@@ -1,152 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login – Medical Exam Room Pro</title>
-    
-    <link rel="manifest" href="../manifest.json">
-    <link rel="stylesheet" href="../css/common.css" media="all">
-    <link rel="stylesheet" href="../css/login.css" media="all">
-    
+    <title>Login – MedHub</title>
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/css/common.css" media="all">
+    <link rel="stylesheet" href="/css/login.css" media="all">
+
     <!-- Auth + validation + security for fingerprint -->
-    <script type="module" src="../scripts/utils.js"></script>
-    <script type="module" src="../scripts/ui.js"></script>
-    <script type="module" src="../scripts/router.js"></script>
-    <script type="module" src="../scripts/validation.js"></script>
-    <script type="module" src="../scripts/db.js"></script> 
-    <script type="module" src="../scripts/auth.js"></script>
-    <script type="module" src="../scripts/security.js"></script>
-    <script type="module" src="../scripts/app.js"></script>
-    
+    <script type="module" src="/scripts/utils.js"></script>
+    <script type="module" src="/scripts/ui.js"></script>
+    <script type="module" src="/scripts/router.js"></script>
+    <script type="module" src="/scripts/validation.js"></script>
+    <script type="module" src="/scripts/db.js"></script>
+    <script type="module" src="/scripts/auth.js"></script>
+    <script type="module" src="/scripts/security.js"></script>
+    <script type="module" src="/scripts/app.js"></script>
+
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('../service-worker.js').catch(() => {});
+            navigator.serviceWorker.register('/service-worker.js').catch(() => { });
         }
     </script>
-    
-<script type="module">
-    import * as app from '../scripts/app.js';
-    import * as auth from '../scripts/auth.js';    // ✅ correct import
-    import * as ui from '../scripts/ui.js';
-    import * as router from '../scripts/router.js';
-    import * as validation from '../scripts/validation.js';
-    import * as security from '../scripts/security.js';
-    import * as utils from '../scripts/utils.js';
 
-    window.addEventListener('load', function() {
-        ui.applyTheme();
-        if (app.checkAuth()) {
-            router.navigateTo('subjects.html');
-            return;
-        }
-        validation.setupLiveValidation('login-form', {
-            email: { required: true, email: true },
-            password: { required: true, min: 8 }
-        });
-        const rememberedEmail = utils.getLocalStorage('rememberedEmail');
-        if (rememberedEmail) {
-            document.getElementById('email').value = rememberedEmail;
-            document.getElementById('remember').checked = true;
-        }
-    });
+    <script type="module">
+        import * as app from '../scripts/app.js';
+        import * as auth from '../scripts/auth.js';    // ✅ correct import
+        import * as ui from '../scripts/ui.js';
+        import * as router from '../scripts/router.js';
+        import * as validation from '../scripts/validation.js';
+        import * as security from '../scripts/security.js';
+        import * as utils from '../scripts/utils.js';
 
-    window.handleLogin = async function(event) {
-        event.preventDefault();
-        const email = document.getElementById('email').value.trim();
-        const password = document.getElementById('password').value;
-        const remember = document.getElementById('remember').checked;
-
-        if (!validation.validateEmail(email) && !validation.validatePhone(email)) {
-            ui.showToast('Enter a valid email or Kenyan phone', 'error');
-            return;
-        }
-        if (!validation.validatePassword(password)) {
-            ui.showToast('Password must be 8+ chars with upper, lower, number', 'error');
-            return;
-        }
-
-        ui.showLoading();
-        try {
-            const deviceFingerprint = security.generateDeviceFingerprint();
-            const deviceInfo = {
-                platform: navigator.platform,
-                userAgent: navigator.userAgent,
-                screen: `${screen.width}x${screen.height}`,
-                timezone: new Date().getTimezoneOffset()
-            };
-
-            // ✅ Use auth.login, not app.login
-            const user = await auth.login(email, password, { deviceFingerprint, deviceInfo });
-
-            if (remember) utils.setLocalStorage('rememberedEmail', email);
-            else utils.removeLocalStorage('rememberedEmail');
-
-            ui.hideLoading();
-            ui.showToast('Login successful!', 'success');
-            router.navigateTo('subjects.html');
-        } catch (error) {
-            ui.hideLoading();
-            ui.showToast(error.message || 'Login failed', 'error');
-            if (error.code === 'ACCOUNT_LOCKED') {
-                router.navigateTo('locked.html?reason=time_manipulation');
+        window.addEventListener('load', function () {
+            ui.applyTheme();
+            if (app.checkAuth()) {
+                router.navigateTo('subjects.html');
+                return;
             }
-        }
-    };
+            validation.setupLiveValidation('login-form', {
+                email: { required: true, email: true },
+                password: { required: true, min: 8 }
+            });
+            const rememberedEmail = utils.getLocalStorage('rememberedEmail');
+            if (rememberedEmail) {
+                document.getElementById('email').value = rememberedEmail;
+                document.getElementById('remember').checked = true;
+            }
+        });
 
-    window.forgotPassword = function() {
-        router.navigateTo('forgot-password.html');
-    };
-</script>
+        window.handleLogin = async function (event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const remember = document.getElementById('remember').checked;
+
+            if (!validation.validateEmail(email) && !validation.validatePhone(email)) {
+                ui.showToast('Enter a valid email or Kenyan phone', 'error');
+                return;
+            }
+            if (!validation.validatePassword(password)) {
+                ui.showToast('Password must be 8+ chars with upper, lower, number', 'error');
+                return;
+            }
+
+            ui.showLoading();
+            try {
+                const deviceFingerprint = security.generateDeviceFingerprint();
+                const deviceInfo = {
+                    platform: navigator.platform,
+                    userAgent: navigator.userAgent,
+                    screen: `${screen.width}x${screen.height}`,
+                    timezone: new Date().getTimezoneOffset()
+                };
+
+                // ✅ Use auth.login, not app.login
+                const user = await auth.login(email, password, { deviceFingerprint, deviceInfo });
+
+                if (remember) utils.setLocalStorage('rememberedEmail', email);
+                else utils.removeLocalStorage('rememberedEmail');
+
+                ui.hideLoading();
+                ui.showToast('Login successful!', 'success');
+                router.navigateTo('subjects.html');
+            } catch (error) {
+                ui.hideLoading();
+                ui.showToast(error.message || 'Login failed', 'error');
+                if (error.code === 'ACCOUNT_LOCKED') {
+                    router.navigateTo('locked.html?reason=time_manipulation');
+                }
+            }
+        };
+
+        window.forgotPassword = function () {
+            router.navigateTo('forgot-password.html');
+        };
+    </script>
 </head>
+
 <body>
     <div class="page-container">
         <header>
             <div class="logo">
-                <img src="../assets/images/logo.png" alt="Logo" width="40" height="40">
-                <span>MedExamPro</span>
+                <img src="/assets/images/logo.png" alt="Logo" width="40" height="40">
+                <span>MedHub</span>
             </div>
             <button onclick="ui.toggleTheme()" class="btn-outline">🌓</button>
         </header>
-        
+
         <main class="form-container">
             <h2>Login to your account</h2>
-            
+
             <form id="login-form" onsubmit="handleLogin(event)">
                 <div class="form-group">
                     <label for="email">Email or Phone (254...)</label>
-                    <input type="text" id="email" name="email" placeholder="e.g., 254712345678 or student@example.com" autocomplete="username" required>
+                    <input type="text" id="email" name="email" placeholder="e.g., 254712345678 or student@example.com"
+                        autocomplete="username" required>
                     <div class="error-message" data-for="email"></div>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="••••••••" autocomplete="current-password" required>
-                    <button type="button" onclick="ui.togglePasswordVisibility('password')" class="reveal-btn">👁️</button>
+                    <input type="password" id="password" name="password" placeholder="••••••••"
+                        autocomplete="current-password" required>
+                    <button type="button" onclick="ui.togglePasswordVisibility('password')"
+                        class="reveal-btn">👁️</button>
                     <div class="error-message" data-for="password"></div>
                 </div>
-                
+
                 <div class="form-row">
                     <label>
                         <input type="checkbox" id="remember"> Remember me
                     </label>
                     <button type="button" onclick="forgotPassword()" class="btn-link">Forgot password?</button>
                 </div>
-                
+
                 <div class="action-buttons">
                     <button type="submit" class="btn-primary">Login</button>
-                    <button type="button" onclick="router.navigateTo('signup.html')" class="btn-secondary">Create account</button>
+                    <button type="button" onclick="router.navigateTo('signup.html')" class="btn-secondary">Create
+                        account</button>
                 </div>
             </form>
-            
+
             <p class="security-note">🔒 Time manipulation will lock your account. Never share password.</p>
         </main>
-        
+
         <footer>
             <button onclick="router.navigateTo('welcome.html')" class="btn-text">← Back</button>
         </footer>
     </div>
-    
-    <script data-lazy data-src="../scripts/offline.js"></script>
+
+    <script data-lazy data-src="/scripts/offline.js"></script>
 </body>
+
 </html>

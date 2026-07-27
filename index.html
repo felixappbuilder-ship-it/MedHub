@@ -4,23 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Medical Exam Room Pro – Kenya's #1 Offline Medical QB</title>
+    <title>MedHub – Kenya's #1 Offline Medical QB</title>
 
     <!-- PWA & Non‑blocking CSS -->
-    <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="css/common.css" media="all">
-    <link rel="stylesheet" href="css/index.css" media="all">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/css/common.css" media="all">
+    <link rel="stylesheet" href="/css/index.css" media="all">
 
     <!-- Critical deferred scripts (load after render) -->
-    <script type="module" src="scripts/utils.js"></script>
-    <script type="module" src="scripts/ui.js"></script>
-    <script type="module" src="scripts/router.js"></script>
-    <script type="module" src="scripts/app.js"></script>
+    <script type="module" src="/scripts/utils.js"></script>
+    <script type="module" src="/scripts/ui.js"></script>
+    <script type="module" src="/scripts/router.js"></script>
+    <script type="module" src="/scripts/app.js"></script>
+    <script type="module" src="/scripts/referral.js"></script>
 
     <!-- Service Worker registration – instant, non‑blocking -->
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('service-worker.js')
+            navigator.serviceWorker.register('/service-worker.js')
                 .then(() => console.log('SW registered'))
                 .catch(err => console.warn('SW failed:', err));
         }
@@ -29,7 +30,7 @@
     <!-- Page‑specific init – runs after DOM, calls imported modules -->
     <script defer>
         (async function initIndex() {
-            // Wait for deferred scripts to load (optional, but safe)
+            // Wait for deferred scripts to load
             await new Promise(resolve => window.addEventListener('load', resolve));
 
             // App state & authentication check – redirect if already logged in
@@ -42,7 +43,29 @@
             ui.applyTheme();
             ui.setupInstallPrompt('install-btn');
 
-            // Feature cards: populate from constants (no mock – real data via i18n / config)
+            // ---- REFERRAL DETECTION ----
+            const refCode = window.referral?.detectReferralFromURL?.() || window.referral?.getStoredReferralCode?.();
+            if (refCode) {
+                console.log('[Index] Referral detected:', refCode);
+                // Show referral banner
+                const banner = document.createElement('div');
+                banner.className = 'referral-banner';
+                banner.innerHTML = `
+                    <div class="referral-banner-content">
+                        <p>🎉 You were referred by a MedHub user! Sign up to get started.</p>
+                        <button onclick="router.navigateTo('signup.html')" class="btn-primary">Sign Up Now</button>
+                        <button class="btn-text close-banner" onclick="this.parentElement.parentElement.remove()">✕</button>
+                    </div>
+                `;
+                const heroSection = document.querySelector('.hero');
+                if (heroSection) {
+                    heroSection.parentNode.insertBefore(banner, heroSection.nextSibling);
+                } else {
+                    document.querySelector('main').prepend(banner);
+                }
+            }
+
+            // ---- FEATURE CARDS ----
             const features = [
                 { icon: '📱', title: '100% Offline', desc: '5,000+ questions stored on your phone. No internet needed.' },
                 { icon: '⏱️', title: 'Adaptive Timing', desc: '21–54 sec per question, based on difficulty.' },
@@ -51,12 +74,12 @@
             ];
             ui.renderFeatureGrid('feature-grid', features);
 
-            // Testimonials placeholder – admin can replace later
+            // ---- TESTIMONIALS ----
             ui.renderTestimonials('testimonials', [
                 { name: 'Dr. A. M.', text: 'Passed my exams with ease. The offline mode saved me.' }
             ]);
 
-            // FAQ accordion – static for now, can be fetched from config
+            // ---- FAQ ----
             ui.renderFaq('faq-section', [
                 { q: 'How do I pay?', a: 'M‑Pesa only. Select a plan, enter your Safaricom number.' },
                 { q: 'Can I study without internet?', a: 'Yes. All questions are stored offline.' }
@@ -66,14 +89,17 @@
 </head>
 
 <body class="loading">
-    <!-- Page‑specific content – fully semantic, all interactive elements call imported functions -->
+    <!-- Page‑specific content -->
     <div class="page-container">
         <header>
             <div class="logo">
-                <img src="assets/images/logo.png" alt="Medical Exam Room Pro" width="48" height="48">
-                <span>MedExamPro</span>
+                <img src="/assets/images/logo.png" alt="MedHub" width="48" height="48">
+                <span>MedHub</span>
             </div>
-            <button id="theme-toggle" onclick="ui.toggleTheme()" class="btn-outline">🌓 Light/Dark</button>
+            <div class="header-actions">
+                <a href="/pages/referral.html" class="btn-text" style="display: none;" id="referral-link">💰 Refer & Earn</a>
+                <button id="theme-toggle" onclick="ui.toggleTheme()" class="btn-outline">🌓</button>
+            </div>
         </header>
 
         <main id="main-content">
@@ -99,13 +125,17 @@
             <!-- Footer -->
             <footer>
                 <p>📞 0746834527 | ✉️ felixappbuilder@gmail.com</p>
-                <p><a href="pages/privacy.html">Privacy Policy</a> | <a href="pages/terms.html">Terms</a></p>
+                <p>
+                    <a href="/pages/privacy.html">Privacy Policy</a> |
+                    <a href="/pages/terms.html">Terms</a> |
+                    <a href="/pages/referral.html">💰 Refer & Earn</a>
+                </p>
             </footer>
         </main>
     </div>
 
-    <!-- Lazy offline script – only loaded if needed -->
-    <script data-lazy data-src="scripts/offline.js"></script>
+    <!-- Lazy offline script -->
+    <script data-lazy data-src="/scripts/offline.js"></script>
 </body>
 
 </html>

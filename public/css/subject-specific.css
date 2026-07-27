@@ -1,0 +1,394 @@
+/* ===== Subject‑Specific Page – Mobile‑first ===== */
+
+/* ----- Global / reset-ish ----- */
+.subject-header {
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+}
+
+/* ----- HEADER – TWO ROWS ONLY ----- */
+.fixed-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+}
+
+.header-row {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+
+/* Superior row (logo, back, theme) */
+.header-row.top {
+    justify-content: space-between;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+}
+.header-row.top .left-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.header-row.top .left-group img {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+}
+.header-row.top .left-group .brand {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+.header-row.top .left-group .btn-text {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.6rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.header-row.top .left-group .btn-text:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+.header-row.top .right-group {
+    display: flex;
+    align-items: center;
+}
+.header-row.top .btn-outline {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    padding: 0.3rem 0.6rem;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: background 0.2s, color 0.2s;
+}
+.header-row.top .btn-outline:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+/* Inferior row (Internal Exam / Export as PDF) */
+.header-row.bottom {
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0.6rem 1rem;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+}
+.mode-btn {
+    padding: 0.4rem 1.2rem;
+    border-radius: 30px;
+    border: 2px solid transparent;
+    background: transparent;
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.mode-btn:hover {
+    color: var(--text-primary);
+}
+.mode-btn.active {
+    background: var(--bg-card);
+    border-color: var(--accent);
+    color: var(--text-primary);
+    box-shadow: var(--shadow-sm);
+}
+
+/* ----- SUBJECT METADATA (outside header) ----- */
+.subject-header-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem 0.25rem 1rem;
+    background: var(--bg-card);
+}
+.subject-header-info .subject-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.subject-header-info .subject-title .icon {
+    font-size: 1.6rem;
+}
+.subject-header-info .subject-title h1 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+.subject-header-info .subject-title .color-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.subject-header-info .total-questions {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* ----- Subject Title (legacy) – keep for backward compatibility ----- */
+.subject-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+.subject-icon {
+    font-size: 2rem;
+}
+.color-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.total-questions {
+    color: var(--text-muted);
+    margin-top: 0.25rem;
+    font-size: 0.95rem;
+}
+
+/* ----- Topic Selection Area ----- */
+.topic-selection {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin: 0 1rem;
+}
+.selection-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+.topic-tree {
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+.topic-item {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
+    position: relative;
+}
+.topic-item:last-child {
+    border-bottom: none;
+}
+
+/* Locked topics */
+.topic-item.locked {
+    opacity: 0.7;
+    background: rgba(0,0,0,0.02);
+}
+.topic-item.locked label {
+    cursor: not-allowed;
+}
+.topic-item.locked .topic-name {
+    color: var(--text-muted);
+}
+.topic-item.locked .tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    white-space: nowrap;
+    box-shadow: var(--shadow);
+    transition: opacity 0.2s;
+    z-index: 10;
+    pointer-events: none;
+}
+.topic-item.locked:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+.lock-icon {
+    display: inline-block;
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+    vertical-align: middle;
+}
+
+.topic-item label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    margin-bottom: 0;
+    width: 100%;
+}
+.topic-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--accent);
+    flex-shrink: 0;
+}
+.topic-item input[type="checkbox"]:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.topic-name {
+    flex: 1;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+.topic-stats {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    white-space: nowrap;
+}
+
+/* ----- Selection Summary (new styles merged) ----- */
+.selection-summary {
+    background: var(--bg-secondary);
+    border-radius: var(--radius);
+    padding: 1rem 1.5rem;
+    margin: 0.5rem 1rem 1rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    border: 1px solid var(--border);
+}
+@media screen and (min-width: 640px) {
+    .selection-summary {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+.summary-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+.summary-stats span {
+    background: var(--bg-card);
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+    border: 1px solid var(--border);
+}
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+.action-buttons button {
+    min-height: 40px;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+    border-radius: 30px;
+    font-weight: 500;
+}
+.action-buttons .btn-primary:disabled,
+.action-buttons .btn-secondary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ----- Recent Topics Section ----- */
+.recent-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin: 0 1rem 2rem;
+}
+.recent-section.hidden {
+    display: none;
+}
+.recent-section h3 {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.recent-topic {
+    padding: 0.75rem;
+    border-radius: var(--radius-sm);
+    background: var(--bg-secondary);
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    border: 1px solid var(--border);
+}
+.recent-topic:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+.no-data {
+    color: var(--text-muted);
+    font-style: italic;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+/* ----- Footer ----- */
+footer {
+    text-align: center;
+    padding: 1rem;
+    color: var(--text-muted);
+}
+
+/* ----- Dark Theme Adjustments ----- */
+body.dark-theme .topic-item.locked {
+    background: rgba(255,255,255,0.02);
+}
+body.dark-theme .topic-item.locked .tooltip {
+    background: var(--bg-secondary);
+    border-color: var(--border-dark);
+}
+
+/* ----- Responsive Tweaks ----- */
+@media screen and (max-width: 480px) {
+    .topic-stats {
+        font-size: 0.75rem;
+    }
+    .selection-actions {
+        flex-direction: column;
+    }
+    .selection-actions button {
+        width: 100%;
+    }
+    .mode-btn {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.8rem;
+    }
+    .selection-summary {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .action-buttons {
+        justify-content: stretch;
+    }
+    .action-buttons button {
+        flex: 1;
+    }
+}

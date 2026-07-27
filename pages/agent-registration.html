@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Become a MedHub Agent</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/agent-registration.css">
+  <style>
+    .agent-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .benefits-list {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+    }
+    .benefits-list li {
+      margin-bottom: 0.5rem;
+    }
+    .upgrade-section {
+      text-align: center;
+      padding: 2rem;
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+    .upgrade-section .btn-primary {
+      font-size: 1.2rem;
+      padding: 0.8rem 2.5rem;
+    }
+    .form-section {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .toggle-link {
+      cursor: pointer;
+      color: var(--accent);
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+    <header>
+      <div class="logo">
+        <img src="/assets/images/logo.png" alt="Logo" width="40" height="40">
+        <span>MedHub</span>
+      </div>
+      <button onclick="ui.toggleTheme()" class="btn-outline">🌓</button>
+    </header>
+
+    <main>
+      <div class="auth-container">
+        <div class="auth-card">
+          <div class="auth-header">
+            <span class="agent-badge">🤝 Agent Program</span>
+            <h1>Become a MedHub Agent</h1>
+            <p>Earn KSh 40 per referral and KSh 15 per renewal</p>
+          </div>
+
+          <!-- Display area for logged-in user upgrade -->
+          <div id="logged-in-upgrade" style="display: none;">
+            <div class="upgrade-section">
+              <h2>Welcome, <span id="agent-user-name"></span>!</h2>
+              <p>You are currently a <strong>normal user</strong>. Upgrade to become a MedHub Agent and start earning commissions.</p>
+              <ul class="benefits-list">
+                <li>✅ Refer new students – earn KSh 40 per first subscription</li>
+                <li>✅ Earn KSh 15 for every renewal</li>
+                <li>✅ No active subscription required to refer</li>
+                <li>✅ Track your referrals and earnings in your dashboard</li>
+              </ul>
+              <button id="upgrade-btn" class="btn-primary">Upgrade to Agent</button>
+              <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">Your account will be verified by admin within 24 hours.</p>
+            </div>
+          </div>
+
+          <!-- Registration form for new users -->
+          <div id="register-form" style="display: none;">
+            <h2>Create Agent Account</h2>
+            <p>Fill in your details to register as a MedHub Agent.</p>
+
+            <form id="agent-register-form" class="form-section">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" required>
+                <small>Format: 07XX or 2547XX</small>
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+                <small>8+ chars, include uppercase, lowercase, number</small>
+              </div>
+              <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" required>
+              </div>
+
+              <!-- Security Questions (same as normal registration) -->
+              <div class="form-group">
+                <label>Security Questions (3 required)</label>
+                <div id="security-questions-container">
+                  <div class="question-row">
+                    <select class="question-select" data-index="0">
+                      <option value="">Select a question</option>
+                      <option value="What is your place of birth?">What is your place of birth?</option>
+                      <option value="What was the name of your primary school?">What was the name of your primary school?</option>
+                      <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
+                      <option value="What was the name of your first pet?">What was the name of your first pet?</option>
+                      <option value="What is your favorite book?">What is your favorite book?</option>
+                    </select>
+                    <input type="text" class="answer-input" placeholder="Answer" data-index="0">
+                  </div>
+                  <div class="question-row">
+                    <select class="question-select" data-index="1">
+                      <option value="">Select a question</option>
+                      <option value="What is your place of birth?">What is your place of birth?</option>
+                      <option value="What was the name of your primary school?">What was the name of your primary school?</option>
+                      <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
+                      <option value="What was the name of your first pet?">What was the name of your first pet?</option>
+                      <option value="What is your favorite book?">What is your favorite book?</option>
+                    </select>
+                    <input type="text" class="answer-input" placeholder="Answer" data-index="1">
+                  </div>
+                  <div class="question-row">
+                    <select class="question-select" data-index="2">
+                      <option value="">Select a question</option>
+                      <option value="What is your place of birth?">What is your place of birth?</option>
+                      <option value="What was the name of your primary school?">What was the name of your primary school?</option>
+                      <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
+                      <option value="What was the name of your first pet?">What was the name of your first pet?</option>
+                      <option value="What is your favorite book?">What is your favorite book?</option>
+                    </select>
+                    <input type="text" class="answer-input" placeholder="Answer" data-index="2">
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group checkbox">
+                <label>
+                  <input type="checkbox" id="agent-terms" required>
+                  I agree to the <a href="#" onclick="ui.showToast('Terms of Service for Agents','info')">Agent Terms</a> and will promote MedHub responsibly.
+                </label>
+              </div>
+
+              <button type="submit" class="btn-primary" id="register-agent-btn">Register as Agent</button>
+            </form>
+            <p style="margin-top: 1rem; text-align: center;">
+              Already have an account? <a href="#" onclick="showUpgrade()" class="toggle-link">Upgrade to Agent</a>
+            </p>
+          </div>
+
+          <!-- Status messages -->
+          <div id="status-message" style="margin-top: 1rem;"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script type="module">
+    import * as app from '../scripts/app.js';
+    import * as ui from '../scripts/ui.js';
+    import * as auth from '../scripts/auth.js';
+    import * as router from '../scripts/router.js';
+    import * as validation from '../scripts/validation.js';
+    import * as security from '../scripts/security.js';
+    import { convexHttpClient } from '../scripts/convex-client.js';
+    import { getToken } from '../scripts/auth.js';
+
+    // ==================== STATE ====================
+    let currentUser = null;
+    let isLoggedIn = false;
+
+    // ==================== DOM REFS ====================
+    const loggedInUpgrade = document.getElementById('logged-in-upgrade');
+    const registerForm = document.getElementById('register-form');
+    const upgradeBtn = document.getElementById('upgrade-btn');
+    const agentUserName = document.getElementById('agent-user-name');
+    const registerFormEl = document.getElementById('agent-register-form');
+    const statusMsg = document.getElementById('status-message');
+
+    // ==================== HELPERS ====================
+    function showStatus(message, type = 'info') {
+      statusMsg.innerHTML = `<div class="alert alert-${type}">${message}</div>`;
+    }
+
+    function clearStatus() {
+      statusMsg.innerHTML = '';
+    }
+
+    function showUpgrade() {
+      loggedInUpgrade.style.display = 'block';
+      registerForm.style.display = 'none';
+      clearStatus();
+    }
+
+    function showRegister() {
+      loggedInUpgrade.style.display = 'none';
+      registerForm.style.display = 'block';
+      clearStatus();
+    }
+
+    // ==================== INIT ====================
+    (async function initAgentRegistration() {
+      await app.initializeApp();
+      ui.applyTheme();
+      currentUser = app.getUser();
+      isLoggedIn = !!currentUser;
+
+      if (isLoggedIn) {
+        // If already logged in, show upgrade option
+        agentUserName.textContent = currentUser.name || currentUser.displayName || 'User';
+        showUpgrade();
+      } else {
+        // Show registration form for new agent
+        showRegister();
+      }
+    })();
+
+    // ==================== UPGRADE EXISTING USER ====================
+    upgradeBtn.addEventListener('click', async () => {
+      const confirmed = await ui.showConfirmationDialog(
+        'Become an Agent',
+        'Are you sure you want to become a MedHub Agent? Your account will be reviewed by admin within 24 hours.',
+        'warning'
+      );
+      if (!confirmed) return;
+
+      ui.showLoading('Upgrading to agent...');
+      try {
+        const token = getToken();
+        const result = await convexHttpClient.action("users/mutations:upgradeToAgent", { token });
+        ui.hideLoading();
+        if (result.success) {
+          ui.showToast(result.data.message, 'success');
+          // Reload user data to reflect new role
+          await app.syncUserData();
+          router.navigateTo('referral.html');
+        } else {
+          ui.showToast(result.message || 'Upgrade failed', 'error');
+        }
+      } catch (err) {
+        ui.hideLoading();
+        ui.showToast(err.message || 'Upgrade failed', 'error');
+        console.error('[Agent] Upgrade error:', err);
+      }
+    });
+
+    // ==================== REGISTER NEW AGENT ====================
+    registerFormEl.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      clearStatus();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const password = document.getElementById('password').value;
+      const confirm = document.getElementById('confirm-password').value;
+
+      // Gather security questions
+      const questionSelects = document.querySelectorAll('.question-select');
+      const answerInputs = document.querySelectorAll('.answer-input');
+      const securityQuestions = [];
+      for (let i = 0; i < 3; i++) {
+        const q = questionSelects[i].value.trim();
+        const a = answerInputs[i].value.trim();
+        if (!q || !a) {
+          showStatus('Please fill in all security questions and answers.', 'error');
+          return;
+        }
+        securityQuestions.push({ question: q, answer: a });
+      }
+
+      // Validation
+      const validationResult = validation.validateForm({ name, email, phone, password, confirm }, {
+        name: { required: true, min: 2 },
+        email: { required: true, email: true },
+        phone: { required: true, phone: 'KE' },
+        password: { required: true, min: 8 },
+        confirm: { required: true }
+      });
+
+      if (!validationResult.valid) {
+        ui.showValidationSummary(validationResult.errors);
+        return;
+      }
+
+      if (password !== confirm) {
+        showStatus('Passwords do not match.', 'error');
+        return;
+      }
+
+      if (!validation.validatePassword(password)) {
+        showStatus('Password must be 8+ chars, include uppercase, lowercase, and a number.', 'error');
+        return;
+      }
+
+      const terms = document.getElementById('agent-terms').checked;
+      if (!terms) {
+        showStatus('You must agree to the Agent Terms to register.', 'error');
+        return;
+      }
+
+      ui.showLoading('Registering agent account...');
+      try {
+        const deviceFingerprint = security.getDeviceFingerprint();
+        const result = await auth.register({
+          name,
+          email,
+          phone,
+          password,
+          securityQuestions,
+          deviceFingerprint,
+          deviceInfo: { platform: 'web' },
+          referralCode: null, // agents can still be referred by someone, but not required
+          isAgent: true,        // ✅ This is key
+          agentVerified: false, // wait for admin verification
+        });
+
+        ui.hideLoading();
+        if (result) {
+          ui.showToast('Agent registration successful! You can now refer students.', 'success');
+          // Redirect to referral dashboard
+          setTimeout(() => {
+            router.navigateTo('referral.html');
+          }, 2000);
+        }
+      } catch (err) {
+        ui.hideLoading();
+        showStatus(err.message || 'Registration failed', 'error');
+        console.error('[Agent] Registration error:', err);
+      }
+    });
+
+    // ==================== TOGGLE VIEWS ====================
+    // The toggle link inside the register form calls showUpgrade()
+    // The toggle link inside the upgrade section could be added if needed.
+    // Also we can add a "Register as new agent" link in the upgrade section.
+    // But for simplicity, we already have the link in the register form.
+
+    // Add toggle to upgrade section (if user wants to register as new instead)
+    // We'll add a small link in the upgrade section:
+    const upgradeSection = document.querySelector('.upgrade-section');
+    const switchToRegister = document.createElement('p');
+    switchToRegister.style.marginTop = '1rem';
+    switchToRegister.innerHTML = 'Not the user you are logged in as? <a href="#" onclick="showRegister()" class="toggle-link">Register a new agent account</a>';
+    upgradeSection.appendChild(switchToRegister);
+
+    // Expose functions globally for inline onclick
+    window.showUpgrade = showUpgrade;
+    window.showRegister = showRegister;
+  </script>
+</body>
+</html>

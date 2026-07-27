@@ -1,0 +1,2664 @@
+{
+  "questions": [
+    {
+      "questionId": "limb_dev_001",
+      "difficulty": 1,
+      "question": "Limb buds first appear as outgrowths of the lateral body wall during which week of development?",
+      "image": null,
+      "options": [
+        {
+          "text": "Fourth week",
+          "isCorrect": true,
+          "explanation": "Upper limb buds appear around day 26-27 (late fourth week), lower limb buds about 1-2 days later."
+        },
+        {
+          "text": "Third week",
+          "isCorrect": false,
+          "explanation": "The third week is gastrulation and neurulation; limb buds have not yet appeared."
+        },
+        {
+          "text": "Fifth week",
+          "isCorrect": false,
+          "explanation": "By the fifth week, limb buds are already established and growing; they appear in the fourth week."
+        },
+        {
+          "text": "Sixth week",
+          "isCorrect": false,
+          "explanation": "The sixth week is when hand and foot plates begin to form, after the buds have appeared."
+        },
+        {
+          "text": "Seventh week",
+          "isCorrect": false,
+          "explanation": "The seventh week is characterized by digit separation, not initial bud appearance."
+        }
+      ],
+      "explanation": {
+        "overview": "Limb buds are the first visible signs of limb development, appearing as small swellings on the ventrolateral body wall during the fourth week.",
+        "highYield": "Upper limb buds appear slightly earlier (day 26-27) than lower limb buds (day 28-29).",
+        "clinicalCorrelation": "The timing of limb bud appearance is used to assess embryonic age; absence or abnormalities can indicate congenital defects."
+      }
+    },
+    {
+      "questionId": "limb_dev_002",
+      "difficulty": 2,
+      "question": "The apical ectodermal ridge (AER) is a thickened ectodermal structure at the tip of the limb bud. Its main function is to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Promote proximal-distal outgrowth",
+          "isCorrect": true,
+          "explanation": "The AER secretes FGFs that maintain the underlying mesenchyme in a proliferative state, driving limb elongation."
+        },
+        {
+          "text": "Pattern the anterior-posterior axis",
+          "isCorrect": false,
+          "explanation": "The anterior-posterior axis is patterned by the ZPA, not the AER."
+        },
+        {
+          "text": "Specify dorsal-ventral identity",
+          "isCorrect": false,
+          "explanation": "Dorsal-ventral identity is specified by Wnt7a from dorsal ectoderm and En-1 in ventral ectoderm."
+        },
+        {
+          "text": "Induce muscle formation",
+          "isCorrect": false,
+          "explanation": "Muscle precursors migrate from somites, not induced by the AER."
+        },
+        {
+          "text": "Form the joints",
+          "isCorrect": false,
+          "explanation": "Joints form from interzones in cartilage, not directly from the AER."
+        }
+      ],
+      "explanation": {
+        "overview": "The AER is a specialized ectodermal structure that is essential for limb outgrowth by maintaining a proliferative mesenchymal zone.",
+        "highYield": "The AER secretes FGF4, FGF8, and FGF9 to promote proliferation; its removal causes limb truncation.",
+        "clinicalCorrelation": "AER defects can lead to limb reduction defects such as amelia or phocomelia."
+      }
+    },
+    {
+      "questionId": "limb_dev_003",
+      "difficulty": 2,
+      "question": "Removal of the AER during limb development results in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Truncation of the limb",
+          "isCorrect": true,
+          "explanation": "The AER is essential for limb outgrowth; its removal leads to limb truncation at the corresponding level."
+        },
+        {
+          "text": "Polydactyly",
+          "isCorrect": false,
+          "explanation": "Polydactyly is due to abnormal SHH signaling, not AER loss."
+        },
+        {
+          "text": "Syndactyly",
+          "isCorrect": false,
+          "explanation": "Syndactyly is due to failure of interdigital apoptosis, not AER loss."
+        },
+        {
+          "text": "Mirror image duplication",
+          "isCorrect": false,
+          "explanation": "Mirror image duplication is caused by ectopic ZPA activity."
+        },
+        {
+          "text": "Normal development",
+          "isCorrect": false,
+          "explanation": "Without the AER, limb development is severely disrupted."
+        }
+      ],
+      "explanation": {
+        "overview": "The AER is required for continued proximal-distal limb growth; its removal causes truncation at the level of removal, as demonstrated in classic chick experiments.",
+        "highYield": "The AER is essential for limb elongation; without it, the limb fails to form distal structures.",
+        "clinicalCorrelation": "AER defects can cause congenital limb shortening (e.g., phocomelia)."
+      }
+    },
+    {
+      "questionId": "limb_dev_004",
+      "difficulty": 2,
+      "question": "The zone of polarizing activity (ZPA) is located at the posterior margin of the limb bud and patterns the:",
+      "image": null,
+      "options": [
+        {
+          "text": "Anterior-posterior axis (digits)",
+          "isCorrect": true,
+          "explanation": "The ZPA secretes Sonic hedgehog (SHH), which specifies digit identity and number (pinky side = high SHH)."
+        },
+        {
+          "text": "Proximal-distal axis",
+          "isCorrect": false,
+          "explanation": "Proximal-distal patterning is controlled by the AER and progress zone."
+        },
+        {
+          "text": "Dorsal-ventral axis",
+          "isCorrect": false,
+          "explanation": "Dorsal-ventral patterning is controlled by Wnt7a and En-1."
+        },
+        {
+          "text": "Muscle mass",
+          "isCorrect": false,
+          "explanation": "Muscle mass is determined by connective tissue and myogenic migration."
+        },
+        {
+          "text": "Joints",
+          "isCorrect": false,
+          "explanation": "Joint formation involves interzone formation, not the ZPA."
+        }
+      ],
+      "explanation": {
+        "overview": "The ZPA is a specialized region of mesenchyme at the posterior edge of the limb bud that secretes SHH and determines digit identity along the anterior-posterior axis.",
+        "highYield": "SHH concentration gradient from high (posterior) to low (anterior) specifies digit types; thumb = low SHH, pinky = high SHH.",
+        "clinicalCorrelation": "Abnormal SHH signaling causes polydactyly, syndactyly, and limb reduction defects."
+      }
+    },
+    {
+      "questionId": "limb_dev_005",
+      "difficulty": 2,
+      "question": "Transplantation of a second ZPA to the anterior side of a chick limb bud results in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Mirror-image duplication of digits",
+          "isCorrect": true,
+          "explanation": "Ectopic SHH from the extra ZPA causes anterior cells to adopt posterior fates, leading to duplicated digits in mirror image."
+        },
+        {
+          "text": "Limb truncation",
+          "isCorrect": false,
+          "explanation": "Truncation is caused by AER removal, not ZPA transplantation."
+        },
+        {
+          "text": "No effect",
+          "isCorrect": false,
+          "explanation": "Transplanted ZPA has a dramatic effect, causing mirror-image duplications."
+        },
+        {
+          "text": "Syndactyly",
+          "isCorrect": false,
+          "explanation": "Syndactyly is from failed apoptosis, not ZPA signaling."
+        },
+        {
+          "text": "Reduction of digit number",
+          "isCorrect": false,
+          "explanation": "ZPA transplantation increases digit number, not decreases."
+        }
+      ],
+      "explanation": {
+        "overview": "The classic ZPA transplantation experiment demonstrated that the ZPA is responsible for digit identity; a transplanted ZPA induces mirror-image digit duplication.",
+        "highYield": "This experiment showed that SHH is the key morphogen for digit patterning.",
+        "clinicalCorrelation": "Ectopic SHH signaling in humans can cause polydactyly."
+      }
+    },
+    {
+      "questionId": "limb_dev_006",
+      "difficulty": 2,
+      "question": "The dorsal-ventral axis of the limb is established by signals from the:",
+      "image": null,
+      "options": [
+        {
+          "text": "Overlying ectoderm (Wnt7a)",
+          "isCorrect": true,
+          "explanation": "Wnt7a from dorsal ectoderm induces Lmx1b in dorsal mesenchyme, specifying dorsal structures (e.g., extensor muscles)."
+        },
+        {
+          "text": "AER",
+          "isCorrect": false,
+          "explanation": "The AER controls proximal-distal growth, not dorsal-ventral."
+        },
+        {
+          "text": "ZPA",
+          "isCorrect": false,
+          "explanation": "The ZPA patterns the anterior-posterior axis."
+        },
+        {
+          "text": "Mesenchyme",
+          "isCorrect": false,
+          "explanation": "Mesenchyme receives signals from ectoderm; it does not initiate dorsal-ventral patterning."
+        },
+        {
+          "text": "Notochord",
+          "isCorrect": false,
+          "explanation": "The notochord is axial, not involved in limb axis formation."
+        }
+      ],
+      "explanation": {
+        "overview": "Dorsal-ventral patterning is established by Wnt7a from the dorsal ectoderm, which induces Lmx1b in the dorsal mesenchyme.",
+        "highYield": "Wnt7a is essential for dorsal identity; En-1 in the ventral ectoderm represses Wnt7a ventrally.",
+        "clinicalCorrelation": "Mutations in LMX1B cause nail-patella syndrome, affecting dorsal limb structures."
+      }
+    },
+    {
+      "questionId": "limb_dev_007",
+      "difficulty": 2,
+      "question": "Engrailed-1 (En-1) is expressed in the ventral ectoderm and promotes ventral fates by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Repressing Wnt7a",
+          "isCorrect": true,
+          "explanation": "En-1 suppresses Wnt7a ventrally, ensuring proper ventral differentiation (e.g., flexor muscles)."
+        },
+        {
+          "text": "Activating SHH",
+          "isCorrect": false,
+          "explanation": "SHH is activated in the ZPA, not by En-1."
+        },
+        {
+          "text": "Stimulating FGFs",
+          "isCorrect": false,
+          "explanation": "FGFs are from the AER, not regulated by En-1."
+        },
+        {
+          "text": "Inducing apoptosis",
+          "isCorrect": false,
+          "explanation": "Apoptosis is mediated by BMPs, not En-1."
+        },
+        {
+          "text": "Promoting dorsal identity",
+          "isCorrect": false,
+          "explanation": "En-1 promotes ventral identity, not dorsal."
+        }
+      ],
+      "explanation": {
+        "overview": "En-1 is a transcription factor expressed in the ventral ectoderm that establishes ventral identity by repressing Wnt7a, thereby preventing dorsalization.",
+        "highYield": "The boundary between En-1 (ventral) and Wnt7a (dorsal) ectoderm defines the AER.",
+        "clinicalCorrelation": "En-1 mutations can cause ventral limb defects."
+      }
+    },
+    {
+      "questionId": "limb_dev_008",
+      "difficulty": 2,
+      "question": "Fibroblast growth factors (FGFs) from the AER are critical for limb outgrowth. FGF2, FGF4, and FGF8 maintain the:",
+      "image": null,
+      "options": [
+        {
+          "text": "Progress zone (undifferentiated mesenchyme)",
+          "isCorrect": true,
+          "explanation": "The progress zone, directly under the AER, remains proliferative and undifferentiated; FGFs from the AER sustain this zone."
+        },
+        {
+          "text": "ZPA",
+          "isCorrect": false,
+          "explanation": "The ZPA is maintained by SHH, not directly by FGFs."
+        },
+        {
+          "text": "Dorsal ectoderm",
+          "isCorrect": false,
+          "explanation": "Dorsal ectoderm is maintained by Wnt7a, not FGFs."
+        },
+        {
+          "text": "Myogenic precursors",
+          "isCorrect": false,
+          "explanation": "Myogenic precursors migrate from somites; they are not maintained by AER FGFs."
+        },
+        {
+          "text": "Cartilage condensation",
+          "isCorrect": false,
+          "explanation": "Cartilage condensation occurs later, not directly maintained by AER FGFs."
+        }
+      ],
+      "explanation": {
+        "overview": "FGFs from the AER are essential for maintaining the progress zone, a population of undifferentiated mesenchyme that gives rise to limb structures.",
+        "highYield": "FGF8 is the primary AER signal; it maintains the progress zone and also induces SHH in the ZPA.",
+        "clinicalCorrelation": "FGF signaling defects can cause limb shortening and syndactyly."
+      }
+    },
+    {
+      "questionId": "limb_dev_009",
+      "difficulty": 2,
+      "question": "The progress zone model proposes that cells leaving the progress zone at different times determine:",
+      "image": null,
+      "options": [
+        {
+          "text": "Proximal-distal identity (e.g., stylopod, zeugopod, autopod)",
+          "isCorrect": true,
+          "explanation": "Cells that leave the progress zone early form proximal structures; later cells form distal structures."
+        },
+        {
+          "text": "Anterior-posterior identity",
+          "isCorrect": false,
+          "explanation": "Anterior-posterior identity is determined by SHH from the ZPA."
+        },
+        {
+          "text": "Dorsal-ventral identity",
+          "isCorrect": false,
+          "explanation": "Dorsal-ventral identity is determined by Wnt7a and En-1."
+        },
+        {
+          "text": "Muscle pattern",
+          "isCorrect": false,
+          "explanation": "Muscle pattern is determined by connective tissue."
+        },
+        {
+          "text": "Joint formation",
+          "isCorrect": false,
+          "explanation": "Joints form from interzones, not the progress zone."
+        }
+      ],
+      "explanation": {
+        "overview": "The progress zone model explains how proximal-distal identity is determined by the time cells spend in the progress zone before differentiating.",
+        "highYield": "Cells that leave early form the stylopod (humerus/femur), later cells form the zeugopod (radius-ulna/tibia-fibula), and the latest cells form the autopod (carpals/tarsals/digits).",
+        "clinicalCorrelation": "Disruption of the progress zone can cause limb truncation defects."
+      }
+    },
+    {
+      "questionId": "limb_dev_010",
+      "difficulty": 2,
+      "question": "The three main segments of the limb (stylopod, zeugopod, autopod) correspond respectively to the:",
+      "image": null,
+      "options": [
+        {
+          "text": "Upper arm/thigh, forearm/leg, hand/foot",
+          "isCorrect": true,
+          "explanation": "Stylopod = proximal segment (humerus/femur), zeugopod = middle segment (radius‑ulna/tibia‑fibula), autopod = distal segment (carpals/tarsals, digits)."
+        },
+        {
+          "text": "Hand/foot, forearm/leg, upper arm/thigh",
+          "isCorrect": false,
+          "explanation": "This is the reverse order."
+        },
+        {
+          "text": "Digits, palm, wrist",
+          "isCorrect": false,
+          "explanation": "These are all parts of the autopod."
+        },
+        {
+          "text": "Femur, tibia/fibula, tarsals",
+          "isCorrect": false,
+          "explanation": "This describes the lower limb segments, but the order is stylopod (femur), zeugopod (tibia/fibula), autopod (tarsals/digits)."
+        },
+        {
+          "text": "Humerus, radius/ulna, carpals",
+          "isCorrect": false,
+          "explanation": "This describes the upper limb segments, but the order is stylopod (humerus), zeugopod (radius/ulna), autopod (carpals/digits)."
+        }
+      ],
+      "explanation": {
+        "overview": "The limb is divided into three segments: stylopod (proximal), zeugopod (middle), and autopod (distal), which correspond to specific bones.",
+        "highYield": "Stylopod = humerus/femur; zeugopod = radius-ulna/tibia-fibula; autopod = carpals/tarsals and digits.",
+        "clinicalCorrelation": "Mutations in HOX genes can affect specific segments, causing shortening of one or more regions."
+      }
+    },
+    {
+      "questionId": "limb_dev_011",
+      "difficulty": 2,
+      "question": "Cartilage condensation (chondrification) begins in the core of the limb bud. The first skeletal elements to appear are:",
+      "image": null,
+      "options": [
+        {
+          "text": "Proximal (stylopod)",
+          "isCorrect": true,
+          "explanation": "Chondrification proceeds in a proximal-to-distal sequence, with the humerus/femur forming first."
+        },
+        {
+          "text": "Distal (autopod)",
+          "isCorrect": false,
+          "explanation": "Distal elements form later, after proximal elements have appeared."
+        },
+        {
+          "text": "Middle (zeugopod)",
+          "isCorrect": false,
+          "explanation": "The zeugopod forms after the stylopod."
+        },
+        {
+          "text": "All simultaneously",
+          "isCorrect": false,
+          "explanation": "Chondrification is sequential, not simultaneous."
+        },
+        {
+          "text": "Digits first",
+          "isCorrect": false,
+          "explanation": "Digits are among the last skeletal elements to form."
+        }
+      ],
+      "explanation": {
+        "overview": "Skeletal development proceeds in a proximal-to-distal sequence, with the stylopod forming first, followed by the zeugopod and then the autopod.",
+        "highYield": "Endochondral ossification begins with condensation of mesenchyme, which differentiates into cartilage, then bone.",
+        "clinicalCorrelation": "Disruption of the proximal-distal sequence can cause segmental limb defects."
+      }
+    },
+    {
+      "questionId": "limb_dev_012",
+      "difficulty": 2,
+      "question": "Ossification of the limb bones occurs in two ways: most long bones develop via:",
+      "image": null,
+      "options": [
+        {
+          "text": "Endochondral ossification",
+          "isCorrect": true,
+          "explanation": "Limb bones form from cartilage models that are later replaced by bone (endochondral)."
+        },
+        {
+          "text": "Intramembranous ossification",
+          "isCorrect": false,
+          "explanation": "Intramembranous ossification occurs in flat bones (e.g., skull, clavicle), not most long bones."
+        },
+        {
+          "text": "Perichondral ossification",
+          "isCorrect": false,
+          "explanation": "Perichondral ossification is part of endochondral, but the primary process is endochondral."
+        },
+        {
+          "text": "Appositional growth",
+          "isCorrect": false,
+          "explanation": "Appositional growth is bone thickening, not the primary formation."
+        },
+        {
+          "text": "Metaplasia",
+          "isCorrect": false,
+          "explanation": "Metaplasia is a change from one mature cell type to another, not relevant to bone formation."
+        }
+      ],
+      "explanation": {
+        "overview": "Most limb bones form by endochondral ossification, where a cartilage template is replaced by bone.",
+        "highYield": "Endochondral ossification involves chondrocyte hypertrophy, calcification, and vascular invasion.",
+        "clinicalCorrelation": "Defects in endochondral ossification can cause skeletal dysplasias (e.g., achondroplasia)."
+      }
+    },
+    {
+      "questionId": "limb_dev_013",
+      "difficulty": 2,
+      "question": "The clavicle is an exception among limb bones because it develops by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Intramembranous ossification",
+          "isCorrect": true,
+          "explanation": "The clavicle ossifies directly from mesenchyme without a cartilage precursor."
+        },
+        {
+          "text": "Endochondral ossification",
+          "isCorrect": false,
+          "explanation": "The clavicle does not have a cartilage model; it forms directly from mesenchyme."
+        },
+        {
+          "text": "Both intramembranous and endochondral",
+          "isCorrect": false,
+          "explanation": "The clavicle is primarily intramembranous, though there is some endochondral involvement at the ends."
+        },
+        {
+          "text": "Appositional growth",
+          "isCorrect": false,
+          "explanation": "Appositional growth is not the primary mechanism."
+        },
+        {
+          "text": "Metaplasia",
+          "isCorrect": false,
+          "explanation": "Metaplasia is not involved."
+        }
+      ],
+      "explanation": {
+        "overview": "The clavicle is unique among long bones in that it develops by intramembranous ossification, making it the first bone to ossify.",
+        "highYield": "Cleidocranial dysplasia affects clavicle formation due to defects in intramembranous ossification.",
+        "clinicalCorrelation": "Clavicle hypoplasia or aplasia can occur in syndromes like cleidocranial dysplasia."
+      }
+    },
+    {
+      "questionId": "limb_dev_014",
+      "difficulty": 1,
+      "question": "Digits are initially connected by webs. Separation of digits occurs through:",
+      "image": null,
+      "options": [
+        {
+          "text": "Apoptosis (programmed cell death) of the interdigital mesenchyme",
+          "isCorrect": true,
+          "explanation": "Programmed cell death in the interdigital zones removes the webbing, allowing free digits."
+        },
+        {
+          "text": "Mechanical separation by growth",
+          "isCorrect": false,
+          "explanation": "Mechanical separation is not the primary mechanism; apoptosis is key."
+        },
+        {
+          "text": "Fusion of adjacent tissues",
+          "isCorrect": false,
+          "explanation": "Tissues do not fuse; they are removed."
+        },
+        {
+          "text": "Regression of the AER",
+          "isCorrect": false,
+          "explanation": "AER regression occurs after digit formation, not as the cause of separation."
+        },
+        {
+          "text": "Vascular remodeling",
+          "isCorrect": false,
+          "explanation": "Vascular remodeling is not the primary mechanism for digit separation."
+        }
+      ],
+      "explanation": {
+        "overview": "Apoptosis of interdigital mesenchymal cells is essential for separating the digits; failure results in syndactyly (webbed digits).",
+        "highYield": "BMP signaling in the interdigital zones induces apoptosis; in bats, this apoptosis is reduced, retaining webbing.",
+        "clinicalCorrelation": "Failure of interdigital apoptosis causes syndactyly, one of the most common congenital hand anomalies."
+      }
+    },
+    {
+      "questionId": "limb_dev_015",
+      "difficulty": 2,
+      "question": "Syndactyly (fusion of digits) results from:",
+      "image": null,
+      "options": [
+        {
+          "text": "Failure of interdigital apoptosis",
+          "isCorrect": true,
+          "explanation": "If the interdigital cells fail to undergo apoptosis, webbing persists."
+        },
+        {
+          "text": "Excessive apoptosis",
+          "isCorrect": false,
+          "explanation": "Excessive apoptosis would cause missing digits, not fusion."
+        },
+        {
+          "text": "Fusion of cartilaginous elements",
+          "isCorrect": false,
+          "explanation": "Syndactyly is usually soft tissue fusion, though bony fusion can occur in complex syndactyly."
+        },
+        {
+          "text": "Abnormal AER signaling",
+          "isCorrect": false,
+          "explanation": "AER signaling affects outgrowth, not directly apoptosis."
+        },
+        {
+          "text": "Polydactyly",
+          "isCorrect": false,
+          "explanation": "Polydactyly is extra digits, not fusion."
+        }
+      ],
+      "explanation": {
+        "overview": "Syndactyly is caused by a failure of interdigital apoptosis, resulting in persistent webbing between digits.",
+        "highYield": "Syndactyly can be simple (skin only) or complex (bone fusion); it is often inherited and can be associated with syndromes.",
+        "clinicalCorrelation": "Surgical separation is often performed for functional and cosmetic reasons."
+      }
+    },
+    {
+      "questionId": "limb_dev_016",
+      "difficulty": 2,
+      "question": "Polydactyly (extra digits) can result from:",
+      "image": null,
+      "options": [
+        {
+          "text": "Expanded SHH signaling or ectopic ZPA activity",
+          "isCorrect": true,
+          "explanation": "Increased SHH signaling or a wider ZPA leads to formation of additional digits."
+        },
+        {
+          "text": "Reduced SHH signaling",
+          "isCorrect": false,
+          "explanation": "Reduced SHH causes digit reduction, not extra digits."
+        },
+        {
+          "text": "Apoptosis in the AER",
+          "isCorrect": false,
+          "explanation": "AER apoptosis would cause truncation, not polydactyly."
+        },
+        {
+          "text": "Failure of digit separation",
+          "isCorrect": false,
+          "explanation": "Failure of separation causes syndactyly, not polydactyly."
+        },
+        {
+          "text": "Limb bud truncation",
+          "isCorrect": false,
+          "explanation": "Truncation reduces digit number, not increases."
+        }
+      ],
+      "explanation": {
+        "overview": "Polydactyly is caused by ectopic or expanded SHH signaling, leading to the formation of extra digits due to altered anterior-posterior patterning.",
+        "highYield": "Preaxial polydactyly (extra thumb) and postaxial polydactyly (extra pinky) have different genetic causes.",
+        "clinicalCorrelation": "Polydactyly is one of the most common congenital hand anomalies and can be syndromic or isolated."
+      }
+    },
+    {
+      "questionId": "limb_dev_017",
+      "difficulty": 2,
+      "question": "Ectrodactyly (split hand/foot, lobster claw deformity) is often associated with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Defects in the AER or central apoptosis",
+          "isCorrect": true,
+          "explanation": "Ectrodactyly involves missing central digits, possibly due to abnormal AER maintenance."
+        },
+        {
+          "text": "Polydactyly",
+          "isCorrect": false,
+          "explanation": "Polydactyly is extra digits, not missing central ones."
+        },
+        {
+          "text": "Syndactyly",
+          "isCorrect": false,
+          "explanation": "Syndactyly is fusion, not clefting."
+        },
+        {
+          "text": "Phocomelia",
+          "isCorrect": false,
+          "explanation": "Phocomelia is shortening of limbs, not clefting of hands/feet."
+        },
+        {
+          "text": "Amelia",
+          "isCorrect": false,
+          "explanation": "Amelia is complete absence of a limb, not a cleft."
+        }
+      ],
+      "explanation": {
+        "overview": "Ectrodactyly (split hand/foot) is caused by defects in the AER or abnormal apoptosis, leading to missing central digits.",
+        "highYield": "Ectrodactyly is often associated with mutations in genes like TP63 (ectrodactyly-ectodermal dysplasia-clefting syndrome).",
+        "clinicalCorrelation": "Ectrodactyly can be isolated or part of a syndrome with other ectodermal defects."
+      }
+    },
+    {
+      "questionId": "limb_dev_018",
+      "difficulty": 2,
+      "question": "Phocomelia (seal limbs) is a severe limb reduction defect famously caused by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Thalidomide exposure",
+          "isCorrect": true,
+          "explanation": "Thalidomide, used in the 1960s, caused limb defects by interfering with limb bud development."
+        },
+        {
+          "text": "Folic acid deficiency",
+          "isCorrect": false,
+          "explanation": "Folic acid deficiency causes neural tube defects, not phocomelia."
+        },
+        {
+          "text": "Alcohol",
+          "isCorrect": false,
+          "explanation": "Alcohol causes fetal alcohol syndrome, not phocomelia."
+        },
+        {
+          "text": "Rubella",
+          "isCorrect": false,
+          "explanation": "Rubella causes cataracts and heart defects, not phocomelia."
+        },
+        {
+          "text": "Radiation",
+          "isCorrect": false,
+          "explanation": "Radiation can cause microcephaly and growth restriction, but not specifically phocomelia."
+        }
+      ],
+      "explanation": {
+        "overview": "Phocomelia is a severe limb reduction defect characterized by short, flipper-like limbs, classically associated with thalidomide exposure.",
+        "highYield": "Thalidomide exposure during the critical period of limb development (days 24-36) causes phocomelia.",
+        "clinicalCorrelation": "Thalidomide is now used under strict control for leprosy and multiple myeloma, with pregnancy prevention programs."
+      }
+    },
+    {
+      "questionId": "limb_dev_019",
+      "difficulty": 1,
+      "question": "Amelia refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Complete absence of a limb",
+          "isCorrect": true,
+          "explanation": "Amelia is the absence of one or more limbs."
+        },
+        {
+          "text": "Shortening of a limb",
+          "isCorrect": false,
+          "explanation": "Shortening is micromelia or hypomelia."
+        },
+        {
+          "text": "Fusion of digits",
+          "isCorrect": false,
+          "explanation": "Fusion of digits is syndactyly."
+        },
+        {
+          "text": "Extra digits",
+          "isCorrect": false,
+          "explanation": "Extra digits is polydactyly."
+        },
+        {
+          "text": "Claw‑hand deformity",
+          "isCorrect": false,
+          "explanation": "Claw-hand deformity is usually due to nerve damage, not congenital absence."
+        }
+      ],
+      "explanation": {
+        "overview": "Amelia is the complete absence of a limb, a severe congenital anomaly that can be caused by genetic factors, teratogens, or vascular disruption.",
+        "highYield": "Amelia can be bilateral or unilateral and may be associated with other anomalies.",
+        "clinicalCorrelation": "Prosthetic management and rehabilitation are essential for patients with amelia."
+      }
+    },
+    {
+      "questionId": "limb_dev_020",
+      "difficulty": 2,
+      "question": "The limb muscles develop from myogenic precursor cells that migrate into the limb bud from the:",
+      "image": null,
+      "options": [
+        {
+          "text": "Somites (dermomyotome)",
+          "isCorrect": true,
+          "explanation": "Muscle progenitors delaminate from the ventrolateral edge of the somites and migrate into the limb."
+        },
+        {
+          "text": "Lateral plate mesoderm",
+          "isCorrect": false,
+          "explanation": "Lateral plate mesoderm gives rise to skeleton and connective tissue, not muscle."
+        },
+        {
+          "text": "Neural crest",
+          "isCorrect": false,
+          "explanation": "Neural crest gives rise to peripheral neurons and melanocytes, not muscle."
+        },
+        {
+          "text": "Splanchnic mesoderm",
+          "isCorrect": false,
+          "explanation": "Splanchnic mesoderm forms smooth muscle and heart, not limb muscles."
+        },
+        {
+          "text": "AER",
+          "isCorrect": false,
+          "explanation": "The AER is ectodermal and does not give rise to muscle."
+        }
+      ],
+      "explanation": {
+        "overview": "Limb muscles are derived from myogenic cells that migrate from the somites (dermomyotome) into the limb bud.",
+        "highYield": "Muscle precursors migrate into the limb and then differentiate, forming dorsal and ventral muscle masses.",
+        "clinicalCorrelation": "Defects in muscle migration can cause muscle hypoplasia or absence, as seen in Poland syndrome."
+      }
+    },
+    {
+      "questionId": "limb_dev_021",
+      "difficulty": 2,
+      "question": "Connective tissue, tendons, and bones of the limb are derived from:",
+      "image": null,
+      "options": [
+        {
+          "text": "Lateral plate mesoderm (somatic layer)",
+          "isCorrect": true,
+          "explanation": "The somatic mesoderm of the lateral plate gives rise to the skeletal and connective tissues of the limb."
+        },
+        {
+          "text": "Somites",
+          "isCorrect": false,
+          "explanation": "Somites give rise to muscle (myotome) and skeleton (sclerotome) of the axial skeleton, but limb skeleton is from lateral plate."
+        },
+        {
+          "text": "Neural crest",
+          "isCorrect": false,
+          "explanation": "Neural crest gives rise to peripheral nerves and some craniofacial tissues, not limb connective tissue."
+        },
+        {
+          "text": "Ectoderm",
+          "isCorrect": false,
+          "explanation": "Ectoderm gives rise to epidermis and the AER, not the skeleton."
+        },
+        {
+          "text": "Endoderm",
+          "isCorrect": false,
+          "explanation": "Endoderm is not involved in limb development."
+        }
+      ],
+      "explanation": {
+        "overview": "Limb connective tissue, including bones, tendons, and ligaments, is derived from lateral plate mesoderm (somatic layer).",
+        "highYield": "The lateral plate mesoderm provides the mesenchymal cells that form the limb skeleton and connective tissue; muscles come from somites.",
+        "clinicalCorrelation": "Defects in lateral plate mesoderm can cause skeletal dysplasias and limb reduction defects."
+      }
+    },
+    {
+      "questionId": "limb_dev_022",
+      "difficulty": 2,
+      "question": "The nerves that innervate the limb originate from:",
+      "image": null,
+      "options": [
+        {
+          "text": "Spinal cord (motor neurons) and neural crest (sensory neurons)",
+          "isCorrect": true,
+          "explanation": "Motor axons grow from the spinal cord; sensory axons grow from dorsal root ganglia (neural crest)."
+        },
+        {
+          "text": "Brainstem",
+          "isCorrect": false,
+          "explanation": "Brainstem innervates head and neck, not limbs."
+        },
+        {
+          "text": "Sympathetic chain",
+          "isCorrect": false,
+          "explanation": "Sympathetic chain supplies autonomic innervation, not the primary motor/sensory nerves."
+        },
+        {
+          "text": "Dorsal root ganglia only",
+          "isCorrect": false,
+          "explanation": "Motor nerves come from the spinal cord, not just DRG."
+        },
+        {
+          "text": "Peripheral ganglia",
+          "isCorrect": false,
+          "explanation": "Peripheral ganglia are part of the peripheral nervous system, but the nerves arise from the spinal cord and DRG."
+        }
+      ],
+      "explanation": {
+        "overview": "Limb innervation arises from motor neurons in the spinal cord (ventral horn) and sensory neurons from the dorsal root ganglia (neural crest).",
+        "highYield": "Nerves grow into the limb along with the developing muscles and bones, following cues from the mesenchyme.",
+        "clinicalCorrelation": "Injuries to the brachial or lumbosacral plexus can cause limb paralysis."
+      }
+    },
+    {
+      "questionId": "limb_dev_023",
+      "difficulty": 2,
+      "question": "During limb development, nerves grow into the limb and establish connections. The pattern of innervation corresponds to:",
+      "image": null,
+      "options": [
+        {
+          "text": "The segmental origin of the somites (dermatomes/myotomes)",
+          "isCorrect": true,
+          "explanation": "Nerves follow cues from mesenchymal tissues and eventually supply muscles derived from specific somites."
+        },
+        {
+          "text": "Random growth",
+          "isCorrect": false,
+          "explanation": "Nerve growth is guided, not random."
+        },
+        {
+          "text": "Blood vessel paths",
+          "isCorrect": false,
+          "explanation": "Nerves may follow blood vessels, but the primary pattern is segmental."
+        },
+        {
+          "text": "Muscle migration routes",
+          "isCorrect": false,
+          "explanation": "Muscles migrate, but nerves are patterned by their segmental origin."
+        },
+        {
+          "text": "Cartilage condensation pattern",
+          "isCorrect": false,
+          "explanation": "Cartilage is not the primary guide for nerve patterning."
+        }
+      ],
+      "explanation": {
+        "overview": "The pattern of limb innervation corresponds to the segmental origin of the somites (dermatomes and myotomes), with specific nerve roots supplying specific regions.",
+        "highYield": "The brachial plexus (C5-T1) innervates the upper limb; the lumbosacral plexus (L2-S3) innervates the lower limb.",
+        "clinicalCorrelation": "Nerve root injuries cause specific patterns of weakness and sensory loss."
+      }
+    },
+    {
+      "questionId": "limb_dev_024",
+      "difficulty": 2,
+      "question": "The rotation of the limbs during development brings the limbs into their final positions. The upper limb rotates:",
+      "image": null,
+      "options": [
+        {
+          "text": "Laterally (so the elbow points back and thumb points laterally)",
+          "isCorrect": true,
+          "explanation": "The upper limb rotates 90° laterally, so the extensor muscles lie on the posterior side and the thumb ends up lateral."
+        },
+        {
+          "text": "Medially (so the elbow points forward and thumb points medially)",
+          "isCorrect": false,
+          "explanation": "This describes the rotation of the lower limb, not the upper."
+        },
+        {
+          "text": "No rotation",
+          "isCorrect": false,
+          "explanation": "Rotation is essential for final positioning."
+        },
+        {
+          "text": "180 degrees",
+          "isCorrect": false,
+          "explanation": "Rotation is 90°, not 180°."
+        },
+        {
+          "text": "Randomly",
+          "isCorrect": false,
+          "explanation": "Rotation is directional and consistent."
+        }
+      ],
+      "explanation": {
+        "overview": "The upper limb undergoes 90° lateral rotation, bringing the extensor muscles to the posterior and the thumb to the lateral side.",
+        "highYield": "Upper limb: lateral rotation; lower limb: medial rotation.",
+        "clinicalCorrelation": "Abnormal rotation can cause positional deformities like clubfoot."
+      }
+    },
+    {
+      "questionId": "limb_dev_025",
+      "difficulty": 2,
+      "question": "The lower limb rotates medially (90°), bringing the big toe to the medial side and the extensor muscles to the anterior side. This rotation explains why:",
+      "image": null,
+      "options": [
+        {
+          "text": "The knee bends forward and the ankle dorsiflexes",
+          "isCorrect": true,
+          "explanation": "Medial rotation aligns the extensor (anterior) compartment of the leg, and the great toe ends up medially."
+        },
+        {
+          "text": "The knee bends backward",
+          "isCorrect": false,
+          "explanation": "The knee bends forward (extension) due to medial rotation."
+        },
+        {
+          "text": "The foot is everted",
+          "isCorrect": false,
+          "explanation": "Medial rotation brings the foot to a neutral position; eversion is abnormal."
+        },
+        {
+          "text": "The tibia and fibula cross",
+          "isCorrect": false,
+          "explanation": "The tibia and fibula do not cross; they are parallel."
+        },
+        {
+          "text": "The patella is posterior",
+          "isCorrect": false,
+          "explanation": "The patella is anterior due to medial rotation."
+        }
+      ],
+      "explanation": {
+        "overview": "The lower limb undergoes 90° medial rotation, aligning the extensor muscles anteriorly and the big toe medially, explaining the knee's forward bend.",
+        "highYield": "Lower limb: medial rotation (90°); upper limb: lateral rotation (90°).",
+        "clinicalCorrelation": "Failure of rotation can cause congenital hip dislocation or clubfoot."
+      }
+    },
+    {
+      "questionId": "limb_dev_026",
+      "difficulty": 2,
+      "question": "The joints of the limb develop where:",
+      "image": null,
+      "options": [
+        {
+          "text": "The cartilage model becomes segmented by interzones that form joint cavities",
+          "isCorrect": true,
+          "explanation": "At future joint sites, chondrocytes flatten and form a dense interzone, which later cavitates to form the joint space."
+        },
+        {
+          "text": "Bones grow together",
+          "isCorrect": false,
+          "explanation": "Bones do not grow together; joints are formed by segmentation."
+        },
+        {
+          "text": "Muscles insert",
+          "isCorrect": false,
+          "explanation": "Muscle insertions are on bones, not the joint itself."
+        },
+        {
+          "text": "Nerves cross",
+          "isCorrect": false,
+          "explanation": "Nerves do not determine joint formation."
+        },
+        {
+          "text": "Blood vessels anastomose",
+          "isCorrect": false,
+          "explanation": "Vascular patterns do not determine joint locations."
+        }
+      ],
+      "explanation": {
+        "overview": "Joints develop at sites where the cartilage model becomes segmented, forming an interzone that cavitates to create the joint space.",
+        "highYield": "Joint formation is regulated by growth factors and mechanical forces.",
+        "clinicalCorrelation": "Joint formation defects can cause congenital joint contractures (arthrogryposis)."
+      }
+    },
+    {
+      "questionId": "limb_dev_027",
+      "difficulty": 1,
+      "question": "Clubfoot (talipes equinovarus) is a congenital deformity involving:",
+      "image": null,
+      "options": [
+        {
+          "text": "Plantar flexion, inversion, and adduction of the forefoot",
+          "isCorrect": true,
+          "explanation": "Clubfoot results from abnormal positioning of the foot, often due to in utero constraint or genetic factors."
+        },
+        {
+          "text": "Dorsiflexion and eversion",
+          "isCorrect": false,
+          "explanation": "That is calcaneovalgus, the opposite of clubfoot."
+        },
+        {
+          "text": "Flat foot",
+          "isCorrect": false,
+          "explanation": "Flat foot (pes planus) is a different condition."
+        },
+        {
+          "text": "Vertical talus",
+          "isCorrect": false,
+          "explanation": "Vertical talus is a different foot deformity."
+        },
+        {
+          "text": "Metatarsus adductus alone",
+          "isCorrect": false,
+          "explanation": "Metatarsus adductus is a milder condition with only forefoot adduction."
+        }
+      ],
+      "explanation": {
+        "overview": "Clubfoot (talipes equinovarus) is a congenital deformity characterized by plantar flexion, inversion, and adduction of the forefoot.",
+        "highYield": "Clubfoot is one of the most common congenital foot deformities; treatment is with casting (Ponseti method) or surgery.",
+        "clinicalCorrelation": "Clubfoot can be isolated or associated with syndromes like arthrogryposis."
+      }
+    },
+    {
+      "questionId": "limb_dev_028",
+      "difficulty": 2,
+      "question": "Holt‑Oram syndrome (heart‑hand syndrome) is caused by mutations in the TBX5 gene and includes:",
+      "image": null,
+      "options": [
+        {
+          "text": "Upper limb anomalies (e.g., thumb hypoplasia) and congenital heart defects",
+          "isCorrect": true,
+          "explanation": "TBX5 is involved in both forelimb and heart development."
+        },
+        {
+          "text": "Lower limb defects only",
+          "isCorrect": false,
+          "explanation": "Holt-Oram primarily affects the upper limbs."
+        },
+        {
+          "text": "Polydactyly and cleft palate",
+          "isCorrect": false,
+          "explanation": "Polydactyly and cleft palate are not features of Holt-Oram."
+        },
+        {
+          "text": "Syndactyly and cardiac defects",
+          "isCorrect": false,
+          "explanation": "Syndactyly is not a primary feature; radial/thumb defects are."
+        },
+        {
+          "text": "Radial aplasia and renal anomalies",
+          "isCorrect": false,
+          "explanation": "Renal anomalies are not part of Holt-Oram; radial aplasia can occur, but with cardiac defects."
+        }
+      ],
+      "explanation": {
+        "overview": "Holt-Oram syndrome is an autosomal dominant disorder caused by TBX5 mutations, characterized by upper limb anomalies (thumb hypoplasia, radial ray defects) and congenital heart defects (ASD, VSD).",
+        "highYield": "TBX5 is a transcription factor essential for forelimb and heart development.",
+        "clinicalCorrelation": "Patients with Holt-Oram syndrome require cardiac evaluation and surveillance."
+      }
+    },
+    {
+      "questionId": "limb_dev_029",
+      "difficulty": 2,
+      "question": "Fanconi anemia is associated with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Radial ray defects, thumb anomalies, and pancytopenia",
+          "isCorrect": true,
+          "explanation": "Fanconi anemia patients often have radial abnormalities (e.g., absent or hypoplastic thumb)."
+        },
+        {
+          "text": "Ulnar defects",
+          "isCorrect": false,
+          "explanation": "Fanconi anemia typically affects the radial side, not ulnar."
+        },
+        {
+          "text": "Digit duplication",
+          "isCorrect": false,
+          "explanation": "Digit duplication is not a feature of Fanconi anemia."
+        },
+        {
+          "text": "Long bone shortening",
+          "isCorrect": false,
+          "explanation": "Long bone shortening is not the primary feature."
+        },
+        {
+          "text": "Clubfoot",
+          "isCorrect": false,
+          "explanation": "Clubfoot is not a classic feature."
+        }
+      ],
+      "explanation": {
+        "overview": "Fanconi anemia is a bone marrow failure syndrome associated with radial ray defects, thumb anomalies, short stature, and increased cancer risk.",
+        "highYield": "Radial aplasia and thumb hypoplasia are key skeletal features.",
+        "clinicalCorrelation": "Patients with Fanconi anemia require monitoring for bone marrow failure and malignancy."
+      }
+    },
+    {
+      "questionId": "limb_dev_030",
+      "difficulty": 2,
+      "question": "The gene SHOX (short stature homeobox) is located in the pseudoautosomal region of the X and Y chromosomes and plays a role in limb development. Mutations in SHOX are associated with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Short stature and Madelung deformity (wrist)",
+          "isCorrect": true,
+          "explanation": "SHOX deficiency leads to short stature and mesomelic limb shortening, as in Turner syndrome."
+        },
+        {
+          "text": "Polydactyly",
+          "isCorrect": false,
+          "explanation": "Polydactyly is not associated with SHOX mutations."
+        },
+        {
+          "text": "Syndactyly",
+          "isCorrect": false,
+          "explanation": "Syndactyly is not associated."
+        },
+        {
+          "text": "Clubbed foot",
+          "isCorrect": false,
+          "explanation": "Clubfoot is not the primary feature."
+        },
+        {
+          "text": "Amelia",
+          "isCorrect": false,
+          "explanation": "Amelia is not associated."
+        }
+      ],
+      "explanation": {
+        "overview": "SHOX gene mutations cause short stature and Madelung deformity (a wrist deformity with radial curvature and ulnar bowing).",
+        "highYield": "SHOX is important for growth plate development; haploinsufficiency causes Léri-Weill dyschondrosteosis.",
+        "clinicalCorrelation": "SHOX deficiency is a common cause of short stature, especially in Turner syndrome."
+      }
+    },
+    {
+      "questionId": "limb_dev_031",
+      "difficulty": 2,
+      "question": "The apical ectodermal ridge (AER) maintains the underlying mesenchyme in a state of proliferation. Which growth factor family is primarily responsible?",
+      "image": null,
+      "options": [
+        {
+          "text": "FGFs",
+          "isCorrect": true,
+          "explanation": "FGF4, FGF8, and others are secreted by the AER and signal to the progress zone."
+        },
+        {
+          "text": "BMPs",
+          "isCorrect": false,
+          "explanation": "BMPs induce apoptosis in interdigital zones, not proliferation."
+        },
+        {
+          "text": "Wnts",
+          "isCorrect": false,
+          "explanation": "Wnts are involved in dorsal-ventral patterning, not the main AER signal."
+        },
+        {
+          "text": "SHH",
+          "isCorrect": false,
+          "explanation": "SHH is from the ZPA, not the AER."
+        },
+        {
+          "text": "TGF‑β",
+          "isCorrect": false,
+          "explanation": "TGF-β is involved in other aspects of development, not the primary AER signal."
+        }
+      ],
+      "explanation": {
+        "overview": "The AER secretes FGFs (FGF4, FGF8, FGF9) to maintain the progress zone and promote limb outgrowth.",
+        "highYield": "FGF8 is the key AER signal; it also regulates SHH expression in the ZPA.",
+        "clinicalCorrelation": "FGF signaling defects can cause limb reduction defects."
+      }
+    },
+    {
+      "questionId": "limb_dev_032",
+      "difficulty": 2,
+      "question": "BMP signaling in the interdigital zones triggers apoptosis. In bat wings, interdigital BMP signaling is reduced, leading to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Webbing (retained interdigital membranes)",
+          "isCorrect": true,
+          "explanation": "Bats retain webbing for flight; their interdigital tissue does not undergo apoptosis."
+        },
+        {
+          "text": "Longer digits",
+          "isCorrect": false,
+          "explanation": "Webbing is due to retained tissue, not longer digits."
+        },
+        {
+          "text": "Extra digits",
+          "isCorrect": false,
+          "explanation": "Extra digits are due to SHH signaling, not BMP."
+        },
+        {
+          "text": "Loss of digits",
+          "isCorrect": false,
+          "explanation": "Loss of digits is due to excessive apoptosis, not reduced."
+        },
+        {
+          "text": "Fused digits",
+          "isCorrect": false,
+          "explanation": "Fusion is syndactyly, which is different from webbing in bats."
+        }
+      ],
+      "explanation": {
+        "overview": "BMPs are key regulators of interdigital apoptosis; in bats, reduced BMP signaling allows webbing to persist, enabling flight.",
+        "highYield": "BMP2, BMP4, and BMP7 are expressed in the interdigital zones and trigger apoptosis.",
+        "clinicalCorrelation": "Human syndactyly is often due to reduced interdigital apoptosis."
+      }
+    },
+    {
+      "questionId": "limb_dev_033",
+      "difficulty": 2,
+      "question": "HOX genes are critical for patterning the limb along the proximal-distal and anterior-posterior axes. Deletion of Hoxa13 or Hoxd13 causes:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hand/foot malformations (synpolydactyly, brachydactyly)",
+          "isCorrect": true,
+          "explanation": "Hoxa13 and Hoxd13 are important for autopod development."
+        },
+        {
+          "text": "Complete limb absence",
+          "isCorrect": false,
+          "explanation": "Complete absence is not due to Hoxa13 deletion."
+        },
+        {
+          "text": "Shoulder girdle defects",
+          "isCorrect": false,
+          "explanation": "Shoulder girdle defects are not the primary feature."
+        },
+        {
+          "text": "Knee joint fusion",
+          "isCorrect": false,
+          "explanation": "Knee joint fusion is not associated."
+        },
+        {
+          "text": "Nail aplasia",
+          "isCorrect": false,
+          "explanation": "Nail aplasia can occur, but hand/foot malformations are the main feature."
+        }
+      ],
+      "explanation": {
+        "overview": "HOX genes, particularly Hoxa13 and Hoxd13, are essential for the development of the autopod (hands and feet).",
+        "highYield": "Mutations in HOXD13 cause synpolydactyly, a condition with fused and extra digits.",
+        "clinicalCorrelation": "HOX gene mutations are a cause of congenital hand and foot anomalies."
+      }
+    },
+    {
+      "questionId": "limb_dev_034",
+      "difficulty": 2,
+      "question": "The polarizing region (ZPA) was first identified by transplantation experiments in chick embryos by Saunders and Gasseling. They showed that the ZPA determines:",
+      "image": null,
+      "options": [
+        {
+          "text": "Digit identity and number",
+          "isCorrect": true,
+          "explanation": "Classic experiments demonstrated that a grafted ZPA induces mirror-image digit duplications."
+        },
+        {
+          "text": "Limb length",
+          "isCorrect": false,
+          "explanation": "Limb length is controlled by the AER."
+        },
+        {
+          "text": "Muscle mass",
+          "isCorrect": false,
+          "explanation": "Muscle mass is determined by connective tissue and migration."
+        },
+        {
+          "text": "Nerve pattern",
+          "isCorrect": false,
+          "explanation": "Nerve pattern follows segmental origin."
+        },
+        {
+          "text": "Blood vessel arrangement",
+          "isCorrect": false,
+          "explanation": "Vascular patterning is not controlled by the ZPA."
+        }
+      ],
+      "explanation": {
+        "overview": "The classic ZPA transplantation experiments established that the ZPA is responsible for anterior-posterior patterning, determining digit identity and number.",
+        "highYield": "ZPA transplantation causes mirror-image digit duplication, demonstrating that SHH is the key morphogen.",
+        "clinicalCorrelation": "These experiments laid the foundation for understanding the molecular basis of limb patterning."
+      }
+    },
+    {
+      "questionId": "limb_dev_035",
+      "difficulty": 2,
+      "question": "The AER also expresses FGF8, which is required for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Initiation of limb bud outgrowth and maintenance of the progress zone",
+          "isCorrect": true,
+          "explanation": "FGF8 from the AER is crucial for limb initiation and outgrowth."
+        },
+        {
+          "text": "Digit specification",
+          "isCorrect": false,
+          "explanation": "Digit specification is by SHH."
+        },
+        {
+          "text": "Muscle migration",
+          "isCorrect": false,
+          "explanation": "Muscle migration is not regulated by FGF8."
+        },
+        {
+          "text": "Joint formation",
+          "isCorrect": false,
+          "explanation": "Joint formation involves interzones, not FGF8."
+        },
+        {
+          "text": "Vascular invasion",
+          "isCorrect": false,
+          "explanation": "Vascular invasion is later, not the primary role of FGF8."
+        }
+      ],
+      "explanation": {
+        "overview": "FGF8 from the AER is essential for the initiation and maintenance of limb bud outgrowth and the progress zone.",
+        "highYield": "FGF8 is one of the earliest signals for limb development and is critical for establishing the limb bud.",
+        "clinicalCorrelation": "FGF8 deficiency causes severe limb reduction defects."
+      }
+    },
+    {
+      "questionId": "limb_dev_036",
+      "difficulty": 2,
+      "question": "The limb bud initially has a transparent apical ridge. The AER forms at the boundary between dorsal and ventral ectoderm, a process regulated by:",
+      "image": null,
+      "options": [
+        {
+          "text": "En-1 (ventral) and Wnt7a (dorsal) interactions",
+          "isCorrect": true,
+          "explanation": "The AER forms precisely at the interface of En-1-expressing ventral ectoderm and Wnt7a-expressing dorsal ectoderm."
+        },
+        {
+          "text": "SHH from the ZPA",
+          "isCorrect": false,
+          "explanation": "SHH from the ZPA is posterior; it does not form the AER."
+        },
+        {
+          "text": "FGFs from the mesenchyme",
+          "isCorrect": false,
+          "explanation": "FGFs are produced by the AER, not the mesenchyme."
+        },
+        {
+          "text": "BMPs from the lateral plate",
+          "isCorrect": false,
+          "explanation": "BMPs are not the primary regulators of AER formation."
+        },
+        {
+          "text": "Notch signaling",
+          "isCorrect": false,
+          "explanation": "Notch signaling is involved in other processes, not AER formation."
+        }
+      ],
+      "explanation": {
+        "overview": "The AER forms at the boundary between dorsal ectoderm (expressing Wnt7a) and ventral ectoderm (expressing En-1), defining the distal tip of the limb bud.",
+        "highYield": "The AER is a signaling center essential for limb outgrowth.",
+        "clinicalCorrelation": "Disruption of AER formation causes limb truncation defects."
+      }
+    },
+    {
+      "questionId": "limb_dev_037",
+      "difficulty": 2,
+      "question": "The progress zone is defined as:",
+      "image": null,
+      "options": [
+        {
+          "text": "The undifferentiated mesenchyme under the AER",
+          "isCorrect": true,
+          "explanation": "The progress zone is maintained by FGFs from the AER and remains proliferative."
+        },
+        {
+          "text": "The zone of cell death between digits",
+          "isCorrect": false,
+          "explanation": "That is the interdigital zone, not the progress zone."
+        },
+        {
+          "text": "The region where cartilage forms",
+          "isCorrect": false,
+          "explanation": "Cartilage forms later, not in the progress zone."
+        },
+        {
+          "text": "The area of nerve entry",
+          "isCorrect": false,
+          "explanation": "Nerves enter later, not in the progress zone."
+        },
+        {
+          "text": "The muscle mass",
+          "isCorrect": false,
+          "explanation": "Muscle masses form later, not in the progress zone."
+        }
+      ],
+      "explanation": {
+        "overview": "The progress zone is the proliferative mesenchymal region directly under the AER that gives rise to the limb structures.",
+        "highYield": "The progress zone is maintained by FGFs; cells leaving the progress zone at different times determine proximal-distal identity.",
+        "clinicalCorrelation": "Disruption of the progress zone causes limb truncation defects."
+      }
+    },
+    {
+      "questionId": "limb_dev_038",
+      "difficulty": 2,
+      "question": "The first sign of digit formation is the appearance of digital rays. These are condensations of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Mesenchyme",
+          "isCorrect": true,
+          "explanation": "Digital rays are mesenchymal condensations that later chondrify."
+        },
+        {
+          "text": "Cartilage",
+          "isCorrect": false,
+          "explanation": "Cartilage forms after the mesenchymal condensation."
+        },
+        {
+          "text": "Bone",
+          "isCorrect": false,
+          "explanation": "Bone formation occurs after cartilage model formation."
+        },
+        {
+          "text": "Muscle",
+          "isCorrect": false,
+          "explanation": "Muscle forms later and is not part of the digital rays."
+        },
+        {
+          "text": "Nerves",
+          "isCorrect": false,
+          "explanation": "Nerves grow into the limb but are not the first sign of digit formation."
+        }
+      ],
+      "explanation": {
+        "overview": "Digital rays are visible as mesenchymal condensations that will later chondrify to form the phalanges.",
+        "highYield": "The digital rays define the position of the digits and are influenced by SHH signaling.",
+        "clinicalCorrelation": "Abnormalities in digital ray formation cause polydactyly or syndactyly."
+      }
+    },
+    {
+      "questionId": "limb_dev_039",
+      "difficulty": 2,
+      "question": "The hand plate initially has a paddle shape. The fingers separate as the interdigital mesenchyme undergoes apoptosis. This process is initiated by:",
+      "image": null,
+      "options": [
+        {
+          "text": "BMP2, BMP4, and BMP7",
+          "isCorrect": true,
+          "explanation": "BMPs in the interdigital zones induce cell death."
+        },
+        {
+          "text": "SHH",
+          "isCorrect": false,
+          "explanation": "SHH is from the ZPA and patterns digits, but does not directly induce apoptosis."
+        },
+        {
+          "text": "FGFs",
+          "isCorrect": false,
+          "explanation": "FGFs promote proliferation, not apoptosis."
+        },
+        {
+          "text": "Wnts",
+          "isCorrect": false,
+          "explanation": "Wnts are involved in dorsal-ventral patterning, not apoptosis."
+        },
+        {
+          "text": "Retinoic acid",
+          "isCorrect": false,
+          "explanation": "Retinoic acid is involved in proximal-distal patterning, not apoptosis."
+        }
+      ],
+      "explanation": {
+        "overview": "BMP signaling in the interdigital zones is responsible for inducing apoptosis, which removes the webbing between digits.",
+        "highYield": "BMP2, BMP4, and BMP7 are the key BMPs involved in interdigital apoptosis.",
+        "clinicalCorrelation": "Failure of apoptosis causes syndactyly; enhanced apoptosis can cause ectrodactyly."
+      }
+    },
+    {
+      "questionId": "limb_dev_040",
+      "difficulty": 2,
+      "question": "Retinoic acid (RA) is produced in the proximal limb bud and may act as a signal for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Proximal identity (e.g., specifying stylopod)",
+          "isCorrect": true,
+          "explanation": "Retinoic acid is thought to establish proximal identity, possibly in opposition to FGFs."
+        },
+        {
+          "text": "Distal identity",
+          "isCorrect": false,
+          "explanation": "Distal identity is controlled by FGFs from the AER, not RA."
+        },
+        {
+          "text": "Digit specification",
+          "isCorrect": false,
+          "explanation": "Digit specification is by SHH."
+        },
+        {
+          "text": "AER formation",
+          "isCorrect": false,
+          "explanation": "AER formation is regulated by Wnt7a and En-1."
+        },
+        {
+          "text": "ZPA induction",
+          "isCorrect": false,
+          "explanation": "ZPA is induced by FGFs from the AER, not RA."
+        }
+      ],
+      "explanation": {
+        "overview": "Retinoic acid is produced in the proximal limb bud and may act as a proximalizing signal, establishing the stylopod.",
+        "highYield": "RA signaling helps define the proximal-distal axis, with RA promoting proximal identity and FGFs promoting distal identity.",
+        "clinicalCorrelation": "Excess RA can cause limb defects, highlighting the importance of balanced signaling."
+      }
+    },
+    {
+      "questionId": "limb_dev_041",
+      "difficulty": 3,
+      "question": "The radius and ulna (zeugopod) are patterned by SHH. Reduced SHH signaling can lead to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Ulnar (postaxial) deficiencies",
+          "isCorrect": false,
+          "explanation": "Reduced SHH affects posterior structures, so it causes radial (preaxial) defects, not ulnar."
+        },
+        {
+          "text": "Radial (preaxial) deficiencies",
+          "isCorrect": true,
+          "explanation": "SHH is expressed posteriorly and specifies posterior structures; reduced signaling leads to radial defects."
+        },
+        {
+          "text": "Both",
+          "isCorrect": false,
+          "explanation": "Reduced SHH primarily affects radial structures."
+        },
+        {
+          "text": "Extra bones",
+          "isCorrect": false,
+          "explanation": "Reduced SHH causes deficiencies, not extra bones."
+        },
+        {
+          "text": "Fusion of radius and ulna",
+          "isCorrect": false,
+          "explanation": "Fusion is not a direct effect of reduced SHH."
+        }
+      ],
+      "explanation": {
+        "overview": "SHH from the ZPA specifies posterior structures; reduced SHH signaling causes radial (preaxial) deficiencies, such as radial aplasia.",
+        "highYield": "Radial aplasia is associated with syndromes like Fanconi anemia and Holt-Oram syndrome.",
+        "clinicalCorrelation": "Radial ray defects are important clinical signs of underlying genetic syndromes."
+      }
+    },
+    {
+      "questionId": "limb_dev_042",
+      "difficulty": 2,
+      "question": "The limb muscles initially develop as dorsal and ventral muscle masses. These masses later split to form individual muscles. The patterning of muscles is controlled by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Connective tissue (from lateral plate mesoderm)",
+          "isCorrect": true,
+          "explanation": "Connective tissue determines muscle pattern, as shown by transplantation experiments."
+        },
+        {
+          "text": "Nerves",
+          "isCorrect": false,
+          "explanation": "Nerves follow muscle pattern, they do not determine it."
+        },
+        {
+          "text": "Bones",
+          "isCorrect": false,
+          "explanation": "Bones form later and do not determine muscle pattern."
+        },
+        {
+          "text": "The AER",
+          "isCorrect": false,
+          "explanation": "The AER controls outgrowth, not muscle pattern."
+        },
+        {
+          "text": "The ZPA",
+          "isCorrect": false,
+          "explanation": "The ZPA patterns digits, not muscles."
+        }
+      ],
+      "explanation": {
+        "overview": "Muscle patterning in the limb is determined by the connective tissue (derived from lateral plate mesoderm), not by the muscle precursors themselves.",
+        "highYield": "Classic transplantation experiments in chicks showed that muscle pattern follows the connective tissue source.",
+        "clinicalCorrelation": "Connective tissue defects can cause abnormal muscle patterning."
+      }
+    },
+    {
+      "questionId": "limb_dev_043",
+      "difficulty": 2,
+      "question": "The tendons attach muscles to bones. Tendon progenitors originate from:",
+      "image": null,
+      "options": [
+        {
+          "text": "Lateral plate mesoderm and possibly somites",
+          "isCorrect": true,
+          "explanation": "Tendons develop from mesenchymal cells in the limb, likely derived from lateral plate mesoderm."
+        },
+        {
+          "text": "Neural crest",
+          "isCorrect": false,
+          "explanation": "Neural crest gives rise to peripheral nerves, not tendons."
+        },
+        {
+          "text": "Ectoderm",
+          "isCorrect": false,
+          "explanation": "Ectoderm gives rise to epidermis and the AER, not tendons."
+        },
+        {
+          "text": "Endoderm",
+          "isCorrect": false,
+          "explanation": "Endoderm is not involved in limb development."
+        },
+        {
+          "text": "AER",
+          "isCorrect": false,
+          "explanation": "The AER is ectodermal and does not give rise to tendons."
+        }
+      ],
+      "explanation": {
+        "overview": "Tendons are derived from mesenchymal cells, primarily from lateral plate mesoderm, with possible somitic contributions.",
+        "highYield": "Tendon development is regulated by mechanical forces and growth factors.",
+        "clinicalCorrelation": "Tendon defects can cause congenital contractures."
+      }
+    },
+    {
+      "questionId": "limb_dev_044",
+      "difficulty": 2,
+      "question": "The scapula (shoulder blade) develops from:",
+      "image": null,
+      "options": [
+        {
+          "text": "Somites and lateral plate mesoderm",
+          "isCorrect": true,
+          "explanation": "The scapula has a complex origin: the blade from somites (dermomyotome) and the glenoid region from lateral plate."
+        },
+        {
+          "text": "Neural crest only",
+          "isCorrect": false,
+          "explanation": "Neural crest does not contribute to the scapula."
+        },
+        {
+          "text": "Limb bud mesenchyme only",
+          "isCorrect": false,
+          "explanation": "The scapula is not a limb bud structure; it forms in the body wall."
+        },
+        {
+          "text": "Notochord",
+          "isCorrect": false,
+          "explanation": "Notochord is axial, not involved in scapula formation."
+        },
+        {
+          "text": "AER",
+          "isCorrect": false,
+          "explanation": "The AER is ectodermal and does not contribute to the scapula."
+        }
+      ],
+      "explanation": {
+        "overview": "The scapula has a dual origin: the blade (dermomyotome of somites) and the glenoid (lateral plate mesoderm).",
+        "highYield": "The scapula is not part of the limb bud; it develops in the body wall.",
+        "clinicalCorrelation": "Scapular anomalies can occur in syndromes like Sprengel deformity."
+      }
+    },
+    {
+      "questionId": "limb_dev_045",
+      "difficulty": 2,
+      "question": "The pelvic girdle develops from:",
+      "image": null,
+      "options": [
+        {
+          "text": "Lateral plate mesoderm and somites",
+          "isCorrect": true,
+          "explanation": "Similar to the scapula, the pelvis has contributions from somites (for muscles) and lateral plate (for skeleton)."
+        },
+        {
+          "text": "Somites only",
+          "isCorrect": false,
+          "explanation": "Somites give the muscle, but the skeleton is from lateral plate."
+        },
+        {
+          "text": "Limb bud only",
+          "isCorrect": false,
+          "explanation": "The pelvis develops from the body wall, not the limb bud."
+        },
+        {
+          "text": "Neural crest",
+          "isCorrect": false,
+          "explanation": "Neural crest does not contribute to the pelvis."
+        },
+        {
+          "text": "Endoderm",
+          "isCorrect": false,
+          "explanation": "Endoderm is not involved."
+        }
+      ],
+      "explanation": {
+        "overview": "The pelvic girdle is derived from lateral plate mesoderm (skeletal elements) and somites (muscles).",
+        "highYield": "The ilium, ischium, and pubis are of lateral plate origin; the muscles are from somites.",
+        "clinicalCorrelation": "Pelvic anomalies can occur in skeletal dysplasias and syndromes."
+      }
+    },
+    {
+      "questionId": "limb_dev_046",
+      "difficulty": 3,
+      "question": "Preaxial polydactyly (extra thumb) is associated with mutations in:",
+      "image": null,
+      "options": [
+        {
+          "text": "SHH (abnormal regulation)",
+          "isCorrect": false,
+          "explanation": "SHH is involved, but the best answer is all of the above."
+        },
+        {
+          "text": "GLI3",
+          "isCorrect": false,
+          "explanation": "GLI3 is also involved."
+        },
+        {
+          "text": "HOXD13",
+          "isCorrect": false,
+          "explanation": "HOXD13 is also involved."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Preaxial polydactyly can result from mutations in several genes, including GLI3 (Greig syndrome), SHH (due to altered ZPA regulatory element), and HOXD13."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All are associated."
+        }
+      ],
+      "explanation": {
+        "overview": "Preaxial polydactyly (extra thumb) is associated with mutations in genes affecting SHH signaling, including GLI3, SHH itself, and HOXD13.",
+        "highYield": "Preaxial polydactyly is often inherited as an autosomal dominant trait with variable penetrance.",
+        "clinicalCorrelation": "Preaxial polydactyly can be isolated or part of syndromes like Greig cephalopolysyndactyly."
+      }
+    },
+    {
+      "questionId": "limb_dev_047",
+      "difficulty": 2,
+      "question": "Postaxial polydactyly (extra pinky) is often caused by mutations in:",
+      "image": null,
+      "options": [
+        {
+          "text": "GLI3",
+          "isCorrect": true,
+          "explanation": "GLI3 mutations are a common cause of postaxial polydactyly."
+        },
+        {
+          "text": "SHH",
+          "isCorrect": false,
+          "explanation": "SHH mutations cause preaxial polydactyly."
+        },
+        {
+          "text": "HOXA13",
+          "isCorrect": false,
+          "explanation": "HOXA13 mutations cause hand/foot malformations, but not typically postaxial polydactyly."
+        },
+        {
+          "text": "TBX5",
+          "isCorrect": false,
+          "explanation": "TBX5 mutations cause Holt-Oram syndrome, not polydactyly."
+        },
+        {
+          "text": "FGF8",
+          "isCorrect": false,
+          "explanation": "FGF8 mutations cause limb reduction, not polydactyly."
+        }
+      ],
+      "explanation": {
+        "overview": "Postaxial polydactyly (extra digit on the ulnar/fibular side) is frequently caused by mutations in GLI3, a downstream effector of SHH signaling.",
+        "highYield": "Postaxial polydactyly is one of the most common forms of polydactyly.",
+        "clinicalCorrelation": "Postaxial polydactyly can be isolated or part of syndromes like Greig syndrome or Ellis-van Creveld syndrome."
+      }
+    },
+    {
+      "questionId": "limb_dev_048",
+      "difficulty": 2,
+      "question": "The hand plate rotates relative to the forearm, and the thumb becomes opposable. This rotation is part of the normal development of the:",
+      "image": null,
+      "options": [
+        {
+          "text": "Carpal bones",
+          "isCorrect": true,
+          "explanation": "The carpal bones undergo rearrangement to allow opposition of the thumb."
+        },
+        {
+          "text": "Digits",
+          "isCorrect": false,
+          "explanation": "Digits are the fingers; the rotation involves the carpals."
+        },
+        {
+          "text": "Palmar fascia",
+          "isCorrect": false,
+          "explanation": "Palmar fascia is connective tissue, not the primary structure for rotation."
+        },
+        {
+          "text": "Thenar muscles",
+          "isCorrect": false,
+          "explanation": "Thenar muscles are important for opposition, but the rotation is in the carpals."
+        },
+        {
+          "text": "Wrist joint",
+          "isCorrect": false,
+          "explanation": "The wrist joint is involved, but the carpal bones provide the mobility for opposition."
+        }
+      ],
+      "explanation": {
+        "overview": "The opposition of the thumb is enabled by the rotation and rearrangement of the carpal bones during development.",
+        "highYield": "The trapezium and other carpals are positioned to allow the thumb to oppose the fingers.",
+        "clinicalCorrelation": "Thumb hypoplasia or absence affects opposition and hand function."
+      }
+    },
+    {
+      "questionId": "limb_dev_049",
+      "difficulty": 2,
+      "question": "A congenital absence of the tibia (tibial hemimelia) can be associated with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Preaxial defects",
+          "isCorrect": true,
+          "explanation": "Tibial hemimelia is a preaxial (medial) deficiency of the leg."
+        },
+        {
+          "text": "Postaxial defects",
+          "isCorrect": false,
+          "explanation": "Postaxial defects affect the fibular side, not the tibia."
+        },
+        {
+          "text": "Syndactyly",
+          "isCorrect": false,
+          "explanation": "Syndactyly is not specifically associated with tibial hemimelia."
+        },
+        {
+          "text": "Polydactyly",
+          "isCorrect": false,
+          "explanation": "Polydactyly is not a feature."
+        },
+        {
+          "text": "Clubfoot",
+          "isCorrect": false,
+          "explanation": "Clubfoot can occur but is not the primary association."
+        }
+      ],
+      "explanation": {
+        "overview": "Tibial hemimelia is a preaxial (medial) deficiency of the leg, often associated with other preaxial defects of the foot.",
+        "highYield": "Tibial hemimelia is rare and can be isolated or associated with syndromes.",
+        "clinicalCorrelation": "Treatment may involve limb lengthening or amputation/prosthesis."
+      }
+    },
+    {
+      "questionId": "limb_dev_050",
+      "difficulty": 2,
+      "question": "The diagram shows a limb bud with AER and ZPA. The region labeled X is the progress zone. Which signal from the AER maintains this region?",
+      "image": "limb_bud_aer_zpa.png",
+      "options": [
+        {
+          "text": "FGFs",
+          "isCorrect": true,
+          "explanation": "FGFs from the AER keep the progress zone cells proliferating."
+        },
+        {
+          "text": "BMPs",
+          "isCorrect": false,
+          "explanation": "BMPs are involved in apoptosis, not maintaining the progress zone."
+        },
+        {
+          "text": "Wnts",
+          "isCorrect": false,
+          "explanation": "Wnts are for dorsal-ventral patterning, not the progress zone."
+        },
+        {
+          "text": "SHH",
+          "isCorrect": false,
+          "explanation": "SHH is from the ZPA, not the AER."
+        },
+        {
+          "text": "Retinoic acid",
+          "isCorrect": false,
+          "explanation": "Retinoic acid is from the proximal limb, not the AER."
+        }
+      ],
+      "explanation": {
+        "overview": "The progress zone (X) is maintained by FGFs secreted by the AER, which keep the mesenchymal cells proliferative.",
+        "highYield": "FGFs are the key signals from the AER that promote limb outgrowth.",
+        "clinicalCorrelation": "FGF signaling defects can cause limb reduction defects."
+      }
+    },
+    {
+      "questionId": "limb_dev_051",
+      "difficulty": 2,
+      "question": "The development of the shoulder girdle is closely linked to the axial skeleton. The clavicle ossifies by intramembranous ossification and is the first bone to ossify, appearing at approximately:",
+      "image": null,
+      "options": [
+        {
+          "text": "6 weeks",
+          "isCorrect": true,
+          "explanation": "The clavicle is the first bone to ossify in the embryo, appearing around week 6."
+        },
+        {
+          "text": "8 weeks",
+          "isCorrect": false,
+          "explanation": "8 weeks is later; the clavicle appears earlier."
+        },
+        {
+          "text": "10 weeks",
+          "isCorrect": false,
+          "explanation": "10 weeks is too late."
+        },
+        {
+          "text": "4 weeks",
+          "isCorrect": false,
+          "explanation": "4 weeks is too early; ossification begins later."
+        },
+        {
+          "text": "12 weeks",
+          "isCorrect": false,
+          "explanation": "12 weeks is too late."
+        }
+      ],
+      "explanation": {
+        "overview": "The clavicle is the first bone to ossify, beginning around week 6 of development, by intramembranous ossification.",
+        "highYield": "The clavicle is a key landmark for assessing fetal development and is visible on ultrasound.",
+        "clinicalCorrelation": "Clavicle hypoplasia or aplasia is seen in cleidocranial dysplasia."
+      }
+    },
+    {
+      "questionId": "limb_dev_052",
+      "difficulty": 2,
+      "question": "The fibula is the lateral bone of the lower leg. Congenital absence of the fibula (fibular hemimelia) is a postaxial (lateral) deficiency that is often associated with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Preaxial polydactyly",
+          "isCorrect": false,
+          "explanation": "Fibular hemimelia is a postaxial deficiency; preaxial polydactyly is not associated."
+        },
+        {
+          "text": "Short femur and tibial bowing",
+          "isCorrect": true,
+          "explanation": "Fibular hemimelia is often associated with femoral shortening and tibial bowing."
+        },
+        {
+          "text": "Clubfoot",
+          "isCorrect": false,
+          "explanation": "Clubfoot can be associated, but the classic features include femoral and tibial anomalies."
+        },
+        {
+          "text": "Syndactyly",
+          "isCorrect": false,
+          "explanation": "Syndactyly is not a primary feature."
+        },
+        {
+          "text": "Radial aplasia",
+          "isCorrect": false,
+          "explanation": "Radial aplasia is an upper limb defect."
+        }
+      ],
+      "explanation": {
+        "overview": "Fibular hemimelia is a postaxial lower limb deficiency, often associated with femoral shortening, tibial bowing, and foot anomalies.",
+        "highYield": "Fibular hemimelia is one of the most common long bone deficiencies.",
+        "clinicalCorrelation": "Treatment may involve limb lengthening or amputation."
+      }
+    },
+    {
+      "questionId": "limb_dev_053",
+      "difficulty": 2,
+      "question": "The development of the hand involves complex patterning. The radial side (thumb side) is derived from the anterior (preaxial) side of the limb bud. Preaxial polydactyly is often caused by mutations in:",
+      "image": null,
+      "options": [
+        {
+          "text": "SHH and its regulators",
+          "isCorrect": true,
+          "explanation": "Preaxial polydactyly is often due to ectopic SHH signaling or mutations in GLI3."
+        },
+        {
+          "text": "TBX5",
+          "isCorrect": false,
+          "explanation": "TBX5 causes Holt-Oram, not polydactyly."
+        },
+        {
+          "text": "HOXD13",
+          "isCorrect": false,
+          "explanation": "HOXD13 causes synpolydactyly, not preaxial polydactyly."
+        },
+        {
+          "text": "FGF8",
+          "isCorrect": false,
+          "explanation": "FGF8 mutations cause limb reduction, not polydactyly."
+        },
+        {
+          "text": "En-1",
+          "isCorrect": false,
+          "explanation": "En-1 is involved in dorsal-ventral patterning, not polydactyly."
+        }
+      ],
+      "explanation": {
+        "overview": "Preaxial polydactyly is caused by increased SHH signaling or mutations in downstream effectors like GLI3.",
+        "highYield": "Preaxial polydactyly can be isolated or part of syndromes like Greig cephalopolysyndactyly.",
+        "clinicalCorrelation": "Preaxial polydactyly is more common in certain populations and can be surgically corrected."
+      }
+    },
+    {
+      "questionId": "limb_dev_054",
+      "difficulty": 2,
+      "question": "The thumbs are the first digits to develop and are essential for grasping. The thenar muscles (thumb muscles) are derived from:",
+      "image": null,
+      "options": [
+        {
+          "text": "Myogenic precursors from somites",
+          "isCorrect": true,
+          "explanation": "All limb muscles, including thenar muscles, are derived from somitic myoblasts that migrate into the limb."
+        },
+        {
+          "text": "Lateral plate mesoderm",
+          "isCorrect": false,
+          "explanation": "Lateral plate mesoderm gives connective tissue and bone, not muscle."
+        },
+        {
+          "text": "Neural crest",
+          "isCorrect": false,
+          "explanation": "Neural crest gives peripheral nerves, not muscle."
+        },
+        {
+          "text": "Ectoderm",
+          "isCorrect": false,
+          "explanation": "Ectoderm is not the source of muscle."
+        },
+        {
+          "text": "Endoderm",
+          "isCorrect": false,
+          "explanation": "Endoderm is not involved in limb muscle formation."
+        }
+      ],
+      "explanation": {
+        "overview": "All limb muscles, including the thenar muscles of the thumb, are derived from myogenic precursor cells that migrate from the somites.",
+        "highYield": "Muscle precursors migrate into the limb and differentiate into the various muscle masses.",
+        "clinicalCorrelation": "Muscle hypoplasia can occur in conditions like arthrogryposis."
+      }
+    },
+    {
+      "questionId": "limb_dev_055",
+      "difficulty": 2,
+      "question": "The ulnar nerve supplies the intrinsic muscles of the hand and is derived from the brachial plexus. The brachial plexus forms from ventral rami of:",
+      "image": null,
+      "options": [
+        {
+          "text": "C5 to T1",
+          "isCorrect": true,
+          "explanation": "The brachial plexus is formed from the ventral rami of C5, C6, C7, C8, and T1."
+        },
+        {
+          "text": "C4 to C8",
+          "isCorrect": false,
+          "explanation": "C4 is not typically part of the brachial plexus; the roots are C5-T1."
+        },
+        {
+          "text": "T1 to T4",
+          "isCorrect": false,
+          "explanation": "T1 is included, but the upper roots are C5-C8."
+        },
+        {
+          "text": "L2 to L5",
+          "isCorrect": false,
+          "explanation": "These are lumbar roots, not brachial."
+        },
+        {
+          "text": "S1 to S4",
+          "isCorrect": false,
+          "explanation": "These are sacral roots."
+        }
+      ],
+      "explanation": {
+        "overview": "The brachial plexus is formed by the ventral rami of spinal nerves C5 to T1, which innervate the upper limb.",
+        "highYield": "The brachial plexus provides motor and sensory innervation to the shoulder, arm, and hand.",
+        "clinicalCorrelation": "Brachial plexus injuries (e.g., Erb's palsy) cause specific patterns of paralysis."
+      }
+    },
+    {
+      "questionId": "limb_dev_056",
+      "difficulty": 2,
+      "question": "The sciatic nerve is the largest nerve in the body, arising from the lumbosacral plexus. It is formed from the ventral rami of:",
+      "image": null,
+      "options": [
+        {
+          "text": "L4, L5, S1, S2, S3",
+          "isCorrect": true,
+          "explanation": "The sciatic nerve is formed from the lumbosacral plexus (L4-S3)."
+        },
+        {
+          "text": "L1, L2, L3",
+          "isCorrect": false,
+          "explanation": "These are lumbar roots that do not form the sciatic nerve."
+        },
+        {
+          "text": "S1, S2, S3, S4",
+          "isCorrect": false,
+          "explanation": "S4 is not part of the sciatic nerve."
+        },
+        {
+          "text": "T12, L1, L2",
+          "isCorrect": false,
+          "explanation": "These are not part of the sciatic nerve."
+        },
+        {
+          "text": "L2, L3, L4",
+          "isCorrect": false,
+          "explanation": "These form the femoral nerve, not the sciatic."
+        }
+      ],
+      "explanation": {
+        "overview": "The sciatic nerve (L4-S3) is the major nerve of the lower limb, innervating the posterior thigh and all of the leg and foot.",
+        "highYield": "The sciatic nerve gives off the tibial and common peroneal nerves.",
+        "clinicalCorrelation": "Sciatica is a common condition involving pain along the sciatic nerve distribution."
+      }
+    },
+    {
+      "questionId": "limb_dev_057",
+      "difficulty": 2,
+      "question": "The development of the limb is highly dependent on proper blood supply. The major artery of the upper limb, the subclavian artery, is derived from the:",
+      "image": null,
+      "options": [
+        {
+          "text": "Seventh intersegmental artery",
+          "isCorrect": true,
+          "explanation": "The subclavian artery is derived from the seventh intersegmental artery."
+        },
+        {
+          "text": "Fourth aortic arch",
+          "isCorrect": false,
+          "explanation": "The fourth aortic arch gives the aortic arch and right subclavian (proximal part)."
+        },
+        {
+          "text": "Sixth aortic arch",
+          "isCorrect": false,
+          "explanation": "The sixth arch gives the pulmonary arteries."
+        },
+        {
+          "text": "Third aortic arch",
+          "isCorrect": false,
+          "explanation": "The third arch gives the common carotid."
+        },
+        {
+          "text": "Dorsal aorta",
+          "isCorrect": false,
+          "explanation": "The dorsal aorta is the main trunk, but the subclavian arises from the seventh intersegmental branch."
+        }
+      ],
+      "explanation": {
+        "overview": "The subclavian artery is derived from the seventh intersegmental artery, which is a branch of the dorsal aorta.",
+        "highYield": "The left subclavian arises from the left seventh intersegmental artery; the right subclavian has a more complex origin.",
+        "clinicalCorrelation": "Vascular anomalies can cause limb ischemia or overgrowth."
+      }
+    },
+    {
+      "questionId": "limb_dev_058",
+      "difficulty": 2,
+      "question": "The lower limb is supplied by the femoral artery, which is a continuation of the:",
+      "image": null,
+      "options": [
+        {
+          "text": "External iliac artery",
+          "isCorrect": true,
+          "explanation": "The femoral artery is the continuation of the external iliac artery after it passes under the inguinal ligament."
+        },
+        {
+          "text": "Internal iliac artery",
+          "isCorrect": false,
+          "explanation": "The internal iliac artery supplies pelvic organs, not the lower limb."
+        },
+        {
+          "text": "Aorta",
+          "isCorrect": false,
+          "explanation": "The aorta gives the common iliac arteries, which branch into internal and external iliac."
+        },
+        {
+          "text": "Common iliac artery",
+          "isCorrect": false,
+          "explanation": "The common iliac bifurcates into internal and external iliac; the femoral is distal to the external iliac."
+        },
+        {
+          "text": "Popliteal artery",
+          "isCorrect": false,
+          "explanation": "The popliteal artery is a continuation of the femoral artery, not the origin."
+        }
+      ],
+      "explanation": {
+        "overview": "The lower limb is supplied by the femoral artery, which is the continuation of the external iliac artery.",
+        "highYield": "The femoral artery is a major artery of the lower limb; its branches supply the leg and foot.",
+        "clinicalCorrelation": "Femoral artery occlusion can cause critical limb ischemia."
+      }
+    },
+    {
+      "questionId": "limb_dev_059",
+      "difficulty": 2,
+      "question": "The development of the limb buds is initiated by signals from the lateral plate mesoderm. The limb bud mesenchyme is derived from:",
+      "image": null,
+      "options": [
+        {
+          "text": "Lateral plate mesoderm and migrating somitic cells",
+          "isCorrect": true,
+          "explanation": "Limb bud mesenchyme is a mixture of lateral plate mesoderm (skeleton/connective tissue) and somitic cells (muscles)."
+        },
+        {
+          "text": "Only lateral plate mesoderm",
+          "isCorrect": false,
+          "explanation": "Muscle precursors from somites also contribute."
+        },
+        {
+          "text": "Only somites",
+          "isCorrect": false,
+          "explanation": "Somites give muscle, but the skeleton is from lateral plate."
+        },
+        {
+          "text": "Neural crest",
+          "isCorrect": false,
+          "explanation": "Neural crest gives peripheral nerves, not the limb mesenchyme."
+        },
+        {
+          "text": "Ectoderm",
+          "isCorrect": false,
+          "explanation": "Ectoderm forms the AER and epidermis, not the mesenchyme."
+        }
+      ],
+      "explanation": {
+        "overview": "Limb bud mesenchyme is derived from lateral plate mesoderm (skeletal and connective tissues) and migrating somitic cells (muscle precursors).",
+        "highYield": "This dual origin explains the different sources of limb tissues.",
+        "clinicalCorrelation": "Defects in either source can affect limb development."
+      }
+    },
+    {
+      "questionId": "limb_dev_060",
+      "difficulty": 2,
+      "question": "The hand and foot are the most distal parts of the limbs. The development of the autopod (hands and feet) is controlled by:",
+      "image": null,
+      "options": [
+        {
+          "text": "HOXA13 and HOXD13",
+          "isCorrect": true,
+          "explanation": "HOXA13 and HOXD13 are key genes for autopod development."
+        },
+        {
+          "text": "SHH only",
+          "isCorrect": false,
+          "explanation": "SHH is important but works together with HOX genes."
+        },
+        {
+          "text": "TBX5",
+          "isCorrect": false,
+          "explanation": "TBX5 is involved in forelimb development, but not specifically the autopod."
+        },
+        {
+          "text": "Wnt7a",
+          "isCorrect": false,
+          "explanation": "Wnt7a is for dorsal-ventral patterning."
+        },
+        {
+          "text": "En-1",
+          "isCorrect": false,
+          "explanation": "En-1 is for ventral identity."
+        }
+      ],
+      "explanation": {
+        "overview": "The autopod (hands and feet) is patterned by HOXA13 and HOXD13, which specify digit identity and number.",
+        "highYield": "Mutations in HOXA13 cause hand-foot-genital syndrome; HOXD13 mutations cause synpolydactyly.",
+        "clinicalCorrelation": "HOX genes are critical for distal limb development and are frequently involved in congenital hand anomalies."
+      }
+    },
+    {
+      "questionId": "limb_dev_061",
+      "difficulty": 2,
+      "question": "Nails develop from the tips of digits and are derived from:",
+      "image": null,
+      "options": [
+        {
+          "text": "Epidermis (ectoderm)",
+          "isCorrect": true,
+          "explanation": "Nails are epidermal derivatives, formed from the ectoderm at the distal tips of digits."
+        },
+        {
+          "text": "Mesoderm",
+          "isCorrect": false,
+          "explanation": "Mesoderm gives the underlying bone and connective tissue, not the nail itself."
+        },
+        {
+          "text": "Neural crest",
+          "isCorrect": false,
+          "explanation": "Neural crest gives melanocytes and peripheral nerves, not nails."
+        },
+        {
+          "text": "Endoderm",
+          "isCorrect": false,
+          "explanation": "Endoderm is not involved in nail formation."
+        },
+        {
+          "text": "AER",
+          "isCorrect": false,
+          "explanation": "The AER is the signaling center, but nails are derived from epidermis."
+        }
+      ],
+      "explanation": {
+        "overview": "Nails are epidermal structures derived from the ectoderm at the tips of digits.",
+        "highYield": "Nails develop from the nail matrix and are a feature of the autopod.",
+        "clinicalCorrelation": "Nail abnormalities can occur in ectodermal dysplasias and nail-patella syndrome."
+      }
+    },
+    {
+      "questionId": "limb_dev_062",
+      "difficulty": 2,
+      "question": "The patella (kneecap) is a sesamoid bone that forms in the tendon of the quadriceps muscle. It develops from:",
+      "image": null,
+      "options": [
+        {
+          "text": "Mesenchyme within the tendon, not from a cartilage model",
+          "isCorrect": true,
+          "explanation": "The patella is a sesamoid bone that forms through a unique process within the quadriceps tendon, without a cartilage precursor."
+        },
+        {
+          "text": "Endochondral ossification from a cartilage model",
+          "isCorrect": false,
+          "explanation": "The patella is not a typical endochondral bone; it forms in the tendon."
+        },
+        {
+          "text": "Intramembranous ossification",
+          "isCorrect": false,
+          "explanation": "The patella is not intramembranous; it develops in tendon."
+        },
+        {
+          "text": "The tibia",
+          "isCorrect": false,
+          "explanation": "The patella is a separate bone, not derived from the tibia."
+        },
+        {
+          "text": "The femur",
+          "isCorrect": false,
+          "explanation": "The patella is not derived from the femur."
+        }
+      ],
+      "explanation": {
+        "overview": "The patella is a sesamoid bone that develops within the quadriceps tendon, not from a separate cartilage model.",
+        "highYield": "The patella forms by condensation of mesenchyme in the tendon, with later ossification.",
+        "clinicalCorrelation": "Patellar aplasia or hypoplasia can occur in syndromes like nail-patella syndrome."
+      }
+    },
+    {
+      "questionId": "limb_dev_063",
+      "difficulty": 2,
+      "question": "The radius and ulna are the bones of the forearm. The radius is located on the lateral (thumb) side. Congenital radial aplasia is often associated with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Holt-Oram syndrome and Fanconi anemia",
+          "isCorrect": true,
+          "explanation": "Radial aplasia is a key feature of both Holt-Oram syndrome (TBX5) and Fanconi anemia."
+        },
+        {
+          "text": "Cleidocranial dysplasia",
+          "isCorrect": false,
+          "explanation": "Cleidocranial dysplasia affects the clavicle and skull, not the radius."
+        },
+        {
+          "text": "Achondroplasia",
+          "isCorrect": false,
+          "explanation": "Achondroplasia is a skeletal dysplasia affecting long bones, but not specifically radial aplasia."
+        },
+        {
+          "text": "Osteogenesis imperfecta",
+          "isCorrect": false,
+          "explanation": "OI affects bone fragility, not radial aplasia."
+        },
+        {
+          "text": "Marfan syndrome",
+          "isCorrect": false,
+          "explanation": "Marfan syndrome affects connective tissue, not radial aplasia."
+        }
+      ],
+      "explanation": {
+        "overview": "Radial aplasia (absence of the radius) is associated with Holt-Oram syndrome (heart-hand syndrome) and Fanconi anemia (bone marrow failure).",
+        "highYield": "Radial aplasia is an important clinical sign that may indicate an underlying genetic syndrome.",
+        "clinicalCorrelation": "Patients with radial aplasia require evaluation for cardiac defects and hematological issues."
+      }
+    },
+    {
+      "questionId": "limb_dev_064",
+      "difficulty": 2,
+      "question": "The development of the limb is influenced by both genetic and environmental factors. The most critical period for limb development is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Weeks 4-8",
+          "isCorrect": true,
+          "explanation": "Limb buds appear in week 4 and are fully formed by week 8, making this the critical period."
+        },
+        {
+          "text": "Weeks 1-3",
+          "isCorrect": false,
+          "explanation": "Limb development has not yet begun."
+        },
+        {
+          "text": "Weeks 9-12",
+          "isCorrect": false,
+          "explanation": "By week 9, the limbs are already formed; this period is for growth."
+        },
+        {
+          "text": "Weeks 12-16",
+          "isCorrect": false,
+          "explanation": "This is late for limb development; the critical period is earlier."
+        },
+        {
+          "text": "Weeks 2-4",
+          "isCorrect": false,
+          "explanation": "Limb buds appear in week 4, so the critical period starts then."
+        }
+      ],
+      "explanation": {
+        "overview": "The critical period for limb development is weeks 4-8, during which the limb buds appear, elongate, and the digits form.",
+        "highYield": "Teratogen exposure during weeks 4-8 can cause limb defects such as phocomelia.",
+        "clinicalCorrelation": "Thalidomide exposure during the critical period caused phocomelia, highlighting the importance of this window."
+      }
+    },
+    {
+      "questionId": "limb_dev_065",
+      "difficulty": 2,
+      "question": "The short stature homeobox gene (SHOX) is located in the pseudoautosomal region of the sex chromosomes. SHOX deficiency in Turner syndrome contributes to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Short stature and limb shortening",
+          "isCorrect": true,
+          "explanation": "SHOX deficiency causes short stature and mesomelic limb shortening, as seen in Turner syndrome."
+        },
+        {
+          "text": "Polydactyly",
+          "isCorrect": false,
+          "explanation": "SHOX deficiency does not cause polydactyly."
+        },
+        {
+          "text": "Webbed neck",
+          "isCorrect": false,
+          "explanation": "Webbed neck is due to other factors in Turner syndrome."
+        },
+        {
+          "text": "Cardiac defects",
+          "isCorrect": false,
+          "explanation": "Cardiac defects in Turner are not due to SHOX deficiency."
+        },
+        {
+          "text": "Renal anomalies",
+          "isCorrect": false,
+          "explanation": "Renal anomalies are not caused by SHOX deficiency."
+        }
+      ],
+      "explanation": {
+        "overview": "SHOX deficiency is a major contributor to the short stature seen in Turner syndrome, as well as Madelung deformity.",
+        "highYield": "SHOX is important for growth plate function; its haploinsufficiency causes short stature.",
+        "clinicalCorrelation": "Growth hormone therapy is often used in SHOX-deficient patients."
+      }
+    },
+    {
+      "questionId": "limb_dev_066",
+      "difficulty": 2,
+      "question": "The development of the digits involves the formation of phalanges. The number of phalanges per digit is determined by:",
+      "image": null,
+      "options": [
+        {
+          "text": "The timing of chondrogenesis and apoptosis",
+          "isCorrect": true,
+          "explanation": "The number of phalanges is determined by the timing of cartilage condensation and apoptosis."
+        },
+        {
+          "text": "SHH signaling only",
+          "isCorrect": false,
+          "explanation": "SHH patterns digit identity, but the number of phalanges is a separate process."
+        },
+        {
+          "text": "FGF signaling only",
+          "isCorrect": false,
+          "explanation": "FGFs promote outgrowth but do not determine the number of phalanges."
+        },
+        {
+          "text": "BMP signaling only",
+          "isCorrect": false,
+          "explanation": "BMPs are involved in apoptosis and joint formation, but not solely."
+        },
+        {
+          "text": "Wnt signaling",
+          "isCorrect": false,
+          "explanation": "Wnts are not the primary determinant."
+        }
+      ],
+      "explanation": {
+        "overview": "The number of phalanges is determined by the pattern of chondrogenesis (cartilage formation) and apoptosis, which are regulated by BMPs and growth factors.",
+        "highYield": "Brachydactyly (short digits) can result from abnormal phalangeal development.",
+        "clinicalCorrelation": "Brachydactyly is a common congenital hand anomaly with variable patterns."
+      }
+    },
+    {
+      "questionId": "limb_dev_067",
+      "difficulty": 2,
+      "question": "The hip joint is a ball-and-socket joint formed by the acetabulum (pelvis) and the head of the femur. Congenital hip dislocation is more common in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Female infants and those with breech presentation",
+          "isCorrect": true,
+          "explanation": "Congenital hip dislocation is more common in females and in breech presentation due to ligamentous laxity and positioning."
+        },
+        {
+          "text": "Male infants",
+          "isCorrect": false,
+          "explanation": "It is more common in females."
+        },
+        {
+          "text": "Cephalic presentation",
+          "isCorrect": false,
+          "explanation": "Breech presentation is a risk factor."
+        },
+        {
+          "text": "Full-term infants only",
+          "isCorrect": false,
+          "explanation": "It can occur in preterm infants as well."
+        },
+        {
+          "text": "African descent",
+          "isCorrect": false,
+          "explanation": "There is a higher incidence in certain populations, but not specifically African descent."
+        }
+      ],
+      "explanation": {
+        "overview": "Congenital hip dislocation (developmental dysplasia of the hip) is more common in female infants and those with breech presentation due to hormonal and mechanical factors.",
+        "highYield": "Early diagnosis is important to prevent long-term complications.",
+        "clinicalCorrelation": "Screening ultrasound is recommended for at-risk infants."
+      }
+    },
+    {
+      "questionId": "limb_dev_068",
+      "difficulty": 2,
+      "question": "The Achilles tendon is the strongest tendon in the body, connecting the calf muscles to the calcaneus. It develops from:",
+      "image": null,
+      "options": [
+        {
+          "text": "Mesenchyme within the limb bud",
+          "isCorrect": true,
+          "explanation": "Tendons, including the Achilles, develop from mesenchymal cells in the limb bud."
+        },
+        {
+          "text": "Neural crest",
+          "isCorrect": false,
+          "explanation": "Neural crest gives peripheral nerves, not tendons."
+        },
+        {
+          "text": "Ectoderm",
+          "isCorrect": false,
+          "explanation": "Ectoderm is not the source of tendons."
+        },
+        {
+          "text": "Endoderm",
+          "isCorrect": false,
+          "explanation": "Endoderm is not involved in tendon development."
+        },
+        {
+          "text": "AER",
+          "isCorrect": false,
+          "explanation": "The AER is ectodermal and does not give rise to tendons."
+        }
+      ],
+      "explanation": {
+        "overview": "The Achilles tendon, like all tendons, develops from mesenchymal cells in the limb bud that differentiate into tendon fibroblasts.",
+        "highYield": "Tendon development is regulated by mechanical forces and growth factors.",
+        "clinicalCorrelation": "Achilles tendon rupture is a common injury."
+      }
+    },
+    {
+      "questionId": "limb_dev_069",
+      "difficulty": 2,
+      "question": "The development of the foot is complex, with the heel and toes forming from the autopod. Congenital talipes equinovarus (clubfoot) is associated with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Abnormal muscle and tendon development, often with genetic and environmental factors",
+          "isCorrect": true,
+          "explanation": "Clubfoot is a multifactorial condition involving abnormal muscle, tendon, and bone development."
+        },
+        {
+          "text": "Isolated genetic mutation",
+          "isCorrect": false,
+          "explanation": "Clubfoot is multifactorial, not usually a single gene defect."
+        },
+        {
+          "text": "Maternal infection",
+          "isCorrect": false,
+          "explanation": "Infections are not a common cause of clubfoot."
+        },
+        {
+          "text": "Nutritional deficiency",
+          "isCorrect": false,
+          "explanation": "Nutritional deficiency is not a primary cause."
+        },
+        {
+          "text": "Vascular anomaly",
+          "isCorrect": false,
+          "explanation": "Vascular anomalies are not the main cause."
+        }
+      ],
+      "explanation": {
+        "overview": "Clubfoot (talipes equinovarus) is a complex congenital deformity resulting from abnormal development of the foot, often with multifactorial etiology.",
+        "highYield": "Treatment with the Ponseti method (serial casting) is highly effective.",
+        "clinicalCorrelation": "Clubfoot can be isolated or associated with syndromes like arthrogryposis."
+      }
+    },
+    {
+      "questionId": "limb_dev_070",
+      "difficulty": 2,
+      "question": "The limb buds are initially undifferentiated and are patterned by three signaling centers. Which of the following is NOT a limb patterning center?",
+      "image": null,
+      "options": [
+        {
+          "text": "Neural crest",
+          "isCorrect": true,
+          "explanation": "Neural crest is not a limb patterning center; the three centers are the AER, ZPA, and dorsal-ventral ectoderm."
+        },
+        {
+          "text": "Apical ectodermal ridge (AER)",
+          "isCorrect": false,
+          "explanation": "The AER is one of the three signaling centers."
+        },
+        {
+          "text": "Zone of polarizing activity (ZPA)",
+          "isCorrect": false,
+          "explanation": "The ZPA is one of the three signaling centers."
+        },
+        {
+          "text": "Dorsal ectoderm (Wnt7a)",
+          "isCorrect": false,
+          "explanation": "The dorsal ectoderm is involved in dorsal-ventral patterning."
+        },
+        {
+          "text": "Ventral ectoderm (En-1)",
+          "isCorrect": false,
+          "explanation": "The ventral ectoderm is involved in dorsal-ventral patterning."
+        }
+      ],
+      "explanation": {
+        "overview": "The three signaling centers in the limb bud are the AER (proximal-distal), ZPA (anterior-posterior), and the dorsal-ventral ectoderm (Wnt7a/En-1).",
+        "highYield": "Neural crest cells are not a limb patterning center; they contribute to the peripheral nervous system.",
+        "clinicalCorrelation": "Defects in these signaling centers cause specific limb anomalies."
+      }
+    }
+  ]
+}

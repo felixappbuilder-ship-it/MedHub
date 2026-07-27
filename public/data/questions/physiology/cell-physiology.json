@@ -1,0 +1,4564 @@
+{
+  "questions": [
+    {
+      "questionId": "cell_physiology_001",
+      "difficulty": 1,
+      "question": "Which organelle is primarily responsible for ATP production through oxidative phosphorylation?",
+      "image": "mitochondrion_diagram.png",
+      "options": [
+        {
+          "text": "Nucleus",
+          "isCorrect": false,
+          "explanation": "The nucleus houses DNA, not the site of ATP synthesis."
+        },
+        {
+          "text": "Ribosome",
+          "isCorrect": false,
+          "explanation": "Ribosomes synthesize proteins, not ATP."
+        },
+        {
+          "text": "Mitochondrion",
+          "isCorrect": true,
+          "explanation": "Mitochondria are the powerhouses of the cell, generating ATP via oxidative phosphorylation in their inner membrane."
+        },
+        {
+          "text": "Endoplasmic reticulum",
+          "isCorrect": false,
+          "explanation": "ER is involved in protein and lipid synthesis, not ATP production."
+        },
+        {
+          "text": "Golgi apparatus",
+          "isCorrect": false,
+          "explanation": "Golgi modifies, sorts, and packages proteins."
+        }
+      ],
+      "explanation": {
+        "overview": "Mitochondria contain the electron transport chain and ATP synthase, which produce the majority of cellular ATP through oxidative phosphorylation.",
+        "highYield": "Mitochondrion = powerhouse; inner membrane for ETC and ATP synthase.",
+        "clinicalCorrelation": "Mitochondrial diseases (e.g., MELAS, LHON) result from defects in oxidative phosphorylation."
+      }
+    },
+    {
+      "questionId": "cell_physiology_002",
+      "difficulty": 1,
+      "question": "The fluid mosaic model describes the structure of which cellular component?",
+      "image": null,
+      "options": [
+        {
+          "text": "Cell wall",
+          "isCorrect": false,
+          "explanation": "Cell wall is rigid, not fluid."
+        },
+        {
+          "text": "Plasma membrane",
+          "isCorrect": true,
+          "explanation": "The fluid mosaic model depicts the plasma membrane as a lipid bilayer with embedded proteins that can move laterally."
+        },
+        {
+          "text": "Nuclear envelope",
+          "isCorrect": false,
+          "explanation": "Nuclear envelope has pores but the fluid mosaic model describes the plasma membrane."
+        },
+        {
+          "text": "Cytoskeleton",
+          "isCorrect": false,
+          "explanation": "Cytoskeleton is a network of filaments, not a lipid bilayer."
+        },
+        {
+          "text": "Ribosome",
+          "isCorrect": false,
+          "explanation": "Ribosomes are non-membranous organelles."
+        }
+      ],
+      "explanation": {
+        "overview": "The plasma membrane is a dynamic structure where lipids and proteins can move within the bilayer, providing fluidity and selective permeability.",
+        "highYield": "Fluid mosaic = phospholipid bilayer + mobile proteins.",
+        "clinicalCorrelation": "Membrane fluidity is affected by cholesterol content and fatty acid saturation."
+      }
+    },
+    {
+      "questionId": "cell_physiology_003",
+      "difficulty": 1,
+      "question": "What is the primary function of the rough endoplasmic reticulum?",
+      "image": null,
+      "options": [
+        {
+          "text": "Lipid synthesis",
+          "isCorrect": false,
+          "explanation": "Lipid synthesis mainly occurs in the smooth ER."
+        },
+        {
+          "text": "Protein synthesis and modification",
+          "isCorrect": true,
+          "explanation": "Rough ER, studded with ribosomes, synthesizes and modifies proteins destined for secretion or membrane insertion."
+        },
+        {
+          "text": "ATP production",
+          "isCorrect": false,
+          "explanation": "Mitochondria are responsible for ATP production."
+        },
+        {
+          "text": "Detoxification",
+          "isCorrect": false,
+          "explanation": "Detoxification is a function of smooth ER."
+        },
+        {
+          "text": "Calcium storage",
+          "isCorrect": false,
+          "explanation": "Smooth ER stores calcium."
+        }
+      ],
+      "explanation": {
+        "overview": "Rough ER is the site of synthesis and folding of membrane and secretory proteins, with ribosomes giving it a 'rough' appearance.",
+        "highYield": "Rough ER = protein synthesis and glycosylation.",
+        "clinicalCorrelation": "Defective protein folding in ER leads to ER stress and unfolded protein response."
+      }
+    },
+    {
+      "questionId": "cell_physiology_004",
+      "difficulty": 1,
+      "question": "Which of the following is NOT a function of the Golgi apparatus?",
+      "image": null,
+      "options": [
+        {
+          "text": "Protein glycosylation",
+          "isCorrect": false,
+          "explanation": "Golgi adds and modifies carbohydrate chains."
+        },
+        {
+          "text": "Sorting and packaging proteins",
+          "isCorrect": false,
+          "explanation": "Golgi sorts proteins to lysosomes, membrane, or secretion."
+        },
+        {
+          "text": "Synthesizing lysosomal enzymes",
+          "isCorrect": false,
+          "explanation": "Lysosomal enzymes are synthesized in the ER but modified and sorted in Golgi."
+        },
+        {
+          "text": "ATP synthesis",
+          "isCorrect": true,
+          "explanation": "ATP synthesis occurs in mitochondria, not the Golgi apparatus."
+        },
+        {
+          "text": "Modifying lipids",
+          "isCorrect": false,
+          "explanation": "Golgi modifies sphingolipids and other lipids."
+        }
+      ],
+      "explanation": {
+        "overview": "The Golgi apparatus is the cell's 'post office', modifying, sorting, and packaging proteins and lipids, but does not produce ATP.",
+        "highYield": "Golgi = processing and sorting; mitochondria = ATP.",
+        "clinicalCorrelation": "Defects in Golgi glycosylation cause congenital disorders of glycosylation."
+      }
+    },
+    {
+      "questionId": "cell_physiology_005",
+      "difficulty": 2,
+      "question": "Lysosomes contain hydrolytic enzymes that function best at which pH?",
+      "image": null,
+      "options": [
+        {
+          "text": "Neutral (pH 7.0)",
+          "isCorrect": false,
+          "explanation": "Cytoplasmic enzymes work best at neutral pH."
+        },
+        {
+          "text": "Alkaline (pH 8.5)",
+          "isCorrect": false,
+          "explanation": "Lysosomal enzymes are active in acidic environment."
+        },
+        {
+          "text": "Acidic (pH ~4.5–5.0)",
+          "isCorrect": true,
+          "explanation": "Lysosomal enzymes have optimal activity at acidic pH, maintained by V-ATPase proton pumps."
+        },
+        {
+          "text": "Very acidic (pH 2.0)",
+          "isCorrect": false,
+          "explanation": "Stomach pH is ~2, not lysosomes."
+        },
+        {
+          "text": "Variable depending on substrate",
+          "isCorrect": false,
+          "explanation": "They function best at a specific acidic range."
+        }
+      ],
+      "explanation": {
+        "overview": "Lysosomes maintain an acidic internal pH (~4.5–5.0) via ATP-driven proton pumps, optimal for acid hydrolases.",
+        "highYield": "Lysosomal enzymes = acid hydrolases, active at low pH.",
+        "clinicalCorrelation": "Inclusion-cell disease (I-cell disease) results from defective lysosomal enzyme targeting."
+      }
+    },
+    {
+      "questionId": "cell_physiology_006",
+      "difficulty": 2,
+      "question": "Peroxisomes are involved in which of the following processes?",
+      "image": null,
+      "options": [
+        {
+          "text": "Beta‑oxidation of fatty acids",
+          "isCorrect": true,
+          "explanation": "Peroxisomes contain enzymes for beta‑oxidation of very long‑chain fatty acids."
+        },
+        {
+          "text": "Glycolysis",
+          "isCorrect": false,
+          "explanation": "Glycolysis occurs in the cytoplasm."
+        },
+        {
+          "text": "Protein synthesis",
+          "isCorrect": false,
+          "explanation": "Ribosomes synthesize proteins."
+        },
+        {
+          "text": "DNA replication",
+          "isCorrect": false,
+          "explanation": "DNA replication occurs in the nucleus."
+        },
+        {
+          "text": "Lipid droplet formation",
+          "isCorrect": false,
+          "explanation": "Lipid droplets are storage organelles, not formed by peroxisomes."
+        }
+      ],
+      "explanation": {
+        "overview": "Peroxisomes oxidize very long-chain fatty acids and detoxify hydrogen peroxide via catalase.",
+        "highYield": "Peroxisomes = β‑oxidation of VLCFAs + H2O2 detoxification.",
+        "clinicalCorrelation": "Zellweger syndrome is a peroxisomal biogenesis disorder."
+      }
+    },
+    {
+      "questionId": "cell_physiology_007",
+      "difficulty": 2,
+      "question": "Which cytoskeletal component is made of tubulin and forms tracks for vesicle transport?",
+      "image": "microtubule_structure.png",
+      "options": [
+        {
+          "text": "Microfilaments",
+          "isCorrect": false,
+          "explanation": "Microfilaments are made of actin."
+        },
+        {
+          "text": "Intermediate filaments",
+          "isCorrect": false,
+          "explanation": "Intermediate filaments are tissue-specific (keratin, vimentin, etc.)."
+        },
+        {
+          "text": "Microtubules",
+          "isCorrect": true,
+          "explanation": "Microtubules, polymers of α‑ and β‑tubulin, serve as tracks for motor proteins kinesin and dynein."
+        },
+        {
+          "text": "Septins",
+          "isCorrect": false,
+          "explanation": "Septins form filaments involved in cytokinesis."
+        },
+        {
+          "text": "Spectrin",
+          "isCorrect": false,
+          "explanation": "Spectrin is a membrane-associated cytoskeletal protein."
+        }
+      ],
+      "explanation": {
+        "overview": "Microtubules provide structural support and are the highways for intracellular transport.",
+        "highYield": "Microtubules = α/β tubulin; tracks for kinesin (anterograde) and dynein (retrograde).",
+        "clinicalCorrelation": "Chemotherapy agents like paclitaxel stabilize microtubules, arresting mitosis."
+      }
+    },
+    {
+      "questionId": "cell_physiology_008",
+      "difficulty": 2,
+      "question": "Actin filaments (microfilaments) are essential for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cilia and flagella movement",
+          "isCorrect": false,
+          "explanation": "Cilia movement is powered by microtubules and dynein."
+        },
+        {
+          "text": "Muscle contraction and cell motility",
+          "isCorrect": true,
+          "explanation": "Actin filaments interact with myosin in muscle contraction and drive cell crawling, cytokinesis, and maintenance of cell shape."
+        },
+        {
+          "text": "Nuclear lamina structure",
+          "isCorrect": false,
+          "explanation": "Nuclear lamina is made of intermediate filaments (lamins)."
+        },
+        {
+          "text": "Chromosome separation",
+          "isCorrect": false,
+          "explanation": "Microtubules separate chromosomes."
+        },
+        {
+          "text": "Membrane repair",
+          "isCorrect": false,
+          "explanation": "Membrane repair involves various mechanisms, not primarily actin."
+        }
+      ],
+      "explanation": {
+        "overview": "Actin microfilaments are dynamic polymers that enable cell movement, shape change, and muscle contraction.",
+        "highYield": "Actin + myosin = contraction; actin polymerization drives lamellipodia.",
+        "clinicalCorrelation": "Defects in dystrophin (links actin to membrane) cause Duchenne muscular dystrophy."
+      }
+    },
+    {
+      "questionId": "cell_physiology_009",
+      "difficulty": 2,
+      "question": "What is the resting membrane potential of a typical mammalian cell?",
+      "image": null,
+      "options": [
+        {
+          "text": "-30 mV",
+          "isCorrect": false,
+          "explanation": "Too depolarized."
+        },
+        {
+          "text": "-50 mV",
+          "isCorrect": false,
+          "explanation": "Less typical."
+        },
+        {
+          "text": "-70 mV",
+          "isCorrect": true,
+          "explanation": "Typical resting membrane potential is about -70 mV, with the interior negative relative to exterior."
+        },
+        {
+          "text": "-90 mV",
+          "isCorrect": false,
+          "explanation": "More typical of skeletal muscle."
+        },
+        {
+          "text": "0 mV",
+          "isCorrect": false,
+          "explanation": "No potential difference."
+        }
+      ],
+      "explanation": {
+        "overview": "The resting membrane potential is established mainly by K+ leak channels and the Na+/K+ ATPase.",
+        "highYield": "Resting Vm ~ -70 mV; K+ dominates resting permeability.",
+        "clinicalCorrelation": "Hyperkalemia depolarizes cells; hypokalemia hyperpolarizes."
+      }
+    },
+    {
+      "questionId": "cell_physiology_010",
+      "difficulty": 2,
+      "question": "The Na+/K+ ATPase pump transports:",
+      "image": null,
+      "options": [
+        {
+          "text": "3 Na+ out, 2 K+ in per ATP",
+          "isCorrect": true,
+          "explanation": "The pump moves three sodium ions out and two potassium ions into the cell per ATP hydrolyzed."
+        },
+        {
+          "text": "2 Na+ out, 3 K+ in per ATP",
+          "isCorrect": false,
+          "explanation": "Reversed stoichiometry."
+        },
+        {
+          "text": "3 Na+ in, 2 K+ out per ATP",
+          "isCorrect": false,
+          "explanation": "Direction is outward for Na+."
+        },
+        {
+          "text": "1 Na+ out, 1 K+ in per ATP",
+          "isCorrect": false,
+          "explanation": "Incorrect stoichiometry."
+        },
+        {
+          "text": "2 Na+ out, 2 K+ in per ATP",
+          "isCorrect": false,
+          "explanation": "Stoichiometry is 3:2."
+        }
+      ],
+      "explanation": {
+        "overview": "The Na+/K+ ATPase maintains the sodium and potassium gradients essential for resting potential and secondary active transport.",
+        "highYield": "3 Na+ out, 2 K+ in; electrogenic pump.",
+        "clinicalCorrelation": "Digoxin inhibits the Na+/K+ ATPase, increasing cardiac contractility."
+      }
+    },
+    {
+      "questionId": "cell_physiology_011",
+      "difficulty": 2,
+      "question": "Which organelle is responsible for detoxifying drugs and alcohol in liver cells?",
+      "image": null,
+      "options": [
+        {
+          "text": "Mitochondria",
+          "isCorrect": false,
+          "explanation": "Mitochondria are not primary detoxification sites."
+        },
+        {
+          "text": "Lysosomes",
+          "isCorrect": false,
+          "explanation": "Lysosomes degrade cellular waste."
+        },
+        {
+          "text": "Peroxisomes",
+          "isCorrect": false,
+          "explanation": "Peroxisomes detoxify H2O2, not drugs."
+        },
+        {
+          "text": "Smooth endoplasmic reticulum",
+          "isCorrect": true,
+          "explanation": "Smooth ER contains cytochrome P450 enzymes that detoxify lipid‑soluble drugs and alcohol, especially in hepatocytes."
+        },
+        {
+          "text": "Rough endoplasmic reticulum",
+          "isCorrect": false,
+          "explanation": "Rough ER synthesizes proteins."
+        }
+      ],
+      "explanation": {
+        "overview": "Smooth ER is abundant in liver cells, where it metabolizes xenobiotics via oxidation, conjugation, and hydrolysis.",
+        "highYield": "Smooth ER = detoxification (CYP450) + lipid synthesis.",
+        "clinicalCorrelation": "Chronic alcohol use induces smooth ER proliferation and CYP2E1."
+      }
+    },
+    {
+      "questionId": "cell_physiology_012",
+      "difficulty": 2,
+      "question": "The nuclear envelope is continuous with which organelle?",
+      "image": null,
+      "options": [
+        {
+          "text": "Mitochondria",
+          "isCorrect": false,
+          "explanation": "Not connected."
+        },
+        {
+          "text": "Golgi apparatus",
+          "isCorrect": false,
+          "explanation": "Separate organelle."
+        },
+        {
+          "text": "Endoplasmic reticulum",
+          "isCorrect": true,
+          "explanation": "The outer nuclear membrane is continuous with the rough ER."
+        },
+        {
+          "text": "Lysosomes",
+          "isCorrect": false,
+          "explanation": "Not connected."
+        },
+        {
+          "text": "Peroxisomes",
+          "isCorrect": false,
+          "explanation": "Not connected."
+        }
+      ],
+      "explanation": {
+        "overview": "The nuclear envelope is an extension of the ER; the perinuclear space is continuous with the ER lumen.",
+        "highYield": "Outer nuclear membrane = rough ER; nuclear pores for transport.",
+        "clinicalCorrelation": "Lamin mutations cause nuclear envelope instability (laminopathies)."
+      }
+    },
+    {
+      "questionId": "cell_physiology_013",
+      "difficulty": 2,
+      "question": "What is the function of nucleoli?",
+      "image": null,
+      "options": [
+        {
+          "text": "DNA replication",
+          "isCorrect": false,
+          "explanation": "DNA replication occurs throughout the nucleus."
+        },
+        {
+          "text": "mRNA processing",
+          "isCorrect": false,
+          "explanation": "mRNA processing occurs in the nucleoplasm."
+        },
+        {
+          "text": "Ribosome subunit assembly",
+          "isCorrect": true,
+          "explanation": "Nucleoli are sites of rRNA transcription and assembly of ribosomal subunits."
+        },
+        {
+          "text": "Protein degradation",
+          "isCorrect": false,
+          "explanation": "Proteasomes and lysosomes degrade proteins."
+        },
+        {
+          "text": "Lipid synthesis",
+          "isCorrect": false,
+          "explanation": "Smooth ER synthesizes lipids."
+        }
+      ],
+      "explanation": {
+        "overview": "The nucleolus synthesizes ribosomal RNA (rRNA) and combines it with proteins to form small and large ribosomal subunits.",
+        "highYield": "Nucleolus = rRNA synthesis and ribosome assembly.",
+        "clinicalCorrelation": "Nucleolar size correlates with protein synthesis activity (prominent in cancer cells)."
+      }
+    },
+    {
+      "questionId": "cell_physiology_014",
+      "difficulty": 2,
+      "question": "Which of the following is NOT a component of the endomembrane system?",
+      "image": null,
+      "options": [
+        {
+          "text": "Endoplasmic reticulum",
+          "isCorrect": false,
+          "explanation": "ER is part of the endomembrane system."
+        },
+        {
+          "text": "Golgi apparatus",
+          "isCorrect": false,
+          "explanation": "Golgi is part."
+        },
+        {
+          "text": "Lysosomes",
+          "isCorrect": false,
+          "explanation": "Lysosomes bud from Golgi."
+        },
+        {
+          "text": "Peroxisomes",
+          "isCorrect": true,
+          "explanation": "Peroxisomes are not derived from the ER-Golgi system; they import proteins post-translationally and divide by fission."
+        },
+        {
+          "text": "Vesicles",
+          "isCorrect": false,
+          "explanation": "Vesicles shuttle between organelles of the system."
+        }
+      ],
+      "explanation": {
+        "overview": "The endomembrane system includes ER, Golgi, lysosomes, endosomes, and vesicles. Peroxisomes and mitochondria are not part of it.",
+        "highYield": "Endomembrane system: ER → Golgi → vesicles/lysosomes. Excludes peroxisomes and mitochondria.",
+        "clinicalCorrelation": "Peroxisomal disorders are distinct from ER/Golgi disorders."
+      }
+    },
+    {
+      "questionId": "cell_physiology_015",
+      "difficulty": 1,
+      "question": "The diagram shows a typical eukaryotic cell. What is structure X?",
+      "image": "cell_diagram_mitochondrion.png",
+      "options": [
+        {
+          "text": "Mitochondrion",
+          "isCorrect": true,
+          "explanation": "Structure X is the mitochondrion, characterized by its double membrane and cristae."
+        },
+        {
+          "text": "Golgi apparatus",
+          "isCorrect": false,
+          "explanation": "Golgi has stacked cisternae."
+        },
+        {
+          "text": "Endoplasmic reticulum",
+          "isCorrect": false,
+          "explanation": "ER is a network of tubules."
+        },
+        {
+          "text": "Lysosome",
+          "isCorrect": false,
+          "explanation": "Lysosomes are small, spherical vesicles."
+        },
+        {
+          "text": "Nucleus",
+          "isCorrect": false,
+          "explanation": "Nucleus is the largest organelle with a double membrane."
+        }
+      ],
+      "explanation": {
+        "overview": "Mitochondria are identified by their double membrane and folded cristae.",
+        "highYield": "Mitochondria = double membrane + cristae.",
+        "clinicalCorrelation": "Mitochondrial morphology changes with metabolic state."
+      }
+    },
+    {
+      "questionId": "cell_physiology_016",
+      "difficulty": 2,
+      "question": "Cilia and flagella contain a core of microtubules arranged in which pattern?",
+      "image": null,
+      "options": [
+        {
+          "text": "9+0",
+          "isCorrect": false,
+          "explanation": "9+0 arrangement is in primary cilia."
+        },
+        {
+          "text": "9+2",
+          "isCorrect": true,
+          "explanation": "Motile cilia have a 9+2 axoneme: nine outer doublets and two central singlet microtubules."
+        },
+        {
+          "text": "9+4",
+          "isCorrect": false,
+          "explanation": "Not a standard arrangement."
+        },
+        {
+          "text": "13+2",
+          "isCorrect": false,
+          "explanation": "Not correct."
+        },
+        {
+          "text": "4+2",
+          "isCorrect": false,
+          "explanation": "Not found."
+        }
+      ],
+      "explanation": {
+        "overview": "The axoneme of motile cilia/flagella uses a 9+2 microtubule arrangement; dynein arms generate sliding and bending.",
+        "highYield": "Motile cilia = 9+2; primary cilium = 9+0.",
+        "clinicalCorrelation": "Primary ciliary dyskinesia (Kartagener syndrome) is due to dynein arm defects."
+      }
+    },
+    {
+      "questionId": "cell_physiology_017",
+      "difficulty": 2,
+      "question": "Which motor protein moves cargo toward the plus end of microtubules (typically away from the cell center)?",
+      "image": null,
+      "options": [
+        {
+          "text": "Dynein",
+          "isCorrect": false,
+          "explanation": "Dynein moves toward the minus end (retrograde)."
+        },
+        {
+          "text": "Kinesin",
+          "isCorrect": true,
+          "explanation": "Kinesin moves toward the plus end (anterograde transport)."
+        },
+        {
+          "text": "Myosin",
+          "isCorrect": false,
+          "explanation": "Myosin moves along actin filaments."
+        },
+        {
+          "text": "Dynamin",
+          "isCorrect": false,
+          "explanation": "Dynamin is involved in vesicle scission."
+        },
+        {
+          "text": "Spectrin",
+          "isCorrect": false,
+          "explanation": "Spectrin is a membrane skeleton protein."
+        }
+      ],
+      "explanation": {
+        "overview": "Kinesin and dynein are microtubule motor proteins. Kinesin transports cargo outward (plus-end directed); dynein inward.",
+        "highYield": "Kinesin = anterograde (+ end); Dynein = retrograde (- end).",
+        "clinicalCorrelation": "Defects in axonal transport contribute to neurodegenerative diseases."
+      }
+    },
+    {
+      "questionId": "cell_physiology_018",
+      "difficulty": 2,
+      "question": "The primary site of lipid synthesis in the cell is the:",
+      "image": null,
+      "options": [
+        {
+          "text": "Rough ER",
+          "isCorrect": false,
+          "explanation": "Rough ER synthesizes proteins."
+        },
+        {
+          "text": "Smooth ER",
+          "isCorrect": true,
+          "explanation": "Smooth ER synthesizes phospholipids, cholesterol, and steroids."
+        },
+        {
+          "text": "Golgi apparatus",
+          "isCorrect": false,
+          "explanation": "Golgi modifies lipids, not primary synthesis."
+        },
+        {
+          "text": "Mitochondria",
+          "isCorrect": false,
+          "explanation": "Mitochondria modify some lipids but not primary synthesis."
+        },
+        {
+          "text": "Peroxisomes",
+          "isCorrect": false,
+          "explanation": "Peroxisomes metabolize lipids, not synthesize."
+        }
+      ],
+      "explanation": {
+        "overview": "Smooth ER contains enzymes for lipid biosynthesis, including phospholipids and cholesterol, and is abundant in steroidogenic cells.",
+        "highYield": "Smooth ER = lipid + steroid synthesis.",
+        "clinicalCorrelation": "Statins inhibit HMG-CoA reductase in the ER to lower cholesterol."
+      }
+    },
+    {
+      "questionId": "cell_physiology_019",
+      "difficulty": 2,
+      "question": "What is the function of clathrin-coated vesicles?",
+      "image": null,
+      "options": [
+        {
+          "text": "Transport from ER to Golgi",
+          "isCorrect": false,
+          "explanation": "COPII coats those vesicles."
+        },
+        {
+          "text": "Receptor-mediated endocytosis",
+          "isCorrect": true,
+          "explanation": "Clathrin-coated vesicles internalize receptors and their ligands from the plasma membrane."
+        },
+        {
+          "text": "Secretion of hormones",
+          "isCorrect": false,
+          "explanation": "Secretory vesicles are not clathrin-coated."
+        },
+        {
+          "text": "Phagocytosis",
+          "isCorrect": false,
+          "explanation": "Phagocytosis involves actin, not clathrin."
+        },
+        {
+          "text": "Autophagy",
+          "isCorrect": false,
+          "explanation": "Autophagy uses a double-membrane structure, not clathrin."
+        }
+      ],
+      "explanation": {
+        "overview": "Clathrin-coated vesicles form at the plasma membrane and TGN, mediating endocytosis and transport to endosomes.",
+        "highYield": "Clathrin = receptor-mediated endocytosis.",
+        "clinicalCorrelation": "LDL is internalized via clathrin-coated pits; mutations in LDL receptor cause hypercholesterolemia."
+      }
+    },
+    {
+      "questionId": "cell_physiology_020",
+      "difficulty": 2,
+      "question": "Which of the following is true about gap junctions?",
+      "image": null,
+      "options": [
+        {
+          "text": "They prevent passage of ions",
+          "isCorrect": false,
+          "explanation": "They allow ion passage."
+        },
+        {
+          "text": "They are formed by connexin proteins",
+          "isCorrect": true,
+          "explanation": "Gap junctions are composed of connexins that form channels connecting adjacent cells."
+        },
+        {
+          "text": "They only connect epithelial cells",
+          "isCorrect": false,
+          "explanation": "They are found in many tissues, including cardiac muscle."
+        },
+        {
+          "text": "They are always open",
+          "isCorrect": false,
+          "explanation": "They can be gated by pH, Ca2+, etc."
+        },
+        {
+          "text": "They are found only in heart muscle",
+          "isCorrect": false,
+          "explanation": "Widely distributed."
+        }
+      ],
+      "explanation": {
+        "overview": "Gap junctions allow direct electrical and metabolic coupling between cells through connexin channels.",
+        "highYield": "Connexins = gap junction channels; allow passage of ions, cAMP, metabolites.",
+        "clinicalCorrelation": "Connexin mutations cause Charcot-Marie-Tooth disease and deafness."
+      }
+    },
+    {
+      "questionId": "cell_physiology_021",
+      "difficulty": 3,
+      "question": "The diagram depicts a desmosome. Which protein is the major component of the dense plaque?",
+      "image": "desmosome_structure.png",
+      "options": [
+        {
+          "text": "Cadherin",
+          "isCorrect": false,
+          "explanation": "Cadherin is the transmembrane linker protein."
+        },
+        {
+          "text": "Desmoplakin",
+          "isCorrect": true,
+          "explanation": "Desmoplakin anchors intermediate filaments to the desmosomal plaque."
+        },
+        {
+          "text": "Keratin",
+          "isCorrect": false,
+          "explanation": "Keratin is the intermediate filament, not the plaque protein."
+        },
+        {
+          "text": "Actin",
+          "isCorrect": false,
+          "explanation": "Actin is in adherens junctions."
+        },
+        {
+          "text": "Connexin",
+          "isCorrect": false,
+          "explanation": "Connexin is in gap junctions."
+        }
+      ],
+      "explanation": {
+        "overview": "Desmosomes provide strong adhesion via cadherins (desmoglein, desmocollin) linked to intermediate filaments by desmoplakin.",
+        "highYield": "Desmosome: cadherin → desmoplakin → intermediate filaments.",
+        "clinicalCorrelation": "Pemphigus vulgaris targets desmoglein, causing skin blistering."
+      }
+    },
+    {
+      "questionId": "cell_physiology_022",
+      "difficulty": 2,
+      "question": "What is the role of the proteasome?",
+      "image": null,
+      "options": [
+        {
+          "text": "Synthesize proteins",
+          "isCorrect": false,
+          "explanation": "Ribosomes synthesize proteins."
+        },
+        {
+          "text": "Degrade ubiquitin-tagged proteins",
+          "isCorrect": true,
+          "explanation": "The proteasome degrades proteins marked with ubiquitin, regulating protein turnover and removing misfolded proteins."
+        },
+        {
+          "text": "Fold newly synthesized proteins",
+          "isCorrect": false,
+          "explanation": "Chaperones assist folding."
+        },
+        {
+          "text": "Transport proteins to membrane",
+          "isCorrect": false,
+          "explanation": "Vesicular transport does that."
+        },
+        {
+          "text": "Modify proteins with sugars",
+          "isCorrect": false,
+          "explanation": "Glycosylation occurs in ER/Golgi."
+        }
+      ],
+      "explanation": {
+        "overview": "The ubiquitin-proteasome system is the major pathway for selective protein degradation in the cytoplasm and nucleus.",
+        "highYield": "Proteasome degrades poly-ubiquitinated proteins.",
+        "clinicalCorrelation": "Bortezomib, a proteasome inhibitor, is used in multiple myeloma."
+      }
+    },
+    {
+      "questionId": "cell_physiology_023",
+      "difficulty": 1,
+      "question": "Which organelle contains its own DNA and ribosomes?",
+      "image": null,
+      "options": [
+        {
+          "text": "Golgi apparatus",
+          "isCorrect": false,
+          "explanation": "No DNA."
+        },
+        {
+          "text": "Lysosome",
+          "isCorrect": false,
+          "explanation": "No DNA."
+        },
+        {
+          "text": "Peroxisome",
+          "isCorrect": false,
+          "explanation": "No DNA."
+        },
+        {
+          "text": "Mitochondrion",
+          "isCorrect": true,
+          "explanation": "Mitochondria have their own circular DNA and ribosomes, supporting their endosymbiotic origin."
+        },
+        {
+          "text": "Endoplasmic reticulum",
+          "isCorrect": false,
+          "explanation": "No DNA."
+        }
+      ],
+      "explanation": {
+        "overview": "Mitochondria (and chloroplasts) are semi-autonomous organelles with their own genome and protein synthesis machinery.",
+        "highYield": "Mitochondria have mtDNA, 70S ribosomes; maternal inheritance.",
+        "clinicalCorrelation": "mtDNA mutations cause Leber hereditary optic neuropathy (LHON)."
+      }
+    },
+    {
+      "questionId": "cell_physiology_024",
+      "difficulty": 2,
+      "question": "The cytoskeleton element that resists mechanical stress and provides structural stability is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Microtubules",
+          "isCorrect": false,
+          "explanation": "Microtubules are dynamic and resist compression."
+        },
+        {
+          "text": "Microfilaments",
+          "isCorrect": false,
+          "explanation": "Actin filaments are for contraction and motility."
+        },
+        {
+          "text": "Intermediate filaments",
+          "isCorrect": true,
+          "explanation": "Intermediate filaments like keratins and lamins provide tensile strength and anchor organelles."
+        },
+        {
+          "text": "Septins",
+          "isCorrect": false,
+          "explanation": "Septins form scaffolds."
+        },
+        {
+          "text": "Focal adhesions",
+          "isCorrect": false,
+          "explanation": "Focal adhesions are cell-matrix junctions."
+        }
+      ],
+      "explanation": {
+        "overview": "Intermediate filaments are strong, rope-like polymers that maintain cell shape and resist mechanical stress.",
+        "highYield": "Intermediate filaments = tensile strength; e.g., keratin, vimentin, desmin, lamin.",
+        "clinicalCorrelation": "Epidermolysis bullosa simplex due to keratin mutations."
+      }
+    },
+    {
+      "questionId": "cell_physiology_025",
+      "difficulty": 1,
+      "question": "In which phase of the cell cycle does DNA replication occur?",
+      "image": null,
+      "options": [
+        {
+          "text": "G1",
+          "isCorrect": false,
+          "explanation": "G1 is gap phase before synthesis."
+        },
+        {
+          "text": "S",
+          "isCorrect": true,
+          "explanation": "S phase (synthesis) is when DNA replication takes place."
+        },
+        {
+          "text": "G2",
+          "isCorrect": false,
+          "explanation": "G2 is after DNA replication, before mitosis."
+        },
+        {
+          "text": "M",
+          "isCorrect": false,
+          "explanation": "Mitosis is cell division."
+        },
+        {
+          "text": "G0",
+          "isCorrect": false,
+          "explanation": "G0 is a quiescent state."
+        }
+      ],
+      "explanation": {
+        "overview": "The cell cycle consists of G1, S, G2, and M phases. DNA replication occurs specifically during S phase.",
+        "highYield": "S phase = DNA synthesis.",
+        "clinicalCorrelation": "Chemotherapeutic agents like methotrexate target S phase."
+      }
+    },
+    {
+      "questionId": "cell_physiology_026",
+      "difficulty": 2,
+      "question": "Which protein complex controls progression through the cell cycle by phosphorylating target proteins?",
+      "image": null,
+      "options": [
+        {
+          "text": "Proteasome",
+          "isCorrect": false,
+          "explanation": "Proteasome degrades proteins."
+        },
+        {
+          "text": "Cyclin-dependent kinase (CDK)",
+          "isCorrect": true,
+          "explanation": "CDKs, activated by cyclins, phosphorylate key proteins to drive cell cycle transitions."
+        },
+        {
+          "text": "DNA polymerase",
+          "isCorrect": false,
+          "explanation": "DNA polymerase replicates DNA."
+        },
+        {
+          "text": "Telomerase",
+          "isCorrect": false,
+          "explanation": "Telomerase extends telomeres."
+        },
+        {
+          "text": "p53",
+          "isCorrect": false,
+          "explanation": "p53 is a tumor suppressor that halts the cell cycle."
+        }
+      ],
+      "explanation": {
+        "overview": "Cyclin-CDK complexes are the master regulators of the cell cycle. Different cyclins (D, E, A, B) pair with specific CDKs.",
+        "highYield": "Cyclin + CDK → phosphorylation → cell cycle progression.",
+        "clinicalCorrelation": "CDK4/6 inhibitors (palbociclib) are used in breast cancer."
+      }
+    },
+    {
+      "questionId": "cell_physiology_027",
+      "difficulty": 2,
+      "question": "Apoptosis is characterized by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cell swelling and lysis",
+          "isCorrect": false,
+          "explanation": "That's necrosis."
+        },
+        {
+          "text": "Inflammation",
+          "isCorrect": false,
+          "explanation": "Apoptosis does not typically cause inflammation."
+        },
+        {
+          "text": "Membrane blebbing and DNA fragmentation",
+          "isCorrect": true,
+          "explanation": "Apoptotic cells show blebbing, nuclear condensation, and internucleosomal DNA cleavage."
+        },
+        {
+          "text": "Random necrosis",
+          "isCorrect": false,
+          "explanation": "Not random; programmed."
+        },
+        {
+          "text": "Phagocyte recruitment",
+          "isCorrect": false,
+          "explanation": "Apoptotic bodies are phagocytosed but without inflammation."
+        }
+      ],
+      "explanation": {
+        "overview": "Apoptosis is programmed cell death characterized by cell shrinkage, membrane blebbing, chromatin condensation, DNA fragmentation, and formation of apoptotic bodies.",
+        "highYield": "Apoptosis = blebbing, DNA laddering, no inflammation. Necrosis = swelling, lysis, inflammation.",
+        "clinicalCorrelation": "Defective apoptosis contributes to cancer; excessive apoptosis in neurodegenerative diseases."
+      }
+    },
+    {
+      "questionId": "cell_physiology_028",
+      "difficulty": 2,
+      "question": "Caspases are enzymes involved in:",
+      "image": null,
+      "options": [
+        {
+          "text": "DNA replication",
+          "isCorrect": false,
+          "explanation": "DNA polymerases replicate DNA."
+        },
+        {
+          "text": "Protein synthesis",
+          "isCorrect": false,
+          "explanation": "Ribosomes synthesize proteins."
+        },
+        {
+          "text": "Apoptosis",
+          "isCorrect": true,
+          "explanation": "Caspases are cysteine proteases that execute apoptosis by cleaving cellular substrates."
+        },
+        {
+          "text": "Glycolysis",
+          "isCorrect": false,
+          "explanation": "Glycolytic enzymes are different."
+        },
+        {
+          "text": "Cell adhesion",
+          "isCorrect": false,
+          "explanation": "Adhesion molecules are cadherins, integrins."
+        }
+      ],
+      "explanation": {
+        "overview": "Caspases are synthesized as inactive procaspases and are activated by proteolytic cleavage during apoptosis. Initiator caspases (8, 9) activate executioner caspases (3, 6, 7).",
+        "highYield": "Caspases = apoptosis executioners.",
+        "clinicalCorrelation": "Caspase inhibitors are being investigated for diseases with excessive apoptosis."
+      }
+    },
+    {
+      "questionId": "cell_physiology_029",
+      "difficulty": 2,
+      "question": "The diagram shows a mitochondrion. Which structure is labeled Y?",
+      "image": "mitochondrion_y.png",
+      "options": [
+        {
+          "text": "Outer membrane",
+          "isCorrect": false,
+          "explanation": "Outer membrane is the smooth outer boundary."
+        },
+        {
+          "text": "Inner membrane",
+          "isCorrect": false,
+          "explanation": "Inner membrane is folded into cristae."
+        },
+        {
+          "text": "Crista",
+          "isCorrect": false,
+          "explanation": "Cristae are folds of inner membrane."
+        },
+        {
+          "text": "Matrix",
+          "isCorrect": true,
+          "explanation": "The matrix contains mitochondrial DNA, ribosomes, and enzymes for the Krebs cycle."
+        },
+        {
+          "text": "Intermembrane space",
+          "isCorrect": false,
+          "explanation": "Between outer and inner membrane."
+        }
+      ],
+      "explanation": {
+        "overview": "Mitochondrial matrix is the compartment enclosed by the inner membrane, containing enzymes for TCA cycle and fatty acid oxidation.",
+        "highYield": "Matrix = TCA cycle, mtDNA, ribosomes.",
+        "clinicalCorrelation": "TCA cycle defects are rare but cause severe metabolic disorders."
+      }
+    },
+    {
+      "questionId": "cell_physiology_030",
+      "difficulty": 1,
+      "question": "Which of the following is NOT a function of the cell membrane?",
+      "image": null,
+      "options": [
+        {
+          "text": "Selective permeability",
+          "isCorrect": false,
+          "explanation": "The membrane controls what enters and leaves."
+        },
+        {
+          "text": "Cell signaling",
+          "isCorrect": false,
+          "explanation": "Receptors in the membrane receive signals."
+        },
+        {
+          "text": "Energy production",
+          "isCorrect": true,
+          "explanation": "Energy production occurs mainly in mitochondria, not the plasma membrane (except in prokaryotes)."
+        },
+        {
+          "text": "Cell adhesion",
+          "isCorrect": false,
+          "explanation": "Membrane proteins like cadherins mediate adhesion."
+        },
+        {
+          "text": "Maintaining electrochemical gradients",
+          "isCorrect": false,
+          "explanation": "Membrane pumps and channels maintain gradients."
+        }
+      ],
+      "explanation": {
+        "overview": "The plasma membrane separates the cell interior from the environment, provides structural support, and mediates communication.",
+        "highYield": "Membrane functions: barrier, transport, signaling, adhesion.",
+        "clinicalCorrelation": "Cystic fibrosis is caused by a defective membrane chloride channel (CFTR)."
+      }
+    },
+    {
+      "questionId": "cell_physiology_031",
+      "difficulty": 1,
+      "question": "What is the principal lipid component of the plasma membrane?",
+      "image": null,
+      "options": [
+        {
+          "text": "Cholesterol",
+          "isCorrect": false,
+          "explanation": "Cholesterol modulates fluidity but is not the main structural lipid."
+        },
+        {
+          "text": "Glycolipids",
+          "isCorrect": false,
+          "explanation": "Glycolipids are minor components."
+        },
+        {
+          "text": "Phospholipids",
+          "isCorrect": true,
+          "explanation": "Phospholipids form the bilayer, with hydrophilic heads and hydrophobic tails."
+        },
+        {
+          "text": "Sphingolipids",
+          "isCorrect": false,
+          "explanation": "A subclass, not the majority."
+        },
+        {
+          "text": "Triglycerides",
+          "isCorrect": false,
+          "explanation": "Triglycerides are storage lipids, not membrane components."
+        }
+      ],
+      "explanation": {
+        "overview": "Phospholipids (phosphatidylcholine, phosphatidylethanolamine, etc.) constitute the backbone of all biological membranes.",
+        "highYield": "Phospholipid bilayer is the fundamental membrane structure.",
+        "clinicalCorrelation": "Phospholipid composition affects membrane fluidity and drug permeability."
+      }
+    },
+    {
+      "questionId": "cell_physiology_032",
+      "difficulty": 1,
+      "question": "Which type of membrane protein spans the entire lipid bilayer?",
+      "image": null,
+      "options": [
+        {
+          "text": "Peripheral protein",
+          "isCorrect": false,
+          "explanation": "Peripheral proteins associate with the membrane surface."
+        },
+        {
+          "text": "Integral transmembrane protein",
+          "isCorrect": true,
+          "explanation": "Transmembrane proteins have domains that cross the bilayer, often as alpha helices."
+        },
+        {
+          "text": "Lipid-anchored protein",
+          "isCorrect": false,
+          "explanation": "These are attached to lipids, not spanning."
+        },
+        {
+          "text": "Glycoprotein",
+          "isCorrect": false,
+          "explanation": "Glycoprotein refers to proteins with sugar groups, can be peripheral or transmembrane."
+        },
+        {
+          "text": "Channel protein",
+          "isCorrect": false,
+          "explanation": "Channels are a subset of transmembrane proteins."
+        }
+      ],
+      "explanation": {
+        "overview": "Transmembrane proteins are integral proteins that pass through the lipid bilayer, often functioning as channels, transporters, or receptors.",
+        "highYield": "Transmembrane proteins span the bilayer; hydrophobic membrane-spanning domains.",
+        "clinicalCorrelation": "G protein-coupled receptors (GPCRs) have seven transmembrane domains."
+      }
+    },
+    {
+      "questionId": "cell_physiology_033",
+      "difficulty": 2,
+      "question": "Receptor-mediated endocytosis relies on which structure?",
+      "image": null,
+      "options": [
+        {
+          "text": "Caveolae",
+          "isCorrect": false,
+          "explanation": "Caveolae are lipid raft invaginations, not clathrin-coated."
+        },
+        {
+          "text": "Clathrin-coated pits",
+          "isCorrect": true,
+          "explanation": "Clathrin-coated pits concentrate receptors and ligands, then internalize as coated vesicles."
+        },
+        {
+          "text": "Phagosomes",
+          "isCorrect": false,
+          "explanation": "Phagosomes are for large particles."
+        },
+        {
+          "text": "Lipid rafts",
+          "isCorrect": false,
+          "explanation": "Lipid rafts are membrane microdomains, not vesicles."
+        },
+        {
+          "text": "Microvilli",
+          "isCorrect": false,
+          "explanation": "Microvilli increase surface area."
+        }
+      ],
+      "explanation": {
+        "overview": "Clathrin-mediated endocytosis is a major pathway for internalizing receptors and their bound ligands.",
+        "highYield": "Clathrin-coated pits → endocytosis of LDL, transferrin, etc.",
+        "clinicalCorrelation": "Defective LDL receptor endocytosis causes familial hypercholesterolemia."
+      }
+    },
+    {
+      "questionId": "cell_physiology_034",
+      "difficulty": 2,
+      "question": "The Nernst equation calculates:",
+      "image": null,
+      "options": [
+        {
+          "text": "Membrane potential at rest",
+          "isCorrect": false,
+          "explanation": "Resting potential is determined by multiple ions (GHK equation)."
+        },
+        {
+          "text": "Equilibrium potential for an ion",
+          "isCorrect": true,
+          "explanation": "The Nernst equation gives the potential at which electrical and chemical forces balance for a single ion."
+        },
+        {
+          "text": "Action potential amplitude",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        },
+        {
+          "text": "Ion flux rate",
+          "isCorrect": false,
+          "explanation": "Not flux rate."
+        },
+        {
+          "text": "Capacitance of membrane",
+          "isCorrect": false,
+          "explanation": "Capacitance is a physical property."
+        }
+      ],
+      "explanation": {
+        "overview": "Eion = (RT/zF) ln([ion]out/[ion]in). It gives the membrane potential at which there is no net movement of that ion.",
+        "highYield": "Nernst equation = equilibrium potential for one ion.",
+        "clinicalCorrelation": "Used to understand how ion imbalances (hyperkalemia) affect resting membrane potential."
+      }
+    },
+    {
+      "questionId": "cell_physiology_035",
+      "difficulty": 3,
+      "question": "The Goldman-Hodgkin-Katz equation takes into account:",
+      "image": null,
+      "options": [
+        {
+          "text": "Only sodium",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Only potassium",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Multiple ions and their permeabilities",
+          "isCorrect": true,
+          "explanation": "GHK calculates resting membrane potential considering concentrations and relative permeabilities of Na+, K+, and Cl-."
+        },
+        {
+          "text": "Membrane capacitance",
+          "isCorrect": false,
+          "explanation": "Not included."
+        },
+        {
+          "text": "Active transport",
+          "isCorrect": false,
+          "explanation": "It considers passive ion distribution."
+        }
+      ],
+      "explanation": {
+        "overview": "The GHK equation is an extension of the Nernst equation, weighting each ion by its permeability to yield the resting membrane potential.",
+        "highYield": "GHK equation: Vm = (RT/F) ln((P_K[K+]o + P_Na[Na+]o + P_Cl[Cl-]i) / ...).",
+        "clinicalCorrelation": "Explains why K+ has the largest effect on resting potential."
+      }
+    },
+    {
+      "questionId": "cell_physiology_036",
+      "difficulty": 2,
+      "question": "Which of the following would depolarize a neuron?",
+      "image": null,
+      "options": [
+        {
+          "text": "Opening K+ channels",
+          "isCorrect": false,
+          "explanation": "K+ efflux hyperpolarizes."
+        },
+        {
+          "text": "Opening Cl- channels",
+          "isCorrect": false,
+          "explanation": "Cl- influx usually hyperpolarizes."
+        },
+        {
+          "text": "Opening Na+ channels",
+          "isCorrect": true,
+          "explanation": "Na+ influx brings the membrane potential closer to threshold (depolarization)."
+        },
+        {
+          "text": "Increasing K+ permeability",
+          "isCorrect": false,
+          "explanation": "Hyperpolarizes."
+        },
+        {
+          "text": "Hyperpolarizing current",
+          "isCorrect": false,
+          "explanation": "Opposite."
+        }
+      ],
+      "explanation": {
+        "overview": "Depolarization is a decrease in the negativity of the membrane potential, usually due to Na+ (or Ca2+) entry.",
+        "highYield": "Na+ entry = depolarization; K+ exit = repolarization/hyperpolarization.",
+        "clinicalCorrelation": "Seizures involve excessive neuronal depolarization."
+      }
+    },
+    {
+      "questionId": "cell_physiology_037",
+      "difficulty": 2,
+      "question": "The Na+/K+ ATPase is an example of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Uniport",
+          "isCorrect": false,
+          "explanation": "Uniport transports one solute."
+        },
+        {
+          "text": "Symport",
+          "isCorrect": false,
+          "explanation": "Symport moves two in the same direction."
+        },
+        {
+          "text": "Antiport",
+          "isCorrect": true,
+          "explanation": "It moves Na+ out and K+ in (opposite directions) = antiport."
+        },
+        {
+          "text": "Channel",
+          "isCorrect": false,
+          "explanation": "It's an active transporter, not a channel."
+        },
+        {
+          "text": "Facilitated diffusion",
+          "isCorrect": false,
+          "explanation": "Requires ATP; primary active transport."
+        }
+      ],
+      "explanation": {
+        "overview": "Primary active transporters use ATP to move ions against their gradients. Na+/K+ ATPase is an antiporter with 3:2 stoichiometry.",
+        "highYield": "Na+/K+ pump = P-type ATPase, antiport.",
+        "clinicalCorrelation": "Digitalis inhibits this pump."
+      }
+    },
+    {
+      "questionId": "cell_physiology_038",
+      "difficulty": 2,
+      "question": "Which of the following is a secondary active transport mechanism?",
+      "image": null,
+      "options": [
+        {
+          "text": "Na+/K+ ATPase",
+          "isCorrect": false,
+          "explanation": "Primary active transport."
+        },
+        {
+          "text": "Glucose-Na+ symporter (SGLT)",
+          "isCorrect": true,
+          "explanation": "SGLT uses the Na+ gradient (established by Na+/K+ ATPase) to co‑transport glucose against its gradient."
+        },
+        {
+          "text": "Simple diffusion",
+          "isCorrect": false,
+          "explanation": "Passive, no energy coupling."
+        },
+        {
+          "text": "Voltage-gated Na+ channel",
+          "isCorrect": false,
+          "explanation": "Channel-mediated passive transport."
+        },
+        {
+          "text": "Aquaporin",
+          "isCorrect": false,
+          "explanation": "Water channel, passive."
+        }
+      ],
+      "explanation": {
+        "overview": "Secondary active transport uses the energy stored in an ion gradient (usually Na+) to drive the transport of another solute against its concentration gradient.",
+        "highYield": "SGLT = Na+/glucose cotransporter; secondary active.",
+        "clinicalCorrelation": "SGLT2 inhibitors (empagliflozin) block glucose reabsorption in kidney."
+      }
+    },
+    {
+      "questionId": "cell_physiology_039",
+      "difficulty": 1,
+      "question": "Aquaporins facilitate the transport of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Sodium ions",
+          "isCorrect": false,
+          "explanation": "Ion channels transport ions."
+        },
+        {
+          "text": "Glucose",
+          "isCorrect": false,
+          "explanation": "Glucose uses transporters (GLUT)."
+        },
+        {
+          "text": "Water",
+          "isCorrect": true,
+          "explanation": "Aquaporins are water channels that increase membrane water permeability."
+        },
+        {
+          "text": "Urea",
+          "isCorrect": false,
+          "explanation": "Some aquaporins transport urea but water is primary."
+        },
+        {
+          "text": "Oxygen",
+          "isCorrect": false,
+          "explanation": "O2 diffuses freely through membranes."
+        }
+      ],
+      "explanation": {
+        "overview": "Aquaporins are integral membrane proteins that form pores for selective water transport across cell membranes.",
+        "highYield": "Aquaporins = water channels; AQP2 in kidney collecting duct regulated by ADH.",
+        "clinicalCorrelation": "Mutations in AQP2 cause nephrogenic diabetes insipidus."
+      }
+    },
+    {
+      "questionId": "cell_physiology_040",
+      "difficulty": 3,
+      "question": "The diagram depicts a voltage-gated sodium channel. Which part is the inactivation gate?",
+      "image": "na_channel_inactivation.png",
+      "options": [
+        {
+          "text": "S4 segment",
+          "isCorrect": false,
+          "explanation": "S4 is the voltage sensor."
+        },
+        {
+          "text": "Pore loop",
+          "isCorrect": false,
+          "explanation": "Pore loop forms the selectivity filter."
+        },
+        {
+          "text": "H (inactivation) loop",
+          "isCorrect": true,
+          "explanation": "The intracellular loop between domains III and IV acts as the inactivation gate."
+        },
+        {
+          "text": "S6 segment",
+          "isCorrect": false,
+          "explanation": "Part of the channel lining."
+        },
+        {
+          "text": "Beta subunit",
+          "isCorrect": false,
+          "explanation": "Auxiliary subunit, not gate."
+        }
+      ],
+      "explanation": {
+        "overview": "Voltage-gated Na+ channels have an inactivation gate (hinged lid) that blocks the pore shortly after opening, contributing to the absolute refractory period.",
+        "highYield": "Inactivation gate = cytoplasmic loop between domains III-IV; 'ball and chain' model.",
+        "clinicalCorrelation": "Mutations in inactivation gate can cause channelopathies like epilepsy."
+      }
+    },
+    {
+      "questionId": "cell_physiology_041",
+      "difficulty": 1,
+      "question": "Which ion is primarily responsible for the rapid upstroke of an action potential in neurons?",
+      "image": null,
+      "options": [
+        {
+          "text": "K+",
+          "isCorrect": false,
+          "explanation": "K+ efflux repolarizes."
+        },
+        {
+          "text": "Na+",
+          "isCorrect": true,
+          "explanation": "Voltage-gated Na+ channels open, causing rapid Na+ influx and depolarization."
+        },
+        {
+          "text": "Ca2+",
+          "isCorrect": false,
+          "explanation": "Ca2+ contributes to plateau in cardiac muscle, not neuronal upstroke."
+        },
+        {
+          "text": "Cl-",
+          "isCorrect": false,
+          "explanation": "Cl- influx hyperpolarizes."
+        },
+        {
+          "text": "Mg2+",
+          "isCorrect": false,
+          "explanation": "Not involved."
+        }
+      ],
+      "explanation": {
+        "overview": "The depolarizing phase of the neuronal action potential is due to the transient opening of voltage-gated Na+ channels.",
+        "highYield": "Neuron AP upstroke = Na+ influx.",
+        "clinicalCorrelation": "Local anesthetics block Na+ channels, preventing action potentials."
+      }
+    },
+    {
+      "questionId": "cell_physiology_042",
+      "difficulty": 2,
+      "question": "In cardiac muscle, the plateau phase is mainly due to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Na+ influx",
+          "isCorrect": false,
+          "explanation": "Na+ influx is rapid and brief."
+        },
+        {
+          "text": "K+ efflux",
+          "isCorrect": false,
+          "explanation": "K+ efflux would repolarize."
+        },
+        {
+          "text": "Ca2+ influx through L-type channels",
+          "isCorrect": true,
+          "explanation": "Sustained Ca2+ entry through L-type channels balances K+ efflux, creating the plateau."
+        },
+        {
+          "text": "Cl- influx",
+          "isCorrect": false,
+          "explanation": "Not."
+        },
+        {
+          "text": "Na+/Ca2+ exchanger",
+          "isCorrect": false,
+          "explanation": "Exchanger operates during repolarization."
+        }
+      ],
+      "explanation": {
+        "overview": "The long plateau (phase 2) in cardiac action potentials results from the slow inward calcium current (ICa,L) through dihydropyridine-sensitive channels.",
+        "highYield": "Cardiac plateau = L-type Ca2+ current.",
+        "clinicalCorrelation": "Calcium channel blockers (verapamil) shorten the plateau and reduce contractility."
+      }
+    },
+    {
+      "questionId": "cell_physiology_043",
+      "difficulty": 1,
+      "question": "What is the function of the sarcoplasmic reticulum in muscle cells?",
+      "image": null,
+      "options": [
+        {
+          "text": "ATP synthesis",
+          "isCorrect": false,
+          "explanation": "Mitochondria."
+        },
+        {
+          "text": "Ca2+ storage and release",
+          "isCorrect": true,
+          "explanation": "The sarcoplasmic reticulum stores Ca2+ and releases it upon stimulation to trigger contraction."
+        },
+        {
+          "text": "Protein synthesis",
+          "isCorrect": false,
+          "explanation": "Rough ER."
+        },
+        {
+          "text": "Lipid metabolism",
+          "isCorrect": false,
+          "explanation": "Smooth ER."
+        },
+        {
+          "text": "Glycogen storage",
+          "isCorrect": false,
+          "explanation": "Cytoplasmic inclusions."
+        }
+      ],
+      "explanation": {
+        "overview": "The SR is a specialized endoplasmic reticulum in muscle cells that regulates intracellular calcium concentration for excitation-contraction coupling.",
+        "highYield": "SR = Ca2+ store; release via ryanodine receptor.",
+        "clinicalCorrelation": "Malignant hyperthermia due to defective ryanodine receptor."
+      }
+    },
+    {
+      "questionId": "cell_physiology_044",
+      "difficulty": 2,
+      "question": "The sliding filament theory describes:",
+      "image": null,
+      "options": [
+        {
+          "text": "Movement of vesicles along microtubules",
+          "isCorrect": false,
+          "explanation": "That's intracellular transport."
+        },
+        {
+          "text": "Contraction of sarcomeres",
+          "isCorrect": true,
+          "explanation": "In muscle, actin and myosin filaments slide past each other, shortening the sarcomere."
+        },
+        {
+          "text": "Cell migration",
+          "isCorrect": false,
+          "explanation": "Involves actin polymerization."
+        },
+        {
+          "text": "Flagellar beating",
+          "isCorrect": false,
+          "explanation": "Microtubule sliding."
+        },
+        {
+          "text": "Cytokinesis",
+          "isCorrect": false,
+          "explanation": "Actin-myosin ring contraction."
+        }
+      ],
+      "explanation": {
+        "overview": "The sliding filament model explains how muscle contraction occurs at the sarcomere level: thin (actin) filaments slide over thick (myosin) filaments, shortening the I band and H zone.",
+        "highYield": "Sliding filament = actin over myosin; requires Ca2+ and ATP.",
+        "clinicalCorrelation": "Rigor mortis due to lack of ATP to detach myosin from actin."
+      }
+    },
+    {
+      "questionId": "cell_physiology_045",
+      "difficulty": 2,
+      "question": "Which protein blocks myosin-binding sites on actin in relaxed muscle?",
+      "image": null,
+      "options": [
+        {
+          "text": "Troponin",
+          "isCorrect": false,
+          "explanation": "Troponin binds Ca2+ and moves tropomyosin."
+        },
+        {
+          "text": "Tropomyosin",
+          "isCorrect": true,
+          "explanation": "Tropomyosin lies in the groove of actin filaments, blocking myosin interaction; Ca2+ binding to troponin moves tropomyosin away."
+        },
+        {
+          "text": "Calmodulin",
+          "isCorrect": false,
+          "explanation": "Calmodulin is involved in smooth muscle contraction."
+        },
+        {
+          "text": "Myosin light chain kinase",
+          "isCorrect": false,
+          "explanation": "Smooth muscle activation."
+        },
+        {
+          "text": "Calsequestrin",
+          "isCorrect": false,
+          "explanation": "Ca2+ binding protein in SR."
+        }
+      ],
+      "explanation": {
+        "overview": "In the absence of Ca2+, the troponin-tropomyosin complex covers myosin-binding sites on actin. When Ca2+ binds troponin C, tropomyosin shifts, allowing cross-bridge formation.",
+        "highYield": "Tropomyosin = block; Ca2+ → troponin → shift tropomyosin.",
+        "clinicalCorrelation": "Cardiac troponin is a biomarker for myocardial infarction."
+      }
+    },
+    {
+      "questionId": "cell_physiology_046",
+      "difficulty": 2,
+      "question": "In smooth muscle, contraction is triggered by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Troponin binding Ca2+",
+          "isCorrect": false,
+          "explanation": "Smooth muscle lacks troponin."
+        },
+        {
+          "text": "Myosin light chain phosphorylation",
+          "isCorrect": true,
+          "explanation": "Ca2+-calmodulin activates myosin light chain kinase (MLCK), which phosphorylates myosin regulatory light chain to initiate contraction."
+        },
+        {
+          "text": "Actin polymerization",
+          "isCorrect": false,
+          "explanation": "Not the trigger."
+        },
+        {
+          "text": "Depolarization only",
+          "isCorrect": false,
+          "explanation": "Can contract without depolarization (pharmacomechanical coupling)."
+        },
+        {
+          "text": "Tropomyosin movement",
+          "isCorrect": false,
+          "explanation": "Smooth muscle has tropomyosin but regulation is myosin-based."
+        }
+      ],
+      "explanation": {
+        "overview": "Smooth muscle contraction is regulated primarily by phosphorylation of myosin light chain, unlike striated muscle which is actin-linked regulation.",
+        "highYield": "Smooth muscle: Ca2+ → CaM → MLCK → MLC phosphorylation → contraction.",
+        "clinicalCorrelation": "Nitric oxide relaxes smooth muscle by activating myosin phosphatase."
+      }
+    },
+    {
+      "questionId": "cell_physiology_047",
+      "difficulty": 2,
+      "question": "The diagram illustrates a sarcomere. What is the I band?",
+      "image": "sarcomere_i_band.png",
+      "options": [
+        {
+          "text": "Region containing only myosin",
+          "isCorrect": false,
+          "explanation": "That's the H zone."
+        },
+        {
+          "text": "Region containing only actin",
+          "isCorrect": true,
+          "explanation": "The I band consists of only thin (actin) filaments and shortens during contraction."
+        },
+        {
+          "text": "Overlap region",
+          "isCorrect": false,
+          "explanation": "Overlap zone is the A band except H zone."
+        },
+        {
+          "text": "M line",
+          "isCorrect": false,
+          "explanation": "Center of sarcomere."
+        },
+        {
+          "text": "Z disc",
+          "isCorrect": false,
+          "explanation": "Boundary of sarcomere."
+        }
+      ],
+      "explanation": {
+        "overview": "The I (isotropic) band is the light band containing only actin filaments, bounded by Z discs. It shortens during contraction.",
+        "highYield": "I band = actin only; A band = myosin (and overlap).",
+        "clinicalCorrelation": "Sarcomere structure is altered in cardiac hypertrophy."
+      }
+    },
+    {
+      "questionId": "cell_physiology_048",
+      "difficulty": 1,
+      "question": "Which of the following is a second messenger?",
+      "image": null,
+      "options": [
+        {
+          "text": "ATP",
+          "isCorrect": false,
+          "explanation": "ATP is an energy currency, not a second messenger."
+        },
+        {
+          "text": "GTP",
+          "isCorrect": false,
+          "explanation": "GTP is a nucleotide involved in signaling but not classic second messenger."
+        },
+        {
+          "text": "cAMP",
+          "isCorrect": true,
+          "explanation": "cAMP is a classic second messenger generated by adenylyl cyclase."
+        },
+        {
+          "text": "ADP",
+          "isCorrect": false,
+          "explanation": "Not a messenger."
+        },
+        {
+          "text": "NADH",
+          "isCorrect": false,
+          "explanation": "Coenzyme in metabolism."
+        }
+      ],
+      "explanation": {
+        "overview": "Second messengers (cAMP, cGMP, IP3, DAG, Ca2+) relay signals from cell surface receptors to intracellular targets.",
+        "highYield": "cAMP = second messenger of GPCRs.",
+        "clinicalCorrelation": "Methylxanthines (theophylline) inhibit phosphodiesterase, increasing cAMP."
+      }
+    },
+    {
+      "questionId": "cell_physiology_049",
+      "difficulty": 2,
+      "question": "G protein-coupled receptors (GPCRs) activate which enzyme to produce cAMP?",
+      "image": null,
+      "options": [
+        {
+          "text": "Phospholipase C",
+          "isCorrect": false,
+          "explanation": "Gq activates PLC, producing IP3/DAG."
+        },
+        {
+          "text": "Adenylyl cyclase",
+          "isCorrect": true,
+          "explanation": "Stimulatory G proteins (Gs) activate adenylyl cyclase, converting ATP to cAMP."
+        },
+        {
+          "text": "Guanylyl cyclase",
+          "isCorrect": false,
+          "explanation": "Guanylyl cyclase produces cGMP (e.g., in response to NO)."
+        },
+        {
+          "text": "Protein kinase A",
+          "isCorrect": false,
+          "explanation": "PKA is activated by cAMP, not producing it."
+        },
+        {
+          "text": "Phosphodiesterase",
+          "isCorrect": false,
+          "explanation": "Phosphodiesterase breaks down cAMP."
+        }
+      ],
+      "explanation": {
+        "overview": "Gs-coupled receptors stimulate adenylyl cyclase, increasing cAMP; Gi-coupled receptors inhibit it.",
+        "highYield": "GPCR → Gs → adenylyl cyclase → cAMP ↑.",
+        "clinicalCorrelation": "Beta-agonists (e.g., albuterol) activate Gs to increase cAMP and relax bronchial smooth muscle."
+      }
+    },
+    {
+      "questionId": "cell_physiology_050",
+      "difficulty": 2,
+      "question": "Phospholipase C generates which two second messengers?",
+      "image": null,
+      "options": [
+        {
+          "text": "cAMP and cGMP",
+          "isCorrect": false,
+          "explanation": "These are from cyclases."
+        },
+        {
+          "text": "IP3 and DAG",
+          "isCorrect": true,
+          "explanation": "Phospholipase C cleaves PIP2 into inositol trisphosphate (IP3) and diacylglycerol (DAG)."
+        },
+        {
+          "text": "Ca2+ and cAMP",
+          "isCorrect": false,
+          "explanation": "Different pathways."
+        },
+        {
+          "text": "ATP and GTP",
+          "isCorrect": false,
+          "explanation": "Not second messengers."
+        },
+        {
+          "text": "NAD+ and FAD",
+          "isCorrect": false,
+          "explanation": "Coenzymes."
+        }
+      ],
+      "explanation": {
+        "overview": "IP3 releases Ca2+ from ER; DAG activates protein kinase C. Both are downstream of Gq-coupled receptors.",
+        "highYield": "PLC → IP3 (Ca2+ release) + DAG (PKC activation).",
+        "clinicalCorrelation": "Angiotensin II acts via Gq-PLC pathway to cause vasoconstriction."
+      }
+    },
+    {
+      "questionId": "cell_physiology_051",
+      "difficulty": 2,
+      "question": "IP3 causes release of Ca2+ from which organelle?",
+      "image": null,
+      "options": [
+        {
+          "text": "Mitochondria",
+          "isCorrect": false,
+          "explanation": "Mitochondria take up Ca2+ but IP3 targets ER."
+        },
+        {
+          "text": "Endoplasmic reticulum",
+          "isCorrect": true,
+          "explanation": "IP3 binds to IP3 receptors on the ER, opening Ca2+ channels."
+        },
+        {
+          "text": "Golgi apparatus",
+          "isCorrect": false,
+          "explanation": "Not a major Ca2+ store."
+        },
+        {
+          "text": "Lysosomes",
+          "isCorrect": false,
+          "explanation": "Lysosomes store some Ca2+ but not primary IP3 target."
+        },
+        {
+          "text": "Peroxisomes",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "IP3 acts on ligand-gated Ca2+ channels in the ER membrane, releasing Ca2+ into the cytoplasm to activate various calcium-dependent processes.",
+        "highYield": "IP3 → ER Ca2+ release.",
+        "clinicalCorrelation": "Dantrolene blocks ryanodine receptors to inhibit Ca2+ release in malignant hyperthermia."
+      }
+    },
+    {
+      "questionId": "cell_physiology_052",
+      "difficulty": 2,
+      "question": "Protein kinase A (PKA) is activated by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Ca2+",
+          "isCorrect": false,
+          "explanation": "Ca2+ activates PKC, calmodulin kinases."
+        },
+        {
+          "text": "cAMP",
+          "isCorrect": true,
+          "explanation": "cAMP binds to regulatory subunits of PKA, releasing active catalytic subunits."
+        },
+        {
+          "text": "cGMP",
+          "isCorrect": false,
+          "explanation": "cGMP activates PKG."
+        },
+        {
+          "text": "DAG",
+          "isCorrect": false,
+          "explanation": "DAG activates PKC."
+        },
+        {
+          "text": "IP3",
+          "isCorrect": false,
+          "explanation": "IP3 releases Ca2+."
+        }
+      ],
+      "explanation": {
+        "overview": "PKA is a tetramer: two regulatory (R) and two catalytic (C) subunits. When four cAMP molecules bind to R subunits, they dissociate, freeing active C subunits.",
+        "highYield": "PKA = cAMP-dependent protein kinase.",
+        "clinicalCorrelation": "PKA phosphorylates multiple targets, including metabolic enzymes and transcription factors."
+      }
+    },
+    {
+      "questionId": "cell_physiology_053",
+      "difficulty": 2,
+      "question": "The diagram shows a GPCR signaling pathway. What molecule is X?",
+      "image": "gpcr_pathway_cAMP.png",
+      "options": [
+        {
+          "text": "GTP",
+          "isCorrect": false,
+          "explanation": "GTP is on the G protein."
+        },
+        {
+          "text": "GDP",
+          "isCorrect": false,
+          "explanation": "GDP is bound to inactive G protein."
+        },
+        {
+          "text": "cAMP",
+          "isCorrect": true,
+          "explanation": "X is cAMP, the second messenger generated by adenylyl cyclase."
+        },
+        {
+          "text": "ATP",
+          "isCorrect": false,
+          "explanation": "ATP is the substrate."
+        },
+        {
+          "text": "PIP2",
+          "isCorrect": false,
+          "explanation": "PIP2 is for PLC pathway."
+        }
+      ],
+      "explanation": {
+        "overview": "The diagram shows the classic Gs-adenylyl cyclase-cAMP cascade.",
+        "highYield": "Ligand → GPCR → Gs → AC → cAMP → PKA.",
+        "clinicalCorrelation": "This pathway mediates the effects of beta-blockers, glucagon, and many hormones."
+      }
+    },
+    {
+      "questionId": "cell_physiology_054",
+      "difficulty": 2,
+      "question": "Receptor tyrosine kinases (RTKs) directly:",
+      "image": null,
+      "options": [
+        {
+          "text": "Open ion channels",
+          "isCorrect": false,
+          "explanation": "Ligand-gated channels do that."
+        },
+        {
+          "text": "Phosphorylate tyrosines on themselves and substrates",
+          "isCorrect": true,
+          "explanation": "Ligand binding induces dimerization and autophosphorylation of tyrosine residues, creating docking sites for signaling proteins."
+        },
+        {
+          "text": "Activate G proteins",
+          "isCorrect": false,
+          "explanation": "GPCRs."
+        },
+        {
+          "text": "Generate second messengers",
+          "isCorrect": false,
+          "explanation": "Indirectly via adaptor proteins."
+        },
+        {
+          "text": "Bind to DNA",
+          "isCorrect": false,
+          "explanation": "Nuclear receptors do that."
+        }
+      ],
+      "explanation": {
+        "overview": "RTKs (e.g., insulin receptor, EGFR) have intrinsic tyrosine kinase activity. Autophosphorylation initiates intracellular signaling cascades like Ras-MAPK and PI3K-Akt.",
+        "highYield": "RTK = ligand → dimerization → autophosphorylation → signaling.",
+        "clinicalCorrelation": "Many targeted cancer therapies inhibit RTKs (e.g., imatinib for BCR-ABL)."
+      }
+    },
+    {
+      "questionId": "cell_physiology_055",
+      "difficulty": 2,
+      "question": "The Ras protein is a small GTPase involved in signaling pathways that regulate:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cell division",
+          "isCorrect": true,
+          "explanation": "Ras activates the MAP kinase cascade, promoting cell proliferation."
+        },
+        {
+          "text": "Apoptosis",
+          "isCorrect": false,
+          "explanation": "Ras generally promotes survival, not apoptosis."
+        },
+        {
+          "text": "Calcium release",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        },
+        {
+          "text": "Gene transcription",
+          "isCorrect": false,
+          "explanation": "Indirectly via MAPK."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "Primary role is proliferation."
+        }
+      ],
+      "explanation": {
+        "overview": "Ras acts as a molecular switch; activated Ras recruits and activates Raf, initiating the MAPK/ERK cascade that promotes cell cycle entry.",
+        "highYield": "Ras = small GTPase; mutations lead to unregulated proliferation (oncogene).",
+        "clinicalCorrelation": "KRAS mutations are common in pancreatic, colorectal, and lung cancers."
+      }
+    },
+    {
+      "questionId": "cell_physiology_056",
+      "difficulty": 2,
+      "question": "Which of the following is a tumor suppressor gene that halts the cell cycle in response to DNA damage?",
+      "image": null,
+      "options": [
+        {
+          "text": "Ras",
+          "isCorrect": false,
+          "explanation": "Oncogene."
+        },
+        {
+          "text": "Myc",
+          "isCorrect": false,
+          "explanation": "Oncogene."
+        },
+        {
+          "text": "p53",
+          "isCorrect": true,
+          "explanation": "p53 activates DNA repair, cell cycle arrest (p21), or apoptosis if damage is irreparable."
+        },
+        {
+          "text": "Src",
+          "isCorrect": false,
+          "explanation": "Proto-oncogene."
+        },
+        {
+          "text": "Akt",
+          "isCorrect": false,
+          "explanation": "Promotes survival/growth."
+        }
+      ],
+      "explanation": {
+        "overview": "p53, the 'guardian of the genome', is a transcription factor that induces genes for cell cycle arrest (p21), DNA repair, or apoptosis in response to cellular stress.",
+        "highYield": "p53 = tumor suppressor; mutated in >50% of cancers.",
+        "clinicalCorrelation": "Li-Fraumeni syndrome due to germline p53 mutation."
+      }
+    },
+    {
+      "questionId": "cell_physiology_057",
+      "difficulty": 2,
+      "question": "Telomeres are repetitive DNA sequences that:",
+      "image": null,
+      "options": [
+        {
+          "text": "Promote chromosome segregation",
+          "isCorrect": false,
+          "explanation": "Centromeres do that."
+        },
+        {
+          "text": "Protect chromosome ends from degradation",
+          "isCorrect": true,
+          "explanation": "Telomeres cap chromosome ends, preventing fusion and degradation, and shorten with each cell division."
+        },
+        {
+          "text": "Initiate DNA replication",
+          "isCorrect": false,
+          "explanation": "Origins of replication."
+        },
+        {
+          "text": "Bind transcription factors",
+          "isCorrect": false,
+          "explanation": "Promoters do that."
+        },
+        {
+          "text": "Enhance recombination",
+          "isCorrect": false,
+          "explanation": "Not."
+        }
+      ],
+      "explanation": {
+        "overview": "Telomeres consist of TTAGGG repeats and associated proteins (shelterin) that prevent chromosome ends from being recognized as DNA breaks.",
+        "highYield": "Telomeres = protective caps; shorten with aging.",
+        "clinicalCorrelation": "Telomerase activation is a hallmark of cancer."
+      }
+    },
+    {
+      "questionId": "cell_physiology_058",
+      "difficulty": 2,
+      "question": "The enzyme telomerase is active in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Most somatic cells",
+          "isCorrect": false,
+          "explanation": "Low/absent in most somatic cells."
+        },
+        {
+          "text": "Germ cells and stem cells",
+          "isCorrect": true,
+          "explanation": "Telomerase maintains telomere length in germ cells, stem cells, and most cancer cells."
+        },
+        {
+          "text": "Neurons",
+          "isCorrect": false,
+          "explanation": "Post-mitotic, low telomerase."
+        },
+        {
+          "text": "Muscle fibers",
+          "isCorrect": false,
+          "explanation": "Post-mitotic."
+        },
+        {
+          "text": "Red blood cells",
+          "isCorrect": false,
+          "explanation": "Enucleated."
+        }
+      ],
+      "explanation": {
+        "overview": "Telomerase is a reverse transcriptase that adds telomeric repeats. Its activity is high in stem cells and cancers, enabling unlimited replication.",
+        "highYield": "Telomerase = immortalizing enzyme; absent in most somatic cells.",
+        "clinicalCorrelation": "Telomerase inhibitors are being investigated as anticancer agents."
+      }
+    },
+    {
+      "questionId": "cell_physiology_059",
+      "difficulty": 2,
+      "question": "Autophagy is a process that:",
+      "image": null,
+      "options": [
+        {
+          "text": "Degrades damaged organelles and proteins",
+          "isCorrect": true,
+          "explanation": "Autophagy delivers cytoplasmic material to lysosomes for degradation and recycling."
+        },
+        {
+          "text": "Triggers apoptosis",
+          "isCorrect": false,
+          "explanation": "Autophagy can promote survival; excessive autophagy may lead to cell death, but its primary role is degradation."
+        },
+        {
+          "text": "Promotes cell division",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Synthesizes new proteins",
+          "isCorrect": false,
+          "explanation": "Degradation."
+        },
+        {
+          "text": "Exports waste",
+          "isCorrect": false,
+          "explanation": "Intracellular degradation."
+        }
+      ],
+      "explanation": {
+        "overview": "Autophagy (self-eating) is a catabolic process that removes damaged organelles, protein aggregates, and pathogens through lysosomal degradation.",
+        "highYield": "Autophagy = double-membrane autophagosome fuses with lysosome.",
+        "clinicalCorrelation": "Impaired autophagy contributes to neurodegeneration (Alzheimer's, Parkinson's)."
+      }
+    },
+    {
+      "questionId": "cell_physiology_060",
+      "difficulty": 2,
+      "question": "Which of the following is a hallmark of apoptosis?",
+      "image": null,
+      "options": [
+        {
+          "text": "Cell swelling",
+          "isCorrect": false,
+          "explanation": "Necrosis."
+        },
+        {
+          "text": "Inflammatory response",
+          "isCorrect": false,
+          "explanation": "Necrosis, not apoptosis."
+        },
+        {
+          "text": "Formation of apoptotic bodies",
+          "isCorrect": true,
+          "explanation": "Apoptotic bodies are membrane‑bound fragments engulfed by phagocytes without inflammation."
+        },
+        {
+          "text": "Random DNA degradation",
+          "isCorrect": false,
+          "explanation": "DNA is cleaved into ~180 bp fragments (ladder pattern)."
+        },
+        {
+          "text": "Membrane rupture",
+          "isCorrect": false,
+          "explanation": "Necrosis."
+        }
+      ],
+      "explanation": {
+        "overview": "Apoptosis is a highly regulated process with distinct morphological features: cell shrinkage, chromatin condensation, membrane blebbing, and formation of apoptotic bodies.",
+        "highYield": "Apoptosis = apoptotic bodies, DNA laddering, no inflammation.",
+        "clinicalCorrelation": "Apoptosis induction is a mechanism of action of many chemotherapeutics."
+      }
+    },
+    {
+      "questionId": "cell_physiology_061",
+      "difficulty": 1,
+      "question": "The diagram depicts the cell cycle. Which phase is labeled Y?",
+      "image": "cell_cycle_m.png",
+      "options": [
+        {
+          "text": "G1",
+          "isCorrect": false,
+          "explanation": "G1 is before S."
+        },
+        {
+          "text": "S",
+          "isCorrect": false,
+          "explanation": "DNA synthesis."
+        },
+        {
+          "text": "G2",
+          "isCorrect": false,
+          "explanation": "Before mitosis."
+        },
+        {
+          "text": "M",
+          "isCorrect": true,
+          "explanation": "Y points to mitosis (M phase), where cell division occurs."
+        },
+        {
+          "text": "G0",
+          "isCorrect": false,
+          "explanation": "Quiescent phase."
+        }
+      ],
+      "explanation": {
+        "overview": "The M phase includes mitosis (nuclear division) and cytokinesis (cytoplasmic division).",
+        "highYield": "M phase = mitosis + cytokinesis.",
+        "clinicalCorrelation": "Microtubule poisons (vinca alkaloids, taxanes) arrest cells in M phase."
+      }
+    },
+    {
+      "questionId": "cell_physiology_062",
+      "difficulty": 2,
+      "question": "Cyclins regulate the cell cycle by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Binding and activating CDKs",
+          "isCorrect": true,
+          "explanation": "Cyclin levels fluctuate and bind CDKs, enabling their kinase activity at specific cell cycle stages."
+        },
+        {
+          "text": "Phosphorylating target proteins",
+          "isCorrect": false,
+          "explanation": "CDKs phosphorylate targets."
+        },
+        {
+          "text": "Degrading CDKs",
+          "isCorrect": false,
+          "explanation": "CDK inhibitors do that."
+        },
+        {
+          "text": "Inhibiting DNA synthesis",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Promoting apoptosis",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Cyclins are regulatory subunits that bind to cyclin-dependent kinases, activating them at specific points in the cell cycle.",
+        "highYield": "Cyclin (regulatory) + CDK (catalytic) = active kinase.",
+        "clinicalCorrelation": "Cyclin D overexpression is common in breast cancer."
+      }
+    },
+    {
+      "questionId": "cell_physiology_063",
+      "difficulty": 2,
+      "question": "The restriction point in the cell cycle occurs during:",
+      "image": null,
+      "options": [
+        {
+          "text": "G1",
+          "isCorrect": true,
+          "explanation": "The restriction point in late G1 commits the cell to division regardless of extracellular signals."
+        },
+        {
+          "text": "S",
+          "isCorrect": false,
+          "explanation": "After commitment."
+        },
+        {
+          "text": "G2",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "M",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "G0",
+          "isCorrect": false,
+          "explanation": "Quiescent state before restriction point."
+        }
+      ],
+      "explanation": {
+        "overview": "The restriction point is the point in late G1 after which the cell is committed to completing the cycle, even without growth factors.",
+        "highYield": "Restriction point = point of no return in G1; regulated by pRb-E2F pathway.",
+        "clinicalCorrelation": "Cancer cells often lose restriction point control."
+      }
+    },
+    {
+      "questionId": "cell_physiology_064",
+      "difficulty": 1,
+      "question": "Which of the following is a component of the cytoskeleton?",
+      "image": null,
+      "options": [
+        {
+          "text": "Ribosomes",
+          "isCorrect": false,
+          "explanation": "Protein synthesis machinery."
+        },
+        {
+          "text": "Microtubules",
+          "isCorrect": true,
+          "explanation": "Microtubules, microfilaments, and intermediate filaments constitute the cytoskeleton."
+        },
+        {
+          "text": "Lysosomes",
+          "isCorrect": false,
+          "explanation": "Digestive organelle."
+        },
+        {
+          "text": "Mitochondria",
+          "isCorrect": false,
+          "explanation": "Energy organelle."
+        },
+        {
+          "text": "Nucleolus",
+          "isCorrect": false,
+          "explanation": "Nuclear structure."
+        }
+      ],
+      "explanation": {
+        "overview": "The cytoskeleton is a network of protein filaments (microtubules, actin filaments, intermediate filaments) that provides shape, support, and motility.",
+        "highYield": "Cytoskeleton = microtubules + microfilaments + intermediate filaments.",
+        "clinicalCorrelation": "Taxanes stabilize microtubules; used in chemotherapy."
+      }
+    },
+    {
+      "questionId": "cell_physiology_065",
+      "difficulty": 2,
+      "question": "Cilia movement is powered by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Kinesin",
+          "isCorrect": false,
+          "explanation": "Kinesin moves along microtubules but does not power ciliary bending."
+        },
+        {
+          "text": "Dynein",
+          "isCorrect": true,
+          "explanation": "Axonemal dynein generates sliding between outer doublet microtubules, causing bending."
+        },
+        {
+          "text": "Myosin",
+          "isCorrect": false,
+          "explanation": "Actin-based motor."
+        },
+        {
+          "text": "Dynamin",
+          "isCorrect": false,
+          "explanation": "Vesicle scission."
+        },
+        {
+          "text": "ATP synthase",
+          "isCorrect": false,
+          "explanation": "ATP synthesis."
+        }
+      ],
+      "explanation": {
+        "overview": "Axonemal dynein is a minus-end-directed motor that produces sliding forces between adjacent microtubule doublets, resulting in ciliary/flagellar bending.",
+        "highYield": "Cilia/flagella beating = dynein ATPase.",
+        "clinicalCorrelation": "Dynein defects cause primary ciliary dyskinesia."
+      }
+    },
+    {
+      "questionId": "cell_physiology_066",
+      "difficulty": 2,
+      "question": "The primary cilium functions as a:",
+      "image": null,
+      "options": [
+        {
+          "text": "Motile structure",
+          "isCorrect": false,
+          "explanation": "Primary cilium is non-motile (9+0)."
+        },
+        {
+          "text": "Sensory antenna",
+          "isCorrect": true,
+          "explanation": "Primary cilia are signaling hubs, detecting mechanical and chemical cues (e.g., Hedgehog, Wnt signaling)."
+        },
+        {
+          "text": "Secretory organelle",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Adhesion site",
+          "isCorrect": false,
+          "explanation": "Focal adhesions."
+        },
+        {
+          "text": "Transport vesicle",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Primary cilia are solitary, immotile organelles found on most vertebrate cells, acting as cellular antennae for signaling pathways.",
+        "highYield": "Primary cilium = 9+0, non-motile, sensory.",
+        "clinicalCorrelation": "Polycystic kidney disease involves defective primary cilia signaling."
+      }
+    },
+    {
+      "questionId": "cell_physiology_067",
+      "difficulty": 1,
+      "question": "Which organelle modifies proteins by adding carbohydrate chains?",
+      "image": null,
+      "options": [
+        {
+          "text": "Rough ER",
+          "isCorrect": false,
+          "explanation": "Initial glycosylation occurs in ER, but extensive modification in Golgi."
+        },
+        {
+          "text": "Golgi apparatus",
+          "isCorrect": true,
+          "explanation": "The Golgi modifies proteins with glycans, sorts them, and packages into vesicles."
+        },
+        {
+          "text": "Lysosome",
+          "isCorrect": false,
+          "explanation": "Degradation."
+        },
+        {
+          "text": "Peroxisome",
+          "isCorrect": false,
+          "explanation": "Oxidation."
+        },
+        {
+          "text": "Nucleus",
+          "isCorrect": false,
+          "explanation": "DNA/RNA processing."
+        }
+      ],
+      "explanation": {
+        "overview": "Protein glycosylation (N-linked and O-linked) is a major function of the Golgi apparatus, determining protein stability, localization, and function.",
+        "highYield": "Golgi = glycosylation center.",
+        "clinicalCorrelation": "Congenital disorders of glycosylation (CDG) result from Golgi enzyme defects."
+      }
+    },
+    {
+      "questionId": "cell_physiology_068",
+      "difficulty": 2,
+      "question": "The signal recognition particle (SRP) directs ribosomes to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Mitochondria",
+          "isCorrect": false,
+          "explanation": "Mitochondrial proteins have different targeting sequences."
+        },
+        {
+          "text": "Rough ER",
+          "isCorrect": true,
+          "explanation": "SRP binds the signal peptide of nascent secretory proteins and targets the ribosome to ER for co‑translational translocation."
+        },
+        {
+          "text": "Golgi",
+          "isCorrect": false,
+          "explanation": "Proteins reach Golgi via vesicles."
+        },
+        {
+          "text": "Cytosol",
+          "isCorrect": false,
+          "explanation": "Cytosolic proteins lack signal peptide."
+        },
+        {
+          "text": "Nucleus",
+          "isCorrect": false,
+          "explanation": "Nuclear proteins have NLS."
+        }
+      ],
+      "explanation": {
+        "overview": "SRP recognizes the ER signal sequence as it emerges from the ribosome, pauses translation, and directs the ribosome-nascent chain complex to the ER translocon.",
+        "highYield": "SRP = ribosome → ER targeting.",
+        "clinicalCorrelation": "Defects in SRP or translocon components can lead to protein misfolding diseases."
+      }
+    },
+    {
+      "questionId": "cell_physiology_069",
+      "difficulty": 2,
+      "question": "KDEL receptors retrieve ER resident proteins from the:",
+      "image": null,
+      "options": [
+        {
+          "text": "Golgi",
+          "isCorrect": true,
+          "explanation": "Proteins with a KDEL sequence are retrieved from the Golgi and returned to the ER via COPI vesicles."
+        },
+        {
+          "text": "Lysosome",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Plasma membrane",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Endosome",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Nucleus",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "The KDEL (Lys-Asp-Glu-Leu) sequence is a retrieval signal; soluble ER proteins that escape to the Golgi are captured by KDEL receptors and returned via COPI vesicles.",
+        "highYield": "KDEL = ER retrieval signal from Golgi.",
+        "clinicalCorrelation": "ER stress leads to upregulation of ER chaperones with KDEL motifs (BiP, calreticulin)."
+      }
+    },
+    {
+      "questionId": "cell_physiology_070",
+      "difficulty": 2,
+      "question": "Which vesicle coat is involved in transport from ER to Golgi?",
+      "image": null,
+      "options": [
+        {
+          "text": "Clathrin",
+          "isCorrect": false,
+          "explanation": "Clathrin is for endocytosis and TGN to endosomes."
+        },
+        {
+          "text": "COPI",
+          "isCorrect": false,
+          "explanation": "COPI is retrograde Golgi→ER and intra-Golgi."
+        },
+        {
+          "text": "COPII",
+          "isCorrect": true,
+          "explanation": "COPII coats vesicles budding from ER for anterograde transport to Golgi."
+        },
+        {
+          "text": "Caveolin",
+          "isCorrect": false,
+          "explanation": "Caveolin forms caveolae."
+        },
+        {
+          "text": "Dynamin",
+          "isCorrect": false,
+          "explanation": "Dynamin is a GTPase for vesicle scission."
+        }
+      ],
+      "explanation": {
+        "overview": "COPII vesicles mediate ER-to-Golgi anterograde transport; COPI mediates retrograde transport.",
+        "highYield": "ER → Golgi = COPII; Golgi → ER = COPI.",
+        "clinicalCorrelation": "Mutations in COPII components cause cranio-lenticulo-sutural dysplasia."
+      }
+    },
+    {
+      "questionId": "cell_physiology_071",
+      "difficulty": 2,
+      "question": "The diagram shows the endocytic pathway. What is structure Z?",
+      "image": "endocytic_pathway_lysosome.png",
+      "options": [
+        {
+          "text": "Early endosome",
+          "isCorrect": false,
+          "explanation": "Sorting compartment."
+        },
+        {
+          "text": "Late endosome",
+          "isCorrect": false,
+          "explanation": "Precedes lysosome."
+        },
+        {
+          "text": "Lysosome",
+          "isCorrect": true,
+          "explanation": "Z is the lysosome, the terminal degradative compartment."
+        },
+        {
+          "text": "Recycling endosome",
+          "isCorrect": false,
+          "explanation": "Returns receptors to membrane."
+        },
+        {
+          "text": "Phagosome",
+          "isCorrect": false,
+          "explanation": "For engulfed particles."
+        }
+      ],
+      "explanation": {
+        "overview": "Endocytic pathway: early endosome → late endosome/multivesicular body → lysosome. Lysosomes are the final destination for degradation.",
+        "highYield": "Lysosome = terminal degradation compartment.",
+        "clinicalCorrelation": "Lysosomal storage diseases result from defective lysosomal enzymes."
+      }
+    },
+    {
+      "questionId": "cell_physiology_072",
+      "difficulty": 1,
+      "question": "Phagocytosis is primarily carried out by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Neurons",
+          "isCorrect": false,
+          "explanation": "Neurons do not phagocytose."
+        },
+        {
+          "text": "Macrophages",
+          "isCorrect": true,
+          "explanation": "Macrophages and neutrophils are professional phagocytes that engulf pathogens and debris."
+        },
+        {
+          "text": "Epithelial cells",
+          "isCorrect": false,
+          "explanation": "Limited phagocytic ability."
+        },
+        {
+          "text": "Fibroblasts",
+          "isCorrect": false,
+          "explanation": "Not professional phagocytes."
+        },
+        {
+          "text": "Erythrocytes",
+          "isCorrect": false,
+          "explanation": "No nucleus or phagocytic machinery."
+        }
+      ],
+      "explanation": {
+        "overview": "Professional phagocytes (macrophages, neutrophils, dendritic cells) are specialized to engulf large particles (>0.5 µm) via receptor-mediated phagocytosis.",
+        "highYield": "Macrophages and neutrophils = professional phagocytes.",
+        "clinicalCorrelation": "Defects in phagocytosis (e.g., chronic granulomatous disease) lead to recurrent infections."
+      }
+    },
+    {
+      "questionId": "cell_physiology_073",
+      "difficulty": 2,
+      "question": "Autophagy involves the formation of a double-membrane structure called the:",
+      "image": null,
+      "options": [
+        {
+          "text": "Phagosome",
+          "isCorrect": false,
+          "explanation": "Single membrane from plasma membrane."
+        },
+        {
+          "text": "Autophagosome",
+          "isCorrect": true,
+          "explanation": "An autophagosome engulfs cytoplasmic material and fuses with lysosomes for degradation."
+        },
+        {
+          "text": "Endosome",
+          "isCorrect": false,
+          "explanation": "Endosomes are part of the endocytic pathway."
+        },
+        {
+          "text": "Lysosome",
+          "isCorrect": false,
+          "explanation": "Lysosome is single-membrane."
+        },
+        {
+          "text": "Proteasome",
+          "isCorrect": false,
+          "explanation": "Proteasome is a protein complex, not a membrane-bound vesicle."
+        }
+      ],
+      "explanation": {
+        "overview": "The autophagosome is a unique double-membrane vesicle that sequesters cytoplasmic content and subsequently fuses with lysosomes.",
+        "highYield": "Autophagosome = double-membrane; fuses with lysosome → autolysosome.",
+        "clinicalCorrelation": "Autophagy is upregulated during starvation and is a target for cancer therapy."
+      }
+    },
+    {
+      "questionId": "cell_physiology_074",
+      "difficulty": 2,
+      "question": "The unfolded protein response (UPR) is triggered by stress in which organelle?",
+      "image": null,
+      "options": [
+        {
+          "text": "Mitochondria",
+          "isCorrect": false,
+          "explanation": "Mitochondria have their own stress response (UPRmt)."
+        },
+        {
+          "text": "Nucleus",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Endoplasmic reticulum",
+          "isCorrect": true,
+          "explanation": "Accumulation of misfolded proteins in the ER activates UPR to restore protein folding or trigger apoptosis."
+        },
+        {
+          "text": "Golgi",
+          "isCorrect": false,
+          "explanation": "Not primary."
+        },
+        {
+          "text": "Lysosome",
+          "isCorrect": false,
+          "explanation": "Not."
+        }
+      ],
+      "explanation": {
+        "overview": "The UPR is an ER-to-nucleus signaling pathway activated by ER stress. It involves three sensors: IRE1, PERK, and ATF6.",
+        "highYield": "UPR = ER stress response; sensors IRE1, PERK, ATF6.",
+        "clinicalCorrelation": "Chronic ER stress contributes to beta-cell failure in diabetes."
+      }
+    },
+    {
+      "questionId": "cell_physiology_075",
+      "difficulty": 2,
+      "question": "Which of the following is a chaperone protein that assists protein folding?",
+      "image": null,
+      "options": [
+        {
+          "text": "Ubiquitin",
+          "isCorrect": false,
+          "explanation": "Ubiquitin tags proteins for degradation."
+        },
+        {
+          "text": "Hsp70",
+          "isCorrect": true,
+          "explanation": "Hsp70 family members bind nascent or unfolded proteins, aiding proper folding."
+        },
+        {
+          "text": "Caspase",
+          "isCorrect": false,
+          "explanation": "Caspases execute apoptosis."
+        },
+        {
+          "text": "Cyclin",
+          "isCorrect": false,
+          "explanation": "Cyclins regulate cell cycle."
+        },
+        {
+          "text": "Protease",
+          "isCorrect": false,
+          "explanation": "Proteases degrade proteins."
+        }
+      ],
+      "explanation": {
+        "overview": "Heat shock proteins (Hsp70, Hsp90, Hsp60) are molecular chaperones that assist in protein folding and prevent aggregation.",
+        "highYield": "Chaperones: Hsp70, Hsp90, Hsp60 (chaperonin).",
+        "clinicalCorrelation": "Hsp90 inhibitors are being developed as anticancer agents."
+      }
+    },
+    {
+      "questionId": "cell_physiology_076",
+      "difficulty": 2,
+      "question": "The electrochemical gradient across the inner mitochondrial membrane drives:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glycolysis",
+          "isCorrect": false,
+          "explanation": "Occurs in cytosol."
+        },
+        {
+          "text": "Krebs cycle",
+          "isCorrect": false,
+          "explanation": "Krebs cycle is in the matrix."
+        },
+        {
+          "text": "ATP synthesis",
+          "isCorrect": true,
+          "explanation": "Proton motive force powers ATP synthase to produce ATP from ADP and Pi."
+        },
+        {
+          "text": "Fatty acid oxidation",
+          "isCorrect": false,
+          "explanation": "Beta-oxidation occurs in matrix, not directly driven by gradient."
+        },
+        {
+          "text": "Calcium uptake",
+          "isCorrect": false,
+          "explanation": "Ca2+ uptake uses the membrane potential but is not the primary function."
+        }
+      ],
+      "explanation": {
+        "overview": "The electron transport chain pumps protons across the inner mitochondrial membrane, creating a proton motive force that drives ATP synthase.",
+        "highYield": "Proton gradient → ATP synthase = chemiosmosis.",
+        "clinicalCorrelation": "Uncouplers (e.g., DNP) dissipate the gradient, generating heat instead of ATP."
+      }
+    },
+    {
+      "questionId": "cell_physiology_077",
+      "difficulty": 2,
+      "question": "In anaerobic conditions, pyruvate is converted to lactate to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Produce more ATP",
+          "isCorrect": false,
+          "explanation": "Fermentation yields only 2 ATP (from glycolysis)."
+        },
+        {
+          "text": "Regenerate NAD+",
+          "isCorrect": true,
+          "explanation": "Lactate dehydrogenase converts pyruvate to lactate, oxidizing NADH back to NAD+, allowing glycolysis to continue."
+        },
+        {
+          "text": "Generate glucose",
+          "isCorrect": false,
+          "explanation": "Gluconeogenesis uses lactate but not under anaerobic conditions."
+        },
+        {
+          "text": "Form acetyl‑CoA",
+          "isCorrect": false,
+          "explanation": "Pyruvate dehydrogenase requires oxygen."
+        },
+        {
+          "text": "Store energy",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Lactate fermentation regenerates NAD+ from NADH, allowing glycolysis to produce ATP (albeit at a lower yield) when oxygen is limiting.",
+        "highYield": "Anaerobic glycolysis: pyruvate → lactate, NADH → NAD+.",
+        "clinicalCorrelation": "Lactic acidosis can occur in shock, sepsis, or metformin toxicity."
+      }
+    },
+    {
+      "questionId": "cell_physiology_078",
+      "difficulty": 2,
+      "question": "The enzyme that converts glucose to glucose-6-phosphate in glycolysis is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hexokinase",
+          "isCorrect": true,
+          "explanation": "Hexokinase (or glucokinase in liver) phosphorylates glucose, trapping it in the cell."
+        },
+        {
+          "text": "Phosphofructokinase",
+          "isCorrect": false,
+          "explanation": "PFK-1 catalyzes the third step (fructose-6-P → fructose-1,6-bisP)."
+        },
+        {
+          "text": "Pyruvate kinase",
+          "isCorrect": false,
+          "explanation": "Final step."
+        },
+        {
+          "text": "Glucokinase",
+          "isCorrect": false,
+          "explanation": "A specific hexokinase isoform in liver; but hexokinase is the general term."
+        },
+        {
+          "text": "Aldolase",
+          "isCorrect": false,
+          "explanation": "Cleaves fructose-1,6-bisP."
+        }
+      ],
+      "explanation": {
+        "overview": "Hexokinase catalyzes the first step of glycolysis, phosphorylating glucose to glucose-6-phosphate, consuming ATP and committing glucose to metabolism.",
+        "highYield": "Glycolysis step 1: glucose → G6P by hexokinase/glucokinase.",
+        "clinicalCorrelation": "Glucokinase mutations cause maturity-onset diabetes of the young (MODY2)."
+      }
+    },
+    {
+      "questionId": "cell_physiology_079",
+      "difficulty": 2,
+      "question": "The diagram shows the electron transport chain. Complex I accepts electrons from:",
+      "image": "etc_complex1.png",
+      "options": [
+        {
+          "text": "FADH2",
+          "isCorrect": false,
+          "explanation": "FADH2 donates electrons to Complex II."
+        },
+        {
+          "text": "NADH",
+          "isCorrect": true,
+          "explanation": "Complex I (NADH dehydrogenase) accepts electrons from NADH and transfers them to CoQ."
+        },
+        {
+          "text": "Succinate",
+          "isCorrect": false,
+          "explanation": "Succinate is substrate for Complex II."
+        },
+        {
+          "text": "Cytochrome c",
+          "isCorrect": false,
+          "explanation": "Cytochrome c is downstream of Complex III."
+        },
+        {
+          "text": "Oxygen",
+          "isCorrect": false,
+          "explanation": "O2 is the final electron acceptor at Complex IV."
+        }
+      ],
+      "explanation": {
+        "overview": "The electron transport chain consists of four complexes; Complex I (NADH dehydrogenase) oxidizes NADH, passing electrons to ubiquinone (CoQ).",
+        "highYield": "Complex I: NADH → CoQ. Complex II: FADH2 → CoQ.",
+        "clinicalCorrelation": "Complex I inhibitors include rotenone and metformin (indirect)."
+      }
+    },
+    {
+      "questionId": "cell_physiology_080",
+      "difficulty": 2,
+      "question": "Which of the following statements about mitochondria is FALSE?",
+      "image": null,
+      "options": [
+        {
+          "text": "They have their own DNA",
+          "isCorrect": false,
+          "explanation": "True."
+        },
+        {
+          "text": "They are involved in apoptosis",
+          "isCorrect": false,
+          "explanation": "True, release cytochrome c."
+        },
+        {
+          "text": "They synthesize all cellular ATP",
+          "isCorrect": true,
+          "explanation": "They produce most ATP, but glycolysis produces a small amount in the cytosol."
+        },
+        {
+          "text": "They divide independently of the cell cycle",
+          "isCorrect": false,
+          "explanation": "True, fission and fusion."
+        },
+        {
+          "text": "They produce reactive oxygen species",
+          "isCorrect": false,
+          "explanation": "True, as a byproduct of ETC."
+        }
+      ],
+      "explanation": {
+        "overview": "Mitochondria generate ~95% of cellular ATP, but some ATP is made by substrate-level phosphorylation in glycolysis.",
+        "highYield": "Mitochondria = most but not all ATP; glycolysis yields 2 ATP.",
+        "clinicalCorrelation": "Mitochondrial diseases affect tissues with high energy demand (brain, muscle)."
+      }
+    },
+    {
+      "questionId": "cell_physiology_081",
+      "difficulty": 2,
+      "question": "Which of the following is a key difference between necrosis and apoptosis?",
+      "image": null,
+      "options": [
+        {
+          "text": "Apoptosis always requires caspase activation, necrosis never does",
+          "isCorrect": false,
+          "explanation": "Some necrosis also involves caspases."
+        },
+        {
+          "text": "Necrosis involves cell swelling and lysis; apoptosis involves cell shrinkage and blebbing",
+          "isCorrect": true,
+          "explanation": "Morphological features are distinct."
+        },
+        {
+          "text": "Apoptosis triggers inflammation; necrosis does not",
+          "isCorrect": false,
+          "explanation": "Opposite."
+        },
+        {
+          "text": "Necrosis is programmed; apoptosis is accidental",
+          "isCorrect": false,
+          "explanation": "Apoptosis is programmed."
+        },
+        {
+          "text": "Apoptosis occurs only in pathological conditions",
+          "isCorrect": false,
+          "explanation": "Also in development."
+        }
+      ],
+      "explanation": {
+        "overview": "Necrosis is unprogrammed cell death with cell swelling, membrane rupture, and inflammation. Apoptosis is programmed, with cell shrinkage, blebbing, and no inflammation.",
+        "highYield": "Necrosis = swelling, lysis, inflammation. Apoptosis = shrinkage, blebbing, no inflammation.",
+        "clinicalCorrelation": "Myocardial infarction leads to coagulative necrosis."
+      }
+    },
+    {
+      "questionId": "cell_physiology_082",
+      "difficulty": 2,
+      "question": "Which molecule is the primary activator of caspase-9 in the intrinsic apoptosis pathway?",
+      "image": null,
+      "options": [
+        {
+          "text": "Cytochrome c",
+          "isCorrect": false,
+          "explanation": "Cytochrome c is released but forms the apoptosome with Apaf-1."
+        },
+        {
+          "text": "Apaf-1",
+          "isCorrect": false,
+          "explanation": "Apaf-1 is the scaffold."
+        },
+        {
+          "text": "Procaspase-9",
+          "isCorrect": false,
+          "explanation": "It's the inactive form."
+        },
+        {
+          "text": "Apoptosome",
+          "isCorrect": true,
+          "explanation": "The apoptosome (cytochrome c + Apaf-1 + ATP) recruits and activates caspase-9."
+        },
+        {
+          "text": "Bcl-2",
+          "isCorrect": false,
+          "explanation": "Bcl-2 is anti-apoptotic."
+        }
+      ],
+      "explanation": {
+        "overview": "The intrinsic pathway involves mitochondrial outer membrane permeabilization, release of cytochrome c, assembly of the apoptosome, and activation of caspase-9.",
+        "highYield": "Apoptosome = cytochrome c + Apaf-1 + procaspase-9 → active caspase-9.",
+        "clinicalCorrelation": "BCL-2 inhibitors (venetoclax) promote apoptosis in CLL."
+      }
+    },
+    {
+      "questionId": "cell_physiology_083",
+      "difficulty": 2,
+      "question": "In the cell cycle, p53 acts as a gatekeeper by inducing transcription of which cyclin-dependent kinase inhibitor?",
+      "image": null,
+      "options": [
+        {
+          "text": "p21",
+          "isCorrect": true,
+          "explanation": "p53 upregulates p21 (WAF1/CIP1), which inhibits CDK-cyclin complexes, arresting the cell cycle."
+        },
+        {
+          "text": "p16",
+          "isCorrect": false,
+          "explanation": "p16 is an INK4 family inhibitor, not directly p53 target."
+        },
+        {
+          "text": "p27",
+          "isCorrect": false,
+          "explanation": "p27 is a CDK inhibitor but not primarily p53 target."
+        },
+        {
+          "text": "Cyclin D",
+          "isCorrect": false,
+          "explanation": "Cyclin D promotes G1 progression."
+        },
+        {
+          "text": "CDC25",
+          "isCorrect": false,
+          "explanation": "Phosphatase, not inhibitor."
+        }
+      ],
+      "explanation": {
+        "overview": "p53 is a transcription factor that, in response to DNA damage, induces expression of p21, which inhibits G1/S CDKs, causing cell cycle arrest.",
+        "highYield": "p53 → p21 → CDK inhibition → G1 arrest.",
+        "clinicalCorrelation": "Loss of p53 function is a key event in many cancers."
+      }
+    },
+    {
+      "questionId": "cell_physiology_084",
+      "difficulty": 2,
+      "question": "Which of the following is responsible for the rapid inactivation of G-protein signaling?",
+      "image": null,
+      "options": [
+        {
+          "text": "GTP hydrolysis by the Gα subunit",
+          "isCorrect": true,
+          "explanation": "Gα proteins have intrinsic GTPase activity; hydrolysis of GTP to GDP terminates signaling."
+        },
+        {
+          "text": "Binding of arrestin",
+          "isCorrect": false,
+          "explanation": "Arrestin terminates GPCR signaling but after receptor phosphorylation."
+        },
+        {
+          "text": "Activation of adenylyl cyclase",
+          "isCorrect": false,
+          "explanation": "Propagates signal."
+        },
+        {
+          "text": "Phosphorylation of the receptor",
+          "isCorrect": false,
+          "explanation": "Contributes to desensitization but not the primary off-switch for G protein."
+        },
+        {
+          "text": "Dissociation of Gβγ",
+          "isCorrect": false,
+          "explanation": "This activates signaling."
+        }
+      ],
+      "explanation": {
+        "overview": "G-protein cycling: activated Gα-GTP is inactivated by its own GTPase activity (often enhanced by RGS proteins), converting GTP to GDP and reassociating with Gβγ.",
+        "highYield": "Gα-GTP → Gα-GDP (GTPase) = signal off.",
+        "clinicalCorrelation": "Cholera toxin inhibits GTPase of Gs, causing prolonged cAMP elevation."
+      }
+    },
+    {
+      "questionId": "cell_physiology_085",
+      "difficulty": 2,
+      "question": "Which of the following is a critical function of the Ran GTPase?",
+      "image": null,
+      "options": [
+        {
+          "text": "Microtubule stability",
+          "isCorrect": false,
+          "explanation": "MAPs regulate microtubules."
+        },
+        {
+          "text": "Nuclear-cytoplasmic transport",
+          "isCorrect": true,
+          "explanation": "Ran GTPase regulates directionality of nuclear import and export by controlling cargo binding to importins/exportins."
+        },
+        {
+          "text": "Vesicle budding from ER",
+          "isCorrect": false,
+          "explanation": "COPII and Sar1."
+        },
+        {
+          "text": "Muscle contraction",
+          "isCorrect": false,
+          "explanation": "Actin-myosin."
+        },
+        {
+          "text": "Protein folding in ER",
+          "isCorrect": false,
+          "explanation": "Chaperones."
+        }
+      ],
+      "explanation": {
+        "overview": "RanGTP/RanGDP gradient across the nuclear envelope drives directionality of nuclear transport. RanGTP in the nucleus promotes cargo release from importins.",
+        "highYield": "Ran GTPase = directionality of nuclear import/export.",
+        "clinicalCorrelation": "Defective nuclear transport in some cancers and viral infections."
+      }
+    },
+    {
+      "questionId": "cell_physiology_086",
+      "difficulty": 2,
+      "question": "Which of the following is the motor protein responsible for vesicle transport along actin filaments?",
+      "image": null,
+      "options": [
+        {
+          "text": "Kinesin",
+          "isCorrect": false,
+          "explanation": "Kinesin moves on microtubules."
+        },
+        {
+          "text": "Dynein",
+          "isCorrect": false,
+          "explanation": "Microtubule motor."
+        },
+        {
+          "text": "Myosin V",
+          "isCorrect": true,
+          "explanation": "Myosin V and other myosin family members move cargo along actin filaments."
+        },
+        {
+          "text": "Dynamin",
+          "isCorrect": false,
+          "explanation": "Dynamin is for membrane scission."
+        },
+        {
+          "text": "Spectrin",
+          "isCorrect": false,
+          "explanation": "Membrane skeleton protein."
+        }
+      ],
+      "explanation": {
+        "overview": "Actin-based transport uses myosin motors (myosin V, VI) to move vesicles and organelles along actin tracks, especially in regions like the cell cortex and microvilli.",
+        "highYield": "Myosin = actin motor; kinesin/dynein = microtubule motors.",
+        "clinicalCorrelation": "Myosin mutations cause some forms of deafness (myosin VIIa) and myopathies."
+      }
+    },
+    {
+      "questionId": "cell_physiology_087",
+      "difficulty": 2,
+      "question": "Which of the following is a major function of the smooth ER in muscle cells?",
+      "image": null,
+      "options": [
+        {
+          "text": "ATP production",
+          "isCorrect": false,
+          "explanation": "Mitochondria."
+        },
+        {
+          "text": "Calcium storage and release (sarcoplasmic reticulum)",
+          "isCorrect": true,
+          "explanation": "The sarcoplasmic reticulum, a specialized smooth ER, stores and releases Ca2+ for muscle contraction."
+        },
+        {
+          "text": "Protein synthesis",
+          "isCorrect": false,
+          "explanation": "Rough ER."
+        },
+        {
+          "text": "Lipid droplet formation",
+          "isCorrect": false,
+          "explanation": "Not primary."
+        },
+        {
+          "text": "Detoxification",
+          "isCorrect": false,
+          "explanation": "Hepatocyte function."
+        }
+      ],
+      "explanation": {
+        "overview": "The sarcoplasmic reticulum is a modified smooth ER that sequesters Ca2+ via SERCA pumps and releases it via ryanodine receptors during excitation-contraction coupling.",
+        "highYield": "SR = smooth ER derivative; Ca2+ store for muscle.",
+        "clinicalCorrelation": "Impaired SR Ca2+ handling leads to heart failure."
+      }
+    },
+    {
+      "questionId": "cell_physiology_088",
+      "difficulty": 2,
+      "question": "Which of the following best describes the function of peroxisomes in neurons?",
+      "image": null,
+      "options": [
+        {
+          "text": "ATP generation",
+          "isCorrect": false,
+          "explanation": "Mitochondria."
+        },
+        {
+          "text": "Synthesis of plasmalogens for myelin",
+          "isCorrect": true,
+          "explanation": "Peroxisomes are essential for synthesis of plasmalogens, a major component of myelin."
+        },
+        {
+          "text": "Neurotransmitter release",
+          "isCorrect": false,
+          "explanation": "Synaptic vesicles."
+        },
+        {
+          "text": "Axonal transport",
+          "isCorrect": false,
+          "explanation": "Motor proteins."
+        },
+        {
+          "text": "DNA replication",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Peroxisomes synthesize plasmalogens, which are abundant in myelin. Defects in peroxisomal function lead to severe neurological disorders.",
+        "highYield": "Peroxisomes = plasmalogen synthesis; critical for myelin.",
+        "clinicalCorrelation": "Adrenoleukodystrophy (X-ALD) due to VLCFA accumulation from peroxisomal defect."
+      }
+    },
+    {
+      "questionId": "cell_physiology_089",
+      "difficulty": 2,
+      "question": "Which of the following cell junctions is responsible for creating a tight seal between epithelial cells, preventing paracellular diffusion?",
+      "image": null,
+      "options": [
+        {
+          "text": "Gap junction",
+          "isCorrect": false,
+          "explanation": "Channels for communication."
+        },
+        {
+          "text": "Desmosome",
+          "isCorrect": false,
+          "explanation": "Anchoring junction."
+        },
+        {
+          "text": "Tight junction",
+          "isCorrect": true,
+          "explanation": "Tight junctions (zonula occludens) seal the intercellular space, regulating paracellular permeability."
+        },
+        {
+          "text": "Adherens junction",
+          "isCorrect": false,
+          "explanation": "Mechanical attachment linked to actin."
+        },
+        {
+          "text": "Hemidesmosome",
+          "isCorrect": false,
+          "explanation": "Anchors cell to basement membrane."
+        }
+      ],
+      "explanation": {
+        "overview": "Tight junctions are composed of claudins and occludins and form a continuous belt around the apical end of epithelial cells.",
+        "highYield": "Tight junction = paracellular barrier; claudins and occludins.",
+        "clinicalCorrelation": "Defects in tight junctions contribute to inflammatory bowel disease."
+      }
+    },
+    {
+      "questionId": "cell_physiology_090",
+      "difficulty": 2,
+      "question": "Which of the following is a primary function of the nucleolus?",
+      "image": null,
+      "options": [
+        {
+          "text": "Pre-mRNA splicing",
+          "isCorrect": false,
+          "explanation": "Splicing occurs in nucleoplasm."
+        },
+        {
+          "text": "Ribosomal RNA synthesis and ribosome assembly",
+          "isCorrect": true,
+          "explanation": "The nucleolus transcribes rRNA and assembles small and large ribosomal subunits."
+        },
+        {
+          "text": "DNA replication",
+          "isCorrect": false,
+          "explanation": "Occurs throughout the nucleus."
+        },
+        {
+          "text": "Protein degradation",
+          "isCorrect": false,
+          "explanation": "Proteasomes/lysosomes."
+        },
+        {
+          "text": "Chromatin remodeling",
+          "isCorrect": false,
+          "explanation": "Not specific to nucleolus."
+        }
+      ],
+      "explanation": {
+        "overview": "The nucleolus is the ribosome factory, where RNA polymerase I transcribes rRNA genes and ribosomal subunits are assembled.",
+        "highYield": "Nucleolus = rRNA transcription + ribosome subunit assembly.",
+        "clinicalCorrelation": "Nucleolar hypertrophy correlates with increased protein synthesis in cancers."
+      }
+    },
+    {
+      "questionId": "cell_physiology_091",
+      "difficulty": 2,
+      "question": "Which of the following sequences directs a protein to the nucleus?",
+      "image": null,
+      "options": [
+        {
+          "text": "KDEL",
+          "isCorrect": false,
+          "explanation": "ER retrieval signal."
+        },
+        {
+          "text": "Signal peptide",
+          "isCorrect": false,
+          "explanation": "ER targeting."
+        },
+        {
+          "text": "Nuclear localization signal (NLS)",
+          "isCorrect": true,
+          "explanation": "NLS is a short amino acid sequence (usually basic) recognized by importins for nuclear entry."
+        },
+        {
+          "text": "Mannose-6-phosphate",
+          "isCorrect": false,
+          "explanation": "Lysosomal targeting."
+        },
+        {
+          "text": "Ubiquitin",
+          "isCorrect": false,
+          "explanation": "Proteasomal targeting."
+        }
+      ],
+      "explanation": {
+        "overview": "Nuclear proteins contain NLS, which is recognized by importin α/β complexes, enabling transport through nuclear pore complexes.",
+        "highYield": "NLS = nuclear import signal.",
+        "clinicalCorrelation": "Mutations in NLS sequences can mislocalize proteins, causing disease."
+      }
+    },
+    {
+      "questionId": "cell_physiology_092",
+      "difficulty": 2,
+      "question": "Which of the following is a major function of the Golgi apparatus in protein trafficking?",
+      "image": null,
+      "options": [
+        {
+          "text": "Protein synthesis",
+          "isCorrect": false,
+          "explanation": "Ribosomes/ER."
+        },
+        {
+          "text": "Sorting proteins to lysosomes, secretion, or plasma membrane",
+          "isCorrect": true,
+          "explanation": "Golgi sorts proteins based on signals, e.g., mannose-6-phosphate for lysosomes."
+        },
+        {
+          "text": "mRNA translation",
+          "isCorrect": false,
+          "explanation": "Cytoplasm."
+        },
+        {
+          "text": "Calcium storage",
+          "isCorrect": false,
+          "explanation": "ER/SR."
+        },
+        {
+          "text": "ATP synthesis",
+          "isCorrect": false,
+          "explanation": "Mitochondria."
+        }
+      ],
+      "explanation": {
+        "overview": "The trans-Golgi network (TGN) acts as a sorting station, directing proteins to their final destinations via vesicles.",
+        "highYield": "Golgi TGN = sorting hub; lysosomal, secretory, membrane proteins.",
+        "clinicalCorrelation": "I-cell disease due to defective mannose-6-phosphate tagging."
+      }
+    },
+    {
+      "questionId": "cell_physiology_093",
+      "difficulty": 2,
+      "question": "Which of the following is a characteristic of membrane lipids that contributes to membrane fluidity?",
+      "image": null,
+      "options": [
+        {
+          "text": "Saturated fatty acid tails",
+          "isCorrect": false,
+          "explanation": "Saturated tails decrease fluidity."
+        },
+        {
+          "text": "Cholesterol at low temperatures",
+          "isCorrect": false,
+          "explanation": "Cholesterol reduces fluidity at low temperatures."
+        },
+        {
+          "text": "Unsaturated fatty acid tails with cis double bonds",
+          "isCorrect": true,
+          "explanation": "Cis double bonds create kinks, preventing tight packing and increasing fluidity."
+        },
+        {
+          "text": "Trans fatty acids",
+          "isCorrect": false,
+          "explanation": "Trans fats pack more like saturated fats, reducing fluidity."
+        },
+        {
+          "text": "Longer fatty acid chains",
+          "isCorrect": false,
+          "explanation": "Longer chains increase van der Waals interactions, decreasing fluidity."
+        }
+      ],
+      "explanation": {
+        "overview": "Unsaturated phospholipids with cis double bonds introduce kinks, preventing tight packing of hydrocarbon chains, thus maintaining membrane fluidity.",
+        "highYield": "Cis-unsaturated fatty acids → ↑ fluidity; cholesterol modulates fluidity.",
+        "clinicalCorrelation": "Dietary unsaturated fats can influence membrane composition and function."
+      }
+    },
+    {
+      "questionId": "cell_physiology_094",
+      "difficulty": 2,
+      "question": "Which of the following is the correct order of the endocytic pathway?",
+      "image": null,
+      "options": [
+        {
+          "text": "Lysosome → late endosome → early endosome",
+          "isCorrect": false,
+          "explanation": "Reverse order."
+        },
+        {
+          "text": "Early endosome → late endosome → lysosome",
+          "isCorrect": true,
+          "explanation": "Internalized cargo passes from early (sorting) endosomes to late endosomes (MVBs) and finally to lysosomes for degradation."
+        },
+        {
+          "text": "Phagosome → lysosome → endosome",
+          "isCorrect": false,
+          "explanation": "Phagosome fuses with lysosome."
+        },
+        {
+          "text": "Recycling endosome → early endosome → lysosome",
+          "isCorrect": false,
+          "explanation": "Recycling endosomes return cargo to membrane."
+        },
+        {
+          "text": "Autophagosome → early endosome → lysosome",
+          "isCorrect": false,
+          "explanation": "Autophagosome directly fuses with lysosome."
+        }
+      ],
+      "explanation": {
+        "overview": "Endocytic maturation: clathrin-coated vesicle → early endosome (pH ~6.5) → late endosome/MVB (pH ~5.5) → lysosome (pH ~4.5).",
+        "highYield": "Endocytosis: early endosome → late endosome → lysosome.",
+        "clinicalCorrelation": "Drugs targeting endosomal acidification (chloroquine) affect this pathway."
+      }
+    },
+    {
+      "questionId": "cell_physiology_095",
+      "difficulty": 2,
+      "question": "Which of the following statements about the Na+/K+ pump is correct?",
+      "image": null,
+      "options": [
+        {
+          "text": "It is an electroneutral pump",
+          "isCorrect": false,
+          "explanation": "3 Na+ out, 2 K+ in → net outward current; electrogenic."
+        },
+        {
+          "text": "It is inhibited by digitalis glycosides",
+          "isCorrect": true,
+          "explanation": "Digoxin and ouabain bind to the pump and inhibit its activity, leading to increased intracellular Na+."
+        },
+        {
+          "text": "It transports Na+ and K+ in the same direction",
+          "isCorrect": false,
+          "explanation": "Antiport."
+        },
+        {
+          "text": "It is a secondary active transporter",
+          "isCorrect": false,
+          "explanation": "Primary active, uses ATP."
+        },
+        {
+          "text": "It is primarily found in the mitochondrial membrane",
+          "isCorrect": false,
+          "explanation": "Plasma membrane."
+        }
+      ],
+      "explanation": {
+        "overview": "The Na+/K+ ATPase is a P-type ATPase that maintains the sodium and potassium gradients, and is the pharmacological target of cardiac glycosides.",
+        "highYield": "Na+/K+ pump = electrogenic, inhibited by digoxin.",
+        "clinicalCorrelation": "Digoxin increases cardiac contractility by inhibiting Na+/K+ pump, indirectly raising intracellular Ca2+ via NCX."
+      }
+    },
+    {
+      "questionId": "cell_physiology_096",
+      "difficulty": 2,
+      "question": "Which of the following is an example of a voltage-gated calcium channel found in neurons?",
+      "image": null,
+      "options": [
+        {
+          "text": "IP3 receptor",
+          "isCorrect": false,
+          "explanation": "Ligand-gated (IP3)."
+        },
+        {
+          "text": "Ryanodine receptor",
+          "isCorrect": false,
+          "explanation": "Ca2+-induced Ca2+ release in muscle."
+        },
+        {
+          "text": "N-type (CaV2.2)",
+          "isCorrect": true,
+          "explanation": "N-type voltage-gated Ca2+ channels mediate neurotransmitter release at presynaptic terminals."
+        },
+        {
+          "text": "SERCA pump",
+          "isCorrect": false,
+          "explanation": "Ca2+ ATPase, not a channel."
+        },
+        {
+          "text": "TRPV1",
+          "isCorrect": false,
+          "explanation": "Transient receptor potential channel, primarily ligand/heat-gated."
+        }
+      ],
+      "explanation": {
+        "overview": "Neuronal voltage-gated calcium channels include L-type, N-type, P/Q-type, and T-type, each with distinct locations and functions.",
+        "highYield": "N-type Ca2+ channels = neurotransmitter release; blocked by gabapentin.",
+        "clinicalCorrelation": "Gabapentin binds to the α2δ subunit of N-type channels, reducing neurotransmitter release in neuropathic pain."
+      }
+    },
+    {
+      "questionId": "cell_physiology_097",
+      "difficulty": 2,
+      "question": "Which of the following is a function of microtubule-associated proteins (MAPs)?",
+      "image": null,
+      "options": [
+        {
+          "text": "ATP synthesis",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Stabilizing microtubules and regulating assembly",
+          "isCorrect": true,
+          "explanation": "MAPs like tau and MAP2 bind to microtubules and promote stability and bundling."
+        },
+        {
+          "text": "Transporting vesicles along actin",
+          "isCorrect": false,
+          "explanation": "Myosin."
+        },
+        {
+          "text": "Degrading misfolded proteins",
+          "isCorrect": false,
+          "explanation": "Proteasome."
+        },
+        {
+          "text": "Sealing gap junctions",
+          "isCorrect": false,
+          "explanation": "Connexins."
+        }
+      ],
+      "explanation": {
+        "overview": "Microtubule-associated proteins (MAPs) bind to microtubules and regulate their dynamics, stability, and interactions with other cellular components.",
+        "highYield": "MAPs: tau (axons), MAP2 (dendrites); stabilize microtubules.",
+        "clinicalCorrelation": "Tau hyperphosphorylation leads to neurofibrillary tangles in Alzheimer's disease."
+      }
+    },
+    {
+      "questionId": "cell_physiology_098",
+      "difficulty": 2,
+      "question": "Which of the following best describes the function of the T-tubule system in skeletal muscle?",
+      "image": null,
+      "options": [
+        {
+          "text": "Synthesis of ATP",
+          "isCorrect": false,
+          "explanation": "Mitochondria."
+        },
+        {
+          "text": "Propagation of action potential deep into the muscle fiber",
+          "isCorrect": true,
+          "explanation": "T-tubules are invaginations of the sarcolemma that carry depolarization to the terminal cisternae of the SR, triggering Ca2+ release."
+        },
+        {
+          "text": "Storage of calcium",
+          "isCorrect": false,
+          "explanation": "Sarcoplasmic reticulum stores calcium."
+        },
+        {
+          "text": "Protein synthesis",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Anchoring the sarcomere",
+          "isCorrect": false,
+          "explanation": "Z-disc anchors."
+        }
+      ],
+      "explanation": {
+        "overview": "T-tubules (transverse tubules) are deep invaginations of the sarcolemma that allow rapid transmission of the action potential to the interior of the muscle fiber, ensuring simultaneous contraction.",
+        "highYield": "T-tubule = inward spread of depolarization; coupled to SR via DHPR-RyR.",
+        "clinicalCorrelation": "In Duchenne muscular dystrophy, T-tubule structure is disrupted."
+      }
+    },
+    {
+      "questionId": "cell_physiology_099",
+      "difficulty": 2,
+      "question": "Which of the following molecules directly mediates the fusion of synaptic vesicles with the presynaptic membrane?",
+      "image": null,
+      "options": [
+        {
+          "text": "Clathrin",
+          "isCorrect": false,
+          "explanation": "Clathrin is for endocytosis."
+        },
+        {
+          "text": "Dynamin",
+          "isCorrect": false,
+          "explanation": "Scission of vesicles."
+        },
+        {
+          "text": "SNARE proteins (synaptobrevin, syntaxin, SNAP-25)",
+          "isCorrect": true,
+          "explanation": "SNARE complex mediates vesicle docking and fusion."
+        },
+        {
+          "text": "Kinesin",
+          "isCorrect": false,
+          "explanation": "Microtubule transport."
+        },
+        {
+          "text": "Caveolin",
+          "isCorrect": false,
+          "explanation": "Caveolae formation."
+        }
+      ],
+      "explanation": {
+        "overview": "Neurotransmitter release involves the assembly of v-SNAREs (synaptobrevin/VAMP) on vesicles and t-SNAREs (syntaxin, SNAP-25) on the plasma membrane, forming a tight complex that drives fusion.",
+        "highYield": "SNARE complex = synaptic vesicle fusion.",
+        "clinicalCorrelation": "Botulinum toxin cleaves SNARE proteins, inhibiting neurotransmitter release."
+      }
+    },
+    {
+      "questionId": "cell_physiology_100",
+      "difficulty": 2,
+      "question": "Which of the following is a major component of the extracellular matrix that provides tensile strength?",
+      "image": null,
+      "options": [
+        {
+          "text": "Collagen",
+          "isCorrect": true,
+          "explanation": "Collagen fibers are the main structural protein in the ECM, providing tensile strength."
+        },
+        {
+          "text": "Elastin",
+          "isCorrect": false,
+          "explanation": "Elastin provides elasticity."
+        },
+        {
+          "text": "Fibronectin",
+          "isCorrect": false,
+          "explanation": "Fibronectin binds cells to ECM."
+        },
+        {
+          "text": "Laminin",
+          "isCorrect": false,
+          "explanation": "Laminin is a major component of basal lamina."
+        },
+        {
+          "text": "Proteoglycans",
+          "isCorrect": false,
+          "explanation": "Proteoglycans provide hydration and compressive resistance."
+        }
+      ],
+      "explanation": {
+        "overview": "Collagen is the most abundant protein in the ECM, forming fibrils that resist stretching.",
+        "highYield": "Collagen = tensile strength; elastin = elasticity.",
+        "clinicalCorrelation": "Defects in collagen synthesis cause osteogenesis imperfecta and Ehlers-Danlos syndromes."
+      }
+    },
+    {
+      "questionId": "cell_physiology_101",
+      "difficulty": 2,
+      "question": "Which of the following is a function of integrins?",
+      "image": null,
+      "options": [
+        {
+          "text": "Form gap junctions",
+          "isCorrect": false,
+          "explanation": "Connexins."
+        },
+        {
+          "text": "Mediate cell-ECM adhesion and signaling",
+          "isCorrect": true,
+          "explanation": "Integrins are transmembrane receptors that link the cytoskeleton to ECM and transduce signals in both directions."
+        },
+        {
+          "text": "Seal tight junctions",
+          "isCorrect": false,
+          "explanation": "Claudins/occludins."
+        },
+        {
+          "text": "Transport glucose",
+          "isCorrect": false,
+          "explanation": "GLUT transporters."
+        },
+        {
+          "text": "Polymerize actin",
+          "isCorrect": false,
+          "explanation": "Actin-binding proteins."
+        }
+      ],
+      "explanation": {
+        "overview": "Integrins are αβ heterodimers that bind ECM proteins (fibronectin, collagen) and cluster to form focal adhesions, activating intracellular signaling pathways.",
+        "highYield": "Integrins = cell-matrix adhesion and bidirectional signaling.",
+        "clinicalCorrelation": "Integrin inhibitors (abciximab) are used as antiplatelet agents."
+      }
+    },
+    {
+      "questionId": "cell_physiology_102",
+      "difficulty": 3,
+      "question": "The diagram shows a typical G protein-coupled receptor. Which structural feature is characteristic of GPCRs?",
+      "image": "gpcr_7tm.png",
+      "options": [
+        {
+          "text": "Single transmembrane helix",
+          "isCorrect": false,
+          "explanation": "Some receptors have one, but GPCRs have seven."
+        },
+        {
+          "text": "Seven transmembrane alpha helices",
+          "isCorrect": true,
+          "explanation": "GPCRs share a common architecture of seven membrane-spanning α‑helical domains."
+        },
+        {
+          "text": "Tyrosine kinase domain",
+          "isCorrect": false,
+          "explanation": "That's RTKs."
+        },
+        {
+          "text": "Guanylyl cyclase domain",
+          "isCorrect": false,
+          "explanation": "ANP receptor."
+        },
+        {
+          "text": "Ligand-gated ion channel",
+          "isCorrect": false,
+          "explanation": "Nicotinic receptor."
+        }
+      ],
+      "explanation": {
+        "overview": "GPCRs are the largest family of cell surface receptors, characterized by seven transmembrane alpha helices (7TM).",
+        "highYield": "GPCR = 7 transmembrane domains.",
+        "clinicalCorrelation": "GPCRs are the target of about 30% of FDA-approved drugs."
+      }
+    },
+    {
+      "questionId": "cell_physiology_103",
+      "difficulty": 2,
+      "question": "Which of the following is a key event in the intrinsic pathway of apoptosis?",
+      "image": null,
+      "options": [
+        {
+          "text": "Death receptor ligation (e.g., Fas)",
+          "isCorrect": false,
+          "explanation": "Extrinsic pathway."
+        },
+        {
+          "text": "Mitochondrial outer membrane permeabilization (MOMP)",
+          "isCorrect": true,
+          "explanation": "MOMP releases cytochrome c and other pro-apoptotic factors, activating the apoptosome."
+        },
+        {
+          "text": "Activation of caspase-8",
+          "isCorrect": false,
+          "explanation": "Mainly extrinsic."
+        },
+        {
+          "text": "Binding of TNF-α",
+          "isCorrect": false,
+          "explanation": "Extrinsic."
+        },
+        {
+          "text": "Caspase-12 activation",
+          "isCorrect": false,
+          "explanation": "ER stress, less common."
+        }
+      ],
+      "explanation": {
+        "overview": "The intrinsic (mitochondrial) pathway is regulated by Bcl-2 family proteins. Pro-apoptotic members (Bax, Bak) permeabilize the mitochondrial membrane, releasing cytochrome c.",
+        "highYield": "Intrinsic apoptosis = MOMP → cytochrome c → apoptosome → caspase-9.",
+        "clinicalCorrelation": "Venetoclax (BCL-2 inhibitor) promotes MOMP in CLL."
+      }
+    },
+    {
+      "questionId": "cell_physiology_104",
+      "difficulty": 2,
+      "question": "Which of the following is a major function of intermediate filaments in the nucleus?",
+      "image": null,
+      "options": [
+        {
+          "text": "Transport of mRNA",
+          "isCorrect": false,
+          "explanation": "Nuclear pore complexes."
+        },
+        {
+          "text": "Formation of the nuclear lamina",
+          "isCorrect": true,
+          "explanation": "Lamins (type V intermediate filaments) form the nuclear lamina, providing structural support to the nuclear envelope."
+        },
+        {
+          "text": "DNA replication",
+          "isCorrect": false,
+          "explanation": "DNA polymerases."
+        },
+        {
+          "text": "Ribosome assembly",
+          "isCorrect": false,
+          "explanation": "Nucleolus."
+        },
+        {
+          "text": "Chromosome segregation",
+          "isCorrect": false,
+          "explanation": "Microtubules."
+        }
+      ],
+      "explanation": {
+        "overview": "Nuclear lamins (A, B, C) form a meshwork underlying the inner nuclear membrane, maintaining nuclear shape and organizing chromatin.",
+        "highYield": "Nuclear lamina = lamin intermediate filaments.",
+        "clinicalCorrelation": "Lamin A mutations cause Hutchinson-Gilford progeria."
+      }
+    },
+    {
+      "questionId": "cell_physiology_105",
+      "difficulty": 2,
+      "question": "Which of the following is a function of the smooth ER in steroidogenic cells?",
+      "image": null,
+      "options": [
+        {
+          "text": "Synthesis of steroid hormones",
+          "isCorrect": true,
+          "explanation": "Smooth ER in cells of adrenal cortex and gonads contains enzymes for cholesterol metabolism and steroid hormone synthesis."
+        },
+        {
+          "text": "Glycogenolysis",
+          "isCorrect": false,
+          "explanation": "Cytoplasm."
+        },
+        {
+          "text": "Protein glycosylation",
+          "isCorrect": false,
+          "explanation": "Golgi."
+        },
+        {
+          "text": "Detoxification of reactive oxygen species",
+          "isCorrect": false,
+          "explanation": "Peroxisomes."
+        },
+        {
+          "text": "DNA repair",
+          "isCorrect": false,
+          "explanation": "Nucleus."
+        }
+      ],
+      "explanation": {
+        "overview": "Steroidogenic cells contain abundant smooth ER, which houses enzymes (CYP450s) for converting cholesterol to steroid hormones like cortisol, aldosterone, and sex steroids.",
+        "highYield": "Smooth ER = steroid synthesis (adrenal cortex, gonads).",
+        "clinicalCorrelation": "Ketoconazole inhibits steroidogenic CYP enzymes."
+      }
+    },
+    {
+      "questionId": "cell_physiology_106",
+      "difficulty": 2,
+      "question": "Which of the following is true about the mitochondrial permeability transition pore (mPTP)?",
+      "image": null,
+      "options": [
+        {
+          "text": "It normally allows ATP export",
+          "isCorrect": false,
+          "explanation": "ATP is exported via adenine nucleotide translocator."
+        },
+        {
+          "text": "Opening leads to dissipation of the proton gradient and cell death",
+          "isCorrect": true,
+          "explanation": "The mPTP is a high-conductance channel that opens under stress, causing mitochondrial depolarization, swelling, and release of pro-apoptotic factors."
+        },
+        {
+          "text": "It is located in the outer mitochondrial membrane",
+          "isCorrect": false,
+          "explanation": "The pore spans both membranes at contact sites."
+        },
+        {
+          "text": "It is activated by cyclosporine",
+          "isCorrect": false,
+          "explanation": "Cyclosporine A inhibits mPTP opening."
+        },
+        {
+          "text": "It is constitutively open",
+          "isCorrect": false,
+          "explanation": "Opens under pathological conditions."
+        }
+      ],
+      "explanation": {
+        "overview": "The mPTP is a non-selective pore that opens in response to Ca2+ overload and oxidative stress, leading to necrotic cell death.",
+        "highYield": "mPTP opening → loss of ΔΨm → swelling → cell death.",
+        "clinicalCorrelation": "mPTP inhibition is a target for cardioprotection in ischemia-reperfusion injury."
+      }
+    },
+    {
+      "questionId": "cell_physiology_107",
+      "difficulty": 2,
+      "question": "Which of the following proteins is a key regulator of the G2/M checkpoint?",
+      "image": null,
+      "options": [
+        {
+          "text": "Cyclin D-CDK4/6",
+          "isCorrect": false,
+          "explanation": "G1 checkpoint."
+        },
+        {
+          "text": "Cyclin B-CDK1",
+          "isCorrect": true,
+          "explanation": "Cyclin B/CDK1 (MPF) drives entry into mitosis; checkpoint prevents entry if DNA is damaged or replication incomplete."
+        },
+        {
+          "text": "Cyclin A-CDK2",
+          "isCorrect": false,
+          "explanation": "S phase and G2 progression."
+        },
+        {
+          "text": "p53",
+          "isCorrect": false,
+          "explanation": "p53 acts at G1/S and G2/M but the direct regulator is cyclin B/CDK1."
+        },
+        {
+          "text": "Rb",
+          "isCorrect": false,
+          "explanation": "G1 restriction point."
+        }
+      ],
+      "explanation": {
+        "overview": "The G2/M checkpoint ensures that DNA replication is complete and any damage is repaired before mitosis. The cyclin B/CDK1 complex (maturation-promoting factor) is the key executor.",
+        "highYield": "G2/M checkpoint: Cyclin B-CDK1 (MPF) activation regulated by Wee1 and Cdc25.",
+        "clinicalCorrelation": "Wee1 inhibitors are being developed to override G2/M checkpoint in cancer."
+      }
+    },
+    {
+      "questionId": "cell_physiology_108",
+      "difficulty": 2,
+      "question": "Which of the following is a function of peroxisomes in plant cells but not in animal cells?",
+      "image": null,
+      "options": [
+        {
+          "text": "Beta-oxidation of fatty acids",
+          "isCorrect": false,
+          "explanation": "Occurs in both."
+        },
+        {
+          "text": "Photorespiration (glyoxylate cycle in glyoxysomes)",
+          "isCorrect": true,
+          "explanation": "Plant peroxisomes called glyoxysomes participate in the glyoxylate cycle and photorespiration."
+        },
+        {
+          "text": "Catalase-mediated detoxification",
+          "isCorrect": false,
+          "explanation": "Both."
+        },
+        {
+          "text": "Plasmalogen synthesis",
+          "isCorrect": false,
+          "explanation": "Animal cells."
+        },
+        {
+          "text": "Very long-chain fatty acid oxidation",
+          "isCorrect": false,
+          "explanation": "Both."
+        }
+      ],
+      "explanation": {
+        "overview": "Glyoxysomes, a specialized peroxisome in plants and fungi, contain enzymes for the glyoxylate cycle, converting fatty acids to carbohydrates.",
+        "highYield": "Plant peroxisomes: glyoxysomes for glyoxylate cycle.",
+        "clinicalCorrelation": "Not directly applicable to human physiology, but illustrates organelle diversity."
+      }
+    },
+    {
+      "questionId": "cell_physiology_109",
+      "difficulty": 2,
+      "question": "Which of the following motor proteins is responsible for retrograde transport in cilia?",
+      "image": null,
+      "options": [
+        {
+          "text": "Kinesin-2",
+          "isCorrect": false,
+          "explanation": "Kinesin-2 is anterograde in cilia."
+        },
+        {
+          "text": "Cytoplasmic dynein 2",
+          "isCorrect": true,
+          "explanation": "Cytoplasmic dynein 2 (dynein-2) powers retrograde intraflagellar transport in cilia."
+        },
+        {
+          "text": "Axonemal dynein",
+          "isCorrect": false,
+          "explanation": "Axonemal dynein generates ciliary bending."
+        },
+        {
+          "text": "Myosin VI",
+          "isCorrect": false,
+          "explanation": "Actin-based motor."
+        },
+        {
+          "text": "Dynamin",
+          "isCorrect": false,
+          "explanation": "Not a motor."
+        }
+      ],
+      "explanation": {
+        "overview": "Intraflagellar transport (IFT) uses kinesin-2 for anterograde (base to tip) and dynein-2 for retrograde (tip to base) movement.",
+        "highYield": "IFT: kinesin-2 (anterograde), dynein-2 (retrograde).",
+        "clinicalCorrelation": "Defects in IFT cause short-rib polydactyly syndromes."
+      }
+    },
+    {
+      "questionId": "cell_physiology_110",
+      "difficulty": 2,
+      "question": "Which of the following is a hallmark of cancer cells related to cell physiology?",
+      "image": null,
+      "options": [
+        {
+          "text": "Contact inhibition",
+          "isCorrect": false,
+          "explanation": "Normal cells exhibit contact inhibition; cancer cells lack it."
+        },
+        {
+          "text": "Dependence on anchorage for growth",
+          "isCorrect": false,
+          "explanation": "Cancer cells are anchorage-independent."
+        },
+        {
+          "text": "Evasion of apoptosis and sustained proliferative signaling",
+          "isCorrect": true,
+          "explanation": "Cancer cells acquire hallmarks including resistance to cell death and self-sufficiency in growth signals."
+        },
+        {
+          "text": "Normal telomere shortening",
+          "isCorrect": false,
+          "explanation": "Cancer cells maintain telomere length via telomerase."
+        },
+        {
+          "text": "Increased DNA repair fidelity",
+          "isCorrect": false,
+          "explanation": "Often impaired repair, leading to genomic instability."
+        }
+      ],
+      "explanation": {
+        "overview": "The hallmarks of cancer include sustained proliferation, evading growth suppressors, resisting cell death, replicative immortality, angiogenesis, invasion, and metastasis.",
+        "highYield": "Cancer hallmarks: evasion of apoptosis, limitless replication (telomerase), genomic instability.",
+        "clinicalCorrelation": "Targeting these hallmarks is the basis of modern cancer therapy."
+      }
+    },
+    {
+      "questionId": "cell_physiology_111",
+      "difficulty": 2,
+      "question": "Which of the following is the function of the Sec61 translocon?",
+      "image": null,
+      "options": [
+        {
+          "text": "Transport of proteins across the inner mitochondrial membrane",
+          "isCorrect": false,
+          "explanation": "TOM/TIM complexes."
+        },
+        {
+          "text": "Protein translocation across the ER membrane",
+          "isCorrect": true,
+          "explanation": "Sec61 is the channel-forming component of the ER translocon for co- and post-translational protein import."
+        },
+        {
+          "text": "Nuclear pore transport",
+          "isCorrect": false,
+          "explanation": "Nuclear pore complex."
+        },
+        {
+          "text": "Vesicle fusion with plasma membrane",
+          "isCorrect": false,
+          "explanation": "SNAREs."
+        },
+        {
+          "text": "Import of proteins into peroxisomes",
+          "isCorrect": false,
+          "explanation": "Peroxins."
+        }
+      ],
+      "explanation": {
+        "overview": "The Sec61 complex forms the aqueous channel in the ER membrane through which nascent secretory and membrane proteins are translocated.",
+        "highYield": "Sec61 = ER translocon.",
+        "clinicalCorrelation": "Some viruses hijack Sec61 for their own replication."
+      }
+    },
+    {
+      "questionId": "cell_physiology_112",
+      "difficulty": 2,
+      "question": "Which of the following is a function of the COPII coat complex?",
+      "image": null,
+      "options": [
+        {
+          "text": "Budding of vesicles from the Golgi to the ER",
+          "isCorrect": false,
+          "explanation": "That's COPI."
+        },
+        {
+          "text": "Budding of vesicles from the ER for transport to the Golgi",
+          "isCorrect": true,
+          "explanation": "COPII vesicles mediate anterograde transport from ER exit sites to the cis-Golgi."
+        },
+        {
+          "text": "Endocytosis from the plasma membrane",
+          "isCorrect": false,
+          "explanation": "Clathrin."
+        },
+        {
+          "text": "Formation of lysosomes",
+          "isCorrect": false,
+          "explanation": "Not."
+        },
+        {
+          "text": "Transport from trans-Golgi to endosomes",
+          "isCorrect": false,
+          "explanation": "Clathrin/AP-1."
+        }
+      ],
+      "explanation": {
+        "overview": "COPII vesicle formation is initiated by the small GTPase Sar1 and the Sec23/Sec24 and Sec13/Sec31 coat complexes, selecting cargo and deforming the ER membrane.",
+        "highYield": "COPII = ER → Golgi anterograde transport.",
+        "clinicalCorrelation": "Mutations in COPII components cause cranio-lenticulo-sutural dysplasia and other diseases."
+      }
+    },
+    {
+      "questionId": "cell_physiology_113",
+      "difficulty": 2,
+      "question": "Which of the following is a critical role of calcium signaling in non-excitable cells?",
+      "image": null,
+      "options": [
+        {
+          "text": "Action potential generation",
+          "isCorrect": false,
+          "explanation": "Excitable cells."
+        },
+        {
+          "text": "Fertilization, secretion, and gene expression",
+          "isCorrect": true,
+          "explanation": "Ca2+ is a universal second messenger regulating processes like exocytosis, muscle contraction, fertilization, and transcription."
+        },
+        {
+          "text": "Maintaining resting membrane potential",
+          "isCorrect": false,
+          "explanation": "K+ leak channels."
+        },
+        {
+          "text": "ATP synthesis",
+          "isCorrect": false,
+          "explanation": "Ca2+ can regulate but not synthesize."
+        },
+        {
+          "text": "DNA replication",
+          "isCorrect": false,
+          "explanation": "Indirect."
+        }
+      ],
+      "explanation": {
+        "overview": "Ca2+ signals are central to numerous cellular processes, from fertilization (cortical granule exocytosis) to neurotransmitter release and activation of transcription factors (NFAT).",
+        "highYield": "Ca2+ = second messenger for secretion, contraction, fertilization.",
+        "clinicalCorrelation": "Ca2+ channel blockers are used for hypertension and arrhythmias."
+      }
+    },
+    {
+      "questionId": "cell_physiology_114",
+      "difficulty": 2,
+      "question": "Which of the following is a feature of apoptosis that distinguishes it from necrosis at the molecular level?",
+      "image": null,
+      "options": [
+        {
+          "text": "Swelling of organelles",
+          "isCorrect": false,
+          "explanation": "Necrosis."
+        },
+        {
+          "text": "Activation of specific cysteine proteases (caspases)",
+          "isCorrect": true,
+          "explanation": "Apoptosis is mediated by a caspase cascade, while necrosis is generally caspase-independent (though some overlap exists)."
+        },
+        {
+          "text": "Release of DAMPs",
+          "isCorrect": false,
+          "explanation": "Necrosis releases DAMPs; apoptosis typically does not."
+        },
+        {
+          "text": "Rapid loss of membrane integrity",
+          "isCorrect": false,
+          "explanation": "Necrosis."
+        },
+        {
+          "text": "Non-specific DNA degradation",
+          "isCorrect": false,
+          "explanation": "Apoptosis yields specific DNA ladder pattern."
+        }
+      ],
+      "explanation": {
+        "overview": "Caspase activation is the biochemical hallmark of apoptosis. Initiator and executioner caspases orchestrate the orderly dismantling of the cell.",
+        "highYield": "Apoptosis = caspase-dependent; necrosis = caspase-independent (mostly).",
+        "clinicalCorrelation": "Caspase-3 cleavage products are used as markers of apoptosis in research."
+      }
+    },
+    {
+      "questionId": "cell_physiology_115",
+      "difficulty": 2,
+      "question": "Which of the following is the main function of the Ran GTPase-activating protein (RanGAP)?",
+      "image": null,
+      "options": [
+        {
+          "text": "Generating RanGTP in the nucleus",
+          "isCorrect": false,
+          "explanation": "RanGEF (RCC1) does that."
+        },
+        {
+          "text": "Converting RanGTP to RanGDP in the cytoplasm",
+          "isCorrect": true,
+          "explanation": "RanGAP is primarily cytoplasmic and hydrolyzes RanGTP to RanGDP, maintaining the Ran gradient."
+        },
+        {
+          "text": "Binding to importin-β",
+          "isCorrect": false,
+          "explanation": "RanGTP binds."
+        },
+        {
+          "text": "Transporting mRNA",
+          "isCorrect": false,
+          "explanation": "Not."
+        },
+        {
+          "text": "Forming nuclear pore complexes",
+          "isCorrect": false,
+          "explanation": "Nucleoporins."
+        }
+      ],
+      "explanation": {
+        "overview": "The Ran gradient (RanGTP high in nucleus, RanGDP high in cytoplasm) is essential for nuclear transport. RanGAP in the cytoplasm stimulates GTP hydrolysis, keeping RanGDP levels high there.",
+        "highYield": "RanGAP in cytoplasm; RCC1 (RanGEF) in nucleus.",
+        "clinicalCorrelation": "Disruption of Ran gradient can impair nuclear transport and contribute to disease."
+      }
+    },
+    {
+      "questionId": "cell_physiology_116",
+      "difficulty": 2,
+      "question": "Which of the following is a major role of cholesterol in the plasma membrane?",
+      "image": null,
+      "options": [
+        {
+          "text": "Serve as a receptor for hormones",
+          "isCorrect": false,
+          "explanation": "Receptors are proteins."
+        },
+        {
+          "text": "Modulate membrane fluidity and permeability",
+          "isCorrect": true,
+          "explanation": "Cholesterol intercalates between phospholipids, reducing fluidity at high temperatures and preventing crystallization at low temperatures."
+        },
+        {
+          "text": "Act as a second messenger",
+          "isCorrect": false,
+          "explanation": "IP3, DAG, cAMP are second messengers."
+        },
+        {
+          "text": "Anchor proteins to the membrane",
+          "isCorrect": false,
+          "explanation": "GPI anchors do that."
+        },
+        {
+          "text": "Facilitate glucose transport",
+          "isCorrect": false,
+          "explanation": "GLUTs are proteins."
+        }
+      ],
+      "explanation": {
+        "overview": "Cholesterol is a key regulator of membrane fluidity, acting as a 'buffer' that prevents both excessive fluidity and rigidity.",
+        "highYield": "Cholesterol = membrane fluidity buffer.",
+        "clinicalCorrelation": "Statins lower cholesterol, which can affect membrane composition."
+      }
+    },
+    {
+      "questionId": "cell_physiology_117",
+      "difficulty": 2,
+      "question": "Which of the following is a key component of the basal lamina?",
+      "image": null,
+      "options": [
+        {
+          "text": "Collagen type I",
+          "isCorrect": false,
+          "explanation": "Mainly in connective tissue."
+        },
+        {
+          "text": "Laminin",
+          "isCorrect": true,
+          "explanation": "Laminin, collagen type IV, entactin, and perlecan are major components of the basal lamina."
+        },
+        {
+          "text": "Elastin",
+          "isCorrect": false,
+          "explanation": "Provides elasticity in connective tissue."
+        },
+        {
+          "text": "Keratin",
+          "isCorrect": false,
+          "explanation": "Intracellular intermediate filament."
+        },
+        {
+          "text": "Fibrillin",
+          "isCorrect": false,
+          "explanation": "Microfibril component."
+        }
+      ],
+      "explanation": {
+        "overview": "The basal lamina is a specialized ECM layer that separates epithelial cells from underlying connective tissue. Laminin and collagen IV are its major structural components.",
+        "highYield": "Basal lamina: laminin, collagen IV, entactin, perlecan.",
+        "clinicalCorrelation": "Anti-laminin antibodies are seen in some autoimmune blistering diseases."
+      }
+    },
+    {
+      "questionId": "cell_physiology_118",
+      "difficulty": 2,
+      "question": "Which of the following statements about cell adhesion molecules (CAMs) is correct?",
+      "image": null,
+      "options": [
+        {
+          "text": "Cadherins mediate calcium-independent cell-cell adhesion",
+          "isCorrect": false,
+          "explanation": "Cadherins are calcium-dependent."
+        },
+        {
+          "text": "Integrins primarily mediate cell-cell adhesion",
+          "isCorrect": false,
+          "explanation": "Integrins are mainly cell-matrix."
+        },
+        {
+          "text": "Ig superfamily CAMs can mediate both homophilic and heterophilic adhesion",
+          "isCorrect": true,
+          "explanation": "NCAM, ICAM, VCAM are Ig superfamily members involved in immune and neural adhesion."
+        },
+        {
+          "text": "Selectins are involved in tight junctions",
+          "isCorrect": false,
+          "explanation": "Selectins mediate leukocyte rolling."
+        },
+        {
+          "text": "Claudins are calcium-dependent adhesion molecules for desmosomes",
+          "isCorrect": false,
+          "explanation": "Claudins are tight junction components."
+        }
+      ],
+      "explanation": {
+        "overview": "The immunoglobulin superfamily includes NCAM, ICAM, VCAM, which mediate various adhesive interactions in immune and nervous systems.",
+        "highYield": "Ig-CAMs: homophilic (NCAM) or heterophilic (ICAM-LFA1).",
+        "clinicalCorrelation": "Anti-ICAM therapies are used in autoimmune diseases."
+      }
+    },
+    {
+      "questionId": "cell_physiology_119",
+      "difficulty": 3,
+      "question": "The 'respiratory burst' in phagocytes is mediated by which enzyme complex?",
+      "image": null,
+      "options": [
+        {
+          "text": "Cytochrome c oxidase",
+          "isCorrect": false,
+          "explanation": "Complex IV of ETC."
+        },
+        {
+          "text": "NADPH oxidase",
+          "isCorrect": true,
+          "explanation": "NADPH oxidase (Phox) generates superoxide anion, which is converted to other reactive oxygen species to kill pathogens."
+        },
+        {
+          "text": "Myeloperoxidase",
+          "isCorrect": false,
+          "explanation": "Myeloperoxidase uses H2O2 to produce hypochlorous acid, but the burst is initiated by NADPH oxidase."
+        },
+        {
+          "text": "Cyclooxygenase",
+          "isCorrect": false,
+          "explanation": "COX produces prostaglandins."
+        },
+        {
+          "text": "Nitric oxide synthase",
+          "isCorrect": false,
+          "explanation": "NOS produces NO."
+        }
+      ],
+      "explanation": {
+        "overview": "Upon activation, phagocytes assemble the NADPH oxidase complex (gp91phox, p22phox, p47phox, etc.) on the phagosomal membrane, producing a burst of superoxide.",
+        "highYield": "Respiratory burst = NADPH oxidase → O2-.",
+        "clinicalCorrelation": "Chronic granulomatous disease is caused by defects in NADPH oxidase components."
+      }
+    },
+    {
+      "questionId": "cell_physiology_120",
+      "difficulty": 2,
+      "question": "Which of the following is the primary function of the microvilli on intestinal epithelial cells?",
+      "image": null,
+      "options": [
+        {
+          "text": "Secretion of mucus",
+          "isCorrect": false,
+          "explanation": "Goblet cells."
+        },
+        {
+          "text": "Increasing surface area for absorption",
+          "isCorrect": true,
+          "explanation": "Microvilli (brush border) amplify the apical surface area, enhancing nutrient absorption."
+        },
+        {
+          "text": "Cell adhesion",
+          "isCorrect": false,
+          "explanation": "Junctions."
+        },
+        {
+          "text": "Secretion of digestive enzymes",
+          "isCorrect": false,
+          "explanation": "Pancreatic acinar cells; some enzymes are on microvilli but main function is absorption."
+        },
+        {
+          "text": "Sensing antigens",
+          "isCorrect": false,
+          "explanation": "M cells."
+        }
+      ],
+      "explanation": {
+        "overview": "Microvilli are actin-based finger-like projections on the apical surface of absorptive cells (enterocytes, kidney proximal tubule cells), dramatically increasing surface area.",
+        "highYield": "Microvilli = increased surface area for absorption.",
+        "clinicalCorrelation": "Celiac disease leads to villous atrophy and malabsorption."
+      }
+    }
+  ]
+}

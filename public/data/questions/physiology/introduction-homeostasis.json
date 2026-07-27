@@ -1,0 +1,2854 @@
+{
+  "questions": [
+    {
+      "questionId": "intro_homeostasis_001",
+      "difficulty": 1,
+      "question": "What is the primary physiological role of homeostatic control mechanisms?",
+      "image": null,
+      "options": [
+        {
+          "text": "To maintain a constant internal environment despite external changes",
+          "isCorrect": true,
+          "explanation": "This is the definition of homeostasis: maintaining internal stability. All homeostatic mechanisms serve this role."
+        },
+        {
+          "text": "To ensure the body adapts to a changing external environment",
+          "isCorrect": false,
+          "explanation": "Adaptation is a broader concept; homeostasis specifically maintains internal constancy, not adaptation to external changes."
+        },
+        {
+          "text": "To maximize energy production during exercise",
+          "isCorrect": false,
+          "explanation": "Energy production is a specific metabolic response, not the overarching role of homeostasis."
+        },
+        {
+          "text": "To regulate body temperature only",
+          "isCorrect": false,
+          "explanation": "Thermoregulation is one example, but homeostasis encompasses all internal variables."
+        },
+        {
+          "text": "To control blood glucose exclusively",
+          "isCorrect": false,
+          "explanation": "Glucose regulation is one aspect; homeostasis covers many variables."
+        }
+      ],
+      "explanation": {
+        "overview": "Homeostasis is the maintenance of a relatively stable internal environment through physiological regulatory mechanisms. These systems keep variables like temperature, pH, and glucose within narrow ranges despite external fluctuations.",
+        "highYield": "Homeostasis = dynamic equilibrium, not absolute constancy. Key is maintaining internal environment within normal range.",
+        "clinicalCorrelation": "Disruption of homeostasis (e.g., in diabetes, dehydration) leads to disease states."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_002",
+      "difficulty": 2,
+      "question": "Which of the following represents a negative feedback mechanism?",
+      "image": null,
+      "options": [
+        {
+          "text": "Increased uterine contractions during labor",
+          "isCorrect": false,
+          "explanation": "Uterine contractions during labor are a positive feedback loop where oxytocin amplifies contractions until delivery."
+        },
+        {
+          "text": "Blood clotting cascade",
+          "isCorrect": false,
+          "explanation": "The clotting cascade is a positive feedback process that rapidly amplifies platelet activation and fibrin formation."
+        },
+        {
+          "text": "Insulin release in response to elevated blood glucose",
+          "isCorrect": true,
+          "explanation": "Insulin lowers blood glucose, which then reduces the stimulus for further insulin secretion – a classic negative feedback loop."
+        },
+        {
+          "text": "Action potential generation",
+          "isCorrect": false,
+          "explanation": "Action potentials involve positive feedback via voltage-gated Na+ channels, but they are not a homeostatic negative feedback loop."
+        },
+        {
+          "text": "Ovulation triggered by LH surge",
+          "isCorrect": false,
+          "explanation": "The LH surge is a positive feedback mechanism in the menstrual cycle, not negative feedback."
+        }
+      ],
+      "explanation": {
+        "overview": "Negative feedback reverses a deviation from a set point, returning the variable to normal. Insulin secretion in response to high glucose is a prime example: glucose elevation triggers insulin, which reduces glucose, thus removing the stimulus.",
+        "highYield": "Negative feedback = response opposes the stimulus. Insulin lowering blood glucose is negative feedback.",
+        "clinicalCorrelation": "Impaired negative feedback (e.g., insulin resistance) leads to persistent hyperglycemia in type 2 diabetes."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_003",
+      "difficulty": 2,
+      "question": "What is the correct order of components in a typical negative feedback loop?",
+      "image": null,
+      "options": [
+        {
+          "text": "Effector → control center → sensor → variable",
+          "isCorrect": false,
+          "explanation": "This sequence is reversed; the sensor detects the variable first, not last."
+        },
+        {
+          "text": "Sensor → control center → effector → variable",
+          "isCorrect": false,
+          "explanation": "The sensor detects a change in the variable, but the variable itself is the starting point of the loop."
+        },
+        {
+          "text": "Variable → sensor → control center → effector",
+          "isCorrect": true,
+          "explanation": "A change in the variable is detected by a sensor, integrated by the control center, and a response is executed by the effector, which then alters the variable."
+        },
+        {
+          "text": "Control center → sensor → effector → variable",
+          "isCorrect": false,
+          "explanation": "The control center does not initiate the process; it responds to input from the sensor."
+        },
+        {
+          "text": "Effector → variable → sensor → control center",
+          "isCorrect": false,
+          "explanation": "The effector acts last to influence the variable, not first."
+        }
+      ],
+      "explanation": {
+        "overview": "The standard negative feedback sequence: a regulated variable deviates from its set point, a sensor detects this, the control center integrates the information and commands an effector, which produces a response that counteracts the deviation.",
+        "highYield": "Order: Variable change → sensor detects → control center decides → effector corrects.",
+        "clinicalCorrelation": "Knowledge of this sequence helps identify defects in disease (e.g., sensor failure, effector organ damage)."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_004",
+      "difficulty": 2,
+      "question": "Which of the following is an example of a positive feedback mechanism in the human body?",
+      "image": null,
+      "options": [
+        {
+          "text": "Temperature regulation",
+          "isCorrect": false,
+          "explanation": "Temperature regulation uses negative feedback (e.g., sweating when hot, shivering when cold) to return to set point."
+        },
+        {
+          "text": "Blood glucose regulation",
+          "isCorrect": false,
+          "explanation": "Glucose regulation is primarily negative feedback via insulin and glucagon."
+        },
+        {
+          "text": "Blood pressure regulation",
+          "isCorrect": false,
+          "explanation": "Short-term blood pressure control is negative feedback through the baroreceptor reflex."
+        },
+        {
+          "text": "Oxytocin release during childbirth",
+          "isCorrect": true,
+          "explanation": "Oxytocin release amplifies uterine contractions, which in turn trigger more oxytocin release, a positive feedback cascade that ends with delivery."
+        },
+        {
+          "text": "Calcium homeostasis",
+          "isCorrect": false,
+          "explanation": "Calcium levels are regulated by negative feedback involving parathyroid hormone and calcitonin."
+        }
+      ],
+      "explanation": {
+        "overview": "Positive feedback amplifies an initial stimulus, driving the system away from its starting point. It is rare in physiology but essential in processes like childbirth, blood clotting, and the action potential upstroke.",
+        "highYield": "Positive feedback = response amplifies the stimulus. Classic example: oxytocin in labor.",
+        "clinicalCorrelation": "Failure of positive feedback (e.g., inadequate oxytocin release) can lead to prolonged labor requiring intervention."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_005",
+      "difficulty": 1,
+      "question": "What is the approximate percentage of total body water in an average adult male?",
+      "image": null,
+      "options": [
+        {
+          "text": "40%",
+          "isCorrect": false,
+          "explanation": "40% is too low; body water is higher in lean adults."
+        },
+        {
+          "text": "50%",
+          "isCorrect": false,
+          "explanation": "50% is closer to the value in females or older adults, not the average male."
+        },
+        {
+          "text": "60%",
+          "isCorrect": true,
+          "explanation": "Total body water comprises about 60% of body weight in adult males."
+        },
+        {
+          "text": "70%",
+          "isCorrect": false,
+          "explanation": "70% is slightly above the typical range for a healthy adult male."
+        },
+        {
+          "text": "80%",
+          "isCorrect": false,
+          "explanation": "80% is far too high; only newborns have a higher percentage (around 75%)."
+        }
+      ],
+      "explanation": {
+        "overview": "Total body water (TBW) averages 60% of body weight in adult males, with lower values in females (50–55%) due to higher adipose tissue. TBW is divided into intracellular and extracellular compartments.",
+        "highYield": "TBW = 60% of body weight in males. Remember: ICF = 2/3, ECF = 1/3.",
+        "clinicalCorrelation": "Dehydration reduces TBW, while fluid overload increases it. Accurate estimation is critical for fluid resuscitation."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_006",
+      "difficulty": 1,
+      "question": "The intracellular fluid compartment contains approximately what percentage of total body water?",
+      "image": null,
+      "options": [
+        {
+          "text": "1/3",
+          "isCorrect": false,
+          "explanation": "1/3 is the approximate fraction of extracellular fluid, not intracellular."
+        },
+        {
+          "text": "2/3",
+          "isCorrect": true,
+          "explanation": "About two-thirds of total body water is inside cells (intracellular fluid)."
+        },
+        {
+          "text": "1/2",
+          "isCorrect": false,
+          "explanation": "Half would be an equal split, but ICF is larger."
+        },
+        {
+          "text": "3/4",
+          "isCorrect": false,
+          "explanation": "Three-quarters is an overestimate; ICF is closer to 66%."
+        },
+        {
+          "text": "1/4",
+          "isCorrect": false,
+          "explanation": "One-quarter is too low; only a small fraction of water is in the extracellular space."
+        }
+      ],
+      "explanation": {
+        "overview": "Of total body water, approximately two-thirds is intracellular fluid (ICF) and one-third is extracellular fluid (ECF). The ECF further divides into interstitial fluid and plasma.",
+        "highYield": "ICF = 2/3 TBW, ECF = 1/3 TBW. Plasma = 1/4 of ECF.",
+        "clinicalCorrelation": "Edema represents expansion of the interstitial compartment, a subcomponent of ECF."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_007",
+      "difficulty": 2,
+      "question": "Which of the following is NOT part of the extracellular fluid compartment?",
+      "image": null,
+      "options": [
+        {
+          "text": "Interstitial fluid",
+          "isCorrect": false,
+          "explanation": "Interstitial fluid is the largest portion of extracellular fluid."
+        },
+        {
+          "text": "Plasma",
+          "isCorrect": false,
+          "explanation": "Plasma is the intravascular component of extracellular fluid."
+        },
+        {
+          "text": "Lymph",
+          "isCorrect": false,
+          "explanation": "Lymph is considered part of extracellular fluid as it originates from interstitial fluid."
+        },
+        {
+          "text": "Cerebrospinal fluid",
+          "isCorrect": false,
+          "explanation": "CSF is a transcellular fluid, which is a specialized subset of extracellular fluid."
+        },
+        {
+          "text": "Cytosol",
+          "isCorrect": true,
+          "explanation": "Cytosol is the fluid inside cells, belonging to the intracellular compartment, not extracellular."
+        }
+      ],
+      "explanation": {
+        "overview": "Extracellular fluid includes interstitial fluid, plasma, lymph, and transcellular fluids (CSF, synovial fluid, etc.). Cytosol is the intracellular fluid matrix.",
+        "highYield": "Cytosol = intracellular. Everything else (interstitial, plasma, lymph, transcellular) = extracellular.",
+        "clinicalCorrelation": "Sampling plasma allows indirect assessment of interstitial fluid composition, important for diagnosing acid-base and electrolyte disorders."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_008",
+      "difficulty": 2,
+      "question": "What is the primary difference between extracellular and intracellular fluid ion composition?",
+      "image": null,
+      "options": [
+        {
+          "text": "ECF has high K+, ICF has high Na+",
+          "isCorrect": false,
+          "explanation": "This is reversed: ECF is high Na+, ICF is high K+."
+        },
+        {
+          "text": "ECF has high Na+, ICF has high K+",
+          "isCorrect": true,
+          "explanation": "Extracellular fluid is sodium-rich, while intracellular fluid is potassium-rich, maintained by the Na+/K+ ATPase pump."
+        },
+        {
+          "text": "Both have equal Na+ and K+ concentrations",
+          "isCorrect": false,
+          "explanation": "Concentrations are vastly different across the cell membrane."
+        },
+        {
+          "text": "ECF has high protein, ICF has low protein",
+          "isCorrect": false,
+          "explanation": "Protein concentration is higher inside cells; plasma proteins (ECF) are present but intracellular protein content is greater."
+        },
+        {
+          "text": "ICF has high Cl-, ECF has low Cl-",
+          "isCorrect": false,
+          "explanation": "Chloride is the major extracellular anion; intracellular chloride is low."
+        }
+      ],
+      "explanation": {
+        "overview": "The Na+/K+ ATPase pump actively transports Na+ out of cells and K+ into cells, creating high extracellular Na+ and high intracellular K+. This gradient is essential for membrane potentials and secondary active transport.",
+        "highYield": "Na+ outside, K+ inside. The pump maintains this; key for resting membrane potential.",
+        "clinicalCorrelation": "Hyperkalemia (high ECF K+) can cause cardiac arrhythmias because it disrupts the K+ gradient and myocardial excitability."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_009",
+      "difficulty": 2,
+      "question": "A patient is dehydrated. Which compartment loses fluid first and to the greatest extent?",
+      "image": null,
+      "options": [
+        {
+          "text": "Intracellular compartment",
+          "isCorrect": false,
+          "explanation": "Intracellular fluid shifts later; the initial loss comes from the more accessible plasma."
+        },
+        {
+          "text": "Interstitial compartment",
+          "isCorrect": false,
+          "explanation": "Interstitial fluid is lost after plasma but before significant intracellular shifts."
+        },
+        {
+          "text": "Plasma compartment",
+          "isCorrect": true,
+          "explanation": "Plasma volume decreases first because it is the most readily accessible fluid compartment, leading to hemoconcentration."
+        },
+        {
+          "text": "Transcellular compartment",
+          "isCorrect": false,
+          "explanation": "Transcellular fluids (CSF, etc.) are relatively protected and represent a very small volume."
+        },
+        {
+          "text": "All compartments lose equally",
+          "isCorrect": false,
+          "explanation": "Loss is not equal; plasma volume drops first and most significantly in acute dehydration."
+        }
+      ],
+      "explanation": {
+        "overview": "During dehydration, fluid is lost initially from the plasma compartment, then from the interstitium, and eventually from intracellular fluid. Hemoconcentration (increased hematocrit) is an early sign.",
+        "highYield": "Plasma volume shrinks first in dehydration. Look for hemoconcentration.",
+        "clinicalCorrelation": "Orthostatic hypotension and tachycardia are early clinical signs of reduced plasma volume."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_010",
+      "difficulty": 2,
+      "question": "What is the normal osmolarity of extracellular fluid?",
+      "image": null,
+      "options": [
+        {
+          "text": "200 mOsm/L",
+          "isCorrect": false,
+          "explanation": "200 mOsm/L is hypotonic and would cause significant cellular swelling."
+        },
+        {
+          "text": "250 mOsm/L",
+          "isCorrect": false,
+          "explanation": "250 mOsm/L is below the normal range of 275–300 mOsm/L."
+        },
+        {
+          "text": "300 mOsm/L",
+          "isCorrect": true,
+          "explanation": "Normal plasma osmolarity is approximately 300 mOsm/L (range 275–300)."
+        },
+        {
+          "text": "350 mOsm/L",
+          "isCorrect": false,
+          "explanation": "350 mOsm/L would indicate hypertonicity, as seen in severe hypernatremia."
+        },
+        {
+          "text": "400 mOsm/L",
+          "isCorrect": false,
+          "explanation": "400 mOsm/L is markedly elevated and would lead to cellular dehydration."
+        }
+      ],
+      "explanation": {
+        "overview": "Plasma osmolarity is tightly regulated around 285–300 mOsm/L, primarily by water balance. It can be estimated as 2×[Na+] + [glucose]/18 + [BUN]/2.8.",
+        "highYield": "Normal plasma osmolarity ≈ 300 mOsm/L. Na+ is the main determinant.",
+        "clinicalCorrelation": "Serum osmolarity is used to assess hydration status and diagnose hypo-/hypernatremia and toxic alcohol ingestions."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_011",
+      "difficulty": 2,
+      "question": "Which organ is primarily responsible for long-term regulation of blood pressure?",
+      "image": null,
+      "options": [
+        {
+          "text": "Heart",
+          "isCorrect": false,
+          "explanation": "The heart is the pump, but it does not regulate blood pressure long-term; cardiac output is one factor influenced by other systems."
+        },
+        {
+          "text": "Lungs",
+          "isCorrect": false,
+          "explanation": "The lungs influence oxygenation and some vasoactive substances, but not long-term BP control."
+        },
+        {
+          "text": "Liver",
+          "isCorrect": false,
+          "explanation": "The liver produces angiotensinogen but is not the primary regulator; it supports the RAAS."
+        },
+        {
+          "text": "Kidneys",
+          "isCorrect": true,
+          "explanation": "The kidneys regulate blood volume and systemic vascular resistance long-term via the renin-angiotensin-aldosterone system and pressure natriuresis."
+        },
+        {
+          "text": "Adrenal glands",
+          "isCorrect": false,
+          "explanation": "Adrenal glands release aldosterone and catecholamines, but the kidneys are the central long-term controller."
+        }
+      ],
+      "explanation": {
+        "overview": "While the baroreceptor reflex provides moment-to-moment control, the kidneys dominate long-term blood pressure regulation by adjusting sodium and water excretion, thereby controlling blood volume and arterial pressure.",
+        "highYield": "Kidneys = long-term BP control (RAAS, pressure natriuresis). Baroreceptors = short-term.",
+        "clinicalCorrelation": "Chronic hypertension often involves altered renal pressure natriuresis, where a higher pressure is required to excrete sodium."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_012",
+      "difficulty": 1,
+      "question": "What is the set point for normal body temperature in humans?",
+      "image": null,
+      "options": [
+        {
+          "text": "35°C",
+          "isCorrect": false,
+          "explanation": "35°C is considered hypothermia."
+        },
+        {
+          "text": "36°C",
+          "isCorrect": false,
+          "explanation": "36°C is at the lower limit of normal, but the classic set point is 37°C."
+        },
+        {
+          "text": "37°C",
+          "isCorrect": true,
+          "explanation": "The hypothalamic set point is ~37°C (98.6°F)."
+        },
+        {
+          "text": "38°C",
+          "isCorrect": false,
+          "explanation": "38°C is above normal, often indicating a low-grade fever."
+        },
+        {
+          "text": "39°C",
+          "isCorrect": false,
+          "explanation": "39°C is a significant fever."
+        }
+      ],
+      "explanation": {
+        "overview": "Normal core temperature is maintained around 37°C by the thermoregulatory center in the hypothalamus. Deviations trigger heat-loss or heat-conservation mechanisms.",
+        "highYield": "Set point = 37°C. Hypothalamus is the thermostat.",
+        "clinicalCorrelation": "Fever results when pyrogens raise the hypothalamic set point, causing the body to generate and conserve heat."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_013",
+      "difficulty": 2,
+      "question": "During a fever, what happens to the hypothalamic set point?",
+      "image": null,
+      "options": [
+        {
+          "text": "It decreases",
+          "isCorrect": false,
+          "explanation": "A decreased set point would cause hypothermia, not fever."
+        },
+        {
+          "text": "It increases",
+          "isCorrect": true,
+          "explanation": "Pyrogens raise the set point, triggering heat-generating mechanisms (shivering, vasoconstriction) to reach the new, elevated temperature."
+        },
+        {
+          "text": "It remains unchanged",
+          "isCorrect": false,
+          "explanation": "If unchanged, the body would not mount a febrile response."
+        },
+        {
+          "text": "It fluctuates randomly",
+          "isCorrect": false,
+          "explanation": "Set point changes are not random; they are reset by endogenous pyrogens."
+        },
+        {
+          "text": "It is eliminated",
+          "isCorrect": false,
+          "explanation": "The set point never disappears; it's reset to a higher level."
+        }
+      ],
+      "explanation": {
+        "overview": "Fever is a regulated rise in body temperature due to an elevated hypothalamic set point. Prostaglandin E2, induced by pyrogens, mediates the reset.",
+        "highYield": "Fever = increased set point. Body then heats up to match the new set point.",
+        "clinicalCorrelation": "Antipyretics (e.g., NSAIDs) work by inhibiting prostaglandin synthesis, returning the set point toward normal."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_014",
+      "difficulty": 1,
+      "question": "Which of the following is NOT a component of homeostatic control systems?",
+      "image": null,
+      "options": [
+        {
+          "text": "Receptor",
+          "isCorrect": false,
+          "explanation": "Receptors (sensors) are fundamental; they detect changes."
+        },
+        {
+          "text": "Control center",
+          "isCorrect": false,
+          "explanation": "The control center integrates information and directs the response."
+        },
+        {
+          "text": "Effector",
+          "isCorrect": false,
+          "explanation": "Effectors carry out the corrective response."
+        },
+        {
+          "text": "Stimulus",
+          "isCorrect": false,
+          "explanation": "The stimulus is the initial change in the variable, a necessary component."
+        },
+        {
+          "text": "Memory",
+          "isCorrect": true,
+          "explanation": "Homeostatic loops do not require memory; they are reflexive and ongoing."
+        }
+      ],
+      "explanation": {
+        "overview": "The core components of a homeostatic control system are a variable, sensor, control center, and effector. Memory is not a part of these physiological reflexes.",
+        "highYield": "Stimulus, receptor, control center, effector – no memory involved.",
+        "clinicalCorrelation": "Understanding components helps localize pathology: receptor damage (e.g., baroreceptor failure) leads to labile blood pressure."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_015",
+      "difficulty": 2,
+      "question": "The diagram below shows a typical homeostatic control loop. What is represented by component X?",
+      "image": "homeostasis_loop_x.png",
+      "options": [
+        {
+          "text": "Receptor detecting change",
+          "isCorrect": false,
+          "explanation": "The receptor is typically the first element detecting the variable, but X here is downstream."
+        },
+        {
+          "text": "Control center integrating information",
+          "isCorrect": false,
+          "explanation": "The control center is between receptor and effector; X appears to be the effector based on its position."
+        },
+        {
+          "text": "Effector producing response",
+          "isCorrect": true,
+          "explanation": "In the diagram, X receives commands from the control center and acts to alter the variable, which is the effector role."
+        },
+        {
+          "text": "Variable being regulated",
+          "isCorrect": false,
+          "explanation": "The variable is the final part of the loop, not the component receiving the command."
+        },
+        {
+          "text": "Feedback signal",
+          "isCorrect": false,
+          "explanation": "The feedback signal is the information returning to the sensor, not the component performing the action."
+        }
+      ],
+      "explanation": {
+        "overview": "The effector is the component that executes the response directed by the control center to bring the variable back to its set point.",
+        "highYield": "Effector = final execution step in a feedback loop (e.g., sweat glands, muscles).",
+        "clinicalCorrelation": null
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_016",
+      "difficulty": 2,
+      "question": "What happens to insulin secretion when blood glucose levels fall below normal?",
+      "image": null,
+      "options": [
+        {
+          "text": "Insulin secretion increases",
+          "isCorrect": false,
+          "explanation": "Low glucose should suppress insulin to prevent further hypoglycemia."
+        },
+        {
+          "text": "Insulin secretion decreases",
+          "isCorrect": true,
+          "explanation": "Falling glucose reduces the stimulus for beta cells, so insulin secretion drops while glucagon rises to restore normoglycemia."
+        },
+        {
+          "text": "Insulin secretion stops completely",
+          "isCorrect": false,
+          "explanation": "Basal insulin secretion continues even during fasting; it decreases but does not cease entirely."
+        },
+        {
+          "text": "Insulin is converted to glucagon",
+          "isCorrect": false,
+          "explanation": "Insulin and glucagon are different hormones; there is no conversion."
+        },
+        {
+          "text": "No change in insulin secretion",
+          "isCorrect": false,
+          "explanation": "Insulin secretion is directly influenced by glucose levels; it would change."
+        }
+      ],
+      "explanation": {
+        "overview": "Pancreatic beta cells are glucose sensors: when blood glucose falls, insulin secretion is inhibited, and glucagon secretion from alpha cells is stimulated, working together to raise glucose.",
+        "highYield": "Low glucose → low insulin, high glucagon. Negative feedback to raise glucose.",
+        "clinicalCorrelation": "In insulin-treated diabetes, exogenous insulin can cause hypoglycemia if dosage is too high, as the normal negative feedback is overridden."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_017",
+      "difficulty": 1,
+      "question": "Which term describes the maintenance of a stable internal environment?",
+      "image": null,
+      "options": [
+        {
+          "text": "Metabolism",
+          "isCorrect": false,
+          "explanation": "Metabolism is the sum of all chemical reactions, not specifically stability of the internal environment."
+        },
+        {
+          "text": "Homeostasis",
+          "isCorrect": true,
+          "explanation": "Homeostasis, coined by Walter Cannon, is the process of maintaining a stable internal environment."
+        },
+        {
+          "text": "Hormesis",
+          "isCorrect": false,
+          "explanation": "Hormesis refers to a biphasic response to a stressor, not internal stability."
+        },
+        {
+          "text": "Heterostasis",
+          "isCorrect": false,
+          "explanation": "This is not a standard physiological term for internal stability."
+        },
+        {
+          "text": "Allostasis",
+          "isCorrect": false,
+          "explanation": "Allostasis refers to achieving stability through change, often in response to chronic stress, but the classic term is homeostasis."
+        }
+      ],
+      "explanation": {
+        "overview": "Homeostasis is the state of steady internal conditions maintained by living systems. It was named by Walter Cannon in the early 20th century.",
+        "highYield": "Homeostasis = stable internal environment. Walter Cannon coined the term.",
+        "clinicalCorrelation": "Loss of homeostasis is the basis of disease; therapy aims to restore homeostatic balance."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_018",
+      "difficulty": 1,
+      "question": "The concept of homeostasis was first proposed by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Claude Bernard",
+          "isCorrect": true,
+          "explanation": "Claude Bernard introduced the idea of the 'milieu intérieur' (internal environment), the foundation for homeostasis."
+        },
+        {
+          "text": "Walter Cannon",
+          "isCorrect": false,
+          "explanation": "Cannon later coined the term 'homeostasis' but Bernard described the concept first."
+        },
+        {
+          "text": "William Harvey",
+          "isCorrect": false,
+          "explanation": "Harvey described circulation of blood, not the broader internal environment concept."
+        },
+        {
+          "text": "Hippocrates",
+          "isCorrect": false,
+          "explanation": "Hippocrates laid foundations of medicine but did not propose the specific homeostasis concept."
+        },
+        {
+          "text": "Galen",
+          "isCorrect": false,
+          "explanation": "Galen made anatomical and physiological observations but not the internal environment theory."
+        }
+      ],
+      "explanation": {
+        "overview": "Claude Bernard first articulated that a stable internal environment is essential for life. Walter Cannon later named this process homeostasis.",
+        "highYield": "Milieu intérieur – Claude Bernard. Term 'homeostasis' – Walter Cannon.",
+        "clinicalCorrelation": null
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_019",
+      "difficulty": 2,
+      "question": "What is the immediate response to a rise in core body temperature?",
+      "image": null,
+      "options": [
+        {
+          "text": "Shivering",
+          "isCorrect": false,
+          "explanation": "Shivering is a heat-generating response to cold, not to heat."
+        },
+        {
+          "text": "Cutaneous vasoconstriction",
+          "isCorrect": false,
+          "explanation": "Vasoconstriction conserves heat; it is activated in cold, not in a hyperthermic state."
+        },
+        {
+          "text": "Cutaneous vasodilation and sweating",
+          "isCorrect": true,
+          "explanation": "To lose heat, skin arterioles dilate (increasing heat transfer) and sweat glands secrete fluid for evaporative cooling."
+        },
+        {
+          "text": "Increased metabolism",
+          "isCorrect": false,
+          "explanation": "Increased metabolism generates more heat, counterproductive when already overheated."
+        },
+        {
+          "text": "Piloerection",
+          "isCorrect": false,
+          "explanation": "Piloerection (goosebumps) traps insulating air; it is a cold response, not heat."
+        }
+      ],
+      "explanation": {
+        "overview": "Thermoregulation in heat: the preoptic area of the hypothalamus triggers cutaneous vasodilation and sweating. These increase heat loss and lower core temperature.",
+        "highYield": "Heat → vasodilation + sweating. Cold → vasoconstriction + shivering.",
+        "clinicalCorrelation": "Heat stroke occurs when thermoregulatory mechanisms fail, leading to dangerously high core temperatures and CNS dysfunction."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_020",
+      "difficulty": 3,
+      "question": "Which of the following best describes feed-forward regulation?",
+      "image": null,
+      "options": [
+        {
+          "text": "A response that occurs before the actual change",
+          "isCorrect": true,
+          "explanation": "Feed-forward control anticipates a change and initiates a response in advance, minimizing deviation."
+        },
+        {
+          "text": "A response that amplifies the initial stimulus",
+          "isCorrect": false,
+          "explanation": "Amplification is positive feedback, not feed-forward."
+        },
+        {
+          "text": "A response that corrects a deviation",
+          "isCorrect": false,
+          "explanation": "Correction of deviation is negative feedback."
+        },
+        {
+          "text": "A response that occurs only during exercise",
+          "isCorrect": false,
+          "explanation": "Feed-forward is not limited to exercise; examples include salivation before eating."
+        },
+        {
+          "text": "A response mediated entirely by hormones",
+          "isCorrect": false,
+          "explanation": "Feed-forward regulation can involve neural or hormonal signals."
+        }
+      ],
+      "explanation": {
+        "overview": "Feed-forward regulation improves homeostatic efficiency by predicting disruptions and initiating responses before the variable changes (e.g., increased heart rate before exercise onset).",
+        "highYield": "Feed-forward = anticipatory response. Does not wait for the error.",
+        "clinicalCorrelation": "Impairment of feed-forward mechanisms (e.g., in autonomic neuropathy) can cause orthostatic intolerance."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_021",
+      "difficulty": 3,
+      "question": "The diagram illustrates the renin-angiotensin-aldosterone system (RAAS). Based on the figure, which organ releases renin in response to low blood pressure?",
+      "image": "raas_pathway_diagram.png",
+      "options": [
+        {
+          "text": "Liver",
+          "isCorrect": false,
+          "explanation": "The liver produces angiotensinogen, not renin."
+        },
+        {
+          "text": "Kidney",
+          "isCorrect": true,
+          "explanation": "Juxtaglomerular cells in the kidney release renin when perfusion pressure drops or sodium delivery to the macula densa decreases."
+        },
+        {
+          "text": "Adrenal gland",
+          "isCorrect": false,
+          "explanation": "The adrenal gland secretes aldosterone, not renin."
+        },
+        {
+          "text": "Lungs",
+          "isCorrect": false,
+          "explanation": "The lungs contain angiotensin-converting enzyme (ACE), not renin."
+        },
+        {
+          "text": "Heart",
+          "isCorrect": false,
+          "explanation": "The heart releases ANP and BNP, not renin."
+        }
+      ],
+      "explanation": {
+        "overview": "Renin is released by the juxtaglomerular apparatus of the kidney in response to low renal perfusion, sympathetic activation, or low sodium delivery. It cleaves angiotensinogen to angiotensin I.",
+        "highYield": "Renin = kidney (JG cells). ACE = lungs. Aldosterone = adrenal cortex.",
+        "clinicalCorrelation": "Renin-secreting tumors (juxtaglomerular cell tumors) cause secondary hypertension with elevated renin levels."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_022",
+      "difficulty": 2,
+      "question": "What is the primary function of antidiuretic hormone (ADH)?",
+      "image": null,
+      "options": [
+        {
+          "text": "Increase blood glucose",
+          "isCorrect": false,
+          "explanation": "ADH (vasopressin) does not significantly affect glucose; glucagon and cortisol do."
+        },
+        {
+          "text": "Increase water reabsorption in kidneys",
+          "isCorrect": true,
+          "explanation": "ADH inserts aquaporin-2 channels in collecting duct cells, increasing water permeability and reabsorption, thus concentrating urine."
+        },
+        {
+          "text": "Stimulate red blood cell production",
+          "isCorrect": false,
+          "explanation": "Erythropoietin (EPO) stimulates RBC production, not ADH."
+        },
+        {
+          "text": "Promote calcium absorption",
+          "isCorrect": false,
+          "explanation": "Parathyroid hormone and vitamin D regulate calcium, not ADH."
+        },
+        {
+          "text": "Increase heart rate",
+          "isCorrect": false,
+          "explanation": "ADH can cause vasoconstriction at high levels but its primary role is water balance, not chronotropy."
+        }
+      ],
+      "explanation": {
+        "overview": "ADH, synthesized in the hypothalamus and released from the posterior pituitary, acts on V2 receptors in the kidney collecting ducts to promote water reabsorption, regulating plasma osmolarity and volume.",
+        "highYield": "ADH = water retention. Acts via aquaporins in collecting duct.",
+        "clinicalCorrelation": "Diabetes insipidus results from ADH deficiency or resistance, leading to polyuria and polydipsia."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_023",
+      "difficulty": 3,
+      "question": "A patient has a condition that destroys ADH-producing neurons. What would you expect to observe?",
+      "image": null,
+      "options": [
+        {
+          "text": "Decreased urine output",
+          "isCorrect": false,
+          "explanation": "Loss of ADH removes water reabsorption; urine output would increase, not decrease."
+        },
+        {
+          "text": "Increased urine output (diabetes insipidus)",
+          "isCorrect": true,
+          "explanation": "Destruction of ADH neurons causes central diabetes insipidus, characterized by polyuria and dilute urine."
+        },
+        {
+          "text": "Increased blood pressure",
+          "isCorrect": false,
+          "explanation": "ADH deficiency typically does not raise BP; volume loss may lower it."
+        },
+        {
+          "text": "Hyponatremia",
+          "isCorrect": false,
+          "explanation": "With water loss, sodium concentration often rises (hypernatremia), not falls."
+        },
+        {
+          "text": "Hyperkalemia",
+          "isCorrect": false,
+          "explanation": "ADH does not directly regulate potassium; hyperkalemia is associated with aldosterone deficiency."
+        }
+      ],
+      "explanation": {
+        "overview": "Central diabetes insipidus results from lack of ADH, leading to inability to concentrate urine. Polyuria (large dilute urine output) and compensatory polydipsia ensue.",
+        "highYield": "No ADH → diabetes insipidus → polyuria + hypernatremia.",
+        "clinicalCorrelation": "Desmopressin (a synthetic ADH analog) is used to treat central diabetes insipidus."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_024",
+      "difficulty": 2,
+      "question": "Which of the following is an example of a circadian rhythm in human physiology?",
+      "image": null,
+      "options": [
+        {
+          "text": "Menstrual cycle",
+          "isCorrect": false,
+          "explanation": "The menstrual cycle is an infradian rhythm (~28 days), not circadian."
+        },
+        {
+          "text": "Cortisol secretion pattern",
+          "isCorrect": true,
+          "explanation": "Cortisol peaks in the early morning and reaches a nadir around midnight, following a 24-hour circadian rhythm."
+        },
+        {
+          "text": "Blood glucose response to meals",
+          "isCorrect": false,
+          "explanation": "Postprandial glucose changes are driven by meal timing, not an endogenous circadian oscillator."
+        },
+        {
+          "text": "Response to exercise",
+          "isCorrect": false,
+          "explanation": "Exercise responses are acute and do not inherently follow a 24-hour rhythm."
+        },
+        {
+          "text": "Blood pressure response to standing",
+          "isCorrect": false,
+          "explanation": "Orthostatic BP changes are acute baroreflex responses, not circadian."
+        }
+      ],
+      "explanation": {
+        "overview": "Circadian rhythms are endogenously generated ~24-hour cycles (regulated by the suprachiasmatic nucleus) that influence hormones like cortisol, melatonin, and body temperature.",
+        "highYield": "Circadian = ~24-hour rhythm. Cortisol peaks in AM, melatonin at night.",
+        "clinicalCorrelation": "Disrupted circadian rhythms (shift work, jet lag) are linked to metabolic syndrome and cardiovascular disease."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_025",
+      "difficulty": 2,
+      "question": "What happens to plasma osmolarity when a person drinks a large volume of pure water?",
+      "image": null,
+      "options": [
+        {
+          "text": "Increases",
+          "isCorrect": false,
+          "explanation": "Pure water dilutes plasma, so osmolarity decreases."
+        },
+        {
+          "text": "Decreases",
+          "isCorrect": true,
+          "explanation": "Water loading lowers plasma osmolarity, suppressing ADH and promoting water diuresis to restore normal osmolarity."
+        },
+        {
+          "text": "Remains unchanged",
+          "isCorrect": false,
+          "explanation": "It changes; the kidneys adjust but not instantaneously."
+        },
+        {
+          "text": "Oscillates",
+          "isCorrect": false,
+          "explanation": "There is a predictable decrease, not oscillation."
+        },
+        {
+          "text": "Increases then decreases",
+          "isCorrect": false,
+          "explanation": "Osmolarity would initially drop, not rise."
+        }
+      ],
+      "explanation": {
+        "overview": "Ingestion of large amounts of water acutely reduces plasma osmolarity, which inhibits hypothalamic osmoreceptors, decreasing ADH secretion and resulting in water diuresis.",
+        "highYield": "Water loading → ↓ plasma osmolarity → ↓ ADH → dilute urine.",
+        "clinicalCorrelation": "In psychogenic polydipsia, excessive water intake can cause hyponatremia and cerebral edema due to very low osmolarity."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_026",
+      "difficulty": 2,
+      "question": "Osmoreceptors that detect changes in plasma osmolarity are located in the:",
+      "image": null,
+      "options": [
+        {
+          "text": "Kidney",
+          "isCorrect": false,
+          "explanation": "The kidney has the macula densa sensing NaCl, but osmoreceptors for osmolarity are in the hypothalamus."
+        },
+        {
+          "text": "Hypothalamus",
+          "isCorrect": true,
+          "explanation": "Osmoreceptors in the organum vasculosum of the lamina terminalis (OVLT) and surrounding hypothalamus detect plasma osmolarity and regulate ADH and thirst."
+        },
+        {
+          "text": "Pituitary gland",
+          "isCorrect": false,
+          "explanation": "The pituitary stores and releases ADH, but the sensors are upstream in the hypothalamus."
+        },
+        {
+          "text": "Carotid bodies",
+          "isCorrect": false,
+          "explanation": "Carotid bodies are peripheral chemoreceptors for O2, CO2, and pH, not osmolarity."
+        },
+        {
+          "text": "Aortic arch",
+          "isCorrect": false,
+          "explanation": "The aortic arch contains baroreceptors for pressure, not osmoreceptors."
+        }
+      ],
+      "explanation": {
+        "overview": "Osmoreceptors are specialized neurons in the anterior hypothalamus that shrink or swell in response to changes in extracellular osmolarity, triggering ADH release and thirst.",
+        "highYield": "Osmoreceptors = hypothalamus (OVLT). Sense Na+ and osmolarity.",
+        "clinicalCorrelation": "Lesions near these osmoreceptors can cause adipsic diabetes insipidus with hypernatremia due to lack of thirst and ADH."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_027",
+      "difficulty": 2,
+      "question": "Which hormone is primarily responsible for sodium reabsorption in the kidneys?",
+      "image": null,
+      "options": [
+        {
+          "text": "ADH",
+          "isCorrect": false,
+          "explanation": "ADH promotes water reabsorption, not sodium reabsorption directly."
+        },
+        {
+          "text": "Aldosterone",
+          "isCorrect": true,
+          "explanation": "Aldosterone increases sodium reabsorption (and potassium secretion) in the distal tubule and collecting duct."
+        },
+        {
+          "text": "Atrial natriuretic peptide",
+          "isCorrect": false,
+          "explanation": "ANP promotes sodium excretion (natriuresis), not reabsorption."
+        },
+        {
+          "text": "Renin",
+          "isCorrect": false,
+          "explanation": "Renin is an enzyme that initiates angiotensin production, not directly reabsorbing sodium."
+        },
+        {
+          "text": "Angiotensin II",
+          "isCorrect": false,
+          "explanation": "Angiotensin II stimulates aldosterone secretion and directly enhances proximal sodium reabsorption, but aldosterone is the primary hormone for sodium reabsorption."
+        }
+      ],
+      "explanation": {
+        "overview": "Aldosterone, a mineralocorticoid from the adrenal cortex, binds to mineralocorticoid receptors in the distal nephron, upregulating ENaC and Na+/K+ ATPase to increase sodium reabsorption.",
+        "highYield": "Aldosterone = sodium reabsorption, potassium secretion. 'Salt-retaining hormone'.",
+        "clinicalCorrelation": "Hyperaldosteronism causes hypertension and hypokalemia due to excessive sodium retention and potassium loss."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_028",
+      "difficulty": 1,
+      "question": "The diagram shows a typical neuron. What structure is labeled Y?",
+      "image": "neuron_diagram_y.png",
+      "options": [
+        {
+          "text": "Dendrites",
+          "isCorrect": false,
+          "explanation": "Dendrites are branched projections that receive signals, typically not the long process labeled Y."
+        },
+        {
+          "text": "Axon",
+          "isCorrect": true,
+          "explanation": "The axon is the long, singular extension that conducts action potentials away from the cell body toward synaptic terminals."
+        },
+        {
+          "text": "Cell body",
+          "isCorrect": false,
+          "explanation": "The cell body (soma) contains the nucleus, not the elongated structure."
+        },
+        {
+          "text": "Myelin sheath",
+          "isCorrect": false,
+          "explanation": "Myelin sheath covers the axon but is a separate structure; Y points to the main process."
+        },
+        {
+          "text": "Synaptic terminal",
+          "isCorrect": false,
+          "explanation": "Synaptic terminals are at the distal end of the axon, not the entire length."
+        }
+      ],
+      "explanation": {
+        "overview": "A neuron consists of dendrites (input), cell body (integration), and axon (output). The axon transmits electrical signals over long distances.",
+        "highYield": "Axon = conducting fiber from cell body. Dendrites = receiving fibers.",
+        "clinicalCorrelation": "Demyelinating diseases (e.g., multiple sclerosis) damage the myelin sheath around axons, slowing conduction."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_029",
+      "difficulty": 1,
+      "question": "What is the normal range for arterial blood pH?",
+      "image": null,
+      "options": [
+        {
+          "text": "7.25-7.35",
+          "isCorrect": false,
+          "explanation": "7.25-7.35 would indicate significant acidosis."
+        },
+        {
+          "text": "7.35-7.45",
+          "isCorrect": true,
+          "explanation": "Normal arterial pH is tightly maintained between 7.35 and 7.45."
+        },
+        {
+          "text": "7.45-7.55",
+          "isCorrect": false,
+          "explanation": "7.45-7.55 is alkalotic."
+        },
+        {
+          "text": "7.15-7.25",
+          "isCorrect": false,
+          "explanation": "This range is severe acidosis, incompatible with normal cellular function."
+        },
+        {
+          "text": "7.55-7.65",
+          "isCorrect": false,
+          "explanation": "Marked alkalosis; rare and dangerous."
+        }
+      ],
+      "explanation": {
+        "overview": "Arterial pH is maintained between 7.35 and 7.45 by chemical buffers, respiratory CO2 elimination, and renal H+/HCO3- regulation.",
+        "highYield": "Normal pH = 7.35–7.45. <7.35 = acidosis, >7.45 = alkalosis.",
+        "clinicalCorrelation": "Blood gas analysis is used to diagnose acid-base disorders: metabolic vs. respiratory, and compensation status."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_030",
+      "difficulty": 1,
+      "question": "Which of the following would most likely trigger a homeostatic response?",
+      "image": null,
+      "options": [
+        {
+          "text": "Deviation of a regulated variable from set point",
+          "isCorrect": true,
+          "explanation": "A homeostatic response is initiated precisely when a variable deviates outside its normal range, activating corrective mechanisms."
+        },
+        {
+          "text": "Constant internal conditions",
+          "isCorrect": false,
+          "explanation": "If conditions are constant and within normal limits, no response is needed."
+        },
+        {
+          "text": "Absence of external stimuli",
+          "isCorrect": false,
+          "explanation": "Lack of stimuli doesn't necessitate a corrective response."
+        },
+        {
+          "text": "Saturation of all receptors",
+          "isCorrect": false,
+          "explanation": "Saturation is an abnormal state, but the trigger for homeostasis is deviation, not saturation."
+        },
+        {
+          "text": "Maximum effector output",
+          "isCorrect": false,
+          "explanation": "Maximum output is a result of a strong stimulus, but the trigger is the deviation itself."
+        }
+      ],
+      "explanation": {
+        "overview": "Homeostatic systems constantly monitor variables; a response is triggered when a variable moves beyond its acceptable range (error signal).",
+        "highYield": "Trigger = error (deviation from set point). No error, no response.",
+        "clinicalCorrelation": "Failure to detect deviation (e.g., baroreceptor denervation) results in uncontrolled blood pressure fluctuations."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_031",
+      "difficulty": 2,
+      "question": "What is the role of buffers in maintaining acid-base homeostasis?",
+      "image": null,
+      "options": [
+        {
+          "text": "They eliminate acids from the body",
+          "isCorrect": false,
+          "explanation": "Buffers temporarily neutralize acids but do not eliminate them; lungs/kidneys do the elimination."
+        },
+        {
+          "text": "They convert strong acids to weak acids",
+          "isCorrect": true,
+          "explanation": "Buffers like bicarbonate bind H+ from strong acids, forming weaker acids and minimizing pH changes."
+        },
+        {
+          "text": "They increase acid production",
+          "isCorrect": false,
+          "explanation": "Buffers do not produce acid; they mitigate acid loads."
+        },
+        {
+          "text": "They neutralize all acids completely",
+          "isCorrect": false,
+          "explanation": "Buffers have limits; they cannot completely neutralize a large acid load without respiratory/renal help."
+        },
+        {
+          "text": "They prevent any pH change",
+          "isCorrect": false,
+          "explanation": "Buffers minimize, not prevent, pH change; they reduce the magnitude of shift."
+        }
+      ],
+      "explanation": {
+        "overview": "Chemical buffers (bicarbonate, phosphate, proteins) provide the first line of defense against pH shifts by binding free H+ or releasing H+ as needed, acting within seconds.",
+        "highYield": "Buffers = immediate, temporary pH stabilization. Convert strong acid to weak acid.",
+        "clinicalCorrelation": "Bicarbonate is the major extracellular buffer; its deficiency worsens metabolic acidosis."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_032",
+      "difficulty": 3,
+      "question": "The bicarbonate buffer system primarily regulates pH by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Excreting CO2 via lungs",
+          "isCorrect": true,
+          "explanation": "The reaction H+ + HCO3- ↔ H2CO3 ↔ CO2 + H2O allows CO2 to be exhaled, effectively removing acid equivalents."
+        },
+        {
+          "text": "Excreting HCO3- via kidneys",
+          "isCorrect": false,
+          "explanation": "Kidneys regulate HCO3- levels but the primary rapid regulation is via CO2 excretion by lungs."
+        },
+        {
+          "text": "Binding H+ to plasma proteins",
+          "isCorrect": false,
+          "explanation": "Plasma proteins do buffer, but the bicarbonate system's unique feature is the volatile CO2 elimination."
+        },
+        {
+          "text": "Converting HCO3- to CO2",
+          "isCorrect": false,
+          "explanation": "This describes one direction; the key regulatory step is excreting CO2."
+        },
+        {
+          "text": "Releasing H+ from hemoglobin",
+          "isCorrect": false,
+          "explanation": "Hemoglobin buffers H+ but does not eliminate it; the respiratory system eliminates CO2."
+        }
+      ],
+      "explanation": {
+        "overview": "The bicarbonate system is special because its acid component (CO2) is volatile and can be rapidly removed by the lungs, allowing continuous buffering of metabolic acids.",
+        "highYield": "Bicarbonate system: H+ + HCO3- → CO2 (exhaled). Lungs regulate CO2, kidneys regulate HCO3-.",
+        "clinicalCorrelation": "Respiratory acidosis occurs when CO2 retention raises H+; respiratory alkalosis from hyperventilation lowers CO2 and H+."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_033",
+      "difficulty": 3,
+      "question": "During respiratory acidosis, what compensatory mechanism does the kidney employ?",
+      "image": null,
+      "options": [
+        {
+          "text": "Decreased H+ secretion",
+          "isCorrect": false,
+          "explanation": "Acidosis requires increased H+ secretion to remove acid."
+        },
+        {
+          "text": "Increased HCO3- reabsorption",
+          "isCorrect": true,
+          "explanation": "The kidneys compensate by excreting more H+ and reabsorbing/producing more HCO3-, raising plasma bicarbonate to offset the elevated CO2."
+        },
+        {
+          "text": "Decreased NH4+ excretion",
+          "isCorrect": false,
+          "explanation": "Ammonium excretion increases to buffer excreted H+ in acidosis."
+        },
+        {
+          "text": "Increased HCO3- excretion",
+          "isCorrect": false,
+          "explanation": "Excreting HCO3- would worsen acidosis; compensation retains HCO3-."
+        },
+        {
+          "text": "Decreased H+ excretion",
+          "isCorrect": false,
+          "explanation": "Decreased H+ excretion would aggravate acidosis."
+        }
+      ],
+      "explanation": {
+        "overview": "In respiratory acidosis (elevated PCO2), renal compensation involves increased H+ secretion and HCO3- reabsorption/generation, leading to elevated plasma HCO3- and partial pH correction over days.",
+        "highYield": "Respiratory acidosis → kidney retains HCO3-, excretes H+.",
+        "clinicalCorrelation": "Chronic respiratory acidosis (e.g., COPD) shows elevated HCO3- as metabolic compensation; acute acidosis shows minimal HCO3- change."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_034",
+      "difficulty": 2,
+      "question": "What is the primary stimulus for aldosterone secretion?",
+      "image": null,
+      "options": [
+        {
+          "text": "High blood pressure",
+          "isCorrect": false,
+          "explanation": "High blood pressure suppresses aldosterone via ANP and reduced renin."
+        },
+        {
+          "text": "Low plasma K+",
+          "isCorrect": false,
+          "explanation": "Low K+ inhibits aldosterone; high K+ stimulates it."
+        },
+        {
+          "text": "High plasma Na+",
+          "isCorrect": false,
+          "explanation": "High Na+ suppresses aldosterone; low Na+ delivery to macula densa stimulates renin."
+        },
+        {
+          "text": "Angiotensin II and high K+",
+          "isCorrect": true,
+          "explanation": "Aldosterone release is primarily driven by angiotensin II (via RAAS) and elevated extracellular potassium."
+        },
+        {
+          "text": "Low plasma osmolarity",
+          "isCorrect": false,
+          "explanation": "Osmoreceptors influence ADH, not aldosterone directly."
+        }
+      ],
+      "explanation": {
+        "overview": "Aldosterone secretion is regulated mainly by angiotensin II (activated by low BP/volume) and hyperkalemia. ACTH also has a minor role.",
+        "highYield": "Aldosterone stimuli: Angiotensin II + high K+. Low Na+ stimulates indirectly via renin.",
+        "clinicalCorrelation": "Primary hyperaldosteronism (Conn's syndrome) shows hypertension, hypokalemia, and suppressed renin."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_035",
+      "difficulty": 3,
+      "question": "Which of the following represents a gain in a control system?",
+      "image": null,
+      "options": [
+        {
+          "text": "The ratio of correction to error",
+          "isCorrect": true,
+          "explanation": "Gain = correction/error. A high gain system strongly corrects any remaining error, providing tight regulation."
+        },
+        {
+          "text": "The time to reach set point",
+          "isCorrect": false,
+          "explanation": "Time to reach set point is a speed parameter, not gain."
+        },
+        {
+          "text": "The magnitude of stimulus",
+          "isCorrect": false,
+          "explanation": "Stimulus magnitude is the input, not the gain."
+        },
+        {
+          "text": "The number of receptors activated",
+          "isCorrect": false,
+          "explanation": "Receptor activation is a sensory aspect, not the definition of gain."
+        },
+        {
+          "text": "The strength of effector response",
+          "isCorrect": false,
+          "explanation": "Effector strength contributes to correction, but gain is the ratio of correction to residual error."
+        }
+      ],
+      "explanation": {
+        "overview": "Gain quantifies the effectiveness of a negative feedback system: a gain of G means the error after feedback is 1/(1+G) times the disturbance. Biological systems often have high gains.",
+        "highYield": "Gain = correction / remaining error. Higher gain = tighter control.",
+        "clinicalCorrelation": "Baroreflex gain can be measured; reduced gain is associated with autonomic dysfunction and cardiovascular risk."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_036",
+      "difficulty": 3,
+      "question": "What would happen to a negative feedback system with a gain of 5?",
+      "image": null,
+      "options": [
+        {
+          "text": "Error is reduced to 1/5 of what it would be without feedback",
+          "isCorrect": true,
+          "explanation": "With gain 5, the system corrects 5/6 of the disturbance, leaving 1/6 of the original error. Without feedback the full error remains; with feedback it's drastically reduced."
+        },
+        {
+          "text": "Error is increased 5-fold",
+          "isCorrect": false,
+          "explanation": "Negative feedback reduces error, not increases."
+        },
+        {
+          "text": "System oscillates uncontrollably",
+          "isCorrect": false,
+          "explanation": "A gain of 5 is stable; oscillation would occur with high phase shifts or excessive gain."
+        },
+        {
+          "text": "Response is delayed 5 seconds",
+          "isCorrect": false,
+          "explanation": "Gain does not directly set a time delay."
+        },
+        {
+          "text": "System becomes positive feedback",
+          "isCorrect": false,
+          "explanation": "Gain magnitude does not flip the sign of feedback."
+        }
+      ],
+      "explanation": {
+        "overview": "A gain of 5 means that for a given disturbance, the feedback response reduces the error to 1/(1+5) = 1/6 of the uncontrolled value. High gain = precise homeostasis.",
+        "highYield": "Error with feedback = error without / (1+gain). Gain 5 → error reduced to ~17%.",
+        "clinicalCorrelation": null
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_037",
+      "difficulty": 2,
+      "question": "The diagram illustrates the relationship between blood pressure and baroreceptor firing rate. What does this curve demonstrate?",
+      "image": "baroreceptor_response_curve.png",
+      "options": [
+        {
+          "text": "Linear relationship",
+          "isCorrect": false,
+          "explanation": "Baroreceptors are not linear; they have thresholds and saturation."
+        },
+        {
+          "text": "Inverse relationship",
+          "isCorrect": false,
+          "explanation": "Firing rate increases with pressure, not decreases."
+        },
+        {
+          "text": "Sigmoidal relationship with threshold and saturation",
+          "isCorrect": true,
+          "explanation": "Baroreceptor firing shows a sigmoid curve: minimal firing at low pressure, steep increase in the normal range, and maximum firing at high pressure."
+        },
+        {
+          "text": "Exponential relationship",
+          "isCorrect": false,
+          "explanation": "While it may steepen, it plateaus at saturation, making it sigmoidal, not purely exponential."
+        },
+        {
+          "text": "No relationship",
+          "isCorrect": false,
+          "explanation": "There is a clear relationship: increased pressure increases firing."
+        }
+      ],
+      "explanation": {
+        "overview": "Arterial baroreceptors exhibit a sigmoidal response curve: low sensitivity at extremes, maximal sensitivity around the normal operating point, allowing fine-tuning of blood pressure.",
+        "highYield": "Baroreceptor curve: sigmoidal. Most sensitive at normal BP.",
+        "clinicalCorrelation": "Baroreceptor resetting in chronic hypertension shifts the curve to operate at higher pressures, maintaining elevated BP."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_038",
+      "difficulty": 2,
+      "question": "A person consumes a large salty meal. What immediate homeostatic response occurs?",
+      "image": null,
+      "options": [
+        {
+          "text": "Increased ADH and thirst",
+          "isCorrect": true,
+          "explanation": "The salt load increases plasma osmolarity, stimulating osmoreceptors to trigger ADH release and thirst to conserve water and dilute the plasma."
+        },
+        {
+          "text": "Decreased ADH",
+          "isCorrect": false,
+          "explanation": "High osmolarity increases ADH, not decreases."
+        },
+        {
+          "text": "Decreased thirst",
+          "isCorrect": false,
+          "explanation": "Thirst would increase, not decrease, to encourage water intake."
+        },
+        {
+          "text": "Increased urine output",
+          "isCorrect": false,
+          "explanation": "Initially, ADH-mediated water retention would decrease urine output; later, volume expansion may increase it."
+        },
+        {
+          "text": "Decreased Na+ reabsorption",
+          "isCorrect": false,
+          "explanation": "The kidney will excrete the excess sodium, but the immediate response is water conservation, not sodium handling."
+        }
+      ],
+      "explanation": {
+        "overview": "High sodium intake raises ECF osmolarity, detected by hypothalamic osmoreceptors. This triggers ADH release (water retention) and thirst, diluting the sodium and restoring osmolarity.",
+        "highYield": "Salt load → ↑ osmolarity → ↑ ADH + thirst → water conservation.",
+        "clinicalCorrelation": "Chronic high salt intake is linked to hypertension, partly due to sustained volume expansion."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_039",
+      "difficulty": 2,
+      "question": "Which of the following describes a feed-forward mechanism during exercise?",
+      "image": null,
+      "options": [
+        {
+          "text": "Increased heart rate before muscle activity begins",
+          "isCorrect": true,
+          "explanation": "Heart rate rises at the onset of exercise (or even anticipation) due to central command, before metabolic byproducts signal a need for increased cardiac output."
+        },
+        {
+          "text": "Increased muscle CO2 during exercise",
+          "isCorrect": false,
+          "explanation": "This is a consequence of exercise, not a feed-forward anticipatory signal."
+        },
+        {
+          "text": "Decreased blood oxygen during exertion",
+          "isCorrect": false,
+          "explanation": "This is a feedback signal (chemoreceptor) responding to actual changes."
+        },
+        {
+          "text": "Increased lactic acid after exercise",
+          "isCorrect": false,
+          "explanation": "Lactic acid is a metabolic product; its accumulation is a result, not a predictor."
+        },
+        {
+          "text": "Muscle fatigue after prolonged work",
+          "isCorrect": false,
+          "explanation": "Fatigue is a later outcome, not an anticipatory mechanism."
+        }
+      ],
+      "explanation": {
+        "overview": "Feed-forward control in exercise involves the 'central command' from the motor cortex and higher centers, which simultaneously activate motor pathways and cardiovascular/respiratory centers, increasing heart rate and ventilation before chemical changes occur.",
+        "highYield": "Exercise feed-forward: HR and ventilation increase before metabolic demand changes. Central command.",
+        "clinicalCorrelation": "In heart failure, the feed-forward vasodilation in active muscle is blunted, contributing to exercise intolerance."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_040",
+      "difficulty": 1,
+      "question": "In the diagram of a typical feedback loop, which component compares actual value to set point?",
+      "image": "feedback_loop_integrator.png",
+      "options": [
+        {
+          "text": "Sensor",
+          "isCorrect": false,
+          "explanation": "The sensor measures the variable but does not compare; it transmits the value."
+        },
+        {
+          "text": "Integrator/control center",
+          "isCorrect": true,
+          "explanation": "The control center receives input from sensors, compares it to the set point, and determines the error signal and effector activation."
+        },
+        {
+          "text": "Effector",
+          "isCorrect": false,
+          "explanation": "The effector carries out the response, not the comparison."
+        },
+        {
+          "text": "Variable",
+          "isCorrect": false,
+          "explanation": "The variable is what's being regulated, not the comparator."
+        },
+        {
+          "text": "Feedback signal",
+          "isCorrect": false,
+          "explanation": "The feedback signal is the information sent back, not the site of comparison."
+        }
+      ],
+      "explanation": {
+        "overview": "The control center (integrator) is the 'decision-maker' in a feedback loop. It computes the difference between the sensed value and the set point, then orchestrates the appropriate response.",
+        "highYield": "Control center = comparator. Sensors provide data, effectors act.",
+        "clinicalCorrelation": null
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_041",
+      "difficulty": 2,
+      "question": "What is the function of atrial natriuretic peptide (ANP)?",
+      "image": null,
+      "options": [
+        {
+          "text": "Increase blood pressure",
+          "isCorrect": false,
+          "explanation": "ANP lowers blood pressure by promoting vasodilation and sodium/water loss."
+        },
+        {
+          "text": "Promote Na+ and water excretion",
+          "isCorrect": true,
+          "explanation": "ANP is released when atrial stretch increases, and it promotes natriuresis and diuresis to reduce blood volume."
+        },
+        {
+          "text": "Stimulate aldosterone release",
+          "isCorrect": false,
+          "explanation": "ANP inhibits aldosterone release, opposing the RAAS."
+        },
+        {
+          "text": "Increase thirst",
+          "isCorrect": false,
+          "explanation": "ANP does not stimulate thirst; ADH-related systems do."
+        },
+        {
+          "text": "Promote ADH release",
+          "isCorrect": false,
+          "explanation": "ANP antagonizes ADH effects, promoting water loss."
+        }
+      ],
+      "explanation": {
+        "overview": "Atrial natriuretic peptide (ANP) is a hormone released by cardiac atria in response to volume expansion. It increases GFR, inhibits sodium reabsorption, and suppresses renin and aldosterone, reducing blood pressure and volume.",
+        "highYield": "ANP = 'anti-RAAS'. ↑ sodium/water excretion, ↓ BP.",
+        "clinicalCorrelation": "BNP (brain natriuretic peptide) is used as a biomarker for heart failure, reflecting ventricular stretch."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_042",
+      "difficulty": 2,
+      "question": "Which statement about positive feedback is TRUE?",
+      "image": null,
+      "options": [
+        {
+          "text": "It maintains stability",
+          "isCorrect": false,
+          "explanation": "Positive feedback drives the system away from stability, causing abrupt change."
+        },
+        {
+          "text": "It opposes the initial stimulus",
+          "isCorrect": false,
+          "explanation": "Opposition is negative feedback; positive feedback amplifies the stimulus."
+        },
+        {
+          "text": "It amplifies the initial stimulus",
+          "isCorrect": true,
+          "explanation": "Positive feedback increases the magnitude of the stimulus, leading to a rapid, often explosive response."
+        },
+        {
+          "text": "It is common in most physiological systems",
+          "isCorrect": false,
+          "explanation": "Negative feedback is far more common; positive feedback occurs only in specific instances."
+        },
+        {
+          "text": "It always restores homeostasis",
+          "isCorrect": false,
+          "explanation": "Positive feedback disrupts homeostasis temporarily; restoration requires termination of the loop."
+        }
+      ],
+      "explanation": {
+        "overview": "Positive feedback loops amplify deviations, creating rapid changes. They are crucial in processes that must go to completion quickly, like childbirth, blood clotting, and action potentials.",
+        "highYield": "Positive feedback = amplification. Rare but important for all-or-none events.",
+        "clinicalCorrelation": "Uncontrolled positive feedback can be dangerous, e.g., disseminated intravascular coagulation (unchecked clotting cascade)."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_043",
+      "difficulty": 2,
+      "question": "During hemorrhagic shock, what happens to sympathetic nervous system activity?",
+      "image": null,
+      "options": [
+        {
+          "text": "Decreases",
+          "isCorrect": false,
+          "explanation": "Blood loss triggers a powerful sympathetic response to maintain perfusion, not a decrease."
+        },
+        {
+          "text": "Increases",
+          "isCorrect": true,
+          "explanation": "Hemorrhage reduces blood pressure and volume, unloading baroreceptors and activating a massive sympathetic outflow to increase heart rate, contractility, and vasoconstriction."
+        },
+        {
+          "text": "Remains unchanged",
+          "isCorrect": false,
+          "explanation": "The system would certainly respond; it's not unchanged."
+        },
+        {
+          "text": "Oscillates",
+          "isCorrect": false,
+          "explanation": "The response is sustained sympathetic activation, not oscillation."
+        },
+        {
+          "text": "Is eliminated",
+          "isCorrect": false,
+          "explanation": "Sympathetic activity becomes maximal, not eliminated."
+        }
+      ],
+      "explanation": {
+        "overview": "Hemorrhage leads to decreased venous return and arterial pressure, activating baroreflex-mediated sympathetic activation and parasympathetic withdrawal to preserve cardiac output and blood pressure.",
+        "highYield": "Hemorrhage = ↑ SNS: tachycardia, vasoconstriction. Compensatory mechanism.",
+        "clinicalCorrelation": "In hemorrhagic shock, persistent tachycardia and cool, clammy skin indicate ongoing sympathetic compensation."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_044",
+      "difficulty": 2,
+      "question": "What is the primary long-term regulator of arterial blood pressure?",
+      "image": null,
+      "options": [
+        {
+          "text": "Baroreceptor reflex",
+          "isCorrect": false,
+          "explanation": "Baroreceptors regulate BP moment-to-moment but reset and do not determine long-term set point."
+        },
+        {
+          "text": "Chemoreceptor reflex",
+          "isCorrect": false,
+          "explanation": "Chemoreceptors mainly regulate ventilation and have minor BP effects during severe hypoxia."
+        },
+        {
+          "text": "Renin-angiotensin-aldosterone system",
+          "isCorrect": true,
+          "explanation": "The RAAS controls blood volume and systemic vascular resistance over hours to days, setting the long-term BP level."
+        },
+        {
+          "text": "Atrial natriuretic peptide",
+          "isCorrect": false,
+          "explanation": "ANP opposes RAAS but is not the primary long-term determinant; it's a counter-regulatory hormone."
+        },
+        {
+          "text": "Vasopressin",
+          "isCorrect": false,
+          "explanation": "Vasopressin aids short-term pressure support during hemorrhage but is not the main long-term regulator."
+        }
+      ],
+      "explanation": {
+        "overview": "The kidney, via the RAAS and pressure natriuresis, is the dominant long-term controller of arterial pressure. Baroreceptors are critical for acute stability.",
+        "highYield": "Long-term BP = kidneys (RAAS, sodium balance). Short-term = baroreflex.",
+        "clinicalCorrelation": "Most chronic hypertension involves abnormal renal sodium handling or RAAS activation."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_045",
+      "difficulty": 3,
+      "question": "The diagram shows pressure-volume relationships in the left ventricle. What does point X represent?",
+      "image": "pv_loop_edv.png",
+      "options": [
+        {
+          "text": "End-diastolic volume",
+          "isCorrect": true,
+          "explanation": "Point X marks the bottom-right corner of the loop, indicating the maximum ventricular volume just before contraction (end-diastole)."
+        },
+        {
+          "text": "End-systolic volume",
+          "isCorrect": false,
+          "explanation": "End-systolic volume is the minimal volume at the end of ejection, typically the top-left corner."
+        },
+        {
+          "text": "Stroke volume",
+          "isCorrect": false,
+          "explanation": "Stroke volume is the difference between EDV and ESV, not a single point."
+        },
+        {
+          "text": "Aortic valve opening",
+          "isCorrect": false,
+          "explanation": "Aortic valve opening occurs at a specific pressure point on the isovolumic contraction line, not X."
+        },
+        {
+          "text": "Mitral valve closure",
+          "isCorrect": false,
+          "explanation": "Mitral valve closure occurs at the beginning of systole, not at the EDV point."
+        }
+      ],
+      "explanation": {
+        "overview": "The pressure-volume loop illustrates the cardiac cycle. End-diastolic volume is the maximum ventricular volume, reflecting preload. End-systolic volume is the minimum. Stroke volume is the width of the loop.",
+        "highYield": "PV loop: bottom right = EDV, top left = ESV. Width = stroke volume.",
+        "clinicalCorrelation": "In heart failure, EDV may increase and the loop shifts right, reducing stroke volume."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_046",
+      "difficulty": 2,
+      "question": "Calculate cardiac output given heart rate 70 bpm and stroke volume 70 mL.",
+      "image": null,
+      "options": [
+        {
+          "text": "4.2 L/min",
+          "isCorrect": false,
+          "explanation": "4.2 L/min would be 60 bpm × 70 mL; actual calculation is 70 × 70 = 4900 mL/min = 4.9 L/min."
+        },
+        {
+          "text": "4.9 L/min",
+          "isCorrect": true,
+          "explanation": "CO = HR × SV = 70 bpm × 70 mL = 4900 mL/min = 4.9 L/min."
+        },
+        {
+          "text": "5.6 L/min",
+          "isCorrect": false,
+          "explanation": "5.6 L/min would be 80 bpm × 70 mL."
+        },
+        {
+          "text": "3.5 L/min",
+          "isCorrect": false,
+          "explanation": "3.5 L/min would be 50 bpm × 70 mL."
+        },
+        {
+          "text": "7.0 L/min",
+          "isCorrect": false,
+          "explanation": "7.0 L/min would be 100 bpm × 70 mL."
+        }
+      ],
+      "explanation": {
+        "overview": "Cardiac output (CO) is the volume of blood pumped per minute, calculated as heart rate (HR) × stroke volume (SV). Normal CO at rest is ~5 L/min.",
+        "highYield": "CO = HR × SV. Units: L/min.",
+        "clinicalCorrelation": "Low cardiac output (e.g., in heart failure) leads to tissue hypoperfusion and fatigue."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_047",
+      "difficulty": 2,
+      "question": "Which vessel normally has the greatest resistance to blood flow?",
+      "image": null,
+      "options": [
+        {
+          "text": "Aorta",
+          "isCorrect": false,
+          "explanation": "The aorta has the largest diameter and lowest resistance; it's a conductance vessel."
+        },
+        {
+          "text": "Large arteries",
+          "isCorrect": false,
+          "explanation": "Large arteries have low resistance due to their large cross-sectional area."
+        },
+        {
+          "text": "Arterioles",
+          "isCorrect": true,
+          "explanation": "Arterioles, with their small diameter and muscular walls, are the primary resistance vessels, generating the largest pressure drop."
+        },
+        {
+          "text": "Capillaries",
+          "isCorrect": false,
+          "explanation": "Although individually tiny, the huge number of capillaries in parallel reduces total resistance in that segment."
+        },
+        {
+          "text": "Venae cavae",
+          "isCorrect": false,
+          "explanation": "Venae cavae are large-diameter veins with very low resistance."
+        }
+      ],
+      "explanation": {
+        "overview": "Arterioles are the main resistance vessels because of their muscular walls and ability to constrict or dilate, controlling peripheral resistance and regional blood flow.",
+        "highYield": "Arterioles = resistance vessels. Greatest pressure drop occurs here.",
+        "clinicalCorrelation": "Systemic hypertension often involves increased arteriolar resistance; vasodilators target arterioles to lower BP."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_048",
+      "difficulty": 2,
+      "question": "What is the primary force driving fluid filtration at the arterial end of capillaries?",
+      "image": null,
+      "options": [
+        {
+          "text": "Plasma colloid osmotic pressure",
+          "isCorrect": false,
+          "explanation": "Plasma osmotic pressure opposes filtration, drawing fluid into the capillary."
+        },
+        {
+          "text": "Interstitial fluid pressure",
+          "isCorrect": false,
+          "explanation": "Interstitial pressure is usually slightly negative or near zero, contributing little to filtration."
+        },
+        {
+          "text": "Capillary hydrostatic pressure",
+          "isCorrect": true,
+          "explanation": "Hydrostatic pressure generated by the heart forces fluid out of the capillary, especially at the arterial end where it exceeds opposing osmotic pressure."
+        },
+        {
+          "text": "Interstitial colloid osmotic pressure",
+          "isCorrect": false,
+          "explanation": "Interstitial osmotic pressure is small and normally favors filtration, but it's not the primary driving force."
+        },
+        {
+          "text": "Venous pressure",
+          "isCorrect": false,
+          "explanation": "Venous pressure influences capillary pressure but is not the direct filtration force at the arterial end."
+        }
+      ],
+      "explanation": {
+        "overview": "Starling forces govern capillary fluid exchange. Capillary hydrostatic pressure (Pc) pushes fluid out, while plasma colloid osmotic pressure (πp) pulls fluid in. Filtration dominates at the arterial end where Pc is highest.",
+        "highYield": "Arterial end: hydrostatic pressure > osmotic pressure → filtration. Venous end: reabsorption.",
+        "clinicalCorrelation": "Increased capillary hydrostatic pressure (e.g., heart failure) can cause edema by excessive filtration."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_049",
+      "difficulty": 2,
+      "question": "The diagram illustrates Starling forces across a capillary. What does arrow Z represent?",
+      "image": "starling_forces_z.png",
+      "options": [
+        {
+          "text": "Capillary hydrostatic pressure",
+          "isCorrect": false,
+          "explanation": "Hydrostatic pressure is usually the outward force, but Z points inward."
+        },
+        {
+          "text": "Interstitial hydrostatic pressure",
+          "isCorrect": false,
+          "explanation": "Interstitial hydrostatic pressure is usually near zero or slightly negative, not a large inward arrow."
+        },
+        {
+          "text": "Plasma colloid osmotic pressure",
+          "isCorrect": true,
+          "explanation": "Plasma colloid osmotic pressure, due to proteins like albumin, is the major inward force drawing fluid into the capillary."
+        },
+        {
+          "text": "Interstitial colloid osmotic pressure",
+          "isCorrect": false,
+          "explanation": "Interstitial osmotic pressure is small and outward-facing, not the major inward force."
+        },
+        {
+          "text": "Net filtration pressure",
+          "isCorrect": false,
+          "explanation": "Net filtration pressure is the resultant of all forces, not a single arrow."
+        }
+      ],
+      "explanation": {
+        "overview": "Starling forces: outward forces = capillary hydrostatic pressure + interstitial osmotic pressure. Inward forces = plasma colloid osmotic pressure + interstitial hydrostatic pressure. The balance determines filtration.",
+        "highYield": "Inward force = plasma oncotic pressure (albumin). Outward = capillary pressure.",
+        "clinicalCorrelation": "Hypoalbuminemia (low plasma protein) reduces inward force, causing edema."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_050",
+      "difficulty": 2,
+      "question": "Which of the following best describes the concept of homeostasis?",
+      "image": null,
+      "options": [
+        {
+          "text": "Complete constancy of internal environment",
+          "isCorrect": false,
+          "explanation": "Homeostasis is not absolute constancy; variables fluctuate within a range."
+        },
+        {
+          "text": "Dynamic equilibrium with fluctuations within normal range",
+          "isCorrect": true,
+          "explanation": "Homeostasis is a dynamic steady state, where regulated variables oscillate around a set point within acceptable limits."
+        },
+        {
+          "text": "Absence of any physiological change",
+          "isCorrect": false,
+          "explanation": "Physiological change is constant; homeostasis manages it, not eliminates it."
+        },
+        {
+          "text": "Maximum response to all stimuli",
+          "isCorrect": false,
+          "explanation": "Homeostasis involves appropriate, not maximum, responses."
+        },
+        {
+          "text": "Minimal energy expenditure",
+          "isCorrect": false,
+          "explanation": "Efficiency is not the defining feature; stability is."
+        }
+      ],
+      "explanation": {
+        "overview": "Homeostasis is a dynamic equilibrium where internal conditions are kept within a normal range by continuous regulatory adjustments, not absolute constancy.",
+        "highYield": "Homeostasis = dynamic, not static. Fluctuations around a set point are normal.",
+        "clinicalCorrelation": "Loss of dynamic regulation (e.g., brittle diabetes) leads to wide, uncontrolled swings."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_051",
+      "difficulty": 2,
+      "question": "What would be the expected plasma sodium concentration in a patient with diabetes insipidus who cannot drink water?",
+      "image": null,
+      "options": [
+        {
+          "text": "Hyponatremia",
+          "isCorrect": false,
+          "explanation": "Without water intake, the loss of dilute urine leads to concentration of sodium, not dilution."
+        },
+        {
+          "text": "Hypernatremia",
+          "isCorrect": true,
+          "explanation": "Diabetes insipidus causes excessive water loss in urine; if water intake is insufficient, the plasma sodium rises, leading to hypernatremia."
+        },
+        {
+          "text": "Normal sodium",
+          "isCorrect": false,
+          "explanation": "With ongoing water loss, sodium cannot remain normal without replacement."
+        },
+        {
+          "text": "Hypokalemia",
+          "isCorrect": false,
+          "explanation": "ADH deficiency does not primarily affect potassium; hypernatremia is the key electrolyte disturbance."
+        },
+        {
+          "text": "Hypercalcemia",
+          "isCorrect": false,
+          "explanation": "Calcium is not directly impacted by ADH or water loss."
+        }
+      ],
+      "explanation": {
+        "overview": "Diabetes insipidus leads to the excretion of large volumes of dilute urine. If water intake does not match losses, the ECF becomes hypertonic, resulting in hypernatremia and cellular dehydration.",
+        "highYield": "DI + no water = hypernatremia. Due to pure water loss.",
+        "clinicalCorrelation": "Severe hypernatremia can cause neurological symptoms such as confusion, seizures, or coma."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_052",
+      "difficulty": 3,
+      "question": "How does the body respond to a decrease in plasma ionized calcium?",
+      "image": null,
+      "options": [
+        {
+          "text": "Increased calcitonin secretion",
+          "isCorrect": false,
+          "explanation": "Calcitonin lowers calcium; it is secreted in hypercalcemia, not hypocalcemia."
+        },
+        {
+          "text": "Decreased parathyroid hormone secretion",
+          "isCorrect": false,
+          "explanation": "Low calcium stimulates PTH, not suppresses it."
+        },
+        {
+          "text": "Increased parathyroid hormone secretion and vitamin D activation",
+          "isCorrect": true,
+          "explanation": "PTH release increases, enhancing bone resorption, renal calcium reabsorption, and activation of vitamin D to raise calcium levels."
+        },
+        {
+          "text": "Immediate renal excretion of phosphate",
+          "isCorrect": false,
+          "explanation": "Phosphate handling changes with PTH, but the primary response to hypocalcemia is PTH and vitamin D."
+        },
+        {
+          "text": "Release of calcium from red blood cells",
+          "isCorrect": false,
+          "explanation": "Red blood cells are not a significant calcium reservoir; bone is the primary store."
+        }
+      ],
+      "explanation": {
+        "overview": "Calcium homeostasis is regulated by PTH, vitamin D, and calcitonin. Hypocalcemia triggers PTH secretion from the parathyroid glands, which increases bone resorption, renal reabsorption of calcium, and stimulates production of active vitamin D to enhance intestinal calcium absorption.",
+        "highYield": "↓ Ca2+ → ↑ PTH → ↑ bone resorption, ↑ renal Ca2+ reabsorption, ↑ vitamin D.",
+        "clinicalCorrelation": "Hypoparathyroidism results in hypocalcemia with tetany, muscle cramps, and possible seizures."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_053",
+      "difficulty": 1,
+      "question": "Which of the following variables is NOT regulated by a negative feedback system?",
+      "image": null,
+      "options": [
+        {
+          "text": "Blood glucose",
+          "isCorrect": false,
+          "explanation": "Blood glucose is tightly regulated by insulin and glucagon via negative feedback."
+        },
+        {
+          "text": "Core body temperature",
+          "isCorrect": false,
+          "explanation": "Thermoregulation uses negative feedback to return to 37°C."
+        },
+        {
+          "text": "Arterial blood pH",
+          "isCorrect": false,
+          "explanation": "pH is controlled by buffers, lungs, and kidneys through negative feedback."
+        },
+        {
+          "text": "Oxytocin release during labor",
+          "isCorrect": true,
+          "explanation": "Oxytocin release during labor is a positive feedback mechanism, not negative."
+        },
+        {
+          "text": "Plasma osmolarity",
+          "isCorrect": false,
+          "explanation": "Plasma osmolarity is regulated by ADH and thirst via negative feedback."
+        }
+      ],
+      "explanation": {
+        "overview": "Most physiological variables are controlled by negative feedback loops. The oxytocin surge during childbirth is a classic example of positive feedback, where the response amplifies the stimulus until delivery.",
+        "highYield": "Oxytocin in labor = positive feedback. Almost everything else = negative feedback.",
+        "clinicalCorrelation": "Misidentification of a feedback loop type can lead to incorrect predictions in pathophysiology."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_054",
+      "difficulty": 2,
+      "question": "A decrease in arterial oxygen tension (PaO2) is primarily sensed by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Central chemoreceptors in the medulla",
+          "isCorrect": false,
+          "explanation": "Central chemoreceptors primarily sense CO2/pH changes, not O2."
+        },
+        {
+          "text": "Peripheral chemoreceptors in the carotid and aortic bodies",
+          "isCorrect": true,
+          "explanation": "Peripheral chemoreceptors (carotid and aortic bodies) are sensitive to low PaO2, high PaCO2, and low pH, and trigger increased ventilation."
+        },
+        {
+          "text": "Pulmonary stretch receptors",
+          "isCorrect": false,
+          "explanation": "Stretch receptors are mechanoreceptors involved in the Hering-Breuer reflex, not oxygen sensing."
+        },
+        {
+          "text": "Baroreceptors in the carotid sinus",
+          "isCorrect": false,
+          "explanation": "Baroreceptors are pressure sensors, not oxygen sensors."
+        },
+        {
+          "text": "Osmoreceptors in the hypothalamus",
+          "isCorrect": false,
+          "explanation": "Osmoreceptors detect osmolarity, not oxygen."
+        }
+      ],
+      "explanation": {
+        "overview": "Peripheral chemoreceptors in the carotid and aortic bodies are the primary sensors of arterial hypoxemia. They increase their firing rate when PaO2 falls below ~60 mmHg, driving an increase in ventilation.",
+        "highYield": "Low O2 sensed by peripheral chemoreceptors (carotid bodies > aortic bodies).",
+        "clinicalCorrelation": "Patients with chronic hypoxemia (e.g., COPD) may rely on hypoxic drive; high-flow oxygen can depress their respiratory drive."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_055",
+      "difficulty": 2,
+      "question": "What effect does angiotensin II have on systemic arterioles?",
+      "image": null,
+      "options": [
+        {
+          "text": "Vasodilation",
+          "isCorrect": false,
+          "explanation": "Angiotensin II is a potent vasoconstrictor, not a dilator."
+        },
+        {
+          "text": "Vasoconstriction",
+          "isCorrect": true,
+          "explanation": "Angiotensin II binds to AT1 receptors on vascular smooth muscle, causing vasoconstriction and increasing total peripheral resistance."
+        },
+        {
+          "text": "No effect",
+          "isCorrect": false,
+          "explanation": "It has a significant effect; it's one of the most powerful endogenous vasoconstrictors."
+        },
+        {
+          "text": "Decreased permeability",
+          "isCorrect": false,
+          "explanation": "Vascular permeability is not directly altered by angiotensin II in a major way; its main effect is vasoconstriction."
+        },
+        {
+          "text": "Increased capacitance",
+          "isCorrect": false,
+          "explanation": "Venoconstriction may occur, but arteriolar constriction is the primary resistance effect."
+        }
+      ],
+      "explanation": {
+        "overview": "Angiotensin II is a key effector of the RAAS. It directly constricts arterioles, raising blood pressure, and stimulates aldosterone release and thirst.",
+        "highYield": "Angiotensin II = vasoconstriction + aldosterone release + thirst.",
+        "clinicalCorrelation": "ACE inhibitors and ARBs are widely used antihypertensives that block angiotensin II formation or action."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_056",
+      "difficulty": 3,
+      "question": "If a person with normal kidneys drinks 2 liters of isotonic saline, what is the most likely acute renal response?",
+      "image": null,
+      "options": [
+        {
+          "text": "Increase in urine osmolarity only",
+          "isCorrect": false,
+          "explanation": "Isotonic saline adds both water and sodium; urine output increases with isotonic excess."
+        },
+        {
+          "text": "Increase in urine volume with little change in osmolarity",
+          "isCorrect": true,
+          "explanation": "Isotonic saline expands ECF volume, leading to pressure natriuresis and diuresis, excreting the excess salt and water while maintaining osmolarity."
+        },
+        {
+          "text": "Decrease in urine volume and concentrated urine",
+          "isCorrect": false,
+          "explanation": "Water and salt are excreted together; urine volume increases, not decreases."
+        },
+        {
+          "text": "Rapid development of hyponatremia",
+          "isCorrect": false,
+          "explanation": "Isotonic saline does not change plasma sodium concentration acutely; no hyponatremia."
+        },
+        {
+          "text": "No change in urine output",
+          "isCorrect": false,
+          "explanation": "Volume expansion will increase urine output via ANP, pressure natriuresis, and decreased RAAS."
+        }
+      ],
+      "explanation": {
+        "overview": "Isotonic saline expands extracellular volume equally. The kidneys respond by increasing sodium and water excretion (natriuresis and diuresis) with minimal change in urine concentration, as the excess is isotonic.",
+        "highYield": "Isotonic volume expansion → ↑ urine output (isotonic). Not concentrated or dilute.",
+        "clinicalCorrelation": "In heart failure, the ability to excrete an isotonic saline load is impaired, leading to edema."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_057",
+      "difficulty": 2,
+      "question": "Which of the following is an example of a set point change in homeostasis?",
+      "image": null,
+      "options": [
+        {
+          "text": "Sweating during heat exposure",
+          "isCorrect": false,
+          "explanation": "Sweating is a response to maintain the normal set point, not a change in the set point itself."
+        },
+        {
+          "text": "Fever due to infection",
+          "isCorrect": true,
+          "explanation": "In fever, the hypothalamic set point for temperature is reset to a higher level by pyrogens."
+        },
+        {
+          "text": "Insulin release after a meal",
+          "isCorrect": false,
+          "explanation": "Insulin release corrects a rise in glucose, returning to the normal set point."
+        },
+        {
+          "text": "Thirst after heavy exercise",
+          "isCorrect": false,
+          "explanation": "Thirst corrects a deficit; the osmolarity set point remains unchanged."
+        },
+        {
+          "text": "Baroreflex activation upon standing",
+          "isCorrect": false,
+          "explanation": "The baroreflex maintains blood pressure set point; the set point doesn't change."
+        }
+      ],
+      "explanation": {
+        "overview": "A set point change is a regulated alteration in the target value of a variable. Fever is the classic example: cytokines reset the hypothalamic thermostat upward.",
+        "highYield": "Fever = reset set point upward. Not failure of thermoregulation.",
+        "clinicalCorrelation": "Hyperthermia (e.g., heat stroke) is different from fever; set point is normal but body overproduces heat beyond capacity."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_058",
+      "difficulty": 2,
+      "question": "What is the primary effect of parathyroid hormone (PTH) on the kidneys?",
+      "image": null,
+      "options": [
+        {
+          "text": "Decreased calcium reabsorption and increased phosphate reabsorption",
+          "isCorrect": false,
+          "explanation": "PTH increases calcium reabsorption and decreases phosphate reabsorption."
+        },
+        {
+          "text": "Increased calcium reabsorption and increased phosphate excretion",
+          "isCorrect": true,
+          "explanation": "PTH acts on the distal tubule to enhance calcium reabsorption and on the proximal tubule to inhibit phosphate reabsorption, leading to phosphaturia."
+        },
+        {
+          "text": "Increased sodium and water reabsorption",
+          "isCorrect": false,
+          "explanation": "PTH primarily regulates calcium and phosphate, not sodium/water balance."
+        },
+        {
+          "text": "Stimulation of ADH release",
+          "isCorrect": false,
+          "explanation": "PTH does not stimulate ADH; osmoreceptors control ADH."
+        },
+        {
+          "text": "Inhibition of vitamin D activation",
+          "isCorrect": false,
+          "explanation": "PTH stimulates the renal 1α-hydroxylase to activate vitamin D."
+        }
+      ],
+      "explanation": {
+        "overview": "PTH raises serum calcium by increasing bone resorption, enhancing renal calcium reabsorption, and promoting conversion of vitamin D to its active form. It also promotes phosphate excretion.",
+        "highYield": "PTH: ↑ Ca2+ reabsorption, ↓ phosphate reabsorption in kidney. 'Phosphate trashing, calcium sparing'.",
+        "clinicalCorrelation": "Primary hyperparathyroidism causes hypercalcemia, hypophosphatemia, and kidney stones."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_059",
+      "difficulty": 3,
+      "question": "What compensatory change would you expect in a patient with metabolic alkalosis?",
+      "image": null,
+      "options": [
+        {
+          "text": "Hypoventilation to retain CO2",
+          "isCorrect": true,
+          "explanation": "Metabolic alkalosis (high HCO3-) is compensated by respiratory depression, which raises PCO2 to offset the pH increase."
+        },
+        {
+          "text": "Hyperventilation to blow off CO2",
+          "isCorrect": false,
+          "explanation": "Hyperventilation would worsen alkalosis by lowering CO2 further."
+        },
+        {
+          "text": "Renal excretion of HCO3-",
+          "isCorrect": false,
+          "explanation": "Renal compensation takes days; immediate respiratory compensation is hypoventilation."
+        },
+        {
+          "text": "Increased production of ketone bodies",
+          "isCorrect": false,
+          "explanation": "Ketone bodies produce metabolic acidosis, not compensation for alkalosis."
+        },
+        {
+          "text": "Reduced renal H+ secretion",
+          "isCorrect": false,
+          "explanation": "This would occur later as renal compensation, but the question likely targets the rapid respiratory response."
+        }
+      ],
+      "explanation": {
+        "overview": "Respiratory compensation for metabolic alkalosis is hypoventilation, causing CO2 retention. This raises carbonic acid levels, opposing the elevated pH. Full compensation requires renal HCO3- excretion.",
+        "highYield": "Metabolic alkalosis → hypoventilate (retain CO2). CO2 is an acid.",
+        "clinicalCorrelation": "Severe metabolic alkalosis (e.g., from vomiting) may cause respiratory depression as a compensatory mechanism."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_060",
+      "difficulty": 2,
+      "question": "Which of the following correctly describes the response of the baroreceptor reflex to a sudden drop in blood pressure upon standing?",
+      "image": null,
+      "options": [
+        {
+          "text": "Increased parasympathetic activity and decreased sympathetic activity",
+          "isCorrect": false,
+          "explanation": "A fall in BP requires sympathetic activation and parasympathetic withdrawal, not increase."
+        },
+        {
+          "text": "Decreased heart rate and vasodilation",
+          "isCorrect": false,
+          "explanation": "These would lower BP further, the opposite of the needed response."
+        },
+        {
+          "text": "Increased heart rate, increased contractility, and vasoconstriction",
+          "isCorrect": true,
+          "explanation": "Baroreceptor unloading triggers sympathetic activation: tachycardia, increased cardiac contractility, and peripheral vasoconstriction to restore blood pressure."
+        },
+        {
+          "text": "Release of ANP to restore volume",
+          "isCorrect": false,
+          "explanation": "ANP is released in volume overload, not acute hypotension."
+        },
+        {
+          "text": "Inhibition of renin release",
+          "isCorrect": false,
+          "explanation": "Low BP stimulates renin release; inhibition would be counterproductive."
+        }
+      ],
+      "explanation": {
+        "overview": "Orthostatic hypotension unloads arterial baroreceptors, leading to decreased vagal tone and increased sympathetic outflow, raising heart rate, contractility, and peripheral resistance.",
+        "highYield": "Stand up → BP drops → baroreflex → ↑ HR, ↑ SVR. Fight gravity.",
+        "clinicalCorrelation": "Failure of this reflex (autonomic neuropathy) causes orthostatic hypotension and syncope."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_061",
+      "difficulty": 2,
+      "question": "What is the main physiological stimulus for thirst?",
+      "image": null,
+      "options": [
+        {
+          "text": "Decreased blood volume only",
+          "isCorrect": false,
+          "explanation": "Hypovolemia stimulates thirst via angiotensin II, but the primary osmotic stimulus is hyperosmolarity."
+        },
+        {
+          "text": "Increased plasma osmolarity",
+          "isCorrect": true,
+          "explanation": "Osmoreceptors in the hypothalamus detect increased plasma osmolarity (hypertonicity) and trigger thirst, often before significant volume loss."
+        },
+        {
+          "text": "High blood glucose",
+          "isCorrect": false,
+          "explanation": "Hyperglycemia can cause osmotic diuresis and thirst, but the direct stimulus is osmolarity, not glucose per se."
+        },
+        {
+          "text": "Low blood pressure",
+          "isCorrect": false,
+          "explanation": "Hypotension stimulates thirst through angiotensin II, but osmolarity is the more sensitive and primary stimulus."
+        },
+        {
+          "text": "Low plasma potassium",
+          "isCorrect": false,
+          "explanation": "Potassium imbalance does not directly trigger thirst."
+        }
+      ],
+      "explanation": {
+        "overview": "Thirst is primarily stimulated by an increase in plasma osmolarity (as little as 2–3%) detected by hypothalamic osmoreceptors. Hypovolemia also stimulates thirst via angiotensin II but is less sensitive.",
+        "highYield": "Thirst: 1° stimulus = ↑ osmolarity. 2° stimulus = ↓ volume (angiotensin II).",
+        "clinicalCorrelation": "Adipsia (lack of thirst) can result from hypothalamic lesions, leading to dangerous hypernatremia."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_062",
+      "difficulty": 3,
+      "question": "A patient with severe diarrhea loses large amounts of bicarbonate-rich fluid. What acid-base disturbance is most likely?",
+      "image": null,
+      "options": [
+        {
+          "text": "Respiratory alkalosis",
+          "isCorrect": false,
+          "explanation": "Diarrhea does not cause primary respiratory changes; it causes metabolic acidosis."
+        },
+        {
+          "text": "Metabolic alkalosis",
+          "isCorrect": false,
+          "explanation": "Loss of bicarbonate (base) leads to acidosis, not alkalosis."
+        },
+        {
+          "text": "Metabolic acidosis with normal anion gap",
+          "isCorrect": true,
+          "explanation": "Diarrhea causes loss of HCO3- in stool, leading to hyperchloremic (normal anion gap) metabolic acidosis."
+        },
+        {
+          "text": "Metabolic acidosis with increased anion gap",
+          "isCorrect": false,
+          "explanation": "Increased anion gap acidosis occurs with accumulation of unmeasured anions (lactate, ketones), not direct HCO3- loss."
+        },
+        {
+          "text": "Respiratory acidosis",
+          "isCorrect": false,
+          "explanation": "No primary respiratory cause; lung function is normal."
+        }
+      ],
+      "explanation": {
+        "overview": "Diarrhea leads to loss of bicarbonate and fluid, causing a hyperchloremic metabolic acidosis with a normal anion gap. The kidney attempts to compensate by increasing acid excretion.",
+        "highYield": "Diarrhea = HCO3- loss → normal anion gap metabolic acidosis.",
+        "clinicalCorrelation": "Treatment includes fluid replacement with bicarbonate or bicarbonate precursors (e.g., lactate)."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_063",
+      "difficulty": 1,
+      "question": "Which compartment contains the majority of body potassium?",
+      "image": null,
+      "options": [
+        {
+          "text": "Extracellular fluid",
+          "isCorrect": false,
+          "explanation": "Only 2% of total body potassium is in the ECF; the rest is intracellular."
+        },
+        {
+          "text": "Intracellular fluid",
+          "isCorrect": true,
+          "explanation": "Approximately 98% of total body potassium is located inside cells, where it is the major cation."
+        },
+        {
+          "text": "Plasma",
+          "isCorrect": false,
+          "explanation": "Plasma potassium is a tiny fraction of total body stores."
+        },
+        {
+          "text": "Bone",
+          "isCorrect": false,
+          "explanation": "Bone contains calcium and phosphate; potassium is primarily in cells."
+        },
+        {
+          "text": "Interstitial fluid",
+          "isCorrect": false,
+          "explanation": "Interstitial K+ concentration is similar to plasma, very low compared to ICF."
+        }
+      ],
+      "explanation": {
+        "overview": "K+ is the major intracellular cation, maintained by the Na+/K+ ATPase pump. The large ICF pool buffers changes in plasma K+.",
+        "highYield": "98% of K+ inside cells. Only 2% in ECF.",
+        "clinicalCorrelation": "Acidosis can shift K+ out of cells, causing dangerous hyperkalemia even with normal total body potassium."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_064",
+      "difficulty": 2,
+      "question": "What is the immediate compensatory response to a fall in arterial pH?",
+      "image": null,
+      "options": [
+        {
+          "text": "Renal bicarbonate reabsorption",
+          "isCorrect": false,
+          "explanation": "Renal compensation takes hours to days; immediate response is respiratory."
+        },
+        {
+          "text": "Increased ventilation to lower PCO2",
+          "isCorrect": true,
+          "explanation": "Peripheral and central chemoreceptors sense acidosis and stimulate hyperventilation, reducing CO2 and raising pH rapidly."
+        },
+        {
+          "text": "Decreased ventilation to retain CO2",
+          "isCorrect": false,
+          "explanation": "Retaining CO2 would worsen acidosis."
+        },
+        {
+          "text": "Increased production of bicarbonate by the pancreas",
+          "isCorrect": false,
+          "explanation": "Pancreatic bicarbonate secretion is for digestion, not acute pH regulation."
+        },
+        {
+          "text": "Increased metabolic acid production",
+          "isCorrect": false,
+          "explanation": "Increased acid would worsen the acidosis."
+        }
+      ],
+      "explanation": {
+        "overview": "Acidosis stimulates chemoreceptors to increase alveolar ventilation, blowing off CO2 and rapidly raising pH. This respiratory compensation occurs within minutes.",
+        "highYield": "Acidosis → hyperventilate → ↓ PCO2 → ↑ pH (respiratory compensation).",
+        "clinicalCorrelation": "Kussmaul breathing (deep, labored) is a sign of metabolic acidosis, especially diabetic ketoacidosis."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_065",
+      "difficulty": 3,
+      "question": "In a patient with chronic respiratory acidosis, what laboratory finding indicates renal compensation?",
+      "image": null,
+      "options": [
+        {
+          "text": "Decreased PCO2",
+          "isCorrect": false,
+          "explanation": "Decreased PCO2 would indicate hyperventilation, not renal compensation."
+        },
+        {
+          "text": "Elevated plasma bicarbonate",
+          "isCorrect": true,
+          "explanation": "The kidneys retain and generate bicarbonate, raising plasma HCO3- to partially correct the pH despite elevated CO2."
+        },
+        {
+          "text": "Decreased plasma bicarbonate",
+          "isCorrect": false,
+          "explanation": "Decreased HCO3- would indicate an added metabolic acidosis, not compensation."
+        },
+        {
+          "text": "Increased anion gap",
+          "isCorrect": false,
+          "explanation": "Anion gap is not directly related to compensation for respiratory acidosis."
+        },
+        {
+          "text": "Decreased hemoglobin",
+          "isCorrect": false,
+          "explanation": "Hemoglobin is a buffer but its concentration does not reflect renal compensation."
+        }
+      ],
+      "explanation": {
+        "overview": "Renal compensation for chronic respiratory acidosis involves increased HCO3- reabsorption and new bicarbonate generation, elevating plasma HCO3- and normalizing pH toward the normal range.",
+        "highYield": "Chronic respiratory acidosis → ↑ HCO3- (renal compensation).",
+        "clinicalCorrelation": "Overly rapid correction of chronic respiratory acidosis can cause post-hypercapnic metabolic alkalosis."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_066",
+      "difficulty": 2,
+      "question": "Which of the following is an effect of sympathetic nervous system activation on renal function?",
+      "image": null,
+      "options": [
+        {
+          "text": "Increased renal blood flow",
+          "isCorrect": false,
+          "explanation": "Sympathetic activation constricts renal arterioles, reducing blood flow."
+        },
+        {
+          "text": "Increased renin secretion",
+          "isCorrect": true,
+          "explanation": "Sympathetic nerves directly stimulate juxtaglomerular cells to release renin via β1 receptors."
+        },
+        {
+          "text": "Decreased sodium reabsorption",
+          "isCorrect": false,
+          "explanation": "Sympathetic activation enhances sodium reabsorption, partly via renin-angiotensin and direct tubular effects."
+        },
+        {
+          "text": "Diuresis",
+          "isCorrect": false,
+          "explanation": "Sympathetic activation promotes water and sodium retention, not diuresis."
+        },
+        {
+          "text": "Inhibition of aldosterone release",
+          "isCorrect": false,
+          "explanation": "Sympathetic activity stimulates the RAAS, leading to increased aldosterone."
+        }
+      ],
+      "explanation": {
+        "overview": "Renal sympathetic nerves stimulate renin release, increase sodium reabsorption, and reduce renal blood flow, helping to conserve volume and maintain blood pressure during stress or hemorrhage.",
+        "highYield": "Renal SNS → ↑ renin, ↓ RBF, Na+ retention. Supports BP.",
+        "clinicalCorrelation": "Renal denervation has been explored as a treatment for resistant hypertension by reducing sympathetic overdrive."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_067",
+      "difficulty": 2,
+      "question": "What is the primary mechanism by which the kidney regulates acid-base balance over days?",
+      "image": null,
+      "options": [
+        {
+          "text": "Adjusting respiratory rate",
+          "isCorrect": false,
+          "explanation": "Respiratory rate is controlled by the respiratory center, not the kidney."
+        },
+        {
+          "text": "Excreting CO2",
+          "isCorrect": false,
+          "explanation": "CO2 is excreted by the lungs; kidneys excrete fixed acids and regulate HCO3-."
+        },
+        {
+          "text": "Regulating H+ secretion and HCO3- reabsorption/excretion",
+          "isCorrect": true,
+          "explanation": "The renal tubules secrete H+ and reabsorb or generate new HCO3-, adjusting net acid excretion to maintain pH."
+        },
+        {
+          "text": "Secreting ammonia into the urine",
+          "isCorrect": false,
+          "explanation": "Ammonia is part of H+ excretion, but the overall mechanism is H+ secretion and HCO3- handling."
+        },
+        {
+          "text": "Buffering with plasma proteins",
+          "isCorrect": false,
+          "explanation": "Plasma proteins are a chemical buffer, not the primary renal regulatory mechanism."
+        }
+      ],
+      "explanation": {
+        "overview": "The kidneys maintain long-term acid-base balance by reabsorbing filtered HCO3- and excreting the daily acid load through H+ secretion and urinary buffers (phosphate and ammonia).",
+        "highYield": "Kidney acid-base: reabsorb HCO3-, excrete H+. Takes days for full compensation.",
+        "clinicalCorrelation": "Renal tubular acidosis results from defects in these processes, causing metabolic acidosis despite normal GFR."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_068",
+      "difficulty": 2,
+      "question": "Which of the following would stimulate the release of atrial natriuretic peptide (ANP)?",
+      "image": null,
+      "options": [
+        {
+          "text": "Severe blood loss",
+          "isCorrect": false,
+          "explanation": "Hypovolemia suppresses ANP; stretch is reduced."
+        },
+        {
+          "text": "Increased atrial stretch due to volume overload",
+          "isCorrect": true,
+          "explanation": "ANP is released from atrial myocytes in response to stretch caused by increased blood volume."
+        },
+        {
+          "text": "Low sodium diet",
+          "isCorrect": false,
+          "explanation": "Low sodium reduces volume, decreasing atrial stretch and ANP."
+        },
+        {
+          "text": "Increased sympathetic activity",
+          "isCorrect": false,
+          "explanation": "Sympathetic activation does not directly stimulate ANP; it's primarily a mechanical stimulus."
+        },
+        {
+          "text": "Dehydration",
+          "isCorrect": false,
+          "explanation": "Dehydration reduces atrial stretch, inhibiting ANP."
+        }
+      ],
+      "explanation": {
+        "overview": "ANP is a stretch-activated hormone: increased venous return and atrial filling promote its release, leading to natriuresis and vasodilation to offload the heart.",
+        "highYield": "ANP = atrial stretch hormone. ↑ volume → ↑ stretch → ANP release.",
+        "clinicalCorrelation": "In heart failure, ANP and BNP levels are elevated due to increased cardiac filling pressures; BNP is used diagnostically."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_069",
+      "difficulty": 3,
+      "question": "A subject breathes into a paper bag for several minutes. Which change in blood gases would be expected?",
+      "image": null,
+      "options": [
+        {
+          "text": "Decreased PCO2 and increased pH",
+          "isCorrect": false,
+          "explanation": "Rebreathing CO2 would increase PCO2, not decrease."
+        },
+        {
+          "text": "Increased PCO2 and decreased pH",
+          "isCorrect": true,
+          "explanation": "Re-breathing exhaled air causes CO2 accumulation (hypercapnia) and respiratory acidosis."
+        },
+        {
+          "text": "Decreased PCO2 and decreased pH",
+          "isCorrect": false,
+          "explanation": "Hyperventilation causes decreased PCO2 with alkalosis, not acidosis."
+        },
+        {
+          "text": "Increased PCO2 and increased pH",
+          "isCorrect": false,
+          "explanation": "CO2 retention lowers pH, not raises it."
+        },
+        {
+          "text": "No change in blood gases",
+          "isCorrect": false,
+          "explanation": "Re-breathing quickly alters CO2 and pH."
+        }
+      ],
+      "explanation": {
+        "overview": "Re-breathing exhaled CO2 elevates alveolar and arterial PCO2, causing respiratory acidosis. The kidneys can't compensate acutely, so pH falls.",
+        "highYield": "Paper bag re-breathing → ↑ CO2 → respiratory acidosis.",
+        "clinicalCorrelation": "This method is sometimes used to abort panic-induced hypocapnia, but must be done cautiously to avoid severe acidosis."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_070",
+      "difficulty": 2,
+      "question": "What is the main function of the Na+/K+ ATPase pump?",
+      "image": null,
+      "options": [
+        {
+          "text": "Facilitate glucose uptake",
+          "isCorrect": false,
+          "explanation": "Glucose uptake uses GLUT transporters, not the Na+/K+ pump directly."
+        },
+        {
+          "text": "Maintain the Na+ and K+ gradients across the cell membrane",
+          "isCorrect": true,
+          "explanation": "The pump actively transports 3 Na+ out and 2 K+ in per ATP, creating concentration gradients essential for resting membrane potential and secondary transport."
+        },
+        {
+          "text": "Synthesize ATP",
+          "isCorrect": false,
+          "explanation": "The pump uses ATP; it doesn't synthesize it."
+        },
+        {
+          "text": "Transport water across membranes",
+          "isCorrect": false,
+          "explanation": "Water moves through aquaporins or by osmosis, not via this pump."
+        },
+        {
+          "text": "Generate heat",
+          "isCorrect": false,
+          "explanation": "The pump consumes ATP and produces some heat, but that's not its primary function."
+        }
+      ],
+      "explanation": {
+        "overview": "The Na+/K+ ATPase is an electrogenic pump that maintains the steep Na+ and K+ gradients across the plasma membrane, critical for cell volume control, secondary active transport, and excitability.",
+        "highYield": "Na+/K+ pump: 3 Na+ out, 2 K+ in. Uses ATP. Maintains gradients.",
+        "clinicalCorrelation": "Digitalis glycosides inhibit the Na+/K+ pump, increasing intracellular Na+, which secondarily increases Ca2+ and cardiac contractility."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_071",
+      "difficulty": 2,
+      "question": "Which of the following would be most effective at lowering elevated blood pressure over weeks?",
+      "image": null,
+      "options": [
+        {
+          "text": "Acute baroreflex activation",
+          "isCorrect": false,
+          "explanation": "Baroreflex resets and cannot maintain low BP over weeks."
+        },
+        {
+          "text": "Reducing dietary sodium intake",
+          "isCorrect": true,
+          "explanation": "Reducing sodium intake over weeks decreases extracellular volume and vascular stiffness, lowering blood pressure through the renal-body fluid mechanism."
+        },
+        {
+          "text": "Single large dose of a vasodilator",
+          "isCorrect": false,
+          "explanation": "A single dose only transiently lowers BP; chronic therapy is needed."
+        },
+        {
+          "text": "Hyperventilation for a few minutes",
+          "isCorrect": false,
+          "explanation": "Hyperventilation causes acute hypocapnia and transient BP changes, not long-term reduction."
+        },
+        {
+          "text": "Drinking 3 liters of water quickly",
+          "isCorrect": false,
+          "explanation": "Acute water loading may briefly lower osmolarity but does not chronically lower BP; may even increase volume."
+        }
+      ],
+      "explanation": {
+        "overview": "Long-term blood pressure control is dominated by sodium balance. Reducing dietary sodium gradually contracts extracellular volume and reduces peripheral resistance, leading to sustained BP lowering.",
+        "highYield": "Long-term BP: sodium restriction works by reducing volume and resistance.",
+        "clinicalCorrelation": "DASH diet and reduced sodium intake are first-line lifestyle interventions for hypertension."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_072",
+      "difficulty": 2,
+      "question": "What is the primary role of glucagon in glucose homeostasis?",
+      "image": null,
+      "options": [
+        {
+          "text": "Promote glucose uptake into cells",
+          "isCorrect": false,
+          "explanation": "Insulin promotes glucose uptake; glucagon opposes that."
+        },
+        {
+          "text": "Increase blood glucose by stimulating glycogenolysis and gluconeogenesis",
+          "isCorrect": true,
+          "explanation": "Glucagon acts on the liver to break down glycogen and produce new glucose, raising blood glucose."
+        },
+        {
+          "text": "Synthesize glycogen from glucose",
+          "isCorrect": false,
+          "explanation": "Glycogen synthesis is stimulated by insulin, not glucagon."
+        },
+        {
+          "text": "Inhibit lipolysis",
+          "isCorrect": false,
+          "explanation": "Glucagon stimulates lipolysis and ketogenesis in fasting."
+        },
+        {
+          "text": "Lower blood amino acid levels",
+          "isCorrect": false,
+          "explanation": "Glucagon can promote amino acid uptake for gluconeogenesis but its primary role is raising glucose."
+        }
+      ],
+      "explanation": {
+        "overview": "Glucagon, released by pancreatic alpha cells in response to hypoglycemia, increases hepatic glucose output by stimulating glycogenolysis and gluconeogenesis.",
+        "highYield": "Glucagon = raises blood glucose. Opposes insulin. Acts on liver.",
+        "clinicalCorrelation": "In type 1 diabetes, absolute insulin deficiency leads to unopposed glucagon action, contributing to hyperglycemia and ketoacidosis."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_073",
+      "difficulty": 3,
+      "question": "Which of the following conditions would lead to a shift of potassium out of cells, causing hyperkalemia?",
+      "image": null,
+      "options": [
+        {
+          "text": "Metabolic alkalosis",
+          "isCorrect": false,
+          "explanation": "Alkalosis promotes K+ shift into cells, lowering plasma K+."
+        },
+        {
+          "text": "Insulin administration",
+          "isCorrect": false,
+          "explanation": "Insulin stimulates Na+/K+ ATPase, driving K+ into cells and lowering plasma K+."
+        },
+        {
+          "text": "Beta-adrenergic stimulation",
+          "isCorrect": false,
+          "explanation": "Beta-agonists (e.g., albuterol) also push K+ into cells."
+        },
+        {
+          "text": "Metabolic acidosis",
+          "isCorrect": true,
+          "explanation": "Acidosis promotes K+ efflux from cells as H+ moves intracellularly in exchange, raising plasma K+."
+        },
+        {
+          "text": "Increased aldosterone",
+          "isCorrect": false,
+          "explanation": "Aldosterone promotes renal K+ excretion, lowering plasma K+, but does not directly shift K+ out of cells."
+        }
+      ],
+      "explanation": {
+        "overview": "Acidemia causes a shift of K+ from ICF to ECF as part of buffering, leading to hyperkalemia. Organic acidoses (e.g., lactic acidosis) cause less shift than mineral acidoses.",
+        "highYield": "Acidosis → ↑ K+ (shifts out of cells). Alkalosis → ↓ K+.",
+        "clinicalCorrelation": "Treating diabetic ketoacidosis with insulin drives K+ back into cells, potentially causing dangerous hypokalemia if not monitored."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_074",
+      "difficulty": 1,
+      "question": "Where are the cell bodies of osmoreceptors that regulate ADH release located?",
+      "image": null,
+      "options": [
+        {
+          "text": "Posterior pituitary",
+          "isCorrect": false,
+          "explanation": "The posterior pituitary stores and releases ADH, but osmoreceptors are in the hypothalamus."
+        },
+        {
+          "text": "Hypothalamus",
+          "isCorrect": true,
+          "explanation": "Osmoreceptors in the organum vasculosum of the lamina terminalis (OVLT) and surrounding hypothalamus detect plasma osmolarity."
+        },
+        {
+          "text": "Kidneys",
+          "isCorrect": false,
+          "explanation": "The kidneys sense sodium delivery (macula densa) but not overall osmolarity for ADH control."
+        },
+        {
+          "text": "Adrenal glands",
+          "isCorrect": false,
+          "explanation": "Adrenals secrete aldosterone and cortisol, but do not contain osmoreceptors."
+        },
+        {
+          "text": "Carotid sinuses",
+          "isCorrect": false,
+          "explanation": "Carotid sinuses house baroreceptors, not osmoreceptors."
+        }
+      ],
+      "explanation": {
+        "overview": "The hypothalamus contains osmoreceptive neurons that directly sense changes in extracellular fluid osmolarity, regulating both thirst and ADH secretion.",
+        "highYield": "Osmoreceptors = hypothalamus (OVLT). ADH made in supraoptic/paraventricular nuclei.",
+        "clinicalCorrelation": "Damage to the osmoreceptors can lead to adipsic hypernatremia with inappropriate ADH and thirst responses."
+      }
+    },
+    {
+      "questionId": "intro_homeostasis_075",
+      "difficulty": 2,
+      "question": "Which of the following is a consequence of prolonged activation of the renin-angiotensin-aldosterone system?",
+      "image": null,
+      "options": [
+        {
+          "text": "Hypotension",
+          "isCorrect": false,
+          "explanation": "RAAS activation raises blood pressure, not lowers it."
+        },
+        {
+          "text": "Hypokalemia and metabolic alkalosis",
+          "isCorrect": true,
+          "explanation": "Aldosterone promotes K+ secretion and H+ excretion, leading to hypokalemia and metabolic alkalosis with chronic excess."
+        },
+        {
+          "text": "Decreased sodium reabsorption",
+          "isCorrect": false,
+          "explanation": "Aldosterone increases sodium reabsorption."
+        },
+        {
+          "text": "Increased renal blood flow",
+          "isCorrect": false,
+          "explanation": "Angiotensin II constricts renal arterioles, reducing blood flow."
+        },
+        {
+          "text": "Suppression of thirst",
+          "isCorrect": false,
+          "explanation": "Angiotensin II stimulates thirst."
+        }
+      ],
+      "explanation": {
+        "overview": "Chronic RAAS overactivity, as in renal artery stenosis, leads to hypertension, hypokalemia, and metabolic alkalosis due to aldosterone excess.",
+        "highYield": "RAAS overdrive → HTN, hypokalemia, alkalosis. Aldosterone effects.",
+        "clinicalCorrelation": "Secondary hyperaldosteronism (e.g., from renal artery stenosis) presents with resistant hypertension and hypokalemia."
+      }
+    }
+  ]
+}

@@ -1,0 +1,568 @@
+/* frontend-user/css/exam-settings.css */
+
+/* ============================================================
+   SHIMMER OVERLAY (Full‑screen, dark theme fallback)
+   Loads before any JS – uses inline styles for critical path
+   ============================================================ */
+.shimmer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #1a1a2e; /* dark fallback */
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease;
+}
+.shimmer-overlay .spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid #3a3a4e;
+    border-top-color: #10a37f;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+.shimmer-overlay .shimmer-text {
+    margin-top: 1rem;
+    color: #aaa;
+    font-size: 0.9rem;
+    font-family: system-ui, sans-serif;
+}
+.shimmer-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ============================================================
+   INLINE LOADER (for async actions like sending invites)
+   Small spinner that doesn't block the whole UI
+   ============================================================ */
+.inline-loader {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+.inline-loader .spinner-sm {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+.inline-loader.hidden {
+    display: none;
+}
+
+/* ============================================================
+   FIXED HEADER (2 rows) – existing styles preserved
+   ============================================================ */
+.fixed-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+    padding: 0.5rem 1rem;
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-row.top {
+    margin-bottom: 0.3rem;
+}
+
+.header-row .left-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.header-row .left-group img {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+}
+.header-row .left-group .brand {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+.header-row .left-group .btn-text {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.6rem;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+}
+.header-row .left-group .btn-text:hover {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+.header-row .right-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.header-row .btn-outline {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    padding: 0.3rem 0.6rem;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.header-row .btn-outline:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+.header-row.bottom .subject-area {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+.header-row.bottom .subject-area .icon {
+    font-size: 1.8rem;
+}
+.header-row.bottom .subject-area .name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+}
+.header-row.bottom .subject-area .topics {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+.header-row.bottom .stats {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+.header-row.bottom .stats span {
+    background: var(--bg-secondary);
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+    border: 1px solid var(--border);
+}
+
+/* Remove background summary wrapper (no duplication) */
+.summary-wrapper {
+    display: none;
+}
+
+/* ============================================================
+   FLOATING BOTTOM CARD
+   ============================================================ */
+.bottom-card {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg-card);
+    border-top: 2px solid var(--accent);
+    border-radius: 24px 24px 0 0;
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.2);
+    padding: 1.5rem 1.5rem 1rem;
+    height: 75vh;
+    max-height: 75vh;
+    overflow-y: auto;
+    z-index: 50;
+    transition: transform 0.3s ease;
+    transform: translateY(0);
+}
+.bottom-card.closed {
+    transform: translateY(100%);
+}
+
+.card-step {
+    display: none;
+}
+.card-step.active {
+    display: block;
+    animation: fadeUp 0.3s ease;
+}
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Step 1: Choose exam type */
+.mode-option {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 0.75rem;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+}
+.mode-option:hover {
+    border-color: var(--accent);
+    background: var(--bg-secondary);
+}
+.mode-option.selected {
+    border-color: var(--accent);
+    background: rgba(37, 99, 235, 0.05);
+}
+.mode-option .icon {
+    font-size: 1.8rem;
+}
+.mode-option .info {
+    flex: 1;
+}
+.mode-option .info .title {
+    font-weight: 600;
+}
+.mode-option .info .desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Step 2 controls */
+.config-group {
+    margin-bottom: 1.2rem;
+}
+.config-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+}
+
+/* Question stepper – wider input, +/- on same line */
+.question-stepper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+}
+.question-stepper button {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--bg-secondary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    flex-shrink: 0;
+}
+.question-stepper button:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+.question-stepper input {
+    flex: 1;
+    width: 70%;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    min-width: 60px;
+    transition: border-color 0.2s;
+}
+.question-stepper input.invalid {
+    border-color: var(--danger);
+}
+.question-stepper .max-hint {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.5rem;
+    white-space: nowrap;
+}
+.validation-warning {
+    color: var(--danger);
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    display: none;
+}
+.validation-warning.show {
+    display: block;
+}
+
+/* Difficulty group */
+.difficulty-group {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+.difficulty-group button {
+    flex: 1;
+    min-width: 80px;
+    padding: 0.5rem;
+    border-radius: 30px;
+    border: 1px solid var(--border);
+    background: var(--bg-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+.difficulty-group button.active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+/* Challenge type group */
+.challenge-type-group {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+.challenge-type-group button {
+    flex: 1;
+    padding: 0.5rem;
+    border-radius: 30px;
+    border: 1px solid var(--border);
+    background: var(--bg-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.challenge-type-group button.active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+/* Challenge extra divs */
+.challenge-extra {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: var(--bg-secondary);
+    border-radius: var(--radius);
+    display: none;
+}
+.challenge-extra.show {
+    display: block;
+}
+.challenge-extra input[type="email"] {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text-primary);
+}
+.challenge-extra .user-list {
+    max-height: 120px;
+    overflow-y: auto;
+    margin: 0.5rem 0;
+}
+.challenge-extra .user-list button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0.5rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border);
+}
+.challenge-extra .user-list button:hover {
+    background: var(--bg-card);
+}
+#invite-status {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+}
+
+/* Verification area (friend invite) */
+.verification-area {
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    display: none;
+}
+.verification-area.show {
+    display: block;
+}
+.verification-area .code-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+    flex-wrap: wrap;
+}
+.verification-area .code-row code {
+    background: var(--bg-secondary);
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--radius-sm);
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: monospace;
+}
+.verification-area .code-row .btn-sm {
+    padding: 0.2rem 0.6rem;
+    font-size: 0.8rem;
+    border-radius: 30px;
+    border: 1px solid var(--border);
+    background: var(--bg-secondary);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.verification-area .code-row .btn-sm:hover {
+    background: var(--border);
+}
+.verification-area .checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+.verification-area .checkbox-row input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--accent);
+}
+
+/* Action row (back + primary) */
+.action-row {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+.action-row .btn {
+    flex: 1;
+    min-width: 120px;
+    padding: 0.6rem 1rem;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.action-row .btn-primary {
+    background: var(--accent);
+    color: white;
+    border: 1px solid var(--accent);
+}
+.action-row .btn-primary:hover {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+}
+.action-row .btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.action-row .btn-secondary {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+}
+.action-row .btn-secondary:hover {
+    background: var(--border);
+}
+
+/* Feature list (revision) */
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0;
+}
+.feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.3rem 0;
+    font-size: 0.9rem;
+}
+.feature-list li::before {
+    content: "✓";
+    color: var(--success);
+    font-weight: bold;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 640px) {
+    .bottom-card {
+        padding: 1rem;
+        height: 80vh;
+        max-height: 80vh;
+    }
+    .header-row.bottom .subject-area {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+    .header-row.bottom .stats {
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+    .question-stepper input {
+        font-size: 1rem;
+        padding: 0.4rem;
+    }
+    .difficulty-group button {
+        min-width: 60px;
+        font-size: 0.85rem;
+    }
+    .action-row .btn {
+        min-width: 100px;
+        font-size: 0.9rem;
+    }
+    .mode-option {
+        padding: 0.5rem 0.75rem;
+    }
+    .mode-option .icon {
+        font-size: 1.4rem;
+    }
+    .verification-area .code-row {
+        gap: 0.3rem;
+    }
+}
+
+/* ============================================================
+   DARK THEME ADJUSTMENTS
+   ============================================================ */
+body.dark-theme .bottom-card {
+    background: var(--bg-card);
+}
+body.dark-theme .mode-option.selected {
+    background: rgba(37, 99, 235, 0.15);
+}
+body.dark-theme .difficulty-group button,
+body.dark-theme .challenge-type-group button {
+    background: var(--bg-secondary);
+}
+body.dark-theme .difficulty-group button.active,
+body.dark-theme .challenge-type-group button.active {
+    background: var(--accent);
+    color: white;
+}
+
+/* ============================================================
+   UTILITY
+   ============================================================ */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+.hidden {
+    display: none !important;
+}

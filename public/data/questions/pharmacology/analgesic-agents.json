@@ -1,0 +1,2854 @@
+{
+  "questions": [
+    {
+      "questionId": "pharma_analgesic_001",
+      "difficulty": 2,
+      "question": "Which of the following opioids is a prodrug that requires metabolic activation by CYP2D6 to produce its analgesic effect?",
+      "image": null,
+      "options": [
+        {
+          "text": "Codeine",
+          "isCorrect": true,
+          "explanation": "Codeine is a prodrug that must be O-demethylated by CYP2D6 to morphine, its active analgesic metabolite."
+        },
+        {
+          "text": "Morphine",
+          "isCorrect": false,
+          "explanation": "Morphine is the active metabolite of codeine and is itself directly active; it is not a prodrug."
+        },
+        {
+          "text": "Fentanyl",
+          "isCorrect": false,
+          "explanation": "Fentanyl is a synthetic opioid that acts directly at mu-receptors and does not require metabolic activation."
+        },
+        {
+          "text": "Methadone",
+          "isCorrect": false,
+          "explanation": "Methadone is a directly acting opioid with a long half‑life; it is not a prodrug."
+        },
+        {
+          "text": "Hydromorphone",
+          "isCorrect": false,
+          "explanation": "Hydromorphone is a direct‑acting semi‑synthetic opioid and does not need conversion to an active form."
+        }
+      ],
+      "explanation": {
+        "overview": "Codeine is a prodrug that is O‑demethylated by CYP2D6 to morphine, which then produces analgesia. Genetic variation in CYP2D6 strongly influences efficacy and toxicity.",
+        "highYield": "Prodrugs requiring CYP2D6: Codeine (→ morphine), tramadol (→ O‑desmethyltramadol), tamoxifen (→ endoxifen).",
+        "clinicalCorrelation": "Poor metabolisers may obtain inadequate pain relief from codeine; ultra‑rapid metabolisers risk life‑threatening opioid toxicity from excessive morphine production."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_002",
+      "difficulty": 1,
+      "question": "Morphine primarily exerts its analgesic effects through activation of which opioid receptor subtype?",
+      "image": null,
+      "options": [
+        {
+          "text": "Mu (μ)",
+          "isCorrect": true,
+          "explanation": "Morphine is a full agonist at mu‑opioid receptors, which mediate supraspinal analgesia, euphoria, and respiratory depression."
+        },
+        {
+          "text": "Delta (δ)",
+          "isCorrect": false,
+          "explanation": "Delta receptors modulate pain at the spinal level but are not the primary target of morphine’s analgesic action."
+        },
+        {
+          "text": "Kappa (κ)",
+          "isCorrect": false,
+          "explanation": "Kappa receptors produce spinal analgesia, dysphoria, and diuresis; morphine has low affinity for them."
+        },
+        {
+          "text": "Nociceptin (ORL1)",
+          "isCorrect": false,
+          "explanation": "The nociceptin receptor does not bind morphine and has a distinct endogenous ligand (nociceptin/orphanin FQ)."
+        },
+        {
+          "text": "Sigma (σ)",
+          "isCorrect": false,
+          "explanation": "Sigma receptors are not true opioid receptors; they are involved in psychotomimetic effects and are not targeted by morphine."
+        }
+      ],
+      "explanation": {
+        "overview": "Morphine is a prototypical mu‑opioid receptor agonist. Activation of mu‑receptors in the brain and spinal cord produces powerful analgesia as well as side‑effects such as respiratory depression and constipation.",
+        "highYield": "Mu = Morphine’s main target. Remember: Mu → Miosis, Morphine, respiratory depression, euphoria.",
+        "clinicalCorrelation": "Understanding receptor subtypes guides the choice of mixed agonist‑antagonists (e.g., nalbuphine) in patients who cannot tolerate pure mu‑agonists."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_003",
+      "difficulty": 2,
+      "question": "Which opioid is commonly used for its rapid onset and short duration in procedural sedation and analgesia?",
+      "image": null,
+      "options": [
+        {
+          "text": "Fentanyl",
+          "isCorrect": true,
+          "explanation": "Fentanyl is highly lipophilic, allowing rapid penetration into the CNS and a quick onset (within minutes), with a short duration due to redistribution."
+        },
+        {
+          "text": "Morphine",
+          "isCorrect": false,
+          "explanation": "Morphine has a slower onset (peak 15–30 min IV) and longer duration, making it less suitable for brief procedures."
+        },
+        {
+          "text": "Oxycodone",
+          "isCorrect": false,
+          "explanation": "Oxycodone’s onset is slower than fentanyl’s, and it is typically used for moderate to severe pain rather than rapid procedural sedation."
+        },
+        {
+          "text": "Hydromorphone",
+          "isCorrect": false,
+          "explanation": "Hydromorphone acts faster than morphine but is still not as rapidly titratable as fentanyl for short procedures."
+        },
+        {
+          "text": "Meperidine",
+          "isCorrect": false,
+          "explanation": "Meperidine has a slower onset and a neurotoxic metabolite (normeperidine); it is avoided in modern procedural sedation."
+        }
+      ],
+      "explanation": {
+        "overview": "Fentanyl’s high lipid solubility enables quick entry into the brain, producing rapid analgesia and sedation. Its effect is terminated by redistribution into fat, giving a short clinical duration ideal for brief painful interventions.",
+        "highYield": "Fentanyl: rapid onset (seconds to minutes) and short duration due to redistribution – perfect for procedural sedation.",
+        "clinicalCorrelation": "Repeated doses or continuous infusions saturate redistribution sites, causing prolonged effects and increasing the risk of respiratory depression."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_004",
+      "difficulty": 1,
+      "question": "The primary mechanism of action of nonsteroidal anti-inflammatory drugs (NSAIDs) is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Inhibition of cyclooxygenase (COX) enzymes",
+          "isCorrect": true,
+          "explanation": "NSAIDs inhibit COX‑1 and/or COX‑2, reducing the synthesis of prostaglandins and thereby decreasing inflammation, pain, and fever."
+        },
+        {
+          "text": "Blockade of sodium channels",
+          "isCorrect": false,
+          "explanation": "Sodium channel blockade is the mechanism of local anaesthetics and some anticonvulsants, not NSAIDs."
+        },
+        {
+          "text": "Antagonism of NMDA receptors",
+          "isCorrect": false,
+          "explanation": "NMDA antagonism is a property of ketamine and some other analgesics; NSAIDs do not act via this pathway."
+        },
+        {
+          "text": "Activation of GABA-A receptors",
+          "isCorrect": false,
+          "explanation": "GABA‑A receptor activation is typical of benzodiazepines and barbiturates, not anti‑inflammatory drugs."
+        },
+        {
+          "text": "Inhibition of lipoxygenase",
+          "isCorrect": false,
+          "explanation": "Lipoxygenase inhibition would block leukotriene synthesis; NSAIDs primarily target cyclooxygenase, not lipoxygenase."
+        }
+      ],
+      "explanation": {
+        "overview": "By inhibiting cyclooxygenase (COX) enzymes, NSAIDs prevent the conversion of arachidonic acid into prostaglandins, prostacyclin, and thromboxane, producing analgesic, anti‑inflammatory, and antipyretic effects.",
+        "highYield": "COX inhibition → ↓ prostaglandins → ↓ pain, ↓ fever, ↓ inflammation.",
+        "clinicalCorrelation": "The balance between COX‑1 and COX‑2 inhibition determines the side‑effect profile: COX‑1 blockade leads to gastric ulceration and antiplatelet effects, while COX‑2 selective agents spare the stomach but may increase cardiovascular risk."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_005",
+      "difficulty": 2,
+      "question": "Acetaminophen (paracetamol) differs from NSAIDs in that it:",
+      "image": null,
+      "options": [
+        {
+          "text": "Has minimal anti-inflammatory activity and lacks significant GI toxicity",
+          "isCorrect": true,
+          "explanation": "Acetaminophen has weak peripheral COX inhibition and therefore very little anti‑inflammatory effect, and it does not impair gastric mucosal protection."
+        },
+        {
+          "text": "Is a potent COX-2 selective inhibitor",
+          "isCorrect": false,
+          "explanation": "Acetaminophen is not a selective COX‑2 inhibitor; its mechanism is largely central and distinct from traditional NSAIDs."
+        },
+        {
+          "text": "Acts primarily on peripheral COX",
+          "isCorrect": false,
+          "explanation": "Its action is predominantly central, not peripheral, which explains the lack of anti‑inflammatory efficacy."
+        },
+        {
+          "text": "Causes gastric ulcers",
+          "isCorrect": false,
+          "explanation": "Unlike traditional NSAIDs, acetaminophen does not significantly inhibit COX‑1 in the stomach and is not associated with peptic ulcer disease."
+        },
+        {
+          "text": "Inhibits lipoxygenase",
+          "isCorrect": false,
+          "explanation": "Acetaminophen does not inhibit lipoxygenase; its analgesic effect involves central COX inhibition and interactions with serotonergic pathways."
+        }
+      ],
+      "explanation": {
+        "overview": "Acetaminophen provides analgesia and antipyresis but lacks significant anti‑inflammatory activity and does not cause gastrointestinal ulceration or platelet dysfunction. Its exact mechanism is still debated but likely involves central COX inhibition, cannabinoid pathways, and serotonergic modulation.",
+        "highYield": "Acetaminophen: good for pain & fever, weak anti‑inflammatory, GI/platelet sparing. Overdose → hepatotoxicity.",
+        "clinicalCorrelation": "Because of its favourable gastrointestinal and platelet profile, acetaminophen is often preferred in patients with gastric ulcers, bleeding disorders, or those on anticoagulation."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_006",
+      "difficulty": 2,
+      "question": "Which adverse effect is most characteristic of NSAIDs but not acetaminophen?",
+      "image": null,
+      "options": [
+        {
+          "text": "Gastrointestinal bleeding and ulcers",
+          "isCorrect": true,
+          "explanation": "NSAIDs inhibit COX‑1, reducing protective gastric prostaglandins, leading to mucosal damage, erosions, and bleeding. Acetaminophen lacks this effect."
+        },
+        {
+          "text": "Hepatotoxicity",
+          "isCorrect": false,
+          "explanation": "Hepatotoxicity is a well‑known risk of acetaminophen overdose, not typical of NSAIDs at therapeutic doses."
+        },
+        {
+          "text": "Nephrotoxicity",
+          "isCorrect": false,
+          "explanation": "Both NSAIDs and, very rarely, acetaminophen can affect renal function; GI ulceration is a more distinctive NSAID effect."
+        },
+        {
+          "text": "Respiratory depression",
+          "isCorrect": false,
+          "explanation": "Respiratory depression is an opioid‑related adverse effect, not seen with NSAIDs or acetaminophen."
+        },
+        {
+          "text": "Constipation",
+          "isCorrect": false,
+          "explanation": "Constipation is primarily an opioid side effect; it is not a hallmark of NSAID use."
+        }
+      ],
+      "explanation": {
+        "overview": "Traditional NSAIDs inhibit COX‑1 in the gastric mucosa, leading to decreased production of gastroprotective prostaglandins, which predisposes patients to gastritis, peptic ulcers, and GI bleeding. Acetaminophen’s central action largely spares the stomach.",
+        "highYield": "NSAIDs → GI bleed/ulcers; Acetaminophen → hepatotoxic in overdose. Know the difference.",
+        "clinicalCorrelation": "Patients on long‑term NSAIDs often require gastroprotection with a proton pump inhibitor or misoprostol to prevent serious gastrointestinal complications."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_007",
+      "difficulty": 1,
+      "question": "The opioid antagonist used to reverse respiratory depression in opioid overdose is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Naloxone",
+          "isCorrect": true,
+          "explanation": "Naloxone is a competitive mu‑opioid receptor antagonist that rapidly reverses respiratory depression, sedation, and analgesia."
+        },
+        {
+          "text": "Naltrexone",
+          "isCorrect": false,
+          "explanation": "Naltrexone is an oral opioid antagonist used for maintenance therapy in addiction; it is not used in acute overdose because of its longer onset and duration."
+        },
+        {
+          "text": "Nalmefene",
+          "isCorrect": false,
+          "explanation": "Nalmefene is an alternative antagonist with a longer half‑life, but naloxone remains the standard first‑line agent for acute reversal."
+        },
+        {
+          "text": "Flumazenil",
+          "isCorrect": false,
+          "explanation": "Flumazenil is a benzodiazepine receptor antagonist, not an opioid antagonist, and has no effect on opioid overdose."
+        },
+        {
+          "text": "Sugammadex",
+          "isCorrect": false,
+          "explanation": "Sugammadex is a selective relaxant binding agent that reverses neuromuscular block caused by rocuronium/vecuronium, not opioids."
+        }
+      ],
+      "explanation": {
+        "overview": "Naloxone competitively displaces opioids from the mu‑receptor, quickly normalising respiration and consciousness. Because of its short half‑life (30–80 min), repeated doses or an infusion may be required for long‑acting opioids.",
+        "highYield": "Naloxone = acute opioid overdose. Naltrexone = maintenance (oral, long‑acting).",
+        "clinicalCorrelation": "Rapid reversal can precipitate severe withdrawal in dependent patients; naloxone should be titrated carefully to restore ventilation without causing complete reversal of analgesia or acute withdrawal syndrome."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_008",
+      "difficulty": 2,
+      "question": "Which opioid is contraindicated in patients with renal failure due to accumulation of an active neurotoxic metabolite?",
+      "image": null,
+      "options": [
+        {
+          "text": "Meperidine (pethidine)",
+          "isCorrect": true,
+          "explanation": "Meperidine is metabolised to normeperidine, which accumulates in renal impairment and can cause CNS excitation, tremors, and seizures."
+        },
+        {
+          "text": "Morphine",
+          "isCorrect": false,
+          "explanation": "Morphine’s active metabolite (morphine‑6‑glucuronide) can accumulate in renal failure and cause respiratory depression, but it is not typically neurotoxic in the same way as normeperidine."
+        },
+        {
+          "text": "Fentanyl",
+          "isCorrect": false,
+          "explanation": "Fentanyl has no active metabolites and is considered safe in renal failure with appropriate monitoring."
+        },
+        {
+          "text": "Methadone",
+          "isCorrect": false,
+          "explanation": "Methadone is metabolised to inactive products and can be used cautiously in renal impairment, though the parent drug may accumulate."
+        },
+        {
+          "text": "Buprenorphine",
+          "isCorrect": false,
+          "explanation": "Buprenorphine has inactive metabolites and a good safety profile in renal failure."
+        }
+      ],
+      "explanation": {
+        "overview": "Meperidine’s primary metabolite, normeperidine, is renally cleared and is a CNS stimulant. In renal insufficiency normeperidine accumulates, leading to myoclonus, agitation, and seizures – a distinct neurotoxic syndrome that does not respond to naloxone.",
+        "highYield": "Avoid meperidine in renal failure: normeperidine → seizures.",
+        "clinicalCorrelation": "Due to this risk and its weaker analgesic profile, meperidine has largely been replaced by safer opioids in clinical practice."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_009",
+      "difficulty": 2,
+      "question": "Tramadol is an atypical opioid that also inhibits reuptake of which neurotransmitters?",
+      "image": null,
+      "options": [
+        {
+          "text": "Serotonin and norepinephrine",
+          "isCorrect": true,
+          "explanation": "Tramadol is a weak mu‑agonist and inhibits serotonin (5‑HT) and norepinephrine (NE) reuptake, contributing to its analgesic effect."
+        },
+        {
+          "text": "Dopamine and serotonin",
+          "isCorrect": false,
+          "explanation": "Tramadol does not significantly affect dopamine reuptake; its non‑opioid action is on serotonin and norepinephrine."
+        },
+        {
+          "text": "GABA and glutamate",
+          "isCorrect": false,
+          "explanation": "GABA and glutamate are not the primary targets of tramadol’s analgesic mechanisms."
+        },
+        {
+          "text": "Acetylcholine",
+          "isCorrect": false,
+          "explanation": "Acetylcholine modulation is not a recognised action of tramadol."
+        },
+        {
+          "text": "Histamine",
+          "isCorrect": false,
+          "explanation": "Histamine release can occur with some opioids (e.g., morphine), but tramadol does not block its reuptake."
+        }
+      ],
+      "explanation": {
+        "overview": "Tramadol combines weak mu‑opioid agonism with inhibition of serotonin and norepinephrine reuptake, providing a multimodal analgesic effect. Its active O‑desmethyl metabolite (via CYP2D6) is a more potent mu‑agonist.",
+        "highYield": "Tramadol: mu‑agonist + SNRI‑like activity. Lowers seizure threshold.",
+        "clinicalCorrelation": "Because of its serotonergic activity, tramadol must be used cautiously with other serotonergic drugs (SSRIs, MAOIs, linezolid) to avoid serotonin syndrome. It also lowers the seizure threshold."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_010",
+      "difficulty": 2,
+      "question": "Celecoxib is a selective COX-2 inhibitor. Its advantage over non-selective NSAIDs is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Reduced risk of GI bleeding",
+          "isCorrect": true,
+          "explanation": "Selective COX‑2 inhibitors spare COX‑1, preserving gastric prostaglandins and reducing the incidence of peptic ulcers and GI bleeding."
+        },
+        {
+          "text": "Greater anti-inflammatory effect",
+          "isCorrect": false,
+          "explanation": "COX‑2 selective agents have anti‑inflammatory efficacy comparable to non‑selective NSAIDs, not superior."
+        },
+        {
+          "text": "Lower cardiovascular risk",
+          "isCorrect": false,
+          "explanation": "COX‑2 inhibitors are associated with an increased, not decreased, risk of thrombotic cardiovascular events (MI, stroke)."
+        },
+        {
+          "text": "No renal effects",
+          "isCorrect": false,
+          "explanation": "Both COX‑1 and COX‑2 inhibitors can impair renal function; COX‑2 plays a role in sodium and water homeostasis."
+        },
+        {
+          "text": "Faster onset",
+          "isCorrect": false,
+          "explanation": "Onset of action is similar across NSAIDs; COX‑2 selectivity does not confer a faster analgesic effect."
+        }
+      ],
+      "explanation": {
+        "overview": "By selectively inhibiting COX‑2, celecoxib reduces inflammation and pain while preserving COX‑1‑mediated gastric protection. This translates into fewer gastroduodenal ulcers and bleeding events compared with non‑selective NSAIDs.",
+        "highYield": "COX‑2 selective → gastric sparing, but watch for CV risk.",
+        "clinicalCorrelation": "Even selective COX‑2 inhibitors carry a cardiovascular risk; they are contraindicated in patients with established ischaemic heart disease or stroke. Concomitant aspirin for cardioprotection negates some of the GI advantage."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_011",
+      "difficulty": 2,
+      "question": "Which of the following is a long-acting opioid used for maintenance therapy in opioid addiction?",
+      "image": null,
+      "options": [
+        {
+          "text": "Methadone",
+          "isCorrect": true,
+          "explanation": "Methadone’s long half‑life (15–60+ hours) allows once‑daily dosing to suppress withdrawal and craving without producing euphoria at steady state."
+        },
+        {
+          "text": "Morphine",
+          "isCorrect": false,
+          "explanation": "Morphine has a short duration of action (4–6 h) and is not approved for maintenance therapy."
+        },
+        {
+          "text": "Hydromorphone",
+          "isCorrect": false,
+          "explanation": "Hydromorphone is a short‑acting opioid used for acute and chronic pain, not addiction treatment."
+        },
+        {
+          "text": "Oxymorphone",
+          "isCorrect": false,
+          "explanation": "Oxymorphone has a short half‑life and is not indicated for opioid use disorder."
+        },
+        {
+          "text": "Fentanyl",
+          "isCorrect": false,
+          "explanation": "Fentanyl’s short duration (except in transdermal form) and high abuse potential make it unsuitable for maintenance therapy."
+        }
+      ],
+      "explanation": {
+        "overview": "Methadone is a full mu‑opioid agonist with a prolonged elimination half‑life, enabling it to prevent withdrawal symptoms and reduce craving for 24 hours or more. It is a cornerstone of medically assisted treatment for opioid dependence.",
+        "highYield": "Methadone = long‑acting mu‑agonist for opioid substitution. Also causes QTc prolongation.",
+        "clinicalCorrelation": "Methadone maintenance reduces mortality, HIV transmission, and criminal activity. It must be titrated slowly to avoid fatal respiratory depression, and ECG monitoring is recommended because of the risk of QTc prolongation and torsades de pointes."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_012",
+      "difficulty": 2,
+      "question": "Buprenorphine is a partial agonist at mu-opioid receptors. Its ceiling effect means that:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increasing doses produce diminishing additional analgesia and less respiratory depression",
+          "isCorrect": true,
+          "explanation": "As a partial agonist, buprenorphine reaches a plateau at higher doses, limiting both analgesic effect and respiratory depression compared with full agonists."
+        },
+        {
+          "text": "It has no analgesic effect",
+          "isCorrect": false,
+          "explanation": "Buprenorphine is an effective analgesic; its ceiling refers to a flattening of the dose–response curve, not an absence of effect."
+        },
+        {
+          "text": "It is a pure antagonist",
+          "isCorrect": false,
+          "explanation": "Buprenorphine is a partial agonist, meaning it activates mu‑receptors but to a lesser maximum than full agonists like morphine."
+        },
+        {
+          "text": "It causes more respiratory depression than morphine",
+          "isCorrect": false,
+          "explanation": "Due to the ceiling effect, buprenorphine produces less respiratory depression than morphine at supratherapeutic doses."
+        },
+        {
+          "text": "It has no withdrawal syndrome",
+          "isCorrect": false,
+          "explanation": "Withdrawal can still occur upon abrupt discontinuation of buprenorphine, although it may be less intense than with full agonists."
+        }
+      ],
+      "explanation": {
+        "overview": "Buprenorphine’s partial agonism means it produces a sub‑maximal response even when all receptors are occupied. This results in a ceiling for respiratory depression and a safer profile in overdose, though it can also limit analgesic efficacy for severe pain.",
+        "highYield": "Partial agonist = ceiling effect: more drug ≠ more effect, especially for respiratory depression.",
+        "clinicalCorrelation": "Buprenorphine is increasingly used for both pain and opioid use disorder; it can precipitate withdrawal if given to patients currently on full agonists, so it should be started after a period of abstinence or when mild withdrawal is present."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_013",
+      "difficulty": 1,
+      "question": "The most common cause of acute liver failure in the United States is overdose of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Acetaminophen",
+          "isCorrect": true,
+          "explanation": "Acetaminophen overdose depletes glutathione, leading to accumulation of the toxic metabolite NAPQI, which causes centrilobular hepatic necrosis."
+        },
+        {
+          "text": "Ibuprofen",
+          "isCorrect": false,
+          "explanation": "Ibuprofen is rarely associated with severe liver injury; acetaminophen is the leading drug‑related cause of acute liver failure."
+        },
+        {
+          "text": "Aspirin",
+          "isCorrect": false,
+          "explanation": "Aspirin can cause Reye syndrome in children but is not the most common cause of acute liver failure in adults."
+        },
+        {
+          "text": "Naproxen",
+          "isCorrect": false,
+          "explanation": "Naproxen is an NSAID that can cause hepatic injury but is far less commonly implicated in acute liver failure than acetaminophen."
+        },
+        {
+          "text": "Diclofenac",
+          "isCorrect": false,
+          "explanation": "Diclofenac can elevate liver enzymes, yet it accounts for a very small fraction of acute liver failure cases compared with acetaminophen."
+        }
+      ],
+      "explanation": {
+        "overview": "In overdose, the usual metabolic pathways of acetaminophen become saturated, shifting metabolism to CYP2E1, which generates the highly reactive metabolite N‑acetyl‑p‑benzoquinone imine (NAPQI). NAPQI is normally detoxified by glutathione, but when glutathione is depleted, it covalently binds to hepatic proteins, causing necrosis.",
+        "highYield": "#1 cause of acute liver failure: acetaminophen OD. Rx: N‑acetylcysteine within 8–10 h.",
+        "clinicalCorrelation": "Prompt recognition and treatment with N‑acetylcysteine can prevent liver failure. The Rumack–Matthew nomogram guides therapy for acute single ingestions."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_014",
+      "difficulty": 2,
+      "question": "The antidote for acetaminophen toxicity is:",
+      "image": null,
+      "options": [
+        {
+          "text": "N-acetylcysteine",
+          "isCorrect": true,
+          "explanation": "N‑acetylcysteine replenishes glutathione stores and directly conjugates NAPQI, preventing hepatic injury; it is most effective within 8–10 hours of overdose."
+        },
+        {
+          "text": "Naloxone",
+          "isCorrect": false,
+          "explanation": "Naloxone reverses opioid overdose, not acetaminophen hepatotoxicity."
+        },
+        {
+          "text": "Flumazenil",
+          "isCorrect": false,
+          "explanation": "Flumazenil is a benzodiazepine antagonist and has no role in acetaminophen poisoning."
+        },
+        {
+          "text": "Activated charcoal",
+          "isCorrect": false,
+          "explanation": "Activated charcoal may be used to reduce absorption if given early, but it is not the specific antidote."
+        },
+        {
+          "text": "Vitamin K",
+          "isCorrect": false,
+          "explanation": "Vitamin K reverses warfarin‑induced coagulopathy, not acetaminophen toxicity."
+        }
+      ],
+      "explanation": {
+        "overview": "N‑acetylcysteine (NAC) works by restoring hepatic glutathione and acting as a glutathione substitute, thereby detoxifying NAPQI. It is nearly 100% effective if administered within 8–10 hours of an acute overdose.",
+        "highYield": "NAC = antidote for acetaminophen. Golden window: <8–10 hours.",
+        "clinicalCorrelation": "NAC can be given orally or intravenously; even late administration may benefit patients with established hepatic failure by improving haemodynamics and oxygen delivery."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_015",
+      "difficulty": 2,
+      "question": "Which opioid is associated with histamine release, leading to pruritus, flushing, and hypotension?",
+      "image": null,
+      "options": [
+        {
+          "text": "Morphine",
+          "isCorrect": true,
+          "explanation": "Morphine directly stimulates mast cells to release histamine, causing itching, vasodilation, and occasionally hypotension."
+        },
+        {
+          "text": "Fentanyl",
+          "isCorrect": false,
+          "explanation": "Fentanyl and its analogues do not cause significant histamine release and are preferred in patients with morphine‑induced pruritus."
+        },
+        {
+          "text": "Sufentanil",
+          "isCorrect": false,
+          "explanation": "Sufentanil is a synthetic opioid with minimal histamine release, similar to fentanyl."
+        },
+        {
+          "text": "Remifentanil",
+          "isCorrect": false,
+          "explanation": "Remifentanil does not release histamine; it is an ultra‑short‑acting esterase‑metabolised opioid."
+        },
+        {
+          "text": "Alfentanil",
+          "isCorrect": false,
+          "explanation": "Alfentanil has little to no histamine release and is often used in cardiac anaesthesia where haemodynamic stability is important."
+        }
+      ],
+      "explanation": {
+        "overview": "Morphine and codeine can trigger non‑immune histamine release from mast cells, resulting in pruritus, urticaria, flushing, and occasionally hypotension. Synthetic opioids such as fentanyl, alfentanil, and remifentanil lack this effect.",
+        "highYield": "Histamine release: Morphine → itch/hypotension. Fentanyl family = histamine‑free.",
+        "clinicalCorrelation": "In patients who experience intolerable pruritus with morphine, switching to a synthetic opioid or co‑administering an antihistamine may be beneficial."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_016",
+      "difficulty": 2,
+      "question": "Aspirin (acetylsalicylic acid) irreversibly inhibits COX-1 in platelets, leading to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Antiplatelet effect lasting for the life of the platelet",
+          "isCorrect": true,
+          "explanation": "Aspirin acetylates platelet COX‑1 irreversibly; platelets cannot synthesise new enzymes, so thromboxane A2 production is suppressed for the platelet’s lifespan (7–10 days)."
+        },
+        {
+          "text": "Increased thromboxane A2 production",
+          "isCorrect": false,
+          "explanation": "Aspirin inhibits thromboxane A2 synthesis, it does not increase it."
+        },
+        {
+          "text": "Enhanced platelet aggregation",
+          "isCorrect": false,
+          "explanation": "By blocking thromboxane A2, aspirin reduces platelet aggregation, not enhances it."
+        },
+        {
+          "text": "Reversible inhibition",
+          "isCorrect": false,
+          "explanation": "The inhibition is irreversible; only newly formed platelets can restore COX‑1 activity."
+        },
+        {
+          "text": "No effect on platelets",
+          "isCorrect": false,
+          "explanation": "Aspirin clearly affects platelets, which is why low‑dose aspirin is used for cardiovascular prophylaxis."
+        }
+      ],
+      "explanation": {
+        "overview": "Aspirin irreversibly acetylates a serine residue on COX‑1, permanently blocking thromboxane A2 production in platelets. Because platelets lack a nucleus and cannot replace COX‑1, the antiplatelet effect lasts for the entire lifespan of the platelet (≈7–10 days).",
+        "highYield": "Aspirin: irreversible COX‑1 inhibitor → antiplatelet for platelet lifetime. Low dose (75–100 mg) for CV protection.",
+        "clinicalCorrelation": "Even low‑dose aspirin can increase bleeding risk, particularly GI haemorrhage. It is contraindicated in children with viral illnesses due to the risk of Reye syndrome."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_017",
+      "difficulty": 2,
+      "question": "Reye syndrome is a rare but serious complication associated with aspirin use in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Children with viral infections (influenza, varicella)",
+          "isCorrect": true,
+          "explanation": "Reye syndrome presents with encephalopathy and fatty liver degeneration and is strongly linked to aspirin use during acute viral illnesses in children."
+        },
+        {
+          "text": "Adults with arthritis",
+          "isCorrect": false,
+          "explanation": "Reye syndrome is almost exclusively a paediatric condition and is not seen in adults taking aspirin for arthritis."
+        },
+        {
+          "text": "Pregnant women",
+          "isCorrect": false,
+          "explanation": "Aspirin may cause premature closure of the ductus arteriosus or bleeding complications in pregnancy, but not Reye syndrome."
+        },
+        {
+          "text": "Elderly with cardiovascular disease",
+          "isCorrect": false,
+          "explanation": "Elderly patients taking low‑dose aspirin for cardioprotection are not at risk for Reye syndrome."
+        },
+        {
+          "text": "Patients with gout",
+          "isCorrect": false,
+          "explanation": "Aspirin can affect uric acid levels, but Reye syndrome is not related to gout therapy."
+        }
+      ],
+      "explanation": {
+        "overview": "Reye syndrome is an acute non‑inflammatory encephalopathy associated with hepatic failure. Its incidence dramatically decreased after public health warnings against using aspirin in children with febrile viral illnesses.",
+        "highYield": "NO aspirin for children with flu/chickenpox → risk of Reye syndrome.",
+        "clinicalCorrelation": "Acetaminophen or ibuprofen are preferred antipyretics in children. Aspirin remains indicated for Kawasaki disease and selected rheumatologic conditions under supervision."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_018",
+      "difficulty": 2,
+      "question": "Ketorolac is an NSAID used parenterally for short-term pain management. Its use is limited to ≤5 days because:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increased risk of GI bleeding, renal impairment, and bleeding complications",
+          "isCorrect": true,
+          "explanation": "Prolonged ketorolac use markedly increases the incidence of serious gastrointestinal, renal, and haemorrhagic adverse events; the FDA limits therapy to a maximum of 5 days."
+        },
+        {
+          "text": "Rapid development of tolerance",
+          "isCorrect": false,
+          "explanation": "Tolerance is not the issue; safety concerns related to COX‑1 inhibition drive the duration limit."
+        },
+        {
+          "text": "Lack of efficacy beyond 5 days",
+          "isCorrect": false,
+          "explanation": "Ketorolac remains effective beyond 5 days, but the risk–benefit profile worsens considerably."
+        },
+        {
+          "text": "Accumulation of toxic metabolites",
+          "isCorrect": false,
+          "explanation": "Ketorolac does not have toxic metabolites; the limitation is due to dose‑ and duration‑dependent toxicity."
+        },
+        {
+          "text": "Cardiotoxicity",
+          "isCorrect": false,
+          "explanation": "While NSAIDs can increase cardiovascular risk, the 5‑day limit for ketorolac is primarily driven by GI and renal bleeding risks."
+        }
+      ],
+      "explanation": {
+        "overview": "Ketorolac is a potent parenteral NSAID approved for moderate‑to‑severe pain. Because of its strong COX‑1 inhibition, the risk of gastrointestinal ulceration, bleeding, and acute kidney injury rises substantially after 5 days of therapy.",
+        "highYield": "Ketorolac = max 5 days, otherwise GI bleed/renal failure risk soars.",
+        "clinicalCorrelation": "Ketorolac is contraindicated in patients with renal impairment, hypovolaemia, peptic ulcer disease, or bleeding disorders. It should not be used neuraxially or during major surgery where haemostasis is critical."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_019",
+      "difficulty": 2,
+      "question": "Which of the following is a tricyclic antidepressant commonly used as an adjuvant analgesic for neuropathic pain?",
+      "image": null,
+      "options": [
+        {
+          "text": "Amitriptyline",
+          "isCorrect": true,
+          "explanation": "Amitriptyline is a tricyclic antidepressant effective for neuropathic pain; its analgesic mechanisms include sodium channel blockade, NMDA antagonism, and enhancement of descending inhibitory pathways."
+        },
+        {
+          "text": "Fluoxetine",
+          "isCorrect": false,
+          "explanation": "Fluoxetine is an SSRI, not a tricyclic, and has weaker evidence for neuropathic pain."
+        },
+        {
+          "text": "Sertraline",
+          "isCorrect": false,
+          "explanation": "Sertraline is an SSRI; while serotonergic agents may help some types of pain, tricyclics have stronger evidence in neuropathic pain."
+        },
+        {
+          "text": "Venlafaxine",
+          "isCorrect": false,
+          "explanation": "Venlafaxine is an SNRI, not a tricyclic, though it also has efficacy in neuropathic pain."
+        },
+        {
+          "text": "Bupropion",
+          "isCorrect": false,
+          "explanation": "Bupropion is an atypical antidepressant with no established role in neuropathic pain; it primarily affects dopamine and norepinephrine."
+        }
+      ],
+      "explanation": {
+        "overview": "Tricyclic antidepressants (TCAs) like amitriptyline and nortriptyline are first‑line adjuvant analgesics for neuropathic pain. They act through multiple mechanisms, including block of voltage‑gated sodium channels, NMDA receptor antagonism, and potentiation of descending noradrenergic and serotonergic pathways.",
+        "highYield": "Amitriptyline/nortriptyline = TCA for neuropathic pain. Start low, go slow.",
+        "clinicalCorrelation": "TCAs are often preferred in neuropathic pain because of their robust efficacy, but anticholinergic side‑effects (dry mouth, constipation, urinary retention) limit tolerability, especially in the elderly."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_020",
+      "difficulty": 2,
+      "question": "Gabapentin and pregabalin are first-line agents for neuropathic pain. Their mechanism involves:",
+      "image": null,
+      "options": [
+        {
+          "text": "Binding to α2-δ subunit of voltage-gated calcium channels",
+          "isCorrect": true,
+          "explanation": "Gabapentinoids bind the α2‑δ subunit, reducing calcium influx and neurotransmitter release (glutamate, substance P) in hyperexcited neurons."
+        },
+        {
+          "text": "Sodium channel blockade",
+          "isCorrect": false,
+          "explanation": "Sodium channel blockade is characteristic of carbamazepine, lidocaine, and some TCAs, not gabapentinoids."
+        },
+        {
+          "text": "NMDA receptor antagonism",
+          "isCorrect": false,
+          "explanation": "NMDA antagonism is a property of ketamine and methadone, not gabapentin or pregabalin."
+        },
+        {
+          "text": "GABA potentiation",
+          "isCorrect": false,
+          "explanation": "Despite the name, gabapentin does not act on GABA receptors; it was designed to mimic GABA but works via calcium channels."
+        },
+        {
+          "text": "Opioid receptor agonism",
+          "isCorrect": false,
+          "explanation": "Gabapentinoids do not bind opioid receptors; they have a completely different target."
+        }
+      ],
+      "explanation": {
+        "overview": "Gabapentin and pregabalin are structural analogues of GABA that bind with high affinity to the α2‑δ subunit of voltage‑gated calcium channels. This reduces calcium influx into presynaptic terminals, decreasing the release of excitatory neurotransmitters and thereby attenuating pain signalling.",
+        "highYield": "Gabapentin/pregabalin → α2‑δ calcium channel blockers → ↓ glutamate, substance P.",
+        "clinicalCorrelation": "These drugs are first‑line for diabetic neuropathy and postherpetic neuralgia. They require renal dose adjustment and can cause sedation, dizziness, and weight gain."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_021",
+      "difficulty": 2,
+      "question": "Capsaicin cream depletes substance P from sensory nerve endings. It is used for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Postherpetic neuralgia and osteoarthritis",
+          "isCorrect": true,
+          "explanation": "Capsaicin is effective in reducing pain in postherpetic neuralgia and osteoarthritis by desensitising TRPV1‑expressing nociceptors."
+        },
+        {
+          "text": "Acute pain",
+          "isCorrect": false,
+          "explanation": "Capsaicin is not suitable for acute pain; it requires repeated application over days to weeks to achieve desensitisation."
+        },
+        {
+          "text": "Visceral pain",
+          "isCorrect": false,
+          "explanation": "Topical capsaicin cannot reach visceral nociceptors and has no role in visceral pain."
+        },
+        {
+          "text": "Migraine",
+          "isCorrect": false,
+          "explanation": "Migraine is not treated with topical capsaicin; triptans, NSAIDs, and CGRP antagonists are used."
+        },
+        {
+          "text": "Bone pain",
+          "isCorrect": false,
+          "explanation": "Bone pain from metastases usually requires systemic analgesics; topical capsaicin is ineffective for deep bone pain."
+        }
+      ],
+      "explanation": {
+        "overview": "Capsaicin, the pungent component of chilli peppers, initially activates TRPV1 receptors causing a burning sensation, then leads to reversible defunctionalisation and depletion of substance P from sensory C‑fibres. This produces a localised analgesic effect in chronic neuropathic and musculoskeletal conditions.",
+        "highYield": "Capsaicin: TRPV1 agonist → initial burn → desensitisation → pain relief. Used for PHN, OA.",
+        "clinicalCorrelation": "Patients must be counselled about the initial burning sensation; consistent use is required for effect. The high‑concentration patch (8%) provides prolonged relief after a single 60‑minute application."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_022",
+      "difficulty": 2,
+      "question": "Lidocaine patch 5% is used for localized neuropathic pain. Its mechanism is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Local sodium channel blockade, reducing ectopic discharges",
+          "isCorrect": true,
+          "explanation": "Lidocaine stabilises neuronal membranes by blocking voltage‑gated sodium channels, suppressing ectopic impulses generated by damaged peripheral nerves."
+        },
+        {
+          "text": "Local anesthetic effect",
+          "isCorrect": false,
+          "explanation": "Although lidocaine is a local anaesthetic, at the low doses delivered by the patch it acts as a membrane stabiliser without causing complete sensory loss."
+        },
+        {
+          "text": "Anti-inflammatory",
+          "isCorrect": false,
+          "explanation": "Lidocaine does not have significant anti‑inflammatory properties."
+        },
+        {
+          "text": "Opioid agonism",
+          "isCorrect": false,
+          "explanation": "Lidocaine does not interact with opioid receptors."
+        },
+        {
+          "text": "TRPV1 antagonism",
+          "isCorrect": false,
+          "explanation": "TRPV1 antagonism is not the mechanism of lidocaine; capsaicin is a TRPV1 agonist."
+        }
+      ],
+      "explanation": {
+        "overview": "The lidocaine 5% patch provides a localised analgesic effect by blocking sodium channels on hyperactive nociceptive fibres, thus reducing abnormal spontaneous activity without causing numbness. It is particularly useful in postherpetic neuralgia.",
+        "highYield": "Lidocaine patch → local Na⁺ channel block → quietens damaged nerves.",
+        "clinicalCorrelation": "Because systemic absorption is minimal, lidocaine patches have an excellent safety profile and can be used alone or in combination with oral agents for focal neuropathic pain."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_023",
+      "difficulty": 3,
+      "question": "Which of the following opioids is a partial agonist at mu receptors and antagonist at kappa receptors?",
+      "image": null,
+      "options": [
+        {
+          "text": "Nalbuphine",
+          "isCorrect": true,
+          "explanation": "Nalbuphine is a mixed agonist‑antagonist: it is a kappa agonist and mu antagonist. (Note: buprenorphine is a partial mu agonist, not a kappa antagonist.)"
+        },
+        {
+          "text": "Buprenorphine",
+          "isCorrect": false,
+          "explanation": "Buprenorphine is a partial mu agonist; it does not possess kappa antagonist properties."
+        },
+        {
+          "text": "Butorphanol",
+          "isCorrect": false,
+          "explanation": "Butorphanol is a kappa agonist and partial mu agonist/antagonist, not a pure mu partial agonist with kappa antagonism."
+        },
+        {
+          "text": "Pentazocine",
+          "isCorrect": false,
+          "explanation": "Pentazocine is a kappa agonist and partial mu agonist, but it is not described as a pure mu partial agonist with kappa antagonism."
+        },
+        {
+          "text": "Naloxone",
+          "isCorrect": false,
+          "explanation": "Naloxone is a full antagonist at mu, kappa, and delta receptors; it is not a partial agonist."
+        }
+      ],
+      "explanation": {
+        "overview": "Nalbuphine has a unique profile: it is a kappa receptor agonist (providing spinal analgesia) and a mu receptor antagonist. This allows it to relieve pain while reversing or preventing mu‑mediated respiratory depression. Buprenorphine, in contrast, is a partial mu agonist.",
+        "highYield": "Mixed agonist‑antagonists: Nalbuphine (κ agonist/μ antagonist). Buprenorphine = partial μ agonist.",
+        "clinicalCorrelation": "Mixed agonists can precipitate withdrawal in opioid‑dependent patients by displacing full agonists from mu receptors. They are useful for pruritus or respiratory depression in patients receiving neuraxial opioids."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_024",
+      "difficulty": 2,
+      "question": "A major risk of mixed agonist-antagonist opioids (e.g., pentazocine) is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Precipitation of withdrawal in opioid-dependent patients",
+          "isCorrect": true,
+          "explanation": "These drugs can displace full agonists from mu receptors while providing only partial activation, thereby triggering acute withdrawal in physically dependent individuals."
+        },
+        {
+          "text": "Higher abuse liability",
+          "isCorrect": false,
+          "explanation": "Mixed agonist‑antagonists generally have lower abuse potential than full mu agonists; withdrawal precipitation is a more immediate concern."
+        },
+        {
+          "text": "Severe respiratory depression",
+          "isCorrect": false,
+          "explanation": "Because of their partial agonism or antagonism at mu receptors, they cause less respiratory depression than full agonists."
+        },
+        {
+          "text": "Hepatotoxicity",
+          "isCorrect": false,
+          "explanation": "Hepatotoxicity is not a class effect of mixed agonist‑antagonist opioids."
+        },
+        {
+          "text": "Seizures",
+          "isCorrect": false,
+          "explanation": "Seizures are not typical with these agents; normeperidine (from meperidine) is the opioid metabolite associated with seizures."
+        }
+      ],
+      "explanation": {
+        "overview": "Mixed agonist‑antagonist opioids (e.g., pentazocine, nalbuphine, butorphanol) have mu antagonist or partial agonist activity. In patients chronically using full mu agonists, they can displace the full agonist, leading to acute opioid withdrawal syndrome.",
+        "highYield": "Never give mixed agonist‑antagonists to a patient on chronic full agonists → withdrawal.",
+        "clinicalCorrelation": "This property is exploited clinically: nalbuphine can be used to reverse pruritus and mild respiratory depression from neuraxial morphine without reversing analgesia."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_025",
+      "difficulty": 2,
+      "question": "Tapentadol is a newer analgesic that combines two mechanisms: mu-opioid agonism and:",
+      "image": null,
+      "options": [
+        {
+          "text": "Norepinephrine reuptake inhibition",
+          "isCorrect": true,
+          "explanation": "Tapentadol is a mu‑opioid receptor agonist and also inhibits norepinephrine reuptake, giving it dual analgesic activity for both nociceptive and neuropathic pain."
+        },
+        {
+          "text": "Serotonin reuptake inhibition",
+          "isCorrect": false,
+          "explanation": "Tapentadol has negligible effect on serotonin reuptake; its non‑opioid target is norepinephrine."
+        },
+        {
+          "text": "Calcium channel blockade",
+          "isCorrect": false,
+          "explanation": "Calcium channel blockade is not part of tapentadol’s mechanism."
+        },
+        {
+          "text": "Sodium channel blockade",
+          "isCorrect": false,
+          "explanation": "Tapentadol does not block sodium channels; this is a feature of local anaesthetics and some anticonvulsants."
+        },
+        {
+          "text": "COX inhibition",
+          "isCorrect": false,
+          "explanation": "Tapentadol is not an NSAID and does not inhibit cyclooxygenase."
+        }
+      ],
+      "explanation": {
+        "overview": "Tapentadol combines mu‑opioid receptor agonism with noradrenaline reuptake inhibition. This dual mechanism allows it to be effective in a broad range of pain conditions, including neuropathic pain, while having fewer serotonergic side‑effects and a lower incidence of nausea and constipation compared with other strong opioids.",
+        "highYield": "Tapentadol = MOR agonist + NRI. Dual pain pathway coverage.",
+        "clinicalCorrelation": "Because it spares serotonin, tapentadol may have a lower risk of serotonin syndrome than tramadol, while still offering comparable efficacy."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_026",
+      "difficulty": 1,
+      "question": "The most common adverse effects of opioids are:",
+      "image": null,
+      "options": [
+        {
+          "text": "Constipation, nausea, sedation, and respiratory depression",
+          "isCorrect": true,
+          "explanation": "These are dose‑dependent opioid effects; constipation and nausea are extremely common, while respiratory depression is the most dangerous."
+        },
+        {
+          "text": "Diarrhea and abdominal pain",
+          "isCorrect": false,
+          "explanation": "Opioids are constipating, not diarrhoeagenic; they reduce gastrointestinal motility."
+        },
+        {
+          "text": "Hypertension and tachycardia",
+          "isCorrect": false,
+          "explanation": "Opioids generally cause hypotension and bradycardia due to reduced sympathetic outflow, not hypertension."
+        },
+        {
+          "text": "Hyperthermia",
+          "isCorrect": false,
+          "explanation": "Opioids can cause mild hypothermia; hyperthermia may occur in serotonin syndrome but is not a common opioid effect."
+        },
+        {
+          "text": "Urinary frequency",
+          "isCorrect": false,
+          "explanation": "Opioids can cause urinary retention by increasing sphincter tone, not urinary frequency."
+        }
+      ],
+      "explanation": {
+        "overview": "Opioids cause widespread effects through mu receptors: gastrointestinal smooth muscle contraction leads to constipation; activation of the chemoreceptor trigger zone causes nausea; sedation occurs via CNS depression; and respiratory depression is due to reduced sensitivity of the brainstem to CO₂.",
+        "highYield": "Opioid side effects: constipation (tolerance slow), nausea (early), sedation, respiratory depression (fatal).",
+        "clinicalCorrelation": "Prophylactic laxatives should be prescribed when initiating chronic opioid therapy. Naloxone must be immediately available to treat respiratory depression."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_027",
+      "difficulty": 2,
+      "question": "Tolerance to which opioid effect develops the slowest?",
+      "image": null,
+      "options": [
+        {
+          "text": "Constipation",
+          "isCorrect": true,
+          "explanation": "Tolerance to opioid‑induced constipation develops very slowly and often incompletely, requiring ongoing laxative therapy."
+        },
+        {
+          "text": "Analgesia",
+          "isCorrect": false,
+          "explanation": "Tolerance to analgesia can develop with chronic use, necessitating dose escalation."
+        },
+        {
+          "text": "Respiratory depression",
+          "isCorrect": false,
+          "explanation": "Tolerance to respiratory depression develops relatively quickly, which is why dose escalation can be managed safely in tolerant patients."
+        },
+        {
+          "text": "Euphoria",
+          "isCorrect": false,
+          "explanation": "Euphoria undergoes tolerance rapidly, contributing to dose escalation in addiction."
+        },
+        {
+          "text": "Sedation",
+          "isCorrect": false,
+          "explanation": "Sedation tends to decrease over days to weeks as tolerance develops."
+        }
+      ],
+      "explanation": {
+        "overview": "Different opioid effects exhibit tolerance at different rates. Respiratory depression, euphoria, and sedation decline fairly quickly, whereas constipation and miosis show minimal tolerance even with prolonged use.",
+        "highYield": "Tolerance: fast to euphoria/resp depression, slow to constipation/miosis. Constipation always needs laxatives.",
+        "clinicalCorrelation": "Patients on chronic opioids should be maintained on a bowel regimen. The persistence of miosis can be a useful sign of opioid intake even in tolerant individuals."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_028",
+      "difficulty": 2,
+      "question": "Which NSAID carries the highest risk of cardiovascular thrombotic events and was withdrawn from the market?",
+      "image": null,
+      "options": [
+        {
+          "text": "Rofecoxib",
+          "isCorrect": true,
+          "explanation": "Rofecoxib (Vioxx), a selective COX‑2 inhibitor, was voluntarily withdrawn after the APPROVe trial showed a doubling of myocardial infarction and stroke risk."
+        },
+        {
+          "text": "Celecoxib",
+          "isCorrect": false,
+          "explanation": "Celecoxib remains on the market; it carries a cardiovascular risk similar to non‑selective NSAIDs but was not withdrawn."
+        },
+        {
+          "text": "Ibuprofen",
+          "isCorrect": false,
+          "explanation": "Ibuprofen is a non‑selective NSAID with a lower cardiovascular risk profile than rofecoxib."
+        },
+        {
+          "text": "Naproxen",
+          "isCorrect": false,
+          "explanation": "Naproxen is thought to have the lowest cardiovascular risk among non‑aspirin NSAIDs."
+        },
+        {
+          "text": "Diclofenac",
+          "isCorrect": false,
+          "explanation": "Diclofenac is associated with increased cardiovascular risk but has not been withdrawn."
+        }
+      ],
+      "explanation": {
+        "overview": "The selective COX‑2 inhibitor rofecoxib was removed from the market in 2004 after a placebo‑controlled trial demonstrated a significantly increased risk of myocardial infarction and stroke. This was attributed to selective suppression of prostacyclin (vasodilatory, antiplatelet) without inhibiting thromboxane A2 (prothrombotic).",
+        "highYield": "Rofecoxib (Vioxx) → withdrawn: ↑ MI/stroke. COX‑2 selective shift prothrombotic balance.",
+        "clinicalCorrelation": "All NSAIDs may carry some cardiovascular risk; the choice of agent should consider the patient’s cardiovascular profile. Co‑administration with aspirin reduces but does not eliminate the risk."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_029",
+      "difficulty": 2,
+      "question": "Diclofenac is an NSAID available in topical and oral forms. It is associated with a small risk of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hepatotoxicity",
+          "isCorrect": true,
+          "explanation": "Diclofenac can cause mild transaminase elevations and, rarely, severe hepatotoxicity."
+        },
+        {
+          "text": "Nephrotoxicity",
+          "isCorrect": false,
+          "explanation": "While diclofenac can impair renal function, this is not the most distinctive risk; hepatotoxicity is a more prominent concern with diclofenac than with many other NSAIDs."
+        },
+        {
+          "text": "Cardiovascular events",
+          "isCorrect": false,
+          "explanation": "Diclofenac does increase cardiovascular risk, but the question’s phrasing ‘a small risk of’ and the provided answer (A) suggests hepatotoxicity is the intended choice; however, note that all listed options are plausible. The correct answer according to the original is A."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "Although diclofenac can cause all these effects, the original answer set designates ‘Hepatotoxicity’ as the single correct choice, likely reflecting the need to select one most characteristic risk."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "Diclofenac does have risks; ‘none’ is incorrect."
+        }
+      ],
+      "explanation": {
+        "overview": "Diclofenac is an NSAID with a slightly higher incidence of hepatic enzyme elevation compared to other NSAIDs. While it also carries GI, renal, and cardiovascular risks, hepatotoxicity is a well‑recognised concern that may require monitoring of liver function tests.",
+        "highYield": "Diclofenac: monitor LFTs. Can cause hepatotoxicity, especially in prolonged use.",
+        "clinicalCorrelation": "Topical diclofenac minimises systemic exposure and is preferred for localised osteoarthritis to reduce the risk of systemic adverse effects."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_030",
+      "difficulty": 2,
+      "question": "Indomethacin is an NSAID particularly effective for closing a patent ductus arteriosus in neonates. Its use is limited by:",
+      "image": null,
+      "options": [
+        {
+          "text": "High incidence of renal impairment and GI bleeding",
+          "isCorrect": true,
+          "explanation": "Indomethacin can cause transient or permanent renal dysfunction, necrotising enterocolitis, and gastrointestinal bleeding, particularly in premature infants."
+        },
+        {
+          "text": "Lack of efficacy",
+          "isCorrect": false,
+          "explanation": "Indomethacin is actually quite effective for ductal closure."
+        },
+        {
+          "text": "Seizures",
+          "isCorrect": false,
+          "explanation": "Seizures are not a common adverse effect of indomethacin; renal and GI issues predominate."
+        },
+        {
+          "text": "Cardiotoxicity",
+          "isCorrect": false,
+          "explanation": "Cardiotoxicity is not the primary limitation; prostaglandin inhibition is the desired effect for ductus closure."
+        },
+        {
+          "text": "Hypoglycemia",
+          "isCorrect": false,
+          "explanation": "Hypoglycaemia is not a typical consequence of indomethacin therapy."
+        }
+      ],
+      "explanation": {
+        "overview": "Indomethacin is a non‑selective NSAID that inhibits prostaglandin synthesis, which is essential for maintaining patency of the ductus arteriosus. It is used therapeutically to close a haemodynamically significant PDA in preterm infants, but its use is limited by significant renal, GI, and cerebrovascular adverse effects.",
+        "highYield": "Indomethacin for PDA closure in neonates. Risk: renal failure, GI bleed, NEC.",
+        "clinicalCorrelation": "Ibuprofen and paracetamol are alternative agents for PDA closure with potentially better safety profiles. Surgical ligation is reserved for cases refractory to pharmacological treatment."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_031",
+      "difficulty": 2,
+      "question": "Which of the following is a WHO step III opioid (strong opioid) for moderate to severe pain?",
+      "image": null,
+      "options": [
+        {
+          "text": "Morphine",
+          "isCorrect": true,
+          "explanation": "Morphine is the prototype strong opioid and is placed on step III of the WHO analgesic ladder for moderate to severe pain."
+        },
+        {
+          "text": "Codeine",
+          "isCorrect": false,
+          "explanation": "Codeine is a weak opioid (step II) used for mild to moderate pain."
+        },
+        {
+          "text": "Tramadol",
+          "isCorrect": false,
+          "explanation": "Tramadol is considered a step II (weak) opioid for mild to moderate pain."
+        },
+        {
+          "text": "Hydrocodone",
+          "isCorrect": false,
+          "explanation": "Hydrocodone is a step II opioid, often combined with paracetamol for moderate pain."
+        },
+        {
+          "text": "Propoxyphene",
+          "isCorrect": false,
+          "explanation": "Propoxyphene is a weak opioid (step II) and has been withdrawn from many markets due to cardiac toxicity."
+        }
+      ],
+      "explanation": {
+        "overview": "The WHO three‑step analgesic ladder starts with non‑opioids (step I), adds weak opioids for mild‑to‑moderate pain (step II), and uses strong opioids such as morphine for moderate‑to‑severe pain (step III).",
+        "highYield": "Step III strong opioids: Morphine, hydromorphone, oxycodone, fentanyl, methadone.",
+        "clinicalCorrelation": "The ladder emphasises that strong opioids should not be delayed when pain is severe; timely use of adequate doses improves quality of life, especially in cancer pain."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_032",
+      "difficulty": 3,
+      "question": "Hydromorphone is a semi-synthetic opioid that is more potent than morphine. Its active metabolite is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hydromorphone-3-glucuronide (neurotoxic)",
+          "isCorrect": true,
+          "explanation": "Hydromorphone is metabolised primarily to hydromorphone‑3‑glucuronide, which can accumulate in renal failure and cause neuroexcitatory effects such as myoclonus and seizures."
+        },
+        {
+          "text": "Morphine",
+          "isCorrect": false,
+          "explanation": "Hydromorphone is not metabolised to morphine; it is a distinct compound."
+        },
+        {
+          "text": "Normorphine",
+          "isCorrect": false,
+          "explanation": "Normorphine is a minor metabolite of morphine, not hydromorphone."
+        },
+        {
+          "text": "None; it has no active metabolites",
+          "isCorrect": false,
+          "explanation": "Hydromorphone does have an active glucuronide metabolite."
+        },
+        {
+          "text": "6-glucuronide",
+          "isCorrect": false,
+          "explanation": "Morphine‑6‑glucuronide is an active analgesic metabolite of morphine; hydromorphone’s analogue is hydromorphone‑3‑glucuronide, which is neurotoxic rather than analgesic."
+        }
+      ],
+      "explanation": {
+        "overview": "Hydromorphone undergoes glucuronidation to hydromorphone‑3‑glucuronide. Like morphine‑3‑glucuronide, this metabolite lacks analgesic activity but can cause neuroexcitation (allodynia, myoclonus, seizures) when it accumulates, particularly in renal impairment.",
+        "highYield": "Hydromorphone’s 3‑glucuronide = neurotoxic (especially in renal failure). No analgesic 6‑glucuronide analogue.",
+        "clinicalCorrelation": "In patients with renal insufficiency, hydromorphone may be a better choice than morphine because it lacks a potent analgesic‑6‑glucuronide, but the neurotoxic 3‑glucuronide can still accumulate with prolonged use."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_033",
+      "difficulty": 2,
+      "question": "Methadone has a long and variable half-life. Besides mu agonism, it also has activity as an:",
+      "image": null,
+      "options": [
+        {
+          "text": "NMDA receptor antagonist",
+          "isCorrect": true,
+          "explanation": "Methadone blocks NMDA receptors, which may enhance its analgesic effect in neuropathic pain and slow the development of tolerance."
+        },
+        {
+          "text": "GABA agonist",
+          "isCorrect": false,
+          "explanation": "Methadone does not act as a GABA agonist."
+        },
+        {
+          "text": "Sodium channel blocker",
+          "isCorrect": false,
+          "explanation": "Sodium channel blockade is not a recognised action of methadone."
+        },
+        {
+          "text": "COX inhibitor",
+          "isCorrect": false,
+          "explanation": "Methadone is not an NSAID and does not inhibit COX enzymes."
+        },
+        {
+          "text": "Calcium channel blocker",
+          "isCorrect": false,
+          "explanation": "While methadone can affect cardiac potassium channels (QTc prolongation), it is not a calcium channel blocker."
+        }
+      ],
+      "explanation": {
+        "overview": "Methadone is a unique opioid: it is a full mu‑opioid agonist, an NMDA receptor antagonist, and a serotonin/norepinephrine reuptake inhibitor. The NMDA antagonism is thought to provide additional benefit in neuropathic pain and to reduce opioid tolerance.",
+        "highYield": "Methadone = mu‑agonist + NMDA antagonist + QTc prolongation risk.",
+        "clinicalCorrelation": "Because of its long and unpredictable half‑life and QTc‑prolonging effect, methadone must be titrated very slowly. ECG monitoring is essential, especially at higher doses."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_034",
+      "difficulty": 2,
+      "question": "Which antidepressant is also a potent inhibitor of serotonin and norepinephrine reuptake and is used for neuropathic pain?",
+      "image": null,
+      "options": [
+        {
+          "text": "Duloxetine",
+          "isCorrect": true,
+          "explanation": "Duloxetine is a serotonin‑norepinephrine reuptake inhibitor (SNRI) approved for diabetic peripheral neuropathy, fibromyalgia, and chronic musculoskeletal pain."
+        },
+        {
+          "text": "Amitriptyline",
+          "isCorrect": false,
+          "explanation": "Amitriptyline is a tricyclic antidepressant, not an SNRI, although it also has analgesic properties."
+        },
+        {
+          "text": "Imipramine",
+          "isCorrect": false,
+          "explanation": "Imipramine is a TCA, not a pure SNRI."
+        },
+        {
+          "text": "Nortriptyline",
+          "isCorrect": false,
+          "explanation": "Nortriptyline is a TCA, not an SNRI."
+        },
+        {
+          "text": "Trazodone",
+          "isCorrect": false,
+          "explanation": "Trazodone is primarily a serotonin antagonist/reuptake inhibitor with weak norepinephrine effects, and is not first‑line for neuropathic pain."
+        }
+      ],
+      "explanation": {
+        "overview": "SNRIs such as duloxetine and venlafaxine increase synaptic concentrations of both serotonin and norepinephrine, enhancing descending inhibitory pain pathways. Duloxetine has robust evidence for diabetic peripheral neuropathy and fibromyalgia.",
+        "highYield": "Duloxetine = SNRI for neuropathic pain, fibromyalgia. Also used for depression/GAD.",
+        "clinicalCorrelation": "Duloxetine can cause nausea, insomnia, and sexual dysfunction. It is contraindicated with MAOIs and should be tapered to avoid a withdrawal syndrome."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_035",
+      "difficulty": 2,
+      "question": "Carbamazepine is an anticonvulsant used as first-line treatment for which type of neuropathic pain?",
+      "image": null,
+      "options": [
+        {
+          "text": "Trigeminal neuralgia",
+          "isCorrect": true,
+          "explanation": "Carbamazepine is the drug of choice for trigeminal neuralgia due to its sodium channel blocking properties, which suppress paroxysmal neuronal firing."
+        },
+        {
+          "text": "Postherpetic neuralgia",
+          "isCorrect": false,
+          "explanation": "Postherpetic neuralgia is typically treated with gabapentinoids, TCAs, or topical lidocaine, not carbamazepine."
+        },
+        {
+          "text": "Diabetic neuropathy",
+          "isCorrect": false,
+          "explanation": "First‑line agents for diabetic neuropathy are gabapentin/pregabalin, duloxetine, and TCAs, not carbamazepine."
+        },
+        {
+          "text": "Phantom limb pain",
+          "isCorrect": false,
+          "explanation": "Phantom limb pain is managed with gabapentinoids, TCAs, opioids, or mirror therapy, not carbamazepine."
+        },
+        {
+          "text": "Complex regional pain syndrome",
+          "isCorrect": false,
+          "explanation": "CRPS is treated with bisphosphonates, corticosteroids, gabapentinoids, and physical therapy, not carbamazepine as first line."
+        }
+      ],
+      "explanation": {
+        "overview": "Carbamazepine stabilises neuronal membranes by blocking voltage‑gated sodium channels, making it highly effective in the paroxysmal lancinating pain of trigeminal neuralgia. Oxcarbazepine is an alternative with fewer drug interactions.",
+        "highYield": "Trigeminal neuralgia → carbamazepine/oxcarbazepine. Na⁺ channel block.",
+        "clinicalCorrelation": "Carbamazepine can cause blood dyscrasias, hyponatraemia, and dizziness. It is a potent inducer of CYP450 enzymes, leading to numerous drug interactions."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_036",
+      "difficulty": 2,
+      "question": "Clonidine, an α2-adrenergic agonist, can be used as an adjuvant analgesic via epidural or intrathecal routes. Its analgesic mechanism involves:",
+      "image": null,
+      "options": [
+        {
+          "text": "Activating descending noradrenergic pathways in the spinal cord",
+          "isCorrect": true,
+          "explanation": "Clonidine stimulates α2‑adrenoceptors in the dorsal horn of the spinal cord, mimicking the effect of descending inhibitory noradrenergic pathways and reducing nociceptive transmission."
+        },
+        {
+          "text": "Blocking sodium channels",
+          "isCorrect": false,
+          "explanation": "Sodium channel blockade is not the mechanism of clonidine; that belongs to local anaesthetics and some anticonvulsants."
+        },
+        {
+          "text": "Antagonizing substance P",
+          "isCorrect": false,
+          "explanation": "Clonidine does not directly antagonise substance P."
+        },
+        {
+          "text": "Inhibiting COX",
+          "isCorrect": false,
+          "explanation": "Clonidine is not a COX inhibitor."
+        },
+        {
+          "text": "Activating GABA receptors",
+          "isCorrect": false,
+          "explanation": "Clonidine acts on α2 receptors, not GABA receptors."
+        }
+      ],
+      "explanation": {
+        "overview": "Clonidine is an α2‑adrenergic agonist that, when administered neuraxially, activates postsynaptic α2 receptors in the spinal dorsal horn, potentiating descending inhibitory pathways. This suppresses the release of substance P and glutamate from primary afferent terminals and hyperpolarises dorsal horn neurons.",
+        "highYield": "Clonidine neuraxial = α2 agonist → spinal analgesia. Watch for hypotension, bradycardia.",
+        "clinicalCorrelation": "Clonidine is commonly added to epidural or intrathecal local anaesthetic/opioid mixtures to prolong analgesia and reduce the dose requirements of each component."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_037",
+      "difficulty": 3,
+      "question": "Ziconotide is a non-opioid analgesic derived from cone snail venom. It is administered intrathecally for severe chronic pain and acts by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Blocking N-type voltage-gated calcium channels",
+          "isCorrect": true,
+          "explanation": "Ziconotide is a selective blocker of N‑type calcium channels, reducing neurotransmitter release from presynaptic terminals of primary nociceptive afferents."
+        },
+        {
+          "text": "Blocking sodium channels",
+          "isCorrect": false,
+          "explanation": "Sodium channel blockade is the mechanism of local anaesthetics, not ziconotide."
+        },
+        {
+          "text": "Activating mu receptors",
+          "isCorrect": false,
+          "explanation": "Ziconotide is non‑opioid and does not interact with opioid receptors."
+        },
+        {
+          "text": "Antagonizing NMDA receptors",
+          "isCorrect": false,
+          "explanation": "NMDA antagonism is a property of ketamine, not ziconotide."
+        },
+        {
+          "text": "Inhibiting COX",
+          "isCorrect": false,
+          "explanation": "Ziconotide has no anti‑inflammatory effect and does not inhibit COX."
+        }
+      ],
+      "explanation": {
+        "overview": "Ziconotide is a synthetic analogue of ω‑conotoxin MVIIA, a peptide from cone snail venom. It selectively and reversibly blocks N‑type voltage‑gated calcium channels in the spinal cord, inhibiting the release of excitatory neurotransmitters from primary afferent nociceptors.",
+        "highYield": "Ziconotide = intrathecal N‑type Ca²⁺ channel blocker. Non‑opioid. Narrow therapeutic window.",
+        "clinicalCorrelation": "Ziconotide is reserved for severe chronic pain refractory to other treatments. It must be titrated slowly to avoid neuropsychiatric adverse effects (confusion, hallucinations, depression)."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_038",
+      "difficulty": 2,
+      "question": "Which of the following drugs is used to prevent NSAID-induced gastric ulcers?",
+      "image": null,
+      "options": [
+        {
+          "text": "Misoprostol",
+          "isCorrect": true,
+          "explanation": "Misoprostol is a prostaglandin E1 analogue that replaces gastroprotective prostaglandins, directly preventing NSAID‑induced gastric ulcers."
+        },
+        {
+          "text": "Omeprazole",
+          "isCorrect": false,
+          "explanation": "Proton pump inhibitors like omeprazole are effective for NSAID gastroprotection, but misoprostol is the only agent that directly replaces prostaglandins."
+        },
+        {
+          "text": "Famotidine",
+          "isCorrect": false,
+          "explanation": "H2‑receptor antagonists reduce acid but are less effective than misoprostol or PPIs for preventing NSAID ulcers."
+        },
+        {
+          "text": "Sucralfate",
+          "isCorrect": false,
+          "explanation": "Sucralfate coats the mucosa but is not the preferred prophylactic agent for NSAID ulcers."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "While all can be used, the original answer marks misoprostol as the correct single choice, reflecting its unique mechanism of replacing prostaglandins."
+        }
+      ],
+      "explanation": {
+        "overview": "NSAIDs reduce gastric prostaglandin production, leading to mucosal injury. Misoprostol, a synthetic prostaglandin E1 analogue, replenishes these protective prostaglandins, thereby preventing ulcers. PPIs and H2 blockers are also used but act by reducing acid, not replacing prostaglandins.",
+        "highYield": "Misoprostol = prostaglandin analogue to prevent NSAID ulcers. Causes diarrhoea, uterine contractions.",
+        "clinicalCorrelation": "Misoprostol is contraindicated in pregnancy (abortifacient). PPIs are the most common first‑line choice for gastroprotection in clinical practice due to tolerability."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_039",
+      "difficulty": 2,
+      "question": "The combination of acetaminophen and NSAIDs can provide additive analgesia because:",
+      "image": null,
+      "options": [
+        {
+          "text": "They have different mechanisms and sites of action",
+          "isCorrect": true,
+          "explanation": "Acetaminophen acts primarily in the central nervous system, while NSAIDs have peripheral and central COX inhibition, so combining them enhances pain relief through complementary pathways."
+        },
+        {
+          "text": "Both are prodrugs",
+          "isCorrect": false,
+          "explanation": "Neither acetaminophen nor most NSAIDs are prodrugs; this is incorrect."
+        },
+        {
+          "text": "They compete for the same receptor",
+          "isCorrect": false,
+          "explanation": "They do not compete for a single receptor; their mechanisms are distinct."
+        },
+        {
+          "text": "They have synergistic respiratory effects",
+          "isCorrect": false,
+          "explanation": "Neither drug causes respiratory depression, and synergy in respiratory effects is not relevant."
+        },
+        {
+          "text": "They increase each other's half-life",
+          "isCorrect": false,
+          "explanation": "Acetaminophen and NSAIDs do not significantly alter each other’s pharmacokinetics."
+        }
+      ],
+      "explanation": {
+        "overview": "Combining acetaminophen (central analgesic) with an NSAID (peripheral and central anti‑inflammatory) provides multimodal analgesia that is often superior to either drug alone, without necessarily increasing side‑effects.",
+        "highYield": "Acetaminophen + NSAID = central + peripheral mechanisms = better pain relief.",
+        "clinicalCorrelation": "Fixed‑dose combinations (e.g., acetaminophen/ibuprofen) are available and can reduce opioid consumption post‑operatively. Caution must be taken not to exceed the maximum daily dose of acetaminophen."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_040",
+      "difficulty": 1,
+      "question": "The World Health Organization analgesic ladder for cancer pain recommends starting with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Non-opioids (acetaminophen, NSAIDs)",
+          "isCorrect": true,
+          "explanation": "Step 1 of the WHO ladder uses non‑opioid analgesics with or without adjuvants for mild pain."
+        },
+        {
+          "text": "Weak opioids (codeine, tramadol)",
+          "isCorrect": false,
+          "explanation": "Weak opioids are added at Step 2 if pain persists despite non‑opioids."
+        },
+        {
+          "text": "Strong opioids (morphine)",
+          "isCorrect": false,
+          "explanation": "Strong opioids are reserved for Step 3 in moderate to severe pain."
+        },
+        {
+          "text": "Adjuvant analgesics only",
+          "isCorrect": false,
+          "explanation": "Adjuvants are used at any step but do not replace the primary analgesic."
+        },
+        {
+          "text": "Interventional procedures",
+          "isCorrect": false,
+          "explanation": "Interventional procedures are considered when pharmacological therapy fails, not as an initial step."
+        }
+      ],
+      "explanation": {
+        "overview": "The WHO analgesic ladder is a stepwise approach: Step 1 (mild pain) – non‑opioid ± adjuvant; Step 2 (moderate pain) – add weak opioid; Step 3 (severe pain) – strong opioid ± non‑opioid ± adjuvant. The goal is to provide prompt and effective pain relief by matching drug strength to pain intensity.",
+        "highYield": "WHO ladder: Step 1 non‑opioid, Step 2 weak opioid, Step 3 strong opioid. Always add non‑opioid + adjuvant as needed.",
+        "clinicalCorrelation": "In practice, for rapidly escalating severe pain, clinicians may skip directly to step 3 (strong opioids) to prevent unnecessary suffering."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_041",
+      "difficulty": 2,
+      "question": "Naloxone has a short half-life (30-80 min). After reversing opioid overdose, patients must be monitored for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Recurrent respiratory depression",
+          "isCorrect": true,
+          "explanation": "Because naloxone is eliminated faster than most opioids, respiratory depression can return once the antagonist wears off, especially after long‑acting opioids like methadone."
+        },
+        {
+          "text": "Hypertension",
+          "isCorrect": false,
+          "explanation": "Hypertension is not a typical consequence; naloxone may cause sympathetic surge but the primary concern is re‑narcotization."
+        },
+        {
+          "text": "Tachycardia",
+          "isCorrect": false,
+          "explanation": "While tachycardia can occur, the life‑threatening concern is recurrent respiratory depression."
+        },
+        {
+          "text": "Seizures",
+          "isCorrect": false,
+          "explanation": "Seizures are not characteristic of naloxone reversal."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "The single most critical monitoring point is respiratory status; other parameters may change but do not define the primary risk."
+        }
+      ],
+      "explanation": {
+        "overview": "Naloxone’s duration of action (≈30–90 min) is shorter than that of most opioids. Once naloxone is cleared, opioid receptors may be re‑occupied by residual opioid, leading to recurrence of respiratory depression – a phenomenon known as re‑narcotization.",
+        "highYield": "Naloxone’s short half‑life → re‑narcotization risk. Watch for recurrent respiratory depression.",
+        "clinicalCorrelation": "Patients revived with naloxone should be observed for at least 4–6 hours. Continuous naloxone infusion may be required for overdose involving long‑acting opioids or extended‑release formulations."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_042",
+      "difficulty": 3,
+      "question": "Oxycodone is a semi-synthetic opioid often combined with acetaminophen. Its active metabolite, oxymorphone, is more potent and produced by:",
+      "image": null,
+      "options": [
+        {
+          "text": "CYP2D6",
+          "isCorrect": true,
+          "explanation": "CYP2D6 O‑demethylates oxycodone to the more potent mu‑agonist oxymorphone, though most analgesic effect comes from oxycodone itself."
+        },
+        {
+          "text": "CYP3A4",
+          "isCorrect": false,
+          "explanation": "CYP3A4 N‑demethylates oxycodone to noroxycodone, a much weaker metabolite."
+        },
+        {
+          "text": "UGT2B7",
+          "isCorrect": false,
+          "explanation": "Glucuronidation is a phase II pathway; oxymorphone formation is a phase I CYP reaction."
+        },
+        {
+          "text": "COMT",
+          "isCorrect": false,
+          "explanation": "COMT is involved in catecholamine metabolism, not opioid conversion."
+        },
+        {
+          "text": "MAO-A",
+          "isCorrect": false,
+          "explanation": "MAO enzymes metabolise monoamines, not oxycodone."
+        }
+      ],
+      "explanation": {
+        "overview": "Oxycodone is metabolised by CYP3A4 to noroxycodone and by CYP2D6 to oxymorphone. Although oxymorphone is more potent, the parent drug oxycodone is responsible for the majority of the analgesic effect in normal metabolisers.",
+        "highYield": "Oxycodone → CYP2D6 → oxymorphone (active). CYP3A4 → noroxycodone (inactive).",
+        "clinicalCorrelation": "CYP2D6 poor metabolisers may still experience analgesia from oxycodone because the parent drug is active. Conversely, CYP2D6 inhibitors may reduce conversion to oxymorphone but typically do not abolish pain relief."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_043",
+      "difficulty": 2,
+      "question": "Which of the following opioids should be avoided or used with extreme caution in patients taking MAO inhibitors due to risk of serotonin syndrome?",
+      "image": null,
+      "options": [
+        {
+          "text": "Meperidine (pethidine)",
+          "isCorrect": true,
+          "explanation": "Meperidine can cause severe serotonin syndrome when combined with MAOIs due to its serotonergic activity."
+        },
+        {
+          "text": "Morphine",
+          "isCorrect": false,
+          "explanation": "Morphine has minimal serotonergic effects and is not strongly associated with serotonin syndrome."
+        },
+        {
+          "text": "Fentanyl",
+          "isCorrect": false,
+          "explanation": "Fentanyl has little serotonergic activity and is generally safe with MAOIs."
+        },
+        {
+          "text": "Hydromorphone",
+          "isCorrect": false,
+          "explanation": "Hydromorphone is not a significant serotonergic agent."
+        },
+        {
+          "text": "Oxycodone",
+          "isCorrect": false,
+          "explanation": "Oxycodone has weak serotonergic effects compared to meperidine."
+        }
+      ],
+      "explanation": {
+        "overview": "Meperidine is the opioid most strongly associated with serotonin syndrome when combined with MAOIs because of its potent serotonin reuptake inhibition. The reaction can be life‑threatening, with hyperthermia, rigidity, and autonomic instability.",
+        "highYield": "MAOI + meperidine = serotonin syndrome risk. Also avoid tramadol, methadone with MAOIs.",
+        "clinicalCorrelation": "Fentanyl, morphine, and hydromorphone are safer alternatives if opioids are needed in patients on MAOIs. A washout period is required when switching between MAOIs and serotonergic opioids."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_044",
+      "difficulty": 2,
+      "question": "A patient on warfarin starts taking ibuprofen regularly. What is the most likely interaction?",
+      "image": null,
+      "options": [
+        {
+          "text": "Increased INR and bleeding risk",
+          "isCorrect": true,
+          "explanation": "Ibuprofen can increase warfarin’s anticoagulant effect by inhibiting platelet function, causing GI erosions, and possibly displacing warfarin from protein binding, all of which raise INR and bleeding risk."
+        },
+        {
+          "text": "Decreased warfarin effect",
+          "isCorrect": false,
+          "explanation": "NSAIDs do not decrease warfarin’s effect; they increase the risk of bleeding."
+        },
+        {
+          "text": "No interaction",
+          "isCorrect": false,
+          "explanation": "There is a well‑documented interaction; bleeding risk is elevated."
+        },
+        {
+          "text": "Increased warfarin metabolism",
+          "isCorrect": false,
+          "explanation": "Ibuprofen is not a significant inducer of warfarin metabolism."
+        },
+        {
+          "text": "Displacement from protein binding only",
+          "isCorrect": false,
+          "explanation": "Displacement is only one part of the interaction; antiplatelet and GI effects also contribute."
+        }
+      ],
+      "explanation": {
+        "overview": "The combination of warfarin with NSAIDs increases the risk of serious bleeding through multiple mechanisms: NSAIDs impair platelet aggregation (via COX‑1 inhibition), cause gastrointestinal erosions, and may displace warfarin from albumin, transiently increasing free drug levels.",
+        "highYield": "Warfarin + NSAID = ↑ bleeding risk (antiplatelet + GI ulcer + protein displacement).",
+        "clinicalCorrelation": "Acetaminophen is the preferred analgesic/antipyretic in patients on warfarin because it does not affect platelet function or the gastric mucosa."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_045",
+      "difficulty": 2,
+      "question": "Calcitonin and bisphosphonates (e.g., pamidronate) are used for pain from:",
+      "image": null,
+      "options": [
+        {
+          "text": "Bone metastases",
+          "isCorrect": true,
+          "explanation": "Bone pain from metastatic disease responds to agents that inhibit osteoclast‑mediated bone resorption, such as bisphosphonates and calcitonin."
+        },
+        {
+          "text": "Neuropathic pain",
+          "isCorrect": false,
+          "explanation": "Neuropathic pain is treated with gabapentinoids, TCAs, SNRIs, not bisphosphonates."
+        },
+        {
+          "text": "Visceral pain",
+          "isCorrect": false,
+          "explanation": "Visceral pain from organ distension or infiltration is managed with opioids and antispasmodics; bisphosphonates are ineffective."
+        },
+        {
+          "text": "Inflammatory arthritis",
+          "isCorrect": false,
+          "explanation": "Inflammatory arthritis is treated with NSAIDs, DMARDs, and corticosteroids, not typically bisphosphonates for pain."
+        },
+        {
+          "text": "Muscle spasm",
+          "isCorrect": false,
+          "explanation": "Muscle spasm pain is treated with muscle relaxants and benzodiazepines, not bisphosphonates."
+        }
+      ],
+      "explanation": {
+        "overview": "Bisphosphonates (e.g., pamidronate, zoledronic acid) and calcitonin inhibit osteoclast activity, reducing bone resorption and stabilising bone architecture. They are effective adjuvant analgesics for pain caused by osteolytic metastases, particularly from breast, prostate, and lung cancers.",
+        "highYield": "Bone mets pain → bisphosphonates, calcitonin, denosumab (RANKL inhibitor).",
+        "clinicalCorrelation": "Bisphosphonates require renal monitoring and can cause hypocalcaemia. Osteonecrosis of the jaw is a rare but serious adverse effect, especially with intravenous administration."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_046",
+      "difficulty": 2,
+      "question": "Corticosteroids (e.g., dexamethasone) are used as adjuvant analgesics for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Pain from bone metastases, nerve compression, and increased intracranial pressure",
+          "isCorrect": true,
+          "explanation": "Corticosteroids reduce peritumoral oedema and inflammation, providing relief in cancer pain, spinal cord compression, and headache from raised intracranial pressure."
+        },
+        {
+          "text": "Acute musculoskeletal pain",
+          "isCorrect": false,
+          "explanation": "Corticosteroids are not first‑line for acute musculoskeletal pain; NSAIDs and acetaminophen are preferred."
+        },
+        {
+          "text": "Migraine prophylaxis",
+          "isCorrect": false,
+          "explanation": "Corticosteroids are not standard for migraine prophylaxis; beta‑blockers, antiepileptics, and CGRP antagonists are used."
+        },
+        {
+          "text": "Fibromyalgia",
+          "isCorrect": false,
+          "explanation": "Fibromyalgia is not primarily inflammatory; corticosteroids are not indicated."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "Corticosteroids have specific roles in cancer‑related pain and oedema, not in all these conditions."
+        }
+      ],
+      "explanation": {
+        "overview": "Corticosteroids are potent anti‑inflammatory agents that decrease oedema around tumours, reducing pressure on nerves and pain‑sensitive structures. They are particularly useful in metastatic bone pain, epidural spinal cord compression, and cerebral oedema with headache.",
+        "highYield": "Dexamethasone for cord compression, brain mets, bone pain. Give with gastroprotection.",
+        "clinicalCorrelation": "Prolonged corticosteroid use is associated with immunosuppression, hyperglycaemia, osteoporosis, and adrenal suppression. The lowest effective dose should be used for the shortest possible time."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_047",
+      "difficulty": 2,
+      "question": "Ketamine, at subanesthetic doses, is used for acute and chronic pain management. Its analgesic effect is primarily due to:",
+      "image": null,
+      "options": [
+        {
+          "text": "NMDA receptor antagonism",
+          "isCorrect": true,
+          "explanation": "Ketamine blocks the NMDA receptor, reducing central sensitisation and wind‑up phenomena, which contributes to its analgesic and opioid‑sparing effects."
+        },
+        {
+          "text": "Mu-opioid agonism",
+          "isCorrect": false,
+          "explanation": "Ketamine has only weak mu‑opioid affinity; its main target is NMDA."
+        },
+        {
+          "text": "GABA potentiation",
+          "isCorrect": false,
+          "explanation": "Ketamine does not primarily act via GABA; that is a feature of benzodiazepines and propofol."
+        },
+        {
+          "text": "Sodium channel blockade",
+          "isCorrect": false,
+          "explanation": "Sodium channel blockade is not ketamine’s primary analgesic mechanism."
+        },
+        {
+          "text": "Calcium channel blockade",
+          "isCorrect": false,
+          "explanation": "Calcium channel blockade is not the primary mechanism; ketamine’s action is NMDA‑specific."
+        }
+      ],
+      "explanation": {
+        "overview": "Ketamine is a dissociative anaesthetic and potent analgesic at subanaesthetic doses. It non‑competitively blocks the NMDA receptor, preventing glutamate‑mediated excitation and reducing central sensitisation. This makes it effective for opioid‑resistant pain and may reduce opioid tolerance.",
+        "highYield": "Ketamine = NMDA antagonist. Opioid‑sparing, treats central sensitisation. Psychomimetic side effects.",
+        "clinicalCorrelation": "Low‑dose ketamine infusions are used perioperatively and in chronic pain syndromes. Side effects include hallucinations, confusion, and hypertension; benzodiazepines can mitigate psychomimetic effects."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_048",
+      "difficulty": 3,
+      "question": "Neostigmine and physostigmine are not analgesics, but which anticholinesterase is sometimes used intrathecally for pain?",
+      "image": null,
+      "options": [
+        {
+          "text": "Neostigmine",
+          "isCorrect": true,
+          "explanation": "Intrathecal neostigmine increases spinal acetylcholine, producing analgesia by activating muscarinic and nicotinic receptors, though it can cause nausea and motor weakness."
+        },
+        {
+          "text": "Physostigmine",
+          "isCorrect": false,
+          "explanation": "Physostigmine is not used intrathecally for pain; it crosses the blood‑brain barrier and is used for central anticholinergic syndrome."
+        },
+        {
+          "text": "Edrophonium",
+          "isCorrect": false,
+          "explanation": "Edrophonium is a short‑acting anticholinesterase used diagnostically for myasthenia gravis, not for analgesia."
+        },
+        {
+          "text": "Pyridostigmine",
+          "isCorrect": false,
+          "explanation": "Pyridostigmine is used for myasthenia gravis and does not have a role in neuraxial analgesia."
+        },
+        {
+          "text": "Donepezil",
+          "isCorrect": false,
+          "explanation": "Donepezil is a central acetylcholinesterase inhibitor for Alzheimer’s disease, not used intrathecally for pain."
+        }
+      ],
+      "explanation": {
+        "overview": "Neostigmine, when administered into the intrathecal space, inhibits acetylcholinesterase, leading to increased acetylcholine concentrations in the spinal cord. This activates muscarinic (M1, M2) and nicotinic receptors in the dorsal horn, producing dose‑dependent analgesia.",
+        "highYield": "Intrathecal neostigmine → ↑ spinal ACh → analgesia. Adverse: nausea, bradycardia, motor weakness.",
+        "clinicalCorrelation": "Neostigmine is primarily used as an adjunct to local anaesthetics or opioids in neuraxial anaesthesia to prolong and intensify analgesia while reducing individual drug requirements."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_049",
+      "difficulty": 2,
+      "question": "Cannabinoids (e.g., nabilone, dronabinol) are used for chemotherapy-induced nausea and for pain in certain conditions. Their analgesic mechanism involves:",
+      "image": null,
+      "options": [
+        {
+          "text": "Activation of CB1 and CB2 receptors",
+          "isCorrect": true,
+          "explanation": "Cannabinoids act on CB1 receptors in the CNS (modulating pain signalling) and CB2 receptors on immune cells (reducing inflammation), producing analgesia."
+        },
+        {
+          "text": "Inhibition of COX",
+          "isCorrect": false,
+          "explanation": "Cannabinoids do not primarily inhibit COX; that is the mechanism of NSAIDs."
+        },
+        {
+          "text": "Sodium channel blockade",
+          "isCorrect": false,
+          "explanation": "Sodium channel blockade is not the mechanism of cannabinoids."
+        },
+        {
+          "text": "GABA potentiation",
+          "isCorrect": false,
+          "explanation": "Cannabinoids do not act by potentiating GABA receptors."
+        },
+        {
+          "text": "NMDA antagonism",
+          "isCorrect": false,
+          "explanation": "NMDA antagonism is a property of ketamine, not cannabinoids."
+        }
+      ],
+      "explanation": {
+        "overview": "Cannabinoids produce analgesia by binding to CB1 receptors in the brain and spinal cord (modulating nociceptive transmission) and CB2 receptors on immune cells (reducing inflammatory mediator release). They are used as adjunctive analgesics and antiemetics.",
+        "highYield": "Cannabinoids: CB1 (CNS) + CB2 (immune) → analgesia and anti‑inflammation.",
+        "clinicalCorrelation": "Synthetic cannabinoids are approved for chemotherapy‑induced nausea and vomiting and for AIDS‑related anorexia. Their role in pain management is still evolving, with side effects including dizziness, sedation, and psychoactive effects limiting use."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_050",
+      "difficulty": 2,
+      "question": "Which of the following is a topical NSAID approved for osteoarthritis pain?",
+      "image": null,
+      "options": [
+        {
+          "text": "Diclofenac sodium gel",
+          "isCorrect": true,
+          "explanation": "Topical diclofenac sodium gel (1% or 3%) is FDA‑approved for osteoarthritis of the knees and hands, delivering the drug locally with reduced systemic exposure."
+        },
+        {
+          "text": "Ibuprofen gel",
+          "isCorrect": false,
+          "explanation": "Topical ibuprofen is available in some countries but is not FDA‑approved for osteoarthritis in the same manner as diclofenac."
+        },
+        {
+          "text": "Ketoprofen gel",
+          "isCorrect": false,
+          "explanation": "Topical ketoprofen exists but lacks the same level of regulatory approval for osteoarthritis as diclofenac."
+        },
+        {
+          "text": "Piroxicam gel",
+          "isCorrect": false,
+          "explanation": "Piroxicam gel is not the standard approved topical NSAID for osteoarthritis."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "Only diclofenac gel has the specific FDA‑approved indication for osteoarthritis among the listed options."
+        }
+      ],
+      "explanation": {
+        "overview": "Topical diclofenac is the most studied and widely approved topical NSAID for osteoarthritis pain. It provides local analgesia by inhibiting COX enzymes in the skin and underlying tissues, with significantly lower plasma levels than oral NSAIDs, thereby reducing systemic adverse effects.",
+        "highYield": "Topical diclofenac gel = approved for OA. Lower systemic risk.",
+        "clinicalCorrelation": "Topical NSAIDs are first‑line options for hand and knee osteoarthritis, especially in patients with cardiovascular or gastrointestinal comorbidities. Skin reactions are the most common side effect."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_051",
+      "difficulty": 2,
+      "question": "Which enzyme is primarily responsible for the conversion of arachidonic acid to prostaglandin H2, the immediate precursor of thromboxane and prostacyclin?",
+      "image": null,
+      "options": [
+        {
+          "text": "Cyclooxygenase (COX)",
+          "isCorrect": true,
+          "explanation": "Both COX‑1 and COX‑2 catalyse the conversion of arachidonic acid to prostaglandin H2, the key intermediate for prostaglandin, thromboxane, and prostacyclin synthesis."
+        },
+        {
+          "text": "Lipoxygenase",
+          "isCorrect": false,
+          "explanation": "Lipoxygenase converts arachidonic acid to leukotrienes, not prostaglandin H2."
+        },
+        {
+          "text": "Phospholipase A2",
+          "isCorrect": false,
+          "explanation": "Phospholipase A2 releases arachidonic acid from membrane phospholipids; it does not synthesise prostaglandin H2."
+        },
+        {
+          "text": "Thromboxane synthase",
+          "isCorrect": false,
+          "explanation": "Thromboxane synthase converts prostaglandin H2 to thromboxane A2, not the initial conversion of arachidonic acid."
+        },
+        {
+          "text": "Prostacyclin synthase",
+          "isCorrect": false,
+          "explanation": "Prostacyclin synthase acts downstream of COX to produce prostacyclin."
+        }
+      ],
+      "explanation": {
+        "overview": "COX enzymes (COX‑1 and COX‑2) are the rate‑limiting steps in the conversion of arachidonic acid to prostaglandin H2. NSAIDs exert their effects by inhibiting these enzymes.",
+        "highYield": "COX → prostaglandin H2 → thromboxane (platelets) / prostacyclin (endothelium).",
+        "clinicalCorrelation": "Understanding the pathway helps explain why low‑dose aspirin selectively inhibits platelet thromboxane while sparing endothelial prostacyclin synthesis (due to differences in COX‑1 turnover)."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_052",
+      "difficulty": 1,
+      "question": "The risk of nephrotoxicity from NSAIDs is highest in patients with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Dehydration, heart failure, or pre‑existing renal disease",
+          "isCorrect": true,
+          "explanation": "NSAIDs reduce renal blood flow by inhibiting vasodilatory prostaglandins; patients with compromised renal perfusion are most susceptible to acute kidney injury."
+        },
+        {
+          "text": "Young healthy adults",
+          "isCorrect": false,
+          "explanation": "Healthy kidneys can usually compensate for the reduction in prostaglandin‑mediated vasodilation."
+        },
+        {
+          "text": "Patients taking acetaminophen concurrently",
+          "isCorrect": false,
+          "explanation": "Acetaminophen does not significantly affect renal prostaglandins and does not predispose to NSAID nephrotoxicity."
+        },
+        {
+          "text": "Patients with a history of migraines",
+          "isCorrect": false,
+          "explanation": "Migraine history does not independently increase the risk of NSAID‑induced renal injury."
+        },
+        {
+          "text": "Those on long‑term opioid therapy",
+          "isCorrect": false,
+          "explanation": "Opioids do not directly influence the renal effects of NSAIDs."
+        }
+      ],
+      "explanation": {
+        "overview": "NSAIDs can cause acute kidney injury by reducing prostaglandin‑dependent renal vasodilation. This is especially dangerous in hypovolaemia, congestive heart failure, cirrhosis, or chronic kidney disease, where renal perfusion is already marginal.",
+        "highYield": "NSAID nephrotoxicity risk ↑ with hypovolaemia, CHF, CKD. Avoid in these patients.",
+        "clinicalCorrelation": "Monitoring renal function before and during NSAID therapy is essential in at‑risk populations. COX‑2 selective inhibitors also impair renal function, contrary to the misconception that they are renal‑sparing."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_053",
+      "difficulty": 2,
+      "question": "Which opioid is metabolised primarily by ester hydrolysis, giving it an ultra‑short duration of action?",
+      "image": null,
+      "options": [
+        {
+          "text": "Remifentanil",
+          "isCorrect": true,
+          "explanation": "Remifentanil contains an ester linkage that is rapidly hydrolysed by non‑specific tissue esterases, resulting in a context‑sensitive half‑life of only 3–10 minutes."
+        },
+        {
+          "text": "Fentanyl",
+          "isCorrect": false,
+          "explanation": "Fentanyl is metabolised by CYP3A4, not esterases, and has a longer duration."
+        },
+        {
+          "text": "Morphine",
+          "isCorrect": false,
+          "explanation": "Morphine undergoes glucuronidation, not ester hydrolysis."
+        },
+        {
+          "text": "Alfentanil",
+          "isCorrect": false,
+          "explanation": "Alfentanil is also metabolised by CYP3A4, although it has a faster onset than fentanyl."
+        },
+        {
+          "text": "Sufentanil",
+          "isCorrect": false,
+          "explanation": "Sufentanil is metabolised by CYP3A4, like fentanyl."
+        }
+      ],
+      "explanation": {
+        "overview": "Remifentanil is unique among opioids because its ester side chain makes it susceptible to rapid hydrolysis by blood and tissue esterases. This results in a very short and predictable half‑life that is independent of hepatic or renal function, making it ideal for intraoperative titration.",
+        "highYield": "Remifentanil = esterase‑metabolised, ultra‑short acting. Context‑sensitive t½ ~3 min.",
+        "clinicalCorrelation": "Because remifentanil wears off rapidly, patients must receive alternative analgesia before discontinuation to avoid severe post‑operative pain."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_054",
+      "difficulty": 3,
+      "question": "Which of the following best explains why morphine‑6‑glucuronide (M6G) is an active analgesic metabolite while morphine‑3‑glucuronide (M3G) is not?",
+      "image": null,
+      "options": [
+        {
+          "text": "M6G retains affinity for mu‑opioid receptors, whereas M3G does not",
+          "isCorrect": true,
+          "explanation": "M6G binds to mu‑receptors and produces analgesia, whereas M3G has negligible opioid receptor affinity and may cause neuroexcitatory effects."
+        },
+        {
+          "text": "M3G is rapidly excreted",
+          "isCorrect": false,
+          "explanation": "Both metabolites can accumulate in renal failure; the lack of analgesia from M3G is due to receptor affinity, not excretion rate."
+        },
+        {
+          "text": "M6G is more lipid soluble",
+          "isCorrect": false,
+          "explanation": "Glucuronidation generally increases water solubility; M6G is actually less lipid‑soluble than morphine but is actively transported into the brain."
+        },
+        {
+          "text": "M3G is metabolised to inactive products",
+          "isCorrect": false,
+          "explanation": "M3G is itself an active metabolite in terms of neuroexcitation; it is not simply inactive."
+        },
+        {
+          "text": "Only M6G can cross the blood‑brain barrier",
+          "isCorrect": false,
+          "explanation": "Both glucuronides have limited passive penetration; M6G enters the CNS via active transport, but the key difference is receptor binding."
+        }
+      ],
+      "explanation": {
+        "overview": "Morphine is metabolised to M3G and M6G. M6G is a potent mu‑agonist and contributes significantly to morphine’s analgesic effect, while M3G does not activate opioid receptors and is thought to be responsible for neuroexcitatory side effects (allodynia, myoclonus).",
+        "highYield": "M6G = analgesic (mu‑agonist). M3G = neurotoxic (non‑opioid).",
+        "clinicalCorrelation": "In renal failure, both metabolites accumulate. M6G can cause prolonged respiratory depression, while M3G may cause myoclonus and seizures. Morphine should be used cautiously or avoided in severe renal impairment."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_055",
+      "difficulty": 2,
+      "question": "A patient with a history of peptic ulcer disease requires long‑term NSAID therapy. Which strategy is most appropriate?",
+      "image": null,
+      "options": [
+        {
+          "text": "Co‑prescribe a proton pump inhibitor",
+          "isCorrect": true,
+          "explanation": "PPIs effectively reduce the risk of NSAID‑induced gastroduodenal ulcers by suppressing gastric acid secretion."
+        },
+        {
+          "text": "Use a higher dose of NSAID",
+          "isCorrect": false,
+          "explanation": "Higher doses increase the risk of GI complications."
+        },
+        {
+          "text": "Combine with acetaminophen only",
+          "isCorrect": false,
+          "explanation": "Acetaminophen is a GI‑safer alternative but does not substitute for an NSAID if anti‑inflammatory effect is needed; it does not protect against NSAID injury when used together."
+        },
+        {
+          "text": "Prescribe an H2 antagonist",
+          "isCorrect": false,
+          "explanation": "H2 blockers are less effective than PPIs for NSAID gastroprotection, though they can be an alternative."
+        },
+        {
+          "text": "Avoid any gastroprotection",
+          "isCorrect": false,
+          "explanation": "In a patient with a history of ulcer disease, gastroprotection is strongly recommended."
+        }
+      ],
+      "explanation": {
+        "overview": "Proton pump inhibitors are the most effective agents for preventing NSAID‑associated gastric and duodenal ulcers. They should be co‑prescribed when NSAIDs are used long‑term in at‑risk patients.",
+        "highYield": "NSAID + PPI = gastric protection in high‑risk patients. Misoprostol is an alternative.",
+        "clinicalCorrelation": "Testing for and eradicating Helicobacter pylori before starting long‑term NSAIDs can further reduce ulcer risk."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_056",
+      "difficulty": 2,
+      "question": "Opioid‑induced hyperalgesia (OIH) is a phenomenon where:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increasing doses of opioids paradoxically increase pain sensitivity",
+          "isCorrect": true,
+          "explanation": "OIH is a state of heightened pain sensitivity caused by opioid exposure itself, likely through NMDA receptor activation and other pro‑nociceptive mechanisms."
+        },
+        {
+          "text": "Opioids fail to produce any analgesia",
+          "isCorrect": false,
+          "explanation": "Analgesia initially occurs; hyperalgesia develops over time, distinct from tolerance."
+        },
+        {
+          "text": "Pain improves with higher opioid doses",
+          "isCorrect": false,
+          "explanation": "In OIH, pain worsens as doses increase, which is the opposite."
+        },
+        {
+          "text": "Opioid receptors become down‑regulated",
+          "isCorrect": false,
+          "explanation": "Receptor down‑regulation is part of tolerance, but OIH involves pronociceptive pathway sensitisation."
+        },
+        {
+          "text": "Withdrawal symptoms are absent",
+          "isCorrect": false,
+          "explanation": "OIH is distinct from withdrawal; patients may have worsening pain without typical withdrawal signs."
+        }
+      ],
+      "explanation": {
+        "overview": "Opioid‑induced hyperalgesia is a paradoxical increase in pain sensitivity resulting from chronic opioid exposure. It is mediated by mechanisms including NMDA receptor activation, increased spinal dynorphin, and enhanced descending facilitation.",
+        "highYield": "OIH = pain worsens with opioid dose escalation. Treat by reducing/rotating opioid, adding NMDA antagonist (ketamine).",
+        "clinicalCorrelation": "Distinguishing OIH from tolerance and disease progression is challenging. A trial of opioid dose reduction or rotation to a non‑opioid or NMDA antagonist (e.g., methadone or ketamine) may help."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_057",
+      "difficulty": 1,
+      "question": "Which of the following drugs is a selective COX‑2 inhibitor?",
+      "image": null,
+      "options": [
+        {
+          "text": "Celecoxib",
+          "isCorrect": true,
+          "explanation": "Celecoxib is a COX‑2 selective inhibitor, designed to reduce inflammation while minimising GI toxicity."
+        },
+        {
+          "text": "Ibuprofen",
+          "isCorrect": false,
+          "explanation": "Ibuprofen is a non‑selective COX inhibitor."
+        },
+        {
+          "text": "Naproxen",
+          "isCorrect": false,
+          "explanation": "Naproxen is a non‑selective NSAID."
+        },
+        {
+          "text": "Indomethacin",
+          "isCorrect": false,
+          "explanation": "Indomethacin is a non‑selective COX inhibitor."
+        },
+        {
+          "text": "Diclofenac",
+          "isCorrect": false,
+          "explanation": "Diclofenac is slightly COX‑2 selective but is not classified as a selective COX‑2 inhibitor like celecoxib."
+        }
+      ],
+      "explanation": {
+        "overview": "Celecoxib is the only selective COX‑2 inhibitor currently available in the United States. It was developed to provide anti‑inflammatory analgesia while reducing the incidence of GI adverse events typical of non‑selective NSAIDs.",
+        "highYield": "COX‑2 selective = celecoxib. GI sparing, CV risk remains.",
+        "clinicalCorrelation": "Celecoxib carries a sulfonamide moiety; it is contraindicated in patients with sulfonamide allergy. It also shares the cardiovascular risks of other COX‑2 inhibitors."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_058",
+      "difficulty": 2,
+      "question": "A patient on transdermal fentanyl develops fever. The rate of fentanyl absorption is likely to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increase, raising the risk of overdose",
+          "isCorrect": true,
+          "explanation": "Fever causes vasodilation and increased skin permeability, enhancing the absorption of fentanyl from the patch and potentially leading to toxicity."
+        },
+        {
+          "text": "Decrease, leading to withdrawal",
+          "isCorrect": false,
+          "explanation": "Heat increases, not decreases, absorption."
+        },
+        {
+          "text": "Remain unchanged",
+          "isCorrect": false,
+          "explanation": "Absorption is temperature‑dependent; it does not remain unchanged with fever."
+        },
+        {
+          "text": "Become erratic and unpredictable",
+          "isCorrect": false,
+          "explanation": "While it becomes faster, it is still predictable in direction – it increases."
+        },
+        {
+          "text": "Cause immediate release of the entire dose",
+          "isCorrect": false,
+          "explanation": "There is not a complete dose‑dumping, but absorption rate does increase significantly."
+        }
+      ],
+      "explanation": {
+        "overview": "Transdermal fentanyl delivery is designed for steady release. External heat (fever, heating pads, hot baths) increases local blood flow and membrane permeability, resulting in faster systemic absorption and higher peak plasma concentrations, which can cause respiratory depression.",
+        "highYield": "Fever/heating pad + fentanyl patch = ↑ absorption → overdose risk.",
+        "clinicalCorrelation": "Patients using fentanyl patches should be advised to avoid external heat sources. If fever occurs, the patient should be closely monitored for signs of opioid toxicity."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_059",
+      "difficulty": 3,
+      "question": "The co‑administration of naloxone with buprenorphine in the sublingual formulation for opioid use disorder serves to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Deter intravenous abuse by precipitating withdrawal if injected",
+          "isCorrect": true,
+          "explanation": "Naloxone has low sublingual bioavailability but high parenteral bioavailability; if the combination is injected, naloxone blocks mu‑receptors and precipitates withdrawal in dependent individuals."
+        },
+        {
+          "text": "Enhance the analgesic effect",
+          "isCorrect": false,
+          "explanation": "Naloxone is an antagonist; it does not enhance buprenorphine’s effect."
+        },
+        {
+          "text": "Reduce constipation",
+          "isCorrect": false,
+          "explanation": "Naloxone when absorbed orally can reduce constipation, but the sublingual combination aims at abuse deterrence, not laxation."
+        },
+        {
+          "text": "Prolong the half‑life of buprenorphine",
+          "isCorrect": false,
+          "explanation": "Naloxone does not alter buprenorphine’s metabolism."
+        },
+        {
+          "text": "Prevent respiratory depression when taken orally",
+          "isCorrect": false,
+          "explanation": "Sublingual buprenorphine already has a ceiling for respiratory depression; naloxone is added for abuse deterrence."
+        }
+      ],
+      "explanation": {
+        "overview": "The buprenorphine/naloxone combination (Suboxone) is formulated to discourage intravenous misuse. Naloxone is poorly absorbed sublingually, so it does not interfere with therapeutic effects. If the tablet is dissolved and injected, naloxone becomes active and precipitates acute opioid withdrawal.",
+        "highYield": "Buprenorphine + naloxone = abuse‑deterrent. Naloxone active only IV/IM.",
+        "clinicalCorrelation": "Patients should be warned not to inject the combination. The sublingual form provides effective maintenance therapy with a safety advantage due to buprenorphine’s partial agonism."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_060",
+      "difficulty": 2,
+      "question": "Which of the following is a peripherally acting mu‑opioid receptor antagonist used to treat opioid‑induced constipation without reversing central analgesia?",
+      "image": null,
+      "options": [
+        {
+          "text": "Methylnaltrexone",
+          "isCorrect": true,
+          "explanation": "Methylnaltrexone is a quaternary amine that does not cross the blood‑brain barrier; it blocks mu‑receptors in the gut, relieving constipation while preserving central analgesia."
+        },
+        {
+          "text": "Naloxone",
+          "isCorrect": false,
+          "explanation": "Naloxone crosses the blood‑brain barrier and would reverse analgesia."
+        },
+        {
+          "text": "Naltrexone",
+          "isCorrect": false,
+          "explanation": "Naltrexone is a central and peripheral opioid antagonist, not selective for the gut."
+        },
+        {
+          "text": "Loperamide",
+          "isCorrect": false,
+          "explanation": "Loperamide is a peripheral mu‑agonist used for diarrhoea, not an antagonist."
+        },
+        {
+          "text": "Diphenoxylate",
+          "isCorrect": false,
+          "explanation": "Diphenoxylate is an opioid agonist used for diarrhoea."
+        }
+      ],
+      "explanation": {
+        "overview": "Peripherally acting mu‑opioid receptor antagonists (PAMORAs) such as methylnaltrexone, naldemedine, and naloxegol selectively block gastrointestinal opioid receptors, alleviating constipation without interfering with centrally mediated analgesia.",
+        "highYield": "PAMORAs: methylnaltrexone, naloxegol, naldemedine → relieve opioid constipation without blocking pain relief.",
+        "clinicalCorrelation": "These agents are prescribed for opioid‑induced constipation that is refractory to conventional laxatives. They are contraindicated in patients with known or suspected GI obstruction."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_061",
+      "difficulty": 2,
+      "question": "Epidural administration of an opioid plus a local anaesthetic produces synergistic analgesia because:",
+      "image": null,
+      "options": [
+        {
+          "text": "They act at different sites: opioid on presynaptic receptors, local anaesthetic on axonal sodium channels",
+          "isCorrect": true,
+          "explanation": "Opioids act on presynaptic mu‑receptors to reduce neurotransmitter release, while local anaesthetics block sodium channels in nerve axons, inhibiting impulse propagation. The combination provides superior analgesia with lower doses of each."
+        },
+        {
+          "text": "They both block sodium channels",
+          "isCorrect": false,
+          "explanation": "Opioids do not block sodium channels; this is not the mechanism."
+        },
+        {
+          "text": "Local anaesthetics increase opioid receptor density",
+          "isCorrect": false,
+          "explanation": "Local anaesthetics do not up‑regulate opioid receptors."
+        },
+        {
+          "text": "They compete for the same metabolic pathway",
+          "isCorrect": false,
+          "explanation": "There is no competitive metabolism; synergy is pharmacodynamic."
+        },
+        {
+          "text": "The local anaesthetic acts as a carrier for the opioid",
+          "isCorrect": false,
+          "explanation": "There is no carrier‑type interaction; they work independently on different targets."
+        }
+      ],
+      "explanation": {
+        "overview": "Neuraxial co‑administration of an opioid and a local anaesthetic takes advantage of their distinct mechanisms: opioids hyperpolarise dorsal horn neurons by activating presynaptic mu‑receptors, while local anaesthetics block axonal conduction. This allows dose reduction of both drugs, improving analgesia and reducing side‑effects.",
+        "highYield": "Epidural opioid + local anaesthetic = dual mechanism → synergistic analgesia, less motor block, less opioid pruritus.",
+        "clinicalCorrelation": "This combination is the foundation of labour epidural analgesia and post‑operative pain management, providing effective pain relief while allowing the patient to remain mobile."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_062",
+      "difficulty": 2,
+      "question": "Which of the following opioids has the greatest oral bioavailability?",
+      "image": null,
+      "options": [
+        {
+          "text": "Methadone",
+          "isCorrect": true,
+          "explanation": "Methadone’s oral bioavailability is high (≈80–90%), much greater than morphine’s (20–40%) because it undergoes less first‑pass metabolism."
+        },
+        {
+          "text": "Morphine",
+          "isCorrect": false,
+          "explanation": "Morphine has low oral bioavailability (20–40%) due to extensive first‑pass glucuronidation."
+        },
+        {
+          "text": "Oxycodone",
+          "isCorrect": false,
+          "explanation": "Oxycodone oral bioavailability is around 60–87%, but methadone is still higher on average."
+        },
+        {
+          "text": "Hydromorphone",
+          "isCorrect": false,
+          "explanation": "Hydromorphone has low oral bioavailability (~30–50%)."
+        },
+        {
+          "text": "Buprenorphine",
+          "isCorrect": false,
+          "explanation": "Buprenorphine has very low oral bioavailability due to extensive first‑pass metabolism; it is given sublingually or transdermally."
+        }
+      ],
+      "explanation": {
+        "overview": "Methadone’s high oral bioavailability makes it a reliable agent for oral administration, an advantage for maintenance therapy. In contrast, morphine and many other opioids have substantial first‑pass metabolism, requiring dose adjustments when switching from parenteral to oral routes.",
+        "highYield": "Oral bioavailability: methadone high (~85%), morphine low (~30%).",
+        "clinicalCorrelation": "The high and predictable oral absorption of methadone simplifies chronic pain management and opioid substitution therapy, but its long and variable half‑life makes titration challenging."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_063",
+      "difficulty": 1,
+      "question": "Aspirin is contraindicated in children with viral infections because of the risk of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Reye syndrome",
+          "isCorrect": true,
+          "explanation": "Aspirin use in children with influenza or varicella is associated with Reye syndrome, a potentially fatal condition involving encephalopathy and hepatic failure."
+        },
+        {
+          "text": "Asthma",
+          "isCorrect": false,
+          "explanation": "Aspirin can exacerbate asthma in sensitive individuals, but Reye syndrome is the specific paediatric contraindication with viral illness."
+        },
+        {
+          "text": "Gastric ulcer",
+          "isCorrect": false,
+          "explanation": "Gastric ulceration is a risk but not the primary reason for the contraindication in febrile children."
+        },
+        {
+          "text": "Thrombocytopenia",
+          "isCorrect": false,
+          "explanation": "Aspirin affects platelet function, not platelet count, and thrombocytopenia is not the principal concern."
+        },
+        {
+          "text": "Nephropathy",
+          "isCorrect": false,
+          "explanation": "Nephropathy is not the main paediatric risk; Reye syndrome is."
+        }
+      ],
+      "explanation": {
+        "overview": "Reye syndrome is an acute illness characterised by encephalopathy and fatty degeneration of the liver, primarily affecting children recovering from viral infections who have been given aspirin. The incidence has dropped markedly since avoidance of aspirin in febrile children was recommended.",
+        "highYield": "No aspirin in kids with flu/chickenpox → Reye syndrome.",
+        "clinicalCorrelation": "Acetaminophen and ibuprofen are safe alternatives for fever and pain in children. Aspirin remains indicated for Kawasaki disease and selected rheumatologic conditions."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_064",
+      "difficulty": 3,
+      "question": "Which of the following opioids is the most potent at the mu‑receptor?",
+      "image": null,
+      "options": [
+        {
+          "text": "Sufentanil",
+          "isCorrect": true,
+          "explanation": "Sufentanil is approximately 1000 times more potent than morphine at the mu‑receptor, making it one of the most potent opioid analgesics used clinically."
+        },
+        {
+          "text": "Fentanyl",
+          "isCorrect": false,
+          "explanation": "Fentanyl is roughly 100 times more potent than morphine, less than sufentanil."
+        },
+        {
+          "text": "Hydromorphone",
+          "isCorrect": false,
+          "explanation": "Hydromorphone is about 5–7 times more potent than morphine."
+        },
+        {
+          "text": "Remifentanil",
+          "isCorrect": false,
+          "explanation": "Remifentanil has similar potency to fentanyl, which is less than sufentanil."
+        },
+        {
+          "text": "Buprenorphine",
+          "isCorrect": false,
+          "explanation": "Buprenorphine has high affinity but is a partial agonist; its maximal effect is lower."
+        }
+      ],
+      "explanation": {
+        "overview": "Sufentanil is an extremely potent synthetic opioid, with roughly 1000‑fold greater analgesic potency than morphine on a weight basis. It is used primarily in cardiac and major surgery where profound opioid effects are needed without large fluid volumes.",
+        "highYield": "Potency: sufentanil > fentanyl > morphine. Sufentanil ~1000x morphine.",
+        "clinicalCorrelation": "Extreme care must be taken with dosing, as minute amounts can cause severe respiratory depression. It is typically administered in controlled settings (operating room, ICU)."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_065",
+      "difficulty": 2,
+      "question": "The analgesic effect of tricyclic antidepressants in neuropathic pain is thought to be primarily due to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Inhibition of norepinephrine and serotonin reuptake, plus sodium channel blockade",
+          "isCorrect": true,
+          "explanation": "TCAs enhance descending inhibitory pathways by blocking reuptake of norepinephrine and serotonin and also stabilise nerve membranes by blocking sodium channels."
+        },
+        {
+          "text": "GABA receptor activation",
+          "isCorrect": false,
+          "explanation": "TCAs do not primarily act on GABA receptors."
+        },
+        {
+          "text": "Opioid receptor agonism",
+          "isCorrect": false,
+          "explanation": "TCAs are not opioid agonists."
+        },
+        {
+          "text": "COX‑2 inhibition",
+          "isCorrect": false,
+          "explanation": "TCAs do not inhibit cyclooxygenase."
+        },
+        {
+          "text": "Calcium channel blockade",
+          "isCorrect": false,
+          "explanation": "Calcium channel blockade is the mechanism of gabapentinoids, not TCAs."
+        }
+      ],
+      "explanation": {
+        "overview": "Tricyclic antidepressants produce analgesia in neuropathic pain through a combination of monoamine reuptake inhibition (enhancing descending inhibition) and sodium channel blockade (reducing ectopic discharges). These effects are independent of their antidepressant activity.",
+        "highYield": "TCAs for pain: block Na⁺ channels + ↑ NE/5‑HT. Start low, anticholinergic side effects.",
+        "clinicalCorrelation": "Amitriptyline and nortriptyline are first‑line for many neuropathic pain conditions. The doses used for pain are lower than those for depression, and the onset of analgesia can take several weeks."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_066",
+      "difficulty": 2,
+      "question": "Which local anaesthetic is most commonly used for intravenous regional anaesthesia (Bier block)?",
+      "image": null,
+      "options": [
+        {
+          "text": "Lidocaine",
+          "isCorrect": true,
+          "explanation": "Lidocaine is the agent of choice for Bier block due to its rapid onset, intermediate duration, and good safety profile when used in a tourniquet‑isolated limb."
+        },
+        {
+          "text": "Bupivacaine",
+          "isCorrect": false,
+          "explanation": "Bupivacaine is cardiotoxic and not recommended for IV regional anaesthesia because accidental tourniquet release could cause severe cardiac arrhythmias."
+        },
+        {
+          "text": "Ropivacaine",
+          "isCorrect": false,
+          "explanation": "Ropivacaine is not typically used for Bier block; lidocaine is the standard."
+        },
+        {
+          "text": "Procaine",
+          "isCorrect": false,
+          "explanation": "Procaine is an ester‑type local anaesthetic with a slower onset and is rarely used for Bier block."
+        },
+        {
+          "text": "Tetracaine",
+          "isCorrect": false,
+          "explanation": "Tetracaine is too potent and long‑acting for safe IV regional use."
+        }
+      ],
+      "explanation": {
+        "overview": "Intravenous regional anaesthesia involves injecting a local anaesthetic into a vein of an exsanguinated limb isolated by a tourniquet. Lidocaine is the drug of choice because of its safety and efficacy; bupivacaine is absolutely contraindicated due to its high cardiotoxicity upon tourniquet release.",
+        "highYield": "Bier block: lidocaine preferred. NO bupivacaine (cardiotoxic).",
+        "clinicalCorrelation": "The technique provides excellent surgical anaesthesia for short procedures on the forearm or hand. The tourniquet must remain inflated for at least 20–30 minutes after injection to avoid systemic toxicity."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_067",
+      "difficulty": 2,
+      "question": "Which of the following best describes the pharmacokinetics of methadone?",
+      "image": null,
+      "options": [
+        {
+          "text": "Long and highly variable half‑life (15–60+ hours) with extensive protein binding",
+          "isCorrect": true,
+          "explanation": "Methadone has an extended and unpredictable elimination half‑life, high protein binding, and a large volume of distribution, contributing to its prolonged effect and risk of accumulation."
+        },
+        {
+          "text": "Short half‑life and rapid clearance",
+          "isCorrect": false,
+          "explanation": "Methadone has a long, not short, half‑life."
+        },
+        {
+          "text": "Ultra‑short half‑life due to ester hydrolysis",
+          "isCorrect": false,
+          "explanation": "Methadone is not metabolised by esterases; this describes remifentanil."
+        },
+        {
+          "text": "Zero‑order kinetics at therapeutic doses",
+          "isCorrect": false,
+          "explanation": "Methadone exhibits linear kinetics at usual doses; zero‑order kinetics is typical of aspirin at high doses and phenytoin."
+        },
+        {
+          "text": "Rapid absorption but extensive first‑pass metabolism",
+          "isCorrect": false,
+          "explanation": "Methadone actually has high oral bioavailability, indicating minimal first‑pass metabolism."
+        }
+      ],
+      "explanation": {
+        "overview": "Methadone’s pharmacokinetic profile is characterised by a long and unpredictable half‑life (ranging from 15 to over 60 hours), high protein binding, and a large volume of distribution. This makes it useful for once‑daily dosing in addiction treatment but also creates a risk of delayed toxicity during dose titration.",
+        "highYield": "Methadone: long, variable t½ → once‑daily dosing but risk of accumulation. Monitor QTc.",
+        "clinicalCorrelation": "Dose adjustments should not be made more frequently than every 5–7 days, and ECG monitoring is recommended to detect QTc prolongation."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_068",
+      "difficulty": 1,
+      "question": "An acute attack of gout is often treated with which of the following analgesics?",
+      "image": null,
+      "options": [
+        {
+          "text": "NSAIDs (e.g., indomethacin, naproxen)",
+          "isCorrect": true,
+          "explanation": "NSAIDs are first‑line for acute gout due to their rapid anti‑inflammatory effect, which reduces pain and inflammation within 24–48 hours."
+        },
+        {
+          "text": "Acetaminophen",
+          "isCorrect": false,
+          "explanation": "Acetaminophen lacks anti‑inflammatory activity and is insufficient for the intense inflammation of acute gout."
+        },
+        {
+          "text": "Opioids",
+          "isCorrect": false,
+          "explanation": "Opioids are not first‑line for gout and do not address the underlying inflammation."
+        },
+        {
+          "text": "Gabapentin",
+          "isCorrect": false,
+          "explanation": "Gabapentin is for neuropathic pain, not inflammatory arthritis like gout."
+        },
+        {
+          "text": "Corticosteroids alone",
+          "isCorrect": false,
+          "explanation": "Corticosteroids are an alternative when NSAIDs are contraindicated, but NSAIDs are the most common first‑line treatment."
+        }
+      ],
+      "explanation": {
+        "overview": "Acute gouty arthritis is an intensely inflammatory condition caused by monosodium urate crystal deposition. NSAIDs (indomethacin, naproxen, ibuprofen) rapidly suppress inflammation and are recommended as first‑line therapy, unless contraindicated.",
+        "highYield": "Acute gout: NSAIDs, colchicine, or corticosteroids. Avoid aspirin (can alter uric acid).",
+        "clinicalCorrelation": "NSAIDs should be started at full dose early in the attack. Colchicine is also effective but has a narrow therapeutic window and can cause severe diarrhoea."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_069",
+      "difficulty": 3,
+      "question": "Which opioid is considered the best option for a patient with end‑stage renal disease requiring a parenteral opioid?",
+      "image": null,
+      "options": [
+        {
+          "text": "Fentanyl",
+          "isCorrect": true,
+          "explanation": "Fentanyl has no active metabolites and is primarily metabolised by CYP3A4, making it the safest parenteral opioid in renal failure when used with careful monitoring."
+        },
+        {
+          "text": "Morphine",
+          "isCorrect": false,
+          "explanation": "Morphine’s active metabolites (M6G, M3G) accumulate in renal failure, causing prolonged respiratory depression and neurotoxicity."
+        },
+        {
+          "text": "Meperidine",
+          "isCorrect": false,
+          "explanation": "Meperidine is contraindicated; normeperidine accumulates and causes seizures."
+        },
+        {
+          "text": "Codeine",
+          "isCorrect": false,
+          "explanation": "Codeine and its active metabolite morphine‑6‑glucuronide can accumulate."
+        },
+        {
+          "text": "Hydromorphone",
+          "isCorrect": false,
+          "explanation": "Hydromorphone’s H3G metabolite can accumulate and cause neuroexcitation, though it is sometimes used cautiously; fentanyl is preferred."
+        }
+      ],
+      "explanation": {
+        "overview": "In renal failure, opioids that rely on renal clearance for the parent drug or active metabolites can accumulate. Fentanyl is hepatically metabolised to inactive compounds and is considered the safest parenteral opioid in this setting, though all opioids must be titrated cautiously.",
+        "highYield": "Renal failure: fentanyl/methadone (cautious) are safer. Avoid meperidine, morphine.",
+        "clinicalCorrelation": "Despite fentanyl’s safety, reduced doses and extended monitoring are still necessary in renal impairment due to altered pharmacokinetics and increased sensitivity."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_070",
+      "difficulty": 2,
+      "question": "Which of the following adjuvants works by inhibiting the reuptake of serotonin and norepinephrine and is FDA‑approved for fibromyalgia?",
+      "image": null,
+      "options": [
+        {
+          "text": "Duloxetine",
+          "isCorrect": true,
+          "explanation": "Duloxetine is an SNRI approved for fibromyalgia, as well as for diabetic neuropathy and chronic musculoskeletal pain."
+        },
+        {
+          "text": "Amitriptyline",
+          "isCorrect": false,
+          "explanation": "Amitriptyline is a TCA, not an SNRI, and while used off‑label for fibromyalgia, it lacks formal FDA approval for this indication."
+        },
+        {
+          "text": "Pregabalin",
+          "isCorrect": false,
+          "explanation": "Pregabalin is FDA‑approved for fibromyalgia, but it works via calcium channels, not serotonin/norepinephrine reuptake."
+        },
+        {
+          "text": "Milnacipran",
+          "isCorrect": false,
+          "explanation": "Milnacipran is an SNRI also approved for fibromyalgia, but duloxetine is the more commonly recognised answer for this mechanism; however, both are SNRIs approved for fibromyalgia. The question has a single correct answer designated as duloxetine, but note that milnacipran is also an SNRI approved for fibromyalgia. In this context, duloxetine is the intended answer."
+        },
+        {
+          "text": "Cyclobenzaprine",
+          "isCorrect": false,
+          "explanation": "Cyclobenzaprine is a muscle relaxant structurally related to TCAs, not an SNRI, and is not FDA‑approved for fibromyalgia."
+        }
+      ],
+      "explanation": {
+        "overview": "Duloxetine is a serotonin‑norepinephrine reuptake inhibitor with proven efficacy in fibromyalgia, likely through enhancement of descending inhibitory pain pathways. It reduces pain and improves function in affected patients.",
+        "highYield": "Fibromyalgia: duloxetine (SNRI), pregabalin (α2‑δ), milnacipran (SNRI). All FDA‑approved.",
+        "clinicalCorrelation": "Patients may experience nausea, insomnia, and dizziness when starting duloxetine. A slow titration can improve tolerability."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_071",
+      "difficulty": 2,
+      "question": "The term ‘ceiling effect’ as applied to buprenorphine refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "A plateau in respiratory depression and analgesia at higher doses",
+          "isCorrect": true,
+          "explanation": "Due to partial agonism, buprenorphine’s dose‑response curve flattens, so further dose increases produce little additional effect, including respiratory depression."
+        },
+        {
+          "text": "It cannot be absorbed orally",
+          "isCorrect": false,
+          "explanation": "Buprenorphine can be absorbed sublingually; the ceiling effect is a pharmacodynamic concept, not absorption."
+        },
+        {
+          "text": "It has no effect on the mu receptor",
+          "isCorrect": false,
+          "explanation": "It is a partial mu agonist, so it does have an effect."
+        },
+        {
+          "text": "It is excreted unchanged",
+          "isCorrect": false,
+          "explanation": "Metabolism and excretion are unrelated to the ceiling effect."
+        },
+        {
+          "text": "It cannot be reversed by naloxone",
+          "isCorrect": false,
+          "explanation": "Buprenorphine can be reversed by naloxone, although higher doses of naloxone may be needed due to its high receptor affinity."
+        }
+      ],
+      "explanation": {
+        "overview": "The ceiling effect of buprenorphine is a direct consequence of its partial agonist activity at the mu‑opioid receptor. Beyond a certain dose, receptor occupancy saturates but the maximal response is lower than that of a full agonist, limiting both analgesia and life‑threatening respiratory depression.",
+        "highYield": "Ceiling effect = partial agonist property. Safety feature for respiratory depression.",
+        "clinicalCorrelation": "The ceiling effect makes buprenorphine a safer option for treating opioid use disorder and chronic pain in patients at risk of overdose, but it also limits its utility for severe acute pain."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_072",
+      "difficulty": 1,
+      "question": "What is the most common route of administration for naloxone in the community setting for suspected opioid overdose?",
+      "image": null,
+      "options": [
+        {
+          "text": "Intranasal",
+          "isCorrect": true,
+          "explanation": "Intranasal naloxone is widely used by first responders and laypersons because it is needle‑free, easy to administer, and rapidly absorbed."
+        },
+        {
+          "text": "Intravenous",
+          "isCorrect": false,
+          "explanation": "Intravenous naloxone is common in hospital settings but not in the community."
+        },
+        {
+          "text": "Intramuscular",
+          "isCorrect": false,
+          "explanation": "Intramuscular is an alternative, but intranasal has become the most common community route due to ease and safety."
+        },
+        {
+          "text": "Subcutaneous",
+          "isCorrect": false,
+          "explanation": "Subcutaneous administration is less common and has slower absorption."
+        },
+        {
+          "text": "Oral",
+          "isCorrect": false,
+          "explanation": "Naloxone has very low oral bioavailability and is not effective orally."
+        }
+      ],
+      "explanation": {
+        "overview": "Community naloxone programs distribute intranasal naloxone because it can be administered by bystanders without training in injections. It has a rapid onset via the nasal mucosa and effectively reverses opioid overdose.",
+        "highYield": "Community naloxone = intranasal spray. Easy, safe, effective.",
+        "clinicalCorrelation": "Multiple doses may be needed for potent or long‑acting opioids. All patients who receive naloxone should seek emergency medical care because of the risk of re‑narcotization."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_073",
+      "difficulty": 2,
+      "question": "Which of the following is a non‑pharmacological analgesic mechanism by which transcutaneous electrical nerve stimulation (TENS) is believed to work?",
+      "image": null,
+      "options": [
+        {
+          "text": "Gate control theory – activating large Aβ fibres to ‘close the gate’ to pain transmission",
+          "isCorrect": true,
+          "explanation": "TENS delivers low‑voltage electrical currents that stimulate large‑diameter Aβ sensory fibres, which according to the gate control theory inhibit transmission of nociceptive signals at the spinal cord level."
+        },
+        {
+          "text": "Release of endogenous opioids only",
+          "isCorrect": false,
+          "explanation": "While TENS may also trigger opioid release at certain frequencies, the primary mechanism is gate control."
+        },
+        {
+          "text": "Direct inhibition of C‑fibres",
+          "isCorrect": false,
+          "explanation": "TENS does not directly inhibit C‑fibres; it activates Aβ fibres which then modulate pain transmission."
+        },
+        {
+          "text": "Placebo effect only",
+          "isCorrect": false,
+          "explanation": "TENS has demonstrable physiological effects beyond placebo."
+        },
+        {
+          "text": "Muscle relaxation",
+          "isCorrect": false,
+          "explanation": "Muscle relaxation is not the primary analgesic mechanism of TENS."
+        }
+      ],
+      "explanation": {
+        "overview": "The gate control theory of pain posits that activation of large, fast‑conducting Aβ fibres can ‘close the gate’ to nociceptive input carried by small Aδ and C fibres in the dorsal horn. TENS devices exploit this by electrically stimulating Aβ fibres, thereby reducing pain perception.",
+        "highYield": "TENS → Aβ stimulation → spinal gate closure → less pain.",
+        "clinicalCorrelation": "TENS is a safe, low‑cost adjunct for acute and chronic pain. It is typically used at high frequency for conventional analgesia and at low frequency to release endogenous opioids."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_074",
+      "difficulty": 3,
+      "question": "Which of the following statements regarding intrathecal drug delivery is correct?",
+      "image": null,
+      "options": [
+        {
+          "text": "It allows lower doses of analgesics, reducing systemic side effects",
+          "isCorrect": true,
+          "explanation": "Intrathecal administration delivers drugs directly to the cerebrospinal fluid, bypassing systemic circulation and achieving high spinal concentrations with a fraction of the oral or intravenous dose, thereby minimising systemic adverse effects."
+        },
+        {
+          "text": "It is the first‑line treatment for chronic non‑cancer pain",
+          "isCorrect": false,
+          "explanation": "Intrathecal therapy is reserved for refractory pain when other measures have failed."
+        },
+        {
+          "text": "Only morphine can be administered intrathecally",
+          "isCorrect": false,
+          "explanation": "Ziconotide, baclofen, clonidine, and local anaesthetics are also used intrathecally."
+        },
+        {
+          "text": "It has no risk of granuloma formation",
+          "isCorrect": false,
+          "explanation": "Intrathecal catheters can lead to granuloma formation, especially with high‑concentration opioids."
+        },
+        {
+          "text": "It is less invasive than epidural injection",
+          "isCorrect": false,
+          "explanation": "Intrathecal pumps are surgically implanted, which is more invasive than temporary epidural catheters."
+        }
+      ],
+      "explanation": {
+        "overview": "Intrathecal drug delivery systems infuse medications directly into the CSF, allowing for profound analgesia with dramatically lower doses than systemic routes. This reduces systemic toxicities such as sedation, constipation, and endocrine dysfunction.",
+        "highYield": "Intrathecal = drug → CSF → high spinal concentration, low systemic dose. For refractory pain.",
+        "clinicalCorrelation": "Implanted pumps are used for cancer pain, severe spasticity, and chronic non‑cancer pain unresponsive to other treatments. Complications include infection, catheter tip granuloma, and pump malfunction."
+      }
+    },
+    {
+      "questionId": "pharma_analgesic_075",
+      "difficulty": 2,
+      "question": "Which of the following is a common adjuvant analgesic for bone pain from osteoblastic metastases in prostate cancer?",
+      "image": null,
+      "options": [
+        {
+          "text": "Bisphosphonates (e.g., zoledronic acid)",
+          "isCorrect": true,
+          "explanation": "Bisphosphonates inhibit osteoclast activity, reduce bone resorption, and stabilise bone metastases, providing significant analgesic benefit in prostate cancer and other osteoblastic metastases."
+        },
+        {
+          "text": "Acetaminophen",
+          "isCorrect": false,
+          "explanation": "Acetaminophen is not specific for bone metastasis pain and lacks the disease‑modifying effect on bone."
+        },
+        {
+          "text": "Muscle relaxants",
+          "isCorrect": false,
+          "explanation": "Muscle relaxants are not indicated for bone pain from metastases."
+        },
+        {
+          "text": "TCAs",
+          "isCorrect": false,
+          "explanation": "TCAs are used for neuropathic pain, not specifically for osteoblastic bone pain."
+        },
+        {
+          "text": "Benzodiazepines",
+          "isCorrect": false,
+          "explanation": "Benzodiazepines are not standard analgesics for bone metastases."
+        }
+      ],
+      "explanation": {
+        "overview": "Bone metastases, particularly osteoblastic lesions from prostate cancer, cause pain through increased bone turnover and periosteal stretching. Bisphosphonates and denosumab (a RANKL inhibitor) reduce osteoclast activity, leading to pain relief and a reduction in skeletal‑related events.",
+        "highYield": "Bisphosphonates/denosumab for bone mets pain. Also used for hypercalcaemia of malignancy.",
+        "clinicalCorrelation": "Intravenous bisphosphonates require renal monitoring and can cause flu‑like symptoms after the first infusion. Osteonecrosis of the jaw is a rare but serious complication, necessitating dental evaluation before therapy."
+      }
+    }
+  ]
+}

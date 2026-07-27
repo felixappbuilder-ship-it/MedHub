@@ -1,0 +1,3424 @@
+{
+  "questions": [
+    {
+      "questionId": "pharma_pharmacokinetics_001",
+      "difficulty": 1,
+      "question": "What does the term 'absorption' refer to in pharmacokinetics?",
+      "image": null,
+      "options": [
+        {
+          "text": "Movement of drug from site of administration into the bloodstream",
+          "isCorrect": true,
+          "explanation": "Absorption is the process by which a drug enters the systemic circulation from its site of administration."
+        },
+        {
+          "text": "Movement of drug from blood into tissues",
+          "isCorrect": false,
+          "explanation": "That is distribution."
+        },
+        {
+          "text": "Chemical alteration of drug in the body",
+          "isCorrect": false,
+          "explanation": "That is metabolism."
+        },
+        {
+          "text": "Removal of drug from the body",
+          "isCorrect": false,
+          "explanation": "That is excretion."
+        },
+        {
+          "text": "Binding of drug to plasma proteins",
+          "isCorrect": false,
+          "explanation": "Binding is part of distribution, not absorption."
+        }
+      ],
+      "explanation": {
+        "overview": "Absorption describes how a drug moves from its administration site into the bloodstream, determining onset and extent of effect.",
+        "highYield": "Absorption = site of administration → systemic circulation.",
+        "clinicalCorrelation": "Oral absorption can be affected by food, GI motility, and pH."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_002",
+      "difficulty": 2,
+      "question": "Which factor does NOT influence drug absorption after oral administration?",
+      "image": null,
+      "options": [
+        {
+          "text": "Gastric emptying time",
+          "isCorrect": false,
+          "explanation": "Slower gastric emptying can delay absorption."
+        },
+        {
+          "text": "Intestinal pH",
+          "isCorrect": false,
+          "explanation": "pH affects drug ionization and solubility."
+        },
+        {
+          "text": "Hepatic blood flow",
+          "isCorrect": true,
+          "explanation": "Hepatic blood flow affects first‑pass metabolism, not direct absorption."
+        },
+        {
+          "text": "Food in the gastrointestinal tract",
+          "isCorrect": false,
+          "explanation": "Food can alter absorption rate and extent."
+        },
+        {
+          "text": "Drug formulation",
+          "isCorrect": false,
+          "explanation": "Immediate vs extended release influences absorption."
+        }
+      ],
+      "explanation": {
+        "overview": "Oral absorption depends on GI physiology and drug properties. Hepatic blood flow impacts first‑pass metabolism, not the absorption process itself.",
+        "highYield": "Hepatic blood flow = first‑pass effect; not absorption.",
+        "clinicalCorrelation": "Patients with portal hypertension may have altered first‑pass metabolism."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_003",
+      "difficulty": 1,
+      "question": "Bioavailability is defined as:",
+      "image": null,
+      "options": [
+        {
+          "text": "The fraction of unchanged drug reaching systemic circulation",
+          "isCorrect": true,
+          "explanation": "Bioavailability (F) = AUC(oral)/AUC(IV) × 100%."
+        },
+        {
+          "text": "The rate of drug absorption",
+          "isCorrect": false,
+          "explanation": "Rate is not fraction."
+        },
+        {
+          "text": "The amount of drug bound to plasma proteins",
+          "isCorrect": false,
+          "explanation": "Protein binding affects distribution."
+        },
+        {
+          "text": "The volume of distribution",
+          "isCorrect": false,
+          "explanation": "Vd is a separate parameter."
+        },
+        {
+          "text": "The half-life of the drug",
+          "isCorrect": false,
+          "explanation": "Half‑life is elimination."
+        }
+      ],
+      "explanation": {
+        "overview": "Bioavailability (F) is the percentage of an administered dose that reaches the systemic circulation unchanged.",
+        "highYield": "F = extent of systemic availability; IV = 100%.",
+        "clinicalCorrelation": "Low oral bioavailability may require higher oral doses or alternative routes."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_004",
+      "difficulty": 1,
+      "question": "Intravenous administration of a drug yields a bioavailability of:",
+      "image": null,
+      "options": [
+        {
+          "text": "0%",
+          "isCorrect": false,
+          "explanation": "IV bypasses absorption losses."
+        },
+        {
+          "text": "50%",
+          "isCorrect": false,
+          "explanation": "Not IV."
+        },
+        {
+          "text": "75%",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "90%",
+          "isCorrect": false,
+          "explanation": "IV is 100%."
+        },
+        {
+          "text": "100%",
+          "isCorrect": true,
+          "explanation": "IV injection places the entire dose directly into the bloodstream."
+        }
+      ],
+      "explanation": {
+        "overview": "Intravenous administration bypasses all barriers to absorption, so bioavailability is 100% by definition.",
+        "highYield": "IV = F = 1.0.",
+        "clinicalCorrelation": "Used for rapid onset and when oral route is not possible."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_005",
+      "difficulty": 1,
+      "question": "The first-pass effect primarily occurs in which organ?",
+      "image": null,
+      "options": [
+        {
+          "text": "Kidney",
+          "isCorrect": false,
+          "explanation": "Kidneys excrete, not first‑pass."
+        },
+        {
+          "text": "Liver",
+          "isCorrect": true,
+          "explanation": "The liver is the main site of first‑pass metabolism for oral drugs."
+        },
+        {
+          "text": "Lungs",
+          "isCorrect": false,
+          "explanation": "Lungs have some metabolic activity but not the main first‑pass."
+        },
+        {
+          "text": "Heart",
+          "isCorrect": false,
+          "explanation": "Not a metabolic organ."
+        },
+        {
+          "text": "Brain",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Orally absorbed drugs travel via the portal vein to the liver, where significant metabolism can occur before reaching systemic circulation.",
+        "highYield": "Liver = primary site of first‑pass metabolism.",
+        "clinicalCorrelation": "Avoid first‑pass by using sublingual, IV, or rectal routes."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_006",
+      "difficulty": 2,
+      "question": "Which route of administration completely bypasses the first-pass effect?",
+      "image": null,
+      "options": [
+        {
+          "text": "Oral",
+          "isCorrect": false,
+          "explanation": "Oral undergoes first‑pass."
+        },
+        {
+          "text": "Rectal",
+          "isCorrect": false,
+          "explanation": "Partial bypass (~50%)."
+        },
+        {
+          "text": "Sublingual",
+          "isCorrect": false,
+          "explanation": "Yes, sublingual bypasses; also IV."
+        },
+        {
+          "text": "Intravenous",
+          "isCorrect": false,
+          "explanation": "IV bypasses completely."
+        },
+        {
+          "text": "Both C and D",
+          "isCorrect": true,
+          "explanation": "Sublingual and IV both avoid hepatic first‑pass metabolism."
+        }
+      ],
+      "explanation": {
+        "overview": "Routes that deliver drug directly into the systemic circulation (IV) or via buccal/sublingual mucosa avoid first‑pass hepatic metabolism.",
+        "highYield": "IV and sublingual = no first‑pass.",
+        "clinicalCorrelation": "Nitroglycerin is given sublingually for immediate effect and to bypass first‑pass."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_007",
+      "difficulty": 2,
+      "question": "The volume of distribution (Vd) is defined as:",
+      "image": null,
+      "options": [
+        {
+          "text": "The actual volume of blood in the body",
+          "isCorrect": false,
+          "explanation": "No, it's a theoretical volume."
+        },
+        {
+          "text": "The volume of plasma cleared of drug per unit time",
+          "isCorrect": false,
+          "explanation": "That is clearance."
+        },
+        {
+          "text": "The theoretical volume that would be necessary to contain the total amount of drug at the same concentration as in plasma",
+          "isCorrect": true,
+          "explanation": "Vd = total amount in body / plasma concentration."
+        },
+        {
+          "text": "The total body water volume",
+          "isCorrect": false,
+          "explanation": "Not necessarily."
+        },
+        {
+          "text": "The volume of extracellular fluid",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Vd is a proportionality constant relating the dose to the plasma concentration. It does not represent a real physiological volume.",
+        "highYield": "Vd = Dose / C0. Large Vd indicates extensive tissue binding.",
+        "clinicalCorrelation": "Used to calculate loading dose: LD = Vd × desired Cp."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_008",
+      "difficulty": 2,
+      "question": "A drug with a very large volume of distribution (e.g., > 100 L) indicates:",
+      "image": null,
+      "options": [
+        {
+          "text": "Extensive binding to plasma proteins",
+          "isCorrect": false,
+          "explanation": "High protein binding reduces Vd."
+        },
+        {
+          "text": "Extensive tissue binding or sequestration",
+          "isCorrect": true,
+          "explanation": "Large Vd means drug is widely distributed outside plasma."
+        },
+        {
+          "text": "Rapid renal excretion",
+          "isCorrect": false,
+          "explanation": "Not related."
+        },
+        {
+          "text": "Poor oral bioavailability",
+          "isCorrect": false,
+          "explanation": "May be related, but Vd is a distribution parameter."
+        },
+        {
+          "text": "High water solubility",
+          "isCorrect": false,
+          "explanation": "Lipophilic drugs tend to have large Vd."
+        }
+      ],
+      "explanation": {
+        "overview": "Vd > total body water implies extensive tissue binding or sequestration, leaving very little drug in plasma.",
+        "highYield": "Large Vd = tissue binding; small Vd = confined to plasma.",
+        "clinicalCorrelation": "Drugs with large Vd may require a loading dose to quickly achieve therapeutic levels."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_009",
+      "difficulty": 3,
+      "question": "Which drug would be expected to have a volume of distribution close to total body water (approximately 42 L)?",
+      "image": null,
+      "options": [
+        {
+          "text": "A highly lipophilic drug",
+          "isCorrect": false,
+          "explanation": "Lipophilic drugs have Vd > total body water."
+        },
+        {
+          "text": "A drug that is 99% protein bound",
+          "isCorrect": false,
+          "explanation": "Protein binding limits distribution, Vd small."
+        },
+        {
+          "text": "A small hydrophilic molecule that distributes evenly",
+          "isCorrect": true,
+          "explanation": "Such a drug distributes throughout total body water."
+        },
+        {
+          "text": "A drug that accumulates in fat tissue",
+          "isCorrect": false,
+          "explanation": "Vd would be very large."
+        },
+        {
+          "text": "A drug that does not cross cell membranes",
+          "isCorrect": false,
+          "explanation": "Vd would be small, maybe ~plasma volume."
+        }
+      ],
+      "explanation": {
+        "overview": "The volume of total body water is about 42 L (0.6 L/kg). A small hydrophilic molecule that is not tissue-bound distributes approximately in this volume.",
+        "highYield": "TBW ~42 L; drugs with Vd ~42 L are evenly distributed in body water.",
+        "clinicalCorrelation": "Ethanol distributes in total body water (Vd ~0.6 L/kg)."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_010",
+      "difficulty": 2,
+      "question": "Plasma protein binding affects drug distribution by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increasing Vd",
+          "isCorrect": false,
+          "explanation": "High protein binding restricts distribution, decreasing Vd."
+        },
+        {
+          "text": "Decreasing Vd",
+          "isCorrect": false,
+          "explanation": "It decreases Vd, but also affects half‑life."
+        },
+        {
+          "text": "Increasing clearance",
+          "isCorrect": false,
+          "explanation": "Only free drug is cleared."
+        },
+        {
+          "text": "Increasing half-life",
+          "isCorrect": false,
+          "explanation": "High protein binding often prolongs half‑life."
+        },
+        {
+          "text": "Both B and D",
+          "isCorrect": true,
+          "explanation": "High protein binding lowers Vd (restricted to plasma) and can prolong half‑life because only free drug is cleared."
+        }
+      ],
+      "explanation": {
+        "overview": "Plasma protein binding confines drug to the vascular space, reducing Vd. It also acts as a reservoir, slowing elimination and increasing half‑life.",
+        "highYield": "Protein binding → ↓ Vd, ↑ t½.",
+        "clinicalCorrelation": "Hypoalbuminemia increases free drug fraction, potentially causing toxicity."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_011",
+      "difficulty": 2,
+      "question": "Which plasma protein is primarily responsible for binding acidic drugs?",
+      "image": null,
+      "options": [
+        {
+          "text": "Albumin",
+          "isCorrect": true,
+          "explanation": "Albumin binds mainly acidic and neutral drugs."
+        },
+        {
+          "text": "α1-acid glycoprotein",
+          "isCorrect": false,
+          "explanation": "AAG binds basic drugs."
+        },
+        {
+          "text": "Globulins",
+          "isCorrect": false,
+          "explanation": "Some binding but albumin is primary."
+        },
+        {
+          "text": "Lipoproteins",
+          "isCorrect": false,
+          "explanation": "Bind lipophilic drugs."
+        },
+        {
+          "text": "Transferrin",
+          "isCorrect": false,
+          "explanation": "Binds iron, not drugs."
+        }
+      ],
+      "explanation": {
+        "overview": "Albumin is the most abundant plasma protein and is the major binding protein for acidic drugs (e.g., warfarin, NSAIDs). α1-acid glycoprotein binds basic drugs.",
+        "highYield": "Acidic drugs → albumin; basic drugs → α1-acid glycoprotein.",
+        "clinicalCorrelation": "In inflammation or cancer, α1-acid glycoprotein levels rise, increasing binding of basic drugs."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_012",
+      "difficulty": 2,
+      "question": "The blood-brain barrier is relatively impermeable to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Lipid-soluble drugs",
+          "isCorrect": false,
+          "explanation": "They cross easily."
+        },
+        {
+          "text": "Ionized, polar drugs",
+          "isCorrect": false,
+          "explanation": "Yes, but also large molecules."
+        },
+        {
+          "text": "Drugs with high molecular weight",
+          "isCorrect": false,
+          "explanation": "Large molecules are restricted."
+        },
+        {
+          "text": "Both B and C",
+          "isCorrect": true,
+          "explanation": "The BBB blocks polar, ionized, and large molecular weight compounds."
+        },
+        {
+          "text": "None of the above",
+          "isCorrect": false,
+          "explanation": "BBB is restrictive."
+        }
+      ],
+      "explanation": {
+        "overview": "The BBB’s tight junctions and efflux transporters (e.g., P‑gp) limit entry of hydrophilic, charged, and large molecules. Only small, lipophilic, uncharged drugs cross easily.",
+        "highYield": "BBB: small, lipophilic, uncharged drugs cross; polar/large/ionized are blocked.",
+        "clinicalCorrelation": "CNS infections can increase BBB permeability, allowing some drugs to enter."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_013",
+      "difficulty": 2,
+      "question": "Clearance (Cl) is defined as:",
+      "image": null,
+      "options": [
+        {
+          "text": "The volume of plasma from which drug is completely removed per unit time",
+          "isCorrect": true,
+          "explanation": "Cl = rate of elimination / plasma concentration (mL/min or L/h)."
+        },
+        {
+          "text": "The rate of drug elimination",
+          "isCorrect": false,
+          "explanation": "Rate is amount/time, clearance is volume/time."
+        },
+        {
+          "text": "The half-life of the drug",
+          "isCorrect": false,
+          "explanation": "Different parameter."
+        },
+        {
+          "text": "The amount of drug eliminated per unit time",
+          "isCorrect": false,
+          "explanation": "That is elimination rate, not clearance."
+        },
+        {
+          "text": "The fraction of drug removed per hour",
+          "isCorrect": false,
+          "explanation": "That's the elimination rate constant."
+        }
+      ],
+      "explanation": {
+        "overview": "Clearance is the most important pharmacokinetic parameter; it determines the maintenance dose rate required to achieve a target concentration.",
+        "highYield": "Cl = volume of plasma cleared of drug per unit time. Additive: Cltotal = Clrenal + Clhepatic + Clother.",
+        "clinicalCorrelation": "Reduced clearance (renal or hepatic failure) requires dose adjustment."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_014",
+      "difficulty": 1,
+      "question": "The primary organ responsible for drug excretion is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Liver",
+          "isCorrect": false,
+          "explanation": "Liver metabolizes; bile excretion is minor."
+        },
+        {
+          "text": "Kidney",
+          "isCorrect": true,
+          "explanation": "Kidneys are the major excretory organ for most drugs and metabolites."
+        },
+        {
+          "text": "Lungs",
+          "isCorrect": false,
+          "explanation": "Minor for volatile agents."
+        },
+        {
+          "text": "Skin",
+          "isCorrect": false,
+          "explanation": "Negligible."
+        },
+        {
+          "text": "Intestine",
+          "isCorrect": false,
+          "explanation": "Some drugs are excreted in feces after biliary elimination."
+        }
+      ],
+      "explanation": {
+        "overview": "Renal excretion is the primary route of drug elimination. It involves glomerular filtration, tubular secretion, and reabsorption.",
+        "highYield": "Kidney = main excretory organ.",
+        "clinicalCorrelation": "Renal impairment necessitates dose reduction for renally cleared drugs."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_015",
+      "difficulty": 1,
+      "question": "Which process is NOT a mechanism of renal drug excretion?",
+      "image": null,
+      "options": [
+        {
+          "text": "Glomerular filtration",
+          "isCorrect": false,
+          "explanation": "It is."
+        },
+        {
+          "text": "Active tubular secretion",
+          "isCorrect": false,
+          "explanation": "Yes."
+        },
+        {
+          "text": "Passive tubular reabsorption",
+          "isCorrect": false,
+          "explanation": "Yes."
+        },
+        {
+          "text": "Biliary excretion",
+          "isCorrect": true,
+          "explanation": "Biliary excretion is hepatic, not renal."
+        },
+        {
+          "text": "Tubular secretion",
+          "isCorrect": false,
+          "explanation": "It is renal."
+        }
+      ],
+      "explanation": {
+        "overview": "Renal excretion consists of glomerular filtration, active tubular secretion, and passive reabsorption. Biliary excretion is a hepatic pathway.",
+        "highYield": "Biliary excretion = liver, not kidney.",
+        "clinicalCorrelation": "Probenecid inhibits renal tubular secretion of penicillin to prolong its effect."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_016",
+      "difficulty": 2,
+      "question": "A drug that is extensively reabsorbed in the renal tubules will have:",
+      "image": null,
+      "options": [
+        {
+          "text": "High renal clearance",
+          "isCorrect": false,
+          "explanation": "Reabsorption reduces net excretion."
+        },
+        {
+          "text": "Low renal clearance",
+          "isCorrect": true,
+          "explanation": "Reabsorption returns drug to blood, lowering clearance."
+        },
+        {
+          "text": "Rapid elimination",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Short half-life",
+          "isCorrect": false,
+          "explanation": "Half‑life would be longer."
+        },
+        {
+          "text": "No effect on clearance",
+          "isCorrect": false,
+          "explanation": "It affects clearance."
+        }
+      ],
+      "explanation": {
+        "overview": "Renal clearance = (filtration + secretion – reabsorption) / plasma concentration. Extensive reabsorption results in lower net renal clearance.",
+        "highYield": "Tubular reabsorption → low renal clearance.",
+        "clinicalCorrelation": "Urine pH manipulation can alter reabsorption: alkaline urine for weak acids increases excretion."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_017",
+      "difficulty": 2,
+      "question": "The elimination half-life (t½) is the time required for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Plasma concentration to decrease by 50%",
+          "isCorrect": false,
+          "explanation": "True, but also total amount."
+        },
+        {
+          "text": "Total body drug to decrease by 50%",
+          "isCorrect": false,
+          "explanation": "Both are equivalent under first‑order kinetics."
+        },
+        {
+          "text": "Drug to reach steady state",
+          "isCorrect": false,
+          "explanation": "Steady state takes 4–5 half‑lives."
+        },
+        {
+          "text": "Drug to be completely eliminated",
+          "isCorrect": false,
+          "explanation": "Complete elimination takes 4–5 half‑lives."
+        },
+        {
+          "text": "Both A and B",
+          "isCorrect": true,
+          "explanation": "Half‑life is the time for plasma concentration (or total amount) to decrease by 50%."
+        }
+      ],
+      "explanation": {
+        "overview": "Elimination half‑life (t½) is the time required for the plasma drug concentration (or amount in the body) to decrease by 50%.",
+        "highYield": "t½ = 0.693 / ke (first‑order).",
+        "clinicalCorrelation": "Half‑life determines dosing frequency and time to steady state."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_018",
+      "difficulty": 3,
+      "question": "The relationship between half-life (t½), volume of distribution (Vd), and clearance (Cl) is:",
+      "image": null,
+      "options": [
+        {
+          "text": "t½ = 0.693 × Vd / Cl",
+          "isCorrect": true,
+          "explanation": "t½ is directly proportional to Vd and inversely proportional to Cl."
+        },
+        {
+          "text": "t½ = Cl / Vd",
+          "isCorrect": false,
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "t½ = Vd × Cl",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "t½ = 0.693 × Cl / Vd",
+          "isCorrect": false,
+          "explanation": "Inverted."
+        },
+        {
+          "text": "t½ = Vd + Cl",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "The formula t½ = 0.693 × Vd / Cl shows that half‑life increases with larger Vd and decreases with higher clearance.",
+        "highYield": "t½ ∝ Vd; t½ ∝ 1/Cl.",
+        "clinicalCorrelation": "Changes in Vd (e.g., obesity) or Cl (e.g., renal failure) alter half‑life."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_019",
+      "difficulty": 2,
+      "question": "Steady-state plasma concentration during constant infusion is achieved after approximately:",
+      "image": null,
+      "options": [
+        {
+          "text": "1 half-life",
+          "isCorrect": false,
+          "explanation": "~50% of steady state."
+        },
+        {
+          "text": "2 half-lives",
+          "isCorrect": false,
+          "explanation": "~75%."
+        },
+        {
+          "text": "3–5 half-lives",
+          "isCorrect": true,
+          "explanation": "After 4–5 half‑lives, >90% of steady state is reached."
+        },
+        {
+          "text": "10 half-lives",
+          "isCorrect": false,
+          "explanation": "Unnecessarily long."
+        },
+        {
+          "text": "Immediately",
+          "isCorrect": false,
+          "explanation": "Takes time."
+        }
+      ],
+      "explanation": {
+        "overview": "Steady state is achieved when the rate of drug administration equals the rate of elimination. This occurs after approximately 4–5 half‑lives.",
+        "highYield": "Steady state = 4–5 half‑lives; independent of dose.",
+        "clinicalCorrelation": "A loading dose can achieve therapeutic levels immediately, bypassing the delay."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_020",
+      "difficulty": 2,
+      "question": "A loading dose is calculated based on:",
+      "image": null,
+      "options": [
+        {
+          "text": "Clearance and desired concentration",
+          "isCorrect": false,
+          "explanation": "Maintenance dose uses clearance."
+        },
+        {
+          "text": "Volume of distribution and desired concentration",
+          "isCorrect": true,
+          "explanation": "Loading dose = Vd × desired Cp / F."
+        },
+        {
+          "text": "Half-life and bioavailability",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        },
+        {
+          "text": "Elimination rate constant",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Maintenance dose",
+          "isCorrect": false,
+          "explanation": "Different."
+        }
+      ],
+      "explanation": {
+        "overview": "The loading dose is designed to quickly fill the volume of distribution to reach target concentration.",
+        "highYield": "LD = Vd × Ctarget. Give one-time or divided over short period.",
+        "clinicalCorrelation": "Used for drugs with long half‑lives (e.g., amiodarone, digoxin) to achieve rapid effect."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_021",
+      "difficulty": 2,
+      "question": "Maintenance dose rate is determined by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Vd × desired concentration / F",
+          "isCorrect": false,
+          "explanation": "Loading dose."
+        },
+        {
+          "text": "Cl × desired concentration / F",
+          "isCorrect": true,
+          "explanation": "Maintenance dose rate = (Cl × Css) / F."
+        },
+        {
+          "text": "Half-life × desired concentration",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Loading dose / half-life",
+          "isCorrect": false,
+          "explanation": "Not."
+        },
+        {
+          "text": "Elimination rate constant × Vd",
+          "isCorrect": false,
+          "explanation": "That's clearance, but dose rate also includes bioavailability."
+        }
+      ],
+      "explanation": {
+        "overview": "Maintenance dose rate = target concentration × clearance / bioavailability. It replaces the drug eliminated per unit time.",
+        "highYield": "MD rate = (Css × Cl) / F.",
+        "clinicalCorrelation": "Adjust maintenance dose in renal or hepatic impairment."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_022",
+      "difficulty": 2,
+      "question": "First-order kinetics means:",
+      "image": null,
+      "options": [
+        {
+          "text": "A constant amount of drug is eliminated per unit time",
+          "isCorrect": false,
+          "explanation": "That is zero‑order."
+        },
+        {
+          "text": "A constant fraction of drug is eliminated per unit time",
+          "isCorrect": true,
+          "explanation": "Rate ∝ concentration; half‑life is constant."
+        },
+        {
+          "text": "Elimination rate is independent of concentration",
+          "isCorrect": false,
+          "explanation": "Zero‑order."
+        },
+        {
+          "text": "Elimination rate increases with concentration but not proportionally",
+          "isCorrect": false,
+          "explanation": "That's mixed/ nonlinear."
+        },
+        {
+          "text": "Saturation of enzymes occurs",
+          "isCorrect": false,
+          "explanation": "Saturation leads to zero‑order."
+        }
+      ],
+      "explanation": {
+        "overview": "In first‑order elimination, the rate of elimination is directly proportional to the drug concentration. A constant fraction (not amount) is eliminated per unit time.",
+        "highYield": "First‑order: constant half‑life, linear kinetics.",
+        "clinicalCorrelation": "Most drugs follow first‑order kinetics at therapeutic doses."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_023",
+      "difficulty": 2,
+      "question": "Zero-order kinetics is also known as:",
+      "image": null,
+      "options": [
+        {
+          "text": "Linear kinetics",
+          "isCorrect": false,
+          "explanation": "Linear = first‑order."
+        },
+        {
+          "text": "Nonlinear kinetics",
+          "isCorrect": false,
+          "explanation": "Yes, zero‑order is nonlinear."
+        },
+        {
+          "text": "Dose-dependent kinetics",
+          "isCorrect": false,
+          "explanation": "Zero‑order exhibits dose‑dependent elimination."
+        },
+        {
+          "text": "Both B and C",
+          "isCorrect": true,
+          "explanation": "Zero‑order (saturation) kinetics is nonlinear and dose‑dependent because elimination rate becomes constant at high concentrations."
+        },
+        {
+          "text": "Exponential kinetics",
+          "isCorrect": false,
+          "explanation": "Exponential = first‑order."
+        }
+      ],
+      "explanation": {
+        "overview": "Zero‑order kinetics occurs when elimination pathways are saturated. A constant amount of drug is eliminated per unit time, regardless of concentration. This nonlinear behavior means half‑life changes with dose.",
+        "highYield": "Zero‑order = nonlinear, dose‑dependent. Examples: phenytoin, ethanol (high dose), aspirin (high dose).",
+        "clinicalCorrelation": "Small dose increases can cause disproportionate rises in plasma concentration."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_024",
+      "difficulty": 3,
+      "question": "Which drug follows zero-order kinetics at therapeutic doses?",
+      "image": null,
+      "options": [
+        {
+          "text": "Phenytoin",
+          "isCorrect": true,
+          "explanation": "Phenytoin undergoes saturable (Michaelis‑Menten) metabolism at therapeutic levels, leading to zero‑order behavior."
+        },
+        {
+          "text": "Penicillin",
+          "isCorrect": false,
+          "explanation": "First‑order."
+        },
+        {
+          "text": "Lisinopril",
+          "isCorrect": false,
+          "explanation": "First‑order."
+        },
+        {
+          "text": "Metformin",
+          "isCorrect": false,
+          "explanation": "First‑order, renally excreted."
+        },
+        {
+          "text": "Warfarin",
+          "isCorrect": false,
+          "explanation": "First‑order."
+        }
+      ],
+      "explanation": {
+        "overview": "Phenytoin exhibits Michaelis‑Menten kinetics; at therapeutic concentrations, its metabolism is near saturation, causing small dose increments to produce large increases in plasma levels.",
+        "highYield": "Phenytoin = zero‑order (saturable). Monitor levels closely.",
+        "clinicalCorrelation": "Phenytoin dose adjustments should be in small increments (30–50 mg)."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_025",
+      "difficulty": 2,
+      "question": "Bioequivalence between two drug products requires:",
+      "image": null,
+      "options": [
+        {
+          "text": "Identical chemical structure",
+          "isCorrect": false,
+          "explanation": "They contain the same active ingredient, but bioequivalence is about absorption."
+        },
+        {
+          "text": "Same manufacturer",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "No significant difference in rate and extent of absorption",
+          "isCorrect": true,
+          "explanation": "Bioequivalence criteria: 90% CI for AUC and Cmax ratios within 80–125%."
+        },
+        {
+          "text": "Same route of administration only",
+          "isCorrect": false,
+          "explanation": "Not sufficient."
+        },
+        {
+          "text": "Same trade name",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Bioequivalence ensures that the generic product delivers the active drug to the systemic circulation at the same rate and extent as the reference product.",
+        "highYield": "Bioequivalence: comparable Cmax and AUC (80–125%).",
+        "clinicalCorrelation": "Switching between generic and brand products of narrow TI drugs requires caution."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_026",
+      "difficulty": 2,
+      "question": "Area under the curve (AUC) in a plasma concentration–time plot represents:",
+      "image": null,
+      "options": [
+        {
+          "text": "Total drug exposure over time",
+          "isCorrect": true,
+          "explanation": "AUC integrates concentration over time, reflecting total systemic exposure."
+        },
+        {
+          "text": "Peak concentration",
+          "isCorrect": false,
+          "explanation": "That's Cmax."
+        },
+        {
+          "text": "Time to peak",
+          "isCorrect": false,
+          "explanation": "Tmax."
+        },
+        {
+          "text": "Elimination rate",
+          "isCorrect": false,
+          "explanation": "Slope reflects elimination."
+        },
+        {
+          "text": "Volume of distribution",
+          "isCorrect": false,
+          "explanation": "Vd is calculated from dose and concentration."
+        }
+      ],
+      "explanation": {
+        "overview": "AUC is the integral of plasma concentration over time; it is a measure of total drug exposure and is used in bioavailability and clearance calculations.",
+        "highYield": "AUC = total exposure; Cl = Dose / AUC.",
+        "clinicalCorrelation": "AUC monitoring helps adjust doses in special populations."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_027",
+      "difficulty": 1,
+      "question": "Cmax is defined as:",
+      "image": null,
+      "options": [
+        {
+          "text": "The maximum drug concentration achieved after dosing",
+          "isCorrect": true,
+          "explanation": "Cmax is the peak plasma concentration."
+        },
+        {
+          "text": "The time to reach maximum concentration",
+          "isCorrect": false,
+          "explanation": "That's Tmax."
+        },
+        {
+          "text": "The average concentration at steady state",
+          "isCorrect": false,
+          "explanation": "Css average."
+        },
+        {
+          "text": "The concentration at the end of a dosing interval",
+          "isCorrect": false,
+          "explanation": "Trough concentration."
+        },
+        {
+          "text": "The concentration after one half-life",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Cmax is the highest plasma concentration observed after a dose. It is important for both efficacy and toxicity (especially for concentration-dependent killing or adverse effects).",
+        "highYield": "Cmax = peak concentration.",
+        "clinicalCorrelation": "Aminoglycoside efficacy correlates with Cmax/MIC ratio."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_028",
+      "difficulty": 2,
+      "question": "Tmax is influenced mainly by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Absorption rate",
+          "isCorrect": true,
+          "explanation": "Tmax (time to peak) is determined by how fast drug is absorbed."
+        },
+        {
+          "text": "Elimination rate",
+          "isCorrect": false,
+          "explanation": "Elimination affects duration but Tmax primarily absorption."
+        },
+        {
+          "text": "Volume of distribution",
+          "isCorrect": false,
+          "explanation": "Vd affects concentration but not Tmax directly."
+        },
+        {
+          "text": "Protein binding",
+          "isCorrect": false,
+          "explanation": "Not primary."
+        },
+        {
+          "text": "Clearance",
+          "isCorrect": false,
+          "explanation": "Clearance affects elimination phase."
+        }
+      ],
+      "explanation": {
+        "overview": "Tmax is a function of the rate constant for absorption (ka) and elimination (ke). If absorption is rapid, Tmax is short.",
+        "highYield": "Tmax indicates rate of absorption.",
+        "clinicalCorrelation": "Immediate-release formulations have shorter Tmax than extended-release."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_029",
+      "difficulty": 2,
+      "question": "Which of the following will increase the bioavailability of an orally administered drug?",
+      "image": null,
+      "options": [
+        {
+          "text": "Increased first-pass metabolism",
+          "isCorrect": false,
+          "explanation": "Decreases bioavailability."
+        },
+        {
+          "text": "Decreased intestinal absorption",
+          "isCorrect": false,
+          "explanation": "Decreases."
+        },
+        {
+          "text": "Use of a prodrug that bypasses first-pass effect",
+          "isCorrect": true,
+          "explanation": "Some prodrugs are designed to improve absorption and avoid first‑pass."
+        },
+        {
+          "text": "High protein binding",
+          "isCorrect": false,
+          "explanation": "Does not increase bioavailability."
+        },
+        {
+          "text": "Rapid renal excretion",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Prodrugs can enhance bioavailability by improving solubility, permeability, or by avoiding first‑pass metabolism through a different absorption route or enzymatic activation after absorption.",
+        "highYield": "Prodrugs can increase F by enhancing absorption or bypassing first‑pass.",
+        "clinicalCorrelation": "Enalapril is a prodrug with better absorption than enalaprilat."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_030",
+      "difficulty": 2,
+      "question": "Enzyme induction leads to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increased drug metabolism",
+          "isCorrect": true,
+          "explanation": "Inducers increase enzyme quantity/activity, accelerating metabolism."
+        },
+        {
+          "text": "Decreased drug metabolism",
+          "isCorrect": false,
+          "explanation": "Opposite."
+        },
+        {
+          "text": "Increased half-life",
+          "isCorrect": false,
+          "explanation": "Half‑life shortens."
+        },
+        {
+          "text": "Decreased clearance",
+          "isCorrect": false,
+          "explanation": "Clearance increases."
+        },
+        {
+          "text": "Higher plasma concentrations",
+          "isCorrect": false,
+          "explanation": "Concentrations fall."
+        }
+      ],
+      "explanation": {
+        "overview": "Enzyme induction results in more rapid clearance of drugs metabolized by the induced enzyme, leading to reduced plasma levels and potentially loss of efficacy.",
+        "highYield": "Inducers (e.g., rifampin) → ↓ drug levels.",
+        "clinicalCorrelation": "Contraceptive failure with rifampin due to CYP3A4 induction."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_031",
+      "difficulty": 2,
+      "question": "Enzyme inhibition results in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increased drug metabolism",
+          "isCorrect": false,
+          "explanation": "Inhibition decreases metabolism."
+        },
+        {
+          "text": "Decreased drug metabolism",
+          "isCorrect": true,
+          "explanation": "Inhibitors block enzyme activity, slowing metabolism."
+        },
+        {
+          "text": "Decreased half-life",
+          "isCorrect": false,
+          "explanation": "Half‑life prolongs."
+        },
+        {
+          "text": "Increased clearance",
+          "isCorrect": false,
+          "explanation": "Clearance decreases."
+        },
+        {
+          "text": "Lower plasma concentrations",
+          "isCorrect": false,
+          "explanation": "Levels rise."
+        }
+      ],
+      "explanation": {
+        "overview": "Enzyme inhibition reduces the clearance of substrates, causing higher plasma concentrations and increased risk of toxicity.",
+        "highYield": "Inhibitors (e.g., ketoconazole) → ↑ drug levels.",
+        "clinicalCorrelation": "Statins + CYP3A4 inhibitors can cause rhabdomyolysis."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_032",
+      "difficulty": 2,
+      "question": "A drug that is a strong CYP3A4 inhibitor will increase plasma levels of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Drugs metabolized by CYP2D6",
+          "isCorrect": false,
+          "explanation": "Only CYP3A4 substrates."
+        },
+        {
+          "text": "Drugs metabolized by CYP3A4",
+          "isCorrect": true,
+          "explanation": "CYP3A4 inhibitors specifically block metabolism of CYP3A4 substrates."
+        },
+        {
+          "text": "Drugs excreted renally",
+          "isCorrect": false,
+          "explanation": "No effect."
+        },
+        {
+          "text": "Highly protein-bound drugs",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        },
+        {
+          "text": "All drugs",
+          "isCorrect": false,
+          "explanation": "Only CYP3A4 substrates."
+        }
+      ],
+      "explanation": {
+        "overview": "Enzyme inhibition is isozyme‑specific. Strong CYP3A4 inhibitors (e.g., ketoconazole, ritonavir) increase levels of drugs metabolized by CYP3A4.",
+        "highYield": "CYP3A4 inhibitor + CYP3A4 substrate = elevated levels.",
+        "clinicalCorrelation": "Monitor for toxicity when combining with CYP3A4 substrates."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_033",
+      "difficulty": 3,
+      "question": "Which of the following is a prodrug?",
+      "image": null,
+      "options": [
+        {
+          "text": "Lisinopril",
+          "isCorrect": false,
+          "explanation": "Active as is."
+        },
+        {
+          "text": "Enalapril",
+          "isCorrect": true,
+          "explanation": "Enalapril is hydrolyzed to enalaprilat in the liver."
+        },
+        {
+          "text": "Captopril",
+          "isCorrect": false,
+          "explanation": "Active."
+        },
+        {
+          "text": "Losartan",
+          "isCorrect": false,
+          "explanation": "Losartan is a prodrug? Actually losartan has an active metabolite, but enalapril is the classic example. The question expects enalapril."
+        },
+        {
+          "text": "Metoprolol",
+          "isCorrect": false,
+          "explanation": "Active."
+        }
+      ],
+      "explanation": {
+        "overview": "Enalapril is a prodrug that requires hepatic esterases to convert to the active ACE inhibitor enalaprilat. Other prodrugs: codeine, clopidogrel, levodopa.",
+        "highYield": "Enalapril = prodrug → enalaprilat.",
+        "clinicalCorrelation": "Prodrugs can have improved bioavailability and reduced GI irritation."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_034",
+      "difficulty": 3,
+      "question": "The term 'flip-flop kinetics' refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "When absorption rate is slower than elimination rate",
+          "isCorrect": true,
+          "explanation": "Flip‑flop: absorption is rate‑limiting; terminal slope reflects ka, not ke."
+        },
+        {
+          "text": "When elimination rate is slower than absorption rate",
+          "isCorrect": false,
+          "explanation": "Normal situation."
+        },
+        {
+          "text": "When distribution is rate-limiting",
+          "isCorrect": false,
+          "explanation": "Not flip‑flop."
+        },
+        {
+          "text": "When drug exhibits enterohepatic recycling",
+          "isCorrect": false,
+          "explanation": "Not."
+        },
+        {
+          "text": "When protein binding is saturable",
+          "isCorrect": false,
+          "explanation": "Not."
+        }
+      ],
+      "explanation": {
+        "overview": "Flip‑flop kinetics occurs when absorption is much slower than elimination (ka << ke). The terminal half‑life then reflects absorption, not elimination. Common with sustained‑release formulations.",
+        "highYield": "Flip‑flop: ka < ke; t½ reflects absorption rate.",
+        "clinicalCorrelation": "Can cause misinterpretation of pharmacokinetic data; important for extended‑release products."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_035",
+      "difficulty": 2,
+      "question": "Enterohepatic recirculation can result in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Prolonged half-life",
+          "isCorrect": true,
+          "explanation": "Recycling reintroduces drug into systemic circulation, extending its presence."
+        },
+        {
+          "text": "Increased peak concentration",
+          "isCorrect": false,
+          "explanation": "Not typically."
+        },
+        {
+          "text": "Decreased bioavailability",
+          "isCorrect": false,
+          "explanation": "Bioavailability may actually increase overall exposure."
+        },
+        {
+          "text": "Rapid elimination",
+          "isCorrect": false,
+          "explanation": "Opposite."
+        },
+        {
+          "text": "Lower AUC",
+          "isCorrect": false,
+          "explanation": "AUC increases."
+        }
+      ],
+      "explanation": {
+        "overview": "Enterohepatic recycling: drug excreted in bile is reabsorbed from the intestine, leading to a secondary peak and prolonged terminal half‑life.",
+        "highYield": "Enterohepatic recirculation → longer t½; e.g., digoxin, oral contraceptives.",
+        "clinicalCorrelation": "Activated charcoal can interrupt enterohepatic recycling in overdose."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_036",
+      "difficulty": 3,
+      "question": "In a two-compartment model, the initial rapid decline in plasma concentration is due to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Elimination",
+          "isCorrect": false,
+          "explanation": "Elimination is the slower β‑phase."
+        },
+        {
+          "text": "Distribution",
+          "isCorrect": true,
+          "explanation": "The α‑phase represents distribution into tissues."
+        },
+        {
+          "text": "Metabolism",
+          "isCorrect": false,
+          "explanation": "Part of elimination."
+        },
+        {
+          "text": "Excretion",
+          "isCorrect": false,
+          "explanation": "Part of elimination."
+        },
+        {
+          "text": "Absorption",
+          "isCorrect": false,
+          "explanation": "IV bolus has no absorption phase."
+        }
+      ],
+      "explanation": {
+        "overview": "A two‑compartment model shows a rapid distribution phase (α) followed by a slower elimination phase (β). The initial decline is due to drug moving from plasma to tissues.",
+        "highYield": "α‑phase = distribution; β‑phase = elimination.",
+        "clinicalCorrelation": "For drugs with a long distribution phase, therapeutic effect may lag behind plasma concentration."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_037",
+      "difficulty": 2,
+      "question": "Therapeutic drug monitoring is most useful for drugs with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Wide therapeutic index",
+          "isCorrect": false,
+          "explanation": "Safe drugs don't need TDM."
+        },
+        {
+          "text": "Narrow therapeutic index",
+          "isCorrect": true,
+          "explanation": "TDM helps avoid toxicity or subtherapeutic levels."
+        },
+        {
+          "text": "Long half-lives",
+          "isCorrect": false,
+          "explanation": "Not necessarily."
+        },
+        {
+          "text": "Low protein binding",
+          "isCorrect": false,
+          "explanation": "Not."
+        },
+        {
+          "text": "High bioavailability",
+          "isCorrect": false,
+          "explanation": "Not."
+        }
+      ],
+      "explanation": {
+        "overview": "TDM is indicated for drugs with narrow therapeutic index, significant interindividual variability, and a good correlation between concentration and effect/toxicity.",
+        "highYield": "TDM for: lithium, digoxin, phenytoin, theophylline, aminoglycosides, vancomycin.",
+        "clinicalCorrelation": "Trough levels are often used for monitoring."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_038",
+      "difficulty": 2,
+      "question": "Which drug typically requires therapeutic drug monitoring?",
+      "image": null,
+      "options": [
+        {
+          "text": "Ibuprofen",
+          "isCorrect": false,
+          "explanation": "Wide TI."
+        },
+        {
+          "text": "Digoxin",
+          "isCorrect": true,
+          "explanation": "Digoxin has a narrow therapeutic index and variable pharmacokinetics."
+        },
+        {
+          "text": "Amoxicillin",
+          "isCorrect": false,
+          "explanation": "Safe."
+        },
+        {
+          "text": "Paracetamol",
+          "isCorrect": false,
+          "explanation": "Not routinely monitored."
+        },
+        {
+          "text": "Cetirizine",
+          "isCorrect": false,
+          "explanation": "Safe."
+        }
+      ],
+      "explanation": {
+        "overview": "Digoxin levels must be monitored because of its narrow therapeutic range (0.5–2 ng/mL) and significant toxicity risk.",
+        "highYield": "Digoxin, lithium, phenytoin, tacrolimus are classic TDM drugs.",
+        "clinicalCorrelation": "Hypokalemia increases digoxin toxicity even at therapeutic levels."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_039",
+      "difficulty": 2,
+      "question": "The fraction of unbound (free) drug is important because:",
+      "image": null,
+      "options": [
+        {
+          "text": "Only free drug is pharmacologically active",
+          "isCorrect": true,
+          "explanation": "Only unbound drug can interact with receptors and be eliminated."
+        },
+        {
+          "text": "Bound drug is rapidly excreted",
+          "isCorrect": false,
+          "explanation": "Bound drug is not filtered."
+        },
+        {
+          "text": "Bound drug distributes into tissues",
+          "isCorrect": false,
+          "explanation": "Bound drug is confined to plasma."
+        },
+        {
+          "text": "Unbound drug is metabolized faster",
+          "isCorrect": false,
+          "explanation": "Not necessarily; protein binding protects from metabolism."
+        },
+        {
+          "text": "Unbound drug is not cleared",
+          "isCorrect": false,
+          "explanation": "Unbound drug is cleared."
+        }
+      ],
+      "explanation": {
+        "overview": "The free drug hypothesis states that only the unbound fraction is available to exert a pharmacological effect or to be eliminated.",
+        "highYield": "Free drug = active drug; alterations in protein binding can change free concentration.",
+        "clinicalCorrelation": "In hypoalbuminemia, free fraction of highly bound drugs rises, increasing effect/toxicity."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_040",
+      "difficulty": 3,
+      "question": "In a patient with hypoalbuminemia, the free fraction of a highly protein-bound drug will:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increase",
+          "isCorrect": true,
+          "explanation": "Less albumin available to bind drug, so free fraction rises."
+        },
+        {
+          "text": "Decrease",
+          "isCorrect": false,
+          "explanation": "Opposite."
+        },
+        {
+          "text": "Remain unchanged",
+          "isCorrect": false,
+          "explanation": "It changes."
+        },
+        {
+          "text": "Be unpredictable",
+          "isCorrect": false,
+          "explanation": "Predictable increase."
+        },
+        {
+          "text": "Initially increase then decrease",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Decreased albumin reduces binding capacity, increasing the free fraction of acidic drugs like warfarin, phenytoin, and NSAIDs, potentially causing toxicity at normal total concentrations.",
+        "highYield": "Hypoalbuminemia → ↑ free drug → ↑ effect/toxicity.",
+        "clinicalCorrelation": "Adjust doses of highly protein‑bound drugs in cirrhosis, nephrotic syndrome, malnutrition."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_041",
+      "difficulty": 2,
+      "question": "The rate of absorption for an orally administered drug may be decreased by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Food in the stomach",
+          "isCorrect": true,
+          "explanation": "Food delays gastric emptying and can slow absorption rate."
+        },
+        {
+          "text": "Increased gastric emptying",
+          "isCorrect": false,
+          "explanation": "Faster emptying increases absorption rate."
+        },
+        {
+          "text": "High intestinal blood flow",
+          "isCorrect": false,
+          "explanation": "Increases absorption."
+        },
+        {
+          "text": "Using an immediate-release formulation",
+          "isCorrect": false,
+          "explanation": "Faster absorption."
+        },
+        {
+          "text": "Administering on an empty stomach",
+          "isCorrect": false,
+          "explanation": "Often faster absorption."
+        }
+      ],
+      "explanation": {
+        "overview": "Food can decrease the rate of drug absorption by delaying gastric emptying, altering pH, or forming complexes with the drug.",
+        "highYield": "Food can slow but may increase extent of absorption for some drugs.",
+        "clinicalCorrelation": "Some drugs should be taken on an empty stomach; others with food to reduce GI irritation."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_042",
+      "difficulty": 1,
+      "question": "Which statement about generic drugs is TRUE?",
+      "image": null,
+      "options": [
+        {
+          "text": "They must be bioequivalent to the brand-name product",
+          "isCorrect": true,
+          "explanation": "Generics must demonstrate bioequivalence to the reference listed drug."
+        },
+        {
+          "text": "They contain different active ingredients",
+          "isCorrect": false,
+          "explanation": "Same active ingredient."
+        },
+        {
+          "text": "They are always less effective",
+          "isCorrect": false,
+          "explanation": "Therapeutically equivalent."
+        },
+        {
+          "text": "They are not approved by regulatory agencies",
+          "isCorrect": false,
+          "explanation": "They are approved."
+        },
+        {
+          "text": "They have different indications",
+          "isCorrect": false,
+          "explanation": "Same indications."
+        }
+      ],
+      "explanation": {
+        "overview": "Generic drugs must prove bioequivalence (similar rate and extent of absorption) to the innovator product, ensuring therapeutic equivalence.",
+        "highYield": "Generics = bioequivalent, same active, same safety/efficacy.",
+        "clinicalCorrelation": "Generic substitution reduces healthcare costs without compromising quality."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_043",
+      "difficulty": 2,
+      "question": "The elimination rate constant (ke) is related to half-life by:",
+      "image": null,
+      "options": [
+        {
+          "text": "ke = 0.693 / t½",
+          "isCorrect": true,
+          "explanation": "ke = ln(2) / t½ = 0.693 / t½."
+        },
+        {
+          "text": "ke = t½ / 0.693",
+          "isCorrect": false,
+          "explanation": "Inverted."
+        },
+        {
+          "text": "ke = t½ × 0.693",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "ke = 1 / t½",
+          "isCorrect": false,
+          "explanation": "Approximation but missing 0.693."
+        },
+        {
+          "text": "ke = t½²",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "The elimination rate constant (ke) is the fraction of drug eliminated per unit time. t½ = 0.693 / ke.",
+        "highYield": "ke = 0.693 / t½.",
+        "clinicalCorrelation": "Use ke to predict drug levels and design dosing intervals."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_044",
+      "difficulty": 3,
+      "question": "A drug with high hepatic extraction ratio will have oral bioavailability that is:",
+      "image": null,
+      "options": [
+        {
+          "text": "High",
+          "isCorrect": false,
+          "explanation": "High extraction → low oral bioavailability."
+        },
+        {
+          "text": "Low",
+          "isCorrect": true,
+          "explanation": "High extraction drugs undergo extensive first‑pass metabolism, leading to low F."
+        },
+        {
+          "text": "Unaffected",
+          "isCorrect": false,
+          "explanation": "It is affected."
+        },
+        {
+          "text": "Variable",
+          "isCorrect": false,
+          "explanation": "Typically low."
+        },
+        {
+          "text": "Close to 100%",
+          "isCorrect": false,
+          "explanation": "Opposite."
+        }
+      ],
+      "explanation": {
+        "overview": "Hepatic extraction ratio (ER) is the fraction of drug removed from the blood in one pass through the liver. High ER drugs (>0.7) have low oral bioavailability due to extensive first‑pass metabolism.",
+        "highYield": "High ER → low oral F (e.g., propranolol, lidocaine).",
+        "clinicalCorrelation": "In cirrhosis, hepatic clearance of high ER drugs decreases significantly."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_045",
+      "difficulty": 2,
+      "question": "Which of the following would increase the half-life of a drug?",
+      "image": null,
+      "options": [
+        {
+          "text": "Increased clearance",
+          "isCorrect": false,
+          "explanation": "Decreases half‑life."
+        },
+        {
+          "text": "Decreased volume of distribution",
+          "isCorrect": false,
+          "explanation": "Decreases t½."
+        },
+        {
+          "text": "Increased volume of distribution",
+          "isCorrect": true,
+          "explanation": "t½ = 0.693 × Vd/Cl; larger Vd → longer t½."
+        },
+        {
+          "text": "Decreased protein binding",
+          "isCorrect": false,
+          "explanation": "May increase Vd but not directly."
+        },
+        {
+          "text": "Increased renal excretion",
+          "isCorrect": false,
+          "explanation": "Increases clearance, reduces t½."
+        }
+      ],
+      "explanation": {
+        "overview": "Half‑life is directly proportional to Vd. A larger Vd (e.g., due to tissue binding) prolongs the time needed to eliminate the drug.",
+        "highYield": "↑ Vd → ↑ t½.",
+        "clinicalCorrelation": "Obese patients may have larger Vd for lipophilic drugs, prolonging t½."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_046",
+      "difficulty": 2,
+      "question": "The time to reach steady state is primarily determined by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Half-life",
+          "isCorrect": true,
+          "explanation": "Steady state is achieved in 4–5 half‑lives, regardless of dose."
+        },
+        {
+          "text": "Volume of distribution",
+          "isCorrect": false,
+          "explanation": "Vd influences t½ but not directly the number of half‑lives."
+        },
+        {
+          "text": "Clearance",
+          "isCorrect": false,
+          "explanation": "Cl affects t½."
+        },
+        {
+          "text": "Dose",
+          "isCorrect": false,
+          "explanation": "Dose determines concentration at steady state, not time to reach it."
+        },
+        {
+          "text": "Bioavailability",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "The time to steady state depends only on the elimination half‑life, not on the dose. After 4–5 half‑lives, >90% of steady state is achieved.",
+        "highYield": "Time to Css = 4–5 × t½.",
+        "clinicalCorrelation": "For a drug with t½ = 12 h, steady state is reached in about 2–3 days."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_047",
+      "difficulty": 3,
+      "question": "If the dosing interval is equal to the half-life, the fluctuation between peak and trough at steady state will be approximately:",
+      "image": null,
+      "options": [
+        {
+          "text": "2-fold",
+          "isCorrect": true,
+          "explanation": "With dosing interval = t½, the trough is half the peak."
+        },
+        {
+          "text": "5-fold",
+          "isCorrect": false,
+          "explanation": "Too high."
+        },
+        {
+          "text": "10-fold",
+          "isCorrect": false,
+          "explanation": "Too high."
+        },
+        {
+          "text": "Minimal",
+          "isCorrect": false,
+          "explanation": "Not minimal; 2‑fold."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "There is fluctuation."
+        }
+      ],
+      "explanation": {
+        "overview": "When the dosing interval (τ) equals the half‑life, the peak concentration is about twice the trough concentration at steady state, assuming one‑compartment IV bolus model.",
+        "highYield": "τ = t½ → Cmax/Cmin ≈ 2.",
+        "clinicalCorrelation": "To reduce fluctuations, shorten the dosing interval (relative to t½)."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_048",
+      "difficulty": 2,
+      "question": "Biotransformation of drugs generally results in:",
+      "image": null,
+      "options": [
+        {
+          "text": "More lipid-soluble compounds",
+          "isCorrect": false,
+          "explanation": "Metabolism increases water solubility."
+        },
+        {
+          "text": "More water-soluble compounds",
+          "isCorrect": true,
+          "explanation": "Metabolites are usually more polar for excretion."
+        },
+        {
+          "text": "Increased volume of distribution",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        },
+        {
+          "text": "Longer half-life",
+          "isCorrect": false,
+          "explanation": "Often shorter half‑life."
+        },
+        {
+          "text": "Increased protein binding",
+          "isCorrect": false,
+          "explanation": "Usually decreased."
+        }
+      ],
+      "explanation": {
+        "overview": "Drug metabolism (biotransformation) converts lipophilic compounds into more hydrophilic metabolites that are more readily excreted in urine or bile.",
+        "highYield": "Metabolism → more polar (water‑soluble) → facilitate excretion.",
+        "clinicalCorrelation": "Phase II conjugation (glucuronidation) greatly increases water solubility."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_049",
+      "difficulty": 2,
+      "question": "Phase I reactions include all EXCEPT:",
+      "image": null,
+      "options": [
+        {
+          "text": "Oxidation",
+          "isCorrect": false,
+          "explanation": "Phase I."
+        },
+        {
+          "text": "Reduction",
+          "isCorrect": false,
+          "explanation": "Phase I."
+        },
+        {
+          "text": "Hydrolysis",
+          "isCorrect": false,
+          "explanation": "Phase I."
+        },
+        {
+          "text": "Glucuronidation",
+          "isCorrect": true,
+          "explanation": "Glucuronidation is a Phase II conjugation reaction."
+        },
+        {
+          "text": "Hydroxylation",
+          "isCorrect": false,
+          "explanation": "Hydroxylation is an oxidation, Phase I."
+        }
+      ],
+      "explanation": {
+        "overview": "Phase I reactions (oxidation, reduction, hydrolysis) introduce or expose a functional group. Phase II reactions conjugate drugs with endogenous molecules (glucuronidation, sulfation, etc.).",
+        "highYield": "Phase I: functionalization; Phase II: conjugation.",
+        "clinicalCorrelation": "Some drugs are excreted directly after Phase I, but most require Phase II."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_050",
+      "difficulty": 2,
+      "question": "Which CYP isoenzyme is most abundantly expressed in human liver and metabolizes about 50% of drugs?",
+      "image": null,
+      "options": [
+        {
+          "text": "CYP2D6",
+          "isCorrect": false,
+          "explanation": "~25% of drugs."
+        },
+        {
+          "text": "CYP3A4",
+          "isCorrect": true,
+          "explanation": "CYP3A4 is the most abundant hepatic CYP and metabolizes ~50% of clinically used drugs."
+        },
+        {
+          "text": "CYP2C9",
+          "isCorrect": false,
+          "explanation": "~10–15%."
+        },
+        {
+          "text": "CYP1A2",
+          "isCorrect": false,
+          "explanation": "Minor."
+        },
+        {
+          "text": "CYP2E1",
+          "isCorrect": false,
+          "explanation": "Small fraction."
+        }
+      ],
+      "explanation": {
+        "overview": "CYP3A4 is the major drug‑metabolizing enzyme, expressed in liver and intestine. It is responsible for the metabolism of a vast number of drugs.",
+        "highYield": "CYP3A4 = metabolizes ~50% of drugs; key source of interactions.",
+        "clinicalCorrelation": "Grapefruit juice and many drugs inhibit CYP3A4."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_051",
+      "difficulty": 1,
+      "question": "A patient with severe renal impairment will have reduced clearance of drugs that are primarily:",
+      "image": null,
+      "options": [
+        {
+          "text": "Metabolized in liver",
+          "isCorrect": false,
+          "explanation": "Not affected."
+        },
+        {
+          "text": "Excreted unchanged in urine",
+          "isCorrect": true,
+          "explanation": "Renally excreted drugs will accumulate in renal failure."
+        },
+        {
+          "text": "Highly protein bound",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        },
+        {
+          "text": "Distributed in fat",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Absorbed in gut",
+          "isCorrect": false,
+          "explanation": "Not."
+        }
+      ],
+      "explanation": {
+        "overview": "Renal impairment reduces the clearance of drugs that are predominantly eliminated unchanged by the kidneys, leading to prolonged half‑life and risk of toxicity.",
+        "highYield": "Renally cleared drugs (e.g., aminoglycosides, vancomycin, methotrexate) require dose adjustment in renal failure.",
+        "clinicalCorrelation": "Estimate GFR to adjust doses; use Cockcroft‑Gault or CKD‑EPI."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_052",
+      "difficulty": 2,
+      "question": "In a patient with cirrhosis, the half-life of a drug metabolized by the liver may be:",
+      "image": null,
+      "options": [
+        {
+          "text": "Shortened",
+          "isCorrect": false,
+          "explanation": "Metabolism is impaired."
+        },
+        {
+          "text": "Prolonged",
+          "isCorrect": true,
+          "explanation": "Reduced metabolic capacity increases half‑life."
+        },
+        {
+          "text": "Unchanged",
+          "isCorrect": false,
+          "explanation": "It changes."
+        },
+        {
+          "text": "Variable",
+          "isCorrect": false,
+          "explanation": "Prolonged is typical."
+        },
+        {
+          "text": "Eliminated",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Liver cirrhosis leads to decreased hepatic blood flow, reduced enzyme activity, and intra‑/extrahepatic shunting, all of which can prolong the half‑life of hepatically cleared drugs.",
+        "highYield": "Cirrhosis → ↓ liver metabolism → ↑ t½.",
+        "clinicalCorrelation": "Dose reduction or increased dosing interval is often required."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_053",
+      "difficulty": 2,
+      "question": "The most important factor determining the rate of drug absorption from an intramuscular injection is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Injection volume",
+          "isCorrect": false,
+          "explanation": "Minor."
+        },
+        {
+          "text": "Blood flow to the muscle",
+          "isCorrect": true,
+          "explanation": "Higher blood flow increases absorption rate."
+        },
+        {
+          "text": "Drug lipophilicity",
+          "isCorrect": false,
+          "explanation": "Affects ability to cross membranes, but blood flow is primary."
+        },
+        {
+          "text": "pH of the solution",
+          "isCorrect": false,
+          "explanation": "Affects ionization but flow is key."
+        },
+        {
+          "text": "Muscle mass",
+          "isCorrect": false,
+          "explanation": "Not."
+        }
+      ],
+      "explanation": {
+        "overview": "Absorption from IM injections depends on local blood flow. Exercise or massage increases flow and absorption; shock or vasoconstrictors decrease it.",
+        "highYield": "IM absorption rate ∝ muscle blood flow.",
+        "clinicalCorrelation": "In shock, IM absorption is erratic; IV route preferred."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_054",
+      "difficulty": 2,
+      "question": "Which statement about transdermal drug delivery is FALSE?",
+      "image": null,
+      "options": [
+        {
+          "text": "It avoids first-pass metabolism",
+          "isCorrect": false,
+          "explanation": "True."
+        },
+        {
+          "text": "It provides sustained release",
+          "isCorrect": false,
+          "explanation": "True."
+        },
+        {
+          "text": "It is suitable for all drugs",
+          "isCorrect": true,
+          "explanation": "Only small, lipophilic drugs with adequate potency are suitable."
+        },
+        {
+          "text": "It requires the drug to be lipophilic",
+          "isCorrect": false,
+          "explanation": "True for passive diffusion."
+        },
+        {
+          "text": "Absorption can be variable",
+          "isCorrect": false,
+          "explanation": "True."
+        }
+      ],
+      "explanation": {
+        "overview": "Transdermal delivery is limited to drugs with appropriate physicochemical properties: low molecular weight, high lipophilicity, and good potency because skin penetration is limited.",
+        "highYield": "Not all drugs can be given transdermally; only small, lipophilic, potent drugs.",
+        "clinicalCorrelation": "Examples: fentanyl, nitroglycerin, clonidine, nicotine patches."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_055",
+      "difficulty": 2,
+      "question": "The Henderson-Hasselbalch equation is used to predict:",
+      "image": null,
+      "options": [
+        {
+          "text": "The extent of drug absorption based on pKa and pH",
+          "isCorrect": true,
+          "explanation": "It calculates the ratio of ionized to unionized drug at a given pH."
+        },
+        {
+          "text": "The volume of distribution",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "The half-life",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Protein binding",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Clearance",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "The Henderson‑Hasselbalch equation relates pH, pKa, and the ratio of ionized/unionized species. Only the unionized form crosses lipid membranes, so absorption depends on this ratio.",
+        "highYield": "HH equation: for weak acid, log(ionized/unionized) = pH – pKa.",
+        "clinicalCorrelation": "Aspirin (pKa 3.5) is unionized in stomach (pH 1.4) and absorbed; ionized in small intestine, but large surface area compensates."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_056",
+      "difficulty": 3,
+      "question": "A weak acid drug with pKa 4.4 will be mostly ionized in the stomach (pH 1.4)?",
+      "image": null,
+      "options": [
+        {
+          "text": "True, because pH < pKa",
+          "isCorrect": false,
+          "explanation": "For a weak acid, when pH < pKa, the unionized form predominates."
+        },
+        {
+          "text": "False, because pH < pKa favors unionized form",
+          "isCorrect": true,
+          "explanation": "When pH is much lower than pKa, the acid is mostly protonated (unionized)."
+        },
+        {
+          "text": "True, because pH > pKa",
+          "isCorrect": false,
+          "explanation": "Not correct."
+        },
+        {
+          "text": "False, because pH > pKa favors ionized form",
+          "isCorrect": false,
+          "explanation": "That would be true if pH > pKa, but here pH < pKa."
+        },
+        {
+          "text": "Ionization is independent of pH",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "For weak acids, the unionized form dominates when pH < pKa. At stomach pH 1.4 (far below pKa 4.4), the drug is mostly unionized and can be absorbed.",
+        "highYield": "Weak acid: pH < pKa → unionized (absorbable).",
+        "clinicalCorrelation": "Weak acids like aspirin are well absorbed in the stomach."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_057",
+      "difficulty": 3,
+      "question": "A weak base with pKa 8.4 will be mostly unionized in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Stomach (pH 1.4)",
+          "isCorrect": false,
+          "explanation": "Highly ionized."
+        },
+        {
+          "text": "Duodenum (pH 6)",
+          "isCorrect": false,
+          "explanation": "Mostly ionized."
+        },
+        {
+          "text": "Blood (pH 7.4)",
+          "isCorrect": false,
+          "explanation": "More ionized."
+        },
+        {
+          "text": "Ileum (pH 8)",
+          "isCorrect": true,
+          "explanation": "When pH approaches pKa, a weak base is partially unionized; at pH 8 it's close to pKa, so a significant fraction is unionized."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "For weak bases, unionized form predominates when pH > pKa. At pH 8 (near pKa 8.4), roughly half is unionized. At lower pH, ionization increases.",
+        "highYield": "Weak base: pH > pKa → unionized; absorption in intestine where pH is higher.",
+        "clinicalCorrelation": "Weak bases are better absorbed from the intestine (higher pH)."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_058",
+      "difficulty": 2,
+      "question": "The term 'absorption rate constant' (ka) describes:",
+      "image": null,
+      "options": [
+        {
+          "text": "The rate of drug absorption from the site of administration",
+          "isCorrect": true,
+          "explanation": "ka is a first‑order rate constant for absorption."
+        },
+        {
+          "text": "The rate of drug elimination",
+          "isCorrect": false,
+          "explanation": "That's ke."
+        },
+        {
+          "text": "The rate of distribution",
+          "isCorrect": false,
+          "explanation": "Different."
+        },
+        {
+          "text": "The rate of metabolism",
+          "isCorrect": false,
+          "explanation": "Part of elimination."
+        },
+        {
+          "text": "The rate of excretion",
+          "isCorrect": false,
+          "explanation": "Part of elimination."
+        }
+      ],
+      "explanation": {
+        "overview": "ka (absorption rate constant) is the first‑order rate constant for drug absorption. A larger ka indicates more rapid absorption.",
+        "highYield": "ka = absorption rate constant; Tmax ∝ 1/ka (approximately).",
+        "clinicalCorrelation": "Extended‑release formulations have a lower effective ka."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_059",
+      "difficulty": 3,
+      "question": "If ka is much larger than ke (elimination rate constant), the rate-limiting step in drug disposition is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Absorption",
+          "isCorrect": false,
+          "explanation": "Not if ka >> ke."
+        },
+        {
+          "text": "Distribution",
+          "isCorrect": false,
+          "explanation": "Not."
+        },
+        {
+          "text": "Elimination",
+          "isCorrect": true,
+          "explanation": "When absorption is rapid, elimination determines the duration (flip‑flop does not occur)."
+        },
+        {
+          "text": "Metabolism",
+          "isCorrect": false,
+          "explanation": "Part of elimination."
+        },
+        {
+          "text": "Excretion",
+          "isCorrect": false,
+          "explanation": "Part of elimination."
+        }
+      ],
+      "explanation": {
+        "overview": "When ka >> ke, absorption is not rate‑limiting; the terminal half‑life reflects the elimination rate constant (ke). This is the usual situation for most drugs.",
+        "highYield": "ka >> ke → elimination rate‑limiting; t½ reflects elimination.",
+        "clinicalCorrelation": "Flip‑flop occurs when ka < ke, as in sustained‑release products."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_060",
+      "difficulty": 3,
+      "question": "Nonlinear pharmacokinetics is most likely to occur when:",
+      "image": null,
+      "options": [
+        {
+          "text": "Drug transporters are saturated",
+          "isCorrect": false,
+          "explanation": "Can cause nonlinearity."
+        },
+        {
+          "text": "Metabolic enzymes are saturated",
+          "isCorrect": false,
+          "explanation": "Common cause."
+        },
+        {
+          "text": "Protein binding is saturable",
+          "isCorrect": false,
+          "explanation": "Also can cause nonlinear kinetics."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Saturation of any capacity‑limited process (absorption, distribution, metabolism, or excretion) can lead to nonlinear pharmacokinetics."
+        },
+        {
+          "text": "None of the above",
+          "isCorrect": false,
+          "explanation": "All are causes."
+        }
+      ],
+      "explanation": {
+        "overview": "Nonlinear (dose‑dependent) pharmacokinetics occurs when one or more ADME processes are saturable, causing clearance, half‑life, or bioavailability to change with dose.",
+        "highYield": "Nonlinear PK: saturation of metabolism, transport, or protein binding.",
+        "clinicalCorrelation": "Phenytoin, ethanol, and high‑dose aspirin exhibit nonlinear kinetics."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_061",
+      "difficulty": 2,
+      "question": "Which of the following best describes 'flip-flop' kinetics?",
+      "image": null,
+      "options": [
+        {
+          "text": "Elimination half-life is longer than absorption half-life",
+          "isCorrect": false,
+          "explanation": "This is normal."
+        },
+        {
+          "text": "Absorption rate constant is smaller than elimination rate constant",
+          "isCorrect": true,
+          "explanation": "Flip‑flop occurs when ka < ke; the terminal half‑life reflects absorption, not elimination."
+        },
+        {
+          "text": "Absorption and elimination rates are equal",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Drug exhibits zero‑order elimination",
+          "isCorrect": false,
+          "explanation": "Not flip‑flop."
+        },
+        {
+          "text": "First‑pass metabolism is saturated",
+          "isCorrect": false,
+          "explanation": "Not flip‑flop."
+        }
+      ],
+      "explanation": {
+        "overview": "In flip‑flop kinetics, absorption is the slowest step (ka < ke), so the terminal slope of the plasma concentration–time curve reflects ka rather than ke. The half‑life then appears to be the absorption half‑life.",
+        "highYield": "Flip‑flop: ka < ke; t½(terminal) = 0.693/ka.",
+        "clinicalCorrelation": "Common with long‑acting injectables and some oral sustained‑release formulations."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_062",
+      "difficulty": 2,
+      "question": "Which of the following drugs exhibits significant enterohepatic recirculation?",
+      "image": null,
+      "options": [
+        {
+          "text": "Morphine",
+          "isCorrect": false,
+          "explanation": "Morphine undergoes glucuronidation and enterohepatic recycling of morphine‑6‑glucuronide."
+        },
+        {
+          "text": "Digoxin",
+          "isCorrect": true,
+          "explanation": "Digoxin undergoes enterohepatic recirculation, contributing to its long half‑life."
+        },
+        {
+          "text": "Penicillin",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Aspirin",
+          "isCorrect": false,
+          "explanation": "Not significant."
+        },
+        {
+          "text": "Lisinopril",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Digoxin, oral contraceptives, and warfarin are examples of drugs that undergo enterohepatic recycling, leading to a secondary plasma peak and prolonged half‑life.",
+        "highYield": "Enterohepatic recycling: digoxin, estrogens, warfarin.",
+        "clinicalCorrelation": "Activated charcoal can be used to interrupt recycling in digoxin overdose."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_063",
+      "difficulty": 2,
+      "question": "A drug that is a weak base (pKa = 7.5) will be best absorbed in which part of the GI tract?",
+      "image": null,
+      "options": [
+        {
+          "text": "Stomach",
+          "isCorrect": false,
+          "explanation": "Acidic environment, base is ionized."
+        },
+        {
+          "text": "Duodenum",
+          "isCorrect": false,
+          "explanation": "pH ~6, still partially ionized."
+        },
+        {
+          "text": "Jejunum",
+          "isCorrect": false,
+          "explanation": "Slightly alkaline but less than ileum."
+        },
+        {
+          "text": "Ileum",
+          "isCorrect": true,
+          "explanation": "Ileum has pH ~8, close to pKa, favoring unionized form."
+        },
+        {
+          "text": "It will be absorbed equally in all regions",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "For a weak base with pKa 7.5, the unionized (absorbable) form increases as pH approaches or exceeds pKa. The ileum (pH ~8) provides a favorable environment for absorption.",
+        "highYield": "Weak bases: absorbed better in alkaline environment (ileum).",
+        "clinicalCorrelation": "Antacids can alter absorption of weak bases by changing intestinal pH."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_064",
+      "difficulty": 2,
+      "question": "Which of the following is a prodrug designed to improve oral bioavailability?",
+      "image": null,
+      "options": [
+        {
+          "text": "Enalapril",
+          "isCorrect": true,
+          "explanation": "Enalapril is a prodrug of enalaprilat with better oral absorption."
+        },
+        {
+          "text": "Lisinopril",
+          "isCorrect": false,
+          "explanation": "Active as is."
+        },
+        {
+          "text": "Atenolol",
+          "isCorrect": false,
+          "explanation": "Active."
+        },
+        {
+          "text": "Furosemide",
+          "isCorrect": false,
+          "explanation": "Active."
+        },
+        {
+          "text": "Metformin",
+          "isCorrect": false,
+          "explanation": "Active."
+        }
+      ],
+      "explanation": {
+        "overview": "Enalapril is an ester prodrug converted by hepatic esterases to the active diacid enalaprilat. The prodrug has much higher oral bioavailability than enalaprilat.",
+        "highYield": "Enalapril = prodrug with improved F.",
+        "clinicalCorrelation": "Prodrug design is a common strategy to overcome poor absorption or high first‑pass metabolism."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_065",
+      "difficulty": 2,
+      "question": "A drug with a high volume of distribution (>5 L/kg) most likely:",
+      "image": null,
+      "options": [
+        {
+          "text": "Is highly bound to plasma albumin",
+          "isCorrect": false,
+          "explanation": "Would limit Vd."
+        },
+        {
+          "text": "Distributes extensively into tissues and may be lipophilic",
+          "isCorrect": true,
+          "explanation": "Large Vd indicates tissue binding or sequestration."
+        },
+        {
+          "text": "Is confined to the extracellular fluid",
+          "isCorrect": false,
+          "explanation": "ECF volume ~0.2 L/kg."
+        },
+        {
+          "text": "Has a short half‑life",
+          "isCorrect": false,
+          "explanation": "Large Vd tends to prolong t½."
+        },
+        {
+          "text": "Is rapidly excreted by the kidneys",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Vd >5 L/kg suggests extensive tissue distribution, often due to high lipophilicity or tissue binding. These drugs may have long half‑lives.",
+        "highYield": "Vd >5 L/kg → extensive tissue binding; e.g., amiodarone, chloroquine.",
+        "clinicalCorrelation": "Such drugs may require loading doses and have long washout periods."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_066",
+      "difficulty": 2,
+      "question": "What is the primary purpose of drug metabolism?",
+      "image": null,
+      "options": [
+        {
+          "text": "To inactivate the drug",
+          "isCorrect": false,
+          "explanation": "Some drugs are activated (prodrugs)."
+        },
+        {
+          "text": "To make the drug more water-soluble for excretion",
+          "isCorrect": true,
+          "explanation": "The main goal is to convert lipophilic drugs to polar, excretable metabolites."
+        },
+        {
+          "text": "To increase the drug's half-life",
+          "isCorrect": false,
+          "explanation": "Metabolism usually reduces half‑life."
+        },
+        {
+          "text": "To increase protein binding",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "To increase volume of distribution",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Drug metabolism is an evolutionary adaptation to eliminate xenobiotics. It converts lipophilic compounds into more polar metabolites that can be excreted in urine or bile.",
+        "highYield": "Metabolism → ↑ polarity → renal excretion.",
+        "clinicalCorrelation": "Impaired metabolism (e.g., liver disease) can lead to drug accumulation."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_067",
+      "difficulty": 2,
+      "question": "Which of the following drugs is primarily excreted unchanged by the kidneys?",
+      "image": null,
+      "options": [
+        {
+          "text": "Atenolol",
+          "isCorrect": true,
+          "explanation": "Atenolol is predominantly excreted unchanged in the urine."
+        },
+        {
+          "text": "Propranolol",
+          "isCorrect": false,
+          "explanation": "Extensive hepatic metabolism."
+        },
+        {
+          "text": "Verapamil",
+          "isCorrect": false,
+          "explanation": "Hepatic metabolism."
+        },
+        {
+          "text": "Lidocaine",
+          "isCorrect": false,
+          "explanation": "Hepatic."
+        },
+        {
+          "text": "Midazolam",
+          "isCorrect": false,
+          "explanation": "Hepatic."
+        }
+      ],
+      "explanation": {
+        "overview": "Atenolol is a hydrophilic beta‑blocker eliminated mainly by renal excretion. In renal impairment, its clearance is significantly reduced.",
+        "highYield": "Atenolol = renally cleared; dose adjustment in renal failure.",
+        "clinicalCorrelation": "Water‑soluble beta‑blockers (atenolol, nadolol) are less likely to cause CNS effects but require renal dose adjustment."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_068",
+      "difficulty": 2,
+      "question": "Which of the following is a common enzyme inducer that can reduce the efficacy of oral contraceptives?",
+      "image": null,
+      "options": [
+        {
+          "text": "Rifampicin",
+          "isCorrect": true,
+          "explanation": "Rifampicin induces CYP3A4, increasing metabolism of estrogens and progestins, leading to contraceptive failure."
+        },
+        {
+          "text": "Cimetidine",
+          "isCorrect": false,
+          "explanation": "Inhibitor."
+        },
+        {
+          "text": "Erythromycin",
+          "isCorrect": false,
+          "explanation": "Inhibitor."
+        },
+        {
+          "text": "Ketoconazole",
+          "isCorrect": false,
+          "explanation": "Inhibitor."
+        },
+        {
+          "text": "Fluconazole",
+          "isCorrect": false,
+          "explanation": "Inhibitor."
+        }
+      ],
+      "explanation": {
+        "overview": "Rifampicin is a potent inducer of CYP3A4, accelerating the metabolism of oral contraceptives and causing unplanned pregnancies.",
+        "highYield": "Rifampicin + OCPs = contraceptive failure; use alternative contraception.",
+        "clinicalCorrelation": "Anticonvulsant inducers (phenytoin, carbamazepine) also reduce OCP efficacy."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_069",
+      "difficulty": 2,
+      "question": "The plasma concentration–time curve after oral administration typically shows:",
+      "image": null,
+      "options": [
+        {
+          "text": "An immediate peak followed by rapid decline",
+          "isCorrect": false,
+          "explanation": "IV."
+        },
+        {
+          "text": "A gradual rise to a peak (Cmax) and then a decline",
+          "isCorrect": true,
+          "explanation": "Oral absorption requires time; plasma levels rise, peak (Tmax), then decline."
+        },
+        {
+          "text": "A constant level from the start",
+          "isCorrect": false,
+          "explanation": "IV infusion."
+        },
+        {
+          "text": "A biphasic decline without an absorption phase",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "No peak because of first‑pass effect",
+          "isCorrect": false,
+          "explanation": "Peak still occurs."
+        }
+      ],
+      "explanation": {
+        "overview": "The oral plasma concentration–time profile shows absorption (rising phase), peak (Cmax at Tmax), and elimination (declining phase).",
+        "highYield": "Oral profile: absorption → peak → elimination.",
+        "clinicalCorrelation": "Cmax and AUC are used to assess bioequivalence."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_070",
+      "difficulty": 2,
+      "question": "Which of the following factors would most likely increase the half‑life of a drug?",
+      "image": null,
+      "options": [
+        {
+          "text": "Increased renal blood flow",
+          "isCorrect": false,
+          "explanation": "Increased clearance."
+        },
+        {
+          "text": "Decreased plasma protein binding",
+          "isCorrect": false,
+          "explanation": "May increase Vd but also increase clearance; overall effect variable."
+        },
+        {
+          "text": "Increased tissue binding (larger Vd)",
+          "isCorrect": true,
+          "explanation": "Larger Vd prolongs half‑life (t½ = 0.693 × Vd/Cl)."
+        },
+        {
+          "text": "Enzyme induction",
+          "isCorrect": false,
+          "explanation": "Increases clearance, reducing t½."
+        },
+        {
+          "text": "Increased cardiac output",
+          "isCorrect": false,
+          "explanation": "May increase hepatic clearance."
+        }
+      ],
+      "explanation": {
+        "overview": "Half‑life is directly proportional to Vd. Increased tissue binding expands Vd and prolongs the time required to eliminate the drug.",
+        "highYield": "↑ tissue binding → ↑ Vd → ↑ t½.",
+        "clinicalCorrelation": "Lipophilic drugs often have large Vd and long half‑lives."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_071",
+      "difficulty": 2,
+      "question": "Which of the following drugs is most likely to have a very large volume of distribution?",
+      "image": null,
+      "options": [
+        {
+          "text": "Gentamicin",
+          "isCorrect": false,
+          "explanation": "Hydrophilic, Vd ~0.25 L/kg."
+        },
+        {
+          "text": "Warfarin",
+          "isCorrect": false,
+          "explanation": "Vd ~0.14 L/kg, highly protein bound."
+        },
+        {
+          "text": "Chloroquine",
+          "isCorrect": true,
+          "explanation": "Chloroquine is highly lipophilic and tissue‑bound; Vd >100 L/kg."
+        },
+        {
+          "text": "Lithium",
+          "isCorrect": false,
+          "explanation": "Vd ~0.7 L/kg, similar to total body water."
+        },
+        {
+          "text": "Amoxicillin",
+          "isCorrect": false,
+          "explanation": "Vd ~0.3 L/kg."
+        }
+      ],
+      "explanation": {
+        "overview": "Highly lipophilic drugs like chloroquine, amiodarone, and amitriptyline have very large Vd due to extensive tissue binding and fat distribution.",
+        "highYield": "Chloroquine Vd >100 L/kg → extensive tissue sequestration.",
+        "clinicalCorrelation": "Large Vd drugs require careful loading doses and have long terminal half‑lives."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_072",
+      "difficulty": 2,
+      "question": "Which of the following is a Phase II metabolic reaction?",
+      "image": null,
+      "options": [
+        {
+          "text": "Sulfation",
+          "isCorrect": true,
+          "explanation": "Sulfation is a conjugation (Phase II) reaction."
+        },
+        {
+          "text": "Oxidation",
+          "isCorrect": false,
+          "explanation": "Phase I."
+        },
+        {
+          "text": "Reduction",
+          "isCorrect": false,
+          "explanation": "Phase I."
+        },
+        {
+          "text": "Hydrolysis",
+          "isCorrect": false,
+          "explanation": "Phase I."
+        },
+        {
+          "text": "Deamination",
+          "isCorrect": false,
+          "explanation": "Phase I."
+        }
+      ],
+      "explanation": {
+        "overview": "Sulfation, glucuronidation, acetylation, methylation, and glutathione conjugation are Phase II reactions that increase water solubility.",
+        "highYield": "Sulfation and glucuronidation are major Phase II pathways.",
+        "clinicalCorrelation": "Morphine is metabolized to morphine‑3‑glucuronide (inactive) and morphine‑6‑glucuronide (active)."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_073",
+      "difficulty": 2,
+      "question": "Which of the following statements about the elimination rate constant (ke) is correct?",
+      "image": null,
+      "options": [
+        {
+          "text": "It represents the fraction of drug eliminated per unit time",
+          "isCorrect": true,
+          "explanation": "ke is the first‑order rate constant; the fraction eliminated per unit time (e.g., h⁻¹)."
+        },
+        {
+          "text": "It is independent of clearance",
+          "isCorrect": false,
+          "explanation": "ke = Cl / Vd."
+        },
+        {
+          "text": "It is larger for drugs with large Vd",
+          "isCorrect": false,
+          "explanation": "ke = Cl/Vd; large Vd makes ke smaller if Cl constant."
+        },
+        {
+          "text": "It equals half‑life",
+          "isCorrect": false,
+          "explanation": "t½ = 0.693/ke."
+        },
+        {
+          "text": "It is measured in L/h",
+          "isCorrect": false,
+          "explanation": "Units are time⁻¹."
+        }
+      ],
+      "explanation": {
+        "overview": "ke is the proportionality constant for elimination; it is the fraction of the amount in the body eliminated per unit time.",
+        "highYield": "ke = Cl / Vd; higher ke = faster elimination.",
+        "clinicalCorrelation": "ke determines dosing frequency."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_074",
+      "difficulty": 2,
+      "question": "In renal failure, the clearance of a drug that is predominantly eliminated unchanged by the kidneys will:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increase",
+          "isCorrect": false,
+          "explanation": "It decreases."
+        },
+        {
+          "text": "Decrease",
+          "isCorrect": true,
+          "explanation": "Reduced renal function leads to lower renal clearance."
+        },
+        {
+          "text": "Remain unchanged",
+          "isCorrect": false,
+          "explanation": "It changes."
+        },
+        {
+          "text": "Become zero",
+          "isCorrect": false,
+          "explanation": "Not unless anuria."
+        },
+        {
+          "text": "Depend on hepatic function",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Renal impairment directly reduces clearance of renally excreted drugs, necessitating dose reduction or interval extension to avoid toxicity.",
+        "highYield": "Renal failure → ↓ Cl → ↑ t½; adjust dose.",
+        "clinicalCorrelation": "Use eGFR to guide dosing for drugs like enoxaparin, vancomycin, aminoglycosides."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_075",
+      "difficulty": 3,
+      "question": "The concept of 'mean residence time' (MRT) represents:",
+      "image": null,
+      "options": [
+        {
+          "text": "The average time a drug molecule remains in the body",
+          "isCorrect": true,
+          "explanation": "MRT = AUMC / AUC; it is the average time a molecule stays in the body."
+        },
+        {
+          "text": "The time to reach peak concentration",
+          "isCorrect": false,
+          "explanation": "Tmax."
+        },
+        {
+          "text": "The half‑life",
+          "isCorrect": false,
+          "explanation": "Different."
+        },
+        {
+          "text": "The duration of action",
+          "isCorrect": false,
+          "explanation": "Not exactly."
+        },
+        {
+          "text": "The time for complete elimination",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Mean residence time (MRT) is a statistical moment parameter that reflects the average time a drug molecule resides in the body. MRT = AUMC/AUC.",
+        "highYield": "MRT = AUMC/AUC; MRT(oral) includes mean absorption time (MAT).",
+        "clinicalCorrelation": "Used in non‑compartmental analysis to characterize drug disposition."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_076",
+      "difficulty": 2,
+      "question": "Which of the following is an example of a high‑extraction drug?",
+      "image": null,
+      "options": [
+        {
+          "text": "Propranolol",
+          "isCorrect": true,
+          "explanation": "Propranolol has a high hepatic extraction ratio and undergoes extensive first‑pass metabolism."
+        },
+        {
+          "text": "Warfarin",
+          "isCorrect": false,
+          "explanation": "Low extraction."
+        },
+        {
+          "text": "Phenytoin",
+          "isCorrect": false,
+          "explanation": "Low extraction."
+        },
+        {
+          "text": "Theophylline",
+          "isCorrect": false,
+          "explanation": "Low extraction."
+        },
+        {
+          "text": "Diazepam",
+          "isCorrect": false,
+          "explanation": "Low extraction."
+        }
+      ],
+      "explanation": {
+        "overview": "High extraction drugs (ER >0.7) like propranolol, lidocaine, and verapamil have low oral bioavailability due to extensive first‑pass metabolism.",
+        "highYield": "High ER → low oral F; clearance sensitive to liver blood flow.",
+        "clinicalCorrelation": "In heart failure, reduced liver blood flow can decrease clearance of high ER drugs."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_077",
+      "difficulty": 2,
+      "question": "The term 'context‑sensitive half‑time' is most relevant for which route?",
+      "image": null,
+      "options": [
+        {
+          "text": "Intravenous infusion",
+          "isCorrect": true,
+          "explanation": "Context‑sensitive half‑time describes the time for plasma concentration to drop by 50% after stopping an infusion, depending on infusion duration."
+        },
+        {
+          "text": "Oral",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Intramuscular",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Subcutaneous",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Transdermal",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Context‑sensitive half‑time is the time for plasma concentration to decrease by 50% after terminating an IV infusion, considering the duration of infusion. It is used for intravenous anesthetics like remifentanil and propofol.",
+        "highYield": "Context‑sensitive half‑time depends on infusion duration and drug pharmacokinetics.",
+        "clinicalCorrelation": "Remifentanil has a very short context‑sensitive half‑time regardless of infusion length."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_078",
+      "difficulty": 2,
+      "question": "Which of the following factors can increase the bioavailability of a highly extracted drug after oral administration?",
+      "image": null,
+      "options": [
+        {
+          "text": "Food intake (increasing hepatic blood flow)",
+          "isCorrect": false,
+          "explanation": "Increased hepatic blood flow can increase first‑pass for high ER drugs."
+        },
+        {
+          "text": "Liver cirrhosis with portosystemic shunting",
+          "isCorrect": true,
+          "explanation": "Shunting allows drug to bypass the liver, reducing first‑pass metabolism and increasing F."
+        },
+        {
+          "text": "Enzyme induction",
+          "isCorrect": false,
+          "explanation": "Would decrease F."
+        },
+        {
+          "text": "Concomitant CYP3A4 inhibitor",
+          "isCorrect": false,
+          "explanation": "May inhibit gut metabolism but not necessarily hepatic; high ER drugs are already extensively metabolized."
+        },
+        {
+          "text": "Increased gastric pH",
+          "isCorrect": false,
+          "explanation": "May affect absorption but not first‑pass."
+        }
+      ],
+      "explanation": {
+        "overview": "In cirrhosis with portosystemic shunting, orally administered drug can bypass hepatocytes, reducing first‑pass metabolism and dramatically increasing bioavailability of high extraction drugs.",
+        "highYield": "Cirrhosis → portosystemic shunting → ↑ F of high ER drugs.",
+        "clinicalCorrelation": "Propranolol bioavailability may increase from ~30% to 60–80% in cirrhosis."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_079",
+      "difficulty": 3,
+      "question": "Which of the following is a characteristic of Michaelis‑Menten kinetics?",
+      "image": null,
+      "options": [
+        {
+          "text": "Rate of metabolism increases proportionally with concentration at all doses",
+          "isCorrect": false,
+          "explanation": "First‑order."
+        },
+        {
+          "text": "At high concentrations, the rate of metabolism approaches a maximum (Vmax)",
+          "isCorrect": true,
+          "explanation": "Michaelis‑Menten kinetics are saturable: as concentration rises, rate approaches Vmax."
+        },
+        {
+          "text": "Half‑life is constant regardless of dose",
+          "isCorrect": false,
+          "explanation": "Half‑life changes with dose."
+        },
+        {
+          "text": "Clearance is constant",
+          "isCorrect": false,
+          "explanation": "Clearance changes with concentration."
+        },
+        {
+          "text": "Drug exhibits linear pharmacokinetics",
+          "isCorrect": false,
+          "explanation": "Nonlinear."
+        }
+      ],
+      "explanation": {
+        "overview": "Michaelis‑Menten (saturable) kinetics are described by V = Vmax × C / (Km + C). At low C, rate is first‑order; at high C, rate approaches Vmax (zero‑order).",
+        "highYield": "Phenytoin, ethanol, high‑dose aspirin follow Michaelis‑Menten kinetics.",
+        "clinicalCorrelation": "At concentrations near Km, small dose changes cause disproportionate level changes."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_080",
+      "difficulty": 2,
+      "question": "Which of the following statements about drug distribution is correct?",
+      "image": null,
+      "options": [
+        {
+          "text": "Drugs with a large Vd are mainly confined to the plasma",
+          "isCorrect": false,
+          "explanation": "Opposite."
+        },
+        {
+          "text": "Highly protein‑bound drugs have a large Vd",
+          "isCorrect": false,
+          "explanation": "Small Vd."
+        },
+        {
+          "text": "Lipophilic drugs can accumulate in adipose tissue, prolonging half‑life",
+          "isCorrect": true,
+          "explanation": "Lipophilic drugs distribute into fat, increasing Vd and t½."
+        },
+        {
+          "text": "Distribution is not affected by blood flow",
+          "isCorrect": false,
+          "explanation": "Perfusion affects initial distribution."
+        },
+        {
+          "text": "Ionized drugs cross cell membranes easily",
+          "isCorrect": false,
+          "explanation": "They do not."
+        }
+      ],
+      "explanation": {
+        "overview": "Lipophilic drugs partition into adipose tissue, creating a depot that slowly releases drug back into circulation, thereby prolonging the half‑life.",
+        "highYield": "Fat distribution → ↑ Vd → ↑ t½. Examples: diazepam, thiopental.",
+        "clinicalCorrelation": "In obese patients, lipophilic drugs may have prolonged elimination and require adjusted dosing."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_081",
+      "difficulty": 2,
+      "question": "In a patient with congestive heart failure and reduced hepatic blood flow, the oral bioavailability of a high‑extraction drug will most likely:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increase",
+          "isCorrect": true,
+          "explanation": "Reduced hepatic blood flow decreases first‑pass metabolism, increasing F."
+        },
+        {
+          "text": "Decrease",
+          "isCorrect": false,
+          "explanation": "It increases."
+        },
+        {
+          "text": "Remain unchanged",
+          "isCorrect": false,
+          "explanation": "It changes."
+        },
+        {
+          "text": "Become unpredictable",
+          "isCorrect": false,
+          "explanation": "Predictable increase."
+        },
+        {
+          "text": "Depend on renal function",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "High extraction drugs are very sensitive to changes in hepatic blood flow. Reduced flow decreases first‑pass metabolism, thereby increasing oral bioavailability.",
+        "highYield": "↓ liver blood flow → ↓ first‑pass → ↑ F for high ER drugs.",
+        "clinicalCorrelation": "Propranolol or verapamil doses may need reduction in heart failure."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_082",
+      "difficulty": 2,
+      "question": "Which of the following is NOT a reason to use a loading dose?",
+      "image": null,
+      "options": [
+        {
+          "text": "To achieve therapeutic concentration rapidly",
+          "isCorrect": false,
+          "explanation": "Reason."
+        },
+        {
+          "text": "For drugs with a long half‑life",
+          "isCorrect": false,
+          "explanation": "Loading dose bypasses delay to steady state."
+        },
+        {
+          "text": "To reduce peak concentration variability",
+          "isCorrect": false,
+          "explanation": "Not the primary reason but loading dose can be divided."
+        },
+        {
+          "text": "To minimize the time to steady state",
+          "isCorrect": false,
+          "explanation": "That's the goal."
+        },
+        {
+          "text": "To decrease the total amount of drug needed over a course of therapy",
+          "isCorrect": true,
+          "explanation": "Loading dose does not decrease total amount; it just front‑loads to reach target sooner."
+        }
+      ],
+      "explanation": {
+        "overview": "A loading dose quickly achieves therapeutic levels, especially important for drugs with long half‑lives. It does not reduce the total drug needed.",
+        "highYield": "Loading dose = front‑load to reach target concentration immediately.",
+        "clinicalCorrelation": "Typical loading doses: digoxin, amiodarone, phenytoin."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_083",
+      "difficulty": 2,
+      "question": "Which of the following correctly defines 'bioavailability' for an extravascular dose?",
+      "image": null,
+      "options": [
+        {
+          "text": "F = AUC(extravascular) / AUC(IV) × Dose(IV) / Dose(extravascular)",
+          "isCorrect": true,
+          "explanation": "Bioavailability (F) is the ratio of AUCs corrected for dose."
+        },
+        {
+          "text": "F = AUC(extravascular) × AUC(IV)",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "F = Cmax(extravascular) / Cmax(IV)",
+          "isCorrect": false,
+          "explanation": "Not sufficient."
+        },
+        {
+          "text": "F = Tmax(extravascular) - Tmax(IV)",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "F = 1 - first‑pass extraction",
+          "isCorrect": false,
+          "explanation": "That's the fraction escaping first‑pass, but the formal definition uses AUC."
+        }
+      ],
+      "explanation": {
+        "overview": "Bioavailability is the fraction of the administered dose that reaches systemic circulation unchanged. It is calculated from AUC: F = (AUC_oral × Dose_IV) / (AUC_IV × Dose_oral).",
+        "highYield": "F = (AUCoral/AUCIV) × (DoseIV/Doseoral).",
+        "clinicalCorrelation": "Absolute bioavailability compares extravascular to IV; relative bioavailability compares two extravascular formulations."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_084",
+      "difficulty": 2,
+      "question": "Which of the following statements about drug half‑life is correct?",
+      "image": null,
+      "options": [
+        {
+          "text": "It is independent of volume of distribution and clearance",
+          "isCorrect": false,
+          "explanation": "It depends on both."
+        },
+        {
+          "text": "A drug with a large Vd will always have a long half‑life",
+          "isCorrect": false,
+          "explanation": "If clearance is also large, t½ may be short."
+        },
+        {
+          "text": "For a given clearance, a larger Vd results in a longer half‑life",
+          "isCorrect": true,
+          "explanation": "t½ = 0.693 × Vd / Cl."
+        },
+        {
+          "text": "Half‑life determines the time to peak concentration",
+          "isCorrect": false,
+          "explanation": "Tmax depends on absorption."
+        },
+        {
+          "text": "Half‑life is constant for all drugs in all individuals",
+          "isCorrect": false,
+          "explanation": "Interindividual variability."
+        }
+      ],
+      "explanation": {
+        "overview": "For a given clearance, increasing Vd prolongs the half‑life because the drug is more widely distributed and takes longer to be eliminated.",
+        "highYield": "t½ ∝ Vd (if Cl constant).",
+        "clinicalCorrelation": "Obesity increases Vd for lipophilic drugs, prolonging t½."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_085",
+      "difficulty": 2,
+      "question": "Which of the following drugs is an example of a drug that exhibits significant nonlinear pharmacokinetics?",
+      "image": null,
+      "options": [
+        {
+          "text": "Phenytoin",
+          "isCorrect": true,
+          "explanation": "Phenytoin exhibits Michaelis‑Menten kinetics; small dose changes can cause large concentration shifts."
+        },
+        {
+          "text": "Digoxin",
+          "isCorrect": false,
+          "explanation": "Linear."
+        },
+        {
+          "text": "Warfarin",
+          "isCorrect": false,
+          "explanation": "Linear."
+        },
+        {
+          "text": "Ibuprofen",
+          "isCorrect": false,
+          "explanation": "Linear at therapeutic doses."
+        },
+        {
+          "text": "Lisinopril",
+          "isCorrect": false,
+          "explanation": "Linear."
+        }
+      ],
+      "explanation": {
+        "overview": "Phenytoin is the classic example of a drug with saturable metabolism at therapeutic concentrations, leading to nonlinear pharmacokinetics.",
+        "highYield": "Phenytoin → nonlinear; monitor levels closely.",
+        "clinicalCorrelation": "Phenytoin dose adjustments should be small (30–50 mg increments)."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_086",
+      "difficulty": 2,
+      "question": "Which of the following best describes the effect of protein binding on drug elimination?",
+      "image": null,
+      "options": [
+        {
+          "text": "Only unbound drug is available for glomerular filtration and metabolism",
+          "isCorrect": true,
+          "explanation": "Protein‑bound drug is largely protected from elimination."
+        },
+        {
+          "text": "Protein binding enhances renal clearance",
+          "isCorrect": false,
+          "explanation": "It reduces filtration."
+        },
+        {
+          "text": "Protein binding increases hepatic metabolism",
+          "isCorrect": false,
+          "explanation": "Restricts access to enzymes."
+        },
+        {
+          "text": "Bound drug is the pharmacologically active fraction",
+          "isCorrect": false,
+          "explanation": "Unbound is active."
+        },
+        {
+          "text": "Protein binding has no effect on drug pharmacokinetics",
+          "isCorrect": false,
+          "explanation": "It does."
+        }
+      ],
+      "explanation": {
+        "overview": "Plasma protein binding restricts the drug to the vascular space and prevents it from being filtered, metabolized, or diffusing into tissues. Only free drug is cleared.",
+        "highYield": "Protein binding → restricts clearance; only free drug eliminated.",
+        "clinicalCorrelation": "Hypoalbuminemia can increase free drug clearance due to more unbound drug."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_087",
+      "difficulty": 2,
+      "question": "Which of the following is a potential consequence of saturable protein binding?",
+      "image": null,
+      "options": [
+        {
+          "text": "Nonlinear increase in free drug concentration with increasing dose",
+          "isCorrect": true,
+          "explanation": "Once binding sites are saturated, further dose increases cause disproportionate rise in free drug."
+        },
+        {
+          "text": "Linear increase in total drug concentration",
+          "isCorrect": false,
+          "explanation": "Free concentration may increase nonlinearly."
+        },
+        {
+          "text": "Decreased volume of distribution",
+          "isCorrect": false,
+          "explanation": "Vd may increase as free fraction rises."
+        },
+        {
+          "text": "Decreased clearance",
+          "isCorrect": false,
+          "explanation": "Clearance may increase due to more free drug."
+        },
+        {
+          "text": "Increased half‑life",
+          "isCorrect": false,
+          "explanation": "Half‑life may decrease if clearance increases."
+        }
+      ],
+      "explanation": {
+        "overview": "Saturable protein binding leads to a disproportionate increase in free (active) drug when binding sites are saturated, potentially causing toxicity even with small dose increments.",
+        "highYield": "Saturable protein binding → nonlinear ↑ free fraction.",
+        "clinicalCorrelation": "Valproic acid and some NSAIDs exhibit saturable binding at therapeutic doses."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_088",
+      "difficulty": 2,
+      "question": "Which of the following statements about renal drug excretion is true?",
+      "image": null,
+      "options": [
+        {
+          "text": "Glomerular filtration only removes free (unbound) drug",
+          "isCorrect": true,
+          "explanation": "Protein‑bound drug is not filtered."
+        },
+        {
+          "text": "Active tubular secretion is a non‑saturable process",
+          "isCorrect": false,
+          "explanation": "It is saturable."
+        },
+        {
+          "text": "Weak acids are more rapidly excreted in acidic urine",
+          "isCorrect": false,
+          "explanation": "Alkaline urine ionizes weak acids, trapping them."
+        },
+        {
+          "text": "All drugs undergo significant tubular reabsorption",
+          "isCorrect": false,
+          "explanation": "Many are not reabsorbed."
+        },
+        {
+          "text": "Renal clearance is always equal to GFR",
+          "isCorrect": false,
+          "explanation": "Depends on filtration, secretion, reabsorption."
+        }
+      ],
+      "explanation": {
+        "overview": "Glomerular filtration is a passive process that filters only free drug. Tubular secretion and reabsorption further modify net excretion.",
+        "highYield": "Only unbound drug is filtered at the glomerulus.",
+        "clinicalCorrelation": "Renal clearance = (filtration + secretion – reabsorption)."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_089",
+      "difficulty": 2,
+      "question": "Which of the following is a true statement about oral drug absorption?",
+      "image": null,
+      "options": [
+        {
+          "text": "The small intestine is the primary site of absorption for most drugs due to its large surface area",
+          "isCorrect": true,
+          "explanation": "Despite pH considerations, the huge surface area and high blood flow of the small intestine make it the main site of absorption."
+        },
+        {
+          "text": "The stomach is the main site of drug absorption",
+          "isCorrect": false,
+          "explanation": "Small surface area."
+        },
+        {
+          "text": "Drugs must be unionized to be absorbed anywhere in the GI tract",
+          "isCorrect": false,
+          "explanation": "True for passive diffusion, but some drugs are absorbed via transporters."
+        },
+        {
+          "text": "Gastric emptying time does not affect absorption",
+          "isCorrect": false,
+          "explanation": "It affects rate."
+        },
+        {
+          "text": "Food always decreases drug absorption",
+          "isCorrect": false,
+          "explanation": "Can increase absorption of some drugs (e.g., lipophilic drugs with fat)."
+        }
+      ],
+      "explanation": {
+        "overview": "The small intestine has a vast surface area due to villi and microvilli, making it the primary site for drug absorption despite variable pH conditions.",
+        "highYield": "Small intestine = major absorption site because of huge surface area.",
+        "clinicalCorrelation": "Rapid gastric emptying can speed drug absorption by delivering drug to the small intestine faster."
+      }
+    },
+    {
+      "questionId": "pharma_pharmacokinetics_090",
+      "difficulty": 2,
+      "question": "Which of the following is an advantage of sublingual drug administration?",
+      "image": null,
+      "options": [
+        {
+          "text": "Rapid absorption and avoidance of first‑pass metabolism",
+          "isCorrect": true,
+          "explanation": "Sublingual mucosa is highly vascular; drug enters systemic circulation directly."
+        },
+        {
+          "text": "Suitable for large‑volume doses",
+          "isCorrect": false,
+          "explanation": "Limited to small, potent drugs."
+        },
+        {
+          "text": "Slow, sustained release",
+          "isCorrect": false,
+          "explanation": "Rapid."
+        },
+        {
+          "text": "Good for drugs with poor oral bioavailability due to acid lability",
+          "isCorrect": false,
+          "explanation": "It bypasses acid, but not the main advantage."
+        },
+        {
+          "text": "Minimal patient training required",
+          "isCorrect": false,
+          "explanation": "Patient must keep drug under tongue."
+        }
+      ],
+      "explanation": {
+        "overview": "Sublingual administration allows for rapid drug absorption directly into the systemic circulation, bypassing the gastrointestinal tract and hepatic first‑pass metabolism.",
+        "highYield": "Sublingual = no first‑pass, rapid onset.",
+        "clinicalCorrelation": "Nitroglycerin, buprenorphine, and some antihypertensives are given sublingually."
+      }
+    }
+  ]
+}

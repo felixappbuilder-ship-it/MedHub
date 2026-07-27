@@ -1,0 +1,632 @@
+/* frontend-user/css/performance.css */
+
+/* ===== Performance Page – Mobile‑first ===== */
+
+/* ----- Fixed Header (top bar) ----- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 10vh;
+    min-height: 56px;
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.logo img {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.header-actions button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    color: var(--text-primary);
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.header-actions button:hover {
+    background: var(--bg-secondary);
+}
+
+.streak-badge {
+    background: var(--warning);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* ----- Main Title ----- */
+main h1 {
+    font-size: 1.8rem;
+    margin: 1rem 0.5rem;
+}
+
+/* ----- Tabs (scrollable on mobile) ----- */
+.tabs {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 1rem;
+}
+
+.tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.tab-button {
+    padding: 0.75rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+    min-height: 48px;
+    white-space: nowrap;
+}
+
+.tab-button.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+/* ----- Summary Cards (grid) ----- */
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    padding: 0.5rem;
+}
+
+.stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+}
+
+.stat-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.5px;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1.2;
+}
+
+/* ----- Chart Section (new) ----- */
+.chart-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin: 1rem 0.5rem 2rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.chart-header h2 {
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+.chart-type-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.chart-btn {
+    padding: 0.3rem 0.8rem;
+    border-radius: 30px;
+    border: 1px solid var(--border);
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 0.75rem;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.chart-btn:hover {
+    background: var(--border);
+}
+
+.chart-btn.active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+.chart-container {
+    width: 100%;
+    height: 280px;
+    position: relative;
+}
+
+#main-chart {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* ----- Old chart container (kept for backward compatibility) ----- */
+.chart-container-old {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+    margin: 1rem 0.5rem;
+}
+
+.chart-container-old h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+}
+
+#trend-chart-container {
+    min-height: 250px;
+}
+
+/* ----- Two‑column (mobile: stacked) ----- */
+.two-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.5rem;
+}
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+}
+
+.card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.stats-list p {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.9rem;
+}
+
+.stats-list p:last-child {
+    border-bottom: none;
+}
+
+#weak-areas-list ul {
+    list-style: none;
+    margin-bottom: 0.75rem;
+}
+
+#weak-areas-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+#weak-areas-list .topic {
+    font-weight: 500;
+}
+
+#weak-areas-list .score {
+    font-weight: 600;
+    color: var(--danger);
+}
+
+.btn-small {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    border-radius: var(--radius-sm);
+    background: var(--accent);
+    color: white;
+    border: none;
+    min-height: 40px;
+}
+
+/* ----- Recommendations Card ----- */
+.recommendations-card {
+    background: var(--bg-secondary);
+    border-left: 4px solid var(--accent);
+    margin: 0.5rem;
+}
+
+#recommendations-list ul {
+    list-style: none;
+}
+
+#recommendations-list li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.9rem;
+}
+
+#recommendations-list li:last-child {
+    border-bottom: none;
+}
+
+/* ----- Subjects Tab ----- */
+#subjects-tab h2 {
+    margin: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.subject-mastery {
+    padding: 0.5rem;
+}
+
+.subject-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+}
+
+.subject-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+    border-top-width: 4px;
+    border-top-style: solid;
+    transition: transform 0.2s;
+}
+
+.subject-card.mastery-expert { border-top-color: var(--success); }
+.subject-card.mastery-advanced { border-top-color: var(--accent); }
+.subject-card.mastery-intermediate { border-top-color: var(--warning); }
+.subject-card.mastery-beginner { border-top-color: var(--danger); }
+
+.subject-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.subject-score {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.subject-stats {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+}
+
+/* ----- Downloaded Exams Tab ----- */
+#downloaded-tab h2 {
+    margin: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.downloaded-list {
+    padding: 0.5rem;
+}
+
+.downloaded-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.downloaded-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.3rem 0.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.downloaded-header .subject {
+    font-weight: 600;
+}
+
+.downloaded-header .score {
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.downloaded-header .date {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.downloaded-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.downloaded-actions .btn-small {
+    flex: 1;
+    min-width: 80px;
+}
+
+/* ----- Fixed Footer (bottom navigation) ----- */
+.app-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+}
+
+.footer-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.2s;
+    border-radius: 50%;
+    min-width: 48px;
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-btn:hover {
+    background: var(--bg-secondary);
+}
+
+.footer-btn.active {
+    color: var(--accent);
+}
+
+/* Adjust main content to avoid footer overlap */
+main {
+    margin-bottom: 70px;
+}
+
+/* ----- Share Modal ----- */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.modal {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    max-width: 500px;
+    width: 100%;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-muted);
+    padding: 0.5rem;
+    min-height: 44px;
+    min-width: 44px;
+}
+
+.modal-body p {
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+#share-link {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+/* ----- Review Modal (downloaded exam review) – fullscreen on mobile, centered on desktop ----- */
+.review-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    border-radius: 0;
+    margin: 0;
+    padding: 1rem;
+    overflow-y: auto;
+    background: var(--bg-card);
+}
+
+.review-modal .modal-header {
+    position: sticky;
+    top: 0;
+    background: var(--bg-card);
+    z-index: 10;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+@media (min-width: 768px) {
+    .review-modal {
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        max-width: 800px;
+        height: auto;
+        max-height: 90vh;
+        border-radius: var(--radius-lg);
+    }
+}
+
+.review-item {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.review-item.correct {
+    border-left: 4px solid var(--success);
+}
+
+.review-item.incorrect {
+    border-left: 4px solid var(--danger);
+}
+
+.review-item .explanation {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+    margin-top: 0.5rem;
+}
+
+/* ----- Utility: No data ----- */
+.no-data {
+    text-align: center;
+    color: var(--text-muted);
+    padding: 2rem 1rem;
+    font-style: italic;
+}
+
+/* ----- Responsive Grid Improvements ----- */
+@media screen and (min-width: 640px) {
+    .summary-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .two-column {
+        flex-direction: row;
+    }
+
+    .subject-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .chart-container {
+        height: 300px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .summary-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .subject-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .chart-container {
+        height: 350px;
+    }
+}
+
+@media (max-width: 640px) {
+    .chart-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .chart-type-selector {
+        justify-content: center;
+    }
+    .chart-container {
+        height: 220px;
+    }
+}

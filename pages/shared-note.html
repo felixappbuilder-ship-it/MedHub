@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shared Note – MedHub</title>
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/css/common.css" media="all">
+    <link rel="stylesheet" href="/css/shared-note.css" media="all">
+
+    <!-- Core modules (no auth required) -->
+    <script type="module" src="/scripts/utils.js"></script>
+    <script type="module" src="/scripts/ui.js"></script>
+    <script type="module" src="/scripts/db.js"></script>
+    <script type="module" src="/scripts/app.js"></script>
+    <script type="module" src="/scripts/notes.js"></script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js').catch(() => { });
+        }
+    </script>
+</head>
+
+<body>
+    <div class="page-container">
+        <header>
+            <div class="logo">
+                <img src="/assets/images/logo.png" alt="Logo" width="40" height="40">
+                <span>MedHub</span>
+            </div>
+            <nav class="main-nav">
+                <a href="subjects.html">Subjects</a>
+                <a href="performance.html">Performance</a>
+                <a href="ai.html">AI Tutor</a>
+                <a href="notes.html">Notes</a>
+            </nav>
+            <div class="header-right">
+                <button onclick="ui.toggleTheme()" class="btn-outline">🌓</button>
+            </div>
+        </header>
+
+        <main>
+            <div id="shared-note-container" class="shared-note-container">
+                <div class="loading">Loading note...</div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; Medical Exam Room Pro. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script type="module">
+        import * as ui from '../scripts/ui.js';
+        import * as utils from '../scripts/utils.js';
+        import * as db from '../scripts/db.js';
+        import * as app from '../scripts/app.js';
+        import * as notes from '../scripts/notes.js';
+
+        (async function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const token = urlParams.get('token');
+
+            await app.initializeApp();
+            const isLoggedIn = app.checkAuth();
+
+            const container = document.getElementById('shared-note-container');
+
+            if (!token) {
+                container.innerHTML = '<div class="error">No share token provided.</div>';
+            } else {
+                try {
+                    const note = await db.getNoteByShareToken(token);
+                    if (!note) {
+                        container.innerHTML = '<div class="error">Note not found or link has expired.</div>';
+                    } else {
+                        const created = utils.formatDate(note.createdAt, 'full');
+
+                        let html = `
+                        <div class="note-card">
+                            <h1>${note.title || 'Untitled'}</h1>
+                            <div class="note-meta">
+                                <span>Created: ${created}</span>
+                                ${note.tags && note.tags.length ? `<span>Tags: ${note.tags.join(', ')}</span>` : ''}
+                            </div>
+                            <div class="note-content">${note.content}</div>
+                            <div class="note-actions">
+                                <button onclick="window.copyLink()" class="btn-secondary">🔗 Copy Link</button>
+                    `;
+
+                        if (isLoggedIn) {
+                            html += `<button onclick="window.saveCopy()" class="btn-primary">📋 Save to My Notes</button>`;
+                        }
+
+                        html += `
+                            </div>
+                        </div>
+                    `;
+                        container.innerHTML = html;
+
+                        window.copyLink = function () {
+                            navigator.clipboard.writeText(window.location.href).then(() => {
+                                ui.showToast('Link copied!', 'success');
+                            }).catch(() => {
+                                prompt('Copy this link:', window.location.href);
+                            });
+                        };
+
+                        window.saveCopy = async function () {
+                            if (!isLoggedIn) {
+                                ui.showToast('You must be logged in', 'error');
+                                return;
+                            }
+                            try {
+                                await notes.createNote({
+                                    title: note.title + ' (shared copy)',
+                                    content: note.content,
+                                    plainText: note.plainText || '',
+                                    subject: note.subject,
+                                    topic: note.topic,
+                                    tags: note.tags
+                                });
+                                ui.showToast('Note saved to your collection!', 'success');
+                            } catch (err) {
+                                ui.showToast('Failed to save note: ' + err.message, 'error');
+                            }
+                        };
+                    }
+                } catch (err) {
+                    console.error(err);
+                    container.innerHTML = '<div class="error">Error loading note.</div>';
+                }
+            }
+        })();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,3994 @@
+{
+  "questions": [
+    {
+      "questionId": "protein_metabolism_001",
+      "difficulty": 1,
+      "question": "What is the primary end product of protein digestion in the stomach?",
+      "image": null,
+      "options": [
+        {
+          "text": "Amino acids",
+          "isCorrect": false,
+          "explanation": "Amino acids are the final products of protein digestion, but they are not produced in the stomach; they are absorbed in the small intestine."
+        },
+        {
+          "text": "Dipeptides and tripeptides",
+          "isCorrect": false,
+          "explanation": "Small peptides are produced in the small intestine by pancreatic proteases, not primarily in the stomach."
+        },
+        {
+          "text": "Polypeptides",
+          "isCorrect": true,
+          "explanation": "Pepsin in the stomach breaks down proteins into large polypeptides; further digestion occurs in the small intestine."
+        },
+        {
+          "text": "Free ammonia",
+          "isCorrect": false,
+          "explanation": "Ammonia is not a direct product of protein digestion; it results from amino acid deamination."
+        },
+        {
+          "text": "Oligopeptides",
+          "isCorrect": false,
+          "explanation": "Oligopeptides are produced later by pancreatic enzymes, not primarily in the stomach."
+        }
+      ],
+      "explanation": {
+        "overview": "Pepsin in the stomach initiates protein digestion by breaking down proteins into large polypeptides; complete digestion to amino acids and small peptides occurs in the small intestine.",
+        "highYield": "The stomach produces polypeptides; the small intestine produces di/tripeptides and amino acids.",
+        "clinicalCorrelation": "Gastric acid and pepsin are essential for protein digestion; deficiencies can lead to protein malabsorption."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_002",
+      "difficulty": 1,
+      "question": "Which pancreatic proteases are secreted as inactive zymogens?",
+      "image": null,
+      "options": [
+        {
+          "text": "Trypsinogen and chymotrypsinogen",
+          "isCorrect": true,
+          "explanation": "Trypsinogen and chymotrypsinogen are activated in the duodenum by enterokinase and trypsin."
+        },
+        {
+          "text": "Pepsinogen",
+          "isCorrect": false,
+          "explanation": "Pepsinogen is a gastric zymogen, not pancreatic."
+        },
+        {
+          "text": "Aminopeptidase",
+          "isCorrect": false,
+          "explanation": "Aminopeptidase is a brush-border enzyme, not pancreatic."
+        },
+        {
+          "text": "Carboxypeptidase",
+          "isCorrect": false,
+          "explanation": "Carboxypeptidase is a pancreatic protease, but the question asks for proteases (plural) that are secreted as zymogens; trypsinogen and chymotrypsinogen are the classic examples."
+        },
+        {
+          "text": "Dipeptidyl peptidase",
+          "isCorrect": false,
+          "explanation": "This is a brush-border enzyme, not pancreatic."
+        }
+      ],
+      "explanation": {
+        "overview": "Pancreatic proteases are secreted as inactive precursors (zymogens) to prevent autodigestion of the pancreas; they are activated in the duodenum.",
+        "highYield": "Trypsinogen is activated by enterokinase; trypsin then activates chymotrypsinogen, proelastase, and procarboxypeptidase.",
+        "clinicalCorrelation": "Acute pancreatitis involves premature activation of pancreatic zymogens, causing autodigestion."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_003",
+      "difficulty": 2,
+      "question": "Enterokinase activates which zymogen?",
+      "image": null,
+      "options": [
+        {
+          "text": "Trypsinogen",
+          "isCorrect": true,
+          "explanation": "Enterokinase (enteropeptidase) cleaves trypsinogen to trypsin, which then activates other pancreatic proteases."
+        },
+        {
+          "text": "Chymotrypsinogen",
+          "isCorrect": false,
+          "explanation": "Chymotrypsinogen is activated by trypsin, not directly by enterokinase."
+        },
+        {
+          "text": "Proelastase",
+          "isCorrect": false,
+          "explanation": "Proelastase is activated by trypsin."
+        },
+        {
+          "text": "Procarboxypeptidase",
+          "isCorrect": false,
+          "explanation": "Procarboxypeptidase is activated by trypsin."
+        },
+        {
+          "text": "Pepsinogen",
+          "isCorrect": false,
+          "explanation": "Pepsinogen is activated by gastric acid (autoactivation), not by enterokinase."
+        }
+      ],
+      "explanation": {
+        "overview": "Enterokinase (enteropeptidase) is a brush-border enzyme that converts trypsinogen to trypsin, initiating the cascade of pancreatic protease activation.",
+        "highYield": "Trypsin activates all other pancreatic zymogens.",
+        "clinicalCorrelation": "Enterokinase deficiency causes protein malabsorption and diarrhea."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_004",
+      "difficulty": 2,
+      "question": "Amino acids are absorbed into the bloodstream from the intestine primarily via:",
+      "image": null,
+      "options": [
+        {
+          "text": "Sodium‑dependent secondary active transport",
+          "isCorrect": true,
+          "explanation": "Most amino acids are co‑transported with Na+ across the apical membrane of enterocytes."
+        },
+        {
+          "text": "Simple diffusion",
+          "isCorrect": false,
+          "explanation": "Simple diffusion is not the primary mechanism for amino acid absorption."
+        },
+        {
+          "text": "Facilitated diffusion",
+          "isCorrect": false,
+          "explanation": "Some amino acids use facilitated diffusion, but the main route is secondary active transport."
+        },
+        {
+          "text": "Endocytosis",
+          "isCorrect": false,
+          "explanation": "Endocytosis is not the main mechanism for amino acid absorption."
+        },
+        {
+          "text": "Ion exchange",
+          "isCorrect": false,
+          "explanation": "Ion exchange is not the primary mechanism for amino acid absorption."
+        }
+      ],
+      "explanation": {
+        "overview": "Amino acids are absorbed via sodium‑dependent cotransporters (SLC families) on the brush border, then exit the basolateral side via facilitated diffusion.",
+        "highYield": "Different transporters exist for neutral, basic, acidic, and imino amino acids.",
+        "clinicalCorrelation": "Defects in amino acid transporters cause disorders like Hartnup disease and cystinuria."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_005",
+      "difficulty": 1,
+      "question": "The amino acid pool refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "The total free amino acids available in the body",
+          "isCorrect": true,
+          "explanation": "The amino acid pool is the sum of all free amino acids in blood and tissues available for metabolism."
+        },
+        {
+          "text": "Amino acids stored in muscle",
+          "isCorrect": false,
+          "explanation": "Muscle protein is a reserve, not the free amino acid pool."
+        },
+        {
+          "text": "Amino acids in dietary protein",
+          "isCorrect": false,
+          "explanation": "Dietary protein contributes to the pool but is not the pool itself."
+        },
+        {
+          "text": "Amino acids incorporated into proteins",
+          "isCorrect": false,
+          "explanation": "Protein-bound amino acids are not part of the free pool."
+        },
+        {
+          "text": "Amino acids excreted in urine",
+          "isCorrect": false,
+          "explanation": "Excreted amino acids are not part of the pool."
+        }
+      ],
+      "explanation": {
+        "overview": "The amino acid pool consists of free amino acids in blood, extracellular fluid, and intracellular compartments, used for protein synthesis, energy, and other pathways.",
+        "highYield": "The pool is maintained by dietary intake, protein breakdown, and de novo synthesis.",
+        "clinicalCorrelation": "Negative nitrogen balance reflects depletion of the amino acid pool."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_006",
+      "difficulty": 1,
+      "question": "Nitrogen balance is defined as:",
+      "image": null,
+      "options": [
+        {
+          "text": "Nitrogen intake minus nitrogen excretion",
+          "isCorrect": true,
+          "explanation": "Nitrogen balance = N intake – N excretion (urine, feces, sweat). Positive balance = net protein synthesis."
+        },
+        {
+          "text": "Nitrogen intake plus nitrogen excretion",
+          "isCorrect": false,
+          "explanation": "That would not represent balance."
+        },
+        {
+          "text": "Urea nitrogen divided by total nitrogen",
+          "isCorrect": false,
+          "explanation": "That is a ratio, not balance."
+        },
+        {
+          "text": "Ammonia excretion",
+          "isCorrect": false,
+          "explanation": "Ammonia excretion is part of nitrogen excretion, not the balance definition."
+        },
+        {
+          "text": "Protein synthesis rate",
+          "isCorrect": false,
+          "explanation": "Nitrogen balance is an overall measure, not synthesis alone."
+        }
+      ],
+      "explanation": {
+        "overview": "Nitrogen balance is the difference between nitrogen intake (mainly protein) and nitrogen losses, indicating the state of protein metabolism.",
+        "highYield": "Positive: growth, pregnancy, recovery; Negative: starvation, illness, catabolic states.",
+        "clinicalCorrelation": "Monitoring nitrogen balance is important in critical care and nutritional support."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_007",
+      "difficulty": 1,
+      "question": "Which condition is associated with negative nitrogen balance?",
+      "image": null,
+      "options": [
+        {
+          "text": "Starvation",
+          "isCorrect": true,
+          "explanation": "During starvation, protein breakdown exceeds synthesis, leading to negative nitrogen balance."
+        },
+        {
+          "text": "Pregnancy",
+          "isCorrect": false,
+          "explanation": "Pregnancy is a state of positive nitrogen balance."
+        },
+        {
+          "text": "Growth in children",
+          "isCorrect": false,
+          "explanation": "Growth requires positive nitrogen balance."
+        },
+        {
+          "text": "Recovery from illness",
+          "isCorrect": false,
+          "explanation": "Recovery involves positive balance."
+        },
+        {
+          "text": "Bodybuilding",
+          "isCorrect": false,
+          "explanation": "Bodybuilders often aim for positive balance."
+        }
+      ],
+      "explanation": {
+        "overview": "Negative nitrogen balance occurs when protein degradation exceeds synthesis, such as in fasting, illness, burns, or severe stress.",
+        "highYield": "Prolonged negative balance leads to muscle wasting and organ dysfunction.",
+        "clinicalCorrelation": "Nutritional support aims to reverse negative balance in hospitalized patients."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_008",
+      "difficulty": 2,
+      "question": "Transamination reactions involve transfer of an amino group from an amino acid to:",
+      "image": null,
+      "options": [
+        {
+          "text": "An α‑keto acid",
+          "isCorrect": true,
+          "explanation": "Aminotransferases transfer the α‑amino group to an α‑keto acid (e.g., α‑ketoglutarate), forming a new amino acid and a new α‑keto acid."
+        },
+        {
+          "text": "Ammonia",
+          "isCorrect": false,
+          "explanation": "Ammonia is not the acceptor; transamination transfers to a keto acid."
+        },
+        {
+          "text": "Glutamate",
+          "isCorrect": false,
+          "explanation": "Glutamate is often a product, not the acceptor."
+        },
+        {
+          "text": "Aspartate",
+          "isCorrect": false,
+          "explanation": "Aspartate is a donor or product, not the acceptor."
+        },
+        {
+          "text": "Oxaloacetate",
+          "isCorrect": false,
+          "explanation": "Oxaloacetate can be a product or acceptor in specific transaminations, but the general acceptor is α‑keto acid."
+        }
+      ],
+      "explanation": {
+        "overview": "Transamination is the transfer of an amino group from an amino acid to an α‑keto acid, yielding a new amino acid and a new α‑keto acid, catalyzed by aminotransferases.",
+        "highYield": "The most common acceptor is α‑ketoglutarate, forming glutamate.",
+        "clinicalCorrelation": "AST and ALT are transaminases used as markers of liver damage."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_009",
+      "difficulty": 2,
+      "question": "The cofactor required for all aminotransferases is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Pyridoxal phosphate (PLP)",
+          "isCorrect": true,
+          "explanation": "PLP (vitamin B6) acts as a carrier of amino groups in transamination."
+        },
+        {
+          "text": "Thiamine pyrophosphate",
+          "isCorrect": false,
+          "explanation": "TPP is for dehydrogenases, not transaminases."
+        },
+        {
+          "text": "Biotin",
+          "isCorrect": false,
+          "explanation": "Biotin is for carboxylases."
+        },
+        {
+          "text": "FAD",
+          "isCorrect": false,
+          "explanation": "FAD is for oxidation-reduction enzymes."
+        },
+        {
+          "text": "NAD+",
+          "isCorrect": false,
+          "explanation": "NAD+ is for dehydrogenases."
+        }
+      ],
+      "explanation": {
+        "overview": "Pyridoxal phosphate (PLP), the active form of vitamin B6, is the coenzyme for all transamination reactions.",
+        "highYield": "PLP also participates in decarboxylation, racemization, and other amino acid reactions.",
+        "clinicalCorrelation": "Vitamin B6 deficiency can impair amino acid metabolism and cause neurological symptoms."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_010",
+      "difficulty": 2,
+      "question": "ALT (alanine aminotransferase) catalyzes the transfer of amino group from alanine to α‑ketoglutarate, producing:",
+      "image": null,
+      "options": [
+        {
+          "text": "Pyruvate and glutamate",
+          "isCorrect": true,
+          "explanation": "ALT: alanine + α‑ketoglutarate ↔ pyruvate + glutamate."
+        },
+        {
+          "text": "Oxaloacetate and glutamate",
+          "isCorrect": false,
+          "explanation": "That is AST."
+        },
+        {
+          "text": "Aspartate and α‑ketoglutarate",
+          "isCorrect": false,
+          "explanation": "Incorrect products."
+        },
+        {
+          "text": "Glutamate and oxaloacetate",
+          "isCorrect": false,
+          "explanation": "That is reverse of AST."
+        },
+        {
+          "text": "Alanine and α‑ketoglutarate",
+          "isCorrect": false,
+          "explanation": "That is the substrate, not product."
+        }
+      ],
+      "explanation": {
+        "overview": "ALT (SGPT) catalyzes the reversible transamination between alanine and α‑ketoglutarate, producing pyruvate and glutamate.",
+        "highYield": "ALT is found mainly in the liver; elevated levels indicate hepatocellular damage.",
+        "clinicalCorrelation": "ALT is a standard liver function test; ALT/AST ratio helps differentiate liver diseases."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_011",
+      "difficulty": 2,
+      "question": "AST (aspartate aminotransferase) transfers amino group from aspartate to α‑ketoglutarate, producing:",
+      "image": null,
+      "options": [
+        {
+          "text": "Oxaloacetate and glutamate",
+          "isCorrect": true,
+          "explanation": "AST: aspartate + α‑ketoglutarate ↔ oxaloacetate + glutamate."
+        },
+        {
+          "text": "Aspartate and glutamate",
+          "isCorrect": false,
+          "explanation": "Incorrect products."
+        },
+        {
+          "text": "Pyruvate and glutamate",
+          "isCorrect": false,
+          "explanation": "That is ALT."
+        },
+        {
+          "text": "Oxaloacetate and alanine",
+          "isCorrect": false,
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "Fumarate and glutamate",
+          "isCorrect": false,
+          "explanation": "Fumarate is from argininosuccinate."
+        }
+      ],
+      "explanation": {
+        "overview": "AST (SGOT) catalyzes the reversible transamination between aspartate and α‑ketoglutarate, yielding oxaloacetate and glutamate.",
+        "highYield": "AST is found in liver, heart, muscle, and kidney; elevation is less specific than ALT.",
+        "clinicalCorrelation": "In alcohol-related liver disease, AST/ALT ratio > 2 is suggestive."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_012",
+      "difficulty": 2,
+      "question": "Oxidative deamination of glutamate is catalyzed by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glutamate dehydrogenase",
+          "isCorrect": true,
+          "explanation": "Glutamate dehydrogenase releases ammonia from glutamate, regenerating α‑ketoglutarate, using NAD+ or NADP+."
+        },
+        {
+          "text": "Glutaminase",
+          "isCorrect": false,
+          "explanation": "Glutaminase converts glutamine to glutamate and ammonia."
+        },
+        {
+          "text": "Glutamate‑oxaloacetate transaminase",
+          "isCorrect": false,
+          "explanation": "That is AST, a transaminase, not deamination."
+        },
+        {
+          "text": "Glutamate decarboxylase",
+          "isCorrect": false,
+          "explanation": "This produces GABA."
+        },
+        {
+          "text": "Glutamine synthetase",
+          "isCorrect": false,
+          "explanation": "This synthesizes glutamine."
+        }
+      ],
+      "explanation": {
+        "overview": "Glutamate dehydrogenase catalyzes the oxidative deamination of glutamate to α‑ketoglutarate, releasing ammonia and producing NADH or NADPH.",
+        "highYield": "It is a key enzyme linking amino acid metabolism to the TCA cycle.",
+        "clinicalCorrelation": "GDH is regulated by GTP and ADP; allosteric defects cause hyperinsulinism-hyperammonemia syndrome."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_013",
+      "difficulty": 2,
+      "question": "Ammonia is transported in the blood primarily as:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glutamine and alanine",
+          "isCorrect": true,
+          "explanation": "Glutamine (via glutamine synthetase) and alanine (glucose‑alanine cycle) carry ammonia safely."
+        },
+        {
+          "text": "Free ammonia",
+          "isCorrect": false,
+          "explanation": "Free ammonia is toxic and not the primary transport form."
+        },
+        {
+          "text": "Urea",
+          "isCorrect": false,
+          "explanation": "Urea is the final excretion product, not transport."
+        },
+        {
+          "text": "Asparagine",
+          "isCorrect": false,
+          "explanation": "Asparagine is not the main transport form."
+        },
+        {
+          "text": "Carbamoyl phosphate",
+          "isCorrect": false,
+          "explanation": "Carbamoyl phosphate is an intermediate in urea cycle, not blood transport."
+        }
+      ],
+      "explanation": {
+        "overview": "Ammonia is transported to the liver as glutamine (from various tissues) and alanine (from muscle), preventing toxicity.",
+        "highYield": "Glutamine carries two ammonia equivalents; alanine carries one.",
+        "clinicalCorrelation": "Hyperammonemia can occur when these transport systems are overwhelmed or liver function is impaired."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_014",
+      "difficulty": 1,
+      "question": "The urea cycle converts ammonia into urea in the:",
+      "image": null,
+      "options": [
+        {
+          "text": "Liver",
+          "isCorrect": true,
+          "explanation": "Urea synthesis occurs almost exclusively in the liver; defects cause hyperammonemia."
+        },
+        {
+          "text": "Kidney",
+          "isCorrect": false,
+          "explanation": "Kidney excretes urea but does not synthesize it."
+        },
+        {
+          "text": "Muscle",
+          "isCorrect": false,
+          "explanation": "Muscle does not have urea cycle enzymes."
+        },
+        {
+          "text": "Brain",
+          "isCorrect": false,
+          "explanation": "Brain lacks a complete urea cycle."
+        },
+        {
+          "text": "Intestine",
+          "isCorrect": false,
+          "explanation": "Intestine does not synthesize urea."
+        }
+      ],
+      "explanation": {
+        "overview": "The urea cycle is a hepatic pathway that converts ammonia into urea for excretion, preventing hyperammonemia.",
+        "highYield": "The liver is the sole site of urea synthesis.",
+        "clinicalCorrelation": "Liver failure leads to hyperammonemia and hepatic encephalopathy."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_015",
+      "difficulty": 2,
+      "question": "The first two nitrogen atoms of urea enter the cycle as:",
+      "image": null,
+      "options": [
+        {
+          "text": "Ammonia (as carbamoyl phosphate) and aspartate",
+          "isCorrect": true,
+          "explanation": "One nitrogen comes from free ammonia (via carbamoyl phosphate) and the second from aspartate."
+        },
+        {
+          "text": "Ammonia and alanine",
+          "isCorrect": false,
+          "explanation": "Alanine nitrogen is not directly used; it is converted to aspartate."
+        },
+        {
+          "text": "Glutamine and aspartate",
+          "isCorrect": false,
+          "explanation": "Glutamine donates ammonia indirectly, but the direct entry is ammonia (as carbamoyl phosphate) and aspartate."
+        },
+        {
+          "text": "Ammonia and glutamate",
+          "isCorrect": false,
+          "explanation": "Glutamate is not directly used; it is oxidized to ammonia."
+        },
+        {
+          "text": "Carbamoyl phosphate and glutamine",
+          "isCorrect": false,
+          "explanation": "Glutamine is not a direct nitrogen donor for urea."
+        }
+      ],
+      "explanation": {
+        "overview": "Urea contains two nitrogen atoms: one from ammonia (via carbamoyl phosphate) and one from aspartate.",
+        "highYield": "The nitrogen of carbamoyl phosphate enters from ammonia or glutamine; aspartate provides the second nitrogen.",
+        "clinicalCorrelation": "Urea cycle disorders affect nitrogen disposal, causing hyperammonemia."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_016",
+      "difficulty": 2,
+      "question": "Carbamoyl phosphate synthetase I (CPS I) is located in mitochondria and uses ammonia as substrate. Its activator is:",
+      "image": null,
+      "options": [
+        {
+          "text": "N‑acetylglutamate",
+          "isCorrect": true,
+          "explanation": "N‑acetylglutamate is an essential allosteric activator of CPS I; its synthesis is stimulated by arginine."
+        },
+        {
+          "text": "Biotin",
+          "isCorrect": false,
+          "explanation": "Biotin is a cofactor for carboxylases, not CPS I."
+        },
+        {
+          "text": "ATP",
+          "isCorrect": false,
+          "explanation": "ATP is a substrate, not an activator."
+        },
+        {
+          "text": "Magnesium",
+          "isCorrect": false,
+          "explanation": "Magnesium is a cofactor but not the activator."
+        },
+        {
+          "text": "NADH",
+          "isCorrect": false,
+          "explanation": "NADH is not an activator of CPS I."
+        }
+      ],
+      "explanation": {
+        "overview": "CPS I is the rate‑limiting enzyme of the urea cycle, activated by N‑acetylglutamate, which is synthesized from glutamate and acetyl‑CoA.",
+        "highYield": "Arginine stimulates N‑acetylglutamate synthesis, linking arginine availability to urea cycle activity.",
+        "clinicalCorrelation": "N‑acetylglutamate synthetase deficiency causes hyperammonemia similar to CPS I deficiency."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_017",
+      "difficulty": 2,
+      "question": "The urea cycle intermediate that combines with carbamoyl phosphate is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Ornithine",
+          "isCorrect": true,
+          "explanation": "Ornithine transcarbamylase transfers carbamoyl phosphate to ornithine, forming citrulline."
+        },
+        {
+          "text": "Citrulline",
+          "isCorrect": false,
+          "explanation": "Citrulline is the product, not the reactant."
+        },
+        {
+          "text": "Argininosuccinate",
+          "isCorrect": false,
+          "explanation": "Argininosuccinate is formed later."
+        },
+        {
+          "text": "Arginine",
+          "isCorrect": false,
+          "explanation": "Arginine is at the end of the cycle."
+        },
+        {
+          "text": "Aspartate",
+          "isCorrect": false,
+          "explanation": "Aspartate combines with citrulline, not with carbamoyl phosphate."
+        }
+      ],
+      "explanation": {
+        "overview": "Ornithine is regenerated each turn of the urea cycle and reacts with carbamoyl phosphate to form citrulline.",
+        "highYield": "Ornithine is not a standard amino acid; it is a key intermediate in the urea cycle.",
+        "clinicalCorrelation": "Ornithine transcarbamylase deficiency is the most common urea cycle disorder."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_018",
+      "difficulty": 2,
+      "question": "Citrulline is transported from mitochondria to cytosol, where it condenses with aspartate to form:",
+      "image": null,
+      "options": [
+        {
+          "text": "Argininosuccinate",
+          "isCorrect": true,
+          "explanation": "Argininosuccinate synthetase forms argininosuccinate from citrulline and aspartate."
+        },
+        {
+          "text": "Arginine",
+          "isCorrect": false,
+          "explanation": "Arginine is produced from argininosuccinate."
+        },
+        {
+          "text": "Ornithine",
+          "isCorrect": false,
+          "explanation": "Ornithine is produced from arginine by arginase."
+        },
+        {
+          "text": "Urea",
+          "isCorrect": false,
+          "explanation": "Urea is produced from arginine."
+        },
+        {
+          "text": "Fumarate",
+          "isCorrect": false,
+          "explanation": "Fumarate is a product of argininosuccinate cleavage."
+        }
+      ],
+      "explanation": {
+        "overview": "Citrulline and aspartate condense to argininosuccinate, a reaction catalyzed by argininosuccinate synthetase, consuming ATP.",
+        "highYield": "This step incorporates the second nitrogen of urea into the cycle.",
+        "clinicalCorrelation": "Deficiency of argininosuccinate synthetase causes citrullinemia."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_019",
+      "difficulty": 2,
+      "question": "Argininosuccinate lyase cleaves argininosuccinate into arginine and:",
+      "image": null,
+      "options": [
+        {
+          "text": "Fumarate",
+          "isCorrect": true,
+          "explanation": "Fumarate links the urea cycle to the TCA cycle."
+        },
+        {
+          "text": "Aspartate",
+          "isCorrect": false,
+          "explanation": "Aspartate was used earlier; fumarate is produced."
+        },
+        {
+          "text": "Ornithine",
+          "isCorrect": false,
+          "explanation": "Ornithine is produced from arginine."
+        },
+        {
+          "text": "Urea",
+          "isCorrect": false,
+          "explanation": "Urea is produced from arginine."
+        },
+        {
+          "text": "Malate",
+          "isCorrect": false,
+          "explanation": "Malate is formed from fumarate, but not directly from argininosuccinate."
+        }
+      ],
+      "explanation": {
+        "overview": "Argininosuccinate lyase cleaves argininosuccinate to arginine and fumarate, linking the urea cycle to the TCA cycle and gluconeogenesis.",
+        "highYield": "Fumarate can be converted to malate and then to oxaloacetate, providing intermediates for gluconeogenesis.",
+        "clinicalCorrelation": "Deficiency causes argininosuccinic aciduria."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_020",
+      "difficulty": 1,
+      "question": "Arginase converts arginine to ornithine and:",
+      "image": null,
+      "options": [
+        {
+          "text": "Urea",
+          "isCorrect": true,
+          "explanation": "Arginase hydrolyzes arginine to ornithine and urea."
+        },
+        {
+          "text": "Citrulline",
+          "isCorrect": false,
+          "explanation": "Citrulline is formed earlier."
+        },
+        {
+          "text": "Fumarate",
+          "isCorrect": false,
+          "explanation": "Fumarate is from argininosuccinate."
+        },
+        {
+          "text": "Ammonia",
+          "isCorrect": false,
+          "explanation": "Ammonia is not produced directly by arginase."
+        },
+        {
+          "text": "Carbamoyl phosphate",
+          "isCorrect": false,
+          "explanation": "Carbamoyl phosphate is used earlier."
+        }
+      ],
+      "explanation": {
+        "overview": "Arginase is the final enzyme of the urea cycle, releasing urea and regenerating ornithine.",
+        "highYield": "Arginase is found in the liver; deficiency causes hyperargininemia.",
+        "clinicalCorrelation": "Arginase deficiency presents with spasticity and progressive neurological symptoms."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_021",
+      "difficulty": 2,
+      "question": "Deficiency of ornithine transcarbamylase leads to accumulation of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Ammonia and orotic acid",
+          "isCorrect": true,
+          "explanation": "Accumulated carbamoyl phosphate spills into pyrimidine synthesis, increasing orotic acid."
+        },
+        {
+          "text": "Urea",
+          "isCorrect": false,
+          "explanation": "Urea synthesis is impaired, not accumulated."
+        },
+        {
+          "text": "Citrulline",
+          "isCorrect": false,
+          "explanation": "Citrulline is decreased due to block."
+        },
+        {
+          "text": "Argininosuccinate",
+          "isCorrect": false,
+          "explanation": "Argininosuccinate accumulates in argininosuccinate lyase deficiency."
+        },
+        {
+          "text": "Carbamoyl phosphate",
+          "isCorrect": false,
+          "explanation": "Carbamoyl phosphate accumulates but is rapidly converted to orotic acid."
+        }
+      ],
+      "explanation": {
+        "overview": "OTCD, an X‑linked disorder, causes accumulation of carbamoyl phosphate, which is diverted to pyrimidine synthesis, leading to orotic aciduria.",
+        "highYield": "Hyperammonemia and orotic aciduria are diagnostic.",
+        "clinicalCorrelation": "Treatment includes ammonia scavengers and arginine supplementation."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_022",
+      "difficulty": 2,
+      "question": "Which urea cycle disorder presents with hyperammonemia and increased urinary orotic acid?",
+      "image": null,
+      "options": [
+        {
+          "text": "Ornithine transcarbamylase deficiency",
+          "isCorrect": true,
+          "explanation": "OTCD is X‑linked; carbamoyl phosphate enters pyrimidine pathway, increasing orotate."
+        },
+        {
+          "text": "Carbamoyl phosphate synthetase I deficiency",
+          "isCorrect": false,
+          "explanation": "CPS I deficiency does not cause orotic aciduria."
+        },
+        {
+          "text": "Argininosuccinate synthetase deficiency",
+          "isCorrect": false,
+          "explanation": "Citrullinemia does not cause orotic aciduria."
+        },
+        {
+          "text": "Argininosuccinate lyase deficiency",
+          "isCorrect": false,
+          "explanation": "Argininosuccinic aciduria does not cause orotic aciduria."
+        },
+        {
+          "text": "Arginase deficiency",
+          "isCorrect": false,
+          "explanation": "Arginase deficiency does not cause orotic aciduria."
+        }
+      ],
+      "explanation": {
+        "overview": "OTCD is the most common urea cycle disorder; elevated orotic acid helps differentiate it from CPS I deficiency.",
+        "highYield": "Orotic acid is produced from carbamoyl phosphate via the pyrimidine pathway.",
+        "clinicalCorrelation": "Female carriers may be symptomatic due to X‑linked inheritance."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_023",
+      "difficulty": 2,
+      "question": "Citrullinemia is caused by deficiency of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Argininosuccinate synthetase",
+          "isCorrect": true,
+          "explanation": "Citrulline accumulates in blood."
+        },
+        {
+          "text": "Argininosuccinate lyase",
+          "isCorrect": false,
+          "explanation": "That causes argininosuccinic aciduria."
+        },
+        {
+          "text": "Ornithine transcarbamylase",
+          "isCorrect": false,
+          "explanation": "That causes orotic aciduria."
+        },
+        {
+          "text": "Carbamoyl phosphate synthetase I",
+          "isCorrect": false,
+          "explanation": "That causes hyperammonemia without orotic aciduria."
+        },
+        {
+          "text": "Arginase",
+          "isCorrect": false,
+          "explanation": "That causes hyperargininemia."
+        }
+      ],
+      "explanation": {
+        "overview": "Citrullinemia (type I) is due to argininosuccinate synthetase deficiency, leading to elevated citrulline and hyperammonemia.",
+        "highYield": "Citrulline is elevated in blood; urine may also show orotic acid if hyperammonemia is severe.",
+        "clinicalCorrelation": "Treatment includes arginine supplementation and nitrogen scavengers."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_024",
+      "difficulty": 2,
+      "question": "Argininosuccinic aciduria results from deficiency of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Argininosuccinate lyase",
+          "isCorrect": true,
+          "explanation": "Argininosuccinate accumulates in urine and blood."
+        },
+        {
+          "text": "Argininosuccinate synthetase",
+          "isCorrect": false,
+          "explanation": "That causes citrullinemia."
+        },
+        {
+          "text": "Arginase",
+          "isCorrect": false,
+          "explanation": "That causes hyperargininemia."
+        },
+        {
+          "text": "Ornithine transcarbamylase",
+          "isCorrect": false,
+          "explanation": "That causes orotic aciduria."
+        },
+        {
+          "text": "CPS I",
+          "isCorrect": false,
+          "explanation": "That causes hyperammonemia without orotic aciduria."
+        }
+      ],
+      "explanation": {
+        "overview": "Argininosuccinic aciduria is due to argininosuccinate lyase deficiency, leading to accumulation of argininosuccinate and hyperammonemia.",
+        "highYield": "Patients may have brittle hair (trichorrhexis nodosa) due to arginine deficiency.",
+        "clinicalCorrelation": "Treatment includes arginine supplementation and ammonia scavengers."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_025",
+      "difficulty": 2,
+      "question": "The carbon skeletons of amino acids are converted to intermediates that can enter:",
+      "image": null,
+      "options": [
+        {
+          "text": "Gluconeogenesis or ketogenesis",
+          "isCorrect": true,
+          "explanation": "Amino acids are classified as glucogenic, ketogenic, or both based on their metabolic fate."
+        },
+        {
+          "text": "Only glycolysis",
+          "isCorrect": false,
+          "explanation": "Some amino acids enter TCA cycle or acetyl‑CoA, not just glycolysis."
+        },
+        {
+          "text": "Only fatty acid synthesis",
+          "isCorrect": false,
+          "explanation": "Not all amino acids are precursors for fatty acids."
+        },
+        {
+          "text": "Only the TCA cycle",
+          "isCorrect": false,
+          "explanation": "They can also enter gluconeogenesis or ketogenesis."
+        },
+        {
+          "text": "Only glycogen synthesis",
+          "isCorrect": false,
+          "explanation": "Glycogen synthesis uses glucose, not directly from amino acids."
+        }
+      ],
+      "explanation": {
+        "overview": "Amino acid carbon skeletons are converted to intermediates that can be used for glucose synthesis (glucogenic) or ketone body/fatty acid synthesis (ketogenic).",
+        "highYield": "Glucogenic amino acids yield pyruvate, oxaloacetate, α‑ketoglutarate, succinyl‑CoA, or fumarate; ketogenic yield acetyl‑CoA or acetoacetyl‑CoA.",
+        "clinicalCorrelation": "During fasting, amino acids are used for gluconeogenesis; in diabetes, ketogenic amino acids contribute to ketoacidosis."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_026",
+      "difficulty": 2,
+      "question": "Which amino acid is purely ketogenic?",
+      "image": null,
+      "options": [
+        {
+          "text": "Leucine",
+          "isCorrect": false,
+          "explanation": "Leucine is ketogenic, but lysine is also purely ketogenic."
+        },
+        {
+          "text": "Lysine",
+          "isCorrect": false,
+          "explanation": "Lysine is also ketogenic."
+        },
+        {
+          "text": "Both A and B",
+          "isCorrect": true,
+          "explanation": "Leucine and lysine are the only purely ketogenic amino acids."
+        },
+        {
+          "text": "Isoleucine",
+          "isCorrect": false,
+          "explanation": "Isoleucine is both glucogenic and ketogenic."
+        },
+        {
+          "text": "Phenylalanine",
+          "isCorrect": false,
+          "explanation": "Phenylalanine is both glucogenic and ketogenic."
+        }
+      ],
+      "explanation": {
+        "overview": "Leucine and lysine are the only amino acids that are exclusively ketogenic, meaning their carbon skeletons yield only acetyl‑CoA or acetoacetyl‑CoA.",
+        "highYield": "All other amino acids are glucogenic or both.",
+        "clinicalCorrelation": "In starvation, ketogenic amino acids contribute to ketone body production."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_027",
+      "difficulty": 2,
+      "question": "Which amino acid is both glucogenic and ketogenic?",
+      "image": null,
+      "options": [
+        {
+          "text": "Isoleucine",
+          "isCorrect": false,
+          "explanation": "Isoleucine is both, but the answer includes all that are both."
+        },
+        {
+          "text": "Phenylalanine",
+          "isCorrect": false,
+          "explanation": "Also both."
+        },
+        {
+          "text": "Tryptophan",
+          "isCorrect": false,
+          "explanation": "Also both."
+        },
+        {
+          "text": "Tyrosine",
+          "isCorrect": false,
+          "explanation": "Also both."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Isoleucine, phenylalanine, tryptophan, and tyrosine are both glucogenic and ketogenic."
+        }
+      ],
+      "explanation": {
+        "overview": "Several amino acids are both glucogenic and ketogenic, yielding intermediates for glucose synthesis and acetyl‑CoA/ketone bodies.",
+        "highYield": "The both glucogenic and ketogenic amino acids are: isoleucine, phenylalanine, tryptophan, tyrosine, and threonine (some sources).",
+        "clinicalCorrelation": "In metabolic stress, these amino acids provide carbon for multiple pathways."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_028",
+      "difficulty": 1,
+      "question": "Alanine is converted to pyruvate by transamination. This makes it:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glucogenic",
+          "isCorrect": true,
+          "explanation": "Pyruvate can enter gluconeogenesis."
+        },
+        {
+          "text": "Ketogenic",
+          "isCorrect": false,
+          "explanation": "Alanine does not yield acetyl‑CoA directly."
+        },
+        {
+          "text": "Both",
+          "isCorrect": false,
+          "explanation": "Alanine is purely glucogenic."
+        },
+        {
+          "text": "Neither",
+          "isCorrect": false,
+          "explanation": "It is glucogenic."
+        },
+        {
+          "text": "Essential",
+          "isCorrect": false,
+          "explanation": "Alanine is non‑essential."
+        }
+      ],
+      "explanation": {
+        "overview": "Alanine is a glucogenic amino acid because its carbon skeleton is converted to pyruvate, which can be used for gluconeogenesis.",
+        "highYield": "Alanine is a major carrier of nitrogen from muscle to liver.",
+        "clinicalCorrelation": "In fasting, alanine is released from muscle and used for hepatic glucose production."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_029",
+      "difficulty": 1,
+      "question": "Glutamate can be oxidatively deaminated to α‑ketoglutarate, which is a TCA cycle intermediate. Glutamate is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glucogenic",
+          "isCorrect": true,
+          "explanation": "α‑ketoglutarate can be converted to glucose."
+        },
+        {
+          "text": "Ketogenic",
+          "isCorrect": false,
+          "explanation": "Glutamate does not yield acetyl‑CoA directly."
+        },
+        {
+          "text": "Both",
+          "isCorrect": false,
+          "explanation": "It is purely glucogenic."
+        },
+        {
+          "text": "Neither",
+          "isCorrect": false,
+          "explanation": "It is glucogenic."
+        },
+        {
+          "text": "Essential",
+          "isCorrect": false,
+          "explanation": "Glutamate is non‑essential."
+        }
+      ],
+      "explanation": {
+        "overview": "Glutamate is glucogenic because its deamination yields α‑ketoglutarate, a TCA intermediate that can be used for gluconeogenesis.",
+        "highYield": "Glutamate also plays a central role in nitrogen metabolism.",
+        "clinicalCorrelation": "Glutamate is a key amino acid for nitrogen transfer and is involved in ammonia detoxification."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_030",
+      "difficulty": 2,
+      "question": "Phenylalanine is normally converted to tyrosine by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Phenylalanine hydroxylase",
+          "isCorrect": true,
+          "explanation": "Phenylalanine hydroxylase (with tetrahydrobiopterin) adds a hydroxyl group."
+        },
+        {
+          "text": "Tyrosine hydroxylase",
+          "isCorrect": false,
+          "explanation": "Tyrosine hydroxylase converts tyrosine to DOPA."
+        },
+        {
+          "text": "Phenylalanine transaminase",
+          "isCorrect": false,
+          "explanation": "Transaminase is not the main route."
+        },
+        {
+          "text": "Phenylalanine decarboxylase",
+          "isCorrect": false,
+          "explanation": "Not a normal pathway."
+        },
+        {
+          "text": "Phenylalanine oxidase",
+          "isCorrect": false,
+          "explanation": "Not a standard enzyme."
+        }
+      ],
+      "explanation": {
+        "overview": "Phenylalanine hydroxylase (PAH) converts phenylalanine to tyrosine, using tetrahydrobiopterin as a cofactor.",
+        "highYield": "PAH deficiency causes phenylketonuria (PKU).",
+        "clinicalCorrelation": "PKU requires dietary phenylalanine restriction to prevent intellectual disability."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_031",
+      "difficulty": 2,
+      "question": "Phenylketonuria (PKU) is caused by deficiency of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Phenylalanine hydroxylase",
+          "isCorrect": true,
+          "explanation": "Phenylalanine accumulates and is converted to phenylketones, causing intellectual disability if untreated."
+        },
+        {
+          "text": "Tyrosine hydroxylase",
+          "isCorrect": false,
+          "explanation": "Tyrosine hydroxylase deficiency causes dopamine deficiency, not PKU."
+        },
+        {
+          "text": "Homogentisate oxidase",
+          "isCorrect": false,
+          "explanation": "Deficiency causes alkaptonuria."
+        },
+        {
+          "text": "Phenylalanine transaminase",
+          "isCorrect": false,
+          "explanation": "Not the cause."
+        },
+        {
+          "text": "Dihydrobiopterin reductase",
+          "isCorrect": false,
+          "explanation": "Deficiency can cause a variant of PKU, but classic PKU is PAH deficiency."
+        }
+      ],
+      "explanation": {
+        "overview": "Classic PKU results from phenylalanine hydroxylase deficiency, leading to elevated phenylalanine and toxic metabolites.",
+        "highYield": "Newborn screening is universal; treatment is a low‑phenylalanine diet.",
+        "clinicalCorrelation": "Maternal PKU can cause fetal damage if diet is not controlled."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_032",
+      "difficulty": 2,
+      "question": "Tyrosine is a precursor for all EXCEPT:",
+      "image": null,
+      "options": [
+        {
+          "text": "Dopamine",
+          "isCorrect": false,
+          "explanation": "Dopamine is derived from tyrosine."
+        },
+        {
+          "text": "Norepinephrine",
+          "isCorrect": false,
+          "explanation": "Norepinephrine is derived from dopamine."
+        },
+        {
+          "text": "Epinephrine",
+          "isCorrect": false,
+          "explanation": "Epinephrine is derived from norepinephrine."
+        },
+        {
+          "text": "Serotonin",
+          "isCorrect": true,
+          "explanation": "Serotonin is derived from tryptophan, not tyrosine."
+        },
+        {
+          "text": "Melanin",
+          "isCorrect": false,
+          "explanation": "Melanin is derived from tyrosine."
+        }
+      ],
+      "explanation": {
+        "overview": "Tyrosine is a precursor for catecholamines (dopamine, norepinephrine, epinephrine), melanin, and thyroid hormones.",
+        "highYield": "Serotonin is derived from tryptophan, which is a separate pathway.",
+        "clinicalCorrelation": "Tyrosine deficiency affects neurotransmitter and hormone synthesis."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_033",
+      "difficulty": 2,
+      "question": "Alkaptonuria results from deficiency of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Homogentisate oxidase",
+          "isCorrect": true,
+          "explanation": "Homogentisate accumulates and oxidizes to a dark pigment in urine and connective tissue (ochronosis)."
+        },
+        {
+          "text": "Tyrosinase",
+          "isCorrect": false,
+          "explanation": "Tyrosinase deficiency causes albinism."
+        },
+        {
+          "text": "Phenylalanine hydroxylase",
+          "isCorrect": false,
+          "explanation": "That causes PKU."
+        },
+        {
+          "text": "Tyrosine aminotransferase",
+          "isCorrect": false,
+          "explanation": "Deficiency causes tyrosinemia type II."
+        },
+        {
+          "text": "4‑hydroxyphenylpyruvate dioxygenase",
+          "isCorrect": false,
+          "explanation": "Deficiency causes tyrosinemia type III."
+        }
+      ],
+      "explanation": {
+        "overview": "Alkaptonuria is a rare autosomal recessive disorder of tyrosine catabolism due to homogentisate oxidase deficiency, causing ochronosis and arthritis.",
+        "highYield": "Urine turns dark on standing or with alkali.",
+        "clinicalCorrelation": "No specific cure; symptomatic management is used."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_034",
+      "difficulty": 2,
+      "question": "Albinism is caused by deficiency of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Tyrosinase",
+          "isCorrect": true,
+          "explanation": "Lack of melanin synthesis due to tyrosinase deficiency."
+        },
+        {
+          "text": "Phenylalanine hydroxylase",
+          "isCorrect": false,
+          "explanation": "That causes PKU."
+        },
+        {
+          "text": "Homogentisate oxidase",
+          "isCorrect": false,
+          "explanation": "That causes alkaptonuria."
+        },
+        {
+          "text": "Dopa decarboxylase",
+          "isCorrect": false,
+          "explanation": "Deficiency affects neurotransmitter synthesis, not melanin."
+        },
+        {
+          "text": "Tyrosine hydroxylase",
+          "isCorrect": false,
+          "explanation": "Deficiency affects dopamine synthesis, not melanin."
+        }
+      ],
+      "explanation": {
+        "overview": "Oculocutaneous albinism is due to tyrosinase deficiency, impairing melanin production in melanocytes.",
+        "highYield": "Tyrosinase catalyzes the conversion of tyrosine to DOPA and DOPAquinone.",
+        "clinicalCorrelation": "Patients have visual problems and increased skin cancer risk."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_035",
+      "difficulty": 2,
+      "question": "Maple syrup urine disease is due to defective metabolism of branched‑chain amino acids:",
+      "image": null,
+      "options": [
+        {
+          "text": "Leucine, isoleucine, valine",
+          "isCorrect": true,
+          "explanation": "Defect in branched‑chain α‑keto acid dehydrogenase causes accumulation of keto acids and sweet‑smelling urine."
+        },
+        {
+          "text": "Phenylalanine, tyrosine, tryptophan",
+          "isCorrect": false,
+          "explanation": "These are aromatic amino acids."
+        },
+        {
+          "text": "Methionine, threonine, lysine",
+          "isCorrect": false,
+          "explanation": "These are essential amino acids but not branched-chain."
+        },
+        {
+          "text": "Glutamate, glutamine, proline",
+          "isCorrect": false,
+          "explanation": "These are not branched-chain."
+        },
+        {
+          "text": "Alanine, aspartate, asparagine",
+          "isCorrect": false,
+          "explanation": "These are not branched-chain."
+        }
+      ],
+      "explanation": {
+        "overview": "Maple syrup urine disease (MSUD) is caused by deficiency of the branched‑chain α‑keto acid dehydrogenase complex, affecting leucine, isoleucine, and valine catabolism.",
+        "highYield": "The urine has a sweet, maple syrup odor due to accumulation of branched‑chain keto acids.",
+        "clinicalCorrelation": "Treatment includes dietary restriction of branched‑chain amino acids and thiamine supplementation in some forms."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_036",
+      "difficulty": 2,
+      "question": "Homocystinuria is most commonly caused by deficiency of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cystathionine β‑synthase",
+          "isCorrect": true,
+          "explanation": "CBS deficiency leads to elevated homocysteine and methionine, causing ocular, skeletal, and vascular issues."
+        },
+        {
+          "text": "Methionine synthase",
+          "isCorrect": false,
+          "explanation": "Deficiency causes hyperhomocysteinemia with low methionine."
+        },
+        {
+          "text": "Methylene tetrahydrofolate reductase",
+          "isCorrect": false,
+          "explanation": "Deficiency causes hyperhomocysteinemia with normal methionine."
+        },
+        {
+          "text": "Homocysteine methyltransferase",
+          "isCorrect": false,
+          "explanation": "Not a common cause."
+        },
+        {
+          "text": "Betaine‑homocysteine methyltransferase",
+          "isCorrect": false,
+          "explanation": "Rare cause."
+        }
+      ],
+      "explanation": {
+        "overview": "Classic homocystinuria is due to cystathionine β‑synthase deficiency, leading to elevated homocysteine and methionine.",
+        "highYield": "Manifestations include Marfanoid habitus, lens dislocation, and thromboembolism.",
+        "clinicalCorrelation": "Treatment includes vitamin B6, betaine, and methionine restriction."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_037",
+      "difficulty": 2,
+      "question": "Cysteine is synthesized from methionine via the transsulfuration pathway, which requires:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cystathionine β‑synthase and cystathionine γ‑lyase",
+          "isCorrect": true,
+          "explanation": "Methionine → S‑adenosylmethionine → S‑adenosylhomocysteine → homocysteine → cystathionine → cysteine."
+        },
+        {
+          "text": "Methionine adenosyltransferase",
+          "isCorrect": false,
+          "explanation": "This enzyme produces SAM, but not the transsulfuration step."
+        },
+        {
+          "text": "S‑adenosylhomocysteine hydrolase",
+          "isCorrect": false,
+          "explanation": "This hydrolyzes SAH to homocysteine."
+        },
+        {
+          "text": "Betaine‑homocysteine methyltransferase",
+          "isCorrect": false,
+          "explanation": "This remethylates homocysteine to methionine."
+        },
+        {
+          "text": "Methionine synthase",
+          "isCorrect": false,
+          "explanation": "Also remethylates homocysteine."
+        }
+      ],
+      "explanation": {
+        "overview": "The transsulfuration pathway converts homocysteine to cysteine via cystathionine β‑synthase and cystathionine γ‑lyase, requiring vitamin B6.",
+        "highYield": "Cysteine is a conditionally essential amino acid; the pathway also generates homocysteine as a methyl donor.",
+        "clinicalCorrelation": "Defects in this pathway lead to homocystinuria."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_038",
+      "difficulty": 2,
+      "question": "S‑adenosylmethionine (SAM) is the major methyl donor in many reactions. After donating a methyl group, it becomes:",
+      "image": null,
+      "options": [
+        {
+          "text": "S‑adenosylhomocysteine",
+          "isCorrect": true,
+          "explanation": "SAM → SAH after methyl transfer; SAH is hydrolyzed to homocysteine and adenosine."
+        },
+        {
+          "text": "Homocysteine",
+          "isCorrect": false,
+          "explanation": "Homocysteine is produced from SAH, not directly from SAM."
+        },
+        {
+          "text": "Methionine",
+          "isCorrect": false,
+          "explanation": "Methionine is the precursor of SAM."
+        },
+        {
+          "text": "Cysteine",
+          "isCorrect": false,
+          "explanation": "Cysteine is produced from homocysteine via transsulfuration."
+        },
+        {
+          "text": "Adenosine",
+          "isCorrect": false,
+          "explanation": "Adenosine is released from SAH, but the immediate product is SAH."
+        }
+      ],
+      "explanation": {
+        "overview": "SAM is the universal methyl donor; demethylation yields S‑adenosylhomocysteine (SAH), which is hydrolyzed to homocysteine.",
+        "highYield": "SAM is synthesized from methionine and ATP by methionine adenosyltransferase.",
+        "clinicalCorrelation": "SAM is used in treatment of depression and liver disease, but evidence is mixed."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_039",
+      "difficulty": 2,
+      "question": "Glycine is a precursor for all EXCEPT:",
+      "image": null,
+      "options": [
+        {
+          "text": "Heme",
+          "isCorrect": false,
+          "explanation": "Glycine is a precursor of δ‑aminolevulinate."
+        },
+        {
+          "text": "Glutathione",
+          "isCorrect": false,
+          "explanation": "Glycine is one of the three amino acids of glutathione."
+        },
+        {
+          "text": "Purines",
+          "isCorrect": false,
+          "explanation": "Glycine contributes to purine ring synthesis."
+        },
+        {
+          "text": "Creatine",
+          "isCorrect": false,
+          "explanation": "Glycine is a precursor of creatine."
+        },
+        {
+          "text": "Urea",
+          "isCorrect": true,
+          "explanation": "Urea is synthesized from ammonia and aspartate; glycine is not a direct precursor."
+        }
+      ],
+      "explanation": {
+        "overview": "Glycine is a versatile amino acid used in the synthesis of heme, glutathione, purines, creatine, and porphyrins.",
+        "highYield": "Glycine is also a neurotransmitter.",
+        "clinicalCorrelation": "Glycine deficiency is rare but can affect these synthetic pathways."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_040",
+      "difficulty": 2,
+      "question": "Creatine is synthesized from:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glycine, arginine, and methionine",
+          "isCorrect": true,
+          "explanation": "Glycine + arginine (amidino group) → guanidinoacetate; then methylated by SAM (from methionine) to creatine."
+        },
+        {
+          "text": "Glycine and glutamate",
+          "isCorrect": false,
+          "explanation": "Glutamate is not involved."
+        },
+        {
+          "text": "Arginine and ornithine",
+          "isCorrect": false,
+          "explanation": "Ornithine is not a precursor."
+        },
+        {
+          "text": "Methionine and lysine",
+          "isCorrect": false,
+          "explanation": "Lysine is not involved."
+        },
+        {
+          "text": "Glycine and aspartate",
+          "isCorrect": false,
+          "explanation": "Aspartate is not a precursor."
+        }
+      ],
+      "explanation": {
+        "overview": "Creatine is synthesized in the kidney and liver from glycine, arginine, and methionine (via SAM).",
+        "highYield": "Creatine is converted to creatine phosphate, a high‑energy phosphate buffer in muscle.",
+        "clinicalCorrelation": "Creatine supplements are used to enhance athletic performance and in some neuromuscular disorders."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_041",
+      "difficulty": 2,
+      "question": "Creatinine is formed from:",
+      "image": null,
+      "options": [
+        {
+          "text": "Non‑enzymatic cyclization of creatine phosphate",
+          "isCorrect": true,
+          "explanation": "Creatine phosphate spontaneously cyclizes to creatinine, which is excreted in urine; used to estimate renal function."
+        },
+        {
+          "text": "Enzymatic breakdown of creatine",
+          "isCorrect": false,
+          "explanation": "Creatine is not enzymatically converted to creatinine."
+        },
+        {
+          "text": "Oxidation of creatine",
+          "isCorrect": false,
+          "explanation": "Not oxidation."
+        },
+        {
+          "text": "Deamination of arginine",
+          "isCorrect": false,
+          "explanation": "Not related."
+        },
+        {
+          "text": "Hydrolysis of creatinine phosphate",
+          "isCorrect": false,
+          "explanation": "Creatinine phosphate does not hydrolyze to creatinine; creatine phosphate cyclizes."
+        }
+      ],
+      "explanation": {
+        "overview": "Creatinine is a waste product formed from the spontaneous dehydration and cyclization of creatine phosphate, excreted at a constant rate.",
+        "highYield": "Serum creatinine is a marker of glomerular filtration rate.",
+        "clinicalCorrelation": "Elevated creatinine indicates renal impairment."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_042",
+      "difficulty": 2,
+      "question": "Glutathione (GSH) is a tripeptide composed of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glutamate, cysteine, glycine",
+          "isCorrect": true,
+          "explanation": "The γ‑glutamyl bond makes GSH resistant to normal peptidases."
+        },
+        {
+          "text": "Glutamate, cysteine, alanine",
+          "isCorrect": false,
+          "explanation": "Alanine is not part of GSH."
+        },
+        {
+          "text": "Glutamate, methionine, glycine",
+          "isCorrect": false,
+          "explanation": "Methionine is not part of GSH."
+        },
+        {
+          "text": "Glutamine, cysteine, glycine",
+          "isCorrect": false,
+          "explanation": "Glutamine is not the correct form; it's glutamate."
+        },
+        {
+          "text": "Glutamate, serine, glycine",
+          "isCorrect": false,
+          "explanation": "Serine is not part of GSH."
+        }
+      ],
+      "explanation": {
+        "overview": "Glutathione is a tripeptide (γ‑Glu‑Cys‑Gly) that acts as a major intracellular antioxidant and redox buffer.",
+        "highYield": "The γ‑glutamyl linkage protects GSH from hydrolysis by peptidases.",
+        "clinicalCorrelation": "GSH levels are important in oxidative stress; depletion is associated with many diseases."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_043",
+      "difficulty": 2,
+      "question": "The reduced form of glutathione (GSH) protects cells from oxidative damage by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Reducing peroxides via glutathione peroxidase",
+          "isCorrect": false,
+          "explanation": "That is one mechanism."
+        },
+        {
+          "text": "Directly scavenging free radicals",
+          "isCorrect": false,
+          "explanation": "Also true."
+        },
+        {
+          "text": "Both A and B",
+          "isCorrect": true,
+          "explanation": "GSH peroxidase reduces peroxides, and GSH can also react directly with radicals."
+        },
+        {
+          "text": "Activating catalase",
+          "isCorrect": false,
+          "explanation": "GSH does not activate catalase."
+        },
+        {
+          "text": "Binding iron",
+          "isCorrect": false,
+          "explanation": "GSH does not bind iron."
+        }
+      ],
+      "explanation": {
+        "overview": "Glutathione protects cells by serving as a substrate for glutathione peroxidase (reducing peroxides) and by direct scavenging of free radicals.",
+        "highYield": "GSH is oxidized to GSSG, which is reduced back by glutathione reductase using NADPH.",
+        "clinicalCorrelation": "G6PD deficiency impairs NADPH production, leading to GSH depletion and hemolysis."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_044",
+      "difficulty": 2,
+      "question": "The γ‑glutamyl cycle is involved in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Amino acid transport across cell membranes",
+          "isCorrect": true,
+          "explanation": "γ‑glutamyl transferase transfers glutamyl group from glutathione to amino acids, facilitating uptake."
+        },
+        {
+          "text": "Glutathione synthesis",
+          "isCorrect": false,
+          "explanation": "Glutathione synthesis is a separate process."
+        },
+        {
+          "text": "Detoxification",
+          "isCorrect": false,
+          "explanation": "γ‑glutamyl cycle is primarily for amino acid transport."
+        },
+        {
+          "text": "Urea cycle",
+          "isCorrect": false,
+          "explanation": "Not involved."
+        },
+        {
+          "text": "Creatine synthesis",
+          "isCorrect": false,
+          "explanation": "Not involved."
+        }
+      ],
+      "explanation": {
+        "overview": "The γ‑glutamyl cycle (Meister cycle) is a pathway for amino acid transport across cell membranes, involving glutathione and γ‑glutamyl transferase.",
+        "highYield": "γ‑glutamyl transferase (GGT) is a marker of biliary obstruction.",
+        "clinicalCorrelation": "Elevated GGT is seen in alcohol use and liver disease."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_045",
+      "difficulty": 2,
+      "question": "Histidine is decarboxylated to form:",
+      "image": null,
+      "options": [
+        {
+          "text": "Histamine",
+          "isCorrect": true,
+          "explanation": "Histidine decarboxylase produces histamine, a mediator of allergic and inflammatory responses."
+        },
+        {
+          "text": "Serotonin",
+          "isCorrect": false,
+          "explanation": "Serotonin is from tryptophan."
+        },
+        {
+          "text": "Dopamine",
+          "isCorrect": false,
+          "explanation": "Dopamine is from tyrosine."
+        },
+        {
+          "text": "GABA",
+          "isCorrect": false,
+          "explanation": "GABA is from glutamate."
+        },
+        {
+          "text": "Taurine",
+          "isCorrect": false,
+          "explanation": "Taurine is from cysteine."
+        }
+      ],
+      "explanation": {
+        "overview": "Histidine decarboxylase converts histidine to histamine, a potent vasoactive amine.",
+        "highYield": "Histamine is involved in allergy, gastric acid secretion, and neurotransmission.",
+        "clinicalCorrelation": "Antihistamines block histamine receptors to treat allergies."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_046",
+      "difficulty": 2,
+      "question": "Tryptophan is a precursor for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Serotonin and niacin",
+          "isCorrect": true,
+          "explanation": "Tryptophan → serotonin → melatonin; also can be converted to niacin (vitamin B3)."
+        },
+        {
+          "text": "Melatonin and dopamine",
+          "isCorrect": false,
+          "explanation": "Melatonin is from serotonin, but dopamine is from tyrosine."
+        },
+        {
+          "text": "Epinephrine and norepinephrine",
+          "isCorrect": false,
+          "explanation": "These are from tyrosine."
+        },
+        {
+          "text": "GABA and histamine",
+          "isCorrect": false,
+          "explanation": "GABA from glutamate, histamine from histidine."
+        },
+        {
+          "text": "Taurine and cysteine",
+          "isCorrect": false,
+          "explanation": "These are from methionine/cysteine."
+        }
+      ],
+      "explanation": {
+        "overview": "Tryptophan is the precursor of serotonin, melatonin, and niacin (vitamin B3) via the kynurenine pathway.",
+        "highYield": "Tryptophan is an essential amino acid.",
+        "clinicalCorrelation": "Tryptophan deficiency can lead to serotonin depletion and pellagra."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_047",
+      "difficulty": 2,
+      "question": "Glutamate decarboxylase produces:",
+      "image": null,
+      "options": [
+        {
+          "text": "GABA",
+          "isCorrect": true,
+          "explanation": "GABA (γ‑aminobutyrate) is an inhibitory neurotransmitter."
+        },
+        {
+          "text": "Glutamine",
+          "isCorrect": false,
+          "explanation": "Glutamine is produced by glutamine synthetase."
+        },
+        {
+          "text": "α‑ketoglutarate",
+          "isCorrect": false,
+          "explanation": "α‑ketoglutarate is produced by glutamate dehydrogenase."
+        },
+        {
+          "text": "Proline",
+          "isCorrect": false,
+          "explanation": "Proline is synthesized from glutamate, but not by decarboxylation."
+        },
+        {
+          "text": "Ornithine",
+          "isCorrect": false,
+          "explanation": "Ornithine is from arginine."
+        }
+      ],
+      "explanation": {
+        "overview": "Glutamate decarboxylase (GAD) converts glutamate to GABA, the major inhibitory neurotransmitter in the CNS.",
+        "highYield": "GAD requires PLP as a cofactor.",
+        "clinicalCorrelation": "Autoantibodies to GAD are found in type 1 diabetes and stiff‑person syndrome."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_048",
+      "difficulty": 2,
+      "question": "Ornithine is produced from arginine by arginase and is also an intermediate in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Urea cycle and polyamine synthesis",
+          "isCorrect": true,
+          "explanation": "Ornithine is converted to putrescine by ornithine decarboxylase in polyamine synthesis."
+        },
+        {
+          "text": "Creatine synthesis",
+          "isCorrect": false,
+          "explanation": "Creatine synthesis uses glycine, arginine, and methionine."
+        },
+        {
+          "text": "Glutathione synthesis",
+          "isCorrect": false,
+          "explanation": "Glutathione uses glutamate, cysteine, glycine."
+        },
+        {
+          "text": "Purine synthesis",
+          "isCorrect": false,
+          "explanation": "Purines use glycine, aspartate, glutamine."
+        },
+        {
+          "text": "Pyrimidine synthesis",
+          "isCorrect": false,
+          "explanation": "Pyrimidines use carbamoyl phosphate and aspartate."
+        }
+      ],
+      "explanation": {
+        "overview": "Ornithine is a key intermediate in the urea cycle and also serves as the precursor for polyamines (putrescine, spermidine, spermine).",
+        "highYield": "Ornithine decarboxylase is the rate‑limiting enzyme in polyamine synthesis.",
+        "clinicalCorrelation": "Polyamines are important for cell proliferation and are often elevated in cancer."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_049",
+      "difficulty": 2,
+      "question": "Polyamines (putrescine, spermidine, spermine) are involved in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cell growth and differentiation",
+          "isCorrect": true,
+          "explanation": "Polyamines bind nucleic acids and stabilize chromatin, promoting proliferation."
+        },
+        {
+          "text": "Energy production",
+          "isCorrect": false,
+          "explanation": "Polyamines are not energy substrates."
+        },
+        {
+          "text": "Detoxification",
+          "isCorrect": false,
+          "explanation": "Not their primary function."
+        },
+        {
+          "text": "Neurotransmission",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        },
+        {
+          "text": "Blood clotting",
+          "isCorrect": false,
+          "explanation": "Not involved."
+        }
+      ],
+      "explanation": {
+        "overview": "Polyamines are essential for cell proliferation, differentiation, and gene expression, interacting with DNA and RNA.",
+        "highYield": "They are synthesized from ornithine and require methionine for aminopropyl groups.",
+        "clinicalCorrelation": "Polyamine levels are elevated in rapidly dividing cells, making them targets for cancer therapy."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_050",
+      "difficulty": 2,
+      "question": "Methionine is an essential amino acid that donates methyl groups via:",
+      "image": null,
+      "options": [
+        {
+          "text": "S‑adenosylmethionine",
+          "isCorrect": true,
+          "explanation": "SAM is the universal methyl donor in many transmethylation reactions."
+        },
+        {
+          "text": "Methylcobalamin",
+          "isCorrect": false,
+          "explanation": "Methylcobalamin is a form of vitamin B12, not derived from methionine."
+        },
+        {
+          "text": "Folate",
+          "isCorrect": false,
+          "explanation": "Folate provides methyl groups for thymidylate synthesis, but not from methionine."
+        },
+        {
+          "text": "Betaine",
+          "isCorrect": false,
+          "explanation": "Betaine is a methyl donor for homocysteine remethylation, but not derived from methionine."
+        },
+        {
+          "text": "Choline",
+          "isCorrect": false,
+          "explanation": "Choline is a methyl donor but not from methionine."
+        }
+      ],
+      "explanation": {
+        "overview": "Methionine is activated to S‑adenosylmethionine (SAM), which participates in numerous methylation reactions.",
+        "highYield": "After methyl donation, SAM becomes SAH, which is hydrolyzed to homocysteine.",
+        "clinicalCorrelation": "SAM has been used in clinical trials for depression and osteoarthritis."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_051",
+      "difficulty": 2,
+      "question": "Folate and vitamin B12 are required for the regeneration of methionine from homocysteine. This reaction is catalyzed by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Methionine synthase",
+          "isCorrect": true,
+          "explanation": "Methionine synthase (B12‑dependent) transfers a methyl from methylfolate to homocysteine."
+        },
+        {
+          "text": "Methionine adenosyltransferase",
+          "isCorrect": false,
+          "explanation": "This synthesizes SAM from methionine."
+        },
+        {
+          "text": "Cystathionine β‑synthase",
+          "isCorrect": false,
+          "explanation": "This catalyzes the first step in transsulfuration."
+        },
+        {
+          "text": "Betaine‑homocysteine methyltransferase",
+          "isCorrect": false,
+          "explanation": "This also remethylates homocysteine, but using betaine, not requiring B12."
+        },
+        {
+          "text": "S‑adenosylhomocysteine hydrolase",
+          "isCorrect": false,
+          "explanation": "This hydrolyzes SAH."
+        }
+      ],
+      "explanation": {
+        "overview": "Methionine synthase catalyzes the remethylation of homocysteine to methionine, using methylcobalamin (B12) and methyl‑THF as cofactors.",
+        "highYield": "This reaction links folate and B12 metabolism.",
+        "clinicalCorrelation": "B12 or folate deficiency leads to elevated homocysteine and megaloblastic anemia."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_052",
+      "difficulty": 2,
+      "question": "Tetrahydrobiopterin (BH4) is a cofactor for which amino acid hydroxylases?",
+      "image": null,
+      "options": [
+        {
+          "text": "Phenylalanine hydroxylase, tyrosine hydroxylase, tryptophan hydroxylase",
+          "isCorrect": true,
+          "explanation": "BH4 is required for aromatic amino acid hydroxylases."
+        },
+        {
+          "text": "Tyrosine hydroxylase only",
+          "isCorrect": false,
+          "explanation": "BH4 is also needed for other hydroxylases."
+        },
+        {
+          "text": "Tryptophan hydroxylase only",
+          "isCorrect": false,
+          "explanation": "It is needed for all three."
+        },
+        {
+          "text": "Phenylalanine hydroxylase only",
+          "isCorrect": false,
+          "explanation": "It is needed for all three."
+        },
+        {
+          "text": "All amino acid oxidases",
+          "isCorrect": false,
+          "explanation": "Not all; only aromatic hydroxylases."
+        }
+      ],
+      "explanation": {
+        "overview": "BH4 is an essential cofactor for the hydroxylation of aromatic amino acids: phenylalanine, tyrosine, and tryptophan.",
+        "highYield": "BH4 deficiency can cause a form of PKU and neurotransmitter deficiencies.",
+        "clinicalCorrelation": "BH4 supplementation is used in some forms of PKU."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_053",
+      "difficulty": 3,
+      "question": "In the glucose‑alanine cycle, alanine transports nitrogen from muscle to liver. In the liver, alanine is transaminated to pyruvate, and the amino group enters the urea cycle as:",
+      "image": null,
+      "options": [
+        {
+          "text": "Aspartate (via transamination with oxaloacetate)",
+          "isCorrect": true,
+          "explanation": "Alanine + α‑ketoglutarate → pyruvate + glutamate; glutamate then transfers amino group to oxaloacetate forming aspartate, which enters urea cycle."
+        },
+        {
+          "text": "Free ammonia",
+          "isCorrect": false,
+          "explanation": "Ammonia is not directly released; it is transferred to aspartate."
+        },
+        {
+          "text": "Glutamate",
+          "isCorrect": false,
+          "explanation": "Glutamate is an intermediate, but the nitrogen is then transferred to aspartate."
+        },
+        {
+          "text": "Carbamoyl phosphate",
+          "isCorrect": false,
+          "explanation": "Carbamoyl phosphate is from free ammonia, not from alanine nitrogen."
+        },
+        {
+          "text": "Glutamine",
+          "isCorrect": false,
+          "explanation": "Glutamine is not the entry form in this cycle."
+        }
+      ],
+      "explanation": {
+        "overview": "The glucose‑alanine cycle transports nitrogen from muscle to liver; alanine is converted to pyruvate and glutamate, and glutamate's amino group is transferred to oxaloacetate to form aspartate for the urea cycle.",
+        "highYield": "This cycle also provides pyruvate for gluconeogenesis.",
+        "clinicalCorrelation": "During fasting, this cycle supports hepatic glucose production."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_054",
+      "difficulty": 2,
+      "question": "Glutamine synthetase converts glutamate and ammonia to glutamine, consuming ATP. This reaction is important for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Ammonia detoxification in brain and liver",
+          "isCorrect": true,
+          "explanation": "Glutamine synthetase traps ammonia safely; glutamine transports nitrogen to liver."
+        },
+        {
+          "text": "Urea synthesis",
+          "isCorrect": false,
+          "explanation": "It provides ammonia for urea cycle indirectly, but the main function is detoxification."
+        },
+        {
+          "text": "Glutamate synthesis",
+          "isCorrect": false,
+          "explanation": "It consumes glutamate, not synthesizes."
+        },
+        {
+          "text": "GABA synthesis",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        },
+        {
+          "text": "Polyamine synthesis",
+          "isCorrect": false,
+          "explanation": "Not involved."
+        }
+      ],
+      "explanation": {
+        "overview": "Glutamine synthetase catalyzes the ATP‑dependent amidation of glutamate to glutamine, a key reaction for ammonia detoxification.",
+        "highYield": "Glutamine is the main transport form of ammonia in blood.",
+        "clinicalCorrelation": "Glutamine synthetase deficiency leads to hyperammonemia."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_055",
+      "difficulty": 2,
+      "question": "Glutaminase converts glutamine to glutamate and ammonia, providing ammonia for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Renal ammonia excretion and hepatic urea synthesis",
+          "isCorrect": true,
+          "explanation": "In kidney, glutaminase produces NH3 to buffer acid; in liver, it supplies ammonia for urea cycle."
+        },
+        {
+          "text": "Purine synthesis",
+          "isCorrect": false,
+          "explanation": "Purine synthesis uses glutamine, but not via glutaminase."
+        },
+        {
+          "text": "Pyrimidine synthesis",
+          "isCorrect": false,
+          "explanation": "Pyrimidine synthesis uses carbamoyl phosphate, not glutaminase."
+        },
+        {
+          "text": "Glutathione synthesis",
+          "isCorrect": false,
+          "explanation": "Glutathione uses glutamate, not requiring glutaminase."
+        },
+        {
+          "text": "Creatine synthesis",
+          "isCorrect": false,
+          "explanation": "Not involved."
+        }
+      ],
+      "explanation": {
+        "overview": "Glutaminase releases ammonia from glutamine; in the kidney, this ammonia is excreted in urine; in the liver, it enters the urea cycle.",
+        "highYield": "Renal glutaminase is upregulated in acidosis.",
+        "clinicalCorrelation": "Hyperammonemia can occur when glutaminase is overactive in liver disease."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_056",
+      "difficulty": 3,
+      "question": "Which of the following is an inhibitor of glutamine synthetase?",
+      "image": null,
+      "options": [
+        {
+          "text": "Methionine sulfoximine",
+          "isCorrect": true,
+          "explanation": "Methionine sulfoximine inhibits glutamine synthetase, leading to ammonia accumulation."
+        },
+        {
+          "text": "Bicuculline",
+          "isCorrect": false,
+          "explanation": "Bicuculline is a GABA antagonist."
+        },
+        {
+          "text": "Strychnine",
+          "isCorrect": false,
+          "explanation": "Strychnine is a glycine antagonist."
+        },
+        {
+          "text": "Picrotoxin",
+          "isCorrect": false,
+          "explanation": "Picrotoxin is a GABA antagonist."
+        },
+        {
+          "text": "Atropine",
+          "isCorrect": false,
+          "explanation": "Atropine is a muscarinic antagonist."
+        }
+      ],
+      "explanation": {
+        "overview": "Methionine sulfoximine is a known irreversible inhibitor of glutamine synthetase, used in research to study ammonia toxicity.",
+        "highYield": "Inhibition leads to elevated ammonia and glutamine depletion.",
+        "clinicalCorrelation": "This compound is not used clinically."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_057",
+      "difficulty": 2,
+      "question": "The amino acid that is a precursor of nitric oxide is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Arginine",
+          "isCorrect": true,
+          "explanation": "Nitric oxide synthase converts arginine to citrulline, releasing NO."
+        },
+        {
+          "text": "Citrulline",
+          "isCorrect": false,
+          "explanation": "Citrulline is a product, not the precursor."
+        },
+        {
+          "text": "Ornithine",
+          "isCorrect": false,
+          "explanation": "Ornithine is not a precursor of NO."
+        },
+        {
+          "text": "Lysine",
+          "isCorrect": false,
+          "explanation": "Lysine is not involved."
+        },
+        {
+          "text": "Histidine",
+          "isCorrect": false,
+          "explanation": "Histidine is for histamine."
+        }
+      ],
+      "explanation": {
+        "overview": "Nitric oxide (NO) is synthesized from L‑arginine by nitric oxide synthase (NOS), producing citrulline.",
+        "highYield": "NO is a potent vasodilator and neurotransmitter.",
+        "clinicalCorrelation": "NOS inhibitors are used in research; NO donors (nitroglycerin) treat angina."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_058",
+      "difficulty": 2,
+      "question": "In the urea cycle, fumarate produced from argininosuccinate can be converted to malate and then to oxaloacetate. This provides a link to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Gluconeogenesis and the TCA cycle",
+          "isCorrect": true,
+          "explanation": "Fumarate → malate → OAA → glucose (gluconeogenesis) or TCA cycle."
+        },
+        {
+          "text": "Fatty acid synthesis",
+          "isCorrect": false,
+          "explanation": "Fatty acid synthesis uses acetyl‑CoA and malonyl‑CoA, not directly linked."
+        },
+        {
+          "text": "Glycolysis",
+          "isCorrect": false,
+          "explanation": "Fumarate is not directly linked to glycolysis."
+        },
+        {
+          "text": "Ketogenesis",
+          "isCorrect": false,
+          "explanation": "Ketogenesis uses acetyl‑CoA."
+        },
+        {
+          "text": "Pentose phosphate pathway",
+          "isCorrect": false,
+          "explanation": "Not linked."
+        }
+      ],
+      "explanation": {
+        "overview": "Fumarate from the urea cycle enters the TCA cycle and can be used for gluconeogenesis, linking nitrogen metabolism to energy and glucose production.",
+        "highYield": "This connection is important for integrating amino acid and carbohydrate metabolism.",
+        "clinicalCorrelation": "Urea cycle disorders can affect energy metabolism."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_059",
+      "difficulty": 2,
+      "question": "Hyperammonemia can cause neurological symptoms because ammonia depletes α‑ketoglutarate, inhibiting the TCA cycle. This is due to the reaction:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glutamate dehydrogenase converting α‑ketoglutarate to glutamate",
+          "isCorrect": true,
+          "explanation": "Ammonia combines with α‑ketoglutarate via glutamate dehydrogenase, depleting TCA intermediate and producing glutamate."
+        },
+        {
+          "text": "Glutamine synthetase converting glutamate to glutamine",
+          "isCorrect": false,
+          "explanation": "This consumes glutamate, not α‑ketoglutarate."
+        },
+        {
+          "text": "Transamination of α‑ketoglutarate to glutamate",
+          "isCorrect": false,
+          "explanation": "Transamination also produces glutamate, but the major pathway in hyperammonemia is glutamate dehydrogenase."
+        },
+        {
+          "text": "Glutaminase producing glutamate",
+          "isCorrect": false,
+          "explanation": "Glutaminase produces glutamate from glutamine."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "The primary reaction is glutamate dehydrogenase."
+        }
+      ],
+      "explanation": {
+        "overview": "Ammonia is incorporated into glutamate via glutamate dehydrogenase, depleting α‑ketoglutarate and impairing TCA cycle function, leading to energy deficit in the brain.",
+        "highYield": "This mechanism contributes to hepatic encephalopathy.",
+        "clinicalCorrelation": "Treatment of hyperammonemia includes reducing ammonia levels and providing alternative energy sources."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_060",
+      "difficulty": 2,
+      "question": "The enzyme that is deficient in Hartnup disease is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Neutral amino acid transporter",
+          "isCorrect": true,
+          "explanation": "Hartnup disease impairs neutral amino acid transport in kidney and intestine, leading to pellagra‑like symptoms due to tryptophan malabsorption."
+        },
+        {
+          "text": "Phenylalanine hydroxylase",
+          "isCorrect": false,
+          "explanation": "That is PKU."
+        },
+        {
+          "text": "Branched‑chain keto acid dehydrogenase",
+          "isCorrect": false,
+          "explanation": "That is MSUD."
+        },
+        {
+          "text": "Cystathionine β‑synthase",
+          "isCorrect": false,
+          "explanation": "That is homocystinuria."
+        },
+        {
+          "text": "Homogentisate oxidase",
+          "isCorrect": false,
+          "explanation": "That is alkaptonuria."
+        }
+      ],
+      "explanation": {
+        "overview": "Hartnup disease is a defect in neutral amino acid transport (SLC6A19), leading to decreased tryptophan absorption and niacin deficiency.",
+        "highYield": "Symptoms include pellagra‑like rash, ataxia, and psychiatric symptoms.",
+        "clinicalCorrelation": "Treatment includes niacin supplementation and a high‑protein diet."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_061",
+      "difficulty": 2,
+      "question": "Cystinuria is caused by defective transport of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cystine and dibasic amino acids (ornithine, arginine, lysine)",
+          "isCorrect": true,
+          "explanation": "Cystinuria results from impaired reabsorption of cystine and dibasic amino acids in renal tubules, leading to cystine stones."
+        },
+        {
+          "text": "Cysteine only",
+          "isCorrect": false,
+          "explanation": "Cystine is the disulfide; transport defect includes dibasic amino acids."
+        },
+        {
+          "text": "Methionine",
+          "isCorrect": false,
+          "explanation": "Methionine is neutral, not affected."
+        },
+        {
+          "text": "Glutamate",
+          "isCorrect": false,
+          "explanation": "Glutamate is acidic, not affected."
+        },
+        {
+          "text": "Glycine",
+          "isCorrect": false,
+          "explanation": "Glycine is neutral, not affected."
+        }
+      ],
+      "explanation": {
+        "overview": "Cystinuria is an autosomal recessive disorder of the renal transporter for cystine and dibasic amino acids, leading to cystine stone formation.",
+        "highYield": "Cystine is relatively insoluble and forms stones at high concentration.",
+        "clinicalCorrelation": "Treatment includes hydration, urine alkalinization, and thiol drugs."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_062",
+      "difficulty": 1,
+      "question": "The major end product of nitrogen metabolism in humans is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Urea",
+          "isCorrect": true,
+          "explanation": "Urea is the main nitrogen excretion product in mammals."
+        },
+        {
+          "text": "Ammonia",
+          "isCorrect": false,
+          "explanation": "Ammonia is toxic and not the end product."
+        },
+        {
+          "text": "Uric acid",
+          "isCorrect": false,
+          "explanation": "Uric acid is the end product of purine metabolism, not general nitrogen."
+        },
+        {
+          "text": "Creatinine",
+          "isCorrect": false,
+          "explanation": "Creatinine is from creatine, not general nitrogen."
+        },
+        {
+          "text": "Amino acids",
+          "isCorrect": false,
+          "explanation": "Amino acids are not excreted as end products."
+        }
+      ],
+      "explanation": {
+        "overview": "Humans excrete nitrogen primarily as urea, synthesized in the liver via the urea cycle.",
+        "highYield": "Urea accounts for about 80-90% of nitrogen excretion.",
+        "clinicalCorrelation": "Urea levels are used to assess renal function and protein intake."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_063",
+      "difficulty": 1,
+      "question": "In birds and reptiles, the main nitrogen excretion product is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Uric acid",
+          "isCorrect": true,
+          "explanation": "Uric acid is excreted to conserve water."
+        },
+        {
+          "text": "Urea",
+          "isCorrect": false,
+          "explanation": "Urea is excreted by mammals."
+        },
+        {
+          "text": "Ammonia",
+          "isCorrect": false,
+          "explanation": "Ammonia is excreted by aquatic animals."
+        },
+        {
+          "text": "Creatine",
+          "isCorrect": false,
+          "explanation": "Not a nitrogen excretion product."
+        },
+        {
+          "text": "Allantoin",
+          "isCorrect": false,
+          "explanation": "Allantoin is a breakdown product of uric acid in some animals, but birds excrete uric acid directly."
+        }
+      ],
+      "explanation": {
+        "overview": "Birds and reptiles excrete nitrogen as uric acid, a relatively insoluble compound that minimizes water loss.",
+        "highYield": "Uric acid is also the end product of purine metabolism in humans.",
+        "clinicalCorrelation": "Uric acid stones can occur in humans with high uric acid levels."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_064",
+      "difficulty": 2,
+      "question": "The amino acid that provides the carbon skeleton for gluconeogenesis during prolonged fasting is primarily:",
+      "image": null,
+      "options": [
+        {
+          "text": "Alanine",
+          "isCorrect": true,
+          "explanation": "Alanine is released from muscle and taken up by liver for gluconeogenesis (glucose‑alanine cycle)."
+        },
+        {
+          "text": "Leucine",
+          "isCorrect": false,
+          "explanation": "Leucine is ketogenic, not glucogenic."
+        },
+        {
+          "text": "Lysine",
+          "isCorrect": false,
+          "explanation": "Lysine is ketogenic."
+        },
+        {
+          "text": "Tryptophan",
+          "isCorrect": false,
+          "explanation": "Tryptophan is both glucogenic and ketogenic, but alanine is the primary one."
+        },
+        {
+          "text": "Methionine",
+          "isCorrect": false,
+          "explanation": "Methionine is glucogenic, but alanine is the major carrier."
+        }
+      ],
+      "explanation": {
+        "overview": "During fasting, alanine is released from muscle and used by the liver for gluconeogenesis, maintaining blood glucose.",
+        "highYield": "Alanine is the major glucogenic amino acid from muscle breakdown.",
+        "clinicalCorrelation": "In catabolic states, alanine production increases."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_065",
+      "difficulty": 2,
+      "question": "During starvation, the liver increases gluconeogenesis from amino acids. Which amino acid is the major carrier of nitrogen from muscle?",
+      "image": null,
+      "options": [
+        {
+          "text": "Alanine",
+          "isCorrect": true,
+          "explanation": "Alanine carries nitrogen from muscle to liver; glutamine is also important but alanine is the primary gluconeogenic precursor."
+        },
+        {
+          "text": "Glutamine",
+          "isCorrect": false,
+          "explanation": "Glutamine also transports nitrogen, but alanine is more directly linked to gluconeogenesis."
+        },
+        {
+          "text": "Asparagine",
+          "isCorrect": false,
+          "explanation": "Not a major carrier."
+        },
+        {
+          "text": "Glycine",
+          "isCorrect": false,
+          "explanation": "Not the major carrier."
+        },
+        {
+          "text": "Serine",
+          "isCorrect": false,
+          "explanation": "Not the major carrier."
+        }
+      ],
+      "explanation": {
+        "overview": "Alanine is the primary amino acid that transports nitrogen from muscle to the liver, where it is used for urea synthesis and gluconeogenesis.",
+        "highYield": "The glucose‑alanine cycle is crucial for maintaining glucose during fasting.",
+        "clinicalCorrelation": "In sepsis or trauma, alanine release is increased."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_066",
+      "difficulty": 2,
+      "question": "The conversion of ornithine to putrescine is catalyzed by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Ornithine decarboxylase",
+          "isCorrect": true,
+          "explanation": "Ornithine decarboxylase (rate‑limiting in polyamine synthesis) produces putrescine."
+        },
+        {
+          "text": "Ornithine transcarbamylase",
+          "isCorrect": false,
+          "explanation": "This is a urea cycle enzyme."
+        },
+        {
+          "text": "Arginase",
+          "isCorrect": false,
+          "explanation": "This converts arginine to ornithine."
+        },
+        {
+          "text": "Arginine decarboxylase",
+          "isCorrect": false,
+          "explanation": "Not the main enzyme."
+        },
+        {
+          "text": "S‑adenosylmethionine decarboxylase",
+          "isCorrect": false,
+          "explanation": "This is involved in polyamine synthesis but not the conversion of ornithine to putrescine."
+        }
+      ],
+      "explanation": {
+        "overview": "Ornithine decarboxylase catalyzes the decarboxylation of ornithine to putrescine, the first step in polyamine synthesis.",
+        "highYield": "This enzyme is highly regulated and is a target for antiproliferative drugs.",
+        "clinicalCorrelation": "Inhibitors of ornithine decarboxylase are being studied for cancer therapy."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_067",
+      "difficulty": 2,
+      "question": "Putrescine is converted to spermidine by addition of an aminopropyl group from:",
+      "image": null,
+      "options": [
+        {
+          "text": "Decarboxylated SAM",
+          "isCorrect": true,
+          "explanation": "Decarboxylated S‑adenosylmethionine donates the aminopropyl group."
+        },
+        {
+          "text": "SAM",
+          "isCorrect": false,
+          "explanation": "SAM donates a methyl group, not an aminopropyl group; it must be decarboxylated first."
+        },
+        {
+          "text": "Methionine",
+          "isCorrect": false,
+          "explanation": "Methionine is not the direct donor."
+        },
+        {
+          "text": "Ornithine",
+          "isCorrect": false,
+          "explanation": "Ornithine is the precursor for putrescine."
+        },
+        {
+          "text": "Arginine",
+          "isCorrect": false,
+          "explanation": "Not involved."
+        }
+      ],
+      "explanation": {
+        "overview": "Polyamine synthesis uses decarboxylated S‑adenosylmethionine (dcSAM) as the aminopropyl donor, producing spermidine and spermine.",
+        "highYield": "dcSAM is formed by SAM decarboxylase, another key regulatory enzyme.",
+        "clinicalCorrelation": "Inhibition of SAM decarboxylase is also a target for cancer therapy."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_068",
+      "difficulty": 2,
+      "question": "Taurine, an important bile acid conjugate, is derived from:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cysteine",
+          "isCorrect": true,
+          "explanation": "Cysteine is oxidized to cysteine sulfinic acid, then decarboxylated to hypotaurine and oxidized to taurine."
+        },
+        {
+          "text": "Methionine",
+          "isCorrect": false,
+          "explanation": "Methionine is a precursor to cysteine, but taurine is directly from cysteine."
+        },
+        {
+          "text": "Serine",
+          "isCorrect": false,
+          "explanation": "Serine is not a precursor."
+        },
+        {
+          "text": "Glycine",
+          "isCorrect": false,
+          "explanation": "Glycine is used for bile acid conjugation (glycocholic acid), but taurine is from cysteine."
+        },
+        {
+          "text": "Glutamate",
+          "isCorrect": false,
+          "explanation": "Not involved."
+        }
+      ],
+      "explanation": {
+        "overview": "Taurine is synthesized from cysteine via cysteine sulfinic acid and hypotaurine; it is a key component of taurocholic acid, a major bile salt.",
+        "highYield": "Taurine is conditionally essential in infants.",
+        "clinicalCorrelation": "Taurine is found in high amounts in tissues and is used as a supplement."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_069",
+      "difficulty": 2,
+      "question": "The enzyme involved in the first step of heme synthesis, which condenses glycine and succinyl‑CoA, is:",
+      "image": null,
+      "options": [
+        {
+          "text": "δ‑aminolevulinic acid synthase (ALAS)",
+          "isCorrect": true,
+          "explanation": "ALAS (with PLP) is the rate‑limiting enzyme in heme synthesis."
+        },
+        {
+          "text": "Aminolevulinic acid dehydratase",
+          "isCorrect": false,
+          "explanation": "This is the second step, condensing two ALA molecules."
+        },
+        {
+          "text": "Porphobilinogen deaminase",
+          "isCorrect": false,
+          "explanation": "This is later in the pathway."
+        },
+        {
+          "text": "Uroporphyrinogen decarboxylase",
+          "isCorrect": false,
+          "explanation": "Later step."
+        },
+        {
+          "text": "Ferrochelatase",
+          "isCorrect": false,
+          "explanation": "Last step, inserting iron into protoporphyrin."
+        }
+      ],
+      "explanation": {
+        "overview": "Heme synthesis begins with the condensation of glycine and succinyl‑CoA to form δ‑aminolevulinic acid (ALA), catalyzed by ALAS.",
+        "highYield": "ALAS1 is the housekeeping form; ALAS2 is erythroid‑specific.",
+        "clinicalCorrelation": "ALAS1 is inhibited by heme feedback; lead poisoning inhibits later enzymes."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_070",
+      "difficulty": 2,
+      "question": "Lead poisoning inhibits which enzymes of heme synthesis?",
+      "image": null,
+      "options": [
+        {
+          "text": "δ‑aminolevulinic acid dehydratase and ferrochelatase",
+          "isCorrect": true,
+          "explanation": "Lead inhibits ALAD (causing ALA accumulation) and ferrochelatase (causing protoporphyrin accumulation)."
+        },
+        {
+          "text": "ALAS and porphobilinogen deaminase",
+          "isCorrect": false,
+          "explanation": "ALAS is not a target of lead; PBG deaminase is not inhibited."
+        },
+        {
+          "text": "Uroporphyrinogen decarboxylase and coproporphyrinogen oxidase",
+          "isCorrect": false,
+          "explanation": "These are not the main targets."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "Only ALAD and ferrochelatase are primarily inhibited."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "Lead does inhibit ALAD and ferrochelatase."
+        }
+      ],
+      "explanation": {
+        "overview": "Lead inhibits the heme synthesis enzymes δ‑aminolevulinic acid dehydratase (ALAD) and ferrochelatase, leading to accumulation of ALA and protoporphyrin.",
+        "highYield": "Elevated ALA and zinc protoporphyrin are markers of lead exposure.",
+        "clinicalCorrelation": "Lead poisoning causes microcytic anemia and neurological symptoms."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_071",
+      "difficulty": 2,
+      "question": "Which enzyme is deficient in acute intermittent porphyria (AIP)?",
+      "image": null,
+      "options": [
+        {
+          "text": "Porphobilinogen deaminase (hydroxymethylbilane synthase)",
+          "isCorrect": true,
+          "explanation": "AIP is due to deficiency of PBG deaminase, leading to accumulation of ALA and PBG."
+        },
+        {
+          "text": "ALAS",
+          "isCorrect": false,
+          "explanation": "ALAS is the first enzyme; deficiency would not cause porphyria."
+        },
+        {
+          "text": "Uroporphyrinogen III synthase",
+          "isCorrect": false,
+          "explanation": "This causes congenital erythropoietic porphyria."
+        },
+        {
+          "text": "Ferrochelatase",
+          "isCorrect": false,
+          "explanation": "This causes erythropoietic protoporphyria."
+        },
+        {
+          "text": "Coproporphyrinogen oxidase",
+          "isCorrect": false,
+          "explanation": "This causes hereditary coproporphyria."
+        }
+      ],
+      "explanation": {
+        "overview": "AIP is the most common acute porphyria, caused by porphobilinogen deaminase deficiency, leading to accumulation of porphyrin precursors.",
+        "highYield": "Acute attacks are precipitated by drugs, fasting, and hormones.",
+        "clinicalCorrelation": "Treatment includes hemin infusion and avoidance of triggers."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_072",
+      "difficulty": 2,
+      "question": "The enzyme that converts homocysteine to cystathionine is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cystathionine β‑synthase",
+          "isCorrect": true,
+          "explanation": "CBS condenses homocysteine and serine to cystathionine, the first step in transsulfuration."
+        },
+        {
+          "text": "Cystathionine γ‑lyase",
+          "isCorrect": false,
+          "explanation": "This converts cystathionine to cysteine."
+        },
+        {
+          "text": "Methionine synthase",
+          "isCorrect": false,
+          "explanation": "This remethylates homocysteine to methionine."
+        },
+        {
+          "text": "Methionine adenosyltransferase",
+          "isCorrect": false,
+          "explanation": "This synthesizes SAM."
+        },
+        {
+          "text": "Betaine‑homocysteine methyltransferase",
+          "isCorrect": false,
+          "explanation": "This also remethylates homocysteine."
+        }
+      ],
+      "explanation": {
+        "overview": "Cystathionine β‑synthase is the enzyme that initiates the transsulfuration pathway, converting homocysteine to cystathionine.",
+        "highYield": "Deficiency causes homocystinuria.",
+        "clinicalCorrelation": "Vitamin B6 (pyridoxine) is a cofactor for CBS; some patients respond to high doses."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_073",
+      "difficulty": 2,
+      "question": "Which amino acid is a precursor for the neurotransmitter serotonin?",
+      "image": null,
+      "options": [
+        {
+          "text": "Tryptophan",
+          "isCorrect": true,
+          "explanation": "Serotonin is synthesized from tryptophan via 5‑hydroxytryptophan."
+        },
+        {
+          "text": "Tyrosine",
+          "isCorrect": false,
+          "explanation": "Tyrosine is a precursor for catecholamines."
+        },
+        {
+          "text": "Histidine",
+          "isCorrect": false,
+          "explanation": "Histidine is a precursor for histamine."
+        },
+        {
+          "text": "Glutamate",
+          "isCorrect": false,
+          "explanation": "Glutamate is a precursor for GABA."
+        },
+        {
+          "text": "Glycine",
+          "isCorrect": false,
+          "explanation": "Glycine is a neurotransmitter itself, not a precursor for serotonin."
+        }
+      ],
+      "explanation": {
+        "overview": "Serotonin (5‑hydroxytryptamine) is synthesized from the essential amino acid tryptophan.",
+        "highYield": "Tryptophan hydroxylase is the rate‑limiting enzyme.",
+        "clinicalCorrelation": "Tryptophan depletion can lower serotonin levels and affect mood."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_074",
+      "difficulty": 2,
+      "question": "Which amino acid is a precursor for the neurotransmitter dopamine?",
+      "image": null,
+      "options": [
+        {
+          "text": "Tyrosine",
+          "isCorrect": true,
+          "explanation": "Dopamine is synthesized from tyrosine via L‑DOPA."
+        },
+        {
+          "text": "Tryptophan",
+          "isCorrect": false,
+          "explanation": "Tryptophan is for serotonin."
+        },
+        {
+          "text": "Histidine",
+          "isCorrect": false,
+          "explanation": "Histidine is for histamine."
+        },
+        {
+          "text": "Glutamate",
+          "isCorrect": false,
+          "explanation": "Glutamate is a neurotransmitter itself and precursor to GABA."
+        },
+        {
+          "text": "Glycine",
+          "isCorrect": false,
+          "explanation": "Glycine is a neurotransmitter."
+        }
+      ],
+      "explanation": {
+        "overview": "Dopamine is derived from tyrosine, which is hydroxylated to L‑DOPA and then decarboxylated to dopamine.",
+        "highYield": "Tyrosine hydroxylase is the rate‑limiting step.",
+        "clinicalCorrelation": "L‑DOPA is used to treat Parkinson's disease."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_075",
+      "difficulty": 2,
+      "question": "Which amino acid is a precursor for the neurotransmitter GABA?",
+      "image": null,
+      "options": [
+        {
+          "text": "Glutamate",
+          "isCorrect": true,
+          "explanation": "GABA is synthesized from glutamate by glutamate decarboxylase."
+        },
+        {
+          "text": "Tyrosine",
+          "isCorrect": false,
+          "explanation": "Tyrosine is for catecholamines."
+        },
+        {
+          "text": "Tryptophan",
+          "isCorrect": false,
+          "explanation": "Tryptophan is for serotonin."
+        },
+        {
+          "text": "Histidine",
+          "isCorrect": false,
+          "explanation": "Histidine is for histamine."
+        },
+        {
+          "text": "Glycine",
+          "isCorrect": false,
+          "explanation": "Glycine is a neurotransmitter itself."
+        }
+      ],
+      "explanation": {
+        "overview": "GABA (γ‑aminobutyric acid) is synthesized from glutamate by glutamate decarboxylase, which requires PLP.",
+        "highYield": "GABA is the main inhibitory neurotransmitter in the CNS.",
+        "clinicalCorrelation": "GABAergic drugs are used for anxiety, epilepsy, and sleep disorders."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_076",
+      "difficulty": 2,
+      "question": "The amino acid that is a precursor for nitric oxide (NO) is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Arginine",
+          "isCorrect": true,
+          "explanation": "Nitric oxide synthase converts arginine to citrulline and NO."
+        },
+        {
+          "text": "Citrulline",
+          "isCorrect": false,
+          "explanation": "Citrulline is a product, not a precursor."
+        },
+        {
+          "text": "Ornithine",
+          "isCorrect": false,
+          "explanation": "Ornithine is not a precursor for NO."
+        },
+        {
+          "text": "Lysine",
+          "isCorrect": false,
+          "explanation": "Lysine is not involved."
+        },
+        {
+          "text": "Histidine",
+          "isCorrect": false,
+          "explanation": "Histidine is for histamine."
+        }
+      ],
+      "explanation": {
+        "overview": "Nitric oxide is synthesized from L‑arginine by nitric oxide synthase (NOS) in endothelial cells, neurons, and immune cells.",
+        "highYield": "NO is a potent vasodilator and a signaling molecule.",
+        "clinicalCorrelation": "NOS inhibitors and NO donors are used therapeutically."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_077",
+      "difficulty": 2,
+      "question": "In the urea cycle, which enzyme catalyzes the formation of citrulline?",
+      "image": null,
+      "options": [
+        {
+          "text": "Ornithine transcarbamylase",
+          "isCorrect": true,
+          "explanation": "OTC transfers carbamoyl phosphate to ornithine, forming citrulline."
+        },
+        {
+          "text": "Carbamoyl phosphate synthetase I",
+          "isCorrect": false,
+          "explanation": "This produces carbamoyl phosphate, not citrulline."
+        },
+        {
+          "text": "Argininosuccinate synthetase",
+          "isCorrect": false,
+          "explanation": "This condenses citrulline and aspartate."
+        },
+        {
+          "text": "Argininosuccinate lyase",
+          "isCorrect": false,
+          "explanation": "This cleaves argininosuccinate."
+        },
+        {
+          "text": "Arginase",
+          "isCorrect": false,
+          "explanation": "This produces urea."
+        }
+      ],
+      "explanation": {
+        "overview": "Citrulline is synthesized from ornithine and carbamoyl phosphate by ornithine transcarbamylase in the mitochondria.",
+        "highYield": "OTC deficiency is the most common urea cycle disorder.",
+        "clinicalCorrelation": "OTC deficiency causes hyperammonemia and orotic aciduria."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_078",
+      "difficulty": 2,
+      "question": "Which enzyme is deficient in type I tyrosinemia?",
+      "image": null,
+      "options": [
+        {
+          "text": "Fumarylacetoacetate hydrolase",
+          "isCorrect": true,
+          "explanation": "Type I tyrosinemia (hepatorenal) is due to fumarylacetoacetate hydrolase deficiency, causing accumulation of toxic intermediates."
+        },
+        {
+          "text": "Tyrosine aminotransferase",
+          "isCorrect": false,
+          "explanation": "This causes type II tyrosinemia (oculocutaneous)."
+        },
+        {
+          "text": "4‑hydroxyphenylpyruvate dioxygenase",
+          "isCorrect": false,
+          "explanation": "This causes type III tyrosinemia."
+        },
+        {
+          "text": "Homogentisate oxidase",
+          "isCorrect": false,
+          "explanation": "This causes alkaptonuria."
+        },
+        {
+          "text": "Phenylalanine hydroxylase",
+          "isCorrect": false,
+          "explanation": "This causes PKU."
+        }
+      ],
+      "explanation": {
+        "overview": "Type I tyrosinemia is caused by fumarylacetoacetate hydrolase deficiency, leading to liver failure and renal dysfunction.",
+        "highYield": "Succinylacetone is a diagnostic marker; treatment includes nitisinone.",
+        "clinicalCorrelation": "Nitisinone inhibits 4‑hydroxyphenylpyruvate dioxygenase, reducing toxic metabolites."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_079",
+      "difficulty": 2,
+      "question": "The amino acid that is a precursor for the neurotransmitter histamine is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Histidine",
+          "isCorrect": true,
+          "explanation": "Histidine is decarboxylated to histamine."
+        },
+        {
+          "text": "Tyrosine",
+          "isCorrect": false,
+          "explanation": "Tyrosine is for catecholamines."
+        },
+        {
+          "text": "Tryptophan",
+          "isCorrect": false,
+          "explanation": "Tryptophan is for serotonin."
+        },
+        {
+          "text": "Glutamate",
+          "isCorrect": false,
+          "explanation": "Glutamate is for GABA."
+        },
+        {
+          "text": "Glycine",
+          "isCorrect": false,
+          "explanation": "Glycine is a neurotransmitter itself."
+        }
+      ],
+      "explanation": {
+        "overview": "Histamine is synthesized from histidine by histidine decarboxylase.",
+        "highYield": "Histamine is involved in allergic responses and gastric acid secretion.",
+        "clinicalCorrelation": "Antihistamines are used to block histamine receptors."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_080",
+      "difficulty": 2,
+      "question": "The amino acid that is a precursor for the synthesis of creatine is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glycine, arginine, and methionine",
+          "isCorrect": true,
+          "explanation": "Creatine requires glycine, arginine (as amidino donor), and methionine (for methyl group)."
+        },
+        {
+          "text": "Glycine and glutamate",
+          "isCorrect": false,
+          "explanation": "Glutamate is not involved."
+        },
+        {
+          "text": "Arginine and ornithine",
+          "isCorrect": false,
+          "explanation": "Ornithine is not a precursor."
+        },
+        {
+          "text": "Methionine and lysine",
+          "isCorrect": false,
+          "explanation": "Lysine is not involved."
+        },
+        {
+          "text": "Glycine and aspartate",
+          "isCorrect": false,
+          "explanation": "Aspartate is not a precursor."
+        }
+      ],
+      "explanation": {
+        "overview": "Creatine is synthesized from glycine, arginine, and methionine (as SAM) in the kidney and liver.",
+        "highYield": "Creatine phosphate is a high‑energy phosphate buffer.",
+        "clinicalCorrelation": "Creatine supplementation is used in sports and some neuromuscular disorders."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_081",
+      "difficulty": 2,
+      "question": "Which of the following is a ketogenic amino acid?",
+      "image": null,
+      "options": [
+        {
+          "text": "Leucine",
+          "isCorrect": true,
+          "explanation": "Leucine is purely ketogenic."
+        },
+        {
+          "text": "Alanine",
+          "isCorrect": false,
+          "explanation": "Alanine is glucogenic."
+        },
+        {
+          "text": "Aspartate",
+          "isCorrect": false,
+          "explanation": "Aspartate is glucogenic."
+        },
+        {
+          "text": "Glutamate",
+          "isCorrect": false,
+          "explanation": "Glutamate is glucogenic."
+        },
+        {
+          "text": "Arginine",
+          "isCorrect": false,
+          "explanation": "Arginine is glucogenic."
+        }
+      ],
+      "explanation": {
+        "overview": "Leucine is a purely ketogenic amino acid; its carbon skeleton yields acetyl‑CoA and acetoacetate.",
+        "highYield": "Lysine is the other purely ketogenic amino acid.",
+        "clinicalCorrelation": "In diabetes, ketogenic amino acids contribute to ketoacidosis."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_082",
+      "difficulty": 2,
+      "question": "Which amino acid is both glucogenic and ketogenic?",
+      "image": null,
+      "options": [
+        {
+          "text": "Phenylalanine",
+          "isCorrect": true,
+          "explanation": "Phenylalanine yields fumarate (glucogenic) and acetyl‑CoA (ketogenic)."
+        },
+        {
+          "text": "Leucine",
+          "isCorrect": false,
+          "explanation": "Leucine is purely ketogenic."
+        },
+        {
+          "text": "Lysine",
+          "isCorrect": false,
+          "explanation": "Lysine is purely ketogenic."
+        },
+        {
+          "text": "Valine",
+          "isCorrect": false,
+          "explanation": "Valine is glucogenic only."
+        },
+        {
+          "text": "Methionine",
+          "isCorrect": false,
+          "explanation": "Methionine is glucogenic only."
+        }
+      ],
+      "explanation": {
+        "overview": "Phenylalanine, tyrosine, tryptophan, and isoleucine are both glucogenic and ketogenic.",
+        "highYield": "These amino acids can contribute to both glucose and ketone body production.",
+        "clinicalCorrelation": "In metabolic stress, they serve as versatile fuel sources."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_083",
+      "difficulty": 2,
+      "question": "The enzyme that catalyzes the conversion of phenylalanine to tyrosine is defective in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Phenylketonuria",
+          "isCorrect": true,
+          "explanation": "PKU is due to phenylalanine hydroxylase deficiency."
+        },
+        {
+          "text": "Alkaptonuria",
+          "isCorrect": false,
+          "explanation": "Alkaptonuria is due to homogentisate oxidase deficiency."
+        },
+        {
+          "text": "Albinism",
+          "isCorrect": false,
+          "explanation": "Albinism is due to tyrosinase deficiency."
+        },
+        {
+          "text": "Tyrosinemia",
+          "isCorrect": false,
+          "explanation": "Tyrosinemia involves defects in tyrosine catabolism downstream."
+        },
+        {
+          "text": "Homocystinuria",
+          "isCorrect": false,
+          "explanation": "Homocystinuria is due to cystathionine β‑synthase deficiency."
+        }
+      ],
+      "explanation": {
+        "overview": "Phenylketonuria is caused by deficiency of phenylalanine hydroxylase, leading to accumulation of phenylalanine.",
+        "highYield": "Early detection and dietary management prevent intellectual disability.",
+        "clinicalCorrelation": "Newborn screening is routine."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_084",
+      "difficulty": 2,
+      "question": "Which of the following is a urea cycle disorder that presents with hyperammonemia but no orotic aciduria?",
+      "image": null,
+      "options": [
+        {
+          "text": "Carbamoyl phosphate synthetase I deficiency",
+          "isCorrect": true,
+          "explanation": "CPS I deficiency does not cause orotic aciduria because carbamoyl phosphate is not produced."
+        },
+        {
+          "text": "Ornithine transcarbamylase deficiency",
+          "isCorrect": false,
+          "explanation": "OTCD causes orotic aciduria due to carbamoyl phosphate spillover."
+        },
+        {
+          "text": "Citrullinemia",
+          "isCorrect": false,
+          "explanation": "Citrullinemia may have orotic aciduria if hyperammonemia is severe."
+        },
+        {
+          "text": "Argininosuccinic aciduria",
+          "isCorrect": false,
+          "explanation": "This does not typically cause orotic aciduria."
+        },
+        {
+          "text": "Arginase deficiency",
+          "isCorrect": false,
+          "explanation": "Arginase deficiency does not cause orotic aciduria."
+        }
+      ],
+      "explanation": {
+        "overview": "CPS I deficiency results in hyperammonemia without orotic aciduria, because carbamoyl phosphate is not formed.",
+        "highYield": "Orotic aciduria is characteristic of OTC deficiency and lysinuric protein intolerance.",
+        "clinicalCorrelation": "Differentiating between CPS I and OTC deficiency requires measuring orotic acid."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_085",
+      "difficulty": 2,
+      "question": "The amino acid that is a precursor for melanin synthesis is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Tyrosine",
+          "isCorrect": true,
+          "explanation": "Melanin is synthesized from tyrosine via DOPA and DOPAquinone."
+        },
+        {
+          "text": "Tryptophan",
+          "isCorrect": false,
+          "explanation": "Tryptophan is for serotonin."
+        },
+        {
+          "text": "Histidine",
+          "isCorrect": false,
+          "explanation": "Histidine is for histamine."
+        },
+        {
+          "text": "Glutamate",
+          "isCorrect": false,
+          "explanation": "Glutamate is for GABA."
+        },
+        {
+          "text": "Glycine",
+          "isCorrect": false,
+          "explanation": "Glycine is not involved in melanin synthesis."
+        }
+      ],
+      "explanation": {
+        "overview": "Melanin is a pigment derived from tyrosine; tyrosinase catalyzes the rate‑limiting step.",
+        "highYield": "Deficiency causes albinism.",
+        "clinicalCorrelation": "Melanin protects skin from UV damage."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_086",
+      "difficulty": 2,
+      "question": "Which enzyme is deficient in type II tyrosinemia?",
+      "image": null,
+      "options": [
+        {
+          "text": "Tyrosine aminotransferase",
+          "isCorrect": true,
+          "explanation": "Type II tyrosinemia (Richner‑Hanhart syndrome) is due to tyrosine aminotransferase deficiency, leading to corneal lesions and skin changes."
+        },
+        {
+          "text": "Fumarylacetoacetate hydrolase",
+          "isCorrect": false,
+          "explanation": "This causes type I tyrosinemia."
+        },
+        {
+          "text": "4‑hydroxyphenylpyruvate dioxygenase",
+          "isCorrect": false,
+          "explanation": "This causes type III tyrosinemia."
+        },
+        {
+          "text": "Homogentisate oxidase",
+          "isCorrect": false,
+          "explanation": "This causes alkaptonuria."
+        },
+        {
+          "text": "Phenylalanine hydroxylase",
+          "isCorrect": false,
+          "explanation": "This causes PKU."
+        }
+      ],
+      "explanation": {
+        "overview": "Type II tyrosinemia is caused by tyrosine aminotransferase deficiency, characterized by ocular and cutaneous manifestations.",
+        "highYield": "Patients may also have intellectual disability.",
+        "clinicalCorrelation": "Treatment includes dietary tyrosine and phenylalanine restriction."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_087",
+      "difficulty": 2,
+      "question": "The branched‑chain α‑keto acid dehydrogenase complex requires which cofactor?",
+      "image": null,
+      "options": [
+        {
+          "text": "Thiamine pyrophosphate",
+          "isCorrect": true,
+          "explanation": "The complex is similar to pyruvate dehydrogenase and requires TPP, lipoic acid, FAD, NAD+, and CoA."
+        },
+        {
+          "text": "Biotin",
+          "isCorrect": false,
+          "explanation": "Biotin is for carboxylases."
+        },
+        {
+          "text": "PLP",
+          "isCorrect": false,
+          "explanation": "PLP is for transaminases and decarboxylases."
+        },
+        {
+          "text": "Methylcobalamin",
+          "isCorrect": false,
+          "explanation": "This is for methionine synthase."
+        },
+        {
+          "text": "Tetrahydrobiopterin",
+          "isCorrect": false,
+          "explanation": "This is for aromatic amino acid hydroxylases."
+        }
+      ],
+      "explanation": {
+        "overview": "Branched‑chain α‑keto acid dehydrogenase uses TPP as a cofactor for the decarboxylation step, similar to pyruvate dehydrogenase.",
+        "highYield": "Deficiency causes maple syrup urine disease.",
+        "clinicalCorrelation": "Thiamine supplementation may help in some variants."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_088",
+      "difficulty": 2,
+      "question": "Which of the following is an essential amino acid?",
+      "image": null,
+      "options": [
+        {
+          "text": "Threonine",
+          "isCorrect": true,
+          "explanation": "Threonine is essential; it must be obtained from the diet."
+        },
+        {
+          "text": "Alanine",
+          "isCorrect": false,
+          "explanation": "Alanine is non‑essential."
+        },
+        {
+          "text": "Asparagine",
+          "isCorrect": false,
+          "explanation": "Asparagine is non‑essential."
+        },
+        {
+          "text": "Glutamine",
+          "isCorrect": false,
+          "explanation": "Glutamine is conditionally essential but not essential in health."
+        },
+        {
+          "text": "Glycine",
+          "isCorrect": false,
+          "explanation": "Glycine is non‑essential."
+        }
+      ],
+      "explanation": {
+        "overview": "Essential amino acids include phenylalanine, valine, threonine, tryptophan, methionine, leucine, isoleucine, lysine, and histidine.",
+        "highYield": "Mnemonic: PVT TIM HALL.",
+        "clinicalCorrelation": "Essential amino acid deficiency leads to protein malnutrition."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_089",
+      "difficulty": 2,
+      "question": "Which of the following is a conditionally essential amino acid?",
+      "image": null,
+      "options": [
+        {
+          "text": "Arginine",
+          "isCorrect": true,
+          "explanation": "Arginine is essential in children and under stress, but not in healthy adults."
+        },
+        {
+          "text": "Lysine",
+          "isCorrect": false,
+          "explanation": "Lysine is always essential."
+        },
+        {
+          "text": "Leucine",
+          "isCorrect": false,
+          "explanation": "Leucine is essential."
+        },
+        {
+          "text": "Methionine",
+          "isCorrect": false,
+          "explanation": "Methionine is essential."
+        },
+        {
+          "text": "Phenylalanine",
+          "isCorrect": false,
+          "explanation": "Phenylalanine is essential."
+        }
+      ],
+      "explanation": {
+        "overview": "Conditionally essential amino acids (arginine, cysteine, glutamine, glycine, proline, tyrosine) are not normally essential but become so in certain conditions.",
+        "highYield": "Arginine is essential in children for growth.",
+        "clinicalCorrelation": "Supplementation may be needed in catabolic states."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_090",
+      "difficulty": 2,
+      "question": "The enzyme that catalyzes the synthesis of glutathione is:",
+      "image": null,
+      "options": [
+        {
+          "text": "γ‑glutamylcysteine synthetase and glutathione synthetase",
+          "isCorrect": true,
+          "explanation": "GSH synthesis occurs in two ATP‑dependent steps: γ‑Glu‑Cys formation, then addition of glycine."
+        },
+        {
+          "text": "Glutathione peroxidase",
+          "isCorrect": false,
+          "explanation": "This enzyme uses GSH to reduce peroxides."
+        },
+        {
+          "text": "Glutathione reductase",
+          "isCorrect": false,
+          "explanation": "This reduces GSSG to GSH."
+        },
+        {
+          "text": "γ‑glutamyl transferase",
+          "isCorrect": false,
+          "explanation": "This is involved in amino acid transport."
+        },
+        {
+          "text": "Glutaminase",
+          "isCorrect": false,
+          "explanation": "This converts glutamine to glutamate."
+        }
+      ],
+      "explanation": {
+        "overview": "Glutathione is synthesized by the sequential action of γ‑glutamylcysteine synthetase (rate‑limiting) and glutathione synthetase.",
+        "highYield": "Cysteine is the limiting substrate for GSH synthesis.",
+        "clinicalCorrelation": "GSH depletion occurs in oxidative stress and many diseases."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_091",
+      "difficulty": 2,
+      "question": "The enzyme that reduces oxidized glutathione (GSSG) to GSH is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glutathione reductase",
+          "isCorrect": true,
+          "explanation": "GSH reductase uses NADPH to convert GSSG to GSH."
+        },
+        {
+          "text": "Glutathione peroxidase",
+          "isCorrect": false,
+          "explanation": "This enzyme oxidizes GSH to GSSG while reducing peroxides."
+        },
+        {
+          "text": "Glutathione synthetase",
+          "isCorrect": false,
+          "explanation": "This synthesizes GSH from its precursors."
+        },
+        {
+          "text": "γ‑glutamylcysteine synthetase",
+          "isCorrect": false,
+          "explanation": "This is the first enzyme in GSH synthesis."
+        },
+        {
+          "text": "γ‑glutamyl transferase",
+          "isCorrect": false,
+          "explanation": "This is involved in amino acid transport."
+        }
+      ],
+      "explanation": {
+        "overview": "Glutathione reductase regenerates GSH from GSSG, using NADPH as the reducing power.",
+        "highYield": "NADPH is generated primarily by the pentose phosphate pathway.",
+        "clinicalCorrelation": "G6PD deficiency impairs NADPH production, leading to GSH depletion and hemolysis."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_092",
+      "difficulty": 2,
+      "question": "Which amino acid is the precursor for the bile acid conjugation with glycine?",
+      "image": null,
+      "options": [
+        {
+          "text": "Glycine",
+          "isCorrect": true,
+          "explanation": "Bile acids are conjugated with glycine or taurine in the liver."
+        },
+        {
+          "text": "Taurine",
+          "isCorrect": false,
+          "explanation": "Taurine is also used for conjugation, but glycine is the amino acid."
+        },
+        {
+          "text": "Cysteine",
+          "isCorrect": false,
+          "explanation": "Cysteine is a precursor of taurine, but not directly for conjugation."
+        },
+        {
+          "text": "Serine",
+          "isCorrect": false,
+          "explanation": "Serine is not used for bile acid conjugation."
+        },
+        {
+          "text": "Glutamine",
+          "isCorrect": false,
+          "explanation": "Not used."
+        }
+      ],
+      "explanation": {
+        "overview": "Bile acids are conjugated with glycine or taurine to increase water solubility and secretion.",
+        "highYield": "Glycine conjugates are predominant in humans.",
+        "clinicalCorrelation": "Bile acid sequestrants bind bile acids and increase their excretion."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_093",
+      "difficulty": 2,
+      "question": "The enzyme that catalyzes the formation of carbamoyl phosphate in mitochondria is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Carbamoyl phosphate synthetase I",
+          "isCorrect": true,
+          "explanation": "CPS I is mitochondrial and uses ammonia as substrate."
+        },
+        {
+          "text": "Carbamoyl phosphate synthetase II",
+          "isCorrect": false,
+          "explanation": "CPS II is cytosolic and uses glutamine; it is involved in pyrimidine synthesis."
+        },
+        {
+          "text": "Ornithine transcarbamylase",
+          "isCorrect": false,
+          "explanation": "This transfers carbamoyl to ornithine."
+        },
+        {
+          "text": "Argininosuccinate synthetase",
+          "isCorrect": false,
+          "explanation": "This is in the urea cycle, not CPS."
+        },
+        {
+          "text": "Arginase",
+          "isCorrect": false,
+          "explanation": "This hydrolyzes arginine."
+        }
+      ],
+      "explanation": {
+        "overview": "CPS I is the mitochondrial enzyme that initiates the urea cycle, producing carbamoyl phosphate from ammonia and bicarbonate.",
+        "highYield": "It is activated by N‑acetylglutamate.",
+        "clinicalCorrelation": "CPS I deficiency causes hyperammonemia without orotic aciduria."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_094",
+      "difficulty": 2,
+      "question": "The enzyme that catalyzes the formation of carbamoyl phosphate in the cytosol for pyrimidine synthesis is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Carbamoyl phosphate synthetase II",
+          "isCorrect": true,
+          "explanation": "CPS II is cytosolic, uses glutamine, and is involved in pyrimidine synthesis."
+        },
+        {
+          "text": "Carbamoyl phosphate synthetase I",
+          "isCorrect": false,
+          "explanation": "CPS I is mitochondrial and in the urea cycle."
+        },
+        {
+          "text": "Ornithine transcarbamylase",
+          "isCorrect": false,
+          "explanation": "This is not a synthetase."
+        },
+        {
+          "text": "Aspartate transcarbamoylase",
+          "isCorrect": false,
+          "explanation": "This uses carbamoyl phosphate, but is not the synthetase."
+        },
+        {
+          "text": "Glutamine synthetase",
+          "isCorrect": false,
+          "explanation": "This synthesizes glutamine."
+        }
+      ],
+      "explanation": {
+        "overview": "CPS II is the cytosolic enzyme that produces carbamoyl phosphate for pyrimidine biosynthesis, using glutamine as the nitrogen donor.",
+        "highYield": "CPS II is regulated by UTP and PRPP.",
+        "clinicalCorrelation": "Orotic aciduria can occur due to CPS II or OTC defects."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_095",
+      "difficulty": 2,
+      "question": "The amino acid that is a precursor for the synthesis of polyamines is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Ornithine",
+          "isCorrect": true,
+          "explanation": "Ornithine is decarboxylated to putrescine, the first step in polyamine synthesis."
+        },
+        {
+          "text": "Arginine",
+          "isCorrect": false,
+          "explanation": "Arginine is a precursor of ornithine, but ornithine is the direct precursor."
+        },
+        {
+          "text": "Lysine",
+          "isCorrect": false,
+          "explanation": "Lysine is not a precursor for polyamines."
+        },
+        {
+          "text": "Glutamate",
+          "isCorrect": false,
+          "explanation": "Glutamate is not a direct precursor."
+        },
+        {
+          "text": "Methionine",
+          "isCorrect": false,
+          "explanation": "Methionine provides aminopropyl groups but is not the primary precursor."
+        }
+      ],
+      "explanation": {
+        "overview": "Ornithine is the direct precursor for putrescine, the first polyamine, via ornithine decarboxylase.",
+        "highYield": "Polyamines are essential for cell growth and proliferation.",
+        "clinicalCorrelation": "Ornithine decarboxylase inhibitors are being studied as anticancer agents."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_096",
+      "difficulty": 2,
+      "question": "Which of the following is a sulfur‑containing amino acid?",
+      "image": null,
+      "options": [
+        {
+          "text": "Methionine",
+          "isCorrect": true,
+          "explanation": "Methionine and cysteine are sulfur‑containing."
+        },
+        {
+          "text": "Lysine",
+          "isCorrect": false,
+          "explanation": "Lysine does not contain sulfur."
+        },
+        {
+          "text": "Threonine",
+          "isCorrect": false,
+          "explanation": "Threonine does not contain sulfur."
+        },
+        {
+          "text": "Tryptophan",
+          "isCorrect": false,
+          "explanation": "Tryptophan contains nitrogen but not sulfur."
+        },
+        {
+          "text": "Valine",
+          "isCorrect": false,
+          "explanation": "Valine does not contain sulfur."
+        }
+      ],
+      "explanation": {
+        "overview": "Sulfur‑containing amino acids are methionine and cysteine; methionine is essential, cysteine is conditionally essential.",
+        "highYield": "Cysteine is important for glutathione synthesis.",
+        "clinicalCorrelation": "Defects in sulfur amino acid metabolism can cause homocystinuria and cystinuria."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_097",
+      "difficulty": 2,
+      "question": "The enzyme that converts cystathionine to cysteine is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cystathionine γ‑lyase",
+          "isCorrect": true,
+          "explanation": "This enzyme cleaves cystathionine to cysteine, α‑ketobutyrate, and ammonia."
+        },
+        {
+          "text": "Cystathionine β‑synthase",
+          "isCorrect": false,
+          "explanation": "This synthesizes cystathionine from homocysteine and serine."
+        },
+        {
+          "text": "Methionine synthase",
+          "isCorrect": false,
+          "explanation": "This converts homocysteine to methionine."
+        },
+        {
+          "text": "Betaine‑homocysteine methyltransferase",
+          "isCorrect": false,
+          "explanation": "This also remethylates homocysteine."
+        },
+        {
+          "text": "S‑adenosylhomocysteine hydrolase",
+          "isCorrect": false,
+          "explanation": "This hydrolyzes SAH."
+        }
+      ],
+      "explanation": {
+        "overview": "Cystathionine γ‑lyase catalyzes the final step of transsulfuration, producing cysteine from cystathionine.",
+        "highYield": "This enzyme requires vitamin B6 (PLP) as a cofactor.",
+        "clinicalCorrelation": "Deficiency is rare but can cause cystathioninuria."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_098",
+      "difficulty": 2,
+      "question": "The amino acid that is a precursor for the synthesis of carnitine is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Lysine and methionine",
+          "isCorrect": true,
+          "explanation": "Carnitine is synthesized from lysine (methylation from SAM) in the liver and kidney."
+        },
+        {
+          "text": "Arginine and glycine",
+          "isCorrect": false,
+          "explanation": "Arginine and glycine are for creatine synthesis."
+        },
+        {
+          "text": "Tryptophan and tyrosine",
+          "isCorrect": false,
+          "explanation": "These are for neurotransmitters."
+        },
+        {
+          "text": "Glutamate and proline",
+          "isCorrect": false,
+          "explanation": "Not involved."
+        },
+        {
+          "text": "Histidine and cysteine",
+          "isCorrect": false,
+          "explanation": "Not involved."
+        }
+      ],
+      "explanation": {
+        "overview": "Carnitine is synthesized from lysine, with methyl groups from S‑adenosylmethionine, in the liver and kidney.",
+        "highYield": "Carnitine is essential for fatty acid transport into mitochondria.",
+        "clinicalCorrelation": "Carnitine deficiency can cause cardiomyopathy and muscle weakness."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_099",
+      "difficulty": 2,
+      "question": "The amino acid that is a precursor for the synthesis of melanin is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Tyrosine",
+          "isCorrect": true,
+          "explanation": "Tyrosine is the precursor for melanin synthesis."
+        },
+        {
+          "text": "Tryptophan",
+          "isCorrect": false,
+          "explanation": "Tryptophan is for serotonin."
+        },
+        {
+          "text": "Histidine",
+          "isCorrect": false,
+          "explanation": "Histidine is for histamine."
+        },
+        {
+          "text": "Glutamate",
+          "isCorrect": false,
+          "explanation": "Glutamate is for GABA."
+        },
+        {
+          "text": "Glycine",
+          "isCorrect": false,
+          "explanation": "Glycine is not involved."
+        }
+      ],
+      "explanation": {
+        "overview": "Melanin is a pigment derived from tyrosine via tyrosinase.",
+        "highYield": "Deficiency in tyrosinase causes albinism.",
+        "clinicalCorrelation": "Melanin protects skin from UV damage."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_100",
+      "difficulty": 2,
+      "question": "Which of the following is a glucogenic amino acid?",
+      "image": null,
+      "options": [
+        {
+          "text": "Aspartate",
+          "isCorrect": true,
+          "explanation": "Aspartate is glucogenic; it forms oxaloacetate."
+        },
+        {
+          "text": "Leucine",
+          "isCorrect": false,
+          "explanation": "Leucine is ketogenic."
+        },
+        {
+          "text": "Lysine",
+          "isCorrect": false,
+          "explanation": "Lysine is ketogenic."
+        },
+        {
+          "text": "Isoleucine",
+          "isCorrect": false,
+          "explanation": "Isoleucine is both, but not purely glucogenic."
+        },
+        {
+          "text": "Phenylalanine",
+          "isCorrect": false,
+          "explanation": "Phenylalanine is both."
+        }
+      ],
+      "explanation": {
+        "overview": "Glucogenic amino acids yield intermediates that can be used for gluconeogenesis.",
+        "highYield": "Most amino acids are glucogenic.",
+        "clinicalCorrelation": "During fasting, glucogenic amino acids support glucose production."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_101",
+      "difficulty": 2,
+      "question": "The enzyme that catalyzes the transamination of aspartate is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Aspartate aminotransferase (AST)",
+          "isCorrect": true,
+          "explanation": "AST catalyzes aspartate + α‑ketoglutarate ↔ oxaloacetate + glutamate."
+        },
+        {
+          "text": "Alanine aminotransferase (ALT)",
+          "isCorrect": false,
+          "explanation": "ALT uses alanine."
+        },
+        {
+          "text": "Glutamate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "This deaminates glutamate."
+        },
+        {
+          "text": "Glutamine synthetase",
+          "isCorrect": false,
+          "explanation": "This synthesizes glutamine."
+        },
+        {
+          "text": "Glutaminase",
+          "isCorrect": false,
+          "explanation": "This converts glutamine to glutamate."
+        }
+      ],
+      "explanation": {
+        "overview": "AST (SGOT) is the enzyme that transaminates aspartate and α‑ketoglutarate to oxaloacetate and glutamate.",
+        "highYield": "AST is found in liver, heart, and muscle.",
+        "clinicalCorrelation": "Elevated AST is a marker of liver damage, but less specific than ALT."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_102",
+      "difficulty": 2,
+      "question": "The enzyme that catalyzes the transamination of alanine is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Alanine aminotransferase (ALT)",
+          "isCorrect": true,
+          "explanation": "ALT catalyzes alanine + α‑ketoglutarate ↔ pyruvate + glutamate."
+        },
+        {
+          "text": "Aspartate aminotransferase (AST)",
+          "isCorrect": false,
+          "explanation": "AST uses aspartate."
+        },
+        {
+          "text": "Glutamate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "This deaminates glutamate."
+        },
+        {
+          "text": "Glutamine synthetase",
+          "isCorrect": false,
+          "explanation": "This synthesizes glutamine."
+        },
+        {
+          "text": "Glutaminase",
+          "isCorrect": false,
+          "explanation": "This converts glutamine to glutamate."
+        }
+      ],
+      "explanation": {
+        "overview": "ALT (SGPT) is the enzyme that transaminates alanine and α‑ketoglutarate to pyruvate and glutamate.",
+        "highYield": "ALT is primarily found in the liver.",
+        "clinicalCorrelation": "ALT elevation is a sensitive indicator of hepatocellular injury."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_103",
+      "difficulty": 2,
+      "question": "The amino acid that is a precursor for the synthesis of epinephrine is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Tyrosine",
+          "isCorrect": true,
+          "explanation": "Epinephrine is synthesized from tyrosine via dopamine and norepinephrine."
+        },
+        {
+          "text": "Tryptophan",
+          "isCorrect": false,
+          "explanation": "Tryptophan is for serotonin."
+        },
+        {
+          "text": "Histidine",
+          "isCorrect": false,
+          "explanation": "Histidine is for histamine."
+        },
+        {
+          "text": "Glutamate",
+          "isCorrect": false,
+          "explanation": "Glutamate is for GABA."
+        },
+        {
+          "text": "Glycine",
+          "isCorrect": false,
+          "explanation": "Glycine is not involved."
+        }
+      ],
+      "explanation": {
+        "overview": "Epinephrine (adrenaline) is synthesized from tyrosine via L‑DOPA, dopamine, and norepinephrine.",
+        "highYield": "Epinephrine is a hormone and neurotransmitter.",
+        "clinicalCorrelation": "Epinephrine is used in anaphylaxis and cardiac arrest."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_104",
+      "difficulty": 2,
+      "question": "The amino acid that is a precursor for the synthesis of norepinephrine is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Tyrosine",
+          "isCorrect": true,
+          "explanation": "Norepinephrine is derived from tyrosine via dopamine."
+        },
+        {
+          "text": "Tryptophan",
+          "isCorrect": false,
+          "explanation": "Tryptophan is for serotonin."
+        },
+        {
+          "text": "Histidine",
+          "isCorrect": false,
+          "explanation": "Histidine is for histamine."
+        },
+        {
+          "text": "Glutamate",
+          "isCorrect": false,
+          "explanation": "Glutamate is for GABA."
+        },
+        {
+          "text": "Glycine",
+          "isCorrect": false,
+          "explanation": "Glycine is not involved."
+        }
+      ],
+      "explanation": {
+        "overview": "Norepinephrine is synthesized from tyrosine via L‑DOPA and dopamine.",
+        "highYield": "Norepinephrine is a neurotransmitter in the sympathetic nervous system.",
+        "clinicalCorrelation": "Norepinephrine is used as a vasopressor in septic shock."
+      }
+    },
+    {
+      "questionId": "protein_metabolism_105",
+      "difficulty": 2,
+      "question": "The enzyme that catalyzes the conversion of homocysteine to methionine in the liver uses which cofactor?",
+      "image": null,
+      "options": [
+        {
+          "text": "Methylcobalamin (vitamin B12)",
+          "isCorrect": true,
+          "explanation": "Methionine synthase is a B12‑dependent enzyme that transfers a methyl group from methyl‑THF to homocysteine."
+        },
+        {
+          "text": "Pyridoxal phosphate",
+          "isCorrect": false,
+          "explanation": "PLP is for transsulfuration, not remethylation."
+        },
+        {
+          "text": "Thiamine pyrophosphate",
+          "isCorrect": false,
+          "explanation": "TPP is for dehydrogenases."
+        },
+        {
+          "text": "Tetrahydrobiopterin",
+          "isCorrect": false,
+          "explanation": "BH4 is for hydroxylation reactions."
+        },
+        {
+          "text": "FAD",
+          "isCorrect": false,
+          "explanation": "FAD is for dehydrogenases."
+        }
+      ],
+      "explanation": {
+        "overview": "Methionine synthase catalyzes the remethylation of homocysteine to methionine, using methylcobalamin as cofactor.",
+        "highYield": "This reaction also requires methyl‑THF as the methyl donor.",
+        "clinicalCorrelation": "Deficiency in B12 or folate impairs this reaction, causing hyperhomocysteinemia."
+      }
+    }
+  ]
+}

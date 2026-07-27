@@ -1,0 +1,4564 @@
+{
+  "questions": [
+    {
+      "questionId": "enzymology_001",
+      "difficulty": 1,
+      "question": "What are enzymes primarily composed of?",
+      "image": null,
+      "options": [
+        {
+          "text": "Proteins",
+          "isCorrect": true,
+          "explanation": "Most enzymes are proteins, with the exception of a few catalytic RNA molecules (ribozymes)."
+        },
+        {
+          "text": "Carbohydrates",
+          "isCorrect": false,
+          "explanation": "Carbohydrates are not the primary component of enzymes; they are mainly proteins."
+        },
+        {
+          "text": "Lipids",
+          "isCorrect": false,
+          "explanation": "Lipids are not the main component of enzymes; enzymes are proteins."
+        },
+        {
+          "text": "Nucleic acids",
+          "isCorrect": false,
+          "explanation": "Nucleic acids are not the primary component; except for ribozymes, which are RNA."
+        },
+        {
+          "text": "Minerals",
+          "isCorrect": false,
+          "explanation": "Minerals are not the primary component; they may act as cofactors but not the main structure."
+        }
+      ],
+      "explanation": {
+        "overview": "Enzymes are biological catalysts that are predominantly proteins, though some RNA molecules (ribozymes) also exhibit catalytic activity.",
+        "highYield": "Remember: almost all enzymes are proteins, but a few catalytic RNAs exist.",
+        "clinicalCorrelation": "Understanding enzyme composition is fundamental for drug design, as many drugs target enzyme active sites."
+      }
+    },
+    {
+      "questionId": "enzymology_002",
+      "difficulty": 1,
+      "question": "The part of an enzyme that binds the substrate is called the:",
+      "image": null,
+      "options": [
+        {
+          "text": "Allosteric site",
+          "isCorrect": false,
+          "explanation": "Allosteric sites bind regulatory molecules, not the substrate."
+        },
+        {
+          "text": "Active site",
+          "isCorrect": true,
+          "explanation": "The active site is the region where substrate binds and catalysis occurs."
+        },
+        {
+          "text": "Regulatory site",
+          "isCorrect": false,
+          "explanation": "Regulatory sites are for effectors, not substrate binding."
+        },
+        {
+          "text": "Binding domain",
+          "isCorrect": false,
+          "explanation": "A binding domain is a broader term, but the specific substrate-binding site is the active site."
+        },
+        {
+          "text": "Cofactor site",
+          "isCorrect": false,
+          "explanation": "Cofactor site binds cofactors, not the substrate directly."
+        }
+      ],
+      "explanation": {
+        "overview": "The active site of an enzyme is a specific cleft or pocket that binds the substrate and contains catalytic groups.",
+        "highYield": "The active site is where the chemistry happens; it's often a small portion of the enzyme.",
+        "clinicalCorrelation": "Many drugs are designed to block the active site of disease-causing enzymes (competitive inhibitors)."
+      }
+    },
+    {
+      "questionId": "enzymology_003",
+      "difficulty": 1,
+      "question": "The lock-and-key model of enzyme-substrate interaction suggests that:",
+      "image": null,
+      "options": [
+        {
+          "text": "The active site is rigid and complementary to the substrate",
+          "isCorrect": true,
+          "explanation": "The lock-and-key model proposes a pre-formed rigid active site complementary to the substrate."
+        },
+        {
+          "text": "The enzyme changes shape upon substrate binding",
+          "isCorrect": false,
+          "explanation": "That describes the induced-fit model."
+        },
+        {
+          "text": "The substrate changes shape to fit the enzyme",
+          "isCorrect": false,
+          "explanation": "This is not a correct description of the lock-and-key model."
+        },
+        {
+          "text": "Multiple substrates bind simultaneously",
+          "isCorrect": false,
+          "explanation": "Not specifically part of lock-and-key."
+        },
+        {
+          "text": "The enzyme is flexible",
+          "isCorrect": false,
+          "explanation": "Flexibility is emphasized in induced-fit, not lock-and-key."
+        }
+      ],
+      "explanation": {
+        "overview": "The lock-and-key model, proposed by Emil Fischer, suggests that the enzyme's active site is rigid and exactly complementary to the substrate shape.",
+        "highYield": "Lock-and-key: rigid complementary shape; induced-fit: enzyme changes shape upon binding.",
+        "clinicalCorrelation": "Knowing the binding model helps in designing inhibitors that fit the active site like a key."
+      }
+    },
+    {
+      "questionId": "enzymology_004",
+      "difficulty": 2,
+      "question": "The induced-fit model of enzyme action states that:",
+      "image": null,
+      "options": [
+        {
+          "text": "The enzyme changes conformation upon substrate binding",
+          "isCorrect": true,
+          "explanation": "Induced‑fit proposes that substrate binding induces conformational changes in the enzyme, optimizing catalysis."
+        },
+        {
+          "text": "The substrate changes conformation to fit the enzyme",
+          "isCorrect": false,
+          "explanation": "The substrate may also change, but the key is enzyme flexibility."
+        },
+        {
+          "text": "The active site is rigid",
+          "isCorrect": false,
+          "explanation": "This is lock-and-key, not induced-fit."
+        },
+        {
+          "text": "No conformational change occurs",
+          "isCorrect": false,
+          "explanation": "Induced-fit involves conformational change."
+        },
+        {
+          "text": "Both enzyme and substrate remain unchanged",
+          "isCorrect": false,
+          "explanation": "In induced-fit, the enzyme changes."
+        }
+      ],
+      "explanation": {
+        "overview": "The induced‑fit model, proposed by Daniel Koshland, describes enzyme flexibility: substrate binding induces a conformational change that stabilizes the transition state.",
+        "highYield": "Induced‑fit is now more accepted than lock‑and‑key for many enzymes.",
+        "clinicalCorrelation": "Understanding induced‑fit aids in designing drugs that exploit conformational changes."
+      }
+    },
+    {
+      "questionId": "enzymology_005",
+      "difficulty": 2,
+      "question": "The Michaelis constant (Km) is a measure of:",
+      "image": null,
+      "options": [
+        {
+          "text": "The affinity of the enzyme for its substrate",
+          "isCorrect": true,
+          "explanation": "Km is the substrate concentration at half Vmax; it inversely reflects affinity (lower Km = higher affinity)."
+        },
+        {
+          "text": "The maximum reaction rate",
+          "isCorrect": false,
+          "explanation": "That is Vmax."
+        },
+        {
+          "text": "The turnover number",
+          "isCorrect": false,
+          "explanation": "That is kcat."
+        },
+        {
+          "text": "The enzyme concentration",
+          "isCorrect": false,
+          "explanation": "Km is independent of enzyme concentration."
+        },
+        {
+          "text": "The inhibitor constant",
+          "isCorrect": false,
+          "explanation": "That is Ki."
+        }
+      ],
+      "explanation": {
+        "overview": "The Michaelis constant (Km) is a key parameter in enzyme kinetics; it equals the substrate concentration at which the reaction rate is half of Vmax.",
+        "highYield": "Low Km means high affinity; high Km means low affinity.",
+        "clinicalCorrelation": "Km values help understand how enzymes function under physiological substrate concentrations."
+      }
+    },
+    {
+      "questionId": "enzymology_006",
+      "difficulty": 2,
+      "question": "Vmax is defined as:",
+      "image": null,
+      "options": [
+        {
+          "text": "The maximum velocity when enzyme is saturated with substrate",
+          "isCorrect": false,
+          "explanation": "This is part of the definition, but not the complete answer."
+        },
+        {
+          "text": "The velocity at half substrate saturation",
+          "isCorrect": false,
+          "explanation": "That is Vmax/2, not Vmax."
+        },
+        {
+          "text": "The turnover number multiplied by enzyme concentration",
+          "isCorrect": false,
+          "explanation": "This is true: Vmax = kcat × [E]total, but the best answer is the combined one."
+        },
+        {
+          "text": "Both A and C",
+          "isCorrect": true,
+          "explanation": "Correct. Vmax is the maximum rate when all active sites are saturated; Vmax = kcat × [E]t."
+        },
+        {
+          "text": "None of the above",
+          "isCorrect": false,
+          "explanation": "A and C are correct, so not 'none'."
+        }
+      ],
+      "explanation": {
+        "overview": "Vmax is the maximum initial velocity achieved when all enzyme molecules are saturated with substrate.",
+        "highYield": "Vmax depends on enzyme concentration and turnover number (kcat).",
+        "clinicalCorrelation": "Vmax values are used to compare enzyme activities in different tissues or disease states."
+      }
+    },
+    {
+      "questionId": "enzymology_007",
+      "difficulty": 2,
+      "question": "The turnover number (kcat) represents:",
+      "image": null,
+      "options": [
+        {
+          "text": "Number of substrate molecules converted per enzyme per second",
+          "isCorrect": true,
+          "explanation": "kcat is the catalytic constant, indicating how many substrate molecules are turned over per enzyme molecule per unit time."
+        },
+        {
+          "text": "The Michaelis constant",
+          "isCorrect": false,
+          "explanation": "That is Km."
+        },
+        {
+          "text": "The maximum velocity",
+          "isCorrect": false,
+          "explanation": "That is Vmax."
+        },
+        {
+          "text": "The enzyme efficiency",
+          "isCorrect": false,
+          "explanation": "Efficiency is kcat/Km."
+        },
+        {
+          "text": "The inhibition constant",
+          "isCorrect": false,
+          "explanation": "That is Ki."
+        }
+      ],
+      "explanation": {
+        "overview": "Turnover number (kcat) is the number of substrate molecules converted to product per enzyme active site per second when saturated.",
+        "highYield": "kcat reflects the catalytic proficiency of the enzyme.",
+        "clinicalCorrelation": "High kcat enzymes are often those that need to act rapidly, e.g., catalase."
+      }
+    },
+    {
+      "questionId": "enzymology_008",
+      "difficulty": 2,
+      "question": "The catalytic efficiency of an enzyme is given by:",
+      "image": null,
+      "options": [
+        {
+          "text": "kcat / Km",
+          "isCorrect": true,
+          "explanation": "kcat/Km is the specificity constant; it measures enzyme efficiency and how well it discriminates between substrates."
+        },
+        {
+          "text": "Km / kcat",
+          "isCorrect": false,
+          "explanation": "This is the inverse and not a measure of efficiency."
+        },
+        {
+          "text": "Vmax / Km",
+          "isCorrect": false,
+          "explanation": "Vmax/Km is not the standard specificity constant; kcat/Km is preferred."
+        },
+        {
+          "text": "Vmax × Km",
+          "isCorrect": false,
+          "explanation": "Not a standard measure."
+        },
+        {
+          "text": "1 / Km",
+          "isCorrect": false,
+          "explanation": "That reflects affinity, not catalytic efficiency."
+        }
+      ],
+      "explanation": {
+        "overview": "The specificity constant (kcat/Km) combines catalytic rate and substrate binding affinity.",
+        "highYield": "Higher kcat/Km means more efficient enzyme, approaching the diffusion limit (~10⁸‑10⁹ M⁻¹s⁻¹).",
+        "clinicalCorrelation": "This parameter is used to compare enzymes and evaluate drug targets."
+      }
+    },
+    {
+      "questionId": "enzymology_009",
+      "difficulty": 2,
+      "question": "In competitive inhibition, the inhibitor:",
+      "image": null,
+      "options": [
+        {
+          "text": "Binds to the active site",
+          "isCorrect": true,
+          "explanation": "Competitive inhibitors resemble the substrate and bind reversibly to the active site, increasing apparent Km but not affecting Vmax."
+        },
+        {
+          "text": "Binds to an allosteric site",
+          "isCorrect": false,
+          "explanation": "That is noncompetitive or allosteric inhibition."
+        },
+        {
+          "text": "Increases Vmax",
+          "isCorrect": false,
+          "explanation": "Competitive inhibitors do not change Vmax."
+        },
+        {
+          "text": "Decreases Vmax",
+          "isCorrect": false,
+          "explanation": "Vmax is unchanged; only apparent Km increases."
+        },
+        {
+          "text": "Does not affect Km",
+          "isCorrect": false,
+          "explanation": "Competitive inhibitors increase Km."
+        }
+      ],
+      "explanation": {
+        "overview": "Competitive inhibition occurs when an inhibitor binds reversibly to the active site, competing with the substrate.",
+        "highYield": "Km increases, Vmax unchanged; inhibition can be overcome by high substrate concentration.",
+        "clinicalCorrelation": "Many drugs (e.g., statins) are competitive inhibitors of target enzymes."
+      }
+    },
+    {
+      "questionId": "enzymology_010",
+      "difficulty": 2,
+      "question": "In noncompetitive inhibition:",
+      "image": null,
+      "options": [
+        {
+          "text": "Vmax decreases, Km unchanged",
+          "isCorrect": true,
+          "explanation": "Noncompetitive inhibitors bind to enzyme or enzyme-substrate complex, reducing Vmax without affecting substrate binding (Km unchanged)."
+        },
+        {
+          "text": "Vmax unchanged, Km increases",
+          "isCorrect": false,
+          "explanation": "That is competitive inhibition."
+        },
+        {
+          "text": "Both Vmax and Km decrease",
+          "isCorrect": false,
+          "explanation": "That is uncompetitive inhibition."
+        },
+        {
+          "text": "Both Vmax and Km increase",
+          "isCorrect": false,
+          "explanation": "Not typical for pure noncompetitive."
+        },
+        {
+          "text": "Only Km changes",
+          "isCorrect": false,
+          "explanation": "Noncompetitive affects Vmax, not Km."
+        }
+      ],
+      "explanation": {
+        "overview": "Noncompetitive inhibitors bind to an allosteric site, decreasing Vmax but not affecting substrate binding affinity.",
+        "highYield": "Km unchanged; Vmax lowered; cannot be overcome by increasing substrate.",
+        "clinicalCorrelation": "Some drugs act as noncompetitive inhibitors, altering enzyme activity without competing with substrate."
+      }
+    },
+    {
+      "questionId": "enzymology_011",
+      "difficulty": 3,
+      "question": "Uncompetitive inhibition is characterized by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Decreased Vmax and decreased Km",
+          "isCorrect": true,
+          "explanation": "Uncompetitive inhibitors bind only to the enzyme-substrate complex, reducing both Vmax and Km."
+        },
+        {
+          "text": "Decreased Vmax and increased Km",
+          "isCorrect": false,
+          "explanation": "That would be mixed inhibition with a specific pattern; uncompetitive decreases both."
+        },
+        {
+          "text": "Increased Vmax and decreased Km",
+          "isCorrect": false,
+          "explanation": "Not characteristic of inhibition."
+        },
+        {
+          "text": "Unchanged Vmax and increased Km",
+          "isCorrect": false,
+          "explanation": "That is competitive inhibition."
+        },
+        {
+          "text": "Unchanged Vmax and decreased Km",
+          "isCorrect": false,
+          "explanation": "Not a standard inhibition type."
+        }
+      ],
+      "explanation": {
+        "overview": "Uncompetitive inhibitors bind only to the ES complex, preventing catalysis. Both Vmax and Km decrease.",
+        "highYield": "Vmax and Km both decrease by the same factor; parallel lines on Lineweaver‑Burk plot.",
+        "clinicalCorrelation": "Uncompetitive inhibition is rare but can be seen with some drug mechanisms."
+      }
+    },
+    {
+      "questionId": "enzymology_012",
+      "difficulty": 2,
+      "question": "A Lineweaver‑Burk plot (double reciprocal plot) is used to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Determine Km and Vmax",
+          "isCorrect": false,
+          "explanation": "Yes, but also for inhibitor type."
+        },
+        {
+          "text": "Determine inhibitor type",
+          "isCorrect": false,
+          "explanation": "Yes, but also for Km and Vmax."
+        },
+        {
+          "text": "Visualize enzyme kinetics",
+          "isCorrect": false,
+          "explanation": "General purpose, but the best answer includes all uses."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "The double reciprocal plot linearizes Michaelis‑Menten kinetics and helps distinguish inhibition types."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "It is used for all those purposes."
+        }
+      ],
+      "explanation": {
+        "overview": "Lineweaver‑Burk plot (1/v vs 1/[S]) is a graphical tool for determining kinetic parameters and inhibition type.",
+        "highYield": "Y‑intercept = 1/Vmax; X‑intercept = -1/Km.",
+        "clinicalCorrelation": "Still used in research, though non‑linear regression is more accurate today."
+      }
+    },
+    {
+      "questionId": "enzymology_013",
+      "difficulty": 2,
+      "question": "In a Lineweaver‑Burk plot, the x‑intercept equals:",
+      "image": null,
+      "options": [
+        {
+          "text": "-1/Km",
+          "isCorrect": true,
+          "explanation": "The x‑intercept is -1/Km; the y‑intercept is 1/Vmax."
+        },
+        {
+          "text": "1/Km",
+          "isCorrect": false,
+          "explanation": "That would be the negative of the x-intercept."
+        },
+        {
+          "text": "-1/Vmax",
+          "isCorrect": false,
+          "explanation": "That would be the y-intercept negative? No, y-intercept is 1/Vmax."
+        },
+        {
+          "text": "1/Vmax",
+          "isCorrect": false,
+          "explanation": "That is the y-intercept."
+        },
+        {
+          "text": "Km",
+          "isCorrect": false,
+          "explanation": "Km is not directly the intercept."
+        }
+      ],
+      "explanation": {
+        "overview": "In the double‑reciprocal plot, the x‑intercept (where 1/v = 0) gives -1/Km.",
+        "highYield": "Remember: x‑intercept = -1/Km; y‑intercept = 1/Vmax.",
+        "clinicalCorrelation": "Useful for quick determination of kinetic parameters."
+      }
+    },
+    {
+      "questionId": "enzymology_014",
+      "difficulty": 2,
+      "question": "Which of the following is an example of an enzyme that uses covalent catalysis?",
+      "image": null,
+      "options": [
+        {
+          "text": "Chymotrypsin",
+          "isCorrect": true,
+          "explanation": "Chymotrypsin forms a covalent acyl‑enzyme intermediate during catalysis."
+        },
+        {
+          "text": "Hexokinase",
+          "isCorrect": false,
+          "explanation": "Hexokinase uses induced fit and acid‑base catalysis, not covalent."
+        },
+        {
+          "text": "Aldolase",
+          "isCorrect": false,
+          "explanation": "Aldolase uses Schiff base formation (covalent) but chymotrypsin is a classic example."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "Aldolase uses covalent Schiff base, but hexokinase does not; the best single answer is chymotrypsin."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "Chymotrypsin is a classic covalent catalysis example."
+        }
+      ],
+      "explanation": {
+        "overview": "Covalent catalysis involves formation of a transient covalent bond between enzyme and substrate. Chymotrypsin uses a covalent acyl‑enzyme intermediate.",
+        "highYield": "Other examples: aldolase (Schiff base), chymotrypsin, trypsin.",
+        "clinicalCorrelation": "Serine protease inhibitors target the covalent intermediate."
+      }
+    },
+    {
+      "questionId": "enzymology_015",
+      "difficulty": 2,
+      "question": "The catalytic triad of chymotrypsin consists of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Serine, Histidine, Aspartate",
+          "isCorrect": true,
+          "explanation": "Chymotrypsin's catalytic triad (Ser195, His57, Asp102) uses a charge‑relay system to enhance nucleophilicity."
+        },
+        {
+          "text": "Serine, Lysine, Aspartate",
+          "isCorrect": false,
+          "explanation": "Histidine, not lysine, is in the triad."
+        },
+        {
+          "text": "Cysteine, Histidine, Glutamate",
+          "isCorrect": false,
+          "explanation": "That would be for cysteine proteases, not chymotrypsin."
+        },
+        {
+          "text": "Serine, Glutamate, Arginine",
+          "isCorrect": false,
+          "explanation": "Not the classic triad."
+        },
+        {
+          "text": "Threonine, Histidine, Aspartate",
+          "isCorrect": false,
+          "explanation": "Threonine is not in chymotrypsin."
+        }
+      ],
+      "explanation": {
+        "overview": "The catalytic triad (Ser, His, Asp) is a common feature of serine proteases, enabling efficient peptide bond hydrolysis.",
+        "highYield": "Serine acts as a nucleophile, histidine as a base, aspartate to orient histidine.",
+        "clinicalCorrelation": "Drugs like organophosphates inhibit serine proteases by modifying the serine."
+      }
+    },
+    {
+      "questionId": "enzymology_016",
+      "difficulty": 1,
+      "question": "An enzyme that requires a metal ion for activity is called a:",
+      "image": null,
+      "options": [
+        {
+          "text": "Metalloenzyme",
+          "isCorrect": true,
+          "explanation": "Metalloenzymes contain tightly bound metal ions (e.g., Zn2+ in carbonic anhydrase)."
+        },
+        {
+          "text": "Holoenzyme",
+          "isCorrect": false,
+          "explanation": "Holoenzyme is the complete enzyme with cofactor."
+        },
+        {
+          "text": "Apoenzyme",
+          "isCorrect": false,
+          "explanation": "Apoenzyme is the protein without cofactor."
+        },
+        {
+          "text": "Coenzyme",
+          "isCorrect": false,
+          "explanation": "Coenzymes are organic molecules, not metal ions."
+        },
+        {
+          "text": "Ribozyme",
+          "isCorrect": false,
+          "explanation": "Ribozymes are catalytic RNA."
+        }
+      ],
+      "explanation": {
+        "overview": "Metalloenzymes contain one or more metal ions as integral parts of their structure, often at the active site.",
+        "highYield": "Examples: carbonic anhydrase (Zn), alcohol dehydrogenase (Zn), DNA polymerase (Mg).",
+        "clinicalCorrelation": "Metal chelators can inhibit metalloenzymes and are used therapeutically."
+      }
+    },
+    {
+      "questionId": "enzymology_017",
+      "difficulty": 1,
+      "question": "A coenzyme is:",
+      "image": null,
+      "options": [
+        {
+          "text": "An organic molecule that assists enzyme catalysis",
+          "isCorrect": true,
+          "explanation": "Coenzymes are organic cofactors (e.g., vitamins) that transiently carry chemical groups."
+        },
+        {
+          "text": "A metal ion",
+          "isCorrect": false,
+          "explanation": "That is a cofactor (inorganic) or metal ion."
+        },
+        {
+          "text": "The protein part of an enzyme",
+          "isCorrect": false,
+          "explanation": "That is the apoenzyme."
+        },
+        {
+          "text": "An inactive enzyme precursor",
+          "isCorrect": false,
+          "explanation": "That is a zymogen."
+        },
+        {
+          "text": "A substrate analog",
+          "isCorrect": false,
+          "explanation": "Not a coenzyme."
+        }
+      ],
+      "explanation": {
+        "overview": "Coenzymes are small organic molecules that carry electrons or chemical groups, often derived from vitamins.",
+        "highYield": "Examples: NAD+, FAD, CoA, TPP, PLP.",
+        "clinicalCorrelation": "Vitamin deficiencies lead to coenzyme deficiencies, causing metabolic diseases."
+      }
+    },
+    {
+      "questionId": "enzymology_018",
+      "difficulty": 1,
+      "question": "An apoenzyme is:",
+      "image": null,
+      "options": [
+        {
+          "text": "The protein portion of an enzyme without its cofactor",
+          "isCorrect": true,
+          "explanation": "Apoenzyme + cofactor = holoenzyme (active form)."
+        },
+        {
+          "text": "The complete active enzyme",
+          "isCorrect": false,
+          "explanation": "That is holoenzyme."
+        },
+        {
+          "text": "An inactive enzyme precursor",
+          "isCorrect": false,
+          "explanation": "That is a zymogen."
+        },
+        {
+          "text": "An enzyme with its cofactor",
+          "isCorrect": false,
+          "explanation": "That is holoenzyme."
+        },
+        {
+          "text": "A denatured enzyme",
+          "isCorrect": false,
+          "explanation": "Denatured enzyme is not functional, not apoenzyme."
+        }
+      ],
+      "explanation": {
+        "overview": "Apoenzyme is the inactive protein component of an enzyme; it requires a cofactor to become active.",
+        "highYield": "Apoenzyme + cofactor = holoenzyme.",
+        "clinicalCorrelation": "Understanding apoenzymes helps in identifying cofactor deficiencies."
+      }
+    },
+    {
+      "questionId": "enzymology_019",
+      "difficulty": 2,
+      "question": "Which vitamin is a precursor of the coenzyme NAD+?",
+      "image": null,
+      "options": [
+        {
+          "text": "Niacin (vitamin B3)",
+          "isCorrect": true,
+          "explanation": "Niacin is incorporated into NAD+ and NADP+, essential redox cofactors."
+        },
+        {
+          "text": "Riboflavin (vitamin B2)",
+          "isCorrect": false,
+          "explanation": "Riboflavin is precursor of FAD and FMN."
+        },
+        {
+          "text": "Thiamine (vitamin B1)",
+          "isCorrect": false,
+          "explanation": "Thiamine is precursor of TPP."
+        },
+        {
+          "text": "Pyridoxine (vitamin B6)",
+          "isCorrect": false,
+          "explanation": "Pyridoxine is precursor of PLP."
+        },
+        {
+          "text": "Pantothenic acid (vitamin B5)",
+          "isCorrect": false,
+          "explanation": "Pantothenic acid is precursor of CoA."
+        }
+      ],
+      "explanation": {
+        "overview": "Niacin (vitamin B3) is the precursor of the coenzymes NAD+ and NADP+, which are essential for redox reactions.",
+        "highYield": "NAD+ is the oxidized form; NADH is the reduced form.",
+        "clinicalCorrelation": "Niacin deficiency causes pellagra, affecting energy metabolism."
+      }
+    },
+    {
+      "questionId": "enzymology_020",
+      "difficulty": 2,
+      "question": "FAD is derived from which vitamin?",
+      "image": null,
+      "options": [
+        {
+          "text": "Riboflavin (B2)",
+          "isCorrect": true,
+          "explanation": "Riboflavin is the precursor of FMN and FAD."
+        },
+        {
+          "text": "Niacin (B3)",
+          "isCorrect": false,
+          "explanation": "Niacin is for NAD+."
+        },
+        {
+          "text": "Thiamine (B1)",
+          "isCorrect": false,
+          "explanation": "Thiamine is for TPP."
+        },
+        {
+          "text": "Pyridoxine (B6)",
+          "isCorrect": false,
+          "explanation": "Pyridoxine is for PLP."
+        },
+        {
+          "text": "Cobalamin (B12)",
+          "isCorrect": false,
+          "explanation": "Cobalamin is a coenzyme for methyl transfer."
+        }
+      ],
+      "explanation": {
+        "overview": "Riboflavin (vitamin B2) is the precursor for flavin mononucleotide (FMN) and flavin adenine dinucleotide (FAD).",
+        "highYield": "FAD is involved in oxidation‑reduction reactions.",
+        "clinicalCorrelation": "Riboflavin deficiency can affect metabolism and cause skin and mucosal issues."
+      }
+    },
+    {
+      "questionId": "enzymology_021",
+      "difficulty": 2,
+      "question": "The coenzyme thiamine pyrophosphate (TPP) is involved in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Decarboxylation of α‑keto acids",
+          "isCorrect": true,
+          "explanation": "TPP is a cofactor for pyruvate dehydrogenase, α‑ketoglutarate dehydrogenase, and transketolase."
+        },
+        {
+          "text": "Transamination",
+          "isCorrect": false,
+          "explanation": "Transamination uses PLP."
+        },
+        {
+          "text": "Oxidation‑reduction reactions",
+          "isCorrect": false,
+          "explanation": "That uses NAD+/FAD."
+        },
+        {
+          "text": "Carboxylation",
+          "isCorrect": false,
+          "explanation": "Carboxylation uses biotin."
+        },
+        {
+          "text": "Methyl transfer",
+          "isCorrect": false,
+          "explanation": "Methyl transfer uses cobalamin or S‑adenosylmethionine."
+        }
+      ],
+      "explanation": {
+        "overview": "Thiamine pyrophosphate (TPP) is a coenzyme for enzymes that catalyze decarboxylation of α‑keto acids and transketolase reactions.",
+        "highYield": "TPP is derived from vitamin B1 (thiamine).",
+        "clinicalCorrelation": "Thiamine deficiency causes beriberi and Wernicke‑Korsakoff syndrome."
+      }
+    },
+    {
+      "questionId": "enzymology_022",
+      "difficulty": 2,
+      "question": "Pyridoxal phosphate (PLP) is a cofactor for enzymes that catalyze:",
+      "image": null,
+      "options": [
+        {
+          "text": "Transamination",
+          "isCorrect": false,
+          "explanation": "PLP is involved in transamination, but also other reactions."
+        },
+        {
+          "text": "Decarboxylation",
+          "isCorrect": false,
+          "explanation": "Also involved."
+        },
+        {
+          "text": "Deamination",
+          "isCorrect": false,
+          "explanation": "Also involved."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "PLP participates in various amino acid metabolism reactions, including transamination, decarboxylation, and racemization."
+        },
+        {
+          "text": "Oxidation",
+          "isCorrect": false,
+          "explanation": "Oxidation is not a PLP reaction."
+        }
+      ],
+      "explanation": {
+        "overview": "Pyridoxal phosphate (PLP) is the active form of vitamin B6, involved in many amino acid reactions: transamination, decarboxylation, deamination, racemization.",
+        "highYield": "PLP is a cofactor for aminotransferases (ALT, AST).",
+        "clinicalCorrelation": "Vitamin B6 deficiency can affect neurotransmitter synthesis and heme production."
+      }
+    },
+    {
+      "questionId": "enzymology_023",
+      "difficulty": 2,
+      "question": "The enzyme alcohol dehydrogenase uses which cofactor?",
+      "image": null,
+      "options": [
+        {
+          "text": "NAD+",
+          "isCorrect": true,
+          "explanation": "Alcohol dehydrogenase oxidizes ethanol using NAD+ as electron acceptor."
+        },
+        {
+          "text": "NADP+",
+          "isCorrect": false,
+          "explanation": "NADP+ is used in anabolic reactions, not alcohol oxidation."
+        },
+        {
+          "text": "FAD",
+          "isCorrect": false,
+          "explanation": "FAD is used in dehydrogenases like succinate dehydrogenase."
+        },
+        {
+          "text": "Coenzyme A",
+          "isCorrect": false,
+          "explanation": "CoA is used in acyl transfer."
+        },
+        {
+          "text": "Biotin",
+          "isCorrect": false,
+          "explanation": "Biotin is for carboxylation."
+        }
+      ],
+      "explanation": {
+        "overview": "Alcohol dehydrogenase catalyzes the oxidation of ethanol to acetaldehyde, using NAD+ as a cofactor.",
+        "highYield": "NAD+ is reduced to NADH; this reaction is important in ethanol metabolism.",
+        "clinicalCorrelation": "Genetic variations in alcohol dehydrogenase affect alcohol tolerance and risk of alcoholism."
+      }
+    },
+    {
+      "questionId": "enzymology_024",
+      "difficulty": 1,
+      "question": "Zymogens are:",
+      "image": null,
+      "options": [
+        {
+          "text": "Inactive enzyme precursors",
+          "isCorrect": true,
+          "explanation": "Zymogens (proenzymes) require proteolytic cleavage to become active (e.g., pepsinogen → pepsin)."
+        },
+        {
+          "text": "Active enzymes",
+          "isCorrect": false,
+          "explanation": "They are inactive."
+        },
+        {
+          "text": "Coenzymes",
+          "isCorrect": false,
+          "explanation": "They are proteins, not coenzymes."
+        },
+        {
+          "text": "Allosteric regulators",
+          "isCorrect": false,
+          "explanation": "They are not regulators."
+        },
+        {
+          "text": "Denatured enzymes",
+          "isCorrect": false,
+          "explanation": "They are not denatured; they are inactive but can be activated."
+        }
+      ],
+      "explanation": {
+        "overview": "Zymogens (proenzymes) are inactive enzyme precursors that require proteolytic cleavage to become active, providing a mechanism for regulation.",
+        "highYield": "Examples: pepsinogen, trypsinogen, chymotrypsinogen, blood clotting factors.",
+        "clinicalCorrelation": "Zymogen activation is important in digestion and coagulation; defects can cause diseases."
+      }
+    },
+    {
+      "questionId": "enzymology_025",
+      "difficulty": 2,
+      "question": "Allosteric enzymes exhibit:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cooperative binding and regulation by effectors",
+          "isCorrect": true,
+          "explanation": "Allosteric enzymes have multiple subunits and display sigmoidal kinetics, modulated by allosteric activators/inhibitors."
+        },
+        {
+          "text": "Michaelis‑Menten kinetics",
+          "isCorrect": false,
+          "explanation": "Allosteric enzymes do not follow Michaelis‑Menten; they show sigmoidal kinetics."
+        },
+        {
+          "text": "Linear Lineweaver‑Burk plots",
+          "isCorrect": false,
+          "explanation": "They show nonlinear plots."
+        },
+        {
+          "text": "No regulation",
+          "isCorrect": false,
+          "explanation": "They are regulated by effectors."
+        },
+        {
+          "text": "Irreversible inhibition",
+          "isCorrect": false,
+          "explanation": "Allosteric regulation is reversible."
+        }
+      ],
+      "explanation": {
+        "overview": "Allosteric enzymes have multiple subunits and sites for regulatory molecules; they display cooperative substrate binding (sigmoidal kinetics).",
+        "highYield": "They are regulated by effectors that bind at allosteric sites, changing enzyme shape.",
+        "clinicalCorrelation": "Many key metabolic enzymes are allosteric, making them important drug targets."
+      }
+    },
+    {
+      "questionId": "enzymology_026",
+      "difficulty": 2,
+      "question": "The effect of a positive allosteric modulator (activator) is to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increase enzyme activity by enhancing substrate affinity",
+          "isCorrect": true,
+          "explanation": "Allosteric activators bind to regulatory sites and increase enzyme activity (often by increasing affinity for substrate or Vmax)."
+        },
+        {
+          "text": "Decrease enzyme activity",
+          "isCorrect": false,
+          "explanation": "That would be an inhibitor."
+        },
+        {
+          "text": "Bind to the active site",
+          "isCorrect": false,
+          "explanation": "Allosteric modulators bind to allosteric sites, not the active site."
+        },
+        {
+          "text": "Irreversibly inactivate the enzyme",
+          "isCorrect": false,
+          "explanation": "Modulation is reversible."
+        },
+        {
+          "text": "Change the pH optimum",
+          "isCorrect": false,
+          "explanation": "Not a typical effect."
+        }
+      ],
+      "explanation": {
+        "overview": "Positive allosteric modulators (activators) increase enzyme activity by stabilizing the active conformation or enhancing substrate affinity.",
+        "highYield": "They do not bind to the active site but to separate regulatory sites.",
+        "clinicalCorrelation": "Drugs that act as allosteric activators are being developed to enhance enzyme function in diseases."
+      }
+    },
+    {
+      "questionId": "enzymology_027",
+      "difficulty": 2,
+      "question": "The Michaelis‑Menten equation describes the relationship between:",
+      "image": null,
+      "options": [
+        {
+          "text": "Initial velocity and substrate concentration",
+          "isCorrect": true,
+          "explanation": "v = (Vmax × [S]) / (Km + [S]) describes hyperbolic dependence of initial velocity on substrate concentration."
+        },
+        {
+          "text": "Enzyme concentration and reaction rate",
+          "isCorrect": false,
+          "explanation": "That is a different relationship, not Michaelis‑Menten."
+        },
+        {
+          "text": "pH and enzyme activity",
+          "isCorrect": false,
+          "explanation": "That is pH optimum, not Michaelis‑Menten."
+        },
+        {
+          "text": "Temperature and enzyme stability",
+          "isCorrect": false,
+          "explanation": "That describes thermal stability."
+        },
+        {
+          "text": "Inhibitor concentration and rate",
+          "isCorrect": false,
+          "explanation": "That would be inhibition kinetics, not the standard Michaelis‑Menten."
+        }
+      ],
+      "explanation": {
+        "overview": "The Michaelis‑Menten equation relates the initial reaction velocity to substrate concentration, assuming steady‑state conditions.",
+        "highYield": "v = Vmax[S]/(Km + [S]).",
+        "clinicalCorrelation": "It is the foundation of enzyme kinetics and drug action."
+      }
+    },
+    {
+      "questionId": "enzymology_028",
+      "difficulty": 2,
+      "question": "At very low substrate concentration ([S] << Km), the reaction rate is approximately:",
+      "image": null,
+      "options": [
+        {
+          "text": "(Vmax / Km) × [S] (first order in [S])",
+          "isCorrect": true,
+          "explanation": "When [S] << Km, v ≈ (Vmax/Km)[S], so rate is proportional to [S] (first order)."
+        },
+        {
+          "text": "Vmax (zero order)",
+          "isCorrect": false,
+          "explanation": "That occurs when [S] >> Km."
+        },
+        {
+          "text": "Half Vmax",
+          "isCorrect": false,
+          "explanation": "That occurs when [S] = Km."
+        },
+        {
+          "text": "Zero",
+          "isCorrect": false,
+          "explanation": "Rate is not zero; it is proportional to [S]."
+        },
+        {
+          "text": "Exponential",
+          "isCorrect": false,
+          "explanation": "No, it's linear."
+        }
+      ],
+      "explanation": {
+        "overview": "At low substrate concentration, the reaction rate is first‑order with respect to substrate, i.e., v = (Vmax/Km)[S].",
+        "highYield": "This region is used to measure substrate concentration using enzymes.",
+        "clinicalCorrelation": "Many enzyme assays are run under these conditions for quantitative measurements."
+      }
+    },
+    {
+      "questionId": "enzymology_029",
+      "difficulty": 2,
+      "question": "At very high substrate concentration ([S] >> Km), the reaction rate approaches:",
+      "image": null,
+      "options": [
+        {
+          "text": "Vmax (zero order)",
+          "isCorrect": true,
+          "explanation": "When [S] saturates the enzyme, v ≈ Vmax, independent of [S] (zero order)."
+        },
+        {
+          "text": "(Vmax/Km)[S]",
+          "isCorrect": false,
+          "explanation": "That is the low substrate approximation."
+        },
+        {
+          "text": "Half Vmax",
+          "isCorrect": false,
+          "explanation": "That is at [S] = Km."
+        },
+        {
+          "text": "Zero",
+          "isCorrect": false,
+          "explanation": "No, it reaches Vmax."
+        },
+        {
+          "text": "Infinity",
+          "isCorrect": false,
+          "explanation": "It approaches a finite maximum."
+        }
+      ],
+      "explanation": {
+        "overview": "At high substrate concentration, the enzyme is saturated, and the rate approaches Vmax, independent of [S] (zero‑order).",
+        "highYield": "This is the maximum velocity the enzyme can achieve.",
+        "clinicalCorrelation": "In vivo, many enzymes work at concentrations near or below Km."
+      }
+    },
+    {
+      "questionId": "enzymology_030",
+      "difficulty": 2,
+      "question": "The specificity of an enzyme for its substrate is often expressed as:",
+      "image": null,
+      "options": [
+        {
+          "text": "kcat/Km",
+          "isCorrect": true,
+          "explanation": "kcat/Km reflects how efficiently an enzyme discriminates between competing substrates."
+        },
+        {
+          "text": "Km",
+          "isCorrect": false,
+          "explanation": "Km reflects affinity, not catalytic specificity."
+        },
+        {
+          "text": "Vmax",
+          "isCorrect": false,
+          "explanation": "Vmax is the maximum rate, not specificity."
+        },
+        {
+          "text": "kcat",
+          "isCorrect": false,
+          "explanation": "kcat is turnover number, not specificity."
+        },
+        {
+          "text": "Ki",
+          "isCorrect": false,
+          "explanation": "Ki is inhibition constant."
+        }
+      ],
+      "explanation": {
+        "overview": "The specificity constant (kcat/Km) measures the enzyme's ability to distinguish between different substrates, combining catalytic efficiency and binding affinity.",
+        "highYield": "High kcat/Km indicates high specificity.",
+        "clinicalCorrelation": "Used to compare enzyme variants and evaluate drug targets."
+      }
+    },
+    {
+      "questionId": "enzymology_031",
+      "difficulty": 1,
+      "question": "The term 'initial velocity' (v0) in enzyme kinetics refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Rate measured when product accumulation is negligible",
+          "isCorrect": true,
+          "explanation": "Initial velocity is measured early, before significant substrate depletion or product inhibition."
+        },
+        {
+          "text": "Maximum rate at saturation",
+          "isCorrect": false,
+          "explanation": "That is Vmax."
+        },
+        {
+          "text": "Rate after prolonged reaction",
+          "isCorrect": false,
+          "explanation": "Prolonged reaction may be affected by product inhibition."
+        },
+        {
+          "text": "Rate at half saturation",
+          "isCorrect": false,
+          "explanation": "That is Vmax/2 at [S]=Km."
+        },
+        {
+          "text": "Rate in the presence of inhibitor",
+          "isCorrect": false,
+          "explanation": "Not specifically."
+        }
+      ],
+      "explanation": {
+        "overview": "Initial velocity (v0) is the rate of reaction at the beginning, when substrate concentration is essentially unchanged and product is negligible.",
+        "highYield": "v0 is used in Michaelis‑Menten kinetics to avoid complications.",
+        "clinicalCorrelation": "Accurate measurement of v0 is critical for determining kinetic parameters."
+      }
+    },
+    {
+      "questionId": "enzymology_032",
+      "difficulty": 1,
+      "question": "An enzyme's pH optimum is the pH at which:",
+      "image": null,
+      "options": [
+        {
+          "text": "Activity is maximal",
+          "isCorrect": true,
+          "explanation": "Enzymes have an optimal pH where they are most active; extremes cause denaturation or altered charge states."
+        },
+        {
+          "text": "Enzyme denatures",
+          "isCorrect": false,
+          "explanation": "Denaturation occurs at extremes, not optimum."
+        },
+        {
+          "text": "Km is highest",
+          "isCorrect": false,
+          "explanation": "Km is usually lowest at optimum."
+        },
+        {
+          "text": "Vmax is lowest",
+          "isCorrect": false,
+          "explanation": "Vmax is highest at optimum."
+        },
+        {
+          "text": "Enzyme precipitates",
+          "isCorrect": false,
+          "explanation": "Precipitation is not related to optimum pH."
+        }
+      ],
+      "explanation": {
+        "overview": "Each enzyme has a specific pH at which its activity is maximal; deviations alter ionization states of active site residues.",
+        "highYield": "Most enzymes have pH optima near physiological pH (7.4), but some (e.g., pepsin) have acidic optima.",
+        "clinicalCorrelation": "pH affects enzyme activity; in diseases like diabetic ketoacidosis, altered pH can affect enzyme function."
+      }
+    },
+    {
+      "questionId": "enzymology_033",
+      "difficulty": 1,
+      "question": "Temperature affects enzyme activity by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increasing reaction rate up to an optimum, then denaturation",
+          "isCorrect": true,
+          "explanation": "Rate increases with temperature until thermal denaturation begins, then declines."
+        },
+        {
+          "text": "Linearly increasing rate indefinitely",
+          "isCorrect": false,
+          "explanation": "Not indefinite; denaturation occurs."
+        },
+        {
+          "text": "Having no effect",
+          "isCorrect": false,
+          "explanation": "Temperature has a significant effect."
+        },
+        {
+          "text": "Only denaturing the enzyme",
+          "isCorrect": false,
+          "explanation": "It also increases kinetic energy and reaction rate."
+        },
+        {
+          "text": "Increasing substrate binding",
+          "isCorrect": false,
+          "explanation": "Not the primary effect; rate increases due to higher kinetic energy."
+        }
+      ],
+      "explanation": {
+        "overview": "Enzyme activity increases with temperature up to an optimum, then decreases due to denaturation.",
+        "highYield": "The optimum temperature for most human enzymes is around 37°C.",
+        "clinicalCorrelation": "Fever can affect enzyme function and metabolic processes."
+      }
+    },
+    {
+      "questionId": "enzymology_034",
+      "difficulty": 2,
+      "question": "The Q10 temperature coefficient for many enzyme reactions is approximately:",
+      "image": null,
+      "options": [
+        {
+          "text": "2 (doubling every 10°C)",
+          "isCorrect": true,
+          "explanation": "Many enzyme‑catalyzed reactions roughly double in rate for every 10°C rise, until denaturation."
+        },
+        {
+          "text": "1 (no change)",
+          "isCorrect": false,
+          "explanation": "Q10 is not 1; reactions are temperature-sensitive."
+        },
+        {
+          "text": "0.5 (halving)",
+          "isCorrect": false,
+          "explanation": "That would be a decrease, not typical."
+        },
+        {
+          "text": "10",
+          "isCorrect": false,
+          "explanation": "Q10 of 2 is typical, not 10."
+        },
+        {
+          "text": "5",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        }
+      ],
+      "explanation": {
+        "overview": "The Q10 is the factor by which the reaction rate increases for a 10°C temperature rise; for many enzymes it is about 2.",
+        "highYield": "Q10 ≈ 2 for most enzyme-catalyzed reactions.",
+        "clinicalCorrelation": "Temperature sensitivity is important in clinical laboratory assays."
+      }
+    },
+    {
+      "questionId": "enzymology_035",
+      "difficulty": 2,
+      "question": "Irreversible inhibition often involves:",
+      "image": null,
+      "options": [
+        {
+          "text": "Covalent modification of the enzyme",
+          "isCorrect": true,
+          "explanation": "Irreversible inhibitors form stable covalent bonds (e.g., organophosphates inhibit acetylcholinesterase)."
+        },
+        {
+          "text": "Weak, reversible binding",
+          "isCorrect": false,
+          "explanation": "That is reversible inhibition."
+        },
+        {
+          "text": "Competition with substrate",
+          "isCorrect": false,
+          "explanation": "Competitive inhibition is reversible."
+        },
+        {
+          "text": "Allosteric regulation",
+          "isCorrect": false,
+          "explanation": "Allosteric regulation is usually reversible."
+        },
+        {
+          "text": "pH change",
+          "isCorrect": false,
+          "explanation": "pH change is not inhibition."
+        }
+      ],
+      "explanation": {
+        "overview": "Irreversible inhibitors bind covalently to the enzyme, often at the active site, leading to permanent inactivation.",
+        "highYield": "Examples: aspirin (irreversible cyclooxygenase inhibitor), organophosphates.",
+        "clinicalCorrelation": "Some drugs are irreversible inhibitors, and their effects persist until new enzyme is synthesized."
+      }
+    },
+    {
+      "questionId": "enzymology_036",
+      "difficulty": 2,
+      "question": "The inhibition caused by diisopropyl fluorophosphate (DFP) is an example of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Irreversible inhibition (serine protease inhibitor)",
+          "isCorrect": true,
+          "explanation": "DFP phosphorylates the active site serine of serine proteases, irreversibly inhibiting them."
+        },
+        {
+          "text": "Competitive inhibition",
+          "isCorrect": false,
+          "explanation": "It is irreversible, not competitive."
+        },
+        {
+          "text": "Noncompetitive inhibition",
+          "isCorrect": false,
+          "explanation": "It is irreversible."
+        },
+        {
+          "text": "Uncompetitive inhibition",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Feedback inhibition",
+          "isCorrect": false,
+          "explanation": "Not feedback."
+        }
+      ],
+      "explanation": {
+        "overview": "Diisopropyl fluorophosphate (DFP) is a suicide inhibitor that covalently modifies the active site serine of serine proteases.",
+        "highYield": "It is used as a research tool and is a prototype for nerve agents.",
+        "clinicalCorrelation": "Organophosphates are used as insecticides and nerve agents; they cause irreversible acetylcholinesterase inhibition."
+      }
+    },
+    {
+      "questionId": "enzymology_037",
+      "difficulty": 2,
+      "question": "Feedback inhibition is a regulatory mechanism where:",
+      "image": null,
+      "options": [
+        {
+          "text": "The end product inhibits an earlier enzyme in the pathway",
+          "isCorrect": true,
+          "explanation": "Feedback inhibition (end‑product inhibition) controls metabolic pathways to prevent overaccumulation."
+        },
+        {
+          "text": "Substrate activates the enzyme",
+          "isCorrect": false,
+          "explanation": "That is substrate activation, not feedback."
+        },
+        {
+          "text": "The enzyme is degraded",
+          "isCorrect": false,
+          "explanation": "Degradation is not feedback inhibition."
+        },
+        {
+          "text": "A cofactor binds",
+          "isCorrect": false,
+          "explanation": "Not feedback inhibition."
+        },
+        {
+          "text": "The product activates the enzyme",
+          "isCorrect": false,
+          "explanation": "That would be positive feedback, not inhibition."
+        }
+      ],
+      "explanation": {
+        "overview": "Feedback inhibition is a negative regulatory mechanism where the end product of a metabolic pathway allosterically inhibits the first enzyme, preventing overproduction.",
+        "highYield": "Example: ATP inhibits PFK‑1 in glycolysis.",
+        "clinicalCorrelation": "Defects in feedback regulation can lead to metabolic diseases."
+      }
+    },
+    {
+      "questionId": "enzymology_038",
+      "difficulty": 2,
+      "question": "An example of an enzyme that exhibits cooperativity is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Aspartate transcarbamoylase (ATCase)",
+          "isCorrect": true,
+          "explanation": "ATCase is a classic cooperative allosteric enzyme. Hemoglobin (though not an enzyme) also exhibits cooperativity."
+        },
+        {
+          "text": "Hexokinase",
+          "isCorrect": false,
+          "explanation": "Hexokinase does not exhibit cooperativity."
+        },
+        {
+          "text": "Trypsin",
+          "isCorrect": false,
+          "explanation": "Trypsin is a serine protease, not cooperative."
+        },
+        {
+          "text": "Ribonuclease",
+          "isCorrect": false,
+          "explanation": "Not cooperative."
+        },
+        {
+          "text": "Lysozyme",
+          "isCorrect": false,
+          "explanation": "Lysozyme does not show cooperativity."
+        }
+      ],
+      "explanation": {
+        "overview": "Cooperativity is seen in allosteric enzymes with multiple subunits, where binding of one substrate affects binding of others. ATCase is a classic example.",
+        "highYield": "ATCase is regulated by ATP and CTP.",
+        "clinicalCorrelation": "Cooperative enzymes are important in metabolic regulation."
+      }
+    },
+    {
+      "questionId": "enzymology_039",
+      "difficulty": 2,
+      "question": "The Hill coefficient (nH) indicates:",
+      "image": null,
+      "options": [
+        {
+          "text": "The degree of cooperativity (nH > 1 positive cooperativity)",
+          "isCorrect": true,
+          "explanation": "Hill coefficient measures cooperativity: nH = 1 (noncooperative), >1 (positive), <1 (negative)."
+        },
+        {
+          "text": "The number of subunits",
+          "isCorrect": false,
+          "explanation": "It is not the number of subunits, though it can be related."
+        },
+        {
+          "text": "The Km value",
+          "isCorrect": false,
+          "explanation": "It is separate from Km."
+        },
+        {
+          "text": "The inhibition type",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        },
+        {
+          "text": "The turnover number",
+          "isCorrect": false,
+          "explanation": "It is not kcat."
+        }
+      ],
+      "explanation": {
+        "overview": "The Hill coefficient is a measure of cooperativity in allosteric enzymes; nH > 1 indicates positive cooperativity.",
+        "highYield": "nH can approach the number of binding sites but is not necessarily equal.",
+        "clinicalCorrelation": "Used in analysis of drug binding to receptors."
+      }
+    },
+    {
+      "questionId": "enzymology_040",
+      "difficulty": 2,
+      "question": "The diagram shows a Lineweaver‑Burk plot for an enzyme with and without an inhibitor. If the lines intersect on the y‑axis, the inhibition is:",
+      "image": "lineweaver_burk_competitive.png",
+      "options": [
+        {
+          "text": "Competitive",
+          "isCorrect": true,
+          "explanation": "Competitive inhibition gives lines that intersect at the y‑axis (same Vmax, different slopes)."
+        },
+        {
+          "text": "Noncompetitive",
+          "isCorrect": false,
+          "explanation": "Noncompetitive intersects on the x‑axis (same Km)."
+        },
+        {
+          "text": "Uncompetitive",
+          "isCorrect": false,
+          "explanation": "Uncompetitive gives parallel lines."
+        },
+        {
+          "text": "Mixed",
+          "isCorrect": false,
+          "explanation": "Mixed intersects left of y‑axis."
+        },
+        {
+          "text": "Irreversible",
+          "isCorrect": false,
+          "explanation": "Irreversible inhibition is not represented by simple plots."
+        }
+      ],
+      "explanation": {
+        "overview": "In competitive inhibition, increasing inhibitor concentration increases the slope (apparent Km) but Vmax remains unchanged, so plots intersect on the y‑axis.",
+        "highYield": "Y‑intercept = 1/Vmax; X‑intercept changes.",
+        "clinicalCorrelation": "Recognizing inhibition patterns helps in drug discovery."
+      }
+    },
+    {
+      "questionId": "enzymology_041",
+      "difficulty": 2,
+      "question": "In a Lineweaver‑Burk plot, parallel lines indicate:",
+      "image": null,
+      "options": [
+        {
+          "text": "Uncompetitive inhibition",
+          "isCorrect": true,
+          "explanation": "Uncompetitive inhibition yields parallel lines (same slope, different intercepts)."
+        },
+        {
+          "text": "Competitive inhibition",
+          "isCorrect": false,
+          "explanation": "Competitive gives intersecting at y‑axis."
+        },
+        {
+          "text": "Noncompetitive inhibition",
+          "isCorrect": false,
+          "explanation": "Noncompetitive gives intersecting at x‑axis."
+        },
+        {
+          "text": "Mixed inhibition",
+          "isCorrect": false,
+          "explanation": "Mixed gives intersecting left of y‑axis."
+        },
+        {
+          "text": "No inhibition",
+          "isCorrect": false,
+          "explanation": "No inhibition gives a single line."
+        }
+      ],
+      "explanation": {
+        "overview": "In uncompetitive inhibition, both Vmax and Km decrease by the same factor, leading to parallel lines in a double reciprocal plot.",
+        "highYield": "Parallel lines indicate uncompetitive inhibition.",
+        "clinicalCorrelation": "Uncompetitive inhibitors are less common but can be used therapeutically."
+      }
+    },
+    {
+      "questionId": "enzymology_042",
+      "difficulty": 1,
+      "question": "The term 'isozyme' (isoenzyme) refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Different enzyme forms catalyzing the same reaction",
+          "isCorrect": true,
+          "explanation": "Isozymes are different molecular forms of an enzyme that catalyze the same reaction (e.g., LDH isozymes)."
+        },
+        {
+          "text": "Enzymes with the same structure",
+          "isCorrect": false,
+          "explanation": "They have different structures."
+        },
+        {
+          "text": "Enzymes from different species",
+          "isCorrect": false,
+          "explanation": "That would be orthologs."
+        },
+        {
+          "text": "Enzymes that are inhibited by the same compound",
+          "isCorrect": false,
+          "explanation": "Not isozymes."
+        },
+        {
+          "text": "Enzymes with identical kinetic properties",
+          "isCorrect": false,
+          "explanation": "They have different kinetic properties."
+        }
+      ],
+      "explanation": {
+        "overview": "Isozymes are multiple forms of an enzyme that catalyze the same reaction but differ in amino acid sequence and kinetic properties.",
+        "highYield": "Example: lactate dehydrogenase (LDH) has five isozymes, composed of H and M subunits.",
+        "clinicalCorrelation": "Isozyme patterns are used clinically to diagnose tissue damage (e.g., LDH in myocardial infarction)."
+      }
+    },
+    {
+      "questionId": "enzymology_043",
+      "difficulty": 2,
+      "question": "Lactate dehydrogenase (LDH) isozymes are composed of:",
+      "image": null,
+      "options": [
+        {
+          "text": "H and M subunits forming tetramers",
+          "isCorrect": true,
+          "explanation": "LDH is a tetramer of heart (H) and muscle (M) subunits, giving five isozymes (H4, H3M1, etc.)."
+        },
+        {
+          "text": "Only H subunits",
+          "isCorrect": false,
+          "explanation": "Not only H; there are combinations."
+        },
+        {
+          "text": "Only M subunits",
+          "isCorrect": false,
+          "explanation": "Not only M."
+        },
+        {
+          "text": "A single polypeptide",
+          "isCorrect": false,
+          "explanation": "It is a tetramer."
+        },
+        {
+          "text": "Two different subunits forming dimers",
+          "isCorrect": false,
+          "explanation": "It is a tetramer, not dimer."
+        }
+      ],
+      "explanation": {
+        "overview": "Lactate dehydrogenase is a tetramer composed of two subunit types: H (heart) and M (muscle). Different combinations give five isozymes.",
+        "highYield": "LDH1 (H4) is predominant in heart; LDH5 (M4) in muscle and liver.",
+        "clinicalCorrelation": "LDH isozyme patterns can indicate tissue damage (e.g., LDH1/LDH2 ratio in MI)."
+      }
+    },
+    {
+      "questionId": "enzymology_044",
+      "difficulty": 2,
+      "question": "The enzyme that catalyzes the conversion of glucose to glucose‑6‑phosphate is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hexokinase",
+          "isCorrect": false,
+          "explanation": "Hexokinase is one of them."
+        },
+        {
+          "text": "Glucokinase",
+          "isCorrect": false,
+          "explanation": "Glucokinase is another form."
+        },
+        {
+          "text": "Both (depending on tissue)",
+          "isCorrect": true,
+          "explanation": "Hexokinase (low Km) is present in most tissues; glucokinase (high Km) is in liver and pancreatic beta cells."
+        },
+        {
+          "text": "Phosphoglucose isomerase",
+          "isCorrect": false,
+          "explanation": "This catalyzes the next step."
+        },
+        {
+          "text": "Glucose‑6‑phosphatase",
+          "isCorrect": false,
+          "explanation": "This catalyzes the reverse reaction (dephosphorylation)."
+        }
+      ],
+      "explanation": {
+        "overview": "Glucose phosphorylation is catalyzed by hexokinase (ubiquitous, low Km) and glucokinase (liver/pancreas, high Km).",
+        "highYield": "Hexokinase is inhibited by G6P; glucokinase is not.",
+        "clinicalCorrelation": "Glucokinase acts as a glucose sensor; mutations cause diabetes."
+      }
+    },
+    {
+      "questionId": "enzymology_045",
+      "difficulty": 2,
+      "question": "Glucokinase differs from hexokinase in that it:",
+      "image": null,
+      "options": [
+        {
+          "text": "Has a higher Km for glucose and is not inhibited by glucose‑6‑phosphate",
+          "isCorrect": true,
+          "explanation": "Glucokinase has a high Km (low affinity) and is not feedback‑inhibited by G6P, allowing liver to regulate blood glucose."
+        },
+        {
+          "text": "Has a lower Km for glucose",
+          "isCorrect": false,
+          "explanation": "It has a higher Km (lower affinity)."
+        },
+        {
+          "text": "Is inhibited by glucose‑6‑phosphate",
+          "isCorrect": false,
+          "explanation": "It is not inhibited."
+        },
+        {
+          "text": "Is found in all tissues",
+          "isCorrect": false,
+          "explanation": "It is found mainly in liver and pancreatic beta cells."
+        },
+        {
+          "text": "Has lower specificity",
+          "isCorrect": false,
+          "explanation": "It is specific for glucose."
+        }
+      ],
+      "explanation": {
+        "overview": "Glucokinase has a high Km (about 10 mM) and is not inhibited by its product, enabling it to respond to high glucose levels.",
+        "highYield": "It acts as a glucose sensor in pancreatic beta cells and liver.",
+        "clinicalCorrelation": "Mutations in glucokinase cause MODY (maturity‑onset diabetes of the young)."
+      }
+    },
+    {
+      "questionId": "enzymology_046",
+      "difficulty": 2,
+      "question": "The enzyme phosphofructokinase‑1 (PFK‑1) is allosterically inhibited by:",
+      "image": null,
+      "options": [
+        {
+          "text": "ATP (high levels)",
+          "isCorrect": false,
+          "explanation": "ATP is an inhibitor, but also citrate."
+        },
+        {
+          "text": "Citrate",
+          "isCorrect": false,
+          "explanation": "Citrate is also an inhibitor."
+        },
+        {
+          "text": "Both A and B",
+          "isCorrect": true,
+          "explanation": "ATP and citrate allosterically inhibit PFK‑1; AMP and fructose‑2,6‑bisphosphate activate it."
+        },
+        {
+          "text": "AMP",
+          "isCorrect": false,
+          "explanation": "AMP activates PFK‑1."
+        },
+        {
+          "text": "Fructose‑2,6‑bisphosphate",
+          "isCorrect": false,
+          "explanation": "This activates, not inhibits."
+        }
+      ],
+      "explanation": {
+        "overview": "PFK‑1 is the key regulatory enzyme of glycolysis; it is inhibited by high ATP and citrate (signals high energy), and activated by AMP and fructose‑2,6‑bisphosphate.",
+        "highYield": "Fructose‑2,6‑bisphosphate is a potent activator, overriding inhibition.",
+        "clinicalCorrelation": "PFK‑1 regulation is central to metabolic control."
+      }
+    },
+    {
+      "questionId": "enzymology_047",
+      "difficulty": 2,
+      "question": "The enzyme pyruvate kinase is activated by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Fructose‑1,6‑bisphosphate (feed‑forward activation)",
+          "isCorrect": true,
+          "explanation": "Fructose‑1,6‑bisphosphate allosterically activates pyruvate kinase (a feed‑forward mechanism)."
+        },
+        {
+          "text": "ATP",
+          "isCorrect": false,
+          "explanation": "ATP inhibits pyruvate kinase."
+        },
+        {
+          "text": "Alanine",
+          "isCorrect": false,
+          "explanation": "Alanine inhibits pyruvate kinase."
+        },
+        {
+          "text": "Acetyl‑CoA",
+          "isCorrect": false,
+          "explanation": "Not a typical activator."
+        },
+        {
+          "text": "Glucagon",
+          "isCorrect": false,
+          "explanation": "Glucagon promotes phosphorylation (inhibition)."
+        }
+      ],
+      "explanation": {
+        "overview": "Pyruvate kinase is activated by fructose‑1,6‑bisphosphate, a feed‑forward activation from an upstream intermediate.",
+        "highYield": "It is inhibited by ATP, alanine, and phosphorylation.",
+        "clinicalCorrelation": "Pyruvate kinase deficiency causes hemolytic anemia."
+      }
+    },
+    {
+      "questionId": "enzymology_048",
+      "difficulty": 1,
+      "question": "The enzyme that converts fructose‑6‑phosphate to fructose‑1,6‑bisphosphate is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Phosphofructokinase‑1",
+          "isCorrect": true,
+          "explanation": "PFK‑1 catalyzes the committed step of glycolysis."
+        },
+        {
+          "text": "Phosphofructokinase‑2",
+          "isCorrect": false,
+          "explanation": "PFK‑2 synthesizes fructose‑2,6‑bisphosphate."
+        },
+        {
+          "text": "Fructose‑1,6‑bisphosphatase",
+          "isCorrect": false,
+          "explanation": "This catalyzes the reverse in gluconeogenesis."
+        },
+        {
+          "text": "Aldolase",
+          "isCorrect": false,
+          "explanation": "Aldolase splits fructose‑1,6‑bisphosphate into triose phosphates."
+        },
+        {
+          "text": "Hexokinase",
+          "isCorrect": false,
+          "explanation": "Hexokinase phosphorylates glucose."
+        }
+      ],
+      "explanation": {
+        "overview": "Phosphofructokinase‑1 (PFK‑1) catalyzes the conversion of fructose‑6‑phosphate to fructose‑1,6‑bisphosphate, the committed step of glycolysis.",
+        "highYield": "PFK‑1 is a key regulatory enzyme.",
+        "clinicalCorrelation": "Defects in PFK‑1 (Tarui disease) cause glycogen storage disease."
+      }
+    },
+    {
+      "questionId": "enzymology_049",
+      "difficulty": 2,
+      "question": "Pyruvate dehydrogenase complex requires all of the following cofactors EXCEPT:",
+      "image": null,
+      "options": [
+        {
+          "text": "Biotin",
+          "isCorrect": true,
+          "explanation": "PDH uses TPP, lipoate, FAD, NAD+, and CoA; biotin is for carboxylases."
+        },
+        {
+          "text": "Thiamine pyrophosphate (TPP)",
+          "isCorrect": false,
+          "explanation": "TPP is required."
+        },
+        {
+          "text": "Lipoic acid",
+          "isCorrect": false,
+          "explanation": "Lipoate is required."
+        },
+        {
+          "text": "FAD",
+          "isCorrect": false,
+          "explanation": "FAD is required."
+        },
+        {
+          "text": "NAD+",
+          "isCorrect": false,
+          "explanation": "NAD+ is required."
+        }
+      ],
+      "explanation": {
+        "overview": "The pyruvate dehydrogenase complex uses TPP, lipoic acid, FAD, NAD+, and CoA. Biotin is used by carboxylases (e.g., pyruvate carboxylase).",
+        "highYield": "PDH is a multi‑enzyme complex linking glycolysis to the TCA cycle.",
+        "clinicalCorrelation": "Arsenic poisoning inhibits lipoic acid, affecting PDH."
+      }
+    },
+    {
+      "questionId": "enzymology_050",
+      "difficulty": 2,
+      "question": "Which enzyme catalyzes the rate‑limiting step of the citric acid cycle?",
+      "image": null,
+      "options": [
+        {
+          "text": "Isocitrate dehydrogenase",
+          "isCorrect": true,
+          "explanation": "Isocitrate dehydrogenase (NAD+‑dependent) is a major regulatory point, activated by ADP and inhibited by ATP/NADH."
+        },
+        {
+          "text": "Citrate synthase",
+          "isCorrect": false,
+          "explanation": "Citrate synthase is also regulated, but IDH is the key regulatory enzyme."
+        },
+        {
+          "text": "α‑ketoglutarate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "This is also regulated but not the rate‑limiting step."
+        },
+        {
+          "text": "Succinate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Not rate‑limiting."
+        },
+        {
+          "text": "Malate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Not rate‑limiting."
+        }
+      ],
+      "explanation": {
+        "overview": "Isocitrate dehydrogenase catalyzes the oxidative decarboxylation of isocitrate to α‑ketoglutarate, the rate‑limiting step of the TCA cycle.",
+        "highYield": "It is activated by ADP and Ca2+, inhibited by ATP and NADH.",
+        "clinicalCorrelation": "Mutations in IDH are associated with cancers."
+      }
+    },
+    {
+      "questionId": "enzymology_051",
+      "difficulty": 2,
+      "question": "Succinate dehydrogenase is unique among TCA cycle enzymes because it:",
+      "image": null,
+      "options": [
+        {
+          "text": "Is bound to the inner mitochondrial membrane and part of ETC Complex II",
+          "isCorrect": true,
+          "explanation": "SDH oxidizes succinate to fumarate, reducing FAD to FADH2, and is directly linked to the electron transport chain."
+        },
+        {
+          "text": "Uses NAD+",
+          "isCorrect": false,
+          "explanation": "It uses FAD, not NAD+."
+        },
+        {
+          "text": "Produces GTP",
+          "isCorrect": false,
+          "explanation": "That is succinyl‑CoA synthetase."
+        },
+        {
+          "text": "Is located in the cytosol",
+          "isCorrect": false,
+          "explanation": "It is mitochondrial."
+        },
+        {
+          "text": "Requires biotin",
+          "isCorrect": false,
+          "explanation": "It does not require biotin."
+        }
+      ],
+      "explanation": {
+        "overview": "Succinate dehydrogenase is the only TCA enzyme embedded in the inner mitochondrial membrane, and it participates in both the TCA cycle and the electron transport chain (Complex II).",
+        "highYield": "It reduces FAD to FADH2.",
+        "clinicalCorrelation": "SDH deficiency causes mitochondrial diseases and tumors (paraganglioma)."
+      }
+    },
+    {
+      "questionId": "enzymology_052",
+      "difficulty": 1,
+      "question": "The enzyme that synthesizes cAMP from ATP is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Adenylyl cyclase",
+          "isCorrect": true,
+          "explanation": "Adenylyl cyclase converts ATP to cAMP, a second messenger."
+        },
+        {
+          "text": "Phosphodiesterase",
+          "isCorrect": false,
+          "explanation": "Phosphodiesterase degrades cAMP."
+        },
+        {
+          "text": "Protein kinase A",
+          "isCorrect": false,
+          "explanation": "PKA is activated by cAMP."
+        },
+        {
+          "text": "Phospholipase C",
+          "isCorrect": false,
+          "explanation": "PLC produces IP3 and DAG."
+        },
+        {
+          "text": "Guanylyl cyclase",
+          "isCorrect": false,
+          "explanation": "GC produces cGMP."
+        }
+      ],
+      "explanation": {
+        "overview": "Adenylyl cyclase is a membrane‑bound enzyme that catalyzes the formation of cAMP from ATP, a key second messenger.",
+        "highYield": "cAMP activates protein kinase A (PKA).",
+        "clinicalCorrelation": "Many hormones and drugs act via adenylyl cyclase (e.g., glucagon, beta‑agonists)."
+      }
+    },
+    {
+      "questionId": "enzymology_053",
+      "difficulty": 1,
+      "question": "The enzyme that degrades cAMP is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Phosphodiesterase",
+          "isCorrect": true,
+          "explanation": "Phosphodiesterase hydrolyzes cAMP to AMP, terminating the signal."
+        },
+        {
+          "text": "Adenylyl cyclase",
+          "isCorrect": false,
+          "explanation": "That synthesizes cAMP."
+        },
+        {
+          "text": "Protein kinase A",
+          "isCorrect": false,
+          "explanation": "PKA is a target of cAMP."
+        },
+        {
+          "text": "Phosphatase",
+          "isCorrect": false,
+          "explanation": "Phosphatase removes phosphate groups."
+        },
+        {
+          "text": "Nuclease",
+          "isCorrect": false,
+          "explanation": "Nuclease degrades nucleic acids."
+        }
+      ],
+      "explanation": {
+        "overview": "cAMP is broken down by phosphodiesterases (PDEs) into AMP, regulating the duration of cAMP signaling.",
+        "highYield": "PDE inhibitors (e.g., caffeine, sildenafil) prolong cAMP/cGMP effects.",
+        "clinicalCorrelation": "PDE inhibitors are used for erectile dysfunction, pulmonary hypertension."
+      }
+    },
+    {
+      "questionId": "enzymology_054",
+      "difficulty": 2,
+      "question": "Which enzyme is activated by cAMP in the glycogenolysis cascade?",
+      "image": null,
+      "options": [
+        {
+          "text": "Protein kinase A (PKA)",
+          "isCorrect": true,
+          "explanation": "cAMP activates PKA, which then phosphorylates and activates phosphorylase kinase."
+        },
+        {
+          "text": "Phosphorylase kinase",
+          "isCorrect": false,
+          "explanation": "Phosphorylase kinase is activated by PKA, not directly by cAMP."
+        },
+        {
+          "text": "Glycogen phosphorylase",
+          "isCorrect": false,
+          "explanation": "This is activated by phosphorylation by phosphorylase kinase."
+        },
+        {
+          "text": "Glycogen synthase",
+          "isCorrect": false,
+          "explanation": "Glycogen synthase is inhibited by phosphorylation, not activated."
+        },
+        {
+          "text": "Phosphoprotein phosphatase",
+          "isCorrect": false,
+          "explanation": "This dephosphorylates, not activated by cAMP."
+        }
+      ],
+      "explanation": {
+        "overview": "In the glycogenolysis cascade, cAMP activates protein kinase A (PKA), which phosphorylates and activates phosphorylase kinase, leading to glycogen breakdown.",
+        "highYield": "This is a classic signaling cascade amplification.",
+        "clinicalCorrelation": "Dysregulation of this cascade contributes to diabetes and glycogen storage diseases."
+      }
+    },
+    {
+      "questionId": "enzymology_055",
+      "difficulty": 2,
+      "question": "The enzyme glycogen synthase is inactivated by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Phosphorylation (by PKA, GSK3)",
+          "isCorrect": true,
+          "explanation": "Glycogen synthase is inactivated by phosphorylation (opposite to glycogen phosphorylase)."
+        },
+        {
+          "text": "Dephosphorylation",
+          "isCorrect": false,
+          "explanation": "Dephosphorylation activates glycogen synthase."
+        },
+        {
+          "text": "Binding of glucose‑6‑phosphate",
+          "isCorrect": false,
+          "explanation": "Glucose‑6‑phosphate activates glycogen synthase."
+        },
+        {
+          "text": "AMP",
+          "isCorrect": false,
+          "explanation": "AMP activates glycogen phosphorylase, not relevant to synthase."
+        },
+        {
+          "text": "Citrate",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        }
+      ],
+      "explanation": {
+        "overview": "Glycogen synthase is inactivated by phosphorylation (via PKA, GSK‑3) and activated by dephosphorylation and by glucose‑6‑phosphate.",
+        "highYield": "Its activity is reciprocally regulated with glycogen phosphorylase.",
+        "clinicalCorrelation": "Insulin promotes dephosphorylation (activation) of glycogen synthase."
+      }
+    },
+    {
+      "questionId": "enzymology_056",
+      "difficulty": 1,
+      "question": "The enzyme that removes phosphate groups from proteins is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Protein phosphatase",
+          "isCorrect": true,
+          "explanation": "Protein phosphatases hydrolyze phosphoester bonds, reversing kinase action."
+        },
+        {
+          "text": "Kinase",
+          "isCorrect": false,
+          "explanation": "Kinases add phosphate groups."
+        },
+        {
+          "text": "Phosphodiesterase",
+          "isCorrect": false,
+          "explanation": "PDE degrades cyclic nucleotides."
+        },
+        {
+          "text": "ATPase",
+          "isCorrect": false,
+          "explanation": "ATPase hydrolyzes ATP."
+        },
+        {
+          "text": "Adenylyl cyclase",
+          "isCorrect": false,
+          "explanation": "AC synthesizes cAMP."
+        }
+      ],
+      "explanation": {
+        "overview": "Protein phosphatases are enzymes that remove phosphate groups from phosphorylated proteins, reversing the action of kinases.",
+        "highYield": "They play a critical role in signal transduction.",
+        "clinicalCorrelation": "Phosphatase inhibitors are used as drug targets."
+      }
+    },
+    {
+      "questionId": "enzymology_057",
+      "difficulty": 2,
+      "question": "Ribozymes are:",
+      "image": null,
+      "options": [
+        {
+          "text": "RNA molecules with catalytic activity",
+          "isCorrect": true,
+          "explanation": "Ribozymes (e.g., RNase P, self‑splicing introns) are catalytically active RNA."
+        },
+        {
+          "text": "Protein enzymes",
+          "isCorrect": false,
+          "explanation": "No, they are RNA."
+        },
+        {
+          "text": "DNA enzymes",
+          "isCorrect": false,
+          "explanation": "DNAzymes exist but are not ribozymes."
+        },
+        {
+          "text": "Lipid catalysts",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Synthetic catalysts",
+          "isCorrect": false,
+          "explanation": "No, natural catalytic RNA."
+        }
+      ],
+      "explanation": {
+        "overview": "Ribozymes are RNA molecules that catalyze chemical reactions, supporting the RNA world hypothesis.",
+        "highYield": "Examples: hammerhead ribozyme, ribosome (peptidyl transferase activity of rRNA).",
+        "clinicalCorrelation": "Ribozymes are being studied as therapeutic agents."
+      }
+    },
+    {
+      "questionId": "enzymology_058",
+      "difficulty": 2,
+      "question": "Abzymes are:",
+      "image": null,
+      "options": [
+        {
+          "text": "Antibodies with catalytic activity",
+          "isCorrect": true,
+          "explanation": "Catalytic antibodies (abzymes) are generated to stabilize transition states."
+        },
+        {
+          "text": "Enzyme inhibitors",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Mutant enzymes",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Artificial enzymes",
+          "isCorrect": false,
+          "explanation": "They are antibodies, not artificial enzymes."
+        },
+        {
+          "text": "Bacterial enzymes",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Abzymes are antibodies that have been engineered or naturally occurring to catalyze specific reactions.",
+        "highYield": "They are used in research and potential therapy.",
+        "clinicalCorrelation": "Some autoimmune diseases may involve abzymes."
+      }
+    },
+    {
+      "questionId": "enzymology_059",
+      "difficulty": 2,
+      "question": "The concept of transition state stabilization in enzyme catalysis was proposed by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Linus Pauling",
+          "isCorrect": true,
+          "explanation": "Pauling suggested that enzymes are complementary to the transition state, stabilizing it and lowering activation energy."
+        },
+        {
+          "text": "Michaelis and Menten",
+          "isCorrect": false,
+          "explanation": "They developed kinetics."
+        },
+        {
+          "text": "Emil Fischer",
+          "isCorrect": false,
+          "explanation": "He proposed lock-and-key."
+        },
+        {
+          "text": "Daniel Koshland",
+          "isCorrect": false,
+          "explanation": "He proposed induced-fit."
+        },
+        {
+          "text": "J.B.S. Haldane",
+          "isCorrect": false,
+          "explanation": "He contributed to enzyme kinetics."
+        }
+      ],
+      "explanation": {
+        "overview": "Linus Pauling proposed that enzymes act by binding and stabilizing the transition state, thereby lowering the activation energy.",
+        "highYield": "This concept is fundamental to understanding catalysis.",
+        "clinicalCorrelation": "Drug design often aims to mimic transition states."
+      }
+    },
+    {
+      "questionId": "enzymology_060",
+      "difficulty": 2,
+      "question": "The diagram shows the free energy profile of an enzyme‑catalyzed reaction. The difference between the uncatalyzed and catalyzed pathways is:",
+      "image": "energy_profile.png",
+      "options": [
+        {
+          "text": "Lower activation energy",
+          "isCorrect": false,
+          "explanation": "This is correct, but the best answer is both lower activation energy and no change in overall free energy."
+        },
+        {
+          "text": "Higher product energy",
+          "isCorrect": false,
+          "explanation": "Enzymes do not change product energy."
+        },
+        {
+          "text": "Lower substrate energy",
+          "isCorrect": false,
+          "explanation": "Substrate energy is unchanged."
+        },
+        {
+          "text": "No change in free energy of reaction",
+          "isCorrect": false,
+          "explanation": "This is also correct."
+        },
+        {
+          "text": "Both A and D",
+          "isCorrect": true,
+          "explanation": "Enzymes lower the activation energy (ΔG‡) but do not change the overall free energy change (ΔG) of the reaction."
+        }
+      ],
+      "explanation": {
+        "overview": "Enzymes accelerate reactions by lowering the activation energy, but they do not alter the equilibrium (overall ΔG).",
+        "highYield": "They stabilize the transition state.",
+        "clinicalCorrelation": "Understanding this is key to designing enzyme inhibitors."
+      }
+    },
+    {
+      "questionId": "enzymology_061",
+      "difficulty": 2,
+      "question": "Which type of inhibition can be overcome by increasing substrate concentration?",
+      "image": null,
+      "options": [
+        {
+          "text": "Competitive inhibition",
+          "isCorrect": true,
+          "explanation": "Competitive inhibitors compete with substrate for the active site; high substrate can outcompete them."
+        },
+        {
+          "text": "Noncompetitive inhibition",
+          "isCorrect": false,
+          "explanation": "Noncompetitive inhibition cannot be overcome by substrate because it doesn't compete at the active site."
+        },
+        {
+          "text": "Uncompetitive inhibition",
+          "isCorrect": false,
+          "explanation": "Uncompetitive inhibition also cannot be overcome."
+        },
+        {
+          "text": "Irreversible inhibition",
+          "isCorrect": false,
+          "explanation": "Irreversible inhibition is permanent."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "Only competitive inhibition can be overcome by substrate."
+        }
+      ],
+      "explanation": {
+        "overview": "Competitive inhibition is reversible and can be overcome by high substrate concentration because they compete for the same site.",
+        "highYield": "Km increases, Vmax unchanged.",
+        "clinicalCorrelation": "This principle is used in determining inhibitor mode and drug dosing."
+      }
+    },
+    {
+      "questionId": "enzymology_062",
+      "difficulty": 2,
+      "question": "The inhibition constant Ki is a measure of:",
+      "image": null,
+      "options": [
+        {
+          "text": "The affinity of an inhibitor for an enzyme",
+          "isCorrect": true,
+          "explanation": "Ki is the dissociation constant for the enzyme-inhibitor complex; a lower Ki means tighter binding."
+        },
+        {
+          "text": "The turnover number",
+          "isCorrect": false,
+          "explanation": "That is kcat."
+        },
+        {
+          "text": "The Michaelis constant",
+          "isCorrect": false,
+          "explanation": "That is Km."
+        },
+        {
+          "text": "The maximum velocity",
+          "isCorrect": false,
+          "explanation": "That is Vmax."
+        },
+        {
+          "text": "The enzyme concentration",
+          "isCorrect": false,
+          "explanation": "Not Ki."
+        }
+      ],
+      "explanation": {
+        "overview": "The inhibition constant (Ki) is the dissociation constant of the enzyme-inhibitor complex, reflecting inhibitor affinity.",
+        "highYield": "Lower Ki means higher affinity and stronger inhibition.",
+        "clinicalCorrelation": "Ki values are used to compare drug potency."
+      }
+    },
+    {
+      "questionId": "enzymology_063",
+      "difficulty": 3,
+      "question": "In mixed inhibition, the inhibitor affects both Km and Vmax. If the inhibitor has a greater affinity for the free enzyme than for the ES complex, the Lineweaver‑Burk plots will intersect:",
+      "image": null,
+      "options": [
+        {
+          "text": "To the left of the y-axis (above the x-axis)",
+          "isCorrect": true,
+          "explanation": "Mixed inhibition lines intersect to the left of the y-axis, not on it."
+        },
+        {
+          "text": "On the y-axis",
+          "isCorrect": false,
+          "explanation": "That is competitive inhibition."
+        },
+        {
+          "text": "On the x-axis",
+          "isCorrect": false,
+          "explanation": "That is noncompetitive inhibition."
+        },
+        {
+          "text": "Parallel",
+          "isCorrect": false,
+          "explanation": "That is uncompetitive."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "They do intersect."
+        }
+      ],
+      "explanation": {
+        "overview": "Mixed inhibition involves inhibitor binding to both free enzyme and ES complex, with different affinities. The plots intersect to the left of the y‑axis.",
+        "highYield": "If Ki < Ki', it binds better to free enzyme, increasing Km and decreasing Vmax.",
+        "clinicalCorrelation": "Mixed inhibition is common for many drugs."
+      }
+    },
+    {
+      "questionId": "enzymology_064",
+      "difficulty": 2,
+      "question": "Enzyme activity can be regulated by covalent modification. Which of the following is an example?",
+      "image": null,
+      "options": [
+        {
+          "text": "Phosphorylation",
+          "isCorrect": false,
+          "explanation": "Yes, but other modifications also exist."
+        },
+        {
+          "text": "Acetylation",
+          "isCorrect": false,
+          "explanation": "Yes, but not the only one."
+        },
+        {
+          "text": "Ubiquitination",
+          "isCorrect": false,
+          "explanation": "Also a covalent modification."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Phosphorylation, acetylation, ubiquitination, and others are covalent modifications regulating enzyme activity."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All are examples."
+        }
+      ],
+      "explanation": {
+        "overview": "Covalent modifications (phosphorylation, acetylation, ubiquitination, etc.) dynamically regulate enzyme activity.",
+        "highYield": "Phosphorylation is the most common.",
+        "clinicalCorrelation": "Many drugs target kinases and phosphatases."
+      }
+    },
+    {
+      "questionId": "enzymology_065",
+      "difficulty": 2,
+      "question": "Proteolytic activation of zymogens is an example of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Irreversible covalent modification",
+          "isCorrect": true,
+          "explanation": "Proteolytic cleavage is irreversible, converting inactive zymogens to active enzymes."
+        },
+        {
+          "text": "Reversible covalent modification",
+          "isCorrect": false,
+          "explanation": "It is irreversible."
+        },
+        {
+          "text": "Allosteric regulation",
+          "isCorrect": false,
+          "explanation": "Not allosteric."
+        },
+        {
+          "text": "Feedback inhibition",
+          "isCorrect": false,
+          "explanation": "Not feedback."
+        },
+        {
+          "text": "Competitive inhibition",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Zymogen activation involves irreversible proteolytic cleavage, which permanently activates the enzyme.",
+        "highYield": "Examples: digestive enzymes, blood clotting factors.",
+        "clinicalCorrelation": "Defects in zymogen activation cause diseases like pancreatitis."
+      }
+    },
+    {
+      "questionId": "enzymology_066",
+      "difficulty": 1,
+      "question": "The enzyme that adds a phosphate group to a protein is called a:",
+      "image": null,
+      "options": [
+        {
+          "text": "Kinase",
+          "isCorrect": true,
+          "explanation": "Kinases transfer phosphate from ATP to target proteins."
+        },
+        {
+          "text": "Phosphatase",
+          "isCorrect": false,
+          "explanation": "Phosphatases remove phosphate."
+        },
+        {
+          "text": "Phosphorylase",
+          "isCorrect": false,
+          "explanation": "Phosphorylase adds phosphate to substrates (e.g., glycogen phosphorylase)."
+        },
+        {
+          "text": "Transferase",
+          "isCorrect": false,
+          "explanation": "Kinases are a type of transferase, but the specific term is kinase."
+        },
+        {
+          "text": "Ligase",
+          "isCorrect": false,
+          "explanation": "Ligases join molecules."
+        }
+      ],
+      "explanation": {
+        "overview": "Protein kinases catalyze the transfer of the γ‑phosphate of ATP to serine, threonine, or tyrosine residues on proteins.",
+        "highYield": "They are key regulators of cell signaling.",
+        "clinicalCorrelation": "Kinase inhibitors are important cancer drugs."
+      }
+    },
+    {
+      "questionId": "enzymology_067",
+      "difficulty": 1,
+      "question": "The enzyme that removes a phosphate group from a protein is called a:",
+      "image": null,
+      "options": [
+        {
+          "text": "Phosphatase",
+          "isCorrect": true,
+          "explanation": "Phosphatases hydrolyze phosphoester bonds on proteins."
+        },
+        {
+          "text": "Kinase",
+          "isCorrect": false,
+          "explanation": "Kinases add phosphate."
+        },
+        {
+          "text": "Phosphorylase",
+          "isCorrect": false,
+          "explanation": "Not removal."
+        },
+        {
+          "text": "Dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Oxidoreductase."
+        },
+        {
+          "text": "Esterase",
+          "isCorrect": false,
+          "explanation": "Not specific to phosphates."
+        }
+      ],
+      "explanation": {
+        "overview": "Protein phosphatases remove phosphate groups from proteins, counteracting kinases.",
+        "highYield": "They are essential for signal termination.",
+        "clinicalCorrelation": "Phosphatase inhibitors are being studied as therapeutics."
+      }
+    },
+    {
+      "questionId": "enzymology_068",
+      "difficulty": 2,
+      "question": "Which of the following is an example of an enzyme that uses a ping-pong (double displacement) mechanism?",
+      "image": null,
+      "options": [
+        {
+          "text": "Chymotrypsin",
+          "isCorrect": false,
+          "explanation": "Chymotrypsin uses a ping‑pong mechanism? Actually, chymotrypsin does have a covalent intermediate, but the classic ping‑pong is seen in transaminases."
+        },
+        {
+          "text": "Hexokinase",
+          "isCorrect": false,
+          "explanation": "Hexokinase uses induced fit, not ping‑pong."
+        },
+        {
+          "text": "Aldolase",
+          "isCorrect": false,
+          "explanation": "Aldolase uses Schiff base, but not classic ping‑pong."
+        },
+        {
+          "text": "Aspartate aminotransferase",
+          "isCorrect": true,
+          "explanation": "Aspartate aminotransferase (a transaminase) uses a ping-pong mechanism where one substrate binds, product released, then second substrate binds."
+        },
+        {
+          "text": "Succinate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Not ping‑pong."
+        }
+      ],
+      "explanation": {
+        "overview": "Ping‑pong (double displacement) mechanism involves formation of a covalent intermediate, and the enzyme alternates between two forms.",
+        "highYield": "Transaminases, some dehydrogenases, and chymotrypsin use ping‑pong.",
+        "clinicalCorrelation": "Understanding the mechanism aids in inhibitor design."
+      }
+    },
+    {
+      "questionId": "enzymology_069",
+      "difficulty": 2,
+      "question": "In a ping-pong mechanism, the double reciprocal plot yields:",
+      "image": null,
+      "options": [
+        {
+          "text": "Parallel lines",
+          "isCorrect": true,
+          "explanation": "Ping-pong mechanisms produce parallel Lineweaver‑Burk plots at different fixed substrate concentrations."
+        },
+        {
+          "text": "Intersecting lines",
+          "isCorrect": false,
+          "explanation": "Sequential mechanisms give intersecting lines."
+        },
+        {
+          "text": "Curved lines",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Vertical lines",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Horizontal lines",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "In a ping‑pong mechanism, the enzyme is modified by the first substrate, and the second substrate reacts after release of the first product, yielding parallel lines in double reciprocal plots.",
+        "highYield": "This pattern distinguishes ping‑pong from sequential mechanisms.",
+        "clinicalCorrelation": "Kinetic analysis helps identify reaction mechanisms."
+      }
+    },
+    {
+      "questionId": "enzymology_070",
+      "difficulty": 1,
+      "question": "The initial rate of an enzyme reaction is measured when:",
+      "image": null,
+      "options": [
+        {
+          "text": "Substrate concentration is in large excess",
+          "isCorrect": false,
+          "explanation": "This is one condition, but also product accumulation is minimal and enzyme constant."
+        },
+        {
+          "text": "Product accumulation is minimal",
+          "isCorrect": false,
+          "explanation": "Also true."
+        },
+        {
+          "text": "Enzyme concentration is constant",
+          "isCorrect": false,
+          "explanation": "Also true."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Initial rate conditions require excess substrate, negligible product, and constant enzyme."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All are correct."
+        }
+      ],
+      "explanation": {
+        "overview": "Initial velocity measurements are made under conditions where substrate is in excess, product is negligible, and enzyme concentration is constant.",
+        "highYield": "This ensures that the rate reflects enzyme activity without complications.",
+        "clinicalCorrelation": "Accurate initial rate measurements are critical for kinetic analysis."
+      }
+    },
+    {
+      "questionId": "enzymology_071",
+      "difficulty": 2,
+      "question": "A coupled enzyme assay is used when:",
+      "image": null,
+      "options": [
+        {
+          "text": "The product of the first enzyme is not directly measurable",
+          "isCorrect": true,
+          "explanation": "Coupled assays link the reaction to a second enzyme that produces a detectable product (e.g., NADH absorbance)."
+        },
+        {
+          "text": "The enzyme is inactive",
+          "isCorrect": false,
+          "explanation": "Not the purpose."
+        },
+        {
+          "text": "The substrate is unstable",
+          "isCorrect": false,
+          "explanation": "Not typically."
+        },
+        {
+          "text": "The enzyme is membrane-bound",
+          "isCorrect": false,
+          "explanation": "Not necessarily."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "It is used when product is not measurable."
+        }
+      ],
+      "explanation": {
+        "overview": "Coupled assays use a second enzyme to convert the product of the first reaction into a measurable signal, often spectrophotometric.",
+        "highYield": "Commonly uses NADH/NADPH absorbance changes.",
+        "clinicalCorrelation": "Used in clinical chemistry for measuring enzyme activities."
+      }
+    },
+    {
+      "questionId": "enzymology_072",
+      "difficulty": 2,
+      "question": "In a coupled assay, the auxiliary enzyme must be:",
+      "image": null,
+      "options": [
+        {
+          "text": "Present in excess so it is not rate-limiting",
+          "isCorrect": true,
+          "explanation": "The auxiliary enzyme should be in excess so that the measured rate reflects the primary enzyme activity."
+        },
+        {
+          "text": "Specific for the substrate",
+          "isCorrect": false,
+          "explanation": "It must be specific for the product of the first reaction."
+        },
+        {
+          "text": "Thermostable",
+          "isCorrect": false,
+          "explanation": "Not necessarily."
+        },
+        {
+          "text": "Immobilized",
+          "isCorrect": false,
+          "explanation": "Not required."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "Only the excess condition is crucial."
+        }
+      ],
+      "explanation": {
+        "overview": "In coupled assays, the auxiliary enzyme must be in large excess so that the rate‑limiting step is the primary enzyme, not the coupling enzyme.",
+        "highYield": "This ensures accurate measurement of the target enzyme activity.",
+        "clinicalCorrelation": "Used in routine clinical enzyme assays."
+      }
+    },
+    {
+      "questionId": "enzymology_073",
+      "difficulty": 2,
+      "question": "Which of the following is a suicide inhibitor (mechanism-based inhibitor)?",
+      "image": null,
+      "options": [
+        {
+          "text": "Penicillin (inhibits transpeptidase)",
+          "isCorrect": false,
+          "explanation": "Penicillin is a suicide inhibitor of transpeptidase."
+        },
+        {
+          "text": "Allopurinol",
+          "isCorrect": false,
+          "explanation": "Allopurinol is a suicide inhibitor of xanthine oxidase."
+        },
+        {
+          "text": "Fluorouracil",
+          "isCorrect": false,
+          "explanation": "5‑Fluorouracil is a suicide inhibitor of thymidylate synthase."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Suicide inhibitors are converted by the enzyme into a reactive species that covalently binds. Penicillin, allopurinol, and 5-fluorouracil are examples."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All are suicide inhibitors."
+        }
+      ],
+      "explanation": {
+        "overview": "Suicide inhibitors (mechanism‑based inhibitors) are initially substrates that form a reactive intermediate that covalently modifies the enzyme.",
+        "highYield": "They are highly specific and irreversible.",
+        "clinicalCorrelation": "Many drugs are designed as suicide inhibitors for therapeutic benefit."
+      }
+    },
+    {
+      "questionId": "enzymology_074",
+      "difficulty": 1,
+      "question": "Enzymes that catalyze the same reaction but have different kinetic properties are called:",
+      "image": null,
+      "options": [
+        {
+          "text": "Isozymes",
+          "isCorrect": true,
+          "explanation": "Isozymes (isoenzymes) are distinct enzyme forms that catalyze the same reaction."
+        },
+        {
+          "text": "Allozymes",
+          "isCorrect": false,
+          "explanation": "Allozymes are genetic variants at the same locus, but isozymes is the broader term."
+        },
+        {
+          "text": "Multienzyme complexes",
+          "isCorrect": false,
+          "explanation": "These are physical associations of different enzymes."
+        },
+        {
+          "text": "Zymogens",
+          "isCorrect": false,
+          "explanation": "Inactive precursors."
+        },
+        {
+          "text": "Ribozymes",
+          "isCorrect": false,
+          "explanation": "Catalytic RNA."
+        }
+      ],
+      "explanation": {
+        "overview": "Isozymes are multiple forms of an enzyme arising from different genes or subunit combinations, catalyzing the same reaction.",
+        "highYield": "They often have different tissue distributions and regulatory properties.",
+        "clinicalCorrelation": "Isozyme patterns aid in disease diagnosis."
+      }
+    },
+    {
+      "questionId": "enzymology_075",
+      "difficulty": 2,
+      "question": "The ratio kcat/Km is also known as the:",
+      "image": null,
+      "options": [
+        {
+          "text": "Specificity constant",
+          "isCorrect": false,
+          "explanation": "Yes, but also catalytic efficiency."
+        },
+        {
+          "text": "Catalytic efficiency",
+          "isCorrect": false,
+          "explanation": "Yes, but also specificity constant."
+        },
+        {
+          "text": "Both A and B",
+          "isCorrect": true,
+          "explanation": "kcat/Km measures both catalytic efficiency and substrate specificity."
+        },
+        {
+          "text": "Michaelis constant",
+          "isCorrect": false,
+          "explanation": "That is Km."
+        },
+        {
+          "text": "Turnover number",
+          "isCorrect": false,
+          "explanation": "That is kcat."
+        }
+      ],
+      "explanation": {
+        "overview": "The ratio kcat/Km is the specificity constant, reflecting both catalytic efficiency and substrate specificity.",
+        "highYield": "It is used to compare enzymes.",
+        "clinicalCorrelation": "Important in evaluating enzyme performance."
+      }
+    },
+    {
+      "questionId": "enzymology_076",
+      "difficulty": 2,
+      "question": "For an enzyme obeying Michaelis‑Menten kinetics, the double reciprocal plot of 1/v versus 1/[S] yields a straight line with intercept on the x‑axis equal to:",
+      "image": null,
+      "options": [
+        {
+          "text": "-1/Km",
+          "isCorrect": true,
+          "explanation": "The Lineweaver‑Burk equation: 1/v = (Km/Vmax)(1/[S]) + 1/Vmax; x‑intercept = -1/Km."
+        },
+        {
+          "text": "1/Km",
+          "isCorrect": false,
+          "explanation": "That would be the negative of the intercept."
+        },
+        {
+          "text": "-1/Vmax",
+          "isCorrect": false,
+          "explanation": "That is not the x‑intercept."
+        },
+        {
+          "text": "1/Vmax",
+          "isCorrect": false,
+          "explanation": "That is the y‑intercept."
+        },
+        {
+          "text": "Km",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        }
+      ],
+      "explanation": {
+        "overview": "In a Lineweaver‑Burk plot, the x‑intercept equals -1/Km.",
+        "highYield": "Remember: y‑intercept = 1/Vmax.",
+        "clinicalCorrelation": "Used to determine Km and Vmax."
+      }
+    },
+    {
+      "questionId": "enzymology_077",
+      "difficulty": 1,
+      "question": "Enzymes increase the rate of a reaction by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Lowering the activation energy",
+          "isCorrect": true,
+          "explanation": "Enzymes lower the activation energy barrier, accelerating the reaction."
+        },
+        {
+          "text": "Increasing the temperature",
+          "isCorrect": false,
+          "explanation": "They do not change temperature."
+        },
+        {
+          "text": "Increasing substrate concentration",
+          "isCorrect": false,
+          "explanation": "They don't change substrate concentration."
+        },
+        {
+          "text": "Raising the free energy of products",
+          "isCorrect": false,
+          "explanation": "They do not change product energy."
+        },
+        {
+          "text": "Decreasing the free energy of reactants",
+          "isCorrect": false,
+          "explanation": "They do not change reactant energy."
+        }
+      ],
+      "explanation": {
+        "overview": "Enzymes are catalysts that lower the activation energy of a reaction, increasing the rate without being consumed.",
+        "highYield": "They stabilize the transition state.",
+        "clinicalCorrelation": "Understanding this is fundamental to biochemistry."
+      }
+    },
+    {
+      "questionId": "enzymology_078",
+      "difficulty": 1,
+      "question": "The active site of an enzyme is characterized by:",
+      "image": null,
+      "options": [
+        {
+          "text": "A three-dimensional cleft that binds substrate",
+          "isCorrect": true,
+          "explanation": "The active site is a cleft that binds substrate and may undergo conformational changes; it contains residues involved in binding and catalysis."
+        },
+        {
+          "text": "A rigid structure that does not change",
+          "isCorrect": false,
+          "explanation": "Some enzymes are flexible (induced-fit)."
+        },
+        {
+          "text": "Located on the surface of the enzyme",
+          "isCorrect": false,
+          "explanation": "It can be a cleft, not always on the surface."
+        },
+        {
+          "text": "Composed of only amino acids that catalyze the reaction",
+          "isCorrect": false,
+          "explanation": "It contains binding residues and catalytic residues."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "Only the first statement is correct."
+        }
+      ],
+      "explanation": {
+        "overview": "The active site is a specific pocket or cleft in the enzyme where substrate binds and catalysis occurs.",
+        "highYield": "It is formed by amino acid residues from different parts of the sequence.",
+        "clinicalCorrelation": "Active site structure is key to drug design."
+      }
+    },
+    {
+      "questionId": "enzymology_079",
+      "difficulty": 1,
+      "question": "Which of the following is an example of an enzyme that requires a cofactor?",
+      "image": null,
+      "options": [
+        {
+          "text": "Carbonic anhydrase (requires Zn2+)",
+          "isCorrect": false,
+          "explanation": "Yes, it requires zinc."
+        },
+        {
+          "text": "Catalase (contains heme)",
+          "isCorrect": false,
+          "explanation": "Catalase contains heme (iron)."
+        },
+        {
+          "text": "Both A and B",
+          "isCorrect": true,
+          "explanation": "Carbonic anhydrase needs zinc; catalase has heme (iron). Lysozyme and trypsin are simple enzymes without cofactors."
+        },
+        {
+          "text": "Lysozyme",
+          "isCorrect": false,
+          "explanation": "Lysozyme does not require a cofactor."
+        },
+        {
+          "text": "Trypsin",
+          "isCorrect": false,
+          "explanation": "Trypsin does not require a cofactor."
+        }
+      ],
+      "explanation": {
+        "overview": "Many enzymes require cofactors (metal ions or coenzymes) for activity. Carbonic anhydrase needs Zn2+, catalase requires heme.",
+        "highYield": "Some enzymes are simple proteins without cofactors.",
+        "clinicalCorrelation": "Cofactor deficiencies can cause disease."
+      }
+    },
+    {
+      "questionId": "enzymology_080",
+      "difficulty": 2,
+      "question": "The phenomenon where the binding of one substrate molecule affects the binding of subsequent substrate molecules is called:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cooperativity",
+          "isCorrect": true,
+          "explanation": "Cooperativity is characteristic of allosteric enzymes, where binding at one site alters affinity at other sites."
+        },
+        {
+          "text": "Allostery",
+          "isCorrect": false,
+          "explanation": "Allostery is broader; cooperativity is a specific manifestation."
+        },
+        {
+          "text": "Feedback inhibition",
+          "isCorrect": false,
+          "explanation": "Feedback inhibition is regulation by end product."
+        },
+        {
+          "text": "Competitive inhibition",
+          "isCorrect": false,
+          "explanation": "Not related."
+        },
+        {
+          "text": "Covalent modification",
+          "isCorrect": false,
+          "explanation": "Not that."
+        }
+      ],
+      "explanation": {
+        "overview": "Cooperativity occurs when substrate binding at one site influences binding at other sites, leading to sigmoidal kinetics.",
+        "highYield": "Positive cooperativity (nH > 1) increases sensitivity.",
+        "clinicalCorrelation": "Important in hemoglobin and many regulatory enzymes."
+      }
+    },
+    {
+      "questionId": "enzymology_081",
+      "difficulty": 2,
+      "question": "Which of the following is a characteristic of Michaelis‑Menten kinetics?",
+      "image": null,
+      "options": [
+        {
+          "text": "Hyperbolic dependence of velocity on substrate concentration",
+          "isCorrect": true,
+          "explanation": "Michaelis‑Menten kinetics gives a hyperbolic curve."
+        },
+        {
+          "text": "Sigmoidal dependence",
+          "isCorrect": false,
+          "explanation": "Sigmoidal is for cooperative enzymes."
+        },
+        {
+          "text": "Linear dependence at all concentrations",
+          "isCorrect": false,
+          "explanation": "Only at low substrate concentrations."
+        },
+        {
+          "text": "No saturation",
+          "isCorrect": false,
+          "explanation": "Saturation occurs."
+        },
+        {
+          "text": "Independent of enzyme concentration",
+          "isCorrect": false,
+          "explanation": "Rate is proportional to enzyme concentration."
+        }
+      ],
+      "explanation": {
+        "overview": "Michaelis‑Menten kinetics describes simple enzyme reactions with hyperbolic saturation behavior.",
+        "highYield": "v = Vmax[S]/(Km+[S]).",
+        "clinicalCorrelation": "Understanding this is fundamental for enzyme assays."
+      }
+    },
+    {
+      "questionId": "enzymology_082",
+      "difficulty": 2,
+      "question": "What is the effect of a competitive inhibitor on the apparent Vmax and Km?",
+      "image": null,
+      "options": [
+        {
+          "text": "Vmax unchanged, Km increased (apparent)",
+          "isCorrect": true,
+          "explanation": "Competitive inhibition increases apparent Km, Vmax unchanged."
+        },
+        {
+          "text": "Vmax decreased, Km unchanged",
+          "isCorrect": false,
+          "explanation": "That is noncompetitive."
+        },
+        {
+          "text": "Both decreased",
+          "isCorrect": false,
+          "explanation": "That is uncompetitive."
+        },
+        {
+          "text": "Both increased",
+          "isCorrect": false,
+          "explanation": "Mixed inhibition may increase Km, decrease Vmax."
+        },
+        {
+          "text": "No change",
+          "isCorrect": false,
+          "explanation": "Inhibition causes change."
+        }
+      ],
+      "explanation": {
+        "overview": "Competitive inhibitors increase the apparent Km (affinity appears lower) but do not affect Vmax because high substrate overcomes inhibition.",
+        "highYield": "Vmax unchanged, Km increases.",
+        "clinicalCorrelation": "Used to design drugs that can be outcompeted."
+      }
+    },
+    {
+      "questionId": "enzymology_083",
+      "difficulty": 2,
+      "question": "Which type of inhibitor binds to the enzyme‑substrate complex only?",
+      "image": null,
+      "options": [
+        {
+          "text": "Uncompetitive inhibitor",
+          "isCorrect": true,
+          "explanation": "Uncompetitive inhibitors bind only to the ES complex."
+        },
+        {
+          "text": "Competitive inhibitor",
+          "isCorrect": false,
+          "explanation": "Competitive binds to free enzyme."
+        },
+        {
+          "text": "Noncompetitive inhibitor",
+          "isCorrect": false,
+          "explanation": "Noncompetitive binds to both free enzyme and ES complex."
+        },
+        {
+          "text": "Mixed inhibitor",
+          "isCorrect": false,
+          "explanation": "Mixed binds to both with different affinities."
+        },
+        {
+          "text": "Irreversible inhibitor",
+          "isCorrect": false,
+          "explanation": "Irreversible can bind to various forms."
+        }
+      ],
+      "explanation": {
+        "overview": "Uncompetitive inhibitors bind only to the enzyme‑substrate complex, preventing catalysis.",
+        "highYield": "They decrease both Vmax and Km.",
+        "clinicalCorrelation": "Rare but seen in some drugs."
+      }
+    },
+    {
+      "questionId": "enzymology_084",
+      "difficulty": 2,
+      "question": "The enzyme that catalyzes the conversion of pyruvate to lactate is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Lactate dehydrogenase",
+          "isCorrect": true,
+          "explanation": "Lactate dehydrogenase (LDH) catalyzes pyruvate + NADH → lactate + NAD+."
+        },
+        {
+          "text": "Pyruvate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "PDH converts pyruvate to acetyl‑CoA."
+        },
+        {
+          "text": "Pyruvate carboxylase",
+          "isCorrect": false,
+          "explanation": "Pyruvate carboxylase converts pyruvate to oxaloacetate."
+        },
+        {
+          "text": "Malate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "MDH converts malate to oxaloacetate."
+        },
+        {
+          "text": "Alcohol dehydrogenase",
+          "isCorrect": false,
+          "explanation": "ADH oxidizes ethanol."
+        }
+      ],
+      "explanation": {
+        "overview": "Lactate dehydrogenase (LDH) catalyzes the interconversion of pyruvate and lactate, using NADH/NAD+.",
+        "highYield": "This reaction regenerates NAD+ for glycolysis under anaerobic conditions.",
+        "clinicalCorrelation": "LDH is elevated in tissue damage (e.g., myocardial infarction, hemolysis)."
+      }
+    },
+    {
+      "questionId": "enzymology_085",
+      "difficulty": 2,
+      "question": "The enzyme that catalyzes the conversion of pyruvate to acetyl‑CoA is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Pyruvate dehydrogenase complex",
+          "isCorrect": true,
+          "explanation": "PDH complex catalyzes the oxidative decarboxylation of pyruvate to acetyl‑CoA."
+        },
+        {
+          "text": "Pyruvate carboxylase",
+          "isCorrect": false,
+          "explanation": "PC converts pyruvate to oxaloacetate."
+        },
+        {
+          "text": "Lactate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "LDH converts pyruvate to lactate."
+        },
+        {
+          "text": "Citrate synthase",
+          "isCorrect": false,
+          "explanation": "Citrate synthase condenses acetyl‑CoA with oxaloacetate."
+        },
+        {
+          "text": "Phosphoenolpyruvate carboxykinase",
+          "isCorrect": false,
+          "explanation": "PEPCK is in gluconeogenesis."
+        }
+      ],
+      "explanation": {
+        "overview": "Pyruvate dehydrogenase complex (PDH) is a multi‑enzyme complex that links glycolysis to the TCA cycle by producing acetyl‑CoA.",
+        "highYield": "It requires five cofactors and is regulated by phosphorylation/dephosphorylation.",
+        "clinicalCorrelation": "PDH deficiency causes lactic acidosis and neurological defects."
+      }
+    },
+    {
+      "questionId": "enzymology_086",
+      "difficulty": 2,
+      "question": "Which enzyme catalyzes the first step of gluconeogenesis from pyruvate?",
+      "image": null,
+      "options": [
+        {
+          "text": "Pyruvate carboxylase",
+          "isCorrect": true,
+          "explanation": "Pyruvate carboxylase converts pyruvate to oxaloacetate, the first step of gluconeogenesis."
+        },
+        {
+          "text": "Phosphoenolpyruvate carboxykinase",
+          "isCorrect": false,
+          "explanation": "PEPCK converts oxaloacetate to PEP, the second step."
+        },
+        {
+          "text": "Fructose‑1,6‑bisphosphatase",
+          "isCorrect": false,
+          "explanation": "FBPase is later in gluconeogenesis."
+        },
+        {
+          "text": "Glucose‑6‑phosphatase",
+          "isCorrect": false,
+          "explanation": "This is the final step."
+        },
+        {
+          "text": "Aldolase",
+          "isCorrect": false,
+          "explanation": "Aldolase is in glycolysis and gluconeogenesis but not the first step."
+        }
+      ],
+      "explanation": {
+        "overview": "Gluconeogenesis begins with pyruvate carboxylase converting pyruvate to oxaloacetate, a key anaplerotic reaction.",
+        "highYield": "Pyruvate carboxylase requires biotin and is activated by acetyl‑CoA.",
+        "clinicalCorrelation": "Defects in gluconeogenesis enzymes cause hypoglycemia."
+      }
+    },
+    {
+      "questionId": "enzymology_087",
+      "difficulty": 2,
+      "question": "The enzyme that catalyzes the final step of gluconeogenesis, producing glucose, is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glucose‑6‑phosphatase",
+          "isCorrect": true,
+          "explanation": "Glucose‑6‑phosphatase hydrolyzes glucose‑6‑phosphate to glucose, the final step."
+        },
+        {
+          "text": "Hexokinase",
+          "isCorrect": false,
+          "explanation": "Hexokinase phosphorylates glucose."
+        },
+        {
+          "text": "Phosphoglucomutase",
+          "isCorrect": false,
+          "explanation": "This converts G6P to G1P."
+        },
+        {
+          "text": "Glycogen phosphorylase",
+          "isCorrect": false,
+          "explanation": "Involved in glycogen breakdown."
+        },
+        {
+          "text": "Fructose‑1,6‑bisphosphatase",
+          "isCorrect": false,
+          "explanation": "FBPase is earlier in the pathway."
+        }
+      ],
+      "explanation": {
+        "overview": "Glucose‑6‑phosphatase (G6Pase) is the final enzyme in gluconeogenesis, releasing glucose from the liver and kidney.",
+        "highYield": "It is present in liver and kidney but not muscle.",
+        "clinicalCorrelation": "Deficiency causes von Gierke disease (glycogen storage disease type I)."
+      }
+    },
+    {
+      "questionId": "enzymology_088",
+      "difficulty": 2,
+      "question": "The enzyme that catalyzes the conversion of glycogen to glucose‑1‑phosphate is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glycogen phosphorylase",
+          "isCorrect": true,
+          "explanation": "Glycogen phosphorylase cleaves α‑1,4 glycosidic bonds to release glucose‑1‑phosphate."
+        },
+        {
+          "text": "Glycogen synthase",
+          "isCorrect": false,
+          "explanation": "Glycogen synthase synthesizes glycogen."
+        },
+        {
+          "text": "Debranching enzyme",
+          "isCorrect": false,
+          "explanation": "Debranching enzyme removes α‑1,6 branches."
+        },
+        {
+          "text": "Phosphoglucomutase",
+          "isCorrect": false,
+          "explanation": "Phosphoglucomutase converts G1P to G6P."
+        },
+        {
+          "text": "UDP‑glucose pyrophosphorylase",
+          "isCorrect": false,
+          "explanation": "Involved in glycogen synthesis."
+        }
+      ],
+      "explanation": {
+        "overview": "Glycogen phosphorylase catalyzes phosphorolysis of glycogen to glucose‑1‑phosphate, the rate‑limiting step in glycogenolysis.",
+        "highYield": "It is activated by phosphorylation and allosterically by AMP.",
+        "clinicalCorrelation": "McArdle disease is a glycogen phosphorylase deficiency in muscle."
+      }
+    },
+    {
+      "questionId": "enzymology_089",
+      "difficulty": 2,
+      "question": "The enzyme that synthesizes glycogen from glucose‑1‑phosphate is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glycogen synthase",
+          "isCorrect": true,
+          "explanation": "Glycogen synthase catalyzes the formation of α‑1,4 linkages in glycogen, using UDP‑glucose."
+        },
+        {
+          "text": "Glycogen phosphorylase",
+          "isCorrect": false,
+          "explanation": "Phosphorylase breaks down glycogen."
+        },
+        {
+          "text": "Branching enzyme",
+          "isCorrect": false,
+          "explanation": "Branching enzyme creates α‑1,6 branches."
+        },
+        {
+          "text": "Phosphoglucomutase",
+          "isCorrect": false,
+          "explanation": "Converts G1P to G6P."
+        },
+        {
+          "text": "UDP‑glucose pyrophosphorylase",
+          "isCorrect": false,
+          "explanation": "This synthesizes UDP‑glucose from G1P and UTP."
+        }
+      ],
+      "explanation": {
+        "overview": "Glycogen synthase is the key enzyme in glycogen synthesis, adding glucose units to the growing chain.",
+        "highYield": "It is activated by dephosphorylation and by glucose‑6‑phosphate.",
+        "clinicalCorrelation": "Insulin promotes glycogen synthase activation."
+      }
+    },
+    {
+      "questionId": "enzymology_090",
+      "difficulty": 2,
+      "question": "Which enzyme is responsible for the rate‑limiting step of the pentose phosphate pathway?",
+      "image": null,
+      "options": [
+        {
+          "text": "Glucose‑6‑phosphate dehydrogenase",
+          "isCorrect": true,
+          "explanation": "G6PD catalyzes the first step of the oxidative phase, producing NADPH; it is the rate‑limiting enzyme."
+        },
+        {
+          "text": "6‑phosphogluconate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "This is the second oxidative step."
+        },
+        {
+          "text": "Transketolase",
+          "isCorrect": false,
+          "explanation": "In the non‑oxidative phase."
+        },
+        {
+          "text": "Transaldolase",
+          "isCorrect": false,
+          "explanation": "Also non‑oxidative."
+        },
+        {
+          "text": "Ribose‑5‑phosphate isomerase",
+          "isCorrect": false,
+          "explanation": "Not rate‑limiting."
+        }
+      ],
+      "explanation": {
+        "overview": "Glucose‑6‑phosphate dehydrogenase (G6PD) catalyzes the first and rate‑limiting step of the pentose phosphate pathway, producing NADPH.",
+        "highYield": "G6PD is regulated by NADP+ levels.",
+        "clinicalCorrelation": "G6PD deficiency causes hemolytic anemia upon oxidative stress."
+      }
+    },
+    {
+      "questionId": "enzymology_091",
+      "difficulty": 2,
+      "question": "The enzyme that converts H2O2 to water and oxygen is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Catalase",
+          "isCorrect": true,
+          "explanation": "Catalase catalyzes 2 H2O2 → 2 H2O + O2."
+        },
+        {
+          "text": "Peroxidase",
+          "isCorrect": false,
+          "explanation": "Peroxidase uses H2O2 to oxidize another substrate."
+        },
+        {
+          "text": "Superoxide dismutase",
+          "isCorrect": false,
+          "explanation": "SOD converts superoxide to H2O2."
+        },
+        {
+          "text": "Glutathione peroxidase",
+          "isCorrect": false,
+          "explanation": "Glutathione peroxidase reduces H2O2 using glutathione."
+        },
+        {
+          "text": "Oxidase",
+          "isCorrect": false,
+          "explanation": "Oxidases produce H2O2."
+        }
+      ],
+      "explanation": {
+        "overview": "Catalase is an enzyme that decomposes hydrogen peroxide into water and oxygen, protecting cells from oxidative damage.",
+        "highYield": "It is present in peroxisomes.",
+        "clinicalCorrelation": "Catalase deficiency is rare but can cause increased H2O2 toxicity."
+      }
+    },
+    {
+      "questionId": "enzymology_092",
+      "difficulty": 2,
+      "question": "Superoxide dismutase (SOD) converts superoxide anion into:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hydrogen peroxide and oxygen",
+          "isCorrect": true,
+          "explanation": "SOD catalyzes 2 O2•− + 2H+ → H2O2 + O2."
+        },
+        {
+          "text": "Water and oxygen",
+          "isCorrect": false,
+          "explanation": "That is catalase."
+        },
+        {
+          "text": "Hydroxyl radical",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        },
+        {
+          "text": "Peroxide radical",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Ozone",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Superoxide dismutase is an antioxidant enzyme that converts superoxide radicals to hydrogen peroxide and oxygen.",
+        "highYield": "SOD requires metal cofactors (Cu/Zn, Mn, Fe).",
+        "clinicalCorrelation": "SOD deficiency leads to oxidative stress."
+      }
+    },
+    {
+      "questionId": "enzymology_093",
+      "difficulty": 2,
+      "question": "The enzyme that catalyzes the formation of nitric oxide from arginine is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Nitric oxide synthase",
+          "isCorrect": true,
+          "explanation": "NOS converts L‑arginine to citrulline and NO."
+        },
+        {
+          "text": "Nitrate reductase",
+          "isCorrect": false,
+          "explanation": "Reduces nitrate to nitrite."
+        },
+        {
+          "text": "Nitrite reductase",
+          "isCorrect": false,
+          "explanation": "Reduces nitrite to NO."
+        },
+        {
+          "text": "Arginase",
+          "isCorrect": false,
+          "explanation": "Arginase converts arginine to urea."
+        },
+        {
+          "text": "Decarboxylase",
+          "isCorrect": false,
+          "explanation": "Not specific."
+        }
+      ],
+      "explanation": {
+        "overview": "Nitric oxide synthase (NOS) produces nitric oxide (NO), a potent vasodilator and signaling molecule.",
+        "highYield": "There are three isoforms: neuronal, endothelial, and inducible.",
+        "clinicalCorrelation": "NOS inhibitors are used in septic shock."
+      }
+    },
+    {
+      "questionId": "enzymology_094",
+      "difficulty": 2,
+      "question": "Angiotensin‑converting enzyme (ACE) converts angiotensin I to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Angiotensin II",
+          "isCorrect": true,
+          "explanation": "ACE cleaves two amino acids from angiotensin I to produce angiotensin II."
+        },
+        {
+          "text": "Angiotensin III",
+          "isCorrect": false,
+          "explanation": "Angiotensin III is formed from II."
+        },
+        {
+          "text": "Angiotensinogen",
+          "isCorrect": false,
+          "explanation": "That is the precursor."
+        },
+        {
+          "text": "Aldosterone",
+          "isCorrect": false,
+          "explanation": "Aldosterone is released due to angiotensin II."
+        },
+        {
+          "text": "Renin",
+          "isCorrect": false,
+          "explanation": "Renin converts angiotensinogen to angiotensin I."
+        }
+      ],
+      "explanation": {
+        "overview": "ACE is a key enzyme in the renin‑angiotensin system, converting angiotensin I to the potent vasoconstrictor angiotensin II.",
+        "highYield": "ACE inhibitors are used to treat hypertension and heart failure.",
+        "clinicalCorrelation": "ACE inhibitors are first‑line for hypertension."
+      }
+    },
+    {
+      "questionId": "enzymology_095",
+      "difficulty": 2,
+      "question": "The enzyme that catalyzes the conversion of angiotensinogen to angiotensin I is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Renin",
+          "isCorrect": true,
+          "explanation": "Renin, released by kidneys, cleaves angiotensinogen to angiotensin I."
+        },
+        {
+          "text": "ACE",
+          "isCorrect": false,
+          "explanation": "ACE converts angiotensin I to II."
+        },
+        {
+          "text": "Chymase",
+          "isCorrect": false,
+          "explanation": "Chymase also produces angiotensin II."
+        },
+        {
+          "text": "Angiotensinogenase",
+          "isCorrect": false,
+          "explanation": "Renin is the specific term."
+        },
+        {
+          "text": "Trypsin",
+          "isCorrect": false,
+          "explanation": "Not specific."
+        }
+      ],
+      "explanation": {
+        "overview": "Renin is an enzyme secreted by the juxtaglomerular apparatus that initiates the renin‑angiotensin cascade by converting angiotensinogen to angiotensin I.",
+        "highYield": "Renin release is stimulated by low blood pressure, low sodium, and beta‑adrenergic stimulation.",
+        "clinicalCorrelation": "Renin inhibitors are used in hypertension."
+      }
+    },
+    {
+      "questionId": "enzymology_096",
+      "difficulty": 2,
+      "question": "HMG‑CoA reductase is the rate‑limiting enzyme in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cholesterol biosynthesis",
+          "isCorrect": true,
+          "explanation": "HMG‑CoA reductase catalyzes the conversion of HMG‑CoA to mevalonate, the rate‑limiting step of cholesterol synthesis."
+        },
+        {
+          "text": "Fatty acid synthesis",
+          "isCorrect": false,
+          "explanation": "Fatty acid synthase is the key enzyme."
+        },
+        {
+          "text": "Glycolysis",
+          "isCorrect": false,
+          "explanation": "PFK‑1 is rate‑limiting."
+        },
+        {
+          "text": "Ketogenesis",
+          "isCorrect": false,
+          "explanation": "HMG‑CoA lyase is involved in ketone body production."
+        },
+        {
+          "text": "Urea cycle",
+          "isCorrect": false,
+          "explanation": "Not related."
+        }
+      ],
+      "explanation": {
+        "overview": "HMG‑CoA reductase is the key regulatory enzyme in cholesterol synthesis, catalyzing the committed step.",
+        "highYield": "It is inhibited by statins, which are competitive inhibitors.",
+        "clinicalCorrelation": "Statins are widely used to lower cholesterol."
+      }
+    },
+    {
+      "questionId": "enzymology_097",
+      "difficulty": 2,
+      "question": "Which enzyme catalyzes the conversion of glucose‑6‑phosphate to fructose‑6‑phosphate?",
+      "image": null,
+      "options": [
+        {
+          "text": "Phosphoglucose isomerase",
+          "isCorrect": true,
+          "explanation": "Phosphoglucose isomerase (glucose‑6‑phosphate isomerase) isomerizes G6P to F6P."
+        },
+        {
+          "text": "Hexokinase",
+          "isCorrect": false,
+          "explanation": "Hexokinase phosphorylates glucose."
+        },
+        {
+          "text": "PFK‑1",
+          "isCorrect": false,
+          "explanation": "PFK‑1 phosphorylates F6P to F1,6BP."
+        },
+        {
+          "text": "Aldolase",
+          "isCorrect": false,
+          "explanation": "Aldolase cleaves F1,6BP."
+        },
+        {
+          "text": "Phosphoglucomutase",
+          "isCorrect": false,
+          "explanation": "Phosphoglucomutase converts G6P to G1P."
+        }
+      ],
+      "explanation": {
+        "overview": "Phosphoglucose isomerase catalyzes the second step of glycolysis, converting glucose‑6‑phosphate to fructose‑6‑phosphate.",
+        "highYield": "This is a reversible isomerization.",
+        "clinicalCorrelation": "Deficiency causes hemolytic anemia."
+      }
+    },
+    {
+      "questionId": "enzymology_098",
+      "difficulty": 2,
+      "question": "The enzyme that catalyzes the conversion of 3‑phosphoglycerate to 2‑phosphoglycerate is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Phosphoglycerate mutase",
+          "isCorrect": true,
+          "explanation": "Phosphoglycerate mutase shifts the phosphate group from C3 to C2."
+        },
+        {
+          "text": "Enolase",
+          "isCorrect": false,
+          "explanation": "Enolase converts 2‑phosphoglycerate to PEP."
+        },
+        {
+          "text": "Phosphoglycerate kinase",
+          "isCorrect": false,
+          "explanation": "PGK catalyzes the transfer of phosphate to ADP, generating ATP."
+        },
+        {
+          "text": "Glyceraldehyde‑3‑phosphate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "GAPDH oxidizes G3P."
+        },
+        {
+          "text": "Pyruvate kinase",
+          "isCorrect": false,
+          "explanation": "Pyruvate kinase converts PEP to pyruvate."
+        }
+      ],
+      "explanation": {
+        "overview": "Phosphoglycerate mutase catalyzes the conversion of 3‑phosphoglycerate to 2‑phosphoglycerate in glycolysis.",
+        "highYield": "It requires a phosphate from the enzyme (or 2,3‑BPG in RBCs).",
+        "clinicalCorrelation": "Deficiency can cause hemolytic anemia."
+      }
+    },
+    {
+      "questionId": "enzymology_099",
+      "difficulty": 2,
+      "question": "Which enzyme is responsible for converting malate to oxaloacetate in the TCA cycle?",
+      "image": null,
+      "options": [
+        {
+          "text": "Malate dehydrogenase",
+          "isCorrect": true,
+          "explanation": "Malate dehydrogenase oxidizes malate to oxaloacetate, producing NADH."
+        },
+        {
+          "text": "Citrate synthase",
+          "isCorrect": false,
+          "explanation": "Citrate synthase condenses acetyl‑CoA and oxaloacetate."
+        },
+        {
+          "text": "Fumarase",
+          "isCorrect": false,
+          "explanation": "Fumarase converts fumarate to malate."
+        },
+        {
+          "text": "Succinate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "SDH converts succinate to fumarate."
+        },
+        {
+          "text": "Isocitrate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "IDH converts isocitrate to α‑KG."
+        }
+      ],
+      "explanation": {
+        "overview": "Malate dehydrogenase catalyzes the final step of the TCA cycle, producing oxaloacetate and NADH.",
+        "highYield": "The reaction is thermodynamically unfavorable, but substrate removal drives it.",
+        "clinicalCorrelation": "MDH is involved in the malate‑aspartate shuttle."
+      }
+    },
+    {
+      "questionId": "enzymology_100",
+      "difficulty": 2,
+      "question": "The enzyme that catalyzes the conversion of fumarate to malate is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Fumarase",
+          "isCorrect": true,
+          "explanation": "Fumarase (fumarate hydratase) adds water to fumarate to form malate."
+        },
+        {
+          "text": "Malate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "MDH oxidizes malate to oxaloacetate."
+        },
+        {
+          "text": "Succinate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "SDH converts succinate to fumarate."
+        },
+        {
+          "text": "Aconitase",
+          "isCorrect": false,
+          "explanation": "Aconitase interconverts citrate and isocitrate."
+        },
+        {
+          "text": "Citrate synthase",
+          "isCorrect": false,
+          "explanation": "Citrate synthase produces citrate."
+        }
+      ],
+      "explanation": {
+        "overview": "Fumarase hydrates fumarate to malate in the TCA cycle.",
+        "highYield": "This is a reversible reaction.",
+        "clinicalCorrelation": "Fumarase deficiency causes encephalopathy and fumaric aciduria."
+      }
+    },
+    {
+      "questionId": "enzymology_101",
+      "difficulty": 2,
+      "question": "The enzyme that catalyzes the conversion of succinyl‑CoA to succinate is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Succinyl‑CoA synthetase",
+          "isCorrect": true,
+          "explanation": "Succinyl‑CoA synthetase (succinate thiokinase) produces GTP (or ATP) and succinate."
+        },
+        {
+          "text": "Succinate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "SDH oxidizes succinate to fumarate."
+        },
+        {
+          "text": "Citrate synthase",
+          "isCorrect": false,
+          "explanation": "Citrate synthase is not involved."
+        },
+        {
+          "text": "Aconitase",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Fumarase",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Succinyl‑CoA synthetase catalyzes the substrate‑level phosphorylation of GDP to GTP (or ADP to ATP) in the TCA cycle.",
+        "highYield": "This is the only TCA cycle step that produces GTP (or ATP).",
+        "clinicalCorrelation": "Deficiency can cause metabolic acidosis."
+      }
+    },
+    {
+      "questionId": "enzymology_102",
+      "difficulty": 2,
+      "question": "Which enzyme is inhibited by arsenic?",
+      "image": null,
+      "options": [
+        {
+          "text": "Pyruvate dehydrogenase (lipoyl-dependent)",
+          "isCorrect": true,
+          "explanation": "Arsenic binds to lipoic acid, inhibiting PDH and α‑ketoglutarate dehydrogenase."
+        },
+        {
+          "text": "Hexokinase",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        },
+        {
+          "text": "Aldolase",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Phosphofructokinase",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Lactate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Arsenic (arsenite) inhibits enzymes that require lipoic acid, such as pyruvate dehydrogenase and α‑ketoglutarate dehydrogenase.",
+        "highYield": "This blocks the TCA cycle and leads to lactic acidosis.",
+        "clinicalCorrelation": "Arsenic poisoning causes vomiting, diarrhea, and neuropathy."
+      }
+    },
+    {
+      "questionId": "enzymology_103",
+      "difficulty": 2,
+      "question": "Which enzyme is inhibited by cyanide?",
+      "image": null,
+      "options": [
+        {
+          "text": "Cytochrome c oxidase",
+          "isCorrect": true,
+          "explanation": "Cyanide binds to the heme iron of cytochrome c oxidase (Complex IV), inhibiting electron transport."
+        },
+        {
+          "text": "Succinate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Not inhibited by cyanide."
+        },
+        {
+          "text": "ATP synthase",
+          "isCorrect": false,
+          "explanation": "ATP synthase is inhibited by oligomycin."
+        },
+        {
+          "text": "NADH dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Not cyanide."
+        },
+        {
+          "text": "Catalase",
+          "isCorrect": false,
+          "explanation": "Catalase is inhibited by azide, not cyanide."
+        }
+      ],
+      "explanation": {
+        "overview": "Cyanide is a potent inhibitor of cytochrome c oxidase (Complex IV) in the mitochondrial electron transport chain.",
+        "highYield": "This blocks ATP production and causes histotoxic hypoxia.",
+        "clinicalCorrelation": "Cyanide poisoning is treated with hydroxocobalamin."
+      }
+    },
+    {
+      "questionId": "enzymology_104",
+      "difficulty": 2,
+      "question": "The enzyme that is inhibited by oligomycin is:",
+      "image": null,
+      "options": [
+        {
+          "text": "ATP synthase",
+          "isCorrect": true,
+          "explanation": "Oligomycin inhibits the F0 subunit of ATP synthase, blocking proton flow."
+        },
+        {
+          "text": "Cytochrome c oxidase",
+          "isCorrect": false,
+          "explanation": "Cyanide inhibits that."
+        },
+        {
+          "text": "NADH dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Rotenone inhibits Complex I."
+        },
+        {
+          "text": "Succinate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Malonate inhibits SDH."
+        },
+        {
+          "text": "Pyruvate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Arsenic inhibits PDH."
+        }
+      ],
+      "explanation": {
+        "overview": "Oligomycin is an antibiotic that blocks the proton channel of ATP synthase, inhibiting oxidative phosphorylation.",
+        "highYield": "It increases the proton gradient and stops ATP production.",
+        "clinicalCorrelation": "Used in research to study mitochondrial function."
+      }
+    },
+    {
+      "questionId": "enzymology_105",
+      "difficulty": 2,
+      "question": "Which enzyme is inhibited by rotenone?",
+      "image": null,
+      "options": [
+        {
+          "text": "NADH dehydrogenase (Complex I)",
+          "isCorrect": true,
+          "explanation": "Rotenone inhibits Complex I, preventing electron transfer from NADH to ubiquinone."
+        },
+        {
+          "text": "Succinate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Malonate inhibits SDH."
+        },
+        {
+          "text": "Cytochrome c oxidase",
+          "isCorrect": false,
+          "explanation": "Cyanide inhibits that."
+        },
+        {
+          "text": "ATP synthase",
+          "isCorrect": false,
+          "explanation": "Oligomycin inhibits ATP synthase."
+        },
+        {
+          "text": "Complex III",
+          "isCorrect": false,
+          "explanation": "Antimycin A inhibits Complex III."
+        }
+      ],
+      "explanation": {
+        "overview": "Rotenone is a pesticide that inhibits mitochondrial Complex I, blocking electron transfer and ATP production.",
+        "highYield": "It is used as a research tool.",
+        "clinicalCorrelation": "Rotenone exposure is linked to Parkinson's disease."
+      }
+    },
+    {
+      "questionId": "enzymology_106",
+      "difficulty": 2,
+      "question": "The enzyme that is inhibited by malonate is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Succinate dehydrogenase",
+          "isCorrect": true,
+          "explanation": "Malonate is a competitive inhibitor of succinate dehydrogenase, as it resembles succinate."
+        },
+        {
+          "text": "Fumarase",
+          "isCorrect": false,
+          "explanation": "Not inhibited by malonate."
+        },
+        {
+          "text": "Aconitase",
+          "isCorrect": false,
+          "explanation": "Aconitase is inhibited by fluoroacetate."
+        },
+        {
+          "text": "Isocitrate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Malate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Malonate is a classic competitive inhibitor of succinate dehydrogenase, used in studies of the TCA cycle and electron transport.",
+        "highYield": "It binds to the active site but cannot be oxidized.",
+        "clinicalCorrelation": "Used in experimental models."
+      }
+    },
+    {
+      "questionId": "enzymology_107",
+      "difficulty": 2,
+      "question": "The enzyme that is inhibited by fluoroacetate is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Aconitase",
+          "isCorrect": true,
+          "explanation": "Fluoroacetate is converted to fluorocitrate, which inhibits aconitase, blocking the TCA cycle."
+        },
+        {
+          "text": "Succinate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Malonate inhibits that."
+        },
+        {
+          "text": "Citrate synthase",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Fumarase",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Isocitrate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Fluoroacetate is metabolized to fluorocitrate, which inhibits aconitase, halting the TCA cycle.",
+        "highYield": "Fluoroacetate is a potent poison.",
+        "clinicalCorrelation": "Used as a rodenticide."
+      }
+    },
+    {
+      "questionId": "enzymology_108",
+      "difficulty": 2,
+      "question": "The enzyme that catalyzes the formation of urea from arginine is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Arginase",
+          "isCorrect": true,
+          "explanation": "Arginase hydrolyzes arginine to urea and ornithine, the final step of the urea cycle."
+        },
+        {
+          "text": "Argininosuccinate synthetase",
+          "isCorrect": false,
+          "explanation": "This condenses citrulline and aspartate."
+        },
+        {
+          "text": "Argininosuccinate lyase",
+          "isCorrect": false,
+          "explanation": "This cleaves argininosuccinate to arginine and fumarate."
+        },
+        {
+          "text": "Carbamoyl phosphate synthetase I",
+          "isCorrect": false,
+          "explanation": "This produces carbamoyl phosphate."
+        },
+        {
+          "text": "Ornithine transcarbamoylase",
+          "isCorrect": false,
+          "explanation": "This transfers carbamoyl to ornithine."
+        }
+      ],
+      "explanation": {
+        "overview": "Arginase catalyzes the final step of the urea cycle, converting arginine to urea and ornithine.",
+        "highYield": "Arginase is found in the liver.",
+        "clinicalCorrelation": "Arginase deficiency causes hyperargininemia."
+      }
+    },
+    {
+      "questionId": "enzymology_109",
+      "difficulty": 2,
+      "question": "The enzyme that catalyzes the formation of carbamoyl phosphate in the urea cycle is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Carbamoyl phosphate synthetase I",
+          "isCorrect": true,
+          "explanation": "CPS I uses ammonia and bicarbonate to form carbamoyl phosphate, the first step of the urea cycle."
+        },
+        {
+          "text": "Ornithine transcarbamoylase",
+          "isCorrect": false,
+          "explanation": "OTC transfers carbamoyl to ornithine."
+        },
+        {
+          "text": "Argininosuccinate synthetase",
+          "isCorrect": false,
+          "explanation": "Next step."
+        },
+        {
+          "text": "Arginase",
+          "isCorrect": false,
+          "explanation": "Final step."
+        },
+        {
+          "text": "Carbamoyl phosphate synthetase II",
+          "isCorrect": false,
+          "explanation": "CPS II is in pyrimidine synthesis."
+        }
+      ],
+      "explanation": {
+        "overview": "Carbamoyl phosphate synthetase I (CPS I) is the rate‑limiting enzyme of the urea cycle, located in mitochondria.",
+        "highYield": "It is activated by N‑acetylglutamate.",
+        "clinicalCorrelation": "CPS I deficiency causes hyperammonemia."
+      }
+    },
+    {
+      "questionId": "enzymology_110",
+      "difficulty": 2,
+      "question": "The enzyme that catalyzes the conversion of phenylalanine to tyrosine is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Phenylalanine hydroxylase",
+          "isCorrect": true,
+          "explanation": "Phenylalanine hydroxylase (PAH) converts phenylalanine to tyrosine, requiring tetrahydrobiopterin (BH4)."
+        },
+        {
+          "text": "Tyrosine aminotransferase",
+          "isCorrect": false,
+          "explanation": "This transaminates tyrosine."
+        },
+        {
+          "text": "Tyrosinase",
+          "isCorrect": false,
+          "explanation": "Tyrosinase is involved in melanin synthesis."
+        },
+        {
+          "text": "Homogentisate oxidase",
+          "isCorrect": false,
+          "explanation": "Involved in tyrosine catabolism."
+        },
+        {
+          "text": "Aminotransferase",
+          "isCorrect": false,
+          "explanation": "Not specific."
+        }
+      ],
+      "explanation": {
+        "overview": "Phenylalanine hydroxylase (PAH) is the enzyme deficient in phenylketonuria (PKU).",
+        "highYield": "PAH requires BH4 as a cofactor.",
+        "clinicalCorrelation": "PKU causes intellectual disability if untreated; managed by dietary phenylalanine restriction."
+      }
+    },
+    {
+      "questionId": "enzymology_111",
+      "difficulty": 2,
+      "question": "The enzyme that catalyzes the conversion of tyrosine to DOPA is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Tyrosine hydroxylase",
+          "isCorrect": true,
+          "explanation": "Tyrosine hydroxylase is the rate‑limiting step in catecholamine synthesis, converting tyrosine to L‑DOPA."
+        },
+        {
+          "text": "DOPA decarboxylase",
+          "isCorrect": false,
+          "explanation": "This converts DOPA to dopamine."
+        },
+        {
+          "text": "Dopamine β‑hydroxylase",
+          "isCorrect": false,
+          "explanation": "Converts dopamine to norepinephrine."
+        },
+        {
+          "text": "Phenylalanine hydroxylase",
+          "isCorrect": false,
+          "explanation": "Converts phenylalanine to tyrosine."
+        },
+        {
+          "text": "Tyrosinase",
+          "isCorrect": false,
+          "explanation": "Tyrosinase is in melanin synthesis."
+        }
+      ],
+      "explanation": {
+        "overview": "Tyrosine hydroxylase catalyzes the conversion of tyrosine to L‑DOPA, the first step in catecholamine synthesis.",
+        "highYield": "It is the rate‑limiting enzyme and is inhibited by α‑methyltyrosine.",
+        "clinicalCorrelation": "Parkinson's disease is treated with L‑DOPA."
+      }
+    },
+    {
+      "questionId": "enzymology_112",
+      "difficulty": 2,
+      "question": "Which enzyme is deficient in phenylketonuria (PKU)?",
+      "image": null,
+      "options": [
+        {
+          "text": "Phenylalanine hydroxylase",
+          "isCorrect": true,
+          "explanation": "PKU is caused by deficiency of phenylalanine hydroxylase, leading to accumulation of phenylalanine."
+        },
+        {
+          "text": "Tyrosine hydroxylase",
+          "isCorrect": false,
+          "explanation": "That is involved in catecholamine synthesis."
+        },
+        {
+          "text": "Homogentisate oxidase",
+          "isCorrect": false,
+          "explanation": "Deficiency causes alkaptonuria."
+        },
+        {
+          "text": "Fumarylacetoacetate hydrolase",
+          "isCorrect": false,
+          "explanation": "Deficiency causes tyrosinemia type I."
+        },
+        {
+          "text": "DOPA decarboxylase",
+          "isCorrect": false,
+          "explanation": "Not PKU."
+        }
+      ],
+      "explanation": {
+        "overview": "Phenylketonuria (PKU) is due to a deficiency of phenylalanine hydroxylase, resulting in high phenylalanine levels and intellectual disability if untreated.",
+        "highYield": "Newborn screening detects PKU; treatment is low‑phenylalanine diet.",
+        "clinicalCorrelation": "Maternal PKU can cause fetal damage."
+      }
+    },
+    {
+      "questionId": "enzymology_113",
+      "difficulty": 2,
+      "question": "Which enzyme is deficient in alkaptonuria?",
+      "image": null,
+      "options": [
+        {
+          "text": "Homogentisate oxidase",
+          "isCorrect": true,
+          "explanation": "Alkaptonuria is caused by deficiency of homogentisate oxidase, leading to accumulation of homogentisic acid."
+        },
+        {
+          "text": "Phenylalanine hydroxylase",
+          "isCorrect": false,
+          "explanation": "That is PKU."
+        },
+        {
+          "text": "Tyrosinase",
+          "isCorrect": false,
+          "explanation": "Tyrosinase deficiency causes albinism."
+        },
+        {
+          "text": "Fumarylacetoacetate hydrolase",
+          "isCorrect": false,
+          "explanation": "Tyrosinemia type I."
+        },
+        {
+          "text": "Tyrosine aminotransferase",
+          "isCorrect": false,
+          "explanation": "Tyrosinemia type II."
+        }
+      ],
+      "explanation": {
+        "overview": "Alkaptonuria is a rare metabolic disorder due to homogentisate oxidase deficiency, causing dark urine and ochronosis.",
+        "highYield": "Homogentisic acid accumulates and oxidizes to a dark pigment.",
+        "clinicalCorrelation": "Patients develop arthritis and cardiac valve disease."
+      }
+    },
+    {
+      "questionId": "enzymology_114",
+      "difficulty": 2,
+      "question": "The enzyme that catalyzes the conversion of homocysteine to methionine is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Methionine synthase",
+          "isCorrect": true,
+          "explanation": "Methionine synthase transfers a methyl group from methyl‑cobalamin to homocysteine, forming methionine."
+        },
+        {
+          "text": "Cystathionine β‑synthase",
+          "isCorrect": false,
+          "explanation": "CBS condenses homocysteine and serine to cystathionine."
+        },
+        {
+          "text": "Betaine‑homocysteine methyltransferase",
+          "isCorrect": false,
+          "explanation": "Also converts homocysteine to methionine, but methionine synthase is the primary enzyme."
+        },
+        {
+          "text": "S‑adenosylmethionine synthetase",
+          "isCorrect": false,
+          "explanation": "Synthesizes SAM from methionine."
+        },
+        {
+          "text": "Homocysteine methyltransferase",
+          "isCorrect": false,
+          "explanation": "Not the standard name."
+        }
+      ],
+      "explanation": {
+        "overview": "Methionine synthase catalyzes the remethylation of homocysteine to methionine, requiring vitamin B12 (cobalamin) as cofactor.",
+        "highYield": "Deficiency leads to hyperhomocysteinemia and megaloblastic anemia.",
+        "clinicalCorrelation": "Vitamin B12 deficiency causes neurological symptoms."
+      }
+    },
+    {
+      "questionId": "enzymology_115",
+      "difficulty": 2,
+      "question": "Which enzyme is deficient in homocystinuria (classic)?",
+      "image": null,
+      "options": [
+        {
+          "text": "Cystathionine β‑synthase",
+          "isCorrect": true,
+          "explanation": "Classic homocystinuria is due to deficiency of cystathionine β‑synthase, leading to elevated homocysteine and methionine."
+        },
+        {
+          "text": "Methionine synthase",
+          "isCorrect": false,
+          "explanation": "Deficiency causes hyperhomocysteinemia with low methionine."
+        },
+        {
+          "text": "Betaine‑homocysteine methyltransferase",
+          "isCorrect": false,
+          "explanation": "Rare."
+        },
+        {
+          "text": "Cystathionase",
+          "isCorrect": false,
+          "explanation": "Cystathioninuria."
+        },
+        {
+          "text": "Phenylalanine hydroxylase",
+          "isCorrect": false,
+          "explanation": "PKU."
+        }
+      ],
+      "explanation": {
+        "overview": "Classic homocystinuria is caused by cystathionine β‑synthase deficiency, resulting in elevated homocysteine and methionine.",
+        "highYield": "Patients present with Marfanoid habitus, lens dislocation, and thromboembolism.",
+        "clinicalCorrelation": "Treatment includes vitamin B6 and low‑methionine diet."
+      }
+    },
+    {
+      "questionId": "enzymology_116",
+      "difficulty": 2,
+      "question": "The enzyme that catalyzes the conversion of glutamate to α‑ketoglutarate and ammonia is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glutamate dehydrogenase",
+          "isCorrect": true,
+          "explanation": "Glutamate dehydrogenase (GDH) reversibly converts glutamate to α‑ketoglutarate and ammonia, using NAD+ or NADP+."
+        },
+        {
+          "text": "Glutaminase",
+          "isCorrect": false,
+          "explanation": "Glutaminase converts glutamine to glutamate and ammonia."
+        },
+        {
+          "text": "Glutamate synthetase",
+          "isCorrect": false,
+          "explanation": "Synthesizes glutamate."
+        },
+        {
+          "text": "Aspartate transaminase",
+          "isCorrect": false,
+          "explanation": "Transaminates aspartate."
+        },
+        {
+          "text": "Alanine transaminase",
+          "isCorrect": false,
+          "explanation": "Transaminates alanine."
+        }
+      ],
+      "explanation": {
+        "overview": "Glutamate dehydrogenase (GDH) catalyzes the oxidative deamination of glutamate, linking amino acid metabolism to the TCA cycle.",
+        "highYield": "GDH is regulated by GTP and ADP.",
+        "clinicalCorrelation": "GDH mutations cause hyperinsulinism‑hyperammonemia syndrome."
+      }
+    },
+    {
+      "questionId": "enzymology_117",
+      "difficulty": 2,
+      "question": "The enzyme that converts glutamine to glutamate and ammonia is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glutaminase",
+          "isCorrect": true,
+          "explanation": "Glutaminase hydrolyzes glutamine to glutamate and ammonia."
+        },
+        {
+          "text": "Glutamate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "GDH deaminates glutamate."
+        },
+        {
+          "text": "Glutamine synthetase",
+          "isCorrect": false,
+          "explanation": "Synthesizes glutamine from glutamate and ammonia."
+        },
+        {
+          "text": "Transaminase",
+          "isCorrect": false,
+          "explanation": "Transaminases transfer amino groups."
+        },
+        {
+          "text": "Asparaginase",
+          "isCorrect": false,
+          "explanation": "Converts asparagine to aspartate."
+        }
+      ],
+      "explanation": {
+        "overview": "Glutaminase catalyzes the deamidation of glutamine to glutamate and ammonia, important for ammonia detoxification and acid‑base regulation.",
+        "highYield": "Kidney glutaminase produces ammonia for buffering urine.",
+        "clinicalCorrelation": "Glutaminase inhibitors are being studied in cancer."
+      }
+    },
+    {
+      "questionId": "enzymology_118",
+      "difficulty": 2,
+      "question": "The enzyme that catalyzes the conversion of aspartate to oxaloacetate and glutamate (transamination) is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Aspartate aminotransferase (AST)",
+          "isCorrect": true,
+          "explanation": "AST catalyzes the transfer of an amino group from aspartate to α‑ketoglutarate, producing oxaloacetate and glutamate."
+        },
+        {
+          "text": "Alanine aminotransferase (ALT)",
+          "isCorrect": false,
+          "explanation": "ALT does this with alanine and pyruvate."
+        },
+        {
+          "text": "Glutamate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Deaminates glutamate."
+        },
+        {
+          "text": "Asparagine synthetase",
+          "isCorrect": false,
+          "explanation": "Synthesizes asparagine."
+        },
+        {
+          "text": "Glutamine synthetase",
+          "isCorrect": false,
+          "explanation": "Synthesizes glutamine."
+        }
+      ],
+      "explanation": {
+        "overview": "Aspartate aminotransferase (AST) is a key enzyme in amino acid metabolism, linking aspartate and α‑ketoglutarate.",
+        "highYield": "AST is present in liver, heart, and muscle; elevated in tissue damage.",
+        "clinicalCorrelation": "AST is used in liver function tests."
+      }
+    },
+    {
+      "questionId": "enzymology_119",
+      "difficulty": 2,
+      "question": "The enzyme that catalyzes the conversion of alanine to pyruvate and glutamate is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Alanine aminotransferase (ALT)",
+          "isCorrect": true,
+          "explanation": "ALT catalyzes transamination between alanine and α‑ketoglutarate, producing pyruvate and glutamate."
+        },
+        {
+          "text": "Aspartate aminotransferase",
+          "isCorrect": false,
+          "explanation": "AST uses aspartate."
+        },
+        {
+          "text": "Pyruvate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "PDH converts pyruvate to acetyl‑CoA."
+        },
+        {
+          "text": "Glutamate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "GDH deaminates glutamate."
+        },
+        {
+          "text": "Lactate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Converts pyruvate to lactate."
+        }
+      ],
+      "explanation": {
+        "overview": "Alanine aminotransferase (ALT) is an enzyme that catalyzes the transfer of amino groups, primarily in the liver.",
+        "highYield": "ALT is more specific to liver than AST.",
+        "clinicalCorrelation": "Elevated ALT indicates hepatocellular damage."
+      }
+    },
+    {
+      "questionId": "enzymology_120",
+      "difficulty": 2,
+      "question": "The enzyme that catalyzes the conversion of ornithine to citrulline in the urea cycle is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Ornithine transcarbamoylase",
+          "isCorrect": true,
+          "explanation": "OTC transfers a carbamoyl group from carbamoyl phosphate to ornithine, forming citrulline."
+        },
+        {
+          "text": "Carbamoyl phosphate synthetase I",
+          "isCorrect": false,
+          "explanation": "CPS I produces carbamoyl phosphate."
+        },
+        {
+          "text": "Argininosuccinate synthetase",
+          "isCorrect": false,
+          "explanation": "This condenses citrulline and aspartate."
+        },
+        {
+          "text": "Argininosuccinate lyase",
+          "isCorrect": false,
+          "explanation": "Cleaves argininosuccinate."
+        },
+        {
+          "text": "Arginase",
+          "isCorrect": false,
+          "explanation": "Final step."
+        }
+      ],
+      "explanation": {
+        "overview": "Ornithine transcarbamoylase (OTC) catalyzes the second step of the urea cycle, producing citrulline.",
+        "highYield": "OTC deficiency is the most common urea cycle disorder, X‑linked.",
+        "clinicalCorrelation": "OTC deficiency causes hyperammonemia and neurological damage."
+      }
+    }
+  ]
+}

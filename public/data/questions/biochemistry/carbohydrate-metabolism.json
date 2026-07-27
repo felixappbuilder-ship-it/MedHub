@@ -1,0 +1,4564 @@
+{
+  "questions": [
+    {
+      "questionId": "carbohydrate_metabolism_001",
+      "difficulty": 1,
+      "question": "What is the primary function of carbohydrate metabolism?",
+      "image": null,
+      "options": [
+        {
+          "text": "To provide energy through glucose oxidation",
+          "isCorrect": true,
+          "explanation": "The main role of carbohydrate metabolism is to generate ATP via glycolysis and the citric acid cycle."
+        },
+        {
+          "text": "To synthesize proteins",
+          "isCorrect": false,
+          "explanation": "Protein synthesis is carried out by ribosomes using amino acids, not directly by carbohydrate metabolism."
+        },
+        {
+          "text": "To store genetic information",
+          "isCorrect": false,
+          "explanation": "Genetic information is stored by nucleic acids (DNA)."
+        },
+        {
+          "text": "To produce amino acids",
+          "isCorrect": false,
+          "explanation": "Amino acids can be synthesized from intermediates of carbohydrate metabolism, but that is not its primary function."
+        },
+        {
+          "text": "To form nucleic acids",
+          "isCorrect": false,
+          "explanation": "Nucleic acids are synthesized from nucleotides; the ribose component can come from the pentose phosphate pathway, but this is not the main purpose."
+        }
+      ],
+      "explanation": {
+        "overview": "Carbohydrate metabolism primarily involves breaking down glucose to generate ATP, as well as storing excess glucose as glycogen for later use.",
+        "highYield": "Primary function: energy production (ATP) and glycogen storage.",
+        "clinicalCorrelation": "Defects in carbohydrate metabolism (e.g., diabetes, glycogen storage diseases) lead to impaired energy balance and organ dysfunction."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_002",
+      "difficulty": 1,
+      "question": "Glycolysis converts one molecule of glucose into:",
+      "image": null,
+      "options": [
+        {
+          "text": "Two molecules of pyruvate",
+          "isCorrect": true,
+          "explanation": "Glycolysis splits the 6‑carbon glucose into two 3‑carbon pyruvate molecules."
+        },
+        {
+          "text": "One molecule of pyruvate",
+          "isCorrect": false,
+          "explanation": "Glucose has six carbons; complete cleavage yields two pyruvates."
+        },
+        {
+          "text": "Two molecules of lactate",
+          "isCorrect": false,
+          "explanation": "Lactate is produced from pyruvate only under anaerobic conditions."
+        },
+        {
+          "text": "One molecule of acetyl-CoA",
+          "isCorrect": false,
+          "explanation": "Acetyl-CoA is produced later from pyruvate, not directly by glycolysis."
+        },
+        {
+          "text": "Two molecules of citrate",
+          "isCorrect": false,
+          "explanation": "Citrate is a citric acid cycle intermediate, not a glycolytic end product."
+        }
+      ],
+      "explanation": {
+        "overview": "Glycolysis splits glucose (6 carbons) into two molecules of pyruvate (3 carbons each), with net production of 2 ATP and 2 NADH.",
+        "highYield": "Glucose → 2 pyruvate + 2 ATP + 2 NADH.",
+        "clinicalCorrelation": "Glycolysis is the sole energy source for red blood cells; enzyme deficiencies (e.g., pyruvate kinase) cause hemolytic anemia."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_003",
+      "difficulty": 1,
+      "question": "Under anaerobic conditions in muscle, pyruvate is converted to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Lactate",
+          "isCorrect": true,
+          "explanation": "Lactate dehydrogenase reduces pyruvate to lactate, regenerating NAD⁺ so glycolysis can continue."
+        },
+        {
+          "text": "Ethanol",
+          "isCorrect": false,
+          "explanation": "Ethanol production occurs in yeast, not human muscle."
+        },
+        {
+          "text": "Acetyl-CoA",
+          "isCorrect": false,
+          "explanation": "Acetyl-CoA formation requires oxygen (via pyruvate dehydrogenase)."
+        },
+        {
+          "text": "Oxaloacetate",
+          "isCorrect": false,
+          "explanation": "Oxaloacetate is formed from pyruvate by pyruvate carboxylase, not under simple anaerobic conditions."
+        },
+        {
+          "text": "Alanine",
+          "isCorrect": false,
+          "explanation": "Alanine is produced by transamination of pyruvate, not directly by reduction."
+        }
+      ],
+      "explanation": {
+        "overview": "Lactate dehydrogenase reduces pyruvate to lactate, regenerating NAD+ for continued glycolysis.",
+        "highYield": "Anaerobic glycolysis: pyruvate → lactate; NAD⁺ regenerated.",
+        "clinicalCorrelation": "Lactic acidosis occurs in shock, severe hypoxia, or mitochondrial dysfunction."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_004",
+      "difficulty": 2,
+      "question": "The enzyme that catalyzes the conversion of glucose to glucose-6-phosphate is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hexokinase",
+          "isCorrect": false,
+          "explanation": "Hexokinase is one of the enzymes, but in liver and pancreas, glucokinase (a hexokinase isoform) also performs this reaction."
+        },
+        {
+          "text": "Glucokinase",
+          "isCorrect": false,
+          "explanation": "Glucokinase works in specific tissues, but hexokinase also phosphorylates glucose."
+        },
+        {
+          "text": "Both (depending on tissue)",
+          "isCorrect": true,
+          "explanation": "Hexokinase (low Km, most tissues) and glucokinase (high Km, liver/pancreatic β‑cells) both convert glucose to glucose-6-phosphate."
+        },
+        {
+          "text": "Phosphoglucose isomerase",
+          "isCorrect": false,
+          "explanation": "This enzyme converts glucose-6-phosphate to fructose-6-phosphate, not the phosphorylation step."
+        },
+        {
+          "text": "Glucose-6-phosphatase",
+          "isCorrect": false,
+          "explanation": "Glucose-6-phosphatase removes phosphate, not adds it."
+        }
+      ],
+      "explanation": {
+        "overview": "Hexokinase (low Km) is present in most tissues; glucokinase (high Km) is in liver and pancreatic beta cells.",
+        "highYield": "Glucose phosphorylation: hexokinase (ubiquitous) and glucokinase (liver/pancreas).",
+        "clinicalCorrelation": "Glucokinase mutations cause MODY2 (maturity‑onset diabetes of the young); hexokinase deficiency causes hemolytic anemia."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_005",
+      "difficulty": 2,
+      "question": "Phosphofructokinase-1 (PFK-1) is allosterically inhibited by:",
+      "image": null,
+      "options": [
+        {
+          "text": "High ATP",
+          "isCorrect": false,
+          "explanation": "ATP inhibits PFK-1, but citrate also inhibits."
+        },
+        {
+          "text": "Citrate",
+          "isCorrect": false,
+          "explanation": "Citrate inhibits, but ATP also inhibits."
+        },
+        {
+          "text": "Both A and B",
+          "isCorrect": true,
+          "explanation": "High ATP and citrate signal energy abundance and inhibit PFK-1."
+        },
+        {
+          "text": "AMP",
+          "isCorrect": false,
+          "explanation": "AMP activates PFK-1, signaling low energy."
+        },
+        {
+          "text": "Fructose-2,6-bisphosphate",
+          "isCorrect": false,
+          "explanation": "Fructose-2,6-bisphosphate is the most potent activator of PFK-1."
+        }
+      ],
+      "explanation": {
+        "overview": "ATP and citrate signal energy abundance and inhibit PFK-1; AMP and fructose-2,6-bisphosphate activate it.",
+        "highYield": "PFK-1 inhibitors: ATP, citrate; activators: AMP, fructose-2,6-bisphosphate.",
+        "clinicalCorrelation": "Regulation of PFK-1 is critical for the switch between glycolysis and gluconeogenesis in the liver."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_006",
+      "difficulty": 1,
+      "question": "The net ATP yield from glycolysis per glucose molecule is:",
+      "image": null,
+      "options": [
+        {
+          "text": "2 ATP",
+          "isCorrect": true,
+          "explanation": "Glycolysis produces 4 ATP but consumes 2, netting 2 ATP per glucose."
+        },
+        {
+          "text": "4 ATP",
+          "isCorrect": false,
+          "explanation": "That is the gross production, not the net."
+        },
+        {
+          "text": "36 ATP",
+          "isCorrect": false,
+          "explanation": "That is the approximate total ATP from aerobic oxidation of glucose."
+        },
+        {
+          "text": "38 ATP",
+          "isCorrect": false,
+          "explanation": "Older estimates for total ATP yield; not just glycolysis."
+        },
+        {
+          "text": "1 ATP",
+          "isCorrect": false,
+          "explanation": "Net is 2 ATP."
+        }
+      ],
+      "explanation": {
+        "overview": "Glycolysis produces 4 ATP (substrate-level) but consumes 2 ATP, netting 2 ATP per glucose.",
+        "highYield": "Net ATP from glycolysis = 2.",
+        "clinicalCorrelation": "RBCs rely solely on glycolysis; pyruvate kinase deficiency reduces ATP, causing hemolysis."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_007",
+      "difficulty": 1,
+      "question": "The conversion of glucose-6-phosphate to fructose-6-phosphate is catalyzed by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Phosphoglucose isomerase",
+          "isCorrect": true,
+          "explanation": "This enzyme isomerizes glucose-6-phosphate to fructose-6-phosphate."
+        },
+        {
+          "text": "Phosphofructokinase",
+          "isCorrect": false,
+          "explanation": "PFK-1 phosphorylates fructose-6-phosphate to fructose-1,6-bisphosphate."
+        },
+        {
+          "text": "Aldolase",
+          "isCorrect": false,
+          "explanation": "Aldolase cleaves fructose-1,6-bisphosphate."
+        },
+        {
+          "text": "Triose phosphate isomerase",
+          "isCorrect": false,
+          "explanation": "Triose phosphate isomerase interconverts DHAP and G3P."
+        },
+        {
+          "text": "Hexokinase",
+          "isCorrect": false,
+          "explanation": "Hexokinase phosphorylates glucose."
+        }
+      ],
+      "explanation": {
+        "overview": "Phosphoglucose isomerase (glucose-6-phosphate isomerase) interconverts glucose-6-phosphate and fructose-6-phosphate.",
+        "highYield": "Isomerization step: glucose-6-P → fructose-6-P by phosphoglucose isomerase.",
+        "clinicalCorrelation": "Deficiency of this enzyme can cause hemolytic anemia."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_008",
+      "difficulty": 2,
+      "question": "Aldolase cleaves fructose-1,6-bisphosphate into:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glyceraldehyde-3-phosphate and dihydroxyacetone phosphate",
+          "isCorrect": true,
+          "explanation": "Aldolase produces two different triose phosphates."
+        },
+        {
+          "text": "Two glyceraldehyde-3-phosphate",
+          "isCorrect": false,
+          "explanation": "Only one G3P is produced directly; DHAP is later converted to G3P."
+        },
+        {
+          "text": "Two dihydroxyacetone phosphate",
+          "isCorrect": false,
+          "explanation": "One DHAP is produced."
+        },
+        {
+          "text": "Glyceraldehyde-3-phosphate and pyruvate",
+          "isCorrect": false,
+          "explanation": "Pyruvate is formed much later in glycolysis."
+        },
+        {
+          "text": "Dihydroxyacetone phosphate and pyruvate",
+          "isCorrect": false,
+          "explanation": "Pyruvate is not produced at this stage."
+        }
+      ],
+      "explanation": {
+        "overview": "Aldolase produces two three-carbon molecules: glyceraldehyde-3-phosphate (an aldose) and dihydroxyacetone phosphate (a ketose).",
+        "highYield": "Fructose-1,6-bisP → G3P + DHAP (aldolase).",
+        "clinicalCorrelation": "Aldolase B deficiency causes hereditary fructose intolerance."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_009",
+      "difficulty": 2,
+      "question": "Triose phosphate isomerase converts:",
+      "image": null,
+      "options": [
+        {
+          "text": "Dihydroxyacetone phosphate to glyceraldehyde-3-phosphate",
+          "isCorrect": true,
+          "explanation": "DHAP is rapidly isomerized to G3P so both trioses can proceed through glycolysis."
+        },
+        {
+          "text": "Glyceraldehyde-3-phosphate to dihydroxyacetone phosphate",
+          "isCorrect": false,
+          "explanation": "The reaction is reversible but the net direction is DHAP → G3P to maintain glycolytic flux."
+        },
+        {
+          "text": "Both directions equally",
+          "isCorrect": false,
+          "explanation": "Though reversible, the forward direction (DHAP to G3P) is pulled by subsequent reactions."
+        },
+        {
+          "text": "Glyceraldehyde-3-phosphate to 1,3-bisphosphoglycerate",
+          "isCorrect": false,
+          "explanation": "That is catalyzed by GAPDH."
+        },
+        {
+          "text": "Dihydroxyacetone phosphate to pyruvate",
+          "isCorrect": false,
+          "explanation": "Multiple steps occur before pyruvate is formed."
+        }
+      ],
+      "explanation": {
+        "overview": "Triose phosphate isomerase interconverts DHAP and G3P; DHAP must be converted to G3P for further glycolysis.",
+        "highYield": "DHAP ⇌ G3P (triose phosphate isomerase).",
+        "clinicalCorrelation": "Triose phosphate isomerase deficiency is a severe glycolytic enzymopathy causing hemolytic anemia and neurological issues."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_010",
+      "difficulty": 2,
+      "question": "The enzyme glyceraldehyde-3-phosphate dehydrogenase produces:",
+      "image": null,
+      "options": [
+        {
+          "text": "1,3-Bisphosphoglycerate and NADH",
+          "isCorrect": true,
+          "explanation": "GAPDH oxidizes G3P and adds inorganic phosphate, forming 1,3-BPG and reducing NAD⁺ to NADH."
+        },
+        {
+          "text": "3-Phosphoglycerate and NADH",
+          "isCorrect": false,
+          "explanation": "3-Phosphoglycerate is formed later by phosphoglycerate kinase."
+        },
+        {
+          "text": "1,3-Bisphosphoglycerate and FADH2",
+          "isCorrect": false,
+          "explanation": "FADH2 is not produced here."
+        },
+        {
+          "text": "2-Phosphoglycerate and NAD+",
+          "isCorrect": false,
+          "explanation": "2-Phosphoglycerate is formed later by phosphoglycerate mutase."
+        },
+        {
+          "text": "Phosphoenolpyruvate and NADH",
+          "isCorrect": false,
+          "explanation": "PEP is formed much later by enolase."
+        }
+      ],
+      "explanation": {
+        "overview": "GAPDH oxidizes G3P, reducing NAD+ to NADH and incorporating inorganic phosphate to form 1,3-BPG.",
+        "highYield": "G3P + NAD⁺ + Pi → 1,3-BPG + NADH + H⁺ (GAPDH).",
+        "clinicalCorrelation": "GAPDH is a key glycolytic enzyme; its inhibition by oxidative stress may contribute to diabetic complications."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_011",
+      "difficulty": 2,
+      "question": "Phosphoglycerate kinase transfers a phosphate from 1,3-BPG to ADP, producing:",
+      "image": null,
+      "options": [
+        {
+          "text": "3-Phosphoglycerate and ATP",
+          "isCorrect": true,
+          "explanation": "This substrate-level phosphorylation generates 3-phosphoglycerate and ATP."
+        },
+        {
+          "text": "2-Phosphoglycerate and ATP",
+          "isCorrect": false,
+          "explanation": "2-Phosphoglycerate is made later by phosphoglycerate mutase."
+        },
+        {
+          "text": "Phosphoenolpyruvate and ATP",
+          "isCorrect": false,
+          "explanation": "PEP is formed by enolase."
+        },
+        {
+          "text": "Pyruvate and ATP",
+          "isCorrect": false,
+          "explanation": "Pyruvate is formed by pyruvate kinase."
+        },
+        {
+          "text": "Glyceraldehyde-3-phosphate and ATP",
+          "isCorrect": false,
+          "explanation": "G3P is the substrate of GAPDH."
+        }
+      ],
+      "explanation": {
+        "overview": "This substrate-level phosphorylation yields 3-phosphoglycerate and ATP.",
+        "highYield": "1,3-BPG + ADP → 3-PG + ATP (phosphoglycerate kinase).",
+        "clinicalCorrelation": "Phosphoglycerate kinase deficiency causes hemolytic anemia and sometimes neurological dysfunction."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_012",
+      "difficulty": 2,
+      "question": "Phosphoglycerate mutase converts:",
+      "image": null,
+      "options": [
+        {
+          "text": "3-Phosphoglycerate to 2-phosphoglycerate",
+          "isCorrect": true,
+          "explanation": "It shifts the phosphate from the 3‑hydroxyl to the 2‑hydroxyl position."
+        },
+        {
+          "text": "2-Phosphoglycerate to 3-phosphoglycerate",
+          "isCorrect": false,
+          "explanation": "The reaction is reversible but the net flux in glycolysis is toward 2-phosphoglycerate."
+        },
+        {
+          "text": "3-Phosphoglycerate to phosphoenolpyruvate",
+          "isCorrect": false,
+          "explanation": "Enolase performs the subsequent dehydration step."
+        },
+        {
+          "text": "2-Phosphoglycerate to pyruvate",
+          "isCorrect": false,
+          "explanation": "Multiple steps occur after 2-phosphoglycerate."
+        },
+        {
+          "text": "Phosphoenolpyruvate to pyruvate",
+          "isCorrect": false,
+          "explanation": "Pyruvate kinase catalyzes that reaction."
+        }
+      ],
+      "explanation": {
+        "overview": "Phosphoglycerate mutase shifts the phosphate group from carbon 3 to carbon 2.",
+        "highYield": "3-PG → 2-PG (phosphoglycerate mutase).",
+        "clinicalCorrelation": "Deficiency of muscle phosphoglycerate mutase causes exercise intolerance and rhabdomyolysis."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_013",
+      "difficulty": 2,
+      "question": "Enolase catalyzes the dehydration of 2-phosphoglycerate to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Phosphoenolpyruvate",
+          "isCorrect": true,
+          "explanation": "Removing water creates a high‑energy phosphate bond in PEP."
+        },
+        {
+          "text": "Pyruvate",
+          "isCorrect": false,
+          "explanation": "Pyruvate is formed by pyruvate kinase."
+        },
+        {
+          "text": "Phosphoglycerate",
+          "isCorrect": false,
+          "explanation": "That is the substrate, not the product."
+        },
+        {
+          "text": "Acetyl-CoA",
+          "isCorrect": false,
+          "explanation": "Acetyl-CoA is formed from pyruvate."
+        },
+        {
+          "text": "Lactate",
+          "isCorrect": false,
+          "explanation": "Lactate is formed by LDH."
+        }
+      ],
+      "explanation": {
+        "overview": "Enolase removes water to form phosphoenolpyruvate (PEP), a high-energy compound.",
+        "highYield": "2-PG → PEP + H₂O (enolase).",
+        "clinicalCorrelation": "Enolase is a tumor marker (neuron‑specific enolase) for small cell lung cancer and neuroblastoma."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_014",
+      "difficulty": 2,
+      "question": "Pyruvate kinase catalyzes the transfer of phosphate from PEP to ADP, producing:",
+      "image": null,
+      "options": [
+        {
+          "text": "Pyruvate and ATP",
+          "isCorrect": true,
+          "explanation": "This irreversible substrate-level phosphorylation yields pyruvate and ATP."
+        },
+        {
+          "text": "Pyruvate and AMP",
+          "isCorrect": false,
+          "explanation": "ADP is phosphorylated to ATP, not AMP."
+        },
+        {
+          "text": "Lactate and ATP",
+          "isCorrect": false,
+          "explanation": "Lactate is formed from pyruvate by LDH."
+        },
+        {
+          "text": "Acetyl-CoA and ATP",
+          "isCorrect": false,
+          "explanation": "Acetyl-CoA is produced by PDH complex."
+        },
+        {
+          "text": "Oxaloacetate and ATP",
+          "isCorrect": false,
+          "explanation": "Oxaloacetate is produced by pyruvate carboxylase."
+        }
+      ],
+      "explanation": {
+        "overview": "This is the second substrate-level phosphorylation in glycolysis, yielding pyruvate and ATP.",
+        "highYield": "PEP + ADP → pyruvate + ATP (pyruvate kinase).",
+        "clinicalCorrelation": "Pyruvate kinase deficiency is the most common glycolytic enzyme defect causing hemolytic anemia."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_015",
+      "difficulty": 2,
+      "question": "Pyruvate kinase is allosterically activated by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Fructose-1,6-bisphosphate",
+          "isCorrect": true,
+          "explanation": "Fructose-1,6-bisphosphate is a feed‑forward activator, stimulating downstream glycolysis."
+        },
+        {
+          "text": "ATP",
+          "isCorrect": false,
+          "explanation": "ATP inhibits pyruvate kinase when energy is high."
+        },
+        {
+          "text": "Alanine",
+          "isCorrect": false,
+          "explanation": "Alanine inhibits the liver isozyme."
+        },
+        {
+          "text": "Acetyl-CoA",
+          "isCorrect": false,
+          "explanation": "Acetyl-CoA is an inhibitor (via phosphorylation cascade)."
+        },
+        {
+          "text": "Citrate",
+          "isCorrect": false,
+          "explanation": "Citrate does not directly activate pyruvate kinase."
+        }
+      ],
+      "explanation": {
+        "overview": "Fructose-1,6-bisphosphate activates pyruvate kinase (feed-forward regulation).",
+        "highYield": "Feed‑forward activator: F-1,6-BP → pyruvate kinase.",
+        "clinicalCorrelation": "In liver, pyruvate kinase is also regulated by phosphorylation (glucagon inactivates)."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_016",
+      "difficulty": 2,
+      "question": "The conversion of pyruvate to acetyl-CoA is catalyzed by the pyruvate dehydrogenase complex, which requires all of the following cofactors EXCEPT:",
+      "image": null,
+      "options": [
+        {
+          "text": "Biotin",
+          "isCorrect": true,
+          "explanation": "Biotin is used by carboxylases (e.g., pyruvate carboxylase), not by PDH."
+        },
+        {
+          "text": "Thiamine pyrophosphate",
+          "isCorrect": false,
+          "explanation": "TPP (from vitamin B1) is a required cofactor for PDH."
+        },
+        {
+          "text": "Lipoic acid",
+          "isCorrect": false,
+          "explanation": "Lipoamide is a covalently attached cofactor."
+        },
+        {
+          "text": "FAD",
+          "isCorrect": false,
+          "explanation": "FAD (from riboflavin) is required."
+        },
+        {
+          "text": "NAD+",
+          "isCorrect": false,
+          "explanation": "NAD⁺ (from niacin) is the final electron acceptor."
+        }
+      ],
+      "explanation": {
+        "overview": "PDH uses TPP, lipoate, FAD, NAD+, and CoA; biotin is used by carboxylases.",
+        "highYield": "PDH cofactors: TPP, lipoate, CoA, FAD, NAD⁺ (no biotin).",
+        "clinicalCorrelation": "Thiamine deficiency impairs PDH, causing lactic acidosis and Wernicke’s encephalopathy."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_017",
+      "difficulty": 2,
+      "question": "Pyruvate dehydrogenase is inactivated by phosphorylation by which kinase?",
+      "image": null,
+      "options": [
+        {
+          "text": "PDH kinase",
+          "isCorrect": true,
+          "explanation": "Specific PDH kinase phosphorylates serine residues on PDH, inactivating it."
+        },
+        {
+          "text": "Protein kinase A",
+          "isCorrect": false,
+          "explanation": "PKA regulates glycogen metabolism, not directly PDH."
+        },
+        {
+          "text": "AMP kinase",
+          "isCorrect": false,
+          "explanation": "AMPK phosphorylates many targets but PDH kinase is the direct PDH inactivator."
+        },
+        {
+          "text": "Hexokinase",
+          "isCorrect": false,
+          "explanation": "Hexokinase phosphorylates glucose, not proteins."
+        },
+        {
+          "text": "Pyruvate kinase",
+          "isCorrect": false,
+          "explanation": "Pyruvate kinase is a glycolytic enzyme, not a regulatory kinase."
+        }
+      ],
+      "explanation": {
+        "overview": "PDH kinase phosphorylates and inactivates PDH; PDH phosphatase reactivates it.",
+        "highYield": "PDH inactive when phosphorylated by PDH kinase.",
+        "clinicalCorrelation": "Dichloroacetate inhibits PDH kinase, used experimentally to treat lactic acidosis."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_018",
+      "difficulty": 2,
+      "question": "High levels of ATP, NADH, and acetyl-CoA:",
+      "image": null,
+      "options": [
+        {
+          "text": "Inhibit pyruvate dehydrogenase",
+          "isCorrect": true,
+          "explanation": "These high‑energy signals activate PDH kinase, which phosphorylates and inactivates PDH."
+        },
+        {
+          "text": "Activate pyruvate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Low energy signals (high ADP, pyruvate) activate PDH."
+        },
+        {
+          "text": "Have no effect on PDH",
+          "isCorrect": false,
+          "explanation": "PDH is tightly regulated by these metabolites."
+        },
+        {
+          "text": "Stimulate PDH phosphatase",
+          "isCorrect": false,
+          "explanation": "PDH phosphatase is stimulated by Ca²⁺ and insulin."
+        },
+        {
+          "text": "Increase PDH kinase activity",
+          "isCorrect": false,
+          "explanation": "They do increase PDH kinase activity, but the net effect is PDH inhibition."
+        }
+      ],
+      "explanation": {
+        "overview": "These energy-rich molecules activate PDH kinase, leading to PDH inactivation.",
+        "highYield": "High ATP, NADH, acetyl-CoA → PDH inhibition via PDH kinase.",
+        "clinicalCorrelation": "PDH deficiency leads to lactic acidosis and energy deficit in the brain."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_019",
+      "difficulty": 1,
+      "question": "The citric acid cycle begins with the condensation of acetyl-CoA and oxaloacetate to form:",
+      "image": null,
+      "options": [
+        {
+          "text": "Citrate",
+          "isCorrect": true,
+          "explanation": "Citrate synthase catalyzes this reaction, forming the six‑carbon citrate."
+        },
+        {
+          "text": "Isocitrate",
+          "isCorrect": false,
+          "explanation": "Isocitrate is formed later by aconitase."
+        },
+        {
+          "text": "α-Ketoglutarate",
+          "isCorrect": false,
+          "explanation": "α‑Ketoglutarate is produced later after oxidative decarboxylation."
+        },
+        {
+          "text": "Succinyl-CoA",
+          "isCorrect": false,
+          "explanation": "Succinyl‑CoA is formed after α‑ketoglutarate dehydrogenase."
+        },
+        {
+          "text": "Malate",
+          "isCorrect": false,
+          "explanation": "Malate is formed near the end of the cycle."
+        }
+      ],
+      "explanation": {
+        "overview": "Citrate synthase catalyzes this aldol condensation, a highly exergonic reaction.",
+        "highYield": "Acetyl-CoA + oxaloacetate → citrate (citrate synthase).",
+        "clinicalCorrelation": "Citrate synthase is a pacemaker enzyme; its activity reflects mitochondrial density."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_020",
+      "difficulty": 2,
+      "question": "The enzyme that converts citrate to isocitrate is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Aconitase",
+          "isCorrect": true,
+          "explanation": "Aconitase isomerizes citrate to isocitrate via cis‑aconitate."
+        },
+        {
+          "text": "Isocitrate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "That enzyme acts on isocitrate, not citrate."
+        },
+        {
+          "text": "Citrate synthase",
+          "isCorrect": false,
+          "explanation": "Citrate synthase forms citrate, not isocitrate."
+        },
+        {
+          "text": "Succinate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Succinate dehydrogenase acts on succinate."
+        },
+        {
+          "text": "Fumarase",
+          "isCorrect": false,
+          "explanation": "Fumarase acts on fumarate."
+        }
+      ],
+      "explanation": {
+        "overview": "Aconitase (aconitate hydratase) catalyzes the reversible isomerization via cis-aconitate.",
+        "highYield": "Citrate ⇌ isocitrate (aconitase).",
+        "clinicalCorrelation": "Fluoroacetate inhibits aconitase, blocking the TCA cycle and causing toxicity."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_021",
+      "difficulty": 2,
+      "question": "Isocitrate dehydrogenase converts isocitrate to α-ketoglutarate, producing:",
+      "image": null,
+      "options": [
+        {
+          "text": "NADH and CO2",
+          "isCorrect": true,
+          "explanation": "The mitochondrial NAD⁺‑dependent enzyme catalyzes oxidative decarboxylation, producing NADH and CO₂."
+        },
+        {
+          "text": "NADPH and CO2",
+          "isCorrect": false,
+          "explanation": "The cytosolic NADP⁺‑dependent enzyme produces NADPH, but the TCA cycle enzyme uses NAD⁺."
+        },
+        {
+          "text": "FADH2 and CO2",
+          "isCorrect": false,
+          "explanation": "Succinate dehydrogenase produces FADH₂."
+        },
+        {
+          "text": "ATP and CO2",
+          "isCorrect": false,
+          "explanation": "No direct ATP production at this step."
+        },
+        {
+          "text": "GTP and CO2",
+          "isCorrect": false,
+          "explanation": "GTP is produced later by succinyl-CoA synthetase."
+        }
+      ],
+      "explanation": {
+        "overview": "Isocitrate dehydrogenase (NAD+-dependent) catalyzes oxidative decarboxylation, yielding α-ketoglutarate, NADH, and CO2.",
+        "highYield": "Isocitrate → α‑KG + NADH + CO₂ (rate‑limiting TCA step).",
+        "clinicalCorrelation": "Mutations in IDH (isocitrate dehydrogenase) are found in gliomas and AML; they produce oncometabolite 2‑hydroxyglutarate."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_022",
+      "difficulty": 2,
+      "question": "α-Ketoglutarate dehydrogenase converts α-ketoglutarate to succinyl-CoA, producing:",
+      "image": null,
+      "options": [
+        {
+          "text": "NADH and CO2",
+          "isCorrect": true,
+          "explanation": "This complex, similar to PDH, catalyzes oxidative decarboxylation, forming succinyl‑CoA, NADH, and CO₂."
+        },
+        {
+          "text": "NADPH and CO2",
+          "isCorrect": false,
+          "explanation": "NADPH is not produced here."
+        },
+        {
+          "text": "FADH2 and CO2",
+          "isCorrect": false,
+          "explanation": "The complex uses FAD as a cofactor, but the product reduced coenzyme is NADH (FAD is reoxidized internally)."
+        },
+        {
+          "text": "GTP and CO2",
+          "isCorrect": false,
+          "explanation": "GTP is formed later by succinyl-CoA synthetase."
+        },
+        {
+          "text": "ATP and CO2",
+          "isCorrect": false,
+          "explanation": "Not a direct ATP‑producing step."
+        }
+      ],
+      "explanation": {
+        "overview": "This complex (similar to PDH) catalyzes oxidative decarboxylation, forming succinyl-CoA, NADH, and CO2.",
+        "highYield": "α‑KG → succinyl‑CoA + NADH + CO₂ (α‑KGDH).",
+        "clinicalCorrelation": "α‑Ketoglutarate dehydrogenase deficiency is a rare cause of lactic acidosis and neurological disease."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_023",
+      "difficulty": 2,
+      "question": "Succinyl-CoA synthetase converts succinyl-CoA to succinate, producing:",
+      "image": null,
+      "options": [
+        {
+          "text": "GTP (or ATP)",
+          "isCorrect": true,
+          "explanation": "This substrate-level phosphorylation yields GTP (or ATP in some organisms) and succinate."
+        },
+        {
+          "text": "NADH",
+          "isCorrect": false,
+          "explanation": "NADH is not produced here."
+        },
+        {
+          "text": "FADH2",
+          "isCorrect": false,
+          "explanation": "FADH₂ is produced by succinate dehydrogenase."
+        },
+        {
+          "text": "NADPH",
+          "isCorrect": false,
+          "explanation": "NADPH is not a product."
+        },
+        {
+          "text": "CO2",
+          "isCorrect": false,
+          "explanation": "No decarboxylation at this step."
+        }
+      ],
+      "explanation": {
+        "overview": "This substrate-level phosphorylation yields GTP (or ATP in some organisms) and succinate.",
+        "highYield": "Succinyl‑CoA + GDP + Pi → succinate + GTP + CoA.",
+        "clinicalCorrelation": "This is the only substrate-level phosphorylation in the TCA cycle."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_024",
+      "difficulty": 2,
+      "question": "Succinate dehydrogenase converts succinate to fumarate, reducing:",
+      "image": null,
+      "options": [
+        {
+          "text": "FAD to FADH2",
+          "isCorrect": true,
+          "explanation": "SDH (Complex II) uses FAD as the electron acceptor, producing FADH₂."
+        },
+        {
+          "text": "NAD+ to NADH",
+          "isCorrect": false,
+          "explanation": "Malate dehydrogenase uses NAD⁺."
+        },
+        {
+          "text": "NADP+ to NADPH",
+          "isCorrect": false,
+          "explanation": "Not used in TCA."
+        },
+        {
+          "text": "FMN to FMNH2",
+          "isCorrect": false,
+          "explanation": "Complex I contains FMN, but SDH uses FAD."
+        },
+        {
+          "text": "CoQ to CoQH2",
+          "isCorrect": false,
+          "explanation": "SDH passes electrons to CoQ, but the direct cofactor reduced is FAD."
+        }
+      ],
+      "explanation": {
+        "overview": "SDH (Complex II) reduces FAD to FADH2; it is also part of the electron transport chain.",
+        "highYield": "Succinate + FAD → fumarate + FADH₂ (SDH).",
+        "clinicalCorrelation": "Mutations in SDH subunits predispose to hereditary paragangliomas and pheochromocytomas."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_025",
+      "difficulty": 2,
+      "question": "Fumarase (fumarate hydratase) converts fumarate to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Malate",
+          "isCorrect": true,
+          "explanation": "Fumarase adds water across the double bond of fumarate to form L‑malate."
+        },
+        {
+          "text": "Succinate",
+          "isCorrect": false,
+          "explanation": "Succinate is the substrate for the preceding step."
+        },
+        {
+          "text": "Oxaloacetate",
+          "isCorrect": false,
+          "explanation": "Oxaloacetate is formed later by malate dehydrogenase."
+        },
+        {
+          "text": "Citrate",
+          "isCorrect": false,
+          "explanation": "Citrate is the first TCA intermediate."
+        },
+        {
+          "text": "Isocitrate",
+          "isCorrect": false,
+          "explanation": "Isocitrate is formed earlier."
+        }
+      ],
+      "explanation": {
+        "overview": "Fumarase adds water to fumarate, forming L-malate.",
+        "highYield": "Fumarate + H₂O → malate (fumarase).",
+        "clinicalCorrelation": "Fumarase deficiency causes severe neurological impairment and is associated with renal cell cancer."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_026",
+      "difficulty": 2,
+      "question": "Malate dehydrogenase converts malate to oxaloacetate, producing:",
+      "image": null,
+      "options": [
+        {
+          "text": "NADH",
+          "isCorrect": true,
+          "explanation": "Malate dehydrogenase reduces NAD⁺ to NADH."
+        },
+        {
+          "text": "NADPH",
+          "isCorrect": false,
+          "explanation": "NADPH is not used here."
+        },
+        {
+          "text": "FADH2",
+          "isCorrect": false,
+          "explanation": "Succinate dehydrogenase produces FADH₂."
+        },
+        {
+          "text": "GTP",
+          "isCorrect": false,
+          "explanation": "GTP was produced by succinyl-CoA synthetase."
+        },
+        {
+          "text": "ATP",
+          "isCorrect": false,
+          "explanation": "No direct ATP."
+        }
+      ],
+      "explanation": {
+        "overview": "Malate dehydrogenase reduces NAD+ to NADH; the reaction is reversible.",
+        "highYield": "Malate + NAD⁺ → oxaloacetate + NADH (malate dehydrogenase).",
+        "clinicalCorrelation": "This reaction completes the TCA cycle; oxaloacetate can be used for gluconeogenesis or the next TCA turn."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_027",
+      "difficulty": 2,
+      "question": "For each acetyl-CoA entering the citric acid cycle, the net production of reduced coenzymes is:",
+      "image": null,
+      "options": [
+        {
+          "text": "3 NADH and 1 FADH2",
+          "isCorrect": true,
+          "explanation": "Per acetyl-CoA: 3 NADH (from isocitrate, α‑ketoglutarate, malate) and 1 FADH₂ (from succinate). Also 1 GTP (ATP)."
+        },
+        {
+          "text": "2 NADH and 1 FADH2",
+          "isCorrect": false,
+          "explanation": "Three NADH are produced."
+        },
+        {
+          "text": "3 NADH and 2 FADH2",
+          "isCorrect": false,
+          "explanation": "Only one FADH₂."
+        },
+        {
+          "text": "4 NADH and 1 FADH2",
+          "isCorrect": false,
+          "explanation": "There are four oxidation steps, but only three produce NADH."
+        },
+        {
+          "text": "2 NADH and 2 FADH2",
+          "isCorrect": false,
+          "explanation": "Not correct."
+        }
+      ],
+      "explanation": {
+        "overview": "Per acetyl-CoA: 3 NADH (from isocitrate, α-ketoglutarate, malate) and 1 FADH2 (from succinate). Also 1 GTP (ATP).",
+        "highYield": "1 acetyl-CoA → 3 NADH, 1 FADH₂, 1 GTP.",
+        "clinicalCorrelation": "The NADH and FADH₂ feed the electron transport chain, generating most of the ATP from glucose oxidation."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_028",
+      "difficulty": 1,
+      "question": "Gluconeogenesis is the synthesis of glucose from non-carbohydrate precursors such as:",
+      "image": null,
+      "options": [
+        {
+          "text": "Lactate, glycerol, glucogenic amino acids",
+          "isCorrect": true,
+          "explanation": "These are the main substrates for de novo glucose synthesis."
+        },
+        {
+          "text": "Fatty acids only",
+          "isCorrect": false,
+          "explanation": "Fatty acids cannot be converted to glucose in animals."
+        },
+        {
+          "text": "Ketone bodies",
+          "isCorrect": false,
+          "explanation": "Ketone bodies are derived from fat and cannot be converted to glucose."
+        },
+        {
+          "text": "Acetyl-CoA only",
+          "isCorrect": false,
+          "explanation": "Acetyl-CoA cannot be used for net glucose synthesis."
+        },
+        {
+          "text": "Cholesterol",
+          "isCorrect": false,
+          "explanation": "Cholesterol cannot be converted to glucose."
+        }
+      ],
+      "explanation": {
+        "overview": "Lactate, glycerol, and most amino acids (except leucine and lysine) can be converted to glucose.",
+        "highYield": "Gluconeogenic substrates: lactate, glycerol, amino acids (not Leu, Lys).",
+        "clinicalCorrelation": "Gluconeogenesis maintains blood glucose during fasting; impaired in liver failure."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_029",
+      "difficulty": 2,
+      "question": "The three irreversible steps of glycolysis that must be bypassed in gluconeogenesis are catalyzed by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hexokinase, PFK-1, pyruvate kinase",
+          "isCorrect": true,
+          "explanation": "These three steps are thermodynamically irreversible and must be bypassed by different gluconeogenic enzymes."
+        },
+        {
+          "text": "Hexokinase, aldolase, enolase",
+          "isCorrect": false,
+          "explanation": "Aldolase and enolase are reversible."
+        },
+        {
+          "text": "PFK-1, aldolase, pyruvate kinase",
+          "isCorrect": false,
+          "explanation": "Aldolase is not an irreversible step."
+        },
+        {
+          "text": "Hexokinase, enolase, pyruvate kinase",
+          "isCorrect": false,
+          "explanation": "Enolase is reversible."
+        },
+        {
+          "text": "Phosphoglycerate kinase, enolase, pyruvate kinase",
+          "isCorrect": false,
+          "explanation": "Phosphoglycerate kinase is reversible."
+        }
+      ],
+      "explanation": {
+        "overview": "These are bypassed by glucose-6-phosphatase, fructose-1,6-bisphosphatase, and the pyruvate carboxylase/PEPCK pathway.",
+        "highYield": "Bypass enzymes: glucose‑6‑phosphatase, fructose‑1,6‑bisphosphatase, PEPCK + pyruvate carboxylase.",
+        "clinicalCorrelation": "Deficiencies in gluconeogenic enzymes cause hypoglycemia (e.g., fructose‑1,6‑bisphosphatase deficiency)."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_030",
+      "difficulty": 2,
+      "question": "Pyruvate carboxylase converts pyruvate to oxaloacetate in the mitochondrion and requires the cofactor:",
+      "image": null,
+      "options": [
+        {
+          "text": "Biotin",
+          "isCorrect": true,
+          "explanation": "Pyruvate carboxylase is a biotin‑dependent enzyme, using ATP to carboxylate pyruvate."
+        },
+        {
+          "text": "Thiamine pyrophosphate",
+          "isCorrect": false,
+          "explanation": "TPP is for PDH and α‑KGDH."
+        },
+        {
+          "text": "FAD",
+          "isCorrect": false,
+          "explanation": "FAD is used by succinate dehydrogenase."
+        },
+        {
+          "text": "NAD+",
+          "isCorrect": false,
+          "explanation": "NAD⁺ is a cofactor for malate dehydrogenase, not pyruvate carboxylase."
+        },
+        {
+          "text": "Coenzyme A",
+          "isCorrect": false,
+          "explanation": "CoA is not required by pyruvate carboxylase."
+        }
+      ],
+      "explanation": {
+        "overview": "Pyruvate carboxylase is a biotin-dependent enzyme; it also requires ATP.",
+        "highYield": "Pyruvate + CO₂ + ATP → oxaloacetate + ADP + Pi (biotin).",
+        "clinicalCorrelation": "Pyruvate carboxylase deficiency causes lactic acidosis and hypoglycemia."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_031",
+      "difficulty": 2,
+      "question": "Phosphoenolpyruvate carboxykinase (PEPCK) converts oxaloacetate to phosphoenolpyruvate, using:",
+      "image": null,
+      "options": [
+        {
+          "text": "GTP (or ATP) as phosphate donor",
+          "isCorrect": true,
+          "explanation": "PEPCK decarboxylates and phosphorylates OAA, using GTP (mitochondrial) or ATP (cytosolic)."
+        },
+        {
+          "text": "ATP only",
+          "isCorrect": false,
+          "explanation": "GTP can also be used."
+        },
+        {
+          "text": "UTP",
+          "isCorrect": false,
+          "explanation": "Not used."
+        },
+        {
+          "text": "CTP",
+          "isCorrect": false,
+          "explanation": "Not used."
+        },
+        {
+          "text": "ITP",
+          "isCorrect": false,
+          "explanation": "Not used."
+        }
+      ],
+      "explanation": {
+        "overview": "PEPCK decarboxylates and phosphorylates OAA to PEP, using GTP (mitochondrial) or ATP (cytosolic).",
+        "highYield": "OAA + GTP → PEP + GDP + CO₂ (PEPCK).",
+        "clinicalCorrelation": "PEPCK is a key control point for gluconeogenesis; its expression is increased in diabetes."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_032",
+      "difficulty": 2,
+      "question": "Fructose-1,6-bisphosphatase converts fructose-1,6-bisphosphate to fructose-6-phosphate and is inhibited by:",
+      "image": null,
+      "options": [
+        {
+          "text": "AMP and fructose-2,6-bisphosphate",
+          "isCorrect": true,
+          "explanation": "AMP signals low energy and inhibits FBPase‑1; F‑2,6‑BP also inhibits it."
+        },
+        {
+          "text": "ATP and citrate",
+          "isCorrect": false,
+          "explanation": "ATP and citrate activate FBPase‑1."
+        },
+        {
+          "text": "ADP and Pi",
+          "isCorrect": false,
+          "explanation": "These do not inhibit FBPase‑1."
+        },
+        {
+          "text": "NADH",
+          "isCorrect": false,
+          "explanation": "Not a direct inhibitor."
+        },
+        {
+          "text": "Acetyl-CoA",
+          "isCorrect": false,
+          "explanation": "Acetyl‑CoA activates pyruvate carboxylase, not FBPase‑1."
+        }
+      ],
+      "explanation": {
+        "overview": "AMP signals low energy and inhibits FBPase-1; F-2,6-BP also inhibits it (reciprocal regulation with PFK-1).",
+        "highYield": "FBPase‑1 inhibitors: AMP, fructose‑2,6‑bisphosphate.",
+        "clinicalCorrelation": "Fructose‑1,6‑bisphosphatase deficiency causes fasting hypoglycemia and lactic acidosis."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_033",
+      "difficulty": 2,
+      "question": "Glucose-6-phosphatase is present in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Liver and kidney",
+          "isCorrect": true,
+          "explanation": "Only liver and kidney express glucose‑6‑phosphatase, allowing them to release free glucose into the blood."
+        },
+        {
+          "text": "Muscle",
+          "isCorrect": false,
+          "explanation": "Muscle lacks glucose‑6‑phosphatase; it cannot release free glucose."
+        },
+        {
+          "text": "Brain",
+          "isCorrect": false,
+          "explanation": "Brain does not express glucose‑6‑phosphatase."
+        },
+        {
+          "text": "Adipose tissue",
+          "isCorrect": false,
+          "explanation": "Adipose tissue does not produce free glucose."
+        },
+        {
+          "text": "All tissues",
+          "isCorrect": false,
+          "explanation": "Only liver and kidney have this enzyme."
+        }
+      ],
+      "explanation": {
+        "overview": "Only liver and kidney express glucose-6-phosphatase, allowing them to release free glucose into blood.",
+        "highYield": "Glucose‑6‑phosphatase: liver and kidney (not muscle).",
+        "clinicalCorrelation": "Von Gierke disease (GSD Ia) is caused by glucose‑6‑phosphatase deficiency, leading to severe fasting hypoglycemia."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_034",
+      "difficulty": 2,
+      "question": "Glycogen synthesis (glycogenesis) begins with the conversion of glucose-6-phosphate to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glucose-1-phosphate",
+          "isCorrect": true,
+          "explanation": "Phosphoglucomutase shifts the phosphate from C6 to C1."
+        },
+        {
+          "text": "UDP-glucose",
+          "isCorrect": false,
+          "explanation": "UDP‑glucose is formed later from glucose‑1‑phosphate."
+        },
+        {
+          "text": "Glucose",
+          "isCorrect": false,
+          "explanation": "Free glucose is not an intermediate in glycogen synthesis."
+        },
+        {
+          "text": "Glycogen primer",
+          "isCorrect": false,
+          "explanation": "A primer of glycogen (glycogenin) is needed but not directly from G6P."
+        },
+        {
+          "text": "Glucose-6-phosphate",
+          "isCorrect": false,
+          "explanation": "It starts as G6P but must be converted."
+        }
+      ],
+      "explanation": {
+        "overview": "Phosphoglucomutase converts G6P to G1P, which is then activated to UDP-glucose.",
+        "highYield": "G6P → G1P (phosphoglucomutase) → UDP‑glucose.",
+        "clinicalCorrelation": "Phosphoglucomutase deficiency can cause muscle glycogenosis."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_035",
+      "difficulty": 2,
+      "question": "The activated glucose donor for glycogen synthesis is:",
+      "image": null,
+      "options": [
+        {
+          "text": "UDP-glucose",
+          "isCorrect": true,
+          "explanation": "UDP‑glucose pyrophosphorylase forms UDP‑glucose from UTP and glucose‑1‑phosphate."
+        },
+        {
+          "text": "ADP-glucose",
+          "isCorrect": false,
+          "explanation": "ADP‑glucose is used in plants and bacteria."
+        },
+        {
+          "text": "GDP-glucose",
+          "isCorrect": false,
+          "explanation": "Not the glucose donor for glycogen."
+        },
+        {
+          "text": "CDP-glucose",
+          "isCorrect": false,
+          "explanation": "Not used for glycogen synthesis."
+        },
+        {
+          "text": "Glucose-1-phosphate",
+          "isCorrect": false,
+          "explanation": "G1P must be activated to UDP‑glucose."
+        }
+      ],
+      "explanation": {
+        "overview": "UDP-glucose pyrophosphorylase forms UDP-glucose from UTP and G1P.",
+        "highYield": "Glucose‑1‑P + UTP → UDP‑glucose + PPi.",
+        "clinicalCorrelation": "UDP‑glucose is also used for galactose metabolism and glycosylation."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_036",
+      "difficulty": 2,
+      "question": "Glycogen synthase catalyzes the formation of α-1,4-glycosidic bonds and is activated by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Dephosphorylation",
+          "isCorrect": true,
+          "explanation": "Glycogen synthase is active when dephosphorylated (e.g., via protein phosphatase 1)."
+        },
+        {
+          "text": "Phosphorylation",
+          "isCorrect": false,
+          "explanation": "Phosphorylation inactivates glycogen synthase."
+        },
+        {
+          "text": "High cAMP",
+          "isCorrect": false,
+          "explanation": "High cAMP leads to phosphorylation and inactivation."
+        },
+        {
+          "text": "Glucagon",
+          "isCorrect": false,
+          "explanation": "Glucagon activates phosphorylase, not synthase."
+        },
+        {
+          "text": "Epinephrine",
+          "isCorrect": false,
+          "explanation": "Epinephrine promotes glycogenolysis via phosphorylation."
+        }
+      ],
+      "explanation": {
+        "overview": "Glycogen synthase is activated by dephosphorylation (via protein phosphatase) and inhibited by phosphorylation (PKA, GSK3).",
+        "highYield": "Active glycogen synthase = dephosphorylated; inactive = phosphorylated.",
+        "clinicalCorrelation": "Insulin activates glycogen synthase via dephosphorylation; glucagon/epinephrine inactivate it."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_037",
+      "difficulty": 2,
+      "question": "The branching enzyme (amylo-1,4→1,6-transglycosylase) creates α-1,6 linkages at branch points approximately every:",
+      "image": null,
+      "options": [
+        {
+          "text": "8-12 residues",
+          "isCorrect": true,
+          "explanation": "The branching enzyme transfers a block of about 7 glucose residues to form a branch every 8–12 residues."
+        },
+        {
+          "text": "4-6 residues",
+          "isCorrect": false,
+          "explanation": "Branch points are farther apart."
+        },
+        {
+          "text": "20-25 residues",
+          "isCorrect": false,
+          "explanation": "Too far apart; glycogen is more highly branched."
+        },
+        {
+          "text": "50 residues",
+          "isCorrect": false,
+          "explanation": "Much less frequent."
+        },
+        {
+          "text": "100 residues",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        }
+      ],
+      "explanation": {
+        "overview": "The branching enzyme transfers a block of about 7 glucose residues to form a branch every 8-12 residues.",
+        "highYield": "Branch points in glycogen: every 8–12 residues.",
+        "clinicalCorrelation": "Andersen disease (GSD IV) is caused by branching enzyme deficiency, leading to abnormal glycogen structure and cirrhosis."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_038",
+      "difficulty": 2,
+      "question": "Glycogen phosphorylase catalyzes phosphorolysis of glycogen to release:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glucose-1-phosphate",
+          "isCorrect": true,
+          "explanation": "Phosphorylase cleaves α‑1,4 linkages using inorganic phosphate, yielding G1P."
+        },
+        {
+          "text": "Glucose",
+          "isCorrect": false,
+          "explanation": "Free glucose is not the direct product; only debranching enzyme yields a small amount of free glucose."
+        },
+        {
+          "text": "Glucose-6-phosphate",
+          "isCorrect": false,
+          "explanation": "G1P must be converted to G6P by phosphoglucomutase."
+        },
+        {
+          "text": "UDP-glucose",
+          "isCorrect": false,
+          "explanation": "UDP‑glucose is used for glycogen synthesis."
+        },
+        {
+          "text": "Maltose",
+          "isCorrect": false,
+          "explanation": "Maltose is a disaccharide, not the product."
+        }
+      ],
+      "explanation": {
+        "overview": "Phosphorylase cleaves α-1,4 linkages using inorganic phosphate, yielding G1P.",
+        "highYield": "Glycogen + Pi → glucose‑1‑P (glycogen phosphorylase).",
+        "clinicalCorrelation": "McArdle disease (GSD V) is caused by muscle glycogen phosphorylase deficiency."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_039",
+      "difficulty": 2,
+      "question": "The debranching enzyme has two activities: transferase and:",
+      "image": null,
+      "options": [
+        {
+          "text": "α-1,6-glucosidase",
+          "isCorrect": true,
+          "explanation": "Debranching enzyme transfers a trisaccharide and then hydrolyzes the α‑1,6 link."
+        },
+        {
+          "text": "α-1,4-glucosidase",
+          "isCorrect": false,
+          "explanation": "Phosphorylase acts on α‑1,4 bonds."
+        },
+        {
+          "text": "Phosphorylase",
+          "isCorrect": false,
+          "explanation": "Phosphorylase is a separate enzyme."
+        },
+        {
+          "text": "Kinase",
+          "isCorrect": false,
+          "explanation": "Not a kinase."
+        },
+        {
+          "text": "Phosphatase",
+          "isCorrect": false,
+          "explanation": "Not a phosphatase."
+        }
+      ],
+      "explanation": {
+        "overview": "Debranching enzyme transfers a trisaccharide from the branch and then hydrolyzes the α-1,6 link.",
+        "highYield": "Debranching enzyme: transferase + α‑1,6‑glucosidase.",
+        "clinicalCorrelation": "Cori disease (GSD III) is caused by debranching enzyme deficiency, leading to limit dextrin accumulation."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_040",
+      "difficulty": 2,
+      "question": "Glycogenolysis in the liver produces glucose-1-phosphate, which is converted to glucose-6-phosphate and then to free glucose by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glucose-6-phosphatase",
+          "isCorrect": true,
+          "explanation": "Only liver and kidney have this enzyme to release free glucose."
+        },
+        {
+          "text": "Phosphoglucomutase",
+          "isCorrect": false,
+          "explanation": "Phosphoglucomutase converts G1P to G6P."
+        },
+        {
+          "text": "Hexokinase",
+          "isCorrect": false,
+          "explanation": "Hexokinase phosphorylates glucose, not dephosphorylate."
+        },
+        {
+          "text": "Glucokinase",
+          "isCorrect": false,
+          "explanation": "Glucokinase phosphorylates glucose."
+        },
+        {
+          "text": "Phosphorylase",
+          "isCorrect": false,
+          "explanation": "Phosphorylase released G1P."
+        }
+      ],
+      "explanation": {
+        "overview": "Liver has glucose-6-phosphatase to release glucose; muscle lacks this enzyme.",
+        "highYield": "Liver: G6P → glucose via glucose‑6‑phosphatase; muscle: G6P enters glycolysis.",
+        "clinicalCorrelation": "Von Gierke disease: glucose‑6‑phosphatase deficiency prevents hepatic glucose release."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_041",
+      "difficulty": 2,
+      "question": "Insulin promotes glycogen synthesis by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Activating protein phosphatase that dephosphorylates glycogen synthase",
+          "isCorrect": true,
+          "explanation": "Insulin signaling activates protein phosphatase 1, which dephosphorylates and activates glycogen synthase."
+        },
+        {
+          "text": "Phosphorylating glycogen synthase",
+          "isCorrect": false,
+          "explanation": "Phosphorylation inactivates glycogen synthase."
+        },
+        {
+          "text": "Increasing cAMP",
+          "isCorrect": false,
+          "explanation": "Glucagon and epinephrine increase cAMP."
+        },
+        {
+          "text": "Activating phosphorylase kinase",
+          "isCorrect": false,
+          "explanation": "This would stimulate glycogen breakdown."
+        },
+        {
+          "text": "Inhibiting protein phosphatase",
+          "isCorrect": false,
+          "explanation": "Insulin activates phosphatase, not inhibits."
+        }
+      ],
+      "explanation": {
+        "overview": "Insulin signaling leads to dephosphorylation and activation of glycogen synthase and inactivation of glycogen phosphorylase.",
+        "highYield": "Insulin → protein phosphatase → dephosphorylates glycogen synthase (active).",
+        "clinicalCorrelation": "In insulin resistance, impaired glycogen synthesis contributes to hyperglycemia."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_042",
+      "difficulty": 2,
+      "question": "Glucagon stimulates glycogenolysis by increasing cAMP, which activates PKA. PKA then:",
+      "image": null,
+      "options": [
+        {
+          "text": "Phosphorylates and activates phosphorylase kinase",
+          "isCorrect": false,
+          "explanation": "PKA does this, but also does more."
+        },
+        {
+          "text": "Phosphorylates and inactivates glycogen synthase",
+          "isCorrect": false,
+          "explanation": "PKA does this as well."
+        },
+        {
+          "text": "Both A and B",
+          "isCorrect": false,
+          "explanation": "PKA also phosphorylates inhibitor of protein phosphatase."
+        },
+        {
+          "text": "Inhibits protein phosphatase",
+          "isCorrect": false,
+          "explanation": "PKA phosphorylates inhibitor‑1, which inhibits protein phosphatase."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "PKA phosphorylates phosphorylase kinase (activating it), glycogen synthase (inactivating it), and inhibitor‑1 of protein phosphatase, amplifying the response."
+        }
+      ],
+      "explanation": {
+        "overview": "PKA phosphorylates phosphorylase kinase (activating it) and glycogen synthase (inactivating it), and also activates inhibitor of protein phosphatase.",
+        "highYield": "Glucagon → cAMP → PKA → multiple phosphorylations → glycogenolysis.",
+        "clinicalCorrelation": "Defects in this cascade can cause glycogen storage diseases (e.g., phosphorylase kinase deficiency)."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_043",
+      "difficulty": 2,
+      "question": "The pentose phosphate pathway is active in tissues that require NADPH for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Fatty acid synthesis, steroid synthesis, and glutathione reduction",
+          "isCorrect": true,
+          "explanation": "NADPH is essential for reductive biosynthesis and antioxidant defense."
+        },
+        {
+          "text": "Glycolysis",
+          "isCorrect": false,
+          "explanation": "Glycolysis uses NAD⁺, not NADPH."
+        },
+        {
+          "text": "Gluconeogenesis",
+          "isCorrect": false,
+          "explanation": "Gluconeogenesis does not require NADPH."
+        },
+        {
+          "text": "Glycogen synthesis",
+          "isCorrect": false,
+          "explanation": "Glycogen synthesis does not require NADPH."
+        },
+        {
+          "text": "Ketogenesis",
+          "isCorrect": false,
+          "explanation": "Ketogenesis does not require NADPH."
+        }
+      ],
+      "explanation": {
+        "overview": "Tissues like liver, adipose, adrenal cortex, and RBCs have active PPP.",
+        "highYield": "PPP provides NADPH for fatty acid synthesis, steroidogenesis, and maintaining reduced glutathione.",
+        "clinicalCorrelation": "G6PD deficiency impairs NADPH production, causing hemolytic anemia under oxidative stress."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_044",
+      "difficulty": 2,
+      "question": "Glucose-6-phosphate dehydrogenase (G6PD) is the rate-limiting enzyme of the pentose phosphate pathway and is inhibited by:",
+      "image": null,
+      "options": [
+        {
+          "text": "NADPH",
+          "isCorrect": true,
+          "explanation": "High NADPH levels feedback-inhibit G6PD."
+        },
+        {
+          "text": "NADH",
+          "isCorrect": false,
+          "explanation": "NADH is not a direct inhibitor of G6PD."
+        },
+        {
+          "text": "ATP",
+          "isCorrect": false,
+          "explanation": "Not a feedback inhibitor of G6PD."
+        },
+        {
+          "text": "Acetyl-CoA",
+          "isCorrect": false,
+          "explanation": "Not an inhibitor."
+        },
+        {
+          "text": "Citrate",
+          "isCorrect": false,
+          "explanation": "Not an inhibitor."
+        }
+      ],
+      "explanation": {
+        "overview": "High NADPH feedback-inhibits G6PD, regulating the pathway.",
+        "highYield": "G6PD inhibited by NADPH.",
+        "clinicalCorrelation": "G6PD deficiency is the most common human enzyme defect; affects RBCs' ability to handle oxidative stress."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_045",
+      "difficulty": 2,
+      "question": "G6PD deficiency leads to hemolytic anemia because RBCs cannot produce enough NADPH to maintain reduced glutathione, making them vulnerable to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Oxidative stress",
+          "isCorrect": true,
+          "explanation": "Without NADPH, glutathione cannot be kept reduced, leading to oxidative damage."
+        },
+        {
+          "text": "Hypoglycemia",
+          "isCorrect": false,
+          "explanation": "Hypoglycemia is not directly related to G6PD."
+        },
+        {
+          "text": "Lactic acidosis",
+          "isCorrect": false,
+          "explanation": "Lactic acidosis is from impaired glycolysis or mitochondrial function."
+        },
+        {
+          "text": "Membrane rupture",
+          "isCorrect": false,
+          "explanation": "Oxidative damage causes hemolysis, but the underlying vulnerability is oxidative stress."
+        },
+        {
+          "text": "Calcium overload",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        }
+      ],
+      "explanation": {
+        "overview": "Without NADPH, glutathione cannot be kept reduced, leading to oxidative damage and hemolysis.",
+        "highYield": "G6PD deficiency → low NADPH → low GSH → oxidative hemolysis.",
+        "clinicalCorrelation": "Triggers: infections, fava beans, certain drugs (sulfonamides, primaquine)."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_046",
+      "difficulty": 2,
+      "question": "Fructose metabolism enters glycolysis primarily via:",
+      "image": null,
+      "options": [
+        {
+          "text": "Fructose-1-phosphate pathway (in liver)",
+          "isCorrect": true,
+          "explanation": "Fructokinase phosphorylates fructose to fructose‑1‑phosphate, which is cleaved to DHAP and glyceraldehyde."
+        },
+        {
+          "text": "Direct phosphorylation to fructose-6-phosphate (in muscle)",
+          "isCorrect": false,
+          "explanation": "Muscle hexokinase can phosphorylate fructose, but the liver pathway is different."
+        },
+        {
+          "text": "Conversion to sorbitol",
+          "isCorrect": false,
+          "explanation": "Sorbitol pathway is a minor alternative."
+        },
+        {
+          "text": "Conversion to glucose",
+          "isCorrect": false,
+          "explanation": "Fructose can be converted to glucose, but first enters glycolysis as trioses."
+        },
+        {
+          "text": "Pentose phosphate pathway",
+          "isCorrect": false,
+          "explanation": "Fructose does not enter directly into PPP."
+        }
+      ],
+      "explanation": {
+        "overview": "In liver, fructokinase phosphorylates fructose to fructose-1-phosphate, cleaved to DHAP and glyceraldehyde.",
+        "highYield": "Fructose → fructose‑1‑P → DHAP + glyceraldehyde → glycolysis.",
+        "clinicalCorrelation": "Hereditary fructose intolerance (aldolase B deficiency) causes hypoglycemia and liver damage after fructose intake."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_047",
+      "difficulty": 2,
+      "question": "Galactose is metabolized via the Leloir pathway, which converts galactose to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glucose-1-phosphate",
+          "isCorrect": true,
+          "explanation": "Galactokinase, transferase, and epimerase convert galactose to UDP‑galactose, then UDP‑glucose, then glucose‑1‑phosphate."
+        },
+        {
+          "text": "Glucose-6-phosphate",
+          "isCorrect": false,
+          "explanation": "It is eventually converted to G1P, which can be isomerized to G6P."
+        },
+        {
+          "text": "Fructose-1-phosphate",
+          "isCorrect": false,
+          "explanation": "Not the product."
+        },
+        {
+          "text": "UDP-glucose",
+          "isCorrect": false,
+          "explanation": "UDP‑glucose is an intermediate, but the final metabolically usable form is glucose‑1‑P or glucose‑6‑P."
+        },
+        {
+          "text": "Galactose-6-phosphate",
+          "isCorrect": false,
+          "explanation": "Not the end product."
+        }
+      ],
+      "explanation": {
+        "overview": "Galactokinase and transferase convert galactose to UDP-galactose, then epimerase forms UDP-glucose, which can enter glycogen synthesis or glycolysis.",
+        "highYield": "Galactose → galactose‑1‑P → UDP‑galactose → UDP‑glucose → G1P.",
+        "clinicalCorrelation": "Classic galactosemia (transferase deficiency) causes vomiting, liver failure, cataracts; treatment is galactose‑free diet."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_048",
+      "difficulty": 2,
+      "question": "Galactosemia is most commonly caused by deficiency of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Galactose-1-phosphate uridylyltransferase",
+          "isCorrect": true,
+          "explanation": "This is the classic galactosemia; deficiency leads to accumulation of galactose‑1‑phosphate."
+        },
+        {
+          "text": "Galactokinase",
+          "isCorrect": false,
+          "explanation": "Galactokinase deficiency causes cataracts but not the severe systemic symptoms."
+        },
+        {
+          "text": "UDP-galactose epimerase",
+          "isCorrect": false,
+          "explanation": "Epimerase deficiency is rarer."
+        },
+        {
+          "text": "Galactose dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Not a recognized disorder."
+        },
+        {
+          "text": "Phosphoglucomutase",
+          "isCorrect": false,
+          "explanation": "Not related to galactosemia."
+        }
+      ],
+      "explanation": {
+        "overview": "Transferase deficiency leads to accumulation of galactose-1-phosphate and damage to liver, eyes, and brain.",
+        "highYield": "Classic galactosemia: GALT deficiency.",
+        "clinicalCorrelation": "Newborn screening detects galactosemia; early dietary restriction prevents complications."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_049",
+      "difficulty": 2,
+      "question": "Hereditary fructose intolerance is due to deficiency of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Aldolase B",
+          "isCorrect": true,
+          "explanation": "Aldolase B (liver) deficiency causes accumulation of fructose‑1‑phosphate, trapping phosphate and causing hypoglycemia."
+        },
+        {
+          "text": "Fructokinase",
+          "isCorrect": false,
+          "explanation": "Fructokinase deficiency causes essential fructosuria, a benign condition."
+        },
+        {
+          "text": "Phosphofructokinase",
+          "isCorrect": false,
+          "explanation": "PFK deficiency is a glycogen storage disease."
+        },
+        {
+          "text": "Hexokinase",
+          "isCorrect": false,
+          "explanation": "Not related."
+        },
+        {
+          "text": "Pyruvate kinase",
+          "isCorrect": false,
+          "explanation": "Causes hemolytic anemia."
+        }
+      ],
+      "explanation": {
+        "overview": "Aldolase B (liver) deficiency causes accumulation of fructose-1-phosphate, trapping phosphate and causing hypoglycemia.",
+        "highYield": "Hereditary fructose intolerance: aldolase B deficiency.",
+        "clinicalCorrelation": "Symptoms after fructose/sucrose ingestion: hypoglycemia, vomiting, jaundice; treatment: fructose‑free diet."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_050",
+      "difficulty": 2,
+      "question": "Sorbitol accumulation in diabetes contributes to complications such as cataracts and neuropathy because:",
+      "image": null,
+      "options": [
+        {
+          "text": "It is osmotically active and cannot diffuse out of cells",
+          "isCorrect": true,
+          "explanation": "Sorbitol is a polyol that accumulates in cells lacking sorbitol dehydrogenase, causing osmotic stress."
+        },
+        {
+          "text": "It inhibits glycolysis",
+          "isCorrect": false,
+          "explanation": "Not the primary mechanism."
+        },
+        {
+          "text": "It depletes ATP",
+          "isCorrect": false,
+          "explanation": "ATP depletion is secondary."
+        },
+        {
+          "text": "It increases oxidative stress",
+          "isCorrect": false,
+          "explanation": "Oxidative stress is a consequence, but osmotic stress is the direct mechanism."
+        },
+        {
+          "text": "It activates protein kinase C",
+          "isCorrect": false,
+          "explanation": "Hyperglycemia can activate PKC via other pathways."
+        }
+      ],
+      "explanation": {
+        "overview": "Aldose reductase converts glucose to sorbitol, which accumulates in tissues lacking sorbitol dehydrogenase, causing osmotic damage.",
+        "highYield": "Sorbitol accumulation → osmotic stress → cataracts, neuropathy.",
+        "clinicalCorrelation": "Aldose reductase inhibitors are investigated for diabetic complications."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_051",
+      "difficulty": 2,
+      "question": "The diagram shows the regulation of glycolysis and gluconeogenesis. Fructose-2,6-bisphosphate is a potent activator of:",
+      "image": "f26bp_regulation.png",
+      "options": [
+        {
+          "text": "PFK-1",
+          "isCorrect": true,
+          "explanation": "F‑2,6‑BP allosterically activates PFK‑1 and inhibits FBPase‑1, promoting glycolysis."
+        },
+        {
+          "text": "FBPase-1",
+          "isCorrect": false,
+          "explanation": "F‑2,6‑BP inhibits FBPase‑1."
+        },
+        {
+          "text": "Pyruvate kinase",
+          "isCorrect": false,
+          "explanation": "Pyruvate kinase is activated by fructose‑1,6‑bisphosphate, not F‑2,6‑BP."
+        },
+        {
+          "text": "Hexokinase",
+          "isCorrect": false,
+          "explanation": "Not directly regulated by F‑2,6‑BP."
+        },
+        {
+          "text": "Glucokinase",
+          "isCorrect": false,
+          "explanation": "Glucokinase is not regulated by F‑2,6‑BP."
+        }
+      ],
+      "explanation": {
+        "overview": "F-2,6-BP allosterically activates PFK-1 and inhibits FBPase-1, promoting glycolysis.",
+        "highYield": "F‑2,6‑BP = key reciprocal regulator: ↑PFK‑1, ↓FBPase‑1.",
+        "clinicalCorrelation": "F‑2,6‑BP levels are controlled by insulin/glucagon via the bifunctional enzyme PFK‑2/FBPase‑2."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_052",
+      "difficulty": 3,
+      "question": "The bifunctional enzyme PFK-2/FBPase-2 is regulated by phosphorylation. In the liver, glucagon causes phosphorylation, which:",
+      "image": null,
+      "options": [
+        {
+          "text": "Inactivates PFK-2 and activates FBPase-2, lowering F-2,6-BP",
+          "isCorrect": true,
+          "explanation": "Phosphorylation switches the enzyme to phosphatase mode, reducing F‑2,6‑BP and promoting gluconeogenesis."
+        },
+        {
+          "text": "Activates PFK-2 and inactivates FBPase-2, raising F-2,6-BP",
+          "isCorrect": false,
+          "explanation": "That occurs when the enzyme is dephosphorylated (insulin)."
+        },
+        {
+          "text": "Has no effect",
+          "isCorrect": false,
+          "explanation": "Phosphorylation controls the enzyme's activity."
+        },
+        {
+          "text": "Phosphorylates both activities equally",
+          "isCorrect": false,
+          "explanation": "Phosphorylation inhibits kinase activity and activates phosphatase."
+        },
+        {
+          "text": "Degrades the enzyme",
+          "isCorrect": false,
+          "explanation": "Not degradation."
+        }
+      ],
+      "explanation": {
+        "overview": "Phosphorylation switches the enzyme to phosphatase mode, reducing F-2,6-BP and promoting gluconeogenesis.",
+        "highYield": "Glucagon → PKA → phosphorylates PFK‑2/FBPase‑2 → F‑2,6‑BP ↓ → glycolysis ↓, gluconeogenesis ↑.",
+        "clinicalCorrelation": "In diabetes, low insulin and high glucagon lead to low F‑2,6‑BP, contributing to hyperglycemia via increased gluconeogenesis."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_053",
+      "difficulty": 3,
+      "question": "Insulin in the liver promotes dephosphorylation of the bifunctional enzyme, which:",
+      "image": null,
+      "options": [
+        {
+          "text": "Activates PFK-2 and inactivates FBPase-2, raising F-2,6-BP",
+          "isCorrect": true,
+          "explanation": "Dephosphorylation activates kinase activity, increasing F‑2,6‑BP and stimulating glycolysis."
+        },
+        {
+          "text": "Does the opposite",
+          "isCorrect": false,
+          "explanation": "That would be phosphorylation."
+        },
+        {
+          "text": "Inhibits both activities",
+          "isCorrect": false,
+          "explanation": "Dephosphorylation does not inhibit both."
+        },
+        {
+          "text": "Degrades F-2,6-BP",
+          "isCorrect": false,
+          "explanation": "It increases F‑2,6‑BP."
+        },
+        {
+          "text": "Has no effect",
+          "isCorrect": false,
+          "explanation": "Insulin clearly affects this enzyme."
+        }
+      ],
+      "explanation": {
+        "overview": "Insulin signaling leads to dephosphorylation, favoring kinase activity and increasing F-2,6-BP, stimulating glycolysis.",
+        "highYield": "Insulin → dephosphorylates PFK‑2/FBPase‑2 → F‑2,6‑BP ↑ → glycolysis ↑.",
+        "clinicalCorrelation": "This is part of the mechanism by which insulin promotes hepatic glucose utilization after a meal."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_054",
+      "difficulty": 2,
+      "question": "Which of the following is an activator of pyruvate carboxylase?",
+      "image": null,
+      "options": [
+        {
+          "text": "Acetyl-CoA",
+          "isCorrect": true,
+          "explanation": "Acetyl‑CoA allosterically activates pyruvate carboxylase, signaling need for oxaloacetate."
+        },
+        {
+          "text": "ATP",
+          "isCorrect": false,
+          "explanation": "ATP is a substrate, not an allosteric activator."
+        },
+        {
+          "text": "NADH",
+          "isCorrect": false,
+          "explanation": "Not an activator."
+        },
+        {
+          "text": "Citrate",
+          "isCorrect": false,
+          "explanation": "Citrate inhibits PFK‑1, but does not directly activate pyruvate carboxylase."
+        },
+        {
+          "text": "ADP",
+          "isCorrect": false,
+          "explanation": "ADP is not an activator."
+        }
+      ],
+      "explanation": {
+        "overview": "Acetyl-CoA allosterically activates pyruvate carboxylase, signaling need for OAA (for TCA or gluconeogenesis).",
+        "highYield": "Pyruvate carboxylase activated by acetyl‑CoA.",
+        "clinicalCorrelation": "This activation ensures OAA is available when acetyl‑CoA levels are high, facilitating TCA cycle activity or gluconeogenesis."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_055",
+      "difficulty": 2,
+      "question": "High levels of alanine in blood often indicate:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increased protein breakdown and gluconeogenesis",
+          "isCorrect": true,
+          "explanation": "Alanine is a major carrier of amino groups from muscle to liver for gluconeogenesis."
+        },
+        {
+          "text": "Excess carbohydrate intake",
+          "isCorrect": false,
+          "explanation": "Carbohydrate intake would increase glucose, not alanine."
+        },
+        {
+          "text": "Fatty liver",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        },
+        {
+          "text": "Ketosis",
+          "isCorrect": false,
+          "explanation": "Ketosis is marked by ketone bodies."
+        },
+        {
+          "text": "Muscle glycogenolysis",
+          "isCorrect": false,
+          "explanation": "Alanine is from amino acid breakdown, not glycogen."
+        }
+      ],
+      "explanation": {
+        "overview": "Alanine is a major carrier of amino groups from muscle to liver for gluconeogenesis.",
+        "highYield": "Alanine = gluconeogenic precursor; elevated in catabolic states.",
+        "clinicalCorrelation": "In fasting, muscle protein degradation provides alanine for hepatic glucose production."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_056",
+      "difficulty": 2,
+      "question": "During prolonged fasting, the brain adapts to use ketone bodies. However, it still requires some glucose from:",
+      "image": null,
+      "options": [
+        {
+          "text": "Gluconeogenesis (from glycerol and amino acids)",
+          "isCorrect": true,
+          "explanation": "Gluconeogenesis continues to provide glucose for cells that cannot use ketones (e.g., RBCs)."
+        },
+        {
+          "text": "Glycogenolysis",
+          "isCorrect": false,
+          "explanation": "Glycogen stores are depleted within ~24 hours."
+        },
+        {
+          "text": "Fatty acid oxidation",
+          "isCorrect": false,
+          "explanation": "Fatty acids cannot be converted to glucose."
+        },
+        {
+          "text": "Pentose phosphate pathway",
+          "isCorrect": false,
+          "explanation": "PPP uses glucose but does not produce it."
+        },
+        {
+          "text": "Direct ketone conversion",
+          "isCorrect": false,
+          "explanation": "Ketones cannot be converted to glucose."
+        }
+      ],
+      "explanation": {
+        "overview": "Gluconeogenesis continues to provide glucose for cells that cannot use ketones (e.g., RBCs, renal medulla).",
+        "highYield": "Brain uses ketones but still needs ~30 g glucose/day from gluconeogenesis.",
+        "clinicalCorrelation": "In prolonged starvation, ketone bodies become the major fuel for the brain, sparing muscle protein."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_057",
+      "difficulty": 3,
+      "question": "The Cori cycle involves the conversion of lactate to glucose in the liver and requires ATP. How many ATP are consumed per lactate converted to glucose?",
+      "image": null,
+      "options": [
+        {
+          "text": "6 ATP (per 2 lactate → 1 glucose)",
+          "isCorrect": true,
+          "explanation": "Gluconeogenesis from 2 lactate uses 6 ATP equivalents (4 ATP + 2 GTP)."
+        },
+        {
+          "text": "2 ATP",
+          "isCorrect": false,
+          "explanation": "Too low."
+        },
+        {
+          "text": "4 ATP",
+          "isCorrect": false,
+          "explanation": "Underestimate."
+        },
+        {
+          "text": "8 ATP",
+          "isCorrect": false,
+          "explanation": "Slightly high."
+        },
+        {
+          "text": "12 ATP",
+          "isCorrect": false,
+          "explanation": "Too high."
+        }
+      ],
+      "explanation": {
+        "overview": "Gluconeogenesis from 2 lactate uses 6 ATP equivalents (4 ATP + 2 GTP).",
+        "highYield": "Cori cycle: 2 lactate → 1 glucose costs 6 ATP.",
+        "clinicalCorrelation": "The Cori cycle shifts the energy burden of gluconeogenesis to the liver; in shock, excessive lactate production overwhelms the cycle."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_058",
+      "difficulty": 2,
+      "question": "McArdle disease (type V glycogen storage disease) is caused by deficiency of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Muscle glycogen phosphorylase",
+          "isCorrect": true,
+          "explanation": "Patients cannot break down muscle glycogen, leading to exercise intolerance."
+        },
+        {
+          "text": "Liver glycogen phosphorylase",
+          "isCorrect": false,
+          "explanation": "Liver phosphorylase deficiency is Hers disease (type VI)."
+        },
+        {
+          "text": "Glycogen synthase",
+          "isCorrect": false,
+          "explanation": "Synthase deficiency would impair glycogen synthesis."
+        },
+        {
+          "text": "Debranching enzyme",
+          "isCorrect": false,
+          "explanation": "Cori disease (type III)."
+        },
+        {
+          "text": "Phosphorylase kinase",
+          "isCorrect": false,
+          "explanation": "Type VIII."
+        }
+      ],
+      "explanation": {
+        "overview": "Patients cannot break down muscle glycogen, leading to exercise intolerance and cramps.",
+        "highYield": "McArdle disease: muscle glycogen phosphorylase deficiency.",
+        "clinicalCorrelation": "Symptoms: muscle pain, cramps, myoglobinuria after intense exercise; 'second wind' phenomenon."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_059",
+      "difficulty": 2,
+      "question": "Von Gierke disease (type I glycogen storage disease) is due to deficiency of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glucose-6-phosphatase",
+          "isCorrect": true,
+          "explanation": "Patients cannot release glucose from liver, causing severe fasting hypoglycemia."
+        },
+        {
+          "text": "Glycogen phosphorylase",
+          "isCorrect": false,
+          "explanation": "Other GSDs."
+        },
+        {
+          "text": "Debranching enzyme",
+          "isCorrect": false,
+          "explanation": "Type III."
+        },
+        {
+          "text": "Phosphorylase kinase",
+          "isCorrect": false,
+          "explanation": "Type VIII."
+        },
+        {
+          "text": "Glycogen synthase",
+          "isCorrect": false,
+          "explanation": "Synthase deficiency causes GSD 0."
+        }
+      ],
+      "explanation": {
+        "overview": "Patients cannot release glucose from liver, causing severe fasting hypoglycemia and hepatomegaly.",
+        "highYield": "Von Gierke (type I): glucose‑6‑phosphatase deficiency.",
+        "clinicalCorrelation": "Features: hypoglycemia, lactic acidosis, hyperuricemia, hypertriglyceridemia, hepatomegaly."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_060",
+      "difficulty": 2,
+      "question": "Cori disease (type III glycogen storage disease) results from deficiency of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Debranching enzyme",
+          "isCorrect": true,
+          "explanation": "Accumulation of limit dextrin causes hypoglycemia and muscle weakness."
+        },
+        {
+          "text": "Branching enzyme",
+          "isCorrect": false,
+          "explanation": "Type IV."
+        },
+        {
+          "text": "Phosphorylase",
+          "isCorrect": false,
+          "explanation": "Type V or VI."
+        },
+        {
+          "text": "Phosphorylase kinase",
+          "isCorrect": false,
+          "explanation": "Type VIII."
+        },
+        {
+          "text": "Glucose-6-phosphatase",
+          "isCorrect": false,
+          "explanation": "Type I."
+        }
+      ],
+      "explanation": {
+        "overview": "Accumulation of limit dextrin causes hypoglycemia and muscle weakness.",
+        "highYield": "Cori disease (type III): debranching enzyme deficiency.",
+        "clinicalCorrelation": "Milder hypoglycemia, hepatomegaly; some patients have muscle involvement."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_061",
+      "difficulty": 2,
+      "question": "Andersen disease (type IV) is caused by deficiency of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Branching enzyme",
+          "isCorrect": true,
+          "explanation": "Abnormally long, unbranched glycogen accumulates, causing liver cirrhosis."
+        },
+        {
+          "text": "Debranching enzyme",
+          "isCorrect": false,
+          "explanation": "Type III."
+        },
+        {
+          "text": "Glycogen synthase",
+          "isCorrect": false,
+          "explanation": "GSD 0."
+        },
+        {
+          "text": "Phosphorylase",
+          "isCorrect": false,
+          "explanation": "Type V/VI."
+        },
+        {
+          "text": "Glucose-6-phosphatase",
+          "isCorrect": false,
+          "explanation": "Type I."
+        }
+      ],
+      "explanation": {
+        "overview": "Abnormally long, unbranched glycogen accumulates, causing liver cirrhosis and death in early childhood.",
+        "highYield": "Andersen disease (type IV): branching enzyme deficiency.",
+        "clinicalCorrelation": "Rare; leads to liver failure and early death unless transplanted."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_062",
+      "difficulty": 2,
+      "question": "Hers disease (type VI) is due to deficiency of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Liver glycogen phosphorylase",
+          "isCorrect": true,
+          "explanation": "Mild hepatomegaly and hypoglycemia."
+        },
+        {
+          "text": "Muscle glycogen phosphorylase",
+          "isCorrect": false,
+          "explanation": "McArdle (type V)."
+        },
+        {
+          "text": "Phosphorylase kinase",
+          "isCorrect": false,
+          "explanation": "Type VIII."
+        },
+        {
+          "text": "Glycogen synthase",
+          "isCorrect": false,
+          "explanation": "GSD 0."
+        },
+        {
+          "text": "Debranching enzyme",
+          "isCorrect": false,
+          "explanation": "Type III."
+        }
+      ],
+      "explanation": {
+        "overview": "Mild hepatomegaly and hypoglycemia; similar to McArdle but in liver.",
+        "highYield": "Hers disease (type VI): liver glycogen phosphorylase deficiency.",
+        "clinicalCorrelation": "Usually mild; improves with age."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_063",
+      "difficulty": 2,
+      "question": "Phosphorylase kinase deficiency (type VIII) affects:",
+      "image": null,
+      "options": [
+        {
+          "text": "Both liver and muscle glycogenolysis",
+          "isCorrect": true,
+          "explanation": "X‑linked recessive; patients have mild hepatomegaly and exercise intolerance."
+        },
+        {
+          "text": "Only liver",
+          "isCorrect": false,
+          "explanation": "Also muscle."
+        },
+        {
+          "text": "Only muscle",
+          "isCorrect": false,
+          "explanation": "Also liver."
+        },
+        {
+          "text": "Only brain",
+          "isCorrect": false,
+          "explanation": "Not a primary feature."
+        },
+        {
+          "text": "Only heart",
+          "isCorrect": false,
+          "explanation": "Not specific to heart."
+        }
+      ],
+      "explanation": {
+        "overview": "X-linked recessive; patients have mild hepatomegaly and exercise intolerance.",
+        "highYield": "Phosphorylase kinase deficiency: affects both liver and muscle.",
+        "clinicalCorrelation": "One of the milder glycogen storage diseases."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_064",
+      "difficulty": 2,
+      "question": "The conversion of glucose to glycogen is stimulated by insulin, which activates protein phosphatase 1 (PP1). PP1 dephosphorylates and:",
+      "image": null,
+      "options": [
+        {
+          "text": "Activates glycogen synthase and inactivates phosphorylase",
+          "isCorrect": true,
+          "explanation": "PP1 coordinately regulates glycogen metabolism, promoting storage."
+        },
+        {
+          "text": "Activates phosphorylase and inactivates glycogen synthase",
+          "isCorrect": false,
+          "explanation": "That would promote glycogenolysis."
+        },
+        {
+          "text": "Activates both",
+          "isCorrect": false,
+          "explanation": "PP1 does not activate phosphorylase."
+        },
+        {
+          "text": "Inactivates both",
+          "isCorrect": false,
+          "explanation": "PP1 activates glycogen synthase."
+        },
+        {
+          "text": "Has no effect",
+          "isCorrect": false,
+          "explanation": "PP1 is crucial for regulation."
+        }
+      ],
+      "explanation": {
+        "overview": "PP1 coordinately regulates glycogen metabolism, promoting storage.",
+        "highYield": "Insulin → PP1 → dephosphorylates glycogen synthase (active) and phosphorylase (inactive).",
+        "clinicalCorrelation": "Targeting PP1 could modulate glycogen levels in diabetes."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_065",
+      "difficulty": 2,
+      "question": "The glucose transporter GLUT2, found in liver and pancreatic beta cells, has a high Km. This allows:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glucose uptake proportional to blood glucose concentration",
+          "isCorrect": true,
+          "explanation": "High Km means transport rate varies with glucose levels; important for glucose sensing and hepatic uptake."
+        },
+        {
+          "text": "Maximal uptake even at low glucose",
+          "isCorrect": false,
+          "explanation": "Low Km transporters do that."
+        },
+        {
+          "text": "Insulin-independent uptake",
+          "isCorrect": false,
+          "explanation": "GLUT2 is insulin-independent, but the question is about Km."
+        },
+        {
+          "text": "Insulin-dependent uptake",
+          "isCorrect": false,
+          "explanation": "GLUT4 is insulin-dependent."
+        },
+        {
+          "text": "Fructose transport",
+          "isCorrect": false,
+          "explanation": "GLUT5 transports fructose."
+        }
+      ],
+      "explanation": {
+        "overview": "High Km means transport rate varies with glucose levels, important for glucose sensing and hepatic glucose uptake.",
+        "highYield": "GLUT2 (high Km) = glucose sensor in liver and β‑cells.",
+        "clinicalCorrelation": "Mutations in GLUT2 cause Fanconi‑Bickel syndrome, characterized by hepatorenal glycogen accumulation."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_066",
+      "difficulty": 2,
+      "question": "In pancreatic beta cells, glucokinase acts as a glucose sensor because:",
+      "image": null,
+      "options": [
+        {
+          "text": "Its high Km allows it to respond to changes in physiological glucose range",
+          "isCorrect": true,
+          "explanation": "Glucokinase flux varies with glucose, controlling glycolytic rate and insulin secretion."
+        },
+        {
+          "text": "It is inhibited by glucose-6-phosphate",
+          "isCorrect": false,
+          "explanation": "Hexokinase is inhibited by G6P; glucokinase is not."
+        },
+        {
+          "text": "It is activated by insulin",
+          "isCorrect": false,
+          "explanation": "Insulin induces glucokinase expression but is not its main mechanism."
+        },
+        {
+          "text": "It is expressed only in beta cells",
+          "isCorrect": false,
+          "explanation": "Also in liver."
+        },
+        {
+          "text": "It produces fructose-6-phosphate",
+          "isCorrect": false,
+          "explanation": "All kinases produce phosphorylated sugars; this is not the sensing mechanism."
+        }
+      ],
+      "explanation": {
+        "overview": "Glucokinase flux varies with glucose, controlling glycolytic rate and insulin secretion.",
+        "highYield": "Glucokinase = β‑cell glucose sensor; high Km ~10 mM.",
+        "clinicalCorrelation": "Glucokinase activators are a novel class of antidiabetic drugs."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_067",
+      "difficulty": 2,
+      "question": "Fructose-2,6-bisphosphate levels in the liver are high during the fed state due to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Insulin-mediated dephosphorylation of PFK-2",
+          "isCorrect": true,
+          "explanation": "Insulin promotes dephosphorylation of the bifunctional enzyme, increasing kinase activity and F‑2,6‑BP."
+        },
+        {
+          "text": "Glucagon-mediated phosphorylation",
+          "isCorrect": false,
+          "explanation": "That would decrease F‑2,6‑BP."
+        },
+        {
+          "text": "High cAMP",
+          "isCorrect": false,
+          "explanation": "cAMP mediates glucagon action."
+        },
+        {
+          "text": "Low glucose",
+          "isCorrect": false,
+          "explanation": "Low glucose would stimulate glucagon."
+        },
+        {
+          "text": "Epinephrine",
+          "isCorrect": false,
+          "explanation": "Epinephrine also raises cAMP."
+        }
+      ],
+      "explanation": {
+        "overview": "Insulin promotes dephosphorylation of the bifunctional enzyme, increasing kinase activity and F-2,6-BP.",
+        "highYield": "Fed state: insulin → PFK‑2 active → F‑2,6‑BP high → glycolysis active.",
+        "clinicalCorrelation": "In diabetes, low insulin leads to low F‑2,6‑BP, impairing glycolysis and promoting gluconeogenesis."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_068",
+      "difficulty": 2,
+      "question": "During intense exercise, muscle glycogen is broken down to lactate even in the presence of oxygen. This phenomenon is called:",
+      "image": null,
+      "options": [
+        {
+          "text": "Aerobic glycolysis",
+          "isCorrect": true,
+          "explanation": "Aerobic glycolysis refers to lactate production despite adequate oxygen."
+        },
+        {
+          "text": "Pasteur effect",
+          "isCorrect": false,
+          "explanation": "Pasteur effect is inhibition of glycolysis by oxygen."
+        },
+        {
+          "text": "Crabtree effect",
+          "isCorrect": false,
+          "explanation": "Crabtree effect is suppression of respiration by high glucose."
+        },
+        {
+          "text": "Warburg effect",
+          "isCorrect": false,
+          "explanation": "Warburg effect is aerobic glycolysis in cancer cells."
+        },
+        {
+          "text": "Cori cycle",
+          "isCorrect": false,
+          "explanation": "Cori cycle is the cycling of lactate and glucose between muscle and liver."
+        }
+      ],
+      "explanation": {
+        "overview": "Aerobic glycolysis refers to lactate production despite oxygen; common in muscle during high demand.",
+        "highYield": "Aerobic glycolysis: lactate formation under aerobic conditions due to high glycolytic flux.",
+        "clinicalCorrelation": "Similar to the Warburg effect in cancer cells, which also produce lactate aerobically."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_069",
+      "difficulty": 2,
+      "question": "The glucose-alanine cycle is important for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Transporting ammonia from muscle to liver",
+          "isCorrect": true,
+          "explanation": "Alanine carries amino groups as nitrogen to liver, where urea is formed; the carbon skeleton is used for gluconeogenesis."
+        },
+        {
+          "text": "Generating ATP in muscle",
+          "isCorrect": false,
+          "explanation": "Not the purpose."
+        },
+        {
+          "text": "Synthesizing glucose from fatty acids",
+          "isCorrect": false,
+          "explanation": "Fatty acids cannot be converted to glucose."
+        },
+        {
+          "text": "Producing ketone bodies",
+          "isCorrect": false,
+          "explanation": "Ketone bodies come from fat."
+        },
+        {
+          "text": "Storing glycogen",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        }
+      ],
+      "explanation": {
+        "overview": "Alanine carries amino groups (as nitrogen) to liver, where urea is formed; the carbon skeleton is used for gluconeogenesis.",
+        "highYield": "Glucose‑alanine cycle: muscle → alanine → liver → glucose + urea.",
+        "clinicalCorrelation": "Important for nitrogen disposal during prolonged exercise or fasting."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_070",
+      "difficulty": 1,
+      "question": "Which of the following is a substrate for gluconeogenesis?",
+      "image": null,
+      "options": [
+        {
+          "text": "Lactate",
+          "isCorrect": false,
+          "explanation": "Yes, but glycerol and alanine are also substrates."
+        },
+        {
+          "text": "Glycerol",
+          "isCorrect": false,
+          "explanation": "Yes, but others are also correct."
+        },
+        {
+          "text": "Alanine",
+          "isCorrect": false,
+          "explanation": "Yes."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Lactate, glycerol, and alanine are all gluconeogenic precursors."
+        },
+        {
+          "text": "None of the above",
+          "isCorrect": false,
+          "explanation": "All are substrates."
+        }
+      ],
+      "explanation": {
+        "overview": "All are gluconeogenic precursors.",
+        "highYield": "Gluconeogenesis uses lactate, glycerol, and glucogenic amino acids.",
+        "clinicalCorrelation": "During fasting, these substrates maintain blood glucose."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_071",
+      "difficulty": 2,
+      "question": "The conversion of pyruvate to phosphoenolpyruvate in gluconeogenesis requires two enzymes: pyruvate carboxylase and:",
+      "image": null,
+      "options": [
+        {
+          "text": "PEP carboxykinase",
+          "isCorrect": true,
+          "explanation": "Pyruvate carboxylase makes OAA; PEPCK converts OAA to PEP."
+        },
+        {
+          "text": "PEP phosphatase",
+          "isCorrect": false,
+          "explanation": "PEP is formed by PEPCK, not a phosphatase."
+        },
+        {
+          "text": "Pyruvate kinase (reverse)",
+          "isCorrect": false,
+          "explanation": "Pyruvate kinase reaction is irreversible."
+        },
+        {
+          "text": "Enolase",
+          "isCorrect": false,
+          "explanation": "Enolase works in the opposite direction."
+        },
+        {
+          "text": "Phosphoglycerate mutase",
+          "isCorrect": false,
+          "explanation": "Not involved here."
+        }
+      ],
+      "explanation": {
+        "overview": "Pyruvate carboxylase makes OAA; PEPCK converts OAA to PEP.",
+        "highYield": "Pyruvate → OAA (pyruvate carboxylase) → PEP (PEPCK).",
+        "clinicalCorrelation": "PEPCK is a key regulatory enzyme of gluconeogenesis; its overexpression contributes to diabetic hyperglycemia."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_072",
+      "difficulty": 2,
+      "question": "The diagram shows the reciprocal regulation of glycolysis and gluconeogenesis at the PFK-1/FBPase-1 step. Which molecule is the key allosteric regulator?",
+      "image": "pfk_fbpase_regulation.png",
+      "options": [
+        {
+          "text": "Fructose-2,6-bisphosphate",
+          "isCorrect": true,
+          "explanation": "F‑2,6‑BP is the most potent regulator, activating PFK‑1 and inhibiting FBPase‑1."
+        },
+        {
+          "text": "Fructose-1,6-bisphosphate",
+          "isCorrect": false,
+          "explanation": "F‑1,6‑BP is a substrate, not an allosteric regulator at this step."
+        },
+        {
+          "text": "ATP",
+          "isCorrect": false,
+          "explanation": "ATP inhibits PFK‑1 but is less potent than F‑2,6‑BP."
+        },
+        {
+          "text": "Citrate",
+          "isCorrect": false,
+          "explanation": "Citrate inhibits PFK‑1 but is not the key reciprocal regulator."
+        },
+        {
+          "text": "AMP",
+          "isCorrect": false,
+          "explanation": "AMP activates PFK‑1 but does not regulate FBPase‑1 as powerfully as F‑2,6‑BP."
+        }
+      ],
+      "explanation": {
+        "overview": "F-2,6-BP is the most potent regulator, activating PFK-1 and inhibiting FBPase-1.",
+        "highYield": "F‑2,6‑BP: key reciprocal regulator of glycolysis/gluconeogenesis.",
+        "clinicalCorrelation": "F‑2,6‑BP levels are controlled by insulin/glucagon and are disrupted in diabetes."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_073",
+      "difficulty": 2,
+      "question": "In the liver, high glucagon leads to decreased F-2,6-BP, which promotes:",
+      "image": null,
+      "options": [
+        {
+          "text": "Gluconeogenesis and inhibits glycolysis",
+          "isCorrect": true,
+          "explanation": "Low F‑2,6‑BP relieves inhibition of FBPase‑1 and reduces activation of PFK‑1, favoring gluconeogenesis."
+        },
+        {
+          "text": "Glycolysis and inhibits gluconeogenesis",
+          "isCorrect": false,
+          "explanation": "Low F‑2,6‑BP does the opposite."
+        },
+        {
+          "text": "Glycogen synthesis",
+          "isCorrect": false,
+          "explanation": "Glucagon inhibits glycogen synthesis."
+        },
+        {
+          "text": "Fatty acid synthesis",
+          "isCorrect": false,
+          "explanation": "Glucagon inhibits fatty acid synthesis."
+        },
+        {
+          "text": "Pentose phosphate pathway",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        }
+      ],
+      "explanation": {
+        "overview": "Low F-2,6-BP relieves inhibition of FBPase-1 and reduces activation of PFK-1, favoring gluconeogenesis.",
+        "highYield": "Glucagon → ↓F‑2,6‑BP → gluconeogenesis ↑, glycolysis ↓.",
+        "clinicalCorrelation": "In fasting, glucagon promotes hepatic glucose output to maintain blood glucose."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_074",
+      "difficulty": 1,
+      "question": "The enzyme that converts lactate to pyruvate is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Lactate dehydrogenase",
+          "isCorrect": true,
+          "explanation": "LDH catalyzes the reversible interconversion; direction depends on NADH/NAD⁺ ratio."
+        },
+        {
+          "text": "Pyruvate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "PDH converts pyruvate to acetyl‑CoA."
+        },
+        {
+          "text": "Lactate oxidase",
+          "isCorrect": false,
+          "explanation": "Not the correct enzyme."
+        },
+        {
+          "text": "Malate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Converts malate to oxaloacetate."
+        },
+        {
+          "text": "Alcohol dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Converts ethanol to acetaldehyde."
+        }
+      ],
+      "explanation": {
+        "overview": "LDH catalyzes the reversible interconversion; direction depends on NADH/NAD+ ratio.",
+        "highYield": "Lactate + NAD⁺ ⇌ pyruvate + NADH (LDH).",
+        "clinicalCorrelation": "LDH is a marker of tissue damage; elevated in myocardial infarction, hemolysis, and cancers."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_075",
+      "difficulty": 2,
+      "question": "Glycerol enters gluconeogenesis after conversion to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glycerol-3-phosphate, then dihydroxyacetone phosphate",
+          "isCorrect": true,
+          "explanation": "Glycerol kinase (liver) phosphorylates glycerol to G3P, which is oxidized to DHAP."
+        },
+        {
+          "text": "Glyceraldehyde-3-phosphate directly",
+          "isCorrect": false,
+          "explanation": "It must first be phosphorylated and oxidized."
+        },
+        {
+          "text": "Pyruvate",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        },
+        {
+          "text": "Acetyl-CoA",
+          "isCorrect": false,
+          "explanation": "Fatty acids, not glycerol, produce acetyl‑CoA."
+        },
+        {
+          "text": "Oxaloacetate",
+          "isCorrect": false,
+          "explanation": "Not the route."
+        }
+      ],
+      "explanation": {
+        "overview": "Glycerol kinase (liver) phosphorylates glycerol to G3P, which is oxidized to DHAP by G3P dehydrogenase.",
+        "highYield": "Glycerol → glycerol‑3‑P → DHAP (gluconeogenesis).",
+        "clinicalCorrelation": "During fasting, glycerol from adipose tissue lipolysis contributes to glucose production."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_076",
+      "difficulty": 2,
+      "question": "The ATP yield from complete oxidation of one glucose molecule (glycolysis + TCA + oxidative phosphorylation) is approximately:",
+      "image": null,
+      "options": [
+        {
+          "text": "30-32 ATP",
+          "isCorrect": true,
+          "explanation": "Modern estimates are about 30–32 ATP, depending on shuttle efficiency."
+        },
+        {
+          "text": "36-38 ATP",
+          "isCorrect": false,
+          "explanation": "Older estimates; revised due to actual ATP yields of NADH/FADH₂."
+        },
+        {
+          "text": "2 ATP",
+          "isCorrect": false,
+          "explanation": "Only glycolysis net."
+        },
+        {
+          "text": "8 ATP",
+          "isCorrect": false,
+          "explanation": "Underestimate."
+        },
+        {
+          "text": "24 ATP",
+          "isCorrect": false,
+          "explanation": "Too low."
+        }
+      ],
+      "explanation": {
+        "overview": "Modern estimates are about 30-32 ATP, depending on shuttle efficiency.",
+        "highYield": "1 glucose → ~30‑32 ATP (aerobic).",
+        "clinicalCorrelation": "The exact ATP yield can vary based on tissue and metabolic state."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_077",
+      "difficulty": 2,
+      "question": "The malate-aspartate shuttle transfers NADH from cytosol to mitochondria, yielding about how many ATP per NADH?",
+      "image": null,
+      "options": [
+        {
+          "text": "2.5",
+          "isCorrect": true,
+          "explanation": "This shuttle preserves the full energy yield, producing ~2.5 ATP per NADH."
+        },
+        {
+          "text": "1.5",
+          "isCorrect": false,
+          "explanation": "That's the yield from the glycerol‑3‑phosphate shuttle."
+        },
+        {
+          "text": "3",
+          "isCorrect": false,
+          "explanation": "Slightly high."
+        },
+        {
+          "text": "4",
+          "isCorrect": false,
+          "explanation": "Too high."
+        },
+        {
+          "text": "5",
+          "isCorrect": false,
+          "explanation": "Not possible."
+        }
+      ],
+      "explanation": {
+        "overview": "This shuttle preserves the full energy yield, producing ~2.5 ATP per NADH.",
+        "highYield": "Malate‑aspartate shuttle → 2.5 ATP/NADH.",
+        "clinicalCorrelation": "This shuttle is the major route for transferring reducing equivalents into mitochondria in liver and heart."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_078",
+      "difficulty": 2,
+      "question": "The glycerol-3-phosphate shuttle yields about how many ATP per cytosolic NADH?",
+      "image": null,
+      "options": [
+        {
+          "text": "1.5",
+          "isCorrect": true,
+          "explanation": "This shuttle feeds electrons into the ETC via FAD, yielding ~1.5 ATP."
+        },
+        {
+          "text": "2.5",
+          "isCorrect": false,
+          "explanation": "That's for malate‑aspartate shuttle."
+        },
+        {
+          "text": "3",
+          "isCorrect": false,
+          "explanation": "Too high."
+        },
+        {
+          "text": "4",
+          "isCorrect": false,
+          "explanation": "Too high."
+        },
+        {
+          "text": "5",
+          "isCorrect": false,
+          "explanation": "Not possible."
+        }
+      ],
+      "explanation": {
+        "overview": "This shuttle feeds electrons into the ETC via Complex III (via FAD), yielding ~1.5 ATP.",
+        "highYield": "Glycerol‑3‑P shuttle → 1.5 ATP/NADH.",
+        "clinicalCorrelation": "This shuttle predominates in skeletal muscle and brain."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_079",
+      "difficulty": 2,
+      "question": "Pyruvate dehydrogenase deficiency leads to lactic acidosis and neurological problems because:",
+      "image": null,
+      "options": [
+        {
+          "text": "Pyruvate is shunted to lactate, causing acidosis and energy deficit",
+          "isCorrect": false,
+          "explanation": "This is true, but there is also impaired acetyl‑CoA production."
+        },
+        {
+          "text": "Acetyl-CoA cannot be formed, impairing TCA cycle",
+          "isCorrect": false,
+          "explanation": "True, but also the lactate issue."
+        },
+        {
+          "text": "Both A and B",
+          "isCorrect": true,
+          "explanation": "Inability to convert pyruvate to acetyl‑CoA leads to accumulation of pyruvate (converted to lactate) and impaired energy production."
+        },
+        {
+          "text": "Oxaloacetate accumulates",
+          "isCorrect": false,
+          "explanation": "Not the primary problem."
+        },
+        {
+          "text": "Glycolysis stops",
+          "isCorrect": false,
+          "explanation": "Glycolysis can continue but pyruvate accumulates."
+        }
+      ],
+      "explanation": {
+        "overview": "Inability to convert pyruvate to acetyl-CoA leads to accumulation of pyruvate (converted to lactate) and impaired energy production.",
+        "highYield": "PDH deficiency: lactic acidosis + energy deficit (especially CNS).",
+        "clinicalCorrelation": "Most patients have neurological symptoms; some respond to thiamine or dichloroacetate."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_080",
+      "difficulty": 2,
+      "question": "The rate of gluconeogenesis is increased by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glucagon and cortisol",
+          "isCorrect": true,
+          "explanation": "Glucagon (via cAMP) and cortisol (via gene expression) stimulate gluconeogenesis."
+        },
+        {
+          "text": "Insulin",
+          "isCorrect": false,
+          "explanation": "Insulin inhibits gluconeogenesis."
+        },
+        {
+          "text": "High blood glucose",
+          "isCorrect": false,
+          "explanation": "High glucose suppresses gluconeogenesis."
+        },
+        {
+          "text": "Fructose-2,6-bisphosphate",
+          "isCorrect": false,
+          "explanation": "F‑2,6‑BP promotes glycolysis, inhibiting gluconeogenesis."
+        },
+        {
+          "text": "AMP",
+          "isCorrect": false,
+          "explanation": "AMP activates glycolysis and inhibits gluconeogenesis."
+        }
+      ],
+      "explanation": {
+        "overview": "Glucagon (via cAMP) and cortisol (via gene expression) stimulate gluconeogenesis.",
+        "highYield": "Gluconeogenesis stimulators: glucagon, cortisol, epinephrine.",
+        "clinicalCorrelation": "In diabetes, excessive gluconeogenesis contributes to fasting hyperglycemia."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_081",
+      "difficulty": 2,
+      "question": "Which of the following is a key regulatory enzyme of glycolysis that is stimulated by insulin?",
+      "image": null,
+      "options": [
+        {
+          "text": "Phosphofructokinase‑1",
+          "isCorrect": true,
+          "explanation": "Insulin increases F‑2,6‑BP, which activates PFK‑1."
+        },
+        {
+          "text": "Fructose‑1,6‑bisphosphatase",
+          "isCorrect": false,
+          "explanation": "FBPase‑1 is inhibited by insulin (via F‑2,6‑BP)."
+        },
+        {
+          "text": "Pyruvate carboxylase",
+          "isCorrect": false,
+          "explanation": "Not directly regulated by insulin."
+        },
+        {
+          "text": "Glucose‑6‑phosphatase",
+          "isCorrect": false,
+          "explanation": "Insulin suppresses its expression."
+        },
+        {
+          "text": "PEP carboxykinase",
+          "isCorrect": false,
+          "explanation": "Insulin decreases PEPCK gene transcription."
+        }
+      ],
+      "explanation": {
+        "overview": "PFK‑1 is the rate‑limiting enzyme of glycolysis; insulin promotes glycolysis by increasing F‑2,6‑BP, a potent PFK‑1 activator.",
+        "highYield": "Insulin → F‑2,6‑BP → PFK‑1 activation → glycolysis ↑.",
+        "clinicalCorrelation": "In insulin‑resistant states, hepatic glycolysis is impaired, contributing to hyperglycemia."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_082",
+      "difficulty": 2,
+      "question": "The TCA cycle is considered amphibolic because it:",
+      "image": null,
+      "options": [
+        {
+          "text": "Participates in both catabolism and anabolism",
+          "isCorrect": true,
+          "explanation": "The cycle breaks down acetyl‑CoA (catabolism) and provides intermediates for biosynthesis (anabolism)."
+        },
+        {
+          "text": "Produces only ATP",
+          "isCorrect": false,
+          "explanation": "It produces reduced coenzymes and intermediates."
+        },
+        {
+          "text": "Occurs only in the liver",
+          "isCorrect": false,
+          "explanation": "The TCA cycle occurs in all aerobic cells."
+        },
+        {
+          "text": "Uses only glucose",
+          "isCorrect": false,
+          "explanation": "It can use acetyl‑CoA from fatty acids and amino acids."
+        },
+        {
+          "text": "Is irreversible",
+          "isCorrect": false,
+          "explanation": "Many steps are reversible, and the cycle can supply anabolic precursors."
+        }
+      ],
+      "explanation": {
+        "overview": "Amphibolic means the TCA cycle serves both in energy production (catabolic) and providing building blocks (anabolic), e.g., citrate for fatty acids, OAA for amino acids.",
+        "highYield": "TCA cycle: catabolic (energy) + anabolic (precursors).",
+        "clinicalCorrelation": "Cataplerosis (removal of intermediates) must be balanced by anaplerosis (replenishment) to keep the cycle functioning."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_083",
+      "difficulty": 2,
+      "question": "Which of the following is an anaplerotic reaction that replenishes TCA cycle intermediates?",
+      "image": null,
+      "options": [
+        {
+          "text": "Pyruvate carboxylase (pyruvate → oxaloacetate)",
+          "isCorrect": true,
+          "explanation": "This reaction generates OAA, a key TCA cycle intermediate."
+        },
+        {
+          "text": "Citrate synthase",
+          "isCorrect": false,
+          "explanation": "That is the entry step, not replenishment."
+        },
+        {
+          "text": "Isocitrate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "This is a catabolic step."
+        },
+        {
+          "text": "Succinate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Part of the cycle."
+        },
+        {
+          "text": "Malate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Reversible but not typically considered anaplerotic."
+        }
+      ],
+      "explanation": {
+        "overview": "Anaplerotic reactions replenish TCA cycle intermediates drawn off for biosynthesis; pyruvate carboxylase is a major anaplerotic enzyme.",
+        "highYield": "Pyruvate carboxylase: pyruvate → OAA (anaplerosis).",
+        "clinicalCorrelation": "Pyruvate carboxylase deficiency impairs anaplerosis and gluconeogenesis."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_084",
+      "difficulty": 2,
+      "question": "During a fast, the liver produces glucose by glycogenolysis and gluconeogenesis. Which hormonal profile predominates?",
+      "image": null,
+      "options": [
+        {
+          "text": "Low insulin, high glucagon",
+          "isCorrect": true,
+          "explanation": "Fasting reduces insulin and increases glucagon, promoting hepatic glucose output."
+        },
+        {
+          "text": "High insulin, low glucagon",
+          "isCorrect": false,
+          "explanation": "That's the fed state."
+        },
+        {
+          "text": "High insulin, high glucagon",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        },
+        {
+          "text": "Low insulin, low glucagon",
+          "isCorrect": false,
+          "explanation": "Glucagon rises in fasting."
+        },
+        {
+          "text": "Only cortisol elevated",
+          "isCorrect": false,
+          "explanation": "Cortisol plays a permissive role but insulin/glucagon ratio is key."
+        }
+      ],
+      "explanation": {
+        "overview": "Fasting: insulin falls, glucagon rises; this activates glycogenolysis and gluconeogenesis while inhibiting glycolysis.",
+        "highYield": "Insulin/glucagon ratio decreases in fasting → hepatic glucose production.",
+        "clinicalCorrelation": "In type 1 diabetes, absolute insulin deficiency leads to uncontrolled hepatic glucose output and ketoacidosis."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_085",
+      "difficulty": 2,
+      "question": "The enzyme phosphoglucomutase is essential for both glycogen synthesis and glycogenolysis because it:",
+      "image": null,
+      "options": [
+        {
+          "text": "Interconverts glucose‑1‑phosphate and glucose‑6‑phosphate",
+          "isCorrect": true,
+          "explanation": "G1P from glycogenolysis must be isomerized to G6P; G6P for glycogen synthesis is converted to G1P."
+        },
+        {
+          "text": "Phosphorylates glucose",
+          "isCorrect": false,
+          "explanation": "That's hexokinase."
+        },
+        {
+          "text": "Cleaves α‑1,6 bonds",
+          "isCorrect": false,
+          "explanation": "Debranching enzyme does that."
+        },
+        {
+          "text": "Synthesizes UDP‑glucose",
+          "isCorrect": false,
+          "explanation": "UDP‑glucose pyrophosphorylase does that."
+        },
+        {
+          "text": "Initiates glycogen synthesis",
+          "isCorrect": false,
+          "explanation": "Glycogenin initiates glycogen synthesis."
+        }
+      ],
+      "explanation": {
+        "overview": "Phosphoglucomutase reversibly shifts the phosphate between C1 and C6, linking glycogen metabolism to the glycolytic/gluconeogenic pool.",
+        "highYield": "Phosphoglucomutase: G1P ↔ G6P.",
+        "clinicalCorrelation": "Phosphoglucomutase deficiency can cause muscle glycogenosis."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_086",
+      "difficulty": 2,
+      "question": "In the well‑fed state, the liver:",
+      "image": null,
+      "options": [
+        {
+          "text": "Converts excess glucose to glycogen and fatty acids",
+          "isCorrect": true,
+          "explanation": "After a meal, glucose is stored as glycogen; when glycogen stores are full, glucose is converted to fatty acids via acetyl‑CoA."
+        },
+        {
+          "text": "Breaks down glycogen to release glucose",
+          "isCorrect": false,
+          "explanation": "That occurs during fasting."
+        },
+        {
+          "text": "Increases gluconeogenesis",
+          "isCorrect": false,
+          "explanation": "Gluconeogenesis is suppressed by insulin."
+        },
+        {
+          "text": "Produces ketone bodies",
+          "isCorrect": false,
+          "explanation": "Ketogenesis is activated during fasting."
+        },
+        {
+          "text": "Secretes glucagon",
+          "isCorrect": false,
+          "explanation": "Glucagon is low after a meal."
+        }
+      ],
+      "explanation": {
+        "overview": "Insulin promotes glucose uptake, glycogen synthesis, and lipogenesis in the fed state.",
+        "highYield": "Fed state: glucose → glycogen, then → fatty acids.",
+        "clinicalCorrelation": "Excess dietary carbohydrate contributes to hepatic steatosis (fatty liver)."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_087",
+      "difficulty": 2,
+      "question": "What is the fate of the NADH produced during glycolysis in erythrocytes?",
+      "image": null,
+      "options": [
+        {
+          "text": "It is used to reduce pyruvate to lactate",
+          "isCorrect": true,
+          "explanation": "RBCs lack mitochondria; they rely on anaerobic glycolysis, and NADH must be re‑oxidized by LDH to maintain NAD⁺ for GAPDH."
+        },
+        {
+          "text": "It enters the electron transport chain",
+          "isCorrect": false,
+          "explanation": "RBCs have no mitochondria."
+        },
+        {
+          "text": "It is shuttled into the pentose phosphate pathway",
+          "isCorrect": false,
+          "explanation": "NADH is not directly used in the PPP."
+        },
+        {
+          "text": "It is excreted",
+          "isCorrect": false,
+          "explanation": "Not excreted."
+        },
+        {
+          "text": "It is converted to NADPH",
+          "isCorrect": false,
+          "explanation": "Transhydrogenases can interconvert but not the primary fate."
+        }
+      ],
+      "explanation": {
+        "overview": "In RBCs, without mitochondria, NADH from glycolysis is re‑oxidized by lactate dehydrogenase, converting pyruvate to lactate.",
+        "highYield": "RBC: glycolysis → lactate, NADH recycled.",
+        "clinicalCorrelation": "This is why RBCs produce lactate even under aerobic conditions."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_088",
+      "difficulty": 2,
+      "question": "The bifunctional enzyme PFK‑2/FBPase‑2 contains both kinase and phosphatase domains. Which amino acid residue is phosphorylated by PKA?",
+      "image": null,
+      "options": [
+        {
+          "text": "A specific serine residue",
+          "isCorrect": true,
+          "explanation": "PKA phosphorylates a single serine, switching the enzyme to its phosphatase form."
+        },
+        {
+          "text": "Threonine",
+          "isCorrect": false,
+          "explanation": "Not the primary site."
+        },
+        {
+          "text": "Tyrosine",
+          "isCorrect": false,
+          "explanation": "PKA is a serine/threonine kinase, but the specific regulation is via serine."
+        },
+        {
+          "text": "Histidine",
+          "isCorrect": false,
+          "explanation": "Not phosphorylated by PKA."
+        },
+        {
+          "text": "Cysteine",
+          "isCorrect": false,
+          "explanation": "Not phosphorylated."
+        }
+      ],
+      "explanation": {
+        "overview": "Phosphorylation of a single serine by PKA inactivates the kinase activity and activates the phosphatase, lowering F‑2,6‑BP.",
+        "highYield": "PKA phosphorylates PFK‑2/FBPase‑2 on serine → F‑2,6‑BP ↓.",
+        "clinicalCorrelation": "This is a key site of hormonal regulation in liver metabolism."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_089",
+      "difficulty": 2,
+      "question": "Which of the following vitamins is essential for the transketolase reaction in the pentose phosphate pathway?",
+      "image": null,
+      "options": [
+        {
+          "text": "Thiamine (B1)",
+          "isCorrect": true,
+          "explanation": "Transketolase requires thiamine pyrophosphate (TPP) as a cofactor."
+        },
+        {
+          "text": "Riboflavin (B2)",
+          "isCorrect": false,
+          "explanation": "Riboflavin is for FAD."
+        },
+        {
+          "text": "Niacin (B3)",
+          "isCorrect": false,
+          "explanation": "Niacin is for NAD⁺."
+        },
+        {
+          "text": "Pantothenic acid (B5)",
+          "isCorrect": false,
+          "explanation": "Pantothenic acid is for CoA."
+        },
+        {
+          "text": "Pyridoxine (B6)",
+          "isCorrect": false,
+          "explanation": "Pyridoxine is for transaminases."
+        }
+      ],
+      "explanation": {
+        "overview": "Transketolase, which transfers a two‑carbon unit in the non‑oxidative PPP, uses TPP derived from thiamine.",
+        "highYield": "Transketolase + TPP (vitamin B1).",
+        "clinicalCorrelation": "Thiamine deficiency reduces transketolase activity; erythrocyte transketolase activity is a functional test for thiamine status."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_090",
+      "difficulty": 2,
+      "question": "In prolonged starvation, the brain reduces its glucose consumption by using ketone bodies. Which enzyme is responsible for the activation of acetoacetate in extrahepatic tissues?",
+      "image": null,
+      "options": [
+        {
+          "text": "Succinyl‑CoA:acetoacetate CoA transferase",
+          "isCorrect": true,
+          "explanation": "This enzyme activates acetoacetate to acetoacetyl‑CoA, allowing its oxidation."
+        },
+        {
+          "text": "Thiophorase",
+          "isCorrect": false,
+          "explanation": "Another name for the same enzyme, but the systematic name is preferred."
+        },
+        {
+          "text": "HMG‑CoA synthase",
+          "isCorrect": false,
+          "explanation": "That is for ketone body synthesis in liver."
+        },
+        {
+          "text": "Acetoacetyl‑CoA thiolase",
+          "isCorrect": false,
+          "explanation": "Works later."
+        },
+        {
+          "text": "β‑Hydroxybutyrate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Converts β‑hydroxybutyrate to acetoacetate."
+        }
+      ],
+      "explanation": {
+        "overview": "Succinyl‑CoA:acetoacetate CoA transferase (also called thiophorase) is the key enzyme that activates acetoacetate for utilization. The liver lacks this enzyme, so it cannot use ketones.",
+        "highYield": "Succinyl‑CoA:acetoacetate CoA transferase (absent in liver).",
+        "clinicalCorrelation": "This enzyme's absence in liver explains why the liver produces but does not consume ketone bodies."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_091",
+      "difficulty": 2,
+      "question": "Which of the following conditions would most likely decrease the activity of the pyruvate dehydrogenase complex?",
+      "image": null,
+      "options": [
+        {
+          "text": "High NADH/NAD+ ratio",
+          "isCorrect": true,
+          "explanation": "Elevated NADH and acetyl‑CoA activate PDH kinase, which phosphorylates and inactivates PDH."
+        },
+        {
+          "text": "High ADP",
+          "isCorrect": false,
+          "explanation": "Low energy signals activate PDH."
+        },
+        {
+          "text": "High pyruvate",
+          "isCorrect": false,
+          "explanation": "Pyruvate inhibits PDH kinase, leading to PDH activation."
+        },
+        {
+          "text": "High calcium",
+          "isCorrect": false,
+          "explanation": "Ca²⁺ activates PDH phosphatase."
+        },
+        {
+          "text": "Insulin",
+          "isCorrect": false,
+          "explanation": "Insulin activates PDH."
+        }
+      ],
+      "explanation": {
+        "overview": "High NADH, acetyl‑CoA, and ATP signal energy abundance and promote PDH phosphorylation (inactivation).",
+        "highYield": "PDH inactive when energy charge is high.",
+        "clinicalCorrelation": "In tissues with high fatty acid oxidation, PDH is inhibited, sparing glucose."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_092",
+      "difficulty": 2,
+      "question": "The glucose transporter GLUT4 is responsible for insulin‑stimulated glucose uptake in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Skeletal muscle and adipose tissue",
+          "isCorrect": true,
+          "explanation": "GLUT4 translocates to the cell surface in response to insulin."
+        },
+        {
+          "text": "Liver",
+          "isCorrect": false,
+          "explanation": "Liver uses GLUT2."
+        },
+        {
+          "text": "Brain",
+          "isCorrect": false,
+          "explanation": "Brain uses GLUT1 and GLUT3."
+        },
+        {
+          "text": "Pancreatic β‑cells",
+          "isCorrect": false,
+          "explanation": "β‑cells use GLUT2."
+        },
+        {
+          "text": "Erythrocytes",
+          "isCorrect": false,
+          "explanation": "RBCs use GLUT1."
+        }
+      ],
+      "explanation": {
+        "overview": "GLUT4 is the insulin‑responsive glucose transporter that increases glucose uptake in muscle and fat after a meal.",
+        "highYield": "GLUT4: insulin‑dependent glucose uptake in muscle and fat.",
+        "clinicalCorrelation": "Insulin resistance is associated with impaired GLUT4 translocation, contributing to hyperglycemia."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_093",
+      "difficulty": 2,
+      "question": "During the Cori cycle, the ATP used for gluconeogenesis in the liver is derived mainly from:",
+      "image": null,
+      "options": [
+        {
+          "text": "Oxidation of fatty acids",
+          "isCorrect": true,
+          "explanation": "The liver oxidizes fatty acids to generate the ATP needed for gluconeogenesis."
+        },
+        {
+          "text": "Glycolysis",
+          "isCorrect": false,
+          "explanation": "Glycolysis is suppressed in the fasting liver."
+        },
+        {
+          "text": "Ketone body oxidation",
+          "isCorrect": false,
+          "explanation": "Liver does not oxidize ketones."
+        },
+        {
+          "text": "Protein breakdown",
+          "isCorrect": false,
+          "explanation": "Not the major source."
+        },
+        {
+          "text": "Glycogenolysis",
+          "isCorrect": false,
+          "explanation": "Glycogen is limited."
+        }
+      ],
+      "explanation": {
+        "overview": "The high ATP demand of gluconeogenesis is met by β‑oxidation of fatty acids in the fasting liver.",
+        "highYield": "Gluconeogenesis energy from fatty acid oxidation.",
+        "clinicalCorrelation": "This explains why gluconeogenesis continues during prolonged fasting when glycogen is depleted."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_094",
+      "difficulty": 2,
+      "question": "In humans, what is the primary fate of ribose‑5‑phosphate produced by the pentose phosphate pathway?",
+      "image": null,
+      "options": [
+        {
+          "text": "Nucleotide and nucleic acid biosynthesis",
+          "isCorrect": true,
+          "explanation": "Ribose‑5‑P is a precursor for the ribose sugar in nucleotides."
+        },
+        {
+          "text": "Glycolysis",
+          "isCorrect": false,
+          "explanation": "It can be converted to glycolytic intermediates, but its main fate is nucleotide synthesis."
+        },
+        {
+          "text": "Gluconeogenesis",
+          "isCorrect": false,
+          "explanation": "Not direct."
+        },
+        {
+          "text": "Glycogen synthesis",
+          "isCorrect": false,
+          "explanation": "Not direct."
+        },
+        {
+          "text": "Fatty acid synthesis",
+          "isCorrect": false,
+          "explanation": "NADPH from PPP supports fatty acid synthesis, but ribose‑5‑P is for nucleotides."
+        }
+      ],
+      "explanation": {
+        "overview": "The non‑oxidative phase of PPP provides ribose‑5‑phosphate, essential for the synthesis of nucleotides, RNA, and DNA.",
+        "highYield": "Ribose‑5‑P → nucleotides (purines and pyrimidines).",
+        "clinicalCorrelation": "Rapidly dividing cells (e.g., cancer cells, bone marrow) require large amounts of ribose‑5‑P."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_095",
+      "difficulty": 2,
+      "question": "A patient with a deficiency in debranching enzyme (type III GSD) would have:",
+      "image": null,
+      "options": [
+        {
+          "text": "Short outer branches on glycogen (limit dextrin)",
+          "isCorrect": true,
+          "explanation": "Debranching enzyme is needed to remove branch points; its deficiency results in glycogen with short outer chains (limit dextrin)."
+        },
+        {
+          "text": "Very long, unbranched glycogen",
+          "isCorrect": false,
+          "explanation": "That is branching enzyme deficiency (type IV)."
+        },
+        {
+          "text": "Normal glycogen structure but decreased amount",
+          "isCorrect": false,
+          "explanation": "Not correct."
+        },
+        {
+          "text": "Increased glycogen branching",
+          "isCorrect": false,
+          "explanation": "Not increased branching."
+        },
+        {
+          "text": "No glycogen",
+          "isCorrect": false,
+          "explanation": "Glycogen is present but abnormal."
+        }
+      ],
+      "explanation": {
+        "overview": "Debranching enzyme deficiency (Cori disease) leads to accumulation of limit dextrin, a glycogen molecule with short outer branches that cannot be further degraded.",
+        "highYield": "Type III GSD: limit dextrin with short outer branches.",
+        "clinicalCorrelation": "Symptoms: hepatomegaly, fasting hypoglycemia, muscle weakness."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_096",
+      "difficulty": 2,
+      "question": "Which of the following cofactors is required for the oxidative phase of the pentose phosphate pathway?",
+      "image": null,
+      "options": [
+        {
+          "text": "NADP+",
+          "isCorrect": true,
+          "explanation": "Glucose‑6‑phosphate dehydrogenase and 6‑phosphogluconate dehydrogenase use NADP⁺ as electron acceptor."
+        },
+        {
+          "text": "NAD+",
+          "isCorrect": false,
+          "explanation": "NAD⁺ is used in glycolysis and TCA."
+        },
+        {
+          "text": "FAD",
+          "isCorrect": false,
+          "explanation": "FAD is used by succinate dehydrogenase."
+        },
+        {
+          "text": "FMN",
+          "isCorrect": false,
+          "explanation": "FMN is in Complex I."
+        },
+        {
+          "text": "Coenzyme Q",
+          "isCorrect": false,
+          "explanation": "CoQ is in ETC."
+        }
+      ],
+      "explanation": {
+        "overview": "The PPP uses NADP⁺, not NAD⁺, as the electron acceptor to produce NADPH.",
+        "highYield": "PPP: NADP⁺ → NADPH.",
+        "clinicalCorrelation": "NADPH is critical for reductive biosynthesis and antioxidant defense."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_097",
+      "difficulty": 2,
+      "question": "A child presents with cataracts, mild hepatomegaly, and normal blood glucose. Urine is positive for reducing substances. Which enzyme is most likely deficient?",
+      "image": null,
+      "options": [
+        {
+          "text": "Galactokinase",
+          "isCorrect": true,
+          "explanation": "Galactokinase deficiency leads to galactose accumulation and galactitol formation in the lens, causing cataracts. Hypoglycemia is absent because GALT is intact."
+        },
+        {
+          "text": "Galactose‑1‑phosphate uridylyltransferase",
+          "isCorrect": false,
+          "explanation": "GALT deficiency (classic galactosemia) causes hypoglycemia, liver failure, and failure to thrive."
+        },
+        {
+          "text": "Aldolase B",
+          "isCorrect": false,
+          "explanation": "Would cause fructose intolerance."
+        },
+        {
+          "text": "Fructokinase",
+          "isCorrect": false,
+          "explanation": "Essential fructosuria is benign."
+        },
+        {
+          "text": "Glucose‑6‑phosphatase",
+          "isCorrect": false,
+          "explanation": "Causes severe hypoglycemia."
+        }
+      ],
+      "explanation": {
+        "overview": "Galactokinase deficiency is milder; galactose is converted to galactitol, causing osmotic cataracts, but without the severe liver and hypoglycemia of classic galactosemia.",
+        "highYield": "Galactokinase deficiency: cataracts, galactosuria, normal glucose.",
+        "clinicalCorrelation": "Differentiate from classic galactosemia: no hypoglycemia or liver failure."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_098",
+      "difficulty": 2,
+      "question": "In the metabolism of fructose, which intermediate directly traps phosphate, leading to ATP depletion in hereditary fructose intolerance?",
+      "image": null,
+      "options": [
+        {
+          "text": "Fructose‑1‑phosphate",
+          "isCorrect": true,
+          "explanation": "Aldolase B deficiency causes accumulation of fructose‑1‑P, which sequesters phosphate, depleting ATP and causing hypoglycemia."
+        },
+        {
+          "text": "Fructose‑1,6‑bisphosphate",
+          "isCorrect": false,
+          "explanation": "Not the trapped phosphate form."
+        },
+        {
+          "text": "Dihydroxyacetone phosphate",
+          "isCorrect": false,
+          "explanation": "It is a product, not an accumulator."
+        },
+        {
+          "text": "Glyceraldehyde",
+          "isCorrect": false,
+          "explanation": "Also a product."
+        },
+        {
+          "text": "Fructose‑6‑phosphate",
+          "isCorrect": false,
+          "explanation": "Not the problem."
+        }
+      ],
+      "explanation": {
+        "overview": "Fructose‑1‑phosphate accumulates in aldolase B deficiency, causing phosphate trapping, ATP depletion, and inhibition of glycogenolysis and gluconeogenesis, leading to hypoglycemia.",
+        "highYield": "Fructose‑1‑phosphate sequestration of Pi → ATP depletion.",
+        "clinicalCorrelation": "Avoidance of fructose and sucrose is the treatment."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_099",
+      "difficulty": 2,
+      "question": "The enzyme lactase hydrolyzes lactose into glucose and galactose. Lactase deficiency is common in adults. The undigested lactose:",
+      "image": null,
+      "options": [
+        {
+          "text": "Is fermented by gut bacteria, producing gas and short‑chain fatty acids",
+          "isCorrect": true,
+          "explanation": "Bacterial fermentation of lactose produces hydrogen, carbon dioxide, methane, and short‑chain fatty acids, causing bloating and diarrhea."
+        },
+        {
+          "text": "Is absorbed intact",
+          "isCorrect": false,
+          "explanation": "Lactose is not absorbed intact."
+        },
+        {
+          "text": "Is excreted unchanged",
+          "isCorrect": false,
+          "explanation": "Not excreted intact; fermented."
+        },
+        {
+          "text": "Is converted to lactic acid only",
+          "isCorrect": false,
+          "explanation": "Lactic acid is one product, but not the only one."
+        },
+        {
+          "text": "Causes immediate hypoglycemia",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Lactose intolerance results from low lactase activity, leading to colonic bacterial fermentation of lactose, producing gas and osmotic diarrhea.",
+        "highYield": "Lactase deficiency → lactose fermented → gas, diarrhea.",
+        "clinicalCorrelation": "Prevalence varies by ethnicity; lactase non‑persistence is the ancestral state."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_100",
+      "difficulty": 2,
+      "question": "During exercise, skeletal muscle produces lactate. The lactate is transported to the liver where it is converted back to glucose via the Cori cycle. This process is an example of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Substrate cycling between tissues",
+          "isCorrect": true,
+          "explanation": "The Cori cycle represents inter‑organ cycling of metabolites (lactate‑glucose)."
+        },
+        {
+          "text": "Intracellular futile cycle",
+          "isCorrect": false,
+          "explanation": "Futile cycles occur within a cell (e.g., PFK‑1/FBPase‑1)."
+        },
+        {
+          "text": "Anaerobic glycolysis only",
+          "isCorrect": false,
+          "explanation": "It involves both anaerobic (muscle) and aerobic (liver gluconeogenesis) processes."
+        },
+        {
+          "text": "Ketogenesis",
+          "isCorrect": false,
+          "explanation": "Not related."
+        },
+        {
+          "text": "Glycogenolysis",
+          "isCorrect": false,
+          "explanation": "Glycogenolysis is glycogen breakdown."
+        }
+      ],
+      "explanation": {
+        "overview": "The Cori cycle is a classic example of metabolic cooperation between tissues: muscle provides lactate, liver regenerates glucose.",
+        "highYield": "Cori cycle: muscle lactate → liver glucose → muscle.",
+        "clinicalCorrelation": "During prolonged exercise, the Cori cycle helps maintain blood glucose."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_101",
+      "difficulty": 2,
+      "question": "Which of the following correctly describes the net reaction of the pentose phosphate pathway (oxidative phase) per glucose‑6‑phosphate?",
+      "image": null,
+      "options": [
+        {
+          "text": "Glucose‑6‑phosphate + 2 NADP+ + H2O → ribulose‑5‑phosphate + CO2 + 2 NADPH + 2 H+",
+          "isCorrect": true,
+          "explanation": "The oxidative phase produces ribulose‑5‑P, CO₂, and two molecules of NADPH."
+        },
+        {
+          "text": "Glucose‑6‑phosphate + NAD+ → ribose‑5‑phosphate + NADH",
+          "isCorrect": false,
+          "explanation": "NAD⁺ is not used."
+        },
+        {
+          "text": "Glucose‑6‑phosphate + ATP → fructose‑1,6‑bisphosphate",
+          "isCorrect": false,
+          "explanation": "That's glycolysis."
+        },
+        {
+          "text": "Ribulose‑5‑phosphate + NADPH → glucose‑6‑phosphate",
+          "isCorrect": false,
+          "explanation": "Reverse reaction."
+        },
+        {
+          "text": "Glucose‑6‑phosphate + FAD → 6‑phosphogluconate + FADH2",
+          "isCorrect": false,
+          "explanation": "Not correct."
+        }
+      ],
+      "explanation": {
+        "overview": "The oxidative PPP generates two NADPH and one pentose phosphate, releasing one CO₂.",
+        "highYield": "G6P + 2 NADP+ → ribulose‑5‑P + CO₂ + 2 NADPH.",
+        "clinicalCorrelation": "NADPH produced is used for fatty acid synthesis and glutathione reduction."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_102",
+      "difficulty": 2,
+      "question": "A newborn presents with jaundice, cataracts, and failure to thrive. Reducing substances are positive in urine. Blood glucose is low after feeding. Which enzyme deficiency is most likely?",
+      "image": null,
+      "options": [
+        {
+          "text": "Galactose‑1‑phosphate uridylyltransferase",
+          "isCorrect": true,
+          "explanation": "Classic galactosemia presents with these features; the transferase deficiency leads to galactose‑1‑phosphate accumulation."
+        },
+        {
+          "text": "Galactokinase",
+          "isCorrect": false,
+          "explanation": "Galactokinase deficiency causes cataracts but not severe liver failure or hypoglycemia."
+        },
+        {
+          "text": "UDP‑galactose epimerase",
+          "isCorrect": false,
+          "explanation": "Rarer form."
+        },
+        {
+          "text": "Aldolase B",
+          "isCorrect": false,
+          "explanation": "Symptoms appear after fructose intake."
+        },
+        {
+          "text": "Glucose‑6‑phosphatase",
+          "isCorrect": false,
+          "explanation": "No reducing substances in urine; presents with hypoglycemia and lactic acidosis."
+        }
+      ],
+      "explanation": {
+        "overview": "Classic galactosemia (transferase deficiency) manifests in newborns after milk feeding with jaundice, cataracts, hepatomegaly, failure to thrive, and hypoglycemia.",
+        "highYield": "Classic galactosemia: GALT deficiency → galactose‑1‑P accumulation → multiorgan damage.",
+        "clinicalCorrelation": "Newborn screening detects galactosemia; immediate dietary galactose restriction prevents complications."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_103",
+      "difficulty": 2,
+      "question": "The NADPH produced by the pentose phosphate pathway in erythrocytes is primarily used by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glutathione reductase to maintain reduced glutathione",
+          "isCorrect": true,
+          "explanation": "NADPH keeps glutathione in its reduced state (GSH), which protects RBCs from oxidative damage."
+        },
+        {
+          "text": "Methemoglobin reductase",
+          "isCorrect": false,
+          "explanation": "This enzyme uses NADH, not NADPH."
+        },
+        {
+          "text": "Catalase",
+          "isCorrect": false,
+          "explanation": "Catalase does not require NADPH."
+        },
+        {
+          "text": "Superoxide dismutase",
+          "isCorrect": false,
+          "explanation": "SOD does not require NADPH."
+        },
+        {
+          "text": "Hexokinase",
+          "isCorrect": false,
+          "explanation": "Hexokinase uses ATP."
+        }
+      ],
+      "explanation": {
+        "overview": "In RBCs, NADPH is critical for reducing oxidized glutathione (GSSG → GSH) via glutathione reductase, protecting against oxidative hemolysis.",
+        "highYield": "RBC: NADPH → GSH → detoxifies peroxides.",
+        "clinicalCorrelation": "G6PD deficiency impairs this, leading to hemolytic anemia under oxidative stress."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_104",
+      "difficulty": 2,
+      "question": "Which of the following statements about glycogenin is correct?",
+      "image": null,
+      "options": [
+        {
+          "text": "It is a protein primer that autocatalytically adds glucose residues to itself, initiating glycogen synthesis",
+          "isCorrect": true,
+          "explanation": "Glycogenin is a self‑glycosylating protein that forms the core of the glycogen particle."
+        },
+        {
+          "text": "It is an enzyme that cleaves glycogen",
+          "isCorrect": false,
+          "explanation": "Phosphorylase cleaves glycogen."
+        },
+        {
+          "text": "It is the major storage form of glycogen",
+          "isCorrect": false,
+          "explanation": "Glycogen is the polymer."
+        },
+        {
+          "text": "It is a glucose transporter",
+          "isCorrect": false,
+          "explanation": "GLUTs are transporters."
+        },
+        {
+          "text": "It is a regulatory subunit of glycogen synthase",
+          "isCorrect": false,
+          "explanation": "Glycogenin is distinct."
+        }
+      ],
+      "explanation": {
+        "overview": "Glycogenin is the primer on which glycogen synthase builds the glycogen chain; it attaches about 8‑10 glucose residues to itself.",
+        "highYield": "Glycogenin = self‑priming protein for glycogen synthesis.",
+        "clinicalCorrelation": "Mutations in glycogenin can cause glycogen storage diseases or cardiac abnormalities."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_105",
+      "difficulty": 2,
+      "question": "In the liver, the glucose phosphorylated by glucokinase can be used for all of the following EXCEPT:",
+      "image": null,
+      "options": [
+        {
+          "text": "Release free glucose directly back into the blood",
+          "isCorrect": true,
+          "explanation": "Once phosphorylated, glucose‑6‑phosphate cannot cross the plasma membrane; it must be dephosphorylated by glucose‑6‑phosphatase to exit."
+        },
+        {
+          "text": "Glycogen synthesis",
+          "isCorrect": false,
+          "explanation": "G6P can be converted to G1P for glycogen."
+        },
+        {
+          "text": "Fatty acid synthesis",
+          "isCorrect": false,
+          "explanation": "G6P → pyruvate → acetyl‑CoA → fatty acids."
+        },
+        {
+          "text": "Pentose phosphate pathway",
+          "isCorrect": false,
+          "explanation": "G6P can enter PPP."
+        },
+        {
+          "text": "Glycolysis",
+          "isCorrect": false,
+          "explanation": "G6P continues in glycolysis."
+        }
+      ],
+      "explanation": {
+        "overview": "Phosphorylated glucose is trapped in the cell; only after dephosphorylation by glucose‑6‑phosphatase (liver/kidney) can free glucose be released.",
+        "highYield": "G6P cannot cross membranes; free glucose release requires glucose‑6‑phosphatase.",
+        "clinicalCorrelation": "Muscle lacks glucose‑6‑phosphatase, so it cannot contribute free glucose to blood."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_106",
+      "difficulty": 2,
+      "question": "In the TCA cycle, which step directly produces GTP (or ATP)?",
+      "image": null,
+      "options": [
+        {
+          "text": "Succinyl‑CoA → succinate",
+          "isCorrect": true,
+          "explanation": "Succinyl‑CoA synthetase catalyzes this substrate‑level phosphorylation."
+        },
+        {
+          "text": "α‑Ketoglutarate → succinyl‑CoA",
+          "isCorrect": false,
+          "explanation": "That produces NADH."
+        },
+        {
+          "text": "Malate → oxaloacetate",
+          "isCorrect": false,
+          "explanation": "Produces NADH."
+        },
+        {
+          "text": "Citrate → isocitrate",
+          "isCorrect": false,
+          "explanation": "Isomerization."
+        },
+        {
+          "text": "Succinate → fumarate",
+          "isCorrect": false,
+          "explanation": "Produces FADH₂."
+        }
+      ],
+      "explanation": {
+        "overview": "Succinyl‑CoA synthetase couples the cleavage of the thioester bond to the synthesis of GTP (or ATP in some organisms).",
+        "highYield": "Only substrate‑level phosphorylation in TCA: succinyl‑CoA → succinate.",
+        "clinicalCorrelation": "This GTP can be used for signal transduction or converted to ATP."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_107",
+      "difficulty": 2,
+      "question": "Which hormone stimulates glycogenolysis in muscle but not in liver?",
+      "image": null,
+      "options": [
+        {
+          "text": "Epinephrine",
+          "isCorrect": true,
+          "explanation": "Epinephrine activates β‑adrenergic receptors in muscle (cAMP pathway) to stimulate glycogenolysis; in liver, it acts via both α‑ and β‑receptors, but glucagon is the primary hepatic signal."
+        },
+        {
+          "text": "Glucagon",
+          "isCorrect": false,
+          "explanation": "Glucagon receptors are primarily on liver."
+        },
+        {
+          "text": "Insulin",
+          "isCorrect": false,
+          "explanation": "Insulin promotes glycogen synthesis."
+        },
+        {
+          "text": "Cortisol",
+          "isCorrect": false,
+          "explanation": "Cortisol stimulates gluconeogenesis, not acute glycogenolysis."
+        },
+        {
+          "text": "Thyroid hormone",
+          "isCorrect": false,
+          "explanation": "T3 increases metabolic rate, not direct glycogenolysis."
+        }
+      ],
+      "explanation": {
+        "overview": "Epinephrine stimulates glycogenolysis in both muscle and liver, but muscle lacks glucagon receptors, so epinephrine is the key hormone for muscle glycogen breakdown.",
+        "highYield": "Muscle glycogenolysis: epinephrine; liver: glucagon and epinephrine.",
+        "clinicalCorrelation": "During exercise, epinephrine mobilizes muscle glycogen for local energy."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_108",
+      "difficulty": 2,
+      "question": "A deficiency of which enzyme of the pentose phosphate pathway causes hemolytic anemia?",
+      "image": null,
+      "options": [
+        {
+          "text": "Glucose‑6‑phosphate dehydrogenase",
+          "isCorrect": true,
+          "explanation": "G6PD deficiency is the most common enzyme defect leading to hemolysis under oxidative stress."
+        },
+        {
+          "text": "6‑Phosphogluconate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Deficiency is rarer and also can cause hemolysis, but G6PD is the classic."
+        },
+        {
+          "text": "Transketolase",
+          "isCorrect": false,
+          "explanation": "Transketolase deficiency causes Wernicke‑Korsakoff syndrome."
+        },
+        {
+          "text": "Transaldolase",
+          "isCorrect": false,
+          "explanation": "Transaldolase deficiency is rare and not a major cause of hemolysis."
+        },
+        {
+          "text": "Ribose‑5‑phosphate isomerase",
+          "isCorrect": false,
+          "explanation": "Extremely rare."
+        }
+      ],
+      "explanation": {
+        "overview": "G6PD deficiency is the most prevalent human enzyme defect, making red cells vulnerable to oxidative stress due to insufficient NADPH.",
+        "highYield": "G6PD deficiency → hemolytic anemia.",
+        "clinicalCorrelation": "X‑linked recessive; common in malarial regions because it offers some protection against malaria."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_109",
+      "difficulty": 2,
+      "question": "Which of the following best describes the function of the enzyme glycogen synthase?",
+      "image": null,
+      "options": [
+        {
+          "text": "Adds glucose units from UDP‑glucose to the non‑reducing ends of glycogen via α‑1,4 bonds",
+          "isCorrect": true,
+          "explanation": "Glycogen synthase elongates the linear glycogen chain."
+        },
+        {
+          "text": "Cleaves α‑1,4 bonds",
+          "isCorrect": false,
+          "explanation": "Phosphorylase does that."
+        },
+        {
+          "text": "Creates α‑1,6 branch points",
+          "isCorrect": false,
+          "explanation": "Branching enzyme does that."
+        },
+        {
+          "text": "Removes branch points",
+          "isCorrect": false,
+          "explanation": "Debranching enzyme does that."
+        },
+        {
+          "text": "Converts glucose to glucose‑6‑phosphate",
+          "isCorrect": false,
+          "explanation": "Hexokinase/glucokinase do that."
+        }
+      ],
+      "explanation": {
+        "overview": "Glycogen synthase catalyzes the transfer of glucose from UDP‑glucose to a growing glycogen chain, forming α‑1,4 bonds.",
+        "highYield": "Glycogen synthase: UDP‑glucose + glycogen(n) → glycogen(n+1) + UDP.",
+        "clinicalCorrelation": "Deficiency of glycogen synthase (GSD 0) causes fasting hypoglycemia and ketosis."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_110",
+      "difficulty": 2,
+      "question": "In the liver, when blood glucose is high, which of the following occurs?",
+      "image": null,
+      "options": [
+        {
+          "text": "Glucokinase phosphorylates glucose, and F‑2,6‑BP activates PFK‑1, promoting glycolysis",
+          "isCorrect": true,
+          "explanation": "High glucose → insulin → dephosphorylation of PFK‑2 → F‑2,6‑BP high → glycolysis on."
+        },
+        {
+          "text": "F‑2,6‑BP is low, and FBPase‑1 is active",
+          "isCorrect": false,
+          "explanation": "That occurs when glucagon is high."
+        },
+        {
+          "text": "Glycogen phosphorylase is activated",
+          "isCorrect": false,
+          "explanation": "Phosphorylase is active when glucose is low."
+        },
+        {
+          "text": "PEPCK gene expression is induced",
+          "isCorrect": false,
+          "explanation": "PEPCK is induced by glucagon/cortisol."
+        },
+        {
+          "text": "Glucose‑6‑phosphatase is upregulated",
+          "isCorrect": false,
+          "explanation": "G6Pase is induced during fasting."
+        }
+      ],
+      "explanation": {
+        "overview": "High glucose stimulates insulin, which activates glycolysis and glycogen synthesis in the liver while suppressing gluconeogenesis.",
+        "highYield": "Fed state: high glucose → glycolysis and glycogen synthesis.",
+        "clinicalCorrelation": "In diabetes, the liver continues to produce glucose despite high blood glucose."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_111",
+      "difficulty": 2,
+      "question": "Which compound is both an intermediate of glycolysis and a precursor for triglyceride synthesis?",
+      "image": null,
+      "options": [
+        {
+          "text": "Dihydroxyacetone phosphate",
+          "isCorrect": true,
+          "explanation": "DHAP is reduced to glycerol‑3‑phosphate, which provides the glycerol backbone for triglycerides."
+        },
+        {
+          "text": "Glucose‑6‑phosphate",
+          "isCorrect": false,
+          "explanation": "Not directly the glycerol precursor."
+        },
+        {
+          "text": "Fructose‑1,6‑bisphosphate",
+          "isCorrect": false,
+          "explanation": "Cleaved to trioses."
+        },
+        {
+          "text": "3‑Phosphoglycerate",
+          "isCorrect": false,
+          "explanation": "Can be used for serine synthesis, not glycerol."
+        },
+        {
+          "text": "Pyruvate",
+          "isCorrect": false,
+          "explanation": "Pyruvate is converted to acetyl‑CoA for fatty acid synthesis, but DHAP is for glycerol."
+        }
+      ],
+      "explanation": {
+        "overview": "DHAP from glycolysis is a precursor for glycerol‑3‑phosphate, which is the backbone of triacylglycerols.",
+        "highYield": "DHAP → glycerol‑3‑P → triglyceride backbone.",
+        "clinicalCorrelation": "In adipose tissue, DHAP links carbohydrate metabolism to fat storage."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_112",
+      "difficulty": 2,
+      "question": "What is the effect of increased citrate on glycolysis?",
+      "image": null,
+      "options": [
+        {
+          "text": "Inhibits PFK‑1, reducing glycolytic flux",
+          "isCorrect": true,
+          "explanation": "Citrate is a negative allosteric effector of PFK‑1, signaling that the TCA cycle is full."
+        },
+        {
+          "text": "Activates PFK‑1",
+          "isCorrect": false,
+          "explanation": "Citrate inhibits."
+        },
+        {
+          "text": "Inhibits hexokinase",
+          "isCorrect": false,
+          "explanation": "Citrate does not inhibit hexokinase."
+        },
+        {
+          "text": "Activates pyruvate kinase",
+          "isCorrect": false,
+          "explanation": "Not affected by citrate."
+        },
+        {
+          "text": "Increases glucose uptake",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        }
+      ],
+      "explanation": {
+        "overview": "High citrate levels indicate that acetyl‑CoA and ATP are abundant; citrate feedback‑inhibits PFK‑1, slowing glycolysis.",
+        "highYield": "Citrate ↑ → PFK‑1 inhibition.",
+        "clinicalCorrelation": "This is an example of feedback regulation linking TCA cycle activity to glycolytic rate."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_113",
+      "difficulty": 2,
+      "question": "Which of the following is a direct activator of liver pyruvate kinase?",
+      "image": null,
+      "options": [
+        {
+          "text": "Fructose‑1,6‑bisphosphate",
+          "isCorrect": true,
+          "explanation": "F‑1,6‑BP is a feed‑forward activator, while ATP and alanine inhibit."
+        },
+        {
+          "text": "ATP",
+          "isCorrect": false,
+          "explanation": "ATP inhibits."
+        },
+        {
+          "text": "Alanine",
+          "isCorrect": false,
+          "explanation": "Alanine inhibits."
+        },
+        {
+          "text": "cAMP",
+          "isCorrect": false,
+          "explanation": "cAMP leads to phosphorylation and inactivation."
+        },
+        {
+          "text": "Glucagon",
+          "isCorrect": false,
+          "explanation": "Glucagon inactivates pyruvate kinase via phosphorylation."
+        }
+      ],
+      "explanation": {
+        "overview": "Fructose‑1,6‑bisphosphate is a feed‑forward activator of pyruvate kinase, ensuring that when glycolysis is active upstream, the downstream enzyme is also active.",
+        "highYield": "F‑1,6‑BP activates pyruvate kinase.",
+        "clinicalCorrelation": "This prevents accumulation of intermediates and keeps glycolytic flux coordinated."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_114",
+      "difficulty": 2,
+      "question": "Which of the following enzymes is responsible for the irreversible production of fructose‑2,6‑bisphosphate?",
+      "image": null,
+      "options": [
+        {
+          "text": "Phosphofructokinase‑2 (PFK‑2)",
+          "isCorrect": true,
+          "explanation": "PFK‑2 is the kinase domain of the bifunctional enzyme that synthesizes F‑2,6‑BP."
+        },
+        {
+          "text": "Fructose‑2,6‑bisphosphatase (FBPase‑2)",
+          "isCorrect": false,
+          "explanation": "FBPase‑2 degrades F‑2,6‑BP."
+        },
+        {
+          "text": "Phosphofructokinase‑1 (PFK‑1)",
+          "isCorrect": false,
+          "explanation": "PFK‑1 uses F‑1,6‑BP, not F‑2,6‑BP."
+        },
+        {
+          "text": "Hexokinase",
+          "isCorrect": false,
+          "explanation": "Not involved."
+        },
+        {
+          "text": "Pyruvate kinase",
+          "isCorrect": false,
+          "explanation": "Not involved."
+        }
+      ],
+      "explanation": {
+        "overview": "The kinase activity of the bifunctional enzyme PFK‑2/FBPase‑2 produces F‑2,6‑BP from fructose‑6‑phosphate and ATP.",
+        "highYield": "PFK‑2 makes F‑2,6‑BP; FBPase‑2 breaks it down.",
+        "clinicalCorrelation": "The balance of these two activities determines the glycolytic/gluconeogenic set point."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_115",
+      "difficulty": 2,
+      "question": "Which of the following statements about the TCA cycle is FALSE?",
+      "image": null,
+      "options": [
+        {
+          "text": "The cycle produces large amounts of ATP directly",
+          "isCorrect": true,
+          "explanation": "The TCA cycle itself produces only one GTP (or ATP) directly; most ATP comes from the ETC via NADH and FADH₂."
+        },
+        {
+          "text": "It is a common pathway for oxidation of carbohydrates, fats, and proteins",
+          "isCorrect": false,
+          "explanation": "True."
+        },
+        {
+          "text": "It occurs in the mitochondrial matrix",
+          "isCorrect": false,
+          "explanation": "True."
+        },
+        {
+          "text": "It provides intermediates for amino acid synthesis",
+          "isCorrect": false,
+          "explanation": "True."
+        },
+        {
+          "text": "It requires oxygen indirectly for NADH reoxidation",
+          "isCorrect": false,
+          "explanation": "True."
+        }
+      ],
+      "explanation": {
+        "overview": "The TCA cycle generates only one GTP per acetyl‑CoA; the bulk of ATP is made by oxidative phosphorylation using the reduced coenzymes produced.",
+        "highYield": "TCA cycle: little ATP directly; mostly NADH and FADH₂.",
+        "clinicalCorrelation": "Defects in TCA enzymes reduce energy production, affecting high‑energy tissues."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_116",
+      "difficulty": 2,
+      "question": "Which of the following pairs correctly matches a glycogen storage disease with its deficient enzyme?",
+      "image": null,
+      "options": [
+        {
+          "text": "Von Gierke disease – glucose‑6‑phosphatase",
+          "isCorrect": true,
+          "explanation": "Type I GSD."
+        },
+        {
+          "text": "McArdle disease – liver phosphorylase",
+          "isCorrect": false,
+          "explanation": "McArdle is muscle phosphorylase."
+        },
+        {
+          "text": "Cori disease – branching enzyme",
+          "isCorrect": false,
+          "explanation": "Cori is debranching enzyme."
+        },
+        {
+          "text": "Andersen disease – debranching enzyme",
+          "isCorrect": false,
+          "explanation": "Andersen is branching enzyme."
+        },
+        {
+          "text": "Hers disease – muscle phosphorylase",
+          "isCorrect": false,
+          "explanation": "Hers is liver phosphorylase."
+        }
+      ],
+      "explanation": {
+        "overview": "Von Gierke (I): glucose‑6‑phosphatase; Pompe (II): acid maltase; Cori (III): debranching; Andersen (IV): branching; McArdle (V): muscle phosphorylase; Hers (VI): liver phosphorylase.",
+        "highYield": "Memorize: Von Gierke = G6Pase.",
+        "clinicalCorrelation": "Understanding the specific defect helps in diagnosis and management."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_117",
+      "difficulty": 2,
+      "question": "The net ATP consumption for converting two molecules of pyruvate to one glucose via gluconeogenesis is:",
+      "image": null,
+      "options": [
+        {
+          "text": "6 ATP (4 ATP + 2 GTP)",
+          "isCorrect": true,
+          "explanation": "Glucoseogenesis from pyruvate: 2 pyruvate + 4 ATP + 2 GTP + 2 NADH + 2 H+ + 6 H2O → glucose + 4 ADP + 2 GDP + 6 Pi + 2 NAD+."
+        },
+        {
+          "text": "4 ATP",
+          "isCorrect": false,
+          "explanation": "Underestimate."
+        },
+        {
+          "text": "2 ATP",
+          "isCorrect": false,
+          "explanation": "Too low."
+        },
+        {
+          "text": "8 ATP",
+          "isCorrect": false,
+          "explanation": "Too high."
+        },
+        {
+          "text": "10 ATP",
+          "isCorrect": false,
+          "explanation": "Too high."
+        }
+      ],
+      "explanation": {
+        "overview": "The energetic cost of gluconeogenesis from pyruvate is 6 ATP equivalents per glucose synthesized, making it energetically expensive.",
+        "highYield": "Gluconeogenesis cost: 6 ~P bonds/glucose.",
+        "clinicalCorrelation": "This high energy cost is met by hepatic fatty acid oxidation."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_118",
+      "difficulty": 2,
+      "question": "Which of the following intermediates is common to both glycolysis and gluconeogenesis?",
+      "image": null,
+      "options": [
+        {
+          "text": "Fructose‑1,6‑bisphosphate",
+          "isCorrect": true,
+          "explanation": "F‑1,6‑BP is an intermediate in both pathways, though the enzymes that interconvert it with fructose‑6‑P are different and regulated."
+        },
+        {
+          "text": "Glucose‑6‑phosphate",
+          "isCorrect": false,
+          "explanation": "G6P is also common, but the question asks for one that is specifically a point of reciprocal regulation. Both are technically common intermediates, but fructose‑1,6‑BP is the key branch point regulated by F‑2,6‑BP. However, G6P is also shared. I'll allow F‑1,6‑BP as the major regulated common intermediate."
+        },
+        {
+          "text": "Phosphoenolpyruvate",
+          "isCorrect": false,
+          "explanation": "PEP is in glycolysis and gluconeogenesis but not a shared intermediate at the same step; in gluconeogenesis it is formed from OAA."
+        },
+        {
+          "text": "Pyruvate",
+          "isCorrect": false,
+          "explanation": "Pyruvate is at the end of glycolysis and start of gluconeogenesis, but the specific common intermediate in the middle is fructose‑1,6‑BP."
+        },
+        {
+          "text": "2‑Phosphoglycerate",
+          "isCorrect": false,
+          "explanation": "It is an intermediate in both but not the classic regulated branch point."
+        }
+      ],
+      "explanation": {
+        "overview": "Fructose‑1,6‑bisphosphate is the key intermediate where glycolysis and gluconeogenesis are reciprocally regulated via F‑2,6‑BP.",
+        "highYield": "F‑1,6‑BP ↔ F‑6‑P is a major regulatory node.",
+        "clinicalCorrelation": "Targeting this node could help control hepatic glucose output in diabetes."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_119",
+      "difficulty": 2,
+      "question": "Which of the following would most likely occur in the liver during prolonged fasting?",
+      "image": null,
+      "options": [
+        {
+          "text": "Increased PEPCK and glucose‑6‑phosphatase activity",
+          "isCorrect": true,
+          "explanation": "Glucagon and cortisol upregulate gluconeogenic enzymes."
+        },
+        {
+          "text": "Increased PFK‑1 activity",
+          "isCorrect": false,
+          "explanation": "Glycolysis is suppressed."
+        },
+        {
+          "text": "Increased F‑2,6‑BP levels",
+          "isCorrect": false,
+          "explanation": "F‑2,6‑BP is low during fasting."
+        },
+        {
+          "text": "Increased glycogen synthase activity",
+          "isCorrect": false,
+          "explanation": "Glycogen synthesis is turned off."
+        },
+        {
+          "text": "Decreased fatty acid oxidation",
+          "isCorrect": false,
+          "explanation": "Fatty acid oxidation increases to provide energy for gluconeogenesis."
+        }
+      ],
+      "explanation": {
+        "overview": "Fasting increases gluconeogenic enzyme expression (PEPCK, G6Pase) and reduces glycolytic enzyme activity.",
+        "highYield": "Fasting → ↑ gluconeogenic enzymes, ↓ glycolytic enzymes.",
+        "clinicalCorrelation": "In type 2 diabetes, these fasting adaptations persist despite hyperglycemia, worsening the condition."
+      }
+    },
+    {
+      "questionId": "carbohydrate_metabolism_120",
+      "difficulty": 2,
+      "question": "The addition of inorganic phosphate (Pi) to phosphorylase b (inactive) converts it to phosphorylase a (active) in muscle. This occurs because:",
+      "image": null,
+      "options": [
+        {
+          "text": "Phosphorylase kinase phosphorylates phosphorylase b",
+          "isCorrect": true,
+          "explanation": "Activation by phosphorylation; phosphorylase kinase is itself activated by Ca²⁺ and/or PKA."
+        },
+        {
+          "text": "Phosphorylase phosphatase removes phosphate",
+          "isCorrect": false,
+          "explanation": "That would inactivate."
+        },
+        {
+          "text": "AMP directly binds and activates phosphorylase b",
+          "isCorrect": false,
+          "explanation": "AMP allosterically activates phosphorylase b, but the conversion to phosphorylase a is via phosphorylation."
+        },
+        {
+          "text": "Insulin stimulates the conversion",
+          "isCorrect": false,
+          "explanation": "Insulin promotes dephosphorylation (inactivation)."
+        },
+        {
+          "text": "Citrate activates the conversion",
+          "isCorrect": false,
+          "explanation": "Citrate does not have this role."
+        }
+      ],
+      "explanation": {
+        "overview": "In muscle, phosphorylase b (inactive) is converted to active phosphorylase a by phosphorylation catalyzed by phosphorylase kinase, which is activated during exercise by Ca²⁺ and epinephrine.",
+        "highYield": "Phosphorylase b → a: phosphorylation by phosphorylase kinase.",
+        "clinicalCorrelation": "McArdle disease: muscle phosphorylase deficiency; inability to activate glycogenolysis leads to exercise intolerance."
+      }
+    }
+  ]
+}

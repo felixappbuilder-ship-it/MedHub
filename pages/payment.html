@@ -4,25 +4,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment – Medical Exam Room Pro</title>
+    <title>Payment – MedHub</title>
 
-    <link rel="manifest" href="../manifest.json">
-    <link rel="stylesheet" href="../css/common.css" media="all">
-    <link rel="stylesheet" href="../css/payment.css" media="all">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/css/common.css" media="all">
+    <link rel="stylesheet" href="/css/payment.css" media="all">
 
-    <script type="module" src="../scripts/utils.js"></script>
-    <script type="module" src="../scripts/ui.js"></script>
-    <script type="module" src="../scripts/router.js"></script>
-    <script type="module" src="../scripts/app.js"></script>
-    <script type="module" src="../scripts/payment.js"></script>
-    <script type="module" src="../scripts/validation.js"></script>
-    <script type="module" src="../scripts/subscription.js"></script>
+    <!-- Inline dark fallback + shimmer styles -->
+    <style id="theme-style">
+        body {
+            background: #1a1a2e;
+            color: #eee;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        @keyframes shimmer {
+            0% { background-position: -200px 0; }
+            100% { background-position: calc(200px + 100%) 0; }
+        }
+        .shimmer-container {
+            padding: 1rem;
+        }
+        .shimmer-header {
+            padding: 0.5rem 1rem;
+            background: #1e1e2f;
+            border-bottom: 1px solid #333;
+        }
+        .shimmer-header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .shimmer-header-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0.5rem;
+        }
+        .shimmer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .shimmer-logo-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 6px;
+            background: #3a3a4e;
+            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
+            background-size: 200px 100%;
+            animation: shimmer 1.5s infinite;
+        }
+        .shimmer-logo-text {
+            width: 80px;
+            height: 20px;
+            background: #3a3a4e;
+            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
+            background-size: 200px 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: 4px;
+        }
+        .shimmer-btn-sm {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #3a3a4e;
+            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
+            background-size: 200px 100%;
+            animation: shimmer 1.5s infinite;
+            display: inline-block;
+        }
+        .shimmer-title {
+            height: 28px;
+            width: 180px;
+            background: #3a3a4e;
+            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
+            background-size: 200px 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: 4px;
+        }
+        .shimmer-card {
+            background: #2a2a3e;
+            border: 1px solid #444;
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .shimmer-line {
+            height: 16px;
+            background: #3a3a4e;
+            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
+            background-size: 200px 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: 4px;
+            margin-bottom: 0.75rem;
+        }
+        .shimmer-line-lg {
+            height: 32px;
+            width: 60%;
+        }
+        .shimmer-input {
+            height: 44px;
+            border-radius: var(--radius-sm);
+            background: #3a3a4e;
+            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
+            background-size: 200px 100%;
+            animation: shimmer 1.5s infinite;
+        }
+        .shimmer-btn-full {
+            height: 48px;
+            width: 100%;
+            border-radius: var(--radius-sm);
+            background: #3a3a4e;
+            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
+            background-size: 200px 100%;
+            animation: shimmer 1.5s infinite;
+            margin-top: 1rem;
+        }
+        #real-content { display: none; }
+    </style>
+
+    <script type="module" src="/scripts/utils.js"></script>
+    <script type="module" src="/scripts/ui.js"></script>
+    <script type="module" src="/scripts/router.js"></script>
+    <script type="module" src="/scripts/app.js"></script>
+    <script type="module" src="/scripts/payment.js"></script>
+    <script type="module" src="/scripts/validation.js"></script>
+    <script type="module" src="/scripts/subscription.js"></script>
 
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('../service-worker.js').catch(() => { });
+            navigator.serviceWorker.register('/service-worker.js').catch(() => { });
         }
     </script>
+
+    <!-- Additional styles for header layout -->
+    <style>
+        .pay-header {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+        }
+        .pay-header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .pay-header-top .left-group {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .pay-header-top .left-group img {
+            width: 36px;
+            height: 36px;
+            border-radius: 6px;
+        }
+        .pay-header-top .left-group .brand {
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        .pay-header-top .right-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .pay-header-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0.3rem;
+        }
+        .pay-header-bottom h2 {
+            font-size: 1.4rem;
+            margin: 0;
+        }
+        .pay-header-bottom .plan-summary {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        .pay-header-bottom .plan-summary strong {
+            color: var(--text-primary);
+        }
+        .change-plan-btn {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            padding: 0.25rem 0.8rem;
+            font-size: 0.8rem;
+            cursor: pointer;
+            color: var(--text-primary);
+        }
+        .change-plan-btn:hover {
+            background: var(--border);
+        }
+        /* Remove the old standalone change plan button */
+        .old-change-plan {
+            display: none !important;
+        }
+    </style>
 
     <script type="module">
         // Import dependencies
@@ -33,10 +214,10 @@
         import * as utils from '../scripts/utils.js';
         import * as payment from '../scripts/payment.js';
         import * as subscription from '../scripts/subscription.js';
-        import * as auth from '../scripts/auth.js'; // optional, for user info
+        import * as auth from '../scripts/auth.js';
 
         (async function initPayment() {
-            // Initialize app state (load user, etc.)
+            console.log('[Payment] Initializing...');
             await app.initializeApp();
             ui.applyTheme();
 
@@ -47,27 +228,26 @@
                 return;
             }
 
-            // Get selected plan from app state
-            const planId = app.getSelectedPlan();
-            if (!planId) {
+            // Get the full plan object from app state
+            const plan = app.getSelectedPlan();
+            if (!plan) {
                 ui.showToast('No plan selected', 'error');
                 router.navigateTo('subscription.html');
                 return;
             }
 
-            // Load plan details from subscription module
-            const plans = await subscription.getSubscriptionPlans();
-            const plan = plans.find(p => p.id === planId);
-            if (!plan) {
-                ui.showToast('Plan not found', 'error');
-                router.navigateTo('subscription.html');
-                return;
-            }
-
-            // Display plan info
+            // Display plan info – use durationText or format duration
             document.getElementById('plan-name').textContent = plan.name;
             document.getElementById('plan-price').textContent = `KES ${plan.price}`;
-            document.getElementById('plan-duration').textContent = plan.duration;
+            // Use durationText if available, else formatDuration
+            const durationDisplay = plan.durationText || utils.formatDuration(plan.duration);
+            document.getElementById('plan-duration').textContent = durationDisplay;
+
+            // Update header summary
+            const summaryEl = document.getElementById('plan-summary');
+            if (summaryEl) {
+                summaryEl.innerHTML = `<strong>${plan.name}</strong> · ${durationDisplay} · <strong>KES ${plan.price}</strong>`;
+            }
 
             // Prefill phone from user profile
             const user = app.getUser();
@@ -79,6 +259,10 @@
             validation.setupLiveValidation('payment-form', {
                 phone: { required: true, phone: 'KE' }
             });
+
+            // Hide shimmer, show real content
+            document.getElementById('shimmer-content').style.display = 'none';
+            document.getElementById('real-content').style.display = 'block';
         })();
 
         // Expose initiatePayment globally for onclick
@@ -86,9 +270,8 @@
             event.preventDefault();
 
             const phone = document.getElementById('phone').value.trim();
-            const planId = app.getSelectedPlan();
+            const plan = app.getSelectedPlan();
 
-            // Validate phone
             if (!validation.validatePhone(phone)) {
                 ui.showToast('Enter a valid Kenyan phone (07XX or 2547XX)', 'error');
                 return;
@@ -98,24 +281,22 @@
             ui.showLoading('Initiating payment...');
 
             try {
-                // Call payment initiation (simulated)
-                const result = await payment.initiateMPesaPayment(formattedPhone, planId);
+                const result = await payment.initiateMPesaPayment(formattedPhone, plan.id);
                 const transactionId = result.transactionId;
 
                 ui.hideLoading();
                 ui.showToast('Check your phone for M‑Pesa prompt', 'info');
 
-                // Start polling for payment status
-                startPolling(transactionId);
+                startPolling(transactionId, plan);
             } catch (error) {
                 ui.hideLoading();
                 ui.showToast(error.message || 'Payment initiation failed', 'error');
             }
         };
 
-        function startPolling(transactionId) {
+        function startPolling(transactionId, plan) {
             let attempts = 0;
-            const maxAttempts = 60; // 5 minutes (poll every 5s)
+            const maxAttempts = 60;
 
             const interval = setInterval(async () => {
                 attempts++;
@@ -126,14 +307,11 @@
                         clearInterval(interval);
                         ui.showToast('Payment successful! Updating subscription...', 'success');
 
-                        // Activate the subscription (offline simulation)
-                        const planId = app.getSelectedPlan();
                         const user = app.getUser();
-                        if (user && planId) {
-                            // Create subscription object
+                        if (user && plan) {
                             const now = new Date();
                             let expiryDate;
-                            switch (planId) {
+                            switch (plan.id) {
                                 case 'monthly':
                                     expiryDate = new Date(now.setMonth(now.getMonth() + 1));
                                     break;
@@ -144,11 +322,11 @@
                                     expiryDate = new Date(now.setFullYear(now.getFullYear() + 1));
                                     break;
                                 default:
-                                    expiryDate = new Date(now.setHours(now.getHours() + 3)); // trial
+                                    expiryDate = new Date(now.setHours(now.getHours() + 3));
                             }
                             const subscriptionData = {
                                 userId: user.id,
-                                plan: planId,
+                                plan: plan.id,
                                 isActive: true,
                                 expiryDate: expiryDate.toISOString(),
                                 autoRenew: false
@@ -157,14 +335,12 @@
                             app.setSubscription(subscriptionData);
                         }
 
-                        // Redirect to subjects
                         router.navigateTo('subjects.html');
                     } else if (status === 'failed') {
                         clearInterval(interval);
                         ui.showToast('Payment failed. Please retry.', 'error');
                         document.getElementById('retry-btn').style.display = 'block';
                     }
-                    // else pending, continue polling
 
                     if (attempts >= maxAttempts) {
                         clearInterval(interval);
@@ -176,7 +352,6 @@
                 }
             }, 5000);
 
-            // Store interval to clear on page unload
             window.__paymentPolling = interval;
         }
 
@@ -185,7 +360,6 @@
             initiatePayment(new Event('submit'));
         };
 
-        // Cleanup on navigation
         window.addEventListener('beforeunload', () => {
             if (window.__paymentPolling) clearInterval(window.__paymentPolling);
         });
@@ -194,51 +368,101 @@
 
 <body>
     <div class="page-container">
-        <header>
-            <div class="logo">
-                <img src="../assets/images/logo.png" alt="Logo" width="40" height="40">
-                <span>MedExamPro</span>
+        <!-- ===== SHIMMER CONTENT ===== -->
+        <div id="shimmer-content">
+            <div class="shimmer-header">
+                <div class="shimmer-header-top">
+                    <div class="shimmer-logo">
+                        <div class="shimmer-logo-icon"></div>
+                        <div class="shimmer-logo-text"></div>
+                    </div>
+                    <div>
+                        <span class="shimmer-btn-sm" style="margin-right: 0.5rem;"></span>
+                        <span class="shimmer-btn-sm"></span>
+                        <span class="shimmer-btn-sm" style="margin-left: 0.5rem;"></span>
+                    </div>
+                </div>
+                <div class="shimmer-header-bottom">
+                    <div class="shimmer-title"></div>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <div style="width: 80px; height: 28px; background: #3a3a4e; background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size: 200px 100%; animation: shimmer 1.5s infinite; border-radius: 4px;"></div>
+                        <div style="width: 60px; height: 28px; background: #3a3a4e; background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size: 200px 100%; animation: shimmer 1.5s infinite; border-radius: 4px;"></div>
+                    </div>
+                </div>
             </div>
-            <button onclick="ui.toggleTheme()" class="btn-outline">🌓</button>
-        </header>
+            <div class="shimmer-container">
+                <div class="shimmer-card">
+                    <div class="shimmer-line shimmer-line-lg"></div>
+                    <div class="shimmer-line"></div>
+                    <div class="shimmer-line"></div>
+                    <div class="shimmer-line" style="width: 70%;"></div>
+                </div>
+                <div class="shimmer-card">
+                    <div class="shimmer-line" style="width: 40%;"></div>
+                    <div class="shimmer-input"></div>
+                    <div class="shimmer-line" style="width: 60%; margin-top: 0.5rem;"></div>
+                </div>
+                <div class="shimmer-btn-full"></div>
+                <div class="shimmer-btn-full" style="background: #2a2a3e; border: 1px solid #444; margin-top: 0.5rem;"></div>
+            </div>
+        </div>
 
-        <main class="payment-container">
-            <h2>Complete Payment</h2>
-
-            <div class="order-summary">
-                <h3>Order Summary</h3>
-                <p><span>Plan:</span> <span id="plan-name"></span></p>
-                <p><span>Amount:</span> <span id="plan-price" class="amount"></span></p>
-                <p><span>Duration:</span> <span id="plan-duration"></span></p>
+        <!-- ===== REAL CONTENT ===== -->
+        <div id="real-content">
+            <!-- Two-row fixed header -->
+            <div class="pay-header">
+                <div class="pay-header-top">
+                    <div class="left-group">
+                        <img src="../assets/images/logo.png" alt="Logo" width="36" height="36">
+                        <span class="brand">MedHub</span>
+                        <button onclick="router.navigateTo('subjects.html')" class="btn-text" style="font-size: 0.9rem; padding: 0.2rem 0.5rem;">← Back</button>
+                    </div>
+                    <div class="right-group">
+                        <button class="change-plan-btn" onclick="router.navigateTo('subscription.html')">Change Plan</button>
+                        <button onclick="ui.toggleTheme()" class="btn-outline" style="padding: 0.3rem 0.6rem;">🌓</button>
+                    </div>
+                </div>
+                <div class="pay-header-bottom">
+                    <h2>Complete Payment</h2>
+                    <div class="plan-summary" id="plan-summary"></div>
+                </div>
             </div>
 
-            <form id="payment-form" onsubmit="initiatePayment(event)">
-                <div class="form-group">
-                    <label for="phone">M‑Pesa Phone Number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="e.g., 0712345678 or 254712345678"
-                        autocomplete="tel" required>
-                    <div class="error-message" data-for="phone"></div>
-                    <small>Enter the number registered with M‑Pesa</small>
+            <main class="payment-container">
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <p><span>Plan:</span> <span id="plan-name"></span></p>
+                    <p><span>Amount:</span> <span id="plan-price" class="amount"></span></p>
+                    <p><span>Duration:</span> <span id="plan-duration"></span></p>
                 </div>
 
-                <div class="payment-instructions">
-                    <p>📱 1. After clicking Pay, check your phone for an M‑Pesa prompt.</p>
-                    <p>🔢 2. Enter your M‑Pesa PIN to confirm.</p>
-                    <p>⏳ 3. Wait for confirmation – this may take up to 1 minute.</p>
-                </div>
+                <form id="payment-form" onsubmit="initiatePayment(event)">
+                    <div class="form-group">
+                        <label for="phone">M‑Pesa Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="e.g., 0712345678 or 254712345678"
+                            autocomplete="tel" required>
+                        <div class="error-message" data-for="phone"></div>
+                        <small>Enter the number registered with M‑Pesa</small>
+                    </div>
 
-                <button type="submit" class="btn-primary btn-large">💰 Pay Now</button>
-                <button id="retry-btn" type="button" onclick="retryPayment()" class="btn-secondary"
-                    style="display:none;">↻ Retry Payment</button>
-                <button type="button" onclick="router.navigateTo('subscription.html')" class="btn-text">← Change
-                    Plan</button>
-            </form>
+                    <div class="payment-instructions">
+                        <p>📱 1. After clicking Pay, check your phone for an M‑Pesa prompt.</p>
+                        <p>🔢 2. Enter your M‑Pesa PIN to confirm.</p>
+                        <p>⏳ 3. Wait for confirmation – this may take up to 1 minute.</p>
+                    </div>
 
-            <div id="payment-status"></div>
-        </main>
+                    <button type="submit" class="btn-primary btn-large">💰 Pay Now</button>
+                    <button id="retry-btn" type="button" onclick="retryPayment()" class="btn-secondary"
+                        style="display:none;">↻ Retry Payment</button>
+                    <!-- Change Plan button removed from bottom -->
+                </form>
+
+                <div id="payment-status"></div>
+            </main>
+        </div>
     </div>
 
-    <script data-lazy data-src="../scripts/offline.js"></script>
+    <script data-lazy data-src="/scripts/offline.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,249 @@
+/* frontend-user/css/subscription.css */
+
+/* ---- Current plan banner (hidden in new layout, but kept for consistency) ---- */
+.current-plan-banner {
+    background: var(--bg-secondary);
+    border-radius: var(--radius);
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    display: none; /* hidden by default; can be shown via JS if needed */
+}
+
+/* ---- Plan grid ---- */
+.plan-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+/* ---- Plan card ---- */
+.plan-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    position: relative;
+    transition: var(--transition);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.plan-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.plan-card.popular {
+    border: 2px solid var(--accent);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.plan-card.popular::before {
+    content: "🔥 POPULAR";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: white;
+    padding: 0.25rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.plan-card.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.plan-card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 0.25rem;
+}
+
+.duration {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.features {
+    list-style: none;
+    margin-bottom: 1.5rem;
+    flex: 1;
+}
+
+.features li {
+    padding: 0.375rem 0;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.features li::before {
+    content: "✓";
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.limitations {
+    font-size: 0.75rem;
+    color: var(--warning);
+    margin-bottom: 1.5rem;
+}
+
+/* Button inside card – purely visual, card handles click */
+.plan-card button {
+    width: 100%;
+    pointer-events: none;
+    margin-top: auto;
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    transition: var(--transition);
+    border: 1px solid var(--accent);
+}
+
+.plan-card button.btn-secondary {
+    background: transparent;
+    color: var(--accent);
+}
+
+/* ---- Payment info ---- */
+.payment-info {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+/* ===== NEW HEADER STYLES (two-row header) ===== */
+.sub-header {
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.sub-header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sub-header-top .left-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.sub-header-top .left-group img {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+}
+
+.sub-header-top .left-group span {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.sub-header-top .left-group .btn-text {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.5rem;
+}
+
+.sub-header-top .right-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sub-header-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.3rem;
+}
+
+.sub-header-bottom h1 {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.status-area {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.status-area .status-text {
+    color: var(--text-secondary);
+}
+
+.trial-btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 0.3rem 0.8rem;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.trial-btn:hover {
+    background: var(--accent-dark);
+}
+
+/* Hide the old bottom back button (removed from HTML) */
+.sub-back-bottom {
+    display: none !important;
+}
+
+/* ---- Responsive adjustments ---- */
+@media (max-width: 640px) {
+    .plan-grid {
+        grid-template-columns: 1fr;
+    }
+    .current-plan-banner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .sub-header-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .sub-header-bottom h1 {
+        font-size: 1.2rem;
+    }
+    .status-area {
+        flex-wrap: wrap;
+    }
+}

@@ -1,0 +1,571 @@
+/* ===== PROFILE PAGE – MOBILE‑FIRST (FULLY OPTIMIZED) ===== */
+/* Assumes CSS custom properties from common.css */
+/* ======================================================== */
+
+/* ----- Fixed Header (two rows) ----- */
+.profile-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+    padding: 0.5rem 1rem;
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-row.top {
+    margin-bottom: 0.3rem;
+}
+
+.header-row .left-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 1;
+    min-width: 0; /* allow shrinking */
+}
+
+.header-row .left-group img {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.header-row .left-group .brand {
+    font-weight: 600;
+    font-size: 1.2rem;
+    white-space: nowrap;
+}
+
+.header-row .left-group .btn-text {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.6rem;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.header-row .left-group .btn-text:hover {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.header-row .right-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.header-row .btn-outline {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    padding: 0.3rem 0.6rem;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.header-row .btn-outline:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+.header-row .btn-text {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.6rem;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.header-row .btn-text:hover {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.header-row.bottom .page-title {
+    font-size: 1.2rem;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+/* ----- Main Content ----- */
+main {
+    padding: 0.5rem 1rem;
+}
+
+main h1 {
+    font-size: 1.8rem;
+    margin: 1rem 0.5rem;
+}
+
+/* ----- Tabs ----- */
+.tabs {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0 0.5rem 0.5rem;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.tabs::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+}
+.tabs::-webkit-scrollbar-track {
+    background: transparent;
+}
+.tabs::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 4px;
+}
+
+/* Mobile: hide scrollbar, add fade hint */
+@media (max-width: 640px) {
+    .tabs {
+        scrollbar-width: none;
+        -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+        mask-image: linear-gradient(to right, black 85%, transparent 100%);
+    }
+    .tabs::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.tab-button {
+    padding: 0.75rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+    min-height: 48px;
+    white-space: nowrap;
+}
+.tab-button.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+/* ----- Profile Form ----- */
+.profile-form {
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+.profile-form .form-group {
+    margin-bottom: 1.25rem;
+}
+
+.profile-form .form-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.profile-form .form-row .half {
+    flex: 1;
+    min-width: 140px;
+}
+
+.profile-form label {
+    display: block;
+    margin-bottom: 0.375rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.profile-form input,
+.profile-form select {
+    width: 100%;
+    padding: 0.625rem 0.875rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 0.9375rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.profile-form input:focus,
+.profile-form select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.profile-form small {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    display: block;
+    margin-top: 0.25rem;
+}
+
+/* ----- Subscription Card ----- */
+.subscription-card {
+    background: var(--bg-secondary);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border: 1px solid var(--border);
+}
+
+.subscription-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+}
+
+.subscription-card p {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+/* ----- Devices ----- */
+.devices-list {
+    margin: 1rem 0;
+}
+
+.device-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+}
+
+.device-item.current-device {
+    background: rgba(16, 185, 129, 0.1);
+    border-left: 4px solid var(--success);
+}
+
+.device-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+.device-name {
+    flex: 1;
+    font-weight: 500;
+    min-width: 100px;
+}
+.device-last {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
+
+.device-item .badge {
+    background: var(--success);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.7rem;
+}
+
+/* ----- Statistics ----- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.stat-item {
+    background: var(--bg-secondary);
+    padding: 1rem;
+    border-radius: var(--radius);
+    text-align: center;
+    border: 1px solid var(--border);
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+/* ----- Buttons (consistent with other pages) ----- */
+.btn-primary {
+    background: var(--accent);
+    color: white;
+    border: 1px solid var(--accent);
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+.btn-primary:hover {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+}
+
+.btn-secondary {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+.btn-secondary:hover {
+    background: var(--border);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.btn-outline:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: white;
+    border: 1px solid var(--danger);
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.btn-danger:hover {
+    background: var(--danger-dark);
+}
+
+.btn-small {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.85rem;
+    border-radius: 30px;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.btn-text {
+    background: transparent;
+    border: none;
+    color: var(--accent);
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+.btn-text:hover {
+    text-decoration: underline;
+}
+
+/* ----- Utility ----- */
+hr {
+    margin: 2rem 0;
+    border: none;
+    border-top: 1px solid var(--border);
+}
+
+.note {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 1rem;
+}
+
+.no-data {
+    color: var(--text-muted);
+    font-style: italic;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.devices-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+footer {
+    padding: 1rem;
+    text-align: center;
+}
+
+/* ===== RESPONSIVE OVERHAUL ===== */
+
+/* ---------- Small phones (≤ 400px) ---------- */
+@media (max-width: 400px) {
+    .profile-header {
+        padding: 0.3rem 0.6rem;
+    }
+    .header-row .left-group .brand {
+        font-size: 1rem;
+    }
+    .header-row .left-group img {
+        width: 28px;
+        height: 28px;
+    }
+    .header-row .btn-outline {
+        font-size: 1rem;
+        padding: 0.2rem 0.5rem;
+    }
+    .header-row.bottom .page-title {
+        font-size: 1rem;
+    }
+    .header-row .btn-text {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.5rem;
+    }
+    main h1 {
+        font-size: 1.4rem;
+        margin: 0.5rem 0.25rem;
+    }
+    /* Shrink tab buttons to fit more */
+    .tab-button {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.8rem;
+        min-height: 36px;
+    }
+    .profile-form .form-row .half {
+        min-width: 100%;
+    }
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    .stat-value {
+        font-size: 1.4rem;
+    }
+    .device-item {
+        padding: 0.75rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .device-name {
+        min-width: auto;
+    }
+    .btn-primary, .btn-secondary, .btn-outline, .btn-danger {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+    .subscription-card {
+        padding: 1rem;
+    }
+    .devices-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* ---------- Phones (401px – 640px) ---------- */
+@media (min-width: 401px) and (max-width: 640px) {
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .profile-form .form-row {
+        flex-direction: column;
+    }
+    .device-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .device-item .badge {
+        margin-left: 0;
+    }
+    .profile-header {
+        padding: 0.4rem 0.8rem;
+    }
+    .header-row .left-group .brand {
+        font-size: 1.1rem;
+    }
+    .devices-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* ---------- Tablets (641px – 1024px) ---------- */
+@media (min-width: 641px) and (max-width: 1024px) {
+    .profile-header {
+        padding: 0.6rem 1.5rem;
+    }
+    main {
+        padding: 1rem 2rem;
+    }
+    .profile-form {
+        max-width: 100%;
+    }
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    .device-item {
+        flex-wrap: nowrap;
+    }
+    .devices-header {
+        flex-direction: row;
+    }
+}
+
+/* ---------- Large screens (≥ 1025px) ---------- */
+@media (min-width: 1025px) {
+    .page-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .profile-form {
+        max-width: 800px;
+    }
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+    .device-item {
+        padding: 1.2rem;
+    }
+    .devices-header {
+        flex-direction: row;
+    }
+}

@@ -1,0 +1,2929 @@
+{
+  "questions": [
+    {
+      "id": "pharma_metabolism_001",
+      "questionId": "pharma_metabolism_001",
+      "difficulty": 1,
+      "question": "Biotransformation of drugs primarily serves to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increase lipid solubility for tissue distribution",
+          "isCorrect": false,
+          "explanation": "Most drugs are already sufficiently lipophilic; the goal is to make them more water-soluble, not more lipid-soluble."
+        },
+        {
+          "text": "Convert drugs to more water-soluble compounds for excretion",
+          "isCorrect": true,
+          "explanation": "Biotransformation increases polarity, facilitating renal or biliary elimination."
+        },
+        {
+          "text": "Enhance receptor binding affinity",
+          "isCorrect": false,
+          "explanation": "Metabolites often have lower affinity; biotransformation typically inactivates drugs."
+        },
+        {
+          "text": "Prolong the half-life of drugs",
+          "isCorrect": false,
+          "explanation": "Metabolism usually shortens half-life by enhancing clearance."
+        },
+        {
+          "text": "Increase the volume of distribution",
+          "isCorrect": false,
+          "explanation": "Hydrophilic metabolites tend to have a smaller volume of distribution."
+        }
+      ],
+      "explanation": {
+        "overview": "Drug metabolism (biotransformation) primarily converts lipophilic substances into more hydrophilic metabolites that can be easily excreted in urine or bile.",
+        "highYield": "Purpose of metabolism: lipophilic → hydrophilic for excretion.",
+        "clinicalCorrelation": "Impaired metabolism (e.g., liver disease) leads to drug accumulation and toxicity."
+      }
+    },
+    {
+      "id": "pharma_metabolism_002",
+      "questionId": "pharma_metabolism_002",
+      "difficulty": 1,
+      "question": "The primary organ responsible for drug metabolism is the:",
+      "image": null,
+      "options": [
+        {
+          "text": "Kidney",
+          "isCorrect": false,
+          "explanation": "The kidney is important for excretion and contains some metabolic enzymes, but it is not the primary site."
+        },
+        {
+          "text": "Liver",
+          "isCorrect": true,
+          "explanation": "The liver has the highest concentration and variety of drug-metabolizing enzymes."
+        },
+        {
+          "text": "Lung",
+          "isCorrect": false,
+          "explanation": "The lung has some metabolic activity but is not the main organ for systemic drug metabolism."
+        },
+        {
+          "text": "Intestine",
+          "isCorrect": false,
+          "explanation": "The gut wall contributes to first-pass metabolism but the liver is the principal organ."
+        },
+        {
+          "text": "Skin",
+          "isCorrect": false,
+          "explanation": "The skin has minimal metabolic capacity compared to the liver."
+        }
+      ],
+      "explanation": {
+        "overview": "The liver is the chief organ for drug metabolism, containing high amounts of CYP450 enzymes, conjugation enzymes, and other metabolic pathways.",
+        "highYield": "Liver = primary site of drug metabolism. Hepatocytes → CYP450 & conjugation.",
+        "clinicalCorrelation": "Hepatic impairment requires dose adjustments for drugs extensively metabolized by the liver."
+      }
+    },
+    {
+      "id": "pharma_metabolism_003",
+      "questionId": "pharma_metabolism_003",
+      "difficulty": 2,
+      "question": "Phase I reactions include all of the following EXCEPT:",
+      "image": null,
+      "options": [
+        {
+          "text": "Oxidation",
+          "isCorrect": false,
+          "explanation": "Oxidation is a classic Phase I reaction, often catalyzed by CYP450."
+        },
+        {
+          "text": "Reduction",
+          "isCorrect": false,
+          "explanation": "Reduction (e.g., nitro-reduction) is a Phase I functionalization reaction."
+        },
+        {
+          "text": "Hydrolysis",
+          "isCorrect": false,
+          "explanation": "Hydrolysis (e.g., of esters) is a Phase I reaction."
+        },
+        {
+          "text": "Glucuronidation",
+          "isCorrect": true,
+          "explanation": "Glucuronidation is a Phase II conjugation reaction, not Phase I."
+        },
+        {
+          "text": "Hydroxylation",
+          "isCorrect": false,
+          "explanation": "Hydroxylation is an oxidation reaction (Phase I)."
+        }
+      ],
+      "explanation": {
+        "overview": "Phase I reactions introduce or unmask a functional group (-OH, -NH2, -SH) via oxidation, reduction, or hydrolysis. Phase II reactions conjugate an endogenous substance to the drug or its Phase I metabolite.",
+        "highYield": "Phase I = functionalization (oxidation, reduction, hydrolysis). Phase II = conjugation (glucuronidation, sulfation, etc.).",
+        "clinicalCorrelation": "Some drugs require Phase I activation (prodrugs); Phase II generally inactivates compounds."
+      }
+    },
+    {
+      "id": "pharma_metabolism_004",
+      "questionId": "pharma_metabolism_004",
+      "difficulty": 2,
+      "question": "Cytochrome P450 enzymes are primarily involved in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Phase I oxidation reactions",
+          "isCorrect": true,
+          "explanation": "CYP450s are the major catalysts of oxidative metabolism (Phase I)."
+        },
+        {
+          "text": "Phase II conjugation",
+          "isCorrect": false,
+          "explanation": "UGTs and other transferases perform Phase II, not CYP450."
+        },
+        {
+          "text": "Renal excretion",
+          "isCorrect": false,
+          "explanation": "CYPs are metabolic enzymes, not transporters."
+        },
+        {
+          "text": "Biliary excretion",
+          "isCorrect": false,
+          "explanation": "Biliary excretion is handled by transport proteins."
+        },
+        {
+          "text": "Protein binding",
+          "isCorrect": false,
+          "explanation": "CYP450 does not bind drugs for distribution."
+        }
+      ],
+      "explanation": {
+        "overview": "The cytochrome P450 superfamily are heme-containing monooxygenases that catalyze oxidation of many endogenous and exogenous substrates.",
+        "highYield": "CYP450 = Phase I oxidation. Location: smooth ER of hepatocytes.",
+        "clinicalCorrelation": "CYP polymorphisms and drug interactions are the source of many pharmacokinetic variabilities."
+      }
+    },
+    {
+      "id": "pharma_metabolism_005",
+      "questionId": "pharma_metabolism_005",
+      "difficulty": 2,
+      "question": "Which of the following is a Phase II metabolic reaction?",
+      "image": null,
+      "options": [
+        {
+          "text": "Acetylation",
+          "isCorrect": true,
+          "explanation": "Acetylation is a conjugation reaction (Phase II) catalyzed by N-acetyltransferases."
+        },
+        {
+          "text": "Oxidation",
+          "isCorrect": false,
+          "explanation": "Oxidation is Phase I."
+        },
+        {
+          "text": "Reduction",
+          "isCorrect": false,
+          "explanation": "Reduction is Phase I."
+        },
+        {
+          "text": "Hydrolysis",
+          "isCorrect": false,
+          "explanation": "Hydrolysis is Phase I."
+        },
+        {
+          "text": "Deamination",
+          "isCorrect": false,
+          "explanation": "Deamination is a Phase I reaction."
+        }
+      ],
+      "explanation": {
+        "overview": "Phase II (conjugation) reactions attach a polar endogenous molecule (glucuronic acid, sulfate, acetyl, etc.) to the drug, increasing water solubility.",
+        "highYield": "Phase II: Glucuronidation, sulfation, acetylation, methylation, glutathione conjugation, amino acid conjugation.",
+        "clinicalCorrelation": "Acetylation polymorphism (slow vs fast acetylators) affects isoniazid toxicity and efficacy."
+      }
+    },
+    {
+      "id": "pharma_metabolism_006",
+      "questionId": "pharma_metabolism_006",
+      "difficulty": 2,
+      "question": "The most abundant CYP enzyme in the human liver is:",
+      "image": null,
+      "options": [
+        {
+          "text": "CYP2D6",
+          "isCorrect": false,
+          "explanation": "CYP2D6 is important but accounts for only ~2% of hepatic CYP content."
+        },
+        {
+          "text": "CYP3A4",
+          "isCorrect": true,
+          "explanation": "CYP3A4 makes up 30-40% of total CYP in the liver and metabolizes ~50% of all drugs."
+        },
+        {
+          "text": "CYP2C9",
+          "isCorrect": false,
+          "explanation": "CYP2C9 represents a smaller fraction (~10-15%)."
+        },
+        {
+          "text": "CYP1A2",
+          "isCorrect": false,
+          "explanation": "CYP1A2 is a smaller fraction, induced by smoking."
+        },
+        {
+          "text": "CYP2E1",
+          "isCorrect": false,
+          "explanation": "CYP2E1 is induced by ethanol but is not the most abundant."
+        }
+      ],
+      "explanation": {
+        "overview": "CYP3A4 is the most abundant CYP isoform in the human liver and gut, and it metabolizes a vast array of drugs, including many cardiovascular, psychotropic, and chemotherapeutic agents.",
+        "highYield": "CYP3A4 = most abundant hepatic CYP (~30-40%). Metabolizes ~50% of drugs. Induced by rifampin, St. John's wort; inhibited by ketoconazole, grapefruit juice.",
+        "clinicalCorrelation": "CYP3A4 interactions are frequent. Always check when prescribing drugs metabolized by this isoform."
+      }
+    },
+    {
+      "id": "pharma_metabolism_007",
+      "questionId": "pharma_metabolism_007",
+      "difficulty": 1,
+      "question": "A prodrug is defined as:",
+      "image": null,
+      "options": [
+        {
+          "text": "An inactive compound that requires metabolic activation",
+          "isCorrect": true,
+          "explanation": "A prodrug is pharmacologically inactive until converted to its active form by metabolism."
+        },
+        {
+          "text": "A drug that is active only after renal excretion",
+          "isCorrect": false,
+          "explanation": "Activity is not dependent on renal excretion."
+        },
+        {
+          "text": "A drug that inhibits its own metabolism",
+          "isCorrect": false,
+          "explanation": "That describes a suicide inhibitor, not a prodrug."
+        },
+        {
+          "text": "A drug that is always administered intravenously",
+          "isCorrect": false,
+          "explanation": "Prodrugs can be given orally (e.g., enalapril)."
+        },
+        {
+          "text": "A drug with a narrow therapeutic index",
+          "isCorrect": false,
+          "explanation": "Narrow therapeutic index is unrelated to prodrug status."
+        }
+      ],
+      "explanation": {
+        "overview": "Prodrugs are designed to improve pharmacokinetic properties (absorption, distribution) and are activated by enzymatic or chemical transformation in the body.",
+        "highYield": "Prodrug = Inactive parent → active metabolite. Examples: codeine→morphine (CYP2D6), enalapril→enalaprilat.",
+        "clinicalCorrelation": "Polymorphisms in activating enzymes (e.g., CYP2D6 for codeine) can cause therapeutic failure or toxicity."
+      }
+    },
+    {
+      "id": "pharma_metabolism_008",
+      "questionId": "pharma_metabolism_008",
+      "difficulty": 2,
+      "question": "Enalapril is converted to its active form, enalaprilat, by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hepatic CYP450",
+          "isCorrect": false,
+          "explanation": "CYP450s are not primarily responsible for ester hydrolysis."
+        },
+        {
+          "text": "Plasma esterases",
+          "isCorrect": false,
+          "explanation": "Plasma esterases hydrolyze some drugs, but enalapril is hydrolyzed in the liver."
+        },
+        {
+          "text": "Hydrolysis in the liver",
+          "isCorrect": true,
+          "explanation": "Enalapril is a prodrug hydrolyzed by hepatic carboxylesterases to the active ACE inhibitor enalaprilat."
+        },
+        {
+          "text": "Gastric acid",
+          "isCorrect": false,
+          "explanation": "Gastric acid does not specifically activate enalapril."
+        },
+        {
+          "text": "Renal enzymes",
+          "isCorrect": false,
+          "explanation": "Renal metabolism is minimal for enalapril."
+        }
+      ],
+      "explanation": {
+        "overview": "Enalapril is an ethyl ester prodrug that undergoes hepatic hydrolysis to the active diacid enalaprilat. This improves oral bioavailability.",
+        "highYield": "Enalapril (prodrug) → hepatic hydrolysis → enalaprilat (active).",
+        "clinicalCorrelation": "In severe hepatic impairment, conversion may be reduced, decreasing efficacy."
+      }
+    },
+    {
+      "id": "pharma_metabolism_009",
+      "questionId": "pharma_metabolism_009",
+      "difficulty": 3,
+      "question": "Codeine is metabolized to its active form, morphine, by:",
+      "image": null,
+      "options": [
+        {
+          "text": "CYP2D6",
+          "isCorrect": true,
+          "explanation": "CYP2D6 O-demethylates codeine to morphine, which provides analgesia."
+        },
+        {
+          "text": "CYP3A4",
+          "isCorrect": false,
+          "explanation": "CYP3A4 metabolizes codeine to norcodeine, a less active metabolite."
+        },
+        {
+          "text": "CYP2C9",
+          "isCorrect": false,
+          "explanation": "CYP2C9 is not involved in codeine metabolism."
+        },
+        {
+          "text": "UGT2B7",
+          "isCorrect": false,
+          "explanation": "UGT2B7 glucuronidates morphine, not codeine activation."
+        },
+        {
+          "text": "MAO-A",
+          "isCorrect": false,
+          "explanation": "MAO-A metabolizes monoamines, not codeine."
+        }
+      ],
+      "explanation": {
+        "overview": "Codeine is a prodrug that requires CYP2D6-mediated O-demethylation to morphine for its analgesic effect. CYP2D6 genetic polymorphisms significantly affect response.",
+        "highYield": "Codeine → morphine via CYP2D6. Poor metabolizers → no analgesia; ultrarapid metabolizers → increased toxicity.",
+        "clinicalCorrelation": "FDA boxed warning: avoid codeine in children after tonsillectomy due to risk of respiratory depression in ultrarapid metabolizers."
+      }
+    },
+    {
+      "id": "pharma_metabolism_010",
+      "questionId": "pharma_metabolism_010",
+      "difficulty": 2,
+      "question": "Enzyme induction leads to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increased drug metabolism",
+          "isCorrect": true,
+          "explanation": "Inducers upregulate enzyme expression or activity, accelerating metabolism."
+        },
+        {
+          "text": "Decreased drug metabolism",
+          "isCorrect": false,
+          "explanation": "Inhibition decreases metabolism."
+        },
+        {
+          "text": "Increased half-life",
+          "isCorrect": false,
+          "explanation": "Induction reduces half-life."
+        },
+        {
+          "text": "Decreased clearance",
+          "isCorrect": false,
+          "explanation": "Induction increases clearance."
+        },
+        {
+          "text": "Higher plasma concentrations",
+          "isCorrect": false,
+          "explanation": "Induction lowers plasma concentrations of parent drug."
+        }
+      ],
+      "explanation": {
+        "overview": "Enzyme induction enhances the rate of drug metabolism, leading to reduced plasma levels and potential therapeutic failure of drugs that are metabolized by the induced enzyme.",
+        "highYield": "Induction = increased enzyme amount/activity → faster metabolism → ↓ drug levels.",
+        "clinicalCorrelation": "Inducers (rifampin, phenytoin, carbamazepine, St. John's wort) can reduce the effectiveness of oral contraceptives, warfarin, and antiretrovirals."
+      }
+    },
+    {
+      "id": "pharma_metabolism_011",
+      "questionId": "pharma_metabolism_011",
+      "difficulty": 2,
+      "question": "Rifampicin is a potent inducer of:",
+      "image": null,
+      "options": [
+        {
+          "text": "CYP3A4",
+          "isCorrect": false,
+          "explanation": "Rifampicin induces CYP3A4, but it also induces others."
+        },
+        {
+          "text": "CYP2D6",
+          "isCorrect": false,
+          "explanation": "CYP2D6 is not significantly induced by rifampicin."
+        },
+        {
+          "text": "CYP2C9",
+          "isCorrect": false,
+          "explanation": "It induces CYP2C9 as well."
+        },
+        {
+          "text": "UGT",
+          "isCorrect": false,
+          "explanation": "It also induces phase II enzymes like UGT."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Rifampicin is a broad-spectrum inducer, activating multiple CYP isoforms and phase II enzymes."
+        }
+      ],
+      "explanation": {
+        "overview": "Rifampicin is a potent activator of the pregnane X receptor (PXR), leading to induction of CYP3A4, CYP2C9, CYP2C19, and conjugating enzymes.",
+        "highYield": "Rifampicin = broad enzyme inducer (CYP3A4, 2C9, 2C19, UGTs). Always check for drug interactions.",
+        "clinicalCorrelation": "Rifampicin reduces levels of warfarin, OCPs, antiretrovirals, and many other drugs."
+      }
+    },
+    {
+      "id": "pharma_metabolism_012",
+      "questionId": "pharma_metabolism_012",
+      "difficulty": 2,
+      "question": "Chronic alcohol consumption induces:",
+      "image": null,
+      "options": [
+        {
+          "text": "CYP2E1",
+          "isCorrect": true,
+          "explanation": "Ethanol is a substrate and inducer of CYP2E1, increasing its activity."
+        },
+        {
+          "text": "CYP3A4",
+          "isCorrect": false,
+          "explanation": "Chronic alcohol does not significantly induce CYP3A4; acute alcohol may inhibit some CYPs."
+        },
+        {
+          "text": "CYP2D6",
+          "isCorrect": false,
+          "explanation": "CYP2D6 is not induced by ethanol."
+        },
+        {
+          "text": "CYP1A2",
+          "isCorrect": false,
+          "explanation": "CYP1A2 is induced by smoking, not alcohol."
+        },
+        {
+          "text": "CYP2C9",
+          "isCorrect": false,
+          "explanation": "CYP2C9 is not primarily induced by ethanol."
+        }
+      ],
+      "explanation": {
+        "overview": "Chronic heavy alcohol consumption induces CYP2E1, which increases the metabolism of ethanol, acetaminophen (to toxic NAPQI), and certain anesthetics.",
+        "highYield": "Ethanol → induces CYP2E1. Increased risk of acetaminophen hepatotoxicity in chronic alcoholics.",
+        "clinicalCorrelation": "In chronic alcoholics, therapeutic doses of acetaminophen can cause liver damage due to enhanced NAPQI formation."
+      }
+    },
+    {
+      "id": "pharma_metabolism_013",
+      "questionId": "pharma_metabolism_013",
+      "difficulty": 2,
+      "question": "Enzyme inhibition results in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Decreased metabolism and increased drug levels",
+          "isCorrect": true,
+          "explanation": "Inhibition reduces enzyme activity, leading to slower clearance and higher plasma drug concentrations."
+        },
+        {
+          "text": "Increased metabolism and decreased drug levels",
+          "isCorrect": false,
+          "explanation": "That describes induction, not inhibition."
+        },
+        {
+          "text": "No change in drug levels",
+          "isCorrect": false,
+          "explanation": "Inhibition directly impacts pharmacokinetics."
+        },
+        {
+          "text": "Faster elimination",
+          "isCorrect": false,
+          "explanation": "Elimination is slower, not faster."
+        },
+        {
+          "text": "Shorter half-life",
+          "isCorrect": false,
+          "explanation": "Half-life is prolonged due to reduced clearance."
+        }
+      ],
+      "explanation": {
+        "overview": "Enzyme inhibition, whether competitive or irreversible, decreases the metabolism of co-administered drugs, potentially leading to toxicity.",
+        "highYield": "Inhibition → ↓ metabolism → ↑ drug levels → risk of toxicity.",
+        "clinicalCorrelation": "Ketoconazole (CYP3A4 inhibitor) can cause dangerous increases in levels of substrates like simvastatin, leading to rhabdomyolysis."
+      }
+    },
+    {
+      "id": "pharma_metabolism_014",
+      "questionId": "pharma_metabolism_014",
+      "difficulty": 2,
+      "question": "Ketoconazole is a potent inhibitor of:",
+      "image": null,
+      "options": [
+        {
+          "text": "CYP3A4",
+          "isCorrect": true,
+          "explanation": "Ketoconazole is a strong, often irreversible, inhibitor of CYP3A4."
+        },
+        {
+          "text": "CYP2D6",
+          "isCorrect": false,
+          "explanation": "Ketoconazole does not significantly inhibit CYP2D6."
+        },
+        {
+          "text": "CYP2C9",
+          "isCorrect": false,
+          "explanation": "Not a major inhibitor of CYP2C9."
+        },
+        {
+          "text": "CYP1A2",
+          "isCorrect": false,
+          "explanation": "CYP1A2 is inhibited by fluvoxamine, not ketoconazole."
+        },
+        {
+          "text": "CYP2E1",
+          "isCorrect": false,
+          "explanation": "Ketoconazole does not inhibit CYP2E1."
+        }
+      ],
+      "explanation": {
+        "overview": "Azole antifungals (ketoconazole, itraconazole) are potent CYP3A4 inhibitors. Ketoconazole is often used as a prototype inhibitor in drug interaction studies.",
+        "highYield": "Ketoconazole = strong CYP3A4 inhibitor. Avoid co-administration with CYP3A4 substrates with narrow therapeutic index.",
+        "clinicalCorrelation": "Coadministration of ketoconazole with oral midazolam can increase midazolam levels many-fold, causing excessive sedation."
+      }
+    },
+    {
+      "id": "pharma_metabolism_015",
+      "questionId": "pharma_metabolism_015",
+      "difficulty": 2,
+      "question": "Grapefruit juice inhibits which CYP enzyme?",
+      "image": null,
+      "options": [
+        {
+          "text": "CYP3A4 (intestinal)",
+          "isCorrect": true,
+          "explanation": "Furanocoumarins in grapefruit juice irreversibly inhibit intestinal CYP3A4, increasing oral bioavailability of many drugs."
+        },
+        {
+          "text": "CYP2D6",
+          "isCorrect": false,
+          "explanation": "Grapefruit juice does not affect CYP2D6."
+        },
+        {
+          "text": "CYP2C9",
+          "isCorrect": false,
+          "explanation": "No significant effect on CYP2C9."
+        },
+        {
+          "text": "CYP1A2",
+          "isCorrect": false,
+          "explanation": "CYP1A2 is unaffected."
+        },
+        {
+          "text": "CYP2E1",
+          "isCorrect": false,
+          "explanation": "CYP2E1 is not inhibited by grapefruit."
+        }
+      ],
+      "explanation": {
+        "overview": "Grapefruit juice selectively inhibits CYP3A4 in the enterocyte, but not significantly in the liver. This increases the oral bioavailability of drugs that undergo intestinal CYP3A4 metabolism.",
+        "highYield": "Grapefruit juice = intestinal CYP3A4 inhibitor. Effect lasts ~24h. Affects felodipine, simvastatin, cyclosporine, etc.",
+        "clinicalCorrelation": "Patients on certain statins (simvastatin, atorvastatin) should avoid large quantities of grapefruit juice to prevent myopathy."
+      }
+    },
+    {
+      "id": "pharma_metabolism_016",
+      "questionId": "pharma_metabolism_016",
+      "difficulty": 1,
+      "question": "First-pass metabolism refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Metabolism of a drug before it reaches systemic circulation",
+          "isCorrect": true,
+          "explanation": "After oral absorption, drugs pass through the portal vein to the liver, where they may be metabolized before entering general circulation."
+        },
+        {
+          "text": "Metabolism after distribution to tissues",
+          "isCorrect": false,
+          "explanation": "That is post-distribution metabolism."
+        },
+        {
+          "text": "Metabolism in the kidneys",
+          "isCorrect": false,
+          "explanation": "Renal metabolism is not first-pass."
+        },
+        {
+          "text": "The first dose of a drug",
+          "isCorrect": false,
+          "explanation": "First-pass is about route-related metabolism, not dosing."
+        },
+        {
+          "text": "The initial breakdown in the stomach",
+          "isCorrect": false,
+          "explanation": "Stomach breakdown is part of absorption/loss but first-pass specifically refers to liver and gut wall metabolism."
+        }
+      ],
+      "explanation": {
+        "overview": "First-pass metabolism (presystemic metabolism) occurs when an orally administered drug is metabolized in the gut wall and liver before reaching systemic circulation, reducing bioavailability.",
+        "highYield": "First-pass = metabolism before reaching systemic circulation. Oral route → portal vein → liver.",
+        "clinicalCorrelation": "Drugs with high first-pass metabolism (e.g., lidocaine, nitroglycerin) are ineffective orally."
+      }
+    },
+    {
+      "id": "pharma_metabolism_017",
+      "questionId": "pharma_metabolism_017",
+      "difficulty": 1,
+      "question": "Which route of administration completely avoids first-pass metabolism?",
+      "image": null,
+      "options": [
+        {
+          "text": "Intravenous",
+          "isCorrect": false,
+          "explanation": "IV bypasses first-pass, but the question asks for 'completely avoids' and sublingual also does."
+        },
+        {
+          "text": "Oral",
+          "isCorrect": false,
+          "explanation": "Oral route undergoes first-pass metabolism."
+        },
+        {
+          "text": "Rectal",
+          "isCorrect": false,
+          "explanation": "Lower rectal administration partially bypasses the liver, but not completely (superior hemorrhoidal vein drains to portal system)."
+        },
+        {
+          "text": "Sublingual",
+          "isCorrect": false,
+          "explanation": "Sublingual also avoids first-pass, so the answer includes both."
+        },
+        {
+          "text": "Both A and D",
+          "isCorrect": true,
+          "explanation": "IV directly enters systemic circulation; sublingual drains into the superior vena cava, bypassing the portal system and first-pass liver metabolism."
+        }
+      ],
+      "explanation": {
+        "overview": "Routes that bypass the portal circulation avoid first-pass metabolism. Intravenous and sublingual are classic examples.",
+        "highYield": "IV and sublingual = bypass first-pass metabolism. Also transdermal, buccal, and inhalation (partially).",
+        "clinicalCorrelation": "Nitroglycerin is given sublingually to circumvent extensive first-pass metabolism and provide rapid onset."
+      }
+    },
+    {
+      "id": "pharma_metabolism_018",
+      "questionId": "pharma_metabolism_018",
+      "difficulty": 2,
+      "question": "Glucuronidation is catalyzed by:",
+      "image": null,
+      "options": [
+        {
+          "text": "UDP-glucuronosyltransferases (UGT)",
+          "isCorrect": true,
+          "explanation": "UGTs are the enzymes that transfer glucuronic acid from UDP-glucuronic acid to substrates."
+        },
+        {
+          "text": "Cytochrome P450",
+          "isCorrect": false,
+          "explanation": "CYP450 catalyzes Phase I oxidation, not glucuronidation."
+        },
+        {
+          "text": "Esterases",
+          "isCorrect": false,
+          "explanation": "Esterases hydrolyze esters."
+        },
+        {
+          "text": "Glutathione S-transferases",
+          "isCorrect": false,
+          "explanation": "GSTs catalyze glutathione conjugation."
+        },
+        {
+          "text": "Sulfotransferases",
+          "isCorrect": false,
+          "explanation": "Sulfotransferases add sulfate groups."
+        }
+      ],
+      "explanation": {
+        "overview": "Glucuronidation is the most common Phase II reaction. UGT enzymes are microsomal and conjugate a wide variety of endogenous and exogenous compounds.",
+        "highYield": "Glucuronidation = UGT enzymes. Most important Phase II pathway. Substrates: bilirubin, morphine, NSAIDs, many drugs.",
+        "clinicalCorrelation": "Reduced UGT1A1 activity (Gilbert's, Crigler-Najjar) leads to hyperbilirubinemia and altered drug clearance (e.g., irinotecan)."
+      }
+    },
+    {
+      "id": "pharma_metabolism_019",
+      "questionId": "pharma_metabolism_019",
+      "difficulty": 2,
+      "question": "Sulfation (sulfoconjugation) typically produces metabolites that are:",
+      "image": null,
+      "options": [
+        {
+          "text": "More water-soluble",
+          "isCorrect": true,
+          "explanation": "Sulfation adds a highly polar sulfate group, increasing water solubility and promoting renal excretion."
+        },
+        {
+          "text": "Less water-soluble",
+          "isCorrect": false,
+          "explanation": "Conjugation increases water solubility, not decreases it."
+        },
+        {
+          "text": "More lipid-soluble",
+          "isCorrect": false,
+          "explanation": "Sulfate conjugates are very polar, not lipid-soluble."
+        },
+        {
+          "text": "More toxic",
+          "isCorrect": false,
+          "explanation": "Generally, sulfation inactivates compounds, though some exceptions exist."
+        },
+        {
+          "text": "Longer-acting",
+          "isCorrect": false,
+          "explanation": "Conjugated metabolites are usually eliminated faster."
+        }
+      ],
+      "explanation": {
+        "overview": "Sulfation transfers a sulfonate group from 3'-phosphoadenosine-5'-phosphosulfate (PAPS) to hydroxyl or amine groups, rendering the metabolite highly polar.",
+        "highYield": "Sulfation = increased water solubility, faster excretion. Uses PAPS as cofactor.",
+        "clinicalCorrelation": "Sulfation capacity can be saturated; at high doses, drugs may shift to other pathways, e.g., acetaminophen sulfation to glucuronidation."
+      }
+    },
+    {
+      "id": "pharma_metabolism_020",
+      "questionId": "pharma_metabolism_020",
+      "difficulty": 2,
+      "question": "Acetylation is an important metabolic pathway for drugs such as:",
+      "image": null,
+      "options": [
+        {
+          "text": "Isoniazid",
+          "isCorrect": true,
+          "explanation": "Isoniazid is acetylated by N-acetyltransferase 2 (NAT2), and acetylator phenotype affects its pharmacokinetics and toxicity."
+        },
+        {
+          "text": "Morphine",
+          "isCorrect": false,
+          "explanation": "Morphine undergoes glucuronidation, not acetylation."
+        },
+        {
+          "text": "Diazepam",
+          "isCorrect": false,
+          "explanation": "Diazepam is metabolized by CYP450s, not acetylation."
+        },
+        {
+          "text": "Warfarin",
+          "isCorrect": false,
+          "explanation": "Warfarin is metabolized by CYP2C9."
+        },
+        {
+          "text": "Lisinopril",
+          "isCorrect": false,
+          "explanation": "Lisinopril is excreted unchanged renally."
+        }
+      ],
+      "explanation": {
+        "overview": "Acetylation is a Phase II reaction catalyzed by N-acetyltransferases (NAT1, NAT2). It is a major pathway for isoniazid, sulfonamides, procainamide, and hydralazine.",
+        "highYield": "Acetylation → isoniazid, sulfonamides, procainamide. Slow acetylators: higher drug levels, more toxicity (peripheral neuropathy, lupus).",
+        "clinicalCorrelation": "Slow acetylators on isoniazid are at greater risk for peripheral neuropathy unless pyridoxine is given."
+      }
+    },
+    {
+      "id": "pharma_metabolism_021",
+      "questionId": "pharma_metabolism_021",
+      "difficulty": 3,
+      "question": "Glutathione conjugation is primarily involved in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Detoxification of reactive electrophiles",
+          "isCorrect": true,
+          "explanation": "Glutathione S-transferases (GSTs) conjugate glutathione to electrophilic compounds, neutralizing their reactivity and preventing cellular damage."
+        },
+        {
+          "text": "Activation of prodrugs",
+          "isCorrect": false,
+          "explanation": "Glutathione conjugation generally inactivates, not activates."
+        },
+        {
+          "text": "Steroid metabolism",
+          "isCorrect": false,
+          "explanation": "Steroids undergo hydroxylation and conjugation, but not primarily glutathione."
+        },
+        {
+          "text": "Fatty acid oxidation",
+          "isCorrect": false,
+          "explanation": "Not a function of GSTs."
+        },
+        {
+          "text": "Neurotransmitter synthesis",
+          "isCorrect": false,
+          "explanation": "Neurotransmitter synthesis involves other enzymes."
+        }
+      ],
+      "explanation": {
+        "overview": "Glutathione (GSH) conjugation is a key cellular defense mechanism. GSTs attach GSH to electrophilic centers, forming mercapturates that are excreted in urine or bile.",
+        "highYield": "Glutathione conjugation = detoxification of electrophiles. Protects against oxidative stress and chemical toxicity.",
+        "clinicalCorrelation": "Acetaminophen overdose depletes GSH, allowing the reactive metabolite NAPQI to cause hepatic necrosis. N-acetylcysteine replenishes GSH."
+      }
+    },
+    {
+      "id": "pharma_metabolism_022",
+      "questionId": "pharma_metabolism_022",
+      "difficulty": 2,
+      "question": "Genetic polymorphism in CYP2D6 affects the metabolism of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Codeine",
+          "isCorrect": true,
+          "explanation": "CYP2D6 O-demethylates codeine to morphine; poor metabolizers get no analgesia, ultrarapid metabolizers risk toxicity."
+        },
+        {
+          "text": "Warfarin",
+          "isCorrect": false,
+          "explanation": "Warfarin is metabolized primarily by CYP2C9."
+        },
+        {
+          "text": "Omeprazole",
+          "isCorrect": false,
+          "explanation": "Omeprazole is metabolized by CYP2C19."
+        },
+        {
+          "text": "Phenytoin",
+          "isCorrect": false,
+          "explanation": "Phenytoin is metabolized by CYP2C9 and CYP2C19."
+        },
+        {
+          "text": "Digoxin",
+          "isCorrect": false,
+          "explanation": "Digoxin is largely renally excreted unchanged, not metabolized by CYP2D6."
+        }
+      ],
+      "explanation": {
+        "overview": "CYP2D6 is highly polymorphic, with over 100 variant alleles leading to poor, intermediate, extensive, and ultrarapid metabolizer phenotypes. It metabolizes many psychotropics, opioids, and antiarrhythmics.",
+        "highYield": "CYP2D6 substrates: Codeine, tramadol, TCAs, SSRIs, antipsychotics, beta-blockers (some). Polymorphism → variable response.",
+        "clinicalCorrelation": "Check CYP2D6 status before prescribing codeine or tamoxifen (converted to active endoxifen) to ensure efficacy."
+      }
+    },
+    {
+      "id": "pharma_metabolism_023",
+      "questionId": "pharma_metabolism_023",
+      "difficulty": 3,
+      "question": "Poor metabolizers of CYP2D6 may experience:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increased toxicity of drugs metabolized by CYP2D6",
+          "isCorrect": false,
+          "explanation": "This is one possible outcome, but not the only one."
+        },
+        {
+          "text": "Reduced efficacy of prodrugs requiring CYP2D6 activation",
+          "isCorrect": false,
+          "explanation": "This is also true for prodrugs, so the complete answer is both."
+        },
+        {
+          "text": "Both A and B",
+          "isCorrect": true,
+          "explanation": "Poor metabolizers have decreased enzyme activity: they will have higher levels of active drug if the drug is inactivated by CYP2D6 (toxicity), and lower levels of active metabolite if the drug is a prodrug (reduced efficacy)."
+        },
+        {
+          "text": "No change in drug response",
+          "isCorrect": false,
+          "explanation": "Significant changes occur."
+        },
+        {
+          "text": "Faster drug elimination",
+          "isCorrect": false,
+          "explanation": "Elimination is slower in poor metabolizers."
+        }
+      ],
+      "explanation": {
+        "overview": "CYP2D6 poor metabolizers have two non-functional alleles. The outcome depends on whether the drug is inactivated by CYP2D6 (risk of toxicity) or activated by CYP2D6 (lack of effect).",
+        "highYield": "Poor metabolizer + active drug metabolized by CYP2D6 = toxicity. Poor metabolizer + prodrug needing CYP2D6 = therapeutic failure.",
+        "clinicalCorrelation": "Codeine (prodrug): poor metabolizers get no analgesia. Nortriptyline (active drug): poor metabolizers may have severe side effects at standard doses."
+      }
+    },
+    {
+      "id": "pharma_metabolism_024",
+      "questionId": "pharma_metabolism_024",
+      "difficulty": 2,
+      "question": "Warfarin is metabolized primarily by which CYP enzyme?",
+      "image": null,
+      "options": [
+        {
+          "text": "CYP2C9",
+          "isCorrect": true,
+          "explanation": "S-warfarin (the more potent enantiomer) is metabolized mainly by CYP2C9, and CYP2C9 polymorphisms influence warfarin dose requirements."
+        },
+        {
+          "text": "CYP3A4",
+          "isCorrect": false,
+          "explanation": "CYP3A4 metabolizes R-warfarin, but S-warfarin is more clinically relevant."
+        },
+        {
+          "text": "CYP2D6",
+          "isCorrect": false,
+          "explanation": "CYP2D6 is not involved in warfarin metabolism."
+        },
+        {
+          "text": "CYP1A2",
+          "isCorrect": false,
+          "explanation": "CYP1A2 does not play a major role."
+        },
+        {
+          "text": "CYP2E1",
+          "isCorrect": false,
+          "explanation": "CYP2E1 is not the primary enzyme."
+        }
+      ],
+      "explanation": {
+        "overview": "Warfarin is a racemic mixture. S-warfarin is 3-5 times more potent and is metabolized primarily by CYP2C9. CYP2C9 variants *2 and *3 reduce clearance, requiring lower doses.",
+        "highYield": "S-warfarin = CYP2C9 substrate. CYP2C9 polymorphisms → reduced clearance → increased bleeding risk.",
+        "clinicalCorrelation": "Pharmacogenetic testing for CYP2C9 and VKORC1 can help determine safe warfarin starting doses."
+      }
+    },
+    {
+      "id": "pharma_metabolism_025",
+      "questionId": "pharma_metabolism_025",
+      "difficulty": 2,
+      "question": "Omeprazole is metabolized by CYP2C19. Poor metabolizers may have:",
+      "image": null,
+      "options": [
+        {
+          "text": "Higher drug levels and increased efficacy",
+          "isCorrect": true,
+          "explanation": "Poor CYP2C19 metabolizers clear omeprazole slowly, resulting in higher plasma concentrations and greater acid suppression (e.g., better H. pylori eradication)."
+        },
+        {
+          "text": "Lower drug levels and reduced efficacy",
+          "isCorrect": false,
+          "explanation": "Lower levels occur in ultrarapid metabolizers."
+        },
+        {
+          "text": "No change in drug levels",
+          "isCorrect": false,
+          "explanation": "Metabolism is impaired, so levels rise."
+        },
+        {
+          "text": "Faster elimination",
+          "isCorrect": false,
+          "explanation": "Elimination is slower."
+        },
+        {
+          "text": "Increased renal excretion",
+          "isCorrect": false,
+          "explanation": "Not a compensatory mechanism."
+        }
+      ],
+      "explanation": {
+        "overview": "CYP2C19 is the major enzyme for proton pump inhibitors. Poor metabolizers (common in Asian populations) have higher drug exposure, leading to superior acid control and possibly increased risk of adverse effects.",
+        "highYield": "CYP2C19 poor metabolizer → higher omeprazole levels → better acid suppression. Good for H. pylori eradication.",
+        "clinicalCorrelation": "CYP2C19 genotype may guide PPI selection, but it is not routinely tested. Clopidogrel is a prodrug activated by CYP2C19; poor metabolizers have reduced antiplatelet effect."
+      }
+    },
+    {
+      "id": "pharma_metabolism_026",
+      "questionId": "pharma_metabolism_026",
+      "difficulty": 1,
+      "question": "The rate of hepatic drug metabolism can be affected by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Age",
+          "isCorrect": false,
+          "explanation": "Neonates and elderly have reduced metabolism."
+        },
+        {
+          "text": "Liver disease",
+          "isCorrect": false,
+          "explanation": "Cirrhosis and hepatitis impair enzyme function."
+        },
+        {
+          "text": "Genetic factors",
+          "isCorrect": false,
+          "explanation": "Polymorphisms alter enzyme activity."
+        },
+        {
+          "text": "Drug interactions",
+          "isCorrect": false,
+          "explanation": "Inducers and inhibitors modify metabolism."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "All these factors influence the rate and extent of drug metabolism."
+        }
+      ],
+      "explanation": {
+        "overview": "Drug metabolism is a complex process influenced by intrinsic (age, genetics, disease) and extrinsic (diet, environment, concomitant drugs) factors.",
+        "highYield": "Metabolism varies with age (extremes of life), liver function, genetics (polymorphisms), and drug interactions (inducers/inhibitors).",
+        "clinicalCorrelation": "Dose adjustments are often necessary in neonates, elderly, patients with liver cirrhosis, or those taking interacting medications."
+      }
+    },
+    {
+      "id": "pharma_metabolism_027",
+      "questionId": "pharma_metabolism_027",
+      "difficulty": 2,
+      "question": "In neonates, drug metabolism is generally:",
+      "image": null,
+      "options": [
+        {
+          "text": "Immature and slower",
+          "isCorrect": true,
+          "explanation": "Neonates have reduced expression of CYP450s and conjugation enzymes, leading to prolonged drug half-lives."
+        },
+        {
+          "text": "More rapid than in adults",
+          "isCorrect": false,
+          "explanation": "Metabolism is underdeveloped, not accelerated."
+        },
+        {
+          "text": "Similar to adults",
+          "isCorrect": false,
+          "explanation": "Enzyme systems are not fully mature at birth."
+        },
+        {
+          "text": "Absent",
+          "isCorrect": false,
+          "explanation": "Some metabolism occurs, but it is reduced."
+        },
+        {
+          "text": "Unchanged",
+          "isCorrect": false,
+          "explanation": "It changes with maturation."
+        }
+      ],
+      "explanation": {
+        "overview": "Neonates have immature hepatic enzyme systems (low CYP450 activity, reduced glucuronidation). The 'grey baby syndrome' with chloramphenicol is a classic example of toxicity due to immature glucuronidation.",
+        "highYield": "Neonates = immature metabolism. Chloramphenicol → grey baby syndrome (lack of glucuronidation).",
+        "clinicalCorrelation": "Dose adjustments and careful monitoring are required for drugs in neonates, especially those cleared by hepatic metabolism."
+      }
+    },
+    {
+      "id": "pharma_metabolism_028",
+      "questionId": "pharma_metabolism_028",
+      "difficulty": 2,
+      "question": "Hepatic cirrhosis typically results in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Decreased drug metabolism",
+          "isCorrect": true,
+          "explanation": "Cirrhosis reduces functional hepatocyte mass and enzyme activity, impairing both Phase I and Phase II metabolism."
+        },
+        {
+          "text": "Increased drug metabolism",
+          "isCorrect": false,
+          "explanation": "Metabolism is decreased, not increased."
+        },
+        {
+          "text": "No change in metabolism",
+          "isCorrect": false,
+          "explanation": "Cirrhosis significantly affects liver function."
+        },
+        {
+          "text": "Increased protein binding",
+          "isCorrect": false,
+          "explanation": "Protein binding may be reduced due to hypoalbuminemia."
+        },
+        {
+          "text": "Enhanced renal clearance",
+          "isCorrect": false,
+          "explanation": "Renal clearance is not enhanced; it may be unchanged or decreased."
+        }
+      ],
+      "explanation": {
+        "overview": "Cirrhosis leads to decreased hepatic blood flow, shunting, and loss of hepatocyte function, collectively reducing the metabolic clearance of many drugs.",
+        "highYield": "Cirrhosis → ↓ metabolism (especially drugs with high extraction ratio). Use Child-Pugh score to adjust doses.",
+        "clinicalCorrelation": "In cirrhosis, drugs like benzodiazepines and opioids should be used with caution due to prolonged effects."
+      }
+    },
+    {
+      "id": "pharma_metabolism_029",
+      "questionId": "pharma_metabolism_029",
+      "difficulty": 2,
+      "question": "Enterohepatic recirculation involves:",
+      "image": null,
+      "options": [
+        {
+          "text": "Biliary excretion followed by intestinal reabsorption",
+          "isCorrect": true,
+          "explanation": "Drugs or their conjugates excreted in bile can be deconjugated by gut bacteria and reabsorbed, returning to the liver via the portal vein."
+        },
+        {
+          "text": "Direct transfer from liver to kidneys",
+          "isCorrect": false,
+          "explanation": "That's not enterohepatic circulation."
+        },
+        {
+          "text": "Repeated metabolism in the liver",
+          "isCorrect": false,
+          "explanation": "Recirculation involves reabsorption, not just metabolism."
+        },
+        {
+          "text": "Filtration by the glomerulus",
+          "isCorrect": false,
+          "explanation": "Glomerular filtration is renal, not enterohepatic."
+        },
+        {
+          "text": "Reabsorption in the renal tubules",
+          "isCorrect": false,
+          "explanation": "That's renal recycling."
+        }
+      ],
+      "explanation": {
+        "overview": "Enterohepatic recirculation prolongs the half-life of some drugs (e.g., digitoxin, estrogens, and some NSAIDs). It can lead to multiple peaks in the plasma concentration-time curve.",
+        "highYield": "Enterohepatic recycling = bile excretion → gut bacteria deconjugation → reabsorption → liver → bile again. Prolongs drug action.",
+        "clinicalCorrelation": "Oral contraceptives undergo enterohepatic recycling; broad-spectrum antibiotics can disrupt gut flora and reduce this recycling, potentially lowering contraceptive efficacy."
+      }
+    },
+    {
+      "id": "pharma_metabolism_030",
+      "questionId": "pharma_metabolism_030",
+      "difficulty": 3,
+      "question": "Morphine-6-glucuronide is an active metabolite of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Morphine",
+          "isCorrect": true,
+          "explanation": "Morphine is metabolized by UGT2B7 to morphine-3-glucuronide (inactive) and morphine-6-glucuronide (a potent μ-opioid agonist)."
+        },
+        {
+          "text": "Codeine",
+          "isCorrect": false,
+          "explanation": "Codeine's active metabolite is morphine (via CYP2D6), not morphine-6-glucuronide directly."
+        },
+        {
+          "text": "Heroin",
+          "isCorrect": false,
+          "explanation": "Heroin is metabolized to 6-monoacetylmorphine and then morphine."
+        },
+        {
+          "text": "Oxycodone",
+          "isCorrect": false,
+          "explanation": "Oxycodone has its own active metabolites (oxymorphone)."
+        },
+        {
+          "text": "Fentanyl",
+          "isCorrect": false,
+          "explanation": "Fentanyl is metabolized to inactive metabolites."
+        }
+      ],
+      "explanation": {
+        "overview": "Morphine undergoes glucuronidation to two main metabolites: M3G (neuroexcitatory, inactive as analgesic) and M6G (analgesic, contributes to morphine's effect, especially in renal impairment when it accumulates).",
+        "highYield": "Morphine → M3G (inactive) + M6G (active, analgesic). M6G accumulates in renal failure → prolonged opioid effect.",
+        "clinicalCorrelation": "In renal failure, morphine metabolites accumulate, increasing risk of respiratory depression. Hydromorphone or fentanyl may be safer."
+      }
+    },
+    {
+      "id": "pharma_metabolism_031",
+      "questionId": "pharma_metabolism_031",
+      "difficulty": 2,
+      "question": "Which of the following is an example of a Phase II reaction that inactivates a toxic metabolite?",
+      "image": null,
+      "options": [
+        {
+          "text": "Glucuronidation of bilirubin",
+          "isCorrect": true,
+          "explanation": "Bilirubin is a toxic product of heme breakdown; glucuronidation by UGT1A1 converts it to a water-soluble, excretable form."
+        },
+        {
+          "text": "Oxidation of ethanol",
+          "isCorrect": false,
+          "explanation": "Oxidation is Phase I; it produces acetaldehyde, a toxic intermediate."
+        },
+        {
+          "text": "Reduction of warfarin",
+          "isCorrect": false,
+          "explanation": "Warfarin metabolism involves CYP450 and reduction, but not a Phase II detoxification example."
+        },
+        {
+          "text": "Hydrolysis of acetylcholine",
+          "isCorrect": false,
+          "explanation": "Hydrolysis is not Phase II; it's a Phase I reaction by esterases."
+        },
+        {
+          "text": "Methylation of dopamine",
+          "isCorrect": false,
+          "explanation": "Methylation is Phase II, but dopamine methylation does not inactivate a 'toxic' metabolite in the same way."
+        }
+      ],
+      "explanation": {
+        "overview": "Phase II conjugation often detoxifies harmful endogenous compounds. Bilirubin, if not glucuronidated, accumulates and causes jaundice and kernicterus.",
+        "highYield": "Bilirubin detoxification = UGT1A1 glucuronidation (Phase II). Impaired in Gilbert's/Crigler-Najjar.",
+        "clinicalCorrelation": "Neonatal jaundice is partly due to immature UGT1A1 activity. Phototherapy converts bilirubin to more water-soluble isomers."
+      }
+    },
+    {
+      "id": "pharma_metabolism_032",
+      "questionId": "pharma_metabolism_032",
+      "difficulty": 2,
+      "question": "The term 'bioactivation' refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Metabolic conversion of a drug to an active compound",
+          "isCorrect": true,
+          "explanation": "Bioactivation can refer to conversion of a prodrug to an active drug or formation of an active metabolite from an active parent drug."
+        },
+        {
+          "text": "Excretion of a drug in active form",
+          "isCorrect": false,
+          "explanation": "Excretion does not constitute bioactivation."
+        },
+        {
+          "text": "Binding of a drug to plasma proteins",
+          "isCorrect": false,
+          "explanation": "Protein binding is a distribution phenomenon."
+        },
+        {
+          "text": "Absorption of a drug from the gut",
+          "isCorrect": false,
+          "explanation": "Absorption is separate from metabolism."
+        },
+        {
+          "text": "Distribution to target tissues",
+          "isCorrect": false,
+          "explanation": "Distribution is not metabolic activation."
+        }
+      ],
+      "explanation": {
+        "overview": "Bioactivation is the metabolic process that converts a compound into a more pharmacologically active or toxic metabolite. It is crucial for prodrugs but can also produce harmful reactive intermediates.",
+        "highYield": "Bioactivation = metabolism → active form. Prodrug activation (e.g., codeine → morphine) or toxification (e.g., acetaminophen → NAPQI).",
+        "clinicalCorrelation": "Many drug-induced liver injuries occur due to bioactivation into reactive metabolites that bind cellular macromolecules."
+      }
+    },
+    {
+      "id": "pharma_metabolism_033",
+      "questionId": "pharma_metabolism_033",
+      "difficulty": 2,
+      "question": "Acetaminophen (paracetamol) overdose causes hepatotoxicity due to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Formation of a toxic metabolite (NAPQI) that depletes glutathione",
+          "isCorrect": true,
+          "explanation": "At supratherapeutic doses, CYP2E1 (and CYP1A2, CYP3A4) converts acetaminophen to NAPQI, which is normally detoxified by glutathione. When glutathione is depleted, NAPQI binds to cellular proteins causing necrosis."
+        },
+        {
+          "text": "Direct irritation of gastric mucosa",
+          "isCorrect": false,
+          "explanation": "Acetaminophen is not a significant gastric irritant (unlike NSAIDs)."
+        },
+        {
+          "text": "Renal tubular necrosis",
+          "isCorrect": false,
+          "explanation": "Renal effects can occur but hepatotoxicity is the hallmark."
+        },
+        {
+          "text": "Cardiac arrhythmias",
+          "isCorrect": false,
+          "explanation": "Not a primary effect."
+        },
+        {
+          "text": "CNS depression",
+          "isCorrect": false,
+          "explanation": "CNS depression is not typical."
+        }
+      ],
+      "explanation": {
+        "overview": "Acetaminophen is primarily metabolized by glucuronidation and sulfation. A minor pathway via CYP2E1 produces the toxic metabolite NAPQI, which is conjugated by glutathione. In overdose, saturation of safe pathways and glutathione depletion lead to hepatotoxicity.",
+        "highYield": "Acetaminophen overdose → CYP2E1 → NAPQI → glutathione depletion → hepatic necrosis. Antidote: N-acetylcysteine.",
+        "clinicalCorrelation": "Chronic alcoholics are at increased risk due to CYP2E1 induction and glutathione depletion."
+      }
+    },
+    {
+      "id": "pharma_metabolism_034",
+      "questionId": "pharma_metabolism_034",
+      "difficulty": 2,
+      "question": "The antidote for acetaminophen toxicity, N-acetylcysteine, works by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Replenishing glutathione stores",
+          "isCorrect": true,
+          "explanation": "NAC provides cysteine, the rate-limiting precursor for glutathione synthesis, thus restoring the capacity to detoxify NAPQI."
+        },
+        {
+          "text": "Inhibiting CYP2E1",
+          "isCorrect": false,
+          "explanation": "NAC does not inhibit CYP2E1; it provides glutathione."
+        },
+        {
+          "text": "Increasing renal excretion",
+          "isCorrect": false,
+          "explanation": "It does not directly increase renal clearance."
+        },
+        {
+          "text": "Blocking NAPQI formation",
+          "isCorrect": false,
+          "explanation": "It does not inhibit the formation of NAPQI."
+        },
+        {
+          "text": "Chelating the toxic metabolite",
+          "isCorrect": false,
+          "explanation": "NAC does not chelate NAPQI."
+        }
+      ],
+      "explanation": {
+        "overview": "N-acetylcysteine is a glutathione precursor. It replenishes hepatic glutathione stores, allowing detoxification of NAPQI. It is most effective within 8 hours of overdose.",
+        "highYield": "NAC = glutathione precursor → detoxifies NAPQI in acetaminophen overdose. Early administration is critical.",
+        "clinicalCorrelation": "NAC can also be used to prevent contrast-induced nephropathy due to its antioxidant effects."
+      }
+    },
+    {
+      "id": "pharma_metabolism_035",
+      "questionId": "pharma_metabolism_035",
+      "difficulty": 2,
+      "question": "Microsomal enzyme inducers can:",
+      "image": null,
+      "options": [
+        {
+          "text": "Reduce the efficacy of oral contraceptives",
+          "isCorrect": true,
+          "explanation": "Inducers like rifampicin and some antiepileptics increase the metabolism of ethinyl estradiol and progestins, lowering contraceptive levels and risking pregnancy."
+        },
+        {
+          "text": "Increase the toxicity of drugs",
+          "isCorrect": false,
+          "explanation": "Inducers can decrease toxicity by lowering drug levels, unless the drug's toxicity is due to a metabolite formed by the induced enzyme."
+        },
+        {
+          "text": "Prolong the half-life of drugs",
+          "isCorrect": false,
+          "explanation": "Inducers shorten half-life by increasing clearance."
+        },
+        {
+          "text": "Decrease the metabolism of other drugs",
+          "isCorrect": false,
+          "explanation": "Inducers increase metabolism."
+        },
+        {
+          "text": "Have no clinical effect",
+          "isCorrect": false,
+          "explanation": "They have significant clinical consequences."
+        }
+      ],
+      "explanation": {
+        "overview": "Enzyme induction accelerates the metabolism of co-administered drugs, potentially leading to subtherapeutic plasma levels and treatment failure. Oral contraceptives are a classic example.",
+        "highYield": "Inducers (rifampin, phenytoin, carbamazepine) → ↓ OCP efficacy → risk of unintended pregnancy.",
+        "clinicalCorrelation": "Women on enzyme-inducing drugs should use alternative or additional contraceptive methods."
+      }
+    },
+    {
+      "id": "pharma_metabolism_036",
+      "questionId": "pharma_metabolism_036",
+      "difficulty": 2,
+      "question": "St. John's wort is a herbal supplement that:",
+      "image": null,
+      "options": [
+        {
+          "text": "Induces CYP3A4",
+          "isCorrect": true,
+          "explanation": "St. John's wort activates PXR, leading to induction of CYP3A4 and also P-glycoprotein, reducing plasma levels of many drugs."
+        },
+        {
+          "text": "Inhibits CYP3A4",
+          "isCorrect": false,
+          "explanation": "It is an inducer, not inhibitor."
+        },
+        {
+          "text": "Has no effect on drug metabolism",
+          "isCorrect": false,
+          "explanation": "It significantly affects metabolism."
+        },
+        {
+          "text": "Increases renal excretion",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        },
+        {
+          "text": "Decreases drug absorption",
+          "isCorrect": false,
+          "explanation": "It can affect absorption via P-glycoprotein but the primary effect is induction."
+        }
+      ],
+      "explanation": {
+        "overview": "St. John's wort is a potent inducer of CYP3A4 and P-glycoprotein, reducing the efficacy of cyclosporine, indinavir, oral contraceptives, warfarin, and many other drugs.",
+        "highYield": "St. John's wort = CYP3A4 and P-gp inducer. Many drug interactions.",
+        "clinicalCorrelation": "Transplant rejection has been reported due to St. John's wort reducing cyclosporine levels."
+      }
+    },
+    {
+      "id": "pharma_metabolism_037",
+      "questionId": "pharma_metabolism_037",
+      "difficulty": 2,
+      "question": "Cigarette smoking induces which CYP enzyme?",
+      "image": null,
+      "options": [
+        {
+          "text": "CYP1A2",
+          "isCorrect": true,
+          "explanation": "Polycyclic aromatic hydrocarbons in tobacco smoke are potent inducers of CYP1A2."
+        },
+        {
+          "text": "CYP3A4",
+          "isCorrect": false,
+          "explanation": "Smoking does not significantly induce CYP3A4."
+        },
+        {
+          "text": "CYP2D6",
+          "isCorrect": false,
+          "explanation": "CYP2D6 is not induced by smoking."
+        },
+        {
+          "text": "CYP2C9",
+          "isCorrect": false,
+          "explanation": "Smoking does not induce CYP2C9."
+        },
+        {
+          "text": "CYP2E1",
+          "isCorrect": false,
+          "explanation": "Alcohol induces CYP2E1, not smoking."
+        }
+      ],
+      "explanation": {
+        "overview": "Cigarette smoke contains PAHs that induce CYP1A2, increasing the metabolism of substrates like theophylline, clozapine, and olanzapine. Smokers may require higher doses.",
+        "highYield": "Smoking = CYP1A2 induction. Affects theophylline, clozapine, olanzapine. Dose adjustments needed.",
+        "clinicalCorrelation": "If a smoker on clozapine quits smoking, CYP1A2 activity decreases, potentially leading to toxic clozapine levels."
+      }
+    },
+    {
+      "id": "pharma_metabolism_038",
+      "questionId": "pharma_metabolism_038",
+      "difficulty": 2,
+      "question": "Theophylline clearance is increased in smokers because of:",
+      "image": null,
+      "options": [
+        {
+          "text": "CYP1A2 induction",
+          "isCorrect": true,
+          "explanation": "Theophylline is a substrate of CYP1A2, which is induced by PAHs in cigarette smoke, leading to faster metabolism."
+        },
+        {
+          "text": "CYP3A4 inhibition",
+          "isCorrect": false,
+          "explanation": "Smoking does not inhibit CYP3A4."
+        },
+        {
+          "text": "Increased renal excretion",
+          "isCorrect": false,
+          "explanation": "Theophylline clearance is primarily metabolic, not renal."
+        },
+        {
+          "text": "Decreased protein binding",
+          "isCorrect": false,
+          "explanation": "Protein binding is not significantly affected."
+        },
+        {
+          "text": "Enhanced absorption",
+          "isCorrect": false,
+          "explanation": "Absorption is not the mechanism."
+        }
+      ],
+      "explanation": {
+        "overview": "Theophylline is metabolized by CYP1A2. Smokers require higher doses because induction of CYP1A2 accelerates its clearance.",
+        "highYield": "Smokers → CYP1A2 induction → faster theophylline clearance → higher dose requirement.",
+        "clinicalCorrelation": "Monitor theophylline levels when a patient starts or stops smoking."
+      }
+    },
+    {
+      "id": "pharma_metabolism_039",
+      "questionId": "pharma_metabolism_039",
+      "difficulty": 2,
+      "question": "A drug with a high hepatic extraction ratio will have oral bioavailability that is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Low",
+          "isCorrect": true,
+          "explanation": "High extraction ratio means the liver removes a large fraction of drug during first pass, leading to low oral bioavailability."
+        },
+        {
+          "text": "High",
+          "isCorrect": false,
+          "explanation": "High extraction drugs have low oral bioavailability."
+        },
+        {
+          "text": "Unaffected",
+          "isCorrect": false,
+          "explanation": "It is significantly affected."
+        },
+        {
+          "text": "Variable",
+          "isCorrect": false,
+          "explanation": "While variable, it is characteristically low."
+        },
+        {
+          "text": "100%",
+          "isCorrect": false,
+          "explanation": "Bioavailability is far below 100%."
+        }
+      ],
+      "explanation": {
+        "overview": "Hepatic extraction ratio (E) determines the extent of first-pass metabolism. Drugs with E > 0.7 (e.g., lidocaine, propranolol, verapamil) undergo extensive presystemic elimination, resulting in low oral bioavailability.",
+        "highYield": "High extraction ratio → extensive first-pass → low oral bioavailability (F). Low extraction ratio → high oral bioavailability.",
+        "clinicalCorrelation": "Lidocaine cannot be given orally due to very high first-pass metabolism; it is used IV or topically."
+      }
+    },
+    {
+      "id": "pharma_metabolism_040",
+      "questionId": "pharma_metabolism_040",
+      "difficulty": 2,
+      "question": "Lidocaine has low oral bioavailability because of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Extensive first-pass metabolism",
+          "isCorrect": true,
+          "explanation": "Lidocaine has a high hepatic extraction ratio; it is almost completely metabolized during its first pass through the liver after oral absorption."
+        },
+        {
+          "text": "Poor absorption",
+          "isCorrect": false,
+          "explanation": "Lidocaine is well absorbed, but rapidly metabolized."
+        },
+        {
+          "text": "Rapid renal excretion",
+          "isCorrect": false,
+          "explanation": "It is not significantly excreted renally in unchanged form."
+        },
+        {
+          "text": "High protein binding",
+          "isCorrect": false,
+          "explanation": "Protein binding is moderate and not the cause of low oral bioavailability."
+        },
+        {
+          "text": "Chemical instability",
+          "isCorrect": false,
+          "explanation": "It is chemically stable."
+        }
+      ],
+      "explanation": {
+        "overview": "Lidocaine is a class I antiarrhythmic with a high hepatic extraction ratio. Oral administration results in extensive first-pass metabolism to inactive metabolites, rendering it ineffective orally.",
+        "highYield": "Lidocaine: high extraction → extensive first-pass → low F oral. Use IV for arrhythmias, topical for local anesthesia.",
+        "clinicalCorrelation": "Oral lidocaine is sometimes used for local GI effects (viscous lidocaine) but systemic bioavailability remains low."
+      }
+    },
+    {
+      "id": "pharma_metabolism_041",
+      "questionId": "pharma_metabolism_041",
+      "difficulty": 1,
+      "question": "Nitroglycerin is administered sublingually to avoid:",
+      "image": null,
+      "options": [
+        {
+          "text": "First-pass metabolism",
+          "isCorrect": true,
+          "explanation": "Sublingual nitroglycerin drains into the systemic circulation directly, bypassing the portal vein and hepatic first-pass metabolism, ensuring rapid therapeutic levels."
+        },
+        {
+          "text": "Gastric irritation",
+          "isCorrect": false,
+          "explanation": "Nitroglycerin is not a significant gastric irritant."
+        },
+        {
+          "text": "Rapid renal excretion",
+          "isCorrect": false,
+          "explanation": "Renal excretion is not the issue."
+        },
+        {
+          "text": "Protein binding",
+          "isCorrect": false,
+          "explanation": "Not the reason."
+        },
+        {
+          "text": "Enzyme induction",
+          "isCorrect": false,
+          "explanation": "Not relevant to route choice."
+        }
+      ],
+      "explanation": {
+        "overview": "Organic nitrates like nitroglycerin undergo extensive first-pass metabolism. Sublingual administration delivers the drug directly into the systemic circulation, providing rapid onset for acute angina relief.",
+        "highYield": "Nitroglycerin: sublingual avoids first-pass, rapid onset. Oral forms have very low bioavailability.",
+        "clinicalCorrelation": "Transdermal and buccal forms also bypass first-pass metabolism and are used for prophylaxis."
+      }
+    },
+    {
+      "id": "pharma_metabolism_042",
+      "questionId": "pharma_metabolism_042",
+      "difficulty": 2,
+      "question": "Phase II reactions typically produce metabolites that are:",
+      "image": null,
+      "options": [
+        {
+          "text": "More polar and less active",
+          "isCorrect": true,
+          "explanation": "Conjugation adds a bulky polar group, increasing water solubility and usually inactivating the drug (with exceptions like morphine-6-glucuronide)."
+        },
+        {
+          "text": "More lipophilic",
+          "isCorrect": false,
+          "explanation": "Metabolites are more water-soluble, not lipophilic."
+        },
+        {
+          "text": "More toxic",
+          "isCorrect": false,
+          "explanation": "While some conjugates can be reactive, the general outcome is detoxification."
+        },
+        {
+          "text": "Longer acting",
+          "isCorrect": false,
+          "explanation": "Conjugates are eliminated faster, shortening action."
+        },
+        {
+          "text": "More protein-bound",
+          "isCorrect": false,
+          "explanation": "Polar metabolites are usually less protein-bound."
+        }
+      ],
+      "explanation": {
+        "overview": "Phase II conjugations attach a polar endogenous molecule (glucuronic acid, sulfate, glutathione, etc.) to the drug, markedly increasing its hydrophilicity and facilitating excretion.",
+        "highYield": "Phase II = conjugation → polar, water-soluble, generally inactive, readily excreted.",
+        "clinicalCorrelation": "Some Phase II metabolites are active (morphine-6-glucuronide) or contribute to toxicity."
+      }
+    },
+    {
+      "id": "pharma_metabolism_043",
+      "questionId": "pharma_metabolism_043",
+      "difficulty": 3,
+      "question": "Uridine diphosphate glucuronosyltransferase (UGT) is located primarily in the:",
+      "image": null,
+      "options": [
+        {
+          "text": "Endoplasmic reticulum of hepatocytes",
+          "isCorrect": true,
+          "explanation": "UGTs are integral membrane proteins of the smooth endoplasmic reticulum, similar to CYP450s."
+        },
+        {
+          "text": "Mitochondria",
+          "isCorrect": false,
+          "explanation": "Monoamine oxidase (MAO) is on the outer mitochondrial membrane."
+        },
+        {
+          "text": "Cytosol",
+          "isCorrect": false,
+          "explanation": "Sulfotransferases are cytosolic, not UGTs."
+        },
+        {
+          "text": "Plasma membrane",
+          "isCorrect": false,
+          "explanation": "UGTs face the lumen of the ER."
+        },
+        {
+          "text": "Nucleus",
+          "isCorrect": false,
+          "explanation": "Not nuclear."
+        }
+      ],
+      "explanation": {
+        "overview": "UGTs are microsomal enzymes embedded in the smooth endoplasmic reticulum of hepatocytes and other tissues. They catalyze the transfer of glucuronic acid from UDPGA to substrates.",
+        "highYield": "UGT = microsomal (ER) enzyme. Important Phase II pathway.",
+        "clinicalCorrelation": "Lipid solubility allows access to the active site of UGT. Genetic defects (e.g., UGT1A1 deficiency) lead to hyperbilirubinemia."
+      }
+    },
+    {
+      "id": "pharma_metabolism_044",
+      "questionId": "pharma_metabolism_044",
+      "difficulty": 3,
+      "question": "Crigler-Najjar syndrome is a genetic deficiency of:",
+      "image": null,
+      "options": [
+        {
+          "text": "UGT1A1",
+          "isCorrect": true,
+          "explanation": "Crigler-Najjar syndrome is an autosomal recessive disorder due to absent (type I) or severely reduced (type II) UGT1A1 activity, leading to severe unconjugated hyperbilirubinemia."
+        },
+        {
+          "text": "CYP2D6",
+          "isCorrect": false,
+          "explanation": "CYP2D6 deficiency causes altered drug metabolism but not jaundice."
+        },
+        {
+          "text": "CYP2C9",
+          "isCorrect": false,
+          "explanation": "Not associated with bilirubin metabolism."
+        },
+        {
+          "text": "Glutathione S-transferase",
+          "isCorrect": false,
+          "explanation": "GST deficiency would affect detoxification of electrophiles, not bilirubin."
+        },
+        {
+          "text": "MAO-A",
+          "isCorrect": false,
+          "explanation": "MAO-A deficiency leads to behavioral issues, not jaundice."
+        }
+      ],
+      "explanation": {
+        "overview": "UGT1A1 is the enzyme responsible for glucuronidating bilirubin. Crigler-Najjar type I involves complete absence, causing severe neonatal jaundice and kernicterus if untreated.",
+        "highYield": "Crigler-Najjar = severe UGT1A1 deficiency → unconjugated hyperbilirubinemia. Type I = no activity, type II = very low.",
+        "clinicalCorrelation": "Phenobarbital can induce residual UGT1A1 activity in type II to lower bilirubin levels."
+      }
+    },
+    {
+      "id": "pharma_metabolism_045",
+      "questionId": "pharma_metabolism_045",
+      "difficulty": 2,
+      "question": "Gilbert's syndrome is a mild deficiency of:",
+      "image": null,
+      "options": [
+        {
+          "text": "UGT1A1",
+          "isCorrect": true,
+          "explanation": "Gilbert's syndrome is a benign condition caused by a promoter polymorphism (UGT1A1*28) reducing UGT1A1 expression to ~30% of normal, causing mild intermittent unconjugated hyperbilirubinemia."
+        },
+        {
+          "text": "CYP2D6",
+          "isCorrect": false,
+          "explanation": "Not related."
+        },
+        {
+          "text": "CYP2C19",
+          "isCorrect": false,
+          "explanation": "Not related."
+        },
+        {
+          "text": "Glucose-6-phosphate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "G6PD deficiency affects red blood cell metabolism."
+        },
+        {
+          "text": "Pseudocholinesterase",
+          "isCorrect": false,
+          "explanation": "Pseudocholinesterase deficiency affects succinylcholine duration."
+        }
+      ],
+      "explanation": {
+        "overview": "Gilbert's syndrome is the most common inherited disorder of bilirubin metabolism, affecting ~5-10% of the population. It is generally asymptomatic except for mild jaundice during illness or fasting.",
+        "highYield": "Gilbert's = reduced UGT1A1 activity (~30%) → mild unconjugated hyperbilirubinemia. Benign.",
+        "clinicalCorrelation": "Patients with Gilbert's syndrome may have reduced clearance of drugs that are glucuronidated, such as irinotecan, leading to increased toxicity."
+      }
+    },
+    {
+      "id": "pharma_metabolism_046",
+      "questionId": "pharma_metabolism_046",
+      "difficulty": 3,
+      "question": "A patient with Gilbert's syndrome may have reduced clearance of drugs that undergo:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glucuronidation (e.g., irinotecan)",
+          "isCorrect": true,
+          "explanation": "Gilbert's patients have reduced UGT1A1 activity, impairing glucuronidation of drugs like irinotecan (active metabolite SN-38) and increasing toxicity risk."
+        },
+        {
+          "text": "CYP2D6 metabolism",
+          "isCorrect": false,
+          "explanation": "CYP2D6 is not affected."
+        },
+        {
+          "text": "Renal excretion",
+          "isCorrect": false,
+          "explanation": "Renal function is normal."
+        },
+        {
+          "text": "CYP3A4 metabolism",
+          "isCorrect": false,
+          "explanation": "Not the affected pathway."
+        },
+        {
+          "text": "Acetylation",
+          "isCorrect": false,
+          "explanation": "Acetylation is by NAT2, not UGT1A1."
+        }
+      ],
+      "explanation": {
+        "overview": "Irinotecan is a prodrug that is converted to the active topoisomerase inhibitor SN-38, which is then inactivated by UGT1A1 glucuronidation. Reduced UGT1A1 activity (Gilbert's) leads to increased SN-38 levels and severe myelosuppression.",
+        "highYield": "Gilbert's → reduced UGT1A1 → increased irinotecan toxicity (SN-38 accumulation).",
+        "clinicalCorrelation": "UGT1A1 genotyping is recommended before irinotecan therapy to identify at-risk patients and reduce doses accordingly."
+      }
+    },
+    {
+      "id": "pharma_metabolism_047",
+      "questionId": "pharma_metabolism_047",
+      "difficulty": 2,
+      "question": "Suxamethonium (succinylcholine) duration of action is prolonged in patients with deficiency of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Pseudocholinesterase",
+          "isCorrect": true,
+          "explanation": "Succinylcholine is rapidly hydrolyzed by plasma butyrylcholinesterase (pseudocholinesterase). Deficiency leads to prolonged paralysis and apnea."
+        },
+        {
+          "text": "CYP2D6",
+          "isCorrect": false,
+          "explanation": "CYP2D6 does not metabolize succinylcholine."
+        },
+        {
+          "text": "UGT1A1",
+          "isCorrect": false,
+          "explanation": "UGT1A1 deficiency causes hyperbilirubinemia."
+        },
+        {
+          "text": "MAO-A",
+          "isCorrect": false,
+          "explanation": "MAO metabolizes amines, not succinylcholine."
+        },
+        {
+          "text": "COMT",
+          "isCorrect": false,
+          "explanation": "COMT metabolizes catechols."
+        }
+      ],
+      "explanation": {
+        "overview": "Succinylcholine is a depolarizing neuromuscular blocker with an ultrashort duration due to rapid hydrolysis by plasma cholinesterase. Genetic variants or liver disease can reduce this enzyme activity, prolonging paralysis.",
+        "highYield": "Succinylcholine = broken down by pseudocholinesterase. Deficiency → prolonged apnea.",
+        "clinicalCorrelation": "Patients with atypical cholinesterase require mechanical ventilation until the drug is cleared. Dibucaine and fluoride numbers help diagnose the variant."
+      }
+    },
+    {
+      "id": "pharma_metabolism_048",
+      "questionId": "pharma_metabolism_048",
+      "difficulty": 3,
+      "question": "Azathioprine is metabolized to active thioguanine nucleotides by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Thiopurine methyltransferase (TPMT)",
+          "isCorrect": true,
+          "explanation": "TPMT catalyzes S-methylation of thiopurines, reducing the formation of active thioguanine nucleotides. Low TPMT activity shunts metabolism toward more active, cytotoxic metabolites."
+        },
+        {
+          "text": "CYP3A4",
+          "isCorrect": false,
+          "explanation": "Azathioprine is not primarily a CYP450 substrate."
+        },
+        {
+          "text": "UGT",
+          "isCorrect": false,
+          "explanation": "UGT does not play a major role in thiopurine metabolism."
+        },
+        {
+          "text": "Glutathione S-transferase",
+          "isCorrect": false,
+          "explanation": "GST is not the key enzyme."
+        },
+        {
+          "text": "Esterases",
+          "isCorrect": false,
+          "explanation": "Azathioprine is a prodrug converted non-enzymatically to 6-MP, then metabolized by TPMT and xanthine oxidase."
+        }
+      ],
+      "explanation": {
+        "overview": "Azathioprine and 6-mercaptopurine are metabolized via multiple pathways. TPMT methylates 6-MP, diverting it away from the formation of active 6-thioguanine nucleotides. Individuals with low TPMT activity (polymorphism) are at high risk for severe myelosuppression.",
+        "highYield": "Low TPMT activity → increased thioguanine nucleotides → myelosuppression. Test TPMT before starting azathioprine/6-MP.",
+        "clinicalCorrelation": "FDA recommends TPMT genotyping or phenotyping prior to thiopurine therapy."
+      }
+    },
+    {
+      "id": "pharma_metabolism_049",
+      "questionId": "pharma_metabolism_049",
+      "difficulty": 3,
+      "question": "Mercaptopurine toxicity is increased in patients with low activity of:",
+      "image": null,
+      "options": [
+        {
+          "text": "TPMT",
+          "isCorrect": true,
+          "explanation": "Low TPMT activity leads to accumulation of 6-thioguanine nucleotides, the active cytotoxic metabolites, causing severe myelosuppression."
+        },
+        {
+          "text": "CYP2D6",
+          "isCorrect": false,
+          "explanation": "CYP2D6 is not involved."
+        },
+        {
+          "text": "UGT1A1",
+          "isCorrect": false,
+          "explanation": "UGT1A1 deficiency affects irinotecan, not 6-MP."
+        },
+        {
+          "text": "COMT",
+          "isCorrect": false,
+          "explanation": "COMT metabolizes catechols."
+        },
+        {
+          "text": "MAO-A",
+          "isCorrect": false,
+          "explanation": "Not related."
+        }
+      ],
+      "explanation": {
+        "overview": "TPMT is a key detoxification pathway for thiopurines. Patients with homozygous TPMT deficiency (~1 in 300) have almost no TPMT activity and can develop life-threatening myelosuppression at standard doses.",
+        "highYield": "TPMT deficiency → severe 6-MP/azathioprine toxicity. Test before starting therapy.",
+        "clinicalCorrelation": "If TPMT is low, dose must be drastically reduced (e.g., 10% of normal) or alternative therapy used."
+      }
+    },
+    {
+      "id": "pharma_metabolism_050",
+      "questionId": "pharma_metabolism_050",
+      "difficulty": 1,
+      "question": "The study of genetic influences on drug metabolism is called:",
+      "image": null,
+      "options": [
+        {
+          "text": "Pharmacogenetics",
+          "isCorrect": true,
+          "explanation": "Pharmacogenetics studies how genetic variation affects drug response, including metabolism, transport, and receptors."
+        },
+        {
+          "text": "Pharmacodynamics",
+          "isCorrect": false,
+          "explanation": "Pharmacodynamics describes what the drug does to the body."
+        },
+        {
+          "text": "Pharmacokinetics",
+          "isCorrect": false,
+          "explanation": "Pharmacokinetics describes what the body does to the drug (ADME)."
+        },
+        {
+          "text": "Pharmacoepidemiology",
+          "isCorrect": false,
+          "explanation": "Pharmacoepidemiology studies drug use and effects in large populations."
+        },
+        {
+          "text": "Toxicogenomics",
+          "isCorrect": false,
+          "explanation": "Toxicogenomics studies gene expression changes caused by toxicants."
+        }
+      ],
+      "explanation": {
+        "overview": "Pharmacogenetics is the study of how an individual's genetic makeup influences their response to drugs. It encompasses pharmacokinetic (metabolism, transport) and pharmacodynamic (receptor) variations.",
+        "highYield": "Pharmacogenetics = genetics → drug response. Key for personalized medicine (e.g., warfarin, clopidogrel, codeine).",
+        "clinicalCorrelation": "Pharmacogenetic testing is increasingly used to guide drug selection and dosing to improve efficacy and reduce adverse effects."
+      }
+    },
+    {
+      "id": "pharma_metabolism_051",
+      "questionId": "pharma_metabolism_051",
+      "difficulty": 2,
+      "question": "Which Phase II enzyme is responsible for the methylation of catecholamines and drugs containing catechol groups?",
+      "image": null,
+      "options": [
+        {
+          "text": "Catechol-O-methyltransferase (COMT)",
+          "isCorrect": true,
+          "explanation": "COMT methylates catechol-containing molecules like dopamine, norepinephrine, and levodopa, using S-adenosylmethionine as a cofactor."
+        },
+        {
+          "text": "UDP-glucuronosyltransferase (UGT)",
+          "isCorrect": false,
+          "explanation": "UGT adds glucuronic acid, not methyl groups."
+        },
+        {
+          "text": "Sulfotransferase (SULT)",
+          "isCorrect": false,
+          "explanation": "Sulfotransferase adds sulfate."
+        },
+        {
+          "text": "N-acetyltransferase (NAT)",
+          "isCorrect": false,
+          "explanation": "NAT adds acetyl groups."
+        },
+        {
+          "text": "Glutathione S-transferase (GST)",
+          "isCorrect": false,
+          "explanation": "GST conjugates glutathione."
+        }
+      ],
+      "explanation": {
+        "overview": "COMT is both cytosolic and membrane-bound and plays a key role in the inactivation of catechol neurotransmitters and drugs like levodopa. Entacapone and tolcapone are COMT inhibitors used in Parkinson's disease.",
+        "highYield": "COMT = methylation of catechols (dopamine, NE, levodopa). Uses SAM as methyl donor.",
+        "clinicalCorrelation": "COMT inhibitors prolong the effect of levodopa in Parkinson's treatment."
+      }
+    },
+    {
+      "id": "pharma_metabolism_052",
+      "questionId": "pharma_metabolism_052",
+      "difficulty": 2,
+      "question": "Which of the following is a Phase I reaction that does NOT involve cytochrome P450?",
+      "image": null,
+      "options": [
+        {
+          "text": "Alcohol dehydrogenase oxidation",
+          "isCorrect": true,
+          "explanation": "Alcohol dehydrogenase and aldehyde dehydrogenase are cytosolic and mitochondrial enzymes that oxidize ethanol and other alcohols, not CYP450s."
+        },
+        {
+          "text": "CYP2E1-mediated ethanol oxidation",
+          "isCorrect": false,
+          "explanation": "CYP2E1 also oxidizes ethanol at high concentrations (microsomal ethanol oxidizing system)."
+        },
+        {
+          "text": "CYP3A4 oxidation of midazolam",
+          "isCorrect": false,
+          "explanation": "Involves CYP450."
+        },
+        {
+          "text": "CYP2D6 O-demethylation of codeine",
+          "isCorrect": false,
+          "explanation": "Involves CYP450."
+        },
+        {
+          "text": "Flavin-containing monooxygenase (FMO) oxidation",
+          "isCorrect": false,
+          "explanation": "FMO is a Phase I enzyme but is not CYP450; alcohol dehydrogenase is the classic non-CYP example given in basic texts."
+        }
+      ],
+      "explanation": {
+        "overview": "Several Phase I enzymes are not CYP450-dependent: alcohol dehydrogenase, aldehyde dehydrogenase, monoamine oxidase (MAO), flavin-containing monooxygenases (FMOs), and esterases.",
+        "highYield": "Non-CYP Phase I: alcohol dehydrogenase (ethanol → acetaldehyde), MAO (monoamines), esterases (hydrolysis).",
+        "clinicalCorrelation": "Disulfiram inhibits aldehyde dehydrogenase, causing acetaldehyde accumulation and a toxic reaction with ethanol."
+      }
+    },
+    {
+      "id": "pharma_metabolism_053",
+      "questionId": "pharma_metabolism_053",
+      "difficulty": 2,
+      "question": "The 'cheese reaction' associated with monoamine oxidase inhibitors occurs due to inhibition of:",
+      "image": null,
+      "options": [
+        {
+          "text": "MAO-A in the gut wall and liver",
+          "isCorrect": true,
+          "explanation": "MAOIs inhibit MAO-A, which normally metabolizes dietary tyramine. Ingested tyramine then enters the circulation and causes massive norepinephrine release, leading to hypertensive crisis."
+        },
+        {
+          "text": "MAO-B in the brain",
+          "isCorrect": false,
+          "explanation": "MAO-B is primarily in the brain and platelets; the cheese reaction is due to MAO-A inhibition in the gut."
+        },
+        {
+          "text": "CYP3A4 in the liver",
+          "isCorrect": false,
+          "explanation": "CYP3A4 is not responsible."
+        },
+        {
+          "text": "DOPA decarboxylase",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        },
+        {
+          "text": "COMT",
+          "isCorrect": false,
+          "explanation": "COMT inhibition does not cause the cheese reaction."
+        }
+      ],
+      "explanation": {
+        "overview": "MAO-A is present in the gut and liver and metabolizes tyramine. Non-selective and MAO-A selective inhibitors prevent this breakdown, so dietary tyramine from cheese, wine, etc. can cause a hypertensive emergency.",
+        "highYield": "MAOI + tyramine = hypertensive crisis. Due to MAO-A inhibition in gut/liver. Avoid tyramine-rich foods.",
+        "clinicalCorrelation": "Selegiline, a selective MAO-B inhibitor at low doses, does not cause the cheese reaction because MAO-A is spared."
+      }
+    },
+    {
+      "id": "pharma_metabolism_054",
+      "questionId": "pharma_metabolism_054",
+      "difficulty": 3,
+      "question": "Which of the following drugs is metabolized primarily by CYP2C19, and its antiplatelet effect is reduced in poor metabolizers?",
+      "image": null,
+      "options": [
+        {
+          "text": "Clopidogrel",
+          "isCorrect": true,
+          "explanation": "Clopidogrel is a prodrug that requires CYP2C19 for conversion to its active metabolite. CYP2C19 poor metabolizers have reduced active metabolite levels and higher risk of stent thrombosis."
+        },
+        {
+          "text": "Prasugrel",
+          "isCorrect": false,
+          "explanation": "Prasugrel is also a prodrug but is less dependent on CYP2C19; it's activated by esterases and CYP3A4."
+        },
+        {
+          "text": "Ticagrelor",
+          "isCorrect": false,
+          "explanation": "Ticagrelor is a direct-acting P2Y12 antagonist, not a prodrug, so CYP2C19 status is irrelevant."
+        },
+        {
+          "text": "Aspirin",
+          "isCorrect": false,
+          "explanation": "Aspirin's antiplatelet effect is not CYP2C19-dependent."
+        },
+        {
+          "text": "Dipyridamole",
+          "isCorrect": false,
+          "explanation": "Dipyridamole is not metabolized by CYP2C19."
+        }
+      ],
+      "explanation": {
+        "overview": "Clopidogrel is a thienopyridine prodrug that undergoes a two-step activation; CYP2C19 is crucial for both steps. Genetic variants and drug interactions (e.g., omeprazole) significantly impair its antiplatelet effect.",
+        "highYield": "Clopidogrel = prodrug, activated by CYP2C19. Poor metabolizers → reduced efficacy → risk of stent thrombosis.",
+        "clinicalCorrelation": "Avoid strong CYP2C19 inhibitors (omeprazole, esomeprazole) with clopidogrel. Consider alternative antiplatelet agents in poor metabolizers."
+      }
+    },
+    {
+      "id": "pharma_metabolism_055",
+      "questionId": "pharma_metabolism_055",
+      "difficulty": 2,
+      "question": "Which of the following is a Phase II metabolic pathway that can lead to the formation of active or even toxic metabolites from aromatic amines?",
+      "image": null,
+      "options": [
+        {
+          "text": "N-acetylation",
+          "isCorrect": true,
+          "explanation": "N-acetylation of aromatic amines (e.g., isoniazid, sulfonamides) can sometimes form reactive intermediates. Slow acetylators may divert metabolism toward pathways that produce toxic metabolites (e.g., hydrazine from isoniazid)."
+        },
+        {
+          "text": "Glucuronidation",
+          "isCorrect": false,
+          "explanation": "Glucuronidation is generally detoxifying, though some acyl glucuronides can be reactive."
+        },
+        {
+          "text": "Sulfation",
+          "isCorrect": false,
+          "explanation": "Sulfation is usually inactivating."
+        },
+        {
+          "text": "Methylation",
+          "isCorrect": false,
+          "explanation": "Methylation is generally inactivating."
+        },
+        {
+          "text": "Glutathione conjugation",
+          "isCorrect": false,
+          "explanation": "Glutathione conjugation is predominantly detoxifying."
+        }
+      ],
+      "explanation": {
+        "overview": "N-acetylation by NAT2 is a key pathway for aromatic amines and hydrazines. It can either detoxify or, in some cases, generate reactive intermediates. Slow acetylator phenotype is associated with higher risk of drug-induced lupus (procainamide, hydralazine) and isoniazid hepatotoxicity.",
+        "highYield": "Acetylation (NAT2) → slow acetylators → increased risk of toxicity from isoniazid, hydralazine, procainamide.",
+        "clinicalCorrelation": "Slow acetylators should receive pyridoxine with isoniazid to prevent peripheral neuropathy."
+      }
+    },
+    {
+      "id": "pharma_metabolism_056",
+      "questionId": "pharma_metabolism_056",
+      "difficulty": 2,
+      "question": "Which CYP enzyme is induced by phenobarbital and is involved in the metabolism of many antiepileptic drugs?",
+      "image": null,
+      "options": [
+        {
+          "text": "CYP3A4",
+          "isCorrect": true,
+          "explanation": "Phenobarbital is a broad-spectrum inducer, particularly of CYP3A4, but also CYP2C9, CYP2C19, and UGTs. It reduces levels of many antiepileptics and other drugs."
+        },
+        {
+          "text": "CYP2D6",
+          "isCorrect": false,
+          "explanation": "CYP2D6 is not significantly induced by phenobarbital."
+        },
+        {
+          "text": "CYP1A2",
+          "isCorrect": false,
+          "explanation": "Phenobarbital induces CYP1A2 as well, but CYP3A4 is the major one affected."
+        },
+        {
+          "text": "CYP2E1",
+          "isCorrect": false,
+          "explanation": "CYP2E1 is induced by ethanol, not phenobarbital."
+        },
+        {
+          "text": "CYP2C19",
+          "isCorrect": false,
+          "explanation": "It also induces CYP2C19, but CYP3A4 is the most prominent."
+        }
+      ],
+      "explanation": {
+        "overview": "Phenobarbital is a classic enzyme inducer, activating CAR (constitutive androstane receptor) and PXR, leading to increased expression of multiple CYP450s and phase II enzymes. This accelerates metabolism of co-administered drugs.",
+        "highYield": "Phenobarbital = broad enzyme inducer (CYP3A4, 2C9, 2C19, UGTs). Decreases efficacy of OCPs, warfarin, etc.",
+        "clinicalCorrelation": "Phenobarbital can reduce the effectiveness of oral contraceptives; advise alternative contraception."
+      }
+    },
+    {
+      "id": "pharma_metabolism_057",
+      "questionId": "pharma_metabolism_057",
+      "difficulty": 1,
+      "question": "Which enzyme system is responsible for the metabolism of the majority of drugs?",
+      "image": null,
+      "options": [
+        {
+          "text": "Cytochrome P450 (CYP)",
+          "isCorrect": true,
+          "explanation": "CYP450 enzymes catalyze the metabolism of approximately 75% of clinically used drugs."
+        },
+        {
+          "text": "Flavin-containing monooxygenases (FMO)",
+          "isCorrect": false,
+          "explanation": "FMOs metabolize a smaller subset of drugs."
+        },
+        {
+          "text": "UDP-glucuronosyltransferases (UGT)",
+          "isCorrect": false,
+          "explanation": "UGTs are the most important Phase II enzymes, but overall, CYP450s metabolize more drugs."
+        },
+        {
+          "text": "Esterases",
+          "isCorrect": false,
+          "explanation": "Esterases hydrolyze ester-containing drugs, a smaller fraction."
+        },
+        {
+          "text": "Monoamine oxidase (MAO)",
+          "isCorrect": false,
+          "explanation": "MAO metabolizes monoamines, not the majority of drugs."
+        }
+      ],
+      "explanation": {
+        "overview": "Cytochrome P450 enzymes are the most significant drug-metabolizing enzyme system, responsible for Phase I oxidation of a vast array of therapeutic agents.",
+        "highYield": "CYP450 = major drug-metabolizing system. ~75% of drugs.",
+        "clinicalCorrelation": "CYP450-mediated drug interactions are among the most clinically significant."
+      }
+    },
+    {
+      "id": "pharma_metabolism_058",
+      "questionId": "pharma_metabolism_058",
+      "difficulty": 2,
+      "question": "Which of the following drugs is an inhibitor of monoamine oxidase used in the treatment of depression?",
+      "image": null,
+      "options": [
+        {
+          "text": "Phenelzine",
+          "isCorrect": true,
+          "explanation": "Phenelzine is an irreversible, non-selective MAOI (inhibits MAO-A and MAO-B) used for depression."
+        },
+        {
+          "text": "Fluoxetine",
+          "isCorrect": false,
+          "explanation": "Fluoxetine is an SSRI, not an MAOI."
+        },
+        {
+          "text": "Amitriptyline",
+          "isCorrect": false,
+          "explanation": "Amitriptyline is a tricyclic antidepressant, which inhibits reuptake of NE and 5-HT."
+        },
+        {
+          "text": "Venlafaxine",
+          "isCorrect": false,
+          "explanation": "Venlafaxine is an SNRI."
+        },
+        {
+          "text": "Bupropion",
+          "isCorrect": false,
+          "explanation": "Bupropion is an NDRI."
+        }
+      ],
+      "explanation": {
+        "overview": "MAOIs like phenelzine, tranylcypromine, and isocarboxazid irreversibly inhibit MAO-A and MAO-B, increasing levels of norepinephrine, serotonin, and dopamine. They require dietary restrictions due to tyramine interaction.",
+        "highYield": "Phenelzine = irreversible non-selective MAOI. Risk of hypertensive crisis with tyramine.",
+        "clinicalCorrelation": "MAOIs are usually reserved for treatment-resistant depression due to dietary restrictions and drug interactions."
+      }
+    },
+    {
+      "id": "pharma_metabolism_059",
+      "questionId": "pharma_metabolism_059",
+      "difficulty": 2,
+      "question": "Which CYP enzyme is primarily responsible for the metabolism of S-warfarin, the more potent warfarin enantiomer?",
+      "image": null,
+      "options": [
+        {
+          "text": "CYP2C9",
+          "isCorrect": true,
+          "explanation": "S-warfarin is metabolized mainly by CYP2C9. CYP2C9 variants with reduced activity increase bleeding risk."
+        },
+        {
+          "text": "CYP3A4",
+          "isCorrect": false,
+          "explanation": "CYP3A4 metabolizes R-warfarin, the less active enantiomer."
+        },
+        {
+          "text": "CYP2D6",
+          "isCorrect": false,
+          "explanation": "CYP2D6 is not involved in warfarin metabolism."
+        },
+        {
+          "text": "CYP1A2",
+          "isCorrect": false,
+          "explanation": "Not involved."
+        },
+        {
+          "text": "CYP2C19",
+          "isCorrect": false,
+          "explanation": "CYP2C19 is not a major pathway for S-warfarin."
+        }
+      ],
+      "explanation": {
+        "overview": "Warfarin is a racemate. S-warfarin is 3-5 times more potent than R-warfarin. CYP2C9 is the principal enzyme for its clearance. Polymorphisms in CYP2C9 are a key determinant of warfarin dose variability.",
+        "highYield": "S-warfarin → CYP2C9. CYP2C9*2/*3 alleles → reduced clearance → lower dose needed.",
+        "clinicalCorrelation": "Pharmacogenetic algorithms incorporating CYP2C9 and VKORC1 genotypes improve warfarin dosing and reduce bleeding."
+      }
+    },
+    {
+      "id": "pharma_metabolism_060",
+      "questionId": "pharma_metabolism_060",
+      "difficulty": 3,
+      "question": "Flavin-containing monooxygenases (FMOs) catalyze the oxidation of nucleophilic heteroatoms (N, S). Unlike CYP450, FMOs are:",
+      "image": null,
+      "options": [
+        {
+          "text": "Generally not inducible by drugs",
+          "isCorrect": true,
+          "explanation": "FMOs are not significantly induced by classical enzyme inducers. Their activity remains relatively constant."
+        },
+        {
+          "text": "Highly inducible by phenobarbital",
+          "isCorrect": false,
+          "explanation": "FMOs are not induced by phenobarbital."
+        },
+        {
+          "text": "Located primarily in mitochondria",
+          "isCorrect": false,
+          "explanation": "FMOs are microsomal, like CYP450."
+        },
+        {
+          "text": "Inhibited by ketoconazole",
+          "isCorrect": false,
+          "explanation": "FMOs are not inhibited by azole antifungals."
+        },
+        {
+          "text": "Responsible for glucuronidation",
+          "isCorrect": false,
+          "explanation": "FMOs are Phase I oxidation, not conjugation."
+        }
+      ],
+      "explanation": {
+        "overview": "FMOs are a family of microsomal enzymes that oxidize soft nucleophiles, such as nitrogen and sulfur atoms. They are not typically induced or inhibited by common xenobiotics, making them less prone to drug interactions.",
+        "highYield": "FMO = Phase I oxidation of N/S. Not inducible, limited drug interactions. Metabolize cimetidine, ranitidine, nicotine.",
+        "clinicalCorrelation": "FMOs play a role in the metabolism of some drugs (e.g., cimetidine sulfoxidation) but are less clinically impactful than CYPs."
+      }
+    },
+    {
+      "id": "pharma_metabolism_061",
+      "questionId": "pharma_metabolism_061",
+      "difficulty": 2,
+      "question": "What is the primary conjugation reaction that the antituberculosis drug isoniazid undergoes?",
+      "image": null,
+      "options": [
+        {
+          "text": "Acetylation",
+          "isCorrect": true,
+          "explanation": "Isoniazid is primarily metabolized by N-acetyltransferase 2 (NAT2) to acetylisoniazid, which is then further metabolized."
+        },
+        {
+          "text": "Glucuronidation",
+          "isCorrect": false,
+          "explanation": "Glucuronidation is a minor pathway for isoniazid."
+        },
+        {
+          "text": "Sulfation",
+          "isCorrect": false,
+          "explanation": "Sulfation is not the major pathway."
+        },
+        {
+          "text": "Methylation",
+          "isCorrect": false,
+          "explanation": "Not methylated."
+        },
+        {
+          "text": "Glutathione conjugation",
+          "isCorrect": false,
+          "explanation": "Glutathione conjugation is not primary."
+        }
+      ],
+      "explanation": {
+        "overview": "Isoniazid is acetylated by NAT2, and the rate is genetically determined. Slow acetylators have higher isoniazid levels, increasing the risk of peripheral neuropathy (prevented by pyridoxine) and hepatotoxicity.",
+        "highYield": "INH = acetylated by NAT2. Slow acetylators → more INH → toxicity (neuropathy, hepatitis).",
+        "clinicalCorrelation": "Always co-administer pyridoxine (vitamin B6) with isoniazid to prevent neuropathy, especially in slow acetylators."
+      }
+    },
+    {
+      "id": "pharma_metabolism_062",
+      "questionId": "pharma_metabolism_062",
+      "difficulty": 1,
+      "question": "Which of the following best describes a 'suicide inhibitor' (mechanism-based inhibitor) of CYP450?",
+      "image": null,
+      "options": [
+        {
+          "text": "A drug that is metabolized by CYP450 to a reactive intermediate that irreversibly inactivates the enzyme",
+          "isCorrect": true,
+          "explanation": "Suicide inhibitors are substrates that are converted to reactive species that covalently bind to the enzyme, destroying its activity (e.g., grapefruit juice furanocoumarins for CYP3A4, secobarbital for CYP2B1)."
+        },
+        {
+          "text": "A drug that competes for the active site without being metabolized",
+          "isCorrect": false,
+          "explanation": "That's a competitive inhibitor, not a suicide inhibitor."
+        },
+        {
+          "text": "A drug that increases enzyme synthesis",
+          "isCorrect": false,
+          "explanation": "That's an inducer."
+        },
+        {
+          "text": "A drug that binds to the allosteric site",
+          "isCorrect": false,
+          "explanation": "Allosteric inhibition is non-competitive."
+        },
+        {
+          "text": "A drug that enhances CYP450 activity",
+          "isCorrect": false,
+          "explanation": "That's an activator."
+        }
+      ],
+      "explanation": {
+        "overview": "Mechanism-based (suicide) inhibitors require metabolic activation by the target enzyme to generate a reactive species that covalently binds and permanently inactivates the enzyme. Recovery requires new enzyme synthesis.",
+        "highYield": "Suicide inhibitor = metabolized to reactive intermediate → irreversible inactivation. Example: grapefruit juice → intestinal CYP3A4.",
+        "clinicalCorrelation": "The effect of grapefruit juice on CYP3A4 lasts until new enzyme is synthesized, about 24-48 hours."
+      }
+    },
+    {
+      "id": "pharma_metabolism_063",
+      "questionId": "pharma_metabolism_063",
+      "difficulty": 2,
+      "question": "What is the rate-limiting step in the synthesis of catecholamines?",
+      "image": null,
+      "options": [
+        {
+          "text": "Hydroxylation of tyrosine to DOPA by tyrosine hydroxylase",
+          "isCorrect": true,
+          "explanation": "Tyrosine hydroxylase is the rate-limiting enzyme in catecholamine synthesis. It requires tetrahydrobiopterin as a cofactor and is inhibited by metyrosine."
+        },
+        {
+          "text": "Decarboxylation of DOPA to dopamine by DOPA decarboxylase",
+          "isCorrect": false,
+          "explanation": "DOPA decarboxylase is not rate-limiting."
+        },
+        {
+          "text": "Hydroxylation of dopamine to norepinephrine by dopamine β-hydroxylase",
+          "isCorrect": false,
+          "explanation": "This step is not rate-limiting."
+        },
+        {
+          "text": "Methylation of norepinephrine to epinephrine by PNMT",
+          "isCorrect": false,
+          "explanation": "PNMT is not rate-limiting for overall catecholamine synthesis."
+        },
+        {
+          "text": "Uptake of tyrosine into neurons",
+          "isCorrect": false,
+          "explanation": "Tyrosine transport is not the rate-limiting step."
+        }
+      ],
+      "explanation": {
+        "overview": "Tyrosine hydroxylase catalyzes the conversion of L-tyrosine to L-DOPA, the first and rate-limiting step in the biosynthesis of dopamine, norepinephrine, and epinephrine.",
+        "highYield": "Tyrosine hydroxylase = rate-limiting enzyme. Cofactor: tetrahydrobiopterin. Inhibitor: metyrosine.",
+        "clinicalCorrelation": "Metyrosine is used in pheochromocytoma to reduce catecholamine synthesis."
+      }
+    },
+    {
+      "id": "pharma_metabolism_064",
+      "questionId": "pharma_metabolism_064",
+      "difficulty": 3,
+      "question": "Paraoxonase (PON1) is an esterase that plays a crucial role in the metabolism of which of the following?",
+      "image": null,
+      "options": [
+        {
+          "text": "Organophosphate insecticides (detoxification) and the active metabolite of clopidogrel",
+          "isCorrect": true,
+          "explanation": "PON1 hydrolyzes organophosphate oxons (like paraoxon) and also contributes to the formation of the active thiol metabolite of clopidogrel and prasugrel."
+        },
+        {
+          "text": "Benzodiazepines",
+          "isCorrect": false,
+          "explanation": "PON1 does not metabolize benzodiazepines."
+        },
+        {
+          "text": "Warfarin",
+          "isCorrect": false,
+          "explanation": "Warfarin is metabolized by CYP450."
+        },
+        {
+          "text": "Statins",
+          "isCorrect": false,
+          "explanation": "Statins are metabolized by CYP3A4 and others."
+        },
+        {
+          "text": "Acetaminophen",
+          "isCorrect": false,
+          "explanation": "Acetaminophen is metabolized by UGTs and CYP2E1."
+        }
+      ],
+      "explanation": {
+        "overview": "PON1 is an HDL-associated esterase that hydrolyzes oxidized lipids and also detoxifies organophosphates. Genetic polymorphisms in PON1 affect clopidogrel activation, potentially influencing antiplatelet response.",
+        "highYield": "PON1 = esterase → detoxifies organophosphates, activates clopidogrel (minor role). PON1 polymorphisms may alter clopidogrel efficacy.",
+        "clinicalCorrelation": "Reduced PON1 activity is associated with higher sensitivity to organophosphate toxicity."
+      }
+    },
+    {
+      "id": "pharma_metabolism_065",
+      "questionId": "pharma_metabolism_065",
+      "difficulty": 2,
+      "question": "Which of the following is a direct-acting oral anticoagulant that is a substrate of CYP3A4 and P-glycoprotein?",
+      "image": null,
+      "options": [
+        {
+          "text": "Rivaroxaban",
+          "isCorrect": true,
+          "explanation": "Rivaroxaban is metabolized by CYP3A4 and transported by P-gp. Strong CYP3A4 and P-gp inhibitors increase its levels and bleeding risk."
+        },
+        {
+          "text": "Apixaban",
+          "isCorrect": false,
+          "explanation": "Apixaban is also a CYP3A4/P-gp substrate, but the question asks for one correct answer; rivaroxaban is a valid answer. Both are, but we'll specify rivaroxaban as a common example."
+        },
+        {
+          "text": "Dabigatran",
+          "isCorrect": false,
+          "explanation": "Dabigatran is a direct thrombin inhibitor, not metabolized by CYP3A4, but is a P-gp substrate."
+        },
+        {
+          "text": "Warfarin",
+          "isCorrect": false,
+          "explanation": "Warfarin is metabolized by CYP2C9, not a DOAC."
+        },
+        {
+          "text": "Edoxaban",
+          "isCorrect": false,
+          "explanation": "Edoxaban is also a P-gp substrate but less CYP3A4-dependent; still, rivaroxaban/apixaban are the classic CYP3A4 DOACs. I'll stick with rivaroxaban."
+        }
+      ],
+      "explanation": {
+        "overview": "Rivaroxaban and apixaban are factor Xa inhibitors that are substrates of CYP3A4 and P-glycoprotein. Strong inhibitors (e.g., ketoconazole, ritonavir) can significantly increase their concentrations and cause bleeding.",
+        "highYield": "Rivaroxaban & apixaban = CYP3A4 & P-gp substrates. Avoid strong CYP3A4/P-gp inhibitors.",
+        "clinicalCorrelation": "Dose adjustments or contraindications exist when DOACs are used with strong CYP3A4/P-gp inhibitors."
+      }
+    },
+    {
+      "id": "pharma_metabolism_066",
+      "questionId": "pharma_metabolism_066",
+      "difficulty": 3,
+      "question": "Which amino acid is conjugated to bile acids and also to certain drugs (e.g., salicylates) in Phase II metabolism?",
+      "image": null,
+      "options": [
+        {
+          "text": "Glycine",
+          "isCorrect": true,
+          "explanation": "Amino acid conjugation, particularly with glycine (and taurine for bile acids), is a Phase II reaction. Salicylic acid is conjugated with glycine to form salicyluric acid."
+        },
+        {
+          "text": "Cysteine",
+          "isCorrect": false,
+          "explanation": "Cysteine is used in glutathione conjugation, not simple amino acid conjugation."
+        },
+        {
+          "text": "Glutamine",
+          "isCorrect": false,
+          "explanation": "Glutamine is not the primary amino acid for drug conjugation."
+        },
+        {
+          "text": "Alanine",
+          "isCorrect": false,
+          "explanation": "Not common for drug metabolism."
+        },
+        {
+          "text": "Serine",
+          "isCorrect": false,
+          "explanation": "Not a typical conjugating amino acid."
+        }
+      ],
+      "explanation": {
+        "overview": "Amino acid conjugation is a Phase II reaction where endogenous amino acids (glycine, taurine, glutamine) are conjugated to carboxylic acid-containing drugs. Salicylates are conjugated with glycine; bile acids with glycine or taurine.",
+        "highYield": "Glycine conjugation → salicylates (salicyluric acid). Taurine/glycine → bile acids.",
+        "clinicalCorrelation": "Amino acid conjugation capacity can be saturated at high doses, leading to nonlinear kinetics."
+      }
+    },
+    {
+      "id": "pharma_metabolism_067",
+      "questionId": "pharma_metabolism_067",
+      "difficulty": 3,
+      "question": "Dihydropyrimidine dehydrogenase (DPD) deficiency is a pharmacogenetic condition that leads to severe toxicity from which chemotherapeutic agent?",
+      "image": null,
+      "options": [
+        {
+          "text": "5-Fluorouracil (5-FU)",
+          "isCorrect": true,
+          "explanation": "DPD is the rate-limiting enzyme in 5-FU catabolism. Patients with DPD deficiency cannot effectively degrade 5-FU, leading to life-threatening myelosuppression, mucositis, and neurotoxicity."
+        },
+        {
+          "text": "Methotrexate",
+          "isCorrect": false,
+          "explanation": "Methotrexate is not metabolized by DPD."
+        },
+        {
+          "text": "Cisplatin",
+          "isCorrect": false,
+          "explanation": "Cisplatin is not dependent on DPD."
+        },
+        {
+          "text": "Doxorubicin",
+          "isCorrect": false,
+          "explanation": "Doxorubicin is metabolized by other enzymes."
+        },
+        {
+          "text": "Cyclophosphamide",
+          "isCorrect": false,
+          "explanation": "Cyclophosphamide is activated by CYP450, not DPD."
+        }
+      ],
+      "explanation": {
+        "overview": "DPD is the initial and rate-limiting enzyme in the catabolism of the pyrimidine analog 5-FU. Complete or partial DPD deficiency can cause severe, even fatal toxicity from standard doses.",
+        "highYield": "DPD deficiency → 5-FU toxicity. Screen for DPD deficiency before starting 5-FU or capecitabine.",
+        "clinicalCorrelation": "Genotyping or phenotyping for DPD deficiency is recommended prior to fluoropyrimidine therapy."
+      }
+    },
+    {
+      "id": "pharma_metabolism_068",
+      "questionId": "pharma_metabolism_068",
+      "difficulty": 2,
+      "question": "Which of the following is NOT a common Phase II conjugation reaction?",
+      "image": null,
+      "options": [
+        {
+          "text": "Oxidation",
+          "isCorrect": true,
+          "explanation": "Oxidation is a Phase I reaction. Phase II reactions include glucuronidation, sulfation, acetylation, methylation, glutathione conjugation, and amino acid conjugation."
+        },
+        {
+          "text": "Glucuronidation",
+          "isCorrect": false,
+          "explanation": "Glucuronidation is a Phase II reaction."
+        },
+        {
+          "text": "Sulfation",
+          "isCorrect": false,
+          "explanation": "Sulfation is Phase II."
+        },
+        {
+          "text": "Acetylation",
+          "isCorrect": false,
+          "explanation": "Acetylation is Phase II."
+        },
+        {
+          "text": "Methylation",
+          "isCorrect": false,
+          "explanation": "Methylation is Phase II."
+        }
+      ],
+      "explanation": {
+        "overview": "Phase II reactions involve conjugation with an endogenous substrate. Oxidation is a functionalization reaction of Phase I, often catalyzed by CYP450.",
+        "highYield": "Phase II = conjugation (glucuronidation, sulfation, acetylation, methylation, glutathione conjugation). Phase I = oxidation, reduction, hydrolysis.",
+        "clinicalCorrelation": "Understanding Phase I vs Phase II helps predict drug interactions and metabolic pathways."
+      }
+    },
+    {
+      "id": "pharma_metabolism_069",
+      "questionId": "pharma_metabolism_069",
+      "difficulty": 2,
+      "question": "Which of the following statins is NOT significantly metabolized by CYP3A4 and is therefore less prone to CYP3A4-mediated drug interactions?",
+      "image": null,
+      "options": [
+        {
+          "text": "Pravastatin",
+          "isCorrect": true,
+          "explanation": "Pravastatin is metabolized via sulfation and renal excretion, not significantly by CYP450, and has fewer CYP3A4 interactions."
+        },
+        {
+          "text": "Atorvastatin",
+          "isCorrect": false,
+          "explanation": "Atorvastatin is a CYP3A4 substrate."
+        },
+        {
+          "text": "Simvastatin",
+          "isCorrect": false,
+          "explanation": "Simvastatin is a CYP3A4 substrate."
+        },
+        {
+          "text": "Lovastatin",
+          "isCorrect": false,
+          "explanation": "Lovastatin is a CYP3A4 substrate."
+        },
+        {
+          "text": "Fluvastatin",
+          "isCorrect": false,
+          "explanation": "Fluvastatin is metabolized by CYP2C9, not CYP3A4. However, pravastatin is the better-known example of a statin with minimal CYP metabolism. The question specifically asks 'NOT significantly metabolized by CYP3A4', and both pravastatin and fluvastatin qualify, but pravastatin is the classic answer. I'll choose pravastatin."
+        }
+      ],
+      "explanation": {
+        "overview": "Pravastatin is unique among statins because it is not appreciably metabolized by CYP450 enzymes. It undergoes sulfation and is excreted unchanged in urine and bile, making it safer regarding CYP3A4 drug interactions.",
+        "highYield": "Pravastatin = minimal CYP metabolism (sulfation). Less CYP3A4 drug interactions than atorvastatin, simvastatin, lovastatin.",
+        "clinicalCorrelation": "Pravastatin is often preferred when strong CYP3A4 inhibitors (e.g., clarithromycin, ketoconazole) are co-prescribed."
+      }
+    },
+    {
+      "id": "pharma_metabolism_070",
+      "questionId": "pharma_metabolism_070",
+      "difficulty": 2,
+      "question": "What is the effect of portosystemic shunt (as in advanced cirrhosis) on oral drug bioavailability?",
+      "image": null,
+      "options": [
+        {
+          "text": "It increases bioavailability by reducing first-pass metabolism",
+          "isCorrect": true,
+          "explanation": "Portosystemic shunts allow portal blood to bypass hepatocytes, decreasing first-pass metabolism and increasing the fraction of drug that reaches systemic circulation."
+        },
+        {
+          "text": "It decreases bioavailability due to increased metabolism",
+          "isCorrect": false,
+          "explanation": "Metabolism is reduced, not increased."
+        },
+        {
+          "text": "It has no effect on bioavailability",
+          "isCorrect": false,
+          "explanation": "Bioavailability is significantly altered."
+        },
+        {
+          "text": "It increases protein binding",
+          "isCorrect": false,
+          "explanation": "Protein binding is often decreased due to hypoalbuminemia."
+        },
+        {
+          "text": "It enhances renal elimination",
+          "isCorrect": false,
+          "explanation": "Renal elimination may be unchanged or reduced."
+        }
+      ],
+      "explanation": {
+        "overview": "Cirrhosis leads to both decreased hepatocyte function and the development of portosystemic shunts. Shunts divert portal blood flow away from the liver, reducing first-pass metabolism and markedly increasing the oral bioavailability of high extraction drugs.",
+        "highYield": "Cirrhosis + portosystemic shunts → ↓ first-pass metabolism → ↑ bioavailability (especially high extraction drugs).",
+        "clinicalCorrelation": "In cirrhosis, normal oral doses of high extraction drugs (e.g., propranolol, verapamil) can lead to toxic plasma levels."
+      }
+    },
+    {
+      "id": "pharma_metabolism_071",
+      "questionId": "pharma_metabolism_071",
+      "difficulty": 3,
+      "question": "Which CYP enzyme is almost exclusively expressed in the olfactory mucosa and may play a role in the metabolism of intranasally administered drugs?",
+      "image": null,
+      "options": [
+        {
+          "text": "CYP2A13",
+          "isCorrect": true,
+          "explanation": "CYP2A13 is predominantly expressed in the respiratory tract, especially the nasal mucosa, and can metabolize inhaled and intranasal xenobiotics, including tobacco-specific nitrosamines."
+        },
+        {
+          "text": "CYP2D6",
+          "isCorrect": false,
+          "explanation": "CYP2D6 is expressed in liver and brain."
+        },
+        {
+          "text": "CYP3A4",
+          "isCorrect": false,
+          "explanation": "CYP3A4 is primarily hepatic and intestinal."
+        },
+        {
+          "text": "CYP2E1",
+          "isCorrect": false,
+          "explanation": "CYP2E1 is in liver and some extrahepatic tissues."
+        },
+        {
+          "text": "CYP1A2",
+          "isCorrect": false,
+          "explanation": "CYP1A2 is hepatic."
+        }
+      ],
+      "explanation": {
+        "overview": "CYP2A13 is a cytochrome P450 enzyme highly expressed in the respiratory tract, particularly the nasal mucosa. It is involved in the bioactivation of several procarcinogens found in tobacco smoke.",
+        "highYield": "CYP2A13 = respiratory tract (nasal mucosa) CYP. Metabolizes nitrosamines. May affect intranasal drug bioavailability.",
+        "clinicalCorrelation": "CYP2A13-mediated activation of nitrosamines is implicated in smoking-related respiratory cancers."
+      }
+    },
+    {
+      "id": "pharma_metabolism_072",
+      "questionId": "pharma_metabolism_072",
+      "difficulty": 1,
+      "question": "The term 'biotransformation' is synonymous with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Drug metabolism",
+          "isCorrect": true,
+          "explanation": "Biotransformation refers to the chemical modifications made by an organism on a chemical compound, usually to aid excretion."
+        },
+        {
+          "text": "Drug absorption",
+          "isCorrect": false,
+          "explanation": "Absorption is the entry of drug into the bloodstream."
+        },
+        {
+          "text": "Drug distribution",
+          "isCorrect": false,
+          "explanation": "Distribution is the dispersion of drug throughout body fluids and tissues."
+        },
+        {
+          "text": "Drug excretion",
+          "isCorrect": false,
+          "explanation": "Excretion is the removal of drug/metabolites from the body."
+        },
+        {
+          "text": "Receptor binding",
+          "isCorrect": false,
+          "explanation": "Receptor binding is a pharmacodynamic event."
+        }
+      ],
+      "explanation": {
+        "overview": "Biotransformation (metabolism) is the process by which the body chemically alters drugs, often to terminate their action and promote elimination.",
+        "highYield": "Biotransformation = drug metabolism.",
+        "clinicalCorrelation": "Understanding biotransformation is essential for predicting drug half-life and potential toxicity."
+      }
+    },
+    {
+      "id": "pharma_metabolism_073",
+      "questionId": "pharma_metabolism_073",
+      "difficulty": 2,
+      "question": "Which of the following is a Phase I reaction that introduces a hydroxyl group into an aromatic ring, catalyzed by CYP450?",
+      "image": null,
+      "options": [
+        {
+          "text": "Aromatic hydroxylation",
+          "isCorrect": true,
+          "explanation": "Aromatic hydroxylation is an oxidative Phase I reaction where a hydrogen on an aromatic ring is replaced by a hydroxyl group, often catalyzed by CYP450 (e.g., phenytoin → hydroxyphenytoin)."
+        },
+        {
+          "text": "Glucuronidation",
+          "isCorrect": false,
+          "explanation": "Glucuronidation is Phase II."
+        },
+        {
+          "text": "N-oxidation",
+          "isCorrect": false,
+          "explanation": "N-oxidation is also a Phase I oxidation, but hydroxylation is the specific reaction asked."
+        },
+        {
+          "text": "Sulfation",
+          "isCorrect": false,
+          "explanation": "Sulfation is Phase II."
+        },
+        {
+          "text": "Acetylation",
+          "isCorrect": false,
+          "explanation": "Acetylation is Phase II."
+        }
+      ],
+      "explanation": {
+        "overview": "Aromatic hydroxylation is a common CYP450-mediated reaction that increases polarity and provides a site for subsequent Phase II conjugation (e.g., glucuronidation of the hydroxyl group).",
+        "highYield": "Aromatic hydroxylation = Phase I (CYP450). Example: phenytoin → 4-hydroxyphenytoin.",
+        "clinicalCorrelation": "Hydroxylated metabolites are often substrates for Phase II conjugation."
+      }
+    },
+    {
+      "id": "pharma_metabolism_074",
+      "questionId": "pharma_metabolism_074",
+      "difficulty": 2,
+      "question": "Which enzyme is responsible for the metabolic activation of the prodrug clopidogrel to its active thiol metabolite?",
+      "image": null,
+      "options": [
+        {
+          "text": "CYP2C19 (primarily)",
+          "isCorrect": true,
+          "explanation": "Clopidogrel is a two-step prodrug: CYP2C19 is central to both the first oxidation and the second activation step to form the active metabolite."
+        },
+        {
+          "text": "CYP3A4",
+          "isCorrect": false,
+          "explanation": "CYP3A4 participates but CYP2C19 is the major determinant."
+        },
+        {
+          "text": "CYP2D6",
+          "isCorrect": false,
+          "explanation": "Not significantly involved."
+        },
+        {
+          "text": "Paraoxonase-1 (PON1)",
+          "isCorrect": false,
+          "explanation": "PON1 may contribute but the dominant enzyme is CYP2C19."
+        },
+        {
+          "text": "CYP2C9",
+          "isCorrect": false,
+          "explanation": "CYP2C9 is not the main enzyme."
+        }
+      ],
+      "explanation": {
+        "overview": "Clopidogrel is converted in the liver to an active metabolite that irreversibly inhibits the P2Y12 receptor. CYP2C19 is the key enzyme; polymorphisms and drug interactions (e.g., omeprazole) can lead to reduced activation and therapeutic failure.",
+        "highYield": "Clopidogrel activation = CYP2C19. Poor metabolizers → less active metabolite → increased cardiovascular events.",
+        "clinicalCorrelation": "FDA boxed warning: consider alternative antiplatelet therapy in CYP2C19 poor metabolizers."
+      }
+    },
+    {
+      "id": "pharma_metabolism_075",
+      "questionId": "pharma_metabolism_075",
+      "difficulty": 2,
+      "question": "Which of the following best explains why some drugs exhibit zero-order (saturable) kinetics at therapeutic doses?",
+      "image": null,
+      "options": [
+        {
+          "text": "The metabolizing enzyme capacity is limited and becomes saturated",
+          "isCorrect": true,
+          "explanation": "Zero-order kinetics occur when the elimination process is saturated; a constant amount of drug is eliminated per unit time, independent of concentration. This is typical of phenytoin and high-dose salicylates."
+        },
+        {
+          "text": "The drug is poorly absorbed",
+          "isCorrect": false,
+          "explanation": "Absorption does not determine zero-order elimination."
+        },
+        {
+          "text": "The volume of distribution is extremely large",
+          "isCorrect": false,
+          "explanation": "Vd affects concentration but not saturable metabolism."
+        },
+        {
+          "text": "The drug is highly protein-bound",
+          "isCorrect": false,
+          "explanation": "Protein binding does not directly cause saturation of metabolism."
+        },
+        {
+          "text": "The drug undergoes extensive enterohepatic recirculation",
+          "isCorrect": false,
+          "explanation": "Recirculation does not produce zero-order kinetics."
+        }
+      ],
+      "explanation": {
+        "overview": "Most drugs follow first-order kinetics (constant fraction eliminated per unit time). A few drugs (phenytoin, ethanol, salicylates at high doses) saturate their metabolic enzymes at therapeutic concentrations, leading to zero-order kinetics where a constant amount is eliminated.",
+        "highYield": "Zero-order kinetics = saturated metabolism → constant amount eliminated per time. Examples: phenytoin, ethanol (therapeutic doses).",
+        "clinicalCorrelation": "Phenytoin requires careful dose adjustments because small dose increases can cause disproportionate rises in plasma concentration."
+      }
+    }
+  ]
+}

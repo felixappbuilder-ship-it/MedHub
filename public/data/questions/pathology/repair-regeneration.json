@@ -1,0 +1,3424 @@
+{
+  "questions": [
+    {
+      "questionId": "path_repair_001",
+      "difficulty": 1,
+      "question": "What is the definition of regeneration?",
+      "image": null,
+      "options": [
+        {
+          "text": "Replacement of damaged tissue with scar tissue",
+          "isCorrect": false,
+          "explanation": "Scarring (fibrosis) occurs when regeneration is not possible; regeneration restores original tissue."
+        },
+        {
+          "text": "Proliferation of cells to restore original tissue structure and function",
+          "isCorrect": true,
+          "explanation": "Regeneration is the replacement of lost cells with identical cells, restoring normal architecture and function. It requires intact stromal framework and cells capable of division."
+        },
+        {
+          "text": "Formation of granulation tissue",
+          "isCorrect": false,
+          "explanation": "Granulation tissue is a step in wound healing, often leading to scar, not regeneration."
+        },
+        {
+          "text": "Deposition of collagen",
+          "isCorrect": false,
+          "explanation": "Collagen deposition is part of fibrosis, not true regeneration."
+        },
+        {
+          "text": "Inflammatory response",
+          "isCorrect": false,
+          "explanation": "Inflammation precedes healing but is not regeneration itself."
+        }
+      ],
+      "explanation": {
+        "overview": "Regeneration is the ideal mode of healing, in which damaged tissue is replaced by the proliferation of residual cells of the same type, fully restoring structure and function. It requires an intact extracellular matrix scaffold and cells with regenerative capacity.",
+        "highYield": "Regeneration = replacement with identical cells, restoring function. Fibrosis = scar (collagen).",
+        "clinicalCorrelation": "Liver resection triggers regeneration; understanding stem cell niches may allow therapeutic regeneration in the future."
+      }
+    },
+    {
+      "questionId": "path_repair_002",
+      "difficulty": 1,
+      "question": "Which of the following tissues has the highest capacity for regeneration?",
+      "image": null,
+      "options": [
+        {
+          "text": "Cardiac muscle",
+          "isCorrect": false,
+          "explanation": "Cardiac muscle is composed of permanent cells with negligible regenerative capacity."
+        },
+        {
+          "text": "Neurons of the CNS",
+          "isCorrect": false,
+          "explanation": "CNS neurons are permanent cells; once lost, they are replaced by gliosis."
+        },
+        {
+          "text": "Liver",
+          "isCorrect": true,
+          "explanation": "Liver (hepatocytes) are stable cells with high regenerative capacity. They can proliferate to restore liver mass."
+        },
+        {
+          "text": "Skeletal muscle",
+          "isCorrect": false,
+          "explanation": "Skeletal muscle has limited regenerative ability via satellite cells but not as robust as liver."
+        },
+        {
+          "text": "Cartilage",
+          "isCorrect": false,
+          "explanation": "Cartilage has poor regenerative capacity due to low cell density and avascularity."
+        }
+      ],
+      "explanation": {
+        "overview": "Tissue regenerative capacity depends on cell type. Liver hepatocytes are stable cells that re-enter the cell cycle after injury, leading to robust regeneration. Permanent cells (neurons, cardiac myocytes) cannot regenerate.",
+        "highYield": "Liver has highest regeneration; cardiac muscle and neurons have none. Labile > stable > permanent.",
+        "clinicalCorrelation": "Partial liver transplants take advantage of hepatic regeneration; cirrhosis limits this ability."
+      }
+    },
+    {
+      "questionId": "path_repair_003",
+      "difficulty": 1,
+      "question": "Cells are classified into which three groups based on proliferative capacity?",
+      "image": null,
+      "options": [
+        {
+          "text": "Labile, stable, permanent",
+          "isCorrect": true,
+          "explanation": "Labile cells continuously divide (e.g., epithelia), stable cells can divide when stimulated (e.g., hepatocytes), permanent cells cannot divide (e.g., neurons)."
+        },
+        {
+          "text": "Epithelial, mesenchymal, neural",
+          "isCorrect": false,
+          "explanation": "That is a histogenic classification, not based on proliferative capacity."
+        },
+        {
+          "text": "Stem, progenitor, differentiated",
+          "isCorrect": false,
+          "explanation": "That describes differentiation hierarchy, not the classic regeneration classification."
+        },
+        {
+          "text": "Renewing, expanding, static",
+          "isCorrect": false,
+          "explanation": "These terms are used in some contexts but the standard pathology classification is labile, stable, permanent."
+        },
+        {
+          "text": "Rapid, slow, non-dividing",
+          "isCorrect": false,
+          "explanation": "These are descriptive but not the formal classification used in pathology."
+        }
+      ],
+      "explanation": {
+        "overview": "The proliferative capacity of tissues determines their response to injury. Labile cells are constantly dividing, stable cells are quiescent but can divide, and permanent cells cannot re-enter the cell cycle.",
+        "highYield": "Labile (skin, GI mucosa) → continuous mitosis. Stable (liver, kidney) → G0, can divide. Permanent (neurons, cardiac muscle) → no division.",
+        "clinicalCorrelation": "Injury to permanent cells always results in scar formation (e.g., myocardial infarction → scar)."
+      }
+    },
+    {
+      "questionId": "path_repair_004",
+      "difficulty": 1,
+      "question": "Which of the following is an example of a labile cell population?",
+      "image": null,
+      "options": [
+        {
+          "text": "Hepatocytes",
+          "isCorrect": false,
+          "explanation": "Hepatocytes are stable cells; they divide only when stimulated."
+        },
+        {
+          "text": "Renal tubular epithelial cells",
+          "isCorrect": false,
+          "explanation": "Renal tubular cells are stable, capable of division after injury."
+        },
+        {
+          "text": "Squamous epithelial cells of the skin",
+          "isCorrect": true,
+          "explanation": "Skin epithelium is labile, continuously renewing. They are constantly shed and replaced."
+        },
+        {
+          "text": "Cardiac myocytes",
+          "isCorrect": false,
+          "explanation": "Cardiac myocytes are permanent, terminally differentiated, and do not divide."
+        },
+        {
+          "text": "Neurons",
+          "isCorrect": false,
+          "explanation": "Neurons are permanent cells; they cannot replicate."
+        }
+      ],
+      "explanation": {
+        "overview": "Labile cells are continuously dividing cells that have a high turnover rate. They include surface epithelia (skin, cornea, GI tract, respiratory tract, urinary tract) and hematopoietic cells.",
+        "highYield": "Labile cells: skin epithelium, GI mucosa, bone marrow. Stable cells: liver, kidney, pancreas, endothelium, fibroblasts.",
+        "clinicalCorrelation": "Labile tissues can quickly regenerate after superficial injuries if the basement membrane is intact."
+      }
+    },
+    {
+      "questionId": "path_repair_005",
+      "difficulty": 1,
+      "question": "Stable cells are characterized by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Continuous division throughout life",
+          "isCorrect": false,
+          "explanation": "That describes labile cells."
+        },
+        {
+          "text": "Inability to divide after maturation",
+          "isCorrect": false,
+          "explanation": "That describes permanent cells."
+        },
+        {
+          "text": "Capacity to divide in response to injury",
+          "isCorrect": true,
+          "explanation": "Stable cells (e.g., hepatocytes, renal tubules) are quiescent but can enter the cell cycle when stimulated."
+        },
+        {
+          "text": "Rapid turnover",
+          "isCorrect": false,
+          "explanation": "Labile cells have rapid turnover."
+        },
+        {
+          "text": "Being terminally differentiated",
+          "isCorrect": false,
+          "explanation": "Permanent cells are terminally differentiated and cannot divide."
+        }
+      ],
+      "explanation": {
+        "overview": "Stable (quiescent) cells are in the G0 phase of the cell cycle but can be stimulated to re-enter G1 and proliferate when needed. Examples include hepatocytes, renal tubular epithelium, pancreatic acinar cells, endothelium, and fibroblasts.",
+        "highYield": "Stable cells: rest in G0, can divide if stimulated. They retain regenerative capacity.",
+        "clinicalCorrelation": "Regeneration of stable organs (liver, kidney) is possible only if the stromal framework is intact."
+      }
+    },
+    {
+      "questionId": "path_repair_006",
+      "difficulty": 1,
+      "question": "Which of the following is a permanent cell?",
+      "image": null,
+      "options": [
+        {
+          "text": "Fibroblast",
+          "isCorrect": false,
+          "explanation": "Fibroblasts are stable cells that can proliferate during wound healing."
+        },
+        {
+          "text": "Endothelial cell",
+          "isCorrect": false,
+          "explanation": "Endothelial cells are stable and can proliferate in angiogenesis."
+        },
+        {
+          "text": "Cardiac myocyte",
+          "isCorrect": true,
+          "explanation": "Cardiac myocytes are permanent cells with negligible regenerative capacity."
+        },
+        {
+          "text": "Hepatocyte",
+          "isCorrect": false,
+          "explanation": "Hepatocytes are stable cells with high regenerative potential."
+        },
+        {
+          "text": "Pancreatic acinar cell",
+          "isCorrect": false,
+          "explanation": "Pancreatic acinar cells are stable and can regenerate to some extent."
+        }
+      ],
+      "explanation": {
+        "overview": "Permanent cells are terminally differentiated post-mitotic cells that cannot replicate. They include neurons, cardiac muscle, and skeletal muscle (limited). Injury to these tissues leads to scar formation.",
+        "highYield": "Permanent cells: neurons, cardiac myocytes, skeletal muscle (very limited). Injury → scar, no regeneration.",
+        "clinicalCorrelation": "Myocardial infarction always results in scar; stroke leads to gliosis, not neuronal regeneration."
+      }
+    },
+    {
+      "questionId": "path_repair_007",
+      "difficulty": 1,
+      "question": "After a partial hepatectomy, the remaining hepatocytes undergo:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hypertrophy only",
+          "isCorrect": false,
+          "explanation": "There is some hypertrophy, but the main response is proliferation (hyperplasia)."
+        },
+        {
+          "text": "Hyperplasia and regeneration",
+          "isCorrect": true,
+          "explanation": "Hepatocytes proliferate (hyperplasia) to restore liver mass, a classic example of compensatory regeneration."
+        },
+        {
+          "text": "Metaplasia",
+          "isCorrect": false,
+          "explanation": "Metaplasia is a change in cell type, not the response to hepatectomy."
+        },
+        {
+          "text": "Atrophy",
+          "isCorrect": false,
+          "explanation": "Atrophy would be a decrease in size, not restoration of mass."
+        },
+        {
+          "text": "Dysplasia",
+          "isCorrect": false,
+          "explanation": "Dysplasia is a pre-neoplastic change, not a regenerative response."
+        }
+      ],
+      "explanation": {
+        "overview": "Partial hepatectomy triggers massive proliferation of residual hepatocytes, along with proliferation of non-parenchymal cells, to restore liver mass within weeks. This is regulated by growth factors like HGF, TGF-α, and IL-6.",
+        "highYield": "Hepatectomy → hepatocyte hyperplasia (compensatory regeneration). Liver can regenerate up to 70% loss.",
+        "clinicalCorrelation": "Living donor liver transplantation is possible because the donor's residual liver regenerates."
+      }
+    },
+    {
+      "questionId": "path_repair_008",
+      "difficulty": 2,
+      "question": "What is the role of stem cells in regeneration?",
+      "image": null,
+      "options": [
+        {
+          "text": "They differentiate into multiple cell types to replace lost cells",
+          "isCorrect": true,
+          "explanation": "Stem cells have self-renewal capacity and can differentiate into various cell lineages to repopulate damaged tissues."
+        },
+        {
+          "text": "They produce growth factors",
+          "isCorrect": false,
+          "explanation": "Growth factors are mainly produced by inflammatory cells and stromal cells, not the primary role of stem cells."
+        },
+        {
+          "text": "They form scar tissue",
+          "isCorrect": false,
+          "explanation": "Stem cells aim to regenerate tissue; fibroblasts form scar."
+        },
+        {
+          "text": "They inhibit inflammation",
+          "isCorrect": false,
+          "explanation": "Some stem cells have immunomodulatory properties but that is not their primary role in regeneration."
+        },
+        {
+          "text": "They phagocytose debris",
+          "isCorrect": false,
+          "explanation": "Phagocytosis is the function of neutrophils and macrophages."
+        }
+      ],
+      "explanation": {
+        "overview": "Stem cells are undifferentiated cells with the capacity for self-renewal and multilineage differentiation. They maintain tissue homeostasis and are critical for regeneration in tissues with high turnover (skin, intestine) and for therapeutic repair.",
+        "highYield": "Stem cells: self-renewal + differentiation. Embryonic (pluripotent) vs adult (multipotent). Induced pluripotent stem cells (iPSCs) are generated in the lab.",
+        "clinicalCorrelation": "Hematopoietic stem cell transplants treat leukemia; mesenchymal stem cells are being explored for tissue repair."
+      }
+    },
+    {
+      "questionId": "path_repair_009",
+      "difficulty": 2,
+      "question": "Which growth factor is a potent mitogen for hepatocytes?",
+      "image": null,
+      "options": [
+        {
+          "text": "Hepatocyte growth factor (HGF)",
+          "isCorrect": false,
+          "explanation": "HGF is a key mitogen, but it is not the only one."
+        },
+        {
+          "text": "Epidermal growth factor (EGF)",
+          "isCorrect": false,
+          "explanation": "EGF also stimulates hepatocyte proliferation."
+        },
+        {
+          "text": "Transforming growth factor-α (TGF-α)",
+          "isCorrect": false,
+          "explanation": "TGF-α is a mitogen for hepatocytes."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "HGF, EGF, and TGF-α all stimulate hepatocyte proliferation during liver regeneration."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "These factors are known to promote hepatocyte division."
+        }
+      ],
+      "explanation": {
+        "overview": "Liver regeneration is a complex process involving multiple growth factors and cytokines. HGF (produced by stellate cells) is the most potent hepatocyte mitogen; EGF and TGF-α also contribute. IL-6 and TNF prime hepatocytes to respond to these growth factors.",
+        "highYield": "HGF is the most potent hepatocyte mitogen. EGF, TGF-α also important. The process is called 'priming and progression'.",
+        "clinicalCorrelation": "Recombinant HGF has been investigated to promote liver regeneration in acute liver failure."
+      }
+    },
+    {
+      "questionId": "path_repair_010",
+      "difficulty": 2,
+      "question": "The extracellular matrix (ECM) is important for regeneration because it:",
+      "image": null,
+      "options": [
+        {
+          "text": "Provides a scaffold for cell migration",
+          "isCorrect": false,
+          "explanation": "That is one function, but the ECM does more."
+        },
+        {
+          "text": "Stores growth factors",
+          "isCorrect": false,
+          "explanation": "ECM binds and releases growth factors."
+        },
+        {
+          "text": "Influences cell differentiation",
+          "isCorrect": false,
+          "explanation": "ECM signals through integrins affect gene expression."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "The ECM supports cell adhesion, migration, and signaling, and acts as a reservoir for growth factors."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All the listed roles are important functions of the ECM."
+        }
+      ],
+      "explanation": {
+        "overview": "The ECM is a dynamic network of proteins and polysaccharides that provides structural support, regulates cell behavior via integrin signaling, and serves as a reservoir for growth factors and cytokines.",
+        "highYield": "ECM: scaffold, growth factor reservoir, signals via integrins. Key components: collagen, fibronectin, laminin, proteoglycans.",
+        "clinicalCorrelation": "Decellularized ECM scaffolds are used in tissue engineering to promote regeneration."
+      }
+    },
+    {
+      "questionId": "path_repair_011",
+      "difficulty": 2,
+      "question": "If the basement membrane is disrupted, regeneration is often replaced by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Scarring (fibrosis)",
+          "isCorrect": true,
+          "explanation": "An intact ECM is essential for orderly regeneration; disruption leads to fibrosis and scar formation."
+        },
+        {
+          "text": "Hyperplasia",
+          "isCorrect": false,
+          "explanation": "Hyperplasia may occur, but the architectural disruption leads to scar."
+        },
+        {
+          "text": "Metaplasia",
+          "isCorrect": false,
+          "explanation": "Metaplasia is a change in cell type, not a consequence of basement membrane disruption."
+        },
+        {
+          "text": "Complete restoration",
+          "isCorrect": false,
+          "explanation": "Without intact basement membrane, regeneration is not orderly and fibrosis predominates."
+        },
+        {
+          "text": "Apoptosis",
+          "isCorrect": false,
+          "explanation": "Cell death may occur, but the healing outcome is fibrosis."
+        }
+      ],
+      "explanation": {
+        "overview": "An intact basement membrane serves as a scaffold for regenerating epithelial cells. When it is destroyed, the defect is filled by granulation tissue and eventually a collagenous scar.",
+        "highYield": "Intact basement membrane → regeneration. Disrupted basement membrane → scar formation.",
+        "clinicalCorrelation": "Superficial skin abrasions heal without scar; deep wounds that destroy the dermal-epidermal junction scar."
+      }
+    },
+    {
+      "questionId": "path_repair_012",
+      "difficulty": 1,
+      "question": "Wound healing by first intention occurs in which type of wound?",
+      "image": null,
+      "options": [
+        {
+          "text": "Clean, surgical incision with opposed edges",
+          "isCorrect": true,
+          "explanation": "Primary intention healing occurs in clean, uninfected wounds with closely apposed edges, minimal scarring."
+        },
+        {
+          "text": "Large, gaping wound with tissue loss",
+          "isCorrect": false,
+          "explanation": "That heals by second intention."
+        },
+        {
+          "text": "Infected wound",
+          "isCorrect": false,
+          "explanation": "Infected wounds usually heal by secondary intention after infection clears."
+        },
+        {
+          "text": "Burn injury",
+          "isCorrect": false,
+          "explanation": "Burns often involve tissue loss and heal by secondary intention."
+        },
+        {
+          "text": "Ulcer",
+          "isCorrect": false,
+          "explanation": "Ulcers are chronic wounds that heal by secondary intention."
+        }
+      ],
+      "explanation": {
+        "overview": "Healing by primary (first) intention occurs when wound edges are closely apposed, as in a surgical incision with sutures. There is minimal granulation tissue, rapid epithelialization, and a fine linear scar.",
+        "highYield": "Primary intention = clean surgical incision, approximated edges, minimal scar. Secondary = gaping wound, more granulation, larger scar.",
+        "clinicalCorrelation": "Surgeons aim for primary closure to reduce scarring and infection risk."
+      }
+    },
+    {
+      "questionId": "path_repair_013",
+      "difficulty": 1,
+      "question": "Wound healing by second intention occurs when:",
+      "image": null,
+      "options": [
+        {
+          "text": "The wound edges are not approximated",
+          "isCorrect": false,
+          "explanation": "This is one cause, but there are others."
+        },
+        {
+          "text": "There is significant tissue loss",
+          "isCorrect": false,
+          "explanation": "Tissue loss necessitates filling by granulation tissue."
+        },
+        {
+          "text": "The wound is infected",
+          "isCorrect": false,
+          "explanation": "Infection can prevent primary closure and leads to secondary healing."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Secondary intention healing involves larger defects, more inflammation, granulation tissue, and scarring."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All these situations favor secondary intention."
+        }
+      ],
+      "explanation": {
+        "overview": "Secondary intention healing occurs when wound edges cannot be brought together due to tissue loss, infection, or a large gap. It involves abundant granulation tissue formation, wound contraction, and a larger scar.",
+        "highYield": "Secondary intention: large gap, tissue loss, infection → more granulation, contraction, scar.",
+        "clinicalCorrelation": "Chronic ulcers and traumatic avulsions heal by secondary intention."
+      }
+    },
+    {
+      "questionId": "path_repair_014",
+      "difficulty": 1,
+      "question": "The initial phase of wound healing is characterized by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Formation of granulation tissue",
+          "isCorrect": false,
+          "explanation": "Granulation tissue appears later (around day 3-5)."
+        },
+        {
+          "text": "Collagen deposition",
+          "isCorrect": false,
+          "explanation": "Collagen deposition begins later, around day 3-5."
+        },
+        {
+          "text": "Hemostasis and inflammation",
+          "isCorrect": true,
+          "explanation": "Immediately after injury, hemostasis occurs (platelet plug, clot), followed by acute inflammation."
+        },
+        {
+          "text": "Wound contraction",
+          "isCorrect": false,
+          "explanation": "Contraction occurs later, mediated by myofibroblasts."
+        },
+        {
+          "text": "Re-epithelialization",
+          "isCorrect": false,
+          "explanation": "Re-epithelialization begins within hours but is not the first event."
+        }
+      ],
+      "explanation": {
+        "overview": "Wound healing proceeds through overlapping phases: (1) hemostasis and inflammation, (2) proliferation (granulation tissue, angiogenesis, re-epithelialization), and (3) remodeling.",
+        "highYield": "First phase: hemostasis (platelets, clot) + inflammation (neutrophils → macrophages). Then proliferation, then remodeling.",
+        "clinicalCorrelation": "Anti-inflammatory drugs given too early may impair the initial inflammatory signals needed for healing."
+      }
+    },
+    {
+      "questionId": "path_repair_015",
+      "difficulty": 1,
+      "question": "Which cells are the first to arrive at a wound site?",
+      "image": null,
+      "options": [
+        {
+          "text": "Lymphocytes",
+          "isCorrect": false,
+          "explanation": "Lymphocytes arrive later in chronic inflammation."
+        },
+        {
+          "text": "Macrophages",
+          "isCorrect": false,
+          "explanation": "Macrophages arrive after neutrophils, usually within 1-2 days."
+        },
+        {
+          "text": "Neutrophils",
+          "isCorrect": true,
+          "explanation": "Neutrophils are the first leukocytes to infiltrate, followed by macrophages."
+        },
+        {
+          "text": "Fibroblasts",
+          "isCorrect": false,
+          "explanation": "Fibroblasts proliferate during the proliferative phase, later."
+        },
+        {
+          "text": "Endothelial cells",
+          "isCorrect": false,
+          "explanation": "Endothelial cells proliferate later during angiogenesis."
+        }
+      ],
+      "explanation": {
+        "overview": "Neutrophils are the first inflammatory cells to migrate to a wound, attracted by chemokines and bacterial products. They phagocytose debris and bacteria and then are replaced by macrophages.",
+        "highYield": "Neutrophils first (24-48 hrs), then macrophages (48-96 hrs). Macrophages are essential for healing.",
+        "clinicalCorrelation": "Persistent neutrophil infiltration indicates ongoing infection, which impairs healing."
+      }
+    },
+    {
+      "questionId": "path_repair_016",
+      "difficulty": 2,
+      "question": "What is the role of macrophages in wound healing?",
+      "image": null,
+      "options": [
+        {
+          "text": "Phagocytosis of debris",
+          "isCorrect": false,
+          "explanation": "This is one role."
+        },
+        {
+          "text": "Secretion of growth factors",
+          "isCorrect": false,
+          "explanation": "Macrophages secrete PDGF, VEGF, TGF-β, etc."
+        },
+        {
+          "text": "Orchestrating tissue repair",
+          "isCorrect": false,
+          "explanation": "They coordinate the transition from inflammation to repair."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Macrophages clear debris, secrete cytokines and growth factors (e.g., PDGF, VEGF, TGF-β), and coordinate the repair process."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All listed are functions of macrophages in wound healing."
+        }
+      ],
+      "explanation": {
+        "overview": "Macrophages are the central regulators of wound healing. They clear apoptotic neutrophils and debris, produce growth factors that stimulate fibroblast and endothelial cell proliferation, and release proteases for ECM remodeling.",
+        "highYield": "Macrophages = master regulators of repair. Secrete PDGF, VEGF, TGF-β. Absence → impaired healing.",
+        "clinicalCorrelation": "M1 macrophages (pro-inflammatory) early, M2 (anti-inflammatory, pro-fibrotic) later. Manipulating phenotype may improve healing."
+      }
+    },
+    {
+      "questionId": "path_repair_017",
+      "difficulty": 1,
+      "question": "Granulation tissue is composed of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Fibroblasts and new blood vessels",
+          "isCorrect": true,
+          "explanation": "Granulation tissue consists of proliferating fibroblasts and new capillaries (angiogenesis), with scattered inflammatory cells."
+        },
+        {
+          "text": "Collagen and elastin",
+          "isCorrect": false,
+          "explanation": "Those are ECM components, not the cellular make-up of granulation tissue."
+        },
+        {
+          "text": "Lymphocytes and plasma cells",
+          "isCorrect": false,
+          "explanation": "Those are seen in chronic inflammation, but granulation tissue has fibroblasts and vessels."
+        },
+        {
+          "text": "Necrotic debris and neutrophils",
+          "isCorrect": false,
+          "explanation": "That describes an abscess or acute inflammation."
+        },
+        {
+          "text": "Epithelial cells",
+          "isCorrect": false,
+          "explanation": "Epithelial cells are involved in re-epithelialization, not the core of granulation tissue."
+        }
+      ],
+      "explanation": {
+        "overview": "Granulation tissue is pink, soft, granular-appearing tissue that fills a healing wound. Histologically, it is composed of proliferating fibroblasts, new thin-walled capillaries, and variable inflammatory cells in a loose ECM.",
+        "highYield": "Granulation tissue = new capillaries (angiogenesis) + fibroblasts. Appears around day 3-5. Later matures into scar.",
+        "clinicalCorrelation": "Healthy granulation tissue is a good sign in wound care; excessive granulation (proud flesh) may need cautery."
+      }
+    },
+    {
+      "questionId": "path_repair_018",
+      "difficulty": 1,
+      "question": "The image shows granulation tissue with numerous small blood vessels. This tissue is characteristic of:",
+      "image": "path_granulation_tissue.png",
+      "options": [
+        {
+          "text": "Healing wound",
+          "isCorrect": true,
+          "explanation": "Granulation tissue is the hallmark of healing wounds and some chronic inflammatory lesions."
+        },
+        {
+          "text": "Tumor",
+          "isCorrect": false,
+          "explanation": "Tumors have their own vasculature but lack the typical organized granulation tissue pattern."
+        },
+        {
+          "text": "Abscess wall",
+          "isCorrect": false,
+          "explanation": "An abscess wall is composed of neutrophils, fibrin, and later fibrosis, not granulation tissue."
+        },
+        {
+          "text": "Chronic inflammation",
+          "isCorrect": false,
+          "explanation": "Granulation tissue can be seen in chronic inflammation but is most typical of healing wounds."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "It is most characteristic of wound healing."
+        }
+      ],
+      "explanation": {
+        "overview": "Granulation tissue is the histological hallmark of a healing wound, appearing as pale pink tissue with numerous newly formed capillary loops. It is part of the proliferative phase of repair.",
+        "highYield": "Granulation tissue on biopsy = wound healing. Be careful not to mistake granulation tissue for vascular tumors.",
+        "clinicalCorrelation": "The presence of granulation tissue on a wound bed indicates that the wound is in the proliferative phase of healing."
+      }
+    },
+    {
+      "questionId": "path_repair_019",
+      "difficulty": 2,
+      "question": "Angiogenesis in wound healing is stimulated primarily by:",
+      "image": null,
+      "options": [
+        {
+          "text": "VEGF (vascular endothelial growth factor)",
+          "isCorrect": true,
+          "explanation": "VEGF is the key mediator of angiogenesis, promoting endothelial cell proliferation and migration."
+        },
+        {
+          "text": "PDGF",
+          "isCorrect": false,
+          "explanation": "PDGF stimulates fibroblasts and smooth muscle, but VEGF is the primary angiogenic factor."
+        },
+        {
+          "text": "TGF-β",
+          "isCorrect": false,
+          "explanation": "TGF-β stimulates ECM production but is not the primary angiogenic factor."
+        },
+        {
+          "text": "FGF",
+          "isCorrect": false,
+          "explanation": "FGF also promotes angiogenesis, but VEGF is the most potent and specific."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "Though several factors contribute, VEGF is the primary driver."
+        }
+      ],
+      "explanation": {
+        "overview": "VEGF (particularly VEGF-A) is the most important cytokine for angiogenesis. It is induced by hypoxia (via HIF-1) and binds to VEGFR-2 on endothelial cells, triggering proliferation, migration, and tube formation.",
+        "highYield": "VEGF = master regulator of angiogenesis. Upregulated by hypoxia. FGF and PDGF also contribute.",
+        "clinicalCorrelation": "Anti-VEGF therapies (e.g., bevacizumab) are used in cancer and wet AMD, but can impair wound healing."
+      }
+    },
+    {
+      "questionId": "path_repair_020",
+      "difficulty": 2,
+      "question": "Which growth factor is most important for fibroblast proliferation and collagen synthesis?",
+      "image": null,
+      "options": [
+        {
+          "text": "PDGF (platelet-derived growth factor)",
+          "isCorrect": false,
+          "explanation": "PDGF is a potent fibroblast mitogen."
+        },
+        {
+          "text": "TGF-β (transforming growth factor-beta)",
+          "isCorrect": false,
+          "explanation": "TGF-β is a strong inducer of collagen synthesis and ECM production."
+        },
+        {
+          "text": "FGF (fibroblast growth factor)",
+          "isCorrect": false,
+          "explanation": "FGF stimulates fibroblast proliferation."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "PDGF stimulates fibroblast proliferation, TGF-β stimulates collagen synthesis, and FGF also promotes fibroblast activity."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "These are all key fibroblast growth factors."
+        }
+      ],
+      "explanation": {
+        "overview": "Multiple growth factors work in concert during the proliferative phase. PDGF and FGF are potent mitogens for fibroblasts; TGF-β is the strongest profibrotic cytokine, driving myofibroblast differentiation and collagen synthesis.",
+        "highYield": "PDGF/FGF → fibroblast proliferation. TGF-β → collagen synthesis and myofibroblast differentiation. TGF-β is key in fibrosis.",
+        "clinicalCorrelation": "Anti-TGF-β therapies are being investigated to reduce pathological fibrosis in kidney, liver, and lung."
+      }
+    },
+    {
+      "questionId": "path_repair_021",
+      "difficulty": 1,
+      "question": "Re-epithelialization of a wound involves:",
+      "image": null,
+      "options": [
+        {
+          "text": "Migration and proliferation of keratinocytes",
+          "isCorrect": true,
+          "explanation": "Epithelial cells at the wound edge migrate and proliferate to cover the defect."
+        },
+        {
+          "text": "Formation of granulation tissue",
+          "isCorrect": false,
+          "explanation": "Granulation tissue is the connective tissue filling the defect, not the epithelial cover."
+        },
+        {
+          "text": "Wound contraction",
+          "isCorrect": false,
+          "explanation": "Contraction is mediated by myofibroblasts, not epithelial cells."
+        },
+        {
+          "text": "Collagen remodeling",
+          "isCorrect": false,
+          "explanation": "Remodeling occurs in the scar tissue, later in healing."
+        },
+        {
+          "text": "Angiogenesis",
+          "isCorrect": false,
+          "explanation": "Angiogenesis provides nutrients for granulation tissue, not the epithelial cover."
+        }
+      ],
+      "explanation": {
+        "overview": "Re-epithelialization is the process by which epithelial cells migrate from wound edges and appendages, proliferate, and differentiate to restore the epidermal barrier. It begins within hours of injury.",
+        "highYield": "Epithelial cells migrate over granulation tissue using integrins and MMPs. Contact inhibition stops migration when edges meet.",
+        "clinicalCorrelation": "Moist wound environment promotes faster re-epithelialization compared to dry eschar."
+      }
+    },
+    {
+      "questionId": "path_repair_022",
+      "difficulty": 2,
+      "question": "Wound contraction is mediated by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Fibroblasts differentiating into myofibroblasts",
+          "isCorrect": true,
+          "explanation": "Myofibroblasts (with contractile actin filaments) pull wound edges together, reducing wound size."
+        },
+        {
+          "text": "Collagen deposition",
+          "isCorrect": false,
+          "explanation": "Collagen provides strength but does not actively contract."
+        },
+        {
+          "text": "Epithelial migration",
+          "isCorrect": false,
+          "explanation": "Epithelial migration covers the surface but does not shrink the wound."
+        },
+        {
+          "text": "Macrophage activity",
+          "isCorrect": false,
+          "explanation": "Macrophages orchestrate repair but do not directly contract."
+        },
+        {
+          "text": "Neutrophils",
+          "isCorrect": false,
+          "explanation": "Neutrophils are phagocytes, not contractile cells."
+        }
+      ],
+      "explanation": {
+        "overview": "Wound contraction is a key feature of healing by secondary intention. Fibroblasts differentiate into myofibroblasts, which express alpha-smooth muscle actin and use contractile forces to draw the wound edges together.",
+        "highYield": "Myofibroblasts = alpha-SMA positive, contractile, reduce wound size. Important in secondary intention healing.",
+        "clinicalCorrelation": "Excessive wound contraction can cause contractures, particularly over joints, limiting mobility."
+      }
+    },
+    {
+      "questionId": "path_repair_023",
+      "difficulty": 2,
+      "question": "Myofibroblasts are characterized by expression of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Alpha-smooth muscle actin",
+          "isCorrect": true,
+          "explanation": "Myofibroblasts express alpha-smooth muscle actin, giving them contractile properties."
+        },
+        {
+          "text": "Vimentin",
+          "isCorrect": false,
+          "explanation": "Vimentin is a mesenchymal marker but not specific for myofibroblasts."
+        },
+        {
+          "text": "Desmin",
+          "isCorrect": false,
+          "explanation": "Desmin is more typical of muscle cells."
+        },
+        {
+          "text": "Cytokeratin",
+          "isCorrect": false,
+          "explanation": "Cytokeratin is an epithelial marker."
+        },
+        {
+          "text": "CD34",
+          "isCorrect": false,
+          "explanation": "CD34 is a hematopoietic stem cell and endothelial marker."
+        }
+      ],
+      "explanation": {
+        "overview": "Myofibroblasts are modified fibroblasts that have acquired contractile properties. Their hallmark is the expression of alpha-smooth muscle actin (α-SMA). They play a central role in wound contraction and fibrosis.",
+        "highYield": "Myofibroblast = α-SMA positive. Derived from fibroblasts, stellate cells, or epithelial-mesenchymal transition.",
+        "clinicalCorrelation": "Persistent myofibroblast activity leads to hypertrophic scars and organ fibrosis."
+      }
+    },
+    {
+      "questionId": "path_repair_024",
+      "difficulty": 2,
+      "question": "The image shows myofibroblasts with stress fibers. These cells are responsible for:",
+      "image": "path_myofibroblast.png",
+      "options": [
+        {
+          "text": "Collagen synthesis",
+          "isCorrect": false,
+          "explanation": "Myofibroblasts do produce collagen, but their primary defining function is contraction."
+        },
+        {
+          "text": "Wound contraction",
+          "isCorrect": true,
+          "explanation": "Myofibroblasts contract, pulling the wound edges together."
+        },
+        {
+          "text": "Angiogenesis",
+          "isCorrect": false,
+          "explanation": "Angiogenesis is primarily endothelial cell function."
+        },
+        {
+          "text": "Phagocytosis",
+          "isCorrect": false,
+          "explanation": "Phagocytosis is performed by macrophages and neutrophils."
+        },
+        {
+          "text": "Inflammation",
+          "isCorrect": false,
+          "explanation": "Inflammation is mediated by leukocytes."
+        }
+      ],
+      "explanation": {
+        "overview": "Myofibroblasts are spindle-shaped cells containing stress fibers and α-SMA, enabling them to generate contractile force. They are essential for wound contraction and contribute to the tensile strength of the scar.",
+        "highYield": "Myofibroblasts → wound contraction. They disappear after wound closure via apoptosis.",
+        "clinicalCorrelation": "Dupuytren contracture involves persistent myofibroblast activity in the palmar fascia."
+      }
+    },
+    {
+      "questionId": "path_repair_025",
+      "difficulty": 2,
+      "question": "Collagen deposition in a healing wound begins around:",
+      "image": null,
+      "options": [
+        {
+          "text": "Day 1-2",
+          "isCorrect": false,
+          "explanation": "Day 1-2 is mainly inflammation; collagen synthesis hasn't started significantly."
+        },
+        {
+          "text": "Day 3-5",
+          "isCorrect": true,
+          "explanation": "Fibroblasts start producing collagen around day 3-5, peaking later."
+        },
+        {
+          "text": "Day 5-7",
+          "isCorrect": false,
+          "explanation": "By day 5-7 collagen is already being laid down, having started earlier."
+        },
+        {
+          "text": "Week 2-3",
+          "isCorrect": false,
+          "explanation": "By this time, significant collagen has already been deposited."
+        },
+        {
+          "text": "Month 1",
+          "isCorrect": false,
+          "explanation": "Collagen deposition begins much earlier."
+        }
+      ],
+      "explanation": {
+        "overview": "Collagen synthesis begins during the proliferative phase, around days 3-5. Fibroblasts produce type III collagen (reticulin) initially, which is later replaced by type I collagen during remodeling.",
+        "highYield": "Collagen starts day 3-5. Type III first → replaced by type I. Peak collagen synthesis around 7-10 days.",
+        "clinicalCorrelation": "Sutures are often removed around day 7-10 when the wound has gained enough collagen strength."
+      }
+    },
+    {
+      "questionId": "path_repair_026",
+      "difficulty": 2,
+      "question": "The tensile strength of a healing wound reaches its maximum at:",
+      "image": null,
+      "options": [
+        {
+          "text": "1 week",
+          "isCorrect": false,
+          "explanation": "At 1 week strength is only about 10% of normal skin."
+        },
+        {
+          "text": "2 weeks",
+          "isCorrect": false,
+          "explanation": "Strength increases but not maximal."
+        },
+        {
+          "text": "3 months",
+          "isCorrect": true,
+          "explanation": "Wound strength increases gradually; by 3 months it may reach about 80% of normal skin, due to collagen remodeling."
+        },
+        {
+          "text": "6 months",
+          "isCorrect": false,
+          "explanation": "By 6 months it may be close to maximum, but maximal strength is usually around 3 months."
+        },
+        {
+          "text": "1 year",
+          "isCorrect": false,
+          "explanation": "It plateaus earlier."
+        }
+      ],
+      "explanation": {
+        "overview": "Wound tensile strength develops slowly. It reaches about 10% by 1 week, increases to 70-80% by 3 months, and never fully recovers to normal unwounded tissue strength.",
+        "highYield": "Wound strength: 10% at 1 week, ~80% at 3 months, never reaches 100%. Remodeling involves collagen cross-linking and MMP activity.",
+        "clinicalCorrelation": "Patients should avoid heavy lifting for 6-8 weeks after abdominal surgery to prevent incisional hernia."
+      }
+    },
+    {
+      "questionId": "path_repair_027",
+      "difficulty": 2,
+      "question": "Which type of collagen is predominant in early granulation tissue?",
+      "image": null,
+      "options": [
+        {
+          "text": "Type I",
+          "isCorrect": false,
+          "explanation": "Type I collagen predominates later in the mature scar."
+        },
+        {
+          "text": "Type II",
+          "isCorrect": false,
+          "explanation": "Type II is characteristic of cartilage."
+        },
+        {
+          "text": "Type III",
+          "isCorrect": true,
+          "explanation": "Type III collagen (reticulin) is deposited initially and later replaced by stronger type I collagen."
+        },
+        {
+          "text": "Type IV",
+          "isCorrect": false,
+          "explanation": "Type IV is found in basement membranes."
+        },
+        {
+          "text": "Type V",
+          "isCorrect": false,
+          "explanation": "Type V is a minor component, not the main early type."
+        }
+      ],
+      "explanation": {
+        "overview": "Collagen types: Type III (reticulin) is the earliest to be laid down in granulation tissue. During remodeling, it is degraded by MMPs and replaced by the stronger type I collagen, increasing tensile strength.",
+        "highYield": "Early granulation tissue = Type III collagen. Mature scar = Type I collagen. Type IV = basement membrane.",
+        "clinicalCorrelation": "Ehlers-Danlos syndromes with type III collagen mutation cause fragile tissues and poor wound healing."
+      }
+    },
+    {
+      "questionId": "path_repair_028",
+      "difficulty": 2,
+      "question": "The enzyme responsible for collagen degradation during remodeling is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Matrix metalloproteinases (MMPs)",
+          "isCorrect": false,
+          "explanation": "MMPs are a family; collagenase is one of them."
+        },
+        {
+          "text": "Cathepsins",
+          "isCorrect": false,
+          "explanation": "Cathepsins are lysosomal proteases, not the main collagen-degrading enzymes in ECM."
+        },
+        {
+          "text": "Elastase",
+          "isCorrect": false,
+          "explanation": "Elastase degrades elastin, not primarily collagen."
+        },
+        {
+          "text": "Collagenase (specific type of MMP)",
+          "isCorrect": false,
+          "explanation": "Collagenases (MMP-1, MMP-8) are the primary collagen-degrading enzymes, and they are part of the MMP family."
+        },
+        {
+          "text": "Both A and D",
+          "isCorrect": true,
+          "explanation": "MMPs, including collagenases, degrade ECM components, allowing remodeling."
+        }
+      ],
+      "explanation": {
+        "overview": "Matrix metalloproteinases (MMPs) are zinc-dependent endopeptidases that degrade ECM components. Collagenases (MMP-1, MMP-8, MMP-13) cleave fibrillar collagens, initiating remodeling. TIMPs (tissue inhibitors of MMPs) regulate their activity.",
+        "highYield": "Collagen degradation: MMPs (especially collagenases). Balance between MMPs and TIMPs controls remodeling.",
+        "clinicalCorrelation": "Excess MMP activity leads to chronic wound dehiscence; reduced activity contributes to fibrosis."
+      }
+    },
+    {
+      "questionId": "path_repair_029",
+      "difficulty": 1,
+      "question": "Which of the following factors impairs wound healing?",
+      "image": null,
+      "options": [
+        {
+          "text": "Infection",
+          "isCorrect": false,
+          "explanation": "Infection is a major cause of delayed healing."
+        },
+        {
+          "text": "Malnutrition (vitamin C deficiency)",
+          "isCorrect": false,
+          "explanation": "Protein, vitamin C, and zinc deficiencies impair collagen synthesis."
+        },
+        {
+          "text": "Steroids",
+          "isCorrect": false,
+          "explanation": "Corticosteroids suppress inflammation and fibroblast activity."
+        },
+        {
+          "text": "Diabetes mellitus",
+          "isCorrect": false,
+          "explanation": "Diabetes causes microangiopathy and impaired immune response."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Infection, poor nutrition, corticosteroids, and diabetes all impair healing."
+        }
+      ],
+      "explanation": {
+        "overview": "Numerous local and systemic factors can delay or impair wound healing, including infection, foreign bodies, poor perfusion, malnutrition, diabetes, steroid use, and mechanical stress.",
+        "highYield": "Local: infection, ischemia, foreign body. Systemic: diabetes, malnutrition (vitamin C, zinc), steroids, old age.",
+        "clinicalCorrelation": "Pre-operative optimization (glycemic control, nutrition, smoking cessation) improves surgical wound healing."
+      }
+    },
+    {
+      "questionId": "path_repair_030",
+      "difficulty": 2,
+      "question": "Vitamin C deficiency (scurvy) impairs wound healing because:",
+      "image": null,
+      "options": [
+        {
+          "text": "It is a cofactor for collagen cross-linking",
+          "isCorrect": true,
+          "explanation": "Vitamin C is required for hydroxylation of proline and lysine in collagen synthesis; deficiency leads to unstable collagen."
+        },
+        {
+          "text": "It reduces inflammation",
+          "isCorrect": false,
+          "explanation": "Vitamin C does not primarily reduce inflammation."
+        },
+        {
+          "text": "It increases infection risk",
+          "isCorrect": false,
+          "explanation": "While it may affect immunity, the primary defect is collagen synthesis."
+        },
+        {
+          "text": "It inhibits angiogenesis",
+          "isCorrect": false,
+          "explanation": "Vitamin C is not an angiogenesis inhibitor."
+        },
+        {
+          "text": "It causes bleeding",
+          "isCorrect": false,
+          "explanation": "Bleeding is a consequence of capillary fragility from poor collagen, but the direct cause of poor healing is impaired collagen synthesis."
+        }
+      ],
+      "explanation": {
+        "overview": "Vitamin C (ascorbic acid) is a necessary cofactor for prolyl hydroxylase and lysyl hydroxylase, enzymes that hydroxylate proline and lysine residues in procollagen. Hydroxylation is essential for stable triple-helix formation and cross-linking.",
+        "highYield": "Vitamin C → collagen hydroxylation → stable collagen triple helix. Deficiency → scurvy → poor wound healing, bleeding gums.",
+        "clinicalCorrelation": "Surgical patients with poor nutrition may need vitamin C supplementation to ensure adequate healing."
+      }
+    },
+    {
+      "questionId": "path_repair_031",
+      "difficulty": 1,
+      "question": "Which systemic disease is a major cause of impaired wound healing?",
+      "image": null,
+      "options": [
+        {
+          "text": "Diabetes mellitus",
+          "isCorrect": true,
+          "explanation": "Diabetes causes microvascular disease, neuropathy, and increased infection risk, all delaying healing."
+        },
+        {
+          "text": "Hypertension",
+          "isCorrect": false,
+          "explanation": "Hypertension alone does not markedly impair wound healing."
+        },
+        {
+          "text": "Asthma",
+          "isCorrect": false,
+          "explanation": "Asthma does not directly impair healing."
+        },
+        {
+          "text": "Osteoarthritis",
+          "isCorrect": false,
+          "explanation": "Osteoarthritis is not a major systemic cause of poor healing."
+        },
+        {
+          "text": "Gout",
+          "isCorrect": false,
+          "explanation": "Gout does not significantly impair healing."
+        }
+      ],
+      "explanation": {
+        "overview": "Diabetes mellitus impairs wound healing through multiple mechanisms: hyperglycemia impairs leukocyte function, microvascular disease reduces perfusion, peripheral neuropathy leads to undetected trauma, and increased risk of infection.",
+        "highYield": "Diabetes → impaired healing: microangiopathy, neuropathy, immune dysfunction, infection. Diabetic foot ulcers are a major complication.",
+        "clinicalCorrelation": "Tight glycemic control and specialized wound care are essential for diabetic ulcer management."
+      }
+    },
+    {
+      "questionId": "path_repair_032",
+      "difficulty": 1,
+      "question": "A keloid is an example of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Excessive scar formation extending beyond original wound",
+          "isCorrect": true,
+          "explanation": "Keloids are raised scars that grow beyond the wound margins, more common in darker-skinned individuals."
+        },
+        {
+          "text": "Normal scar",
+          "isCorrect": false,
+          "explanation": "Keloids are abnormal excessive scars."
+        },
+        {
+          "text": "Hypertrophic scar confined to wound edges",
+          "isCorrect": false,
+          "explanation": "Hypertrophic scars stay within wound boundaries; keloids extend beyond."
+        },
+        {
+          "text": "Wound dehiscence",
+          "isCorrect": false,
+          "explanation": "Dehiscence is wound rupture, not excessive scar."
+        },
+        {
+          "text": "Ulceration",
+          "isCorrect": false,
+          "explanation": "Ulceration is an open sore, not a scar."
+        }
+      ],
+      "explanation": {
+        "overview": "Keloids are thick, raised scars that result from excessive collagen deposition and extend beyond the boundaries of the original wound. They have a genetic predisposition and are more common in African, Asian, and Hispanic populations.",
+        "highYield": "Keloid = excessive scar beyond wound margins. Hypertrophic scar = within wound margins. Both have excessive collagen.",
+        "clinicalCorrelation": "Keloids may require corticosteroid injections, laser, or surgical excision, but recurrences are common."
+      }
+    },
+    {
+      "questionId": "path_repair_033",
+      "difficulty": 2,
+      "question": "A hypertrophic scar differs from a keloid in that it:",
+      "image": null,
+      "options": [
+        {
+          "text": "Remains within the wound boundaries",
+          "isCorrect": false,
+          "explanation": "This is one difference."
+        },
+        {
+          "text": "Regresses over time",
+          "isCorrect": false,
+          "explanation": "Hypertrophic scars may regress spontaneously, keloids do not."
+        },
+        {
+          "text": "Does not recur after excision",
+          "isCorrect": false,
+          "explanation": "Hypertrophic scars rarely recur after excision; keloids often recur."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Hypertrophic scars are confined to the wound, may regress, and typically do not recur if excised."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All statements correctly distinguish hypertrophic scar from keloid."
+        }
+      ],
+      "explanation": {
+        "overview": "Hypertrophic scars are raised but remain within the boundaries of the original wound, often improve over time, and generally do not recur after surgical revision. Keloids are more persistent and extend beyond the wound.",
+        "highYield": "Hypertrophic scar: within wound, may regress. Keloid: beyond wound, persistent, frequent recurrence.",
+        "clinicalCorrelation": "Distinguishing them clinically is important for management: pressure therapy for hypertrophic, intralesional steroids for keloids."
+      }
+    },
+    {
+      "questionId": "path_repair_034",
+      "difficulty": 1,
+      "question": "The image shows an ear lobe with a large, overgrown scar. This is a:",
+      "image": "path_keloid_ear.png",
+      "options": [
+        {
+          "text": "Hypertrophic scar",
+          "isCorrect": false,
+          "explanation": "Hypertrophic scars stay within the wound margins; this extends beyond."
+        },
+        {
+          "text": "Keloid",
+          "isCorrect": true,
+          "explanation": "Keloids often occur on ear lobes after piercing, extending beyond the original wound."
+        },
+        {
+          "text": "Dermatofibroma",
+          "isCorrect": false,
+          "explanation": "Dermatofibroma is a benign skin nodule, not a scar."
+        },
+        {
+          "text": "Neurofibroma",
+          "isCorrect": false,
+          "explanation": "Neurofibroma is a benign nerve sheath tumor."
+        },
+        {
+          "text": "Granuloma",
+          "isCorrect": false,
+          "explanation": "Granuloma is a collection of epithelioid histiocytes."
+        }
+      ],
+      "explanation": {
+        "overview": "Earlobe keloids are common after ear piercing and can grow to large sizes. They are difficult to treat and often recur after excision.",
+        "highYield": "Earlobe mass after piercing = keloid. Excision alone has high recurrence rate; need adjuvant therapy (pressure, steroids, radiation).",
+        "clinicalCorrelation": "Surgical excision with post-op corticosteroid injection or radiotherapy is often used to reduce recurrence."
+      }
+    },
+    {
+      "questionId": "path_repair_035",
+      "difficulty": 1,
+      "question": "Wound dehiscence refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Rupture or splitting open of a wound",
+          "isCorrect": true,
+          "explanation": "Dehiscence is breakdown of a closed wound, often due to poor healing or infection."
+        },
+        {
+          "text": "Excessive scarring",
+          "isCorrect": false,
+          "explanation": "That describes keloid or hypertrophic scar."
+        },
+        {
+          "text": "Infection of wound",
+          "isCorrect": false,
+          "explanation": "Infection can cause dehiscence, but dehiscence itself is the wound opening."
+        },
+        {
+          "text": "Delayed healing",
+          "isCorrect": false,
+          "explanation": "Delayed healing is a chronic situation, not acute rupture."
+        },
+        {
+          "text": "Ulcer formation",
+          "isCorrect": false,
+          "explanation": "Ulcer is a chronic open sore."
+        }
+      ],
+      "explanation": {
+        "overview": "Wound dehiscence is the partial or total separation of previously approximated wound edges. It often occurs 5-8 days post-operatively and is a serious surgical complication, sometimes leading to evisceration.",
+        "highYield": "Dehiscence = wound opening. Causes: infection, poor nutrition, tension, ischemia, steroid use.",
+        "clinicalCorrelation": "Abdominal wound dehiscence may require emergency re-operation and mesh repair."
+      }
+    },
+    {
+      "questionId": "path_repair_036",
+      "difficulty": 2,
+      "question": "Which of the following is a complication of wound healing?",
+      "image": null,
+      "options": [
+        {
+          "text": "Infection",
+          "isCorrect": false,
+          "explanation": "Wound infection is a common complication."
+        },
+        {
+          "text": "Incisional hernia",
+          "isCorrect": false,
+          "explanation": "Weak scar can lead to hernia."
+        },
+        {
+          "text": "Stenosis (e.g., in tubular structures)",
+          "isCorrect": false,
+          "explanation": "Scar contraction can cause strictures in esophagus, urethra, etc."
+        },
+        {
+          "text": "Neuroma formation",
+          "isCorrect": false,
+          "explanation": "Traumatic neuromas can form when nerves are severed."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Complications include infection, hernia (weak scar), stricture, and painful neuromas from cut nerves."
+        }
+      ],
+      "explanation": {
+        "overview": "Wound healing complications range from infection and dehiscence to excessive scarring (keloid/hypertrophic), contractures (causing stenosis or limited mobility), and neuromas from nerve injury.",
+        "highYield": "Healing complications: infection, dehiscence, hernia, stricture/contracture, keloid, neuroma.",
+        "clinicalCorrelation": "Anastomotic strictures after bowel surgery are a form of excessive healing causing obstruction."
+      }
+    },
+    {
+      "questionId": "path_repair_037",
+      "difficulty": 2,
+      "question": "The term 'organization' in pathology refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Replacement of necrotic tissue by granulation tissue and fibrosis",
+          "isCorrect": true,
+          "explanation": "Organization is the process by which granulation tissue invades and replaces necrotic debris, leading to scar formation."
+        },
+        {
+          "text": "Formation of granulomas",
+          "isCorrect": false,
+          "explanation": "Granuloma is a type of chronic inflammation, not organization."
+        },
+        {
+          "text": "Arrangement of cells in a tissue",
+          "isCorrect": false,
+          "explanation": "That is histological architecture, not organization."
+        },
+        {
+          "text": "Wound contraction",
+          "isCorrect": false,
+          "explanation": "Contraction is part of the healing process but not the definition of organization."
+        },
+        {
+          "text": "Re-epithelialization",
+          "isCorrect": false,
+          "explanation": "Re-epithelialization is epithelial covering, not the replacement of necrotic tissue."
+        }
+      ],
+      "explanation": {
+        "overview": "'Organization' is a pathological term for the replacement of necrotic tissue or exudate by granulation tissue, which eventually forms a fibrous scar. It is commonly seen in organizing pneumonia, organizing thrombus, and healing infarcts.",
+        "highYield": "Organization = granulation tissue ingrowth into necrotic/thrombotic material → scar. Example: organizing pneumonia (Masson bodies).",
+        "clinicalCorrelation": "An organized thrombus can recanalize; organized pneumonia may resemble interstitial lung disease on imaging."
+      }
+    },
+    {
+      "questionId": "path_repair_038",
+      "difficulty": 1,
+      "question": "In a myocardial infarction, the necrotic muscle is replaced by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Regenerated cardiac muscle",
+          "isCorrect": false,
+          "explanation": "Cardiac muscle cannot regenerate."
+        },
+        {
+          "text": "Granulation tissue and then fibrous scar",
+          "isCorrect": true,
+          "explanation": "Cardiac muscle cannot regenerate; the infarct undergoes organization and becomes a fibrous scar."
+        },
+        {
+          "text": "Adipose tissue",
+          "isCorrect": false,
+          "explanation": "Adipose tissue replacement (fatty infiltration) can occur in chronic injury, but infarcts scar."
+        },
+        {
+          "text": "Calcified tissue",
+          "isCorrect": false,
+          "explanation": "Calcification can occur within a scar, but the primary replacement is fibrous tissue."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "The necrotic tissue is definitely replaced by something."
+        }
+      ],
+      "explanation": {
+        "overview": "Because cardiac myocytes are permanent cells, myocardial infarction inevitably heals by organization: the necrotic area is invaded by granulation tissue and ultimately replaced by a dense collagenous scar.",
+        "highYield": "Myocardial infarct → organization → fibrous scar. No myocardial regeneration. Scar may calcify or thin (aneurysm).",
+        "clinicalCorrelation": "Scar thinning after MI can lead to ventricular aneurysm and heart failure."
+      }
+    },
+    {
+      "questionId": "path_repair_039",
+      "difficulty": 1,
+      "question": "The image shows a myocardial scar after an infarct. This is an example of:",
+      "image": "path_myocardial_scar.png",
+      "options": [
+        {
+          "text": "Regeneration",
+          "isCorrect": false,
+          "explanation": "There is no regeneration of cardiac muscle; it is a scar."
+        },
+        {
+          "text": "Organization with fibrosis",
+          "isCorrect": true,
+          "explanation": "The infarcted area is replaced by dense collagenous scar."
+        },
+        {
+          "text": "Metaplasia",
+          "isCorrect": false,
+          "explanation": "Metaplasia is a change in cell type, not relevant here."
+        },
+        {
+          "text": "Dysplasia",
+          "isCorrect": false,
+          "explanation": "Dysplasia is pre-cancerous change."
+        },
+        {
+          "text": "Atrophy",
+          "isCorrect": false,
+          "explanation": "Atrophy is a decrease in cell size, not scar formation."
+        }
+      ],
+      "explanation": {
+        "overview": "A healed myocardial infarct appears as a pale, fibrous scar that thins the ventricular wall. Histologically, it is dense collagen with few residual cardiomyocytes.",
+        "highYield": "Myocardial scar = organization + fibrosis. White, firm, thinned wall. No muscle regeneration.",
+        "clinicalCorrelation": "Echocardiography can detect wall motion abnormalities due to scar."
+      }
+    },
+    {
+      "questionId": "path_repair_040",
+      "difficulty": 1,
+      "question": "Which cells are responsible for synthesizing collagen in a healing wound?",
+      "image": null,
+      "options": [
+        {
+          "text": "Macrophages",
+          "isCorrect": false,
+          "explanation": "Macrophages regulate healing but do not synthesize collagen."
+        },
+        {
+          "text": "Fibroblasts",
+          "isCorrect": true,
+          "explanation": "Fibroblasts produce collagen and other ECM components."
+        },
+        {
+          "text": "Endothelial cells",
+          "isCorrect": false,
+          "explanation": "Endothelial cells form blood vessels."
+        },
+        {
+          "text": "Lymphocytes",
+          "isCorrect": false,
+          "explanation": "Lymphocytes are immune cells, not collagen producers."
+        },
+        {
+          "text": "Myofibroblasts",
+          "isCorrect": false,
+          "explanation": "Myofibroblasts do produce collagen, but fibroblasts are the primary collagen-synthesizing cells. Myofibroblasts are differentiated fibroblasts."
+        }
+      ],
+      "explanation": {
+        "overview": "Fibroblasts are the workhorses of wound healing, responsible for synthesizing collagen, fibronectin, and proteoglycans. They are attracted to the wound and proliferate under the influence of growth factors.",
+        "highYield": "Fibroblast → collagen synthesis. TGF-β is the major profibrotic cytokine.",
+        "clinicalCorrelation": "In fibrotic diseases (pulmonary fibrosis, cirrhosis), activated fibroblasts/myofibroblasts overproduce collagen."
+      }
+    },
+    {
+      "questionId": "path_repair_041",
+      "difficulty": 2,
+      "question": "The process of angiogenesis involves:",
+      "image": null,
+      "options": [
+        {
+          "text": "Sprouting of new capillaries from existing vessels",
+          "isCorrect": false,
+          "explanation": "This is one step."
+        },
+        {
+          "text": "Proliferation of endothelial cells",
+          "isCorrect": false,
+          "explanation": "Endothelial cells proliferate to form new tubes."
+        },
+        {
+          "text": "Migration of endothelial cells",
+          "isCorrect": false,
+          "explanation": "Endothelial cells migrate toward the angiogenic stimulus."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Angiogenesis is a multi-step process involving endothelial activation, proliferation, and migration."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All listed steps are part of angiogenesis."
+        }
+      ],
+      "explanation": {
+        "overview": "Angiogenesis (new blood vessel formation from existing vasculature) involves vasodilation, increased permeability, degradation of basement membrane by MMPs, endothelial cell migration and proliferation, tube formation, and maturation with pericyte coverage.",
+        "highYield": "Angiogenesis steps: vasodilation → BM degradation → endothelial migration/proliferation → tube formation → pericyte recruitment.",
+        "clinicalCorrelation": "Anti-angiogenic drugs (e.g., bevacizumab) inhibit VEGF and are used in cancer and retinal disease."
+      }
+    },
+    {
+      "questionId": "path_repair_042",
+      "difficulty": 3,
+      "question": "Which of the following is a negative regulator of wound healing?",
+      "image": null,
+      "options": [
+        {
+          "text": "PDGF",
+          "isCorrect": false,
+          "explanation": "PDGF promotes fibroblast proliferation."
+        },
+        {
+          "text": "TGF-β",
+          "isCorrect": false,
+          "explanation": "TGF-β promotes collagen synthesis and fibrosis."
+        },
+        {
+          "text": "IFN-γ",
+          "isCorrect": true,
+          "explanation": "IFN-γ can inhibit collagen synthesis and fibroblast proliferation, slowing healing."
+        },
+        {
+          "text": "VEGF",
+          "isCorrect": false,
+          "explanation": "VEGF stimulates angiogenesis."
+        },
+        {
+          "text": "FGF",
+          "isCorrect": false,
+          "explanation": "FGF promotes fibroblast and endothelial cell proliferation."
+        }
+      ],
+      "explanation": {
+        "overview": "While most growth factors promote wound healing, interferon-gamma (IFN-γ) is an inhibitor. It suppresses fibroblast proliferation and collagen gene expression. It is sometimes used clinically to reduce scarring.",
+        "highYield": "IFN-γ inhibits fibrosis. Used to treat keloids and hypertrophic scars by reducing collagen.",
+        "clinicalCorrelation": "Topical IFN-γ has been explored for hypertrophic scar reduction."
+      }
+    },
+    {
+      "questionId": "path_repair_043",
+      "difficulty": 1,
+      "question": "In pressure ulcers (bedsores), impaired healing is often due to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Ischemia from prolonged pressure",
+          "isCorrect": false,
+          "explanation": "Ischemia is the primary insult."
+        },
+        {
+          "text": "Infection",
+          "isCorrect": false,
+          "explanation": "Infection often complicates."
+        },
+        {
+          "text": "Malnutrition",
+          "isCorrect": false,
+          "explanation": "Malnutrition contributes."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Pressure ulcers result from ischemia, compounded by infection and poor nutrition."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All factors are involved."
+        }
+      ],
+      "explanation": {
+        "overview": "Pressure ulcers develop in immobilized patients due to sustained pressure, leading to tissue ischemia and necrosis. Poor nutrition, infection, and systemic illness impair the healing of these chronic wounds.",
+        "highYield": "Pressure ulcers: prolonged pressure → ischemia → necrosis. Risk factors: immobility, poor nutrition, incontinence.",
+        "clinicalCorrelation": "Prevention via frequent repositioning and pressure-relieving support surfaces is key."
+      }
+    },
+    {
+      "questionId": "path_repair_044",
+      "difficulty": 2,
+      "question": "The role of platelets in wound healing includes:",
+      "image": null,
+      "options": [
+        {
+          "text": "Forming a hemostatic plug",
+          "isCorrect": false,
+          "explanation": "This is their primary hemostatic function."
+        },
+        {
+          "text": "Releasing growth factors (PDGF, TGF-β)",
+          "isCorrect": false,
+          "explanation": "Platelets release alpha granules containing PDGF, TGF-β, VEGF, etc."
+        },
+        {
+          "text": "Attracting inflammatory cells",
+          "isCorrect": false,
+          "explanation": "Platelet-derived chemokines recruit leukocytes."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Platelets initiate clot formation and release cytokines that recruit cells and stimulate repair."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All are functions of platelets in wound healing."
+        }
+      ],
+      "explanation": {
+        "overview": "Platelets are the first responders to vascular injury. They aggregate to form a hemostatic plug and degranulate, releasing growth factors (PDGF, TGF-β, VEGF, FGF) and chemokines that initiate the inflammatory and proliferative phases of healing.",
+        "highYield": "Platelets → hemostasis + growth factor release (PDGF, TGF-β). Key to initiating wound healing.",
+        "clinicalCorrelation": "Platelet-rich plasma (PRP) injections are used in sports medicine and wound care to deliver concentrated growth factors."
+      }
+    },
+    {
+      "questionId": "path_repair_045",
+      "difficulty": 2,
+      "question": "A deficiency in which of the following trace elements can impair wound healing?",
+      "image": null,
+      "options": [
+        {
+          "text": "Zinc",
+          "isCorrect": false,
+          "explanation": "Zinc is a cofactor for many enzymes including MMPs and DNA/RNA polymerases."
+        },
+        {
+          "text": "Copper",
+          "isCorrect": false,
+          "explanation": "Copper is a cofactor for lysyl oxidase, needed for collagen cross-linking."
+        },
+        {
+          "text": "Iron",
+          "isCorrect": false,
+          "explanation": "Iron is required for hemoglobin and cytochrome enzymes; deficiency causes anemia and poor oxygenation."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Zinc is a cofactor for enzymes; copper is needed for collagen cross-linking; iron is essential for oxygen delivery."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All three are essential for wound healing."
+        }
+      ],
+      "explanation": {
+        "overview": "Trace elements play critical roles in wound healing. Zinc is needed for protein and DNA synthesis, copper for collagen cross-linking, and iron for oxygen transport and cytochrome function.",
+        "highYield": "Zinc: enzyme cofactor. Copper: lysyl oxidase (collagen cross-linking). Iron: oxygen delivery. Deficiencies impair healing.",
+        "clinicalCorrelation": "Patients with chronic wounds should be assessed for nutritional deficiencies including zinc and iron."
+      }
+    },
+    {
+      "questionId": "path_repair_046",
+      "difficulty": 2,
+      "question": "Which of the following conditions predisposes to excessive scar formation (keloids)?",
+      "image": null,
+      "options": [
+        {
+          "text": "African ancestry",
+          "isCorrect": false,
+          "explanation": "Dark-skinned individuals have a higher incidence."
+        },
+        {
+          "text": "Young age",
+          "isCorrect": false,
+          "explanation": "Younger people are more prone."
+        },
+        {
+          "text": "Wound tension",
+          "isCorrect": false,
+          "explanation": "High-tension areas (chest, deltoid) are more susceptible."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Keloids are more common in dark-skinned individuals, younger people, and areas of high tension."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All factors are associated."
+        }
+      ],
+      "explanation": {
+        "overview": "Keloid formation has a strong genetic predisposition, with higher incidence in African, Asian, and Hispanic populations. They occur more frequently in younger individuals and in body sites with high skin tension.",
+        "highYield": "Keloid risk factors: darker skin, young age, high-tension areas (chest, shoulders, earlobes).",
+        "clinicalCorrelation": "Avoiding unnecessary surgery in high-risk individuals and early silicone gel therapy may reduce keloid risk."
+      }
+    },
+    {
+      "questionId": "path_repair_047",
+      "difficulty": 1,
+      "question": "The image shows a healed surgical incision with a fine line. This is an example of healing by:",
+      "image": "path_healing_first_intention.png",
+      "options": [
+        {
+          "text": "First intention",
+          "isCorrect": true,
+          "explanation": "Clean incisions heal by first intention with minimal scarring."
+        },
+        {
+          "text": "Second intention",
+          "isCorrect": false,
+          "explanation": "Second intention involves more granulation tissue and a larger scar."
+        },
+        {
+          "text": "Third intention",
+          "isCorrect": false,
+          "explanation": "Third intention (delayed primary closure) occurs when a wound is left open initially and closed later."
+        },
+        {
+          "text": "Delayed primary closure",
+          "isCorrect": false,
+          "explanation": "That is third intention."
+        },
+        {
+          "text": "Granulation",
+          "isCorrect": false,
+          "explanation": "Granulation tissue is a phase, not the final scar appearance."
+        }
+      ],
+      "explanation": {
+        "overview": "A fine, linear, minimally depressed scar following a surgical incision is characteristic of primary intention healing.",
+        "highYield": "First intention scar = fine line. Second intention scar = larger, irregular, more contracture.",
+        "clinicalCorrelation": "Cosmetically, primary closure is preferred when possible."
+      }
+    },
+    {
+      "questionId": "path_repair_048",
+      "difficulty": 2,
+      "question": "Healing by second intention involves more granulation tissue because:",
+      "image": null,
+      "options": [
+        {
+          "text": "The wound gap is larger",
+          "isCorrect": false,
+          "explanation": "This is one reason."
+        },
+        {
+          "text": "There is more fibrin and debris to remove",
+          "isCorrect": false,
+          "explanation": "More exudate and debris need to be organized."
+        },
+        {
+          "text": "More contraction is needed",
+          "isCorrect": false,
+          "explanation": "Contraction is more pronounced."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Larger defects require more granulation tissue to fill the gap, followed by wound contraction."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All factors contribute."
+        }
+      ],
+      "explanation": {
+        "overview": "Secondary intention healing is characterized by a large tissue defect that must be filled by granulation tissue. This leads to more intense inflammation, more granulation tissue, and prominent wound contraction, resulting in a larger, more irregular scar.",
+        "highYield": "Secondary intention: more granulation, more contraction, larger scar. Occurs in gaping wounds, burns, ulcers.",
+        "clinicalCorrelation": "Understanding the difference helps predict scar outcomes and plan wound closure strategies."
+      }
+    },
+    {
+      "questionId": "path_repair_049",
+      "difficulty": 2,
+      "question": "Wound contraction can reduce the size of a full-thickness wound by up to:",
+      "image": null,
+      "options": [
+        {
+          "text": "10-20%",
+          "isCorrect": false,
+          "explanation": "That underestimates the power of contraction."
+        },
+        {
+          "text": "30-50%",
+          "isCorrect": false,
+          "explanation": "Contraction can shrink wounds more than this."
+        },
+        {
+          "text": "70-80%",
+          "isCorrect": true,
+          "explanation": "Contraction can significantly reduce wound size, often by 70-80% in some areas."
+        },
+        {
+          "text": "90%",
+          "isCorrect": false,
+          "explanation": "It can approach 90% but typical maximum is around 70-80%."
+        },
+        {
+          "text": "100%",
+          "isCorrect": false,
+          "explanation": "Complete closure by contraction alone is rare."
+        }
+      ],
+      "explanation": {
+        "overview": "Wound contraction can dramatically reduce the surface area of a full-thickness wound, in some cases by up to 70-80%. This is most pronounced in loose skin areas.",
+        "highYield": "Wound contraction reduces size up to 70-80%. Mediated by myofibroblasts. Key in secondary intention.",
+        "clinicalCorrelation": "Excessive contraction can cause contractures, limiting joint mobility and requiring surgical release."
+      }
+    },
+    {
+      "questionId": "path_repair_050",
+      "difficulty": 1,
+      "question": "The term 'epithelialization' refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Migration and proliferation of epithelial cells over a wound",
+          "isCorrect": true,
+          "explanation": "Epithelialization restores the epithelial barrier."
+        },
+        {
+          "text": "Formation of new blood vessels",
+          "isCorrect": false,
+          "explanation": "That is angiogenesis."
+        },
+        {
+          "text": "Collagen deposition",
+          "isCorrect": false,
+          "explanation": "That is fibrosis."
+        },
+        {
+          "text": "Wound contraction",
+          "isCorrect": false,
+          "explanation": "Contraction is mediated by myofibroblasts."
+        },
+        {
+          "text": "Scar remodeling",
+          "isCorrect": false,
+          "explanation": "Remodeling occurs later."
+        }
+      ],
+      "explanation": {
+        "overview": "Epithelialization (re-epithelialization) is the re-formation of a continuous epithelial surface across a wound defect. It involves keratinocyte migration, proliferation, and differentiation.",
+        "highYield": "Epithelialization = wound covered by epithelium. Provides barrier against infection and fluid loss.",
+        "clinicalCorrelation": "A wound that fails to epithelialize within 2 weeks is at high risk of becoming chronic."
+      }
+    },
+    {
+      "questionId": "path_repair_051",
+      "difficulty": 2,
+      "question": "In a superficial wound that does not breach the basement membrane, healing occurs by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Regeneration of epithelium without scar",
+          "isCorrect": true,
+          "explanation": "If the basement membrane is intact, epithelial cells can regenerate and restore normal structure."
+        },
+        {
+          "text": "Granulation tissue formation",
+          "isCorrect": false,
+          "explanation": "Granulation tissue fills deeper defects."
+        },
+        {
+          "text": "Fibrosis",
+          "isCorrect": false,
+          "explanation": "Fibrosis (scar) occurs when the basement membrane is breached."
+        },
+        {
+          "text": "Contraction",
+          "isCorrect": false,
+          "explanation": "Contraction is part of deep wound healing."
+        },
+        {
+          "text": "Metaplasia",
+          "isCorrect": false,
+          "explanation": "Metaplasia is a change in cell type, not a healing pattern."
+        }
+      ],
+      "explanation": {
+        "overview": "Superficial wounds that only involve the epithelium and leave the basement membrane intact heal purely by epithelial regeneration, without scarring. Examples include minor abrasions.",
+        "highYield": "Intact basement membrane → regeneration, no scar. Breached → granulation tissue and scar.",
+        "clinicalCorrelation": "Dermabrasion procedures abrade only the epidermis and superficial dermis, promoting re-epithelialization with minimal scarring."
+      }
+    },
+    {
+      "questionId": "path_repair_052",
+      "difficulty": 2,
+      "question": "Which of the following growth factors is involved in both angiogenesis and fibroblast proliferation?",
+      "image": null,
+      "options": [
+        {
+          "text": "VEGF",
+          "isCorrect": false,
+          "explanation": "VEGF primarily affects endothelial cells."
+        },
+        {
+          "text": "FGF",
+          "isCorrect": true,
+          "explanation": "FGF (fibroblast growth factor) stimulates both endothelial cells and fibroblasts."
+        },
+        {
+          "text": "PDGF",
+          "isCorrect": false,
+          "explanation": "PDGF mainly stimulates fibroblasts and smooth muscle."
+        },
+        {
+          "text": "TGF-β",
+          "isCorrect": false,
+          "explanation": "TGF-β mainly stimulates ECM production."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "While multiple factors affect these processes, FGF is noted for its dual effect on endothelial cells and fibroblasts."
+        }
+      ],
+      "explanation": {
+        "overview": "Fibroblast growth factors (FGFs) are a family of proteins that stimulate the proliferation of both fibroblasts and endothelial cells, playing a key role in angiogenesis and granulation tissue formation.",
+        "highYield": "FGF → stimulates fibroblasts + endothelial cells. Important for angiogenesis and wound healing.",
+        "clinicalCorrelation": "Becaplermin gel (recombinant PDGF) is used for diabetic foot ulcers; FGF-based therapies are under investigation."
+      }
+    },
+    {
+      "questionId": "path_repair_053",
+      "difficulty": 2,
+      "question": "The extracellular matrix component that provides a scaffold for cell migration during healing is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Collagen",
+          "isCorrect": false,
+          "explanation": "Collagen provides strength but fibronectin is more important for early cell migration."
+        },
+        {
+          "text": "Fibronectin",
+          "isCorrect": true,
+          "explanation": "Fibronectin promotes cell adhesion and migration, serving as a provisional matrix."
+        },
+        {
+          "text": "Laminin",
+          "isCorrect": false,
+          "explanation": "Laminin is important for basement membrane and epithelial adhesion, but fibronectin is the key provisional matrix protein."
+        },
+        {
+          "text": "Proteoglycans",
+          "isCorrect": false,
+          "explanation": "Proteoglycans provide hydration and growth factor binding, not primarily cell migration."
+        },
+        {
+          "text": "Elastin",
+          "isCorrect": false,
+          "explanation": "Elastin provides elasticity, not scaffold for migration."
+        }
+      ],
+      "explanation": {
+        "overview": "Fibronectin is a large glycoprotein that serves as the provisional matrix in wound healing, providing a scaffold for cell adhesion and migration via integrins. It is later replaced by mature collagen.",
+        "highYield": "Fibronectin = provisional matrix, cell migration. Laminin = basement membrane. Collagen = tensile strength.",
+        "clinicalCorrelation": "Fibronectin is upregulated early in wound healing and is essential for proper granulation tissue formation."
+      }
+    },
+    {
+      "questionId": "path_repair_054",
+      "difficulty": 3,
+      "question": "Which of the following cytokines inhibits collagen synthesis and promotes ECM degradation?",
+      "image": null,
+      "options": [
+        {
+          "text": "TNF-α",
+          "isCorrect": false,
+          "explanation": "TNF-α stimulates MMP production and can inhibit collagen synthesis."
+        },
+        {
+          "text": "IL-1",
+          "isCorrect": false,
+          "explanation": "IL-1 promotes inflammation and MMP activity."
+        },
+        {
+          "text": "IFN-γ",
+          "isCorrect": false,
+          "explanation": "IFN-γ directly inhibits fibroblast collagen production."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "TNF-α, IL-1, and IFN-γ can stimulate MMP production and inhibit collagen synthesis, contributing to tissue destruction in chronic inflammation."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All three cytokines are known to have these effects."
+        }
+      ],
+      "explanation": {
+        "overview": "Pro-inflammatory cytokines, such as TNF-α, IL-1, and IFN-γ, shift the balance toward ECM degradation by upregulating MMPs and inhibiting collagen gene expression. This is seen in chronic inflammatory diseases like rheumatoid arthritis and chronic wounds.",
+        "highYield": "TNF-α, IL-1, IFN-γ → ↑ MMP, ↓ collagen → tissue destruction. Opposing profibrotic TGF-β.",
+        "clinicalCorrelation": "Anti-TNF therapy (infliximab) reduces inflammation and joint destruction in rheumatoid arthritis."
+      }
+    },
+    {
+      "questionId": "path_repair_055",
+      "difficulty": 1,
+      "question": "In chronic wounds (e.g., venous stasis ulcers), impaired healing is often due to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Poor perfusion",
+          "isCorrect": false,
+          "explanation": "Venous stasis leads to hemosiderin deposition and hypoxia."
+        },
+        {
+          "text": "Persistent inflammation",
+          "isCorrect": false,
+          "explanation": "Chronic inflammation impairs normal healing progression."
+        },
+        {
+          "text": "Infection",
+          "isCorrect": false,
+          "explanation": "Colonization and infection are common."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Chronic wounds have multiple factors: ischemia, inflammation, and bacterial colonization."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All contribute."
+        }
+      ],
+      "explanation": {
+        "overview": "Chronic wounds fail to progress through the normal stages of healing. They are often arrested in an inflammatory state, with persistent inflammation, infection, hypoxia, and high levels of degradative MMPs.",
+        "highYield": "Chronic wound = persistent inflammation, infection, poor perfusion. Failed re-epithelialization.",
+        "clinicalCorrelation": "Venous stasis ulcers require compression therapy; diabetic ulcers require off-loading and glycemic control."
+      }
+    },
+    {
+      "questionId": "path_repair_056",
+      "difficulty": 1,
+      "question": "The image shows a chronic venous ulcer on the lower leg. These ulcers are often associated with:",
+      "image": "path_venous_ulcer.png",
+      "options": [
+        {
+          "text": "Arterial insufficiency",
+          "isCorrect": false,
+          "explanation": "Arterial ulcers are typically on pressure points and toes."
+        },
+        {
+          "text": "Venous hypertension",
+          "isCorrect": true,
+          "explanation": "Venous stasis ulcers result from chronic venous insufficiency and edema."
+        },
+        {
+          "text": "Diabetes",
+          "isCorrect": false,
+          "explanation": "Diabetic ulcers are neuropathic, often on plantar surface."
+        },
+        {
+          "text": "Neuropathy",
+          "isCorrect": false,
+          "explanation": "Neuropathic ulcers are typical of diabetes."
+        },
+        {
+          "text": "Trauma",
+          "isCorrect": false,
+          "explanation": "Trauma is not the primary cause."
+        }
+      ],
+      "explanation": {
+        "overview": "Venous stasis ulcers occur due to chronic venous insufficiency, leading to venous hypertension, edema, hemosiderin deposition, and skin breakdown. They are typically located above the medial malleolus.",
+        "highYield": "Venous ulcer: medial malleolus, shallow, irregular, with hemosiderin hyperpigmentation, edema. Treat with compression.",
+        "clinicalCorrelation": "Compression bandaging is the mainstay of treatment for venous ulcers."
+      }
+    },
+    {
+      "questionId": "path_repair_057",
+      "difficulty": 1,
+      "question": "Which of the following is a local factor that impairs wound healing?",
+      "image": null,
+      "options": [
+        {
+          "text": "Poor blood supply",
+          "isCorrect": false,
+          "explanation": "Ischemia is a local factor."
+        },
+        {
+          "text": "Foreign body",
+          "isCorrect": false,
+          "explanation": "Foreign material perpetuates inflammation."
+        },
+        {
+          "text": "Infection",
+          "isCorrect": false,
+          "explanation": "Infection is a local factor."
+        },
+        {
+          "text": "Mechanical stress",
+          "isCorrect": false,
+          "explanation": "Excessive tension impairs healing."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Local factors include ischemia, infection, foreign material, and tension."
+        }
+      ],
+      "explanation": {
+        "overview": "Local factors that impair wound healing include poor vascular supply (ischemia), presence of foreign bodies (including suture material), infection, and mechanical stress on the wound edges.",
+        "highYield": "Local impairment: ischemia, infection, foreign body, tension. Systemic: diabetes, malnutrition, steroids.",
+        "clinicalCorrelation": "Surgical wound infection prophylaxis includes sterile technique and appropriate antibiotic use."
+      }
+    },
+    {
+      "questionId": "path_repair_058",
+      "difficulty": 1,
+      "question": "A deficiency in which vitamin causes impaired collagen synthesis and poor wound healing?",
+      "image": null,
+      "options": [
+        {
+          "text": "Vitamin A",
+          "isCorrect": false,
+          "explanation": "Vitamin A deficiency impairs epithelialization but collagen synthesis defect is classic for vitamin C."
+        },
+        {
+          "text": "Vitamin C",
+          "isCorrect": true,
+          "explanation": "Vitamin C is essential for collagen hydroxylation."
+        },
+        {
+          "text": "Vitamin D",
+          "isCorrect": false,
+          "explanation": "Vitamin D is important for calcium metabolism, not collagen synthesis."
+        },
+        {
+          "text": "Vitamin E",
+          "isCorrect": false,
+          "explanation": "Vitamin E is an antioxidant, not a cofactor for collagen synthesis."
+        },
+        {
+          "text": "Vitamin K",
+          "isCorrect": false,
+          "explanation": "Vitamin K is needed for clotting factors, not collagen."
+        }
+      ],
+      "explanation": {
+        "overview": "Vitamin C (ascorbic acid) is a necessary cofactor for prolyl and lysyl hydroxylases, enzymes essential for collagen maturation and cross-linking. Deficiency results in scurvy, with poor wound healing, bleeding gums, and capillary fragility.",
+        "highYield": "Vitamin C = cofactor for collagen hydroxylation. Deficiency → scurvy → poor wound healing, bleeding.",
+        "clinicalCorrelation": "Supplementation is required in malnourished or post-surgical patients to ensure adequate healing."
+      }
+    },
+    {
+      "questionId": "path_repair_059",
+      "difficulty": 2,
+      "question": "Corticosteroids impair wound healing by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Inhibiting inflammation",
+          "isCorrect": false,
+          "explanation": "They suppress the inflammatory phase needed to initiate repair."
+        },
+        {
+          "text": "Suppressing fibroblast proliferation",
+          "isCorrect": false,
+          "explanation": "Corticosteroids inhibit fibroblast growth and ECM synthesis."
+        },
+        {
+          "text": "Reducing collagen synthesis",
+          "isCorrect": false,
+          "explanation": "They decrease collagen gene expression."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Steroids have broad anti-inflammatory and anti-proliferative effects that delay healing."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All are well-known effects of corticosteroids."
+        }
+      ],
+      "explanation": {
+        "overview": "Corticosteroids impair wound healing at multiple levels: they blunt the inflammatory response, inhibit fibroblast proliferation, reduce collagen synthesis, and decrease wound tensile strength.",
+        "highYield": "Steroids → ↓ inflammation, ↓ fibroblasts, ↓ collagen → poor wound healing. Vitamin A can partially reverse the effect.",
+        "clinicalCorrelation": "Elective surgery in patients on chronic steroids should consider perioperative 'stress dose' steroids, and wound healing must be monitored closely."
+      }
+    },
+    {
+      "questionId": "path_repair_060",
+      "difficulty": 2,
+      "question": "The process of scar remodeling involves:",
+      "image": null,
+      "options": [
+        {
+          "text": "Degradation of excess collagen by MMPs",
+          "isCorrect": false,
+          "explanation": "This is one part of remodeling."
+        },
+        {
+          "text": "Cross-linking of collagen fibers",
+          "isCorrect": false,
+          "explanation": "Cross-linking increases tensile strength."
+        },
+        {
+          "text": "Increase in tensile strength",
+          "isCorrect": false,
+          "explanation": "This is the outcome of remodeling."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Remodeling balances collagen synthesis and degradation, increasing strength over months."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All are aspects of remodeling."
+        }
+      ],
+      "explanation": {
+        "overview": "The final phase of wound healing, remodeling, can last months to years. MMPs degrade excess and disorganized collagen, while new collagen is synthesized and cross-linked, converting weak type III collagen to stronger type I, thereby increasing tensile strength.",
+        "highYield": "Remodeling: collagen degradation (MMP) and synthesis with cross-linking → stronger type I collagen. Max strength at 3 months ~80%.",
+        "clinicalCorrelation": "Remodeling phase is when hypertrophic scars and keloids can develop; silicone gel may modulate this process."
+      }
+    },
+    {
+      "questionId": "path_repair_061",
+      "difficulty": 1,
+      "question": "Which of the following is NOT a phase of wound healing?",
+      "image": null,
+      "options": [
+        {
+          "text": "Inflammation",
+          "isCorrect": false,
+          "explanation": "Inflammation is the first phase."
+        },
+        {
+          "text": "Proliferation",
+          "isCorrect": false,
+          "explanation": "Proliferation (granulation tissue, angiogenesis) is the second phase."
+        },
+        {
+          "text": "Remodeling",
+          "isCorrect": false,
+          "explanation": "Remodeling is the final phase."
+        },
+        {
+          "text": "Metaplasia",
+          "isCorrect": true,
+          "explanation": "Metaplasia is a change in cell type, not a phase of wound healing."
+        },
+        {
+          "text": "Hemostasis",
+          "isCorrect": false,
+          "explanation": "Hemostasis initiates the process."
+        }
+      ],
+      "explanation": {
+        "overview": "The classic phases of wound healing are hemostasis, inflammation, proliferation (granulation tissue, angiogenesis, re-epithelialization), and remodeling. Metaplasia is a adaptive cellular change, not a phase of repair.",
+        "highYield": "Phases: Hemostasis → Inflammation → Proliferation → Remodeling. Metaplasia is not part of wound healing.",
+        "clinicalCorrelation": "Understanding phases helps in timing interventions (e.g., debridement, skin grafting)."
+      }
+    },
+    {
+      "questionId": "path_repair_062",
+      "difficulty": 2,
+      "question": "Which factor is essential for the initial migration of keratinocytes during re-epithelialization?",
+      "image": null,
+      "options": [
+        {
+          "text": "Loss of contact inhibition",
+          "isCorrect": true,
+          "explanation": "At wound edge, keratinocytes lose contact inhibition and become migratory. E-cadherin is downregulated, integrins upregulated."
+        },
+        {
+          "text": "Increased apoptosis",
+          "isCorrect": false,
+          "explanation": "Apoptosis occurs later to remove excess cells."
+        },
+        {
+          "text": "Collagen synthesis",
+          "isCorrect": false,
+          "explanation": "Collagen synthesis is mainly by fibroblasts."
+        },
+        {
+          "text": "Wound contraction",
+          "isCorrect": false,
+          "explanation": "Contraction is by myofibroblasts."
+        },
+        {
+          "text": "Angiogenesis",
+          "isCorrect": false,
+          "explanation": "Angiogenesis provides blood supply but does not directly mediate epithelial migration."
+        }
+      ],
+      "explanation": {
+        "overview": "Keratinocytes at the wound edge undergo an epithelial-mesenchymal transition-like state: they lose adhesion to basement membrane and neighboring cells, express integrins for provisional matrix binding, and migrate to cover the defect.",
+        "highYield": "Re-epithelialization: loss of contact inhibition, migration, proliferation. Driven by EGF, KGF, and integrins binding fibronectin.",
+        "clinicalCorrelation": "Topical growth factors (EGF) can accelerate re-epithelialization in chronic wounds."
+      }
+    },
+    {
+      "questionId": "path_repair_063",
+      "difficulty": 2,
+      "question": "Which of the following is a systemic factor that can enhance wound healing?",
+      "image": null,
+      "options": [
+        {
+          "text": "Adequate oxygen delivery",
+          "isCorrect": true,
+          "explanation": "Oxygen is required for oxidative phosphorylation, ROS for bacterial killing, and collagen hydroxylation."
+        },
+        {
+          "text": "High-dose corticosteroids",
+          "isCorrect": false,
+          "explanation": "Corticosteroids impair healing."
+        },
+        {
+          "text": "Protein malnutrition",
+          "isCorrect": false,
+          "explanation": "Malnutrition delays healing."
+        },
+        {
+          "text": "Uremia",
+          "isCorrect": false,
+          "explanation": "Uremia impairs granulocyte function and wound healing."
+        },
+        {
+          "text": "Advanced age alone",
+          "isCorrect": false,
+          "explanation": "Aging is associated with slower healing."
+        }
+      ],
+      "explanation": {
+        "overview": "Optimal wound healing requires adequate oxygen delivery to support cellular metabolism, collagen synthesis, and neutrophil function. Hypoxia impairs healing, while adequate perfusion and oxygenation enhance it.",
+        "highYield": "Oxygen is critical for healing: needed for collagen hydroxylation, bacterial killing, angiogenesis. Hyperbaric oxygen can aid in selected cases.",
+        "clinicalCorrelation": "Hyperbaric oxygen therapy is used for some chronic wounds, like diabetic foot ulcers."
+      }
+    },
+    {
+      "questionId": "path_repair_064",
+      "difficulty": 2,
+      "question": "A surgical wound left open for a few days to drain and then closed primarily is termed:",
+      "image": null,
+      "options": [
+        {
+          "text": "Tertiary intention (delayed primary closure)",
+          "isCorrect": true,
+          "explanation": "Delayed primary closure, or third intention healing, combines aspects of primary and secondary, used for contaminated wounds."
+        },
+        {
+          "text": "First intention",
+          "isCorrect": false,
+          "explanation": "First intention is immediate primary closure."
+        },
+        {
+          "text": "Second intention",
+          "isCorrect": false,
+          "explanation": "Second intention is healing without closure."
+        },
+        {
+          "text": "Primary closure",
+          "isCorrect": false,
+          "explanation": "That is immediate closure."
+        },
+        {
+          "text": "Granulation",
+          "isCorrect": false,
+          "explanation": "Granulation is the tissue, not the closure type."
+        }
+      ],
+      "explanation": {
+        "overview": "Healing by tertiary intention (delayed primary closure) is used for contaminated or infected wounds. The wound is debrided, left open briefly, and then surgically closed after infection risk has decreased, resulting in a scar intermediate between primary and secondary.",
+        "highYield": "Third intention = delayed primary closure. Used for contaminated wounds to reduce infection risk.",
+        "clinicalCorrelation": "Commonly used in trauma surgery or contaminated abdominal wounds."
+      }
+    },
+    {
+      "questionId": "path_repair_065",
+      "difficulty": 2,
+      "question": "Which of the following is an important function of transforming growth factor-beta (TGF-β) in wound healing?",
+      "image": null,
+      "options": [
+        {
+          "text": "Stimulation of collagen synthesis",
+          "isCorrect": true,
+          "explanation": "TGF-β is the most potent profibrotic cytokine, driving fibroblast to myofibroblast differentiation and ECM production."
+        },
+        {
+          "text": "Angiogenesis initiation",
+          "isCorrect": false,
+          "explanation": "VEGF is the key angiogenic factor; TGF-β has some role but is not the primary initiator."
+        },
+        {
+          "text": "Neutrophil chemotaxis",
+          "isCorrect": false,
+          "explanation": "Chemokines like IL-8 attract neutrophils, not TGF-β primarily."
+        },
+        {
+          "text": "Epithelial cell proliferation",
+          "isCorrect": false,
+          "explanation": "EGF, KGF, and TGF-α are more important for epithelial cells."
+        },
+        {
+          "text": "Platelet aggregation",
+          "isCorrect": false,
+          "explanation": "Platelet aggregation is mediated by thrombin, ADP, etc."
+        }
+      ],
+      "explanation": {
+        "overview": "TGF-β is a pleiotropic cytokine that plays a central role in fibrosis and wound healing. It strongly stimulates fibroblast chemotaxis, proliferation, and collagen synthesis, and promotes myofibroblast differentiation.",
+        "highYield": "TGF-β = major profibrotic cytokine. Increases collagen, fibronectin, proteoglycans. Key in normal scarring and pathologic fibrosis.",
+        "clinicalCorrelation": "Excess TGF-β activity is implicated in pulmonary fibrosis, liver cirrhosis, and renal fibrosis."
+      }
+    },
+    {
+      "questionId": "path_repair_066",
+      "difficulty": 2,
+      "question": "In bone fracture healing, the initial hematoma is eventually replaced by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Soft callus (fibrocartilage) then hard callus (woven bone)",
+          "isCorrect": true,
+          "explanation": "Fracture healing mimics embryonic bone formation: hematoma → granulation tissue → soft callus (fibrocartilage) → hard callus (woven bone) → lamellar bone remodeling."
+        },
+        {
+          "text": "Directly by lamellar bone",
+          "isCorrect": false,
+          "explanation": "Direct bone formation occurs only with rigid fixation, not through a cartilaginous phase."
+        },
+        {
+          "text": "Permanent cartilage",
+          "isCorrect": false,
+          "explanation": "The cartilage is replaced by bone."
+        },
+        {
+          "text": "Fibrous tissue only",
+          "isCorrect": false,
+          "explanation": "Fibrous tissue would be a non-union, not normal healing."
+        },
+        {
+          "text": "Dense regular connective tissue",
+          "isCorrect": false,
+          "explanation": "That would be a tendon/ligament, not bone healing."
+        }
+      ],
+      "explanation": {
+        "overview": "Bone healing occurs via primary (direct) or secondary (indirect) union. In secondary union, a hematoma forms, is replaced by granulation tissue, then a fibrocartilaginous soft callus, which calcifies to a hard callus of woven bone, finally remodeled to lamellar bone.",
+        "highYield": "Fracture healing: hematoma → soft callus (fibrocartilage) → hard callus (woven bone) → remodeling to lamellar bone.",
+        "clinicalCorrelation": "Non-union can result if there is movement, infection, or poor blood supply."
+      }
+    },
+    {
+      "questionId": "path_repair_067",
+      "difficulty": 1,
+      "question": "Which of the following is a feature of healing by first intention compared to second intention?",
+      "image": null,
+      "options": [
+        {
+          "text": "More granulation tissue",
+          "isCorrect": false,
+          "explanation": "First intention has minimal granulation tissue."
+        },
+        {
+          "text": "Less wound contraction",
+          "isCorrect": true,
+          "explanation": "First intention has minimal wound contraction; second intention relies heavily on contraction."
+        },
+        {
+          "text": "Larger scar",
+          "isCorrect": false,
+          "explanation": "First intention produces a smaller, finer scar."
+        },
+        {
+          "text": "More inflammation",
+          "isCorrect": false,
+          "explanation": "First intention has less intense inflammation."
+        },
+        {
+          "text": "Delayed epithelialization",
+          "isCorrect": false,
+          "explanation": "Epithelialization is faster in first intention due to minimal gap."
+        }
+      ],
+      "explanation": {
+        "overview": "Healing by first intention has a smaller gap, minimal granulation tissue, rapid re-epithelialization, and negligible contraction, resulting in a fine linear scar. Second intention involves a large gap, more granulation tissue, prominent contraction, and a larger irregular scar.",
+        "highYield": "Primary closure = minimal contraction, small scar. Secondary = marked contraction, large scar.",
+        "clinicalCorrelation": "Wound contraction is particularly important for large defects not amenable to primary closure."
+      }
+    },
+    {
+      "questionId": "path_repair_068",
+      "difficulty": 1,
+      "question": "Which of the following cell types is primarily responsible for the contraction of a healing wound?",
+      "image": null,
+      "options": [
+        {
+          "text": "Myofibroblast",
+          "isCorrect": true,
+          "explanation": "Myofibroblasts contain alpha-smooth muscle actin and contract to reduce wound size."
+        },
+        {
+          "text": "Fibroblast",
+          "isCorrect": false,
+          "explanation": "Fibroblasts synthesize collagen but are not specialized for contraction."
+        },
+        {
+          "text": "Macrophage",
+          "isCorrect": false,
+          "explanation": "Macrophages regulate healing but do not contract."
+        },
+        {
+          "text": "Endothelial cell",
+          "isCorrect": false,
+          "explanation": "Endothelial cells line blood vessels."
+        },
+        {
+          "text": "Keratinocyte",
+          "isCorrect": false,
+          "explanation": "Keratinocytes migrate and proliferate to cover the wound."
+        }
+      ],
+      "explanation": {
+        "overview": "Myofibroblasts are specialized contractile fibroblasts that express alpha-SMA. They generate force and pull wound edges together, playing a major role in wound contraction during secondary intention healing.",
+        "highYield": "Myofibroblast = contractile wound cell. Disappear by apoptosis after wound closure.",
+        "clinicalCorrelation": "Persistent myofibroblast activity leads to contractures and hypertrophic scarring."
+      }
+    },
+    {
+      "questionId": "path_repair_069",
+      "difficulty": 2,
+      "question": "Which of the following is an accurate statement about hypertrophic scars?",
+      "image": null,
+      "options": [
+        {
+          "text": "They extend beyond the original wound boundaries",
+          "isCorrect": false,
+          "explanation": "That describes keloids."
+        },
+        {
+          "text": "They often regress spontaneously over time",
+          "isCorrect": true,
+          "explanation": "Hypertrophic scars typically stay within wound margins and may flatten and regress over months to years."
+        },
+        {
+          "text": "They are more common in older adults",
+          "isCorrect": false,
+          "explanation": "They are more common in younger individuals and in high-tension areas."
+        },
+        {
+          "text": "They are caused by a viral infection",
+          "isCorrect": false,
+          "explanation": "There is no infectious etiology."
+        },
+        {
+          "text": "They are malignant tumors",
+          "isCorrect": false,
+          "explanation": "They are benign excessive scars."
+        }
+      ],
+      "explanation": {
+        "overview": "Hypertrophic scars are raised, erythematous scars that remain confined to the original wound borders. They often develop within weeks of injury and may spontaneously regress over time.",
+        "highYield": "Hypertrophic scar: within wound, may regress. Keloid: beyond wound, persists, genetic predisposition.",
+        "clinicalCorrelation": "Silicone gel sheeting and intralesional corticosteroids are common treatments."
+      }
+    },
+    {
+      "questionId": "path_repair_070",
+      "difficulty": 1,
+      "question": "Which vitamin deficiency is associated with delayed wound healing due to impaired epithelialization?",
+      "image": null,
+      "options": [
+        {
+          "text": "Vitamin A",
+          "isCorrect": true,
+          "explanation": "Vitamin A is essential for epithelial cell differentiation and maintenance; deficiency leads to impaired re-epithelialization."
+        },
+        {
+          "text": "Vitamin C",
+          "isCorrect": false,
+          "explanation": "Vitamin C deficiency impairs collagen synthesis."
+        },
+        {
+          "text": "Vitamin D",
+          "isCorrect": false,
+          "explanation": "Vitamin D is important for calcium metabolism."
+        },
+        {
+          "text": "Vitamin K",
+          "isCorrect": false,
+          "explanation": "Vitamin K is needed for clotting."
+        },
+        {
+          "text": "Vitamin B12",
+          "isCorrect": false,
+          "explanation": "B12 deficiency causes anemia, not directly epithelialization."
+        }
+      ],
+      "explanation": {
+        "overview": "Vitamin A (retinoic acid) is required for normal epithelial cell proliferation and differentiation. Deficiency impairs re-epithelialization, while topical or systemic vitamin A can enhance wound healing.",
+        "highYield": "Vitamin A → epithelialization. Vitamin C → collagen synthesis. Both needed for wound healing.",
+        "clinicalCorrelation": "Vitamin A supplementation may partially counteract the wound-healing impairment caused by corticosteroids."
+      }
+    },
+    {
+      "questionId": "path_repair_071",
+      "difficulty": 3,
+      "question": "Which of the following is a key mediator of the resolution of fibrosis during scar remodeling?",
+      "image": null,
+      "options": [
+        {
+          "text": "Matrix metalloproteinases (MMPs)",
+          "isCorrect": true,
+          "explanation": "MMPs, particularly collagenases and gelatinases, degrade excess ECM, balancing synthesis and allowing resolution of fibrosis."
+        },
+        {
+          "text": "Tissue inhibitors of metalloproteinases (TIMPs)",
+          "isCorrect": false,
+          "explanation": "TIMPs inhibit MMPs and prevent degradation; resolution requires MMP activity."
+        },
+        {
+          "text": "TGF-β",
+          "isCorrect": false,
+          "explanation": "TGF-β promotes fibrosis, not resolution."
+        },
+        {
+          "text": "PDGF",
+          "isCorrect": false,
+          "explanation": "PDGF promotes fibroblast proliferation."
+        },
+        {
+          "text": "VEGF",
+          "isCorrect": false,
+          "explanation": "VEGF promotes angiogenesis."
+        }
+      ],
+      "explanation": {
+        "overview": "Scar remodeling involves a shift from synthesis to degradation. MMPs, particularly collagenases (MMP-1) and gelatinases (MMP-2, MMP-9), degrade excess and disorganized collagen, allowing replacement with stronger type I collagen and reduction of scar bulk.",
+        "highYield": "Scar resolution: MMP activity > TIMP activity. This degrades type III collagen and allows type I remodeling.",
+        "clinicalCorrelation": "Chronic non-healing wounds have high MMP activity that degrades growth factors, contributing to healing arrest. MMP-modulating dressings are used."
+      }
+    },
+    {
+      "questionId": "path_repair_072",
+      "difficulty": 2,
+      "question": "Which of the following statements about diabetic wound healing is true?",
+      "image": null,
+      "options": [
+        {
+          "text": "Hyperglycemia impairs neutrophil function and promotes infection",
+          "isCorrect": true,
+          "explanation": "High glucose impairs leukocyte phagocytosis and bacterial killing, increasing infection risk and delaying healing."
+        },
+        {
+          "text": "Microvascular disease improves tissue perfusion",
+          "isCorrect": false,
+          "explanation": "Microvascular disease reduces perfusion."
+        },
+        {
+          "text": "Advanced glycation end-products (AGEs) enhance collagen cross-linking and wound strength",
+          "isCorrect": false,
+          "explanation": "AGEs make collagen stiff and less effective, impairing healing."
+        },
+        {
+          "text": "Wound healing is accelerated due to high blood sugar",
+          "isCorrect": false,
+          "explanation": "High blood sugar impairs healing."
+        },
+        {
+          "text": "Diabetes reduces the risk of neuropathy",
+          "isCorrect": false,
+          "explanation": "Diabetes causes peripheral neuropathy."
+        }
+      ],
+      "explanation": {
+        "overview": "Diabetes impairs wound healing through multiple mechanisms: hyperglycemia impairs neutrophil function, microangiopathy reduces tissue oxygenation, AGEs interfere with collagen, and neuropathy leads to repeated trauma and pressure ulcers.",
+        "highYield": "Diabetes → poor healing: leukocyte dysfunction, microangiopathy, AGEs, neuropathy. Diabetic foot ulcers are a major complication.",
+        "clinicalCorrelation": "Aggressive glycemic control, debridement, off-loading, and infection control are essential."
+      }
+    },
+    {
+      "questionId": "path_repair_073",
+      "difficulty": 1,
+      "question": "What type of collagen is most abundant in a mature scar?",
+      "image": null,
+      "options": [
+        {
+          "text": "Type I",
+          "isCorrect": true,
+          "explanation": "Mature scar tissue consists predominantly of dense type I collagen, which replaces the initial type III collagen."
+        },
+        {
+          "text": "Type II",
+          "isCorrect": false,
+          "explanation": "Type II is found in cartilage."
+        },
+        {
+          "text": "Type III",
+          "isCorrect": false,
+          "explanation": "Type III is predominant in early granulation tissue."
+        },
+        {
+          "text": "Type IV",
+          "isCorrect": false,
+          "explanation": "Type IV is in basement membranes."
+        },
+        {
+          "text": "Type X",
+          "isCorrect": false,
+          "explanation": "Type X is in hypertrophic cartilage (growth plate)."
+        }
+      ],
+      "explanation": {
+        "overview": "Early granulation tissue has a high proportion of type III collagen (reticulin). As the scar matures, type III is degraded by MMPs and replaced by thicker, stronger type I collagen, increasing tensile strength.",
+        "highYield": "Early granulation: type III. Mature scar: type I. This transition is key to gaining strength.",
+        "clinicalCorrelation": "Abnormal collagen composition or cross-linking (e.g., in Ehlers-Danlos syndrome) leads to weak scars."
+      }
+    },
+    {
+      "questionId": "path_repair_074",
+      "difficulty": 2,
+      "question": "A 55-year-old smoker undergoes abdominal surgery. Which factor most significantly increases his risk of wound dehiscence?",
+      "image": null,
+      "options": [
+        {
+          "text": "Smoking-induced vasoconstriction and tissue hypoxia",
+          "isCorrect": true,
+          "explanation": "Nicotine causes peripheral vasoconstriction, reducing oxygen delivery to the wound. Hypoxia impairs collagen synthesis and increases risk of infection and dehiscence."
+        },
+        {
+          "text": "His age alone",
+          "isCorrect": false,
+          "explanation": "Age is a minor factor; smoking is more significant."
+        },
+        {
+          "text": "Male gender",
+          "isCorrect": false,
+          "explanation": "Gender alone is not a major independent risk factor for dehiscence."
+        },
+        {
+          "text": "Type of suture material",
+          "isCorrect": false,
+          "explanation": "Suture material is a factor but smoking is a stronger systemic cause."
+        },
+        {
+          "text": "Post-operative walking",
+          "isCorrect": false,
+          "explanation": "Early ambulation reduces thromboembolic risk and does not cause dehiscence."
+        }
+      ],
+      "explanation": {
+        "overview": "Smoking is a major risk factor for poor wound healing. Nicotine causes vasoconstriction, carbon monoxide reduces oxygen delivery, and smoking increases coughing and wound tension, all contributing to dehiscence.",
+        "highYield": "Smoking → vasoconstriction, hypoxia, impaired collagen synthesis → increased dehiscence, infection.",
+        "clinicalCorrelation": "Patients are strongly advised to stop smoking at least 4-6 weeks before elective surgery."
+      }
+    },
+    {
+      "questionId": "path_repair_075",
+      "difficulty": 2,
+      "question": "Which of the following is a direct function of platelet-derived growth factor (PDGF) in wound healing?",
+      "image": null,
+      "options": [
+        {
+          "text": "Chemotaxis and proliferation of fibroblasts",
+          "isCorrect": true,
+          "explanation": "PDGF is a potent mitogen and chemoattractant for fibroblasts, smooth muscle cells, and glial cells."
+        },
+        {
+          "text": "Vasoconstriction",
+          "isCorrect": false,
+          "explanation": "PDGF does not cause vasoconstriction."
+        },
+        {
+          "text": "Immunoglobulin production",
+          "isCorrect": false,
+          "explanation": "That is a B cell function."
+        },
+        {
+          "text": "Erythropoiesis",
+          "isCorrect": false,
+          "explanation": "Erythropoiesis is stimulated by EPO."
+        },
+        {
+          "text": "Melanin synthesis",
+          "isCorrect": false,
+          "explanation": "Melanin synthesis is by melanocytes."
+        }
+      ],
+      "explanation": {
+        "overview": "PDGF, released from platelet alpha granules and also produced by macrophages and endothelial cells, is a potent fibroblast chemotactic and mitogenic factor, essential for the formation of granulation tissue.",
+        "highYield": "PDGF: fibroblast chemotaxis and proliferation. Used clinically as becaplermin gel for diabetic ulcers.",
+        "clinicalCorrelation": "Recombinant PDGF is FDA-approved for diabetic neuropathic foot ulcers."
+      }
+    },
+    {
+      "questionId": "path_repair_076",
+      "difficulty": 1,
+      "question": "The term 'pyogenic granuloma' describes:",
+      "image": null,
+      "options": [
+        {
+          "text": "An exuberant, polypoid proliferation of granulation tissue",
+          "isCorrect": true,
+          "explanation": "Pyogenic granuloma is a benign vascular lesion of skin or mucosa, representing an overgrowth of granulation tissue, often at a site of trauma."
+        },
+        {
+          "text": "A purulent skin infection",
+          "isCorrect": false,
+          "explanation": "Despite the name, it is not a true granuloma and does not contain pus."
+        },
+        {
+          "text": "A type of malignant tumor",
+          "isCorrect": false,
+          "explanation": "It is benign."
+        },
+        {
+          "text": "A fungal infection",
+          "isCorrect": false,
+          "explanation": "It is not infectious."
+        },
+        {
+          "text": "A deep bacterial abscess",
+          "isCorrect": false,
+          "explanation": "It is a superficial vascular proliferation."
+        }
+      ],
+      "explanation": {
+        "overview": "Pyogenic granuloma (lobular capillary hemangioma) is a common acquired vascular lesion that appears as a red, friable, rapidly growing nodule on skin or oral mucosa, often at sites of minor trauma. It represents excessive granulation tissue.",
+        "highYield": "Pyogenic granuloma = overgrowth of granulation tissue, not pyogenic (no pus). Common in gingiva and fingers. Bleeds easily.",
+        "clinicalCorrelation": "Simple excision or shave removal with cautery of the base is curative; pregnancy tumor is a variant."
+      }
+    },
+    {
+      "questionId": "path_repair_077",
+      "difficulty": 2,
+      "question": "In liver cirrhosis, the regenerative capacity of hepatocytes is limited by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Extensive fibrosis and disruption of normal architecture",
+          "isCorrect": true,
+          "explanation": "Regeneration requires intact ECM scaffold. In cirrhosis, bridging fibrosis and nodular regeneration distort the architecture, preventing functional restoration."
+        },
+        {
+          "text": "Lack of hepatocyte growth factor",
+          "isCorrect": false,
+          "explanation": "HGF is present; the problem is structural."
+        },
+        {
+          "text": "Absence of progenitor cells",
+          "isCorrect": false,
+          "explanation": "Oval cells (progenitors) exist but cannot restore architecture."
+        },
+        {
+          "text": "Hypervascularity",
+          "isCorrect": false,
+          "explanation": "Cirrhosis is associated with increased intrahepatic resistance, not hypervascularity aiding regeneration."
+        },
+        {
+          "text": "Increased apoptosis",
+          "isCorrect": false,
+          "explanation": "Apoptosis occurs but is not the primary limiting factor."
+        }
+      ],
+      "explanation": {
+        "overview": "Hepatocytes have tremendous regenerative capacity, as seen in partial hepatectomy. However, in chronic liver disease with cirrhosis, the extensive deposition of collagen and loss of normal lobular architecture prevent orderly regeneration, leading to nodular regeneration and portal hypertension.",
+        "highYield": "Cirrhosis → ECM fibrosis → disorganized regeneration → nodules. Portal hypertension and liver dysfunction persist.",
+        "clinicalCorrelation": "Liver transplantation is often the only curative option for decompensated cirrhosis."
+      }
+    },
+    {
+      "questionId": "path_repair_078",
+      "difficulty": 2,
+      "question": "Which of the following growth factors is also known as 'scatter factor' and promotes cell migration?",
+      "image": null,
+      "options": [
+        {
+          "text": "HGF (hepatocyte growth factor)",
+          "isCorrect": true,
+          "explanation": "HGF is also called scatter factor because it stimulates epithelial cell dissociation and migration, in addition to being a potent mitogen."
+        },
+        {
+          "text": "VEGF",
+          "isCorrect": false,
+          "explanation": "VEGF primarily promotes angiogenesis."
+        },
+        {
+          "text": "TGF-β",
+          "isCorrect": false,
+          "explanation": "TGF-β promotes ECM synthesis."
+        },
+        {
+          "text": "PDGF",
+          "isCorrect": false,
+          "explanation": "PDGF promotes fibroblast proliferation and chemotaxis."
+        },
+        {
+          "text": "EGF",
+          "isCorrect": false,
+          "explanation": "EGF is mitogenic for epithelial cells but not classically called scatter factor."
+        }
+      ],
+      "explanation": {
+        "overview": "Hepatocyte growth factor (HGF), also known as scatter factor, is a multifunctional cytokine that stimulates cell proliferation, motility, and morphogenesis, especially in epithelial cells. It is important in embryogenesis, wound healing, and cancer invasion.",
+        "highYield": "HGF = scatter factor. Promotes cell migration and proliferation. c-MET is its receptor.",
+        "clinicalCorrelation": "HGF/c-MET pathway is a target in cancer therapy because it promotes invasion and metastasis."
+      }
+    },
+    {
+      "questionId": "path_repair_079",
+      "difficulty": 1,
+      "question": "Which of the following is a feature of healing by secondary intention that is NOT seen in primary intention?",
+      "image": null,
+      "options": [
+        {
+          "text": "Significant wound contraction",
+          "isCorrect": true,
+          "explanation": "Wound contraction is a prominent feature of secondary intention to reduce the large defect."
+        },
+        {
+          "text": "Re-epithelialization",
+          "isCorrect": false,
+          "explanation": "Both have re-epithelialization."
+        },
+        {
+          "text": "Collagen deposition",
+          "isCorrect": false,
+          "explanation": "Both involve collagen deposition."
+        },
+        {
+          "text": "Inflammation",
+          "isCorrect": false,
+          "explanation": "Both have inflammation, though magnitude differs."
+        },
+        {
+          "text": "Angiogenesis",
+          "isCorrect": false,
+          "explanation": "Both have angiogenesis."
+        }
+      ],
+      "explanation": {
+        "overview": "The key distinctive feature of healing by secondary intention is the significant amount of wound contraction, which reduces the wound size. Primary intention has minimal contraction because edges are already approximated.",
+        "highYield": "Secondary intention hallmark: granulation tissue + wound contraction. Primary intention: minimal contraction.",
+        "clinicalCorrelation": "Contractures from extensive healing by secondary intention can impair function over joints."
+      }
+    },
+    {
+      "questionId": "path_repair_080",
+      "difficulty": 3,
+      "question": "Which of the following is a mechanism by which mesenchymal stem cells (MSCs) promote wound healing?",
+      "image": null,
+      "options": [
+        {
+          "text": "Secretion of paracrine factors that reduce inflammation and promote angiogenesis",
+          "isCorrect": true,
+          "explanation": "MSCs mainly act through paracrine effects, secreting growth factors, anti-inflammatory cytokines, and antimicrobial peptides."
+        },
+        {
+          "text": "Direct transformation into epithelial cells",
+          "isCorrect": false,
+          "explanation": "While transdifferentiation has been reported, the primary mechanism is paracrine."
+        },
+        {
+          "text": "Production of collagen for scar strength",
+          "isCorrect": false,
+          "explanation": "MSCs modulate collagen but do not directly provide the bulk of collagen."
+        },
+        {
+          "text": "Phagocytosis of bacteria",
+          "isCorrect": false,
+          "explanation": "That is a neutrophil/macrophage function."
+        },
+        {
+          "text": "Releasing histamine",
+          "isCorrect": false,
+          "explanation": "Histamine is from mast cells."
+        }
+      ],
+      "explanation": {
+        "overview": "MSCs are multipotent stromal cells that aid wound healing primarily through paracrine mechanisms, secreting anti-inflammatory cytokines, growth factors (VEGF, FGF, IGF), and antimicrobial peptides. They also modulate immune response.",
+        "highYield": "MSCs: paracrine effects → reduce inflammation, promote angiogenesis, recruit host stem cells. Being investigated for chronic wounds.",
+        "clinicalCorrelation": "Clinical trials are exploring MSC therapy for diabetic ulcers, Crohn's fistulas, and cardiac repair."
+      }
+    },
+    {
+      "questionId": "path_repair_081",
+      "difficulty": 2,
+      "question": "Delayed wound healing in jaundiced patients is primarily due to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Impaired fibroblast proliferation and collagen synthesis",
+          "isCorrect": true,
+          "explanation": "Hyperbilirubinemia and bile salts impair fibroblast function and collagen synthesis, contributing to delayed healing and increased risk of dehiscence."
+        },
+        {
+          "text": "Excessive angiogenesis",
+          "isCorrect": false,
+          "explanation": "Angiogenesis is not the issue."
+        },
+        {
+          "text": "Overactive immune response",
+          "isCorrect": false,
+          "explanation": "Immune dysfunction may exist but the direct effect on fibroblasts is key."
+        },
+        {
+          "text": "Increased platelet aggregation",
+          "isCorrect": false,
+          "explanation": "Jaundice is associated with coagulopathy, not increased aggregation."
+        },
+        {
+          "text": "Rapid epithelialization",
+          "isCorrect": false,
+          "explanation": "Healing is delayed, not enhanced."
+        }
+      ],
+      "explanation": {
+        "overview": "Obstructive jaundice impairs wound healing due to the effect of bile acids on fibroblast proliferation and collagen synthesis. There is also increased risk of wound dehiscence and infection.",
+        "highYield": "Jaundice → delayed healing. Preoperative biliary drainage may improve outcomes.",
+        "clinicalCorrelation": "Surgeons often try to relieve biliary obstruction before major elective surgery to improve healing."
+      }
+    },
+    {
+      "questionId": "path_repair_082",
+      "difficulty": 1,
+      "question": "In a sutured surgical wound, removal of sutures is typically done at which time point to balance wound strength and cosmetic outcome?",
+      "image": null,
+      "options": [
+        {
+          "text": "5-10 days",
+          "isCorrect": true,
+          "explanation": "By 5-10 days, the wound has enough tensile strength to hold without sutures, and earlier removal improves cosmetic appearance by reducing suture marks."
+        },
+        {
+          "text": "1-2 days",
+          "isCorrect": false,
+          "explanation": "Too early; wound would dehisce."
+        },
+        {
+          "text": "3-4 weeks",
+          "isCorrect": false,
+          "explanation": "Unnecessarily late; suture marks and infection risk increase."
+        },
+        {
+          "text": "6-8 weeks",
+          "isCorrect": false,
+          "explanation": "Far too late."
+        },
+        {
+          "text": "Immediately after surgery",
+          "isCorrect": false,
+          "explanation": "Immediate removal would cause dehiscence."
+        }
+      ],
+      "explanation": {
+        "overview": "Skin sutures are typically removed when the wound has gained sufficient tensile strength to stay closed without support, usually at 5-10 days, depending on the site. Face sutures may be removed earlier (5 days), back/legs later (10-14 days).",
+        "highYield": "Suture removal: face 5 days, scalp/chest 7 days, extremities 7-10 days, back 10-14 days. Wound strength at removal is ~10% of normal.",
+        "clinicalCorrelation": "Wound support (steri-strips) may be used after suture removal for added security."
+      }
+    },
+    {
+      "questionId": "path_repair_083",
+      "difficulty": 3,
+      "question": "Which of the following molecules is a key negative feedback regulator of scar formation?",
+      "image": null,
+      "options": [
+        {
+          "text": "Decorin",
+          "isCorrect": true,
+          "explanation": "Decorin is a small leucine-rich proteoglycan that binds and neutralizes TGF-β, thereby limiting fibrosis. It acts as a natural anti-fibrotic agent."
+        },
+        {
+          "text": "Collagen I",
+          "isCorrect": false,
+          "explanation": "Collagen I is the main scar component."
+        },
+        {
+          "text": "Fibronectin",
+          "isCorrect": false,
+          "explanation": "Fibronectin promotes cell migration and ECM deposition."
+        },
+        {
+          "text": "TGF-β",
+          "isCorrect": false,
+          "explanation": "TGF-β promotes fibrosis."
+        },
+        {
+          "text": "PDGF",
+          "isCorrect": false,
+          "explanation": "PDGF promotes fibroblast proliferation."
+        }
+      ],
+      "explanation": {
+        "overview": "Decorin is a proteoglycan that binds to collagen fibrils and also sequesters TGF-β, reducing its activity. It functions as a natural inhibitor of fibrosis, and its downregulation is associated with excessive scarring.",
+        "highYield": "Decorin = natural anti-fibrotic, binds TGF-β. Reduced in keloids. Potential therapeutic target.",
+        "clinicalCorrelation": "Decorin-based therapies are being investigated to reduce pathological fibrosis."
+      }
+    },
+    {
+      "questionId": "path_repair_084",
+      "difficulty": 2,
+      "question": "Which of the following describes the role of interleukin-6 (IL-6) in wound healing?",
+      "image": null,
+      "options": [
+        {
+          "text": "Promotes hepatocyte priming for liver regeneration and leukocyte recruitment",
+          "isCorrect": true,
+          "explanation": "IL-6 is a pleiotropic cytokine that primes hepatocytes to respond to growth factors and also stimulates acute-phase protein synthesis and inflammatory cell recruitment."
+        },
+        {
+          "text": "Inhibits epithelial migration",
+          "isCorrect": false,
+          "explanation": "IL-6 does not inhibit migration."
+        },
+        {
+          "text": "Directly cross-links collagen",
+          "isCorrect": false,
+          "explanation": "Lysyl oxidase cross-links collagen."
+        },
+        {
+          "text": "Suppresses angiogenesis",
+          "isCorrect": false,
+          "explanation": "IL-6 can promote angiogenesis in some contexts."
+        },
+        {
+          "text": "Degrades fibrin clot",
+          "isCorrect": false,
+          "explanation": "Plasmin degrades fibrin."
+        }
+      ],
+      "explanation": {
+        "overview": "IL-6 is a pro-inflammatory cytokine with important roles in wound healing and liver regeneration. It primes hepatocytes to proliferate via STAT3 activation and stimulates production of acute-phase proteins and fever.",
+        "highYield": "IL-6: primes hepatocytes for regeneration, stimulates acute-phase response. Important in initiating healing.",
+        "clinicalCorrelation": "Elevated IL-6 is seen in chronic wounds and may contribute to persistent inflammation."
+      }
+    },
+    {
+      "questionId": "path_repair_085",
+      "difficulty": 1,
+      "question": "Which of the following best describes 'contact inhibition' in wound healing?",
+      "image": null,
+      "options": [
+        {
+          "text": "Keratinocytes stop migrating when they meet opposing epithelium",
+          "isCorrect": true,
+          "explanation": "When migrating keratinocytes from opposite edges meet, they cease migration and form cell-cell junctions, restoring the epidermal barrier."
+        },
+        {
+          "text": "Inhibition of fibroblast proliferation by collagen",
+          "isCorrect": false,
+          "explanation": "That is not termed contact inhibition in wound healing."
+        },
+        {
+          "text": "Inhibition of bacterial growth by neutrophils",
+          "isCorrect": false,
+          "explanation": "That is phagocytosis."
+        },
+        {
+          "text": "Cessation of angiogenesis upon wound closure",
+          "isCorrect": false,
+          "explanation": "Angiogenesis regresses after wound closure but is not contact inhibition."
+        },
+        {
+          "text": "Myofibroblast apoptosis after contraction",
+          "isCorrect": false,
+          "explanation": "Myofibroblast apoptosis is important but not contact inhibition."
+        }
+      ],
+      "explanation": {
+        "overview": "Contact inhibition is a critical phenomenon in wound epithelialization: when migrating keratinocytes from opposite sides meet, they recognize each other via cell adhesion molecules, stop migrating, and reform stable intercellular junctions.",
+        "highYield": "Contact inhibition of epithelium stops migration after wound coverage. Prevents overgrowth.",
+        "clinicalCorrelation": "Loss of contact inhibition is a hallmark of cancer cells, leading to uncontrolled growth."
+      }
+    },
+    {
+      "questionId": "path_repair_086",
+      "difficulty": 2,
+      "question": "Which of the following is characteristic of the 'proliferative phase' of wound healing?",
+      "image": null,
+      "options": [
+        {
+          "text": "Granulation tissue formation, angiogenesis, re-epithelialization",
+          "isCorrect": true,
+          "explanation": "The proliferative phase includes fibroblast proliferation, collagen deposition, new vessel formation, and epithelial cell migration."
+        },
+        {
+          "text": "Hemostatic plug formation",
+          "isCorrect": false,
+          "explanation": "That is hemostasis."
+        },
+        {
+          "text": "Neutrophil infiltration",
+          "isCorrect": false,
+          "explanation": "That is early inflammation."
+        },
+        {
+          "text": "Collagen remodeling with increased strength",
+          "isCorrect": false,
+          "explanation": "That is remodeling."
+        },
+        {
+          "text": "Platelet aggregation and degranulation",
+          "isCorrect": false,
+          "explanation": "That is hemostasis."
+        }
+      ],
+      "explanation": {
+        "overview": "The proliferative phase (day 3 to week 2-3) overlaps with inflammation and is characterized by granulation tissue formation (fibroblasts + new vessels), re-epithelialization, and early collagen deposition.",
+        "highYield": "Proliferative phase: fibroblasts, new capillaries, collagen (type III), epithelialization.",
+        "clinicalCorrelation": "Wound appears pink and granular; this is the best time for skin grafting."
+      }
+    },
+    {
+      "questionId": "path_repair_087",
+      "difficulty": 1,
+      "question": "A patient with a clean surgical wound that heals with a fine line scar likely had healing by:",
+      "image": null,
+      "options": [
+        {
+          "text": "First intention",
+          "isCorrect": true,
+          "explanation": "A fine linear scar is typical of primary intention healing."
+        },
+        {
+          "text": "Second intention",
+          "isCorrect": false,
+          "explanation": "Secondary intention results in a larger, irregular scar."
+        },
+        {
+          "text": "Third intention",
+          "isCorrect": false,
+          "explanation": "Tertiary intention also has a larger scar than primary."
+        },
+        {
+          "text": "Regeneration",
+          "isCorrect": false,
+          "explanation": "Skin wounds that are full-thickness heal with scar, not regeneration."
+        },
+        {
+          "text": "Metaplasia",
+          "isCorrect": false,
+          "explanation": "Metaplasia is a cellular change, not a healing pattern."
+        }
+      ],
+      "explanation": {
+        "overview": "A fine, flat, linear scar with minimal surrounding puckering indicates healing by primary (first) intention, typical of a clean surgical incision closed with sutures.",
+        "highYield": "Fine line = primary intention. Wide irregular scar = secondary intention.",
+        "clinicalCorrelation": "Cosmetic outcome is best with primary intention closure."
+      }
+    },
+    {
+      "questionId": "path_repair_088",
+      "difficulty": 2,
+      "question": "Which of the following nutritional components is most directly required for the hydroxylation of collagen?",
+      "image": null,
+      "options": [
+        {
+          "text": "Vitamin C",
+          "isCorrect": true,
+          "explanation": "Vitamin C is a necessary cofactor for prolyl and lysyl hydroxylase enzymes."
+        },
+        {
+          "text": "Zinc",
+          "isCorrect": false,
+          "explanation": "Zinc is a cofactor for many enzymes, but not specifically collagen hydroxylases."
+        },
+        {
+          "text": "Iron",
+          "isCorrect": false,
+          "explanation": "Iron is needed for oxygen transport and some enzymes."
+        },
+        {
+          "text": "Vitamin A",
+          "isCorrect": false,
+          "explanation": "Vitamin A is important for epithelial integrity."
+        },
+        {
+          "text": "Vitamin D",
+          "isCorrect": false,
+          "explanation": "Vitamin D regulates calcium metabolism."
+        }
+      ],
+      "explanation": {
+        "overview": "Prolyl hydroxylase and lysyl hydroxylase require ascorbic acid (vitamin C) as a cofactor to add hydroxyl groups to procollagen, allowing stable triple helix formation and cross-linking.",
+        "highYield": "Vitamin C = essential cofactor for collagen hydroxylation. Deficiency → scurvy, poor healing, bleeding.",
+        "clinicalCorrelation": "Even subclinical vitamin C deficiency can impair wound healing in hospitalized patients."
+      }
+    },
+    {
+      "questionId": "path_repair_089",
+      "difficulty": 2,
+      "question": "Which of the following molecules is critical for the cross-linking of collagen fibers and requires copper as a cofactor?",
+      "image": null,
+      "options": [
+        {
+          "text": "Lysyl oxidase",
+          "isCorrect": true,
+          "explanation": "Lysyl oxidase oxidatively deaminates lysine and hydroxylysine residues, forming cross-links between collagen fibers. It requires copper."
+        },
+        {
+          "text": "Matrix metalloproteinase-1",
+          "isCorrect": false,
+          "explanation": "MMP-1 degrades collagen and requires zinc."
+        },
+        {
+          "text": "Prolyl hydroxylase",
+          "isCorrect": false,
+          "explanation": "Prolyl hydroxylase requires vitamin C, not copper."
+        },
+        {
+          "text": "Catalase",
+          "isCorrect": false,
+          "explanation": "Catalase breaks down hydrogen peroxide, requires iron."
+        },
+        {
+          "text": "Superoxide dismutase",
+          "isCorrect": false,
+          "explanation": "Cu/Zn SOD uses copper, but not for collagen cross-linking."
+        }
+      ],
+      "explanation": {
+        "overview": "Collagen cross-linking, which provides tensile strength, is catalyzed by lysyl oxidase. This enzyme requires copper as a cofactor. Copper deficiency impairs wound healing due to weak collagen.",
+        "highYield": "Lysyl oxidase = cross-links collagen, requires copper. Vitamin C = hydroxylates collagen. Zinc = MMPs and protein synthesis.",
+        "clinicalCorrelation": "Copper deficiency is rare but can occur in malabsorption or parenteral nutrition without supplementation."
+      }
+    },
+    {
+      "questionId": "path_repair_090",
+      "difficulty": 1,
+      "question": "A wound that heals with significant scar tissue and contraction is most likely healing by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Second intention",
+          "isCorrect": true,
+          "explanation": "Secondary intention healing fills the defect with granulation tissue, followed by prominent contraction and scar formation."
+        },
+        {
+          "text": "First intention",
+          "isCorrect": false,
+          "explanation": "First intention has minimal scar and contraction."
+        },
+        {
+          "text": "Third intention",
+          "isCorrect": false,
+          "explanation": "Third intention has less contraction than secondary."
+        },
+        {
+          "text": "Regeneration",
+          "isCorrect": false,
+          "explanation": "Regeneration restores normal tissue without scar."
+        },
+        {
+          "text": "Delayed primary closure",
+          "isCorrect": false,
+          "explanation": "Delayed closure is a form of primary, with less scar."
+        }
+      ],
+      "explanation": {
+        "overview": "Healing by secondary intention results in a wider, irregular scar due to the need for abundant granulation tissue to fill the defect, followed by wound contraction. This is typical for wounds not closed by sutures.",
+        "highYield": "Secondary intention = wide scar, contraction. Examples: pressure ulcers, traumatic avulsions.",
+        "clinicalCorrelation": "These scars may be cosmetically displeasing and require later revision."
+      }
+    }
+  ]
+}

@@ -1,0 +1,219 @@
+<!-- frontend-user/pages/referral.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referrals – MedHub</title>
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/css/common.css" media="all">
+    <link rel="stylesheet" href="/css/referral.css" media="all">
+
+    <!-- ===== SHIMMER STYLES (inline to load immediately) ===== -->
+    <style>
+        /* Shimmer overlay – dark theme by default */
+        .shimmer-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--bg-primary, #121212);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            transition: opacity 0.3s ease;
+        }
+        .shimmer-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .shimmer-grid {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .shimmer-card {
+            background: var(--bg-secondary, #1e1e1e);
+            border-radius: var(--radius, 12px);
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            animation: shimmer-pulse 1.5s ease-in-out infinite;
+        }
+        .shimmer-line {
+            height: 14px;
+            background: var(--border, #2a2a2a);
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+            width: 100%;
+        }
+        .shimmer-line.short {
+            width: 40%;
+        }
+        .shimmer-line.medium {
+            width: 60%;
+        }
+        .shimmer-line.large {
+            width: 80%;
+        }
+        .shimmer-line:last-child {
+            margin-bottom: 0;
+        }
+        @keyframes shimmer-pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+        .shimmer-overlay .shimmer-subtitle {
+            color: var(--text-muted, #888);
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        #main-content {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        #main-content.show {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+
+    <!-- Core modules (deferred) -->
+    <script type="module" src="/scripts/utils.js"></script>
+    <script type="module" src="/scripts/ui.js"></script>
+    <script type="module" src="/scripts/router.js"></script>
+    <script type="module" src="/scripts/app.js"></script>
+    <script type="module" src="/scripts/auth.js"></script>
+    <script type="module" src="/scripts/referral.js"></script>
+    <script type="module" src="/scripts/referral-ui.js"></script>
+    <script type="module" src="/scripts/db.js"></script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js').catch(() => {});
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Shimmer Skeleton Overlay (no spinner) -->
+    <div id="shimmer-overlay" class="shimmer-overlay">
+        <div class="shimmer-grid">
+            <!-- Header shimmer -->
+            <div class="shimmer-card">
+                <div class="shimmer-line short"></div>
+                <div class="shimmer-line medium"></div>
+                <div class="shimmer-line large"></div>
+            </div>
+            <!-- Wallet shimmer -->
+            <div class="shimmer-card">
+                <div class="shimmer-line short"></div>
+                <div class="shimmer-line medium"></div>
+                <div class="shimmer-line short" style="width:30%;"></div>
+            </div>
+            <!-- Referrals list shimmer -->
+            <div class="shimmer-card">
+                <div class="shimmer-line short"></div>
+                <div class="shimmer-line large"></div>
+                <div class="shimmer-line medium"></div>
+                <div class="shimmer-line large"></div>
+            </div>
+        </div>
+        <div class="shimmer-subtitle">Loading your referral dashboard…</div>
+    </div>
+
+    <!-- Main content (hidden until data loads) -->
+    <div id="main-content">
+        <!-- Fixed Header (2 rows) -->
+        <header class="fixed-header">
+            <div class="header-row top">
+                <div class="left-group">
+                    <img src="/assets/images/logo.png" alt="Logo" width="32" height="32">
+                    <span class="brand">MedHub</span>
+                    <button onclick="router.navigateTo('subjects.html')" class="btn-text">← Subjects</button>
+                </div>
+                <div class="right-group">
+                    <button onclick="ui.toggleTheme()" class="btn-outline">🌓</button>
+                </div>
+            </div>
+            <div class="header-row bottom">
+                <div class="title-area">
+                    <h1>💰 Refer & Earn</h1>
+                </div>
+                <div id="header-status" style="font-size: 0.85rem; color: var(--text-muted);"></div>
+            </div>
+        </header>
+
+        <main>
+            <div id="dashboard-container">
+                <!-- Rendered by referral-ui.js -->
+            </div>
+
+            <div class="action-buttons" style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+                <button onclick="router.navigateTo('subjects.html')" class="btn-secondary">← Back to Subjects</button>
+                <button onclick="router.navigateTo('profile.html')" class="btn-secondary">👤 Profile</button>
+            </div>
+        </main>
+    </div>
+
+    <script type="module">
+        import * as app from '/scripts/app.js';
+        import * as ui from '/scripts/ui.js';
+        import * as router from '/scripts/router.js';
+        import * as referral from '/scripts/referral.js';
+        import * as referralUI from '/scripts/referral-ui.js';
+        import * as utils from '/scripts/utils.js';
+
+        // ==================== INIT ====================
+        (async function init() {
+            // Shimmer is already visible.
+            const overlay = document.getElementById('shimmer-overlay');
+            const mainContent = document.getElementById('main-content');
+
+            await app.initializeApp();
+            ui.applyTheme();
+
+            if (!app.checkAuth()) {
+                ui.showToast('Please log in to view referrals', 'warning');
+                router.navigateTo('login.html');
+                return;
+            }
+
+            // Check user type for header
+            try {
+                const data = await referral.getReferralDashboard();
+                const isAgent = data.isAgent || false;
+                const statusEl = document.getElementById('header-status');
+                statusEl.innerHTML = isAgent ? '⭐ Agent' : '👤 User';
+            } catch (err) {
+                // ignore
+            }
+
+            // Render dashboard
+            const container = document.getElementById('dashboard-container');
+            await referralUI.renderDashboard(container);
+
+            // Hide shimmer, show main content with fade
+            overlay.classList.add('hidden');
+            mainContent.classList.add('show');
+
+            // Remove overlay from DOM after transition
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 500);
+        })();
+    </script>
+
+    <script data-lazy data-src="/scripts/offline.js"></script>
+</body>
+
+</html>

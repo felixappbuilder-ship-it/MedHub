@@ -1,0 +1,2854 @@
+{
+  "questions": [
+    {
+      "questionId": "nucleic_acids_001",
+      "difficulty": 1,
+      "question": "What are the three components of a nucleotide?",
+      "image": null,
+      "options": [
+        {
+          "text": "Nitrogenous base, pentose sugar, phosphate group",
+          "isCorrect": true,
+          "explanation": "Nucleotides are composed of a nitrogenous base (purine or pyrimidine), a pentose sugar (ribose or deoxyribose), and one or more phosphate groups."
+        },
+        {
+          "text": "Nitrogenous base, hexose sugar, sulfate group",
+          "isCorrect": false,
+          "explanation": "The sugar is a pentose (five‑carbon), not hexose; and the phosphate group is not sulfate."
+        },
+        {
+          "text": "Amino acid, ribose, phosphate",
+          "isCorrect": false,
+          "explanation": "Nucleotides contain a nitrogenous base, not an amino acid."
+        },
+        {
+          "text": "Nitrogenous base, deoxyribose, amino group",
+          "isCorrect": false,
+          "explanation": "Deoxyribose is the sugar in DNA, but nucleotides also have phosphate; amino group is not a component."
+        },
+        {
+          "text": "Purine, pyrimidine, phosphate",
+          "isCorrect": false,
+          "explanation": "Purine and pyrimidine are types of bases, not components; a nucleotide has one base, not both."
+        }
+      ],
+      "explanation": {
+        "overview": "Nucleotides are the building blocks of nucleic acids; each consists of a nitrogenous base, a pentose sugar, and phosphate group(s).",
+        "highYield": "Remember: base + sugar + phosphate = nucleotide.",
+        "clinicalCorrelation": "Nucleotide analogs are used as antiviral and anticancer drugs (e.g., AZT, 5‑fluorouracil)."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_002",
+      "difficulty": 1,
+      "question": "Which of the following is a purine base?",
+      "image": null,
+      "options": [
+        {
+          "text": "Cytosine",
+          "isCorrect": false,
+          "explanation": "Cytosine is a pyrimidine, not a purine."
+        },
+        {
+          "text": "Thymine",
+          "isCorrect": false,
+          "explanation": "Thymine is a pyrimidine, not a purine."
+        },
+        {
+          "text": "Uracil",
+          "isCorrect": false,
+          "explanation": "Uracil is a pyrimidine, not a purine."
+        },
+        {
+          "text": "Adenine",
+          "isCorrect": true,
+          "explanation": "Adenine and guanine are purines, characterized by a two‑ring structure."
+        },
+        {
+          "text": "All are purines",
+          "isCorrect": false,
+          "explanation": "Only adenine and guanine are purines; the others are pyrimidines."
+        }
+      ],
+      "explanation": {
+        "overview": "Purines (adenine, guanine) have a double‑ring structure; pyrimidines (cytosine, thymine, uracil) have a single ring.",
+        "highYield": "Purines = A, G; Pyrimidines = C, T, U.",
+        "clinicalCorrelation": "Purine metabolism disorders (e.g., gout, Lesch‑Nyhan) involve accumulation of uric acid."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_003",
+      "difficulty": 1,
+      "question": "Which base is found in RNA but not in DNA?",
+      "image": null,
+      "options": [
+        {
+          "text": "Adenine",
+          "isCorrect": false,
+          "explanation": "Adenine is found in both DNA and RNA."
+        },
+        {
+          "text": "Guanine",
+          "isCorrect": false,
+          "explanation": "Guanine is found in both DNA and RNA."
+        },
+        {
+          "text": "Cytosine",
+          "isCorrect": false,
+          "explanation": "Cytosine is found in both DNA and RNA."
+        },
+        {
+          "text": "Thymine",
+          "isCorrect": false,
+          "explanation": "Thymine is found in DNA but replaced by uracil in RNA."
+        },
+        {
+          "text": "Uracil",
+          "isCorrect": true,
+          "explanation": "RNA contains uracil instead of thymine; DNA contains thymine."
+        }
+      ],
+      "explanation": {
+        "overview": "RNA uses uracil as a base pair with adenine, whereas DNA uses thymine.",
+        "highYield": "DNA: A, G, C, T; RNA: A, G, C, U.",
+        "clinicalCorrelation": "Uracil can arise in DNA due to deamination of cytosine, but is normally repaired."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_004",
+      "difficulty": 1,
+      "question": "The sugar in DNA is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Ribose",
+          "isCorrect": false,
+          "explanation": "Ribose is the sugar in RNA."
+        },
+        {
+          "text": "Deoxyribose",
+          "isCorrect": true,
+          "explanation": "DNA contains 2'‑deoxyribose, which lacks an oxygen at the 2' position."
+        },
+        {
+          "text": "Glucose",
+          "isCorrect": false,
+          "explanation": "Glucose is a hexose, not a component of nucleic acids."
+        },
+        {
+          "text": "Fructose",
+          "isCorrect": false,
+          "explanation": "Fructose is a ketose sugar, not in nucleic acids."
+        },
+        {
+          "text": "Galactose",
+          "isCorrect": false,
+          "explanation": "Galactose is a hexose found in milk sugar."
+        }
+      ],
+      "explanation": {
+        "overview": "DNA contains deoxyribose, a pentose sugar lacking the 2'‑hydroxyl group; RNA contains ribose.",
+        "highYield": "Deoxyribose makes DNA more stable than RNA.",
+        "clinicalCorrelation": "The 2'‑OH group in RNA makes it susceptible to alkaline hydrolysis, important in RNA degradation."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_005",
+      "difficulty": 2,
+      "question": "The bond that links nucleotides in a nucleic acid strand is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Peptide bond",
+          "isCorrect": false,
+          "explanation": "Peptide bonds link amino acids in proteins."
+        },
+        {
+          "text": "Glycosidic bond",
+          "isCorrect": false,
+          "explanation": "Glycosidic bonds connect base to sugar in nucleosides."
+        },
+        {
+          "text": "Phosphodiester bond",
+          "isCorrect": true,
+          "explanation": "Phosphodiester bonds connect the 3' carbon of one sugar to the 5' carbon of the next via a phosphate group."
+        },
+        {
+          "text": "Hydrogen bond",
+          "isCorrect": false,
+          "explanation": "Hydrogen bonds hold complementary strands together, not the individual strand."
+        },
+        {
+          "text": "Ester bond",
+          "isCorrect": false,
+          "explanation": "While phosphodiester bonds contain ester linkages, the specific term is phosphodiester bond."
+        }
+      ],
+      "explanation": {
+        "overview": "Nucleotides are linked by phosphodiester bonds between the 3'‑hydroxyl of one sugar and the 5'‑phosphate of the next.",
+        "highYield": "3'–5' phosphodiester linkage forms the backbone of nucleic acids.",
+        "clinicalCorrelation": "Nucleases (e.g., DNase, RNase) cleave phosphodiester bonds."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_006",
+      "difficulty": 1,
+      "question": "In DNA, adenine pairs with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Guanine",
+          "isCorrect": false,
+          "explanation": "Guanine pairs with cytosine."
+        },
+        {
+          "text": "Cytosine",
+          "isCorrect": false,
+          "explanation": "Cytosine pairs with guanine."
+        },
+        {
+          "text": "Thymine",
+          "isCorrect": true,
+          "explanation": "Adenine forms two hydrogen bonds with thymine in DNA."
+        },
+        {
+          "text": "Uracil",
+          "isCorrect": false,
+          "explanation": "In RNA, adenine pairs with uracil, but in DNA it's thymine."
+        },
+        {
+          "text": "Adenine",
+          "isCorrect": false,
+          "explanation": "Adenine does not pair with itself."
+        }
+      ],
+      "explanation": {
+        "overview": "In DNA, adenine (A) pairs with thymine (T) via two hydrogen bonds; guanine (G) pairs with cytosine (C) via three hydrogen bonds.",
+        "highYield": "A‑T has 2 H‑bonds; G‑C has 3 H‑bonds, making G‑C pairs more stable.",
+        "clinicalCorrelation": "Mutations can alter base pairing, leading to genetic diseases."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_007",
+      "difficulty": 1,
+      "question": "In RNA, guanine pairs with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Adenine",
+          "isCorrect": false,
+          "explanation": "In RNA, adenine pairs with uracil."
+        },
+        {
+          "text": "Cytosine",
+          "isCorrect": true,
+          "explanation": "Guanine pairs with cytosine via three hydrogen bonds in both DNA and RNA."
+        },
+        {
+          "text": "Thymine",
+          "isCorrect": false,
+          "explanation": "Thymine is not found in RNA; it pairs with adenine in DNA."
+        },
+        {
+          "text": "Uracil",
+          "isCorrect": false,
+          "explanation": "Uracil pairs with adenine, not guanine."
+        },
+        {
+          "text": "Guanine",
+          "isCorrect": false,
+          "explanation": "Guanine does not pair with itself."
+        }
+      ],
+      "explanation": {
+        "overview": "Base pairing is conserved: G pairs with C in both DNA and RNA, via three hydrogen bonds.",
+        "highYield": "G‑C pairs are more stable than A‑U (or A‑T) due to three H‑bonds.",
+        "clinicalCorrelation": "High GC content in DNA increases melting temperature, affecting PCR and hybridization."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_008",
+      "difficulty": 2,
+      "question": "The double helix of DNA is stabilized by hydrogen bonds between base pairs and:",
+      "image": null,
+      "options": [
+        {
+          "text": "Covalent bonds between sugars",
+          "isCorrect": false,
+          "explanation": "Sugars are linked by phosphodiester bonds, not covalent between sugars."
+        },
+        {
+          "text": "Ionic bonds with Mg2+",
+          "isCorrect": false,
+          "explanation": "While metal ions may stabilize, the main non‑covalent interaction is base stacking."
+        },
+        {
+          "text": "Hydrophobic interactions (base stacking)",
+          "isCorrect": true,
+          "explanation": "Base stacking (hydrophobic interactions and van der Waals forces) contributes significantly to DNA stability."
+        },
+        {
+          "text": "Disulfide bridges",
+          "isCorrect": false,
+          "explanation": "Disulfide bridges stabilize proteins, not DNA."
+        },
+        {
+          "text": "Peptide bonds",
+          "isCorrect": false,
+          "explanation": "Peptide bonds are in proteins, not DNA."
+        }
+      ],
+      "explanation": {
+        "overview": "DNA stability is due to hydrogen bonding between base pairs and base‑stacking interactions between adjacent bases.",
+        "highYield": "Base stacking is the major contributor to DNA helix stability.",
+        "clinicalCorrelation": "Disruption of base stacking (e.g., by intercalating drugs) can inhibit DNA replication."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_009",
+      "difficulty": 1,
+      "question": "The helical structure of DNA is described as:",
+      "image": null,
+      "options": [
+        {
+          "text": "Right-handed double helix",
+          "isCorrect": true,
+          "explanation": "Classic B‑DNA is a right‑handed double helix with about 10 base pairs per turn."
+        },
+        {
+          "text": "Left-handed double helix",
+          "isCorrect": false,
+          "explanation": "Left‑handed DNA is Z‑DNA, not the usual B‑form."
+        },
+        {
+          "text": "Single-stranded helix",
+          "isCorrect": false,
+          "explanation": "DNA is typically double‑stranded."
+        },
+        {
+          "text": "Triple helix",
+          "isCorrect": false,
+          "explanation": "Triple helix DNA is rare and not the standard form."
+        },
+        {
+          "text": "Quadruplex",
+          "isCorrect": false,
+          "explanation": "Quadruplex structures occur in telomeres, not the main helical structure."
+        }
+      ],
+      "explanation": {
+        "overview": "The most common DNA structure is the right‑handed double helix (B‑DNA), described by Watson and Crick.",
+        "highYield": "B‑DNA has 10.5 bp per turn and major/minor grooves.",
+        "clinicalCorrelation": "Altered DNA structures (e.g., Z‑DNA, quadruplexes) are implicated in transcription regulation and cancer."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_010",
+      "difficulty": 2,
+      "question": "Z‑DNA is a:",
+      "image": null,
+      "options": [
+        {
+          "text": "Left-handed helix",
+          "isCorrect": true,
+          "explanation": "Z‑DNA is a left‑handed double helix that can form under high salt or certain sequences."
+        },
+        {
+          "text": "Right-handed helix",
+          "isCorrect": false,
+          "explanation": "That is B‑DNA."
+        },
+        {
+          "text": "Single-stranded form",
+          "isCorrect": false,
+          "explanation": "Z‑DNA is double‑stranded."
+        },
+        {
+          "text": "RNA structure",
+          "isCorrect": false,
+          "explanation": "Z‑DNA is a DNA structure."
+        },
+        {
+          "text": "Triple helix",
+          "isCorrect": false,
+          "explanation": "Z‑DNA is a double helix."
+        }
+      ],
+      "explanation": {
+        "overview": "Z‑DNA is a left‑handed helical form of DNA that occurs in sequences with alternating purines and pyrimidines.",
+        "highYield": "Z‑DNA may be involved in gene regulation.",
+        "clinicalCorrelation": "Antibodies against Z‑DNA are found in some autoimmune diseases."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_011",
+      "difficulty": 2,
+      "question": "The melting temperature (Tm) of DNA is defined as the temperature at which:",
+      "image": null,
+      "options": [
+        {
+          "text": "Half of the DNA is denatured",
+          "isCorrect": true,
+          "explanation": "Tm is the temperature at which half of the DNA duplex dissociates into single strands."
+        },
+        {
+          "text": "All DNA is denatured",
+          "isCorrect": false,
+          "explanation": "All is denatured at higher temperatures."
+        },
+        {
+          "text": "DNA reanneals",
+          "isCorrect": false,
+          "explanation": "Reannealing occurs upon cooling, not at Tm."
+        },
+        {
+          "text": "DNA polymerase is most active",
+          "isCorrect": false,
+          "explanation": "Polymerase has an optimum temperature, but not Tm."
+        },
+        {
+          "text": "DNA begins to degrade",
+          "isCorrect": false,
+          "explanation": "Degradation is not related to Tm."
+        }
+      ],
+      "explanation": {
+        "overview": "Tm is the midpoint of DNA melting where 50% of the strands are separated.",
+        "highYield": "Tm depends on GC content and salt concentration.",
+        "clinicalCorrelation": "Tm is used in PCR primer design to determine annealing temperatures."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_012",
+      "difficulty": 2,
+      "question": "DNA with a higher G+C content has a _________ Tm.",
+      "image": null,
+      "options": [
+        {
+          "text": "Higher",
+          "isCorrect": true,
+          "explanation": "G‑C pairs have three hydrogen bonds (vs two in A‑T), so more energy is required to denature them, raising Tm."
+        },
+        {
+          "text": "Lower",
+          "isCorrect": false,
+          "explanation": "Higher GC gives higher Tm."
+        },
+        {
+          "text": "Unchanged",
+          "isCorrect": false,
+          "explanation": "GC content directly affects Tm."
+        },
+        {
+          "text": "Variable",
+          "isCorrect": false,
+          "explanation": "It is positively correlated."
+        },
+        {
+          "text": "No correlation",
+          "isCorrect": false,
+          "explanation": "There is a direct correlation."
+        }
+      ],
+      "explanation": {
+        "overview": "GC‑rich DNA has higher Tm because of three hydrogen bonds per G‑C pair, compared to two in A‑T pairs.",
+        "highYield": "Tm (°C) ≈ 2×(A+T) + 4×(G+C) for short primers.",
+        "clinicalCorrelation": "GC content affects PCR efficiency and is used in primer design."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_013",
+      "difficulty": 1,
+      "question": "The process by which DNA is copied into RNA is called:",
+      "image": null,
+      "options": [
+        {
+          "text": "Transcription",
+          "isCorrect": true,
+          "explanation": "Transcription synthesizes RNA complementary to a DNA template."
+        },
+        {
+          "text": "Translation",
+          "isCorrect": false,
+          "explanation": "Translation is protein synthesis from mRNA."
+        },
+        {
+          "text": "Replication",
+          "isCorrect": false,
+          "explanation": "Replication is copying DNA to DNA."
+        },
+        {
+          "text": "Reverse transcription",
+          "isCorrect": false,
+          "explanation": "Reverse transcription is RNA to DNA."
+        },
+        {
+          "text": "Transposition",
+          "isCorrect": false,
+          "explanation": "Transposition is movement of genetic elements."
+        }
+      ],
+      "explanation": {
+        "overview": "Transcription is the synthesis of RNA from a DNA template, catalyzed by RNA polymerase.",
+        "highYield": "Transcription produces mRNA, tRNA, rRNA, and other non‑coding RNAs.",
+        "clinicalCorrelation": "Transcription factors and RNA polymerase are targets for many drugs."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_014",
+      "difficulty": 1,
+      "question": "The enzyme that synthesizes RNA from a DNA template is:",
+      "image": null,
+      "options": [
+        {
+          "text": "DNA polymerase",
+          "isCorrect": false,
+          "explanation": "DNA polymerase synthesizes DNA."
+        },
+        {
+          "text": "RNA polymerase",
+          "isCorrect": true,
+          "explanation": "RNA polymerase catalyzes transcription in all living organisms."
+        },
+        {
+          "text": "Reverse transcriptase",
+          "isCorrect": false,
+          "explanation": "Reverse transcriptase synthesizes DNA from RNA."
+        },
+        {
+          "text": "Primase",
+          "isCorrect": false,
+          "explanation": "Primase is a type of RNA polymerase that synthesizes RNA primers, but not the main transcription enzyme."
+        },
+        {
+          "text": "Helicase",
+          "isCorrect": false,
+          "explanation": "Helicase unwinds DNA, but does not synthesize RNA."
+        }
+      ],
+      "explanation": {
+        "overview": "RNA polymerase binds to promoter sequences and synthesizes RNA complementary to the template strand.",
+        "highYield": "In eukaryotes, there are multiple RNA polymerases (I, II, III).",
+        "clinicalCorrelation": "Inhibitors of RNA polymerase (e.g., rifampicin, α‑amanitin) are used as antibiotics and research tools."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_015",
+      "difficulty": 2,
+      "question": "The enzyme that synthesizes DNA from an RNA template is:",
+      "image": null,
+      "options": [
+        {
+          "text": "DNA polymerase",
+          "isCorrect": false,
+          "explanation": "DNA polymerase synthesizes DNA from a DNA template."
+        },
+        {
+          "text": "RNA polymerase",
+          "isCorrect": false,
+          "explanation": "RNA polymerase synthesizes RNA from DNA."
+        },
+        {
+          "text": "Reverse transcriptase",
+          "isCorrect": true,
+          "explanation": "Reverse transcriptase is found in retroviruses and certain mobile elements."
+        },
+        {
+          "text": "Telomerase",
+          "isCorrect": false,
+          "explanation": "Telomerase uses an RNA template to extend DNA, but it is not a general reverse transcriptase."
+        },
+        {
+          "text": "Primase",
+          "isCorrect": false,
+          "explanation": "Primase synthesizes RNA primers, not DNA from RNA."
+        }
+      ],
+      "explanation": {
+        "overview": "Reverse transcriptase catalyzes the synthesis of DNA using an RNA template, a key step in retroviral replication.",
+        "highYield": "Reverse transcription is used in molecular biology to make cDNA from mRNA.",
+        "clinicalCorrelation": "HIV‑1 reverse transcriptase is a target for antiretroviral drugs (e.g., AZT, tenofovir)."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_016",
+      "difficulty": 2,
+      "question": "Okazaki fragments are synthesized on the:",
+      "image": null,
+      "options": [
+        {
+          "text": "Leading strand",
+          "isCorrect": false,
+          "explanation": "Leading strand synthesis is continuous."
+        },
+        {
+          "text": "Lagging strand",
+          "isCorrect": true,
+          "explanation": "On the lagging strand, DNA synthesis is discontinuous, producing Okazaki fragments that are later joined."
+        },
+        {
+          "text": "Both strands",
+          "isCorrect": false,
+          "explanation": "Only the lagging strand has Okazaki fragments."
+        },
+        {
+          "text": "RNA primer",
+          "isCorrect": false,
+          "explanation": "Okazaki fragments are DNA, synthesized after RNA primers."
+        },
+        {
+          "text": "Template strand",
+          "isCorrect": false,
+          "explanation": "The template strand is used for synthesis, but fragments are on the lagging strand."
+        }
+      ],
+      "explanation": {
+        "overview": "Due to the antiparallel nature of DNA and the 5'→3' synthesis direction, the lagging strand is synthesized in short Okazaki fragments.",
+        "highYield": "Okazaki fragments are later joined by DNA ligase.",
+        "clinicalCorrelation": "Defects in Okazaki fragment processing can cause genomic instability and cancer."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_017",
+      "difficulty": 2,
+      "question": "The enzyme that joins Okazaki fragments is:",
+      "image": null,
+      "options": [
+        {
+          "text": "DNA ligase",
+          "isCorrect": true,
+          "explanation": "DNA ligase seals nicks between fragments by forming phosphodiester bonds."
+        },
+        {
+          "text": "DNA polymerase I",
+          "isCorrect": false,
+          "explanation": "DNA polymerase I removes RNA primers and replaces them with DNA, but ligase joins fragments."
+        },
+        {
+          "text": "DNA polymerase III",
+          "isCorrect": false,
+          "explanation": "DNA polymerase III is the main replicative polymerase in bacteria."
+        },
+        {
+          "text": "Helicase",
+          "isCorrect": false,
+          "explanation": "Helicase unwinds the DNA helix."
+        },
+        {
+          "text": "Primase",
+          "isCorrect": false,
+          "explanation": "Primase synthesizes RNA primers."
+        }
+      ],
+      "explanation": {
+        "overview": "DNA ligase catalyzes the formation of a phosphodiester bond between the 3'‑OH and 5'‑phosphate ends, joining Okazaki fragments.",
+        "highYield": "Ligase is essential for sealing nicks in DNA replication, repair, and recombination.",
+        "clinicalCorrelation": "Defects in ligase can cause immune deficiencies and cancer predisposition."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_018",
+      "difficulty": 2,
+      "question": "The primer for DNA replication is synthesized by:",
+      "image": null,
+      "options": [
+        {
+          "text": "DNA polymerase α",
+          "isCorrect": false,
+          "explanation": "In eukaryotes, DNA polymerase α has primase activity, but in bacteria primase is a separate enzyme. The general answer is primase."
+        },
+        {
+          "text": "Primase",
+          "isCorrect": true,
+          "explanation": "Primase (a type of RNA polymerase) synthesizes short RNA primers to initiate DNA synthesis."
+        },
+        {
+          "text": "Helicase",
+          "isCorrect": false,
+          "explanation": "Helicase unwinds DNA, not synthesize primers."
+        },
+        {
+          "text": "Ligase",
+          "isCorrect": false,
+          "explanation": "Ligase joins fragments."
+        },
+        {
+          "text": "Topoisomerase",
+          "isCorrect": false,
+          "explanation": "Topoisomerase relieves torsional stress."
+        }
+      ],
+      "explanation": {
+        "overview": "Primase synthesizes short RNA primers that provide a free 3'‑OH for DNA polymerase to begin synthesis.",
+        "highYield": "Primers are later removed and replaced with DNA.",
+        "clinicalCorrelation": "Primase is a potential target for antibiotic development."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_019",
+      "difficulty": 2,
+      "question": "The proofreading function of DNA polymerase is due to its:",
+      "image": null,
+      "options": [
+        {
+          "text": "3'→5' exonuclease activity",
+          "isCorrect": true,
+          "explanation": "3'→5' exonuclease activity allows DNA polymerase to remove misincorporated nucleotides."
+        },
+        {
+          "text": "5'→3' exonuclease activity",
+          "isCorrect": false,
+          "explanation": "This activity is used to remove RNA primers, not for proofreading."
+        },
+        {
+          "text": "Endonuclease activity",
+          "isCorrect": false,
+          "explanation": "Endonucleases cleave internal phosphodiester bonds, not involved in proofreading."
+        },
+        {
+          "text": "Ligase activity",
+          "isCorrect": false,
+          "explanation": "Ligase joins fragments, not proofreading."
+        },
+        {
+          "text": "Primase activity",
+          "isCorrect": false,
+          "explanation": "Primase is not part of DNA polymerase."
+        }
+      ],
+      "explanation": {
+        "overview": "DNA polymerase's proofreading 3'→5' exonuclease activity removes mismatched bases, enhancing replication fidelity.",
+        "highYield": "This activity reduces error rates to about 10⁻⁹ per base.",
+        "clinicalCorrelation": "Mutations in proofreading domains (e.g., in POLE) are associated with hypermutation and cancer."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_020",
+      "difficulty": 2,
+      "question": "Telomeres are repetitive sequences at chromosome ends that are maintained by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Telomerase",
+          "isCorrect": true,
+          "explanation": "Telomerase adds telomeric repeats to chromosome ends to counteract shortening during replication."
+        },
+        {
+          "text": "DNA polymerase",
+          "isCorrect": false,
+          "explanation": "DNA polymerase cannot fully replicate chromosome ends due to the end‑replication problem."
+        },
+        {
+          "text": "Helicase",
+          "isCorrect": false,
+          "explanation": "Helicase unwinds DNA."
+        },
+        {
+          "text": "Ligase",
+          "isCorrect": false,
+          "explanation": "Ligase joins DNA fragments."
+        },
+        {
+          "text": "Topoisomerase",
+          "isCorrect": false,
+          "explanation": "Topoisomerase relieves supercoiling."
+        }
+      ],
+      "explanation": {
+        "overview": "Telomerase is a ribonucleoprotein that extends telomeres using an internal RNA template, preventing loss of genetic material.",
+        "highYield": "Telomerase is active in germ cells, stem cells, and most cancer cells.",
+        "clinicalCorrelation": "Telomerase is a promising target for cancer therapy."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_021",
+      "difficulty": 1,
+      "question": "The central dogma of molecular biology describes the flow of genetic information as:",
+      "image": null,
+      "options": [
+        {
+          "text": "DNA → RNA → Protein",
+          "isCorrect": true,
+          "explanation": "Genetic information flows from DNA to RNA (transcription) and from RNA to protein (translation)."
+        },
+        {
+          "text": "RNA → DNA → Protein",
+          "isCorrect": false,
+          "explanation": "This occurs in retroviruses but is not the central dogma."
+        },
+        {
+          "text": "Protein → RNA → DNA",
+          "isCorrect": false,
+          "explanation": "Not the direction."
+        },
+        {
+          "text": "DNA → Protein → RNA",
+          "isCorrect": false,
+          "explanation": "Reverse order."
+        },
+        {
+          "text": "RNA → Protein → DNA",
+          "isCorrect": false,
+          "explanation": "Not the central dogma."
+        }
+      ],
+      "explanation": {
+        "overview": "The central dogma (Crick) describes the flow of information: DNA is transcribed to RNA, which is translated to protein.",
+        "highYield": "Some viruses use reverse transcription (RNA → DNA).",
+        "clinicalCorrelation": "Understanding the central dogma is fundamental to molecular medicine and genetic engineering."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_022",
+      "difficulty": 1,
+      "question": "Which of the following is NOT a type of RNA?",
+      "image": null,
+      "options": [
+        {
+          "text": "mRNA",
+          "isCorrect": false,
+          "explanation": "mRNA (messenger RNA) is a type of RNA."
+        },
+        {
+          "text": "tRNA",
+          "isCorrect": false,
+          "explanation": "tRNA (transfer RNA) is a type of RNA."
+        },
+        {
+          "text": "rRNA",
+          "isCorrect": false,
+          "explanation": "rRNA (ribosomal RNA) is a type of RNA."
+        },
+        {
+          "text": "snRNA",
+          "isCorrect": false,
+          "explanation": "snRNA (small nuclear RNA) is a type of RNA involved in splicing."
+        },
+        {
+          "text": "sDNA",
+          "isCorrect": true,
+          "explanation": "sDNA (small DNA) is not a type of RNA; all others are functional RNAs."
+        }
+      ],
+      "explanation": {
+        "overview": "RNA types include mRNA, tRNA, rRNA, snRNA, snoRNA, miRNA, etc. sDNA is not a type of RNA.",
+        "highYield": "Each type of RNA has distinct functions in gene expression.",
+        "clinicalCorrelation": "Non‑coding RNAs are important in many diseases."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_023",
+      "difficulty": 2,
+      "question": "Transfer RNA (tRNA) functions to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Carry amino acids to the ribosome",
+          "isCorrect": true,
+          "explanation": "tRNA molecules bring specific amino acids to the ribosome during translation, matching anticodons to mRNA codons."
+        },
+        {
+          "text": "Form the ribosomal structure",
+          "isCorrect": false,
+          "explanation": "rRNA forms the ribosomal structure."
+        },
+        {
+          "text": "Carry genetic information from nucleus",
+          "isCorrect": false,
+          "explanation": "mRNA carries genetic information."
+        },
+        {
+          "text": "Splice introns",
+          "isCorrect": false,
+          "explanation": "snRNA and spliceosomes splice introns."
+        },
+        {
+          "text": "Catalyze peptide bond formation",
+          "isCorrect": false,
+          "explanation": "rRNA (peptidyl transferase) catalyzes peptide bonds."
+        }
+      ],
+      "explanation": {
+        "overview": "tRNA serves as an adaptor, bringing specific amino acids to the ribosome in response to mRNA codons.",
+        "highYield": "Each tRNA has an anticodon and carries a specific amino acid.",
+        "clinicalCorrelation": "Mutations in tRNA genes can cause mitochondrial diseases."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_024",
+      "difficulty": 1,
+      "question": "Ribosomal RNA (rRNA) is a component of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Ribosomes",
+          "isCorrect": true,
+          "explanation": "rRNA is the catalytic and structural component of ribosomes."
+        },
+        {
+          "text": "Spliceosomes",
+          "isCorrect": false,
+          "explanation": "Spliceosomes are composed of snRNPs."
+        },
+        {
+          "text": "Nucleosomes",
+          "isCorrect": false,
+          "explanation": "Nucleosomes are DNA wrapped around histone proteins."
+        },
+        {
+          "text": "Chromatin",
+          "isCorrect": false,
+          "explanation": "Chromatin is DNA and proteins."
+        },
+        {
+          "text": "Signal recognition particle",
+          "isCorrect": false,
+          "explanation": "SRP contains RNA and protein, but not rRNA."
+        }
+      ],
+      "explanation": {
+        "overview": "rRNA is a major component of ribosomes, where it forms the catalytic site (peptidyl transferase).",
+        "highYield": "rRNA is the most abundant RNA in cells.",
+        "clinicalCorrelation": "Antibiotics like chloramphenicol and erythromycin target ribosomal RNA."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_025",
+      "difficulty": 2,
+      "question": "The genetic code is said to be degenerate because:",
+      "image": null,
+      "options": [
+        {
+          "text": "Multiple codons can specify the same amino acid",
+          "isCorrect": true,
+          "explanation": "Degeneracy means most amino acids are encoded by more than one codon."
+        },
+        {
+          "text": "One codon can specify multiple amino acids",
+          "isCorrect": false,
+          "explanation": "Each codon specifies only one amino acid (unless stop)."
+        },
+        {
+          "text": "It is universal",
+          "isCorrect": false,
+          "explanation": "Universality means the code is the same in most organisms."
+        },
+        {
+          "text": "It has stop codons",
+          "isCorrect": false,
+          "explanation": "Stop codons terminate translation, not degeneracy."
+        },
+        {
+          "text": "It is non‑overlapping",
+          "isCorrect": false,
+          "explanation": "Non‑overlapping means codons are read sequentially, not degeneracy."
+        }
+      ],
+      "explanation": {
+        "overview": "The genetic code is degenerate because multiple codons encode the same amino acid, providing redundancy.",
+        "highYield": "Degeneracy reduces the impact of point mutations.",
+        "clinicalCorrelation": "Degeneracy allows silent mutations that do not change protein sequence."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_026",
+      "difficulty": 1,
+      "question": "A codon consists of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Three nucleotides",
+          "isCorrect": true,
+          "explanation": "The genetic code is read in triplets (codons) during translation."
+        },
+        {
+          "text": "Two nucleotides",
+          "isCorrect": false,
+          "explanation": "Two nucleotides would only give 16 combinations, insufficient for 20 amino acids."
+        },
+        {
+          "text": "One nucleotide",
+          "isCorrect": false,
+          "explanation": "One nucleotide would give only 4 combinations."
+        },
+        {
+          "text": "Four nucleotides",
+          "isCorrect": false,
+          "explanation": "Four nucleotides would give 4^4=256, but actual is triplet."
+        },
+        {
+          "text": "Five nucleotides",
+          "isCorrect": false,
+          "explanation": "Not the case."
+        }
+      ],
+      "explanation": {
+        "overview": "A codon is a sequence of three nucleotides in mRNA that specifies one amino acid or a stop signal.",
+        "highYield": "There are 64 possible codons, 61 encode amino acids, 3 are stop codons.",
+        "clinicalCorrelation": "Codon mutations can change protein sequence, leading to genetic diseases."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_027",
+      "difficulty": 1,
+      "question": "The start codon for protein synthesis in eukaryotes is:",
+      "image": null,
+      "options": [
+        {
+          "text": "AUG (methionine)",
+          "isCorrect": true,
+          "explanation": "AUG codes for methionine and serves as the initiation codon."
+        },
+        {
+          "text": "GUG",
+          "isCorrect": false,
+          "explanation": "GUG codes for valine but can serve as start in some bacteria, not eukaryotes."
+        },
+        {
+          "text": "UAA",
+          "isCorrect": false,
+          "explanation": "UAA is a stop codon."
+        },
+        {
+          "text": "UGA",
+          "isCorrect": false,
+          "explanation": "UGA is a stop codon (also codes for selenocysteine in some contexts)."
+        },
+        {
+          "text": "UAG",
+          "isCorrect": false,
+          "explanation": "UAG is a stop codon."
+        }
+      ],
+      "explanation": {
+        "overview": "The start codon AUG (methionine) initiates translation in eukaryotes, recognized by the initiator tRNA.",
+        "highYield": "In bacteria, the start codon is also AUG (formylmethionine).",
+        "clinicalCorrelation": "Mutations in the start codon can prevent protein synthesis."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_028",
+      "difficulty": 1,
+      "question": "Which of the following is a stop codon?",
+      "image": null,
+      "options": [
+        {
+          "text": "UAA",
+          "isCorrect": false,
+          "explanation": "UAA is a stop codon, but the answer is all of the above."
+        },
+        {
+          "text": "UAG",
+          "isCorrect": false,
+          "explanation": "UAG is also a stop codon."
+        },
+        {
+          "text": "UGA",
+          "isCorrect": false,
+          "explanation": "UGA is a stop codon (also selenocysteine)."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "UAA, UAG, and UGA are termination codons that do not specify any amino acid."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All three are stop codons."
+        }
+      ],
+      "explanation": {
+        "overview": "The three stop codons (UAA, UAG, UGA) signal termination of translation.",
+        "highYield": "Stop codons are also called nonsense codons.",
+        "clinicalCorrelation": "Nonsense mutations create premature stop codons, often leading to truncated proteins and disease."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_029",
+      "difficulty": 2,
+      "question": "The wobble hypothesis explains:",
+      "image": null,
+      "options": [
+        {
+          "text": "Flexible base pairing at the third codon position",
+          "isCorrect": false,
+          "explanation": "This is part of the hypothesis, but the best answer includes all."
+        },
+        {
+          "text": "Why the genetic code is degenerate",
+          "isCorrect": false,
+          "explanation": "Also related."
+        },
+        {
+          "text": "tRNA anticodon flexibility",
+          "isCorrect": false,
+          "explanation": "Also related."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Wobble allows a single tRNA to recognize more than one codon due to non‑standard pairing at the 5' end of the anticodon, explaining degeneracy."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All are correct."
+        }
+      ],
+      "explanation": {
+        "overview": "The wobble hypothesis (Crick) explains that the third base of a codon can pair non‑standardly with the first base of the anticodon, allowing fewer tRNAs to read multiple codons.",
+        "highYield": "Wobble occurs at position 1 of the anticodon (5').",
+        "clinicalCorrelation": "Wobble allows cells to use fewer tRNA species."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_030",
+      "difficulty": 2,
+      "question": "Inosine (I) is a modified base found in:",
+      "image": null,
+      "options": [
+        {
+          "text": "tRNA anticodons",
+          "isCorrect": true,
+          "explanation": "Inosine is often present in the wobble position of tRNA anticodons and can pair with U, C, or A."
+        },
+        {
+          "text": "mRNA codons",
+          "isCorrect": false,
+          "explanation": "Inosine is not common in mRNA codons."
+        },
+        {
+          "text": "DNA",
+          "isCorrect": false,
+          "explanation": "Inosine is not a standard base in DNA."
+        },
+        {
+          "text": "rRNA",
+          "isCorrect": false,
+          "explanation": "rRNA has other modifications but not inosine typically."
+        },
+        {
+          "text": "snRNA",
+          "isCorrect": false,
+          "explanation": "snRNA contains other modifications."
+        }
+      ],
+      "explanation": {
+        "overview": "Inosine is a modified guanine base that appears in tRNA anticodons, enabling wobble base pairing.",
+        "highYield": "Inosine pairs with U, C, or A.",
+        "clinicalCorrelation": "Defects in tRNA modification can cause human diseases."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_031",
+      "difficulty": 2,
+      "question": "The enzyme that adds amino acids to tRNA is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Aminoacyl‑tRNA synthetase",
+          "isCorrect": true,
+          "explanation": "Each aminoacyl‑tRNA synthetase attaches a specific amino acid to its cognate tRNA."
+        },
+        {
+          "text": "Peptidyl transferase",
+          "isCorrect": false,
+          "explanation": "Peptidyl transferase forms peptide bonds."
+        },
+        {
+          "text": "Transaminase",
+          "isCorrect": false,
+          "explanation": "Transaminases transfer amino groups."
+        },
+        {
+          "text": "Kinase",
+          "isCorrect": false,
+          "explanation": "Kinases phosphorylate substrates."
+        },
+        {
+          "text": "Ligase",
+          "isCorrect": false,
+          "explanation": "Ligase joins nucleic acid fragments."
+        }
+      ],
+      "explanation": {
+        "overview": "Aminoacyl‑tRNA synthetases catalyze the attachment of amino acids to their corresponding tRNAs, forming aminoacyl‑tRNA.",
+        "highYield": "There are 20 synthetases, one for each amino acid.",
+        "clinicalCorrelation": "Mutations in synthetases can cause neurological and metabolic disorders."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_032",
+      "difficulty": 2,
+      "question": "The ribosome's peptidyl transferase activity is catalyzed by:",
+      "image": null,
+      "options": [
+        {
+          "text": "rRNA (ribozyme)",
+          "isCorrect": true,
+          "explanation": "Peptide bond formation is catalyzed by the 23S rRNA in the large ribosomal subunit, making it a ribozyme."
+        },
+        {
+          "text": "Protein subunits",
+          "isCorrect": false,
+          "explanation": "Proteins in the ribosome are structural, but catalysis is by rRNA."
+        },
+        {
+          "text": "tRNA",
+          "isCorrect": false,
+          "explanation": "tRNA is a substrate, not catalyst."
+        },
+        {
+          "text": "mRNA",
+          "isCorrect": false,
+          "explanation": "mRNA is the template."
+        },
+        {
+          "text": "Initiation factors",
+          "isCorrect": false,
+          "explanation": "Factors assist initiation, not catalysis."
+        }
+      ],
+      "explanation": {
+        "overview": "The ribosome is a ribozyme; its peptidyl transferase center is composed of RNA (23S rRNA in bacteria, 28S in eukaryotes).",
+        "highYield": "This discovery supports the RNA world hypothesis.",
+        "clinicalCorrelation": "Antibiotics like chloramphenicol and macrolides bind to rRNA and inhibit peptide bond formation."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_033",
+      "difficulty": 2,
+      "question": "Introns are removed from pre‑mRNA by the:",
+      "image": null,
+      "options": [
+        {
+          "text": "Spliceosome",
+          "isCorrect": true,
+          "explanation": "Spliceosomes, composed of snRNPs, catalyze the splicing of introns from pre‑mRNA."
+        },
+        {
+          "text": "Ribosome",
+          "isCorrect": false,
+          "explanation": "Ribosomes translate mRNA."
+        },
+        {
+          "text": "Proteasome",
+          "isCorrect": false,
+          "explanation": "Proteasomes degrade proteins."
+        },
+        {
+          "text": "Nucleosome",
+          "isCorrect": false,
+          "explanation": "Nucleosomes are DNA‑protein complexes."
+        },
+        {
+          "text": "Exosome",
+          "isCorrect": false,
+          "explanation": "Exosomes are involved in RNA degradation, not splicing."
+        }
+      ],
+      "explanation": {
+        "overview": "Splicing removes introns and joins exons, catalyzed by the spliceosome, a complex of snRNPs and proteins.",
+        "highYield": "Splicing occurs in the nucleus before mRNA is exported.",
+        "clinicalCorrelation": "Aberrant splicing causes many genetic diseases; antisense oligonucleotides can modulate splicing."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_034",
+      "difficulty": 2,
+      "question": "Alternative splicing allows:",
+      "image": null,
+      "options": [
+        {
+          "text": "One gene to produce multiple protein isoforms",
+          "isCorrect": true,
+          "explanation": "Alternative splicing combines different exons to generate diverse mRNAs from a single gene."
+        },
+        {
+          "text": "Removal of introns",
+          "isCorrect": false,
+          "explanation": "That is general splicing, not alternative."
+        },
+        {
+          "text": "Addition of a poly‑A tail",
+          "isCorrect": false,
+          "explanation": "Poly‑A tail addition is a separate process."
+        },
+        {
+          "text": "Capping of mRNA",
+          "isCorrect": false,
+          "explanation": "Capping is a separate modification."
+        },
+        {
+          "text": "RNA editing",
+          "isCorrect": false,
+          "explanation": "RNA editing changes nucleotide sequences, not alternative splicing."
+        }
+      ],
+      "explanation": {
+        "overview": "Alternative splicing generates multiple mRNA variants from a single gene, greatly expanding the proteome.",
+        "highYield": "Over 90% of human genes undergo alternative splicing.",
+        "clinicalCorrelation": "Misregulation of splicing contributes to many diseases, including cancer."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_035",
+      "difficulty": 2,
+      "question": "The poly‑A tail at the 3' end of eukaryotic mRNA functions in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Stability and translation efficiency",
+          "isCorrect": true,
+          "explanation": "The poly‑A tail protects mRNA from degradation and aids in translation initiation."
+        },
+        {
+          "text": "Initiation of replication",
+          "isCorrect": false,
+          "explanation": "Poly‑A tail is not involved in replication."
+        },
+        {
+          "text": "Splicing",
+          "isCorrect": false,
+          "explanation": "Splicing occurs before poly‑adenylation."
+        },
+        {
+          "text": "Export from nucleus only",
+          "isCorrect": false,
+          "explanation": "It also affects stability and translation."
+        },
+        {
+          "text": "Capping",
+          "isCorrect": false,
+          "explanation": "Capping is at the 5' end."
+        }
+      ],
+      "explanation": {
+        "overview": "The poly‑A tail (added after transcription) protects mRNA from exonucleases and enhances translation by interacting with poly‑A‑binding proteins.",
+        "highYield": "Poly‑A length influences mRNA half‑life.",
+        "clinicalCorrelation": "Poly‑A tail shortening can lead to mRNA degradation, affecting gene expression."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_036",
+      "difficulty": 2,
+      "question": "The 5' cap of eukaryotic mRNA is a:",
+      "image": null,
+      "options": [
+        {
+          "text": "7‑methylguanosine linked via 5'–5' triphosphate",
+          "isCorrect": true,
+          "explanation": "The cap is a reverse 5'–5' linkage of 7‑methylguanosine, essential for translation initiation and stability."
+        },
+        {
+          "text": "Poly‑A tail",
+          "isCorrect": false,
+          "explanation": "Poly‑A tail is at the 3' end."
+        },
+        {
+          "text": "Modified adenine",
+          "isCorrect": false,
+          "explanation": "The cap is a modified guanine."
+        },
+        {
+          "text": "Ribose methylation",
+          "isCorrect": false,
+          "explanation": "Ribose methylation occurs internally."
+        },
+        {
+          "text": "Phosphate group",
+          "isCorrect": false,
+          "explanation": "The cap contains phosphate but is more than just phosphate."
+        }
+      ],
+      "explanation": {
+        "overview": "The 5' cap (7‑methylguanylate) is added to the 5' end of pre‑mRNA, protecting it from degradation and promoting translation.",
+        "highYield": "The cap is added co‑transcriptionally.",
+        "clinicalCorrelation": "Cap analogs are used in mRNA vaccines to enhance stability and translation."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_037",
+      "difficulty": 2,
+      "question": "Which of the following is a DNA virus?",
+      "image": null,
+      "options": [
+        {
+          "text": "HIV",
+          "isCorrect": false,
+          "explanation": "HIV is an RNA retrovirus."
+        },
+        {
+          "text": "Influenza virus",
+          "isCorrect": false,
+          "explanation": "Influenza is an RNA virus."
+        },
+        {
+          "text": "Hepatitis B virus",
+          "isCorrect": true,
+          "explanation": "Hepatitis B virus has a DNA genome (partially double‑stranded)."
+        },
+        {
+          "text": "SARS‑CoV‑2",
+          "isCorrect": false,
+          "explanation": "SARS‑CoV‑2 is an RNA virus."
+        },
+        {
+          "text": "Poliovirus",
+          "isCorrect": false,
+          "explanation": "Poliovirus is an RNA virus."
+        }
+      ],
+      "explanation": {
+        "overview": "DNA viruses have DNA genomes; examples include Hepatitis B, Herpes, Adenoviruses, and Papillomaviruses.",
+        "highYield": "HIV and influenza are RNA viruses.",
+        "clinicalCorrelation": "DNA viruses are targeted by drugs like acyclovir; HBV is treated with nucleos(t)ide analogs."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_038",
+      "difficulty": 1,
+      "question": "A plasmid is a:",
+      "image": null,
+      "options": [
+        {
+          "text": "Small circular DNA molecule in bacteria",
+          "isCorrect": true,
+          "explanation": "Plasmids are extrachromosomal circular DNA often carrying antibiotic resistance genes."
+        },
+        {
+          "text": "Viral genome",
+          "isCorrect": false,
+          "explanation": "Viral genomes can be DNA or RNA, but plasmids are separate entities."
+        },
+        {
+          "text": "Mitochondrial DNA",
+          "isCorrect": false,
+          "explanation": "Mitochondrial DNA is circular but distinct from plasmids."
+        },
+        {
+          "text": "Chromosomal fragment",
+          "isCorrect": false,
+          "explanation": "Plasmids are not chromosomal fragments."
+        },
+        {
+          "text": "RNA molecule",
+          "isCorrect": false,
+          "explanation": "Plasmids are DNA."
+        }
+      ],
+      "explanation": {
+        "overview": "Plasmids are small, circular, double‑stranded DNA molecules found in bacteria, separate from chromosomal DNA.",
+        "highYield": "They are used as vectors in genetic engineering.",
+        "clinicalCorrelation": "Plasmids often carry antibiotic resistance genes, contributing to the spread of resistance."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_039",
+      "difficulty": 2,
+      "question": "Restriction enzymes are bacterial enzymes that:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cut DNA at specific sequences",
+          "isCorrect": true,
+          "explanation": "Restriction endonucleases recognize palindromic sequences and cleave DNA, protecting bacteria from foreign DNA."
+        },
+        {
+          "text": "Join DNA fragments",
+          "isCorrect": false,
+          "explanation": "Ligases join DNA fragments."
+        },
+        {
+          "text": "Synthesize DNA",
+          "isCorrect": false,
+          "explanation": "Polymerases synthesize DNA."
+        },
+        {
+          "text": "Unwind DNA",
+          "isCorrect": false,
+          "explanation": "Helicases unwind DNA."
+        },
+        {
+          "text": "Protect DNA from methylation",
+          "isCorrect": false,
+          "explanation": "Methylation protects host DNA; restriction enzymes cleave unmethylated foreign DNA."
+        }
+      ],
+      "explanation": {
+        "overview": "Restriction enzymes (endonucleases) recognize and cut specific DNA sequences, usually palindromic, as part of bacterial defense.",
+        "highYield": "They are essential tools in molecular cloning.",
+        "clinicalCorrelation": "Restriction enzymes are used in DNA fingerprinting and diagnostic assays."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_040",
+      "difficulty": 1,
+      "question": "The diagram shows a DNA double helix. The arrow points to a:",
+      "image": "dna_hydrogen_bond.png",
+      "options": [
+        {
+          "text": "Hydrogen bond between bases",
+          "isCorrect": true,
+          "explanation": "Dashed lines between bases represent hydrogen bonds holding the strands together."
+        },
+        {
+          "text": "Phosphodiester bond",
+          "isCorrect": false,
+          "explanation": "Phosphodiester bonds are in the backbone, not between bases."
+        },
+        {
+          "text": "Sugar‑phosphate backbone",
+          "isCorrect": false,
+          "explanation": "The backbone is the sugar and phosphate chain, not the bond between bases."
+        },
+        {
+          "text": "Glycosidic bond",
+          "isCorrect": false,
+          "explanation": "Glycosidic bonds connect base to sugar."
+        },
+        {
+          "text": "Base pair",
+          "isCorrect": false,
+          "explanation": "A base pair is the combination of two bases, not the bond itself."
+        }
+      ],
+      "explanation": {
+        "overview": "Hydrogen bonds between complementary bases stabilize the double helix; the dotted lines in diagrams often represent these bonds.",
+        "highYield": "A‑T has 2 H‑bonds; G‑C has 3.",
+        "clinicalCorrelation": "Disruption of H‑bonds (e.g., by heat) denatures DNA."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_041",
+      "difficulty": 1,
+      "question": "The nucleotide that serves as a major energy carrier in cells is:",
+      "image": null,
+      "options": [
+        {
+          "text": "ATP",
+          "isCorrect": true,
+          "explanation": "Adenosine triphosphate (ATP) is the primary energy currency."
+        },
+        {
+          "text": "GTP",
+          "isCorrect": false,
+          "explanation": "GTP is used in protein synthesis and some other processes, but ATP is the main energy carrier."
+        },
+        {
+          "text": "UTP",
+          "isCorrect": false,
+          "explanation": "UTP is used in RNA synthesis and sugar metabolism."
+        },
+        {
+          "text": "CTP",
+          "isCorrect": false,
+          "explanation": "CTP is used in lipid synthesis."
+        },
+        {
+          "text": "TTP",
+          "isCorrect": false,
+          "explanation": "TTP is a DNA precursor, not an energy carrier."
+        }
+      ],
+      "explanation": {
+        "overview": "ATP is the universal energy currency, used in many cellular processes.",
+        "highYield": "ATP is generated by oxidative phosphorylation and glycolysis.",
+        "clinicalCorrelation": "Disorders of ATP production cause mitochondrial diseases."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_042",
+      "difficulty": 2,
+      "question": "GTP is specifically required for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Protein synthesis (translation)",
+          "isCorrect": true,
+          "explanation": "GTP provides energy for translation (initiation, elongation, and termination)."
+        },
+        {
+          "text": "DNA replication",
+          "isCorrect": false,
+          "explanation": "DNA replication uses dNTPs and ATP for energy, not GTP specifically."
+        },
+        {
+          "text": "Glycolysis",
+          "isCorrect": false,
+          "explanation": "Glycolysis uses ATP and NAD+."
+        },
+        {
+          "text": "Fatty acid synthesis",
+          "isCorrect": false,
+          "explanation": "Fatty acid synthesis uses ATP and NADPH."
+        },
+        {
+          "text": "Glycogen synthesis",
+          "isCorrect": false,
+          "explanation": "Glycogen synthesis uses UTP."
+        }
+      ],
+      "explanation": {
+        "overview": "GTP is essential for translation, providing energy for ribosome function and initiation/elongation factors.",
+        "highYield": "GTP is also used in signal transduction (e.g., G‑proteins).",
+        "clinicalCorrelation": "Defects in GTPase regulation are involved in cancer (e.g., Ras)."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_043",
+      "difficulty": 1,
+      "question": "Cyclic AMP (cAMP) is a:",
+      "image": null,
+      "options": [
+        {
+          "text": "Second messenger in signal transduction",
+          "isCorrect": true,
+          "explanation": "cAMP is synthesized from ATP by adenylyl cyclase and mediates hormone responses."
+        },
+        {
+          "text": "Energy carrier",
+          "isCorrect": false,
+          "explanation": "cAMP is not an energy carrier; it's a signaling molecule."
+        },
+        {
+          "text": "Building block of RNA",
+          "isCorrect": false,
+          "explanation": "cAMP is not incorporated into RNA."
+        },
+        {
+          "text": "Coenzyme",
+          "isCorrect": false,
+          "explanation": "cAMP is not a coenzyme; it's a signaling molecule."
+        },
+        {
+          "text": "Nucleotide precursor",
+          "isCorrect": false,
+          "explanation": "cAMP is derived from ATP but is not a precursor for nucleotides."
+        }
+      ],
+      "explanation": {
+        "overview": "cAMP is a second messenger that transmits signals from hormones and neurotransmitters to intracellular targets.",
+        "highYield": "cAMP activates protein kinase A (PKA).",
+        "clinicalCorrelation": "Phosphodiesterase inhibitors (e.g., caffeine, sildenafil) increase cAMP levels."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_044",
+      "difficulty": 2,
+      "question": "The compound that accumulates in Lesch‑Nyhan syndrome is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Uric acid",
+          "isCorrect": true,
+          "explanation": "Lesch‑Nyhan syndrome (HGPRT deficiency) leads to overproduction of uric acid."
+        },
+        {
+          "text": "Xanthine",
+          "isCorrect": false,
+          "explanation": "Xanthine accumulates in xanthine oxidase deficiency, not Lesch‑Nyhan."
+        },
+        {
+          "text": "Hypoxanthine",
+          "isCorrect": false,
+          "explanation": "Hypoxanthine is a precursor, but uric acid is the end product that accumulates."
+        },
+        {
+          "text": "Guanine",
+          "isCorrect": false,
+          "explanation": "Guanine accumulation is not characteristic."
+        },
+        {
+          "text": "Adenine",
+          "isCorrect": false,
+          "explanation": "Adenine is not the accumulated compound."
+        }
+      ],
+      "explanation": {
+        "overview": "Lesch‑Nyhan syndrome is due to deficiency of hypoxanthine‑guanine phosphoribosyltransferase (HGPRT), causing purine salvage defects and uric acid overproduction.",
+        "highYield": "Features include hyperuricemia, gout, self‑mutilation, and neurological symptoms.",
+        "clinicalCorrelation": "Treatment includes allopurinol to reduce uric acid and supportive care."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_045",
+      "difficulty": 3,
+      "question": "The first step in purine biosynthesis is the formation of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Phosphoribosyl pyrophosphate (PRPP)",
+          "isCorrect": false,
+          "explanation": "PRPP is synthesized first, but the committed step is formation of 5‑phosphoribosylamine."
+        },
+        {
+          "text": "5‑phosphoribosylamine",
+          "isCorrect": true,
+          "explanation": "PRPP reacts with glutamine to form 5‑phosphoribosylamine, the committed step in purine synthesis."
+        },
+        {
+          "text": "Inosine monophosphate (IMP)",
+          "isCorrect": false,
+          "explanation": "IMP is the first purine nucleotide formed, but not the first step."
+        },
+        {
+          "text": "Adenylosuccinate",
+          "isCorrect": false,
+          "explanation": "Adenylosuccinate is an intermediate in AMP synthesis."
+        },
+        {
+          "text": "Xanthylate",
+          "isCorrect": false,
+          "explanation": "Xanthylate is an intermediate in GMP synthesis."
+        }
+      ],
+      "explanation": {
+        "overview": "Purine synthesis begins with PRPP; the committed step is the formation of 5‑phosphoribosylamine catalyzed by glutamine‑PRPP amidotransferase.",
+        "highYield": "This step is the key regulatory point.",
+        "clinicalCorrelation": "Inhibitors of purine synthesis (e.g., mycophenolate) are used as immunosuppressants."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_046",
+      "difficulty": 3,
+      "question": "The enzyme amidophosphoribosyltransferase (glutamine‑PRPP amidotransferase) is regulated by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Feedback inhibition by IMP, AMP, GMP",
+          "isCorrect": false,
+          "explanation": "This is one mechanism."
+        },
+        {
+          "text": "Activation by PRPP",
+          "isCorrect": false,
+          "explanation": "This is another."
+        },
+        {
+          "text": "Both A and B",
+          "isCorrect": true,
+          "explanation": "The enzyme is inhibited by purine nucleotides and activated by PRPP."
+        },
+        {
+          "text": "Phosphorylation",
+          "isCorrect": false,
+          "explanation": "Not a major regulatory mechanism."
+        },
+        {
+          "text": "cAMP",
+          "isCorrect": false,
+          "explanation": "Not involved."
+        }
+      ],
+      "explanation": {
+        "overview": "The committed step of purine synthesis is controlled by feedback inhibition (purine nucleotides) and activation (PRPP), maintaining balance.",
+        "highYield": "This is an example of allosteric regulation.",
+        "clinicalCorrelation": "Dysregulation can lead to purine overproduction and gout."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_047",
+      "difficulty": 3,
+      "question": "The first committed step in pyrimidine biosynthesis is formation of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Carbamoyl phosphate",
+          "isCorrect": false,
+          "explanation": "Carbamoyl phosphate is synthesized first but not the committed step."
+        },
+        {
+          "text": "Orotate",
+          "isCorrect": false,
+          "explanation": "Orotate is later."
+        },
+        {
+          "text": "UMP",
+          "isCorrect": false,
+          "explanation": "UMP is the first pyrimidine nucleotide, but the committed step is carbamoyl aspartate."
+        },
+        {
+          "text": "Aspartate transcarbamoylase product (carbamoyl aspartate)",
+          "isCorrect": true,
+          "explanation": "In animals, carbamoyl phosphate synthetase II (CPS II) makes carbamoyl phosphate, which then reacts with aspartate (via ATCase) to form carbamoyl aspartate – the first committed step."
+        },
+        {
+          "text": "Dihydroorotate",
+          "isCorrect": false,
+          "explanation": "Dihydroorotate is later after ring closure."
+        }
+      ],
+      "explanation": {
+        "overview": "Pyrimidine synthesis: carbamoyl phosphate + aspartate → carbamoyl aspartate (catalyzed by ATCase), which is the committed step.",
+        "highYield": "CPS II (cytosolic) is different from CPS I (mitochondrial, urea cycle).",
+        "clinicalCorrelation": "Inhibitors of pyrimidine synthesis (e.g., leflunomide) are used as immunosuppressants."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_048",
+      "difficulty": 2,
+      "question": "The enzyme ribonucleotide reductase converts:",
+      "image": null,
+      "options": [
+        {
+          "text": "NDPs to dNDPs",
+          "isCorrect": true,
+          "explanation": "Ribonucleotide reductase reduces ribonucleoside diphosphates (NDPs) to deoxyribonucleoside diphosphates (dNDPs)."
+        },
+        {
+          "text": "NTPs to dNTPs",
+          "isCorrect": false,
+          "explanation": "It works on NDPs, not NTPs, although the final dNTPs are formed by phosphorylation."
+        },
+        {
+          "text": "Ribose to deoxyribose",
+          "isCorrect": false,
+          "explanation": "It reduces the nucleotide, not free sugar."
+        },
+        {
+          "text": "UDP to dUDP",
+          "isCorrect": false,
+          "explanation": "It can reduce all NDPs, not just UDP."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "Only the first is correct."
+        }
+      ],
+      "explanation": {
+        "overview": "Ribonucleotide reductase catalyzes the conversion of ribonucleotides to deoxyribonucleotides, essential for DNA synthesis.",
+        "highYield": "It is a key regulatory enzyme in nucleotide metabolism.",
+        "clinicalCorrelation": "Inhibitors like hydroxyurea target ribonucleotide reductase."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_049",
+      "difficulty": 2,
+      "question": "Thymidylate synthase converts dUMP to dTMP using a methyl donor:",
+      "image": null,
+      "options": [
+        {
+          "text": "N5,N10‑methylene tetrahydrofolate",
+          "isCorrect": true,
+          "explanation": "Thymidylate synthase transfers a methylene group from methylene‑THF to dUMP, forming dTMP and dihydrofolate."
+        },
+        {
+          "text": "S‑adenosylmethionine",
+          "isCorrect": false,
+          "explanation": "SAM is a methyl donor in many reactions, but not for thymidylate synthase."
+        },
+        {
+          "text": "Methylcobalamin",
+          "isCorrect": false,
+          "explanation": "Methylcobalamin is used in methionine synthase."
+        },
+        {
+          "text": "Biotin",
+          "isCorrect": false,
+          "explanation": "Biotin is for carboxylation reactions."
+        },
+        {
+          "text": "Formate",
+          "isCorrect": false,
+          "explanation": "Formate is not the direct donor; it is the source of one‑carbon units."
+        }
+      ],
+      "explanation": {
+        "overview": "Thymidylate synthase is a key enzyme in dTMP synthesis, using methylene‑THF as the one‑carbon donor.",
+        "highYield": "This reaction is a target for anticancer drugs (e.g., 5‑fluorouracil).",
+        "clinicalCorrelation": "5‑FU inhibits thymidylate synthase, depleting dTTP and blocking DNA synthesis."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_050",
+      "difficulty": 2,
+      "question": "Methotrexate, an anticancer drug, inhibits:",
+      "image": null,
+      "options": [
+        {
+          "text": "Dihydrofolate reductase",
+          "isCorrect": true,
+          "explanation": "Methotrexate inhibits dihydrofolate reductase, depleting tetrahydrofolate and blocking thymidylate and purine synthesis."
+        },
+        {
+          "text": "Thymidylate synthase",
+          "isCorrect": false,
+          "explanation": "5‑fluorouracil inhibits thymidylate synthase."
+        },
+        {
+          "text": "Ribonucleotide reductase",
+          "isCorrect": false,
+          "explanation": "Hydroxyurea inhibits ribonucleotide reductase."
+        },
+        {
+          "text": "PRPP synthetase",
+          "isCorrect": false,
+          "explanation": "Not a target of methotrexate."
+        },
+        {
+          "text": "CPS II",
+          "isCorrect": false,
+          "explanation": "Not a target of methotrexate."
+        }
+      ],
+      "explanation": {
+        "overview": "Methotrexate is a folate analog that inhibits DHFR, reducing THF levels and impairing synthesis of thymidylate and purines.",
+        "highYield": "It is used in cancer, rheumatoid arthritis, and psoriasis.",
+        "clinicalCorrelation": "Leucovorin (folinic acid) can rescue cells from methotrexate toxicity."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_051",
+      "difficulty": 2,
+      "question": "Which of the following is a purine salvage pathway enzyme?",
+      "image": null,
+      "options": [
+        {
+          "text": "Hypoxanthine‑guanine phosphoribosyltransferase (HGPRT)",
+          "isCorrect": true,
+          "explanation": "HGPRT is a key salvage enzyme that converts hypoxanthine to IMP and guanine to GMP using PRPP."
+        },
+        {
+          "text": "Adenine phosphoribosyltransferase (APRT)",
+          "isCorrect": false,
+          "explanation": "APRT is also a salvage enzyme, but the question asks for a purine salvage enzyme; both are, but HGPRT is more well‑known in the context of Lesch‑Nyhan."
+        },
+        {
+          "text": "Both A and B",
+          "isCorrect": true,
+          "explanation": "Both HGPRT and APRT are salvage enzymes for purines."
+        },
+        {
+          "text": "Thymidine kinase",
+          "isCorrect": false,
+          "explanation": "Thymidine kinase is a salvage enzyme for pyrimidines."
+        },
+        {
+          "text": "Uridine kinase",
+          "isCorrect": false,
+          "explanation": "Uridine kinase is for pyrimidine salvage."
+        }
+      ],
+      "explanation": {
+        "overview": "Purine salvage pathways recycle free bases (adenine, guanine, hypoxanthine) back into nucleotides, saving energy.",
+        "highYield": "HGPRT and APRT are the main salvage enzymes.",
+        "clinicalCorrelation": "HGPRT deficiency causes Lesch‑Nyhan syndrome."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_052",
+      "difficulty": 2,
+      "question": "Which enzyme deficiency leads to severe combined immunodeficiency (SCID) due to accumulation of deoxyadenosine?",
+      "image": null,
+      "options": [
+        {
+          "text": "Adenosine deaminase (ADA)",
+          "isCorrect": true,
+          "explanation": "ADA deficiency causes accumulation of deoxyadenosine, which is toxic to lymphocytes, leading to SCID."
+        },
+        {
+          "text": "Purine nucleoside phosphorylase (PNP)",
+          "isCorrect": false,
+          "explanation": "PNP deficiency also causes immunodeficiency but is less common."
+        },
+        {
+          "text": "HGPRT",
+          "isCorrect": false,
+          "explanation": "HGPRT deficiency causes Lesch‑Nyhan, not SCID."
+        },
+        {
+          "text": "Ribonucleotide reductase",
+          "isCorrect": false,
+          "explanation": "Not a deficiency causing SCID."
+        },
+        {
+          "text": "Thymidylate synthase",
+          "isCorrect": false,
+          "explanation": "Not associated with SCID."
+        }
+      ],
+      "explanation": {
+        "overview": "Adenosine deaminase (ADA) deficiency is a cause of autosomal recessive SCID, due to toxic accumulation of deoxyadenosine and dATP.",
+        "highYield": "ADA is a key enzyme in purine catabolism.",
+        "clinicalCorrelation": "Gene therapy and enzyme replacement (PEG‑ADA) are treatment options."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_053",
+      "difficulty": 2,
+      "question": "The enzyme that catalyzes the breakdown of adenosine to inosine is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Adenosine deaminase (ADA)",
+          "isCorrect": true,
+          "explanation": "ADA deaminates adenosine to inosine."
+        },
+        {
+          "text": "Purine nucleoside phosphorylase (PNP)",
+          "isCorrect": false,
+          "explanation": "PNP converts inosine to hypoxanthine."
+        },
+        {
+          "text": "Xanthine oxidase",
+          "isCorrect": false,
+          "explanation": "Xanthine oxidase converts hypoxanthine to xanthine and uric acid."
+        },
+        {
+          "text": "Adenylate kinase",
+          "isCorrect": false,
+          "explanation": "Adenylate kinase interconverts AMP, ADP, and ATP."
+        },
+        {
+          "text": "Guanine deaminase",
+          "isCorrect": false,
+          "explanation": "Guanine deaminase converts guanine to xanthine."
+        }
+      ],
+      "explanation": {
+        "overview": "Adenosine deaminase (ADA) is a key enzyme in purine catabolism, converting adenosine to inosine.",
+        "highYield": "ADA deficiency leads to SCID.",
+        "clinicalCorrelation": "ADA inhibitors are used in cancer therapy (e.g., pentostatin)."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_054",
+      "difficulty": 2,
+      "question": "The enzyme that converts hypoxanthine to xanthine is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Xanthine oxidase",
+          "isCorrect": true,
+          "explanation": "Xanthine oxidase oxidizes hypoxanthine to xanthine and xanthine to uric acid."
+        },
+        {
+          "text": "Purine nucleoside phosphorylase",
+          "isCorrect": false,
+          "explanation": "PNP converts inosine to hypoxanthine."
+        },
+        {
+          "text": "Adenosine deaminase",
+          "isCorrect": false,
+          "explanation": "ADA converts adenosine to inosine."
+        },
+        {
+          "text": "Guanine deaminase",
+          "isCorrect": false,
+          "explanation": "Guanine deaminase converts guanine to xanthine."
+        },
+        {
+          "text": "Urate oxidase",
+          "isCorrect": false,
+          "explanation": "Urate oxidase converts uric acid to allantoin (not present in humans)."
+        }
+      ],
+      "explanation": {
+        "overview": "Xanthine oxidase catalyzes the last two steps of purine catabolism: hypoxanthine → xanthine → uric acid.",
+        "highYield": "Allopurinol inhibits xanthine oxidase, reducing uric acid production.",
+        "clinicalCorrelation": "Xanthine oxidase inhibitors are used to treat gout."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_055",
+      "difficulty": 2,
+      "question": "In humans, the final product of purine catabolism is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Uric acid",
+          "isCorrect": true,
+          "explanation": "Humans excrete uric acid as the end product of purine catabolism (unlike other mammals that have urate oxidase to produce allantoin)."
+        },
+        {
+          "text": "Allantoin",
+          "isCorrect": false,
+          "explanation": "Allantoin is produced in other mammals, not humans."
+        },
+        {
+          "text": "Urea",
+          "isCorrect": false,
+          "explanation": "Urea is from amino acid catabolism."
+        },
+        {
+          "text": "Ammonia",
+          "isCorrect": false,
+          "explanation": "Ammonia is from amino acid deamination."
+        },
+        {
+          "text": "Creatinine",
+          "isCorrect": false,
+          "explanation": "Creatinine is from creatine metabolism."
+        }
+      ],
+      "explanation": {
+        "overview": "In humans, purine catabolism ends with uric acid, which is excreted in urine.",
+        "highYield": "Uric acid is relatively insoluble; high levels cause gout and kidney stones.",
+        "clinicalCorrelation": "Hyperuricemia is managed with xanthine oxidase inhibitors and uricosurics."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_056",
+      "difficulty": 2,
+      "question": "Allopurinol is a drug that:",
+      "image": null,
+      "options": [
+        {
+          "text": "Inhibits xanthine oxidase",
+          "isCorrect": true,
+          "explanation": "Allopurinol is a structural analog of hypoxanthine that inhibits xanthine oxidase, reducing uric acid production."
+        },
+        {
+          "text": "Inhibits adenosine deaminase",
+          "isCorrect": false,
+          "explanation": "ADA inhibitors are used in cancer (e.g., pentostatin)."
+        },
+        {
+          "text": "Inhibits HGPRT",
+          "isCorrect": false,
+          "explanation": "Not a target of allopurinol."
+        },
+        {
+          "text": "Increases uric acid excretion",
+          "isCorrect": false,
+          "explanation": "That is a uricosuric effect (e.g., probenecid), not allopurinol."
+        },
+        {
+          "text": "Promotes purine synthesis",
+          "isCorrect": false,
+          "explanation": "Allopurinol reduces production."
+        }
+      ],
+      "explanation": {
+        "overview": "Allopurinol is a xanthine oxidase inhibitor used to lower uric acid in gout and tumor lysis syndrome.",
+        "highYield": "It reduces uric acid production and can cause accumulation of hypoxanthine and xanthine.",
+        "clinicalCorrelation": "Allopurinol is first‑line therapy for gout."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_057",
+      "difficulty": 2,
+      "question": "Which base is methylated to form 5‑methylcytosine, an epigenetic mark?",
+      "image": null,
+      "options": [
+        {
+          "text": "Cytosine",
+          "isCorrect": true,
+          "explanation": "DNA methylation occurs at cytosine residues, often in CpG islands, to regulate gene expression."
+        },
+        {
+          "text": "Adenine",
+          "isCorrect": false,
+          "explanation": "Adenine methylation is common in bacteria, not mammals (except in some contexts)."
+        },
+        {
+          "text": "Guanine",
+          "isCorrect": false,
+          "explanation": "Guanine methylation is less common."
+        },
+        {
+          "text": "Thymine",
+          "isCorrect": false,
+          "explanation": "Thymine is already methylated (5‑methyluracil)."
+        },
+        {
+          "text": "Uracil",
+          "isCorrect": false,
+          "explanation": "Uracil is not in DNA normally."
+        }
+      ],
+      "explanation": {
+        "overview": "DNA methylation in mammals primarily occurs at cytosine residues, especially in CpG dinucleotides, playing a role in gene silencing.",
+        "highYield": "Methylation patterns are heritable and important for development.",
+        "clinicalCorrelation": "Aberrant methylation is associated with cancer and other diseases."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_058",
+      "difficulty": 2,
+      "question": "The enzyme that adds methyl groups to DNA is:",
+      "image": null,
+      "options": [
+        {
+          "text": "DNA methyltransferase",
+          "isCorrect": true,
+          "explanation": "DNA methyltransferases (DNMTs) catalyze methylation of cytosine residues using SAM."
+        },
+        {
+          "text": "Demethylase",
+          "isCorrect": false,
+          "explanation": "Demethylases remove methyl groups."
+        },
+        {
+          "text": "Histone acetyltransferase",
+          "isCorrect": false,
+          "explanation": "HATs acetylate histones."
+        },
+        {
+          "text": "Histone deacetylase",
+          "isCorrect": false,
+          "explanation": "HDACs deacetylate histones."
+        },
+        {
+          "text": "RNA polymerase",
+          "isCorrect": false,
+          "explanation": "RNA polymerase transcribes DNA."
+        }
+      ],
+      "explanation": {
+        "overview": "DNA methyltransferases (DNMTs) are enzymes that transfer methyl groups from S‑adenosylmethionine to cytosine bases.",
+        "highYield": "DNMT inhibitors (e.g., azacitidine) are used in cancer therapy.",
+        "clinicalCorrelation": "Epigenetic changes are being targeted in cancer and other diseases."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_059",
+      "difficulty": 2,
+      "question": "Histone acetylation generally leads to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increased gene expression (open chromatin)",
+          "isCorrect": true,
+          "explanation": "Acetylation neutralizes positive charge on histones, reducing interaction with DNA and promoting transcription."
+        },
+        {
+          "text": "Decreased gene expression (closed chromatin)",
+          "isCorrect": false,
+          "explanation": "Deacetylation leads to closed chromatin and silencing."
+        },
+        {
+          "text": "No effect",
+          "isCorrect": false,
+          "explanation": "Acetylation has a significant effect."
+        },
+        {
+          "text": "DNA methylation",
+          "isCorrect": false,
+          "explanation": "Acetylation is different from methylation."
+        },
+        {
+          "text": "Histone degradation",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        }
+      ],
+      "explanation": {
+        "overview": "Histone acetylation is associated with transcriptional activation by altering chromatin structure and recruiting bromodomain proteins.",
+        "highYield": "HDAC inhibitors (e.g., vorinostat) are used in cancer therapy.",
+        "clinicalCorrelation": "Dysregulation of acetylation is implicated in many diseases."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_060",
+      "difficulty": 2,
+      "question": "The enzyme that removes acetyl groups from histones is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Histone deacetylase (HDAC)",
+          "isCorrect": true,
+          "explanation": "HDACs remove acetyl groups, promoting chromatin condensation and transcriptional repression."
+        },
+        {
+          "text": "Histone acetyltransferase (HAT)",
+          "isCorrect": false,
+          "explanation": "HATs add acetyl groups."
+        },
+        {
+          "text": "DNA methyltransferase",
+          "isCorrect": false,
+          "explanation": "DNMTs methylate DNA."
+        },
+        {
+          "text": "Demethylase",
+          "isCorrect": false,
+          "explanation": "Demethylases remove methyl groups."
+        },
+        {
+          "text": "Kinase",
+          "isCorrect": false,
+          "explanation": "Kinases phosphorylate proteins."
+        }
+      ],
+      "explanation": {
+        "overview": "Histone deacetylases (HDACs) remove acetyl groups from lysine residues, leading to chromatin compaction and gene silencing.",
+        "highYield": "HDAC inhibitors are used as epigenetic drugs.",
+        "clinicalCorrelation": "HDAC inhibition has therapeutic potential in cancer and neurodegenerative diseases."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_061",
+      "difficulty": 2,
+      "question": "DNA repair is critical for maintaining genomic stability. Which type of DNA repair directly reverses UV‑induced pyrimidine dimers in some organisms?",
+      "image": null,
+      "options": [
+        {
+          "text": "Photoreactivation (using photolyase)",
+          "isCorrect": true,
+          "explanation": "Photolyase breaks the cyclobutane ring of pyrimidine dimers using blue light, reversing the damage."
+        },
+        {
+          "text": "Nucleotide excision repair",
+          "isCorrect": false,
+          "explanation": "NER removes a damaged oligonucleotide and fills in the gap; it is the main repair pathway for bulky adducts in humans."
+        },
+        {
+          "text": "Base excision repair",
+          "isCorrect": false,
+          "explanation": "BER repairs small base lesions, not bulky dimers."
+        },
+        {
+          "text": "Mismatch repair",
+          "isCorrect": false,
+          "explanation": "MMR fixes replication errors."
+        },
+        {
+          "text": "Non‑homologous end joining",
+          "isCorrect": false,
+          "explanation": "NHEJ repairs double‑strand breaks."
+        }
+      ],
+      "explanation": {
+        "overview": "Photoreactivation is a light‑dependent repair mechanism that directly reverses pyrimidine dimers, present in many organisms but absent in humans.",
+        "highYield": "In humans, nucleotide excision repair (NER) removes UV‑induced dimers.",
+        "clinicalCorrelation": "Defects in NER cause xeroderma pigmentosum, with high skin cancer risk."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_062",
+      "difficulty": 2,
+      "question": "Base excision repair is initiated by:",
+      "image": null,
+      "options": [
+        {
+          "text": "DNA glycosylase",
+          "isCorrect": true,
+          "explanation": "DNA glycosylase recognizes and removes damaged bases, creating an abasic site."
+        },
+        {
+          "text": "Endonuclease",
+          "isCorrect": false,
+          "explanation": "Endonucleases cut the DNA backbone, but glycosylase is the first step."
+        },
+        {
+          "text": "Exonuclease",
+          "isCorrect": false,
+          "explanation": "Exonucleases remove nucleotides from ends."
+        },
+        {
+          "text": "Ligase",
+          "isCorrect": false,
+          "explanation": "Ligase seals nicks after repair synthesis."
+        },
+        {
+          "text": "Polymerase",
+          "isCorrect": false,
+          "explanation": "Polymerase fills the gap after base removal."
+        }
+      ],
+      "explanation": {
+        "overview": "BER removes damaged bases via DNA glycosylases, followed by AP endonuclease cleavage, gap filling, and ligation.",
+        "highYield": "BER repairs oxidative damage, alkylation, and deamination.",
+        "clinicalCorrelation": "Defects in BER are linked to cancer and neurodegeneration."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_063",
+      "difficulty": 2,
+      "question": "Which repair pathway is responsible for repairing mismatches that occur during DNA replication?",
+      "image": null,
+      "options": [
+        {
+          "text": "Mismatch repair (MMR)",
+          "isCorrect": true,
+          "explanation": "MMR recognizes and corrects mismatched bases caused by replication errors."
+        },
+        {
+          "text": "Nucleotide excision repair",
+          "isCorrect": false,
+          "explanation": "NER removes bulky adducts."
+        },
+        {
+          "text": "Base excision repair",
+          "isCorrect": false,
+          "explanation": "BER repairs small base changes."
+        },
+        {
+          "text": "Non‑homologous end joining",
+          "isCorrect": false,
+          "explanation": "NHEJ repairs DSBs."
+        },
+        {
+          "text": "Homologous recombination",
+          "isCorrect": false,
+          "explanation": "HR repairs DSBs using a homologous template."
+        }
+      ],
+      "explanation": {
+        "overview": "Mismatch repair (MMR) corrects base‑base mismatches and insertion‑deletion loops that arise during DNA replication.",
+        "highYield": "Defects in MMR cause Lynch syndrome (hereditary non‑polyposis colorectal cancer).",
+        "clinicalCorrelation": "MMR deficiency leads to microsatellite instability (MSI) in tumors."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_064",
+      "difficulty": 2,
+      "question": "Which enzyme is responsible for the repair of double‑strand breaks by homologous recombination?",
+      "image": null,
+      "options": [
+        {
+          "text": "Rad51",
+          "isCorrect": true,
+          "explanation": "Rad51 is the central recombinase in homologous recombination, promoting strand invasion and exchange."
+        },
+        {
+          "text": "Ku70/Ku80",
+          "isCorrect": false,
+          "explanation": "Ku proteins are involved in non‑homologous end joining (NHEJ)."
+        },
+        {
+          "text": "DNA‑PKcs",
+          "isCorrect": false,
+          "explanation": "DNA‑PKcs is also involved in NHEJ."
+        },
+        {
+          "text": "Ligase IV",
+          "isCorrect": false,
+          "explanation": "Ligase IV is involved in NHEJ."
+        },
+        {
+          "text": "XRCC4",
+          "isCorrect": false,
+          "explanation": "XRCC4 is in NHEJ."
+        }
+      ],
+      "explanation": {
+        "overview": "Homologous recombination (HR) repairs double‑strand breaks using Rad51 and a homologous template, ensuring high‑fidelity repair.",
+        "highYield": "HR is the primary repair pathway in S/G2 phases.",
+        "clinicalCorrelation": "BRCA1 and BRCA2 are involved in HR; mutations cause breast and ovarian cancer."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_065",
+      "difficulty": 2,
+      "question": "Which repair pathway is active throughout the cell cycle and directly joins broken DNA ends without a template?",
+      "image": null,
+      "options": [
+        {
+          "text": "Non‑homologous end joining (NHEJ)",
+          "isCorrect": true,
+          "explanation": "NHEJ directly ligates broken ends without requiring sequence homology; it is error‑prone."
+        },
+        {
+          "text": "Homologous recombination",
+          "isCorrect": false,
+          "explanation": "HR requires a homologous template and is mainly active in S/G2."
+        },
+        {
+          "text": "Nucleotide excision repair",
+          "isCorrect": false,
+          "explanation": "NER removes bulky lesions."
+        },
+        {
+          "text": "Base excision repair",
+          "isCorrect": false,
+          "explanation": "BER repairs small lesions."
+        },
+        {
+          "text": "Mismatch repair",
+          "isCorrect": false,
+          "explanation": "MMR corrects replication errors."
+        }
+      ],
+      "explanation": {
+        "overview": "Non‑homologous end joining (NHEJ) is the main DSB repair pathway in G1 and throughout the cell cycle, but it is error‑prone.",
+        "highYield": "NHEJ can cause insertions or deletions at repair sites.",
+        "clinicalCorrelation": "Defects in NHEJ cause severe combined immunodeficiency and radiosensitivity."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_066",
+      "difficulty": 2,
+      "question": "DNA polymerase is used in PCR. Which feature is essential for PCR?",
+      "image": null,
+      "options": [
+        {
+          "text": "Thermostability (e.g., Taq polymerase)",
+          "isCorrect": true,
+          "explanation": "PCR requires a DNA polymerase that can withstand repeated heating steps; Taq polymerase is isolated from Thermus aquaticus."
+        },
+        {
+          "text": "Proofreading activity",
+          "isCorrect": false,
+          "explanation": "Proofreading is not required for standard PCR, though high‑fidelity enzymes exist."
+        },
+        {
+          "text": "Primase activity",
+          "isCorrect": false,
+          "explanation": "Primase is not needed in PCR because oligonucleotide primers are provided."
+        },
+        {
+          "text": "Ligase activity",
+          "isCorrect": false,
+          "explanation": "Ligase is not used in standard PCR."
+        },
+        {
+          "text": "Reverse transcriptase activity",
+          "isCorrect": false,
+          "explanation": "RT‑PCR uses reverse transcriptase, but standard PCR does not."
+        }
+      ],
+      "explanation": {
+        "overview": "PCR uses a thermostable DNA polymerase (e.g., Taq) to amplify specific DNA sequences through repeated cycles of denaturation, annealing, and extension.",
+        "highYield": "Taq polymerase lacks 3'→5' exonuclease activity, so it has a higher error rate.",
+        "clinicalCorrelation": "PCR is the basis of many diagnostic tests, including for infectious diseases and genetic disorders."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_067",
+      "difficulty": 2,
+      "question": "In Sanger sequencing, chain termination is achieved by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Dideoxynucleotides (ddNTPs) that lack a 3'‑OH",
+          "isCorrect": true,
+          "explanation": "Dideoxynucleotides terminate DNA synthesis because they cannot form a phosphodiester bond with the next nucleotide."
+        },
+        {
+          "text": "Alkaline phosphatase",
+          "isCorrect": false,
+          "explanation": "Alkaline phosphatase removes phosphate groups, not used for termination."
+        },
+        {
+          "text": "Restriction enzymes",
+          "isCorrect": false,
+          "explanation": "Restriction enzymes cut DNA at specific sites, not used in sequencing."
+        },
+        {
+          "text": "Heat denaturation",
+          "isCorrect": false,
+          "explanation": "Denaturation is part of PCR, not termination."
+        },
+        {
+          "text": "Primer degradation",
+          "isCorrect": false,
+          "explanation": "Not relevant."
+        }
+      ],
+      "explanation": {
+        "overview": "Sanger sequencing uses ddNTPs (chain terminators) to produce DNA fragments of varying lengths, which are resolved to determine sequence.",
+        "highYield": "Each ddNTP is labeled with a different fluorescent dye.",
+        "clinicalCorrelation": "Sanger sequencing is the gold standard for diagnostic gene sequencing."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_068",
+      "difficulty": 2,
+      "question": "Next‑generation sequencing (NGS) technologies differ from Sanger sequencing in that they:",
+      "image": null,
+      "options": [
+        {
+          "text": "Massively parallelize sequencing, generating millions of reads",
+          "isCorrect": true,
+          "explanation": "NGS allows simultaneous sequencing of millions of DNA fragments, greatly increasing throughput."
+        },
+        {
+          "text": "Use ddNTPs",
+          "isCorrect": false,
+          "explanation": "NGS uses different chemistries, not ddNTPs."
+        },
+        {
+          "text": "Require longer reads",
+          "isCorrect": false,
+          "explanation": "NGS reads are generally shorter than Sanger."
+        },
+        {
+          "text": "Are less accurate",
+          "isCorrect": false,
+          "explanation": "Accuracy can be similar, but NGS has higher error rates in some platforms."
+        },
+        {
+          "text": "Cannot sequence whole genomes",
+          "isCorrect": false,
+          "explanation": "NGS is used for whole genome sequencing."
+        }
+      ],
+      "explanation": {
+        "overview": "NGS technologies (e.g., Illumina) enable high‑throughput sequencing by parallelizing the sequencing process.",
+        "highYield": "NGS has revolutionized genomics and clinical diagnostics.",
+        "clinicalCorrelation": "NGS is used for cancer genomics, infectious disease detection, and non‑invasive prenatal testing."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_069",
+      "difficulty": 2,
+      "question": "RNA interference (RNAi) is a mechanism for gene silencing mediated by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Small interfering RNAs (siRNAs) or microRNAs (miRNAs)",
+          "isCorrect": true,
+          "explanation": "siRNAs and miRNAs are small RNAs that guide the RNA‑induced silencing complex (RISC) to degrade mRNA or inhibit translation."
+        },
+        {
+          "text": "Large non‑coding RNAs",
+          "isCorrect": false,
+          "explanation": "Large non‑coding RNAs have other functions, not typically RNAi."
+        },
+        {
+          "text": "Ribozymes",
+          "isCorrect": false,
+          "explanation": "Ribozymes are catalytic RNAs, not the main mediators of RNAi."
+        },
+        {
+          "text": "Antisense oligonucleotides",
+          "isCorrect": false,
+          "explanation": "ASOs are a different approach to gene silencing."
+        },
+        {
+          "text": "CRISPR‑Cas9",
+          "isCorrect": false,
+          "explanation": "CRISPR is a gene editing system, not RNAi."
+        }
+      ],
+      "explanation": {
+        "overview": "RNAi is a post‑transcriptional gene silencing mechanism using small RNAs (siRNA, miRNA) to guide mRNA degradation or translational repression.",
+        "highYield": "RNAi is a natural defense against viruses and transposons.",
+        "clinicalCorrelation": "RNAi therapeutics (e.g., siRNA) are used to treat genetic diseases and cancers."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_070",
+      "difficulty": 2,
+      "question": "CRISPR‑Cas9 technology uses a guide RNA to direct the Cas9 nuclease to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cleave DNA at a specific site",
+          "isCorrect": true,
+          "explanation": "The guide RNA pairs with a target DNA sequence, and Cas9 creates a double‑strand break for genome editing."
+        },
+        {
+          "text": "Cleave RNA",
+          "isCorrect": false,
+          "explanation": "Cas9 is a DNA nuclease."
+        },
+        {
+          "text": "Repair DNA without cleavage",
+          "isCorrect": false,
+          "explanation": "Cas9 induces cleavage, not direct repair."
+        },
+        {
+          "text": "Transcribe DNA",
+          "isCorrect": false,
+          "explanation": "Cas9 is not a polymerase."
+        },
+        {
+          "text": "Methylate DNA",
+          "isCorrect": false,
+          "explanation": "Cas9 does not methylate."
+        }
+      ],
+      "explanation": {
+        "overview": "CRISPR‑Cas9 is a gene‑editing tool that uses a guide RNA to target a specific DNA sequence and introduce a double‑strand break.",
+        "highYield": "It can be used for gene knock‑out, knock‑in, and gene regulation.",
+        "clinicalCorrelation": "CRISPR is being explored for therapeutic gene editing (e.g., sickle cell disease)."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_071",
+      "difficulty": 2,
+      "question": "The secondary structure of tRNA is often represented as a:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cloverleaf structure",
+          "isCorrect": true,
+          "explanation": "tRNA has a characteristic cloverleaf secondary structure with four arms."
+        },
+        {
+          "text": "Double helix",
+          "isCorrect": false,
+          "explanation": "tRNA is not a double helix; it has regions of base pairing."
+        },
+        {
+          "text": "Hairpin loop",
+          "isCorrect": false,
+          "explanation": "tRNA has multiple hairpins, but the overall shape is cloverleaf."
+        },
+        {
+          "text": "Knot",
+          "isCorrect": false,
+          "explanation": "Not a knotted structure."
+        },
+        {
+          "text": "L‑shape",
+          "isCorrect": false,
+          "explanation": "The tertiary structure is L‑shaped, but the secondary structure is cloverleaf."
+        }
+      ],
+      "explanation": {
+        "overview": "tRNA secondary structure is a cloverleaf formed by intra‑strand base pairing; its tertiary structure is an L‑shape.",
+        "highYield": "The anticodon is at the bottom of the cloverleaf.",
+        "clinicalCorrelation": "tRNA structure is crucial for protein synthesis and is a target for some antibiotics."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_072",
+      "difficulty": 2,
+      "question": "The enzyme that catalyzes the unwinding of DNA during replication is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Helicase",
+          "isCorrect": true,
+          "explanation": "Helicase uses ATP to break hydrogen bonds between base pairs, unwinding the double helix."
+        },
+        {
+          "text": "Topoisomerase",
+          "isCorrect": false,
+          "explanation": "Topoisomerase relieves supercoiling ahead of the replication fork."
+        },
+        {
+          "text": "Single‑stranded binding protein (SSB)",
+          "isCorrect": false,
+          "explanation": "SSB stabilizes single‑stranded DNA, but does not unwind."
+        },
+        {
+          "text": "Primase",
+          "isCorrect": false,
+          "explanation": "Primase synthesizes RNA primers."
+        },
+        {
+          "text": "Ligase",
+          "isCorrect": false,
+          "explanation": "Ligase joins DNA fragments."
+        }
+      ],
+      "explanation": {
+        "overview": "Helicase is responsible for unwinding the DNA duplex at the replication fork, creating two single‑stranded templates.",
+        "highYield": "Helicases are ATP‑dependent.",
+        "clinicalCorrelation": "Mutations in helicase genes cause Bloom syndrome and Werner syndrome."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_073",
+      "difficulty": 2,
+      "question": "Topoisomerase functions in DNA replication to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Relieve torsional stress (supercoiling) ahead of the replication fork",
+          "isCorrect": true,
+          "explanation": "Topoisomerases (e.g., DNA gyrase in bacteria) cut and rejoin DNA to relieve supercoiling."
+        },
+        {
+          "text": "Unwind the DNA helix",
+          "isCorrect": false,
+          "explanation": "Unwinding is performed by helicase."
+        },
+        {
+          "text": "Synthesize RNA primers",
+          "isCorrect": false,
+          "explanation": "Primase synthesizes primers."
+        },
+        {
+          "text": "Join Okazaki fragments",
+          "isCorrect": false,
+          "explanation": "Ligase joins fragments."
+        },
+        {
+          "text": "Proofread newly synthesized DNA",
+          "isCorrect": false,
+          "explanation": "Proofreading is done by DNA polymerase."
+        }
+      ],
+      "explanation": {
+        "overview": "Topoisomerases manage DNA supercoiling during replication and transcription by introducing transient breaks and religating strands.",
+        "highYield": "Bacterial topoisomerase (gyrase) is a target for antibiotics like ciprofloxacin.",
+        "clinicalCorrelation": "Topoisomerase inhibitors (e.g., etoposide) are used as anticancer drugs."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_074",
+      "difficulty": 2,
+      "question": "In eukaryotic cells, which RNA polymerase transcribes mRNA?",
+      "image": null,
+      "options": [
+        {
+          "text": "RNA polymerase II",
+          "isCorrect": true,
+          "explanation": "RNA polymerase II synthesizes mRNA, as well as some snRNAs and microRNAs."
+        },
+        {
+          "text": "RNA polymerase I",
+          "isCorrect": false,
+          "explanation": "Pol I transcribes rRNA."
+        },
+        {
+          "text": "RNA polymerase III",
+          "isCorrect": false,
+          "explanation": "Pol III transcribes tRNA, 5S rRNA, and other small RNAs."
+        },
+        {
+          "text": "Primase",
+          "isCorrect": false,
+          "explanation": "Primase is a type of RNA polymerase but is involved in DNA replication."
+        },
+        {
+          "text": "Reverse transcriptase",
+          "isCorrect": false,
+          "explanation": "Reverse transcriptase synthesizes DNA from RNA."
+        }
+      ],
+      "explanation": {
+        "overview": "Eukaryotic RNA polymerase II transcribes protein‑coding genes into mRNA.",
+        "highYield": "Pol I transcribes rRNA (except 5S); Pol III transcribes tRNA, 5S rRNA, and others.",
+        "clinicalCorrelation": "RNA polymerase II is a target for transcription inhibitors (e.g., α‑amanitin)."
+      }
+    },
+    {
+      "questionId": "nucleic_acids_075",
+      "difficulty": 2,
+      "question": "The promoter is a region of DNA that:",
+      "image": null,
+      "options": [
+        {
+          "text": "Binds RNA polymerase to initiate transcription",
+          "isCorrect": true,
+          "explanation": "The promoter is a DNA sequence that recruits RNA polymerase and transcription factors for transcription initiation."
+        },
+        {
+          "text": "Codes for the protein",
+          "isCorrect": false,
+          "explanation": "The coding region, not the promoter, codes for protein."
+        },
+        {
+          "text": "Terminates transcription",
+          "isCorrect": false,
+          "explanation": "Terminators signal the end of transcription."
+        },
+        {
+          "text": "Serves as an origin of replication",
+          "isCorrect": false,
+          "explanation": "Origins of replication are distinct from promoters."
+        },
+        {
+          "text": "Is involved in translation",
+          "isCorrect": false,
+          "explanation": "Translation involves mRNA and ribosomes."
+        }
+      ],
+      "explanation": {
+        "overview": "The promoter is a regulatory DNA sequence where RNA polymerase binds to initiate transcription.",
+        "highYield": "Promoters contain conserved elements like the TATA box.",
+        "clinicalCorrelation": "Mutations in promoters can disrupt gene expression and cause disease."
+      }
+    }
+  ]
+}

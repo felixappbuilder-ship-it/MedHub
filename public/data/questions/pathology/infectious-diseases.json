@@ -1,0 +1,3424 @@
+{
+  "questions": [
+    {
+      "id": "path_infectious_001",
+      "difficulty": 1,
+      "question": "Which of the following is a characteristic feature of exotoxins?",
+      "image": null,
+      "options": [
+        {
+          "text": "Produced primarily by Gram‑negative bacteria",
+          "isCorrect": false,
+          "explanation": "Exotoxins are produced by both Gram‑positive and Gram‑negative bacteria; they are not limited to Gram‑negative."
+        },
+        {
+          "text": "Heat‑stable and composed of lipopolysaccharide",
+          "isCorrect": false,
+          "explanation": "That describes endotoxins (LPS), which are heat‑stable. Exotoxins are usually heat‑labile proteins."
+        },
+        {
+          "text": "Highly potent and often have specific cellular targets",
+          "isCorrect": true,
+          "explanation": "Exotoxins are soluble proteins secreted by bacteria; they are highly potent and often have specific effects (e.g., neurotoxins, enterotoxins)."
+        },
+        {
+          "text": "Released only when bacteria lyse",
+          "isCorrect": false,
+          "explanation": "Exotoxins are actively secreted, whereas endotoxins are released upon bacterial lysis."
+        },
+        {
+          "text": "Induce fever through IL‑1 release",
+          "isCorrect": false,
+          "explanation": "Fever induction via IL‑1 is a property of endotoxins, not exotoxins."
+        }
+      ],
+      "explanation": {
+        "overview": "Exotoxins are soluble proteins secreted by both Gram‑positive and Gram‑negative bacteria; they are highly potent and often have specific effects (e.g., neurotoxins, enterotoxins).",
+        "highYield": "Exotoxins = proteins, heat‑labile, active secretion, highly potent.",
+        "clinicalCorrelation": "Examples: diphtheria toxin, tetanospasmin, botulinum toxin, cholera toxin."
+      }
+    },
+    {
+      "id": "path_infectious_002",
+      "difficulty": 1,
+      "question": "Endotoxins are associated with which part of the bacterial cell?",
+      "image": null,
+      "options": [
+        {
+          "text": "Cell wall of Gram‑positive bacteria",
+          "isCorrect": false,
+          "explanation": "Gram‑positive bacteria have a thick peptidoglycan layer but do not contain LPS."
+        },
+        {
+          "text": "Outer membrane of Gram‑negative bacteria (lipopolysaccharide, LPS)",
+          "isCorrect": true,
+          "explanation": "Endotoxin (LPS) is a component of the outer membrane of Gram‑negative bacteria and is released during bacterial lysis, triggering inflammatory responses."
+        },
+        {
+          "text": "Capsule",
+          "isCorrect": false,
+          "explanation": "Capsules are composed of polysaccharides or proteins and are not endotoxin."
+        },
+        {
+          "text": "Flagella",
+          "isCorrect": false,
+          "explanation": "Flagella are involved in motility, not endotoxin."
+        },
+        {
+          "text": "Pili",
+          "isCorrect": false,
+          "explanation": "Pili are involved in adhesion, not endotoxin."
+        }
+      ],
+      "explanation": {
+        "overview": "Endotoxin (LPS) is a component of the outer membrane of Gram‑negative bacteria and is released during bacterial lysis, triggering inflammatory responses.",
+        "highYield": "Endotoxin = LPS, located in Gram‑negative outer membrane.",
+        "clinicalCorrelation": "Endotoxin causes fever, shock, and DIC in severe Gram‑negative sepsis."
+      }
+    },
+    {
+      "id": "path_infectious_003",
+      "difficulty": 2,
+      "question": "Lipid A of endotoxin is responsible for which biological effect?",
+      "image": null,
+      "options": [
+        {
+          "text": "Adhesion to host cells",
+          "isCorrect": false,
+          "explanation": "Adhesion is mediated by pili and adhesins, not Lipid A."
+        },
+        {
+          "text": "Induction of fever, shock, and cytokine release",
+          "isCorrect": true,
+          "explanation": "Lipid A, the toxic component of LPS, activates macrophages and endothelial cells, leading to cytokine release (TNF, IL‑1), fever, and septic shock."
+        },
+        {
+          "text": "Tissue necrosis",
+          "isCorrect": false,
+          "explanation": "Tissue necrosis can occur in severe sepsis, but that is secondary to cytokine storm, not a direct effect of Lipid A."
+        },
+        {
+          "text": "Neurotoxicity",
+          "isCorrect": false,
+          "explanation": "Neurotoxicity is a property of exotoxins like tetanospasmin."
+        },
+        {
+          "text": "Hemolysis",
+          "isCorrect": false,
+          "explanation": "Hemolysis is caused by hemolysins (exotoxins), not Lipid A."
+        }
+      ],
+      "explanation": {
+        "overview": "Lipid A, the toxic component of LPS, activates macrophages and endothelial cells, leading to cytokine release (TNF, IL‑1), fever, and septic shock.",
+        "highYield": "Lipid A = toxic component of LPS → fever, shock, cytokine release.",
+        "clinicalCorrelation": "In Gram‑negative sepsis, Lipid A triggers a systemic inflammatory response that can lead to organ failure."
+      }
+    },
+    {
+      "id": "path_infectious_004",
+      "difficulty": 2,
+      "question": "Which of the following bacteria produces a potent exotoxin that blocks protein synthesis (Shiga toxin)?",
+      "image": null,
+      "options": [
+        {
+          "text": "Shigella dysenteriae",
+          "isCorrect": true,
+          "explanation": "Shiga toxin produced by Shigella dysenteriae and Shiga‑like toxin by certain E. coli (e.g., O157:H7) inhibit protein synthesis by inactivating ribosomes."
+        },
+        {
+          "text": "Escherichia coli O157:H7",
+          "isCorrect": false,
+          "explanation": "E. coli O157:H7 produces Shiga‑like toxin, but Shigella dysenteriae is the classic producer of Shiga toxin."
+        },
+        {
+          "text": "Clostridium botulinum",
+          "isCorrect": false,
+          "explanation": "C. botulinum produces botulinum toxin, which blocks acetylcholine release."
+        },
+        {
+          "text": "Corynebacterium diphtheriae",
+          "isCorrect": false,
+          "explanation": "C. diphtheriae produces diphtheria toxin, which inhibits protein synthesis via ADP‑ribosylation of EF‑2, not by ribosomal inactivation."
+        },
+        {
+          "text": "Vibrio cholerae",
+          "isCorrect": false,
+          "explanation": "V. cholerae produces cholera toxin, which activates adenylate cyclase."
+        }
+      ],
+      "explanation": {
+        "overview": "Shiga toxin produced by Shigella dysenteriae and Shiga‑like toxin by certain E. coli (e.g., O157:H7) inhibit protein synthesis by inactivating ribosomes.",
+        "highYield": "Shiga toxin = ribosomal inactivation; produced by Shigella and STEC.",
+        "clinicalCorrelation": "Shiga toxin causes hemorrhagic colitis and hemolytic‑uremic syndrome (HUS)."
+      }
+    },
+    {
+      "id": "path_infectious_005",
+      "difficulty": 1,
+      "question": "The image shows a Gram stain of a smear with purple cocci in clusters. This is characteristic of:",
+      "image": "path_infectious_staph_gram.png",
+      "options": [
+        {
+          "text": "Staphylococcus aureus",
+          "isCorrect": true,
+          "explanation": "Gram‑positive cocci in clusters are typical of Staphylococcus species."
+        },
+        {
+          "text": "Streptococcus pyogenes",
+          "isCorrect": false,
+          "explanation": "Streptococci appear as Gram‑positive cocci in chains."
+        },
+        {
+          "text": "Neisseria meningitidis",
+          "isCorrect": false,
+          "explanation": "Neisseria are Gram‑negative diplococci."
+        },
+        {
+          "text": "Escherichia coli",
+          "isCorrect": false,
+          "explanation": "E. coli is a Gram‑negative rod."
+        },
+        {
+          "text": "Bacillus anthracis",
+          "isCorrect": false,
+          "explanation": "Bacillus anthracis is a Gram‑positive rod."
+        }
+      ],
+      "explanation": {
+        "overview": "Gram‑positive cocci in clusters are typical of Staphylococcus species.",
+        "highYield": "Staphylococcus = Gram‑positive cocci in clusters.",
+        "clinicalCorrelation": "S. aureus causes skin infections, pneumonia, endocarditis, and toxic shock syndrome."
+      }
+    },
+    {
+      "id": "path_infectious_006",
+      "difficulty": 1,
+      "question": "Which organism is the most common cause of community‑acquired pneumonia?",
+      "image": null,
+      "options": [
+        {
+          "text": "Streptococcus pneumoniae",
+          "isCorrect": true,
+          "explanation": "Streptococcus pneumoniae (pneumococcus) is the leading cause of community‑acquired bacterial pneumonia."
+        },
+        {
+          "text": "Haemophilus influenzae",
+          "isCorrect": false,
+          "explanation": "H. influenzae is more common in children and patients with COPD."
+        },
+        {
+          "text": "Mycoplasma pneumoniae",
+          "isCorrect": false,
+          "explanation": "Mycoplasma is a common cause of atypical pneumonia, especially in young adults."
+        },
+        {
+          "text": "Legionella pneumophila",
+          "isCorrect": false,
+          "explanation": "Legionella causes atypical pneumonia, often from water sources."
+        },
+        {
+          "text": "Klebsiella pneumoniae",
+          "isCorrect": false,
+          "explanation": "Klebsiella causes pneumonia in alcoholics and debilitated patients (currant jelly sputum)."
+        }
+      ],
+      "explanation": {
+        "overview": "Streptococcus pneumoniae (pneumococcus) is the leading cause of community‑acquired bacterial pneumonia.",
+        "highYield": "Most common CAP = Streptococcus pneumoniae.",
+        "clinicalCorrelation": "Vaccination (PCV13, PPSV23) reduces the risk of invasive pneumococcal disease."
+      }
+    },
+    {
+      "id": "path_infectious_007",
+      "difficulty": 1,
+      "question": "Neisseria meningitidis is a Gram‑negative diplococcus that can cause:",
+      "image": null,
+      "options": [
+        {
+          "text": "Meningitis and septicemia (meningococcemia)",
+          "isCorrect": true,
+          "explanation": "N. meningitidis causes meningococcal meningitis and fulminant septicemia with petechial rash and adrenal hemorrhage (Waterhouse‑Friderichsen syndrome)."
+        },
+        {
+          "text": "Pneumonia",
+          "isCorrect": false,
+          "explanation": "While it can cause pneumonia, meningitis and septicemia are the hallmark presentations."
+        },
+        {
+          "text": "Urinary tract infection",
+          "isCorrect": false,
+          "explanation": "UTI is more common with E. coli and other enteric bacteria."
+        },
+        {
+          "text": "Food poisoning",
+          "isCorrect": false,
+          "explanation": "Food poisoning is caused by Salmonella, Campylobacter, etc."
+        },
+        {
+          "text": "Skin abscess",
+          "isCorrect": false,
+          "explanation": "Skin abscesses are more commonly caused by Staphylococcus."
+        }
+      ],
+      "explanation": {
+        "overview": "N. meningitidis causes meningococcal meningitis and fulminant septicemia with petechial rash and adrenal hemorrhage (Waterhouse‑Friderichsen syndrome).",
+        "highYield": "Meningococcus = meningitis, sepsis, petechial rash, WFS.",
+        "clinicalCorrelation": "Treatment with penicillin or ceftriaxone; prophylaxis for close contacts."
+      }
+    },
+    {
+      "id": "path_infectious_008",
+      "difficulty": 2,
+      "question": "The image shows a skin lesion with central eschar and surrounding edema (anthrax). This is caused by:",
+      "image": "path_infectious_anthrax.png",
+      "options": [
+        {
+          "text": "Bacillus anthracis",
+          "isCorrect": true,
+          "explanation": "Cutaneous anthrax presents as a painless ulcer with black eschar due to Bacillus anthracis."
+        },
+        {
+          "text": "Staphylococcus aureus",
+          "isCorrect": false,
+          "explanation": "S. aureus can cause abscesses and furuncles, but not the classic eschar of anthrax."
+        },
+        {
+          "text": "Streptococcus pyogenes",
+          "isCorrect": false,
+          "explanation": "S. pyogenes causes impetigo, erysipelas, and necrotizing fasciitis, not anthrax."
+        },
+        {
+          "text": "Pseudomonas aeruginosa",
+          "isCorrect": false,
+          "explanation": "Pseudomonas causes necrotic lesions (ecthyma gangrenosum) in neutropenic patients, but not the classic eschar."
+        },
+        {
+          "text": "Clostridium perfringens",
+          "isCorrect": false,
+          "explanation": "C. perfringens causes gas gangrene, not cutaneous anthrax."
+        }
+      ],
+      "explanation": {
+        "overview": "Cutaneous anthrax presents as a painless ulcer with black eschar due to Bacillus anthracis.",
+        "highYield": "Anthrax eschar = Bacillus anthracis.",
+        "clinicalCorrelation": "Cutaneous anthrax is treatable with antibiotics; inhalational anthrax is often fatal."
+      }
+    },
+    {
+      "id": "path_infectious_009",
+      "difficulty": 2,
+      "question": "Which of the following is a major virulence factor of Streptococcus pyogenes (Group A Strep)?",
+      "image": null,
+      "options": [
+        {
+          "text": "M protein",
+          "isCorrect": true,
+          "explanation": "M protein of S. pyogenes inhibits phagocytosis and is antiphagocytic."
+        },
+        {
+          "text": "Lipoteichoic acid",
+          "isCorrect": false,
+          "explanation": "Lipoteichoic acid is involved in adhesion but not the primary antiphagocytic factor."
+        },
+        {
+          "text": "Protein A",
+          "isCorrect": false,
+          "explanation": "Protein A is a virulence factor of Staphylococcus aureus."
+        },
+        {
+          "text": "Exfoliative toxin",
+          "isCorrect": false,
+          "explanation": "Exfoliative toxin is produced by Staphylococcus aureus, causing scalded skin syndrome."
+        },
+        {
+          "text": "LPS",
+          "isCorrect": false,
+          "explanation": "LPS is an endotoxin of Gram‑negative bacteria."
+        }
+      ],
+      "explanation": {
+        "overview": "M protein of S. pyogenes inhibits phagocytosis and is antiphagocytic.",
+        "highYield": "M protein = antiphagocytic factor of Group A Strep.",
+        "clinicalCorrelation": "M protein typing is used for epidemiology; certain M types are associated with rheumatic fever."
+      }
+    },
+    {
+      "id": "path_infectious_010",
+      "difficulty": 1,
+      "question": "Rheumatic fever is a post‑infectious sequela of infection with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Streptococcus pyogenes (Group A Strep)",
+          "isCorrect": true,
+          "explanation": "Rheumatic fever follows pharyngeal infection with Group A streptococci due to molecular mimicry between M protein and cardiac myosin."
+        },
+        {
+          "text": "Staphylococcus aureus",
+          "isCorrect": false,
+          "explanation": "S. aureus does not cause rheumatic fever."
+        },
+        {
+          "text": "Streptococcus pneumoniae",
+          "isCorrect": false,
+          "explanation": "S. pneumoniae does not cause rheumatic fever."
+        },
+        {
+          "text": "Neisseria gonorrhoeae",
+          "isCorrect": false,
+          "explanation": "N. gonorrhoeae causes gonorrhea, not rheumatic fever."
+        },
+        {
+          "text": "Borrelia burgdorferi",
+          "isCorrect": false,
+          "explanation": "B. burgdorferi causes Lyme disease, not rheumatic fever."
+        }
+      ],
+      "explanation": {
+        "overview": "Rheumatic fever follows pharyngeal infection with Group A streptococci due to molecular mimicry between M protein and cardiac myosin.",
+        "highYield": "Rheumatic fever = Group A Strep pharyngitis.",
+        "clinicalCorrelation": "Prevent with prompt antibiotic treatment of strep pharyngitis."
+      }
+    },
+    {
+      "id": "path_infectious_011",
+      "difficulty": 2,
+      "question": "The image shows a Gram stain of kidney‑shaped Gram‑negative diplococci. This is characteristic of:",
+      "image": "path_infectious_gonococcus.png",
+      "options": [
+        {
+          "text": "Neisseria gonorrhoeae",
+          "isCorrect": true,
+          "explanation": "Neisseria gonorrhoeae appears as Gram‑negative diplococci with adjacent flat sides (kidney‑bean shape)."
+        },
+        {
+          "text": "Neisseria meningitidis",
+          "isCorrect": false,
+          "explanation": "N. meningitidis also appears as Gram‑negative diplococci, but typically with adjacent sides not as flat."
+        },
+        {
+          "text": "Moraxella catarrhalis",
+          "isCorrect": false,
+          "explanation": "Moraxella can appear as Gram‑negative diplococci, but is less commonly seen in this context."
+        },
+        {
+          "text": "Haemophilus influenzae",
+          "isCorrect": false,
+          "explanation": "H. influenzae is a Gram‑negative coccobacillus."
+        },
+        {
+          "text": "Acinetobacter",
+          "isCorrect": false,
+          "explanation": "Acinetobacter appears as Gram‑negative coccobacilli, not kidney‑shaped diplococci."
+        }
+      ],
+      "explanation": {
+        "overview": "Neisseria gonorrhoeae appears as Gram‑negative diplococci with adjacent flat sides (kidney‑bean shape).",
+        "highYield": "Kidney‑shaped diplococci = Neisseria gonorrhoeae.",
+        "clinicalCorrelation": "Causes urethritis, cervicitis, and pelvic inflammatory disease; treat with ceftriaxone."
+      }
+    },
+    {
+      "id": "path_infectious_012",
+      "difficulty": 2,
+      "question": "Listeria monocytogenes is a Gram‑positive rod that can cause:",
+      "image": null,
+      "options": [
+        {
+          "text": "Neonatal meningitis and sepsis (early‑onset and late‑onset)",
+          "isCorrect": true,
+          "explanation": "Listeria monocytogenes causes foodborne illness, particularly dangerous in pregnant women (neonatal infection), immunocompromised, and elderly."
+        },
+        {
+          "text": "Pneumonia",
+          "isCorrect": false,
+          "explanation": "Pneumonia is not the primary manifestation."
+        },
+        {
+          "text": "Urinary tract infection",
+          "isCorrect": false,
+          "explanation": "UTI is not typical."
+        },
+        {
+          "text": "Osteomyelitis",
+          "isCorrect": false,
+          "explanation": "Osteomyelitis is less common."
+        },
+        {
+          "text": "Gas gangrene",
+          "isCorrect": false,
+          "explanation": "Gas gangrene is caused by Clostridium species."
+        }
+      ],
+      "explanation": {
+        "overview": "Listeria monocytogenes causes foodborne illness, particularly dangerous in pregnant women (neonatal infection), immunocompromised, and elderly.",
+        "highYield": "Listeria = Gram‑positive rod, neonatal meningitis, sepsis.",
+        "clinicalCorrelation": "Pregnant women should avoid unpasteurized dairy and deli meats."
+      }
+    },
+    {
+      "id": "path_infectious_013",
+      "difficulty": 1,
+      "question": "Which of the following is an acid‑fast bacillus?",
+      "image": null,
+      "options": [
+        {
+          "text": "Mycobacterium tuberculosis",
+          "isCorrect": false,
+          "explanation": "M. tuberculosis is acid‑fast, but the answer includes Nocardia as well."
+        },
+        {
+          "text": "Nocardia asteroides",
+          "isCorrect": false,
+          "explanation": "Nocardia is partially acid‑fast, but the answer includes both."
+        },
+        {
+          "text": "Both A and B",
+          "isCorrect": true,
+          "explanation": "Both Mycobacterium and Nocardia are partially acid‑fast; Mycobacterium is strongly acid‑fast due to mycolic acid content."
+        },
+        {
+          "text": "Corynebacterium diphtheriae",
+          "isCorrect": false,
+          "explanation": "Corynebacterium is a Gram‑positive rod, not acid‑fast."
+        },
+        {
+          "text": "Lactobacillus",
+          "isCorrect": false,
+          "explanation": "Lactobacillus is a Gram‑positive rod, not acid‑fast."
+        }
+      ],
+      "explanation": {
+        "overview": "Both Mycobacterium and Nocardia are partially acid‑fast; Mycobacterium is strongly acid‑fast due to mycolic acid content.",
+        "highYield": "Acid‑fast bacilli: Mycobacterium and Nocardia.",
+        "clinicalCorrelation": "Acid‑fast staining (Ziehl‑Neelsen) is used for diagnosis of TB."
+      }
+    },
+    {
+      "id": "path_infectious_014",
+      "difficulty": 1,
+      "question": "The image shows a Ziehl‑Neelsen stain with red bacilli. This is diagnostic for:",
+      "image": "path_infectious_afb.png",
+      "options": [
+        {
+          "text": "Mycobacterium tuberculosis",
+          "isCorrect": true,
+          "explanation": "Acid‑fast bacilli appear red with Ziehl‑Neelsen stain, characteristic of Mycobacterium tuberculosis."
+        },
+        {
+          "text": "Staphylococcus aureus",
+          "isCorrect": false,
+          "explanation": "S. aureus is Gram‑positive, not acid‑fast."
+        },
+        {
+          "text": "Escherichia coli",
+          "isCorrect": false,
+          "explanation": "E. coli is Gram‑negative, not acid‑fast."
+        },
+        {
+          "text": "Clostridium tetani",
+          "isCorrect": false,
+          "explanation": "C. tetani is a Gram‑positive rod, not acid‑fast."
+        },
+        {
+          "text": "Treponema pallidum",
+          "isCorrect": false,
+          "explanation": "T. pallidum is a spirochete, not acid‑fast."
+        }
+      ],
+      "explanation": {
+        "overview": "Acid‑fast bacilli appear red with Ziehl‑Neelsen stain, characteristic of Mycobacterium tuberculosis.",
+        "highYield": "Red bacilli on Z‑N stain = AFB (Mycobacterium tuberculosis).",
+        "clinicalCorrelation": "AFB smear is a rapid diagnostic tool for pulmonary TB."
+      }
+    },
+    {
+      "id": "path_infectious_015",
+      "difficulty": 1,
+      "question": "The tuberculin skin test (PPD) detects which type of immune response?",
+      "image": null,
+      "options": [
+        {
+          "text": "Delayed‑type hypersensitivity (Type IV)",
+          "isCorrect": true,
+          "explanation": "PPD test is a classic example of delayed‑type hypersensitivity (type IV), mediated by memory T cells."
+        },
+        {
+          "text": "Immediate hypersensitivity (Type I)",
+          "isCorrect": false,
+          "explanation": "Type I is IgE‑mediated, not involved in PPD."
+        },
+        {
+          "text": "Cytotoxic T cell response",
+          "isCorrect": false,
+          "explanation": "While T cells are involved, the PPD is a DTH response, not direct cytotoxicity."
+        },
+        {
+          "text": "Antibody‑mediated immunity",
+          "isCorrect": false,
+          "explanation": "PPD does not measure antibodies."
+        },
+        {
+          "text": "Complement activation",
+          "isCorrect": false,
+          "explanation": "Complement is not involved."
+        }
+      ],
+      "explanation": {
+        "overview": "PPD test is a classic example of delayed‑type hypersensitivity (type IV), mediated by memory T cells.",
+        "highYield": "PPD = Type IV (delayed) hypersensitivity.",
+        "clinicalCorrelation": "Positive PPD indicates prior exposure to mycobacteria; may be false positive in BCG‑vaccinated individuals."
+      }
+    },
+    {
+      "id": "path_infectious_016",
+      "difficulty": 1,
+      "question": "Leprosy (Hansen disease) is caused by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Mycobacterium leprae",
+          "isCorrect": true,
+          "explanation": "Mycobacterium leprae causes leprosy; it cannot be cultured in vitro and grows best in cooler body parts (skin, nerves)."
+        },
+        {
+          "text": "Mycobacterium lepromatosis",
+          "isCorrect": false,
+          "explanation": "M. lepromatosis is a newly recognized species causing lepromatous leprosy, but M. leprae is the classic agent."
+        },
+        {
+          "text": "Mycobacterium tuberculosis",
+          "isCorrect": false,
+          "explanation": "M. tuberculosis causes tuberculosis, not leprosy."
+        },
+        {
+          "text": "Mycobacterium avium complex",
+          "isCorrect": false,
+          "explanation": "MAC causes opportunistic infections in immunocompromised, not leprosy."
+        },
+        {
+          "text": "Nocardia brasiliensis",
+          "isCorrect": false,
+          "explanation": "Nocardia brasiliensis causes nocardiosis, not leprosy."
+        }
+      ],
+      "explanation": {
+        "overview": "Mycobacterium leprae causes leprosy; it cannot be cultured in vitro and grows best in cooler body parts (skin, nerves).",
+        "highYield": "Leprosy = Mycobacterium leprae.",
+        "clinicalCorrelation": "Treatment includes dapsone, rifampicin, and clofazimine."
+      }
+    },
+    {
+      "id": "path_infectious_017",
+      "difficulty": 2,
+      "question": "The image shows a skin lesion with loss of sensation and thickened nerves. This is characteristic of:",
+      "image": "path_infectious_leprosy.png",
+      "options": [
+        {
+          "text": "Tuberculoid leprosy",
+          "isCorrect": true,
+          "explanation": "Tuberculoid leprosy presents with well‑defined anesthetic skin lesions and enlarged peripheral nerves."
+        },
+        {
+          "text": "Lepromatous leprosy",
+          "isCorrect": false,
+          "explanation": "Lepromatous leprosy has diffuse, symmetrical skin lesions with abundant bacilli, and is less likely to show thickened nerves early."
+        },
+        {
+          "text": "Sarcoidosis",
+          "isCorrect": false,
+          "explanation": "Sarcoidosis has non‑caseating granulomas and does not cause thickened nerves."
+        },
+        {
+          "text": "Cutaneous tuberculosis",
+          "isCorrect": false,
+          "explanation": "Tuberculosis can cause skin lesions but not the classic nerve thickening of leprosy."
+        },
+        {
+          "text": "Syphilis",
+          "isCorrect": false,
+          "explanation": "Syphilis does not cause thickened nerves."
+        }
+      ],
+      "explanation": {
+        "overview": "Tuberculoid leprosy presents with well‑defined anesthetic skin lesions and enlarged peripheral nerves.",
+        "highYield": "Tuberculoid leprosy = anesthetic patches + nerve thickening.",
+        "clinicalCorrelation": "Diagnosis by skin biopsy showing granulomas and few bacilli."
+      }
+    },
+    {
+      "id": "path_infectious_018",
+      "difficulty": 1,
+      "question": "Syphilis is caused by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Treponema pallidum",
+          "isCorrect": true,
+          "explanation": "Treponema pallidum, a spirochete, is the causative agent of syphilis."
+        },
+        {
+          "text": "Borrelia burgdorferi",
+          "isCorrect": false,
+          "explanation": "B. burgdorferi causes Lyme disease."
+        },
+        {
+          "text": "Leptospira interrogans",
+          "isCorrect": false,
+          "explanation": "L. interrogans causes leptospirosis."
+        },
+        {
+          "text": "Spirillum minus",
+          "isCorrect": false,
+          "explanation": "Spirillum minus causes rat‑bite fever, not syphilis."
+        },
+        {
+          "text": "Helicobacter pylori",
+          "isCorrect": false,
+          "explanation": "H. pylori causes peptic ulcer disease."
+        }
+      ],
+      "explanation": {
+        "overview": "Treponema pallidum, a spirochete, is the causative agent of syphilis.",
+        "highYield": "Syphilis = Treponema pallidum.",
+        "clinicalCorrelation": "Diagnosis via dark‑field microscopy or serology (RPR, FTA‑ABS)."
+      }
+    },
+    {
+      "id": "path_infectious_019",
+      "difficulty": 2,
+      "question": "The painless chancre of primary syphilis is characterized by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Endarteritis and plasma cell‑rich infiltrate",
+          "isCorrect": true,
+          "explanation": "Primary chancre shows obliterative endarteritis and a dense infiltrate of plasma cells and lymphocytes."
+        },
+        {
+          "text": "Granulomatous inflammation",
+          "isCorrect": false,
+          "explanation": "Granulomas are seen in tertiary syphilis (gumma), not primary."
+        },
+        {
+          "text": "Neutrophilic abscess",
+          "isCorrect": false,
+          "explanation": "Abscesses are more typical of bacterial infections like Staphylococcus."
+        },
+        {
+          "text": "Gumma formation",
+          "isCorrect": false,
+          "explanation": "Gumma is a lesion of tertiary syphilis."
+        },
+        {
+          "text": "Necrotizing vasculitis",
+          "isCorrect": false,
+          "explanation": "Necrotizing vasculitis is seen in other conditions, not primary chancre."
+        }
+      ],
+      "explanation": {
+        "overview": "Primary chancre shows obliterative endarteritis and a dense infiltrate of plasma cells and lymphocytes.",
+        "highYield": "Primary syphilis = painless chancre with endarteritis and plasma cells.",
+        "clinicalCorrelation": "The chancre heals spontaneously; without treatment, secondary syphilis develops."
+      }
+    },
+    {
+      "id": "path_infectious_020",
+      "difficulty": 2,
+      "question": "The image shows a maculopapular rash involving palms and soles. This is characteristic of:",
+      "image": "path_infectious_syphilis_rash.png",
+      "options": [
+        {
+          "text": "Secondary syphilis",
+          "isCorrect": true,
+          "explanation": "Secondary syphilis presents with a generalized rash often involving palms and soles, along with condylomata lata."
+        },
+        {
+          "text": "Primary syphilis",
+          "isCorrect": false,
+          "explanation": "Primary syphilis presents with a painless chancre, not a rash."
+        },
+        {
+          "text": "Tertiary syphilis",
+          "isCorrect": false,
+          "explanation": "Tertiary syphilis presents with gummas, cardiovascular, and neurologic involvement."
+        },
+        {
+          "text": "Congenital syphilis",
+          "isCorrect": false,
+          "explanation": "Congenital syphilis presents with stigmata (e.g., Hutchinson teeth, saddle nose) in infants."
+        },
+        {
+          "text": "Lyme disease",
+          "isCorrect": false,
+          "explanation": "Lyme disease has erythema migrans (bull's‑eye rash), not a palmar/plantar rash."
+        }
+      ],
+      "explanation": {
+        "overview": "Secondary syphilis presents with a generalized rash often involving palms and soles, along with condylomata lata.",
+        "highYield": "Palmar/plantar rash + condylomata lata = secondary syphilis.",
+        "clinicalCorrelation": "Diagnosis via serology; treatment with penicillin."
+      }
+    },
+    {
+      "id": "path_infectious_021",
+      "difficulty": 2,
+      "question": "Gumma, a lesion of tertiary syphilis, is characterized by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Central gummatous necrosis with epithelioid cells and giant cells",
+          "isCorrect": true,
+          "explanation": "Gumma is a rubbery lesion with central necrosis and palisading epithelioid cells, seen in tertiary syphilis."
+        },
+        {
+          "text": "Caseous necrosis",
+          "isCorrect": false,
+          "explanation": "Caseous necrosis is typical of tuberculosis."
+        },
+        {
+          "text": "Liquefactive necrosis",
+          "isCorrect": false,
+          "explanation": "Liquefactive necrosis is seen in brain infarcts and abscesses."
+        },
+        {
+          "text": "Fat necrosis",
+          "isCorrect": false,
+          "explanation": "Fat necrosis is seen in pancreatitis and breast trauma."
+        },
+        {
+          "text": "Fibrinoid necrosis",
+          "isCorrect": false,
+          "explanation": "Fibrinoid necrosis is seen in vasculitis and malignant hypertension."
+        }
+      ],
+      "explanation": {
+        "overview": "Gumma is a rubbery lesion with central necrosis and palisading epithelioid cells, seen in tertiary syphilis.",
+        "highYield": "Gumma = necrotizing granuloma of tertiary syphilis.",
+        "clinicalCorrelation": "Gummas can occur in skin, bones, and internal organs."
+      }
+    },
+    {
+      "id": "path_infectious_022",
+      "difficulty": 1,
+      "question": "Lyme disease is caused by Borrelia burgdorferi and transmitted by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Ixodes ticks",
+          "isCorrect": true,
+          "explanation": "Borrelia burgdorferi is transmitted by Ixodes scapularis (deer tick) and causes Lyme disease."
+        },
+        {
+          "text": "Mosquitoes",
+          "isCorrect": false,
+          "explanation": "Mosquitoes transmit malaria, dengue, Zika, etc."
+        },
+        {
+          "text": "Fleas",
+          "isCorrect": false,
+          "explanation": "Fleas transmit plague and murine typhus."
+        },
+        {
+          "text": "Lice",
+          "isCorrect": false,
+          "explanation": "Lice transmit epidemic typhus and relapsing fever."
+        },
+        {
+          "text": "Sandflies",
+          "isCorrect": false,
+          "explanation": "Sandflies transmit leishmaniasis."
+        }
+      ],
+      "explanation": {
+        "overview": "Borrelia burgdorferi is transmitted by Ixodes scapularis (deer tick) and causes Lyme disease.",
+        "highYield": "Lyme disease = Ixodes tick, Borrelia burgdorferi.",
+        "clinicalCorrelation": "Early treatment with doxycycline prevents late complications."
+      }
+    },
+    {
+      "id": "path_infectious_023",
+      "difficulty": 1,
+      "question": "The characteristic rash of Lyme disease is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Erythema migrans (bull's‑eye rash)",
+          "isCorrect": true,
+          "explanation": "Erythema migrans, an expanding red rash with central clearing, is the hallmark of early Lyme disease."
+        },
+        {
+          "text": "Maculopapular rash on palms",
+          "isCorrect": false,
+          "explanation": "Palmar rash is seen in secondary syphilis."
+        },
+        {
+          "text": "Vesicular rash",
+          "isCorrect": false,
+          "explanation": "Vesicular rash is seen in varicella and herpes."
+        },
+        {
+          "text": "Petechial rash",
+          "isCorrect": false,
+          "explanation": "Petechial rash is seen in meningococcemia and rickettsial infections."
+        },
+        {
+          "text": "Urticaria",
+          "isCorrect": false,
+          "explanation": "Urticaria is a type I hypersensitivity reaction, not Lyme disease."
+        }
+      ],
+      "explanation": {
+        "overview": "Erythema migrans, an expanding red rash with central clearing, is the hallmark of early Lyme disease.",
+        "highYield": "Erythema migrans = bull's‑eye rash = Lyme disease.",
+        "clinicalCorrelation": "May be accompanied by flu‑like symptoms; treat with doxycycline."
+      }
+    },
+    {
+      "id": "path_infectious_024",
+      "difficulty": 2,
+      "question": "Leptospirosis is caused by Leptospira interrogans, which is transmitted through:",
+      "image": null,
+      "options": [
+        {
+          "text": "Water contaminated with animal urine",
+          "isCorrect": true,
+          "explanation": "Leptospirosis is a zoonosis acquired from water or soil contaminated with urine of infected animals (rats, cattle)."
+        },
+        {
+          "text": "Tick bite",
+          "isCorrect": false,
+          "explanation": "Tick bites transmit Lyme disease, babesiosis, ehrlichiosis."
+        },
+        {
+          "text": "Mosquito bite",
+          "isCorrect": false,
+          "explanation": "Mosquitoes transmit malaria, dengue, Zika."
+        },
+        {
+          "text": "Airborne droplets",
+          "isCorrect": false,
+          "explanation": "Airborne transmission occurs with TB, influenza, COVID‑19."
+        },
+        {
+          "text": "Sexual contact",
+          "isCorrect": false,
+          "explanation": "Sexually transmitted infections include syphilis, gonorrhea, HIV."
+        }
+      ],
+      "explanation": {
+        "overview": "Leptospirosis is a zoonosis acquired from water or soil contaminated with urine of infected animals (rats, cattle).",
+        "highYield": "Leptospirosis = water contaminated with animal urine.",
+        "clinicalCorrelation": "Presents with fever, jaundice, renal failure (Weil syndrome); treat with doxycycline or penicillin."
+      }
+    },
+    {
+      "id": "path_infectious_025",
+      "difficulty": 1,
+      "question": "Which of the following is a Gram‑negative rod that causes pneumonia with 'currant jelly' sputum?",
+      "image": null,
+      "options": [
+        {
+          "text": "Klebsiella pneumoniae",
+          "isCorrect": true,
+          "explanation": "Klebsiella pneumoniae causes lobar pneumonia with thick, bloody sputum (currant jelly) due to its large capsule."
+        },
+        {
+          "text": "Pseudomonas aeruginosa",
+          "isCorrect": false,
+          "explanation": "Pseudomonas causes necrotizing pneumonia, often in immunocompromised, but not currant jelly."
+        },
+        {
+          "text": "Escherichia coli",
+          "isCorrect": false,
+          "explanation": "E. coli causes pneumonia mainly in hospitalized patients, not typically currant jelly."
+        },
+        {
+          "text": "Proteus mirabilis",
+          "isCorrect": false,
+          "explanation": "Proteus causes UTI, not pneumonia."
+        },
+        {
+          "text": "Serratia marcescens",
+          "isCorrect": false,
+          "explanation": "Serratia causes nosocomial infections, not currant jelly."
+        }
+      ],
+      "explanation": {
+        "overview": "Klebsiella pneumoniae causes lobar pneumonia with thick, bloody sputum (currant jelly) due to its large capsule.",
+        "highYield": "Currant jelly sputum = Klebsiella pneumoniae.",
+        "clinicalCorrelation": "Often seen in alcoholics and diabetics; treat with third‑generation cephalosporins and aminoglycosides."
+      }
+    },
+    {
+      "id": "path_infectious_026",
+      "difficulty": 1,
+      "question": "Pseudomonas aeruginosa is an opportunistic pathogen commonly associated with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Burn wound infections and nosocomial pneumonia",
+          "isCorrect": true,
+          "explanation": "Pseudomonas thrives in moist environments and causes infections in immunocompromised, burn patients, and those on ventilators."
+        },
+        {
+          "text": "Urinary tract infections in young women",
+          "isCorrect": false,
+          "explanation": "UTIs are usually caused by E. coli."
+        },
+        {
+          "text": "Food poisoning",
+          "isCorrect": false,
+          "explanation": "Food poisoning is usually caused by Salmonella, Campylobacter, etc."
+        },
+        {
+          "text": "Pharyngitis",
+          "isCorrect": false,
+          "explanation": "Pharyngitis is commonly viral or streptococcal."
+        },
+        {
+          "text": "Dental caries",
+          "isCorrect": false,
+          "explanation": "Dental caries are caused by Streptococcus mutans."
+        }
+      ],
+      "explanation": {
+        "overview": "Pseudomonas thrives in moist environments and causes infections in immunocompromised, burn patients, and those on ventilators.",
+        "highYield": "Pseudomonas = opportunistic, burn wounds, nosocomial pneumonia.",
+        "clinicalCorrelation": "Treatment requires antipseudomonal antibiotics (e.g., piperacillin‑tazobactam, ceftazidime)."
+      }
+    },
+    {
+      "id": "path_infectious_027",
+      "difficulty": 2,
+      "question": "The image shows a greenish pigment produced by a bacterium. This is characteristic of:",
+      "image": "path_infectious_pseudomonas.png",
+      "options": [
+        {
+          "text": "Pseudomonas aeruginosa (pyocyanin)",
+          "isCorrect": true,
+          "explanation": "Pseudomonas aeruginosa produces blue‑green pigment (pyocyanin) and fluorescein."
+        },
+        {
+          "text": "Staphylococcus aureus",
+          "isCorrect": false,
+          "explanation": "S. aureus produces golden colonies (hemolysis), not greenish pigment."
+        },
+        {
+          "text": "Serratia marcescens (prodigiosin)",
+          "isCorrect": false,
+          "explanation": "Serratia produces red pigment (prodigiosin)."
+        },
+        {
+          "text": "Escherichia coli",
+          "isCorrect": false,
+          "explanation": "E. coli does not produce a distinctive green pigment."
+        },
+        {
+          "text": "Mycobacterium tuberculosis",
+          "isCorrect": false,
+          "explanation": "M. tuberculosis does not produce pigment."
+        }
+      ],
+      "explanation": {
+        "overview": "Pseudomonas aeruginosa produces blue‑green pigment (pyocyanin) and fluorescein.",
+        "highYield": "Pyocyanin = Pseudomonas aeruginosa.",
+        "clinicalCorrelation": "Also produces a sweet grape‑like odor."
+      }
+    },
+    {
+      "id": "path_infectious_028",
+      "difficulty": 1,
+      "question": "Which of the following is an anaerobic Gram‑positive rod causing gas gangrene?",
+      "image": null,
+      "options": [
+        {
+          "text": "Clostridium perfringens",
+          "isCorrect": true,
+          "explanation": "Clostridium perfringens produces toxins that cause myonecrosis (gas gangrene) with gas production."
+        },
+        {
+          "text": "Clostridium tetani",
+          "isCorrect": false,
+          "explanation": "C. tetani causes tetanus (spastic paralysis), not gas gangrene."
+        },
+        {
+          "text": "Clostridium botulinum",
+          "isCorrect": false,
+          "explanation": "C. botulinum causes botulism (flaccid paralysis)."
+        },
+        {
+          "text": "Clostridium difficile",
+          "isCorrect": false,
+          "explanation": "C. difficile causes pseudomembranous colitis."
+        },
+        {
+          "text": "Bacteroides fragilis",
+          "isCorrect": false,
+          "explanation": "B. fragilis is an anaerobic Gram‑negative rod, not Gram‑positive."
+        }
+      ],
+      "explanation": {
+        "overview": "Clostridium perfringens produces toxins that cause myonecrosis (gas gangrene) with gas production.",
+        "highYield": "Gas gangrene = Clostridium perfringens.",
+        "clinicalCorrelation": "Treatment includes surgical debridement, antibiotics (penicillin), and hyperbaric oxygen."
+      }
+    },
+    {
+      "id": "path_infectious_029",
+      "difficulty": 2,
+      "question": "Tetanus is caused by Clostridium tetani toxin, which acts by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Blocking release of inhibitory neurotransmitters (GABA, glycine)",
+          "isCorrect": true,
+          "explanation": "Tetanospasmin inhibits release of GABA and glycine in spinal cord, causing spastic paralysis."
+        },
+        {
+          "text": "Blocking acetylcholine release",
+          "isCorrect": false,
+          "explanation": "Blocking acetylcholine release is the mechanism of botulinum toxin."
+        },
+        {
+          "text": "Activating adenylate cyclase",
+          "isCorrect": false,
+          "explanation": "Cholera toxin activates adenylate cyclase."
+        },
+        {
+          "text": "Inhibiting protein synthesis",
+          "isCorrect": false,
+          "explanation": "Diphtheria and Shiga toxins inhibit protein synthesis."
+        },
+        {
+          "text": "Damaging blood vessels",
+          "isCorrect": false,
+          "explanation": "Damage to blood vessels is seen in anthrax and some other toxins."
+        }
+      ],
+      "explanation": {
+        "overview": "Tetanospasmin inhibits release of GABA and glycine in spinal cord, causing spastic paralysis.",
+        "highYield": "Tetanus = blocks GABA/glycine → spastic paralysis.",
+        "clinicalCorrelation": "Treatment includes wound debridement, metronidazole, and tetanus immune globulin."
+      }
+    },
+    {
+      "id": "path_infectious_030",
+      "difficulty": 2,
+      "question": "Botulism toxin causes flaccid paralysis by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Blocking acetylcholine release at neuromuscular junction",
+          "isCorrect": true,
+          "explanation": "Botulinum toxin prevents vesicle fusion and release of acetylcholine, leading to flaccid paralysis."
+        },
+        {
+          "text": "Blocking glycine release",
+          "isCorrect": false,
+          "explanation": "Tetanus toxin blocks glycine release."
+        },
+        {
+          "text": "Stimulating acetylcholine receptors",
+          "isCorrect": false,
+          "explanation": "Stimulation of ACh receptors would cause excitation, not paralysis."
+        },
+        {
+          "text": "Inhibiting sodium channels",
+          "isCorrect": false,
+          "explanation": "Inhibiting sodium channels is a mechanism of local anesthetics."
+        },
+        {
+          "text": "Depolarizing muscle membrane",
+          "isCorrect": false,
+          "explanation": "Depolarization would cause contraction, not flaccid paralysis."
+        }
+      ],
+      "explanation": {
+        "overview": "Botulinum toxin prevents vesicle fusion and release of acetylcholine, leading to flaccid paralysis.",
+        "highYield": "Botulism = blocks ACh release → flaccid paralysis.",
+        "clinicalCorrelation": "Presents with descending paralysis, diplopia, dysphagia; treat with antitoxin."
+      }
+    },
+    {
+      "id": "path_infectious_031",
+      "difficulty": 1,
+      "question": "Clostridium difficile‑associated diarrhea is often triggered by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Broad‑spectrum antibiotics",
+          "isCorrect": true,
+          "explanation": "Antibiotics disrupt normal gut flora, allowing C. difficile overgrowth and toxin production."
+        },
+        {
+          "text": "Contaminated food",
+          "isCorrect": false,
+          "explanation": "Foodborne transmission is less common; C. difficile spores are spread via the fecal‑oral route in healthcare settings."
+        },
+        {
+          "text": "Surgery",
+          "isCorrect": false,
+          "explanation": "Surgery alone is not a direct trigger; antibiotic prophylaxis is often used."
+        },
+        {
+          "text": "Immunosuppression",
+          "isCorrect": false,
+          "explanation": "Immunosuppression is a risk factor, but antibiotics are the main trigger."
+        },
+        {
+          "text": "Ingestion of spores",
+          "isCorrect": false,
+          "explanation": "Ingestion of spores is how infection occurs, but antibiotics create the environment for overgrowth."
+        }
+      ],
+      "explanation": {
+        "overview": "Antibiotics disrupt normal gut flora, allowing C. difficile overgrowth and toxin production.",
+        "highYield": "C. difficile diarrhea = antibiotic‑associated.",
+        "clinicalCorrelation": "Treatment: oral vancomycin or fidaxomicin."
+      }
+    },
+    {
+      "id": "path_infectious_032",
+      "difficulty": 2,
+      "question": "The image shows pseudomembranous colitis with yellowish plaques. This is characteristic of:",
+      "image": "path_infectious_pseudomembranous.png",
+      "options": [
+        {
+          "text": "Clostridium difficile infection",
+          "isCorrect": true,
+          "explanation": "Pseudomembranous colitis is pathognomonic for C. difficile infection."
+        },
+        {
+          "text": "Shigellosis",
+          "isCorrect": false,
+          "explanation": "Shigellosis causes ulceration and inflammation, not pseudomembranes."
+        },
+        {
+          "text": "Salmonellosis",
+          "isCorrect": false,
+          "explanation": "Salmonellosis causes enterocolitis, not pseudomembranes."
+        },
+        {
+          "text": "Campylobacter enteritis",
+          "isCorrect": false,
+          "explanation": "Campylobacter causes bloody diarrhea, not pseudomembranes."
+        },
+        {
+          "text": "Yersinia enterocolitica",
+          "isCorrect": false,
+          "explanation": "Yersinia causes enterocolitis and mesenteric lymphadenitis, not pseudomembranes."
+        }
+      ],
+      "explanation": {
+        "overview": "Pseudomembranous colitis is pathognomonic for C. difficile infection.",
+        "highYield": "Pseudomembranous colitis = C. difficile.",
+        "clinicalCorrelation": "Diagnosis via stool toxin PCR or EIA."
+      }
+    },
+    {
+      "id": "path_infectious_033",
+      "difficulty": 2,
+      "question": "Bacteroides fragilis, the most common anaerobic isolate in clinical infections, is often involved in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Intra‑abdominal abscesses",
+          "isCorrect": false,
+          "explanation": "B. fragilis is common in intra‑abdominal abscesses, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Brain abscess",
+          "isCorrect": false,
+          "explanation": "B. fragilis is also common in brain abscesses, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Pelvic inflammatory disease",
+          "isCorrect": false,
+          "explanation": "B. fragilis is involved in PID, but the answer is 'All of the above'."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Bacteroides fragilis is a common anaerobe in mixed infections, especially abdominal and pelvic abscesses."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "B. fragilis is involved in all these conditions."
+        }
+      ],
+      "explanation": {
+        "overview": "Bacteroides fragilis is a common anaerobe in mixed infections, especially abdominal and pelvic abscesses.",
+        "highYield": "B. fragilis = intra‑abdominal abscesses, brain abscess, PID.",
+        "clinicalCorrelation": "Treatment includes metronidazole or clindamycin."
+      }
+    },
+    {
+      "id": "path_infectious_034",
+      "difficulty": 1,
+      "question": "Which of the following is a major cause of bacterial meningitis in neonates?",
+      "image": null,
+      "options": [
+        {
+          "text": "Group B Streptococcus (Streptococcus agalactiae)",
+          "isCorrect": false,
+          "explanation": "Group B Strep is a cause, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Escherichia coli",
+          "isCorrect": false,
+          "explanation": "E. coli is a cause, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Listeria monocytogenes",
+          "isCorrect": false,
+          "explanation": "Listeria is a cause, but the answer is 'All of the above'."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Neonatal meningitis is most commonly caused by Group B strep, E. coli, and Listeria."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All are important causes."
+        }
+      ],
+      "explanation": {
+        "overview": "Neonatal meningitis is most commonly caused by Group B strep, E. coli, and Listeria.",
+        "highYield": "Neonatal meningitis: GBS, E. coli, Listeria.",
+        "clinicalCorrelation": "Maternal screening for GBS and intrapartum antibiotics reduce risk."
+      }
+    },
+    {
+      "id": "path_infectious_035",
+      "difficulty": 2,
+      "question": "Haemophilus influenzae type b (Hib) was a leading cause of meningitis in children before the introduction of vaccine. Its capsule is composed of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Polyribosylribitol phosphate (PRP)",
+          "isCorrect": true,
+          "explanation": "Hib capsule (PRP) is a virulence factor; vaccine uses PRP conjugated to protein."
+        },
+        {
+          "text": "Hyaluronic acid",
+          "isCorrect": false,
+          "explanation": "Hyaluronic acid is found in Group A Strep capsules."
+        },
+        {
+          "text": "Glucuronic acid",
+          "isCorrect": false,
+          "explanation": "Not the Hib capsule."
+        },
+        {
+          "text": "Sialic acid",
+          "isCorrect": false,
+          "explanation": "Sialic acid is found in capsules of some bacteria (e.g., Neisseria meningitidis)."
+        },
+        {
+          "text": "Teichoic acid",
+          "isCorrect": false,
+          "explanation": "Teichoic acid is part of Gram‑positive cell walls."
+        }
+      ],
+      "explanation": {
+        "overview": "Hib capsule (PRP) is a virulence factor; vaccine uses PRP conjugated to protein.",
+        "highYield": "Hib capsule = PRP.",
+        "clinicalCorrelation": "Hib conjugate vaccine has dramatically reduced Hib disease."
+      }
+    },
+    {
+      "id": "path_infectious_036",
+      "difficulty": 1,
+      "question": "Legionella pneumophila is a fastidious Gram‑negative rod that causes Legionnaires' disease, often associated with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Contaminated water sources (e.g., cooling towers, hot tubs)",
+          "isCorrect": true,
+          "explanation": "Legionella is transmitted via aerosolized water from environmental sources."
+        },
+        {
+          "text": "Person‑to‑person transmission",
+          "isCorrect": false,
+          "explanation": "Legionella is not transmitted person‑to‑person."
+        },
+        {
+          "text": "Animal contact",
+          "isCorrect": false,
+          "explanation": "Animal contact is not a typical mode."
+        },
+        {
+          "text": "Contaminated food",
+          "isCorrect": false,
+          "explanation": "Foodborne transmission is not typical."
+        },
+        {
+          "text": "Blood transfusion",
+          "isCorrect": false,
+          "explanation": "Blood transfusion is not a mode of transmission."
+        }
+      ],
+      "explanation": {
+        "overview": "Legionella is transmitted via aerosolized water from environmental sources.",
+        "highYield": "Legionella = aerosolized water (cooling towers, hot tubs).",
+        "clinicalCorrelation": "Presents with pneumonia, high fever, diarrhea, hyponatremia; treat with macrolides or fluoroquinolones."
+      }
+    },
+    {
+      "id": "path_infectious_037",
+      "difficulty": 2,
+      "question": "The image shows a silver stain of lung tissue with intracellular organisms in macrophages. This is characteristic of:",
+      "image": "path_infectious_pneumocystis.png",
+      "options": [
+        {
+          "text": "Legionella pneumophila",
+          "isCorrect": false,
+          "explanation": "Legionella is a rod, but it does not appear as cysts on silver stain."
+        },
+        {
+          "text": "Mycobacterium tuberculosis",
+          "isCorrect": false,
+          "explanation": "M. tuberculosis is acid‑fast, not seen as cysts."
+        },
+        {
+          "text": "Pneumocystis jirovecii",
+          "isCorrect": true,
+          "explanation": "Pneumocystis jirovecii (formerly carinii) stains with silver and appears as cysts in alveoli, often in immunocompromised."
+        },
+        {
+          "text": "Histoplasma capsulatum",
+          "isCorrect": false,
+          "explanation": "Histoplasma is a fungus seen on GMS stain, but the image shows intracellular cysts typical of Pneumocystis."
+        },
+        {
+          "text": "Toxoplasma gondii",
+          "isCorrect": false,
+          "explanation": "Toxoplasma can be seen in brain, not typically in lung as cysts."
+        }
+      ],
+      "explanation": {
+        "overview": "Pneumocystis jirovecii (formerly carinii) stains with silver and appears as cysts in alveoli, often in immunocompromised.",
+        "highYield": "Pneumocystis = silver stain cysts.",
+        "clinicalCorrelation": "Occurs in AIDS (CD4 <200); treat with TMP‑SMX."
+      }
+    },
+    {
+      "id": "path_infectious_038",
+      "difficulty": 1,
+      "question": "Which virus is associated with Burkitt lymphoma?",
+      "image": null,
+      "options": [
+        {
+          "text": "Epstein‑Barr virus (EBV)",
+          "isCorrect": true,
+          "explanation": "EBV is associated with endemic Burkitt lymphoma, among other malignancies."
+        },
+        {
+          "text": "Human papillomavirus (HPV)",
+          "isCorrect": false,
+          "explanation": "HPV is associated with cervical, anal, and oropharyngeal cancers."
+        },
+        {
+          "text": "Hepatitis B virus",
+          "isCorrect": false,
+          "explanation": "HBV is associated with hepatocellular carcinoma."
+        },
+        {
+          "text": "Cytomegalovirus (CMV)",
+          "isCorrect": false,
+          "explanation": "CMV is not strongly associated with Burkitt lymphoma."
+        },
+        {
+          "text": "Human herpesvirus 8 (HHV‑8)",
+          "isCorrect": false,
+          "explanation": "HHV‑8 is associated with Kaposi sarcoma."
+        }
+      ],
+      "explanation": {
+        "overview": "EBV is associated with endemic Burkitt lymphoma, among other malignancies.",
+        "highYield": "EBV = Burkitt lymphoma.",
+        "clinicalCorrelation": "Burkitt lymphoma is a high‑grade B‑cell lymphoma with translocation of MYC."
+      }
+    },
+    {
+      "id": "path_infectious_039",
+      "difficulty": 1,
+      "question": "Kaposi sarcoma is caused by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Human herpesvirus 8 (HHV‑8)",
+          "isCorrect": true,
+          "explanation": "HHV‑8 (KSHV) is the etiologic agent of Kaposi sarcoma, seen in AIDS and other immunocompromised states."
+        },
+        {
+          "text": "Epstein‑Barr virus",
+          "isCorrect": false,
+          "explanation": "EBV is associated with Burkitt lymphoma, Hodgkin lymphoma, and nasopharyngeal carcinoma."
+        },
+        {
+          "text": "Human papillomavirus",
+          "isCorrect": false,
+          "explanation": "HPV causes warts and cancers, not Kaposi sarcoma."
+        },
+        {
+          "text": "Merkel cell polyomavirus",
+          "isCorrect": false,
+          "explanation": "Merkel cell polyomavirus causes Merkel cell carcinoma."
+        },
+        {
+          "text": "HTLV‑1",
+          "isCorrect": false,
+          "explanation": "HTLV‑1 causes adult T‑cell leukemia/lymphoma."
+        }
+      ],
+      "explanation": {
+        "overview": "HHV‑8 (KSHV) is the etiologic agent of Kaposi sarcoma, seen in AIDS and other immunocompromised states.",
+        "highYield": "Kaposi sarcoma = HHV‑8.",
+        "clinicalCorrelation": "In HIV patients, treatment with ART can lead to regression."
+      }
+    },
+    {
+      "id": "path_infectious_040",
+      "difficulty": 2,
+      "question": "The image shows a skin lesion with characteristic 'red‑purple' nodules. This is most likely:",
+      "image": "path_infectious_kaposi.png",
+      "options": [
+        {
+          "text": "Kaposi sarcoma",
+          "isCorrect": true,
+          "explanation": "Kaposi sarcoma presents as red‑purple plaques/nodules on skin and mucosa, often in AIDS patients."
+        },
+        {
+          "text": "Basal cell carcinoma",
+          "isCorrect": false,
+          "explanation": "BCC is a pearly, raised lesion with telangiectasias."
+        },
+        {
+          "text": "Malignant melanoma",
+          "isCorrect": false,
+          "explanation": "Melanoma is dark brown/black, not typically red‑purple."
+        },
+        {
+          "text": "Pyogenic granuloma",
+          "isCorrect": false,
+          "explanation": "Pyogenic granuloma is a bright red vascular nodule, often after trauma."
+        },
+        {
+          "text": "Hemangioma",
+          "isCorrect": false,
+          "explanation": "Hemangioma is a common benign vascular tumor, not typically associated with AIDS."
+        }
+      ],
+      "explanation": {
+        "overview": "Kaposi sarcoma presents as red‑purple plaques/nodules on skin and mucosa, often in AIDS patients.",
+        "highYield": "Red‑purple nodules = Kaposi sarcoma (HHV‑8).",
+        "clinicalCorrelation": "Biopsy shows spindle cells and vascular channels; HHV‑8 staining confirms."
+      }
+    },
+    {
+      "id": "path_infectious_041",
+      "difficulty": 1,
+      "question": "Human papillomavirus (HPV) types 6 and 11 are associated with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Genital warts (condylomata acuminata)",
+          "isCorrect": true,
+          "explanation": "Low‑risk HPV types 6 and 11 cause benign genital warts; high‑risk types (16, 18) cause cancers."
+        },
+        {
+          "text": "Cervical cancer",
+          "isCorrect": false,
+          "explanation": "Cervical cancer is associated with high‑risk HPV types 16 and 18."
+        },
+        {
+          "text": "Oropharyngeal cancer",
+          "isCorrect": false,
+          "explanation": "Oropharyngeal cancer is associated with HPV 16."
+        },
+        {
+          "text": "Anal cancer",
+          "isCorrect": false,
+          "explanation": "Anal cancer is associated with HPV 16 and 18."
+        },
+        {
+          "text": "Penile cancer",
+          "isCorrect": false,
+          "explanation": "Penile cancer is associated with HPV 16 and 18."
+        }
+      ],
+      "explanation": {
+        "overview": "Low‑risk HPV types 6 and 11 cause benign genital warts; high‑risk types (16, 18) cause cancers.",
+        "highYield": "HPV 6, 11 = genital warts.",
+        "clinicalCorrelation": "Gardasil vaccine protects against HPV 6, 11, 16, 18."
+      }
+    },
+    {
+      "id": "path_infectious_042",
+      "difficulty": 2,
+      "question": "Influenza virus pandemics are often caused by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Antigenic shift (reassortment of gene segments)",
+          "isCorrect": true,
+          "explanation": "Antigenic shift, resulting from reassortment of viral segments between different strains, can create novel viruses with pandemic potential."
+        },
+        {
+          "text": "Antigenic drift",
+          "isCorrect": false,
+          "explanation": "Antigenic drift is a gradual accumulation of point mutations, causing seasonal epidemics, not pandemics."
+        },
+        {
+          "text": "Point mutations in hemagglutinin",
+          "isCorrect": false,
+          "explanation": "Point mutations cause drift, not shift."
+        },
+        {
+          "text": "Recombination with other viruses",
+          "isCorrect": false,
+          "explanation": "Recombination is not the primary mechanism for influenza pandemics."
+        },
+        {
+          "text": "Host adaptation",
+          "isCorrect": false,
+          "explanation": "Host adaptation can occur, but shift is the key mechanism for pandemics."
+        }
+      ],
+      "explanation": {
+        "overview": "Antigenic shift, resulting from reassortment of viral segments between different strains, can create novel viruses with pandemic potential.",
+        "highYield": "Pandemic influenza = antigenic shift.",
+        "clinicalCorrelation": "Vaccines are updated annually for drift; pandemic preparedness requires rapid vaccine development."
+      }
+    },
+    {
+      "id": "path_infectious_043",
+      "difficulty": 2,
+      "question": "Rabies virus produces Negri bodies, which are:",
+      "image": null,
+      "options": [
+        {
+          "text": "Eosinophilic cytoplasmic inclusions in neurons",
+          "isCorrect": true,
+          "explanation": "Negri bodies are eosinophilic cytoplasmic inclusions in infected neurons, pathognomonic for rabies."
+        },
+        {
+          "text": "Nuclear inclusions in glial cells",
+          "isCorrect": false,
+          "explanation": "Negri bodies are cytoplasmic, not nuclear, and in neurons."
+        },
+        {
+          "text": "Granulomas in brain",
+          "isCorrect": false,
+          "explanation": "Granulomas are not typical of rabies."
+        },
+        {
+          "text": "Perivascular cuffing",
+          "isCorrect": false,
+          "explanation": "Perivascular cuffing is a nonspecific inflammatory response."
+        },
+        {
+          "text": "Microglial nodules",
+          "isCorrect": false,
+          "explanation": "Microglial nodules are seen in viral infections but are not Negri bodies."
+        }
+      ],
+      "explanation": {
+        "overview": "Negri bodies are eosinophilic cytoplasmic inclusions in infected neurons, pathognomonic for rabies.",
+        "highYield": "Negri bodies = rabies (cytoplasmic inclusions).",
+        "clinicalCorrelation": "Rabies is almost always fatal once symptoms appear; post‑exposure prophylaxis is crucial."
+      }
+    },
+    {
+      "id": "path_infectious_044",
+      "difficulty": 2,
+      "question": "The image shows a cytoplasmic inclusion body in a neuron. This is characteristic of:",
+      "image": "path_infectious_negri.png",
+      "options": [
+        {
+          "text": "Rabies (Negri body)",
+          "isCorrect": true,
+          "explanation": "Negri bodies are eosinophilic cytoplasmic inclusions in rabies."
+        },
+        {
+          "text": "Herpes simplex (Cowdry type A)",
+          "isCorrect": false,
+          "explanation": "Cowdry type A are intranuclear inclusions."
+        },
+        {
+          "text": "CMV (owl eye)",
+          "isCorrect": false,
+          "explanation": "CMV produces large intranuclear inclusions (owl eye)."
+        },
+        {
+          "text": "Measles (Warthin‑Finkeldey)",
+          "isCorrect": false,
+          "explanation": "Warthin‑Finkeldey cells are multinucleated giant cells in lymphoid tissue."
+        },
+        {
+          "text": "Poliovirus",
+          "isCorrect": false,
+          "explanation": "Poliovirus does not produce characteristic inclusions."
+        }
+      ],
+      "explanation": {
+        "overview": "Negri bodies are eosinophilic cytoplasmic inclusions in rabies.",
+        "highYield": "Cytoplasmic inclusions in neurons = Negri bodies (rabies).",
+        "clinicalCorrelation": "Diagnosis confirmed by immunofluorescence or PCR."
+      }
+    },
+    {
+      "id": "path_infectious_045",
+      "difficulty": 1,
+      "question": "Cytomegalovirus (CMV) infection is characterized histologically by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Large cells with intranuclear and intracytoplasmic inclusions (owl's eye)",
+          "isCorrect": true,
+          "explanation": "CMV causes cytomegaly with large basophilic intranuclear inclusions and smaller cytoplasmic inclusions."
+        },
+        {
+          "text": "Multinucleated giant cells",
+          "isCorrect": false,
+          "explanation": "Multinucleated giant cells are seen in measles, HIV, and other infections."
+        },
+        {
+          "text": "Granulomas",
+          "isCorrect": false,
+          "explanation": "Granulomas are seen in TB, sarcoidosis."
+        },
+        {
+          "text": "Negri bodies",
+          "isCorrect": false,
+          "explanation": "Negri bodies are in rabies."
+        },
+        {
+          "text": "Councilman bodies",
+          "isCorrect": false,
+          "explanation": "Councilman bodies are seen in yellow fever (apoptotic hepatocytes)."
+        }
+      ],
+      "explanation": {
+        "overview": "CMV causes cytomegaly with large basophilic intranuclear inclusions and smaller cytoplasmic inclusions.",
+        "highYield": "CMV = owl's eye inclusions.",
+        "clinicalCorrelation": "CMV infection is common in immunocompromised (AIDS, transplant); treat with ganciclovir."
+      }
+    },
+    {
+      "id": "path_infectious_046",
+      "difficulty": 2,
+      "question": "The image shows a cell with an intranuclear inclusion surrounded by a halo (Cowdry type A). This is characteristic of:",
+      "image": "path_infectious_cowdry.png",
+      "options": [
+        {
+          "text": "Herpes simplex virus (HSV) or varicella‑zoster virus (VZV)",
+          "isCorrect": true,
+          "explanation": "Cowdry type A inclusions are eosinophilic nuclear inclusions with a halo, seen in HSV and VZV infections."
+        },
+        {
+          "text": "CMV",
+          "isCorrect": false,
+          "explanation": "CMV inclusions are basophilic and fill the nucleus (owl's eye)."
+        },
+        {
+          "text": "Adenovirus",
+          "isCorrect": false,
+          "explanation": "Adenovirus produces smudge cells."
+        },
+        {
+          "text": "Measles virus",
+          "isCorrect": false,
+          "explanation": "Measles produces multinucleated giant cells, not Cowdry A."
+        },
+        {
+          "text": "Parvovirus B19",
+          "isCorrect": false,
+          "explanation": "Parvovirus produces nuclear inclusions in erythroid precursors."
+        }
+      ],
+      "explanation": {
+        "overview": "Cowdry type A inclusions are eosinophilic nuclear inclusions with a halo, seen in HSV and VZV infections.",
+        "highYield": "Cowdry type A = HSV/VZV.",
+        "clinicalCorrelation": "HSV causes encephalitis, mucocutaneous lesions; VZV causes chickenpox and shingles."
+      }
+    },
+    {
+      "id": "path_infectious_047",
+      "difficulty": 1,
+      "question": "Which of the following fungi is dimorphic, existing as yeast at body temperature and mold at room temperature?",
+      "image": null,
+      "options": [
+        {
+          "text": "Histoplasma capsulatum",
+          "isCorrect": true,
+          "explanation": "Histoplasma is dimorphic: mold in environment, yeast in tissue. Others: Candida is yeast/pseudohyphae, Aspergillus is mold, Cryptococcus is yeast (encapsulated)."
+        },
+        {
+          "text": "Candida albicans",
+          "isCorrect": false,
+          "explanation": "Candida is not dimorphic in the same sense; it forms pseudohyphae and yeast but not a mold form."
+        },
+        {
+          "text": "Aspergillus fumigatus",
+          "isCorrect": false,
+          "explanation": "Aspergillus is a mold; it does not switch to yeast."
+        },
+        {
+          "text": "Cryptococcus neoformans",
+          "isCorrect": false,
+          "explanation": "Cryptococcus is an encapsulated yeast; it does not have a mold form."
+        },
+        {
+          "text": "Mucor species",
+          "isCorrect": false,
+          "explanation": "Mucor is a mold; it is not dimorphic."
+        }
+      ],
+      "explanation": {
+        "overview": "Histoplasma is dimorphic: mold in environment, yeast in tissue. Others: Candida is yeast/pseudohyphae, Aspergillus is mold, Cryptococcus is yeast (encapsulated).",
+        "highYield": "Dimorphic fungi: Histoplasma, Blastomyces, Coccidioides, Paracoccidioides, Sporothrix.",
+        "clinicalCorrelation": "Dimorphic fungi cause systemic mycoses; diagnosis by culture and serology."
+      }
+    },
+    {
+      "id": "path_infectious_048",
+      "difficulty": 2,
+      "question": "Cryptococcus neoformans has a polysaccharide capsule that can be visualized with which stain?",
+      "image": null,
+      "options": [
+        {
+          "text": "India ink",
+          "isCorrect": true,
+          "explanation": "India ink stains the background, revealing the clear capsule of Cryptococcus. Mucicarmine also stains the capsule red."
+        },
+        {
+          "text": "Gomori methenamine silver (GMS)",
+          "isCorrect": false,
+          "explanation": "GMS stains fungal cell walls, but not the capsule."
+        },
+        {
+          "text": "Periodic acid‑Schiff (PAS)",
+          "isCorrect": false,
+          "explanation": "PAS stains carbohydrates, including fungal cell walls, but is not specific for the capsule."
+        },
+        {
+          "text": "Mucicarmine",
+          "isCorrect": false,
+          "explanation": "Mucicarmine stains the capsule red, but India ink is a rapid, classic method."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "India ink and mucicarmine are used; but the classic rapid test is India ink."
+        }
+      ],
+      "explanation": {
+        "overview": "India ink stains the background, revealing the clear capsule of Cryptococcus. Mucicarmine also stains the capsule red.",
+        "highYield": "Cryptococcus capsule = India ink (negative staining).",
+        "clinicalCorrelation": "Capsular antigen detection in serum/CSF is the preferred diagnostic method."
+      }
+    },
+    {
+      "id": "path_infectious_049",
+      "difficulty": 2,
+      "question": "The image shows a spherical yeast with narrow‑based budding and a thick capsule. This is characteristic of:",
+      "image": "path_infectious_cryptococcus.png",
+      "options": [
+        {
+          "text": "Cryptococcus neoformans",
+          "isCorrect": true,
+          "explanation": "Cryptococcus shows narrow‑based budding and a prominent capsule."
+        },
+        {
+          "text": "Blastomyces dermatitidis",
+          "isCorrect": false,
+          "explanation": "Blastomyces shows broad‑based budding."
+        },
+        {
+          "text": "Coccidioides immitis",
+          "isCorrect": false,
+          "explanation": "Coccidioides forms spherules containing endospores."
+        },
+        {
+          "text": "Histoplasma capsulatum",
+          "isCorrect": false,
+          "explanation": "Histoplasma is a small yeast with narrow‑based budding but lacks a thick capsule."
+        },
+        {
+          "text": "Paracoccidioides brasiliensis",
+          "isCorrect": false,
+          "explanation": "Paracoccidioides has multiple buds (pilot wheel)."
+        }
+      ],
+      "explanation": {
+        "overview": "Cryptococcus shows narrow‑based budding and a prominent capsule.",
+        "highYield": "Narrow‑based budding + capsule = Cryptococcus.",
+        "clinicalCorrelation": "Cryptococcus causes meningitis in immunocompromised; treat with amphotericin and fluconazole."
+      }
+    },
+    {
+      "id": "path_infectious_050",
+      "difficulty": 1,
+      "question": "Aspergillus fumigatus is characterized by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Septate hyphae with dichotomous branching at 45° angles",
+          "isCorrect": true,
+          "explanation": "Aspergillus has septate hyphae branching at acute angles (about 45°)."
+        },
+        {
+          "text": "Broad, non‑septate hyphae with right‑angle branching",
+          "isCorrect": false,
+          "explanation": "This describes Mucorales (zygomycetes)."
+        },
+        {
+          "text": "Spherules containing endospores",
+          "isCorrect": false,
+          "explanation": "This describes Coccidioides."
+        },
+        {
+          "text": "Yeast with broad‑based budding",
+          "isCorrect": false,
+          "explanation": "This describes Blastomyces."
+        },
+        {
+          "text": "Pseudohyphae and blastoconidia",
+          "isCorrect": false,
+          "explanation": "This describes Candida."
+        }
+      ],
+      "explanation": {
+        "overview": "Aspergillus has septate hyphae branching at acute angles (about 45°).",
+        "highYield": "Aspergillus = septate hyphae, 45° branching.",
+        "clinicalCorrelation": "Aspergillus causes allergic bronchopulmonary aspergillosis, aspergilloma, and invasive aspergillosis in immunocompromised."
+      }
+    },
+    {
+      "id": "path_infectious_051",
+      "difficulty": 2,
+      "question": "The image shows a fungal ball (aspergilloma) in a lung cavity. This is often seen in patients with:",
+      "image": "path_infectious_aspergilloma.png",
+      "options": [
+        {
+          "text": "Pre‑existing lung cavities (e.g., TB, sarcoidosis)",
+          "isCorrect": true,
+          "explanation": "Aspergilloma (fungus ball) colonizes pre‑existing lung cavities without tissue invasion."
+        },
+        {
+          "text": "Neutropenia",
+          "isCorrect": false,
+          "explanation": "Neutropenia predisposes to invasive aspergillosis, not aspergilloma."
+        },
+        {
+          "text": "HIV/AIDS",
+          "isCorrect": false,
+          "explanation": "HIV predisposes to invasive aspergillosis and other infections, but aspergilloma is usually in cavitary lung disease."
+        },
+        {
+          "text": "Diabetes",
+          "isCorrect": false,
+          "explanation": "Diabetes predisposes to mucormycosis, not typically aspergilloma."
+        },
+        {
+          "text": "Cystic fibrosis",
+          "isCorrect": false,
+          "explanation": "CF patients may have allergic bronchopulmonary aspergillosis, but aspergilloma is more common in TB cavities."
+        }
+      ],
+      "explanation": {
+        "overview": "Aspergilloma (fungus ball) colonizes pre‑existing lung cavities without tissue invasion.",
+        "highYield": "Aspergilloma = fungus ball in old cavity (TB, sarcoid).",
+        "clinicalCorrelation": "May cause hemoptysis; treatment includes surgical resection or embolization."
+      }
+    },
+    {
+      "id": "path_infectious_052",
+      "difficulty": 2,
+      "question": "Mucormycosis (zygomycosis) is caused by fungi of the order Mucorales. They have characteristic:",
+      "image": null,
+      "options": [
+        {
+          "text": "Wide, non‑septate hyphae with right‑angle branching",
+          "isCorrect": true,
+          "explanation": "Mucorales have broad, ribbon‑like, pauciseptate hyphae with irregular branching at wide angles (90°)."
+        },
+        {
+          "text": "Septate hyphae with 45° branching",
+          "isCorrect": false,
+          "explanation": "This is Aspergillus."
+        },
+        {
+          "text": "Yeast with broad‑based budding",
+          "isCorrect": false,
+          "explanation": "This is Blastomyces."
+        },
+        {
+          "text": "Spherules with endospores",
+          "isCorrect": false,
+          "explanation": "This is Coccidioides."
+        },
+        {
+          "text": "Encapsulated yeast",
+          "isCorrect": false,
+          "explanation": "This is Cryptococcus."
+        }
+      ],
+      "explanation": {
+        "overview": "Mucorales have broad, ribbon‑like, pauciseptate hyphae with irregular branching at wide angles (90°).",
+        "highYield": "Mucormycosis = non‑septate hyphae, 90° branching.",
+        "clinicalCorrelation": "Occurs in diabetics (rhinocerebral form) and neutropenics; treat with amphotericin B and surgical debridement."
+      }
+    },
+    {
+      "id": "path_infectious_053",
+      "difficulty": 1,
+      "question": "Which parasite causes malaria?",
+      "image": null,
+      "options": [
+        {
+          "text": "Plasmodium species",
+          "isCorrect": true,
+          "explanation": "Malaria is caused by Plasmodium falciparum, P. vivax, P. ovale, P. malariae, and P. knowlesi."
+        },
+        {
+          "text": "Toxoplasma gondii",
+          "isCorrect": false,
+          "explanation": "Toxoplasma causes toxoplasmosis, not malaria."
+        },
+        {
+          "text": "Leishmania donovani",
+          "isCorrect": false,
+          "explanation": "Leishmania causes leishmaniasis."
+        },
+        {
+          "text": "Trypanosoma cruzi",
+          "isCorrect": false,
+          "explanation": "T. cruzi causes Chagas disease."
+        },
+        {
+          "text": "Entamoeba histolytica",
+          "isCorrect": false,
+          "explanation": "E. histolytica causes amebiasis."
+        }
+      ],
+      "explanation": {
+        "overview": "Malaria is caused by Plasmodium falciparum, P. vivax, P. ovale, P. malariae, and P. knowlesi.",
+        "highYield": "Malaria = Plasmodium species.",
+        "clinicalCorrelation": "Transmitted by Anopheles mosquitoes; treat with artemisinin‑based combination therapy."
+      }
+    },
+    {
+      "id": "path_infectious_054",
+      "difficulty": 2,
+      "question": "The image shows a ring form inside a red blood cell. This is characteristic of:",
+      "image": "path_infectious_plasmodium.png",
+      "options": [
+        {
+          "text": "Plasmodium falciparum",
+          "isCorrect": true,
+          "explanation": "Ring forms (trophozoites) of Plasmodium in RBCs are diagnostic for malaria."
+        },
+        {
+          "text": "Babesia microti",
+          "isCorrect": false,
+          "explanation": "Babesia can also form ring forms, but they are typically smaller and without pigment."
+        },
+        {
+          "text": "Toxoplasma gondii",
+          "isCorrect": false,
+          "explanation": "Toxoplasma does not form rings in RBCs."
+        },
+        {
+          "text": "Leishmania donovani",
+          "isCorrect": false,
+          "explanation": "Leishmania infects macrophages, not RBCs."
+        },
+        {
+          "text": "Trypanosoma cruzi",
+          "isCorrect": false,
+          "explanation": "Trypanosoma does not form rings in RBCs."
+        }
+      ],
+      "explanation": {
+        "overview": "Ring forms (trophozoites) of Plasmodium in RBCs are diagnostic for malaria.",
+        "highYield": "Ring forms in RBCs = Plasmodium (malaria).",
+        "clinicalCorrelation": "Thick and thin blood smears are used for diagnosis."
+      }
+    },
+    {
+      "id": "path_infectious_055",
+      "difficulty": 1,
+      "question": "Toxoplasma gondii is an obligate intracellular parasite that can cause congenital infection and encephalitis in immunocompromised. The definitive host is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cat (felidae family)",
+          "isCorrect": true,
+          "explanation": "Cats are the definitive host for Toxoplasma, shedding oocysts in feces."
+        },
+        {
+          "text": "Dog",
+          "isCorrect": false,
+          "explanation": "Dogs are not the definitive host."
+        },
+        {
+          "text": "Human",
+          "isCorrect": false,
+          "explanation": "Humans are intermediate hosts."
+        },
+        {
+          "text": "Rodent",
+          "isCorrect": false,
+          "explanation": "Rodents are intermediate hosts."
+        },
+        {
+          "text": "Cattle",
+          "isCorrect": false,
+          "explanation": "Cattle are not the definitive host."
+        }
+      ],
+      "explanation": {
+        "overview": "Cats are the definitive host for Toxoplasma, shedding oocysts in feces.",
+        "highYield": "Toxoplasma definitive host = cat.",
+        "clinicalCorrelation": "Pregnant women should avoid cat litter; immunocompromised should receive prophylaxis."
+      }
+    },
+    {
+      "id": "path_infectious_056",
+      "difficulty": 2,
+      "question": "The image shows a brain abscess with a cyst containing bradyzoites. This is characteristic of:",
+      "image": "path_infectious_toxo_cyst.png",
+      "options": [
+        {
+          "text": "Toxoplasma gondii",
+          "isCorrect": true,
+          "explanation": "Toxoplasma cysts in brain contain bradyzoites, often seen in reactivated infection."
+        },
+        {
+          "text": "Taenia solium (cysticercosis)",
+          "isCorrect": false,
+          "explanation": "Cysticercosis shows larvae (cysticerci) with a scolex."
+        },
+        {
+          "text": "Echinococcus granulosus",
+          "isCorrect": false,
+          "explanation": "Echinococcus forms hydatid cysts with brood capsules."
+        },
+        {
+          "text": "Entamoeba histolytica",
+          "isCorrect": false,
+          "explanation": "Amebic abscesses do not contain bradyzoites."
+        },
+        {
+          "text": "Naegleria fowleri",
+          "isCorrect": false,
+          "explanation": "Naegleria causes acute meningoencephalitis, not cysts with bradyzoites."
+        }
+      ],
+      "explanation": {
+        "overview": "Toxoplasma cysts in brain contain bradyzoites, often seen in reactivated infection.",
+        "highYield": "Bradyzoites in cyst = Toxoplasma.",
+        "clinicalCorrelation": "In HIV, toxoplasmic encephalitis is a common opportunistic infection; treat with pyrimethamine and sulfadiazine."
+      }
+    },
+    {
+      "id": "path_infectious_057",
+      "difficulty": 1,
+      "question": "Entamoeba histolytica causes amebic dysentery and can lead to which extraintestinal complication?",
+      "image": null,
+      "options": [
+        {
+          "text": "Liver abscess (anchovy paste)",
+          "isCorrect": true,
+          "explanation": "E. histolytica most commonly causes amebic liver abscess; the aspirate often resembles anchovy paste."
+        },
+        {
+          "text": "Lung abscess",
+          "isCorrect": false,
+          "explanation": "Lung abscess is less common."
+        },
+        {
+          "text": "Brain abscess",
+          "isCorrect": false,
+          "explanation": "Brain abscess is rare."
+        },
+        {
+          "text": "Pericarditis",
+          "isCorrect": false,
+          "explanation": "Pericarditis can occur but is less common."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "Liver abscess is the most common extraintestinal manifestation."
+        }
+      ],
+      "explanation": {
+        "overview": "E. histolytica most commonly causes amebic liver abscess; the aspirate often resembles anchovy paste.",
+        "highYield": "Amebic liver abscess = anchovy paste appearance.",
+        "clinicalCorrelation": "Treat with metronidazole followed by a luminal agent (e.g., paromomycin)."
+      }
+    },
+    {
+      "id": "path_infectious_058",
+      "difficulty": 2,
+      "question": "The image shows a flask‑shaped ulcer in the colon. This is characteristic of:",
+      "image": "path_infectious_amebic_ulcer.png",
+      "options": [
+        {
+          "text": "Amebic colitis (Entamoeba histolytica)",
+          "isCorrect": true,
+          "explanation": "Flask‑shaped ulcers are typical of amebic colitis, with undermining of mucosa."
+        },
+        {
+          "text": "Shigellosis",
+          "isCorrect": false,
+          "explanation": "Shigellosis causes superficial mucosal ulceration, not flask‑shaped."
+        },
+        {
+          "text": "Crohn disease",
+          "isCorrect": false,
+          "explanation": "Crohn disease causes transmural inflammation and fissures, not flask‑shaped."
+        },
+        {
+          "text": "Ulcerative colitis",
+          "isCorrect": false,
+          "explanation": "UC causes continuous mucosal inflammation, not flask‑shaped."
+        },
+        {
+          "text": "Pseudomembranous colitis",
+          "isCorrect": false,
+          "explanation": "Pseudomembranous colitis has yellow plaques, not flask ulcers."
+        }
+      ],
+      "explanation": {
+        "overview": "Flask‑shaped ulcers are typical of amebic colitis, with undermining of mucosa.",
+        "highYield": "Flask‑shaped ulcer = amebic colitis.",
+        "clinicalCorrelation": "Diagnosis via stool O&P or antigen detection; treat with metronidazole."
+      }
+    },
+    {
+      "id": "path_infectious_059",
+      "difficulty": 1,
+      "question": "Giardia lamblia causes diarrheal disease characterized by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Profuse watery diarrhea with malabsorption, and trophozoites with 'falling leaf' motility",
+          "isCorrect": true,
+          "explanation": "Giardiasis presents with foul‑smelling, watery diarrhea, steatorrhea, and malabsorption; trophozoites have characteristic motility."
+        },
+        {
+          "text": "Bloody diarrhea",
+          "isCorrect": false,
+          "explanation": "Bloody diarrhea is typical of enteroinvasive pathogens like Shigella."
+        },
+        {
+          "text": "Steatorrhea",
+          "isCorrect": false,
+          "explanation": "Steatorrhea can occur, but the classic description includes profuse watery diarrhea."
+        },
+        {
+          "text": "Constipation",
+          "isCorrect": false,
+          "explanation": "Giardia causes diarrhea, not constipation."
+        },
+        {
+          "text": "Alternating diarrhea and constipation",
+          "isCorrect": false,
+          "explanation": "This is more typical of irritable bowel syndrome."
+        }
+      ],
+      "explanation": {
+        "overview": "Giardiasis presents with foul‑smelling, watery diarrhea, steatorrhea, and malabsorption; trophozoites have characteristic motility.",
+        "highYield": "Giardia = watery diarrhea, malabsorption, 'falling leaf' motility.",
+        "clinicalCorrelation": "Diagnosis via stool antigen or microscopy; treat with metronidazole or tinidazole."
+      }
+    },
+    {
+      "id": "path_infectious_060",
+      "difficulty": 2,
+      "question": "The image shows a pear‑shaped binucleate trophozoite with a ventral disc. This is characteristic of:",
+      "image": "path_infectious_giardia.png",
+      "options": [
+        {
+          "text": "Giardia lamblia",
+          "isCorrect": true,
+          "explanation": "Giardia trophozoites are pear‑shaped with two nuclei and a ventral sucking disc."
+        },
+        {
+          "text": "Trichomonas vaginalis",
+          "isCorrect": false,
+          "explanation": "Trichomonas has undulating membrane and a single nucleus."
+        },
+        {
+          "text": "Entamoeba histolytica",
+          "isCorrect": false,
+          "explanation": "Entamoeba trophozoites are amoeboid with a single nucleus."
+        },
+        {
+          "text": "Cryptosporidium parvum",
+          "isCorrect": false,
+          "explanation": "Cryptosporidium is a small intracellular parasite, not pear‑shaped."
+        },
+        {
+          "text": "Cyclospora cayetanensis",
+          "isCorrect": false,
+          "explanation": "Cyclospora is a coccidian, not pear‑shaped."
+        }
+      ],
+      "explanation": {
+        "overview": "Giardia trophozoites are pear‑shaped with two nuclei and a ventral sucking disc.",
+        "highYield": "Pear‑shaped binucleate = Giardia.",
+        "clinicalCorrelation": "Transmission via contaminated water; treat with metronidazole."
+      }
+    },
+    {
+      "id": "path_infectious_061",
+      "difficulty": 2,
+      "question": "Which of the following is a characteristic of HIV infection in its early (acute) phase?",
+      "image": null,
+      "options": [
+        {
+          "text": "Mononucleosis‑like syndrome with high viral load and CD4 count drop",
+          "isCorrect": true,
+          "explanation": "Acute HIV presents with fever, lymphadenopathy, and a high viral load, often with transient CD4 decline."
+        },
+        {
+          "text": "Opportunistic infections such as Pneumocystis pneumonia",
+          "isCorrect": false,
+          "explanation": "Opportunistic infections occur in late stage (AIDS), not acute phase."
+        },
+        {
+          "text": "Kaposi sarcoma",
+          "isCorrect": false,
+          "explanation": "Kaposi sarcoma is a late manifestation."
+        },
+        {
+          "text": "CD4 count <200 cells/µL",
+          "isCorrect": false,
+          "explanation": "CD4 <200 defines AIDS, not acute infection."
+        },
+        {
+          "text": "Negative HIV antibody test",
+          "isCorrect": false,
+          "explanation": "Antibody test is negative in acute infection (window period); p24 antigen or RNA is positive."
+        }
+      ],
+      "explanation": {
+        "overview": "Acute HIV presents with fever, lymphadenopathy, and a high viral load, often with transient CD4 decline.",
+        "highYield": "Acute HIV = mononucleosis‑like syndrome, high viral load.",
+        "clinicalCorrelation": "Diagnosis via HIV RNA or p24 antigen; early treatment improves outcomes."
+      }
+    },
+    {
+      "id": "path_infectious_062",
+      "difficulty": 2,
+      "question": "Hepatitis A virus (HAV) is transmitted by the fecal‑oral route and typically causes:",
+      "image": null,
+      "options": [
+        {
+          "text": "Acute self‑limited hepatitis, does not lead to chronic infection",
+          "isCorrect": true,
+          "explanation": "HAV causes acute hepatitis with no chronic carrier state."
+        },
+        {
+          "text": "Chronic hepatitis with risk of cirrhosis",
+          "isCorrect": false,
+          "explanation": "HAV does not become chronic."
+        },
+        {
+          "text": "Hepatocellular carcinoma",
+          "isCorrect": false,
+          "explanation": "HCC is associated with HBV and HCV, not HAV."
+        },
+        {
+          "text": "Fulminant hepatic failure in all cases",
+          "isCorrect": false,
+          "explanation": "Fulminant hepatic failure occurs in <1% of cases."
+        },
+        {
+          "text": "Parenteral transmission",
+          "isCorrect": false,
+          "explanation": "HAV is transmitted via fecal‑oral, not parenteral."
+        }
+      ],
+      "explanation": {
+        "overview": "HAV causes acute hepatitis with no chronic carrier state.",
+        "highYield": "HAV = acute, fecal‑oral, no chronicity.",
+        "clinicalCorrelation": "Vaccination is available; hygiene and sanitation are preventive."
+      }
+    },
+    {
+      "id": "path_infectious_063",
+      "difficulty": 2,
+      "question": "Hepatitis E virus (HEV) is transmitted via:",
+      "image": null,
+      "options": [
+        {
+          "text": "Fecal‑oral route, often via contaminated water",
+          "isCorrect": true,
+          "explanation": "HEV is enterically transmitted, similar to HAV, and can cause acute hepatitis."
+        },
+        {
+          "text": "Blood transfusion",
+          "isCorrect": false,
+          "explanation": "Transfusion transmission is rare; main route is fecal‑oral."
+        },
+        {
+          "text": "Sexual contact",
+          "isCorrect": false,
+          "explanation": "Sexual transmission is not typical."
+        },
+        {
+          "text": "Vertical transmission",
+          "isCorrect": false,
+          "explanation": "Vertical transmission can occur but is not the primary route."
+        },
+        {
+          "text": "Respiratory droplets",
+          "isCorrect": false,
+          "explanation": "Not respiratory."
+        }
+      ],
+      "explanation": {
+        "overview": "HEV is enterically transmitted, similar to HAV, and can cause acute hepatitis.",
+        "highYield": "HEV = fecal‑oral (waterborne).",
+        "clinicalCorrelation": "High mortality in pregnant women; supportive care."
+      }
+    },
+    {
+      "id": "path_infectious_064",
+      "difficulty": 2,
+      "question": "Bordetella pertussis causes whooping cough. Which of the following is a key virulence factor?",
+      "image": null,
+      "options": [
+        {
+          "text": "Pertussis toxin (adenylate cyclase activation)",
+          "isCorrect": true,
+          "explanation": "Pertussis toxin is a major virulence factor that inhibits G protein signaling and causes lymphocytosis."
+        },
+        {
+          "text": "LPS",
+          "isCorrect": false,
+          "explanation": "LPS is an endotoxin, not the key factor."
+        },
+        {
+          "text": "Protein A",
+          "isCorrect": false,
+          "explanation": "Protein A is a virulence factor of Staphylococcus aureus."
+        },
+        {
+          "text": "M protein",
+          "isCorrect": false,
+          "explanation": "M protein is a virulence factor of Streptococcus pyogenes."
+        },
+        {
+          "text": "Exfoliative toxin",
+          "isCorrect": false,
+          "explanation": "Exfoliative toxin is produced by Staphylococcus aureus."
+        }
+      ],
+      "explanation": {
+        "overview": "Pertussis toxin is a major virulence factor that inhibits G protein signaling and causes lymphocytosis.",
+        "highYield": "Pertussis = pertussis toxin (adenylate cyclase).",
+        "clinicalCorrelation": "Vaccination (DTaP) prevents disease; treatment with macrolides reduces transmission."
+      }
+    },
+    {
+      "id": "path_infectious_065",
+      "difficulty": 2,
+      "question": "Chlamydia trachomatis is an obligate intracellular bacterium that can cause:",
+      "image": null,
+      "options": [
+        {
+          "text": "Urethritis, cervicitis, pelvic inflammatory disease, and neonatal conjunctivitis",
+          "isCorrect": true,
+          "explanation": "C. trachomatis causes these infections and can lead to infertility."
+        },
+        {
+          "text": "Pneumonia in immunocompetent adults",
+          "isCorrect": false,
+          "explanation": "C. pneumoniae causes atypical pneumonia, not C. trachomatis."
+        },
+        {
+          "text": "Meningitis",
+          "isCorrect": false,
+          "explanation": "Meningitis is not typical."
+        },
+        {
+          "text": "Gastroenteritis",
+          "isCorrect": false,
+          "explanation": "Gastroenteritis is not a typical manifestation."
+        },
+        {
+          "text": "Skin abscesses",
+          "isCorrect": false,
+          "explanation": "Skin abscesses are not typical."
+        }
+      ],
+      "explanation": {
+        "overview": "C. trachomatis causes these infections and can lead to infertility.",
+        "highYield": "Chlamydia trachomatis = urethritis, PID, neonatal conjunctivitis.",
+        "clinicalCorrelation": "Treat with doxycycline or azithromycin; screen sexually active women."
+      }
+    },
+    {
+      "id": "path_infectious_066",
+      "difficulty": 2,
+      "question": "Rickettsia rickettsii is transmitted by the tick Dermacentor and causes:",
+      "image": null,
+      "options": [
+        {
+          "text": "Rocky Mountain spotted fever (RMSF) with a petechial rash on palms and soles",
+          "isCorrect": true,
+          "explanation": "RMSF is a tick‑borne illness with fever, headache, and a petechial rash that starts on extremities."
+        },
+        {
+          "text": "Typhus fever",
+          "isCorrect": false,
+          "explanation": "Typhus is caused by R. prowazekii (louse‑borne) or R. typhi (flea‑borne)."
+        },
+        {
+          "text": "Ehrlichiosis",
+          "isCorrect": false,
+          "explanation": "Ehrlichiosis is caused by Ehrlichia species, not Rickettsia."
+        },
+        {
+          "text": "Lyme disease",
+          "isCorrect": false,
+          "explanation": "Lyme disease is caused by Borrelia burgdorferi."
+        },
+        {
+          "text": "Babesiosis",
+          "isCorrect": false,
+          "explanation": "Babesiosis is caused by Babesia microti."
+        }
+      ],
+      "explanation": {
+        "overview": "RMSF is a tick‑borne illness with fever, headache, and a petechial rash that starts on extremities.",
+        "highYield": "RMSF = petechial rash palms/soles + tick exposure.",
+        "clinicalCorrelation": "Treat promptly with doxycycline; delay can be fatal."
+      }
+    },
+    {
+      "id": "path_infectious_067",
+      "difficulty": 2,
+      "question": "Ehrlichia chaffeensis causes human monocytic ehrlichiosis (HME) and is transmitted by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Tick bites (Amblyomma americanum)",
+          "isCorrect": true,
+          "explanation": "E. chaffeensis is transmitted by the Lone Star tick."
+        },
+        {
+          "text": "Mosquito bites",
+          "isCorrect": false,
+          "explanation": "Mosquitoes transmit malaria, dengue, etc."
+        },
+        {
+          "text": "Flea bites",
+          "isCorrect": false,
+          "explanation": "Fleas transmit typhus."
+        },
+        {
+          "text": "Louse bites",
+          "isCorrect": false,
+          "explanation": "Lice transmit epidemic typhus."
+        },
+        {
+          "text": "Direct contact with animals",
+          "isCorrect": false,
+          "explanation": "Not the primary mode."
+        }
+      ],
+      "explanation": {
+        "overview": "E. chaffeensis is transmitted by the Lone Star tick.",
+        "highYield": "Ehrlichiosis = tick‑borne.",
+        "clinicalCorrelation": "Presents with fever, headache, and leukopenia; treat with doxycycline."
+      }
+    },
+    {
+      "id": "path_infectious_068",
+      "difficulty": 2,
+      "question": "Which of the following is a helminth infection transmitted by ingestion of undercooked pork?",
+      "image": null,
+      "options": [
+        {
+          "text": "Trichinella spiralis (trichinosis)",
+          "isCorrect": true,
+          "explanation": "Trichinosis is acquired by eating raw/undercooked pork containing encysted larvae."
+        },
+        {
+          "text": "Taenia solium (taeniasis/cysticercosis)",
+          "isCorrect": false,
+          "explanation": "Taenia solium is also from pork, but the question specifically asks for the parasite causing trichinosis."
+        },
+        {
+          "text": "Ascaris lumbricoides",
+          "isCorrect": false,
+          "explanation": "Ascaris is transmitted by fecal‑oral, not pork."
+        },
+        {
+          "text": "Hookworm",
+          "isCorrect": false,
+          "explanation": "Hookworm larvae penetrate skin."
+        },
+        {
+          "text": "Enterobius vermicularis",
+          "isCorrect": false,
+          "explanation": "Pinworm is transmitted via fecal‑oral/auto‑infection."
+        }
+      ],
+      "explanation": {
+        "overview": "Trichinosis is acquired by eating raw/undercooked pork containing encysted larvae.",
+        "highYield": "Trichinella = undercooked pork.",
+        "clinicalCorrelation": "Presents with myalgias, periorbital edema, eosinophilia; treat with albendazole and steroids."
+      }
+    },
+    {
+      "id": "path_infectious_069",
+      "difficulty": 2,
+      "question": "Which parasite causes cysticercosis (brain cysts) and is acquired by ingesting eggs of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Taenia solium (pork tapeworm)",
+          "isCorrect": true,
+          "explanation": "Cysticercosis results from ingestion of T. solium eggs from contaminated food or autoinfection."
+        },
+        {
+          "text": "Taenia saginata (beef tapeworm)",
+          "isCorrect": false,
+          "explanation": "T. saginata causes taeniasis but not cysticercosis."
+        },
+        {
+          "text": "Echinococcus granulosus",
+          "isCorrect": false,
+          "explanation": "Echinococcus causes hydatid cysts, not cysticercosis."
+        },
+        {
+          "text": "Trichinella spiralis",
+          "isCorrect": false,
+          "explanation": "Trichinella causes trichinosis, not cysticercosis."
+        },
+        {
+          "text": "Hymenolepis nana",
+          "isCorrect": false,
+          "explanation": "Hymenolepis causes dwarf tapeworm infection, not cysticercosis."
+        }
+      ],
+      "explanation": {
+        "overview": "Cysticercosis results from ingestion of T. solium eggs from contaminated food or autoinfection.",
+        "highYield": "Cysticercosis = Taenia solium (pork tapeworm).",
+        "clinicalCorrelation": "Neurocysticercosis is a leading cause of seizures in endemic areas; treat with albendazole and steroids."
+      }
+    },
+    {
+      "id": "path_infectious_070",
+      "difficulty": 2,
+      "question": "Echinococcus granulosus causes hydatid cysts, most commonly in which organ?",
+      "image": null,
+      "options": [
+        {
+          "text": "Liver",
+          "isCorrect": true,
+          "explanation": "Echinococcal cysts most commonly form in the liver, followed by lungs."
+        },
+        {
+          "text": "Brain",
+          "isCorrect": false,
+          "explanation": "Brain cysts are less common."
+        },
+        {
+          "text": "Kidney",
+          "isCorrect": false,
+          "explanation": "Kidney involvement is rare."
+        },
+        {
+          "text": "Bone",
+          "isCorrect": false,
+          "explanation": "Bone involvement is rare."
+        },
+        {
+          "text": "Heart",
+          "isCorrect": false,
+          "explanation": "Cardiac involvement is rare."
+        }
+      ],
+      "explanation": {
+        "overview": "Echinococcal cysts most commonly form in the liver, followed by lungs.",
+        "highYield": "Hydatid cyst = liver (most common).",
+        "clinicalCorrelation": "Caused by E. granulosus; treatment includes surgical resection and albendazole."
+      }
+    },
+    {
+      "id": "path_infectious_071",
+      "difficulty": 2,
+      "question": "Schistosomiasis is caused by trematodes (blood flukes). Which species causes urinary schistosomiasis?",
+      "image": null,
+      "options": [
+        {
+          "text": "Schistosoma haematobium",
+          "isCorrect": true,
+          "explanation": "S. haematobium affects the vesical venous plexus, causing hematuria and bladder fibrosis."
+        },
+        {
+          "text": "Schistosoma mansoni",
+          "isCorrect": false,
+          "explanation": "S. mansoni causes intestinal schistosomiasis."
+        },
+        {
+          "text": "Schistosoma japonicum",
+          "isCorrect": false,
+          "explanation": "S. japonicum causes intestinal schistosomiasis."
+        },
+        {
+          "text": "Schistosoma mekongi",
+          "isCorrect": false,
+          "explanation": "S. mekongi causes intestinal schistosomiasis."
+        },
+        {
+          "text": "Schistosoma intercalatum",
+          "isCorrect": false,
+          "explanation": "S. intercalatum causes intestinal schistosomiasis."
+        }
+      ],
+      "explanation": {
+        "overview": "S. haematobium affects the vesical venous plexus, causing hematuria and bladder fibrosis.",
+        "highYield": "S. haematobium = urinary schistosomiasis.",
+        "clinicalCorrelation": "Chronic infection can lead to bladder cancer (squamous cell carcinoma)."
+      }
+    },
+    {
+      "id": "path_infectious_072",
+      "difficulty": 2,
+      "question": "Which parasite causes lymphatic filariasis (elephantiasis)?",
+      "image": null,
+      "options": [
+        {
+          "text": "Wuchereria bancrofti",
+          "isCorrect": true,
+          "explanation": "W. bancrofti is the most common cause of lymphatic filariasis, transmitted by mosquitoes."
+        },
+        {
+          "text": "Brugia malayi",
+          "isCorrect": false,
+          "explanation": "B. malayi also causes filariasis but is less common."
+        },
+        {
+          "text": "Onchocerca volvulus",
+          "isCorrect": false,
+          "explanation": "O. volvulus causes river blindness, not elephantiasis."
+        },
+        {
+          "text": "Loa loa",
+          "isCorrect": false,
+          "explanation": "L. loa causes loiasis (eye worm)."
+        },
+        {
+          "text": "Dracunculus medinensis",
+          "isCorrect": false,
+          "explanation": "D. medinensis causes guinea worm disease."
+        }
+      ],
+      "explanation": {
+        "overview": "W. bancrofti is the most common cause of lymphatic filariasis, transmitted by mosquitoes.",
+        "highYield": "Elephantiasis = Wuchereria bancrofti (filarial).",
+        "clinicalCorrelation": "Treat with diethylcarbamazine (DEC) and albendazole."
+      }
+    },
+    {
+      "id": "path_infectious_073",
+      "difficulty": 2,
+      "question": "Dengue fever is caused by a flavivirus transmitted by which mosquito?",
+      "image": null,
+      "options": [
+        {
+          "text": "Aedes aegypti",
+          "isCorrect": true,
+          "explanation": "Dengue is transmitted by Aedes aegypti, a day‑biting mosquito."
+        },
+        {
+          "text": "Anopheles gambiae",
+          "isCorrect": false,
+          "explanation": "Anopheles transmits malaria."
+        },
+        {
+          "text": "Culex pipiens",
+          "isCorrect": false,
+          "explanation": "Culex transmits West Nile virus and filariasis."
+        },
+        {
+          "text": "Phlebotomus",
+          "isCorrect": false,
+          "explanation": "Phlebotomus (sandfly) transmits leishmaniasis."
+        },
+        {
+          "text": "Simulium",
+          "isCorrect": false,
+          "explanation": "Simulium (blackfly) transmits onchocerciasis."
+        }
+      ],
+      "explanation": {
+        "overview": "Dengue is transmitted by Aedes aegypti, a day‑biting mosquito.",
+        "highYield": "Dengue = Aedes aegypti.",
+        "clinicalCorrelation": "Presents with fever, retro‑orbital pain, rash; severe forms include dengue hemorrhagic fever/shock."
+      }
+    },
+    {
+      "id": "path_infectious_074",
+      "difficulty": 2,
+      "question": "Zika virus is also transmitted by Aedes mosquitoes. A major complication of congenital Zika infection is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Microcephaly and other neurologic abnormalities",
+          "isCorrect": true,
+          "explanation": "Zika infection during pregnancy can cause microcephaly, intracranial calcifications, and other birth defects."
+        },
+        {
+          "text": "Hydrocephalus",
+          "isCorrect": false,
+          "explanation": "Hydrocephalus is not the classic finding."
+        },
+        {
+          "text": "Congenital heart disease",
+          "isCorrect": false,
+          "explanation": "Not the primary complication."
+        },
+        {
+          "text": "Cleft palate",
+          "isCorrect": false,
+          "explanation": "Not associated."
+        },
+        {
+          "text": "Spina bifida",
+          "isCorrect": false,
+          "explanation": "Not associated."
+        }
+      ],
+      "explanation": {
+        "overview": "Zika infection during pregnancy can cause microcephaly, intracranial calcifications, and other birth defects.",
+        "highYield": "Zika = congenital microcephaly.",
+        "clinicalCorrelation": "Prevention by avoiding mosquito bites in endemic areas."
+      }
+    },
+    {
+      "id": "path_infectious_075",
+      "difficulty": 2,
+      "question": "West Nile virus is a mosquito‑borne flavivirus that can cause:",
+      "image": null,
+      "options": [
+        {
+          "text": "Encephalitis and meningoencephalitis",
+          "isCorrect": true,
+          "explanation": "West Nile virus can cause neurologic disease, especially in elderly."
+        },
+        {
+          "text": "Hemorrhagic fever",
+          "isCorrect": false,
+          "explanation": "Hemorrhagic fever is more typical of dengue, yellow fever, Ebola."
+        },
+        {
+          "text": "Rash with desquamation",
+          "isCorrect": false,
+          "explanation": "Rash may occur but is not the main feature."
+        },
+        {
+          "text": "Polyarthritis",
+          "isCorrect": false,
+          "explanation": "Polyarthritis is seen in Chikungunya and Ross River virus."
+        },
+        {
+          "text": "Retinitis",
+          "isCorrect": false,
+          "explanation": "Retinitis is not typical."
+        }
+      ],
+      "explanation": {
+        "overview": "West Nile virus can cause neurologic disease, especially in elderly.",
+        "highYield": "West Nile = encephalitis.",
+        "clinicalCorrelation": "Supportive care; no specific antiviral therapy."
+      }
+    },
+    {
+      "id": "path_infectious_076",
+      "difficulty": 2,
+      "question": "Yellow fever is a mosquito‑borne flavivirus that causes:",
+      "image": null,
+      "options": [
+        {
+          "text": "Fever, jaundice, and hemorrhagic manifestations",
+          "isCorrect": true,
+          "explanation": "Yellow fever presents with high fever, jaundice, and bleeding, with high mortality."
+        },
+        {
+          "text": "A self‑limited febrile illness",
+          "isCorrect": false,
+          "explanation": "It can be severe and fatal."
+        },
+        {
+          "text": "Chronic liver disease",
+          "isCorrect": false,
+          "explanation": "Chronic disease does not occur."
+        },
+        {
+          "text": "Meningitis",
+          "isCorrect": false,
+          "explanation": "Meningitis is not typical."
+        },
+        {
+          "text": "Pneumonia",
+          "isCorrect": false,
+          "explanation": "Pneumonia is not typical."
+        }
+      ],
+      "explanation": {
+        "overview": "Yellow fever presents with high fever, jaundice, and bleeding, with high mortality.",
+        "highYield": "Yellow fever = jaundice, hemorrhage.",
+        "clinicalCorrelation": "Prevention via vaccination (live‑attenuated)."
+      }
+    },
+    {
+      "id": "path_infectious_077",
+      "difficulty": 2,
+      "question": "Which of the following viruses causes rabies?",
+      "image": null,
+      "options": [
+        {
+          "text": "Lyssavirus (RNA virus)",
+          "isCorrect": true,
+          "explanation": "Rabies is caused by the rabies virus, a neurotropic lyssavirus."
+        },
+        {
+          "text": "Herpes simplex virus",
+          "isCorrect": false,
+          "explanation": "HSV causes herpes."
+        },
+        {
+          "text": "Varicella‑zoster virus",
+          "isCorrect": false,
+          "explanation": "VZV causes chickenpox and shingles."
+        },
+        {
+          "text": "Cytomegalovirus",
+          "isCorrect": false,
+          "explanation": "CMV causes mononucleosis and congenital infections."
+        },
+        {
+          "text": "Parvovirus B19",
+          "isCorrect": false,
+          "explanation": "Parvovirus causes erythema infectiosum."
+        }
+      ],
+      "explanation": {
+        "overview": "Rabies is caused by the rabies virus, a neurotropic lyssavirus.",
+        "highYield": "Rabies = lyssavirus (RNA).",
+        "clinicalCorrelation": "Post‑exposure prophylaxis with vaccine and immune globulin is essential."
+      }
+    },
+    {
+      "id": "path_infectious_078",
+      "difficulty": 2,
+      "question": "The characteristic pathology of rabies includes Negri bodies, which are:",
+      "image": null,
+      "options": [
+        {
+          "text": "Eosinophilic cytoplasmic inclusions in neurons",
+          "isCorrect": true,
+          "explanation": "Negri bodies are pathognomonic for rabies."
+        },
+        {
+          "text": "Intranuclear inclusions in glial cells",
+          "isCorrect": false,
+          "explanation": "Negri bodies are cytoplasmic, not nuclear."
+        },
+        {
+          "text": "Multinucleated giant cells",
+          "isCorrect": false,
+          "explanation": "Multinucleated giant cells are seen in other infections."
+        },
+        {
+          "text": "Granulomas",
+          "isCorrect": false,
+          "explanation": "Granulomas are not typical."
+        },
+        {
+          "text": "Perivascular cuffing only",
+          "isCorrect": false,
+          "explanation": "Perivascular cuffing is a nonspecific finding."
+        }
+      ],
+      "explanation": {
+        "overview": "Negri bodies are pathognomonic for rabies.",
+        "highYield": "Negri bodies = cytoplasmic inclusions in rabies.",
+        "clinicalCorrelation": "Diagnosis confirmed by immunofluorescence or PCR."
+      }
+    },
+    {
+      "id": "path_infectious_079",
+      "difficulty": 2,
+      "question": "Mumps virus is a paramyxovirus that causes parotitis. A potential complication is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Orchitis, oophoritis, and meningoencephalitis",
+          "isCorrect": true,
+          "explanation": "Mumps can cause inflammation of the testes, ovaries, and central nervous system."
+        },
+        {
+          "text": "Hepatitis",
+          "isCorrect": false,
+          "explanation": "Hepatitis is not a common complication."
+        },
+        {
+          "text": "Nephritis",
+          "isCorrect": false,
+          "explanation": "Nephritis is not typical."
+        },
+        {
+          "text": "Pneumonia",
+          "isCorrect": false,
+          "explanation": "Pneumonia is not typical."
+        },
+        {
+          "text": "Myocarditis",
+          "isCorrect": false,
+          "explanation": "Myocarditis is rare."
+        }
+      ],
+      "explanation": {
+        "overview": "Mumps can cause inflammation of the testes, ovaries, and central nervous system.",
+        "highYield": "Mumps complications: orchitis, oophoritis, meningitis.",
+        "clinicalCorrelation": "Vaccination (MMR) prevents mumps."
+      }
+    },
+    {
+      "id": "path_infectious_080",
+      "difficulty": 2,
+      "question": "Measles (rubeola) virus causes which characteristic histologic finding?",
+      "image": null,
+      "options": [
+        {
+          "text": "Warthin‑Finkeldey giant cells (multinucleated cells in lymphoid tissue)",
+          "isCorrect": true,
+          "explanation": "Warthin‑Finkeldey cells are pathognomonic for measles."
+        },
+        {
+          "text": "Negri bodies",
+          "isCorrect": false,
+          "explanation": "Negri bodies are in rabies."
+        },
+        {
+          "text": "Cowdry type A inclusions",
+          "isCorrect": false,
+          "explanation": "Cowdry A is in HSV/VZV."
+        },
+        {
+          "text": "Owl's eye inclusions",
+          "isCorrect": false,
+          "explanation": "Owl's eye is in CMV."
+        },
+        {
+          "text": "Smudge cells",
+          "isCorrect": false,
+          "explanation": "Smudge cells are seen in adenovirus."
+        }
+      ],
+      "explanation": {
+        "overview": "Warthin‑Finkeldey cells are pathognomonic for measles.",
+        "highYield": "Measles = Warthin‑Finkeldey giant cells.",
+        "clinicalCorrelation": "Measles is highly contagious; prevention via MMR vaccine."
+      }
+    },
+    {
+      "id": "path_infectious_081",
+      "difficulty": 2,
+      "question": "Rubella (German measles) virus is a teratogen that can cause congenital rubella syndrome, which includes:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cataracts, deafness, and cardiac defects (PDA)",
+          "isCorrect": true,
+          "explanation": "Congenital rubella syndrome classically presents with cataracts, sensorineural deafness, and patent ductus arteriosus."
+        },
+        {
+          "text": "Microcephaly and intracranial calcifications",
+          "isCorrect": false,
+          "explanation": "This is more characteristic of congenital Zika or CMV."
+        },
+        {
+          "text": "Hydronephrosis",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        },
+        {
+          "text": "Cleft palate",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        },
+        {
+          "text": "Spina bifida",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        }
+      ],
+      "explanation": {
+        "overview": "Congenital rubella syndrome classically presents with cataracts, sensorineural deafness, and patent ductus arteriosus.",
+        "highYield": "Rubella = cataracts, deafness, PDA.",
+        "clinicalCorrelation": "Vaccination (MMR) prevents rubella; pregnant women should avoid exposure."
+      }
+    },
+    {
+      "id": "path_infectious_082",
+      "difficulty": 2,
+      "question": "Parvovirus B19 causes erythema infectiosum (fifth disease). A characteristic finding is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Slapped cheek rash",
+          "isCorrect": true,
+          "explanation": "Fifth disease presents with a bright red rash on the cheeks ('slapped cheek')."
+        },
+        {
+          "text": "Bull's‑eye rash",
+          "isCorrect": false,
+          "explanation": "Bull's‑eye rash is Lyme disease."
+        },
+        {
+          "text": "Malar rash",
+          "isCorrect": false,
+          "explanation": "Malar rash is SLE."
+        },
+        {
+          "text": "Vesicular rash",
+          "isCorrect": false,
+          "explanation": "Vesicular rash is varicella."
+        },
+        {
+          "text": "Petechial rash",
+          "isCorrect": false,
+          "explanation": "Petechial rash is meningococcemia."
+        }
+      ],
+      "explanation": {
+        "overview": "Fifth disease presents with a bright red rash on the cheeks ('slapped cheek').",
+        "highYield": "Slapped cheek rash = Parvovirus B19 (fifth disease).",
+        "clinicalCorrelation": "Can cause aplastic crisis in sickle cell patients; no specific treatment."
+      }
+    },
+    {
+      "id": "path_infectious_083",
+      "difficulty": 2,
+      "question": "Which of the following is a common opportunistic infection in AIDS patients with CD4 < 200/µL?",
+      "image": null,
+      "options": [
+        {
+          "text": "Pneumocystis jirovecii pneumonia (PCP)",
+          "isCorrect": true,
+          "explanation": "PCP is a classic opportunistic infection in AIDS with CD4 <200."
+        },
+        {
+          "text": "Tuberculosis",
+          "isCorrect": false,
+          "explanation": "TB can occur at any CD4 count, but is particularly common in endemic areas."
+        },
+        {
+          "text": "Candidal esophagitis",
+          "isCorrect": false,
+          "explanation": "Candidal esophagitis occurs when CD4 <100."
+        },
+        {
+          "text": "Cryptococcal meningitis",
+          "isCorrect": false,
+          "explanation": "Cryptococcal meningitis occurs when CD4 <100."
+        },
+        {
+          "text": "CMV retinitis",
+          "isCorrect": false,
+          "explanation": "CMV retinitis occurs when CD4 <50."
+        }
+      ],
+      "explanation": {
+        "overview": "PCP is a classic opportunistic infection in AIDS with CD4 <200.",
+        "highYield": "PCP prophylaxis indicated when CD4 <200.",
+        "clinicalCorrelation": "Prophylaxis with TMP‑SMX; treatment with high‑dose TMP‑SMX or pentamidine."
+      }
+    },
+    {
+      "id": "path_infectious_084",
+      "difficulty": 2,
+      "question": "Toxoplasma encephalitis in AIDS patients typically occurs when CD4 count drops below:",
+      "image": null,
+      "options": [
+        {
+          "text": "100 cells/µL",
+          "isCorrect": true,
+          "explanation": "Toxoplasmic encephalitis is an opportunistic infection in patients with CD4 <100."
+        },
+        {
+          "text": "200 cells/µL",
+          "isCorrect": false,
+          "explanation": "PCP occurs at CD4 <200."
+        },
+        {
+          "text": "50 cells/µL",
+          "isCorrect": false,
+          "explanation": "CMV retinitis and MAC occur at CD4 <50."
+        },
+        {
+          "text": "500 cells/µL",
+          "isCorrect": false,
+          "explanation": "Not a typical threshold."
+        },
+        {
+          "text": "Any CD4 count",
+          "isCorrect": false,
+          "explanation": "It is specifically seen in advanced immunosuppression."
+        }
+      ],
+      "explanation": {
+        "overview": "Toxoplasmic encephalitis is an opportunistic infection in patients with CD4 <100.",
+        "highYield": "Toxoplasmic encephalitis = CD4 <100.",
+        "clinicalCorrelation": "Prophylaxis with TMP‑SMX if seropositive and CD4 <100."
+      }
+    },
+    {
+      "id": "path_infectious_085",
+      "difficulty": 2,
+      "question": "Which of the following is a typical feature of mucocutaneous candidiasis in HIV patients?",
+      "image": null,
+      "options": [
+        {
+          "text": "Oral thrush (pseudomembranous white plaques)",
+          "isCorrect": true,
+          "explanation": "Oral thrush is a common early manifestation of HIV infection, indicating decreasing CD4 count."
+        },
+        {
+          "text": "Vesicular lesions",
+          "isCorrect": false,
+          "explanation": "Vesicular lesions are typical of herpes."
+        },
+        {
+          "text": "Fungal ball",
+          "isCorrect": false,
+          "explanation": "Fungal ball is aspergilloma."
+        },
+        {
+          "text": "Ulcerative colitis",
+          "isCorrect": false,
+          "explanation": "Not related."
+        },
+        {
+          "text": "Petechiae",
+          "isCorrect": false,
+          "explanation": "Petechiae are seen in thrombocytopenia or meningococcemia."
+        }
+      ],
+      "explanation": {
+        "overview": "Oral thrush is a common early manifestation of HIV infection, indicating decreasing CD4 count.",
+        "highYield": "Oral thrush = early HIV (CD4 often <200).",
+        "clinicalCorrelation": "Treat with topical or oral antifungals (fluconazole)."
+      }
+    },
+    {
+      "id": "path_infectious_086",
+      "difficulty": 2,
+      "question": "Cryptosporidium is a protozoan that causes watery diarrhea in AIDS patients. Diagnosis is made by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Acid‑fast staining of stool (modified Ziehl‑Neelsen)",
+          "isCorrect": true,
+          "explanation": "Cryptosporidium oocysts are acid‑fast and stain red with modified Z‑N."
+        },
+        {
+          "text": "Gram stain",
+          "isCorrect": false,
+          "explanation": "Gram stain is not used."
+        },
+        {
+          "text": "Wet mount",
+          "isCorrect": false,
+          "explanation": "Wet mount may show motile trophozoites in giardiasis, not Cryptosporidium."
+        },
+        {
+          "text": "Immunofluorescence",
+          "isCorrect": false,
+          "explanation": "Immunofluorescence can be used, but acid‑fast stain is classic."
+        },
+        {
+          "text": "Culture",
+          "isCorrect": false,
+          "explanation": "Cryptosporidium is difficult to culture."
+        }
+      ],
+      "explanation": {
+        "overview": "Cryptosporidium oocysts are acid‑fast and stain red with modified Z‑N.",
+        "highYield": "Cryptosporidium = acid‑fast oocysts in stool.",
+        "clinicalCorrelation": "Treatment with nitazoxanide; immune restoration with ART is key."
+      }
+    },
+    {
+      "id": "path_infectious_087",
+      "difficulty": 2,
+      "question": "Which bacterial infection is a common cause of community‑acquired pneumonia in young adults and is often associated with a dry cough and extrapulmonary symptoms?",
+      "image": null,
+      "options": [
+        {
+          "text": "Mycoplasma pneumoniae",
+          "isCorrect": true,
+          "explanation": "Mycoplasma causes atypical pneumonia with dry cough, fever, and extrapulmonary symptoms (e.g., headache, myalgias)."
+        },
+        {
+          "text": "Streptococcus pneumoniae",
+          "isCorrect": false,
+          "explanation": "Pneumococcus causes lobar pneumonia with productive cough."
+        },
+        {
+          "text": "Legionella pneumophila",
+          "isCorrect": false,
+          "explanation": "Legionella causes pneumonia with high fever, diarrhea, and hyponatremia."
+        },
+        {
+          "text": "Chlamydophila pneumoniae",
+          "isCorrect": false,
+          "explanation": "Chlamydophila also causes atypical pneumonia, but Mycoplasma is the most common."
+        },
+        {
+          "text": "Haemophilus influenzae",
+          "isCorrect": false,
+          "explanation": "H. influenzae causes pneumonia in COPD patients."
+        }
+      ],
+      "explanation": {
+        "overview": "Mycoplasma causes atypical pneumonia with dry cough, fever, and extrapulmonary symptoms (e.g., headache, myalgias).",
+        "highYield": "Mycoplasma pneumoniae = atypical pneumonia (dry cough, young adults).",
+        "clinicalCorrelation": "Diagnosis via serology or PCR; treat with macrolides or tetracyclines."
+      }
+    },
+    {
+      "id": "path_infectious_088",
+      "difficulty": 2,
+      "question": "Which of the following is a common cause of bacterial gastroenteritis that can lead to Guillain‑Barré syndrome?",
+      "image": null,
+      "options": [
+        {
+          "text": "Campylobacter jejuni",
+          "isCorrect": true,
+          "explanation": "C. jejuni is the most common bacterial cause of gastroenteritis and a known trigger of Guillain‑Barré syndrome."
+        },
+        {
+          "text": "Salmonella enteritidis",
+          "isCorrect": false,
+          "explanation": "Salmonella causes gastroenteritis but is not typically associated with GBS."
+        },
+        {
+          "text": "Shigella sonnei",
+          "isCorrect": false,
+          "explanation": "Shigella causes dysentery but is not a major GBS trigger."
+        },
+        {
+          "text": "Escherichia coli O157:H7",
+          "isCorrect": false,
+          "explanation": "E. coli O157:H7 causes HUS, not GBS."
+        },
+        {
+          "text": "Yersinia enterocolitica",
+          "isCorrect": false,
+          "explanation": "Yersinia causes enterocolitis and can cause reactive arthritis, but not GBS."
+        }
+      ],
+      "explanation": {
+        "overview": "C. jejuni is the most common bacterial cause of gastroenteritis and a known trigger of Guillain‑Barré syndrome.",
+        "highYield": "Campylobacter = GBS trigger.",
+        "clinicalCorrelation": "Campylobacter infection is often associated with bloody diarrhea; diagnosis by stool culture."
+      }
+    },
+    {
+      "id": "path_infectious_089",
+      "difficulty": 2,
+      "question": "Which of the following is a characteristic feature of infection with Helicobacter pylori?",
+      "image": null,
+      "options": [
+        {
+          "text": "Chronic gastritis, peptic ulcer, and increased risk of gastric adenocarcinoma",
+          "isCorrect": true,
+          "explanation": "H. pylori causes chronic gastritis, peptic ulcer, and is a risk factor for gastric cancer."
+        },
+        {
+          "text": "Acute, self‑limited gastroenteritis",
+          "isCorrect": false,
+          "explanation": "H. pylori causes chronic infection, not acute self‑limited."
+        },
+        {
+          "text": "Colorectal cancer",
+          "isCorrect": false,
+          "explanation": "H. pylori is not associated with colorectal cancer."
+        },
+        {
+          "text": "Pancreatic cancer",
+          "isCorrect": false,
+          "explanation": "Not associated."
+        },
+        {
+          "text": "Liver abscess",
+          "isCorrect": false,
+          "explanation": "Not associated."
+        }
+      ],
+      "explanation": {
+        "overview": "H. pylori causes chronic gastritis, peptic ulcer, and is a risk factor for gastric cancer.",
+        "highYield": "H. pylori = chronic gastritis, peptic ulcer, gastric cancer.",
+        "clinicalCorrelation": "Eradication therapy (triple therapy) reduces ulcer recurrence and cancer risk."
+      }
+    },
+    {
+      "id": "path_infectious_090",
+      "difficulty": 2,
+      "question": "Which of the following is a common complication of untreated gonococcal infection in women?",
+      "image": null,
+      "options": [
+        {
+          "text": "Pelvic inflammatory disease (PID) and infertility",
+          "isCorrect": true,
+          "explanation": "Untreated gonorrhea can ascend to the uterus and fallopian tubes, causing PID and infertility."
+        },
+        {
+          "text": "Ectopic pregnancy",
+          "isCorrect": false,
+          "explanation": "Ectopic pregnancy is a complication of PID, but the direct complication is PID itself."
+        },
+        {
+          "text": "Chronic pelvic pain",
+          "isCorrect": false,
+          "explanation": "Chronic pelvic pain can result, but PID is the acute complication."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "The classic early complication is PID."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "PID is a well‑known complication."
+        }
+      ],
+      "explanation": {
+        "overview": "Untreated gonorrhea can ascend to the uterus and fallopian tubes, causing PID and infertility.",
+        "highYield": "Gonorrhea → PID → infertility.",
+        "clinicalCorrelation": "Treat with ceftriaxone and doxycycline; screen sexually active women."
+      }
+    }
+  ]
+}

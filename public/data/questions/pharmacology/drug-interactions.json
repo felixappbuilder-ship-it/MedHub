@@ -1,0 +1,2854 @@
+{
+  "questions": [
+    {
+      "questionId": "pharma_interactions_001",
+      "difficulty": 1,
+      "question": "A drug interaction that occurs when one drug alters the absorption, distribution, metabolism, or excretion of another is called:",
+      "image": null,
+      "options": [
+        {
+          "text": "Pharmacodynamic interaction",
+          "isCorrect": false,
+          "explanation": "Pharmacodynamic interactions involve effects at the receptor or physiological level."
+        },
+        {
+          "text": "Pharmacokinetic interaction",
+          "isCorrect": true,
+          "explanation": "Pharmacokinetic interactions involve changes in ADME (absorption, distribution, metabolism, excretion)."
+        },
+        {
+          "text": "Chemical interaction",
+          "isCorrect": false,
+          "explanation": "Chemical interaction is a direct chemical reaction between drugs."
+        },
+        {
+          "text": "Physiological interaction",
+          "isCorrect": false,
+          "explanation": "Physiological interaction is often a type of pharmacodynamic antagonism."
+        },
+        {
+          "text": "Receptor interaction",
+          "isCorrect": false,
+          "explanation": "Receptor interaction is a subset of pharmacodynamic interactions."
+        }
+      ],
+      "explanation": {
+        "overview": "Drug interactions are broadly classified into pharmacokinetic (affecting drug concentration) and pharmacodynamic (affecting drug response).",
+        "highYield": "Pharmacokinetic interactions = ADME changes; pharmacodynamic interactions = effect on the target.",
+        "clinicalCorrelation": "Understanding the type of interaction guides management strategies, such as dose adjustment or monitoring."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_002",
+      "difficulty": 1,
+      "question": "An additive effect occurs when:",
+      "image": null,
+      "options": [
+        {
+          "text": "The combined effect is equal to the sum of individual effects",
+          "isCorrect": true,
+          "explanation": "Additivity means 1+1=2; the total effect equals the sum of the individual effects."
+        },
+        {
+          "text": "The combined effect is greater than the sum of individual effects",
+          "isCorrect": false,
+          "explanation": "That is synergism or supra-additive effect."
+        },
+        {
+          "text": "One drug enhances the effect of another but has no effect alone",
+          "isCorrect": false,
+          "explanation": "That describes potentiation."
+        },
+        {
+          "text": "The drugs antagonize each other",
+          "isCorrect": false,
+          "explanation": "Antagonism is opposite, reducing effect."
+        },
+        {
+          "text": "The effect is less than additive",
+          "isCorrect": false,
+          "explanation": "That would be sub-additive or antagonistic."
+        }
+      ],
+      "explanation": {
+        "overview": "Additivity is a common type of drug interaction where the total effect is the arithmetic sum of individual drug effects.",
+        "highYield": "Additive: 1+1=2; Synergism: 1+1>2; Potentiation: 0+1>1.",
+        "clinicalCorrelation": "Many fixed-dose combinations are designed to achieve additive therapeutic effects with reduced side effects."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_003",
+      "difficulty": 1,
+      "question": "Synergism (supra-additive effect) is defined as:",
+      "image": null,
+      "options": [
+        {
+          "text": "The combined effect is greater than the sum of individual effects",
+          "isCorrect": true,
+          "explanation": "Synergism means 1+1 > 2; the combined effect exceeds the arithmetic sum."
+        },
+        {
+          "text": "The combined effect is equal to the sum",
+          "isCorrect": false,
+          "explanation": "That is additive effect."
+        },
+        {
+          "text": "One drug has no effect alone but enhances another",
+          "isCorrect": false,
+          "explanation": "Potentiation."
+        },
+        {
+          "text": "The drugs oppose each other",
+          "isCorrect": false,
+          "explanation": "Antagonism."
+        },
+        {
+          "text": "The effect is unpredictable",
+          "isCorrect": false,
+          "explanation": "Not a definition."
+        }
+      ],
+      "explanation": {
+        "overview": "Synergism occurs when two drugs produce a combined effect greater than expected from their individual potencies.",
+        "highYield": "Synergism = supra-additive; e.g., sulfamethoxazole + trimethoprim (sequential folate blockade).",
+        "clinicalCorrelation": "Synergistic combinations allow lower doses of each drug, reducing toxicity while maintaining efficacy."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_004",
+      "difficulty": 2,
+      "question": "Potentiation refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "One drug enhances the effect of another but has no effect alone",
+          "isCorrect": true,
+          "explanation": "Potentiation occurs when an inactive substance increases the effect of an active drug."
+        },
+        {
+          "text": "Both drugs produce similar effects",
+          "isCorrect": false,
+          "explanation": "That could be additive or synergistic."
+        },
+        {
+          "text": "The sum of effects is greater than additive",
+          "isCorrect": false,
+          "explanation": "Synergism."
+        },
+        {
+          "text": "The drugs antagonize each other",
+          "isCorrect": false,
+          "explanation": "Antagonism."
+        },
+        {
+          "text": "The effect is less than additive",
+          "isCorrect": false,
+          "explanation": "Not potentiation."
+        }
+      ],
+      "explanation": {
+        "overview": "Potentiation is a special case where one component is inactive alone but increases the effect of the other.",
+        "highYield": "Example: clavulanic acid (no antibacterial activity) potentiates amoxicillin by inhibiting beta-lactamase.",
+        "clinicalCorrelation": "Co-formulated drugs like amoxicillin-clavulanate exploit potentiation to overcome resistance."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_005",
+      "difficulty": 2,
+      "question": "Antagonism can be classified as all EXCEPT:",
+      "image": null,
+      "options": [
+        {
+          "text": "Chemical",
+          "isCorrect": false,
+          "explanation": "Chemical antagonism exists (e.g., protamine and heparin)."
+        },
+        {
+          "text": "Physiological",
+          "isCorrect": false,
+          "explanation": "Physiological antagonism exists (e.g., histamine and epinephrine)."
+        },
+        {
+          "text": "Receptor-mediated",
+          "isCorrect": false,
+          "explanation": "Receptor antagonism includes competitive and noncompetitive."
+        },
+        {
+          "text": "Synergistic",
+          "isCorrect": true,
+          "explanation": "Synergism is a type of enhanced effect, not antagonism."
+        },
+        {
+          "text": "Pharmacokinetic",
+          "isCorrect": false,
+          "explanation": "Pharmacokinetic antagonism occurs when one drug reduces the concentration of another."
+        }
+      ],
+      "explanation": {
+        "overview": "Antagonism includes chemical, physiological, receptor (competitive/noncompetitive), and pharmacokinetic types.",
+        "highYield": "Antagonism = reduction in effect; synergism = enhancement.",
+        "clinicalCorrelation": "Antagonism can be therapeutic (e.g., naloxone for opioid overdose) or adverse (e.g., decreased antibiotic efficacy)."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_006",
+      "difficulty": 2,
+      "question": "Competitive antagonism is characterized by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Parallel rightward shift of the dose-response curve without change in maximum",
+          "isCorrect": true,
+          "explanation": "Competitive antagonists shift the dose-response curve to the right without reducing the maximum response."
+        },
+        {
+          "text": "Depression of the maximal response",
+          "isCorrect": false,
+          "explanation": "Noncompetitive antagonists reduce maximum response."
+        },
+        {
+          "text": "Irreversible binding to the receptor",
+          "isCorrect": false,
+          "explanation": "Competitive antagonists bind reversibly."
+        },
+        {
+          "text": "Nonparallel shift of the curve",
+          "isCorrect": false,
+          "explanation": "Shift is parallel if competitive."
+        },
+        {
+          "text": "Leftward shift of the curve",
+          "isCorrect": false,
+          "explanation": "Left shift indicates increased potency."
+        }
+      ],
+      "explanation": {
+        "overview": "A competitive antagonist competes with the agonist for the same binding site, causing a dextral shift of the log dose-response curve.",
+        "highYield": "Competitive antagonist: right shift, same Emax; can be overcome by increasing agonist concentration.",
+        "clinicalCorrelation": "Naloxone is a competitive antagonist at opioid receptors; it can be overcome by high doses of opioids (though dangerous)."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_007",
+      "difficulty": 2,
+      "question": "Noncompetitive antagonism results in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Parallel rightward shift",
+          "isCorrect": false,
+          "explanation": "Competitive antagonists cause rightward shift."
+        },
+        {
+          "text": "Depression of the maximal response",
+          "isCorrect": true,
+          "explanation": "Noncompetitive antagonists reduce the maximum response (efficacy) of the agonist."
+        },
+        {
+          "text": "Leftward shift of the curve",
+          "isCorrect": false,
+          "explanation": "Not characteristic."
+        },
+        {
+          "text": "No change in the curve",
+          "isCorrect": false,
+          "explanation": "There is change."
+        },
+        {
+          "text": "Increased potency of the agonist",
+          "isCorrect": false,
+          "explanation": "No, efficacy is reduced."
+        }
+      ],
+      "explanation": {
+        "overview": "Noncompetitive antagonists bind irreversibly or at a different site, reducing the maximum achievable effect of the agonist.",
+        "highYield": "Noncompetitive antagonist: decreased Emax, no right shift (or minimal shift).",
+        "clinicalCorrelation": "Irreversible inhibitors like phenoxybenzamine act as noncompetitive antagonists at alpha receptors."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_008",
+      "difficulty": 2,
+      "question": "An example of chemical antagonism is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Protamine sulfate binding to heparin",
+          "isCorrect": true,
+          "explanation": "Protamine is positively charged and binds directly to negatively charged heparin, forming an inactive complex."
+        },
+        {
+          "text": "Naloxone reversing morphine",
+          "isCorrect": false,
+          "explanation": "That is receptor antagonism."
+        },
+        {
+          "text": "Propranolol blocking isoproterenol",
+          "isCorrect": false,
+          "explanation": "Receptor antagonism."
+        },
+        {
+          "text": "Histamine and epinephrine on blood pressure",
+          "isCorrect": false,
+          "explanation": "Physiological antagonism."
+        },
+        {
+          "text": "Alcohol and disulfiram",
+          "isCorrect": false,
+          "explanation": "Disulfiram inhibits aldehyde dehydrogenase, not direct chemical binding."
+        }
+      ],
+      "explanation": {
+        "overview": "Chemical antagonism occurs when two substances combine directly to neutralize each other, without involving receptors.",
+        "highYield": "Protamine (basic) + heparin (acidic) = inactive complex.",
+        "clinicalCorrelation": "Protamine is used clinically to reverse heparin anticoagulation after cardiac surgery."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_009",
+      "difficulty": 2,
+      "question": "Physiological antagonism occurs when:",
+      "image": null,
+      "options": [
+        {
+          "text": "Two drugs produce opposite effects via different receptors",
+          "isCorrect": true,
+          "explanation": "Physiological (functional) antagonism involves two agents acting on different receptors to produce opposing physiological effects."
+        },
+        {
+          "text": "One drug binds and blocks the receptor of another",
+          "isCorrect": false,
+          "explanation": "Receptor antagonism."
+        },
+        {
+          "text": "Drugs combine chemically",
+          "isCorrect": false,
+          "explanation": "Chemical antagonism."
+        },
+        {
+          "text": "One drug alters the metabolism of another",
+          "isCorrect": false,
+          "explanation": "Pharmacokinetic interaction."
+        },
+        {
+          "text": "The effect is greater than additive",
+          "isCorrect": false,
+          "explanation": "Synergism."
+        }
+      ],
+      "explanation": {
+        "overview": "Physiological antagonism relies on the body's compensatory mechanisms: one drug activates a response, the other activates an opposing response.",
+        "highYield": "Epinephrine (vasoconstrictor) vs histamine (vasodilator) = physiological antagonism.",
+        "clinicalCorrelation": "In anaphylaxis, epinephrine is given to counteract histamine-induced vasodilation and bronchoconstriction."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_010",
+      "difficulty": 2,
+      "question": "An example of physiological antagonism is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Epinephrine raising blood pressure and histamine lowering it",
+          "isCorrect": true,
+          "explanation": "Epinephrine (α-agonist) increases BP, histamine (H1 receptor) decreases BP via different mechanisms."
+        },
+        {
+          "text": "Naloxone and morphine",
+          "isCorrect": false,
+          "explanation": "Receptor antagonism."
+        },
+        {
+          "text": "Protamine and heparin",
+          "isCorrect": false,
+          "explanation": "Chemical antagonism."
+        },
+        {
+          "text": "Atropine and acetylcholine",
+          "isCorrect": false,
+          "explanation": "Receptor antagonism."
+        },
+        {
+          "text": "Propranolol and isoproterenol",
+          "isCorrect": false,
+          "explanation": "Receptor antagonism."
+        }
+      ],
+      "explanation": {
+        "overview": "Epinephrine and histamine act on different receptors to produce opposite effects on blood pressure.",
+        "highYield": "Physiological antagonism = different receptors, opposite effects.",
+        "clinicalCorrelation": "This concept is utilized when using epinephrine to treat histamine-mediated anaphylaxis."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_011",
+      "difficulty": 2,
+      "question": "Pharmacokinetic interactions at the absorption level can occur by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Altering gastric pH",
+          "isCorrect": false,
+          "explanation": "True, but not exhaustive."
+        },
+        {
+          "text": "Forming chelates",
+          "isCorrect": false,
+          "explanation": "True, but not alone."
+        },
+        {
+          "text": "Changing gastric emptying time",
+          "isCorrect": false,
+          "explanation": "True."
+        },
+        {
+          "text": "Inducing or inhibiting gut wall enzymes",
+          "isCorrect": false,
+          "explanation": "True."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Absorption can be affected by pH, chelation, motility changes, and gut metabolism."
+        }
+      ],
+      "explanation": {
+        "overview": "Many factors influence drug absorption in the GI tract, and co-administered drugs can modify these factors.",
+        "highYield": "Absorption interactions: pH, chelation, motility, transporters/enzymes (P-gp, CYP3A4).",
+        "clinicalCorrelation": "Separate administration times by 2-4 hours to minimize absorption interactions."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_012",
+      "difficulty": 2,
+      "question": "Tetracycline absorption is reduced by concurrent administration of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Antacids containing calcium, magnesium, or aluminum",
+          "isCorrect": true,
+          "explanation": "Divalent and trivalent cations chelate tetracyclines, forming insoluble complexes and reducing absorption."
+        },
+        {
+          "text": "Paracetamol",
+          "isCorrect": false,
+          "explanation": "No interaction."
+        },
+        {
+          "text": "Ibuprofen",
+          "isCorrect": false,
+          "explanation": "NSAIDs do not chelate tetracyclines."
+        },
+        {
+          "text": "Omeprazole",
+          "isCorrect": false,
+          "explanation": "PPIs do not chelate, though they may alter pH which has minor effect."
+        },
+        {
+          "text": "Ranitidine",
+          "isCorrect": false,
+          "explanation": "H2 blockers do not chelate."
+        }
+      ],
+      "explanation": {
+        "overview": "Tetracyclines form stable chelates with polyvalent metal ions, drastically reducing their oral bioavailability.",
+        "highYield": "Avoid taking tetracyclines with dairy products, antacids, or iron supplements.",
+        "clinicalCorrelation": "Separate administration by at least 2 hours to avoid this interaction."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_013",
+      "difficulty": 3,
+      "question": "Drugs that increase gastric pH (e.g., proton pump inhibitors) can affect absorption of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Weak bases (increased absorption)",
+          "isCorrect": false,
+          "explanation": "Weak bases become more ionized in higher pH, decreasing absorption."
+        },
+        {
+          "text": "Weak acids (decreased absorption)",
+          "isCorrect": false,
+          "explanation": "Weak acids become less ionized in higher pH, increasing absorption."
+        },
+        {
+          "text": "Both A and B",
+          "isCorrect": true,
+          "explanation": "Weak bases are more soluble at low pH; increasing pH decreases their absorption. Weak acids are more soluble at high pH, so their absorption may increase."
+        },
+        {
+          "text": "All drugs equally",
+          "isCorrect": false,
+          "explanation": "Not all drugs; pH-dependent solubility matters."
+        },
+        {
+          "text": "Highly lipophilic drugs only",
+          "isCorrect": false,
+          "explanation": "Lipophilic drugs are generally well absorbed regardless of pH."
+        }
+      ],
+      "explanation": {
+        "overview": "Gastric pH influences ionization and solubility of drugs, particularly those that are weak acids or bases.",
+        "highYield": "PPIs/H2 blockers may decrease absorption of weak bases (e.g., ketoconazole) and increase absorption of weak acids.",
+        "clinicalCorrelation": "Ketoconazole requires an acidic environment; coadministration with antacids/PPIs can lead to treatment failure."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_014",
+      "difficulty": 2,
+      "question": "Metoclopramide accelerates gastric emptying. This may:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increase the absorption rate of other drugs",
+          "isCorrect": true,
+          "explanation": "Faster gastric emptying delivers drugs to the small intestine more rapidly, often increasing absorption rate."
+        },
+        {
+          "text": "Decrease the absorption rate of other drugs",
+          "isCorrect": false,
+          "explanation": "It usually increases rate."
+        },
+        {
+          "text": "Have no effect on drug absorption",
+          "isCorrect": false,
+          "explanation": "It can have effects."
+        },
+        {
+          "text": "Delay the onset of action of some drugs",
+          "isCorrect": false,
+          "explanation": "It accelerates onset for many drugs."
+        },
+        {
+          "text": "Increase the extent of absorption of all drugs",
+          "isCorrect": false,
+          "explanation": "Extent may not change, but rate often does."
+        }
+      ],
+      "explanation": {
+        "overview": "Prokinetic agents like metoclopramide can speed gastric emptying, leading to faster drug absorption and earlier peak concentrations.",
+        "highYield": "Metoclopramide = accelerates gastric emptying; earlier peak, but total absorption may be unchanged.",
+        "clinicalCorrelation": "Used in migraine with gastroparesis to improve oral analgesic absorption."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_015",
+      "difficulty": 2,
+      "question": "Opioids delay gastric emptying. This may:",
+      "image": null,
+      "options": [
+        {
+          "text": "Delay the absorption of other orally administered drugs",
+          "isCorrect": true,
+          "explanation": "Slower gastric emptying delays delivery to the small intestine, slowing absorption."
+        },
+        {
+          "text": "Increase the absorption of other drugs",
+          "isCorrect": false,
+          "explanation": "Delays, not increases."
+        },
+        {
+          "text": "Have no effect",
+          "isCorrect": false,
+          "explanation": "It does affect absorption."
+        },
+        {
+          "text": "Increase the peak concentration",
+          "isCorrect": false,
+          "explanation": "Slows and may lower peak."
+        },
+        {
+          "text": "Decrease the extent of absorption",
+          "isCorrect": false,
+          "explanation": "Extent may not change, but rate slows."
+        }
+      ],
+      "explanation": {
+        "overview": "Opioids reduce gastrointestinal motility, which can significantly delay the absorption of co-administered drugs.",
+        "highYield": "Opioids = delayed gastric emptying; slower absorption of many oral drugs.",
+        "clinicalCorrelation": "In acute pain, parenteral routes may be preferred until GI function returns."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_016",
+      "difficulty": 2,
+      "question": "P-glycoprotein (P-gp) is an efflux transporter that can:",
+      "image": null,
+      "options": [
+        {
+          "text": "Decrease drug absorption by pumping drug back into intestinal lumen",
+          "isCorrect": true,
+          "explanation": "P-gp in the intestinal epithelium pumps some drugs back into the gut, reducing their bioavailability."
+        },
+        {
+          "text": "Increase drug absorption by facilitating uptake",
+          "isCorrect": false,
+          "explanation": "It is an efflux, not uptake, transporter."
+        },
+        {
+          "text": "Have no effect on absorption",
+          "isCorrect": false,
+          "explanation": "It can significantly affect absorption."
+        },
+        {
+          "text": "Enhance metabolism",
+          "isCorrect": false,
+          "explanation": "Not directly; it effluxes drugs."
+        },
+        {
+          "text": "Promote renal excretion",
+          "isCorrect": false,
+          "explanation": "It also exists in kidneys, but its role in gut absorption is the focus here."
+        }
+      ],
+      "explanation": {
+        "overview": "P-glycoprotein is an ATP-dependent efflux pump expressed in the intestinal epithelium, liver, kidney, and brain, limiting drug absorption and distribution.",
+        "highYield": "P-gp substrates: digoxin, loperamide, protease inhibitors. Inhibitors: verapamil, cyclosporine, grapefruit juice.",
+        "clinicalCorrelation": "P-gp inhibition can increase drug levels, leading to toxicity (e.g., digoxin + verapamil)."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_017",
+      "difficulty": 2,
+      "question": "Grapefruit juice inhibits intestinal CYP3A4 and P-gp, leading to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increased bioavailability of drugs metabolized by CYP3A4",
+          "isCorrect": true,
+          "explanation": "Inhibition of gut wall CYP3A4 and P-gp by grapefruit juice increases systemic exposure to many drugs (e.g., felodipine, cyclosporine)."
+        },
+        {
+          "text": "Decreased bioavailability of CYP3A4 substrates",
+          "isCorrect": false,
+          "explanation": "Inhibition increases bioavailability."
+        },
+        {
+          "text": "No change in drug levels",
+          "isCorrect": false,
+          "explanation": "Significant changes occur."
+        },
+        {
+          "text": "Faster drug elimination",
+          "isCorrect": false,
+          "explanation": "Elimination may be unchanged; first-pass metabolism is inhibited."
+        },
+        {
+          "text": "Reduced drug absorption",
+          "isCorrect": false,
+          "explanation": "Absorption is increased."
+        }
+      ],
+      "explanation": {
+        "overview": "Grapefruit juice contains furanocoumarins that irreversibly inhibit intestinal CYP3A4 and P-gp, drastically increasing the oral bioavailability of many drugs.",
+        "highYield": "Avoid grapefruit juice with statins (atorvastatin, simvastatin), cyclosporine, and many other CYP3A4 substrates.",
+        "clinicalCorrelation": "A single glass can inhibit CYP3A4 for 24 hours; effects persist after discontinuing juice."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_018",
+      "difficulty": 2,
+      "question": "Displacement from plasma protein binding can increase the free fraction of a drug, potentially leading to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increased pharmacological effect and toxicity",
+          "isCorrect": true,
+          "explanation": "For highly protein-bound drugs, displacement raises free drug concentration, enhancing effect and toxicity risk."
+        },
+        {
+          "text": "Decreased effect",
+          "isCorrect": false,
+          "explanation": "Effect is increased."
+        },
+        {
+          "text": "No change in effect",
+          "isCorrect": false,
+          "explanation": "Significant for drugs with high protein binding and narrow therapeutic index."
+        },
+        {
+          "text": "Increased metabolism",
+          "isCorrect": false,
+          "explanation": "Metabolism may increase as free drug is available, but the immediate concern is enhanced effect."
+        },
+        {
+          "text": "Increased renal excretion",
+          "isCorrect": false,
+          "explanation": "Excretion of free drug may increase but initial effect is increased free concentration."
+        }
+      ],
+      "explanation": {
+        "overview": "Plasma protein binding interactions are most clinically significant for drugs that are highly protein-bound (>90%) and have a narrow therapeutic index.",
+        "highYield": "Warfarin (99% bound) + sulfonamides or NSAIDs = increased free warfarin, bleeding risk.",
+        "clinicalCorrelation": "Displacement interactions are usually transient; the free drug is rapidly metabolized/excreted, but peak effects can be dangerous."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_019",
+      "difficulty": 2,
+      "question": "Warfarin is highly protein-bound. Concurrent administration of another highly protein-bound drug (e.g., phenylbutazone) may:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increase warfarin's anticoagulant effect",
+          "isCorrect": true,
+          "explanation": "Displacement of warfarin from albumin increases free warfarin, potentiating anticoagulation and bleeding risk."
+        },
+        {
+          "text": "Decrease warfarin's effect",
+          "isCorrect": false,
+          "explanation": "Anticoagulation is enhanced."
+        },
+        {
+          "text": "Have no effect",
+          "isCorrect": false,
+          "explanation": "There is a significant interaction."
+        },
+        {
+          "text": "Increase warfarin metabolism",
+          "isCorrect": false,
+          "explanation": "Metabolism may not be the primary effect."
+        },
+        {
+          "text": "Decrease warfarin absorption",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        }
+      ],
+      "explanation": {
+        "overview": "Phenylbutazone competes with warfarin for albumin binding sites, transiently increasing free warfarin levels and INR.",
+        "highYield": "Highly protein-bound drug + warfarin = increased bleeding risk; monitor INR closely.",
+        "clinicalCorrelation": "Phenylbutazone also inhibits warfarin metabolism, compounding the effect."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_020",
+      "difficulty": 1,
+      "question": "Enzyme induction leads to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increased metabolism and decreased drug levels",
+          "isCorrect": true,
+          "explanation": "Inducers accelerate drug metabolism, reducing plasma concentrations and potentially decreasing efficacy."
+        },
+        {
+          "text": "Decreased metabolism and increased drug levels",
+          "isCorrect": false,
+          "explanation": "That is enzyme inhibition."
+        },
+        {
+          "text": "No change in drug levels",
+          "isCorrect": false,
+          "explanation": "Induction alters levels."
+        },
+        {
+          "text": "Increased protein binding",
+          "isCorrect": false,
+          "explanation": "Not related."
+        },
+        {
+          "text": "Enhanced absorption",
+          "isCorrect": false,
+          "explanation": "Not direct."
+        }
+      ],
+      "explanation": {
+        "overview": "Enzyme induction increases the synthesis or activity of drug-metabolizing enzymes (especially CYPs), leading to faster drug clearance.",
+        "highYield": "Inducers: rifampin, carbamazepine, phenytoin, St. John's wort, chronic ethanol.",
+        "clinicalCorrelation": "Induction may require increasing doses of the affected drug; risk of therapeutic failure."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_021",
+      "difficulty": 2,
+      "question": "Rifampicin is a potent enzyme inducer. It may decrease the efficacy of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Oral contraceptives",
+          "isCorrect": false,
+          "explanation": "Yes, rifampicin reduces OCP efficacy."
+        },
+        {
+          "text": "Warfarin",
+          "isCorrect": false,
+          "explanation": "Yes, INR decreases."
+        },
+        {
+          "text": "HIV protease inhibitors",
+          "isCorrect": false,
+          "explanation": "Yes, significant interaction."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Rifampicin induces CYP3A4 and other enzymes, reducing levels of many drugs, including oral contraceptives, warfarin, and protease inhibitors."
+        },
+        {
+          "text": "None of the above",
+          "isCorrect": false,
+          "explanation": "All are affected."
+        }
+      ],
+      "explanation": {
+        "overview": "Rifampicin is a broad-spectrum enzyme inducer, lowering plasma levels of numerous medications and leading to potential therapeutic failures.",
+        "highYield": "Rifampicin = potent inducer; expect reduced efficacy of many co-administered drugs.",
+        "clinicalCorrelation": "Women on rifampicin should use alternative contraception; monitor INR closely with warfarin."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_022",
+      "difficulty": 2,
+      "question": "Carbamazepine is an enzyme inducer. When added to warfarin therapy, it may:",
+      "image": null,
+      "options": [
+        {
+          "text": "Decrease INR and require higher warfarin doses",
+          "isCorrect": true,
+          "explanation": "Induction of warfarin metabolism reduces its effect, lowering INR and necessitating dose increases."
+        },
+        {
+          "text": "Increase INR and increase bleeding risk",
+          "isCorrect": false,
+          "explanation": "INR decreases."
+        },
+        {
+          "text": "Have no effect on INR",
+          "isCorrect": false,
+          "explanation": "Significant effect."
+        },
+        {
+          "text": "Increase warfarin absorption",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        },
+        {
+          "text": "Displace warfarin from protein binding",
+          "isCorrect": false,
+          "explanation": "Metabolism induction is primary."
+        }
+      ],
+      "explanation": {
+        "overview": "Carbamazepine induces CYP2C9 and CYP3A4, accelerating warfarin metabolism and lowering anticoagulant effect.",
+        "highYield": "Adding an inducer to warfarin: expect ↑ warfarin dose requirement; when inducer stops, bleeding risk if dose not reduced.",
+        "clinicalCorrelation": "Monitor INR frequently when starting or stopping enzyme-inducing drugs in patients on warfarin."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_023",
+      "difficulty": 1,
+      "question": "Enzyme inhibition results in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increased drug levels and potential toxicity",
+          "isCorrect": true,
+          "explanation": "Inhibitors slow metabolism, raising drug concentrations and increasing risk of adverse effects."
+        },
+        {
+          "text": "Decreased drug levels",
+          "isCorrect": false,
+          "explanation": "Levels increase."
+        },
+        {
+          "text": "Faster drug elimination",
+          "isCorrect": false,
+          "explanation": "Elimination is slower."
+        },
+        {
+          "text": "Reduced half-life",
+          "isCorrect": false,
+          "explanation": "Half-life is prolonged."
+        },
+        {
+          "text": "Enhanced metabolism",
+          "isCorrect": false,
+          "explanation": "Opposite."
+        }
+      ],
+      "explanation": {
+        "overview": "Enzyme inhibition decreases the clearance of drugs metabolized by the affected enzyme, leading to accumulation and potential toxicity.",
+        "highYield": "Inhibitors: cimetidine, ketoconazole, macrolides, grapefruit juice, ciprofloxacin.",
+        "clinicalCorrelation": "Dose reduction may be necessary when an inhibitor is added to a drug with a narrow therapeutic index."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_024",
+      "difficulty": 2,
+      "question": "Ketoconazole, a potent CYP3A4 inhibitor, may increase levels of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Lovastatin",
+          "isCorrect": false,
+          "explanation": "CYP3A4 substrate, levels increase."
+        },
+        {
+          "text": "Midazolam",
+          "isCorrect": false,
+          "explanation": "CYP3A4 substrate."
+        },
+        {
+          "text": "Cyclosporine",
+          "isCorrect": false,
+          "explanation": "CYP3A4 substrate."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "All these drugs are CYP3A4 substrates; inhibition raises their levels, potentially causing toxicity."
+        },
+        {
+          "text": "None of the above",
+          "isCorrect": false,
+          "explanation": "All are affected."
+        }
+      ],
+      "explanation": {
+        "overview": "Ketoconazole is a potent inhibitor of CYP3A4, and co-administration with substrates of this enzyme can lead to dangerously elevated drug levels.",
+        "highYield": "Ketoconazole + statins = rhabdomyolysis risk; + midazolam = prolonged sedation; + cyclosporine = nephrotoxicity.",
+        "clinicalCorrelation": "Many drug interactions involve CYP3A4; always check before combining with strong inhibitors."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_025",
+      "difficulty": 2,
+      "question": "Macrolide antibiotics (e.g., erythromycin) are inhibitors of CYP3A4. Co-administration with simvastatin may:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increase risk of statin-induced myopathy",
+          "isCorrect": true,
+          "explanation": "Erythromycin inhibits simvastatin metabolism, raising its levels and increasing myopathy risk."
+        },
+        {
+          "text": "Decrease simvastatin efficacy",
+          "isCorrect": false,
+          "explanation": "Efficacy is increased, along with toxicity."
+        },
+        {
+          "text": "Have no effect",
+          "isCorrect": false,
+          "explanation": "There is a significant interaction."
+        },
+        {
+          "text": "Increase simvastatin metabolism",
+          "isCorrect": false,
+          "explanation": "Metabolism is decreased."
+        },
+        {
+          "text": "Decrease simvastatin absorption",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        }
+      ],
+      "explanation": {
+        "overview": "Macrolide antibiotics inhibit CYP3A4, leading to elevated statin concentrations and increased risk of myopathy/rhabdomyolysis.",
+        "highYield": "Avoid concurrent use of macrolides (except azithromycin) with simvastatin, lovastatin, atorvastatin.",
+        "clinicalCorrelation": "If macrolide therapy is necessary, temporarily hold the statin or use a non-interacting statin like pravastatin or rosuvastatin."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_026",
+      "difficulty": 2,
+      "question": "Cimetidine, a non-specific CYP inhibitor, can increase levels of drugs metabolized by:",
+      "image": null,
+      "options": [
+        {
+          "text": "CYP1A2",
+          "isCorrect": false,
+          "explanation": "Yes, but not the only one."
+        },
+        {
+          "text": "CYP2D6",
+          "isCorrect": false,
+          "explanation": "Also inhibited."
+        },
+        {
+          "text": "CYP3A4",
+          "isCorrect": false,
+          "explanation": "Inhibited as well."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Cimetidine inhibits multiple CYP enzymes, potentially interacting with many drugs."
+        },
+        {
+          "text": "None of the above",
+          "isCorrect": false,
+          "explanation": "Cimetidine is a broad inhibitor."
+        }
+      ],
+      "explanation": {
+        "overview": "Cimetidine binds to the heme iron of CYPs, inhibiting several isoforms and reducing the clearance of many co-administered drugs.",
+        "highYield": "Cimetidine = broad CYP inhibitor; interactions with theophylline, warfarin, phenytoin, etc.",
+        "clinicalCorrelation": "Ranitidine and famotidine have fewer CYP interactions; preferred over cimetidine in patients on multiple drugs."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_027",
+      "difficulty": 3,
+      "question": "Quinolone antibiotics (e.g., ciprofloxacin) inhibit CYP1A2. They may increase levels of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Theophylline",
+          "isCorrect": false,
+          "explanation": "Yes, theophylline is a CYP1A2 substrate."
+        },
+        {
+          "text": "Warfarin",
+          "isCorrect": false,
+          "explanation": "R-warfarin is metabolized by CYP1A2."
+        },
+        {
+          "text": "Clozapine",
+          "isCorrect": false,
+          "explanation": "Clozapine is a CYP1A2 substrate."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "CYP1A2 metabolizes theophylline, warfarin (R-enantiomer), and clozapine; inhibition can raise their levels."
+        },
+        {
+          "text": "None of the above",
+          "isCorrect": false,
+          "explanation": "All are affected."
+        }
+      ],
+      "explanation": {
+        "overview": "Ciprofloxacin and other fluoroquinolones are moderate inhibitors of CYP1A2, affecting drugs with narrow therapeutic indices.",
+        "highYield": "Ciprofloxacin + theophylline = risk of seizures; + warfarin = increased INR; + clozapine = increased sedation, seizures.",
+        "clinicalCorrelation": "Monitor drug levels or clinical effect when combining ciprofloxacin with CYP1A2 substrates."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_028",
+      "difficulty": 3,
+      "question": "Amiodarone inhibits CYP2C9, CYP2D6, and CYP3A4. It may increase the effect of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Warfarin",
+          "isCorrect": false,
+          "explanation": "Amiodarone inhibits warfarin metabolism, raising INR."
+        },
+        {
+          "text": "Digoxin",
+          "isCorrect": false,
+          "explanation": "Amiodarone reduces digoxin clearance, increasing levels."
+        },
+        {
+          "text": "Flecainide",
+          "isCorrect": false,
+          "explanation": "Flecainide is a CYP2D6 substrate; levels increase."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Amiodarone interacts with many drugs via multiple mechanisms, including inhibition of metabolism and displacement."
+        },
+        {
+          "text": "None of the above",
+          "isCorrect": false,
+          "explanation": "All are affected."
+        }
+      ],
+      "explanation": {
+        "overview": "Amiodarone is a potent inhibitor of several CYP enzymes and P-glycoprotein, leading to numerous clinically significant drug interactions.",
+        "highYield": "Amiodarone + warfarin = ↑ INR; + digoxin = ↑ digoxin levels; + flecainide = ↑ flecainide toxicity.",
+        "clinicalCorrelation": "Reduce warfarin dose by 30-50% when starting amiodarone; monitor digoxin levels."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_029",
+      "difficulty": 2,
+      "question": "Competition for renal tubular secretion can lead to drug interactions. An example is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Probenecid inhibiting penicillin excretion",
+          "isCorrect": true,
+          "explanation": "Probenecid competes for the organic anion transporter, reducing penicillin secretion and increasing its levels."
+        },
+        {
+          "text": "Warfarin and aspirin",
+          "isCorrect": false,
+          "explanation": "Pharmacodynamic interaction."
+        },
+        {
+          "text": "Digoxin and quinidine",
+          "isCorrect": false,
+          "explanation": "P-gp and renal clearance reduction."
+        },
+        {
+          "text": "Tetracycline and antacids",
+          "isCorrect": false,
+          "explanation": "Absorption interaction."
+        },
+        {
+          "text": "Ketoconazole and terfenadine",
+          "isCorrect": false,
+          "explanation": "Metabolism inhibition."
+        }
+      ],
+      "explanation": {
+        "overview": "Renal drug interactions can occur when two drugs compete for the same active tubular secretion pathway (OAT or OCT), reducing elimination.",
+        "highYield": "Probenecid + penicillin = higher penicillin levels; also used to increase uricosuric effect.",
+        "clinicalCorrelation": "This interaction was historically used to prolong penicillin serum levels when supplies were limited."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_030",
+      "difficulty": 2,
+      "question": "Methotrexate toxicity can be increased by concurrent administration of:",
+      "image": null,
+      "options": [
+        {
+          "text": "NSAIDs (compete for renal secretion)",
+          "isCorrect": true,
+          "explanation": "NSAIDs inhibit renal tubular secretion of methotrexate, raising its levels and toxicity risk."
+        },
+        {
+          "text": "Penicillin",
+          "isCorrect": false,
+          "explanation": "Penicillin also reduces methotrexate clearance, but NSAIDs are classic."
+        },
+        {
+          "text": "Paracetamol",
+          "isCorrect": false,
+          "explanation": "No significant interaction."
+        },
+        {
+          "text": "Omeprazole",
+          "isCorrect": false,
+          "explanation": "Not a significant interaction."
+        },
+        {
+          "text": "Metoclopramide",
+          "isCorrect": false,
+          "explanation": "No direct renal interaction."
+        }
+      ],
+      "explanation": {
+        "overview": "Methotrexate is eliminated primarily by renal excretion via organic anion transporters. NSAIDs compete for this pathway, leading to delayed clearance and increased myelosuppression.",
+        "highYield": "High-dose methotrexate + NSAIDs = life-threatening toxicity; avoid combination.",
+        "clinicalCorrelation": "If methotrexate is used in low doses for rheumatoid arthritis, low-dose NSAIDs may be used cautiously with renal monitoring."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_031",
+      "difficulty": 3,
+      "question": "Lithium levels can be increased by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Thiazide diuretics (reduce renal clearance)",
+          "isCorrect": false,
+          "explanation": "Thiazides increase lithium levels."
+        },
+        {
+          "text": "Loop diuretics",
+          "isCorrect": false,
+          "explanation": "May also affect lithium, but thiazides and ACEi are classic."
+        },
+        {
+          "text": "Potassium-sparing diuretics",
+          "isCorrect": false,
+          "explanation": "Amiloride may actually reduce lithium uptake."
+        },
+        {
+          "text": "ACE inhibitors",
+          "isCorrect": false,
+          "explanation": "ACEi reduce lithium clearance."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Thiazides, loop diuretics, and ACE inhibitors can reduce lithium excretion, increasing levels."
+        }
+      ],
+      "explanation": {
+        "overview": "Lithium is handled similarly to sodium in the kidney; diuretics and drugs affecting renal function can significantly alter lithium clearance.",
+        "highYield": "Thiazides, ACEi, NSAIDs, and dehydration increase lithium levels; monitor levels closely.",
+        "clinicalCorrelation": "Thiazide diuretics can double lithium levels; if combination is necessary, reduce lithium dose and monitor."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_032",
+      "difficulty": 2,
+      "question": "Digoxin levels are increased by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Amiodarone (decreases renal and non-renal clearance)",
+          "isCorrect": false,
+          "explanation": "True."
+        },
+        {
+          "text": "Quinidine (displaces and reduces clearance)",
+          "isCorrect": false,
+          "explanation": "True."
+        },
+        {
+          "text": "Verapamil (reduces clearance)",
+          "isCorrect": false,
+          "explanation": "True."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Multiple drugs interact with digoxin via P-gp inhibition, reduced renal clearance, or displacement."
+        },
+        {
+          "text": "None of the above",
+          "isCorrect": false,
+          "explanation": "All interact."
+        }
+      ],
+      "explanation": {
+        "overview": "Digoxin is a substrate of P-glycoprotein and is primarily renally eliminated; many drugs inhibit P-gp or reduce renal clearance, raising digoxin levels.",
+        "highYield": "Digoxin toxicity risk: amiodarone, quinidine, verapamil, macrolides, cyclosporine all increase levels.",
+        "clinicalCorrelation": "Reduce digoxin dose by 30-50% when adding amiodarone; monitor digoxin levels."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_033",
+      "difficulty": 2,
+      "question": "Concomitant use of ACE inhibitors and potassium-sparing diuretics may cause:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hyperkalemia",
+          "isCorrect": true,
+          "explanation": "Both drugs reduce potassium excretion; combined use increases risk of hyperkalemia."
+        },
+        {
+          "text": "Hypokalemia",
+          "isCorrect": false,
+          "explanation": "Opposite."
+        },
+        {
+          "text": "Hyponatremia",
+          "isCorrect": false,
+          "explanation": "Not primary concern."
+        },
+        {
+          "text": "Hypotension",
+          "isCorrect": false,
+          "explanation": "Possible but hyperkalemia is more specific."
+        },
+        {
+          "text": "No interaction",
+          "isCorrect": false,
+          "explanation": "Significant interaction."
+        }
+      ],
+      "explanation": {
+        "overview": "ACE inhibitors decrease aldosterone, reducing potassium excretion; potassium-sparing diuretics block the aldosterone receptor, also reducing potassium excretion.",
+        "highYield": "ACEi + spironolactone/eplerenone = hyperkalemia risk; monitor potassium, renal function.",
+        "clinicalCorrelation": "This combination is used in heart failure but requires careful monitoring; contraindicated in renal impairment."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_034",
+      "difficulty": 2,
+      "question": "The risk of serotonin syndrome is increased when combining:",
+      "image": null,
+      "options": [
+        {
+          "text": "MAO inhibitors with SSRIs",
+          "isCorrect": false,
+          "explanation": "High risk."
+        },
+        {
+          "text": "SSRIs with triptans",
+          "isCorrect": false,
+          "explanation": "Increased risk."
+        },
+        {
+          "text": "SSRIs with linezolid",
+          "isCorrect": false,
+          "explanation": "Linezolid is a reversible MAO inhibitor."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Serotonin syndrome can result from excessive serotonergic activity from combinations of drugs that increase serotonin."
+        },
+        {
+          "text": "None of the above",
+          "isCorrect": false,
+          "explanation": "All can cause serotonin syndrome."
+        }
+      ],
+      "explanation": {
+        "overview": "Serotonin syndrome is a potentially life-threatening condition caused by excessive serotonergic activity in the CNS.",
+        "highYield": "Classic combinations: MAOI + SSRI, SSRI + triptan, SSRI + linezolid. Symptoms: hyperthermia, rigidity, myoclonus, autonomic instability.",
+        "clinicalCorrelation": "Washout period of 2 weeks (5 weeks for fluoxetine) between MAOI and SSRIs."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_035",
+      "difficulty": 2,
+      "question": "MAO inhibitors combined with tyramine-rich foods (e.g., aged cheese) can cause:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hypertensive crisis",
+          "isCorrect": true,
+          "explanation": "MAOIs prevent tyramine metabolism, leading to noradrenaline release and severe hypertension."
+        },
+        {
+          "text": "Hypotension",
+          "isCorrect": false,
+          "explanation": "Not hypotension."
+        },
+        {
+          "text": "Serotonin syndrome",
+          "isCorrect": false,
+          "explanation": "Serotonin syndrome is from excess serotonin, not tyramine."
+        },
+        {
+          "text": "Cardiac arrhythmias",
+          "isCorrect": false,
+          "explanation": "Hypertension is primary."
+        },
+        {
+          "text": "No effect",
+          "isCorrect": false,
+          "explanation": "Can be fatal."
+        }
+      ],
+      "explanation": {
+        "overview": "MAO-A in the gut breaks down dietary tyramine; when inhibited, tyramine enters the circulation and releases norepinephrine, causing severe hypertension.",
+        "highYield": "MAOI + tyramine = cheese reaction (hypertensive crisis). Avoid aged cheeses, cured meats, beer, wine.",
+        "clinicalCorrelation": "Patients on MAOIs must follow strict dietary restrictions; newer selective MAO-B inhibitors (selegiline) have less risk."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_036",
+      "difficulty": 3,
+      "question": "Alcohol (ethanol) interacts with many drugs. Acute alcohol ingestion can inhibit drug metabolism by competing for:",
+      "image": null,
+      "options": [
+        {
+          "text": "CYP2E1",
+          "isCorrect": true,
+          "explanation": "Ethanol and some drugs are metabolized by CYP2E1; acute alcohol can inhibit metabolism of these drugs."
+        },
+        {
+          "text": "CYP3A4",
+          "isCorrect": false,
+          "explanation": "Ethanol is not primarily metabolized by CYP3A4."
+        },
+        {
+          "text": "CYP2D6",
+          "isCorrect": false,
+          "explanation": "Not the main enzyme."
+        },
+        {
+          "text": "UGT",
+          "isCorrect": false,
+          "explanation": "Not primary."
+        },
+        {
+          "text": "MAO-A",
+          "isCorrect": false,
+          "explanation": "Not an enzyme for alcohol."
+        }
+      ],
+      "explanation": {
+        "overview": "Ethanol is metabolized by alcohol dehydrogenase and CYP2E1. Acute intake competitively inhibits CYP2E1, while chronic intake induces it.",
+        "highYield": "Acute alcohol: CYP2E1 inhibition → increased levels of drugs like acetaminophen (if taken acutely). Chronic alcohol: CYP2E1 induction → increased NAPQI from acetaminophen.",
+        "clinicalCorrelation": "Chronic alcoholics have increased susceptibility to acetaminophen hepatotoxicity even at therapeutic doses."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_037",
+      "difficulty": 2,
+      "question": "Chronic alcohol consumption induces CYP2E1, which may:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increase metabolism of acetaminophen, leading to higher NAPQI formation",
+          "isCorrect": true,
+          "explanation": "Induction of CYP2E1 increases conversion of acetaminophen to toxic NAPQI, raising hepatotoxicity risk in chronic drinkers."
+        },
+        {
+          "text": "Decrease acetaminophen metabolism",
+          "isCorrect": false,
+          "explanation": "Induction increases metabolism."
+        },
+        {
+          "text": "Have no effect on acetaminophen",
+          "isCorrect": false,
+          "explanation": "It does have an effect."
+        },
+        {
+          "text": "Protect against acetaminophen toxicity",
+          "isCorrect": false,
+          "explanation": "It increases toxicity."
+        },
+        {
+          "text": "Increase acetaminophen absorption",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        }
+      ],
+      "explanation": {
+        "overview": "Chronic alcohol use induces CYP2E1, leading to increased production of the hepatotoxic metabolite NAPQI from acetaminophen, even at therapeutic doses.",
+        "highYield": "Chronic alcoholics: acetaminophen max dose 2 g/day due to increased hepatotoxicity risk.",
+        "clinicalCorrelation": "In chronic alcoholics, NAPQI depletes glutathione stores, leading to centrilobular necrosis."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_038",
+      "difficulty": 2,
+      "question": "Disulfiram used in alcohol aversion therapy inhibits:",
+      "image": null,
+      "options": [
+        {
+          "text": "Aldehyde dehydrogenase",
+          "isCorrect": true,
+          "explanation": "Disulfiram blocks aldehyde dehydrogenase, causing accumulation of acetaldehyde after alcohol ingestion (disulfiram-ethanol reaction)."
+        },
+        {
+          "text": "Alcohol dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Not inhibited."
+        },
+        {
+          "text": "CYP2E1",
+          "isCorrect": false,
+          "explanation": "Not the target."
+        },
+        {
+          "text": "MAO-A",
+          "isCorrect": false,
+          "explanation": "Not."
+        },
+        {
+          "text": "COMT",
+          "isCorrect": false,
+          "explanation": "Not."
+        }
+      ],
+      "explanation": {
+        "overview": "Disulfiram irreversibly inhibits aldehyde dehydrogenase, leading to acetaldehyde buildup when alcohol is consumed, causing flushing, nausea, vomiting, and hypotension.",
+        "highYield": "Disulfiram reaction: acetaldehyde accumulation → severe discomfort; used as deterrent for alcoholics.",
+        "clinicalCorrelation": "Patients must avoid all alcohol-containing products, including mouthwash, sauces, and some medications."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_039",
+      "difficulty": 2,
+      "question": "St. John's wort induces CYP3A4. It may reduce the efficacy of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Oral contraceptives",
+          "isCorrect": false,
+          "explanation": "Yes."
+        },
+        {
+          "text": "Cyclosporine",
+          "isCorrect": false,
+          "explanation": "Yes."
+        },
+        {
+          "text": "Antiretroviral drugs",
+          "isCorrect": false,
+          "explanation": "Yes."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "St. John's wort induces CYP3A4 and P-gp, lowering levels of many drugs."
+        },
+        {
+          "text": "None of the above",
+          "isCorrect": false,
+          "explanation": "All are affected."
+        }
+      ],
+      "explanation": {
+        "overview": "St. John's wort is a potent inducer of CYP3A4 and P-glycoprotein, significantly reducing plasma concentrations of many critical medications.",
+        "highYield": "St. John's wort = avoid with OCPs (breakthrough bleeding, pregnancy), cyclosporine (organ rejection), antiretrovirals (treatment failure).",
+        "clinicalCorrelation": "Always ask about herbal supplements; St. John's wort is one of the most common causes of pharmacokinetic interactions."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_040",
+      "difficulty": 2,
+      "question": "Ginkgo biloba may increase bleeding risk when combined with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Warfarin",
+          "isCorrect": false,
+          "explanation": "Yes."
+        },
+        {
+          "text": "Aspirin",
+          "isCorrect": false,
+          "explanation": "Yes."
+        },
+        {
+          "text": "NSAIDs",
+          "isCorrect": false,
+          "explanation": "Yes."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Ginkgo has antiplatelet effects and may potentiate anticoagulants and antiplatelet drugs."
+        },
+        {
+          "text": "None of the above",
+          "isCorrect": false,
+          "explanation": "All can interact."
+        }
+      ],
+      "explanation": {
+        "overview": "Ginkgo biloba extracts contain ginkgolides that inhibit platelet-activating factor, potentially increasing the risk of bleeding when combined with other anticoagulant/antiplatelet agents.",
+        "highYield": "Ginkgo + warfarin/aspirin/NSAIDs = increased bleeding risk; avoid concurrent use or monitor closely.",
+        "clinicalCorrelation": "Patients scheduled for surgery should discontinue ginkgo at least 1-2 weeks prior."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_041",
+      "difficulty": 2,
+      "question": "The interaction between warfarin and aspirin is an example of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Pharmacodynamic interaction (increased bleeding risk)",
+          "isCorrect": true,
+          "explanation": "Both drugs affect hemostasis (warfarin inhibits clotting factor synthesis, aspirin inhibits platelets), leading to additive anticoagulant effect."
+        },
+        {
+          "text": "Pharmacokinetic interaction (metabolism)",
+          "isCorrect": false,
+          "explanation": "No significant metabolic interaction."
+        },
+        {
+          "text": "Chemical antagonism",
+          "isCorrect": false,
+          "explanation": "Not chemical."
+        },
+        {
+          "text": "Physiological antagonism",
+          "isCorrect": false,
+          "explanation": "They do not antagonize."
+        },
+        {
+          "text": "No interaction",
+          "isCorrect": false,
+          "explanation": "There is a significant interaction."
+        }
+      ],
+      "explanation": {
+        "overview": "Warfarin and aspirin both impair hemostasis through different mechanisms, resulting in a pharmacodynamic interaction that increases bleeding risk.",
+        "highYield": "Warfarin + aspirin = 2-3 fold increased bleeding risk; used together only in specific indications (e.g., mechanical heart valves).",
+        "clinicalCorrelation": "If combined, maintain INR in lower therapeutic range and consider gastroprotection."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_042",
+      "difficulty": 3,
+      "question": "Clopidogrel is a prodrug activated by CYP2C19. Co-administration with omeprazole (a CYP2C19 inhibitor) may:",
+      "image": null,
+      "options": [
+        {
+          "text": "Reduce clopidogrel activation and antiplatelet effect",
+          "isCorrect": true,
+          "explanation": "Omeprazole inhibits CYP2C19, reducing conversion of clopidogrel to its active metabolite, decreasing its efficacy."
+        },
+        {
+          "text": "Increase clopidogrel effect",
+          "isCorrect": false,
+          "explanation": "Effect is decreased."
+        },
+        {
+          "text": "Have no effect",
+          "isCorrect": false,
+          "explanation": "There is a significant interaction."
+        },
+        {
+          "text": "Increase bleeding risk",
+          "isCorrect": false,
+          "explanation": "Bleeding risk may be reduced due to less antiplatelet effect."
+        },
+        {
+          "text": "Increase clopidogrel absorption",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        }
+      ],
+      "explanation": {
+        "overview": "Clopidogrel requires CYP2C19 for bioactivation; strong inhibitors like omeprazole can reduce the formation of the active metabolite, potentially increasing cardiovascular events.",
+        "highYield": "Avoid omeprazole and esomeprazole with clopidogrel; pantoprazole is a weaker CYP2C19 inhibitor and preferred.",
+        "clinicalCorrelation": "FDA recommends against concurrent use of omeprazole and clopidogrel; consider separating or using alternative PPI."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_043",
+      "difficulty": 2,
+      "question": "Beta-blockers and verapamil combined can cause:",
+      "image": null,
+      "options": [
+        {
+          "text": "Severe bradycardia, heart block, and hypotension",
+          "isCorrect": true,
+          "explanation": "Both drugs depress SA and AV node activity; combined use can lead to additive negative chronotropic and dromotropic effects."
+        },
+        {
+          "text": "Tachycardia",
+          "isCorrect": false,
+          "explanation": "Bradycardia is the concern."
+        },
+        {
+          "text": "Hypertension",
+          "isCorrect": false,
+          "explanation": "Hypotension."
+        },
+        {
+          "text": "No interaction",
+          "isCorrect": false,
+          "explanation": "Significant interaction."
+        },
+        {
+          "text": "Increased bronchodilation",
+          "isCorrect": false,
+          "explanation": "Beta-blockers may cause bronchoconstriction."
+        }
+      ],
+      "explanation": {
+        "overview": "The combination of a beta-blocker and a non-dihydropyridine calcium channel blocker (verapamil, diltiazem) can cause additive suppression of cardiac conduction and contractility.",
+        "highYield": "Avoid combining beta-blockers with verapamil or diltiazem; risk of bradycardia, AV block, heart failure.",
+        "clinicalCorrelation": "If both are necessary (e.g., angina), use with extreme caution and ECG monitoring; dihydropyridines (nifedipine) are safer with beta-blockers."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_044",
+      "difficulty": 2,
+      "question": "Sildenafil and nitrates should not be co-administered because of risk of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Severe hypotension",
+          "isCorrect": true,
+          "explanation": "Both are vasodilators; sildenafil potentiates the hypotensive effect of nitrates, leading to dangerous drops in blood pressure."
+        },
+        {
+          "text": "Hypertensive crisis",
+          "isCorrect": false,
+          "explanation": "Hypotension, not hypertension."
+        },
+        {
+          "text": "Tachycardia",
+          "isCorrect": false,
+          "explanation": "Hypotension is the primary danger."
+        },
+        {
+          "text": "Priapism",
+          "isCorrect": false,
+          "explanation": "Not a common interaction."
+        },
+        {
+          "text": "No interaction",
+          "isCorrect": false,
+          "explanation": "Significant interaction."
+        }
+      ],
+      "explanation": {
+        "overview": "Sildenafil inhibits PDE5, increasing cGMP and causing vasodilation; nitrates also increase cGMP, leading to profound synergistic hypotension.",
+        "highYield": "Contraindicated: sildenafil (and other PDE5 inhibitors) with any form of nitrate. Fatal hypotension can occur.",
+        "clinicalCorrelation": "Ask all men about PDE5 inhibitor use before prescribing nitrates; if chest pain after sildenafil, avoid nitrates for at least 24 hours."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_045",
+      "difficulty": 2,
+      "question": "Potassium supplements combined with potassium-sparing diuretics may cause:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hyperkalemia",
+          "isCorrect": true,
+          "explanation": "Both increase potassium levels; combination can lead to life-threatening hyperkalemia."
+        },
+        {
+          "text": "Hypokalemia",
+          "isCorrect": false,
+          "explanation": "Opposite."
+        },
+        {
+          "text": "Hyponatremia",
+          "isCorrect": false,
+          "explanation": "Not primary."
+        },
+        {
+          "text": "Metabolic alkalosis",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        },
+        {
+          "text": "No interaction",
+          "isCorrect": false,
+          "explanation": "Significant interaction."
+        }
+      ],
+      "explanation": {
+        "overview": "Both potassium supplements and potassium-sparing diuretics (spironolactone, eplerenone, amiloride) increase serum potassium, and co-administration can cause dangerous hyperkalemia.",
+        "highYield": "Avoid potassium supplements with potassium-sparing diuretics or ACE inhibitors/ARBs unless hypokalemia is documented.",
+        "clinicalCorrelation": "Monitor serum potassium and renal function; hyperkalemia can cause cardiac arrhythmias."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_046",
+      "difficulty": 3,
+      "question": "Trimethoprim-sulfamethoxazole can increase phenytoin levels by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Inhibiting CYP2C9",
+          "isCorrect": true,
+          "explanation": "Sulfamethoxazole inhibits CYP2C9, the enzyme that metabolizes phenytoin, leading to increased phenytoin levels."
+        },
+        {
+          "text": "Inducing CYP2C9",
+          "isCorrect": false,
+          "explanation": "It inhibits, not induces."
+        },
+        {
+          "text": "Competing for protein binding",
+          "isCorrect": false,
+          "explanation": "Also may occur, but primary mechanism is enzyme inhibition."
+        },
+        {
+          "text": "Reducing renal excretion",
+          "isCorrect": false,
+          "explanation": "Not the primary."
+        },
+        {
+          "text": "Increasing absorption",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        }
+      ],
+      "explanation": {
+        "overview": "Sulfamethoxazole is a potent inhibitor of CYP2C9, which is the major metabolic pathway for phenytoin.",
+        "highYield": "TMP-SMX + phenytoin = phenytoin toxicity; monitor levels and clinical signs of toxicity (nystagmus, ataxia).",
+        "clinicalCorrelation": "If possible, use alternative antibiotics in patients on phenytoin."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_047",
+      "difficulty": 2,
+      "question": "Fluconazole inhibits CYP2C9 and CYP3A4. It may increase the effect of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Warfarin",
+          "isCorrect": false,
+          "explanation": "Yes, INR increases."
+        },
+        {
+          "text": "Phenytoin",
+          "isCorrect": false,
+          "explanation": "Yes."
+        },
+        {
+          "text": "Sulfonylureas",
+          "isCorrect": false,
+          "explanation": "Yes, hypoglycemia risk."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Fluconazole interacts with many drugs metabolized by these enzymes, raising their levels."
+        },
+        {
+          "text": "None of the above",
+          "isCorrect": false,
+          "explanation": "All are affected."
+        }
+      ],
+      "explanation": {
+        "overview": "Fluconazole is a potent inhibitor of CYP2C9 and a moderate inhibitor of CYP3A4, leading to increased plasma concentrations of many drugs.",
+        "highYield": "Fluconazole + warfarin = ↑ INR; + phenytoin = ↑ levels; + sulfonylureas = hypoglycemia.",
+        "clinicalCorrelation": "Monitor INR, phenytoin levels, and blood glucose closely when fluconazole is prescribed."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_048",
+      "difficulty": 3,
+      "question": "The interaction between MAO inhibitors and meperidine can cause:",
+      "image": null,
+      "options": [
+        {
+          "text": "Serotonin syndrome or hyperpyrexia",
+          "isCorrect": true,
+          "explanation": "MAOIs can potentiate the serotonergic effects of meperidine, leading to serotonin syndrome."
+        },
+        {
+          "text": "Hypertensive crisis",
+          "isCorrect": false,
+          "explanation": "Not the primary concern; it's serotonin toxicity."
+        },
+        {
+          "text": "Hypotension",
+          "isCorrect": false,
+          "explanation": "Not the main effect."
+        },
+        {
+          "text": "Respiratory depression",
+          "isCorrect": false,
+          "explanation": "May occur but not the hallmark interaction."
+        },
+        {
+          "text": "No interaction",
+          "isCorrect": false,
+          "explanation": "Severe interaction."
+        }
+      ],
+      "explanation": {
+        "overview": "Meperidine (pethidine) has serotonergic activity; when combined with MAOIs, it can precipitate a fatal serotonin syndrome characterized by hyperpyrexia, rigidity, and autonomic instability.",
+        "highYield": "MAOI + meperidine = severe serotonin syndrome; avoid meperidine in patients on MAOIs.",
+        "clinicalCorrelation": "Other opioids like morphine, fentanyl are safer alternatives with MAOIs."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_049",
+      "difficulty": 2,
+      "question": "Cholestyramine can bind to drugs in the gut and reduce their absorption. It is used to treat:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hyperlipidemia",
+          "isCorrect": false,
+          "explanation": "Yes, but also other uses."
+        },
+        {
+          "text": "Diarrhea",
+          "isCorrect": false,
+          "explanation": "Bile acid sequestrants can cause constipation, not treat diarrhea, but they are used in cholestatic pruritus."
+        },
+        {
+          "text": "Pruritus in cholestasis",
+          "isCorrect": false,
+          "explanation": "Yes, it binds bile acids."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Cholestyramine binds bile acids (treating hyperlipidemia and pruritus) and can also bind drugs like digoxin, warfarin, and thyroxine."
+        },
+        {
+          "text": "None of the above",
+          "isCorrect": false,
+          "explanation": "All are indications or effects."
+        }
+      ],
+      "explanation": {
+        "overview": "Cholestyramine is a bile acid sequestrant that lowers LDL cholesterol and relieves pruritus in cholestasis, but it also binds many oral drugs, reducing their absorption.",
+        "highYield": "Cholestyramine binds: digoxin, warfarin, thyroxine, thiazides, fat-soluble vitamins. Separate from other drugs by at least 4 hours.",
+        "clinicalCorrelation": "In cholestatic pruritus, cholestyramine provides symptomatic relief by reducing bile acid deposition in skin."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_050",
+      "difficulty": 1,
+      "question": "To minimize drug interactions, the most important strategy is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Taking a thorough medication history including OTC and herbal products",
+          "isCorrect": true,
+          "explanation": "A complete medication history helps identify potential interactions before they occur."
+        },
+        {
+          "text": "Using fixed-dose combinations",
+          "isCorrect": false,
+          "explanation": "Doesn't prevent all interactions."
+        },
+        {
+          "text": "Avoiding all polypharmacy",
+          "isCorrect": false,
+          "explanation": "Not always possible."
+        },
+        {
+          "text": "Taking drugs at the same time each day",
+          "isCorrect": false,
+          "explanation": "Doesn't address interactions."
+        },
+        {
+          "text": "Increasing the dose of all drugs",
+          "isCorrect": false,
+          "explanation": "Would worsen toxicity."
+        }
+      ],
+      "explanation": {
+        "overview": "The cornerstone of preventing drug interactions is a comprehensive medication review, including prescription, over-the-counter, and herbal products.",
+        "highYield": "Always ask: 'What else are you taking?' including supplements.",
+        "clinicalCorrelation": "Use drug interaction checkers and clinical judgment to weigh risks and benefits of combinations."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_051",
+      "difficulty": 2,
+      "question": "Which of the following best describes pharmacodynamic synergism?",
+      "image": null,
+      "options": [
+        {
+          "text": "Two drugs acting at different receptors produce a greater effect than either alone",
+          "isCorrect": true,
+          "explanation": "Pharmacodynamic synergism results from complementary mechanisms enhancing the overall response."
+        },
+        {
+          "text": "One drug increases the metabolism of the other",
+          "isCorrect": false,
+          "explanation": "That's a pharmacokinetic interaction."
+        },
+        {
+          "text": "Two drugs compete for the same receptor",
+          "isCorrect": false,
+          "explanation": "That's competitive antagonism."
+        },
+        {
+          "text": "A drug reduces the side effects of another",
+          "isCorrect": false,
+          "explanation": "That could be a beneficial interaction but not synergism."
+        },
+        {
+          "text": "The combined effect equals the sum of individual effects",
+          "isCorrect": false,
+          "explanation": "That's additive effect."
+        }
+      ],
+      "explanation": {
+        "overview": "Pharmacodynamic synergism occurs when drugs with different mechanisms produce a combined effect that exceeds what would be expected from simple additivity.",
+        "highYield": "Example: Amoxicillin (cell wall synthesis inhibitor) + clavulanate (beta-lactamase inhibitor) = synergistic bacterial killing.",
+        "clinicalCorrelation": "Combining antihypertensives from different classes often yields synergistic BP reduction."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_052",
+      "difficulty": 2,
+      "question": "Which of the following CYP enzyme inducers is also a substrate of the induced enzyme, leading to auto-induction?",
+      "image": null,
+      "options": [
+        {
+          "text": "Carbamazepine",
+          "isCorrect": true,
+          "explanation": "Carbamazepine induces its own metabolism, leading to decreased levels over time and requiring dose adjustment."
+        },
+        {
+          "text": "Rifampicin",
+          "isCorrect": false,
+          "explanation": "Rifampicin is an inducer but auto-induction is less prominent than carbamazepine."
+        },
+        {
+          "text": "Phenobarbital",
+          "isCorrect": false,
+          "explanation": "Also induces its metabolism, but carbamazepine is the classic example."
+        },
+        {
+          "text": "St. John's wort",
+          "isCorrect": false,
+          "explanation": "Induces CYP3A4 but not a prominent auto-inducer."
+        },
+        {
+          "text": "Dexamethasone",
+          "isCorrect": false,
+          "explanation": "Inducer, but auto-induction not as characteristic."
+        }
+      ],
+      "explanation": {
+        "overview": "Carbamazepine is a well-known auto-inducer; it accelerates its own metabolism via CYP3A4, leading to declining levels over the first weeks of therapy.",
+        "highYield": "Carbamazepine auto-induction: dose needs to be increased after 3-6 weeks; also induces other drugs.",
+        "clinicalCorrelation": "When starting carbamazepine, monitor drug levels and adjust dose based on clinical response."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_053",
+      "difficulty": 2,
+      "question": "Which antifungal agent is a strong inhibitor of CYP3A4 and can cause significant drug interactions?",
+      "image": null,
+      "options": [
+        {
+          "text": "Itraconazole",
+          "isCorrect": true,
+          "explanation": "Itraconazole is a potent CYP3A4 inhibitor, similar to ketoconazole."
+        },
+        {
+          "text": "Fluconazole",
+          "isCorrect": false,
+          "explanation": "Fluconazole is more CYP2C9 inhibition, less CYP3A4."
+        },
+        {
+          "text": "Amphotericin B",
+          "isCorrect": false,
+          "explanation": "Not a metabolic inhibitor."
+        },
+        {
+          "text": "Caspofungin",
+          "isCorrect": false,
+          "explanation": "Echinocandin, not a CYP inhibitor."
+        },
+        {
+          "text": "Nystatin",
+          "isCorrect": false,
+          "explanation": "Topical, no systemic interactions."
+        }
+      ],
+      "explanation": {
+        "overview": "Azole antifungals, particularly ketoconazole and itraconazole, are potent CYP3A4 inhibitors, while fluconazole is a CYP2C9 inhibitor.",
+        "highYield": "Itraconazole/ketoconazole + statins, midazolam, cyclosporine = toxicity.",
+        "clinicalCorrelation": "Choose non-interacting antifungals (terbinafine, echinocandins) if the patient is on multiple CYP3A4 substrates."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_054",
+      "difficulty": 2,
+      "question": "Which of the following is a pharmacodynamic drug interaction?",
+      "image": null,
+      "options": [
+        {
+          "text": "Warfarin plus aspirin causing increased bleeding",
+          "isCorrect": true,
+          "explanation": "Both affect hemostasis, an additive pharmacodynamic effect."
+        },
+        {
+          "text": "Rifampicin reducing oral contraceptive efficacy",
+          "isCorrect": false,
+          "explanation": "Pharmacokinetic (enzyme induction)."
+        },
+        {
+          "text": "Probenecid increasing penicillin levels",
+          "isCorrect": false,
+          "explanation": "Pharmacokinetic (renal transport)."
+        },
+        {
+          "text": "Grapefruit juice increasing felodipine bioavailability",
+          "isCorrect": false,
+          "explanation": "Pharmacokinetic (CYP3A4 inhibition)."
+        },
+        {
+          "text": "Cholestyramine binding digoxin in the gut",
+          "isCorrect": false,
+          "explanation": "Pharmacokinetic (absorption)."
+        }
+      ],
+      "explanation": {
+        "overview": "Pharmacodynamic interactions occur when drugs have additive, synergistic, or antagonistic effects at the receptor or physiological level.",
+        "highYield": "Warfarin + aspirin = PD interaction; most other examples are PK.",
+        "clinicalCorrelation": "PD interactions are often predictable based on the drugs' mechanisms."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_055",
+      "difficulty": 2,
+      "question": "Which of the following antibiotics can prolong the QT interval and interact with other QT-prolonging drugs?",
+      "image": null,
+      "options": [
+        {
+          "text": "Azithromycin",
+          "isCorrect": true,
+          "explanation": "Macrolides, including azithromycin, can prolong QT interval."
+        },
+        {
+          "text": "Amoxicillin",
+          "isCorrect": false,
+          "explanation": "No QT effect."
+        },
+        {
+          "text": "Tetracycline",
+          "isCorrect": false,
+          "explanation": "No QT effect."
+        },
+        {
+          "text": "Clindamycin",
+          "isCorrect": false,
+          "explanation": "No significant QT prolongation."
+        },
+        {
+          "text": "Metronidazole",
+          "isCorrect": false,
+          "explanation": "Not a QT drug."
+        }
+      ],
+      "explanation": {
+        "overview": "Macrolides and fluoroquinolones are known to prolong the QT interval; concurrent use with other QT-prolonging drugs increases the risk of torsades de pointes.",
+        "highYield": "Azithromycin + antiarrhythmics, antipsychotics, methadone = risk of arrhythmia.",
+        "clinicalCorrelation": "Check ECG before and during therapy if combining QT-prolonging agents."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_056",
+      "difficulty": 2,
+      "question": "Which of the following is a CYP2D6 inhibitor that can reduce the analgesic effect of codeine?",
+      "image": null,
+      "options": [
+        {
+          "text": "Paroxetine",
+          "isCorrect": true,
+          "explanation": "Paroxetine is a potent CYP2D6 inhibitor, blocking conversion of codeine to morphine."
+        },
+        {
+          "text": "Fluconazole",
+          "isCorrect": false,
+          "explanation": "CYP2C9 inhibitor."
+        },
+        {
+          "text": "Rifampicin",
+          "isCorrect": false,
+          "explanation": "Inducer, not inhibitor."
+        },
+        {
+          "text": "Omeprazole",
+          "isCorrect": false,
+          "explanation": "CYP2C19 inhibitor."
+        },
+        {
+          "text": "Cimetidine",
+          "isCorrect": false,
+          "explanation": "Broad inhibitor but not primarily CYP2D6."
+        }
+      ],
+      "explanation": {
+        "overview": "Codeine is a prodrug that requires CYP2D6 for conversion to morphine; strong CYP2D6 inhibitors like paroxetine, fluoxetine, and bupropion reduce its analgesic efficacy.",
+        "highYield": "CYP2D6 inhibitors (paroxetine, fluoxetine) + codeine = reduced pain relief.",
+        "clinicalCorrelation": "If a patient on paroxetine needs an opioid, choose morphine or hydromorphone instead of codeine."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_057",
+      "difficulty": 2,
+      "question": "Which of the following is a common interaction between warfarin and antibiotics?",
+      "image": null,
+      "options": [
+        {
+          "text": "Increased INR due to vitamin K synthesis reduction by gut flora",
+          "isCorrect": true,
+          "explanation": "Broad-spectrum antibiotics can reduce vitamin K-producing gut bacteria, potentiating warfarin effect."
+        },
+        {
+          "text": "Decreased INR due to enzyme induction",
+          "isCorrect": false,
+          "explanation": "Some antibiotics inhibit metabolism, leading to increased INR."
+        },
+        {
+          "text": "No effect on INR",
+          "isCorrect": false,
+          "explanation": "Many antibiotics affect INR."
+        },
+        {
+          "text": "Increased warfarin absorption",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        },
+        {
+          "text": "Reduced warfarin protein binding",
+          "isCorrect": false,
+          "explanation": "Some may displace, but gut flora effect is additional."
+        }
+      ],
+      "explanation": {
+        "overview": "Antibiotics can alter warfarin response by reducing intestinal flora that produce vitamin K, and many also inhibit warfarin metabolism.",
+        "highYield": "Antibiotics + warfarin = monitor INR closely; increased bleeding risk.",
+        "clinicalCorrelation": "Cephalosporins with NMTT side chain (cefamandole) can cause hypoprothrombinemia and increase warfarin effect."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_058",
+      "difficulty": 2,
+      "question": "Which of the following drugs is a CYP3A4 substrate whose levels are substantially increased by grapefruit juice?",
+      "image": null,
+      "options": [
+        {
+          "text": "Felodipine",
+          "isCorrect": true,
+          "explanation": "Felodipine is highly sensitive to grapefruit juice; bioavailability increases dramatically."
+        },
+        {
+          "text": "Digoxin",
+          "isCorrect": false,
+          "explanation": "Digoxin is a P-gp substrate but not a CYP3A4 substrate."
+        },
+        {
+          "text": "Atenolol",
+          "isCorrect": false,
+          "explanation": "Renally eliminated, not CYP3A4."
+        },
+        {
+          "text": "Furosemide",
+          "isCorrect": false,
+          "explanation": "Not metabolized by CYP3A4."
+        },
+        {
+          "text": "Metformin",
+          "isCorrect": false,
+          "explanation": "Renally excreted unchanged."
+        }
+      ],
+      "explanation": {
+        "overview": "Felodipine, a dihydropyridine calcium channel blocker, is a classic victim of grapefruit juice interaction due to high first-pass metabolism by intestinal CYP3A4.",
+        "highYield": "Grapefruit juice + felodipine = several-fold increase in AUC; risk of hypotension, headache.",
+        "clinicalCorrelation": "Other CYP3A4 substrate CCBs (nifedipine, verapamil) are also affected."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_059",
+      "difficulty": 2,
+      "question": "Which of the following interactions involves inhibition of P-glycoprotein?",
+      "image": null,
+      "options": [
+        {
+          "text": "Quinidine increasing digoxin levels",
+          "isCorrect": true,
+          "explanation": "Quinidine inhibits P-gp, reducing renal and intestinal digoxin efflux, elevating levels."
+        },
+        {
+          "text": "Warfarin and aspirin",
+          "isCorrect": false,
+          "explanation": "Pharmacodynamic interaction."
+        },
+        {
+          "text": "Carbamazepine reducing warfarin levels",
+          "isCorrect": false,
+          "explanation": "Enzyme induction."
+        },
+        {
+          "text": "Probenecid and penicillin",
+          "isCorrect": false,
+          "explanation": "Organic anion transporter inhibition."
+        },
+        {
+          "text": "Ketoconazole and simvastatin",
+          "isCorrect": false,
+          "explanation": "CYP3A4 inhibition."
+        }
+      ],
+      "explanation": {
+        "overview": "P-glycoprotein is an efflux transporter; its inhibition leads to increased absorption and decreased excretion of substrates like digoxin.",
+        "highYield": "Digoxin + quinidine = classic P-gp interaction; reduce digoxin dose.",
+        "clinicalCorrelation": "Other P-gp inhibitors: verapamil, cyclosporine, amiodarone."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_060",
+      "difficulty": 2,
+      "question": "Which of the following is a true statement about the interaction between levothyroxine and calcium carbonate?",
+      "image": null,
+      "options": [
+        {
+          "text": "Calcium carbonate reduces levothyroxine absorption",
+          "isCorrect": true,
+          "explanation": "Calcium carbonate can chelate or adsorb levothyroxine in the gut, impairing its absorption."
+        },
+        {
+          "text": "Calcium carbonate increases levothyroxine effect",
+          "isCorrect": false,
+          "explanation": "Absorption is reduced."
+        },
+        {
+          "text": "There is no interaction",
+          "isCorrect": false,
+          "explanation": "Well-documented interaction."
+        },
+        {
+          "text": "Calcium carbonate enhances levothyroxine metabolism",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        },
+        {
+          "text": "Calcium carbonate displaces levothyroxine from protein binding",
+          "isCorrect": false,
+          "explanation": "Not the primary interaction."
+        }
+      ],
+      "explanation": {
+        "overview": "Divalent cations (calcium, magnesium, iron) form insoluble complexes with levothyroxine, reducing its bioavailability.",
+        "highYield": "Separate levothyroxine from calcium/iron supplements by at least 4 hours.",
+        "clinicalCorrelation": "Check TSH if a patient on stable levothyroxine starts calcium supplements; may need dose adjustment."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_061",
+      "difficulty": 2,
+      "question": "Which of the following drugs is a CYP2C9 inhibitor that can cause hypoglycemia when added to sulfonylureas?",
+      "image": null,
+      "options": [
+        {
+          "text": "Fluconazole",
+          "isCorrect": true,
+          "explanation": "Fluconazole inhibits CYP2C9, which metabolizes sulfonylureas, potentially causing severe hypoglycemia."
+        },
+        {
+          "text": "Rifampicin",
+          "isCorrect": false,
+          "explanation": "Enzyme inducer, would decrease sulfonylurea levels."
+        },
+        {
+          "text": "Omeprazole",
+          "isCorrect": false,
+          "explanation": "CYP2C19 inhibitor, not CYP2C9."
+        },
+        {
+          "text": "Cimetidine",
+          "isCorrect": false,
+          "explanation": "Broad inhibitor but not primarily CYP2C9."
+        },
+        {
+          "text": "Phenytoin",
+          "isCorrect": false,
+          "explanation": "Inducer, not inhibitor."
+        }
+      ],
+      "explanation": {
+        "overview": "Fluconazole is a potent CYP2C9 inhibitor; sulfonylureas (glyburide, glipizide) are CYP2C9 substrates, so concurrent use increases the risk of hypoglycemia.",
+        "highYield": "Fluconazole + sulfonylurea = increased hypoglycemia risk; monitor blood glucose.",
+        "clinicalCorrelation": "Consider temporary reduction of sulfonylurea dose during fluconazole therapy."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_062",
+      "difficulty": 2,
+      "question": "Which of the following is an example of a beneficial drug interaction?",
+      "image": null,
+      "options": [
+        {
+          "text": "Amoxicillin and clavulanic acid for resistant bacteria",
+          "isCorrect": true,
+          "explanation": "Clavulanic acid inhibits beta-lactamase, restoring amoxicillin activity against resistant strains."
+        },
+        {
+          "text": "Warfarin and aspirin increasing bleeding",
+          "isCorrect": false,
+          "explanation": "Harmful interaction."
+        },
+        {
+          "text": "Sildenafil and nitrates causing hypotension",
+          "isCorrect": false,
+          "explanation": "Dangerous."
+        },
+        {
+          "text": "St. John's wort reducing oral contraceptive efficacy",
+          "isCorrect": false,
+          "explanation": "Unintended pregnancy risk."
+        },
+        {
+          "text": "Grapefruit juice increasing statin levels",
+          "isCorrect": false,
+          "explanation": "Risk of myopathy."
+        }
+      ],
+      "explanation": {
+        "overview": "Some drug interactions are deliberately used therapeutically, such as beta-lactamase inhibitors combined with penicillins.",
+        "highYield": "Beneficial interactions: amoxicillin-clavulanate, carbidopa-levodopa, sulfamethoxazole-trimethoprim.",
+        "clinicalCorrelation": "Understanding mechanisms allows clinicians to exploit synergistic interactions for better outcomes."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_063",
+      "difficulty": 3,
+      "question": "Which of the following anticonvulsants is a strong enzyme inducer and can decrease the effectiveness of hormonal contraceptives?",
+      "image": null,
+      "options": [
+        {
+          "text": "Phenytoin",
+          "isCorrect": true,
+          "explanation": "Phenytoin induces CYP3A4, reducing estrogen and progestin levels, leading to contraceptive failure."
+        },
+        {
+          "text": "Valproate",
+          "isCorrect": false,
+          "explanation": "Valproate is an enzyme inhibitor, not inducer."
+        },
+        {
+          "text": "Levetiracetam",
+          "isCorrect": false,
+          "explanation": "Not an enzyme inducer."
+        },
+        {
+          "text": "Gabapentin",
+          "isCorrect": false,
+          "explanation": "No CYP interactions."
+        },
+        {
+          "text": "Lamotrigine",
+          "isCorrect": false,
+          "explanation": "Weak or no induction; oral contraceptives can reduce lamotrigine levels."
+        }
+      ],
+      "explanation": {
+        "overview": "Phenytoin, carbamazepine, and barbiturates are potent enzyme inducers that reduce the efficacy of oral contraceptives.",
+        "highYield": "Anticonvulsant inducers (phenytoin, carbamazepine, phenobarbital) + OCPs = unplanned pregnancy risk.",
+        "clinicalCorrelation": "Women on these anticonvulsants need higher-dose estrogen OCPs or alternative contraception like IUD."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_064",
+      "difficulty": 2,
+      "question": "Which of the following medications increases lithium levels by promoting sodium depletion?",
+      "image": null,
+      "options": [
+        {
+          "text": "Hydrochlorothiazide",
+          "isCorrect": true,
+          "explanation": "Thiazide diuretics cause sodium loss, leading to compensatory increased lithium reabsorption in the proximal tubule."
+        },
+        {
+          "text": "Amiloride",
+          "isCorrect": false,
+          "explanation": "Amiloride may reduce lithium uptake, but not increase levels."
+        },
+        {
+          "text": "Furosemide",
+          "isCorrect": false,
+          "explanation": "Loop diuretics can also increase lithium, but thiazides are classic."
+        },
+        {
+          "text": "Spironolactone",
+          "isCorrect": false,
+          "explanation": "Potassium-sparing, less effect on lithium."
+        },
+        {
+          "text": "Acetazolamide",
+          "isCorrect": false,
+          "explanation": "Carbonic anhydrase inhibitor, does not increase lithium."
+        }
+      ],
+      "explanation": {
+        "overview": "Thiazide diuretics induce sodium depletion, which stimulates proximal tubular reabsorption of sodium and lithium, increasing serum lithium levels.",
+        "highYield": "Thiazides increase lithium levels; avoid if possible or reduce lithium dose and monitor levels.",
+        "clinicalCorrelation": "Loop diuretics also increase lithium but to a lesser extent; always monitor lithium levels when adding any diuretic."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_065",
+      "difficulty": 2,
+      "question": "Which of the following is a known interaction of verapamil with beta-blockers?",
+      "image": null,
+      "options": [
+        {
+          "text": "Additive negative inotropic and chronotropic effects",
+          "isCorrect": true,
+          "explanation": "Both suppress cardiac function; combination can cause bradycardia, AV block, and heart failure."
+        },
+        {
+          "text": "Reduced antihypertensive effect",
+          "isCorrect": false,
+          "explanation": "Effect is additive, not reduced."
+        },
+        {
+          "text": "Increased metabolism of beta-blockers",
+          "isCorrect": false,
+          "explanation": "Not a metabolic interaction."
+        },
+        {
+          "text": "No significant interaction",
+          "isCorrect": false,
+          "explanation": "Significant and potentially dangerous."
+        },
+        {
+          "text": "Increased bronchodilation",
+          "isCorrect": false,
+          "explanation": "Beta-blockers may cause bronchoconstriction."
+        }
+      ],
+      "explanation": {
+        "overview": "Verapamil and beta-blockers both decrease heart rate and contractility; combined use can lead to severe bradycardia, AV block, and hypotension.",
+        "highYield": "Avoid verapamil + beta-blocker combination; if necessary, use with caution and ECG monitoring.",
+        "clinicalCorrelation": "Elderly patients with underlying conduction system disease are at highest risk."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_066",
+      "difficulty": 2,
+      "question": "Which of the following herbal supplements is known to inhibit CYP3A4 and increase the risk of rhabdomyolysis with statins?",
+      "image": null,
+      "options": [
+        {
+          "text": "Grapefruit seed extract",
+          "isCorrect": true,
+          "explanation": "Grapefruit juice and extracts contain furanocoumarins that inhibit CYP3A4, increasing statin levels."
+        },
+        {
+          "text": "Ginkgo biloba",
+          "isCorrect": false,
+          "explanation": "Affects platelets, not CYP3A4."
+        },
+        {
+          "text": "St. John's wort",
+          "isCorrect": false,
+          "explanation": "Induces CYP3A4."
+        },
+        {
+          "text": "Echinacea",
+          "isCorrect": false,
+          "explanation": "May affect CYP1A2 and CYP3A4 but less significant."
+        },
+        {
+          "text": "Garlic",
+          "isCorrect": false,
+          "explanation": "May have mild antiplatelet effects."
+        }
+      ],
+      "explanation": {
+        "overview": "Grapefruit juice is a well-known inhibitor of intestinal CYP3A4, leading to increased systemic exposure of statins metabolized by this enzyme.",
+        "highYield": "Avoid grapefruit products with atorvastatin, simvastatin, lovastatin to prevent myopathy/rhabdomyolysis.",
+        "clinicalCorrelation": "Separating grapefruit juice from statin intake by several hours does not eliminate the interaction due to irreversible CYP inactivation."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_067",
+      "difficulty": 2,
+      "question": "Which of the following is an interaction between methotrexate and NSAIDs?",
+      "image": null,
+      "options": [
+        {
+          "text": "NSAIDs reduce renal clearance of methotrexate, increasing toxicity",
+          "isCorrect": true,
+          "explanation": "NSAIDs inhibit renal tubular secretion of methotrexate, leading to increased levels and myelosuppression."
+        },
+        {
+          "text": "NSAIDs increase methotrexate metabolism",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        },
+        {
+          "text": "No interaction",
+          "isCorrect": false,
+          "explanation": "Clinically significant interaction."
+        },
+        {
+          "text": "Methotrexate reduces NSAID efficacy",
+          "isCorrect": false,
+          "explanation": "Not the case."
+        },
+        {
+          "text": "NSAIDs displace methotrexate from protein binding",
+          "isCorrect": false,
+          "explanation": "Some displacement occurs but the main mechanism is renal competition."
+        }
+      ],
+      "explanation": {
+        "overview": "NSAIDs compete with methotrexate for renal tubular secretion via organic anion transporters, leading to delayed elimination and severe toxicity, especially with high-dose methotrexate.",
+        "highYield": "Avoid NSAIDs with high-dose methotrexate; with low-dose methotrexate, careful monitoring required.",
+        "clinicalCorrelation": "NSAID use with methotrexate for rheumatoid arthritis is common but requires monitoring of blood counts and renal function."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_068",
+      "difficulty": 2,
+      "question": "Which of the following is a common interaction between selective serotonin reuptake inhibitors (SSRIs) and tramadol?",
+      "image": null,
+      "options": [
+        {
+          "text": "Increased risk of serotonin syndrome",
+          "isCorrect": true,
+          "explanation": "Both drugs increase serotonin levels; co-administration can precipitate serotonin toxicity."
+        },
+        {
+          "text": "Reduced analgesic effect of tramadol",
+          "isCorrect": false,
+          "explanation": "Effect may be enhanced, not reduced."
+        },
+        {
+          "text": "No interaction",
+          "isCorrect": false,
+          "explanation": "Significant interaction."
+        },
+        {
+          "text": "Increased metabolism of SSRIs",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Tramadol inhibits SSRI metabolism",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        }
+      ],
+      "explanation": {
+        "overview": "Tramadol has SNRI-like properties, and combining it with SSRIs or other serotonergic drugs increases the risk of serotonin syndrome.",
+        "highYield": "Tramadol + SSRI/SNRI/MAOI = risk of serotonin syndrome; consider alternative analgesic.",
+        "clinicalCorrelation": "Symptoms: confusion, hyperthermia, myoclonus, hyperreflexia; requires discontinuation of serotonergic drugs and supportive care."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_069",
+      "difficulty": 2,
+      "question": "Which of the following drugs can displace warfarin from protein binding and inhibit its metabolism, causing a profound increase in INR?",
+      "image": null,
+      "options": [
+        {
+          "text": "Phenylbutazone",
+          "isCorrect": true,
+          "explanation": "Phenylbutazone displaces warfarin from albumin and also inhibits CYP2C9, dramatically increasing anticoagulation."
+        },
+        {
+          "text": "Paracetamol",
+          "isCorrect": false,
+          "explanation": "No significant interaction."
+        },
+        {
+          "text": "Ibuprofen",
+          "isCorrect": false,
+          "explanation": "Ibuprofen can increase bleeding risk but mainly via pharmacodynamic effects."
+        },
+        {
+          "text": "Omeprazole",
+          "isCorrect": false,
+          "explanation": "CYP2C19 inhibitor, minimal effect on warfarin."
+        },
+        {
+          "text": "Ranitidine",
+          "isCorrect": false,
+          "explanation": "Not significant."
+        }
+      ],
+      "explanation": {
+        "overview": "Phenylbutazone, an NSAID, is a classic example of a drug that interacts with warfarin both pharmacokinetically (displacement and enzyme inhibition) and pharmacodynamically (antiplatelet).",
+        "highYield": "Phenylbutazone + warfarin = severe bleeding risk; avoid this combination.",
+        "clinicalCorrelation": "Phenylbutazone is rarely used now due to its adverse effect profile, but it illustrates the multiple interaction mechanisms."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_070",
+      "difficulty": 2,
+      "question": "Which of the following drug classes can cause hypokalemia and increase the risk of digitalis toxicity?",
+      "image": null,
+      "options": [
+        {
+          "text": "Loop diuretics",
+          "isCorrect": true,
+          "explanation": "Loop diuretics (furosemide) cause potassium loss, which sensitizes the myocardium to digoxin, precipitating arrhythmias even at therapeutic digoxin levels."
+        },
+        {
+          "text": "ACE inhibitors",
+          "isCorrect": false,
+          "explanation": "ACE inhibitors can cause hyperkalemia, not hypokalemia."
+        },
+        {
+          "text": "Beta-blockers",
+          "isCorrect": false,
+          "explanation": "Not directly affecting potassium significantly."
+        },
+        {
+          "text": "Calcium channel blockers",
+          "isCorrect": false,
+          "explanation": "No significant effect on potassium."
+        },
+        {
+          "text": "Alpha-blockers",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Hypokalemia enhances the binding of digoxin to the Na+/K+-ATPase, increasing its toxic effects, so diuretic-induced potassium depletion is a risk factor for digoxin toxicity.",
+        "highYield": "Digoxin + loop/thiazide diuretic = check potassium; maintain K+ >4.0 mmol/L.",
+        "clinicalCorrelation": "Potassium-sparing diuretics or potassium supplements may be used to counteract this interaction."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_071",
+      "difficulty": 3,
+      "question": "Which of the following is a true statement about the interaction between allopurinol and azathioprine?",
+      "image": null,
+      "options": [
+        {
+          "text": "Allopurinol inhibits xanthine oxidase, reducing azathioprine metabolism and causing severe myelosuppression",
+          "isCorrect": true,
+          "explanation": "Azathioprine is metabolized by xanthine oxidase; allopurinol inhibits this enzyme, leading to toxic accumulation of 6-mercaptopurine."
+        },
+        {
+          "text": "Allopurinol enhances azathioprine metabolism",
+          "isCorrect": false,
+          "explanation": "Opposite."
+        },
+        {
+          "text": "No interaction",
+          "isCorrect": false,
+          "explanation": "Well-known dangerous interaction."
+        },
+        {
+          "text": "Allopurinol reduces azathioprine absorption",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        },
+        {
+          "text": "Allopurinol displaces azathioprine from protein binding",
+          "isCorrect": false,
+          "explanation": "Not."
+        }
+      ],
+      "explanation": {
+        "overview": "Azathioprine is a prodrug converted to 6-mercaptopurine, which is then metabolized by xanthine oxidase. Allopurinol, a xanthine oxidase inhibitor, drastically reduces 6-MP clearance.",
+        "highYield": "Allopurinol + azathioprine/6-MP = life-threatening myelosuppression; reduce azathioprine dose by 75% or avoid combination.",
+        "clinicalCorrelation": "If both needed, use reduced azathioprine dose (25% of usual) and monitor complete blood counts."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_072",
+      "difficulty": 2,
+      "question": "Which of the following is a common interaction between verapamil and digoxin?",
+      "image": null,
+      "options": [
+        {
+          "text": "Verapamil increases digoxin levels by reducing renal clearance",
+          "isCorrect": true,
+          "explanation": "Verapamil inhibits P-gp, decreasing digoxin renal and biliary excretion, raising serum digoxin."
+        },
+        {
+          "text": "Verapamil reduces digoxin absorption",
+          "isCorrect": false,
+          "explanation": "Absorption may actually increase."
+        },
+        {
+          "text": "No interaction",
+          "isCorrect": false,
+          "explanation": "Clinically significant."
+        },
+        {
+          "text": "Digoxin reduces verapamil levels",
+          "isCorrect": false,
+          "explanation": "Not the case."
+        },
+        {
+          "text": "Verapamil enhances digoxin metabolism",
+          "isCorrect": false,
+          "explanation": "It reduces clearance."
+        }
+      ],
+      "explanation": {
+        "overview": "Verapamil inhibits P-glycoprotein, reducing digoxin clearance and increasing its serum concentration, potentially leading to toxicity.",
+        "highYield": "Verapamil + digoxin = increased digoxin levels; reduce digoxin dose and monitor levels.",
+        "clinicalCorrelation": "This interaction is used in some atrial fibrillation management but requires careful monitoring."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_073",
+      "difficulty": 2,
+      "question": "Which of the following antibiotics can cause a disulfiram-like reaction when taken with alcohol?",
+      "image": null,
+      "options": [
+        {
+          "text": "Metronidazole",
+          "isCorrect": true,
+          "explanation": "Metronidazole can inhibit aldehyde dehydrogenase, leading to acetaldehyde accumulation and a disulfiram-like reaction."
+        },
+        {
+          "text": "Amoxicillin",
+          "isCorrect": false,
+          "explanation": "No such effect."
+        },
+        {
+          "text": "Ciprofloxacin",
+          "isCorrect": false,
+          "explanation": "No disulfiram reaction."
+        },
+        {
+          "text": "Azithromycin",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Tetracycline",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Metronidazole and some cephalosporins (cefotetan, cefoperazone) can cause a disulfiram-like reaction by inhibiting acetaldehyde dehydrogenase.",
+        "highYield": "Metronidazole + alcohol = nausea, vomiting, flushing, headache; avoid alcohol during and for 48 hours after treatment.",
+        "clinicalCorrelation": "Counsel patients to avoid all alcohol, including in mouthwash and medications, while on metronidazole."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_074",
+      "difficulty": 2,
+      "question": "Which of the following drugs is an inhibitor of CYP2C19 and can reduce the antiplatelet activity of clopidogrel?",
+      "image": null,
+      "options": [
+        {
+          "text": "Omeprazole",
+          "isCorrect": true,
+          "explanation": "Omeprazole inhibits CYP2C19, the enzyme required to activate clopidogrel, reducing its antiplatelet effect."
+        },
+        {
+          "text": "Pantoprazole",
+          "isCorrect": false,
+          "explanation": "Pantoprazole has less CYP2C19 inhibition."
+        },
+        {
+          "text": "Ranitidine",
+          "isCorrect": false,
+          "explanation": "Not a CYP2C19 inhibitor."
+        },
+        {
+          "text": "Famotidine",
+          "isCorrect": false,
+          "explanation": "No CYP2C19 inhibition."
+        },
+        {
+          "text": "Misoprostol",
+          "isCorrect": false,
+          "explanation": "Not."
+        }
+      ],
+      "explanation": {
+        "overview": "Strong CYP2C19 inhibitors like omeprazole and esomeprazole impair the bioactivation of clopidogrel, potentially leading to reduced antiplatelet effect and increased cardiovascular events.",
+        "highYield": "Avoid omeprazole/esomeprazole with clopidogrel; pantoprazole is a weaker inhibitor and may be used.",
+        "clinicalCorrelation": "Current guidelines suggest using alternative PPIs or H2 blockers if gastric protection is needed."
+      }
+    },
+    {
+      "questionId": "pharma_interactions_075",
+      "difficulty": 2,
+      "question": "Which of the following is a known interaction between rifampicin and warfarin?",
+      "image": null,
+      "options": [
+        {
+          "text": "Rifampicin induces warfarin metabolism, reducing INR",
+          "isCorrect": true,
+          "explanation": "Rifampicin is a potent CYP2C9 and CYP3A4 inducer, accelerating warfarin clearance and decreasing its effect."
+        },
+        {
+          "text": "Rifampicin inhibits warfarin metabolism, increasing INR",
+          "isCorrect": false,
+          "explanation": "Induction, not inhibition."
+        },
+        {
+          "text": "No interaction",
+          "isCorrect": false,
+          "explanation": "Significant interaction."
+        },
+        {
+          "text": "Rifampicin displaces warfarin from protein binding",
+          "isCorrect": false,
+          "explanation": "Not the primary mechanism."
+        },
+        {
+          "text": "Rifampicin enhances warfarin absorption",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Rifampicin is one of the most potent enzyme inducers and significantly reduces warfarin's anticoagulant effect, often necessitating large dose increases.",
+        "highYield": "Rifampicin + warfarin = require 2-3 fold warfarin dose increase; monitor INR frequently.",
+        "clinicalCorrelation": "When rifampicin is discontinued, warfarin dose must be reduced to avoid bleeding."
+      }
+    }
+  ]
+}

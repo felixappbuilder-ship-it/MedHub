@@ -1,0 +1,3424 @@
+{
+  "questions": [
+    {
+      "questionId": "pharma_cns_001",
+      "difficulty": 2,
+      "question": "Benzodiazepines exert their anxiolytic and sedative effects by binding to which site on the GABA-A receptor?",
+      "image": null,
+      "options": [
+        {
+          "text": "The benzodiazepine binding site, enhancing GABA affinity",
+          "isCorrect": true,
+          "explanation": "Benzodiazepines bind to a specific allosteric site on the GABA-A receptor, increasing the frequency of chloride channel opening in response to GABA, enhancing inhibitory neurotransmission."
+        },
+        {
+          "text": "The GABA binding site directly",
+          "isCorrect": false,
+          "explanation": "Benzodiazepines do not bind to the orthosteric GABA site; they are positive allosteric modulators."
+        },
+        {
+          "text": "The chloride channel pore",
+          "isCorrect": false,
+          "explanation": "Picrotoxin acts on the chloride channel pore, not benzodiazepines."
+        },
+        {
+          "text": "The barbiturate binding site",
+          "isCorrect": false,
+          "explanation": "Barbiturates have a distinct binding site; benzodiazepines bind to the BZ site."
+        },
+        {
+          "text": "The picrotoxin site",
+          "isCorrect": false,
+          "explanation": "Picrotoxin binds to the chloride channel, not the benzodiazepine site."
+        }
+      ],
+      "explanation": {
+        "overview": "Benzodiazepines bind to a specific allosteric site on the GABA-A receptor, increasing the frequency of chloride channel opening in response to GABA, enhancing inhibitory neurotransmission.",
+        "highYield": "Benzodiazepines = positive allosteric modulators at GABA-A. Increase frequency of Cl⁻ channel opening. Flumazenil reverses.",
+        "clinicalCorrelation": "Benzodiazepines are classified by duration of action: short (midazolam), intermediate (lorazepam), long (diazepam). Overdose treated with flumazenil (caution: seizures)."
+      }
+    },
+    {
+      "questionId": "pharma_cns_002",
+      "difficulty": 2,
+      "question": "Which benzodiazepine is most commonly used for its short duration of action in preoperative sedation and procedures?",
+      "image": null,
+      "options": [
+        {
+          "text": "Midazolam",
+          "isCorrect": true,
+          "explanation": "Midazolam is a short-acting, water-soluble benzodiazepine used for procedural sedation, anesthesia induction, and ICU sedation due to its rapid onset and short duration."
+        },
+        {
+          "text": "Diazepam",
+          "isCorrect": false,
+          "explanation": "Diazepam has a longer duration and active metabolites; it's used for anxiety, muscle spasms, and status epilepticus."
+        },
+        {
+          "text": "Lorazepam",
+          "isCorrect": false,
+          "explanation": "Lorazepam is intermediate-acting and used for anxiety and status epilepticus, not primarily for procedural sedation."
+        },
+        {
+          "text": "Chlordiazepoxide",
+          "isCorrect": false,
+          "explanation": "Chlordiazepoxide is used for alcohol withdrawal, not procedural sedation."
+        },
+        {
+          "text": "Clonazepam",
+          "isCorrect": false,
+          "explanation": "Clonazepam has a longer half-life; used for seizure disorders and panic disorder."
+        }
+      ],
+      "explanation": {
+        "overview": "Midazolam is a short-acting, water-soluble benzodiazepine used for procedural sedation, anesthesia induction, and ICU sedation due to its rapid onset and short duration.",
+        "highYield": "Midazolam = short-acting, IV/IM. Amnestic, anxiolytic. Reversed by flumazenil. Caution in elderly (prolonged sedation).",
+        "clinicalCorrelation": "Midazolam can cause respiratory depression, especially when combined with opioids. It is a CYP3A4 substrate."
+      }
+    },
+    {
+      "questionId": "pharma_cns_003",
+      "difficulty": 2,
+      "question": "The primary mechanism of action of barbiturates (e.g., phenobarbital) at the GABA-A receptor is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Prolonging the duration of chloride channel opening",
+          "isCorrect": true,
+          "explanation": "Barbiturates bind to a distinct site and prolong the duration of chloride channel opening, leading to greater chloride influx and neuronal inhibition. At high doses, they can directly activate the receptor."
+        },
+        {
+          "text": "Increasing the frequency of channel opening",
+          "isCorrect": false,
+          "explanation": "That is the mechanism of benzodiazepines."
+        },
+        {
+          "text": "Directly activating the receptor even without GABA",
+          "isCorrect": false,
+          "explanation": "This occurs at high doses, but the primary mechanism is prolonging channel opening; at therapeutic doses they require GABA."
+        },
+        {
+          "text": "Blocking GABA reuptake",
+          "isCorrect": false,
+          "explanation": "Tiagabine inhibits GABA reuptake; barbiturates act at the receptor."
+        },
+        {
+          "text": "Antagonizing glutamate",
+          "isCorrect": false,
+          "explanation": "Barbiturates do not directly antagonize glutamate; some anticonvulsants like perampanel do."
+        }
+      ],
+      "explanation": {
+        "overview": "Barbiturates bind to a distinct site and prolong the duration of chloride channel opening, leading to greater chloride influx and neuronal inhibition. At high doses, they can directly activate the receptor.",
+        "highYield": "Barbiturates = GABA-A modulators: prolong Cl⁻ channel opening, direct activation at high doses. Narrow therapeutic index.",
+        "clinicalCorrelation": "Barbiturates cause respiratory depression and have high abuse potential. They are potent CYP450 inducers."
+      }
+    },
+    {
+      "questionId": "pharma_cns_004",
+      "difficulty": 2,
+      "question": "Flumazenil is a competitive antagonist at the benzodiazepine binding site. It is used clinically to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Reverse benzodiazepine overdose and sedation",
+          "isCorrect": true,
+          "explanation": "Flumazenil rapidly reverses the sedative effects of benzodiazepines but can precipitate withdrawal and seizures in benzodiazepine-dependent patients."
+        },
+        {
+          "text": "Reverse opioid overdose",
+          "isCorrect": false,
+          "explanation": "Naloxone reverses opioid overdose."
+        },
+        {
+          "text": "Treat alcohol withdrawal",
+          "isCorrect": false,
+          "explanation": "Benzodiazepines themselves treat alcohol withdrawal; flumazenil would worsen it."
+        },
+        {
+          "text": "Induce anesthesia",
+          "isCorrect": false,
+          "explanation": "Flumazenil is an antagonist, not an anesthetic."
+        },
+        {
+          "text": "Prevent seizures",
+          "isCorrect": false,
+          "explanation": "Flumazenil can precipitate seizures, especially in epileptics or those with benzodiazepine dependence."
+        }
+      ],
+      "explanation": {
+        "overview": "Flumazenil rapidly reverses the sedative effects of benzodiazepines but can precipitate withdrawal and seizures in benzodiazepine-dependent patients.",
+        "highYield": "Flumazenil = competitive BZ antagonist. Short half-life. Risk: acute withdrawal, seizures.",
+        "clinicalCorrelation": "Used for benzodiazepine overdose or to reverse procedural sedation. Avoid in chronic users or those with seizure history."
+      }
+    },
+    {
+      "questionId": "pharma_cns_005",
+      "difficulty": 2,
+      "question": "Which of the following is a major concern with barbiturate use compared to benzodiazepines?",
+      "image": null,
+      "options": [
+        {
+          "text": "Narrow therapeutic index and respiratory depression at high doses",
+          "isCorrect": true,
+          "explanation": "Barbiturates have a narrow therapeutic window; doses only slightly above the hypnotic dose can cause severe respiratory depression, coma, and death. They also have high abuse potential and cause significant tolerance and dependence."
+        },
+        {
+          "text": "Lack of anxiolytic effect",
+          "isCorrect": false,
+          "explanation": "Barbiturates do have anxiolytic effects, but their safety profile limits their use."
+        },
+        {
+          "text": "No anticonvulsant activity",
+          "isCorrect": false,
+          "explanation": "Phenobarbital is a potent anticonvulsant."
+        },
+        {
+          "text": "Rapid development of tolerance only",
+          "isCorrect": false,
+          "explanation": "Tolerance develops, but the primary concern is the low therapeutic index."
+        },
+        {
+          "text": "Low abuse potential",
+          "isCorrect": false,
+          "explanation": "Barbiturates have high abuse potential."
+        }
+      ],
+      "explanation": {
+        "overview": "Barbiturates have a narrow therapeutic window; doses only slightly above the hypnotic dose can cause severe respiratory depression, coma, and death. They also have high abuse potential and cause significant tolerance and dependence.",
+        "highYield": "Barbiturates: narrow therapeutic index, respiratory depression, CYP450 induction. Safer alternatives: benzodiazepines.",
+        "clinicalCorrelation": "Barbiturates are now rarely used as sedatives; phenobarbital is still used for epilepsy and neonatal withdrawal."
+      }
+    },
+    {
+      "questionId": "pharma_cns_006",
+      "difficulty": 2,
+      "question": "Zolpidem is a non-benzodiazepine hypnotic that acts selectively on which GABA-A receptor subtype?",
+      "image": null,
+      "options": [
+        {
+          "text": "α1 subunit-containing receptors",
+          "isCorrect": true,
+          "explanation": "Zolpidem has selectivity for GABA-A receptors containing the α1 subunit, which are primarily responsible for sedative effects, with minimal anxiolytic or muscle relaxant properties."
+        },
+        {
+          "text": "α2 subunit-containing receptors",
+          "isCorrect": false,
+          "explanation": "α2 subunits are associated with anxiolytic effects; zolpidem is selective for α1."
+        },
+        {
+          "text": "α3 subunit-containing receptors",
+          "isCorrect": false,
+          "explanation": "Not the primary target of zolpidem."
+        },
+        {
+          "text": "α5 subunit-containing receptors",
+          "isCorrect": false,
+          "explanation": "α5 subunits are involved in cognition; not zolpidem's target."
+        },
+        {
+          "text": "All subunits equally",
+          "isCorrect": false,
+          "explanation": "Zolpidem is selective for α1-containing receptors."
+        }
+      ],
+      "explanation": {
+        "overview": "Zolpidem has selectivity for GABA-A receptors containing the α1 subunit, which are primarily responsible for sedative effects, with minimal anxiolytic or muscle relaxant properties.",
+        "highYield": "Zolpidem = α1-selective GABA-A modulator. Sedation without anxiolysis/muscle relaxation. Risk: complex sleep behaviors.",
+        "clinicalCorrelation": "Zolpidem is a Schedule IV controlled substance; dose should be reduced in elderly and hepatic impairment."
+      }
+    },
+    {
+      "questionId": "pharma_cns_007",
+      "difficulty": 2,
+      "question": "Eszopiclone and zaleplon are other 'Z-drugs' used for insomnia. Their main advantage over benzodiazepines is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Shorter half-life and fewer next-day effects",
+          "isCorrect": true,
+          "explanation": "Z-drugs generally have shorter half-lives, reducing residual daytime sedation, but they still carry risks of tolerance, dependence, and abuse."
+        },
+        {
+          "text": "Greater efficacy",
+          "isCorrect": false,
+          "explanation": "Efficacy is similar to benzodiazepines."
+        },
+        {
+          "text": "No tolerance development",
+          "isCorrect": false,
+          "explanation": "Tolerance and dependence can still develop."
+        },
+        {
+          "text": "No abuse potential",
+          "isCorrect": false,
+          "explanation": "They have abuse potential, although lower than barbiturates."
+        },
+        {
+          "text": "Safer in overdose",
+          "isCorrect": false,
+          "explanation": "Overdose can still cause significant sedation and respiratory depression, especially when combined with other CNS depressants."
+        }
+      ],
+      "explanation": {
+        "overview": "Z-drugs generally have shorter half-lives, reducing residual daytime sedation, but they still carry risks of tolerance, dependence, and abuse.",
+        "highYield": "Z-drugs (zolpidem, eszopiclone, zaleplon) = short t½, less next-day hangover. Still risk of abuse, complex sleep behaviors.",
+        "clinicalCorrelation": "Z-drugs are recommended for short-term use only; cognitive behavioral therapy for insomnia is first-line."
+      }
+    },
+    {
+      "questionId": "pharma_cns_008",
+      "difficulty": 2,
+      "question": "Ramelteon is a melatonin receptor agonist used for insomnia. It acts on which receptors?",
+      "image": null,
+      "options": [
+        {
+          "text": "MT1 and MT2 receptors in the suprachiasmatic nucleus",
+          "isCorrect": true,
+          "explanation": "Ramelteon selectively activates MT1 and MT2 melatonin receptors, helping regulate circadian rhythms and promoting sleep onset without the abuse potential of benzodiazepines."
+        },
+        {
+          "text": "GABA-A receptors",
+          "isCorrect": false,
+          "explanation": "Ramelteon does not act on GABA-A; that's benzodiazepines."
+        },
+        {
+          "text": "Serotonin receptors",
+          "isCorrect": false,
+          "explanation": "Not the target of ramelteon."
+        },
+        {
+          "text": "Histamine receptors",
+          "isCorrect": false,
+          "explanation": "Suvorexant targets orexin; ramelteon is melatonin."
+        },
+        {
+          "text": "Orexin receptors",
+          "isCorrect": false,
+          "explanation": "Orexin receptors are blocked by suvorexant."
+        }
+      ],
+      "explanation": {
+        "overview": "Ramelteon selectively activates MT1 and MT2 melatonin receptors, helping regulate circadian rhythms and promoting sleep onset without the abuse potential of benzodiazepines.",
+        "highYield": "Ramelteon = melatonin agonist (MT1/MT2). No abuse potential. For sleep-onset insomnia.",
+        "clinicalCorrelation": "Ramelteon can be used long-term without risk of dependence; may increase prolactin levels."
+      }
+    },
+    {
+      "questionId": "pharma_cns_009",
+      "difficulty": 2,
+      "question": "Suvorexant is a dual orexin receptor antagonist used for insomnia. Its mechanism involves:",
+      "image": null,
+      "options": [
+        {
+          "text": "Blocking orexin (hypocretin) receptors, promoting sleep",
+          "isCorrect": true,
+          "explanation": "Suvorexant inhibits orexin signaling, which promotes wakefulness, thereby facilitating sleep onset and maintenance."
+        },
+        {
+          "text": "Activating melatonin receptors",
+          "isCorrect": false,
+          "explanation": "That is ramelteon."
+        },
+        {
+          "text": "Enhancing GABA activity",
+          "isCorrect": false,
+          "explanation": "That is benzodiazepines and Z-drugs."
+        },
+        {
+          "text": "Blocking histamine H1 receptors",
+          "isCorrect": false,
+          "explanation": "Some antidepressants (doxepin) block H1; suvorexant targets orexin."
+        },
+        {
+          "text": "Antagonizing 5-HT2A receptors",
+          "isCorrect": false,
+          "explanation": "That is the mechanism of some atypical antipsychotics and trazodone."
+        }
+      ],
+      "explanation": {
+        "overview": "Suvorexant inhibits orexin signaling, which promotes wakefulness, thereby facilitating sleep onset and maintenance.",
+        "highYield": "Suvorexant = dual orexin receptor antagonist (DORA). Promotes sleep by inhibiting wakefulness. Scheduled IV.",
+        "clinicalCorrelation": "Suvorexant can cause next-day somnolence and is contraindicated in narcolepsy. Lower dose in patients taking strong CYP3A4 inhibitors."
+      }
+    },
+    {
+      "questionId": "pharma_cns_010",
+      "difficulty": 2,
+      "question": "Phenytoin is a first-line anticonvulsant for focal and generalized tonic-clonic seizures. Its primary mechanism is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Use-dependent blockade of voltage-gated sodium channels",
+          "isCorrect": true,
+          "explanation": "Phenytoin stabilizes the inactivated state of sodium channels, preventing repetitive neuronal firing. Its effects are use-dependent, meaning it preferentially blocks rapidly firing neurons during seizures."
+        },
+        {
+          "text": "Enhancement of GABA-A receptor function",
+          "isCorrect": false,
+          "explanation": "That is the mechanism of benzodiazepines and barbiturates."
+        },
+        {
+          "text": "Blockade of T-type calcium channels",
+          "isCorrect": false,
+          "explanation": "Ethosuximide blocks T-type calcium channels."
+        },
+        {
+          "text": "Antagonism of AMPA receptors",
+          "isCorrect": false,
+          "explanation": "Perampanel is an AMPA antagonist."
+        },
+        {
+          "text": "Inhibition of SV2A",
+          "isCorrect": false,
+          "explanation": "Levetiracetam binds SV2A."
+        }
+      ],
+      "explanation": {
+        "overview": "Phenytoin stabilizes the inactivated state of sodium channels, preventing repetitive neuronal firing. Its effects are use-dependent, meaning it preferentially blocks rapidly firing neurons during seizures.",
+        "highYield": "Phenytoin/fosphenytoin = Na⁺ channel blocker (use-dependent). Zero-order kinetics, CYP450 inducer. Adverse: gingival hyperplasia, hirsutism, nystagmus.",
+        "clinicalCorrelation": "Phenytoin has a narrow therapeutic range (10-20 µg/mL). Fosphenytoin is a prodrug for IV/IM use. Avoid IM administration of phenytoin due to erratic absorption."
+      }
+    },
+    {
+      "questionId": "pharma_cns_011",
+      "difficulty": 2,
+      "question": "A common and concerning adverse effect of phenytoin is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Gingival hyperplasia",
+          "isCorrect": true,
+          "explanation": "Phenytoin causes gingival overgrowth, coarsening of facial features, hirsutism, and with chronic use, cerebellar degeneration leading to ataxia and nystagmus."
+        },
+        {
+          "text": "Hirsutism",
+          "isCorrect": true,
+          "explanation": "Hirsutism is also a known adverse effect."
+        },
+        {
+          "text": "Cerebellar atrophy with long-term use",
+          "isCorrect": true,
+          "explanation": "Chronic phenytoin can cause cerebellar degeneration."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "All listed are recognized adverse effects."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "These are known adverse effects."
+        }
+      ],
+      "explanation": {
+        "overview": "Phenytoin causes gingival overgrowth, coarsening of facial features, hirsutism, and with chronic use, cerebellar degeneration leading to ataxia and nystagmus.",
+        "highYield": "Phenytoin adverse effects: gum hyperplasia, hirsutism, coarse facies, megaloblastic anemia (↓ folate), osteomalacia.",
+        "clinicalCorrelation": "Good oral hygiene can reduce gingival hyperplasia. Vitamin D and folate supplementation may be needed."
+      }
+    },
+    {
+      "questionId": "pharma_cns_012",
+      "difficulty": 2,
+      "question": "Carbamazepine is an anticonvulsant and mood stabilizer. Its mechanism of action is similar to phenytoin (sodium channel blockade). It is also a potent:",
+      "image": null,
+      "options": [
+        {
+          "text": "Enzyme inducer (CYP3A4, CYP2C9)",
+          "isCorrect": true,
+          "explanation": "Carbamazepine is a strong inducer of multiple CYP enzymes and P-glycoprotein, leading to numerous drug interactions (e.g., reducing efficacy of oral contraceptives, warfarin)."
+        },
+        {
+          "text": "Enzyme inhibitor",
+          "isCorrect": false,
+          "explanation": "Carbamazepine induces, not inhibits, CYP enzymes."
+        },
+        {
+          "text": "MAO inhibitor",
+          "isCorrect": false,
+          "explanation": "Carbamazepine does not inhibit MAO."
+        },
+        {
+          "text": "COMT inhibitor",
+          "isCorrect": false,
+          "explanation": "Entacapone inhibits COMT."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "Carbamazepine is a well-known enzyme inducer."
+        }
+      ],
+      "explanation": {
+        "overview": "Carbamazepine is a strong inducer of multiple CYP enzymes and P-glycoprotein, leading to numerous drug interactions (e.g., reducing efficacy of oral contraceptives, warfarin).",
+        "highYield": "Carbamazepine = Na⁺ channel blocker + CYP3A4 inducer. Drug interactions: ↓ OCPs, ↓ warfarin, ↓ other AEDs. Adverse: agranulocytosis, Stevens-Johnson (HLA-B*1502).",
+        "clinicalCorrelation": "Screen for HLA-B*1502 in at-risk populations before starting carbamazepine to reduce risk of severe rash. Autoinduction occurs over weeks."
+      }
+    },
+    {
+      "questionId": "pharma_cns_013",
+      "difficulty": 2,
+      "question": "Oxcarbazepine is a derivative of carbamazepine with fewer drug interactions because:",
+      "image": null,
+      "options": [
+        {
+          "text": "It is metabolized by glucuronidation, not CYP oxidation",
+          "isCorrect": true,
+          "explanation": "Oxcarbazepine is rapidly reduced to its active metabolite, which is glucuronidated, resulting in less CYP enzyme induction and fewer interactions than carbamazepine."
+        },
+        {
+          "text": "It is not an enzyme inducer",
+          "isCorrect": false,
+          "explanation": "Oxcarbazepine is a weaker inducer than carbamazepine but still induces CYP3A4 to some extent."
+        },
+        {
+          "text": "It has no active metabolite",
+          "isCorrect": false,
+          "explanation": "Oxcarbazepine is a prodrug; its active metabolite is the monohydroxy derivative."
+        },
+        {
+          "text": "It is renally excreted unchanged",
+          "isCorrect": false,
+          "explanation": "The metabolite is renally cleared, but the drug itself is not excreted unchanged."
+        },
+        {
+          "text": "It has a shorter half-life",
+          "isCorrect": false,
+          "explanation": "Half-life is not the reason for fewer interactions."
+        }
+      ],
+      "explanation": {
+        "overview": "Oxcarbazepine is rapidly reduced to its active metabolite, which is glucuronidated, resulting in less CYP enzyme induction and fewer interactions than carbamazepine.",
+        "highYield": "Oxcarbazepine = prodrug, less CYP induction. Similar efficacy to carbamazepine. Risk of hyponatremia.",
+        "clinicalCorrelation": "Oxcarbazepine can cause dose-dependent hyponatremia. It does not require HLA-B*1502 screening."
+      }
+    },
+    {
+      "questionId": "pharma_cns_014",
+      "difficulty": 2,
+      "question": "Valproic acid (valproate) is a broad-spectrum anticonvulsant effective in absence, myoclonic, and tonic-clonic seizures. Its mechanisms include:",
+      "image": null,
+      "options": [
+        {
+          "text": "Sodium channel blockade",
+          "isCorrect": true,
+          "explanation": "Valproate blocks voltage-gated sodium channels."
+        },
+        {
+          "text": "Increased GABA synthesis and inhibition of GABA degradation",
+          "isCorrect": true,
+          "explanation": "Valproate increases brain GABA levels by inhibiting GABA transaminase."
+        },
+        {
+          "text": "T-type calcium channel blockade",
+          "isCorrect": true,
+          "explanation": "Valproate also blocks T-type calcium channels."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Valproate has multiple actions: blocks voltage-gated sodium channels, increases brain GABA levels, and blocks T-type calcium channels."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "Valproate has several known mechanisms."
+        }
+      ],
+      "explanation": {
+        "overview": "Valproate has multiple actions: blocks voltage-gated sodium channels, increases brain GABA levels by inhibiting GABA transaminase, and blocks T-type calcium channels.",
+        "highYield": "Valproate = broad-spectrum AED. Mechanisms: Na⁺ channel block, ↑ GABA, T-type Ca²⁺ block. Teratogenic (neural tube defects).",
+        "clinicalCorrelation": "Avoid valproate in pregnancy and women of childbearing age unless essential. Monitor LFTs, CBC, and ammonia levels."
+      }
+    },
+    {
+      "questionId": "pharma_cns_015",
+      "difficulty": 2,
+      "question": "A major concern with valproate use in women of childbearing age is:",
+      "image": null,
+      "options": [
+        {
+          "text": "High risk of neural tube defects and teratogenicity",
+          "isCorrect": true,
+          "explanation": "Valproate is highly teratogenic, causing neural tube defects (spina bifida), facial dysmorphism, and developmental delay. It is contraindicated in pregnancy unless no alternative."
+        },
+        {
+          "text": "Contraceptive failure",
+          "isCorrect": false,
+          "explanation": "Valproate does not affect contraceptive efficacy."
+        },
+        {
+          "text": "Weight loss",
+          "isCorrect": false,
+          "explanation": "Valproate is more likely to cause weight gain."
+        },
+        {
+          "text": "Insomnia",
+          "isCorrect": false,
+          "explanation": "Sedation is more common."
+        },
+        {
+          "text": "Nephrotoxicity",
+          "isCorrect": false,
+          "explanation": "Valproate is hepatotoxic, not primarily nephrotoxic."
+        }
+      ],
+      "explanation": {
+        "overview": "Valproate is highly teratogenic, causing neural tube defects (spina bifida), facial dysmorphism, and developmental delay. It is contraindicated in pregnancy unless no alternative.",
+        "highYield": "Valproate = teratogenic, neural tube defects. Avoid in women of childbearing potential. Folic acid supplementation recommended.",
+        "clinicalCorrelation": "If valproate must be used, prescribe high-dose folic acid (5 mg daily) to reduce neural tube defect risk."
+      }
+    },
+    {
+      "questionId": "pharma_cns_016",
+      "difficulty": 2,
+      "question": "Ethosuximide is the drug of choice for childhood absence seizures. Its mechanism is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Blockade of T-type calcium channels in thalamic neurons",
+          "isCorrect": true,
+          "explanation": "Absence seizures involve thalamocortical oscillations driven by T-type calcium channels; ethosuximide selectively blocks these channels."
+        },
+        {
+          "text": "Sodium channel blockade",
+          "isCorrect": false,
+          "explanation": "That is the mechanism of phenytoin, carbamazepine, lamotrigine."
+        },
+        {
+          "text": "GABA potentiation",
+          "isCorrect": false,
+          "explanation": "That is benzodiazepines/barbiturates."
+        },
+        {
+          "text": "AMPA receptor antagonism",
+          "isCorrect": false,
+          "explanation": "Perampanel is an AMPA antagonist."
+        },
+        {
+          "text": "SV2A inhibition",
+          "isCorrect": false,
+          "explanation": "That is levetiracetam."
+        }
+      ],
+      "explanation": {
+        "overview": "Absence seizures involve thalamocortical oscillations driven by T-type calcium channels; ethosuximide selectively blocks these channels.",
+        "highYield": "Ethosuximide = T-type Ca²⁺ channel blocker. First-line for absence seizures. Adverse: GI upset, hiccups, blood dyscrasias.",
+        "clinicalCorrelation": "Ethosuximide may worsen tonic-clonic seizures; it is used only for absence. Monitor CBC and LFTs."
+      }
+    },
+    {
+      "questionId": "pharma_cns_017",
+      "difficulty": 2,
+      "question": "Lamotrigine is an anticonvulsant and mood stabilizer. Its mechanism involves:",
+      "image": null,
+      "options": [
+        {
+          "text": "Sodium channel blockade and inhibition of glutamate release",
+          "isCorrect": true,
+          "explanation": "Lamotrigine blocks voltage-gated sodium channels and reduces glutamate release, contributing to its anticonvulsant and mood-stabilizing effects."
+        },
+        {
+          "text": "GABA potentiation",
+          "isCorrect": false,
+          "explanation": "Lamotrigine does not primarily affect GABA."
+        },
+        {
+          "text": "Calcium channel blockade",
+          "isCorrect": false,
+          "explanation": "Not a primary mechanism of lamotrigine."
+        },
+        {
+          "text": "SV2A binding",
+          "isCorrect": false,
+          "explanation": "That is levetiracetam."
+        },
+        {
+          "text": "NMDA receptor antagonism",
+          "isCorrect": false,
+          "explanation": "Lamotrigine does not directly antagonize NMDA receptors."
+        }
+      ],
+      "explanation": {
+        "overview": "Lamotrigine blocks voltage-gated sodium channels and reduces glutamate release, contributing to its anticonvulsant and mood-stabilizing effects.",
+        "highYield": "Lamotrigine = Na⁺ channel block + ↓ glutamate release. Broad-spectrum AED; mood stabilizer for bipolar depression. Risk: Stevens-Johnson syndrome.",
+        "clinicalCorrelation": "Slow titration is required to minimize rash risk. Stop immediately if rash develops."
+      }
+    },
+    {
+      "questionId": "pharma_cns_018",
+      "difficulty": 2,
+      "question": "A serious adverse effect of lamotrigine is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Stevens-Johnson syndrome and toxic epidermal necrolysis",
+          "isCorrect": true,
+          "explanation": "Lamotrigine can cause severe, potentially life-threatening rashes, including Stevens-Johnson syndrome, especially if the initial dose is too high or titrated too rapidly."
+        },
+        {
+          "text": "Hepatotoxicity",
+          "isCorrect": false,
+          "explanation": "Hepatotoxicity is rare with lamotrigine."
+        },
+        {
+          "text": "Nephrotoxicity",
+          "isCorrect": false,
+          "explanation": "Not a prominent adverse effect."
+        },
+        {
+          "text": "Cardiotoxicity",
+          "isCorrect": false,
+          "explanation": "Not known."
+        },
+        {
+          "text": "Osteoporosis",
+          "isCorrect": false,
+          "explanation": "Enzyme-inducing AEDs are associated with bone loss, but not specifically lamotrigine."
+        }
+      ],
+      "explanation": {
+        "overview": "Lamotrigine can cause severe, potentially life-threatening rashes, including Stevens-Johnson syndrome, especially if the initial dose is too high or titrated too rapidly.",
+        "highYield": "Lamotrigine = slow titration to avoid SJS/TEN. Benign rash also common. Drug interactions: valproate doubles lamotrigine levels.",
+        "clinicalCorrelation": "Valproate inhibits lamotrigine metabolism; reduce lamotrigine dose by 50% when adding valproate."
+      }
+    },
+    {
+      "questionId": "pharma_cns_019",
+      "difficulty": 2,
+      "question": "Levetiracetam is a broad-spectrum anticonvulsant with a unique mechanism:",
+      "image": null,
+      "options": [
+        {
+          "text": "Binding to synaptic vesicle protein SV2A",
+          "isCorrect": true,
+          "explanation": "Levetiracetam binds to SV2A, modulating neurotransmitter release, but its exact anticonvulsant mechanism is not fully understood."
+        },
+        {
+          "text": "Sodium channel blockade",
+          "isCorrect": false,
+          "explanation": "Not the mechanism of levetiracetam."
+        },
+        {
+          "text": "GABA potentiation",
+          "isCorrect": false,
+          "explanation": "Not a direct GABAergic."
+        },
+        {
+          "text": "Calcium channel blockade",
+          "isCorrect": false,
+          "explanation": "Not its primary target."
+        },
+        {
+          "text": "NMDA antagonism",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        }
+      ],
+      "explanation": {
+        "overview": "Levetiracetam binds to SV2A, modulating neurotransmitter release, but its exact anticonvulsant mechanism is not fully understood.",
+        "highYield": "Levetiracetam = SV2A ligand. Broad-spectrum, few drug interactions. Adverse: somnolence, behavioral changes (aggression, psychosis).",
+        "clinicalCorrelation": "Levetiracetam is often preferred due to lack of hepatic metabolism and no need for serum level monitoring."
+      }
+    },
+    {
+      "questionId": "pharma_cns_020",
+      "difficulty": 2,
+      "question": "The most common adverse effects of levetiracetam are:",
+      "image": null,
+      "options": [
+        {
+          "text": "Somnolence, dizziness, and behavioral changes (aggression, psychosis)",
+          "isCorrect": true,
+          "explanation": "Levetiracetam is generally well-tolerated but commonly causes CNS side effects and, in some patients, psychiatric symptoms."
+        },
+        {
+          "text": "Hepatotoxicity",
+          "isCorrect": false,
+          "explanation": "Hepatotoxicity is rare."
+        },
+        {
+          "text": "Rash",
+          "isCorrect": false,
+          "explanation": "Rash is less common than with lamotrigine."
+        },
+        {
+          "text": "Weight gain",
+          "isCorrect": false,
+          "explanation": "Weight gain is not typical; weight loss may occur."
+        },
+        {
+          "text": "Tremor",
+          "isCorrect": false,
+          "explanation": "Tremor can occur but is not the most characteristic."
+        }
+      ],
+      "explanation": {
+        "overview": "Levetiracetam is generally well-tolerated but commonly causes CNS side effects and, in some patients, psychiatric symptoms.",
+        "highYield": "Levetiracetam: 'Kepprage' – irritability, aggression. Use with caution in patients with psychiatric history. Pyridoxine may mitigate behavioral effects.",
+        "clinicalCorrelation": "Slow titration and pyridoxine supplementation may reduce behavioral side effects."
+      }
+    },
+    {
+      "questionId": "pharma_cns_021",
+      "difficulty": 2,
+      "question": "Topiramate is an anticonvulsant with multiple mechanisms, including:",
+      "image": null,
+      "options": [
+        {
+          "text": "Sodium channel blockade, GABA potentiation, AMPA antagonism, and carbonic anhydrase inhibition",
+          "isCorrect": true,
+          "explanation": "Topiramate has a complex pharmacology: blocks sodium channels, enhances GABA, antagonizes AMPA/kainate receptors, and weakly inhibits carbonic anhydrase."
+        },
+        {
+          "text": "Only sodium channel blockade",
+          "isCorrect": false,
+          "explanation": "Topiramate has multiple mechanisms."
+        },
+        {
+          "text": "Only GABA potentiation",
+          "isCorrect": false,
+          "explanation": "It has additional actions."
+        },
+        {
+          "text": "Only calcium channel blockade",
+          "isCorrect": false,
+          "explanation": "Not primarily a calcium channel blocker."
+        },
+        {
+          "text": "Only SV2A binding",
+          "isCorrect": false,
+          "explanation": "That is levetiracetam."
+        }
+      ],
+      "explanation": {
+        "overview": "Topiramate has a complex pharmacology: blocks sodium channels, enhances GABA, antagonizes AMPA/kainate receptors, and weakly inhibits carbonic anhydrase.",
+        "highYield": "Topiramate = multiple MOA: Na⁺ channel, GABA, AMPA/KA, CA inhibition. Side effects: cognitive impairment, weight loss, paresthesias, kidney stones.",
+        "clinicalCorrelation": "Topiramate is also approved for migraine prophylaxis. Avoid abrupt withdrawal. Can cause metabolic acidosis."
+      }
+    },
+    {
+      "questionId": "pharma_cns_022",
+      "difficulty": 2,
+      "question": "A common side effect of topiramate that can be distressing is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cognitive dulling ('brain fog'), word-finding difficulty",
+          "isCorrect": true,
+          "explanation": "Topiramate often causes cognitive impairment, including difficulty with concentration, memory, and language. It also causes weight loss (often beneficial) and paresthesia."
+        },
+        {
+          "text": "Weight gain",
+          "isCorrect": false,
+          "explanation": "Topiramate usually causes weight loss."
+        },
+        {
+          "text": "Sedation",
+          "isCorrect": false,
+          "explanation": "Sedation can occur but cognitive dulling is more characteristic."
+        },
+        {
+          "text": "Tremor",
+          "isCorrect": false,
+          "explanation": "Tremor is less prominent."
+        },
+        {
+          "text": "Hirsutism",
+          "isCorrect": false,
+          "explanation": "That is phenytoin."
+        }
+      ],
+      "explanation": {
+        "overview": "Topiramate often causes cognitive impairment, including difficulty with concentration, memory, and language. It also causes weight loss (often beneficial) and paresthesia.",
+        "highYield": "Topiramate: 'Dope-a-max' cognitive slowing, word-finding difficulty. Metabolic acidosis, nephrolithiasis (calcium phosphate stones).",
+        "clinicalCorrelation": "Avoid topiramate in patients with history of kidney stones or metabolic acidosis. Encourage hydration."
+      }
+    },
+    {
+      "questionId": "pharma_cns_023",
+      "difficulty": 2,
+      "question": "Gabapentin and pregabalin are anticonvulsants that also treat neuropathic pain and anxiety. They act by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Binding to the α2-δ subunit of voltage-gated calcium channels, reducing neurotransmitter release",
+          "isCorrect": true,
+          "explanation": "Gabapentinoids bind to the α2-δ subunit, inhibiting calcium influx and reducing release of excitatory neurotransmitters like glutamate and substance P."
+        },
+        {
+          "text": "Sodium channel blockade",
+          "isCorrect": false,
+          "explanation": "Phenytoin and carbamazepine block sodium channels."
+        },
+        {
+          "text": "GABA potentiation",
+          "isCorrect": false,
+          "explanation": "Despite the name, gabapentin does not act on GABA receptors."
+        },
+        {
+          "text": "NMDA antagonism",
+          "isCorrect": false,
+          "explanation": "Not the primary mechanism."
+        },
+        {
+          "text": "AMPA antagonism",
+          "isCorrect": false,
+          "explanation": "Perampanel is an AMPA antagonist."
+        }
+      ],
+      "explanation": {
+        "overview": "Gabapentinoids bind to the α2-δ subunit, inhibiting calcium influx and reducing release of excitatory neurotransmitters like glutamate and substance P.",
+        "highYield": "Gabapentinoids = α2-δ Ca²⁺ channel blockers. Used for neuropathic pain, partial seizures, anxiety. Side effects: dizziness, somnolence, edema.",
+        "clinicalCorrelation": "Pregabalin has higher bioavailability and faster onset than gabapentin. Both require renal dose adjustment."
+      }
+    },
+    {
+      "questionId": "pharma_cns_024",
+      "difficulty": 2,
+      "question": "Pregabalin is more potent than gabapentin and has higher bioavailability. Its main adverse effects include:",
+      "image": null,
+      "options": [
+        {
+          "text": "Dizziness, somnolence, and peripheral edema",
+          "isCorrect": true,
+          "explanation": "Gabapentinoids commonly cause CNS depression and, less frequently, peripheral edema and weight gain."
+        },
+        {
+          "text": "Hepatotoxicity",
+          "isCorrect": false,
+          "explanation": "Hepatotoxicity is rare."
+        },
+        {
+          "text": "Nephrotoxicity",
+          "isCorrect": false,
+          "explanation": "Gabapentinoids are renally cleared but not nephrotoxic."
+        },
+        {
+          "text": "Cardiac arrhythmias",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        },
+        {
+          "text": "Seizures",
+          "isCorrect": false,
+          "explanation": "They are anticonvulsants; however, abrupt withdrawal can precipitate seizures."
+        }
+      ],
+      "explanation": {
+        "overview": "Gabapentinoids commonly cause CNS depression and, less frequently, peripheral edema and weight gain.",
+        "highYield": "Pregabalin > gabapentin potency. Both can cause CNS depression, peripheral edema, and may be abused. Scheduled V.",
+        "clinicalCorrelation": "Gabapentinoids are increasingly misused; consider risk of dependence when prescribing."
+      }
+    },
+    {
+      "questionId": "pharma_cns_025",
+      "difficulty": 2,
+      "question": "Tiagabine is an anticonvulsant that acts by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Inhibiting GABA reuptake via GAT-1 transporter",
+          "isCorrect": true,
+          "explanation": "Tiagabine selectively inhibits the GABA transporter GAT-1, increasing synaptic GABA levels."
+        },
+        {
+          "text": "Enhancing GABA synthesis",
+          "isCorrect": false,
+          "explanation": "Valproate enhances GABA synthesis."
+        },
+        {
+          "text": "Blocking sodium channels",
+          "isCorrect": false,
+          "explanation": "Phenytoin blocks sodium channels."
+        },
+        {
+          "text": "Blocking calcium channels",
+          "isCorrect": false,
+          "explanation": "Ethosuximide blocks T-type calcium channels."
+        },
+        {
+          "text": "Antagonizing glutamate",
+          "isCorrect": false,
+          "explanation": "Perampanel antagonizes AMPA glutamate receptors."
+        }
+      ],
+      "explanation": {
+        "overview": "Tiagabine selectively inhibits the GABA transporter GAT-1, increasing synaptic GABA levels.",
+        "highYield": "Tiagabine = GAT-1 inhibitor → ↑ synaptic GABA. Used for partial seizures. Adverse: dizziness, tremor, may induce absence status epilepticus.",
+        "clinicalCorrelation": "Tiagabine can induce non-convulsive status epilepticus in patients with no seizure history. Use with caution."
+      }
+    },
+    {
+      "questionId": "pharma_cns_026",
+      "difficulty": 2,
+      "question": "Vigabatrin is an anticonvulsant that irreversibly inhibits GABA transaminase, increasing brain GABA. Its use is limited by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Irreversible visual field defects",
+          "isCorrect": true,
+          "explanation": "Vigabatrin causes progressive and permanent peripheral visual field loss in a significant percentage of patients, restricting its use to refractory cases."
+        },
+        {
+          "text": "Hepatotoxicity",
+          "isCorrect": false,
+          "explanation": "Not the main concern."
+        },
+        {
+          "text": "Nephrotoxicity",
+          "isCorrect": false,
+          "explanation": "Not prominent."
+        },
+        {
+          "text": "Cardiotoxicity",
+          "isCorrect": false,
+          "explanation": "Not known."
+        },
+        {
+          "text": "Bone marrow suppression",
+          "isCorrect": false,
+          "explanation": "Not the major toxicity; felbamate causes aplastic anemia."
+        }
+      ],
+      "explanation": {
+        "overview": "Vigabatrin causes progressive and permanent peripheral visual field loss in a significant percentage of patients, restricting its use to refractory cases.",
+        "highYield": "Vigabatrin = irreversible GABA-T inhibitor → ↑ GABA. Toxicity: permanent visual field constriction. Used for infantile spasms.",
+        "clinicalCorrelation": "Baseline and periodic ophthalmologic monitoring are mandatory. Visual loss may be asymptomatic."
+      }
+    },
+    {
+      "questionId": "pharma_cns_027",
+      "difficulty": 2,
+      "question": "Felbamate is an anticonvulsant used for refractory seizures but reserved due to risk of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Aplastic anemia and hepatotoxicity",
+          "isCorrect": true,
+          "explanation": "Felbamate is effective but carries a high risk of aplastic anemia and liver failure, limiting its use."
+        },
+        {
+          "text": "Nephrotoxicity",
+          "isCorrect": false,
+          "explanation": "Not the primary concern."
+        },
+        {
+          "text": "Cardiotoxicity",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        },
+        {
+          "text": "Pulmonary fibrosis",
+          "isCorrect": false,
+          "explanation": "Amiodarone causes pulmonary fibrosis."
+        },
+        {
+          "text": "Rash",
+          "isCorrect": false,
+          "explanation": "Rash is less prominent."
+        }
+      ],
+      "explanation": {
+        "overview": "Felbamate is effective but carries a high risk of aplastic anemia and liver failure, limiting its use.",
+        "highYield": "Felbamate = risk of aplastic anemia (1:4000) and hepatic failure. Reserved for refractory epilepsy. Informed consent required.",
+        "clinicalCorrelation": "Baseline and regular CBC, LFTs required. Only used when benefits outweigh risks."
+      }
+    },
+    {
+      "questionId": "pharma_cns_028",
+      "difficulty": 2,
+      "question": "Perampanel is a newer anticonvulsant that acts as a selective, non-competitive antagonist at:",
+      "image": null,
+      "options": [
+        {
+          "text": "AMPA glutamate receptors",
+          "isCorrect": true,
+          "explanation": "Perampanel is the first-in-class AMPA receptor antagonist approved for focal and generalized tonic-clonic seizures."
+        },
+        {
+          "text": "NMDA receptors",
+          "isCorrect": false,
+          "explanation": "Memantine is an NMDA antagonist."
+        },
+        {
+          "text": "Kainate receptors",
+          "isCorrect": false,
+          "explanation": "Perampanel is selective for AMPA over kainate."
+        },
+        {
+          "text": "GABA-A receptors",
+          "isCorrect": false,
+          "explanation": "Benzodiazepines act on GABA-A."
+        },
+        {
+          "text": "Glycine receptors",
+          "isCorrect": false,
+          "explanation": "Not the target."
+        }
+      ],
+      "explanation": {
+        "overview": "Perampanel is the first-in-class AMPA receptor antagonist approved for focal and generalized tonic-clonic seizures.",
+        "highYield": "Perampanel = non-competitive AMPA antagonist. Schedule III. Adverse: dizziness, somnolence, aggression. May lower OCP efficacy.",
+        "clinicalCorrelation": "Perampanel can cause severe psychiatric side effects. Start low and titrate slowly. Reduce dose in hepatic impairment."
+      }
+    },
+    {
+      "questionId": "pharma_cns_029",
+      "difficulty": 2,
+      "question": "Levodopa (L-DOPA) is the most effective drug for Parkinson's disease. It is combined with carbidopa to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Inhibit peripheral decarboxylation, increasing brain levodopa and reducing side effects",
+          "isCorrect": true,
+          "explanation": "Carbidopa inhibits dopa decarboxylase in the periphery but does not cross the blood-brain barrier, allowing more levodopa to reach the brain and reducing peripheral dopamine side effects (nausea, hypotension)."
+        },
+        {
+          "text": "Enhance dopamine release",
+          "isCorrect": false,
+          "explanation": "Carbidopa does not enhance release."
+        },
+        {
+          "text": "Block dopamine reuptake",
+          "isCorrect": false,
+          "explanation": "That is not carbidopa's action."
+        },
+        {
+          "text": "Stimulate dopamine receptors directly",
+          "isCorrect": false,
+          "explanation": "Dopamine agonists, not carbidopa, stimulate receptors."
+        },
+        {
+          "text": "Prevent levodopa metabolism in the brain",
+          "isCorrect": false,
+          "explanation": "Carbidopa cannot cross the BBB; it only inhibits peripheral decarboxylase."
+        }
+      ],
+      "explanation": {
+        "overview": "Carbidopa inhibits dopa decarboxylase in the periphery but does not cross the blood-brain barrier, allowing more levodopa to reach the brain and reducing peripheral dopamine side effects (nausea, hypotension).",
+        "highYield": "Levodopa + carbidopa = Sinemet. Peripheral DDC inhibitor prevents nausea/orthostasis. Gold standard for PD.",
+        "clinicalCorrelation": "Long-term levodopa leads to motor fluctuations and dyskinesias. Adding COMT inhibitors or MAO-B inhibitors can smooth response."
+      }
+    },
+    {
+      "questionId": "pharma_cns_030",
+      "difficulty": 2,
+      "question": "Long-term levodopa use is associated with motor complications, including:",
+      "image": null,
+      "options": [
+        {
+          "text": "Wearing-off fluctuations and dyskinesias",
+          "isCorrect": true,
+          "explanation": "Chronic levodopa therapy leads to motor fluctuations (end-of-dose wearing-off, on-off phenomena) and levodopa-induced dyskinesias (choreiform movements)."
+        },
+        {
+          "text": "Tardive dyskinesia",
+          "isCorrect": false,
+          "explanation": "Tardive dyskinesia is associated with antipsychotics, not levodopa."
+        },
+        {
+          "text": "Dystonia only",
+          "isCorrect": false,
+          "explanation": "Both fluctuations and dyskinesias occur."
+        },
+        {
+          "text": "Parkinsonian crisis",
+          "isCorrect": false,
+          "explanation": "That is a complication of abrupt withdrawal."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "Motor complications are very common."
+        }
+      ],
+      "explanation": {
+        "overview": "Chronic levodopa therapy leads to motor fluctuations (end-of-dose wearing-off, on-off phenomena) and levodopa-induced dyskinesias (choreiform movements).",
+        "highYield": "Levodopa long-term: wearing-off, dyskinesia. Manage with COMT inhibitors, MAO-B inhibitors, dopamine agonists, or amantadine for dyskinesias.",
+        "clinicalCorrelation": "Dyskinesias are not necessarily disabling but can be. Amantadine and deep brain stimulation are options."
+      }
+    },
+    {
+      "questionId": "pharma_cns_031",
+      "difficulty": 2,
+      "question": "Dopamine agonists (e.g., pramipexole, ropinirole) are used in Parkinson's disease. Their advantages over levodopa include:",
+      "image": null,
+      "options": [
+        {
+          "text": "Lower risk of developing motor fluctuations and dyskinesias",
+          "isCorrect": true,
+          "explanation": "Dopamine agonists are less potent than levodopa but are associated with fewer motor complications in early disease. However, they have more psychiatric side effects (impulse control disorders)."
+        },
+        {
+          "text": "Greater efficacy",
+          "isCorrect": false,
+          "explanation": "Levodopa is more effective for motor symptoms."
+        },
+        {
+          "text": "Faster onset",
+          "isCorrect": false,
+          "explanation": "Onset is slower."
+        },
+        {
+          "text": "No side effects",
+          "isCorrect": false,
+          "explanation": "They have significant side effects."
+        },
+        {
+          "text": "Cure disease",
+          "isCorrect": false,
+          "explanation": "No cure."
+        }
+      ],
+      "explanation": {
+        "overview": "Dopamine agonists are less potent than levodopa but are associated with fewer motor complications in early disease. However, they have more psychiatric side effects (impulse control disorders).",
+        "highYield": "Dopamine agonists (pramipexole, ropinirole, rotigotine): early PD, fewer motor fluctuations, but impulse control disorders, excessive daytime sleepiness.",
+        "clinicalCorrelation": "Screen for impulse control disorders (gambling, hypersexuality, shopping). Rotigotine patch is useful for patients with GI issues."
+      }
+    },
+    {
+      "questionId": "pharma_cns_032",
+      "difficulty": 2,
+      "question": "Apomorphine is a potent, short-acting dopamine agonist used for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Rescue from off periods in Parkinson's disease (subcutaneous injection)",
+          "isCorrect": true,
+          "explanation": "Apomorphine is used as a rescue medication for rapid reversal of severe off episodes in advanced Parkinson's."
+        },
+        {
+          "text": "First-line therapy",
+          "isCorrect": false,
+          "explanation": "It is for rescue, not first-line."
+        },
+        {
+          "text": "Oral maintenance",
+          "isCorrect": false,
+          "explanation": "It is given subcutaneously."
+        },
+        {
+          "text": "Preventing dyskinesias",
+          "isCorrect": false,
+          "explanation": "Not indicated for prevention."
+        },
+        {
+          "text": "Treating psychosis",
+          "isCorrect": false,
+          "explanation": "Not an antipsychotic."
+        }
+      ],
+      "explanation": {
+        "overview": "Apomorphine is used as a rescue medication for rapid reversal of severe off episodes in advanced Parkinson's.",
+        "highYield": "Apomorphine = SC dopamine agonist, rescue for 'off' periods. Pre-treat with antiemetic (trimethobenzamide) for nausea. Avoid in patients with severe QT prolongation.",
+        "clinicalCorrelation": "Apomorphine can cause severe nausea/vomiting; domperidone (not available in US) or trimethobenzamide are used as antiemetics. Ondansetron is contraindicated due to hypotension."
+      }
+    },
+    {
+      "questionId": "pharma_cns_033",
+      "difficulty": 2,
+      "question": "Selegiline is an MAO-B inhibitor used in Parkinson's. Its mechanism is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Selectively inhibiting MAO-B, reducing dopamine metabolism in brain",
+          "isCorrect": true,
+          "explanation": "Selegiline irreversibly inhibits MAO-B, which metabolizes dopamine, increasing synaptic dopamine levels. At higher doses, it loses selectivity and can cause hypertensive crisis with tyramine."
+        },
+        {
+          "text": "Inhibiting COMT",
+          "isCorrect": false,
+          "explanation": "Entacapone inhibits COMT."
+        },
+        {
+          "text": "Releasing dopamine",
+          "isCorrect": false,
+          "explanation": "Amantadine promotes dopamine release."
+        },
+        {
+          "text": "Blocking dopamine reuptake",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        },
+        {
+          "text": "Activating dopamine receptors",
+          "isCorrect": false,
+          "explanation": "Dopamine agonists activate receptors."
+        }
+      ],
+      "explanation": {
+        "overview": "Selegiline irreversibly inhibits MAO-B, which metabolizes dopamine, increasing synaptic dopamine levels. At higher doses, it loses selectivity and can cause hypertensive crisis with tyramine.",
+        "highYield": "Selegiline = irreversible MAO-B inhibitor. Low doses (<10 mg/day) selective. May cause insomnia (amphetamine metabolites). Rasagiline has no amphetamine metabolites.",
+        "clinicalCorrelation": "Selegiline oral disintegrating tablet bypasses first-pass metabolism, reducing amphetamine metabolites."
+      }
+    },
+    {
+      "questionId": "pharma_cns_034",
+      "difficulty": 2,
+      "question": "Rasagiline is another MAO-B inhibitor similar to selegiline but with no amphetamine metabolites. It is used for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Early Parkinson's as monotherapy or adjunct",
+          "isCorrect": true,
+          "explanation": "Rasagiline is approved for both initial monotherapy and as add-on to levodopa in Parkinson's."
+        },
+        {
+          "text": "Only as adjunct",
+          "isCorrect": false,
+          "explanation": "It can be used as monotherapy."
+        },
+        {
+          "text": "Only for tremor",
+          "isCorrect": false,
+          "explanation": "Not specific for tremor."
+        },
+        {
+          "text": "Only for dyskinesia",
+          "isCorrect": false,
+          "explanation": "Not indicated for dyskinesia."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "It is approved for early PD."
+        }
+      ],
+      "explanation": {
+        "overview": "Rasagiline is approved for both initial monotherapy and as add-on to levodopa in Parkinson's.",
+        "highYield": "Rasagiline = MAO-B inhibitor, once daily. No dietary tyramine restriction at therapeutic doses. Possible disease-modifying effect (not proven).",
+        "clinicalCorrelation": "Rasagiline may interact with serotonergic drugs (risk of serotonin syndrome) but risk is low at therapeutic doses."
+      }
+    },
+    {
+      "questionId": "pharma_cns_035",
+      "difficulty": 2,
+      "question": "Entacapone is a COMT inhibitor used with levodopa. It works by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Inhibiting peripheral and central COMT, prolonging levodopa half-life",
+          "isCorrect": true,
+          "explanation": "Entacapone inhibits COMT, the enzyme that metabolizes levodopa to 3-OMD, increasing its bioavailability and reducing wearing-off fluctuations."
+        },
+        {
+          "text": "Increasing dopamine synthesis",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        },
+        {
+          "text": "Blocking dopamine reuptake",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        },
+        {
+          "text": "Stimulating dopamine receptors",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        },
+        {
+          "text": "Inhibiting MAO-B",
+          "isCorrect": false,
+          "explanation": "That is selegiline/rasagiline."
+        }
+      ],
+      "explanation": {
+        "overview": "Entacapone inhibits COMT, the enzyme that metabolizes levodopa to 3-OMD, increasing its bioavailability and reducing wearing-off fluctuations.",
+        "highYield": "Entacapone = peripheral COMT inhibitor, prolongs levodopa t½. Always given with levodopa. Can cause orange urine, diarrhea.",
+        "clinicalCorrelation": "Entacapone may potentiate levodopa side effects (dyskinesias). Combined with levodopa/carbidopa as Stalevo."
+      }
+    },
+    {
+      "questionId": "pharma_cns_036",
+      "difficulty": 2,
+      "question": "Tolcapone is another COMT inhibitor but is more potent and has central effects. Its use is restricted due to risk of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hepatotoxicity",
+          "isCorrect": true,
+          "explanation": "Tolcapone can cause fatal hepatotoxicity, requiring liver function monitoring; it is reserved for patients not responding to entacapone."
+        },
+        {
+          "text": "Cardiotoxicity",
+          "isCorrect": false,
+          "explanation": "Not the primary concern."
+        },
+        {
+          "text": "Nephrotoxicity",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        },
+        {
+          "text": "Pulmonary fibrosis",
+          "isCorrect": false,
+          "explanation": "Not associated."
+        },
+        {
+          "text": "Rash",
+          "isCorrect": false,
+          "explanation": "Not the major toxicity."
+        }
+      ],
+      "explanation": {
+        "overview": "Tolcapone can cause fatal hepatotoxicity, requiring liver function monitoring; it is reserved for patients not responding to entacapone.",
+        "highYield": "Tolcapone = central and peripheral COMT inhibitor. Risk of severe hepatotoxicity. Monitor ALT biweekly initially.",
+        "clinicalCorrelation": "Tolcapone is used as a last resort in advanced PD. Discontinue if ALT >2x ULN."
+      }
+    },
+    {
+      "questionId": "pharma_cns_037",
+      "difficulty": 2,
+      "question": "Amantadine has multiple mechanisms in Parkinson's, including:",
+      "image": null,
+      "options": [
+        {
+          "text": "Weak NMDA receptor antagonism and promoting dopamine release",
+          "isCorrect": true,
+          "explanation": "Amantadine is an antiviral that also increases dopamine release and blocks NMDA receptors; it is used for dyskinesias and as an adjunct in early Parkinson's."
+        },
+        {
+          "text": "MAO-B inhibition",
+          "isCorrect": false,
+          "explanation": "Selegiline inhibits MAO-B."
+        },
+        {
+          "text": "COMT inhibition",
+          "isCorrect": false,
+          "explanation": "Entacapone inhibits COMT."
+        },
+        {
+          "text": "Dopamine receptor agonism",
+          "isCorrect": false,
+          "explanation": "Amantadine is not a direct agonist."
+        },
+        {
+          "text": "Anticholinergic effects only",
+          "isCorrect": false,
+          "explanation": "Amantadine does have anticholinergic effects but the primary mechanisms are NMDA antagonism and enhanced dopamine release."
+        }
+      ],
+      "explanation": {
+        "overview": "Amantadine is an antiviral that also increases dopamine release and blocks NMDA receptors; it is used for dyskinesias and as an adjunct in early Parkinson's.",
+        "highYield": "Amantadine = NMDA antagonist, ↑ dopamine release. Used for levodopa-induced dyskinesias and early PD. Adverse: livedo reticularis, hallucinations, ankle edema.",
+        "clinicalCorrelation": "Amantadine is renally cleared; dose adjustment in renal impairment. Can cause anticholinergic side effects."
+      }
+    },
+    {
+      "questionId": "pharma_cns_038",
+      "difficulty": 2,
+      "question": "Anticholinergic drugs (e.g., benztropine, trihexyphenidyl) are used in Parkinson's to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Reduce tremor and rigidity by balancing cholinergic overactivity in striatum",
+          "isCorrect": true,
+          "explanation": "In Parkinson's, there is a relative excess of cholinergic activity; anticholinergics help restore balance, improving tremor and rigidity, but have limited effect on bradykinesia."
+        },
+        {
+          "text": "Increase dopamine",
+          "isCorrect": false,
+          "explanation": "Anticholinergics do not increase dopamine."
+        },
+        {
+          "text": "Treat bradykinesia",
+          "isCorrect": false,
+          "explanation": "They primarily help tremor and rigidity, not bradykinesia."
+        },
+        {
+          "text": "Prevent dyskinesias",
+          "isCorrect": false,
+          "explanation": "Not effective for dyskinesias."
+        },
+        {
+          "text": "Improve gait",
+          "isCorrect": false,
+          "explanation": "Not a primary benefit."
+        }
+      ],
+      "explanation": {
+        "overview": "In Parkinson's, there is a relative excess of cholinergic activity; anticholinergics help restore balance, improving tremor and rigidity, but have limited effect on bradykinesia.",
+        "highYield": "Anticholinergics: trihexyphenidyl, benztropine. Help tremor and rigidity in PD. Avoid in elderly (confusion, urinary retention, constipation).",
+        "clinicalCorrelation": "Anticholinergics may cause cognitive impairment and are generally avoided in patients >60 years."
+      }
+    },
+    {
+      "questionId": "pharma_cns_039",
+      "difficulty": 2,
+      "question": "Typical antipsychotics (e.g., haloperidol) exert their effect mainly by blocking:",
+      "image": null,
+      "options": [
+        {
+          "text": "Dopamine D2 receptors in the mesolimbic pathway",
+          "isCorrect": true,
+          "explanation": "The antipsychotic effect of typical antipsychotics is primarily due to D2 receptor blockade in the mesolimbic pathway, but this also causes extrapyramidal side effects and prolactin elevation."
+        },
+        {
+          "text": "Serotonin 5-HT2A receptors",
+          "isCorrect": false,
+          "explanation": "Atypical antipsychotics block 5-HT2A; typicals primarily block D2."
+        },
+        {
+          "text": "Muscarinic receptors",
+          "isCorrect": false,
+          "explanation": "Some typicals have anticholinergic effects, but not the primary mechanism."
+        },
+        {
+          "text": "Histamine H1 receptors",
+          "isCorrect": false,
+          "explanation": "Sedation from H1 block is a side effect, not the primary antipsychotic mechanism."
+        },
+        {
+          "text": "Alpha-1 adrenergic receptors",
+          "isCorrect": false,
+          "explanation": "Alpha-1 blockade causes orthostasis, but not antipsychotic effect."
+        }
+      ],
+      "explanation": {
+        "overview": "The antipsychotic effect of typical antipsychotics is primarily due to D2 receptor blockade in the mesolimbic pathway, but this also causes extrapyramidal side effects and prolactin elevation.",
+        "highYield": "Typical antipsychotics = D2 antagonists. High potency → EPS, hyperprolactinemia. Low potency → more sedation, orthostasis.",
+        "clinicalCorrelation": "Haloperidol is high potency; chlorpromazine is low potency. EPS risk correlates with D2 occupancy >80%."
+      }
+    },
+    {
+      "questionId": "pharma_cns_040",
+      "difficulty": 2,
+      "question": "Extrapyramidal side effects (EPS) of typical antipsychotics include all EXCEPT:",
+      "image": null,
+      "options": [
+        {
+          "text": "Tardive dyskinesia (late-onset)",
+          "isCorrect": true,
+          "explanation": "Tardive dyskinesia is an EPS, but the question asks for EXCEPT. Weight gain is not an EPS, it's metabolic. So the correct answer marked is E (Weight gain). Tardive dyskinesia is an EPS. Acute dystonia, akathisia, parkinsonism are EPS. Weight gain is metabolic, not extrapyramidal."
+        },
+        {
+          "text": "Acute dystonia",
+          "isCorrect": false,
+          "explanation": "Acute dystonia is an EPS."
+        },
+        {
+          "text": "Akathisia",
+          "isCorrect": false,
+          "explanation": "Akathisia is an EPS."
+        },
+        {
+          "text": "Parkinsonism",
+          "isCorrect": false,
+          "explanation": "Drug-induced parkinsonism is an EPS."
+        },
+        {
+          "text": "Weight gain",
+          "isCorrect": true,
+          "explanation": "Weight gain is a metabolic side effect, not an extrapyramidal symptom."
+        }
+      ],
+      "explanation": {
+        "overview": "Weight gain is more common with atypical antipsychotics. EPS are common with typical antipsychotics due to D2 blockade in the nigrostriatal pathway.",
+        "highYield": "EPS: acute dystonia (hours), akathisia (days), parkinsonism (weeks), tardive dyskinesia (months-years). Weight gain is metabolic, not EPS.",
+        "clinicalCorrelation": "Treat acute dystonia with anticholinergics (benztropine) or diphenhydramine. Tardive dyskinesia is potentially irreversible."
+      }
+    },
+    {
+      "questionId": "pharma_cns_041",
+      "difficulty": 2,
+      "question": "Atypical antipsychotics (e.g., clozapine, risperidone, olanzapine) differ from typical agents by also blocking:",
+      "image": null,
+      "options": [
+        {
+          "text": "Serotonin 5-HT2A receptors",
+          "isCorrect": true,
+          "explanation": "Atypical antipsychotics have high 5-HT2A antagonism relative to D2 antagonism, which is thought to reduce EPS and improve negative symptoms."
+        },
+        {
+          "text": "Dopamine D1 receptors",
+          "isCorrect": false,
+          "explanation": "Not the primary distinction."
+        },
+        {
+          "text": "GABA-A receptors",
+          "isCorrect": false,
+          "explanation": "Not their target."
+        },
+        {
+          "text": "NMDA receptors",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        },
+        {
+          "text": "Glycine receptors",
+          "isCorrect": false,
+          "explanation": "Not involved."
+        }
+      ],
+      "explanation": {
+        "overview": "Atypical antipsychotics have high 5-HT2A antagonism relative to D2 antagonism, which is thought to reduce EPS and improve negative symptoms.",
+        "highYield": "Atypicals = D2 + 5-HT2A antagonists. Lower EPS risk (except risperidone/paliperidone at high doses). Metabolic side effects common.",
+        "clinicalCorrelation": "Clozapine is the most effective for refractory schizophrenia but has agranulocytosis risk. Olanzapine/quetiapine cause significant weight gain."
+      }
+    },
+    {
+      "questionId": "pharma_cns_042",
+      "difficulty": 2,
+      "question": "Clozapine is an atypical antipsychotic reserved for treatment-resistant schizophrenia due to risk of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Agranulocytosis",
+          "isCorrect": true,
+          "explanation": "Clozapine can cause agranulocytosis (requiring regular blood monitoring), seizures, myocarditis, and metabolic side effects, but it is uniquely effective in refractory cases."
+        },
+        {
+          "text": "Seizures",
+          "isCorrect": true,
+          "explanation": "Dose-dependent seizure risk."
+        },
+        {
+          "text": "Myocarditis",
+          "isCorrect": true,
+          "explanation": "Clozapine can cause myocarditis, especially early in treatment."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "All listed are known adverse effects."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "These are significant risks."
+        }
+      ],
+      "explanation": {
+        "overview": "Clozapine can cause agranulocytosis (requiring regular blood monitoring), seizures, myocarditis, and metabolic side effects, but it is uniquely effective in refractory cases.",
+        "highYield": "Clozapine: agranulocytosis (~1%), seizures, myocarditis, sialorrhea, constipation. Weekly CBC initially, then monthly. REMS program.",
+        "clinicalCorrelation": "Clozapine is the only antipsychotic proven to reduce suicide in schizophrenia. Monitor ANC; stop if ANC <1000/µL."
+      }
+    },
+    {
+      "questionId": "pharma_cns_043",
+      "difficulty": 2,
+      "question": "Aripiprazole is a partial agonist at D2 and 5-HT1A receptors and an antagonist at 5-HT2A. It is sometimes called a:",
+      "image": null,
+      "options": [
+        {
+          "text": "Dopamine system stabilizer",
+          "isCorrect": true,
+          "explanation": "As a partial agonist, aripiprazole stabilizes dopamine tone, reducing psychosis without causing excessive blockade and EPS."
+        },
+        {
+          "text": "Full antagonist",
+          "isCorrect": false,
+          "explanation": "It is a partial agonist, not full antagonist."
+        },
+        {
+          "text": "Full agonist",
+          "isCorrect": false,
+          "explanation": "Not a full agonist."
+        },
+        {
+          "text": "Inverse agonist",
+          "isCorrect": false,
+          "explanation": "Not an inverse agonist."
+        },
+        {
+          "text": "Reuptake inhibitor",
+          "isCorrect": false,
+          "explanation": "It does not inhibit reuptake."
+        }
+      ],
+      "explanation": {
+        "overview": "As a partial agonist, aripiprazole stabilizes dopamine tone, reducing psychosis without causing excessive blockade and EPS.",
+        "highYield": "Aripiprazole = D2 partial agonist. 'Dopamine stabilizer'. Lower EPS, prolactin elevation, weight gain. Can cause akathisia.",
+        "clinicalCorrelation": "Aripiprazole is also used as adjunct in depression and for irritability in autism. Long-acting injectable available."
+      }
+    },
+    {
+      "questionId": "pharma_cns_044",
+      "difficulty": 2,
+      "question": "Lithium is a first-line mood stabilizer for bipolar disorder. Its mechanism may involve:",
+      "image": null,
+      "options": [
+        {
+          "text": "Inhibition of inositol monophosphatase, depleting IP3",
+          "isCorrect": true,
+          "explanation": "Lithium's mechanism is complex, but the leading hypothesis is inhibition of inositol monophosphatase, affecting phosphatidylinositol signaling and protein kinase C."
+        },
+        {
+          "text": "Blockade of dopamine receptors",
+          "isCorrect": false,
+          "explanation": "Not the primary mechanism."
+        },
+        {
+          "text": "Enhancement of GABA",
+          "isCorrect": false,
+          "explanation": "Lithium does not primarily affect GABA."
+        },
+        {
+          "text": "Inhibition of MAO",
+          "isCorrect": false,
+          "explanation": "Not an MAO inhibitor."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "Only one mechanism is listed."
+        }
+      ],
+      "explanation": {
+        "overview": "Lithium's mechanism is complex, but the leading hypothesis is inhibition of inositol monophosphatase, affecting phosphatidylinositol signaling and protein kinase C.",
+        "highYield": "Lithium: narrow therapeutic index (0.6-1.2 mEq/L). Toxicity: tremor, ataxia, nephrotoxicity, hypothyroidism, nephrogenic DI. Teratogenic (Ebstein anomaly).",
+        "clinicalCorrelation": "Lithium levels should be monitored regularly, along with TSH, creatinine, and electrolytes. Avoid dehydration."
+      }
+    },
+    {
+      "questionId": "pharma_cns_045",
+      "difficulty": 2,
+      "question": "Lithium has a narrow therapeutic index. Monitoring includes regular checks of serum levels, thyroid function, and renal function because of risks of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hypothyroidism, nephrogenic diabetes insipidus, and toxicity",
+          "isCorrect": true,
+          "explanation": "Lithium commonly causes hypothyroidism and impairs renal concentrating ability (nephrogenic DI); toxicity causes tremor, ataxia, seizures, and coma."
+        },
+        {
+          "text": "Hyperthyroidism and hypertension",
+          "isCorrect": false,
+          "explanation": "It causes hypothyroidism, not hyperthyroidism."
+        },
+        {
+          "text": "Diabetes mellitus",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        },
+        {
+          "text": "Osteoporosis",
+          "isCorrect": false,
+          "explanation": "Not a major effect."
+        },
+        {
+          "text": "Hepatotoxicity",
+          "isCorrect": false,
+          "explanation": "Hepatotoxicity is rare."
+        }
+      ],
+      "explanation": {
+        "overview": "Lithium commonly causes hypothyroidism and impairs renal concentrating ability (nephrogenic DI); toxicity causes tremor, ataxia, seizures, and coma.",
+        "highYield": "Lithium monitoring: q3-6 month levels, TSH, creatinine, electrolytes. Toxicity symptoms: coarse tremor, confusion, seizures.",
+        "clinicalCorrelation": "Lithium-induced nephrogenic DI is treated with amiloride. Avoid NSAIDs (decrease lithium clearance, increase levels)."
+      }
+    },
+    {
+      "questionId": "pharma_cns_046",
+      "difficulty": 2,
+      "question": "Valproate and carbamazepine are also used as mood stabilizers. Valproate is particularly effective in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Acute mania",
+          "isCorrect": true,
+          "explanation": "Valproate is highly effective for acute manic episodes, while lithium may be more effective for maintenance and suicide prevention."
+        },
+        {
+          "text": "Bipolar depression",
+          "isCorrect": false,
+          "explanation": "Lamotrigine is more effective for bipolar depression."
+        },
+        {
+          "text": "Maintenance",
+          "isCorrect": false,
+          "explanation": "Lithium is preferred for maintenance."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "Valproate is best for acute mania."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "Valproate is effective for acute mania."
+        }
+      ],
+      "explanation": {
+        "overview": "Valproate is highly effective for acute manic episodes, while lithium may be more effective for maintenance and suicide prevention.",
+        "highYield": "Valproate = first-line for acute mania. Lamotrigine = bipolar depression. Lithium = gold standard for maintenance and suicide prevention.",
+        "clinicalCorrelation": "Valproate can be loaded orally or IV for rapid control of mania. Avoid in women of childbearing age."
+      }
+    },
+    {
+      "questionId": "pharma_cns_047",
+      "difficulty": 1,
+      "question": "SSRIs (e.g., fluoxetine, sertraline) are first-line antidepressants. Their mechanism is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Selective inhibition of serotonin reuptake transporter (SERT)",
+          "isCorrect": true,
+          "explanation": "SSRIs block SERT, increasing synaptic serotonin levels."
+        },
+        {
+          "text": "Inhibition of MAO",
+          "isCorrect": false,
+          "explanation": "MAOIs inhibit MAO."
+        },
+        {
+          "text": "Blockade of 5-HT2 receptors",
+          "isCorrect": false,
+          "explanation": "That is a property of some atypical antipsychotics and antidepressants like mirtazapine."
+        },
+        {
+          "text": "Antagonism of alpha-2 autoreceptors",
+          "isCorrect": false,
+          "explanation": "Mirtazapine antagonizes alpha-2 autoreceptors."
+        },
+        {
+          "text": "Enhancement of serotonin release",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        }
+      ],
+      "explanation": {
+        "overview": "SSRIs block SERT, increasing synaptic serotonin levels.",
+        "highYield": "SSRIs = SERT inhibitors. First-line for depression, anxiety disorders. Side effects: GI, sexual dysfunction, activation. Withdrawal syndrome if stopped abruptly.",
+        "clinicalCorrelation": "Fluoxetine has longest half-life, fewer withdrawal symptoms. Paroxetine has highest anticholinergic and withdrawal effects."
+      }
+    },
+    {
+      "questionId": "pharma_cns_048",
+      "difficulty": 2,
+      "question": "A common initial side effect of SSRIs is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Nausea, headache, sexual dysfunction, and activation",
+          "isCorrect": true,
+          "explanation": "SSRIs often cause GI distress, headache, anxiety, and sexual side effects; these often improve over time."
+        },
+        {
+          "text": "Sedation",
+          "isCorrect": false,
+          "explanation": "Sedation is more common with mirtazapine or paroxetine."
+        },
+        {
+          "text": "Weight loss",
+          "isCorrect": false,
+          "explanation": "Weight loss can occur initially but is not the most common."
+        },
+        {
+          "text": "Hypertension",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        },
+        {
+          "text": "Seizures",
+          "isCorrect": false,
+          "explanation": "Not common."
+        }
+      ],
+      "explanation": {
+        "overview": "SSRIs often cause GI distress, headache, anxiety, and sexual side effects; these often improve over time.",
+        "highYield": "SSRI side effects: 'activation syndrome' (anxiety/agitation) early, sexual dysfunction (anorgasmia, ↓ libido), nausea. Slow taper to avoid withdrawal.",
+        "clinicalCorrelation": "Sexual dysfunction may be managed by dose reduction, switching to bupropion or mirtazapine, or adding sildenafil."
+      }
+    },
+    {
+      "questionId": "pharma_cns_049",
+      "difficulty": 2,
+      "question": "Serotonin syndrome is a potentially life-threatening condition caused by excessive serotonergic activity. Symptoms include:",
+      "image": null,
+      "options": [
+        {
+          "text": "Confusion, agitation, hyperthermia, hyperreflexia, clonus",
+          "isCorrect": true,
+          "explanation": "Serotonin syndrome results from overstimulation of CNS and peripheral serotonin receptors, often due to combinations of serotonergic drugs (e.g., MAOIs + SSRIs)."
+        },
+        {
+          "text": "Bradykinesia and rigidity",
+          "isCorrect": false,
+          "explanation": "Bradykinesia and rigidity are parkinsonian symptoms."
+        },
+        {
+          "text": "Hypotension and bradycardia",
+          "isCorrect": false,
+          "explanation": "Autonomic instability may cause hypertension and tachycardia."
+        },
+        {
+          "text": "Miosis and sedation",
+          "isCorrect": false,
+          "explanation": "That is opioid toxicity."
+        },
+        {
+          "text": "Dry mouth and constipation",
+          "isCorrect": false,
+          "explanation": "Anticholinergic effects."
+        }
+      ],
+      "explanation": {
+        "overview": "Serotonin syndrome results from overstimulation of CNS and peripheral serotonin receptors, often due to combinations of serotonergic drugs (e.g., MAOIs + SSRIs).",
+        "highYield": "Serotonin syndrome: hyperthermia, hyperreflexia, clonus, agitation. Treatment: supportive, cyproheptadine (5-HT2A antagonist).",
+        "clinicalCorrelation": "Most common with combining MAOIs and SSRIs. Avoid serotonergic drugs within 2 weeks of stopping MAOIs (5 weeks for fluoxetine)."
+      }
+    },
+    {
+      "questionId": "pharma_cns_050",
+      "difficulty": 2,
+      "question": "SNRIs (e.g., venlafaxine, duloxetine) inhibit both serotonin and norepinephrine reuptake. Duloxetine is also approved for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Neuropathic pain, fibromyalgia, and chronic musculoskeletal pain",
+          "isCorrect": true,
+          "explanation": "Duloxetine has additional indications for diabetic peripheral neuropathy, fibromyalgia, and chronic pain due to its noradrenergic effects."
+        },
+        {
+          "text": "Only depression",
+          "isCorrect": false,
+          "explanation": "It has multiple indications."
+        },
+        {
+          "text": "Only anxiety",
+          "isCorrect": false,
+          "explanation": "It is also approved for generalized anxiety disorder."
+        },
+        {
+          "text": "Only OCD",
+          "isCorrect": false,
+          "explanation": "Not a primary indication."
+        },
+        {
+          "text": "Only panic disorder",
+          "isCorrect": false,
+          "explanation": "Not approved for panic disorder."
+        }
+      ],
+      "explanation": {
+        "overview": "Duloxetine has additional indications for diabetic peripheral neuropathy, fibromyalgia, and chronic pain due to its noradrenergic effects.",
+        "highYield": "Duloxetine = SNRI. Indications: MDD, GAD, diabetic neuropathy, fibromyalgia, chronic musculoskeletal pain. Hepatotoxic in alcoholics.",
+        "clinicalCorrelation": "Duloxetine should not be used in patients with heavy alcohol use or hepatic impairment."
+      }
+    },
+    {
+      "questionId": "pharma_cns_051",
+      "difficulty": 2,
+      "question": "Bupropion is an antidepressant that inhibits reuptake of norepinephrine and dopamine. It is also used for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Smoking cessation",
+          "isCorrect": true,
+          "explanation": "Bupropion (Zyban) is effective for smoking cessation. Unlike SSRIs, it does not cause sexual dysfunction or weight gain but lowers seizure threshold."
+        },
+        {
+          "text": "Anxiety disorders",
+          "isCorrect": false,
+          "explanation": "Bupropion can worsen anxiety."
+        },
+        {
+          "text": "OCD",
+          "isCorrect": false,
+          "explanation": "Not indicated."
+        },
+        {
+          "text": "Bipolar depression",
+          "isCorrect": false,
+          "explanation": "May cause mood switch in bipolar."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "Only smoking cessation."
+        }
+      ],
+      "explanation": {
+        "overview": "Bupropion (Zyban) is effective for smoking cessation. Unlike SSRIs, it does not cause sexual dysfunction or weight gain but lowers seizure threshold.",
+        "highYield": "Bupropion = NDRI. Used for MDD, smoking cessation. Advantages: no sexual dysfunction, no weight gain. Risk: seizures (dose-dependent), contraindicated in eating disorders.",
+        "clinicalCorrelation": "Do not use bupropion in patients with bulimia or anorexia due to increased seizure risk. Can be combined with SSRI to counteract sexual side effects."
+      }
+    },
+    {
+      "questionId": "pharma_cns_052",
+      "difficulty": 2,
+      "question": "Mirtazapine is an antidepressant with a unique mechanism: antagonism of α2-adrenergic autoreceptors and 5-HT2/5-HT3 receptors. Its common side effects include:",
+      "image": null,
+      "options": [
+        {
+          "text": "Sedation and weight gain",
+          "isCorrect": true,
+          "explanation": "Mirtazapine blocks histamine H1 receptors, causing sedation, and increases appetite, leading to weight gain."
+        },
+        {
+          "text": "Insomnia and weight loss",
+          "isCorrect": false,
+          "explanation": "It causes sedation, not insomnia."
+        },
+        {
+          "text": "Sexual dysfunction",
+          "isCorrect": false,
+          "explanation": "Mirtazapine has low sexual side effects."
+        },
+        {
+          "text": "Hypertension",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        },
+        {
+          "text": "Nausea",
+          "isCorrect": false,
+          "explanation": "5-HT3 antagonism may reduce nausea."
+        }
+      ],
+      "explanation": {
+        "overview": "Mirtazapine blocks histamine H1 receptors, causing sedation, and increases appetite, leading to weight gain.",
+        "highYield": "Mirtazapine = α2 antagonist, 5-HT2/5-HT3 antagonist. Sedation, weight gain, increased appetite. Low sexual dysfunction. May cause blood dyscrasias (rare).",
+        "clinicalCorrelation": "Mirtazapine is often used in depressed patients with insomnia and anorexia. Nighttime dosing due to sedation."
+      }
+    },
+    {
+      "questionId": "pharma_cns_053",
+      "difficulty": 2,
+      "question": "Trazodone is an antidepressant often used at low doses for insomnia. Its mechanism includes:",
+      "image": null,
+      "options": [
+        {
+          "text": "5-HT2A antagonism and weak serotonin reuptake inhibition",
+          "isCorrect": true,
+          "explanation": "Trazodone's sedative effects are due to potent 5-HT2A and H1 antagonism; it has weak SERT inhibition."
+        },
+        {
+          "text": "SSRI only",
+          "isCorrect": false,
+          "explanation": "It has weak SERT inhibition but also 5-HT2A antagonism."
+        },
+        {
+          "text": "SNRI only",
+          "isCorrect": false,
+          "explanation": "Not an SNRI."
+        },
+        {
+          "text": "MAO inhibition",
+          "isCorrect": false,
+          "explanation": "Not an MAOI."
+        },
+        {
+          "text": "Dopamine reuptake inhibition",
+          "isCorrect": false,
+          "explanation": "Not the primary mechanism."
+        }
+      ],
+      "explanation": {
+        "overview": "Trazodone's sedative effects are due to potent 5-HT2A and H1 antagonism; it has weak SERT inhibition.",
+        "highYield": "Trazodone = SARI (serotonin antagonist/reuptake inhibitor). Low dose for insomnia, higher dose for depression. Risk: priapism (rare).",
+        "clinicalCorrelation": "Take trazodone with food to reduce dizziness. Priapism requires emergency medical attention."
+      }
+    },
+    {
+      "questionId": "pharma_cns_054",
+      "difficulty": 2,
+      "question": "Monoamine oxidase inhibitors (MAOIs) like phenelzine are effective antidepressants but used rarely due to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Dietary restrictions (tyramine) and drug interactions",
+          "isCorrect": true,
+          "explanation": "MAOIs inhibit breakdown of tyramine, which can cause hypertensive crisis with tyramine-rich foods; they also interact dangerously with serotonergic drugs."
+        },
+        {
+          "text": "Hepatotoxicity",
+          "isCorrect": false,
+          "explanation": "Not the primary reason."
+        },
+        {
+          "text": "Nephrotoxicity",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        },
+        {
+          "text": "Cardiotoxicity",
+          "isCorrect": false,
+          "explanation": "Not the main concern."
+        },
+        {
+          "text": "Seizures",
+          "isCorrect": false,
+          "explanation": "Not prominent."
+        }
+      ],
+      "explanation": {
+        "overview": "MAOIs inhibit breakdown of tyramine, which can cause hypertensive crisis with tyramine-rich foods; they also interact dangerously with serotonergic drugs.",
+        "highYield": "MAOIs: phenelzine, tranylcypromine, isocarboxazid. Dietary restriction: aged cheese, wine, cured meats. Risk of serotonin syndrome with SSRIs.",
+        "clinicalCorrelation": "Selegiline transdermal patch at low dose does not require dietary restrictions (selective MAO-B). Emergency hypertensive crisis treated with phentolamine or nitroprusside."
+      }
+    },
+    {
+      "questionId": "pharma_cns_055",
+      "difficulty": 2,
+      "question": "Methylphenidate is a CNS stimulant used in ADHD. Its mechanism is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Blocking dopamine and norepinephrine reuptake",
+          "isCorrect": true,
+          "explanation": "Methylphenidate inhibits the dopamine transporter (DAT) and norepinephrine transporter (NET), increasing synaptic levels."
+        },
+        {
+          "text": "Releasing dopamine",
+          "isCorrect": false,
+          "explanation": "Amphetamines release dopamine; methylphenidate blocks reuptake."
+        },
+        {
+          "text": "Activating dopamine receptors",
+          "isCorrect": false,
+          "explanation": "Not a direct agonist."
+        },
+        {
+          "text": "Inhibiting MAO",
+          "isCorrect": false,
+          "explanation": "Not an MAO inhibitor."
+        },
+        {
+          "text": "Blocking serotonin reuptake",
+          "isCorrect": false,
+          "explanation": "Minimal serotonin effect."
+        }
+      ],
+      "explanation": {
+        "overview": "Methylphenidate inhibits the dopamine transporter (DAT) and norepinephrine transporter (NET), increasing synaptic levels.",
+        "highYield": "Methylphenidate = NDRI. Schedule II. Used for ADHD, narcolepsy. Side effects: insomnia, anorexia, tachycardia, growth suppression in children.",
+        "clinicalCorrelation": "Extended-release formulations reduce abuse potential and provide all-day coverage. Monitor growth in children."
+      }
+    },
+    {
+      "questionId": "pharma_cns_056",
+      "difficulty": 2,
+      "question": "Amphetamine-based drugs (e.g., Adderall) used in ADHD also release catecholamines from nerve terminals. Common side effects include:",
+      "image": null,
+      "options": [
+        {
+          "text": "Insomnia, decreased appetite, increased heart rate",
+          "isCorrect": true,
+          "explanation": "Stimulants cause sympathetic activation, leading to insomnia, anorexia, tachycardia, and potential for abuse."
+        },
+        {
+          "text": "Sedation and weight gain",
+          "isCorrect": false,
+          "explanation": "Stimulants cause wakefulness and anorexia."
+        },
+        {
+          "text": "Hypotension",
+          "isCorrect": false,
+          "explanation": "They can increase blood pressure."
+        },
+        {
+          "text": "Bradycardia",
+          "isCorrect": false,
+          "explanation": "They increase heart rate."
+        },
+        {
+          "text": "Constipation",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        }
+      ],
+      "explanation": {
+        "overview": "Stimulants cause sympathetic activation, leading to insomnia, anorexia, tachycardia, and potential for abuse.",
+        "highYield": "Amphetamines: release DA/NE. Adverse: insomnia, appetite suppression, cardiovascular stimulation. Contraindicated in symptomatic cardiovascular disease.",
+        "clinicalCorrelation": "Screen for cardiac conditions before prescribing stimulants. Avoid in patients with history of substance abuse."
+      }
+    },
+    {
+      "questionId": "pharma_cns_057",
+      "difficulty": 2,
+      "question": "Atomoxetine is a non-stimulant medication for ADHD that acts as a:",
+      "image": null,
+      "options": [
+        {
+          "text": "Selective norepinephrine reuptake inhibitor (NRI)",
+          "isCorrect": true,
+          "explanation": "Atomoxetine increases norepinephrine levels by blocking NET, improving attention without abuse potential."
+        },
+        {
+          "text": "Dopamine reuptake inhibitor",
+          "isCorrect": false,
+          "explanation": "It primarily affects NE."
+        },
+        {
+          "text": "MAO inhibitor",
+          "isCorrect": false,
+          "explanation": "Not an MAOI."
+        },
+        {
+          "text": "α2 agonist",
+          "isCorrect": false,
+          "explanation": "Guanfacine and clonidine are α2 agonists."
+        },
+        {
+          "text": "Serotonin reuptake inhibitor",
+          "isCorrect": false,
+          "explanation": "Minimal serotonin effect."
+        }
+      ],
+      "explanation": {
+        "overview": "Atomoxetine increases norepinephrine levels by blocking NET, improving attention without abuse potential.",
+        "highYield": "Atomoxetine = selective NRI. Not a controlled substance. Slow onset. Risk: hepatotoxicity (rare), suicidal ideation in children.",
+        "clinicalCorrelation": "Atomoxetine is metabolized by CYP2D6; poor metabolizers may have higher levels. Monitor for suicidal thoughts in children/adolescents."
+      }
+    },
+    {
+      "questionId": "pharma_cns_058",
+      "difficulty": 2,
+      "question": "Guanfacine and clonidine are α2-adrenergic agonists used in ADHD and hypertension. In ADHD, they are thought to work by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Strengthening prefrontal cortical function via α2A receptor stimulation",
+          "isCorrect": true,
+          "explanation": "α2 agonists improve prefrontal cortical regulation of attention and impulse control by stimulating postsynaptic α2A receptors."
+        },
+        {
+          "text": "Blocking dopamine reuptake",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        },
+        {
+          "text": "Releasing norepinephrine",
+          "isCorrect": false,
+          "explanation": "They are agonists, not releasers."
+        },
+        {
+          "text": "Stimulating dopamine release",
+          "isCorrect": false,
+          "explanation": "Not the primary action."
+        },
+        {
+          "text": "Blocking serotonin receptors",
+          "isCorrect": false,
+          "explanation": "Not the target."
+        }
+      ],
+      "explanation": {
+        "overview": "α2 agonists improve prefrontal cortical regulation of attention and impulse control by stimulating postsynaptic α2A receptors.",
+        "highYield": "Guanfacine ER (Intuniv) = α2A agonist for ADHD, especially hyperactivity and impulsivity. Side effects: sedation, hypotension, bradycardia.",
+        "clinicalCorrelation": "Avoid abrupt discontinuation to prevent rebound hypertension. Monitor heart rate and blood pressure."
+      }
+    },
+    {
+      "questionId": "pharma_cns_059",
+      "difficulty": 2,
+      "question": "Donepezil, rivastigmine, and galantamine are cholinesterase inhibitors used in Alzheimer's disease. Their primary effect is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Temporarily improving cognitive function by increasing brain acetylcholine",
+          "isCorrect": true,
+          "explanation": "These drugs provide modest, temporary cognitive improvement by boosting cholinergic transmission, but do not alter disease progression."
+        },
+        {
+          "text": "Curing the disease",
+          "isCorrect": false,
+          "explanation": "They do not cure."
+        },
+        {
+          "text": "Preventing neurodegeneration",
+          "isCorrect": false,
+          "explanation": "No proven disease modification."
+        },
+        {
+          "text": "Reducing amyloid plaques",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        },
+        {
+          "text": "Blocking NMDA receptors",
+          "isCorrect": false,
+          "explanation": "Memantine is an NMDA antagonist."
+        }
+      ],
+      "explanation": {
+        "overview": "These drugs provide modest, temporary cognitive improvement by boosting cholinergic transmission, but do not alter disease progression.",
+        "highYield": "Cholinesterase inhibitors: donepezil, rivastigmine, galantamine. Mild-moderate AD. Side effects: nausea, diarrhea, bradycardia, syncope.",
+        "clinicalCorrelation": "Rivastigmine is available as a transdermal patch to reduce GI side effects. Contraindicated in severe bradycardia or heart block."
+      }
+    },
+    {
+      "questionId": "pharma_cns_060",
+      "difficulty": 2,
+      "question": "Memantine is an NMDA receptor antagonist used in moderate-to-severe Alzheimer's. It works by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Blocking excessive glutamate activity without interfering with normal neurotransmission",
+          "isCorrect": true,
+          "explanation": "Memantine is an uncompetitive, low-affinity NMDA antagonist that reduces glutamate excitotoxicity while allowing physiological glutamate signaling."
+        },
+        {
+          "text": "Enhancing acetylcholine",
+          "isCorrect": false,
+          "explanation": "That is the cholinesterase inhibitors."
+        },
+        {
+          "text": "Inhibiting acetylcholinesterase",
+          "isCorrect": false,
+          "explanation": "That is donepezil."
+        },
+        {
+          "text": "Reducing amyloid",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        },
+        {
+          "text": "Increasing dopamine",
+          "isCorrect": false,
+          "explanation": "Not the target."
+        }
+      ],
+      "explanation": {
+        "overview": "Memantine is an uncompetitive, low-affinity NMDA antagonist that reduces glutamate excitotoxicity while allowing physiological glutamate signaling.",
+        "highYield": "Memantine = NMDA antagonist for moderate-severe AD. Often combined with donepezil. Renal elimination; dose adjustment in renal impairment.",
+        "clinicalCorrelation": "Memantine may cause dizziness, confusion, and constipation. It has a once-daily extended-release formulation."
+      }
+    },
+    {
+      "questionId": "pharma_cns_061",
+      "difficulty": 2,
+      "question": "Buspirone is a non-benzodiazepine anxiolytic. Its primary mechanism is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Partial agonist at serotonin 5-HT1A receptors",
+          "isCorrect": true,
+          "explanation": "Buspirone is a 5-HT1A partial agonist that reduces anxiety without sedation, muscle relaxation, or dependence."
+        },
+        {
+          "text": "GABA-A receptor positive allosteric modulator",
+          "isCorrect": false,
+          "explanation": "That is benzodiazepines."
+        },
+        {
+          "text": "Dopamine D2 receptor antagonist",
+          "isCorrect": false,
+          "explanation": "Antipsychotics block D2."
+        },
+        {
+          "text": "Serotonin reuptake inhibitor",
+          "isCorrect": false,
+          "explanation": "SSRIs block SERT."
+        },
+        {
+          "text": "Alpha-2 delta calcium channel blocker",
+          "isCorrect": false,
+          "explanation": "Gabapentinoids bind α2-δ."
+        }
+      ],
+      "explanation": {
+        "overview": "Buspirone is a 5-HT1A partial agonist used for generalized anxiety disorder. It has no abuse potential, does not cause sedation or muscle relaxation, and does not interact with alcohol.",
+        "highYield": "Buspirone = 5-HT1A partial agonist. Delayed onset (weeks). Not for acute anxiety. Minimal drug interactions, no withdrawal.",
+        "clinicalCorrelation": "Buspirone is not effective for panic disorder. It can be combined with SSRIs. Does not potentiate CNS depression."
+      }
+    },
+    {
+      "questionId": "pharma_cns_062",
+      "difficulty": 2,
+      "question": "Pimavanserin is an atypical antipsychotic approved for psychosis in Parkinson's disease. Its mechanism is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Inverse agonist/antagonist at 5-HT2A receptors, with no dopamine blockade",
+          "isCorrect": true,
+          "explanation": "Pimavanserin selectively targets 5-HT2A receptors, improving psychosis without worsening motor symptoms."
+        },
+        {
+          "text": "D2 receptor antagonist",
+          "isCorrect": false,
+          "explanation": "It has negligible dopamine antagonism, hence no EPS or worsening of PD."
+        },
+        {
+          "text": "Dopamine agonist",
+          "isCorrect": false,
+          "explanation": "Not a dopamine agonist."
+        },
+        {
+          "text": "SSRI",
+          "isCorrect": false,
+          "explanation": "Not an SSRI."
+        },
+        {
+          "text": "Cholinesterase inhibitor",
+          "isCorrect": false,
+          "explanation": "Not its mechanism."
+        }
+      ],
+      "explanation": {
+        "overview": "Pimavanserin is a selective 5-HT2A inverse agonist/antagonist, effective for Parkinson's disease psychosis without blocking dopamine receptors, thus avoiding motor worsening.",
+        "highYield": "Pimavanserin = 5-HT2A inverse agonist for PD psychosis. No EPS, no worsening of motor function. Boxed warning: increased mortality in elderly.",
+        "clinicalCorrelation": "Pimavanserin may cause QT prolongation. Contraindicated in patients with known QT prolongation or arrhythmias."
+      }
+    },
+    {
+      "questionId": "pharma_cns_063",
+      "difficulty": 2,
+      "question": "Cariprazine is an atypical antipsychotic with a unique profile: partial agonist at D2, D3, and 5-HT1A receptors. It is FDA-approved for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Schizophrenia and bipolar mania, and as an adjunct for bipolar depression",
+          "isCorrect": true,
+          "explanation": "Cariprazine is approved for schizophrenia, acute manic/mixed episodes, and bipolar I depression (adjunct)."
+        },
+        {
+          "text": "Only schizophrenia",
+          "isCorrect": false,
+          "explanation": "It has broader indications."
+        },
+        {
+          "text": "Only bipolar disorder",
+          "isCorrect": false,
+          "explanation": "It is approved for both."
+        },
+        {
+          "text": "Only depression",
+          "isCorrect": false,
+          "explanation": "Not a primary indication."
+        },
+        {
+          "text": "Only psychosis in Parkinson's",
+          "isCorrect": false,
+          "explanation": "That is pimavanserin."
+        }
+      ],
+      "explanation": {
+        "overview": "Cariprazine is a D2/D3/5-HT1A partial agonist with high affinity for D3 receptors. It is approved for schizophrenia, acute mania, and bipolar depression.",
+        "highYield": "Cariprazine = D3-preferring partial agonist. Indications: schizophrenia, bipolar I mania, bipolar depression. Side effects: akathisia, nausea, insomnia.",
+        "clinicalCorrelation": "Cariprazine has a long half-life (2-4 days for active metabolite). Dose adjustments required with CYP3A4 inhibitors."
+      }
+    },
+    {
+      "questionId": "pharma_cns_064",
+      "difficulty": 2,
+      "question": "Lurasidone is an atypical antipsychotic with strong 5-HT2A antagonism and 5-HT7 antagonism. A notable advantage is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Minimal weight gain, no significant metabolic effects",
+          "isCorrect": true,
+          "explanation": "Lurasidone has a favorable metabolic profile compared to olanzapine or quetiapine."
+        },
+        {
+          "text": "High risk of QT prolongation",
+          "isCorrect": false,
+          "explanation": "QT prolongation is low."
+        },
+        {
+          "text": "Significant anticholinergic effects",
+          "isCorrect": false,
+          "explanation": "Low anticholinergic burden."
+        },
+        {
+          "text": "Causes hyperprolactinemia more than risperidone",
+          "isCorrect": false,
+          "explanation": "Prolactin elevation is less than with risperidone."
+        },
+        {
+          "text": "High sedation",
+          "isCorrect": false,
+          "explanation": "Sedation is moderate."
+        }
+      ],
+      "explanation": {
+        "overview": "Lurasidone is an atypical antipsychotic with low risk of weight gain, metabolic syndrome, and QTc prolongation. It requires administration with food (≥350 calories) for absorption.",
+        "highYield": "Lurasidone = 5-HT2A, 5-HT7, D2 antagonist. Minimal metabolic effects. Must take with food. Indicated for schizophrenia and bipolar depression.",
+        "clinicalCorrelation": "Lurasidone can cause akathisia and somnolence. It is a substrate of CYP3A4; avoid with strong inducers/inhibitors."
+      }
+    },
+    {
+      "questionId": "pharma_cns_065",
+      "difficulty": 2,
+      "question": "Iloperidone is an atypical antipsychotic with similar receptor profile to risperidone but known for:",
+      "image": null,
+      "options": [
+        {
+          "text": "QT prolongation risk requiring ECG monitoring",
+          "isCorrect": true,
+          "explanation": "Iloperidone can prolong the QTc interval, and ECG is recommended before and during treatment."
+        },
+        {
+          "text": "No metabolic effects",
+          "isCorrect": false,
+          "explanation": "It can cause weight gain and metabolic changes."
+        },
+        {
+          "text": "Low risk of orthostasis",
+          "isCorrect": false,
+          "explanation": "Orthostatic hypotension is a concern."
+        },
+        {
+          "text": "Approved for bipolar depression",
+          "isCorrect": false,
+          "explanation": "Only for schizophrenia."
+        },
+        {
+          "text": "No CYP interactions",
+          "isCorrect": false,
+          "explanation": "Metabolized by CYP2D6 and CYP3A4."
+        }
+      ],
+      "explanation": {
+        "overview": "Iloperidone is an atypical antipsychotic approved for schizophrenia. It has a significant risk of QTc prolongation, orthostatic hypotension, and requires ECG monitoring.",
+        "highYield": "Iloperidone = D2/5-HT2A antagonist. QT prolongation. CYP2D6/3A4 substrate. Second-line due to tolerability.",
+        "clinicalCorrelation": "Avoid use with other QT-prolonging drugs. Titrate slowly to minimize orthostasis."
+      }
+    },
+    {
+      "questionId": "pharma_cns_066",
+      "difficulty": 2,
+      "question": "Brexpiprazole is a newer atypical antipsychotic used as adjunct in depression and for schizophrenia. It is similar to aripiprazole but with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Higher potency at 5-HT1A receptors and lower intrinsic activity at D2 receptors",
+          "isCorrect": true,
+          "explanation": "Brexpiprazole is a D2/5-HT1A partial agonist with lower D2 intrinsic activity, potentially causing less akathisia than aripiprazole."
+        },
+        {
+          "text": "Full D2 antagonist",
+          "isCorrect": false,
+          "explanation": "It is a partial agonist."
+        },
+        {
+          "text": "No serotonergic activity",
+          "isCorrect": false,
+          "explanation": "It has strong serotonergic effects."
+        },
+        {
+          "text": "Dopamine reuptake inhibition",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        },
+        {
+          "text": "MAO inhibition",
+          "isCorrect": false,
+          "explanation": "Not an MAOI."
+        }
+      ],
+      "explanation": {
+        "overview": "Brexpiprazole is a serotonin-dopamine activity modulator (SDAM) with partial agonist activity at D2 and 5-HT1A and antagonist at 5-HT2A. Its lower D2 intrinsic activity may reduce akathisia compared to aripiprazole.",
+        "highYield": "Brexpiprazole = D2/5-HT1A partial agonist, 5-HT2A antagonist. For depression (adjunct) and schizophrenia. Lower akathisia than aripiprazole.",
+        "clinicalCorrelation": "Brexpiprazole can still cause weight gain and metabolic effects. It is a CYP2D6 substrate."
+      }
+    },
+    {
+      "questionId": "pharma_cns_067",
+      "difficulty": 2,
+      "question": "Deutetrabenazine is used for tardive dyskinesia and Huntington's chorea. Its mechanism is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Reversible inhibition of VMAT2, depleting presynaptic dopamine",
+          "isCorrect": true,
+          "explanation": "Deutetrabenazine (and valbenazine) inhibit the vesicular monoamine transporter 2 (VMAT2), reducing dopamine storage and release."
+        },
+        {
+          "text": "D2 receptor antagonism",
+          "isCorrect": false,
+          "explanation": "They are not D2 antagonists."
+        },
+        {
+          "text": "GABA potentiation",
+          "isCorrect": false,
+          "explanation": "Not their action."
+        },
+        {
+          "text": "MAO inhibition",
+          "isCorrect": false,
+          "explanation": "Not an MAO inhibitor."
+        },
+        {
+          "text": "Dopamine agonist",
+          "isCorrect": false,
+          "explanation": "They deplete dopamine, not stimulate."
+        }
+      ],
+      "explanation": {
+        "overview": "Deutetrabenazine and valbenazine are VMAT2 inhibitors that deplete dopamine from presynaptic neurons, used for tardive dyskinesia and chorea in Huntington's disease.",
+        "highYield": "VMAT2 inhibitors: deutetrabenazine, valbenazine, tetrabenazine. Side effects: somnolence, parkinsonism, QT prolongation, depression.",
+        "clinicalCorrelation": "Contraindicated in patients with untreated depression or suicidal ideation. Deutetrabenazine has less peak-dose dyskinesia than tetrabenazine."
+      }
+    },
+    {
+      "questionId": "pharma_cns_068",
+      "difficulty": 2,
+      "question": "Naltrexone is an opioid antagonist used in alcohol use disorder because it:",
+      "image": null,
+      "options": [
+        {
+          "text": "Blocks opioid receptors, reducing the rewarding effects of alcohol",
+          "isCorrect": true,
+          "explanation": "Naltrexone blocks mu-opioid receptors, attenuating the pleasurable effects of alcohol and reducing craving."
+        },
+        {
+          "text": "Causes a disulfiram-like reaction",
+          "isCorrect": false,
+          "explanation": "Disulfiram inhibits aldehyde dehydrogenase."
+        },
+        {
+          "text": "Enhances GABA activity",
+          "isCorrect": false,
+          "explanation": "Benzodiazepines enhance GABA."
+        },
+        {
+          "text": "Inhibits alcohol dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        },
+        {
+          "text": "Blocks NMDA receptors",
+          "isCorrect": false,
+          "explanation": "Memantine is an NMDA antagonist."
+        }
+      ],
+      "explanation": {
+        "overview": "Naltrexone is a mu-opioid antagonist that reduces alcohol craving and reward. It is effective for alcohol and opioid use disorders.",
+        "highYield": "Naltrexone: oral or long-acting injectable (Vivitrol). Must be opioid-free before starting. Monitor LFTs.",
+        "clinicalCorrelation": "Contraindicated in patients using opioids or with acute hepatitis. Can precipitate opioid withdrawal."
+      }
+    },
+    {
+      "questionId": "pharma_cns_069",
+      "difficulty": 2,
+      "question": "Acamprosate is used for alcohol use disorder. Its proposed mechanism involves:",
+      "image": null,
+      "options": [
+        {
+          "text": "Normalizing glutamate and GABA balance (NMDA antagonist, GABA-A modulator)",
+          "isCorrect": true,
+          "explanation": "Acamprosate is thought to restore the balance between excitatory and inhibitory neurotransmission disrupted by chronic alcohol use."
+        },
+        {
+          "text": "Blocking opioid receptors",
+          "isCorrect": false,
+          "explanation": "Naltrexone blocks opioid receptors."
+        },
+        {
+          "text": "Inhibiting aldehyde dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Disulfiram inhibits ALDH."
+        },
+        {
+          "text": "Dopamine reuptake inhibition",
+          "isCorrect": false,
+          "explanation": "Bupropion is an NDRI."
+        },
+        {
+          "text": "Serotonin reuptake inhibition",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        }
+      ],
+      "explanation": {
+        "overview": "Acamprosate is believed to stabilize the chemical balance in the brain by acting as a weak NMDA antagonist and positive allosteric modulator of GABA-A receptors, reducing protracted withdrawal symptoms.",
+        "highYield": "Acamprosate = NMDA antagonist, GABA modulator. For alcohol abstinence maintenance. Renally excreted, dose adjust with CrCl.",
+        "clinicalCorrelation": "Acamprosate may cause diarrhea. It does not interact with alcohol, so no disulfiram-like reaction."
+      }
+    },
+    {
+      "questionId": "pharma_cns_070",
+      "difficulty": 2,
+      "question": "Disulfiram is an aversive therapy for alcohol use disorder. It works by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Irreversibly inhibiting aldehyde dehydrogenase, leading to acetaldehyde accumulation",
+          "isCorrect": true,
+          "explanation": "Disulfiram blocks ALDH, causing flushing, nausea, vomiting, and hypotension when alcohol is consumed."
+        },
+        {
+          "text": "Blocking opioid receptors",
+          "isCorrect": false,
+          "explanation": "Naltrexone does that."
+        },
+        {
+          "text": "Stimulating GABA receptors",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        },
+        {
+          "text": "Inhibiting alcohol dehydrogenase",
+          "isCorrect": false,
+          "explanation": "It inhibits aldehyde dehydrogenase, not alcohol dehydrogenase."
+        },
+        {
+          "text": "Increasing dopamine",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        }
+      ],
+      "explanation": {
+        "overview": "Disulfiram inhibits aldehyde dehydrogenase, preventing the breakdown of acetaldehyde. When alcohol is consumed, acetaldehyde accumulates, causing unpleasant effects.",
+        "highYield": "Disulfiram = ALDH inhibitor. Aversive therapy. Patient must be fully informed and avoid all alcohol (including hidden sources).",
+        "clinicalCorrelation": "Disulfiram reaction: flushing, throbbing headache, nausea, vomiting, chest pain, palpitations. Can be fatal. Contraindicated in severe cardiac disease."
+      }
+    },
+    {
+      "questionId": "pharma_cns_071",
+      "difficulty": 2,
+      "question": "Varenicline is a partial agonist at nicotinic acetylcholine receptors used for smoking cessation. It acts by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Partial agonist at α4β2 nicotinic receptors, reducing craving and withdrawal",
+          "isCorrect": true,
+          "explanation": "Varenicline stimulates receptors partially, reducing nicotine craving and withdrawal while blocking the rewarding effects of smoked nicotine."
+        },
+        {
+          "text": "Full agonist at nicotinic receptors",
+          "isCorrect": false,
+          "explanation": "It is a partial agonist."
+        },
+        {
+          "text": "Nicotine replacement only",
+          "isCorrect": false,
+          "explanation": "It is not nicotine."
+        },
+        {
+          "text": "Dopamine reuptake inhibitor",
+          "isCorrect": false,
+          "explanation": "Bupropion is an NDRI."
+        },
+        {
+          "text": "MAO inhibitor",
+          "isCorrect": false,
+          "explanation": "Not an MAOI."
+        }
+      ],
+      "explanation": {
+        "overview": "Varenicline is a partial agonist at α4β2 nicotinic receptors, reducing cravings and withdrawal symptoms while blocking nicotine from binding.",
+        "highYield": "Varenicline (Chantix) = α4β2 nicotinic partial agonist. Effective for smoking cessation. Side effects: nausea, abnormal dreams, neuropsychiatric (FDA removed boxed warning).",
+        "clinicalCorrelation": "Start varenicline 1 week before quit date. Dose titration reduces nausea."
+      }
+    },
+    {
+      "questionId": "pharma_cns_072",
+      "difficulty": 2,
+      "question": "Sumatriptan is a 5-HT1B/1D receptor agonist used for acute migraine. Its action includes:",
+      "image": null,
+      "options": [
+        {
+          "text": "Vasoconstriction of dilated cranial blood vessels and inhibition of trigeminal activation",
+          "isCorrect": true,
+          "explanation": "Triptans constrict intracranial vessels and inhibit release of pro-inflammatory neuropeptides from trigeminal nerves."
+        },
+        {
+          "text": "Dopamine antagonism",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        },
+        {
+          "text": "GABA potentiation",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        },
+        {
+          "text": "Calcium channel blockade",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        },
+        {
+          "text": "Beta-blockade",
+          "isCorrect": false,
+          "explanation": "Beta-blockers are used for migraine prophylaxis, not acute treatment."
+        }
+      ],
+      "explanation": {
+        "overview": "Triptans are 5-HT1B/1D agonists that constrict dilated cranial arteries and inhibit trigeminal nerve release of CGRP and substance P.",
+        "highYield": "Sumatriptan = 5-HT1B/1D agonist. Acute migraine. Contraindicated in cardiovascular disease, uncontrolled hypertension, and within 24h of ergotamine/triptans.",
+        "clinicalCorrelation": "Triptans can cause chest tightness and paresthesias. Avoid in patients with coronary artery disease or Prinzmetal angina."
+      }
+    },
+    {
+      "questionId": "pharma_cns_073",
+      "difficulty": 2,
+      "question": "Which of the following is a CGRP receptor antagonist used for acute migraine treatment (gepant class)?",
+      "image": null,
+      "options": [
+        {
+          "text": "Ubrogepant",
+          "isCorrect": true,
+          "explanation": "Ubrogepant and rimegepant are small-molecule CGRP receptor antagonists (gepants) for acute migraine. They do not cause vasoconstriction."
+        },
+        {
+          "text": "Erenumab",
+          "isCorrect": false,
+          "explanation": "Erenumab is a CGRP receptor monoclonal antibody for prophylaxis."
+        },
+        {
+          "text": "Sumatriptan",
+          "isCorrect": false,
+          "explanation": "Sumatriptan is a triptan, not a gepant."
+        },
+        {
+          "text": "Galcanezumab",
+          "isCorrect": false,
+          "explanation": "Galcanezumab is an anti-CGRP antibody for prophylaxis."
+        },
+        {
+          "text": "Fremanezumab",
+          "isCorrect": false,
+          "explanation": "Another antibody for migraine prevention."
+        }
+      ],
+      "explanation": {
+        "overview": "Gepants (ubrogepant, rimegepant) are oral CGRP receptor antagonists that provide acute migraine relief without vasoconstriction, making them safer in patients with cardiovascular disease.",
+        "highYield": "Acute migraine gepants: ubrogepant, rimegepant. No vasoconstriction. Rimegepant also has a preventive indication (every other day dosing).",
+        "clinicalCorrelation": "Gepants are metabolized by CYP3A4 and may interact with inhibitors/inducers. They are well-tolerated, with nausea and dry mouth as common side effects."
+      }
+    },
+    {
+      "questionId": "pharma_cns_074",
+      "difficulty": 2,
+      "question": "Erenumab is a monoclonal antibody used for migraine prevention. It targets:",
+      "image": null,
+      "options": [
+        {
+          "text": "CGRP receptor",
+          "isCorrect": true,
+          "explanation": "Erenumab is a fully human monoclonal antibody that blocks the CGRP receptor, preventing migraines."
+        },
+        {
+          "text": "CGRP ligand",
+          "isCorrect": false,
+          "explanation": "Galcanezumab and fremanezumab target the CGRP ligand."
+        },
+        {
+          "text": "5-HT1D receptor",
+          "isCorrect": false,
+          "explanation": "Triptans target 5-HT1D."
+        },
+        {
+          "text": "PACAP receptor",
+          "isCorrect": false,
+          "explanation": "Not the target of erenumab."
+        },
+        {
+          "text": "NMDA receptor",
+          "isCorrect": false,
+          "explanation": "Not involved."
+        }
+      ],
+      "explanation": {
+        "overview": "Erenumab is a monoclonal antibody against the CGRP receptor, administered monthly or quarterly subcutaneously for migraine prevention.",
+        "highYield": "Anti-CGRP mAbs for prophylaxis: erenumab (receptor), fremanezumab, galcanezumab (ligand). Eptinezumab (IV ligand). Effective, well-tolerated.",
+        "clinicalCorrelation": "Monoclonal antibodies have few drug interactions. They may cause injection site reactions and constipation."
+      }
+    },
+    {
+      "questionId": "pharma_cns_075",
+      "difficulty": 2,
+      "question": "Lasmiditan is a novel acute migraine agent. Its mechanism is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Selective 5-HT1F receptor agonist, no vasoconstrictive effects",
+          "isCorrect": true,
+          "explanation": "Lasmiditan activates 5-HT1F receptors on trigeminal neurons, inhibiting pain transmission without vasoconstriction."
+        },
+        {
+          "text": "CGRP receptor antagonist",
+          "isCorrect": false,
+          "explanation": "That is the gepants."
+        },
+        {
+          "text": "Triptan (5-HT1B/1D agonist)",
+          "isCorrect": false,
+          "explanation": "Triptans act on 5-HT1B/1D; lasmiditan is 5-HT1F."
+        },
+        {
+          "text": "Dopamine antagonist",
+          "isCorrect": false,
+          "explanation": "Not a dopamine antagonist."
+        },
+        {
+          "text": "GABA potentiator",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        }
+      ],
+      "explanation": {
+        "overview": "Lasmiditan is a first-in-class 'ditan' – a selective 5-HT1F receptor agonist that provides acute migraine relief without cranial vasoconstriction, suitable for patients with cardiovascular risk.",
+        "highYield": "Lasmiditan = 5-HT1F agonist. No vasoconstriction. Side effects: dizziness, fatigue, paresthesia. CNS depressant – no driving for 8 h.",
+        "clinicalCorrelation": "Lasmiditan can cause significant CNS depression; patients should not drive or operate machinery for at least 8 hours after taking."
+      }
+    },
+    {
+      "questionId": "pharma_cns_076",
+      "difficulty": 2,
+      "question": "Divalproex sodium is used for migraine prophylaxis. The active moiety is the same as:",
+      "image": null,
+      "options": [
+        {
+          "text": "Valproic acid",
+          "isCorrect": true,
+          "explanation": "Divalproex is a stable combination of sodium valproate and valproic acid. It dissociates to valproate in the GI tract."
+        },
+        {
+          "text": "Carbamazepine",
+          "isCorrect": false,
+          "explanation": "Not the same."
+        },
+        {
+          "text": "Topiramate",
+          "isCorrect": false,
+          "explanation": "Topiramate is also used for migraine prophylaxis but different drug."
+        },
+        {
+          "text": "Lamotrigine",
+          "isCorrect": false,
+          "explanation": "Different agent."
+        },
+        {
+          "text": "Gabapentin",
+          "isCorrect": false,
+          "explanation": "Not related."
+        }
+      ],
+      "explanation": {
+        "overview": "Divalproex sodium is a prodrug of valproic acid, used for migraine prophylaxis, mania, and epilepsy.",
+        "highYield": "Valproate/divalproex = approved for migraine prevention. Teratogenic, avoid in childbearing potential. Monitor LFTs, CBC, levels.",
+        "clinicalCorrelation": "Valproate is a second-line migraine prophylactic after beta-blockers, antidepressants, or topiramate."
+      }
+    },
+    {
+      "questionId": "pharma_cns_077",
+      "difficulty": 2,
+      "question": "Propranolol and timolol are beta-blockers effective for migraine prophylaxis. Their mechanism may involve:",
+      "image": null,
+      "options": [
+        {
+          "text": "Blocking beta-adrenergic receptors, reducing central sympathetic activity and modulating vascular tone",
+          "isCorrect": true,
+          "explanation": "The exact mechanism is unclear, but likely involves central beta blockade, reduced neuronal excitability, and vascular effects."
+        },
+        {
+          "text": "Alpha-1 blockade",
+          "isCorrect": false,
+          "explanation": "Propranolol is non-selective beta, but not alpha-1."
+        },
+        {
+          "text": "Calcium channel blockade",
+          "isCorrect": false,
+          "explanation": "Not CCBs."
+        },
+        {
+          "text": "Serotonin reuptake inhibition",
+          "isCorrect": false,
+          "explanation": "Not SSRIs."
+        },
+        {
+          "text": "CGRP antagonism",
+          "isCorrect": false,
+          "explanation": "Not CGRP."
+        }
+      ],
+      "explanation": {
+        "overview": "Several beta-blockers (propranolol, timolol, metoprolol) are first-line for migraine prophylaxis. They reduce frequency and severity of attacks.",
+        "highYield": "Beta-blockers for migraine: propranolol (FDA approved), timolol. Also effective: topiramate, valproate, amitriptyline, CGRP mAbs.",
+        "clinicalCorrelation": "Avoid beta-blockers in patients with asthma, severe COPD, or heart block. Propranolol can cause fatigue and depression."
+      }
+    },
+    {
+      "questionId": "pharma_cns_078",
+      "difficulty": 2,
+      "question": "Botox (onabotulinumtoxinA) is used for chronic migraine. It works by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Inhibiting release of neurotransmitters (CGRP, substance P) from trigeminal nerve endings",
+          "isCorrect": true,
+          "explanation": "Botulinum toxin cleaves SNARE proteins, preventing vesicle fusion and neurotransmitter release, reducing peripheral and central sensitization."
+        },
+        {
+          "text": "Blocking CGRP receptors",
+          "isCorrect": false,
+          "explanation": "Gepants and antibodies target CGRP directly."
+        },
+        {
+          "text": "Vasoconstriction",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        },
+        {
+          "text": "Anti-inflammatory via COX inhibition",
+          "isCorrect": false,
+          "explanation": "Not an NSAID."
+        },
+        {
+          "text": "Dopamine antagonism",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        }
+      ],
+      "explanation": {
+        "overview": "OnabotulinumtoxinA injections every 12 weeks into specific head/neck muscles prevent chronic migraine by reducing nociceptive input from trigeminal afferents.",
+        "highYield": "Botox for chronic migraine (≥15 headache days/month). 31 injection sites. Onset may take 2-3 cycles.",
+        "clinicalCorrelation": "Rarely, distant spread of toxin effects can cause muscle weakness. Avoid in neuromuscular disorders."
+      }
+    },
+    {
+      "questionId": "pharma_cns_079",
+      "difficulty": 2,
+      "question": "Vortioxetine is a multimodal antidepressant. Its mechanisms include:",
+      "image": null,
+      "options": [
+        {
+          "text": "SERT inhibition, 5-HT3 antagonism, 5-HT1A agonism, 5-HT7 antagonism",
+          "isCorrect": true,
+          "explanation": "Vortioxetine modulates multiple serotonin receptors while inhibiting reuptake, enhancing serotonergic, noradrenergic, and dopaminergic neurotransmission."
+        },
+        {
+          "text": "Only SERT inhibition",
+          "isCorrect": false,
+          "explanation": "It has receptor modulatory actions as well."
+        },
+        {
+          "text": "Only 5-HT2A antagonism",
+          "isCorrect": false,
+          "explanation": "Not its sole mechanism."
+        },
+        {
+          "text": "MAO inhibition",
+          "isCorrect": false,
+          "explanation": "Not an MAOI."
+        },
+        {
+          "text": "Dopamine reuptake inhibition",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        }
+      ],
+      "explanation": {
+        "overview": "Vortioxetine is a serotonin multimodal agent: SERT inhibitor, 5-HT3 antagonist, 5-HT1A agonist, 5-HT7 antagonist. It may have pro-cognitive effects.",
+        "highYield": "Vortioxetine = multimodal serotonergic. Approved for MDD. Side effects: nausea (dose-dependent), sexual dysfunction less than SSRIs.",
+        "clinicalCorrelation": "Vortioxetine can cause GI distress; take with food. It does not significantly affect weight."
+      }
+    },
+    {
+      "questionId": "pharma_cns_080",
+      "difficulty": 2,
+      "question": "Vilazodone is an antidepressant that combines SSRI activity with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Partial agonism at 5-HT1A receptors",
+          "isCorrect": true,
+          "explanation": "Vilazodone is both a serotonin reuptake inhibitor and a partial agonist at 5-HT1A receptors, similar to the combination of an SSRI with buspirone."
+        },
+        {
+          "text": "5-HT2A antagonism",
+          "isCorrect": false,
+          "explanation": "Trazodone has 5-HT2A antagonism."
+        },
+        {
+          "text": "Dopamine reuptake inhibition",
+          "isCorrect": false,
+          "explanation": "Bupropion inhibits DA reuptake."
+        },
+        {
+          "text": "NMDA antagonism",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        },
+        {
+          "text": "MAO inhibition",
+          "isCorrect": false,
+          "explanation": "Not an MAOI."
+        }
+      ],
+      "explanation": {
+        "overview": "Vilazodone is a serotonin reuptake inhibitor and 5-HT1A partial agonist. It is approved for major depressive disorder and has a moderate side effect profile.",
+        "highYield": "Vilazodone = SSRI + 5-HT1A partial agonism. Requires dose titration. Take with food. Less sexual dysfunction and weight gain than SSRIs.",
+        "clinicalCorrelation": "Vilazodone can cause GI upset, diarrhea, and insomnia. It is a CYP3A4 substrate."
+      }
+    },
+    {
+      "questionId": "pharma_cns_081",
+      "difficulty": 2,
+      "question": "Prazosin is an α1-adrenergic antagonist used off-label for PTSD-related nightmares. Its mechanism is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Blocking α1 receptors, reducing central noradrenergic hyperactivity",
+          "isCorrect": true,
+          "explanation": "Prazosin crosses the BBB and blocks α1 receptors, dampening the exaggerated noradrenergic response associated with nightmares and hyperarousal in PTSD."
+        },
+        {
+          "text": "Beta-blockade",
+          "isCorrect": false,
+          "explanation": "Prazosin is an α1 blocker."
+        },
+        {
+          "text": "Serotonin reuptake inhibition",
+          "isCorrect": false,
+          "explanation": "Not an SSRI."
+        },
+        {
+          "text": "Dopamine blockade",
+          "isCorrect": false,
+          "explanation": "Not a dopamine antagonist."
+        },
+        {
+          "text": "GABA potentiation",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        }
+      ],
+      "explanation": {
+        "overview": "Prazosin is a selective α1-antagonist that reduces noradrenergic overactivity in the CNS, decreasing the frequency and intensity of nightmares and improving sleep in PTSD.",
+        "highYield": "Prazosin = α1 blocker for PTSD nightmares. Start low, titrate slowly. Monitor for orthostatic hypotension.",
+        "clinicalCorrelation": "Prazosin is not FDA-approved for PTSD but is commonly used. The first dose should be taken at bedtime to minimize hypotension."
+      }
+    },
+    {
+      "questionId": "pharma_cns_082",
+      "difficulty": 2,
+      "question": "Modafinil is a wakefulness-promoting agent used for narcolepsy and shift work sleep disorder. Its mechanism is not fully understood but it may:",
+      "image": null,
+      "options": [
+        {
+          "text": "Inhibit dopamine reuptake and increase histamine, orexin, and other wake-promoting systems",
+          "isCorrect": true,
+          "explanation": "Modafinil weakly inhibits DAT and NET, and its effects may involve orexin, histamine, and other pathways."
+        },
+        {
+          "text": "Direct GABA antagonist",
+          "isCorrect": false,
+          "explanation": "Not a GABA antagonist."
+        },
+        {
+          "text": "Melatonin receptor agonist",
+          "isCorrect": false,
+          "explanation": "Ramelteon is a melatonin agonist."
+        },
+        {
+          "text": "Orexin receptor antagonist",
+          "isCorrect": false,
+          "explanation": "Suvorexant is an orexin antagonist."
+        },
+        {
+          "text": "Adenosine receptor antagonist",
+          "isCorrect": false,
+          "explanation": "Caffeine is an adenosine antagonist."
+        }
+      ],
+      "explanation": {
+        "overview": "Modafinil is a wake-promoting agent used for narcolepsy, OSA-associated sleepiness, and shift work disorder. It is a Schedule IV controlled substance with lower abuse potential than traditional stimulants.",
+        "highYield": "Modafinil/armodafinil = wakefulness promoters. Inhibit DA reuptake? Also enhance histamine, orexin? Not well understood. Side effects: headache, nausea, anxiety.",
+        "clinicalCorrelation": "Modafinil can decrease effectiveness of hormonal contraceptives. It is a CYP3A4 inducer. Rarely causes Stevens-Johnson syndrome."
+      }
+    },
+    {
+      "questionId": "pharma_cns_083",
+      "difficulty": 2,
+      "question": "Pimavanserin is a 5-HT2A inverse agonist. What is its primary approved indication?",
+      "image": null,
+      "options": [
+        {
+          "text": "Hallucinations and delusions associated with Parkinson's disease psychosis",
+          "isCorrect": true,
+          "explanation": "Pimavanserin is specifically approved for Parkinson's disease psychosis."
+        },
+        {
+          "text": "Schizophrenia",
+          "isCorrect": false,
+          "explanation": "It is not approved for schizophrenia."
+        },
+        {
+          "text": "Bipolar mania",
+          "isCorrect": false,
+          "explanation": "Not an indication."
+        },
+        {
+          "text": "Generalized anxiety disorder",
+          "isCorrect": false,
+          "explanation": "Not indicated."
+        },
+        {
+          "text": "Alzheimer's psychosis",
+          "isCorrect": false,
+          "explanation": "Not approved."
+        }
+      ],
+      "explanation": {
+        "overview": "Pimavanserin (Nuplazid) is a selective 5-HT2A inverse agonist approved for treatment of hallucinations and delusions associated with Parkinson's disease psychosis.",
+        "highYield": "Pimavanserin = 5-HT2A inverse agonist. Only for PD psychosis. No dopamine blockade, thus no motor worsening.",
+        "clinicalCorrelation": "Elderly patients with dementia-related psychosis treated with antipsychotics have increased mortality; pimavanserin carries the same boxed warning."
+      }
+    },
+    {
+      "questionId": "pharma_cns_084",
+      "difficulty": 2,
+      "question": "Levocarnitine supplementation may be necessary in patients treated with valproate because valproate can cause:",
+      "image": null,
+      "options": [
+        {
+          "text": "Secondary carnitine deficiency, leading to hyperammonemia and hepatotoxicity",
+          "isCorrect": true,
+          "explanation": "Valproate depletes carnitine, impairing mitochondrial fatty acid metabolism, which can cause hyperammonemic encephalopathy, especially in young children."
+        },
+        {
+          "text": "Vitamin B6 deficiency",
+          "isCorrect": false,
+          "explanation": "INH causes B6 deficiency."
+        },
+        {
+          "text": "Thiamine deficiency",
+          "isCorrect": false,
+          "explanation": "Not valproate."
+        },
+        {
+          "text": "Folate deficiency",
+          "isCorrect": false,
+          "explanation": "Phenytoin and methotrexate are associated."
+        },
+        {
+          "text": "Magnesium deficiency",
+          "isCorrect": false,
+          "explanation": "Not valproate."
+        }
+      ],
+      "explanation": {
+        "overview": "Valproate forms valproylcarnitine and inhibits carnitine synthesis, leading to carnitine deficiency, impaired fatty acid oxidation, and hyperammonemia. L-carnitine supplementation may be protective.",
+        "highYield": "Valproate → ↓ carnitine → ↑ ammonia → encephalopathy. Consider L-carnitine in symptomatic patients or high-risk (children under 2).",
+        "clinicalCorrelation": "Check ammonia levels if unexplained lethargy or confusion in patients on valproate. Carnitine supplementation can reverse hyperammonemia."
+      }
+    },
+    {
+      "questionId": "pharma_cns_085",
+      "difficulty": 2,
+      "question": "Esketamine is a newer antidepressant for treatment-resistant depression. It is the S-enantiomer of ketamine and acts as:",
+      "image": null,
+      "options": [
+        {
+          "text": "Non-competitive NMDA receptor antagonist, increasing synaptic plasticity via AMPA activation",
+          "isCorrect": true,
+          "explanation": "Esketamine blocks NMDA receptors, which leads to increased glutamate signaling through AMPA receptors, promoting synaptogenesis and rapid antidepressant effects."
+        },
+        {
+          "text": "SSRI",
+          "isCorrect": false,
+          "explanation": "Not an SSRI."
+        },
+        {
+          "text": "MAOI",
+          "isCorrect": false,
+          "explanation": "Not an MAOI."
+        },
+        {
+          "text": "Dopamine agonist",
+          "isCorrect": false,
+          "explanation": "Not a dopamine agonist."
+        },
+        {
+          "text": "GABA agonist",
+          "isCorrect": false,
+          "explanation": "Not GABAergic."
+        }
+      ],
+      "explanation": {
+        "overview": "Esketamine nasal spray is a non-competitive NMDA antagonist that produces rapid antidepressant effects in treatment-resistant depression, administered under supervision due to sedation and dissociation.",
+        "highYield": "Esketamine = NMDA antagonist, rapid-acting for TRD. Administered intranasally in REMS program. Side effects: dissociation, dizziness, increased BP.",
+        "clinicalCorrelation": "Patients must be monitored for at least 2 hours post-dose. Esketamine is combined with an oral antidepressant."
+      }
+    },
+    {
+      "questionId": "pharma_cns_086",
+      "difficulty": 2,
+      "question": "Brexanolone is a novel antidepressant specifically approved for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Postpartum depression",
+          "isCorrect": true,
+          "explanation": "Brexanolone (allopregnanolone) is a neuroactive steroid that acts as a positive allosteric modulator of GABA-A receptors, administered IV over 60 hours for postpartum depression."
+        },
+        {
+          "text": "Major depressive disorder",
+          "isCorrect": false,
+          "explanation": "Approved only for PPD."
+        },
+        {
+          "text": "Bipolar depression",
+          "isCorrect": false,
+          "explanation": "Not indicated."
+        },
+        {
+          "text": "Premenstrual dysphoric disorder",
+          "isCorrect": false,
+          "explanation": "Not approved."
+        },
+        {
+          "text": "Generalized anxiety disorder",
+          "isCorrect": false,
+          "explanation": "Not indicated."
+        }
+      ],
+      "explanation": {
+        "overview": "Brexanolone is an intravenous formulation of allopregnanolone, a positive allosteric modulator of GABA-A receptors, providing rapid relief of postpartum depression.",
+        "highYield": "Brexanolone = GABA-A PAM for postpartum depression. IV infusion over 60h. REMS program due to excessive sedation and loss of consciousness risk.",
+        "clinicalCorrelation": "Brexanolone can cause significant sedation; continuous pulse oximetry and monitoring required. Avoid in patients with end-stage renal disease."
+      }
+    },
+    {
+      "questionId": "pharma_cns_087",
+      "difficulty": 2,
+      "question": "Risperidone is metabolized primarily by CYP2D6 to its active metabolite paliperidone. Which formulation provides an extended-release injectable of the active moiety?",
+      "image": null,
+      "options": [
+        {
+          "text": "Paliperidone palmitate (Invega Sustenna)",
+          "isCorrect": true,
+          "explanation": "Paliperidone palmitate is a long-acting injectable that does not require hepatic activation, providing sustained levels."
+        },
+        {
+          "text": "Risperidone microspheres (Risperdal Consta)",
+          "isCorrect": false,
+          "explanation": "Risperdal Consta is a long-acting risperidone, not paliperidone."
+        },
+        {
+          "text": "Aripiprazole lauroxil",
+          "isCorrect": false,
+          "explanation": "That is aripiprazole."
+        },
+        {
+          "text": "Olanzapine pamoate",
+          "isCorrect": false,
+          "explanation": "That is olanzapine."
+        },
+        {
+          "text": "Haloperidol decanoate",
+          "isCorrect": false,
+          "explanation": "That is haloperidol."
+        }
+      ],
+      "explanation": {
+        "overview": "Paliperidone is the 9-hydroxy metabolite of risperidone, formulated as paliperidone palmitate for monthly or 3-monthly injection. It does not require CYP2D6 activation, unlike risperidone.",
+        "highYield": "Paliperidone = active metabolite of risperidone. LAI (Sustenna, Trinza). Advantage: no CYP activation needed, predictable pharmacokinetics.",
+        "clinicalCorrelation": "Paliperidone is predominantly renally excreted; dose adjustment in renal impairment. It can cause hyperprolactinemia and EPS at high doses."
+      }
+    },
+    {
+      "questionId": "pharma_cns_088",
+      "difficulty": 2,
+      "question": "Which antipsychotic is available as a long-acting injectable that only requires dosing every 2 months?",
+      "image": null,
+      "options": [
+        {
+          "text": "Aripiprazole lauroxil (Aristada) – 2-month formulation available",
+          "isCorrect": true,
+          "explanation": "Aripiprazole lauroxil can be administered every 2 months (1064 mg) after stabilization. Aripiprazole (Abilify Maintena) is monthly. Paliperidone palmitate 3-monthly (Trinza) is also available. The question likely refers to Aristada 2-month option."
+        },
+        {
+          "text": "Paliperidone palmitate (Invega Trinza)",
+          "isCorrect": false,
+          "explanation": "Trinza is every 3 months, not 2 months."
+        },
+        {
+          "text": "Risperidone Consta",
+          "isCorrect": false,
+          "explanation": "Every 2 weeks."
+        },
+        {
+          "text": "Olanzapine pamoate",
+          "isCorrect": false,
+          "explanation": "Every 2-4 weeks."
+        },
+        {
+          "text": "Haloperidol decanoate",
+          "isCorrect": false,
+          "explanation": "Every 4 weeks."
+        }
+      ],
+      "explanation": {
+        "overview": "Aristada (aripiprazole lauroxil) offers dosing intervals of monthly, every 6 weeks, or every 2 months. Invega Trinza is every 3 months. The question may have intended Aristada's 2-month dosing.",
+        "highYield": "Long-acting injectables: aripiprazole lauroxil (2-month), paliperidone palmitate (3-month). Improve adherence in schizophrenia.",
+        "clinicalCorrelation": "LAI antipsychotics reduce relapse risk but require oral overlap initially. Monitor for injection site reactions."
+      }
+    },
+    {
+      "questionId": "pharma_cns_089",
+      "difficulty": 2,
+      "question": "Which of the following is a melatonin agonist used for non-24-hour sleep-wake disorder in blind individuals?",
+      "image": null,
+      "options": [
+        {
+          "text": "Tasimelteon",
+          "isCorrect": true,
+          "explanation": "Tasimelteon is a melatonin MT1/MT2 receptor agonist approved for non-24-hour sleep-wake disorder in totally blind individuals."
+        },
+        {
+          "text": "Ramelteon",
+          "isCorrect": false,
+          "explanation": "Ramelteon is a melatonin agonist for insomnia, but tasimelteon is specifically for non-24-hour disorder."
+        },
+        {
+          "text": "Suvorexant",
+          "isCorrect": false,
+          "explanation": "Suvorexant is an orexin antagonist."
+        },
+        {
+          "text": "Zolpidem",
+          "isCorrect": false,
+          "explanation": "Benzodiazepine receptor agonist."
+        },
+        {
+          "text": "Eszopiclone",
+          "isCorrect": false,
+          "explanation": "Z-drug."
+        }
+      ],
+      "explanation": {
+        "overview": "Tasimelteon (Hetlioz) is a selective melatonin receptor agonist that entrains the circadian clock in totally blind patients with non-24-hour sleep-wake disorder.",
+        "highYield": "Tasimelteon = melatonin agonist for non-24 disorder in blind. Dosed before bedtime.",
+        "clinicalCorrelation": "Melatonin agonists are not controlled substances and have no abuse potential. Tasimelteon can cause somnolence and elevated liver enzymes."
+      }
+    },
+    {
+      "questionId": "pharma_cns_090",
+      "difficulty": 2,
+      "question": "Pitolisant is a novel agent for narcolepsy. It works by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Histamine H3 receptor antagonist/inverse agonist, increasing histamine release",
+          "isCorrect": true,
+          "explanation": "Pitolisant blocks presynaptic H3 autoreceptors, enhancing histaminergic neurotransmission and promoting wakefulness."
+        },
+        {
+          "text": "Dopamine reuptake inhibitor",
+          "isCorrect": false,
+          "explanation": "Not the primary mechanism."
+        },
+        {
+          "text": "Orexin receptor agonist",
+          "isCorrect": false,
+          "explanation": "No orexin agonists approved."
+        },
+        {
+          "text": "GABA antagonist",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        },
+        {
+          "text": "Adenosine antagonist",
+          "isCorrect": false,
+          "explanation": "Caffeine is an adenosine antagonist."
+        }
+      ],
+      "explanation": {
+        "overview": "Pitolisant is a histamine H3 receptor antagonist/inverse agonist that increases histamine release in the brain, promoting wakefulness in narcolepsy with or without cataplexy.",
+        "highYield": "Pitolisant = H3 antagonist, increases wake-promoting histamine. For narcolepsy. Can cause insomnia, headache, nausea, QT prolongation.",
+        "clinicalCorrelation": "Pitolisant is a CYP2D6 substrate; dose adjustment needed with CYP2D6 inhibitors. It can worsen psychosis."
+      }
+    }
+  ]
+}

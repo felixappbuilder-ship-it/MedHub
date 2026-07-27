@@ -1,0 +1,3424 @@
+{
+  "questions": [
+    {
+      "questionId": "pharma_chemotherapy_001",
+      "difficulty": 2,
+      "question": "Alkylating agents such as cyclophosphamide exert their anticancer effect primarily by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Forming cross-links in DNA, inhibiting replication",
+          "isCorrect": true,
+          "explanation": "Alkylating agents covalently attach alkyl groups to nucleophilic sites on DNA bases (especially N7 of guanine), creating intra- and interstrand cross-links that block DNA replication and transcription, leading to cell death."
+        },
+        {
+          "text": "Inhibiting topoisomerase II",
+          "isCorrect": false,
+          "explanation": "Topoisomerase II inhibition is the mechanism of etoposide and anthracyclines, not alkylating agents."
+        },
+        {
+          "text": "Intercalating into DNA",
+          "isCorrect": false,
+          "explanation": "DNA intercalation is a property of anthracyclines (doxorubicin) and actinomycin D, not alkylating agents."
+        },
+        {
+          "text": "Blocking microtubule formation",
+          "isCorrect": false,
+          "explanation": "Microtubule disruption is the mechanism of vinca alkaloids and taxanes."
+        },
+        {
+          "text": "Inhibiting dihydrofolate reductase",
+          "isCorrect": false,
+          "explanation": "Dihydrofolate reductase inhibition is the mechanism of methotrexate."
+        }
+      ],
+      "explanation": {
+        "overview": "Alkylating agents (cyclophosphamide, ifosfamide, melphalan, chlorambucil, busulfan) are cell-cycle nonspecific drugs that damage DNA by cross-linking, leading to apoptosis. They are used in many hematologic and solid malignancies.",
+        "highYield": "Alkylating agents = DNA cross-linking (N7-guanine). Cyclophosphamide requires hepatic activation. Major toxicities: myelosuppression, hemorrhagic cystitis (cyclophosphamide/ifosfamide).",
+        "clinicalCorrelation": "Acrolein, a metabolite of cyclophosphamide, causes hemorrhagic cystitis; prevented with hydration and mesna. Secondary leukemias are a long-term risk."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_002",
+      "difficulty": 2,
+      "question": "Cyclophosphamide is a prodrug that requires metabolic activation by which enzyme system?",
+      "image": null,
+      "options": [
+        {
+          "text": "Cytochrome P450 (CYP2B6, CYP2C9)",
+          "isCorrect": true,
+          "explanation": "Cyclophosphamide is oxidized by hepatic CYP enzymes to 4-hydroxycyclophosphamide, which equilibrates with aldophosphamide, ultimately yielding the active alkylating metabolite phosphoramide mustard and acrolein."
+        },
+        {
+          "text": "Esterases",
+          "isCorrect": false,
+          "explanation": "Esterases activate irinotecan to SN-38, not cyclophosphamide."
+        },
+        {
+          "text": "Glucuronidases",
+          "isCorrect": false,
+          "explanation": "Glucuronidation is a phase II conjugation reaction; not involved in cyclophosphamide activation."
+        },
+        {
+          "text": "Dihydrofolate reductase",
+          "isCorrect": false,
+          "explanation": "Dihydrofolate reductase is the target of methotrexate."
+        },
+        {
+          "text": "Thymidylate synthase",
+          "isCorrect": false,
+          "explanation": "Thymidylate synthase is the target of 5-fluorouracil."
+        }
+      ],
+      "explanation": {
+        "overview": "Cyclophosphamide is a nitrogen mustard prodrug activated by CYP2B6 (and to a lesser extent CYP2C9) in the liver. The active metabolite phosphoramide mustard cross-links DNA. The toxicity profile includes myelosuppression, hemorrhagic cystitis, and SIADH.",
+        "highYield": "Cyclophosphamide = prodrug → hepatic CYP2B6 → phosphoramide mustard (active). Acrolein → hemorrhagic cystitis (prevent with mesna).",
+        "clinicalCorrelation": "Polymorphisms in CYP2B6 can affect activation and toxicity. High-dose cyclophosphamide is used in conditioning regimens for bone marrow transplantation."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_003",
+      "difficulty": 2,
+      "question": "A serious adverse effect of cyclophosphamide that requires monitoring and preventive measures is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hemorrhagic cystitis",
+          "isCorrect": true,
+          "explanation": "Acrolein, a metabolite of cyclophosphamide, is excreted in urine and causes urothelial toxicity, leading to hemorrhagic cystitis. Aggressive hydration and mesna (which binds acrolein) are preventive."
+        },
+        {
+          "text": "Cardiotoxicity",
+          "isCorrect": false,
+          "explanation": "Cardiotoxicity is a hallmark of anthracyclines (doxorubicin) and trastuzumab."
+        },
+        {
+          "text": "Pulmonary fibrosis",
+          "isCorrect": false,
+          "explanation": "Pulmonary fibrosis is characteristic of bleomycin and busulfan."
+        },
+        {
+          "text": "Peripheral neuropathy",
+          "isCorrect": false,
+          "explanation": "Peripheral neuropathy is typical of vinca alkaloids (vincristine), taxanes, and platinum compounds."
+        },
+        {
+          "text": "Nephrotoxicity",
+          "isCorrect": false,
+          "explanation": "Nephrotoxicity is the dose-limiting toxicity of cisplatin."
+        }
+      ],
+      "explanation": {
+        "overview": "Cyclophosphamide and ifosfamide can cause hemorrhagic cystitis, which can be acute or chronic. Mesna (sodium 2-mercaptoethane sulfonate) is a uroprotective agent that binds acrolein in the urine.",
+        "highYield": "Cyclophosphamide/ifosfamide → hemorrhagic cystitis (acrolein). Prevention: hydration + mesna.",
+        "clinicalCorrelation": "Mesna is typically given before and after the alkylating agent. Without prophylaxis, hemorrhagic cystitis can lead to bladder fibrosis and increased risk of bladder cancer."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_004",
+      "difficulty": 2,
+      "question": "Methotrexate inhibits which enzyme to exert its antineoplastic effect?",
+      "image": null,
+      "options": [
+        {
+          "text": "Dihydrofolate reductase",
+          "isCorrect": true,
+          "explanation": "Methotrexate is a folate analog that competitively inhibits dihydrofolate reductase (DHFR), preventing the reduction of dihydrofolate to tetrahydrofolate. This depletes reduced folate cofactors necessary for thymidylate and purine synthesis, inhibiting DNA synthesis."
+        },
+        {
+          "text": "Thymidylate synthase",
+          "isCorrect": false,
+          "explanation": "Thymidylate synthase is the target of 5-fluorouracil."
+        },
+        {
+          "text": "Ribonucleotide reductase",
+          "isCorrect": false,
+          "explanation": "Ribonucleotide reductase is inhibited by hydroxyurea and gemcitabine."
+        },
+        {
+          "text": "DNA topoisomerase II",
+          "isCorrect": false,
+          "explanation": "Topoisomerase II is the target of etoposide and anthracyclines."
+        },
+        {
+          "text": "Dihydropyrimidine dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Dihydropyrimidine dehydrogenase (DPD) is the enzyme that metabolizes 5-fluorouracil; its deficiency leads to toxicity."
+        }
+      ],
+      "explanation": {
+        "overview": "Methotrexate is an antimetabolite that acts in the S phase of the cell cycle. It is used in cancers (ALL, choriocarcinoma, breast, head/neck) and autoimmune diseases (rheumatoid arthritis, psoriasis).",
+        "highYield": "Methotrexate = DHFR inhibitor → ↓ thymidylate & purine synthesis. Leucovorin rescue bypasses DHFR. Toxicity: myelosuppression, mucositis, hepatotoxicity.",
+        "clinicalCorrelation": "High-dose methotrexate requires leucovorin rescue, urine alkalinization, and monitoring of renal function. Intrathecal methotrexate is used for CNS prophylaxis in ALL."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_005",
+      "difficulty": 2,
+      "question": "Leucovorin (folinic acid) is used in methotrexate therapy to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Rescue normal cells from methotrexate toxicity",
+          "isCorrect": true,
+          "explanation": "Leucovorin (5-formyl tetrahydrofolate) is a reduced folate that bypasses DHFR inhibition, replenishing intracellular folate pools preferentially in normal cells, allowing them to survive while tumor cells (which lack efficient transport) are killed."
+        },
+        {
+          "text": "Enhance methotrexate antitumor effect",
+          "isCorrect": false,
+          "explanation": "Leucovorin does not enhance methotrexate; it counteracts its effects to reduce toxicity."
+        },
+        {
+          "text": "Increase methotrexate absorption",
+          "isCorrect": false,
+          "explanation": "Leucovorin does not affect methotrexate absorption."
+        },
+        {
+          "text": "Prevent methotrexate metabolism",
+          "isCorrect": false,
+          "explanation": "Methotrexate is primarily excreted unchanged by the kidneys; leucovorin does not affect its metabolism."
+        },
+        {
+          "text": "Reduce renal excretion",
+          "isCorrect": false,
+          "explanation": "Leucovorin does not reduce methotrexate excretion; in fact, adequate hydration and urine alkalinization are needed to enhance excretion."
+        }
+      ],
+      "explanation": {
+        "overview": "Leucovorin rescue is a critical component of high-dose methotrexate therapy. It provides a source of tetrahydrofolate that is not dependent on DHFR, rescuing normal hematopoietic and gastrointestinal cells from the toxic effects of methotrexate.",
+        "highYield": "Leucovorin (folinic acid) = rescues normal cells from MTX. Must be started within 24-42 hours. Alkalinize urine to prevent MTX precipitation.",
+        "clinicalCorrelation": "Leucovorin rescue is timed to allow tumor cell kill while protecting normal tissues. Delayed initiation or inadequate dosing can result in severe myelosuppression and mucositis."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_006",
+      "difficulty": 2,
+      "question": "5-Fluorouracil (5-FU) is an antimetabolite that acts by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Inhibiting thymidylate synthase and incorporating into RNA/DNA",
+          "isCorrect": true,
+          "explanation": "5-FU is converted to FdUMP, which forms a stable complex with thymidylate synthase, inhibiting dTMP synthesis. It also incorporates into RNA (FUTP) and DNA (FdUTP), disrupting nucleic acid function."
+        },
+        {
+          "text": "Blocking dihydrofolate reductase",
+          "isCorrect": false,
+          "explanation": "Dihydrofolate reductase is inhibited by methotrexate."
+        },
+        {
+          "text": "Inhibiting ribonucleotide reductase",
+          "isCorrect": false,
+          "explanation": "Ribonucleotide reductase is inhibited by hydroxyurea and gemcitabine."
+        },
+        {
+          "text": "Cross-linking DNA",
+          "isCorrect": false,
+          "explanation": "DNA cross-linking is the mechanism of alkylating agents and platinum compounds."
+        },
+        {
+          "text": "Inhibiting topoisomerase I",
+          "isCorrect": false,
+          "explanation": "Topoisomerase I is the target of irinotecan and topotecan."
+        }
+      ],
+      "explanation": {
+        "overview": "5-FU is a pyrimidine analog that requires activation to FdUMP, FUTP, and FdUTP. Thymidylate synthase inhibition is the primary mechanism, but incorporation into RNA and DNA contributes. It is used in colorectal, breast, and head/neck cancers.",
+        "highYield": "5-FU = TS inhibitor (FdUMP) + RNA/DNA incorporation. Leucovorin enhances TS inhibition. DPD deficiency → severe toxicity.",
+        "clinicalCorrelation": "5-FU can cause hand-foot syndrome, mucositis, diarrhea, and myelosuppression. DPD deficiency (3-5% of population) leads to life-threatening toxicity."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_007",
+      "difficulty": 2,
+      "question": "Capecitabine is an oral prodrug that is converted to 5-FU primarily in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Tumor tissue (by thymidine phosphorylase)",
+          "isCorrect": true,
+          "explanation": "Capecitabine is sequentially activated: carboxylesterase in liver converts it to 5'-deoxy-5-fluorocytidine, then cytidine deaminase to 5'-deoxy-5-fluorouridine, and finally thymidine phosphorylase (higher in tumors) converts it to 5-FU, providing tumor selectivity."
+        },
+        {
+          "text": "Liver",
+          "isCorrect": false,
+          "explanation": "The first two activation steps occur in the liver, but the final and rate-limiting step to 5-FU occurs preferentially in tumor tissue."
+        },
+        {
+          "text": "Kidney",
+          "isCorrect": false,
+          "explanation": "Kidney is not the primary site of activation."
+        },
+        {
+          "text": "Intestinal mucosa",
+          "isCorrect": false,
+          "explanation": "While some conversion can occur in intestinal mucosa, tumor tissue with high thymidine phosphorylase is the key site."
+        },
+        {
+          "text": "Plasma",
+          "isCorrect": false,
+          "explanation": "The final activation step is intracellular, not in plasma."
+        }
+      ],
+      "explanation": {
+        "overview": "Capecitabine is an oral fluoropyrimidine designed to mimic continuous infusion 5-FU. The preferential activation in tumor tissue by thymidine phosphorylase reduces systemic toxicity compared to intravenous 5-FU.",
+        "highYield": "Capecitabine = oral prodrug → 5-FU in tumors (thymidine phosphorylase). Used in colorectal and breast cancer. Hand-foot syndrome is common.",
+        "clinicalCorrelation": "Capecitabine avoids the need for central venous access. Dose adjustment is needed for renal impairment. Concurrent use with warfarin can cause INR elevation."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_008",
+      "difficulty": 2,
+      "question": "Gemcitabine is a pyrimidine analog used in pancreatic and other cancers. Its mechanism includes:",
+      "image": null,
+      "options": [
+        {
+          "text": "Inhibition of ribonucleotide reductase and DNA chain termination",
+          "isCorrect": true,
+          "explanation": "Gemcitabine diphosphate inhibits ribonucleotide reductase, depleting dNTP pools. Gemcitabine triphosphate is incorporated into DNA, causing 'masked chain termination' after one additional nucleotide, preventing DNA repair."
+        },
+        {
+          "text": "Inhibition of dihydrofolate reductase",
+          "isCorrect": false,
+          "explanation": "DHFR inhibition is the action of methotrexate."
+        },
+        {
+          "text": "Alkylation of DNA",
+          "isCorrect": false,
+          "explanation": "Alkylation is the mechanism of cyclophosphamide and cisplatin."
+        },
+        {
+          "text": "Microtubule stabilization",
+          "isCorrect": false,
+          "explanation": "Microtubule stabilization is the mechanism of taxanes (paclitaxel)."
+        },
+        {
+          "text": "Topoisomerase II inhibition",
+          "isCorrect": false,
+          "explanation": "Topoisomerase II inhibition is the mechanism of etoposide and doxorubicin."
+        }
+      ],
+      "explanation": {
+        "overview": "Gemcitabine (dFdC) is a deoxycytidine analog that is activated intracellularly. Its unique mechanism includes inhibition of ribonucleotide reductase (self-potentiation) and masked chain termination, making it highly effective in solid tumors.",
+        "highYield": "Gemcitabine = ribonucleotide reductase inhibitor + masked chain terminator. Used for pancreatic, NSCLC, bladder, breast cancer. Myelosuppression is dose-limiting.",
+        "clinicalCorrelation": "Gemcitabine is combined with nab-paclitaxel for pancreatic cancer, and with cisplatin for bladder and NSCLC. Infusion time affects toxicity (prolonged infusion increases myelosuppression)."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_009",
+      "difficulty": 2,
+      "question": "Cytarabine (ara-C) is an antimetabolite primarily used for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Acute myeloid leukemia",
+          "isCorrect": true,
+          "explanation": "Cytarabine is a pyrimidine analog that is incorporated into DNA and inhibits DNA polymerase. It is the backbone of AML induction and consolidation therapy ('7+3' regimen with an anthracycline)."
+        },
+        {
+          "text": "Solid tumors",
+          "isCorrect": false,
+          "explanation": "Cytarabine has limited activity in solid tumors; it is primarily used in hematologic malignancies."
+        },
+        {
+          "text": "Lymphomas",
+          "isCorrect": false,
+          "explanation": "Cytarabine is used in some lymphoma regimens (e.g., DHAP), but its primary indication is AML."
+        },
+        {
+          "text": "Multiple myeloma",
+          "isCorrect": false,
+          "explanation": "Multiple myeloma is treated with proteasome inhibitors, IMiDs, and steroids; cytarabine is not a standard agent."
+        },
+        {
+          "text": "Brain tumors",
+          "isCorrect": false,
+          "explanation": "Cytarabine has limited CNS penetration and is not a primary treatment for brain tumors."
+        }
+      ],
+      "explanation": {
+        "overview": "Cytarabine (cytosine arabinoside) is an S-phase-specific antimetabolite. High-dose cytarabine (HiDAC) is used for consolidation in favorable-risk AML. It requires intracellular phosphorylation to ara-CTP for activity.",
+        "highYield": "Cytarabine = DNA polymerase inhibitor, used in AML. Liposomal cytarabine for intrathecal use. Neurotoxicity at high doses (cerebellar dysfunction).",
+        "clinicalCorrelation": "High-dose cytarabine can cause a severe, reversible cerebellar syndrome (especially in renal impairment). Conjunctivitis is common; prophylactic steroid eye drops are used."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_010",
+      "difficulty": 2,
+      "question": "Mercaptopurine (6-MP) is metabolized by which enzyme, whose deficiency leads to severe toxicity?",
+      "image": null,
+      "options": [
+        {
+          "text": "Thiopurine methyltransferase (TPMT)",
+          "isCorrect": true,
+          "explanation": "TPMT inactivates 6-MP by S-methylation. Genetic deficiency (homozygous ~0.3%, heterozygous ~10%) leads to accumulation of thioguanine nucleotides, causing severe and prolonged myelosuppression."
+        },
+        {
+          "text": "Dihydropyrimidine dehydrogenase",
+          "isCorrect": false,
+          "explanation": "DPD metabolizes 5-fluorouracil; deficiency causes 5-FU toxicity."
+        },
+        {
+          "text": "CYP2D6",
+          "isCorrect": false,
+          "explanation": "CYP2D6 metabolizes tamoxifen to endoxifen, not 6-MP."
+        },
+        {
+          "text": "UGT1A1",
+          "isCorrect": false,
+          "explanation": "UGT1A1 deficiency causes Gilbert syndrome and increased irinotecan toxicity."
+        },
+        {
+          "text": "Glutathione S-transferase",
+          "isCorrect": false,
+          "explanation": "GST is involved in detoxification of alkylating agents, not 6-MP."
+        }
+      ],
+      "explanation": {
+        "overview": "6-MP and azathioprine are purine antimetabolites used in ALL maintenance therapy and immunosuppression. TPMT testing is recommended before starting therapy to avoid life-threatening myelotoxicity.",
+        "highYield": "6-MP → TPMT inactivation. TPMT deficiency → severe myelosuppression. Also metabolized by xanthine oxidase; allopurinol increases toxicity.",
+        "clinicalCorrelation": "Concurrent allopurinol (XO inhibitor) requires 75% dose reduction of 6-MP. TPMT genotyping or phenotyping is standard before initiating thiopurine therapy."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_011",
+      "difficulty": 2,
+      "question": "Doxorubicin is an anthracycline antibiotic that intercalates DNA and inhibits topoisomerase II. Its major dose-limiting toxicity is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cardiomyopathy",
+          "isCorrect": true,
+          "explanation": "Doxorubicin causes cumulative, dose-related dilated cardiomyopathy due to free radical generation via iron-mediated redox cycling and inhibition of topoisomerase IIβ in cardiomyocytes. Lifetime cumulative dose limit is 450-550 mg/m²."
+        },
+        {
+          "text": "Pulmonary fibrosis",
+          "isCorrect": false,
+          "explanation": "Pulmonary fibrosis is typical of bleomycin and busulfan."
+        },
+        {
+          "text": "Neurotoxicity",
+          "isCorrect": false,
+          "explanation": "Neurotoxicity is associated with vinca alkaloids, taxanes, and platinum compounds."
+        },
+        {
+          "text": "Nephrotoxicity",
+          "isCorrect": false,
+          "explanation": "Nephrotoxicity is the dose-limiting toxicity of cisplatin."
+        },
+        {
+          "text": "Hepatotoxicity",
+          "isCorrect": false,
+          "explanation": "Hepatotoxicity is not the primary dose-limiting toxicity of anthracyclines."
+        }
+      ],
+      "explanation": {
+        "overview": "Anthracyclines (doxorubicin, daunorubicin, epirubicin, idarubicin) are natural products that intercalate DNA, inhibit topoisomerase II, and generate reactive oxygen species. Cardiotoxicity can be acute (arrhythmias) or chronic (dilated cardiomyopathy).",
+        "highYield": "Doxorubicin → dose-dependent cardiomyopathy (free radical injury). Dexrazoxane (iron chelator) for cardioprotection. Also causes myelosuppression, alopecia, mucositis.",
+        "clinicalCorrelation": "Cardiotoxicity risk increases with cumulative dose, prior mediastinal radiation, and combination with trastuzumab. Liposomal doxorubicin has reduced cardiac toxicity."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_012",
+      "difficulty": 2,
+      "question": "Bleomycin is unique among antitumor antibiotics because it causes:",
+      "image": null,
+      "options": [
+        {
+          "text": "Pulmonary fibrosis and minimal myelosuppression",
+          "isCorrect": true,
+          "explanation": "Bleomycin induces single- and double-strand DNA breaks via an iron-dependent free radical mechanism. It causes dose-dependent pulmonary fibrosis but has little myelotoxicity because it is inactivated by bleomycin hydrolase, which is low in lungs and skin but high in bone marrow."
+        },
+        {
+          "text": "Severe myelosuppression",
+          "isCorrect": false,
+          "explanation": "Bleomycin is notable for its lack of significant myelosuppression."
+        },
+        {
+          "text": "Cardiotoxicity",
+          "isCorrect": false,
+          "explanation": "Cardiotoxicity is characteristic of anthracyclines."
+        },
+        {
+          "text": "Hemorrhagic cystitis",
+          "isCorrect": false,
+          "explanation": "Hemorrhagic cystitis is caused by cyclophosphamide/ifosfamide."
+        },
+        {
+          "text": "Nephrotoxicity",
+          "isCorrect": false,
+          "explanation": "Nephrotoxicity is a hallmark of cisplatin."
+        }
+      ],
+      "explanation": {
+        "overview": "Bleomycin is a glycopeptide antibiotic used in germ cell tumors, Hodgkin lymphoma, and squamous cell carcinomas. Its unique property is sparing of bone marrow, making it ideal for combination chemotherapy.",
+        "highYield": "Bleomycin → pulmonary fibrosis (cough, dyspnea, bibasilar infiltrates). No myelosuppression. Risk factors: age >40, cumulative dose >400 units, renal impairment, O₂ therapy.",
+        "clinicalCorrelation": "Pulmonary function tests (DLCO) are monitored. High inspired oxygen concentrations during surgery can precipitate acute lung injury in patients previously treated with bleomycin."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_013",
+      "difficulty": 2,
+      "question": "Etoposide is a topoisomerase II inhibitor that acts by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Stabilizing the topoisomerase II-DNA complex, causing DNA breaks",
+          "isCorrect": true,
+          "explanation": "Etoposide forms a ternary complex with topoisomerase II and DNA, preventing the religation step of the enzyme's catalytic cycle. This results in persistent double-strand breaks and apoptosis."
+        },
+        {
+          "text": "Inhibiting topoisomerase I",
+          "isCorrect": false,
+          "explanation": "Topoisomerase I is the target of irinotecan and topotecan."
+        },
+        {
+          "text": "Intercalating DNA",
+          "isCorrect": false,
+          "explanation": "DNA intercalation is a property of anthracyclines and actinomycin D."
+        },
+        {
+          "text": "Alkylating DNA",
+          "isCorrect": false,
+          "explanation": "DNA alkylation is the mechanism of nitrogen mustards and platinum drugs."
+        },
+        {
+          "text": "Blocking microtubule polymerization",
+          "isCorrect": false,
+          "explanation": "Microtubule polymerization inhibition is the action of vinca alkaloids."
+        }
+      ],
+      "explanation": {
+        "overview": "Etoposide is a podophyllotoxin derivative that poisons topoisomerase II. It is used in small cell lung cancer, testicular cancer, and lymphomas. It is available in intravenous and oral forms.",
+        "highYield": "Etoposide = topoisomerase II poison. Myelosuppression (neutropenia) is dose-limiting. Secondary AML (MLL rearrangements) is a long-term risk.",
+        "clinicalCorrelation": "Etoposide metabolism by CYP3A4 leads to drug interactions. Dose adjustment is needed in renal impairment because it is partially renally excreted."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_014",
+      "difficulty": 2,
+      "question": "Irinotecan is a topoisomerase I inhibitor used in colon cancer. Its active metabolite is:",
+      "image": null,
+      "options": [
+        {
+          "text": "SN-38",
+          "isCorrect": true,
+          "explanation": "Irinotecan (CPT-11) is a prodrug hydrolyzed by carboxylesterases (primarily in liver, but also in tumors) to SN-38 (7-ethyl-10-hydroxycamptothecin), which is 100-1000 times more potent as a topoisomerase I inhibitor."
+        },
+        {
+          "text": "7-ethyl-10-hydroxycamptothecin",
+          "isCorrect": false,
+          "explanation": "This is the chemical name for SN-38, but the answer expected is SN-38."
+        },
+        {
+          "text": "Topotecan",
+          "isCorrect": false,
+          "explanation": "Topotecan is a separate topoisomerase I inhibitor, not the active metabolite of irinotecan."
+        },
+        {
+          "text": "Etoposide",
+          "isCorrect": false,
+          "explanation": "Etoposide is a topoisomerase II inhibitor."
+        },
+        {
+          "text": "Camptothecin",
+          "isCorrect": false,
+          "explanation": "Camptothecin is the parent natural compound; irinotecan is a semi-synthetic derivative."
+        }
+      ],
+      "explanation": {
+        "overview": "Irinotecan is a camptothecin analog that targets topoisomerase I. SN-38 is further detoxified by UGT1A1-mediated glucuronidation. Patients with UGT1A1*28 polymorphism (Gilbert syndrome) have reduced clearance and increased risk of severe diarrhea and neutropenia.",
+        "highYield": "Irinotecan → SN-38 (active, 1000x more potent). Inactivated by UGT1A1. UGT1A1*28 → toxicity. Early diarrhea (cholinergic) and late diarrhea (SN-38 mucosal injury).",
+        "clinicalCorrelation": "Early-onset diarrhea (within 24h) is cholinergic-mediated and responds to atropine. Late diarrhea is managed with high-dose loperamide. UGT1A1 genotyping is recommended before irinotecan."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_015",
+      "difficulty": 2,
+      "question": "Topotecan is another topoisomerase I inhibitor used in ovarian and small cell lung cancer. Its main toxicity is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Myelosuppression",
+          "isCorrect": true,
+          "explanation": "Topotecan causes dose-limiting neutropenia and thrombocytopenia. Growth factor support is often required."
+        },
+        {
+          "text": "Cardiotoxicity",
+          "isCorrect": false,
+          "explanation": "Cardiotoxicity is characteristic of anthracyclines."
+        },
+        {
+          "text": "Pulmonary fibrosis",
+          "isCorrect": false,
+          "explanation": "Pulmonary fibrosis is associated with bleomycin."
+        },
+        {
+          "text": "Hemorrhagic cystitis",
+          "isCorrect": false,
+          "explanation": "Hemorrhagic cystitis is caused by cyclophosphamide/ifosfamide."
+        },
+        {
+          "text": "Peripheral neuropathy",
+          "isCorrect": false,
+          "explanation": "Peripheral neuropathy is typical of vincristine, taxanes, and platinum compounds."
+        }
+      ],
+      "explanation": {
+        "overview": "Topotecan is a camptothecin analog that inhibits topoisomerase I. Its primary dose-limiting toxicity is myelosuppression. It is available in intravenous and oral formulations.",
+        "highYield": "Topotecan = topo I inhibitor → neutropenia, thrombocytopenia. Used for relapsed SCLC and ovarian cancer.",
+        "clinicalCorrelation": "Topotecan is primarily renally excreted; dose reduction is required in renal impairment."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_016",
+      "difficulty": 2,
+      "question": "Vinca alkaloids (vincristine, vinblastine) act by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Binding to tubulin and inhibiting microtubule polymerization",
+          "isCorrect": true,
+          "explanation": "Vinca alkaloids bind to the β-subunit of tubulin dimers, preventing microtubule assembly and leading to mitotic arrest in metaphase."
+        },
+        {
+          "text": "Stabilizing microtubules",
+          "isCorrect": false,
+          "explanation": "Microtubule stabilization is the mechanism of taxanes (paclitaxel, docetaxel)."
+        },
+        {
+          "text": "Inhibiting topoisomerase II",
+          "isCorrect": false,
+          "explanation": "Topoisomerase II is the target of etoposide and anthracyclines."
+        },
+        {
+          "text": "Alkylating DNA",
+          "isCorrect": false,
+          "explanation": "DNA alkylation is the mechanism of cyclophosphamide and cisplatin."
+        },
+        {
+          "text": "Intercalating DNA",
+          "isCorrect": false,
+          "explanation": "DNA intercalation is a property of anthracyclines."
+        }
+      ],
+      "explanation": {
+        "overview": "Vinca alkaloids are plant-derived microtubule-targeting agents. Vincristine is used in ALL, lymphomas, and many pediatric tumors; vinblastine in Hodgkin lymphoma and testicular cancer; vinorelbine in NSCLC and breast cancer.",
+        "highYield": "Vinca alkaloids = inhibit microtubule polymerization (M phase arrest). Vincristine → peripheral neuropathy, constipation. Vinblastine → myelosuppression.",
+        "clinicalCorrelation": "Vincristine is vesicant and must be administered via central line. It should never be given intrathecally (fatal ascending radiculomyeloencephalopathy)."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_017",
+      "difficulty": 2,
+      "question": "Vincristine is associated with a unique toxicity profile, notably:",
+      "image": null,
+      "options": [
+        {
+          "text": "Peripheral neuropathy and constipation",
+          "isCorrect": true,
+          "explanation": "Vincristine causes a dose-dependent, sensorimotor peripheral neuropathy (axonal degeneration) and autonomic neuropathy leading to constipation, ileus, and urinary retention. It is usually reversible over months."
+        },
+        {
+          "text": "Myelosuppression",
+          "isCorrect": false,
+          "explanation": "Myelosuppression is the primary toxicity of vinblastine, not vincristine."
+        },
+        {
+          "text": "Cardiotoxicity",
+          "isCorrect": false,
+          "explanation": "Cardiotoxicity is typical of anthracyclines."
+        },
+        {
+          "text": "Pulmonary fibrosis",
+          "isCorrect": false,
+          "explanation": "Pulmonary fibrosis is associated with bleomycin."
+        },
+        {
+          "text": "Alopecia",
+          "isCorrect": false,
+          "explanation": "Alopecia occurs with many chemotherapies but is not unique to vincristine."
+        }
+      ],
+      "explanation": {
+        "overview": "The most characteristic and dose-limiting toxicity of vincristine is neurotoxicity, manifesting as peripheral sensory-motor neuropathy and autonomic dysfunction. Vinblastine causes more myelosuppression.",
+        "highYield": "Vincristine = neuropathy + constipation (ileus). Vinblastine = myelosuppression. Both are vesicants.",
+        "clinicalCorrelation": "A prophylactic bowel regimen (stool softeners, laxatives) is recommended for patients on vincristine. The neuropathic symptoms (paresthesias, foot drop) may take months to resolve after discontinuation."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_018",
+      "difficulty": 2,
+      "question": "Paclitaxel and docetaxel are taxanes that act by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Promoting microtubule assembly and stabilization",
+          "isCorrect": true,
+          "explanation": "Taxanes bind to the β-tubulin subunit, promoting microtubule polymerization and preventing depolymerization. This stabilizes microtubules, leading to mitotic arrest at the G2/M phase."
+        },
+        {
+          "text": "Inhibiting microtubule polymerization",
+          "isCorrect": false,
+          "explanation": "Microtubule polymerization inhibition is the mechanism of vinca alkaloids."
+        },
+        {
+          "text": "Inhibiting topoisomerase I",
+          "isCorrect": false,
+          "explanation": "Topoisomerase I is the target of irinotecan and topotecan."
+        },
+        {
+          "text": "Alkylating DNA",
+          "isCorrect": false,
+          "explanation": "DNA alkylation is the mechanism of nitrogen mustards and platinum drugs."
+        },
+        {
+          "text": "Intercalating DNA",
+          "isCorrect": false,
+          "explanation": "DNA intercalation is the property of anthracyclines."
+        }
+      ],
+      "explanation": {
+        "overview": "Taxanes are microtubule-stabilizing agents extracted from the Pacific yew tree. Paclitaxel is used in ovarian, breast, and NSCLC; docetaxel in breast, prostate, and NSCLC. They differ in toxicity profiles.",
+        "highYield": "Taxanes = stabilize microtubules (M phase arrest). Paclitaxel → hypersensitivity (Cremophor), peripheral neuropathy. Docetaxel → fluid retention, myelosuppression.",
+        "clinicalCorrelation": "Nab-paclitaxel (protein-bound) avoids Cremophor, reducing hypersensitivity reactions and allowing shorter infusion times without premedication."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_019",
+      "difficulty": 2,
+      "question": "A common adverse effect of paclitaxel is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hypersensitivity reactions (due to Cremophor vehicle)",
+          "isCorrect": true,
+          "explanation": "Paclitaxel is formulated with Cremophor EL (polyethoxylated castor oil), which can cause severe hypersensitivity reactions, including bronchospasm, hypotension, and urticaria. Premedication with corticosteroids, antihistamines, and H2 blockers is required."
+        },
+        {
+          "text": "Hemorrhagic cystitis",
+          "isCorrect": false,
+          "explanation": "Hemorrhagic cystitis is associated with cyclophosphamide and ifosfamide."
+        },
+        {
+          "text": "Cardiomyopathy",
+          "isCorrect": false,
+          "explanation": "Cardiomyopathy is typical of anthracyclines."
+        },
+        {
+          "text": "Pulmonary fibrosis",
+          "isCorrect": false,
+          "explanation": "Pulmonary fibrosis is associated with bleomycin."
+        },
+        {
+          "text": "Nephrotoxicity",
+          "isCorrect": false,
+          "explanation": "Nephrotoxicity is the dose-limiting toxicity of cisplatin."
+        }
+      ],
+      "explanation": {
+        "overview": "Hypersensitivity reactions to paclitaxel are largely due to Cremophor EL. Despite premedication, reactions still occur in about 2-4% of patients. Docetaxel is formulated with polysorbate 80 and causes hypersensitivity less frequently.",
+        "highYield": "Paclitaxel = Cremophor EL → hypersensitivity (premedicate with dexamethasone, diphenhydramine, ranitidine). Peripheral neuropathy is dose-limiting.",
+        "clinicalCorrelation": "In addition to hypersensitivity, paclitaxel causes cumulative sensory peripheral neuropathy (stocking-glove pattern) and myalgias."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_020",
+      "difficulty": 2,
+      "question": "Cisplatin is a platinum compound that cross-links DNA. Its dose-limiting toxicity is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Nephrotoxicity",
+          "isCorrect": true,
+          "explanation": "Cisplatin accumulates in proximal renal tubular cells, causing dose-dependent acute kidney injury and electrolyte wasting (magnesium, potassium). Aggressive saline hydration and mannitol diuresis are used to mitigate nephrotoxicity."
+        },
+        {
+          "text": "Neurotoxicity",
+          "isCorrect": false,
+          "explanation": "Neurotoxicity (peripheral neuropathy, ototoxicity) is common but nephrotoxicity is the classic dose-limiting toxicity."
+        },
+        {
+          "text": "Ototoxicity",
+          "isCorrect": false,
+          "explanation": "Ototoxicity (high-frequency hearing loss, tinnitus) is a significant toxicity but not the dose-limiting one."
+        },
+        {
+          "text": "Myelosuppression",
+          "isCorrect": false,
+          "explanation": "Myelosuppression is the dose-limiting toxicity of carboplatin."
+        },
+        {
+          "text": "Cardiotoxicity",
+          "isCorrect": false,
+          "explanation": "Cardiotoxicity is not a major concern with cisplatin."
+        }
+      ],
+      "explanation": {
+        "overview": "Cisplatin is a potent DNA cross-linking agent used in testicular, ovarian, bladder, and head/neck cancers. Nephrotoxicity is reduced by aggressive hydration. Other toxicities include severe nausea/vomiting, ototoxicity, and peripheral neuropathy.",
+        "highYield": "Cisplatin → nephrotoxicity (dose-limiting), ototoxicity, peripheral neuropathy, severe emesis. Hydration + mannitol for renoprotection.",
+        "clinicalCorrelation": "Cisplatin-induced nephrotoxicity can be persistent; magnesium wasting is common and requires supplementation. Amifostine is a cytoprotectant used to reduce renal toxicity in some settings."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_021",
+      "difficulty": 2,
+      "question": "Carboplatin is a second-generation platinum analog with less nephrotoxicity and ototoxicity, but its dose-limiting toxicity is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Myelosuppression (thrombocytopenia)",
+          "isCorrect": true,
+          "explanation": "Carboplatin causes dose-dependent myelosuppression, with thrombocytopenia being more pronounced than neutropenia. Dosing is based on the Calvert formula to target a specific AUC using renal function (GFR)."
+        },
+        {
+          "text": "Neurotoxicity",
+          "isCorrect": false,
+          "explanation": "Neurotoxicity is more associated with oxaliplatin and cisplatin."
+        },
+        {
+          "text": "Nausea/vomiting",
+          "isCorrect": false,
+          "explanation": "Nausea is less severe with carboplatin compared to cisplatin."
+        },
+        {
+          "text": "Pulmonary fibrosis",
+          "isCorrect": false,
+          "explanation": "Pulmonary fibrosis is a toxicity of bleomycin."
+        },
+        {
+          "text": "Cardiotoxicity",
+          "isCorrect": false,
+          "explanation": "Cardiotoxicity is not a major feature of carboplatin."
+        }
+      ],
+      "explanation": {
+        "overview": "Carboplatin was developed to have a more favorable toxicity profile than cisplatin. It is used in ovarian, lung, and breast cancers. The Calvert formula (dose = target AUC × [GFR + 25]) is used to calculate carboplatin dose based on renal function.",
+        "highYield": "Carboplatin = less nephrotoxicity/ototoxicity than cisplatin; dose-limiting = thrombocytopenia. Dosing by Calvert formula (AUC).",
+        "clinicalCorrelation": "Carboplatin can be combined with paclitaxel for ovarian cancer. Unlike cisplatin, it does not require aggressive hydration. It is also less emetogenic."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_022",
+      "difficulty": 2,
+      "question": "Oxaliplatin is a platinum compound used in colorectal cancer. Its characteristic toxicity is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Acute and chronic peripheral neuropathy",
+          "isCorrect": true,
+          "explanation": "Oxaliplatin causes a unique acute, cold-induced dysesthesia (triggered by cold liquids/air) and a cumulative chronic sensory peripheral neuropathy due to dorsal root ganglion toxicity."
+        },
+        {
+          "text": "Nephrotoxicity",
+          "isCorrect": false,
+          "explanation": "Nephrotoxicity is typical of cisplatin."
+        },
+        {
+          "text": "Ototoxicity",
+          "isCorrect": false,
+          "explanation": "Ototoxicity is more common with cisplatin."
+        },
+        {
+          "text": "Cardiotoxicity",
+          "isCorrect": false,
+          "explanation": "Cardiotoxicity is not characteristic of oxaliplatin."
+        },
+        {
+          "text": "Pulmonary fibrosis",
+          "isCorrect": false,
+          "explanation": "Pulmonary fibrosis is associated with bleomycin."
+        }
+      ],
+      "explanation": {
+        "overview": "Oxaliplatin is a third-generation platinum analog with a 1,2-diaminocyclohexane (DACH) ligand. It is a key component of FOLFOX and XELOX regimens for colorectal cancer. The acute neurotoxicity is dose-limiting.",
+        "highYield": "Oxaliplatin → acute cold-triggered paresthesias + chronic sensory neuropathy. No nephrotoxicity. Used in colorectal cancer (FOLFOX).",
+        "clinicalCorrelation": "Patients should avoid cold drinks and exposure to cold temperatures during and shortly after oxaliplatin infusion. Calcium/magnesium infusions have been used to reduce neuropathy."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_023",
+      "difficulty": 2,
+      "question": "L-asparaginase is used in acute lymphoblastic leukemia. Its mechanism involves:",
+      "image": null,
+      "options": [
+        {
+          "text": "Depleting asparagine, which lymphoblasts require for protein synthesis",
+          "isCorrect": true,
+          "explanation": "L-asparaginase catalyzes the hydrolysis of circulating asparagine to aspartic acid. Leukemic lymphoblasts lack asparagine synthetase and depend on exogenous asparagine; its depletion leads to inhibition of protein synthesis and apoptosis."
+        },
+        {
+          "text": "Inhibiting DNA synthesis",
+          "isCorrect": false,
+          "explanation": "DNA synthesis inhibition is the mechanism of antimetabolites like methotrexate."
+        },
+        {
+          "text": "Alkylating DNA",
+          "isCorrect": false,
+          "explanation": "DNA alkylation is the mechanism of cyclophosphamide."
+        },
+        {
+          "text": "Blocking microtubules",
+          "isCorrect": false,
+          "explanation": "Microtubule blockade is the action of vincristine."
+        },
+        {
+          "text": "Inhibiting topoisomerase",
+          "isCorrect": false,
+          "explanation": "Topoisomerase inhibition is the target of etoposide and anthracyclines."
+        }
+      ],
+      "explanation": {
+        "overview": "L-asparaginase (derived from E. coli or Erwinia) is an enzyme that depletes asparagine. It is a cornerstone of pediatric ALL therapy. Pegaspargase (PEGylated form) has a longer half-life.",
+        "highYield": "L-asparaginase → asparagine depletion → lymphoblast apoptosis. Toxicities: hypersensitivity, pancreatitis, coagulopathy (↓ antithrombin III), hepatotoxicity.",
+        "clinicalCorrelation": "Hypersensitivity reactions (including anaphylaxis) are common; a test dose is sometimes given. Pegaspargase is less immunogenic. Pancreatitis and thrombosis are serious complications."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_024",
+      "difficulty": 2,
+      "question": "Hydroxyurea inhibits ribonucleotide reductase and is used in sickle cell disease and chronic myeloid leukemia. Its mechanism is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Blocking conversion of ribonucleotides to deoxyribonucleotides",
+          "isCorrect": true,
+          "explanation": "Hydroxyurea inhibits ribonucleotide reductase, the rate-limiting enzyme in dNTP synthesis, thereby depleting deoxyribonucleotide pools and causing S-phase arrest. In sickle cell disease, it also increases fetal hemoglobin (HbF) levels."
+        },
+        {
+          "text": "Inhibiting thymidylate synthase",
+          "isCorrect": false,
+          "explanation": "Thymidylate synthase is the target of 5-FU."
+        },
+        {
+          "text": "Alkylating DNA",
+          "isCorrect": false,
+          "explanation": "DNA alkylation is the mechanism of cyclophosphamide."
+        },
+        {
+          "text": "Inhibiting topoisomerase",
+          "isCorrect": false,
+          "explanation": "Topoisomerase inhibition is the target of etoposide and irinotecan."
+        },
+        {
+          "text": "Blocking microtubule polymerization",
+          "isCorrect": false,
+          "explanation": "Microtubule polymerization inhibition is the mechanism of vinca alkaloids."
+        }
+      ],
+      "explanation": {
+        "overview": "Hydroxyurea is an antimetabolite that inhibits ribonucleotide reductase. It is used for cytoreduction in CML (acute phase and in combination with TKIs) and in sickle cell disease to increase HbF and reduce vaso-occlusive crises.",
+        "highYield": "Hydroxyurea = ribonucleotide reductase inhibitor → ↓ dNTPs. Increases HbF in sickle cell disease. Causes myelosuppression, leg ulcers.",
+        "clinicalCorrelation": "Hydroxyurea is well absorbed orally. In sickle cell disease, it reduces pain crises and acute chest syndrome. Chronic use may cause skin hyperpigmentation and leg ulcers."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_025",
+      "difficulty": 2,
+      "question": "Imatinib is a tyrosine kinase inhibitor used in chronic myeloid leukemia. It targets:",
+      "image": null,
+      "options": [
+        {
+          "text": "BCR-ABL fusion protein",
+          "isCorrect": true,
+          "explanation": "Imatinib is a small molecule that binds to the ATP-binding pocket of the BCR-ABL tyrosine kinase (p210), inhibiting its constitutive activity. This blocks proliferation and induces apoptosis of CML cells."
+        },
+        {
+          "text": "EGFR",
+          "isCorrect": false,
+          "explanation": "EGFR is targeted by gefitinib, erlotinib, and cetuximab."
+        },
+        {
+          "text": "VEGFR",
+          "isCorrect": false,
+          "explanation": "VEGFR is the target of bevacizumab (anti-VEGF antibody) and multi-kinase inhibitors like sunitinib."
+        },
+        {
+          "text": "HER2/neu",
+          "isCorrect": false,
+          "explanation": "HER2/neu is targeted by trastuzumab and lapatinib."
+        },
+        {
+          "text": "Ras",
+          "isCorrect": false,
+          "explanation": "Ras is not directly targeted; farnesyltransferase inhibitors were developed to inhibit Ras but are not standard."
+        }
+      ],
+      "explanation": {
+        "overview": "Imatinib revolutionized CML treatment by targeting the causative BCR-ABL oncoprotein. It also inhibits c-KIT (GIST) and PDGFR. It is a first-line therapy for chronic phase CML.",
+        "highYield": "Imatinib = BCR-ABL TKI (CML, Ph+ ALL). Also inhibits c-KIT (GIST). Resistance: T315I mutation. Side effects: fluid retention, muscle cramps, rash.",
+        "clinicalCorrelation": "Monitoring of BCR-ABL transcript levels by qPCR is used to assess response (complete cytogenetic response, major molecular response). Non-adherence is the most common cause of 'resistance'."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_026",
+      "difficulty": 2,
+      "question": "Dasatinib and nilotinib are second-generation TKIs for CML that are used in cases of imatinib resistance. They also inhibit:",
+      "image": null,
+      "options": [
+        {
+          "text": "SRC family kinases",
+          "isCorrect": true,
+          "explanation": "Dasatinib is a dual BCR-ABL and SRC family kinase inhibitor, which contributes to its broader activity. Nilotinib is a more potent, selective BCR-ABL inhibitor. Both overcome many imatinib-resistant mutations except T315I."
+        },
+        {
+          "text": "EGFR",
+          "isCorrect": false,
+          "explanation": "EGFR is targeted by erlotinib and gefitinib."
+        },
+        {
+          "text": "ALK",
+          "isCorrect": false,
+          "explanation": "ALK is targeted by crizotinib, alectinib."
+        },
+        {
+          "text": "mTOR",
+          "isCorrect": false,
+          "explanation": "mTOR is targeted by everolimus, temsirolimus."
+        },
+        {
+          "text": "MEK",
+          "isCorrect": false,
+          "explanation": "MEK is targeted by trametinib, cobimetinib."
+        }
+      ],
+      "explanation": {
+        "overview": "Second-generation TKIs were developed to address imatinib resistance. Dasatinib also inhibits SRC kinases, leading to unique side effects like pleural effusions. Nilotinib has a higher incidence of metabolic syndrome and vascular events.",
+        "highYield": "Dasatinib = BCR-ABL + SRC inhibitor. Nilotinib = more potent BCR-ABL. Both ineffective against T315I mutation. Ponatinib covers T315I.",
+        "clinicalCorrelation": "Dasatinib causes pleural effusions; nilotinib is associated with hyperglycemia, hyperlipidemia, and peripheral arterial occlusive disease. ECG monitoring (QT prolongation) is required for nilotinib."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_027",
+      "difficulty": 2,
+      "question": "Gefitinib and erlotinib are EGFR tyrosine kinase inhibitors used in non-small cell lung cancer with EGFR mutations. Their main toxicity is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Acneiform rash and diarrhea",
+          "isCorrect": true,
+          "explanation": "EGFR inhibitors cause a characteristic papulopustular (acneiform) rash on the face and upper trunk, as well as diarrhea, due to EGFR expression in skin and gastrointestinal mucosa. The rash correlates with efficacy."
+        },
+        {
+          "text": "Cardiotoxicity",
+          "isCorrect": false,
+          "explanation": "Cardiotoxicity is not a major feature of EGFR TKIs."
+        },
+        {
+          "text": "Pulmonary fibrosis",
+          "isCorrect": false,
+          "explanation": "Although rare, pneumonitis has been reported, but it is not the most common toxicity."
+        },
+        {
+          "text": "Nephrotoxicity",
+          "isCorrect": false,
+          "explanation": "Nephrotoxicity is not typical for these agents."
+        },
+        {
+          "text": "Hepatotoxicity",
+          "isCorrect": false,
+          "explanation": "Hepatotoxicity can occur but is less common than rash and diarrhea."
+        }
+      ],
+      "explanation": {
+        "overview": "First-generation EGFR TKIs (gefitinib, erlotinib) are effective in NSCLC with activating EGFR mutations (exon 19 deletion, L858R). Afatinib (second-gen) is an irreversible ErbB family blocker. Osimertinib (third-gen) overcomes the T790M resistance mutation.",
+        "highYield": "EGFR TKIs → acneiform rash + diarrhea. Activity depends on EGFR mutation status (exon 19 deletion, L858R). T790M mutation confers resistance.",
+        "clinicalCorrelation": "The rash is managed with topical corticosteroids, antibiotics, and emollients. Severe diarrhea is treated with loperamide. Dose reduction may be necessary."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_028",
+      "difficulty": 2,
+      "question": "Cetuximab and panitumumab are monoclonal antibodies that target EGFR. They are effective in:",
+      "image": null,
+      "options": [
+        {
+          "text": "KRAS wild-type colorectal cancer",
+          "isCorrect": true,
+          "explanation": "Cetuximab and panitumumab block EGFR signaling. Tumors with KRAS exon 2 mutations (and extended RAS mutations) have constitutive activation of the MAPK pathway downstream of EGFR, making EGFR blockade ineffective."
+        },
+        {
+          "text": "KRAS mutant colorectal cancer",
+          "isCorrect": false,
+          "explanation": "KRAS mutations predict resistance to anti-EGFR antibodies."
+        },
+        {
+          "text": "All colorectal cancers",
+          "isCorrect": false,
+          "explanation": "They are only effective in RAS wild-type tumors."
+        },
+        {
+          "text": "Breast cancer",
+          "isCorrect": false,
+          "explanation": "EGFR antibodies are not standard in breast cancer."
+        },
+        {
+          "text": "Lymphoma",
+          "isCorrect": false,
+          "explanation": "EGFR antibodies are not used in lymphoma; rituximab (anti-CD20) is used."
+        }
+      ],
+      "explanation": {
+        "overview": "Cetuximab (chimeric) and panitumumab (fully human) are anti-EGFR monoclonal antibodies used in RAS wild-type metastatic colorectal cancer. KRAS and NRAS mutations are predictive biomarkers for lack of response.",
+        "highYield": "Anti-EGFR antibodies = only effective in RAS wild-type colorectal cancer. Cetuximab causes infusion reactions; panitumumab does not.",
+        "clinicalCorrelation": "All patients with metastatic colorectal cancer should have RAS testing before considering anti-EGFR therapy. Cetuximab can cause severe hypomagnesemia."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_029",
+      "difficulty": 2,
+      "question": "Trastuzumab is a monoclonal antibody against HER2/neu used in HER2-positive breast cancer. A significant adverse effect is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cardiomyopathy",
+          "isCorrect": true,
+          "explanation": "Trastuzumab can cause reversible left ventricular dysfunction and congestive heart failure, especially when combined with anthracyclines. Cardiac monitoring (ECHO/MUGA) is required before and during therapy."
+        },
+        {
+          "text": "Pulmonary fibrosis",
+          "isCorrect": false,
+          "explanation": "Pulmonary fibrosis is not a typical toxicity of trastuzumab."
+        },
+        {
+          "text": "Severe infusion reactions",
+          "isCorrect": false,
+          "explanation": "Infusion reactions can occur but are not the primary long-term concern."
+        },
+        {
+          "text": "Nephrotoxicity",
+          "isCorrect": false,
+          "explanation": "Nephrotoxicity is not a major side effect of trastuzumab."
+        },
+        {
+          "text": "Hepatotoxicity",
+          "isCorrect": false,
+          "explanation": "Hepatotoxicity is uncommon with trastuzumab."
+        }
+      ],
+      "explanation": {
+        "overview": "Trastuzumab is a humanized monoclonal antibody that binds to the extracellular domain of HER2, inhibiting downstream signaling and mediating antibody-dependent cellular cytotoxicity. It is used in both early and metastatic HER2-positive breast and gastric cancers.",
+        "highYield": "Trastuzumab → cardiomyopathy (reversible, monitor LVEF). Avoid concurrent anthracyclines. Can cause infusion reactions.",
+        "clinicalCorrelation": "Trastuzumab is typically administered for 1 year in the adjuvant setting. Lapatinib, pertuzumab, and ado-trastuzumab emtansine (T-DM1) are other HER2-directed therapies."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_030",
+      "difficulty": 2,
+      "question": "Rituximab is a chimeric monoclonal antibody against CD20 used in B-cell lymphomas and autoimmune diseases. Its mechanism includes:",
+      "image": null,
+      "options": [
+        {
+          "text": "Complement-dependent cytotoxicity and antibody-dependent cell-mediated cytotoxicity",
+          "isCorrect": true,
+          "explanation": "Rituximab binds CD20 on B lymphocytes, triggering complement activation (CDC) and recruiting NK cells and macrophages (ADCC), leading to B-cell depletion. It may also induce apoptosis directly."
+        },
+        {
+          "text": "Direct inhibition of BCR-ABL",
+          "isCorrect": false,
+          "explanation": "BCR-ABL inhibition is the mechanism of imatinib."
+        },
+        {
+          "text": "Blocking VEGF",
+          "isCorrect": false,
+          "explanation": "VEGF blockade is the mechanism of bevacizumab."
+        },
+        {
+          "text": "Inhibiting proteasome",
+          "isCorrect": false,
+          "explanation": "Proteasome inhibition is the mechanism of bortezomib."
+        },
+        {
+          "text": "Modulating immune checkpoints",
+          "isCorrect": false,
+          "explanation": "Immune checkpoint modulation is the mechanism of ipilimumab (CTLA-4) and pembrolizumab (PD-1)."
+        }
+      ],
+      "explanation": {
+        "overview": "Rituximab is a cornerstone of B-cell non-Hodgkin lymphoma and CLL therapy. It is also used in autoimmune disorders (rheumatoid arthritis, ANCA vasculitis). CD20 is expressed on mature B cells but not on plasma cells or stem cells.",
+        "highYield": "Rituximab = anti-CD20 → B-cell depletion via CDC, ADCC, apoptosis. Infusion reactions, hepatitis B reactivation, PML.",
+        "clinicalCorrelation": "Pre-treatment screening for hepatitis B is required because rituximab can cause reactivation. Infusion reactions are common and managed with premedication."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_031",
+      "difficulty": 2,
+      "question": "Bevacizumab is a monoclonal antibody against VEGF used in several solid tumors. It acts by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Inhibiting angiogenesis",
+          "isCorrect": true,
+          "explanation": "Bevacizumab binds circulating VEGF-A, preventing its interaction with VEGFR on endothelial cells, thereby inhibiting the formation of new blood vessels (angiogenesis) that tumors need for growth."
+        },
+        {
+          "text": "Directly killing tumor cells",
+          "isCorrect": false,
+          "explanation": "Bevacizumab does not directly kill tumor cells; it targets tumor vasculature."
+        },
+        {
+          "text": "Blocking HER2",
+          "isCorrect": false,
+          "explanation": "HER2 is blocked by trastuzumab."
+        },
+        {
+          "text": "Inhibiting EGFR",
+          "isCorrect": false,
+          "explanation": "EGFR is the target of cetuximab and erlotinib."
+        },
+        {
+          "text": "Modulating immune checkpoints",
+          "isCorrect": false,
+          "explanation": "Immune checkpoint modulation is the action of PD-1/CTLA-4 inhibitors."
+        }
+      ],
+      "explanation": {
+        "overview": "Bevacizumab was the first approved anti-angiogenic agent. It is used in colorectal, lung, breast, ovarian, and renal cancers. It normalizes tumor vasculature, potentially enhancing delivery of chemotherapy.",
+        "highYield": "Bevacizumab = anti-VEGF monoclonal antibody → inhibits angiogenesis. Toxicities: hypertension, proteinuria, bleeding, thromboembolism, GI perforation.",
+        "clinicalCorrelation": "Bevacizumab is contraindicated in patients with recent hemoptysis, major surgery, or untreated brain metastases due to bleeding risk. It can cause delayed wound healing."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_032",
+      "difficulty": 2,
+      "question": "Sunitinib and sorafenib are multi-kinase inhibitors that target VEGFR, PDGFR, and others. They are used in renal cell carcinoma and GIST. Common adverse effects include:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hand-foot skin reaction, hypertension, fatigue",
+          "isCorrect": true,
+          "explanation": "Multi-kinase inhibitors cause hand-foot skin reaction (palmar-plantar erythrodysesthesia), hypertension (VEGFR inhibition), fatigue, and diarrhea. Sunitinib also causes hypothyroidism."
+        },
+        {
+          "text": "Cardiomyopathy",
+          "isCorrect": false,
+          "explanation": "Although sunitinib can cause cardiotoxicity, it is not the most common adverse effect."
+        },
+        {
+          "text": "Pulmonary fibrosis",
+          "isCorrect": false,
+          "explanation": "Pulmonary fibrosis is not characteristic of these agents."
+        },
+        {
+          "text": "Severe myelosuppression",
+          "isCorrect": false,
+          "explanation": "Myelosuppression can occur but hand-foot syndrome and hypertension are hallmark."
+        },
+        {
+          "text": "Nephrotoxicity",
+          "isCorrect": false,
+          "explanation": "Nephrotoxicity is not the primary toxicity; proteinuria can occur."
+        }
+      ],
+      "explanation": {
+        "overview": "Sunitinib and sorafenib are oral multi-targeted TKIs. Sunitinib is first-line for metastatic renal cell carcinoma; sorafenib for hepatocellular carcinoma and RCC. They inhibit multiple receptors involved in tumor growth and angiogenesis.",
+        "highYield": "Sunitinib/sorafenib → hand-foot syndrome, hypertension, fatigue, diarrhea. Sunitinib also causes hypothyroidism, skin yellowing.",
+        "clinicalCorrelation": "Dose interruptions and reductions are common due to toxicity. Blood pressure monitoring and management are essential. Sunitinib should be taken on an empty stomach."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_033",
+      "difficulty": 2,
+      "question": "Everolimus and temsirolimus are mTOR inhibitors used in renal cell carcinoma and other cancers. Their mechanism is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Inhibiting the PI3K/Akt/mTOR pathway",
+          "isCorrect": true,
+          "explanation": "Everolimus and temsirolimus bind to FKBP-12 and inhibit mTOR complex 1 (mTORC1), blocking downstream signaling that promotes protein synthesis, cell growth, and angiogenesis."
+        },
+        {
+          "text": "Blocking VEGF",
+          "isCorrect": false,
+          "explanation": "VEGF is blocked by bevacizumab."
+        },
+        {
+          "text": "Inhibiting proteasome",
+          "isCorrect": false,
+          "explanation": "Proteasome inhibition is the mechanism of bortezomib."
+        },
+        {
+          "text": "Alkylating DNA",
+          "isCorrect": false,
+          "explanation": "DNA alkylation is the mechanism of cyclophosphamide."
+        },
+        {
+          "text": "Intercalating DNA",
+          "isCorrect": false,
+          "explanation": "DNA intercalation is the property of anthracyclines."
+        }
+      ],
+      "explanation": {
+        "overview": "mTOR inhibitors are used in advanced renal cell carcinoma, breast cancer (everolimus + exemestane), and neuroendocrine tumors. They can cause stomatitis, rash, hyperglycemia, and immunosuppression.",
+        "highYield": "Everolimus/temsirolimus = mTORC1 inhibitors. Used in RCC, breast cancer, NETs. Side effects: stomatitis, pneumonitis, hyperglycemia, infections.",
+        "clinicalCorrelation": "Everolimus is a CYP3A4 substrate; drug interactions are common. Prophylactic dexamethasone mouthwash is used to prevent stomatitis."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_034",
+      "difficulty": 2,
+      "question": "Bortezomib is a proteasome inhibitor used in multiple myeloma. Its mechanism involves:",
+      "image": null,
+      "options": [
+        {
+          "text": "Reversible inhibition of the 26S proteasome, leading to accumulation of pro-apoptotic factors",
+          "isCorrect": true,
+          "explanation": "Bortezomib reversibly inhibits the chymotrypsin-like activity of the 26S proteasome, preventing degradation of IκB (allowing NF-κB inhibition) and pro-apoptotic proteins, leading to apoptosis of myeloma cells."
+        },
+        {
+          "text": "Inhibition of histone deacetylases",
+          "isCorrect": false,
+          "explanation": "HDAC inhibition is the mechanism of vorinostat and romidepsin."
+        },
+        {
+          "text": "Alkylation of DNA",
+          "isCorrect": false,
+          "explanation": "DNA alkylation is the mechanism of cyclophosphamide and cisplatin."
+        },
+        {
+          "text": "Blocking microtubule polymerization",
+          "isCorrect": false,
+          "explanation": "Microtubule polymerization inhibition is the mechanism of vinca alkaloids."
+        },
+        {
+          "text": "Inhibiting topoisomerase",
+          "isCorrect": false,
+          "explanation": "Topoisomerase inhibition is the target of etoposide and irinotecan."
+        }
+      ],
+      "explanation": {
+        "overview": "Bortezomib is a dipeptide boronic acid that targets the proteasome. It is a cornerstone of multiple myeloma therapy, often combined with dexamethasone and lenalidomide/thalidomide.",
+        "highYield": "Bortezomib = proteasome inhibitor → apoptosis in myeloma. Major toxicity: peripheral neuropathy (sensory, painful). Subcutaneous administration reduces neuropathy.",
+        "clinicalCorrelation": "Herpes zoster reactivation is common; antiviral prophylaxis (acyclovir) is recommended. Thrombocytopenia is transient and cyclical."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_035",
+      "difficulty": 2,
+      "question": "Carfilzomib is a second-generation proteasome inhibitor that irreversibly binds its target. Its notable toxicity is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cardiovascular events (hypertension, heart failure)",
+          "isCorrect": true,
+          "explanation": "Carfilzomib is associated with an increased risk of cardiac toxicity, including hypertension, heart failure, arrhythmias, and myocardial infarction, likely due to endothelial injury."
+        },
+        {
+          "text": "Peripheral neuropathy",
+          "isCorrect": false,
+          "explanation": "Carfilzomib has less neuropathy than bortezomib."
+        },
+        {
+          "text": "Pulmonary fibrosis",
+          "isCorrect": false,
+          "explanation": "Pulmonary toxicity can occur but cardiovascular events are more characteristic."
+        },
+        {
+          "text": "Nephrotoxicity",
+          "isCorrect": false,
+          "explanation": "Renal impairment is common in myeloma but carfilzomib is not primarily nephrotoxic."
+        },
+        {
+          "text": "Hepatotoxicity",
+          "isCorrect": false,
+          "explanation": "Hepatotoxicity is not the primary toxicity."
+        }
+      ],
+      "explanation": {
+        "overview": "Carfilzomib is an irreversible epoxyketone proteasome inhibitor used in relapsed/refractory multiple myeloma. It has less neuropathy than bortezomib but more cardiovascular toxicity.",
+        "highYield": "Carfilzomib = irreversible proteasome inhibitor. Cardiotoxicity (hypertension, heart failure, MI). No significant neuropathy.",
+        "clinicalCorrelation": "Patients require cardiac risk assessment before treatment and monitoring during therapy. Dexamethasone pre-treatment may reduce infusion reactions."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_036",
+      "difficulty": 2,
+      "question": "Vorinostat and romidepsin are histone deacetylase (HDAC) inhibitors used in cutaneous T-cell lymphoma. Their mechanism is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increasing histone acetylation, altering gene expression and inducing apoptosis",
+          "isCorrect": true,
+          "explanation": "HDAC inhibitors promote acetylation of histone proteins, leading to an open chromatin structure and reactivation of silenced tumor suppressor genes, differentiation, and apoptosis."
+        },
+        {
+          "text": "Inhibiting DNA methylation",
+          "isCorrect": false,
+          "explanation": "DNA methylation inhibition is the mechanism of azacitidine and decitabine."
+        },
+        {
+          "text": "Alkylating DNA",
+          "isCorrect": false,
+          "explanation": "DNA alkylation is the mechanism of cyclophosphamide."
+        },
+        {
+          "text": "Blocking microtubules",
+          "isCorrect": false,
+          "explanation": "Microtubule blockade is the action of vincristine and taxanes."
+        },
+        {
+          "text": "Inhibiting topoisomerase",
+          "isCorrect": false,
+          "explanation": "Topoisomerase inhibition is the target of etoposide and doxorubicin."
+        }
+      ],
+      "explanation": {
+        "overview": "HDAC inhibitors are epigenetic agents. Vorinostat is an oral agent, romidepsin is intravenous. They are approved for relapsed/refractory cutaneous T-cell lymphoma.",
+        "highYield": "HDAC inhibitors (vorinostat, romidepsin) → ↑ histone acetylation → gene expression changes. Toxicities: fatigue, thrombocytopenia, GI effects, QT prolongation.",
+        "clinicalCorrelation": "Romidepsin can cause significant QT prolongation; electrolyte monitoring and ECG are recommended. Both can cause thrombocytopenia."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_037",
+      "difficulty": 2,
+      "question": "Azacitidine and decitabine are DNA methyltransferase inhibitors used in myelodysplastic syndromes. They act by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Incorporating into DNA/RNA, inhibiting DNA methylation and reactivating silenced genes",
+          "isCorrect": true,
+          "explanation": "Azacitidine and decitabine are cytidine analogs that incorporate into DNA and RNA, trapping DNA methyltransferases (DNMTs) and causing global hypomethylation, which restores expression of tumor suppressor genes."
+        },
+        {
+          "text": "Alkylating DNA",
+          "isCorrect": false,
+          "explanation": "DNA alkylation is the mechanism of cyclophosphamide."
+        },
+        {
+          "text": "Inhibiting topoisomerase",
+          "isCorrect": false,
+          "explanation": "Topoisomerase inhibition is the target of etoposide."
+        },
+        {
+          "text": "Blocking ribonucleotide reductase",
+          "isCorrect": false,
+          "explanation": "Ribonucleotide reductase inhibition is the mechanism of hydroxyurea."
+        },
+        {
+          "text": "Inhibiting thymidylate synthase",
+          "isCorrect": false,
+          "explanation": "Thymidylate synthase inhibition is the mechanism of 5-FU."
+        }
+      ],
+      "explanation": {
+        "overview": "Hypomethylating agents are standard for higher-risk myelodysplastic syndromes. Azacitidine has an overall survival benefit in MDS. They are also used in AML in elderly patients.",
+        "highYield": "Azacitidine/decitabine = DNMT inhibitors → hypomethylation → reactivation of silenced genes. Myelosuppression is common. Given in cycles.",
+        "clinicalCorrelation": "Azacitidine can be given subcutaneously or intravenously; decitabine is IV. They are both S-phase specific. Febrile neutropenia prophylaxis is often needed."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_038",
+      "difficulty": 2,
+      "question": "Tamoxifen is a selective estrogen receptor modulator used in breast cancer. Its mechanism in breast tissue is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Competitive antagonism of estrogen receptors",
+          "isCorrect": true,
+          "explanation": "Tamoxifen competes with estradiol for binding to the estrogen receptor (ER) in breast tissue, inhibiting estrogen-driven transcription and cell proliferation. It has mixed agonist/antagonist activity in other tissues."
+        },
+        {
+          "text": "Estrogen receptor agonism",
+          "isCorrect": false,
+          "explanation": "Tamoxifen acts as an antagonist in breast tissue, though it is an agonist in bone (reducing osteoporosis) and endometrium (increasing cancer risk)."
+        },
+        {
+          "text": "Aromatase inhibition",
+          "isCorrect": false,
+          "explanation": "Aromatase inhibition is the mechanism of anastrozole, letrozole, exemestane."
+        },
+        {
+          "text": "GnRH agonism",
+          "isCorrect": false,
+          "explanation": "GnRH agonists are leuprolide and goserelin."
+        },
+        {
+          "text": "Progesterone antagonism",
+          "isCorrect": false,
+          "explanation": "Progesterone modulation is not the primary mechanism of tamoxifen."
+        }
+      ],
+      "explanation": {
+        "overview": "Tamoxifen is used for ER-positive breast cancer in premenopausal women (and some postmenopausal). It reduces the risk of recurrence and contralateral breast cancer. Tamoxifen is a prodrug metabolized by CYP2D6 to endoxifen.",
+        "highYield": "Tamoxifen = SERM (antagonist in breast, agonist in bone/endometrium). CYP2D6 → endoxifen (active). Risk of endometrial cancer, DVT.",
+        "clinicalCorrelation": "CYP2D6 inhibitors (e.g., paroxetine, fluoxetine) can reduce tamoxifen efficacy by blocking conversion to endoxifen. Venlafaxine is preferred for managing hot flashes."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_039",
+      "difficulty": 2,
+      "question": "Anastrozole and letrozole are nonsteroidal aromatase inhibitors used in postmenopausal breast cancer. They work by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Inhibiting conversion of androgens to estrogens",
+          "isCorrect": true,
+          "explanation": "Aromatase inhibitors block the aromatase enzyme (CYP19A1), which converts androstenedione and testosterone to estrone and estradiol in peripheral tissues, drastically reducing circulating estrogen levels in postmenopausal women."
+        },
+        {
+          "text": "Blocking estrogen receptors",
+          "isCorrect": false,
+          "explanation": "Estrogen receptor blockade is the mechanism of tamoxifen and fulvestrant."
+        },
+        {
+          "text": "Suppressing gonadotropin release",
+          "isCorrect": false,
+          "explanation": "GnRH analogs suppress gonadotropins; aromatase inhibitors do not act centrally."
+        },
+        {
+          "text": "Destroying ovarian tissue",
+          "isCorrect": false,
+          "explanation": "AIs do not destroy ovarian tissue; they inhibit peripheral estrogen synthesis."
+        },
+        {
+          "text": "Increasing testosterone levels",
+          "isCorrect": false,
+          "explanation": "AIs may cause a slight increase in androgens but the primary effect is reduced estrogen."
+        }
+      ],
+      "explanation": {
+        "overview": "Aromatase inhibitors are standard adjuvant therapy for postmenopausal women with ER-positive breast cancer. They are more effective than tamoxifen in this population but cause more bone loss and arthralgias.",
+        "highYield": "Anastrozole/letrozole = aromatase inhibitors → block estrogen synthesis. Used in postmenopausal women. Side effects: arthralgias, bone loss, hot flashes.",
+        "clinicalCorrelation": "Bone density should be monitored; calcium and vitamin D supplementation is recommended. AIs are ineffective in premenopausal women without ovarian suppression."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_040",
+      "difficulty": 2,
+      "question": "Exemestane is a steroidal aromatase inhibitor that irreversibly inactivates the enzyme. Its adverse effects include:",
+      "image": null,
+      "options": [
+        {
+          "text": "Arthralgia, hot flashes, and osteoporosis",
+          "isCorrect": true,
+          "explanation": "Like all aromatase inhibitors, exemestane causes estrogen deprivation symptoms: arthralgias/myalgias, hot flashes, and accelerated bone loss leading to osteoporosis and increased fracture risk."
+        },
+        {
+          "text": "Cardiotoxicity",
+          "isCorrect": false,
+          "explanation": "Cardiotoxicity is not a primary toxicity of aromatase inhibitors."
+        },
+        {
+          "text": "Pulmonary fibrosis",
+          "isCorrect": false,
+          "explanation": "Pulmonary fibrosis is associated with bleomycin."
+        },
+        {
+          "text": "Nephrotoxicity",
+          "isCorrect": false,
+          "explanation": "Nephrotoxicity is not a recognized adverse effect of AIs."
+        },
+        {
+          "text": "Myelosuppression",
+          "isCorrect": false,
+          "explanation": "Myelosuppression is not typical for hormonal agents."
+        }
+      ],
+      "explanation": {
+        "overview": "Exemestane is a steroidal aromatase inhibitor that acts as a suicide inhibitor, permanently inactivating the enzyme. It is used in early and advanced breast cancer.",
+        "highYield": "Exemestane = irreversible steroidal aromatase inhibitor. Similar side effects to nonsteroidal AIs: musculoskeletal pain, hot flashes, osteoporosis.",
+        "clinicalCorrelation": "Exemestane has a slightly androgenic structure; it may have a different lipid profile effect than nonsteroidal AIs. It is also used in the prevention of breast cancer in high-risk postmenopausal women."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_041",
+      "difficulty": 2,
+      "question": "Flutamide and bicalutamide are nonsteroidal antiandrogens used in prostate cancer. They act by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Competitively blocking androgen receptors",
+          "isCorrect": true,
+          "explanation": "Flutamide and bicalutamide bind to the androgen receptor (AR) in prostate cancer cells, preventing dihydrotestosterone (DHT) and testosterone from activating AR-mediated transcription."
+        },
+        {
+          "text": "Inhibiting 5α-reductase",
+          "isCorrect": false,
+          "explanation": "5α-reductase inhibitors (finasteride, dutasteride) block conversion of testosterone to DHT."
+        },
+        {
+          "text": "Suppressing LH secretion",
+          "isCorrect": false,
+          "explanation": "LH suppression is achieved by GnRH agonists and antagonists."
+        },
+        {
+          "text": "Inhibiting CYP17",
+          "isCorrect": false,
+          "explanation": "CYP17 inhibition is the mechanism of abiraterone."
+        },
+        {
+          "text": "Reducing testosterone synthesis",
+          "isCorrect": false,
+          "explanation": "Testosterone synthesis is reduced by GnRH analogs and CYP17 inhibitors, not antiandrogens."
+        }
+      ],
+      "explanation": {
+        "overview": "Antiandrogens are used in combination with GnRH agonists (combined androgen blockade) for advanced prostate cancer and to prevent the testosterone flare. Bicalutamide is preferred due to once-daily dosing and better tolerability.",
+        "highYield": "Flutamide/bicalutamide = AR antagonists. Used with GnRH agonists to block flare. Bicalutamide has a longer half-life. Hepatotoxicity is possible.",
+        "clinicalCorrelation": "Flutamide can cause diarrhea and hepatotoxicity. Both can cause gynecomastia and hot flashes when used as monotherapy."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_042",
+      "difficulty": 2,
+      "question": "Leuprolide and goserelin are GnRH agonists used in prostate cancer. Their initial effect is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Transient surge in gonadotropins and testosterone (flare)",
+          "isCorrect": true,
+          "explanation": "GnRH agonists initially stimulate pituitary gonadotropin release (LH, FSH) before downregulating GnRH receptors. This causes a temporary testosterone surge (flare) that can worsen bone pain and urinary symptoms; antiandrogens are co-administered to block this effect."
+        },
+        {
+          "text": "Immediate suppression of testosterone",
+          "isCorrect": false,
+          "explanation": "Suppression occurs after the initial flare, typically within 2-4 weeks."
+        },
+        {
+          "text": "Direct tumor lysis",
+          "isCorrect": false,
+          "explanation": "GnRH agonists do not directly lyse tumor cells."
+        },
+        {
+          "text": "Increased estrogen levels",
+          "isCorrect": false,
+          "explanation": "Testosterone, not estrogen, is affected."
+        },
+        {
+          "text": "Blocking androgen receptors",
+          "isCorrect": false,
+          "explanation": "Androgen receptor blockade is the action of antiandrogens."
+        }
+      ],
+      "explanation": {
+        "overview": "GnRH agonists (leuprolide, goserelin, triptorelin) provide chemical castration by suppressing pituitary gonadotropins after an initial flare. GnRH antagonists (degarelix) avoid the flare by directly inhibiting GnRH receptors.",
+        "highYield": "GnRH agonists → initial testosterone flare (use antiandrogen to block). Long-term → castrate levels. GnRH antagonists have no flare.",
+        "clinicalCorrelation": "The flare can cause spinal cord compression in patients with vertebral metastases; therefore, antiandrogens are started before the first dose of GnRH agonist."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_043",
+      "difficulty": 2,
+      "question": "Abiraterone is a CYP17 inhibitor used in castration-resistant prostate cancer. Its mechanism is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Inhibiting androgen synthesis in adrenal glands and tumor",
+          "isCorrect": true,
+          "explanation": "Abiraterone selectively and irreversibly inhibits CYP17 (17α-hydroxylase/C17,20-lyase), blocking androgen biosynthesis in the adrenal glands, testes, and prostate tumor tissue, further lowering testosterone levels."
+        },
+        {
+          "text": "Blocking androgen receptors",
+          "isCorrect": false,
+          "explanation": "Androgen receptor blockade is the action of enzalutamide and bicalutamide."
+        },
+        {
+          "text": "Inhibiting 5α-reductase",
+          "isCorrect": false,
+          "explanation": "5α-reductase inhibitors are finasteride and dutasteride."
+        },
+        {
+          "text": "GnRH antagonism",
+          "isCorrect": false,
+          "explanation": "GnRH antagonism is the mechanism of degarelix."
+        },
+        {
+          "text": "Estrogen receptor modulation",
+          "isCorrect": false,
+          "explanation": "Estrogen modulation is the mechanism of tamoxifen."
+        }
+      ],
+      "explanation": {
+        "overview": "Abiraterone acetate (prodrug) is used with prednisone (to manage mineralocorticoid excess) in metastatic castration-resistant prostate cancer, both before and after docetaxel.",
+        "highYield": "Abiraterone = CYP17 inhibitor → blocks androgen synthesis. Given with prednisone. Side effects: hypertension, hypokalemia, hepatotoxicity, edema.",
+        "clinicalCorrelation": "CYP17 inhibition increases mineralocorticoid precursors, leading to hypertension, hypokalemia, and fluid retention. Prednisone mitigates these effects."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_044",
+      "difficulty": 2,
+      "question": "Enzalutamide is a second-generation antiandrogen that also inhibits nuclear translocation of the androgen receptor. It is used in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Castration-resistant prostate cancer",
+          "isCorrect": true,
+          "explanation": "Enzalutamide binds to the androgen receptor with higher affinity than bicalutamide, inhibits receptor nuclear translocation, DNA binding, and coactivator recruitment. It is approved for metastatic and non-metastatic castration-resistant prostate cancer."
+        },
+        {
+          "text": "Breast cancer",
+          "isCorrect": false,
+          "explanation": "Enzalutamide is an antiandrogen, not used in breast cancer."
+        },
+        {
+          "text": "Ovarian cancer",
+          "isCorrect": false,
+          "explanation": "No role in ovarian cancer."
+        },
+        {
+          "text": "Lung cancer",
+          "isCorrect": false,
+          "explanation": "Not indicated for lung cancer."
+        },
+        {
+          "text": "Colorectal cancer",
+          "isCorrect": false,
+          "explanation": "Not used in colorectal cancer."
+        }
+      ],
+      "explanation": {
+        "overview": "Enzalutamide is a potent oral antiandrogen that has activity even in patients who have progressed on bicalutamide. It improves overall survival in metastatic CRPC.",
+        "highYield": "Enzalutamide = AR signaling inhibitor (blocks binding, nuclear translocation, DNA binding). Used in CRPC. Side effects: fatigue, seizures (CNS penetration), hypertension.",
+        "clinicalCorrelation": "Enzalutamide can lower seizure threshold; caution in patients with history of seizures or brain metastases. It is a strong CYP3A4 inducer."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_045",
+      "difficulty": 2,
+      "question": "Ipilimumab is a monoclonal antibody that blocks CTLA-4 on T cells. It is used in melanoma and works by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Enhancing T-cell activation and antitumor immunity",
+          "isCorrect": true,
+          "explanation": "Ipilimumab blocks CTLA-4, a checkpoint receptor that downregulates T-cell activation. By inhibiting CTLA-4, it prolongs T-cell activation and proliferation, enhancing the immune response against tumor antigens."
+        },
+        {
+          "text": "Directly killing tumor cells",
+          "isCorrect": false,
+          "explanation": "Ipilimumab does not directly kill tumor cells; it acts on the immune system."
+        },
+        {
+          "text": "Inhibiting angiogenesis",
+          "isCorrect": false,
+          "explanation": "Angiogenesis inhibition is the mechanism of bevacizumab."
+        },
+        {
+          "text": "Blocking PD-1",
+          "isCorrect": false,
+          "explanation": "PD-1 is blocked by nivolumab and pembrolizumab."
+        },
+        {
+          "text": "Modulating hormone receptors",
+          "isCorrect": false,
+          "explanation": "Hormone receptor modulation is the action of tamoxifen and fulvestrant."
+        }
+      ],
+      "explanation": {
+        "overview": "Ipilimumab was the first FDA-approved immune checkpoint inhibitor. It demonstrated durable responses in a subset of melanoma patients. It is now often combined with nivolumab (anti-PD-1) for enhanced efficacy.",
+        "highYield": "Ipilimumab = anti-CTLA-4 → T-cell activation. Immune-related adverse events: colitis, dermatitis, hepatitis, endocrinopathies. Can be severe.",
+        "clinicalCorrelation": "Management of immune-related toxicities requires corticosteroids and sometimes other immunosuppressants (infliximab for colitis). Thyroid function tests must be monitored."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_046",
+      "difficulty": 2,
+      "question": "Pembrolizumab and nivolumab are PD-1 inhibitors used in multiple cancers. Their mechanism is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Blocking the PD-1/PD-L1 interaction, restoring T-cell activity",
+          "isCorrect": true,
+          "explanation": "Pembrolizumab and nivolumab bind to the PD-1 receptor on T cells, preventing its interaction with PD-L1 (and PD-L2) on tumor cells and antigen-presenting cells. This releases the 'brake' on T cells, allowing them to recognize and kill tumor cells."
+        },
+        {
+          "text": "Stimulating cytokine release",
+          "isCorrect": false,
+          "explanation": "While they enhance T-cell function, the direct mechanism is checkpoint blockade, not cytokine stimulation."
+        },
+        {
+          "text": "Directly lysing tumor cells",
+          "isCorrect": false,
+          "explanation": "They are not directly cytotoxic; they activate the immune system."
+        },
+        {
+          "text": "Inhibiting VEGF",
+          "isCorrect": false,
+          "explanation": "VEGF inhibition is the target of bevacizumab."
+        },
+        {
+          "text": "Activating NK cells",
+          "isCorrect": false,
+          "explanation": "The primary mechanism is through T cells, though NK cells may also contribute."
+        }
+      ],
+      "explanation": {
+        "overview": "PD-1 inhibitors have activity across a wide range of solid tumors (melanoma, NSCLC, renal cell, head/neck, Hodgkin lymphoma, MSI-H tumors). PD-L1 expression by immunohistochemistry is used as a predictive biomarker, though responses can occur in PD-L1-negative tumors.",
+        "highYield": "PD-1 inhibitors (nivolumab, pembrolizumab) → block PD-1/PD-L1 axis → T-cell activation. Toxicities: pneumonitis, colitis, hepatitis, endocrinopathies, skin rash.",
+        "clinicalCorrelation": "PD-L1 testing (e.g., TPS for pembrolizumab) is used to guide therapy in NSCLC. Immune-related pneumonitis requires prompt recognition and corticosteroid therapy."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_047",
+      "difficulty": 2,
+      "question": "A common immune-related adverse effect of checkpoint inhibitors is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Colitis, pneumonitis, hepatitis, endocrinopathies",
+          "isCorrect": true,
+          "explanation": "Checkpoint inhibitors remove inhibitory signals on T cells, which can lead to autoimmune-like inflammation in virtually any organ. The most frequent are skin rash, colitis/diarrhea, pneumonitis, hepatitis, and endocrinopathies (thyroiditis, hypophysitis)."
+        },
+        {
+          "text": "Myelosuppression",
+          "isCorrect": false,
+          "explanation": "Myelosuppression is common with chemotherapy, not typically with checkpoint inhibitors."
+        },
+        {
+          "text": "Cardiomyopathy",
+          "isCorrect": false,
+          "explanation": "Cardiomyopathy can occur (myocarditis) but is much less common than the listed effects."
+        },
+        {
+          "text": "Neuropathy",
+          "isCorrect": false,
+          "explanation": "Neurologic toxicity (neuropathy, encephalitis) can occur but is less common than colitis and endocrinopathies."
+        },
+        {
+          "text": "Nephrotoxicity",
+          "isCorrect": false,
+          "explanation": "Immune-related nephritis is possible but less frequent."
+        }
+      ],
+      "explanation": {
+        "overview": "Immune-related adverse events (irAEs) are a class effect of checkpoint inhibitors. They require early recognition and management, typically with corticosteroids and dose interruption. Grade 3-4 events can be life-threatening.",
+        "highYield": "Checkpoint inhibitor irAEs: skin rash, colitis, hepatitis, pneumonitis, endocrinopathies. Management: corticosteroids, hold checkpoint inhibitor.",
+        "clinicalCorrelation": "CTLA-4 inhibitor toxicity tends to be more severe than PD-1 inhibitors. Combination therapy (ipilimumab + nivolumab) has the highest rate of grade 3-4 irAEs."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_048",
+      "difficulty": 2,
+      "question": "Crizotinib is a TKI that targets ALK, ROS1, and MET. It is used in ALK-positive non-small cell lung cancer. Common side effects include:",
+      "image": null,
+      "options": [
+        {
+          "text": "Visual disturbances, edema, GI upset",
+          "isCorrect": true,
+          "explanation": "Crizotinib commonly causes visual flashes/floaters (due to MET inhibition in the retina), peripheral edema, nausea, diarrhea, and elevated transaminases."
+        },
+        {
+          "text": "Cardiotoxicity",
+          "isCorrect": false,
+          "explanation": "Cardiotoxicity is not a major side effect of crizotinib."
+        },
+        {
+          "text": "Pulmonary fibrosis",
+          "isCorrect": false,
+          "explanation": "Pulmonary fibrosis is not characteristic."
+        },
+        {
+          "text": "Severe rash",
+          "isCorrect": false,
+          "explanation": "Rash can occur but is not the hallmark side effect."
+        },
+        {
+          "text": "Nephrotoxicity",
+          "isCorrect": false,
+          "explanation": "Renal cysts have been reported, but nephrotoxicity is not a primary toxicity."
+        }
+      ],
+      "explanation": {
+        "overview": "Crizotinib was the first ALK inhibitor approved for ALK-rearranged NSCLC (about 5% of NSCLC). It also targets ROS1 fusions and MET amplification. Resistance develops, often due to secondary mutations in ALK kinase domain.",
+        "highYield": "Crizotinib = ALK/ROS1/MET inhibitor → visual disturbances, edema, GI effects. Second-gen ALK inhibitors (alectinib) have better CNS penetration.",
+        "clinicalCorrelation": "Patients should be warned about visual disturbances which can affect driving. ECG monitoring is recommended because crizotinib can cause QT prolongation and bradycardia."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_049",
+      "difficulty": 2,
+      "question": "Alectinib and ceritinib are second-generation ALK inhibitors used in ALK-positive NSCLC. They have better CNS penetration and are active against:",
+      "image": null,
+      "options": [
+        {
+          "text": "Brain metastases",
+          "isCorrect": true,
+          "explanation": "Second-generation ALK inhibitors like alectinib and ceritinib are highly effective against brain metastases, which are common in ALK-positive NSCLC, and they overcome many crizotinib-resistant mutations."
+        },
+        {
+          "text": "Liver metastases",
+          "isCorrect": false,
+          "explanation": "While they treat all metastatic sites, the key advance is CNS penetration."
+        },
+        {
+          "text": "Bone metastases",
+          "isCorrect": false,
+          "explanation": "Bone metastases are also treated, but the CNS activity is the distinguishing feature."
+        },
+        {
+          "text": "Leptomeningeal disease",
+          "isCorrect": false,
+          "explanation": "They also treat leptomeningeal disease, but the broader term 'brain metastases' is the answer."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "The specific advantage highlighted is CNS penetration for brain metastases."
+        }
+      ],
+      "explanation": {
+        "overview": "Alectinib is a preferred first-line agent for ALK-positive NSCLC due to superior progression-free survival and CNS activity compared to crizotinib. Lorlatinib is a third-generation ALK inhibitor with activity against most resistance mutations.",
+        "highYield": "Second-gen ALK inhibitors (alectinib, ceritinib) = better CNS activity, overcome crizotinib resistance. Alectinib is first-line choice.",
+        "clinicalCorrelation": "Ceritinib is associated with significant GI toxicity (diarrhea, nausea) that can be managed by taking with food. Alectinib can cause myalgia and anemia."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_050",
+      "difficulty": 2,
+      "question": "Vemurafenib and dabrafenib are BRAF inhibitors used in BRAF V600E-mutant melanoma. Their main toxicity includes:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cutaneous squamous cell carcinoma, rash, arthralgia",
+          "isCorrect": true,
+          "explanation": "BRAF inhibitors can paradoxically activate the MAPK pathway in cells with wild-type BRAF (e.g., keratinocytes with upstream RAS mutations), leading to cutaneous squamous cell carcinomas and keratoacanthomas. They also cause photosensitivity and arthralgias."
+        },
+        {
+          "text": "Cardiotoxicity",
+          "isCorrect": false,
+          "explanation": "Cardiotoxicity is not a primary toxicity of BRAF inhibitors."
+        },
+        {
+          "text": "Pneumonitis",
+          "isCorrect": false,
+          "explanation": "Pneumonitis is not characteristic."
+        },
+        {
+          "text": "Nephrotoxicity",
+          "isCorrect": false,
+          "explanation": "Nephrotoxicity is not typical."
+        },
+        {
+          "text": "Myelosuppression",
+          "isCorrect": false,
+          "explanation": "Myelosuppression is not a major effect."
+        }
+      ],
+      "explanation": {
+        "overview": "BRAF inhibitors produce rapid responses in BRAF V600E/K-mutant melanoma. They are often combined with MEK inhibitors to reduce paradoxical MAPK activation and improve outcomes.",
+        "highYield": "Vemurafenib/dabrafenib → paradoxical MAPK activation in BRAF WT cells → SCC, keratoacanthomas. Also cause arthralgia, fatigue, photosensitivity.",
+        "clinicalCorrelation": "Combination with MEK inhibitors (trametinib, cobimetinib) reduces skin toxicity and improves PFS. Routine skin exams are recommended for patients on BRAF inhibitor monotherapy."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_051",
+      "difficulty": 2,
+      "question": "Trametinib and cobimetinib are MEK inhibitors used with BRAF inhibitors in melanoma. MEK inhibitors commonly cause:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cardiomyopathy, rash, diarrhea, visual disturbances",
+          "isCorrect": true,
+          "explanation": "MEK inhibitors can cause decreased left ventricular ejection fraction, acneiform rash, diarrhea, and serous retinopathy (visual disturbances). Cardiac monitoring is recommended."
+        },
+        {
+          "text": "Pneumonitis",
+          "isCorrect": false,
+          "explanation": "Pneumonitis is not a common side effect of MEK inhibitors."
+        },
+        {
+          "text": "Nephrotoxicity",
+          "isCorrect": false,
+          "explanation": "Nephrotoxicity is not typical."
+        },
+        {
+          "text": "Myelosuppression",
+          "isCorrect": false,
+          "explanation": "Myelosuppression is not a hallmark."
+        },
+        {
+          "text": "Hepatotoxicity",
+          "isCorrect": false,
+          "explanation": "Liver enzyme elevations can occur but are not the most common."
+        }
+      ],
+      "explanation": {
+        "overview": "MEK inhibitors are central to BRAF/MEK combination therapy in BRAF-mutant melanoma and are also used in NF1-associated plexiform neurofibromas. They block signaling downstream of BRAF.",
+        "highYield": "MEK inhibitors (trametinib, cobimetinib) → LV dysfunction, retinopathy, rash, diarrhea. Used in combination with BRAF inhibitors.",
+        "clinicalCorrelation": "Eye exams are recommended for visual disturbances (serous retinopathy). Dose interruption is often required for cardiomyopathy."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_052",
+      "difficulty": 2,
+      "question": "Palbociclib, ribociclib, and abemaciclib are CDK4/6 inhibitors used in HR-positive, HER2-negative breast cancer. They act by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Blocking cyclin-dependent kinases 4 and 6, inhibiting cell cycle progression",
+          "isCorrect": true,
+          "explanation": "CDK4/6 inhibitors prevent phosphorylation of the retinoblastoma (Rb) protein, keeping E2F transcription factors inactive, which arrests the cell cycle at the G1 to S phase transition. They are synergistic with endocrine therapy."
+        },
+        {
+          "text": "Inhibiting aromatase",
+          "isCorrect": false,
+          "explanation": "Aromatase inhibition is the mechanism of letrozole and anastrozole."
+        },
+        {
+          "text": "Blocking HER2",
+          "isCorrect": false,
+          "explanation": "HER2 blockade is the action of trastuzumab."
+        },
+        {
+          "text": "Inhibiting mTOR",
+          "isCorrect": false,
+          "explanation": "mTOR inhibition is the mechanism of everolimus."
+        },
+        {
+          "text": "Inducing apoptosis directly",
+          "isCorrect": false,
+          "explanation": "They primarily cause cytostasis (cell cycle arrest), though apoptosis can follow."
+        }
+      ],
+      "explanation": {
+        "overview": "CDK4/6 inhibitors are approved in combination with endocrine therapy (aromatase inhibitor or fulvestrant) for advanced HR+/HER2- breast cancer, and as adjuvant therapy in high-risk early breast cancer.",
+        "highYield": "CDK4/6 inhibitors = G1 arrest (Rb phosphorylation block). Combined with endocrine therapy. Main toxicity: neutropenia (reversible, manageable).",
+        "clinicalCorrelation": "Neutropenia is the most common toxicity with palbociclib and ribociclib; abemaciclib causes more diarrhea and less neutropenia. Dose interruption, not dose reduction, is typical for neutropenia."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_053",
+      "difficulty": 2,
+      "question": "Olaparib and niraparib are PARP inhibitors used in BRCA-mutated ovarian and breast cancers. Their mechanism involves:",
+      "image": null,
+      "options": [
+        {
+          "text": "Inhibiting poly(ADP-ribose) polymerase, exploiting synthetic lethality in BRCA-deficient cells",
+          "isCorrect": true,
+          "explanation": "PARP inhibitors block base excision repair (BER) of single-strand DNA breaks. In cells with defective homologous recombination repair (BRCA1/2 mutation), these lesions become double-strand breaks during replication, leading to cell death through synthetic lethality."
+        },
+        {
+          "text": "Alkylating DNA",
+          "isCorrect": false,
+          "explanation": "DNA alkylation is the mechanism of cyclophosphamide and platinum drugs."
+        },
+        {
+          "text": "Inhibiting topoisomerase",
+          "isCorrect": false,
+          "explanation": "Topoisomerase inhibition is the target of irinotecan and etoposide."
+        },
+        {
+          "text": "Blocking microtubules",
+          "isCorrect": false,
+          "explanation": "Microtubule blockade is the action of taxanes and vinca alkaloids."
+        },
+        {
+          "text": "Inhibiting angiogenesis",
+          "isCorrect": false,
+          "explanation": "Angiogenesis inhibition is the mechanism of bevacizumab."
+        }
+      ],
+      "explanation": {
+        "overview": "PARP inhibitors are most effective in tumors with homologous recombination deficiency (HRD), including BRCA1/2 mutations. They are used as maintenance therapy in platinum-sensitive ovarian cancer and in BRCA-mutated breast, pancreatic, and prostate cancers.",
+        "highYield": "PARP inhibitors = block single-strand break repair → synthetic lethality in BRCA-mutated cells. Toxicities: anemia, fatigue, nausea, myelosuppression.",
+        "clinicalCorrelation": "Niraparib causes hypertension and palpitations; olaparib is associated with increased creatinine. All can cause myelodysplastic syndrome/AML rarely."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_054",
+      "difficulty": 2,
+      "question": "A common toxicity of PARP inhibitors is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Myelosuppression (anemia, neutropenia, thrombocytopenia)",
+          "isCorrect": true,
+          "explanation": "PARP inhibitors cause bone marrow suppression, particularly anemia and fatigue. Regular complete blood count monitoring is required."
+        },
+        {
+          "text": "Cardiomyopathy",
+          "isCorrect": false,
+          "explanation": "Cardiomyopathy is not a primary toxicity of PARP inhibitors."
+        },
+        {
+          "text": "Pulmonary fibrosis",
+          "isCorrect": false,
+          "explanation": "Pulmonary fibrosis is associated with bleomycin."
+        },
+        {
+          "text": "Nephrotoxicity",
+          "isCorrect": false,
+          "explanation": "Nephrotoxicity is not typical."
+        },
+        {
+          "text": "Peripheral neuropathy",
+          "isCorrect": false,
+          "explanation": "Peripheral neuropathy is more characteristic of platinum agents and vinca alkaloids."
+        }
+      ],
+      "explanation": {
+        "overview": "Hematologic toxicity is the most common adverse event leading to dose reduction or interruption. PARP is also involved in normal hematopoietic cell function.",
+        "highYield": "PARP inhibitors → myelosuppression (anemia, fatigue). Monitor CBC. Also cause nausea, elevated creatinine.",
+        "clinicalCorrelation": "Dose interruptions and blood transfusions may be needed for symptomatic anemia. PARP inhibitors are taken orally and have minimal drug interactions."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_055",
+      "difficulty": 2,
+      "question": "Bleomycin is associated with a rare but serious pulmonary toxicity. Risk factors include:",
+      "image": null,
+      "options": [
+        {
+          "text": "Age >40, cumulative dose >400 units, renal impairment, concomitant oxygen therapy",
+          "isCorrect": true,
+          "explanation": "Bleomycin hydrolase, which inactivates the drug, is low in lungs and skin. Toxicity is enhanced by high inspired oxygen concentrations, renal dysfunction (reduced clearance), and prior radiation to the chest."
+        },
+        {
+          "text": "Concomitant corticosteroids",
+          "isCorrect": false,
+          "explanation": "Corticosteroids are used to treat pneumonitis, not a risk factor."
+        },
+        {
+          "text": "Young age",
+          "isCorrect": false,
+          "explanation": "Older age is a risk factor."
+        },
+        {
+          "text": "Female gender",
+          "isCorrect": false,
+          "explanation": "Gender is not a primary risk factor."
+        },
+        {
+          "text": "Hepatic impairment",
+          "isCorrect": false,
+          "explanation": "Bleomycin is primarily renally cleared; hepatic impairment is less critical."
+        }
+      ],
+      "explanation": {
+        "overview": "Bleomycin pulmonary toxicity presents as interstitial pneumonitis progressing to fibrosis. It is a clinical diagnosis supported by imaging (bibasilar reticular opacities) and decreased DLCO.",
+        "highYield": "Bleomycin lung toxicity → dose-related (>400 units lifetime), risk with O₂, renal failure, age >40. Monitor DLCO.",
+        "clinicalCorrelation": "If bleomycin-treated patients require surgery, low FiO₂ should be used to avoid acute lung injury. Corticosteroids are the mainstay of treatment for pneumonitis."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_056",
+      "difficulty": 2,
+      "question": "Asparaginase can cause hypersensitivity reactions and also affects coagulation by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Decreasing synthesis of antithrombin III, protein C, and protein S",
+          "isCorrect": true,
+          "explanation": "Asparaginase inhibits protein synthesis, including coagulation inhibitors (antithrombin III, protein C, protein S) and procoagulant factors. The net effect is a hypercoagulable state with increased risk of venous thrombosis and stroke."
+        },
+        {
+          "text": "Increasing platelet aggregation",
+          "isCorrect": false,
+          "explanation": "Platelet function is not primarily affected."
+        },
+        {
+          "text": "Inhibiting vitamin K",
+          "isCorrect": false,
+          "explanation": "Vitamin K inhibition is the mechanism of warfarin."
+        },
+        {
+          "text": "Activating fibrinolysis",
+          "isCorrect": false,
+          "explanation": "Asparaginase reduces fibrinolytic inhibitors as well, but the predominant effect is reduction of anticoagulant proteins."
+        },
+        {
+          "text": "Binding to factor Xa",
+          "isCorrect": false,
+          "explanation": "Factor Xa binding is the action of direct oral anticoagulants."
+        }
+      ],
+      "explanation": {
+        "overview": "The reduction of anticoagulant proteins (especially antithrombin III) leads to a prothrombotic state. Monitoring of coagulation parameters and prophylactic anticoagulation may be considered in high-risk patients.",
+        "highYield": "Asparaginase → ↓ antithrombin III, protein C, protein S → thrombosis risk. Also causes pancreatitis, hepatotoxicity, hyperglycemia.",
+        "clinicalCorrelation": "Screening for antithrombin III levels and replacement with fresh frozen plasma or antithrombin concentrate may be needed in symptomatic thrombosis."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_057",
+      "difficulty": 2,
+      "question": "Methotrexate is often used intrathecally for CNS leukemia. A severe toxicity of intrathecal methotrexate is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Chemical arachnoiditis, leukoencephalopathy",
+          "isCorrect": true,
+          "explanation": "Intrathecal methotrexate can cause acute aseptic meningitis (chemical arachnoiditis) with headache, fever, and nuchal rigidity. Chronic use, especially with cranial radiation, can lead to subacute leukoencephalopathy."
+        },
+        {
+          "text": "Myelosuppression",
+          "isCorrect": false,
+          "explanation": "Myelosuppression is a systemic toxicity; intrathecal administration limits systemic exposure."
+        },
+        {
+          "text": "Nephrotoxicity",
+          "isCorrect": false,
+          "explanation": "Nephrotoxicity is related to systemic methotrexate, not intrathecal."
+        },
+        {
+          "text": "Cardiotoxicity",
+          "isCorrect": false,
+          "explanation": "Cardiotoxicity is not associated with methotrexate."
+        },
+        {
+          "text": "Pulmonary fibrosis",
+          "isCorrect": false,
+          "explanation": "Pulmonary fibrosis is not typical for methotrexate."
+        }
+      ],
+      "explanation": {
+        "overview": "Intrathecal chemotherapy (methotrexate, cytarabine) is used for prophylaxis and treatment of CNS leukemia/lymphoma. The preservative-free formulation is used. Concomitant radiotherapy increases neurotoxicity risk.",
+        "highYield": "Intrathecal MTX → arachnoiditis (acute), leukoencephalopathy (chronic, with radiation). Use preservative-free formulations only.",
+        "clinicalCorrelation": "Acute arachnoiditis is treated with supportive care and corticosteroids. Leukoencephalopathy may be irreversible, presenting with dementia, ataxia, and spasticity."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_058",
+      "difficulty": 2,
+      "question": "Irinotecan can cause severe diarrhea due to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Early-onset cholinergic effects and late-onset secretory diarrhea",
+          "isCorrect": true,
+          "explanation": "Irinotecan can cause acute diarrhea (<24 hours) mediated by cholinergic stimulation, treated with atropine. Delayed diarrhea (>24 hours) is due to SN-38 cytotoxicity on intestinal mucosa and is managed with aggressive loperamide."
+        },
+        {
+          "text": "Direct mucosal injury",
+          "isCorrect": false,
+          "explanation": "While SN-38 does cause mucosal injury, the diarrhea is multifactorial; cholinergic effects and SN-38 secretory damage are key."
+        },
+        {
+          "text": "Bacterial overgrowth",
+          "isCorrect": false,
+          "explanation": "Not the primary mechanism."
+        },
+        {
+          "text": "Pancreatic enzyme deficiency",
+          "isCorrect": false,
+          "explanation": "Not the cause."
+        },
+        {
+          "text": "Malabsorption",
+          "isCorrect": false,
+          "explanation": "Malabsorption can contribute but the described early and late phases are due to cholinergic and SN-38 effects."
+        }
+      ],
+      "explanation": {
+        "overview": "Irinotecan-induced diarrhea is a major dose-limiting toxicity. Early diarrhea (during or shortly after infusion) is accompanied by sweating and abdominal cramps (cholinergic), responding to atropine. Late diarrhea (2-14 days) requires prompt loperamide therapy.",
+        "highYield": "Irinotecan diarrhea = early (cholinergic → atropine) + late (SN-38 mucosal toxicity → loperamide). UGT1A1 deficiency worsens late diarrhea.",
+        "clinicalCorrelation": "Patients should be educated to start loperamide at the first sign of loose stool. Hospitalization may be required for severe diarrhea with dehydration."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_059",
+      "difficulty": 2,
+      "question": "The efficacy of capecitabine is increased by prior treatment with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Oxaliplatin",
+          "isCorrect": true,
+          "explanation": "Capecitabine is often combined with oxaliplatin (XELOX regimen) in colorectal cancer. Pre-treatment or concurrent oxaliplatin may enhance the activation of capecitabine by upregulating thymidine phosphorylase in tumor tissue, increasing efficacy."
+        },
+        {
+          "text": "Gemcitabine",
+          "isCorrect": false,
+          "explanation": "Gemcitabine does not have this specific interaction."
+        },
+        {
+          "text": "Bevacizumab",
+          "isCorrect": false,
+          "explanation": "Bevacizumab is combined with capecitabine but does not enhance its activation."
+        },
+        {
+          "text": "Trastuzumab",
+          "isCorrect": false,
+          "explanation": "Trastuzumab is for HER2+ cancers, not used to enhance capecitabine."
+        },
+        {
+          "text": "Rituximab",
+          "isCorrect": false,
+          "explanation": "Rituximab is for B-cell malignancies."
+        }
+      ],
+      "explanation": {
+        "overview": "Capecitabine is an oral fluoropyrimidine that is converted to 5-FU preferentially in tumor tissue. Oxaliplatin and taxanes have been shown to upregulate thymidine phosphorylase in tumors, potentially enhancing the conversion of capecitabine to 5-FU.",
+        "highYield": "Capecitabine + oxaliplatin (XELOX) for colorectal cancer. Taxanes can also upregulate thymidine phosphorylase, increasing capecitabine activation.",
+        "clinicalCorrelation": "XELOX is a standard first-line regimen for metastatic colorectal cancer, offering an alternative to infusional 5-FU (FOLFOX)."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_060",
+      "difficulty": 2,
+      "question": "Which drug is used to treat extrapyramidal symptoms caused by chemotherapy-induced nausea regimens?",
+      "image": null,
+      "options": [
+        {
+          "text": "Diphenhydramine",
+          "isCorrect": true,
+          "explanation": "Metoclopramide and prochlorperazine, commonly used as antiemetics, are dopamine antagonists that can cause acute dystonic reactions. Diphenhydramine (an anticholinergic/antihistamine) is effective in treating these extrapyramidal symptoms."
+        },
+        {
+          "text": "Lorazepam",
+          "isCorrect": false,
+          "explanation": "Lorazepam is used for anxiety and anticipatory nausea, but not specifically for EPS."
+        },
+        {
+          "text": "Prochlorperazine",
+          "isCorrect": false,
+          "explanation": "Prochlorperazine can cause EPS; diphenhydramine treats it."
+        },
+        {
+          "text": "Metoclopramide",
+          "isCorrect": false,
+          "explanation": "Metoclopramide often causes EPS, especially in young patients."
+        },
+        {
+          "text": "Ondansetron",
+          "isCorrect": false,
+          "explanation": "Ondansetron is a 5-HT3 antagonist and does not cause EPS."
+        }
+      ],
+      "explanation": {
+        "overview": "Extrapyramidal symptoms (dystonia, oculogyric crisis, torticollis) are adverse effects of dopamine-blocking antiemetics (metoclopramide, prochlorperazine). Diphenhydramine or benztropine are used for acute management.",
+        "highYield": "Metoclopramide/prochlorperazine → EPS (dystonic reactions). Treat with diphenhydramine or benztropine.",
+        "clinicalCorrelation": "Younger patients are at higher risk. Prophylactic diphenhydramine can be given with high-dose metoclopramide."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_061",
+      "difficulty": 2,
+      "question": "Ifosfamide, a nitrogen mustard analog, requires concomitant mesna to prevent:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hemorrhagic cystitis",
+          "isCorrect": true,
+          "explanation": "Ifosfamide produces acrolein, a urotoxic metabolite, similar to cyclophosphamide but to a greater extent. Mesna binds acrolein in the urine, preventing bladder toxicity."
+        },
+        {
+          "text": "Cardiotoxicity",
+          "isCorrect": false,
+          "explanation": "Cardiotoxicity is a feature of anthracyclines."
+        },
+        {
+          "text": "Pulmonary fibrosis",
+          "isCorrect": false,
+          "explanation": "Pulmonary fibrosis is associated with bleomycin."
+        },
+        {
+          "text": "Nephrotoxicity",
+          "isCorrect": false,
+          "explanation": "Ifosfamide can cause renal tubular injury, but mesna primarily protects the bladder."
+        },
+        {
+          "text": "Peripheral neuropathy",
+          "isCorrect": false,
+          "explanation": "Neuropathy is a common toxicity of ifosfamide, but mesna does not prevent it."
+        }
+      ],
+      "explanation": {
+        "overview": "Ifosfamide is an oxazaphosphorine alkylating agent. It is a prodrug requiring CYP activation. Acrolein is the urotoxic metabolite. Mesna is administered with and after ifosfamide.",
+        "highYield": "Ifosfamide → acrolein → hemorrhagic cystitis. Mesna + hydration for prevention. Also causes neurotoxicity, nephrotoxicity.",
+        "clinicalCorrelation": "Central neurotoxicity (encephalopathy, seizures) can occur with ifosfamide due to chloroacetaldehyde metabolite; methylene blue has been used as an antidote."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_062",
+      "difficulty": 2,
+      "question": "Which antimetabolite inhibits both thymidylate synthase and purine synthesis, and requires leucovorin rescue?",
+      "image": null,
+      "options": [
+        {
+          "text": "Methotrexate",
+          "isCorrect": true,
+          "explanation": "Methotrexate inhibits dihydrofolate reductase, leading to depletion of tetrahydrofolate cofactors needed for thymidylate synthase and purine synthesis. Leucovorin bypasses the block."
+        },
+        {
+          "text": "5-Fluorouracil",
+          "isCorrect": false,
+          "explanation": "5-FU inhibits thymidylate synthase and incorporates into RNA/DNA; leucovorin enhances its effect, it is not used for rescue."
+        },
+        {
+          "text": "Gemcitabine",
+          "isCorrect": false,
+          "explanation": "Gemcitabine inhibits ribonucleotide reductase and causes chain termination."
+        },
+        {
+          "text": "Cytarabine",
+          "isCorrect": false,
+          "explanation": "Cytarabine incorporates into DNA and inhibits DNA polymerase."
+        },
+        {
+          "text": "6-Mercaptopurine",
+          "isCorrect": false,
+          "explanation": "6-MP is a purine antagonist that requires TPMT metabolism."
+        }
+      ],
+      "explanation": {
+        "overview": "Methotrexate's broad inhibition of folate-dependent pathways makes it highly effective but also toxic. Leucovorin rescue is a prime example of selective rescue of normal cells.",
+        "highYield": "MTX = DHFR inhibitor → blocks thymidylate and purine synthesis. Leucovorin rescue bypasses DHFR in normal cells.",
+        "clinicalCorrelation": "High-dose MTX is used in ALL, osteosarcoma, and primary CNS lymphoma. Therapeutic drug monitoring of MTX levels guides leucovorin dosing."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_063",
+      "difficulty": 2,
+      "question": "A patient receiving cisplatin develops acute kidney injury, hypomagnesemia, and high-frequency hearing loss. These side effects are due to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cisplatin accumulation in renal tubules and cochlear hair cells",
+          "isCorrect": true,
+          "explanation": "Cisplatin is taken up by proximal tubular cells and cochlear outer hair cells via organic cation transporters, leading to apoptosis. Nephrotoxicity presents as AKI and magnesium wasting; ototoxicity as tinnitus and high-frequency hearing loss."
+        },
+        {
+          "text": "Allergic reaction to platinum",
+          "isCorrect": false,
+          "explanation": "This is a direct toxic effect, not allergic."
+        },
+        {
+          "text": "Hypersensitivity to Cremophor",
+          "isCorrect": false,
+          "explanation": "Cremophor hypersensitivity is associated with paclitaxel."
+        },
+        {
+          "text": "Immune-mediated damage",
+          "isCorrect": false,
+          "explanation": "Cisplatin toxicity is direct, not immune-mediated."
+        },
+        {
+          "text": "Metabolite accumulation in the CNS",
+          "isCorrect": false,
+          "explanation": "Toxicity is peripheral (renal, otic, neural), not primarily CNS."
+        }
+      ],
+      "explanation": {
+        "overview": "Cisplatin is highly emetogenic and causes dose-limiting nephrotoxicity, neurotoxicity, and ototoxicity. Carboplatin was developed to reduce these toxicities. Magnesium supplementation is often required.",
+        "highYield": "Cisplatin → nephrotoxic, ototoxic, neurotoxic. Hydration + mannitol for nephroprotection. Monitor Mg²⁺ and hearing.",
+        "clinicalCorrelation": "Amifostine is a cytoprotectant that can reduce cumulative renal toxicity. Pediatric patients are particularly susceptible to ototoxicity."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_064",
+      "difficulty": 2,
+      "question": "Vincristine and vinblastine are both vinca alkaloids, but differ in their main dose-limiting toxicity. Which is correct?",
+      "image": null,
+      "options": [
+        {
+          "text": "Vincristine → neuropathy; Vinblastine → myelosuppression",
+          "isCorrect": true,
+          "explanation": "Vincristine primarily causes peripheral neuropathy and autonomic dysfunction. Vinblastine causes more bone marrow suppression (neutropenia)."
+        },
+        {
+          "text": "Vincristine → myelosuppression; Vinblastine → neuropathy",
+          "isCorrect": false,
+          "explanation": "This is reversed."
+        },
+        {
+          "text": "Both cause severe myelosuppression as dose-limiting",
+          "isCorrect": false,
+          "explanation": "Vincristine has minimal myelosuppression."
+        },
+        {
+          "text": "Both cause severe neuropathy as dose-limiting",
+          "isCorrect": false,
+          "explanation": "Vinblastine's neuropathy is less prominent."
+        },
+        {
+          "text": "Neither causes myelosuppression",
+          "isCorrect": false,
+          "explanation": "Vinblastine does cause myelosuppression."
+        }
+      ],
+      "explanation": {
+        "overview": "The different side effect profiles guide clinical selection: vincristine is used in regimens where preserving blood counts is critical; vinblastine is used where neuropathy would limit therapy.",
+        "highYield": "Vincristine = neurotoxicity (constipation, peripheral neuropathy). Vinblastine = myelosuppression. Vinorelbine = intermediate.",
+        "clinicalCorrelation": "Vincristine-induced ileus can be life-threatening in children; aggressive bowel regimen is necessary. Vinblastine dose is often adjusted based on neutrophil count."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_065",
+      "difficulty": 2,
+      "question": "A patient on tamoxifen develops endometrial hyperplasia. This is due to tamoxifen's:",
+      "image": null,
+      "options": [
+        {
+          "text": "Partial estrogen receptor agonist activity in endometrium",
+          "isCorrect": true,
+          "explanation": "Tamoxifen acts as an estrogen receptor antagonist in breast tissue but as an agonist in the endometrium, stimulating proliferation and increasing the risk of endometrial hyperplasia and carcinoma."
+        },
+        {
+          "text": "Aromatase inhibition",
+          "isCorrect": false,
+          "explanation": "Tamoxifen does not inhibit aromatase; that is the mechanism of AIs."
+        },
+        {
+          "text": "Progesterone antagonism",
+          "isCorrect": false,
+          "explanation": "It is not a progesterone antagonist."
+        },
+        {
+          "text": "GnRH stimulation",
+          "isCorrect": false,
+          "explanation": "Tamoxifen does not stimulate GnRH."
+        },
+        {
+          "text": "Direct DNA damage",
+          "isCorrect": false,
+          "explanation": "Tamoxifen does not directly damage DNA."
+        }
+      ],
+      "explanation": {
+        "overview": "The tissue-selective effects of tamoxifen (SERM) mean it is anti-estrogenic in breast but pro-estrogenic in bone, endometrium, and lipid metabolism. Raloxifene has less endometrial agonist activity.",
+        "highYield": "Tamoxifen = SERM → agonist on endometrium → endometrial hyperplasia/cancer risk. Annual gynecologic monitoring recommended.",
+        "clinicalCorrelation": "Any abnormal uterine bleeding in a patient on tamoxifen requires prompt evaluation, including endometrial biopsy."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_066",
+      "difficulty": 2,
+      "question": "Fulvestrant is an estrogen receptor antagonist used in metastatic breast cancer. Its unique mechanism is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Binding to ER and promoting its degradation, leading to complete receptor downregulation",
+          "isCorrect": true,
+          "explanation": "Fulvestrant is a selective estrogen receptor degrader (SERD) that binds to the estrogen receptor, inhibiting its dimerization and nuclear translocation, and accelerating its ubiquitination and proteasomal degradation."
+        },
+        {
+          "text": "Competitive antagonism of ER without degradation",
+          "isCorrect": false,
+          "explanation": "Tamoxifen does this; fulvestrant causes degradation."
+        },
+        {
+          "text": "Inhibiting aromatase",
+          "isCorrect": false,
+          "explanation": "Aromatase inhibitors work by blocking estrogen synthesis."
+        },
+        {
+          "text": "Suppressing ovarian function",
+          "isCorrect": false,
+          "explanation": "GnRH agonists suppress ovaries; fulvestrant acts on the receptor."
+        },
+        {
+          "text": "Blocking androgen receptors",
+          "isCorrect": false,
+          "explanation": "Fulvestrant is an anti-estrogen, not anti-androgen."
+        }
+      ],
+      "explanation": {
+        "overview": "Fulvestrant is used in postmenopausal women with HR+ advanced breast cancer after progression on endocrine therapy. It is administered intramuscularly monthly.",
+        "highYield": "Fulvestrant = SERD → ER degradation (no agonist activity). Used after AI resistance. IM injection.",
+        "clinicalCorrelation": "Fulvestrant can cause injection site reactions. It is combined with CDK4/6 inhibitors for enhanced efficacy."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_067",
+      "difficulty": 2,
+      "question": "Lenalidomide and pomalidomide are immunomodulatory drugs (IMiDs) used in multiple myeloma. Their multiple effects include:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cereblon-mediated degradation of Ikaros/Aiolos, anti-angiogenesis, and immune stimulation",
+          "isCorrect": true,
+          "explanation": "IMiDs bind to cereblon (CRBN), a component of the E3 ubiquitin ligase complex, altering its substrate specificity to degrade transcription factors Ikaros and Aiolos. They also inhibit angiogenesis and enhance T-cell and NK-cell activity."
+        },
+        {
+          "text": "Proteasome inhibition",
+          "isCorrect": false,
+          "explanation": "Proteasome inhibition is the mechanism of bortezomib."
+        },
+        {
+          "text": "DNA alkylation",
+          "isCorrect": false,
+          "explanation": "Alkylation is the mechanism of cyclophosphamide."
+        },
+        {
+          "text": "Microtubule stabilization",
+          "isCorrect": false,
+          "explanation": "Microtubule stabilization is the action of taxanes."
+        },
+        {
+          "text": "CD20 targeting",
+          "isCorrect": false,
+          "explanation": "CD20 targeting is the action of rituximab."
+        }
+      ],
+      "explanation": {
+        "overview": "Thalidomide, lenalidomide, and pomalidomide are IMiDs with activity in multiple myeloma and del(5q) MDS. Lenalidomide is more potent and less neurotoxic than thalidomide. Pomalidomide is used in relapsed/refractory disease.",
+        "highYield": "IMiDs (lenalidomide) → CRBN-Ikaros/Aiolos degradation, anti-angiogenesis, immune stimulation. Toxicities: myelosuppression, thrombosis, teratogenicity.",
+        "clinicalCorrelation": "DVT prophylaxis (aspirin or anticoagulation) is recommended with lenalidomide in combination with steroids. All IMiDs are pregnancy category X."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_068",
+      "difficulty": 2,
+      "question": "Venetoclax is a BCL-2 inhibitor used in CLL and AML. Its mechanism is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Selectively binding BCL-2, displacing pro-apoptotic proteins, leading to apoptosis",
+          "isCorrect": true,
+          "explanation": "Venetoclax is a BH3-mimetic that binds to the hydrophobic groove of BCL-2, releasing BIM and other pro-apoptotic proteins, which then activate BAX/BAK to permeabilize the mitochondrial membrane and trigger apoptosis."
+        },
+        {
+          "text": "Inhibiting Bruton tyrosine kinase (BTK)",
+          "isCorrect": false,
+          "explanation": "BTK inhibition is the mechanism of ibrutinib."
+        },
+        {
+          "text": "Inhibiting PI3 kinase",
+          "isCorrect": false,
+          "explanation": "PI3Kδ inhibition is the mechanism of idelalisib."
+        },
+        {
+          "text": "Blocking CD20",
+          "isCorrect": false,
+          "explanation": "CD20 targeting is the action of rituximab."
+        },
+        {
+          "text": "Inhibiting proteasome",
+          "isCorrect": false,
+          "explanation": "Proteasome inhibition is the mechanism of bortezomib."
+        }
+      ],
+      "explanation": {
+        "overview": "Venetoclax is highly effective in CLL with 17p deletion and in combination with hypomethylating agents or low-dose cytarabine in elderly AML. It causes rapid tumor lysis syndrome (TLS).",
+        "highYield": "Venetoclax = BCL-2 inhibitor → apoptosis of CLL/AML cells. Major risk: tumor lysis syndrome. Dose ramp-up required.",
+        "clinicalCorrelation": "TLS prophylaxis (hydration, allopurinol/rasburicase) and monitoring are mandatory during venetoclax initiation and dose escalation."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_069",
+      "difficulty": 2,
+      "question": "Ibrutinib is a Bruton tyrosine kinase (BTK) inhibitor used in B-cell malignancies. Its common adverse effects include:",
+      "image": null,
+      "options": [
+        {
+          "text": "Atrial fibrillation, bleeding, diarrhea, infections",
+          "isCorrect": true,
+          "explanation": "Ibrutinib irreversibly inhibits BTK, which is also involved in platelet aggregation (via GPVI) and cardiac function. Atrial fibrillation, bleeding, and infections are common."
+        },
+        {
+          "text": "Cardiomyopathy",
+          "isCorrect": false,
+          "explanation": "Cardiomyopathy is not a primary feature; atrial fibrillation is."
+        },
+        {
+          "text": "Nephrotoxicity",
+          "isCorrect": false,
+          "explanation": "Renal toxicity is not typical."
+        },
+        {
+          "text": "Peripheral neuropathy",
+          "isCorrect": false,
+          "explanation": "Neuropathy is not a major side effect."
+        },
+        {
+          "text": "Pulmonary fibrosis",
+          "isCorrect": false,
+          "explanation": "Pulmonary toxicity is rare."
+        }
+      ],
+      "explanation": {
+        "overview": "Ibrutinib is a first-generation BTK inhibitor used in CLL, mantle cell lymphoma, and Waldenström macroglobulinemia. Second-generation BTK inhibitors (acalabrutinib, zanubrutinib) have improved selectivity and fewer off-target effects.",
+        "highYield": "Ibrutinib = BTK inhibitor → blocks B-cell receptor signaling. Toxicities: atrial fibrillation, bleeding (inhibits platelet aggregation), diarrhea, infections.",
+        "clinicalCorrelation": "Avoid concurrent use of anticoagulants and antiplatelet agents if possible. Hold ibrutinib before surgery. Acalabrutinib has less atrial fibrillation."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_070",
+      "difficulty": 2,
+      "question": "Ruxolitinib is a JAK1/2 inhibitor used in myelofibrosis and polycythemia vera. Its mechanism is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Inhibiting JAK-STAT signaling, reducing splenomegaly and constitutional symptoms",
+          "isCorrect": true,
+          "explanation": "Ruxolitinib inhibits Janus kinases (JAK1 and JAK2), which are constitutively activated in myeloproliferative neoplasms, leading to reduced cytokine signaling and decreased splenomegaly and symptoms."
+        },
+        {
+          "text": "Inhibiting BCR-ABL",
+          "isCorrect": false,
+          "explanation": "BCR-ABL is the target of imatinib."
+        },
+        {
+          "text": "Inhibiting FLT3",
+          "isCorrect": false,
+          "explanation": "FLT3 inhibitors (midostaurin) are used in AML."
+        },
+        {
+          "text": "Blocking VEGF",
+          "isCorrect": false,
+          "explanation": "VEGF blockade is the mechanism of bevacizumab."
+        },
+        {
+          "text": "Inhibiting CDK4/6",
+          "isCorrect": false,
+          "explanation": "CDK4/6 inhibitors are used in breast cancer."
+        }
+      ],
+      "explanation": {
+        "overview": "Ruxolitinib is approved for intermediate/high-risk myelofibrosis and for polycythemia vera after hydroxyurea failure. It improves quality of life and reduces spleen size.",
+        "highYield": "Ruxolitinib = JAK1/2 inhibitor → blocks JAK-STAT signaling. Used in myelofibrosis, PV. Cytopenias (anemia, thrombocytopenia) are dose-limiting.",
+        "clinicalCorrelation": "Ruxolitinib can cause immunosuppression and reactivation of infections (tuberculosis, hepatitis B). Dose adjustment is required for renal/hepatic impairment."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_071",
+      "difficulty": 2,
+      "question": "Trastuzumab emtansine (T-DM1) is an antibody-drug conjugate. It delivers the cytotoxic agent DM1 (a maytansinoid) to HER2-positive cells. The advantage is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Targeted delivery of a potent antimicrotubule agent, reducing systemic toxicity",
+          "isCorrect": true,
+          "explanation": "T-DM1 links trastuzumab to DM1, a microtubule inhibitor. The antibody delivers the toxin specifically to HER2-overexpressing cells, allowing effective killing with less systemic toxicity than free DM1."
+        },
+        {
+          "text": "It is an oral formulation",
+          "isCorrect": false,
+          "explanation": "T-DM1 is given intravenously."
+        },
+        {
+          "text": "It does not require HER2 positivity",
+          "isCorrect": false,
+          "explanation": "It specifically targets HER2-positive cells."
+        },
+        {
+          "text": "It has no cardiotoxicity",
+          "isCorrect": false,
+          "explanation": "Cardiotoxicity can still occur."
+        },
+        {
+          "text": "It is an immune checkpoint inhibitor",
+          "isCorrect": false,
+          "explanation": "It is a conjugated antibody, not a checkpoint inhibitor."
+        }
+      ],
+      "explanation": {
+        "overview": "Antibody-drug conjugates (ADCs) combine the specificity of a monoclonal antibody with the potency of a cytotoxic drug. T-DM1 is standard second-line therapy for HER2-positive metastatic breast cancer.",
+        "highYield": "T-DM1 = trastuzumab + DM1 (anti-microtubule) → targeted intracellular delivery. Toxicities: thrombocytopenia, hepatotoxicity, neuropathy.",
+        "clinicalCorrelation": "T-DM1 can cause peripheral neuropathy and interstitial lung disease. It is contraindicated with strong CYP3A4 inhibitors/inducers due to DM1 metabolism."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_072",
+      "difficulty": 2,
+      "question": "Filgrastim (G-CSF) is used in chemotherapy to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Stimulate neutrophil production and reduce the duration of neutropenia",
+          "isCorrect": true,
+          "explanation": "Filgrastim is a recombinant granulocyte colony-stimulating factor that promotes proliferation and differentiation of myeloid progenitor cells, accelerating neutrophil recovery after myelosuppressive chemotherapy."
+        },
+        {
+          "text": "Increase platelet count",
+          "isCorrect": false,
+          "explanation": "Thrombopoietin receptor agonists (romiplostim) and IL-11 (oprelvekin) increase platelets."
+        },
+        {
+          "text": "Stimulate red blood cell production",
+          "isCorrect": false,
+          "explanation": "Erythropoiesis-stimulating agents (epoetin alfa, darbepoetin) increase red blood cells."
+        },
+        {
+          "text": "Reduce chemotherapy side effects",
+          "isCorrect": false,
+          "explanation": "It specifically targets neutropenia, not all side effects."
+        },
+        {
+          "text": "Enhance tumor killing",
+          "isCorrect": false,
+          "explanation": "G-CSF does not directly kill tumor cells; it supports neutrophil recovery."
+        }
+      ],
+      "explanation": {
+        "overview": "G-CSF is used as primary prophylaxis (when febrile neutropenia risk >20%) or secondary prophylaxis after neutropenic events. Pegfilgrastim is a longer-acting form requiring a single dose per cycle.",
+        "highYield": "Filgrastim (G-CSF) → stimulates neutrophil recovery. Given 24-72 hours after chemotherapy. Pegfilgrastim is long-acting.",
+        "clinicalCorrelation": "Bone pain is a common side effect. Avoid G-CSF within 24 hours of chemotherapy (scheduling varies) to prevent myeloid progenitor sensitization."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_073",
+      "difficulty": 2,
+      "question": "Dexrazoxane is used as a cardioprotectant in patients receiving anthracyclines. Its mechanism is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Iron chelation, reducing free radical formation",
+          "isCorrect": true,
+          "explanation": "Dexrazoxane is an EDTA analog that chelates iron, preventing the formation of anthracycline-iron complexes that generate reactive oxygen species, thereby reducing cardiac toxicity."
+        },
+        {
+          "text": "Scavenging oxygen radicals directly",
+          "isCorrect": false,
+          "explanation": "It works by chelation, not direct scavenging."
+        },
+        {
+          "text": "Blocking topoisomerase II",
+          "isCorrect": false,
+          "explanation": "While it is a topoisomerase II catalytic inhibitor, its cardioprotection is from iron chelation."
+        },
+        {
+          "text": "Increasing doxorubicin metabolism",
+          "isCorrect": false,
+          "explanation": "It does not alter doxorubicin metabolism."
+        },
+        {
+          "text": "Inhibiting P-glycoprotein",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        }
+      ],
+      "explanation": {
+        "overview": "Dexrazoxane is given prior to anthracycline administration in patients who have received a high cumulative dose or have cardiac risk factors. It also has a role in treating anthracycline extravasation.",
+        "highYield": "Dexrazoxane = iron chelator → prevents anthracycline-induced cardiotoxicity. Also used for extravasation treatment.",
+        "clinicalCorrelation": "Dexrazoxane can cause myelosuppression and may slightly reduce anthracycline efficacy in some settings. It is recommended when cumulative doxorubicin exceeds 300 mg/m²."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_074",
+      "difficulty": 2,
+      "question": "Which of the following agents is classified as a 'differentiating agent' and is used in acute promyelocytic leukemia?",
+      "image": null,
+      "options": [
+        {
+          "text": "All-trans retinoic acid (ATRA)",
+          "isCorrect": true,
+          "explanation": "ATRA induces differentiation of leukemic promyelocytes by targeting the PML-RARα fusion protein, leading to degradation of the oncoprotein and maturation of the malignant cells."
+        },
+        {
+          "text": "Arsenic trioxide",
+          "isCorrect": false,
+          "explanation": "Arsenic trioxide also degrades PML-RARα but is considered an apoptosis-inducing agent, not solely a differentiating agent."
+        },
+        {
+          "text": "Imatinib",
+          "isCorrect": false,
+          "explanation": "Imatinib is a TKI for CML."
+        },
+        {
+          "text": "Decitabine",
+          "isCorrect": false,
+          "explanation": "Decitabine is a hypomethylating agent."
+        },
+        {
+          "text": "Vorinostat",
+          "isCorrect": false,
+          "explanation": "Vorinostat is an HDAC inhibitor."
+        }
+      ],
+      "explanation": {
+        "overview": "ATRA is the prototype differentiation therapy. Combined with arsenic trioxide, it achieves cure rates >90% in low/intermediate-risk APL without conventional chemotherapy.",
+        "highYield": "ATRA = differentiation therapy for APL (t(15;17) PML-RARα). Can cause differentiation syndrome (fever, respiratory distress, effusions) → treat with dexamethasone.",
+        "clinicalCorrelation": "Differentiation syndrome (formerly retinoic acid syndrome) is a potentially fatal complication occurring 1-2 weeks after starting ATRA. Early recognition and high-dose dexamethasone are critical."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_075",
+      "difficulty": 2,
+      "question": "Denosumab is a monoclonal antibody against RANKL used in cancer-related bone disease. Its primary indication is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Prevention of skeletal-related events in bone metastases and giant cell tumor of bone",
+          "isCorrect": true,
+          "explanation": "Denosumab inhibits RANKL, preventing osteoclast activation and bone resorption. It reduces fractures, spinal cord compression, and need for radiation in solid tumors with bone metastases."
+        },
+        {
+          "text": "Treatment of hypercalcemia of malignancy",
+          "isCorrect": false,
+          "explanation": "It can be used but bisphosphonates are often first-line for acute hypercalcemia."
+        },
+        {
+          "text": "Induction of bone formation in osteoporosis",
+          "isCorrect": false,
+          "explanation": "Denosumab is an antiresorptive, not an anabolic agent."
+        },
+        {
+          "text": "Replacement of calcium in hypoparathyroidism",
+          "isCorrect": false,
+          "explanation": "Not an indication."
+        },
+        {
+          "text": "Treatment of multiple myeloma bone lesions",
+          "isCorrect": false,
+          "explanation": "Denosumab is used in solid tumors; zoledronic acid is more established in myeloma."
+        }
+      ],
+      "explanation": {
+        "overview": "Denosumab is a fully human monoclonal antibody that binds RANKL, inhibiting osteoclastogenesis. It is administered subcutaneously every 4 weeks and does not require renal monitoring like bisphosphonates.",
+        "highYield": "Denosumab = anti-RANKL → inhibits bone resorption. Used for bone metastases, GCTB. Risk of hypocalcemia, osteonecrosis of jaw (ONJ).",
+        "clinicalCorrelation": "Calcium and vitamin D supplementation is mandatory to prevent hypocalcemia. Dental evaluation before initiation reduces ONJ risk."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_076",
+      "difficulty": 2,
+      "question": "Pralatrexate is a novel antifolate approved for peripheral T-cell lymphoma. Its advantage over methotrexate is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Improved cellular uptake via reduced folate carrier (RFC) and retained in tumor cells longer",
+          "isCorrect": true,
+          "explanation": "Pralatrexate was designed to have higher affinity for RFC and enhanced polyglutamation, leading to more selective accumulation and retention in cancer cells compared to methotrexate."
+        },
+        {
+          "text": "It does not require leucovorin rescue",
+          "isCorrect": false,
+          "explanation": "Leucovorin is used to manage toxicity."
+        },
+        {
+          "text": "It is a tyrosine kinase inhibitor",
+          "isCorrect": false,
+          "explanation": "It is an antifolate, not a TKI."
+        },
+        {
+          "text": "It has no myelosuppression",
+          "isCorrect": false,
+          "explanation": "Myelosuppression, especially thrombocytopenia, is dose-limiting."
+        },
+        {
+          "text": "It is a monoclonal antibody",
+          "isCorrect": false,
+          "explanation": "It is a small molecule."
+        }
+      ],
+      "explanation": {
+        "overview": "Pralatrexate is the first drug approved specifically for relapsed/refractory peripheral T-cell lymphoma. It is structurally similar to methotrexate but with enhanced membrane transport and intracellular accumulation.",
+        "highYield": "Pralatrexate = antifolate with high RFC affinity → better tumor cell uptake. Mucositis, thrombocytopenia are dose-limiting. Supplement with folate and B12.",
+        "clinicalCorrelation": "Patients must receive folic acid and vitamin B12 supplementation to reduce toxicity. Severe mucositis is common and can be dose-limiting."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_077",
+      "difficulty": 2,
+      "question": "A patient receiving pembrolizumab develops severe fatigue, hypotension, and hyponatremia. Adrenal insufficiency is suspected. The most likely immune-related etiology is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hypophysitis leading to secondary adrenal insufficiency",
+          "isCorrect": true,
+          "explanation": "Checkpoint inhibitors can cause hypophysitis, most commonly with ipilimumab, but also with PD-1 inhibitors. It presents with fatigue, hypotension, hyponatremia, and low ACTH/cortisol. Central hypothyroidism and hypogonadism may also occur."
+        },
+        {
+          "text": "Primary adrenal insufficiency",
+          "isCorrect": false,
+          "explanation": "Primary adrenal insufficiency (Addison's) is less common than hypophysitis as an irAE."
+        },
+        {
+          "text": "Sepsis",
+          "isCorrect": false,
+          "explanation": "Must be ruled out, but hypophysitis is a known irAE."
+        },
+        {
+          "text": "Cardiomyopathy",
+          "isCorrect": false,
+          "explanation": "Cardiomyopathy does not cause hyponatremia as the primary feature."
+        },
+        {
+          "text": "Diabetes insipidus",
+          "isCorrect": false,
+          "explanation": "Diabetes insipidus would present with polyuria and hypernatremia."
+        }
+      ],
+      "explanation": {
+        "overview": "Immune-related hypophysitis results in deficiency of ACTH, TSH, LH/FSH. Diagnosis: low morning cortisol, low ACTH, low TSH with low free T4. MRI shows pituitary enlargement. Management: high-dose corticosteroids and hormone replacement.",
+        "highYield": "Checkpoint inhibitor hypophysitis → secondary adrenal insufficiency (fatigue, hypotension, hyponatremia). Check AM cortisol, ACTH. Treat with corticosteroids.",
+        "clinicalCorrelation": "Adrenal crisis can be prevented by stress-dose steroids during illness. Thyroid function and gonadal axes should also be assessed."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_078",
+      "difficulty": 2,
+      "question": "Which of the following anticancer agents is a monoclonal antibody that targets the CD30 antigen and delivers a microtubule inhibitor (monomethyl auristatin E) to lymphoma cells?",
+      "image": null,
+      "options": [
+        {
+          "text": "Brentuximab vedotin",
+          "isCorrect": true,
+          "explanation": "Brentuximab vedotin is an antibody-drug conjugate (ADC) that links an anti-CD30 antibody to MMAE, a potent antimicrotubule agent. It is used in Hodgkin lymphoma and anaplastic large cell lymphoma."
+        },
+        {
+          "text": "Rituximab",
+          "isCorrect": false,
+          "explanation": "Rituximab is a naked anti-CD20 antibody."
+        },
+        {
+          "text": "Trastuzumab emtansine",
+          "isCorrect": false,
+          "explanation": "T-DM1 targets HER2 with DM1."
+        },
+        {
+          "text": "Bevacizumab",
+          "isCorrect": false,
+          "explanation": "Bevacizumab targets VEGF-A."
+        },
+        {
+          "text": "Cetuximab",
+          "isCorrect": false,
+          "explanation": "Cetuximab targets EGFR."
+        }
+      ],
+      "explanation": {
+        "overview": "Brentuximab vedotin delivers the cytotoxic payload MMAE to CD30-expressing cells. CD30 is highly expressed on Reed-Sternberg cells in Hodgkin lymphoma.",
+        "highYield": "Brentuximab vedotin = anti-CD30 + MMAE (anti-microtubule ADC). Used in Hodgkin lymphoma, ALCL. Peripheral neuropathy is dose-limiting.",
+        "clinicalCorrelation": "Progressive peripheral neuropathy can require dose modification. The drug is given intravenously every 3 weeks."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_079",
+      "difficulty": 2,
+      "question": "Inotuzumab ozogamicin is an ADC that targets CD22 and delivers calicheamicin. It is used in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Relapsed/refractory B-cell acute lymphoblastic leukemia",
+          "isCorrect": true,
+          "explanation": "Inotuzumab ozogamicin binds CD22 on B-ALL cells, internalizes, and releases calicheamicin, which causes double-strand DNA breaks. It is approved for relapsed/refractory B-ALL."
+        },
+        {
+          "text": "Chronic myeloid leukemia",
+          "isCorrect": false,
+          "explanation": "CML is treated with TKIs."
+        },
+        {
+          "text": "Acute promyelocytic leukemia",
+          "isCorrect": false,
+          "explanation": "APL is treated with ATRA and arsenic."
+        },
+        {
+          "text": "Myelodysplastic syndrome",
+          "isCorrect": false,
+          "explanation": "MDS is treated with hypomethylating agents, not anti-CD22."
+        },
+        {
+          "text": "Multiple myeloma",
+          "isCorrect": false,
+          "explanation": "Myeloma therapies include proteasome inhibitors, IMiDs."
+        }
+      ],
+      "explanation": {
+        "overview": "Inotuzumab ozogamicin is a CD22-directed ADC linked to calicheamicin, a potent DNA-damaging agent. It is used in relapsed/refractory B-ALL, with high response rates.",
+        "highYield": "Inotuzumab ozogamicin = anti-CD22 + calicheamicin (DNA breaks). Used in B-ALL. Major toxicity: sinusoidal obstruction syndrome (VOD), especially if followed by HSCT.",
+        "clinicalCorrelation": "Veno-occlusive disease (VOD) of the liver is a serious risk; avoidance of dual hepatotoxic agents and careful bridging to transplant are necessary."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_080",
+      "difficulty": 2,
+      "question": "Radium-223 is a radiopharmaceutical used in metastatic castration-resistant prostate cancer with bone metastases. It acts by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Targeting areas of increased bone turnover and emitting alpha particles, causing localized DNA damage",
+          "isCorrect": true,
+          "explanation": "Radium-223 is a calcium mimetic that preferentially incorporates into bone metastases where there is active bone remodeling. It emits high-energy alpha particles with a short range, sparing surrounding normal tissue."
+        },
+        {
+          "text": "Emitting beta particles that destroy tumor cells",
+          "isCorrect": false,
+          "explanation": "Radium-223 is an alpha emitter; beta emitters include samarium-153."
+        },
+        {
+          "text": "Inhibiting androgen synthesis",
+          "isCorrect": false,
+          "explanation": "Hormonal therapy is separate."
+        },
+        {
+          "text": "Blocking RANKL",
+          "isCorrect": false,
+          "explanation": "Denosumab blocks RANKL."
+        },
+        {
+          "text": "Stimulating bone formation",
+          "isCorrect": false,
+          "explanation": "It does not stimulate bone formation."
+        }
+      ],
+      "explanation": {
+        "overview": "Radium-223 is the first alpha-emitting radionuclide approved for cancer therapy. It improves overall survival and delays skeletal events in mCRPC patients with symptomatic bone metastases and no visceral metastases.",
+        "highYield": "Radium-223 = alpha emitter → targets bone metastases → DNA damage. Improves survival in CRPC with bone mets. Myelosuppression is main toxicity.",
+        "clinicalCorrelation": "It is not combined with abiraterone plus prednisone due to increased fracture risk. Monitor blood counts due to myelosuppression."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_081",
+      "difficulty": 2,
+      "question": "Which chemotherapy agent is known for causing 'hand-foot syndrome' (palmar-plantar erythrodysesthesia) when given as a continuous infusion?",
+      "image": null,
+      "options": [
+        {
+          "text": "5-Fluorouracil (continuous infusion)",
+          "isCorrect": true,
+          "explanation": "Hand-foot syndrome is a characteristic toxicity of continuous infusion 5-FU and capecitabine. It is less common with bolus 5-FU."
+        },
+        {
+          "text": "Methotrexate",
+          "isCorrect": false,
+          "explanation": "Methotrexate is not typically associated with hand-foot syndrome."
+        },
+        {
+          "text": "Cisplatin",
+          "isCorrect": false,
+          "explanation": "Cisplatin causes neuropathy and nephrotoxicity."
+        },
+        {
+          "text": "Doxorubicin",
+          "isCorrect": false,
+          "explanation": "Doxorubicin causes cardiotoxicity and myelosuppression."
+        },
+        {
+          "text": "Vincristine",
+          "isCorrect": false,
+          "explanation": "Vincristine causes neuropathy."
+        }
+      ],
+      "explanation": {
+        "overview": "Hand-foot syndrome presents with erythema, swelling, and desquamation of palms and soles. It is also a hallmark of capecitabine and pegylated liposomal doxorubicin.",
+        "highYield": "Continuous 5-FU / capecitabine → hand-foot syndrome. Manage with dose interruption, emollients, cold compresses.",
+        "clinicalCorrelation": "For capecitabine, dose reduction and topical urea-based creams are used. In severe cases, chemotherapy may need to be stopped."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_082",
+      "difficulty": 2,
+      "question": "Lomustine and carmustine are nitrosoureas that can cross the blood-brain barrier. Their dose-limiting toxicity is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Delayed and cumulative myelosuppression",
+          "isCorrect": true,
+          "explanation": "Nitrosoureas cause profound, prolonged, and cumulative myelosuppression, with nadirs occurring 4-6 weeks after administration."
+        },
+        {
+          "text": "Cardiotoxicity",
+          "isCorrect": false,
+          "explanation": "Cardiotoxicity is not typical."
+        },
+        {
+          "text": "Pulmonary fibrosis",
+          "isCorrect": false,
+          "explanation": "Carmustine can cause pulmonary fibrosis, but myelosuppression is dose-limiting."
+        },
+        {
+          "text": "Nephrotoxicity",
+          "isCorrect": false,
+          "explanation": "Nephrotoxicity is not the main toxicity."
+        },
+        {
+          "text": "Peripheral neuropathy",
+          "isCorrect": false,
+          "explanation": "Neuropathy is not characteristic."
+        }
+      ],
+      "explanation": {
+        "overview": "Nitrosoureas are lipid-soluble alkylating agents used in brain tumors and lymphoma. They are unique for their ability to cross the blood-brain barrier and their delayed myelosuppression.",
+        "highYield": "Carmustine/lomustine = nitrosoureas (CNS penetration). Dose-limiting = delayed myelosuppression (4-6 weeks). Also cause pulmonary fibrosis, renal toxicity.",
+        "clinicalCorrelation": "Carmustine wafers (Gliadel) are implanted into the brain for local treatment of glioblastoma. Systemic nitrosoureas require prolonged intervals between cycles."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_083",
+      "difficulty": 2,
+      "question": "Pegaspargase is a PEGylated form of asparaginase. The PEGylation primarily serves to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Prolong half-life and reduce immunogenicity",
+          "isCorrect": true,
+          "explanation": "PEGylation increases the molecular size, reducing renal clearance and shielding the enzyme from immune recognition, leading to longer duration of action and fewer hypersensitivity reactions."
+        },
+        {
+          "text": "Increase potency",
+          "isCorrect": false,
+          "explanation": "Potency is similar, but duration is prolonged."
+        },
+        {
+          "text": "Allow oral administration",
+          "isCorrect": false,
+          "explanation": "It is still given intravenously or intramuscularly."
+        },
+        {
+          "text": "Reduce coagulation toxicity",
+          "isCorrect": false,
+          "explanation": "Toxicity profile is similar; the benefit is in dosing interval and immunogenicity."
+        },
+        {
+          "text": "Increase CNS penetration",
+          "isCorrect": false,
+          "explanation": "PEGylation does not significantly increase CNS penetration."
+        }
+      ],
+      "explanation": {
+        "overview": "Pegaspargase is preferred in pediatric ALL due to its prolonged half-life (allowing 2-4 week intervals) and reduced immunogenicity compared to native E. coli asparaginase. It is used when hypersensitivity to native asparaginase occurs.",
+        "highYield": "Pegaspargase = PEGylated asparaginase → longer half-life, less immunogenic. Still causes pancreatitis, thrombosis, hepatotoxicity.",
+        "clinicalCorrelation": "Despite PEGylation, hypersensitivity reactions can still occur. Erwinia asparaginase is an alternative for patients with severe reactions to E. coli-derived products."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_084",
+      "difficulty": 2,
+      "question": "Romidepsin is unique among HDAC inhibitors because it is a prodrug activated by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Reduction of a disulfide bond within cells",
+          "isCorrect": true,
+          "explanation": "Romidepsin is a bicyclic depsipeptide that is reduced intracellularly to release a zinc-binding thiol group that potently inhibits histone deacetylases."
+        },
+        {
+          "text": "Oxidation by CYP450",
+          "isCorrect": false,
+          "explanation": "It is activated by reduction, not oxidation."
+        },
+        {
+          "text": "Glucuronidation in the liver",
+          "isCorrect": false,
+          "explanation": "Activation is intracellular via glutathione reduction."
+        },
+        {
+          "text": "Hydrolysis by esterases",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        },
+        {
+          "text": "Acetylation in tumor cells",
+          "isCorrect": false,
+          "explanation": "It inhibits deacetylases."
+        }
+      ],
+      "explanation": {
+        "overview": "Romidepsin is a unique HDAC inhibitor with a disulfide bond that acts as a prodrug. It is approved for cutaneous and peripheral T-cell lymphomas.",
+        "highYield": "Romidepsin = prodrug reduced intracellularly to active zinc-binding thiol → HDAC inhibition. Side effects: nausea, QT prolongation, thrombocytopenia.",
+        "clinicalCorrelation": "ECG monitoring is recommended because romidepsin can cause significant QT prolongation. Electrolyte imbalances should be corrected before dosing."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_085",
+      "difficulty": 2,
+      "question": "Sipuleucel-T is an autologous cellular immunotherapy used in prostate cancer. Its mechanism is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Activating patient's dendritic cells against prostatic acid phosphatase (PAP)",
+          "isCorrect": true,
+          "explanation": "Sipuleucel-T involves collecting patient's peripheral blood mononuclear cells, exposing them ex vivo to a fusion protein of PAP and GM-CSF, then reinfusing the activated antigen-presenting cells to stimulate a T-cell response against prostate cancer."
+        },
+        {
+          "text": "Direct lysis of prostate cancer cells",
+          "isCorrect": false,
+          "explanation": "It is an immunotherapy, not a direct cytotoxic agent."
+        },
+        {
+          "text": "Inhibiting androgen receptors",
+          "isCorrect": false,
+          "explanation": "It does not block androgen receptors."
+        },
+        {
+          "text": "Blocking PD-1",
+          "isCorrect": false,
+          "explanation": "PD-1 inhibitors are checkpoint blockers."
+        },
+        {
+          "text": "Inhibiting CYP17",
+          "isCorrect": false,
+          "explanation": "CYP17 inhibition is the mechanism of abiraterone."
+        }
+      ],
+      "explanation": {
+        "overview": "Sipuleucel-T is the first therapeutic cancer vaccine approved by the FDA. It improves overall survival in metastatic castration-resistant prostate cancer without affecting PSA levels or disease progression time.",
+        "highYield": "Sipuleucel-T = autologous dendritic cell vaccine against PAP. Prolongs survival in mCRPC. Adverse effects: infusion reactions, flu-like symptoms.",
+        "clinicalCorrelation": "The treatment involves three infusions at 2-week intervals. It is not recommended for patients with rapidly progressive disease needing immediate cytoreduction."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_086",
+      "difficulty": 2,
+      "question": "Trabectedin is a marine-derived alkaloid used in soft tissue sarcoma and ovarian cancer. It exerts its effect by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Binding to DNA minor groove and disrupting transcription-coupled repair",
+          "isCorrect": true,
+          "explanation": "Trabectedin binds to the DNA minor groove, specifically to guanine-rich sequences, bending DNA toward the major groove and blocking transcription-coupled nucleotide excision repair (TC-NER), leading to lethal DNA breaks."
+        },
+        {
+          "text": "Inhibiting topoisomerase II",
+          "isCorrect": false,
+          "explanation": "It does not inhibit topoisomerase II."
+        },
+        {
+          "text": "Intercalating DNA base pairs",
+          "isCorrect": false,
+          "explanation": "It is a minor groove binder, not an intercalator."
+        },
+        {
+          "text": "Alkylating DNA",
+          "isCorrect": false,
+          "explanation": "It does not alkylate DNA."
+        },
+        {
+          "text": "Inhibiting microtubules",
+          "isCorrect": false,
+          "explanation": "Not a microtubule inhibitor."
+        }
+      ],
+      "explanation": {
+        "overview": "Trabectedin (ET-743) is particularly active in translocation-related sarcomas (myxoid liposarcoma) and in BRCA-mutated cancers. It is metabolized by CYP3A4.",
+        "highYield": "Trabectedin = minor groove binder → blocks TC-NER. Active in soft tissue sarcoma, ovarian cancer. Hepatotoxicity and myelosuppression are toxicities.",
+        "clinicalCorrelation": "Pre-medication with dexamethasone reduces hepatotoxicity. Avoid strong CYP3A4 inhibitors. Rhabdomyolysis has been reported."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_087",
+      "difficulty": 2,
+      "question": "Copanlisib is a PI3K inhibitor used in relapsed follicular lymphoma. Unlike idelalisib (selective PI3Kδ), copanlisib inhibits:",
+      "image": null,
+      "options": [
+        {
+          "text": "Pan-PI3K (α and δ isoforms)",
+          "isCorrect": true,
+          "explanation": "Copanlisib inhibits both PI3K-α and PI3K-δ, and is given intravenously. Idelalisib is an oral PI3Kδ inhibitor. Copanlisib has a different toxicity profile, including hyperglycemia and hypertension due to PI3K-α inhibition."
+        },
+        {
+          "text": "PI3Kδ only",
+          "isCorrect": false,
+          "explanation": "Copanlisib is a pan-PI3K inhibitor."
+        },
+        {
+          "text": "BTK",
+          "isCorrect": false,
+          "explanation": "BTK is targeted by ibrutinib."
+        },
+        {
+          "text": "BCL-2",
+          "isCorrect": false,
+          "explanation": "BCL-2 is targeted by venetoclax."
+        },
+        {
+          "text": "JAK2",
+          "isCorrect": false,
+          "explanation": "JAK2 is targeted by ruxolitinib."
+        }
+      ],
+      "explanation": {
+        "overview": "Copanlisib is a pan-class I PI3K inhibitor with predominant activity against PI3K-α and PI3K-δ. It is approved for relapsed follicular lymphoma in patients who have received at least two prior therapies.",
+        "highYield": "Copanlisib = PI3K-α/δ inhibitor (IV). Hyperglycemia, hypertension, infections. Idelalisib = PI3Kδ (oral) → colitis, pneumonitis, infections.",
+        "clinicalCorrelation": "Monitor blood glucose and blood pressure during copanlisib infusion. Prophylaxis for Pneumocystis jirovecii pneumonia (PJP) is recommended."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_088",
+      "difficulty": 2,
+      "question": "Gilteritinib is a FLT3 inhibitor used in relapsed/refractory AML with FLT3 mutations. Its advantage over midostaurin is:",
+      "image": null,
+      "options": [
+        {
+          "text": "More selective and potent FLT3 inhibition, including FLT3-ITD and TKD mutations",
+          "isCorrect": true,
+          "explanation": "Gilteritinib is a highly selective FLT3/AXL inhibitor with activity against both internal tandem duplication (ITD) and tyrosine kinase domain (TKD) mutations. It is used as monotherapy in relapsed/refractory AML."
+        },
+        {
+          "text": "It is a monoclonal antibody",
+          "isCorrect": false,
+          "explanation": "Both are small molecule TKIs."
+        },
+        {
+          "text": "It does not cause myelosuppression",
+          "isCorrect": false,
+          "explanation": "Myelosuppression is common with both."
+        },
+        {
+          "text": "It inhibits IDH1",
+          "isCorrect": false,
+          "explanation": "IDH inhibitors are ivosidenib, enasidenib."
+        },
+        {
+          "text": "It is given intravenously",
+          "isCorrect": false,
+          "explanation": "Gilteritinib is oral."
+        }
+      ],
+      "explanation": {
+        "overview": "FLT3 mutations (ITD, TKD) are common in AML. Midostaurin is a first-generation multi-kinase inhibitor; gilteritinib is a next-generation selective FLT3 inhibitor with higher response rates in relapsed setting.",
+        "highYield": "Gilteritinib = FLT3/AXL inhibitor for relapsed/refractory FLT3-mutated AML. Midostaurin = multi-targeted, used upfront. Differentiation syndrome can occur with gilteritinib.",
+        "clinicalCorrelation": "Gilteritinib can cause posterior reversible encephalopathy syndrome (PRES) and prolonged QT interval. ECG and symptom monitoring are essential."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_089",
+      "difficulty": 2,
+      "question": "Ivosidenib and enasidenib are IDH inhibitors used in AML. They target:",
+      "image": null,
+      "options": [
+        {
+          "text": "IDH1 and IDH2 mutations, respectively, reducing 2-hydroxyglutarate",
+          "isCorrect": true,
+          "explanation": "Ivosidenib inhibits mutant IDH1, enasidenib inhibits mutant IDH2. These mutations produce the oncometabolite 2-hydroxyglutarate (2-HG), which impairs hematopoietic differentiation. Inhibition restores normal differentiation."
+        },
+        {
+          "text": "FLT3 mutations",
+          "isCorrect": false,
+          "explanation": "FLT3 inhibitors are gilteritinib, midostaurin."
+        },
+        {
+          "text": "BCR-ABL",
+          "isCorrect": false,
+          "explanation": "BCR-ABL is targeted by imatinib."
+        },
+        {
+          "text": "RAS mutations",
+          "isCorrect": false,
+          "explanation": "No direct RAS inhibitors are approved."
+        },
+        {
+          "text": "NPM1 mutations",
+          "isCorrect": false,
+          "explanation": "NPM1 is a prognostic marker, not a direct drug target."
+        }
+      ],
+      "explanation": {
+        "overview": "IDH mutations are found in 15-20% of AML patients. IDH inhibitors promote differentiation of leukemic blasts, similar to ATRA in APL. They can cause differentiation syndrome.",
+        "highYield": "Ivosidenib (IDH1), Enasidenib (IDH2) → reduce 2-HG, induce differentiation. Used in relapsed/refractory AML. Risk of differentiation syndrome, QT prolongation.",
+        "clinicalCorrelation": "Differentiation syndrome (fever, pulmonary infiltrates, effusions) is managed with corticosteroids and dose interruption. These agents are oral and require liver function monitoring."
+      }
+    },
+    {
+      "questionId": "pharma_chemotherapy_090",
+      "difficulty": 2,
+      "question": "Selinexor is a selective inhibitor of nuclear export (SINE) that targets XPO1. It is used in multiple myeloma and DLBCL. Its mechanism is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Blocking export of tumor suppressor proteins and growth regulators from the nucleus",
+          "isCorrect": true,
+          "explanation": "Selinexor covalently binds to exportin-1 (XPO1/CRM1), preventing the nuclear export of tumor suppressor proteins (p53, p21, IκB) and growth regulatory mRNAs, leading to cell cycle arrest and apoptosis."
+        },
+        {
+          "text": "Inhibiting proteasome function",
+          "isCorrect": false,
+          "explanation": "Proteasome inhibition is the mechanism of bortezomib."
+        },
+        {
+          "text": "Inhibiting CDK4/6",
+          "isCorrect": false,
+          "explanation": "CDK4/6 inhibitors are palbociclib, etc."
+        },
+        {
+          "text": "Alkylating DNA",
+          "isCorrect": false,
+          "explanation": "DNA alkylation is the action of cyclophosphamide."
+        },
+        {
+          "text": "Blocking immune checkpoints",
+          "isCorrect": false,
+          "explanation": "Immune checkpoint blockade is the action of PD-1/CTLA-4 inhibitors."
+        }
+      ],
+      "explanation": {
+        "overview": "Selinexor is the first approved XPO1 inhibitor. It is used in combination with dexamethasone for penta-refractory multiple myeloma and as monotherapy for relapsed/refractory DLBCL.",
+        "highYield": "Selinexor = XPO1 inhibitor → nuclear retention of tumor suppressors → apoptosis. Toxicities: nausea, fatigue, thrombocytopenia, hyponatremia.",
+        "clinicalCorrelation": "Aggressive antiemetic prophylaxis is required. Dose is 100 mg weekly. It can cause significant weight loss and anorexia."
+      }
+    }
+  ]
+}

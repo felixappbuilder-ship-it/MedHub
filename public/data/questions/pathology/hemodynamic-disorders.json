@@ -1,0 +1,3728 @@
+{
+  "questions": [
+    {
+      "id": "path_hemodynamic_001",
+      "difficulty": 1,
+      "question": "What is the most common cause of edema?",
+      "image": null,
+      "options": [
+        {
+          "text": "Increased capillary hydrostatic pressure",
+          "isCorrect": true,
+          "explanation": "Increased capillary hydrostatic pressure, often due to heart failure or venous obstruction, is the most frequent cause of edema."
+        },
+        {
+          "text": "Decreased plasma osmotic pressure",
+          "isCorrect": false,
+          "explanation": "Hypoalbuminemia causes edema but is less common than increased hydrostatic pressure."
+        },
+        {
+          "text": "Lymphatic obstruction",
+          "isCorrect": false,
+          "explanation": "Lymphatic obstruction leads to lymphedema, which is less common."
+        },
+        {
+          "text": "Sodium retention",
+          "isCorrect": false,
+          "explanation": "Sodium retention contributes but is usually secondary to other causes."
+        },
+        {
+          "text": "Increased capillary permeability",
+          "isCorrect": false,
+          "explanation": "Increased permeability is seen in inflammation, but not the most common cause."
+        }
+      ],
+      "explanation": {
+        "overview": "Edema results from an imbalance in Starling forces; increased hydrostatic pressure is the leading cause.",
+        "highYield": "Most common cause of edema = increased hydrostatic pressure (heart failure).",
+        "clinicalCorrelation": "Pitting edema in dependent areas suggests heart failure; check for JVD and pulmonary congestion."
+      }
+    },
+    {
+      "id": "path_hemodynamic_002",
+      "difficulty": 1,
+      "question": "Which of the following is a cause of decreased plasma osmotic pressure leading to edema?",
+      "image": null,
+      "options": [
+        {
+          "text": "Nephrotic syndrome",
+          "isCorrect": false,
+          "explanation": "Nephrotic syndrome causes proteinuria and hypoalbuminemia, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Cirrhosis",
+          "isCorrect": false,
+          "explanation": "Cirrhosis impairs albumin synthesis, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Protein malnutrition",
+          "isCorrect": false,
+          "explanation": "Malnutrition reduces albumin production, but the answer is 'All of the above'."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Hypoalbuminemia from any cause (nephrotic syndrome, liver disease, malnutrition) reduces plasma oncotic pressure, favoring edema formation."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "There are multiple causes listed."
+        }
+      ],
+      "explanation": {
+        "overview": "Hypoalbuminemia from any cause (nephrotic syndrome, liver disease, malnutrition) reduces plasma oncotic pressure, favoring edema formation.",
+        "highYield": "Decreased oncotic pressure causes edema in nephrotic syndrome, cirrhosis, and malnutrition.",
+        "clinicalCorrelation": "Check serum albumin and urine protein to differentiate causes."
+      }
+    },
+    {
+      "id": "path_hemodynamic_003",
+      "difficulty": 1,
+      "question": "Lymphedema is caused by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increased capillary permeability",
+          "isCorrect": false,
+          "explanation": "Increased permeability causes inflammatory edema, not lymphedema."
+        },
+        {
+          "text": "Lymphatic obstruction",
+          "isCorrect": true,
+          "explanation": "Lymphedema results from impaired lymphatic drainage, leading to protein-rich interstitial fluid accumulation."
+        },
+        {
+          "text": "Heart failure",
+          "isCorrect": false,
+          "explanation": "Heart failure causes cardiogenic edema via increased hydrostatic pressure."
+        },
+        {
+          "text": "Hypoproteinemia",
+          "isCorrect": false,
+          "explanation": "Hypoproteinemia causes edema via reduced oncotic pressure."
+        },
+        {
+          "text": "Arterial vasodilation",
+          "isCorrect": false,
+          "explanation": "Vasodilation increases capillary pressure but is not lymphedema."
+        }
+      ],
+      "explanation": {
+        "overview": "Lymphedema results from impaired lymphatic drainage, leading to protein-rich interstitial fluid accumulation.",
+        "highYield": "Lymphedema = lymphatic obstruction (non-pitting).",
+        "clinicalCorrelation": "Common after lymph node dissection or filariasis; manage with compression and elevation."
+      }
+    },
+    {
+      "id": "path_hemodynamic_004",
+      "difficulty": 1,
+      "question": "Which of the following is a common cause of generalized edema?",
+      "image": null,
+      "options": [
+        {
+          "text": "Congestive heart failure",
+          "isCorrect": false,
+          "explanation": "CHF causes edema via increased hydrostatic pressure, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Nephrotic syndrome",
+          "isCorrect": false,
+          "explanation": "Nephrotic syndrome causes edema via hypoalbuminemia, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Cirrhosis",
+          "isCorrect": false,
+          "explanation": "Cirrhosis causes edema via hypoalbuminemia and portal hypertension, but the answer is 'All of the above'."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "All these conditions can cause systemic edema (anasarca) due to salt and water retention, hypoalbuminemia, or increased hydrostatic pressure."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All are common causes."
+        }
+      ],
+      "explanation": {
+        "overview": "All these conditions can cause systemic edema (anasarca) due to salt and water retention, hypoalbuminemia, or increased hydrostatic pressure.",
+        "highYield": "Generalized edema: heart failure, nephrotic syndrome, cirrhosis.",
+        "clinicalCorrelation": "Identify underlying cause by history, physical exam, and labs (BNP, albumin, liver function)."
+      }
+    },
+    {
+      "id": "path_hemodynamic_005",
+      "difficulty": 1,
+      "question": "Pitting edema is characterized by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Non-removable indentation after pressure",
+          "isCorrect": false,
+          "explanation": "Non-removable indentation is not typical; pitting leaves a depression."
+        },
+        {
+          "text": "Firm, non-pitting swelling",
+          "isCorrect": false,
+          "explanation": "Firm, non-pitting is seen in lymphedema or myxedema."
+        },
+        {
+          "text": "Tissue that retains a finger imprint",
+          "isCorrect": true,
+          "explanation": "Pitting edema leaves a visible depression after finger pressure, due to excess interstitial fluid."
+        },
+        {
+          "text": "Hard, fibrotic skin",
+          "isCorrect": false,
+          "explanation": "Fibrotic skin is typical of chronic lymphedema."
+        },
+        {
+          "text": "Redness and warmth",
+          "isCorrect": false,
+          "explanation": "Redness and warmth suggest inflammation, not edema itself."
+        }
+      ],
+      "explanation": {
+        "overview": "Pitting edema leaves a visible depression after finger pressure, due to excess interstitial fluid.",
+        "highYield": "Pitting edema = fluid overload (heart, renal, liver).",
+        "clinicalCorrelation": "Assess for bilateral vs. unilateral; unilateral suggests venous obstruction."
+      }
+    },
+    {
+      "id": "path_hemodynamic_006",
+      "difficulty": 1,
+      "question": "The image shows pitting edema of the lower extremity. This finding is most commonly associated with:",
+      "image": "path_pitting_edema.png",
+      "options": [
+        {
+          "text": "Lymphedema",
+          "isCorrect": false,
+          "explanation": "Lymphedema is typically non-pitting."
+        },
+        {
+          "text": "Myxedema",
+          "isCorrect": false,
+          "explanation": "Myxedema is non-pitting."
+        },
+        {
+          "text": "Cardiac failure",
+          "isCorrect": true,
+          "explanation": "Cardiac failure leads to increased venous pressure and pitting edema in dependent areas."
+        },
+        {
+          "text": "Lipodystrophy",
+          "isCorrect": false,
+          "explanation": "Lipodystrophy is not associated with edema."
+        },
+        {
+          "text": "Cellulitis",
+          "isCorrect": false,
+          "explanation": "Cellulitis causes erythema and warmth, not typically pitting edema."
+        }
+      ],
+      "explanation": {
+        "overview": "Cardiac failure leads to increased venous pressure and pitting edema in dependent areas.",
+        "highYield": "Pitting edema in legs = heart failure (or renal/liver disease).",
+        "clinicalCorrelation": "Evaluate for signs of heart failure: JVD, crackles, S3 gallop."
+      }
+    },
+    {
+      "id": "path_hemodynamic_007",
+      "difficulty": 2,
+      "question": "Non-pitting edema is typically seen in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hypothyroidism (myxedema)",
+          "isCorrect": false,
+          "explanation": "Myxedema is non-pitting, but the answer is 'Both A and B'."
+        },
+        {
+          "text": "Lymphedema",
+          "isCorrect": false,
+          "explanation": "Lymphedema is non-pitting, but the answer is 'Both A and B'."
+        },
+        {
+          "text": "Both A and B",
+          "isCorrect": true,
+          "explanation": "Myxedema (due to mucopolysaccharide deposition) and lymphedema (protein-rich fluid causing fibrosis) are non-pitting."
+        },
+        {
+          "text": "Heart failure",
+          "isCorrect": false,
+          "explanation": "Heart failure causes pitting edema."
+        },
+        {
+          "text": "Nephrotic syndrome",
+          "isCorrect": false,
+          "explanation": "Nephrotic syndrome causes pitting edema."
+        }
+      ],
+      "explanation": {
+        "overview": "Myxedema (due to mucopolysaccharide deposition) and lymphedema (protein-rich fluid causing fibrosis) are non-pitting.",
+        "highYield": "Non-pitting edema: myxedema and lymphedema.",
+        "clinicalCorrelation": "Check for thyroid status or history of lymph node surgery."
+      }
+    },
+    {
+      "id": "path_hemodynamic_008",
+      "difficulty": 1,
+      "question": "The most common cause of pulmonary edema is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Left-sided heart failure",
+          "isCorrect": true,
+          "explanation": "Left ventricular failure increases pulmonary venous pressure, leading to transudation of fluid into lung interstitium and alveoli."
+        },
+        {
+          "text": "Right-sided heart failure",
+          "isCorrect": false,
+          "explanation": "Right heart failure causes systemic edema, not pulmonary edema."
+        },
+        {
+          "text": "Renal failure",
+          "isCorrect": false,
+          "explanation": "Renal failure can cause fluid overload but is less common than heart failure."
+        },
+        {
+          "text": "Liver cirrhosis",
+          "isCorrect": false,
+          "explanation": "Cirrhosis causes ascites and peripheral edema, not typically pulmonary."
+        },
+        {
+          "text": "Hypoalbuminemia",
+          "isCorrect": false,
+          "explanation": "Hypoalbuminemia causes peripheral edema but not primary pulmonary edema."
+        }
+      ],
+      "explanation": {
+        "overview": "Left ventricular failure increases pulmonary venous pressure, leading to transudation of fluid into lung interstitium and alveoli.",
+        "highYield": "Pulmonary edema = left heart failure.",
+        "clinicalCorrelation": "Treat with diuretics and afterload reduction."
+      }
+    },
+    {
+      "id": "path_hemodynamic_009",
+      "difficulty": 2,
+      "question": "The image shows pulmonary edema with frothy fluid in the airways. This is characteristic of:",
+      "image": "path_pulmonary_edema.png",
+      "options": [
+        {
+          "text": "ARDS",
+          "isCorrect": false,
+          "explanation": "ARDS causes non-cardiogenic pulmonary edema with protein-rich fluid."
+        },
+        {
+          "text": "Cardiogenic pulmonary edema",
+          "isCorrect": true,
+          "explanation": "Cardiogenic pulmonary edema results from increased hydrostatic pressure, causing transudation and frothy edema fluid."
+        },
+        {
+          "text": "Pneumonia",
+          "isCorrect": false,
+          "explanation": "Pneumonia presents with purulent sputum, not frothy fluid."
+        },
+        {
+          "text": "Tuberculosis",
+          "isCorrect": false,
+          "explanation": "TB presents with hemoptysis and granulomas."
+        },
+        {
+          "text": "Asthma",
+          "isCorrect": false,
+          "explanation": "Asthma presents with wheezing and mucus, not frothy edema."
+        }
+      ],
+      "explanation": {
+        "overview": "Cardiogenic pulmonary edema results from increased hydrostatic pressure, causing transudation and frothy edema fluid.",
+        "highYield": "Frothy pink sputum = cardiogenic pulmonary edema.",
+        "clinicalCorrelation": "Distinguish from ARDS by low oncotic pressure and normal capillary permeability."
+      }
+    },
+    {
+      "id": "path_hemodynamic_010",
+      "difficulty": 1,
+      "question": "Hyperemia is defined as:",
+      "image": null,
+      "options": [
+        {
+          "text": "Active increase in blood flow due to arteriolar dilation",
+          "isCorrect": true,
+          "explanation": "Hyperemia is an active process with arteriolar dilation and increased inflow (e.g., inflammation, exercise)."
+        },
+        {
+          "text": "Passive congestion due to impaired venous outflow",
+          "isCorrect": false,
+          "explanation": "Passive congestion is congestion, not hyperemia."
+        },
+        {
+          "text": "Hemorrhage into tissues",
+          "isCorrect": false,
+          "explanation": "Hemorrhage is extravasation of blood."
+        },
+        {
+          "text": "Decreased blood flow",
+          "isCorrect": false,
+          "explanation": "Hyperemia is increased blood flow."
+        },
+        {
+          "text": "Thrombosis",
+          "isCorrect": false,
+          "explanation": "Thrombosis is clot formation."
+        }
+      ],
+      "explanation": {
+        "overview": "Hyperemia is an active process with arteriolar dilation and increased inflow (e.g., inflammation, exercise).",
+        "highYield": "Hyperemia = active vasodilation (inflammation).",
+        "clinicalCorrelation": "Seen as erythema in inflammation."
+      }
+    },
+    {
+      "id": "path_hemodynamic_011",
+      "difficulty": 1,
+      "question": "Congestion refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Active increase in blood flow",
+          "isCorrect": false,
+          "explanation": "Active increase is hyperemia."
+        },
+        {
+          "text": "Passive accumulation of blood due to impaired venous return",
+          "isCorrect": true,
+          "explanation": "Congestion is a passive process caused by reduced venous outflow, leading to engorgement of vessels."
+        },
+        {
+          "text": "Arterial obstruction",
+          "isCorrect": false,
+          "explanation": "Arterial obstruction leads to ischemia, not congestion."
+        },
+        {
+          "text": "Capillary rupture",
+          "isCorrect": false,
+          "explanation": "Capillary rupture causes hemorrhage."
+        },
+        {
+          "text": "Lymphatic blockage",
+          "isCorrect": false,
+          "explanation": "Lymphatic blockage causes lymphedema."
+        }
+      ],
+      "explanation": {
+        "overview": "Congestion is a passive process caused by reduced venous outflow, leading to engorgement of vessels.",
+        "highYield": "Congestion = passive venous engorgement (e.g., heart failure).",
+        "clinicalCorrelation": "Chronic congestion leads to fibrosis and hemosiderin deposition (brown induration)."
+      }
+    },
+    {
+      "id": "path_hemodynamic_012",
+      "difficulty": 2,
+      "question": "Acute pulmonary congestion is characterized by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Capillary congestion and alveolar septal edema",
+          "isCorrect": true,
+          "explanation": "Acute congestion shows dilated capillaries and edema; chronic congestion leads to hemosiderin deposition and fibrosis (brown induration)."
+        },
+        {
+          "text": "Hemosiderin-laden macrophages",
+          "isCorrect": false,
+          "explanation": "These are seen in chronic congestion."
+        },
+        {
+          "text": "Brown induration of the lung",
+          "isCorrect": false,
+          "explanation": "Brown induration is a chronic change."
+        },
+        {
+          "text": "Fibrosis",
+          "isCorrect": false,
+          "explanation": "Fibrosis is a chronic change."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "Acute congestion does not include fibrosis or hemosiderin macrophages."
+        }
+      ],
+      "explanation": {
+        "overview": "Acute congestion shows dilated capillaries and edema; chronic congestion leads to hemosiderin deposition and fibrosis (brown induration).",
+        "highYield": "Acute pulmonary congestion = capillary congestion + alveolar edema.",
+        "clinicalCorrelation": "Patients present with dyspnea and orthopnea."
+      }
+    },
+    {
+      "id": "path_hemodynamic_013",
+      "difficulty": 1,
+      "question": "Chronic passive congestion of the liver results in a characteristic appearance known as:",
+      "image": null,
+      "options": [
+        {
+          "text": "Nutmeg liver",
+          "isCorrect": true,
+          "explanation": "Nutmeg liver describes the mottled appearance due to centrilobular congestion (dark areas) and paler peripheral zones."
+        },
+        {
+          "text": "Cirrhosis",
+          "isCorrect": false,
+          "explanation": "Cirrhosis is fibrosis, not the specific congested appearance."
+        },
+        {
+          "text": "Hepatocellular adenoma",
+          "isCorrect": false,
+          "explanation": "Adenoma is a benign tumor."
+        },
+        {
+          "text": "Fatty liver",
+          "isCorrect": false,
+          "explanation": "Fatty liver is steatosis, not congestion."
+        },
+        {
+          "text": "Peliosis hepatis",
+          "isCorrect": false,
+          "explanation": "Peliosis is blood-filled cystic spaces, not nutmeg."
+        }
+      ],
+      "explanation": {
+        "overview": "Nutmeg liver describes the mottled appearance due to centrilobular congestion (dark areas) and paler peripheral zones.",
+        "highYield": "Nutmeg liver = chronic passive congestion (right heart failure).",
+        "clinicalCorrelation": "Seen in patients with chronic right heart failure (e.g., cor pulmonale, tricuspid regurgitation)."
+      }
+    },
+    {
+      "id": "path_hemodynamic_014",
+      "difficulty": 2,
+      "question": "The image shows a liver with a nutmeg appearance. This is caused by:",
+      "image": "path_nutmeg_liver.png",
+      "options": [
+        {
+          "text": "Chronic passive congestion",
+          "isCorrect": true,
+          "explanation": "Nutmeg liver is seen in chronic right heart failure with hepatic congestion."
+        },
+        {
+          "text": "Acute hepatitis",
+          "isCorrect": false,
+          "explanation": "Hepatitis shows inflammation and necrosis, not nutmeg."
+        },
+        {
+          "text": "Alcoholic liver disease",
+          "isCorrect": false,
+          "explanation": "Alcoholic liver disease shows steatosis and Mallory bodies."
+        },
+        {
+          "text": "Bile duct obstruction",
+          "isCorrect": false,
+          "explanation": "Obstruction causes jaundice and cholestasis."
+        },
+        {
+          "text": "Portal hypertension",
+          "isCorrect": false,
+          "explanation": "Portal hypertension causes cirrhosis, not nutmeg liver."
+        }
+      ],
+      "explanation": {
+        "overview": "Nutmeg liver is seen in chronic right heart failure with hepatic congestion.",
+        "highYield": "Nutmeg liver = right heart failure.",
+        "clinicalCorrelation": "Evaluate for causes of right heart failure: pulmonary hypertension, valvular disease."
+      }
+    },
+    {
+      "id": "path_hemodynamic_015",
+      "difficulty": 2,
+      "question": "Heart failure cells (hemosiderin-laden macrophages) in the lung are characteristic of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Acute pulmonary edema",
+          "isCorrect": false,
+          "explanation": "Acute edema does not have time to develop hemosiderin-laden macrophages."
+        },
+        {
+          "text": "Chronic passive congestion",
+          "isCorrect": true,
+          "explanation": "In chronic left heart failure, RBCs extravasate and are phagocytosed by macrophages, which convert hemoglobin to hemosiderin."
+        },
+        {
+          "text": "Pneumonia",
+          "isCorrect": false,
+          "explanation": "Pneumonia shows neutrophils, not hemosiderin macrophages."
+        },
+        {
+          "text": "Tuberculosis",
+          "isCorrect": false,
+          "explanation": "TB shows granulomas and caseation."
+        },
+        {
+          "text": "Asthma",
+          "isCorrect": false,
+          "explanation": "Asthma shows eosinophils and airway remodeling."
+        }
+      ],
+      "explanation": {
+        "overview": "In chronic left heart failure, RBCs extravasate and are phagocytosed by macrophages, which convert hemoglobin to hemosiderin.",
+        "highYield": "Heart failure cells = chronic pulmonary congestion.",
+        "clinicalCorrelation": "Indicates long-standing left heart failure."
+      }
+    },
+    {
+      "id": "path_hemodynamic_016",
+      "difficulty": 2,
+      "question": "The image shows hemosiderin-laden macrophages (heart failure cells) in alveolar spaces. This finding indicates:",
+      "image": "path_heart_failure_cells.png",
+      "options": [
+        {
+          "text": "Acute pneumonia",
+          "isCorrect": false,
+          "explanation": "Pneumonia would show neutrophils, not hemosiderin macrophages."
+        },
+        {
+          "text": "Chronic pulmonary congestion",
+          "isCorrect": true,
+          "explanation": "Heart failure cells are pathognomonic for chronic passive congestion of the lungs."
+        },
+        {
+          "text": "Pulmonary infarction",
+          "isCorrect": false,
+          "explanation": "Infarction shows necrosis and hemorrhage, but heart failure cells are from chronic congestion."
+        },
+        {
+          "text": "Pulmonary hemorrhage",
+          "isCorrect": false,
+          "explanation": "Hemorrhage would show fresh RBCs, not hemosiderin-laden macrophages."
+        },
+        {
+          "text": "Goodpasture syndrome",
+          "isCorrect": false,
+          "explanation": "Goodpasture shows anti-GBM antibodies and crescentic glomerulonephritis."
+        }
+      ],
+      "explanation": {
+        "overview": "Heart failure cells are pathognomonic for chronic passive congestion of the lungs.",
+        "highYield": "Heart failure cells = chronic left heart failure.",
+        "clinicalCorrelation": "Often seen in patients with mitral stenosis or chronic systolic heart failure."
+      }
+    },
+    {
+      "id": "path_hemodynamic_017",
+      "difficulty": 1,
+      "question": "Which of the following is a cause of hemorrhage?",
+      "image": null,
+      "options": [
+        {
+          "text": "Trauma",
+          "isCorrect": false,
+          "explanation": "Trauma is a cause, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Vascular wall abnormalities (aneurysm, vasculitis)",
+          "isCorrect": false,
+          "explanation": "Vessel disease is a cause, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Coagulation disorders",
+          "isCorrect": false,
+          "explanation": "Bleeding diatheses are a cause, but the answer is 'All of the above'."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Hemorrhage can result from trauma, vessel disease, or bleeding diatheses."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All are valid causes."
+        }
+      ],
+      "explanation": {
+        "overview": "Hemorrhage can result from trauma, vessel disease, or bleeding diatheses.",
+        "highYield": "Causes of hemorrhage: trauma, vessel wall defects, coagulation disorders.",
+        "clinicalCorrelation": "Identify the cause to guide management (e.g., pressure, surgery, clotting factors)."
+      }
+    },
+    {
+      "id": "path_hemodynamic_018",
+      "difficulty": 1,
+      "question": "A hematoma is defined as:",
+      "image": null,
+      "options": [
+        {
+          "text": "A collection of blood within a tissue",
+          "isCorrect": true,
+          "explanation": "Hematoma is a localized collection of blood (usually clotted) in an organ or tissue."
+        },
+        {
+          "text": "Bleeding into a body cavity",
+          "isCorrect": false,
+          "explanation": "Bleeding into a cavity is hemothorax, hemoperitoneum, etc."
+        },
+        {
+          "text": "A small pinpoint hemorrhage",
+          "isCorrect": false,
+          "explanation": "Pinpoint hemorrhages are petechiae."
+        },
+        {
+          "text": "Bleeding into the skin",
+          "isCorrect": false,
+          "explanation": "Skin bleeding can be ecchymosis or purpura, not specifically hematoma."
+        },
+        {
+          "text": "Internal bleeding",
+          "isCorrect": false,
+          "explanation": "Internal bleeding is a general term."
+        }
+      ],
+      "explanation": {
+        "overview": "Hematoma is a localized collection of blood (usually clotted) in an organ or tissue.",
+        "highYield": "Hematoma = localized blood collection (e.g., subdural hematoma).",
+        "clinicalCorrelation": "May require evacuation if it compresses vital structures."
+      }
+    },
+    {
+      "id": "path_hemodynamic_019",
+      "difficulty": 1,
+      "question": "Petechiae are small hemorrhages (1-2 mm) typically caused by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increased intravascular pressure",
+          "isCorrect": false,
+          "explanation": "Increased pressure can cause petechiae, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Thrombocytopenia",
+          "isCorrect": false,
+          "explanation": "Low platelets cause petechiae, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Platelet dysfunction",
+          "isCorrect": false,
+          "explanation": "Platelet dysfunction causes petechiae, but the answer is 'All of the above'."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Petechiae occur with low platelet count, platelet defects, or increased pressure (e.g., coughing)."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "There are multiple causes."
+        }
+      ],
+      "explanation": {
+        "overview": "Petechiae occur with low platelet count, platelet defects, or increased pressure (e.g., coughing).",
+        "highYield": "Petechiae = platelet disorders or increased capillary pressure.",
+        "clinicalCorrelation": "Check platelet count and consider platelet function tests."
+      }
+    },
+    {
+      "id": "path_hemodynamic_020",
+      "difficulty": 1,
+      "question": "Purpura refers to hemorrhages of what size?",
+      "image": null,
+      "options": [
+        {
+          "text": "1-2 mm",
+          "isCorrect": false,
+          "explanation": "1-2 mm are petechiae."
+        },
+        {
+          "text": "3-5 mm",
+          "isCorrect": true,
+          "explanation": "Purpura are slightly larger than petechiae (3-5 mm), often seen in vasculitis or coagulation disorders."
+        },
+        {
+          "text": ">5 mm",
+          "isCorrect": false,
+          "explanation": ">5 mm are ecchymoses."
+        },
+        {
+          "text": "Variable",
+          "isCorrect": false,
+          "explanation": "Purpura have a defined size range."
+        },
+        {
+          "text": "Pinpoint",
+          "isCorrect": false,
+          "explanation": "Pinpoint are petechiae."
+        }
+      ],
+      "explanation": {
+        "overview": "Purpura are slightly larger than petechiae (3-5 mm), often seen in vasculitis or coagulation disorders.",
+        "highYield": "Purpura = 3-5 mm hemorrhage.",
+        "clinicalCorrelation": "Palpable purpura suggests vasculitis (e.g., Henoch-Schönlein)."
+      }
+    },
+    {
+      "id": "path_hemodynamic_021",
+      "difficulty": 1,
+      "question": "Ecchymoses are:",
+      "image": null,
+      "options": [
+        {
+          "text": "Large (>1 cm) areas of hemorrhage (bruises)",
+          "isCorrect": true,
+          "explanation": "Ecchymoses are large, flat, irregular hemorrhages, commonly called bruises."
+        },
+        {
+          "text": "Small pinpoint hemorrhages",
+          "isCorrect": false,
+          "explanation": "Pinpoint are petechiae."
+        },
+        {
+          "text": "Bleeding into joints",
+          "isCorrect": false,
+          "explanation": "Bleeding into joints is hemarthrosis."
+        },
+        {
+          "text": "Blood in pleural cavity",
+          "isCorrect": false,
+          "explanation": "Blood in pleura is hemothorax."
+        },
+        {
+          "text": "Subcutaneous nodules",
+          "isCorrect": false,
+          "explanation": "Nodules are not ecchymoses."
+        }
+      ],
+      "explanation": {
+        "overview": "Ecchymoses are large, flat, irregular hemorrhages, commonly called bruises.",
+        "highYield": "Ecchymosis = bruise (>1 cm).",
+        "clinicalCorrelation": "May indicate trauma or bleeding diathesis."
+      }
+    },
+    {
+      "id": "path_hemodynamic_022",
+      "difficulty": 1,
+      "question": "The image shows multiple petechiae on the skin. This finding is most suggestive of:",
+      "image": "path_petechiae.png",
+      "options": [
+        {
+          "text": "Thrombocytopenia",
+          "isCorrect": true,
+          "explanation": "Petechiae are characteristic of platelet disorders (quantitative or qualitative)."
+        },
+        {
+          "text": "Coagulation factor deficiency",
+          "isCorrect": false,
+          "explanation": "Factor deficiencies cause deep bleeding (hematomas, hemarthrosis), not petechiae."
+        },
+        {
+          "text": "Vitamin K deficiency",
+          "isCorrect": false,
+          "explanation": "Vitamin K deficiency causes coagulopathy with deep bleeding."
+        },
+        {
+          "text": "Hemophilia",
+          "isCorrect": false,
+          "explanation": "Hemophilia causes deep bleeding into joints and muscles."
+        },
+        {
+          "text": "Arterial hypertension",
+          "isCorrect": false,
+          "explanation": "Hypertension can cause petechiae but not the primary cause."
+        }
+      ],
+      "explanation": {
+        "overview": "Petechiae are characteristic of platelet disorders (quantitative or qualitative).",
+        "highYield": "Petechiae = thrombocytopenia or platelet dysfunction.",
+        "clinicalCorrelation": "Check CBC and peripheral smear."
+      }
+    },
+    {
+      "id": "path_hemodynamic_023",
+      "difficulty": 1,
+      "question": "Hemopericardium refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Blood in the pericardial cavity",
+          "isCorrect": true,
+          "explanation": "Hemopericardium is blood in the pericardial space, which can lead to cardiac tamponade."
+        },
+        {
+          "text": "Blood in the pleural cavity",
+          "isCorrect": false,
+          "explanation": "Blood in pleura is hemothorax."
+        },
+        {
+          "text": "Blood in the peritoneal cavity",
+          "isCorrect": false,
+          "explanation": "Blood in peritoneum is hemoperitoneum."
+        },
+        {
+          "text": "Blood in a joint",
+          "isCorrect": false,
+          "explanation": "Blood in joint is hemarthrosis."
+        },
+        {
+          "text": "Blood in the cranial cavity",
+          "isCorrect": false,
+          "explanation": "Blood in cranium is intracranial hemorrhage."
+        }
+      ],
+      "explanation": {
+        "overview": "Hemopericardium is blood in the pericardial space, which can lead to cardiac tamponade.",
+        "highYield": "Hemopericardium = blood in pericardium.",
+        "clinicalCorrelation": "Causes include trauma, aortic dissection, or myocardial rupture."
+      }
+    },
+    {
+      "id": "path_hemodynamic_024",
+      "difficulty": 1,
+      "question": "Hemothorax is defined as:",
+      "image": null,
+      "options": [
+        {
+          "text": "Blood in the pleural cavity",
+          "isCorrect": true,
+          "explanation": "Hemothorax is accumulation of blood in the pleural space."
+        },
+        {
+          "text": "Blood in the pericardium",
+          "isCorrect": false,
+          "explanation": "Blood in pericardium is hemopericardium."
+        },
+        {
+          "text": "Blood in the abdomen",
+          "isCorrect": false,
+          "explanation": "Blood in abdomen is hemoperitoneum."
+        },
+        {
+          "text": "Blood in the joint",
+          "isCorrect": false,
+          "explanation": "Blood in joint is hemarthrosis."
+        },
+        {
+          "text": "Blood in the scrotum",
+          "isCorrect": false,
+          "explanation": "Blood in scrotum is hematocele."
+        }
+      ],
+      "explanation": {
+        "overview": "Hemothorax is accumulation of blood in the pleural space.",
+        "highYield": "Hemothorax = blood in pleural cavity.",
+        "clinicalCorrelation": "Causes include trauma, ruptured aneurysm, or neoplasm."
+      }
+    },
+    {
+      "id": "path_hemodynamic_025",
+      "difficulty": 1,
+      "question": "Hemarthrosis is bleeding into a:",
+      "image": null,
+      "options": [
+        {
+          "text": "Joint",
+          "isCorrect": true,
+          "explanation": "Hemarthrosis is common in hemophilia, leading to joint damage."
+        },
+        {
+          "text": "Muscle",
+          "isCorrect": false,
+          "explanation": "Bleeding into muscle is hematoma or intramuscular hemorrhage."
+        },
+        {
+          "text": "Skin",
+          "isCorrect": false,
+          "explanation": "Skin bleeding is ecchymosis or purpura."
+        },
+        {
+          "text": "Organ",
+          "isCorrect": false,
+          "explanation": "Organ bleeding is hematoma."
+        },
+        {
+          "text": "Body cavity",
+          "isCorrect": false,
+          "explanation": "Cavity bleeding is hemothorax, hemoperitoneum, etc."
+        }
+      ],
+      "explanation": {
+        "overview": "Hemarthrosis is common in hemophilia, leading to joint damage.",
+        "highYield": "Hemarthrosis = bleeding into joint.",
+        "clinicalCorrelation": "Recurrent hemarthrosis causes chronic arthropathy."
+      }
+    },
+    {
+      "id": "path_hemodynamic_026",
+      "difficulty": 1,
+      "question": "What is the definition of shock?",
+      "image": null,
+      "options": [
+        {
+          "text": "Hypotension due to blood loss",
+          "isCorrect": false,
+          "explanation": "Hypotension is a feature, but the definition is broader."
+        },
+        {
+          "text": "Generalized tissue hypoperfusion leading to cellular dysfunction",
+          "isCorrect": true,
+          "explanation": "Shock is a state of inadequate tissue perfusion resulting in cellular and metabolic abnormalities."
+        },
+        {
+          "text": "Cardiac arrest",
+          "isCorrect": false,
+          "explanation": "Cardiac arrest is cessation of cardiac function, not shock."
+        },
+        {
+          "text": "Severe infection",
+          "isCorrect": false,
+          "explanation": "Severe infection may cause septic shock, but not the definition."
+        },
+        {
+          "text": "Loss of consciousness",
+          "isCorrect": false,
+          "explanation": "Loss of consciousness can occur, but not the definition."
+        }
+      ],
+      "explanation": {
+        "overview": "Shock is a state of inadequate tissue perfusion resulting in cellular and metabolic abnormalities.",
+        "highYield": "Shock = generalized tissue hypoperfusion.",
+        "clinicalCorrelation": "Recognize early signs: tachycardia, tachypnea, altered mental status."
+      }
+    },
+    {
+      "id": "path_hemodynamic_027",
+      "difficulty": 1,
+      "question": "Which of the following is a type of distributive shock?",
+      "image": null,
+      "options": [
+        {
+          "text": "Septic shock",
+          "isCorrect": false,
+          "explanation": "Septic shock is distributive, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Anaphylactic shock",
+          "isCorrect": false,
+          "explanation": "Anaphylaxis is distributive, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Neurogenic shock",
+          "isCorrect": false,
+          "explanation": "Neurogenic shock is distributive, but the answer is 'All of the above'."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Distributive shock results from vasodilation and maldistribution of blood flow, seen in sepsis, anaphylaxis, and spinal injury."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All are distributive."
+        }
+      ],
+      "explanation": {
+        "overview": "Distributive shock results from vasodilation and maldistribution of blood flow, seen in sepsis, anaphylaxis, and spinal injury.",
+        "highYield": "Distributive shock: septic, anaphylactic, neurogenic.",
+        "clinicalCorrelation": "Treatment includes fluids, vasopressors, and addressing the underlying cause."
+      }
+    },
+    {
+      "id": "path_hemodynamic_028",
+      "difficulty": 1,
+      "question": "Cardiogenic shock is most commonly caused by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Myocardial infarction",
+          "isCorrect": true,
+          "explanation": "Acute MI with pump failure is the leading cause of cardiogenic shock."
+        },
+        {
+          "text": "Cardiomyopathy",
+          "isCorrect": false,
+          "explanation": "Cardiomyopathy can cause cardiogenic shock but is less common."
+        },
+        {
+          "text": "Arrhythmias",
+          "isCorrect": false,
+          "explanation": "Arrhythmias can cause shock but are less common."
+        },
+        {
+          "text": "Valvular disease",
+          "isCorrect": false,
+          "explanation": "Valvular disease is a less common cause."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "MI is the most common cause."
+        }
+      ],
+      "explanation": {
+        "overview": "Acute MI with pump failure is the leading cause of cardiogenic shock.",
+        "highYield": "Cardiogenic shock = most often due to acute MI.",
+        "clinicalCorrelation": "Urgent revascularization and inotropic support are key."
+      }
+    },
+    {
+      "id": "path_hemodynamic_029",
+      "difficulty": 1,
+      "question": "Hypovolemic shock results from:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hemorrhage",
+          "isCorrect": false,
+          "explanation": "Hemorrhage is a cause, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Severe burns",
+          "isCorrect": false,
+          "explanation": "Burns cause plasma loss, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Dehydration",
+          "isCorrect": false,
+          "explanation": "Dehydration causes fluid loss, but the answer is 'All of the above'."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Hypovolemia can be due to blood loss, plasma loss (burns), or fluid loss (vomiting, diarrhea)."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All are causes."
+        }
+      ],
+      "explanation": {
+        "overview": "Hypovolemia can be due to blood loss, plasma loss (burns), or fluid loss (vomiting, diarrhea).",
+        "highYield": "Hypovolemic shock = blood/fluid loss.",
+        "clinicalCorrelation": "Resuscitate with crystalloids or blood products."
+      }
+    },
+    {
+      "id": "path_hemodynamic_030",
+      "difficulty": 2,
+      "question": "The early (compensated) stage of shock is characterized by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Tachycardia and peripheral vasoconstriction",
+          "isCorrect": true,
+          "explanation": "Compensatory mechanisms (baroreceptor reflex) increase heart rate and vasoconstriction to maintain perfusion."
+        },
+        {
+          "text": "Hypotension and organ failure",
+          "isCorrect": false,
+          "explanation": "Hypotension and organ failure occur in later stages."
+        },
+        {
+          "text": "Metabolic acidosis",
+          "isCorrect": false,
+          "explanation": "Metabolic acidosis appears in the progressive stage."
+        },
+        {
+          "text": "Disseminated intravascular coagulation",
+          "isCorrect": false,
+          "explanation": "DIC is a late complication."
+        },
+        {
+          "text": "Irreversible cell injury",
+          "isCorrect": false,
+          "explanation": "Irreversible injury occurs in the refractory stage."
+        }
+      ],
+      "explanation": {
+        "overview": "Compensatory mechanisms (baroreceptor reflex) increase heart rate and vasoconstriction to maintain perfusion.",
+        "highYield": "Compensated shock = tachycardia, vasoconstriction.",
+        "clinicalCorrelation": "Early recognition and intervention can prevent progression."
+      }
+    },
+    {
+      "id": "path_hemodynamic_031",
+      "difficulty": 2,
+      "question": "Progressive (decompensated) shock leads to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Tissue hypoxia and lactic acidosis",
+          "isCorrect": false,
+          "explanation": "This occurs, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Organ dysfunction",
+          "isCorrect": false,
+          "explanation": "Organ dysfunction occurs, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Capillary leakage",
+          "isCorrect": false,
+          "explanation": "Capillary leak occurs, but the answer is 'All of the above'."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "As shock progresses, tissue hypoperfusion causes anaerobic metabolism, acidosis, and endothelial injury."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All are features."
+        }
+      ],
+      "explanation": {
+        "overview": "As shock progresses, tissue hypoperfusion causes anaerobic metabolism, acidosis, and endothelial injury.",
+        "highYield": "Progressive shock = lactic acidosis, organ dysfunction, capillary leak.",
+        "clinicalCorrelation": "Aggressive fluid resuscitation and inotropes are needed."
+      }
+    },
+    {
+      "id": "path_hemodynamic_032",
+      "difficulty": 2,
+      "question": "Irreversible shock is characterized by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Severe cell injury and death despite restoring perfusion",
+          "isCorrect": true,
+          "explanation": "Irreversible shock involves widespread cell death and organ failure unresponsive to therapy."
+        },
+        {
+          "text": "Hemodynamic stability",
+          "isCorrect": false,
+          "explanation": "Hemodynamic stability is not a feature; patients are unstable."
+        },
+        {
+          "text": "Complete recovery",
+          "isCorrect": false,
+          "explanation": "Recovery is not possible."
+        },
+        {
+          "text": "Mild acidosis",
+          "isCorrect": false,
+          "explanation": "Acidosis is severe."
+        },
+        {
+          "text": "Absence of organ damage",
+          "isCorrect": false,
+          "explanation": "Organ damage is extensive."
+        }
+      ],
+      "explanation": {
+        "overview": "Irreversible shock involves widespread cell death and organ failure unresponsive to therapy.",
+        "highYield": "Irreversible shock = unresponsive to treatment, multiorgan failure.",
+        "clinicalCorrelation": "Prevention is key; early goal-directed therapy improves outcomes."
+      }
+    },
+    {
+      "id": "path_hemodynamic_033",
+      "difficulty": 2,
+      "question": "The image shows acute tubular necrosis (ATN) in a kidney from a patient with shock. This is caused by:",
+      "image": "path_atn.png",
+      "options": [
+        {
+          "text": "Prolonged renal hypoperfusion",
+          "isCorrect": true,
+          "explanation": "Shock leads to ischemic ATN, a common cause of acute kidney injury."
+        },
+        {
+          "text": "Direct toxin effect",
+          "isCorrect": false,
+          "explanation": "Toxin effects cause toxic ATN, not shock."
+        },
+        {
+          "text": "Glomerulonephritis",
+          "isCorrect": false,
+          "explanation": "Glomerulonephritis is an immune-mediated glomerular disease."
+        },
+        {
+          "text": "Pyelonephritis",
+          "isCorrect": false,
+          "explanation": "Pyelonephritis is an infection of the kidney."
+        },
+        {
+          "text": "Obstruction",
+          "isCorrect": false,
+          "explanation": "Obstruction causes hydronephrosis, not ATN."
+        }
+      ],
+      "explanation": {
+        "overview": "Shock leads to ischemic ATN, a common cause of acute kidney injury.",
+        "highYield": "Ischemic ATN = shock (hypoperfusion).",
+        "clinicalCorrelation": "Monitor urine output and creatinine; supportive care is mainstay."
+      }
+    },
+    {
+      "id": "path_hemodynamic_034",
+      "difficulty": 2,
+      "question": "Shock lung (diffuse alveolar damage) is a feature of:",
+      "image": null,
+      "options": [
+        {
+          "text": "ARDS secondary to shock",
+          "isCorrect": true,
+          "explanation": "ARDS can occur in shock due to systemic inflammation, leading to capillary leak and hyaline membranes."
+        },
+        {
+          "text": "Cardiogenic pulmonary edema",
+          "isCorrect": false,
+          "explanation": "Cardiogenic edema is due to increased hydrostatic pressure, not DAD."
+        },
+        {
+          "text": "Pneumonia",
+          "isCorrect": false,
+          "explanation": "Pneumonia is infection, not shock lung."
+        },
+        {
+          "text": "Pulmonary embolism",
+          "isCorrect": false,
+          "explanation": "PE causes infarction, not diffuse alveolar damage."
+        },
+        {
+          "text": "Asthma",
+          "isCorrect": false,
+          "explanation": "Asthma is bronchoconstriction, not DAD."
+        }
+      ],
+      "explanation": {
+        "overview": "ARDS can occur in shock due to systemic inflammation, leading to capillary leak and hyaline membranes.",
+        "highYield": "Shock lung = ARDS (diffuse alveolar damage).",
+        "clinicalCorrelation": "Diagnosis: bilateral opacities, PaO2/FiO2 <300, not fully explained by heart failure."
+      }
+    },
+    {
+      "id": "path_hemodynamic_035",
+      "difficulty": 2,
+      "question": "Disseminated intravascular coagulation (DIC) is a complication of shock characterized by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Widespread microthrombi",
+          "isCorrect": false,
+          "explanation": "Microthrombi occur, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Consumption of clotting factors",
+          "isCorrect": false,
+          "explanation": "Consumption occurs, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Bleeding diathesis",
+          "isCorrect": false,
+          "explanation": "Bleeding occurs due to factor depletion, but the answer is 'All of the above'."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "DIC involves simultaneous thrombosis and hemorrhage due to uncontrolled activation of coagulation."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All are features."
+        }
+      ],
+      "explanation": {
+        "overview": "DIC involves simultaneous thrombosis and hemorrhage due to uncontrolled activation of coagulation.",
+        "highYield": "DIC = microthrombi + consumption + bleeding.",
+        "clinicalCorrelation": "Treat underlying cause; replace clotting factors as needed."
+      }
+    },
+    {
+      "id": "path_hemodynamic_036",
+      "difficulty": 2,
+      "question": "The image shows fibrin thrombi in small vessels (DIC). This can lead to:",
+      "image": "path_dic.png",
+      "options": [
+        {
+          "text": "Microangiopathic hemolytic anemia",
+          "isCorrect": false,
+          "explanation": "MAHA occurs, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Organ infarction",
+          "isCorrect": false,
+          "explanation": "Infarction occurs, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Consumptive coagulopathy",
+          "isCorrect": false,
+          "explanation": "Consumptive coagulopathy occurs, but the answer is 'All of the above'."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "DIC causes microthrombi, RBC fragmentation (schistocytes), and bleeding from factor depletion."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All are consequences."
+        }
+      ],
+      "explanation": {
+        "overview": "DIC causes microthrombi, RBC fragmentation (schistocytes), and bleeding from factor depletion.",
+        "highYield": "DIC = schistocytes, thrombosis, bleeding.",
+        "clinicalCorrelation": "Look for schistocytes on peripheral smear and elevated D-dimer."
+      }
+    },
+    {
+      "id": "path_hemodynamic_037",
+      "difficulty": 1,
+      "question": "Thrombosis is defined as:",
+      "image": null,
+      "options": [
+        {
+          "text": "Formation of a clot in a blood vessel during life",
+          "isCorrect": true,
+          "explanation": "Thrombosis is the pathologic formation of a solid mass from blood constituents within the circulatory system."
+        },
+        {
+          "text": "Clot formation after death",
+          "isCorrect": false,
+          "explanation": "Postmortem clotting is a postmortem clot."
+        },
+        {
+          "text": "Hemorrhage",
+          "isCorrect": false,
+          "explanation": "Hemorrhage is bleeding, not thrombosis."
+        },
+        {
+          "text": "Embolism",
+          "isCorrect": false,
+          "explanation": "Embolism is a detached mass."
+        },
+        {
+          "text": "Aneurysm",
+          "isCorrect": false,
+          "explanation": "Aneurysm is a vascular dilation."
+        }
+      ],
+      "explanation": {
+        "overview": "Thrombosis is the pathologic formation of a solid mass from blood constituents within the circulatory system.",
+        "highYield": "Thrombosis = intravascular clotting during life.",
+        "clinicalCorrelation": "Differentiate from postmortem clot: thrombus is attached, has lines of Zahn."
+      }
+    },
+    {
+      "id": "path_hemodynamic_038",
+      "difficulty": 1,
+      "question": "Virchow's triad includes:",
+      "image": null,
+      "options": [
+        {
+          "text": "Endothelial injury, stasis, hypercoagulability",
+          "isCorrect": true,
+          "explanation": "Virchow's triad describes the three factors predisposing to thrombosis."
+        },
+        {
+          "text": "Platelet activation, coagulation cascade, fibrinolysis",
+          "isCorrect": false,
+          "explanation": "These are parts of hemostasis, not the triad."
+        },
+        {
+          "text": "Arterial, venous, capillary thrombosis",
+          "isCorrect": false,
+          "explanation": "These are types of thrombi."
+        },
+        {
+          "text": "Thrombus, embolus, infarction",
+          "isCorrect": false,
+          "explanation": "These are consequences."
+        },
+        {
+          "text": "Inflammation, necrosis, repair",
+          "isCorrect": false,
+          "explanation": "These are general pathology processes."
+        }
+      ],
+      "explanation": {
+        "overview": "Virchow's triad describes the three factors predisposing to thrombosis.",
+        "highYield": "Virchow's triad: endothelial injury, stasis, hypercoagulability.",
+        "clinicalCorrelation": "Assess risk factors: atherosclerosis (endothelial injury), immobility (stasis), oral contraceptives (hypercoagulability)."
+      }
+    },
+    {
+      "id": "path_hemodynamic_039",
+      "difficulty": 2,
+      "question": "Endothelial injury is the dominant factor in thrombosis of which vessels?",
+      "image": null,
+      "options": [
+        {
+          "text": "Heart and arteries",
+          "isCorrect": true,
+          "explanation": "In arteries and heart, endothelial damage (e.g., atherosclerosis, MI) is the primary cause of thrombosis."
+        },
+        {
+          "text": "Veins",
+          "isCorrect": false,
+          "explanation": "Venous thrombosis is mainly due to stasis and hypercoagulability."
+        },
+        {
+          "text": "Capillaries",
+          "isCorrect": false,
+          "explanation": "Capillaries rarely thrombose."
+        },
+        {
+          "text": "Lymphatics",
+          "isCorrect": false,
+          "explanation": "Lymphatics are not blood vessels."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "Only arteries and heart are primarily endothelial injury."
+        }
+      ],
+      "explanation": {
+        "overview": "In arteries and heart, endothelial damage (e.g., atherosclerosis, MI) is the primary cause of thrombosis.",
+        "highYield": "Arterial thrombosis = endothelial injury.",
+        "clinicalCorrelation": "Atherosclerotic plaque rupture is a key trigger."
+      }
+    },
+    {
+      "id": "path_hemodynamic_040",
+      "difficulty": 2,
+      "question": "Stasis and hypercoagulability are the most important factors in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Arterial thrombosis",
+          "isCorrect": false,
+          "explanation": "Arterial thrombosis is mainly endothelial injury."
+        },
+        {
+          "text": "Venous thrombosis",
+          "isCorrect": true,
+          "explanation": "Venous thrombi often form in areas of stasis (e.g., deep veins of legs) with hypercoagulable states."
+        },
+        {
+          "text": "Cardiac mural thrombus",
+          "isCorrect": false,
+          "explanation": "Mural thrombus is due to endothelial injury or stasis in the heart."
+        },
+        {
+          "text": "Microvascular thrombosis",
+          "isCorrect": false,
+          "explanation": "Microvascular thrombi are from DIC or sepsis."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "Only venous thrombosis is primarily stasis/hypercoagulability."
+        }
+      ],
+      "explanation": {
+        "overview": "Venous thrombi often form in areas of stasis (e.g., deep veins of legs) with hypercoagulable states.",
+        "highYield": "Venous thrombosis = stasis + hypercoagulability.",
+        "clinicalCorrelation": "Risk factors: immobility, surgery, pregnancy, cancer."
+      }
+    },
+    {
+      "id": "path_hemodynamic_041",
+      "difficulty": 1,
+      "question": "Which of the following is a hypercoagulable state?",
+      "image": null,
+      "options": [
+        {
+          "text": "Factor V Leiden mutation",
+          "isCorrect": false,
+          "explanation": "This is a hypercoagulable state, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Antiphospholipid syndrome",
+          "isCorrect": false,
+          "explanation": "This is a hypercoagulable state, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Pregnancy",
+          "isCorrect": false,
+          "explanation": "Pregnancy is a hypercoagulable state, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Cancer",
+          "isCorrect": false,
+          "explanation": "Cancer is a hypercoagulable state, but the answer is 'All of the above'."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Genetic (Factor V Leiden) and acquired (antiphospholipid, pregnancy, cancer) conditions increase thrombosis risk."
+        }
+      ],
+      "explanation": {
+        "overview": "Genetic (Factor V Leiden) and acquired (antiphospholipid, pregnancy, cancer) conditions increase thrombosis risk.",
+        "highYield": "Hypercoagulable states: Factor V Leiden, antiphospholipid syndrome, pregnancy, cancer.",
+        "clinicalCorrelation": "Screen for these in patients with recurrent thrombosis."
+      }
+    },
+    {
+      "id": "path_hemodynamic_042",
+      "difficulty": 2,
+      "question": "An arterial thrombus is often characterized by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Platelet-rich (white thrombus)",
+          "isCorrect": false,
+          "explanation": "This is true, but the answer is 'Both A and C'."
+        },
+        {
+          "text": "Fibrin-rich (red thrombus)",
+          "isCorrect": false,
+          "explanation": "This is typical of venous thrombi."
+        },
+        {
+          "text": "Laminated lines of Zahn",
+          "isCorrect": false,
+          "explanation": "This is true, but the answer is 'Both A and C'."
+        },
+        {
+          "text": "Both A and C",
+          "isCorrect": true,
+          "explanation": "Arterial thrombi are often pale (platelet aggregates) and show laminations (lines of Zahn). Venous thrombi are red (fibrin and RBCs)."
+        },
+        {
+          "text": "Both B and C",
+          "isCorrect": false,
+          "explanation": "B is venous; C is arterial, but A is also true."
+        }
+      ],
+      "explanation": {
+        "overview": "Arterial thrombi are often pale (platelet aggregates) and show laminations (lines of Zahn). Venous thrombi are red (fibrin and RBCs).",
+        "highYield": "Arterial thrombus = white, lines of Zahn; venous = red.",
+        "clinicalCorrelation": "Arterial thrombi cause ischemia; venous thrombi cause congestion and embolism."
+      }
+    },
+    {
+      "id": "path_hemodynamic_043",
+      "difficulty": 2,
+      "question": "The image shows a thrombus with alternating pale and dark layers (lines of Zahn). This indicates:",
+      "image": "path_lines_of_zahn.png",
+      "options": [
+        {
+          "text": "Arterial thrombus formed in flowing blood",
+          "isCorrect": true,
+          "explanation": "Lines of Zahn are characteristic of thrombi formed in vivo in flowing blood."
+        },
+        {
+          "text": "Postmortem clot",
+          "isCorrect": false,
+          "explanation": "Postmortem clots lack lines of Zahn."
+        },
+        {
+          "text": "Venous thrombus",
+          "isCorrect": false,
+          "explanation": "Venous thrombi are red and may not show clear lines."
+        },
+        {
+          "text": "Embolus",
+          "isCorrect": false,
+          "explanation": "Embolus is a detached mass."
+        },
+        {
+          "text": "Hematoma",
+          "isCorrect": false,
+          "explanation": "Hematoma is a collection of blood, not a thrombus."
+        }
+      ],
+      "explanation": {
+        "overview": "Lines of Zahn are characteristic of thrombi formed in vivo in flowing blood.",
+        "highYield": "Lines of Zahn = antemortem thrombus.",
+        "clinicalCorrelation": "Distinguishes thrombus from postmortem clot."
+      }
+    },
+    {
+      "id": "path_hemodynamic_044",
+      "difficulty": 2,
+      "question": "A postmortem clot is distinguished from an antemortem thrombus by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Gelatinous consistency and lack of lines of Zahn",
+          "isCorrect": true,
+          "explanation": "Postmortem clots are rubbery, dark red, not attached, and lack lines of Zahn."
+        },
+        {
+          "text": "Firm attachment to vessel wall",
+          "isCorrect": false,
+          "explanation": "Thrombi are attached; postmortem clots are not."
+        },
+        {
+          "text": "Friability",
+          "isCorrect": false,
+          "explanation": "Friability can be a feature of thrombi, not differentiating."
+        },
+        {
+          "text": "Presence of inflammatory cells",
+          "isCorrect": false,
+          "explanation": "Thrombi may have inflammatory cells; postmortem clots do not."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "Only A is a key distinguishing feature."
+        }
+      ],
+      "explanation": {
+        "overview": "Postmortem clots are rubbery, dark red, not attached, and lack lines of Zahn.",
+        "highYield": "Postmortem clot = gelatinous, no lines of Zahn.",
+        "clinicalCorrelation": "At autopsy, differentiate to determine timing of clot."
+      }
+    },
+    {
+      "id": "path_hemodynamic_045",
+      "difficulty": 1,
+      "question": "An embolus is defined as:",
+      "image": null,
+      "options": [
+        {
+          "text": "A detached intravascular solid, liquid, or gaseous mass",
+          "isCorrect": true,
+          "explanation": "An embolus travels through the bloodstream and can occlude vessels."
+        },
+        {
+          "text": "A thrombus attached to vessel wall",
+          "isCorrect": false,
+          "explanation": "An attached mass is a thrombus."
+        },
+        {
+          "text": "A collection of blood",
+          "isCorrect": false,
+          "explanation": "This is a hematoma."
+        },
+        {
+          "text": "A piece of atherosclerotic plaque",
+          "isCorrect": false,
+          "explanation": "Plaque can be an embolus (cholesterol emboli), but the definition is broader."
+        },
+        {
+          "text": "Any foreign material in blood",
+          "isCorrect": false,
+          "explanation": "Too broad; embolus is a travelling mass."
+        }
+      ],
+      "explanation": {
+        "overview": "An embolus travels through the bloodstream and can occlude vessels.",
+        "highYield": "Embolus = detached mass travelling in blood.",
+        "clinicalCorrelation": "Emboli cause infarction if they occlude arteries."
+      }
+    },
+    {
+      "id": "path_hemodynamic_046",
+      "difficulty": 1,
+      "question": "The most common type of embolus is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Thromboembolus",
+          "isCorrect": true,
+          "explanation": "Thromboemboli (detached thrombi) account for the majority of embolic events."
+        },
+        {
+          "text": "Fat embolus",
+          "isCorrect": false,
+          "explanation": "Fat emboli are less common."
+        },
+        {
+          "text": "Air embolus",
+          "isCorrect": false,
+          "explanation": "Air emboli are rare."
+        },
+        {
+          "text": "Amniotic fluid embolus",
+          "isCorrect": false,
+          "explanation": "Amniotic fluid emboli are rare."
+        },
+        {
+          "text": "Tumor embolus",
+          "isCorrect": false,
+          "explanation": "Tumor emboli are less common."
+        }
+      ],
+      "explanation": {
+        "overview": "Thromboemboli (detached thrombi) account for the majority of embolic events.",
+        "highYield": "Most common embolus = thromboembolus.",
+        "clinicalCorrelation": "Prevent by anticoagulation for DVT."
+      }
+    },
+    {
+      "id": "path_hemodynamic_047",
+      "difficulty": 1,
+      "question": "Pulmonary embolism most commonly originates from:",
+      "image": null,
+      "options": [
+        {
+          "text": "Deep veins of the lower extremities",
+          "isCorrect": true,
+          "explanation": "Most pulmonary emboli arise from deep vein thrombi in the legs (above the knee)."
+        },
+        {
+          "text": "Pelvic veins",
+          "isCorrect": false,
+          "explanation": "Pelvic veins can be a source but less common."
+        },
+        {
+          "text": "Right atrium",
+          "isCorrect": false,
+          "explanation": "Right atrial thrombi are less common."
+        },
+        {
+          "text": "Portal vein",
+          "isCorrect": false,
+          "explanation": "Portal vein thrombi go to the liver, not lungs."
+        },
+        {
+          "text": "Superior vena cava",
+          "isCorrect": false,
+          "explanation": "SVC thrombi are less common."
+        }
+      ],
+      "explanation": {
+        "overview": "Most pulmonary emboli arise from deep vein thrombi in the legs (above the knee).",
+        "highYield": "PE origin = deep veins of legs.",
+        "clinicalCorrelation": "Prophylaxis with anticoagulants and mechanical compression."
+      }
+    },
+    {
+      "id": "path_hemodynamic_048",
+      "difficulty": 2,
+      "question": "The image shows a saddle embolus at the bifurcation of the pulmonary artery. This can cause:",
+      "image": "path_saddle_embolus.png",
+      "options": [
+        {
+          "text": "Sudden death",
+          "isCorrect": false,
+          "explanation": "Sudden death can occur, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Pulmonary infarction",
+          "isCorrect": false,
+          "explanation": "Infarction can occur, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Right heart failure",
+          "isCorrect": false,
+          "explanation": "Right heart failure can occur, but the answer is 'All of the above'."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "A large saddle embolus obstructs both pulmonary arteries, leading to acute right heart failure and often death."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All are possible."
+        }
+      ],
+      "explanation": {
+        "overview": "A large saddle embolus obstructs both pulmonary arteries, leading to acute right heart failure and often death.",
+        "highYield": "Saddle embolus = massive PE, sudden death.",
+        "clinicalCorrelation": "Emergency thrombolysis or embolectomy may be needed."
+      }
+    },
+    {
+      "id": "path_hemodynamic_049",
+      "difficulty": 2,
+      "question": "Paradoxical (crossed) embolism refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Venous thrombus crossing to arterial side through a septal defect",
+          "isCorrect": true,
+          "explanation": "A paradoxical embolus passes from right to left circulation via a cardiac or pulmonary shunt."
+        },
+        {
+          "text": "Arterial embolus traveling to a vein",
+          "isCorrect": false,
+          "explanation": "This is not paradoxical."
+        },
+        {
+          "text": "Embolus from left heart to brain",
+          "isCorrect": false,
+          "explanation": "This is a typical arterial embolus."
+        },
+        {
+          "text": "Embolus from leg to lung",
+          "isCorrect": false,
+          "explanation": "This is a typical PE."
+        },
+        {
+          "text": "Air embolism",
+          "isCorrect": false,
+          "explanation": "Air embolism is different."
+        }
+      ],
+      "explanation": {
+        "overview": "A paradoxical embolus passes from right to left circulation via a cardiac or pulmonary shunt.",
+        "highYield": "Paradoxical embolus = venous to arterial via PFO.",
+        "clinicalCorrelation": "Patients with PFO may be at risk; consider closure."
+      }
+    },
+    {
+      "id": "path_hemodynamic_050",
+      "difficulty": 1,
+      "question": "Fat embolism syndrome typically occurs after:",
+      "image": null,
+      "options": [
+        {
+          "text": "Long bone fractures",
+          "isCorrect": false,
+          "explanation": "Long bone fractures are a cause, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Soft tissue trauma",
+          "isCorrect": false,
+          "explanation": "Soft tissue trauma can cause, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Liposuction",
+          "isCorrect": false,
+          "explanation": "Liposuction can cause, but the answer is 'All of the above'."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Fat embolism can follow trauma with fat release into circulation."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All are causes."
+        }
+      ],
+      "explanation": {
+        "overview": "Fat embolism can follow trauma with fat release into circulation.",
+        "highYield": "Fat embolism = long bone fractures, trauma.",
+        "clinicalCorrelation": "Classic triad: respiratory distress, neurologic symptoms, petechial rash."
+      }
+    },
+    {
+      "id": "path_hemodynamic_051",
+      "difficulty": 2,
+      "question": "The classic triad of fat embolism syndrome includes:",
+      "image": null,
+      "options": [
+        {
+          "text": "Respiratory distress, neurologic symptoms, petechial rash",
+          "isCorrect": true,
+          "explanation": "Fat embolism presents with pulmonary, cerebral, and cutaneous manifestations."
+        },
+        {
+          "text": "Hypotension, bradycardia, fever",
+          "isCorrect": false,
+          "explanation": "These are not typical."
+        },
+        {
+          "text": "Chest pain, dyspnea, hemoptysis",
+          "isCorrect": false,
+          "explanation": "These may occur but are not the classic triad."
+        },
+        {
+          "text": "Leg swelling, pain, erythema",
+          "isCorrect": false,
+          "explanation": "These are DVT signs."
+        },
+        {
+          "text": "Jaundice, hepatomegaly, ascites",
+          "isCorrect": false,
+          "explanation": "These are signs of liver disease."
+        }
+      ],
+      "explanation": {
+        "overview": "Fat embolism presents with pulmonary, cerebral, and cutaneous manifestations.",
+        "highYield": "Fat embolism triad: respiratory, neuro, petechiae.",
+        "clinicalCorrelation": "Supportive care; avoid further trauma."
+      }
+    },
+    {
+      "id": "path_hemodynamic_052",
+      "difficulty": 2,
+      "question": "The image shows fat globules in a pulmonary vessel (fat stain). This is diagnostic of:",
+      "image": "path_fat_embolism.png",
+      "options": [
+        {
+          "text": "Fat embolism",
+          "isCorrect": true,
+          "explanation": "Fat stains (Oil Red O) highlight neutral fat in vessels."
+        },
+        {
+          "text": "Air embolism",
+          "isCorrect": false,
+          "explanation": "Air embolism shows air bubbles."
+        },
+        {
+          "text": "Thrombus",
+          "isCorrect": false,
+          "explanation": "Thrombus is composed of fibrin and platelets."
+        },
+        {
+          "text": "Amniotic fluid embolism",
+          "isCorrect": false,
+          "explanation": "Amniotic fluid embolism shows squamous cells."
+        },
+        {
+          "text": "Tumor embolism",
+          "isCorrect": false,
+          "explanation": "Tumor embolism shows malignant cells."
+        }
+      ],
+      "explanation": {
+        "overview": "Fat stains (Oil Red O) highlight neutral fat in vessels.",
+        "highYield": "Fat embolism = fat globules in pulmonary vessels.",
+        "clinicalCorrelation": "Diagnosis is often clinical; fat stains are used at autopsy."
+      }
+    },
+    {
+      "id": "path_hemodynamic_053",
+      "difficulty": 1,
+      "question": "Air embolism can occur during:",
+      "image": null,
+      "options": [
+        {
+          "text": "Chest trauma",
+          "isCorrect": false,
+          "explanation": "Trauma can cause air embolism, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Central line insertion",
+          "isCorrect": false,
+          "explanation": "Central line can introduce air, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Diving (decompression sickness)",
+          "isCorrect": false,
+          "explanation": "Decompression sickness is due to nitrogen bubbles, but air embolism can occur, but the answer is 'All of the above'."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Air entry into veins can occur with trauma, medical procedures, or rapid ascent from deep water."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All are causes."
+        }
+      ],
+      "explanation": {
+        "overview": "Air entry into veins can occur with trauma, medical procedures, or rapid ascent from deep water.",
+        "highYield": "Air embolism causes: trauma, procedures, diving.",
+        "clinicalCorrelation": "Prevent with careful procedures; treat with left lateral decubitus and 100% oxygen."
+      }
+    },
+    {
+      "id": "path_hemodynamic_054",
+      "difficulty": 2,
+      "question": "Decompression sickness (the bends) is caused by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Nitrogen bubbles forming in blood and tissues",
+          "isCorrect": true,
+          "explanation": "Rapid decompression allows dissolved nitrogen to form gas bubbles, causing tissue ischemia and pain."
+        },
+        {
+          "text": "Air embolism",
+          "isCorrect": false,
+          "explanation": "Air embolism is different; decompression sickness is nitrogen gas."
+        },
+        {
+          "text": "Fat embolism",
+          "isCorrect": false,
+          "explanation": "Fat embolism is from trauma."
+        },
+        {
+          "text": "Thrombosis",
+          "isCorrect": false,
+          "explanation": "Thrombosis is clot formation."
+        },
+        {
+          "text": "Hemorrhage",
+          "isCorrect": false,
+          "explanation": "Hemorrhage is bleeding."
+        }
+      ],
+      "explanation": {
+        "overview": "Rapid decompression allows dissolved nitrogen to form gas bubbles, causing tissue ischemia and pain.",
+        "highYield": "Decompression sickness = nitrogen bubbles.",
+        "clinicalCorrelation": "Treatment: hyperbaric oxygen therapy."
+      }
+    },
+    {
+      "id": "path_hemodynamic_055",
+      "difficulty": 2,
+      "question": "Amniotic fluid embolism is a rare obstetric emergency characterized by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Sudden dyspnea, hypotension, and coagulopathy",
+          "isCorrect": true,
+          "explanation": "Amniotic fluid enters maternal circulation, causing cardiopulmonary collapse and DIC."
+        },
+        {
+          "text": "Postpartum hemorrhage",
+          "isCorrect": false,
+          "explanation": "Postpartum hemorrhage is a complication but not the primary presentation."
+        },
+        {
+          "text": "Infection",
+          "isCorrect": false,
+          "explanation": "Infection causes sepsis, not amniotic fluid embolism."
+        },
+        {
+          "text": "Uterine rupture",
+          "isCorrect": false,
+          "explanation": "Uterine rupture is a different obstetric emergency."
+        },
+        {
+          "text": "Preeclampsia",
+          "isCorrect": false,
+          "explanation": "Preeclampsia is hypertension and proteinuria."
+        }
+      ],
+      "explanation": {
+        "overview": "Amniotic fluid enters maternal circulation, causing cardiopulmonary collapse and DIC.",
+        "highYield": "Amniotic fluid embolism = sudden dyspnea, hypotension, DIC.",
+        "clinicalCorrelation": "Supportive care; treat DIC."
+      }
+    },
+    {
+      "id": "path_hemodynamic_056",
+      "difficulty": 3,
+      "question": "The image shows squamous cells and debris in a maternal pulmonary vessel. This is characteristic of:",
+      "image": "path_amniotic_embolism.png",
+      "options": [
+        {
+          "text": "Amniotic fluid embolism",
+          "isCorrect": true,
+          "explanation": "Fetal squamous cells, lanugo hair, or mucin in maternal lung vessels indicate amniotic fluid embolism."
+        },
+        {
+          "text": "Trophoblastic embolism",
+          "isCorrect": false,
+          "explanation": "Trophoblastic embolism is different."
+        },
+        {
+          "text": "Fat embolism",
+          "isCorrect": false,
+          "explanation": "Fat embolism shows fat globules."
+        },
+        {
+          "text": "Thrombus",
+          "isCorrect": false,
+          "explanation": "Thrombus is fibrin/platelets."
+        },
+        {
+          "text": "Septic embolus",
+          "isCorrect": false,
+          "explanation": "Septic embolus shows bacteria/inflammatory cells."
+        }
+      ],
+      "explanation": {
+        "overview": "Fetal squamous cells, lanugo hair, or mucin in maternal lung vessels indicate amniotic fluid embolism.",
+        "highYield": "Amniotic fluid embolism = squamous cells in maternal pulmonary vessels.",
+        "clinicalCorrelation": "Usually diagnosed at autopsy; clinical diagnosis is presumptive."
+      }
+    },
+    {
+      "id": "path_hemodynamic_057",
+      "difficulty": 1,
+      "question": "Infarction is defined as:",
+      "image": null,
+      "options": [
+        {
+          "text": "Area of ischemic necrosis caused by occlusion of blood supply",
+          "isCorrect": true,
+          "explanation": "Infarction results from ischemia, usually due to arterial occlusion (thrombus, embolus)."
+        },
+        {
+          "text": "Hemorrhage into tissue",
+          "isCorrect": false,
+          "explanation": "Hemorrhage is bleeding, not infarction."
+        },
+        {
+          "text": "Cell death due to direct injury",
+          "isCorrect": false,
+          "explanation": "Direct injury causes necrosis but not infarction."
+        },
+        {
+          "text": "Venous obstruction",
+          "isCorrect": false,
+          "explanation": "Venous obstruction causes congestion, not infarction."
+        },
+        {
+          "text": "Apoptosis",
+          "isCorrect": false,
+          "explanation": "Apoptosis is programmed cell death."
+        }
+      ],
+      "explanation": {
+        "overview": "Infarction results from ischemia, usually due to arterial occlusion (thrombus, embolus).",
+        "highYield": "Infarction = ischemic necrosis.",
+        "clinicalCorrelation": "Causes include thrombosis, embolism, and vasospasm."
+      }
+    },
+    {
+      "id": "path_hemodynamic_058",
+      "difficulty": 1,
+      "question": "Which of the following organs typically develops pale (white) infarcts?",
+      "image": null,
+      "options": [
+        {
+          "text": "Heart",
+          "isCorrect": false,
+          "explanation": "Heart has pale infarcts, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Kidney",
+          "isCorrect": false,
+          "explanation": "Kidney has pale infarcts, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Spleen",
+          "isCorrect": false,
+          "explanation": "Spleen has pale infarcts, but the answer is 'All of the above'."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Solid organs with end-arterial supply (heart, kidney, spleen) have pale infarcts due to lack of collateral flow."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All are pale."
+        }
+      ],
+      "explanation": {
+        "overview": "Solid organs with end-arterial supply (heart, kidney, spleen) have pale infarcts due to lack of collateral flow.",
+        "highYield": "Pale infarcts: heart, kidney, spleen.",
+        "clinicalCorrelation": "Pale infarcts may become hemorrhagic if reperfusion occurs."
+      }
+    },
+    {
+      "id": "path_hemodynamic_059",
+      "difficulty": 1,
+      "question": "Red (hemorrhagic) infarcts occur in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Lung",
+          "isCorrect": false,
+          "explanation": "Lung can have hemorrhagic infarcts, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Intestine",
+          "isCorrect": false,
+          "explanation": "Intestine can have hemorrhagic infarcts, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Liver",
+          "isCorrect": false,
+          "explanation": "Liver can have hemorrhagic infarcts, but the answer is 'All of the above'."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Loose tissues with dual blood supply (lung, liver, bowel) may have hemorrhagic infarcts due to blood seepage."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All are possible."
+        }
+      ],
+      "explanation": {
+        "overview": "Loose tissues with dual blood supply (lung, liver, bowel) may have hemorrhagic infarcts due to blood seepage.",
+        "highYield": "Red infarcts: lung, intestine, liver.",
+        "clinicalCorrelation": "Red infarcts may be due to venous occlusion or reperfusion."
+      }
+    },
+    {
+      "id": "path_hemodynamic_060",
+      "difficulty": 1,
+      "question": "The image shows a wedge-shaped pale infarct in the kidney. This is typical of:",
+      "image": "path_renal_infarct.png",
+      "options": [
+        {
+          "text": "Arterial occlusion",
+          "isCorrect": true,
+          "explanation": "Renal infarcts are pale, wedge-shaped with base on capsule."
+        },
+        {
+          "text": "Venous thrombosis",
+          "isCorrect": false,
+          "explanation": "Venous thrombosis causes congestion, not a pale wedge."
+        },
+        {
+          "text": "Hemorrhage",
+          "isCorrect": false,
+          "explanation": "Hemorrhage is bleeding, not infarction."
+        },
+        {
+          "text": "Inflammation",
+          "isCorrect": false,
+          "explanation": "Inflammation is not infarction."
+        },
+        {
+          "text": "Trauma",
+          "isCorrect": false,
+          "explanation": "Trauma causes laceration or hematoma."
+        }
+      ],
+      "explanation": {
+        "overview": "Renal infarcts are pale, wedge-shaped with base on capsule.",
+        "highYield": "Renal infarct = wedge-shaped, pale.",
+        "clinicalCorrelation": "May be due to emboli from heart or aorta."
+      }
+    },
+    {
+      "id": "path_hemodynamic_061",
+      "difficulty": 2,
+      "question": "A hemorrhagic pulmonary infarct is often caused by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Pulmonary embolism",
+          "isCorrect": true,
+          "explanation": "Lung has dual supply (bronchial and pulmonary arteries); emboli occlude pulmonary artery, but bronchial flow may cause hemorrhage."
+        },
+        {
+          "text": "Pneumonia",
+          "isCorrect": false,
+          "explanation": "Pneumonia is infection, not infarction."
+        },
+        {
+          "text": "Tuberculosis",
+          "isCorrect": false,
+          "explanation": "TB causes caseating granulomas."
+        },
+        {
+          "text": "Bronchiectasis",
+          "isCorrect": false,
+          "explanation": "Bronchiectasis is chronic dilation."
+        },
+        {
+          "text": "Asthma",
+          "isCorrect": false,
+          "explanation": "Asthma is bronchoconstriction."
+        }
+      ],
+      "explanation": {
+        "overview": "Lung has dual supply (bronchial and pulmonary arteries); emboli occlude pulmonary artery, but bronchial flow may cause hemorrhage.",
+        "highYield": "Hemorrhagic pulmonary infarct = PE.",
+        "clinicalCorrelation": "Often wedge-shaped, red, and may cause hemoptysis."
+      }
+    },
+    {
+      "id": "path_hemodynamic_062",
+      "difficulty": 2,
+      "question": "The image shows a hemorrhagic infarct of the lung. This is typically due to:",
+      "image": "path_lung_infarct.png",
+      "options": [
+        {
+          "text": "Pulmonary thromboembolism",
+          "isCorrect": true,
+          "explanation": "Pulmonary infarcts are often hemorrhagic and wedge-shaped."
+        },
+        {
+          "text": "Venous thrombosis",
+          "isCorrect": false,
+          "explanation": "Venous thrombosis causes congestion, not infarction."
+        },
+        {
+          "text": "Atherosclerosis",
+          "isCorrect": false,
+          "explanation": "Atherosclerosis affects arteries, but pulmonary embolism is the cause."
+        },
+        {
+          "text": "Vasculitis",
+          "isCorrect": false,
+          "explanation": "Vasculitis can cause infarction but less common."
+        },
+        {
+          "text": "Hypertension",
+          "isCorrect": false,
+          "explanation": "Hypertension causes congestion, not infarction."
+        }
+      ],
+      "explanation": {
+        "overview": "Pulmonary infarcts are often hemorrhagic and wedge-shaped.",
+        "highYield": "Lung infarct = PE, hemorrhagic.",
+        "clinicalCorrelation": "Infarction occurs in 10-15% of PEs due to bronchial collateral flow."
+      }
+    },
+    {
+      "id": "path_hemodynamic_063",
+      "difficulty": 2,
+      "question": "An infarct in the brain is typically:",
+      "image": null,
+      "options": [
+        {
+          "text": "Pale initially, then liquefactive",
+          "isCorrect": true,
+          "explanation": "Brain infarcts undergo liquefactive necrosis; they may be pale (anemic) or hemorrhagic depending on reperfusion."
+        },
+        {
+          "text": "Hemorrhagic",
+          "isCorrect": false,
+          "explanation": "Some are hemorrhagic, but the typical is pale then liquefactive."
+        },
+        {
+          "text": "Coagulative",
+          "isCorrect": false,
+          "explanation": "Coagulative necrosis is in solid organs like heart."
+        },
+        {
+          "text": "Caseous",
+          "isCorrect": false,
+          "explanation": "Caseous necrosis is in TB."
+        },
+        {
+          "text": "Fatty",
+          "isCorrect": false,
+          "explanation": "Fatty necrosis is in pancreatitis."
+        }
+      ],
+      "explanation": {
+        "overview": "Brain infarcts undergo liquefactive necrosis; they may be pale (anemic) or hemorrhagic depending on reperfusion.",
+        "highYield": "Brain infarct = liquefactive necrosis.",
+        "clinicalCorrelation": "MRI is used to detect acute infarcts."
+      }
+    },
+    {
+      "id": "path_hemodynamic_064",
+      "difficulty": 1,
+      "question": "The outcome of an infarct depends on:",
+      "image": null,
+      "options": [
+        {
+          "text": "Tissue vulnerability to ischemia",
+          "isCorrect": false,
+          "explanation": "This is a factor, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Speed of occlusion",
+          "isCorrect": false,
+          "explanation": "This is a factor, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Availability of collateral circulation",
+          "isCorrect": false,
+          "explanation": "This is a factor, but the answer is 'All of the above'."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Infarct size and consequences vary with these factors."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All are factors."
+        }
+      ],
+      "explanation": {
+        "overview": "Infarct size and consequences vary with these factors.",
+        "highYield": "Infarct outcome depends on vulnerability, occlusion speed, collaterals.",
+        "clinicalCorrelation": "Brain is most vulnerable; collaterals can limit damage."
+      }
+    },
+    {
+      "id": "path_hemodynamic_065",
+      "difficulty": 1,
+      "question": "Which organ is most susceptible to ischemic injury (shortest time to irreversible damage)?",
+      "image": null,
+      "options": [
+        {
+          "text": "Brain",
+          "isCorrect": true,
+          "explanation": "Neurons undergo irreversible damage within minutes of ischemia."
+        },
+        {
+          "text": "Heart",
+          "isCorrect": false,
+          "explanation": "Heart muscle can survive 20-30 minutes."
+        },
+        {
+          "text": "Kidney",
+          "isCorrect": false,
+          "explanation": "Kidney can survive 1-2 hours."
+        },
+        {
+          "text": "Liver",
+          "isCorrect": false,
+          "explanation": "Liver can survive 1-2 hours."
+        },
+        {
+          "text": "Skeletal muscle",
+          "isCorrect": false,
+          "explanation": "Skeletal muscle can survive several hours."
+        }
+      ],
+      "explanation": {
+        "overview": "Neurons undergo irreversible damage within minutes of ischemia.",
+        "highYield": "Brain is most susceptible to ischemia.",
+        "clinicalCorrelation": "Stroke is a medical emergency; time to treatment is critical."
+      }
+    },
+    {
+      "id": "path_hemodynamic_066",
+      "difficulty": 2,
+      "question": "Which of the following is a factor that predisposes to venous thrombosis?",
+      "image": null,
+      "options": [
+        {
+          "text": "Immobilization",
+          "isCorrect": false,
+          "explanation": "Immobilization causes stasis, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Oral contraceptives",
+          "isCorrect": false,
+          "explanation": "OCs increase hypercoagulability, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Malignancy",
+          "isCorrect": false,
+          "explanation": "Cancer causes hypercoagulability, but the answer is 'All of the above'."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "These are common risk factors for venous thromboembolism."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All are risk factors."
+        }
+      ],
+      "explanation": {
+        "overview": "These are common risk factors for venous thromboembolism.",
+        "highYield": "Venous thrombosis risk: immobilization, OCPs, cancer.",
+        "clinicalCorrelation": "Prophylactic anticoagulation is indicated in high-risk patients."
+      }
+    },
+    {
+      "id": "path_hemodynamic_067",
+      "difficulty": 2,
+      "question": "A patient with atrial fibrillation is at high risk for which type of thrombus?",
+      "image": null,
+      "options": [
+        {
+          "text": "Mural thrombus in the left atrium",
+          "isCorrect": true,
+          "explanation": "Atrial fibrillation causes stasis in the left atrium, leading to thrombus formation."
+        },
+        {
+          "text": "Deep vein thrombosis",
+          "isCorrect": false,
+          "explanation": "DVT is from venous stasis in legs."
+        },
+        {
+          "text": "Arterial thrombus due to atherosclerosis",
+          "isCorrect": false,
+          "explanation": "Atherosclerosis causes arterial thrombosis, not atrial fibrillation."
+        },
+        {
+          "text": "Thrombus in the right ventricle",
+          "isCorrect": false,
+          "explanation": "Right ventricle is less common."
+        },
+        {
+          "text": "Portal vein thrombosis",
+          "isCorrect": false,
+          "explanation": "Portal vein thrombosis is from liver disease."
+        }
+      ],
+      "explanation": {
+        "overview": "Atrial fibrillation causes stasis in the left atrium, leading to thrombus formation.",
+        "highYield": "Atrial fibrillation = left atrial mural thrombus.",
+        "clinicalCorrelation": "Risk of embolization to brain (stroke); anticoagulation is indicated."
+      }
+    },
+    {
+      "id": "path_hemodynamic_068",
+      "difficulty": 2,
+      "question": "Which of the following is a cause of arterial thrombosis?",
+      "image": null,
+      "options": [
+        {
+          "text": "Atherosclerosis with plaque rupture",
+          "isCorrect": true,
+          "explanation": "Plaque rupture exposes subendothelium, triggering platelet aggregation and thrombosis."
+        },
+        {
+          "text": "Stasis",
+          "isCorrect": false,
+          "explanation": "Stasis is a cause of venous thrombosis."
+        },
+        {
+          "text": "Hypercoagulability alone",
+          "isCorrect": false,
+          "explanation": "Hypercoagulability alone is more important in venous thrombosis."
+        },
+        {
+          "text": "Venous injury",
+          "isCorrect": false,
+          "explanation": "Venous injury is not arterial."
+        },
+        {
+          "text": "Embolism",
+          "isCorrect": false,
+          "explanation": "Embolism is a consequence, not a cause of thrombosis."
+        }
+      ],
+      "explanation": {
+        "overview": "Plaque rupture exposes subendothelium, triggering platelet aggregation and thrombosis.",
+        "highYield": "Arterial thrombosis = plaque rupture.",
+        "clinicalCorrelation": "Anti-platelet agents (aspirin) are used for prevention."
+      }
+    },
+    {
+      "id": "path_hemodynamic_069",
+      "difficulty": 2,
+      "question": "The most common site of deep venous thrombosis is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Proximal leg veins (iliac, femoral, popliteal)",
+          "isCorrect": true,
+          "explanation": "Proximal DVTs are more common and more likely to embolize."
+        },
+        {
+          "text": "Distal calf veins",
+          "isCorrect": false,
+          "explanation": "Distal DVTs are common but less likely to embolize."
+        },
+        {
+          "text": "Pelvic veins",
+          "isCorrect": false,
+          "explanation": "Pelvic veins are less common."
+        },
+        {
+          "text": "Upper extremity veins",
+          "isCorrect": false,
+          "explanation": "Upper extremity DVT is less common."
+        },
+        {
+          "text": "Inferior vena cava",
+          "isCorrect": false,
+          "explanation": "IVC thrombosis is rare."
+        }
+      ],
+      "explanation": {
+        "overview": "Proximal DVTs are more common and more likely to embolize.",
+        "highYield": "DVT most common = proximal leg veins.",
+        "clinicalCorrelation": "Proximal DVT requires anticoagulation; distal may be observed."
+      }
+    },
+    {
+      "id": "path_hemodynamic_070",
+      "difficulty": 2,
+      "question": "A thrombus that forms on a heart valve (vegetation) is most commonly seen in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Infective endocarditis",
+          "isCorrect": true,
+          "explanation": "Vegetations are composed of fibrin, platelets, and bacteria."
+        },
+        {
+          "text": "Rheumatic heart disease",
+          "isCorrect": false,
+          "explanation": "Rheumatic disease causes scarring, not active vegetations."
+        },
+        {
+          "text": "Libman-Sacks endocarditis",
+          "isCorrect": false,
+          "explanation": "Libman-Sacks is associated with SLE, but infective is more common."
+        },
+        {
+          "text": "Atherosclerosis",
+          "isCorrect": false,
+          "explanation": "Atherosclerosis affects arteries, not valves."
+        },
+        {
+          "text": "Congenital heart disease",
+          "isCorrect": false,
+          "explanation": "Congenital defects may predispose but vegetations are from infection."
+        }
+      ],
+      "explanation": {
+        "overview": "Vegetations are composed of fibrin, platelets, and bacteria.",
+        "highYield": "Valvular thrombus = infective endocarditis (vegetation).",
+        "clinicalCorrelation": "Blood cultures and echocardiography are key."
+      }
+    },
+    {
+      "id": "path_hemodynamic_071",
+      "difficulty": 2,
+      "question": "Which of the following is a complication of chronic venous stasis?",
+      "image": null,
+      "options": [
+        {
+          "text": "Varicose veins",
+          "isCorrect": false,
+          "explanation": "Varicose veins are dilated superficial veins, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Stasis dermatitis",
+          "isCorrect": false,
+          "explanation": "Dermatitis occurs, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Venous ulcers",
+          "isCorrect": false,
+          "explanation": "Ulcers occur, but the answer is 'All of the above'."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Chronic venous insufficiency leads to these complications."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All are complications."
+        }
+      ],
+      "explanation": {
+        "overview": "Chronic venous insufficiency leads to these complications.",
+        "highYield": "Chronic venous stasis: varicose veins, dermatitis, ulcers.",
+        "clinicalCorrelation": "Management includes compression, elevation, and wound care."
+      }
+    },
+    {
+      "id": "path_hemodynamic_072",
+      "difficulty": 2,
+      "question": "The image shows a venous ulcer on the medial malleolus. This is most commonly due to:",
+      "image": "path_venous_ulcer.png",
+      "options": [
+        {
+          "text": "Chronic venous insufficiency",
+          "isCorrect": true,
+          "explanation": "Venous ulcers are typically on the medial malleolus due to venous hypertension."
+        },
+        {
+          "text": "Arterial insufficiency",
+          "isCorrect": false,
+          "explanation": "Arterial ulcers are on pressure points and are painful."
+        },
+        {
+          "text": "Neuropathic (diabetic) ulcer",
+          "isCorrect": false,
+          "explanation": "Diabetic ulcers are on plantar surfaces."
+        },
+        {
+          "text": "Pressure ulcer",
+          "isCorrect": false,
+          "explanation": "Pressure ulcers occur over bony prominences."
+        },
+        {
+          "text": "Trauma",
+          "isCorrect": false,
+          "explanation": "Trauma is not the primary cause."
+        }
+      ],
+      "explanation": {
+        "overview": "Venous ulcers are typically on the medial malleolus due to venous hypertension.",
+        "highYield": "Venous ulcer = medial malleolus, chronic venous insufficiency.",
+        "clinicalCorrelation": "Treat with compression and elevation."
+      }
+    },
+    {
+      "id": "path_hemodynamic_073",
+      "difficulty": 2,
+      "question": "Heparin-induced thrombocytopenia (HIT) is a hypercoagulable state caused by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Antibodies against heparin-platelet factor 4 complexes",
+          "isCorrect": true,
+          "explanation": "HIT causes platelet activation and thrombosis, despite thrombocytopenia."
+        },
+        {
+          "text": "Direct platelet toxicity",
+          "isCorrect": false,
+          "explanation": "HIT is immune-mediated."
+        },
+        {
+          "text": "Bone marrow suppression",
+          "isCorrect": false,
+          "explanation": "Not bone marrow."
+        },
+        {
+          "text": "Vitamin K deficiency",
+          "isCorrect": false,
+          "explanation": "Not related."
+        },
+        {
+          "text": "Disseminated intravascular coagulation",
+          "isCorrect": false,
+          "explanation": "DIC is different."
+        }
+      ],
+      "explanation": {
+        "overview": "HIT causes platelet activation and thrombosis, despite thrombocytopenia.",
+        "highYield": "HIT = antibody to heparin-PF4 complexes.",
+        "clinicalCorrelation": "Stop heparin and use alternative anticoagulants (argatroban)."
+      }
+    },
+    {
+      "id": "path_hemodynamic_074",
+      "difficulty": 2,
+      "question": "Which of the following is a treatment for acute pulmonary embolism?",
+      "image": null,
+      "options": [
+        {
+          "text": "Anticoagulation (heparin, then warfarin)",
+          "isCorrect": true,
+          "explanation": "Anticoagulation prevents further thrombi and allows fibrinolysis."
+        },
+        {
+          "text": "Thrombolysis",
+          "isCorrect": false,
+          "explanation": "Thrombolysis is reserved for massive PE with hemodynamic instability."
+        },
+        {
+          "text": "Embolectomy",
+          "isCorrect": false,
+          "explanation": "Surgical embolectomy is for massive PE if thrombolysis fails."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "Anticoagulation is the primary treatment; thrombolysis and embolectomy are for severe cases."
+        },
+        {
+          "text": "Observation only",
+          "isCorrect": false,
+          "explanation": "Observation is not appropriate."
+        }
+      ],
+      "explanation": {
+        "overview": "Anticoagulation prevents further thrombi and allows fibrinolysis.",
+        "highYield": "PE treatment = anticoagulation (heparin, warfarin).",
+        "clinicalCorrelation": "Massive PE requires thrombolysis or embolectomy."
+      }
+    },
+    {
+      "id": "path_hemodynamic_075",
+      "difficulty": 2,
+      "question": "The most common cause of arterial embolism is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Thromboembolism from the heart (e.g., atrial fibrillation)",
+          "isCorrect": true,
+          "explanation": "Cardiac thrombi (from AF, MI, valve disease) are the most common source."
+        },
+        {
+          "text": "Atheroembolism from aorta",
+          "isCorrect": false,
+          "explanation": "Atheroembolism is less common."
+        },
+        {
+          "text": "Venous thromboembolism",
+          "isCorrect": false,
+          "explanation": "Venous thrombi cause pulmonary embolism, not arterial."
+        },
+        {
+          "text": "Fat embolism",
+          "isCorrect": false,
+          "explanation": "Fat embolism is less common."
+        },
+        {
+          "text": "Air embolism",
+          "isCorrect": false,
+          "explanation": "Air embolism is rare."
+        }
+      ],
+      "explanation": {
+        "overview": "Cardiac thrombi (from AF, MI, valve disease) are the most common source.",
+        "highYield": "Arterial embolism = cardiac source (AF).",
+        "clinicalCorrelation": "Anticoagulation for AF reduces stroke risk."
+      }
+    },
+    {
+      "id": "path_hemodynamic_076",
+      "difficulty": 2,
+      "question": "Which of the following is a feature of chronic venous congestion in the liver?",
+      "image": null,
+      "options": [
+        {
+          "text": "Centrilobular necrosis and fibrosis",
+          "isCorrect": true,
+          "explanation": "Chronic congestion leads to ischemia of centrilobular hepatocytes, causing necrosis and fibrosis."
+        },
+        {
+          "text": "Bile duct proliferation",
+          "isCorrect": false,
+          "explanation": "Bile duct proliferation is seen in biliary obstruction."
+        },
+        {
+          "text": "Fatty change",
+          "isCorrect": false,
+          "explanation": "Fatty change is steatosis."
+        },
+        {
+          "text": "Hepatocellular adenoma",
+          "isCorrect": false,
+          "explanation": "Adenoma is a tumor."
+        },
+        {
+          "text": "Cirrhosis",
+          "isCorrect": false,
+          "explanation": "Cirrhosis can result, but centrilobular necrosis is the acute finding."
+        }
+      ],
+      "explanation": {
+        "overview": "Chronic congestion leads to ischemia of centrilobular hepatocytes, causing necrosis and fibrosis.",
+        "highYield": "Chronic liver congestion = centrilobular necrosis.",
+        "clinicalCorrelation": "Seen in right heart failure; may progress to cardiac cirrhosis."
+      }
+    },
+    {
+      "id": "path_hemodynamic_077",
+      "difficulty": 2,
+      "question": "Brown induration of the lung is caused by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Chronic left heart failure with hemosiderin deposition",
+          "isCorrect": true,
+          "explanation": "Chronic congestion leads to RBC extravasation, phagocytosis, and hemosiderin deposition, giving a brown color."
+        },
+        {
+          "text": "Pulmonary fibrosis",
+          "isCorrect": false,
+          "explanation": "Fibrosis without hemosiderin is not brown induration."
+        },
+        {
+          "text": "Pneumoconiosis",
+          "isCorrect": false,
+          "explanation": "Pneumoconiosis causes pigmentation from dust."
+        },
+        {
+          "text": "Pulmonary hemorrhage",
+          "isCorrect": false,
+          "explanation": "Hemorrhage is acute, not the chronic brown induration."
+        },
+        {
+          "text": "Smoking",
+          "isCorrect": false,
+          "explanation": "Smoking causes black pigmentation, not brown induration."
+        }
+      ],
+      "explanation": {
+        "overview": "Chronic congestion leads to RBC extravasation, phagocytosis, and hemosiderin deposition, giving a brown color.",
+        "highYield": "Brown induration = chronic pulmonary congestion.",
+        "clinicalCorrelation": "Often seen in mitral stenosis or chronic left heart failure."
+      }
+    },
+    {
+      "id": "path_hemodynamic_078",
+      "difficulty": 2,
+      "question": "Which of the following is a cause of increased capillary permeability leading to edema?",
+      "image": null,
+      "options": [
+        {
+          "text": "Inflammation",
+          "isCorrect": true,
+          "explanation": "Inflammatory mediators increase vascular permeability, causing edema."
+        },
+        {
+          "text": "Heart failure",
+          "isCorrect": false,
+          "explanation": "Heart failure causes edema via increased hydrostatic pressure."
+        },
+        {
+          "text": "Nephrotic syndrome",
+          "isCorrect": false,
+          "explanation": "Nephrotic syndrome causes edema via decreased oncotic pressure."
+        },
+        {
+          "text": "Cirrhosis",
+          "isCorrect": false,
+          "explanation": "Cirrhosis causes edema via decreased oncotic pressure and portal hypertension."
+        },
+        {
+          "text": "Lymphedema",
+          "isCorrect": false,
+          "explanation": "Lymphedema is due to lymphatic obstruction."
+        }
+      ],
+      "explanation": {
+        "overview": "Inflammatory mediators increase vascular permeability, causing edema.",
+        "highYield": "Increased permeability edema = inflammation (e.g., burns, sepsis).",
+        "clinicalCorrelation": "This is non-cardiogenic edema; seen in ARDS."
+      }
+    },
+    {
+      "id": "path_hemodynamic_079",
+      "difficulty": 2,
+      "question": "A patient with shock and acute renal failure has urine with muddy brown casts. This is most consistent with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Acute tubular necrosis (ATN)",
+          "isCorrect": true,
+          "explanation": "Muddy brown casts are characteristic of ATN, often due to ischemia or toxins."
+        },
+        {
+          "text": "Glomerulonephritis",
+          "isCorrect": false,
+          "explanation": "Glomerulonephritis shows RBC casts."
+        },
+        {
+          "text": "Pyelonephritis",
+          "isCorrect": false,
+          "explanation": "Pyelonephritis shows WBC casts."
+        },
+        {
+          "text": "Nephrotic syndrome",
+          "isCorrect": false,
+          "explanation": "Nephrotic syndrome shows fatty casts."
+        },
+        {
+          "text": "Interstitial nephritis",
+          "isCorrect": false,
+          "explanation": "Interstitial nephritis shows WBC casts."
+        }
+      ],
+      "explanation": {
+        "overview": "Muddy brown casts are characteristic of ATN, often due to ischemia or toxins.",
+        "highYield": "Muddy brown casts = ATN.",
+        "clinicalCorrelation": "Supportive care and treat underlying cause."
+      }
+    },
+    {
+      "id": "path_hemodynamic_080",
+      "difficulty": 2,
+      "question": "Which of the following is a cause of non-cardiogenic pulmonary edema?",
+      "image": null,
+      "options": [
+        {
+          "text": "Acute respiratory distress syndrome (ARDS)",
+          "isCorrect": true,
+          "explanation": "ARDS is caused by increased permeability due to inflammation, not heart failure."
+        },
+        {
+          "text": "Left heart failure",
+          "isCorrect": false,
+          "explanation": "Left heart failure causes cardiogenic edema."
+        },
+        {
+          "text": "Mitral stenosis",
+          "isCorrect": false,
+          "explanation": "Mitral stenosis causes cardiogenic edema."
+        },
+        {
+          "text": "Hypertensive crisis",
+          "isCorrect": false,
+          "explanation": "Hypertensive crisis can cause cardiogenic edema."
+        },
+        {
+          "text": "Volume overload",
+          "isCorrect": false,
+          "explanation": "Volume overload causes cardiogenic edema."
+        }
+      ],
+      "explanation": {
+        "overview": "ARDS is caused by increased permeability due to inflammation, not heart failure.",
+        "highYield": "Non-cardiogenic edema = ARDS.",
+        "clinicalCorrelation": "Diagnosis: bilateral opacities, low PAWP, and acute onset."
+      }
+    },
+    {
+      "id": "path_hemodynamic_081",
+      "difficulty": 2,
+      "question": "A patient with sepsis develops hypotension and diffuse petechiae. Labs show thrombocytopenia, elevated D-dimer, and low fibrinogen. This is most consistent with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Disseminated intravascular coagulation (DIC)",
+          "isCorrect": true,
+          "explanation": "Sepsis can trigger DIC, characterized by consumption of platelets and clotting factors."
+        },
+        {
+          "text": "Thrombotic thrombocytopenic purpura (TTP)",
+          "isCorrect": false,
+          "explanation": "TTP has schistocytes and low ADAMTS13."
+        },
+        {
+          "text": "Hemolytic uremic syndrome (HUS)",
+          "isCorrect": false,
+          "explanation": "HUS is associated with E. coli and renal failure."
+        },
+        {
+          "text": "Heparin-induced thrombocytopenia",
+          "isCorrect": false,
+          "explanation": "HIT is associated with heparin use."
+        },
+        {
+          "text": "Idiopathic thrombocytopenic purpura",
+          "isCorrect": false,
+          "explanation": "ITP is isolated thrombocytopenia."
+        }
+      ],
+      "explanation": {
+        "overview": "Sepsis can trigger DIC, characterized by consumption of platelets and clotting factors.",
+        "highYield": "DIC = sepsis, thrombocytopenia, elevated D-dimer, low fibrinogen.",
+        "clinicalCorrelation": "Treat underlying infection and replace clotting factors."
+      }
+    },
+    {
+      "id": "path_hemodynamic_082",
+      "difficulty": 2,
+      "question": "The image shows fibrinoid necrosis in a vessel wall. This is characteristic of:",
+      "image": "path_fibrinoid_necrosis.png",
+      "options": [
+        {
+          "text": "Malignant hypertension",
+          "isCorrect": true,
+          "explanation": "Fibrinoid necrosis of arterioles is seen in malignant hypertension and vasculitis."
+        },
+        {
+          "text": "Atherosclerosis",
+          "isCorrect": false,
+          "explanation": "Atherosclerosis shows lipid deposition."
+        },
+        {
+          "text": "Amyloidosis",
+          "isCorrect": false,
+          "explanation": "Amyloidosis shows amyloid deposition."
+        },
+        {
+          "text": "Thrombosis",
+          "isCorrect": false,
+          "explanation": "Thrombosis is clot formation."
+        },
+        {
+          "text": "Embolism",
+          "isCorrect": false,
+          "explanation": "Embolism is a traveling mass."
+        }
+      ],
+      "explanation": {
+        "overview": "Fibrinoid necrosis of arterioles is seen in malignant hypertension and vasculitis.",
+        "highYield": "Fibrinoid necrosis = malignant hypertension, vasculitis.",
+        "clinicalCorrelation": "Seen in renal arterioles in hypertension (onion-skinning)."
+      }
+    },
+    {
+      "id": "path_hemodynamic_083",
+      "difficulty": 2,
+      "question": "Which of the following is a feature of septic shock?",
+      "image": null,
+      "options": [
+        {
+          "text": "Systemic vasodilation and relative hypovolemia",
+          "isCorrect": true,
+          "explanation": "Septic shock involves vasodilation, decreased SVR, and hypotension."
+        },
+        {
+          "text": "Bradycardia",
+          "isCorrect": false,
+          "explanation": "Tachycardia is more common."
+        },
+        {
+          "text": "Hypothermia",
+          "isCorrect": false,
+          "explanation": "Fever is more common, though hypothermia can occur."
+        },
+        {
+          "text": "Decreased cardiac output",
+          "isCorrect": false,
+          "explanation": "Cardiac output is often normal or increased initially."
+        },
+        {
+          "text": "Increased peripheral resistance",
+          "isCorrect": false,
+          "explanation": "SVR is decreased."
+        }
+      ],
+      "explanation": {
+        "overview": "Septic shock involves vasodilation, decreased SVR, and hypotension.",
+        "highYield": "Septic shock = distributive (vasodilation).",
+        "clinicalCorrelation": "Treat with fluids, vasopressors, and antibiotics."
+      }
+    },
+    {
+      "id": "path_hemodynamic_084",
+      "difficulty": 2,
+      "question": "Anaphylactic shock is caused by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Massive release of histamine and other mediators from mast cells",
+          "isCorrect": true,
+          "explanation": "Anaphylaxis involves IgE-mediated mast cell degranulation."
+        },
+        {
+          "text": "Bacterial endotoxins",
+          "isCorrect": false,
+          "explanation": "Endotoxins cause septic shock."
+        },
+        {
+          "text": "Spinal cord injury",
+          "isCorrect": false,
+          "explanation": "Spinal injury causes neurogenic shock."
+        },
+        {
+          "text": "Myocardial infarction",
+          "isCorrect": false,
+          "explanation": "MI causes cardiogenic shock."
+        },
+        {
+          "text": "Hemorrhage",
+          "isCorrect": false,
+          "explanation": "Hemorrhage causes hypovolemic shock."
+        }
+      ],
+      "explanation": {
+        "overview": "Anaphylaxis involves IgE-mediated mast cell degranulation.",
+        "highYield": "Anaphylactic shock = histamine release.",
+        "clinicalCorrelation": "Treat with epinephrine, antihistamines, and corticosteroids."
+      }
+    },
+    {
+      "id": "path_hemodynamic_085",
+      "difficulty": 2,
+      "question": "Neurogenic shock is characterized by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Loss of sympathetic tone leading to vasodilation and bradycardia",
+          "isCorrect": true,
+          "explanation": "Spinal cord injury above T1 causes loss of sympathetic output."
+        },
+        {
+          "text": "Tachycardia and vasoconstriction",
+          "isCorrect": false,
+          "explanation": "These are compensatory mechanisms, not neurogenic shock."
+        },
+        {
+          "text": "Hypotension and fever",
+          "isCorrect": false,
+          "explanation": "Fever is not typical."
+        },
+        {
+          "text": "Increased cardiac output",
+          "isCorrect": false,
+          "explanation": "Cardiac output may be decreased due to bradycardia."
+        },
+        {
+          "text": "Pulmonary edema",
+          "isCorrect": false,
+          "explanation": "Pulmonary edema is not characteristic."
+        }
+      ],
+      "explanation": {
+        "overview": "Spinal cord injury above T1 causes loss of sympathetic output.",
+        "highYield": "Neurogenic shock = bradycardia + hypotension.",
+        "clinicalCorrelation": "Treat with vasopressors and support."
+      }
+    },
+    {
+      "id": "path_hemodynamic_086",
+      "difficulty": 2,
+      "question": "Which of the following is a common cause of cardiac tamponade?",
+      "image": null,
+      "options": [
+        {
+          "text": "Hemopericardium",
+          "isCorrect": true,
+          "explanation": "Blood in the pericardial space compresses the heart."
+        },
+        {
+          "text": "Pneumopericardium",
+          "isCorrect": false,
+          "explanation": "Air in pericardium is less common."
+        },
+        {
+          "text": "Pericardial effusion",
+          "isCorrect": false,
+          "explanation": "Effusion can cause tamponade, but hemopericardium is the most common cause."
+        },
+        {
+          "text": "Pericarditis",
+          "isCorrect": false,
+          "explanation": "Pericarditis can cause effusion, but tamponade is usually due to fluid."
+        },
+        {
+          "text": "Constrictive pericarditis",
+          "isCorrect": false,
+          "explanation": "Constrictive pericarditis causes diastolic dysfunction, not tamponade."
+        }
+      ],
+      "explanation": {
+        "overview": "Blood in the pericardial space compresses the heart.",
+        "highYield": "Cardiac tamponade = hemopericardium.",
+        "clinicalCorrelation": "Emergency pericardiocentesis is lifesaving."
+      }
+    },
+    {
+      "id": "path_hemodynamic_087",
+      "difficulty": 2,
+      "question": "A patient with a central line has sudden dyspnea and hypotension. You suspect:",
+      "image": null,
+      "options": [
+        {
+          "text": "Air embolism",
+          "isCorrect": true,
+          "explanation": "Air can enter through the catheter and cause obstruction."
+        },
+        {
+          "text": "Fat embolism",
+          "isCorrect": false,
+          "explanation": "Fat embolism is from trauma."
+        },
+        {
+          "text": "Pulmonary embolism",
+          "isCorrect": false,
+          "explanation": "PE from DVT is less acute and has different setting."
+        },
+        {
+          "text": "Anaphylaxis",
+          "isCorrect": false,
+          "explanation": "Anaphylaxis is allergic reaction."
+        },
+        {
+          "text": "Septic shock",
+          "isCorrect": false,
+          "explanation": "Sepsis develops over hours, not suddenly."
+        }
+      ],
+      "explanation": {
+        "overview": "Air can enter through the catheter and cause obstruction.",
+        "highYield": "Air embolism = sudden dyspnea with central line.",
+        "clinicalCorrelation": "Place patient in left lateral decubitus and give 100% O2."
+      }
+    },
+    {
+      "id": "path_hemodynamic_088",
+      "difficulty": 2,
+      "question": "Which of the following is a risk factor for atherosclerosis leading to arterial thrombosis?",
+      "image": null,
+      "options": [
+        {
+          "text": "Hyperlipidemia",
+          "isCorrect": false,
+          "explanation": "Hyperlipidemia is a risk factor, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Hypertension",
+          "isCorrect": false,
+          "explanation": "Hypertension is a risk factor, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Smoking",
+          "isCorrect": false,
+          "explanation": "Smoking is a risk factor, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Diabetes",
+          "isCorrect": false,
+          "explanation": "Diabetes is a risk factor, but the answer is 'All of the above'."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "All are major risk factors for atherosclerosis."
+        }
+      ],
+      "explanation": {
+        "overview": "All are major risk factors for atherosclerosis.",
+        "highYield": "Atherosclerosis risk: hyperlipidemia, HTN, smoking, diabetes.",
+        "clinicalCorrelation": "Control these factors to prevent arterial thrombosis."
+      }
+    },
+    {
+      "id": "path_hemodynamic_089",
+      "difficulty": 2,
+      "question": "A patient with long-standing atrial fibrillation presents with acute left leg pain, pallor, and absent pulses. This is most likely due to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Arterial embolism from left atrium",
+          "isCorrect": true,
+          "explanation": "Atrial fibrillation causes left atrial thrombus, which can embolize to systemic arteries."
+        },
+        {
+          "text": "Deep vein thrombosis",
+          "isCorrect": false,
+          "explanation": "DVT causes leg swelling, not acute arterial ischemia."
+        },
+        {
+          "text": "Atherosclerotic occlusion",
+          "isCorrect": false,
+          "explanation": "Atherosclerosis is chronic, not acute."
+        },
+        {
+          "text": "Venous insufficiency",
+          "isCorrect": false,
+          "explanation": "Venous insufficiency causes chronic edema, not acute ischemia."
+        },
+        {
+          "text": "Compartment syndrome",
+          "isCorrect": false,
+          "explanation": "Compartment syndrome is from trauma or ischemia-reperfusion."
+        }
+      ],
+      "explanation": {
+        "overview": "Atrial fibrillation causes left atrial thrombus, which can embolize to systemic arteries.",
+        "highYield": "Acute arterial embolism = atrial fibrillation.",
+        "clinicalCorrelation": "Urgent embolectomy or thrombolysis may be needed."
+      }
+    },
+    {
+      "id": "path_hemodynamic_090",
+      "difficulty": 2,
+      "question": "Which of the following is a cause of secondary hypertension that can lead to arterial thrombosis?",
+      "image": null,
+      "options": [
+        {
+          "text": "Renal artery stenosis",
+          "isCorrect": true,
+          "explanation": "Renal artery stenosis causes secondary hypertension via renin-angiotensin activation."
+        },
+        {
+          "text": "Oral contraceptives",
+          "isCorrect": false,
+          "explanation": "OCs can cause hypertension but are less common."
+        },
+        {
+          "text": "Pheochromocytoma",
+          "isCorrect": false,
+          "explanation": "Pheochromocytoma causes episodic hypertension."
+        },
+        {
+          "text": "Cushing syndrome",
+          "isCorrect": false,
+          "explanation": "Cushing can cause hypertension."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "Renal artery stenosis is a classic cause, but others can also cause secondary hypertension."
+        }
+      ],
+      "explanation": {
+        "overview": "Renal artery stenosis causes secondary hypertension via renin-angiotensin activation.",
+        "highYield": "Secondary HTN = renal artery stenosis.",
+        "clinicalCorrelation": "Treat underlying cause to control blood pressure."
+      }
+    },
+    {
+      "id": "path_hemodynamic_091",
+      "difficulty": 2,
+      "question": "A patient with shock has a blood pressure of 80/40, heart rate 130, and cool, clammy skin. This is most consistent with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cardiogenic shock",
+          "isCorrect": true,
+          "explanation": "Cool, clammy skin indicates poor perfusion; tachycardia and hypotension suggest cardiogenic or hypovolemic shock."
+        },
+        {
+          "text": "Septic shock",
+          "isCorrect": false,
+          "explanation": "Septic shock often has warm, flushed skin initially."
+        },
+        {
+          "text": "Neurogenic shock",
+          "isCorrect": false,
+          "explanation": "Neurogenic shock would have bradycardia."
+        },
+        {
+          "text": "Anaphylactic shock",
+          "isCorrect": false,
+          "explanation": "Anaphylaxis would have urticaria and wheezing."
+        },
+        {
+          "text": "Hypovolemic shock",
+          "isCorrect": false,
+          "explanation": "Hypovolemic shock can have similar signs, but cardiogenic is more likely if there is a history of MI."
+        }
+      ],
+      "explanation": {
+        "overview": "Cool, clammy skin indicates poor perfusion; tachycardia and hypotension suggest cardiogenic or hypovolemic shock.",
+        "highYield": "Cardiogenic shock = cool, clammy, hypotension.",
+        "clinicalCorrelation": "Assess for signs of heart failure (JVD, crackles)."
+      }
+    },
+    {
+      "id": "path_hemodynamic_092",
+      "difficulty": 2,
+      "question": "In hypovolemic shock, the most appropriate initial fluid for resuscitation is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Isotonic crystalloid (e.g., normal saline)",
+          "isCorrect": true,
+          "explanation": "Crystalloids are the first-line for volume resuscitation."
+        },
+        {
+          "text": "Colloids (e.g., albumin)",
+          "isCorrect": false,
+          "explanation": "Colloids are second-line and not clearly superior."
+        },
+        {
+          "text": "Packed red blood cells",
+          "isCorrect": false,
+          "explanation": "PRBCs are for hemorrhagic shock with significant blood loss."
+        },
+        {
+          "text": "Hypertonic saline",
+          "isCorrect": false,
+          "explanation": "Hypertonic saline is not first-line."
+        },
+        {
+          "text": "Dextrose 5%",
+          "isCorrect": false,
+          "explanation": "D5W is not effective for volume expansion."
+        }
+      ],
+      "explanation": {
+        "overview": "Crystalloids are the first-line for volume resuscitation.",
+        "highYield": "Hypovolemic shock = crystalloid first.",
+        "clinicalCorrelation": "Monitor response and use blood products if hemorrhagic."
+      }
+    },
+    {
+      "id": "path_hemodynamic_093",
+      "difficulty": 2,
+      "question": "Which of the following is a complication of prolonged shock?",
+      "image": null,
+      "options": [
+        {
+          "text": "Multiorgan dysfunction syndrome (MODS)",
+          "isCorrect": true,
+          "explanation": "Prolonged hypoperfusion leads to failure of multiple organs."
+        },
+        {
+          "text": "Transient hypotension",
+          "isCorrect": false,
+          "explanation": "This is a feature of shock, not a complication."
+        },
+        {
+          "text": "Compensatory tachycardia",
+          "isCorrect": false,
+          "explanation": "Tachycardia is a compensatory response."
+        },
+        {
+          "text": "Hyperglycemia",
+          "isCorrect": false,
+          "explanation": "Hyperglycemia can occur, but MODS is the major complication."
+        },
+        {
+          "text": "Acidosis",
+          "isCorrect": false,
+          "explanation": "Acidosis is part of the shock, not a complication."
+        }
+      ],
+      "explanation": {
+        "overview": "Prolonged hypoperfusion leads to failure of multiple organs.",
+        "highYield": "Prolonged shock = MODS.",
+        "clinicalCorrelation": "Prevent by early goal-directed therapy."
+      }
+    },
+    {
+      "id": "path_hemodynamic_094",
+      "difficulty": 2,
+      "question": "The primary mechanism of edema in nephrotic syndrome is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Decreased plasma oncotic pressure due to proteinuria",
+          "isCorrect": true,
+          "explanation": "Proteinuria leads to hypoalbuminemia, reducing oncotic pressure."
+        },
+        {
+          "text": "Increased capillary hydrostatic pressure",
+          "isCorrect": false,
+          "explanation": "Increased hydrostatic pressure is seen in heart failure."
+        },
+        {
+          "text": "Lymphatic obstruction",
+          "isCorrect": false,
+          "explanation": "Lymphatic obstruction causes lymphedema."
+        },
+        {
+          "text": "Increased capillary permeability",
+          "isCorrect": false,
+          "explanation": "Increased permeability is seen in inflammation."
+        },
+        {
+          "text": "Sodium retention",
+          "isCorrect": false,
+          "explanation": "Sodium retention contributes, but the primary is oncotic pressure."
+        }
+      ],
+      "explanation": {
+        "overview": "Proteinuria leads to hypoalbuminemia, reducing oncotic pressure.",
+        "highYield": "Nephrotic edema = decreased oncotic pressure.",
+        "clinicalCorrelation": "Treat with diuretics and address underlying renal disease."
+      }
+    },
+    {
+      "id": "path_hemodynamic_095",
+      "difficulty": 2,
+      "question": "The image shows a pale, wedge-shaped infarct in the spleen. This is due to:",
+      "image": "path_spleen_infarct.png",
+      "options": [
+        {
+          "text": "Occlusion of the splenic artery",
+          "isCorrect": true,
+          "explanation": "Splenic infarcts are typically pale and wedge-shaped due to end-arterial supply."
+        },
+        {
+          "text": "Venous thrombosis",
+          "isCorrect": false,
+          "explanation": "Venous thrombosis causes congestion, not pale infarct."
+        },
+        {
+          "text": "Hemorrhage",
+          "isCorrect": false,
+          "explanation": "Hemorrhage is bleeding, not infarction."
+        },
+        {
+          "text": "Infection",
+          "isCorrect": false,
+          "explanation": "Infection causes abscess, not infarction."
+        },
+        {
+          "text": "Trauma",
+          "isCorrect": false,
+          "explanation": "Trauma causes laceration."
+        }
+      ],
+      "explanation": {
+        "overview": "Splenic infarcts are typically pale and wedge-shaped due to end-arterial supply.",
+        "highYield": "Spleen infarct = arterial occlusion.",
+        "clinicalCorrelation": "Common in embolic disease (e.g., endocarditis)."
+      }
+    },
+    {
+      "id": "path_hemodynamic_096",
+      "difficulty": 2,
+      "question": "Which of the following organs can undergo hemorrhagic infarction due to venous occlusion?",
+      "image": null,
+      "options": [
+        {
+          "text": "Intestine",
+          "isCorrect": true,
+          "explanation": "Venous occlusion (e.g., mesenteric vein thrombosis) leads to hemorrhagic infarct."
+        },
+        {
+          "text": "Heart",
+          "isCorrect": false,
+          "explanation": "Heart infarction is usually pale (coagulative)."
+        },
+        {
+          "text": "Kidney",
+          "isCorrect": false,
+          "explanation": "Kidney infarction is pale."
+        },
+        {
+          "text": "Spleen",
+          "isCorrect": false,
+          "explanation": "Spleen infarction is pale."
+        },
+        {
+          "text": "Brain",
+          "isCorrect": false,
+          "explanation": "Brain infarction is liquefactive, not typically hemorrhagic unless reperfusion."
+        }
+      ],
+      "explanation": {
+        "overview": "Venous occlusion (e.g., mesenteric vein thrombosis) leads to hemorrhagic infarct.",
+        "highYield": "Hemorrhagic infarct = intestine (venous occlusion).",
+        "clinicalCorrelation": "Mesenteric ischemia is a surgical emergency."
+      }
+    },
+    {
+      "id": "path_hemodynamic_097",
+      "difficulty": 2,
+      "question": "A patient with cirrhosis develops ascites. The mechanism of ascites formation includes:",
+      "image": null,
+      "options": [
+        {
+          "text": "Portal hypertension and hypoalbuminemia",
+          "isCorrect": true,
+          "explanation": "Portal hypertension increases hydrostatic pressure in splanchnic capillaries, and hypoalbuminemia reduces oncotic pressure."
+        },
+        {
+          "text": "Increased capillary permeability",
+          "isCorrect": false,
+          "explanation": "Permeability is not the primary mechanism."
+        },
+        {
+          "text": "Lymphatic obstruction",
+          "isCorrect": false,
+          "explanation": "Lymphatic obstruction is not the cause."
+        },
+        {
+          "text": "Heart failure",
+          "isCorrect": false,
+          "explanation": "Heart failure can cause ascites but not the primary in cirrhosis."
+        },
+        {
+          "text": "Renal failure",
+          "isCorrect": false,
+          "explanation": "Renal failure can cause fluid retention but not the primary."
+        }
+      ],
+      "explanation": {
+        "overview": "Portal hypertension increases hydrostatic pressure in splanchnic capillaries, and hypoalbuminemia reduces oncotic pressure.",
+        "highYield": "Cirrhotic ascites = portal HTN + hypoalbuminemia.",
+        "clinicalCorrelation": "Treat with diuretics, paracentesis, and TIPS."
+      }
+    },
+    {
+      "id": "path_hemodynamic_098",
+      "difficulty": 2,
+      "question": "Which of the following is a cause of secondary edema due to decreased plasma oncotic pressure?",
+      "image": null,
+      "options": [
+        {
+          "text": "Malnutrition",
+          "isCorrect": false,
+          "explanation": "Malnutrition causes hypoalbuminemia, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Liver disease",
+          "isCorrect": false,
+          "explanation": "Liver disease reduces albumin synthesis, but the answer is 'All of the above'."
+        },
+        {
+          "text": "Nephrotic syndrome",
+          "isCorrect": false,
+          "explanation": "Nephrotic syndrome causes protein loss, but the answer is 'All of the above'."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "All these conditions reduce plasma oncotic pressure and cause edema."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All are causes."
+        }
+      ],
+      "explanation": {
+        "overview": "All these conditions reduce plasma oncotic pressure and cause edema.",
+        "highYield": "Decreased oncotic edema: malnutrition, liver disease, nephrotic syndrome.",
+        "clinicalCorrelation": "Treat underlying cause; albumin infusion may be considered."
+      }
+    }
+  ]
+}

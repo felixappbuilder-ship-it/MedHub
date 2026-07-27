@@ -4,10 +4,13 @@
  * Performance Analytics Module
  * Calculates exam statistics, subject progress, weak areas, trends, and recommendations.
  * All data is derived from exam results stored in IndexedDB.
+ * Integrates with the Performance Rating Engine for user ratings and rankings.
  */
 
 import * as utils from './utils.js';
 import * as db from './db.js';
+import * as sync from './sync.js';
+import * as performanceRating from './performance-rating-v2.js'; // NEW
 
 // ==================== CONSTANTS ====================
 
@@ -18,15 +21,23 @@ const MASTERY_THRESHOLDS = {
     BEGINNER: 60
 };
 
+// ==================== HELPER: FILTER VALID EXAMS ====================
+
+function filterValidExams(exams) {
+    return exams.filter(exam =>
+        exam &&
+        exam.examId &&
+        exam.totalQuestions > 0 &&
+        exam.correctAnswers !== undefined &&
+        exam.scorePercentage !== undefined
+    );
+}
+
 // ==================== SUBJECT PROGRESS ====================
 
-/**
- * Get progress percentage for each subject based on completed exams.
- * @returns {Promise<Object>} e.g., { anatomy: 35, physiology: 42, ... }
- */
 export async function getSubjectProgress() {
     try {
-        const exams = await db.getAllExamResults();
+        const exams = filterValidExams(await db.getAllExamResults());
         if (!exams || exams.length === 0) return {};
 
         const subjectStats = {};
@@ -60,23 +71,15 @@ export async function getSubjectProgress() {
 
 // ==================== RECENT TOPICS ====================
 
-/**
- * Get recent topics studied for a subject.
- * @param {string} subjectId
- * @param {number} limit
- * @returns {Promise<Array>}
- */
 export async function getRecentTopics(subjectId, limit = 3) {
     try {
-        const exams = await db.getAllExamResults();
+        const exams = filterValidExams(await db.getAllExamResults());
         if (!exams || exams.length === 0) return [];
 
-        // Filter by subject and sort by date descending
         const subjectExams = exams
             .filter(exam => exam.subject === subjectId)
-            .sort((a, b) => new Date(b.date) - new Date(a.date));
+            .sort((a, b) => new Date(b.date || b.examId) - new Date(a.date || a.examId));
 
-        // Collect unique topics from recent exams
         const topicsMap = new Map();
         subjectExams.forEach(exam => {
             if (exam.topics && Array.isArray(exam.topics)) {
@@ -87,14 +90,13 @@ export async function getRecentTopics(subjectId, limit = 3) {
                             topicId: topic.id,
                             topicName: topic.name,
                             questions: topic.questions || 0,
-                            lastStudied: exam.date
+                            lastStudied: exam.date || new Date().toISOString()
                         });
                     }
                 });
             }
         });
 
-        // Convert to array, sort by lastStudied, take limit
         const topics = Array.from(topicsMap.values())
             .sort((a, b) => new Date(b.lastStudied) - new Date(a.lastStudied))
             .slice(0, limit);
@@ -108,31 +110,21 @@ export async function getRecentTopics(subjectId, limit = 3) {
 
 // ==================== WEAK AREAS ====================
 
-/**
- * Identify weak areas (topics/subjects with score < 70%).
- * @returns {Promise<Array>}
- */
 export async function identifyWeakAreas() {
     try {
-        const exams = await db.getAllExamResults();
+        const exams = filterValidExams(await db.getAllExamResults());
         if (!exams || exams.length === 0) return [];
 
         const topicStats = {};
 
         exams.forEach(exam => {
             if (!exam.questions || !Array.isArray(exam.questions)) return;
-
             exam.questions.forEach(q => {
                 const topic = q.topic;
                 if (!topic) return;
-
                 if (!topicStats[topic]) {
-                    topicStats[topic] = {
-                        total: 0,
-                        correct: 0
-                    };
+                    topicStats[topic] = { total: 0, correct: 0 };
                 }
-
                 topicStats[topic].total++;
                 if (q.correct) topicStats[topic].correct++;
             });
@@ -151,7 +143,6 @@ export async function identifyWeakAreas() {
             }
         });
 
-        // Sort by score ascending (worst first)
         return weakAreas.sort((a, b) => a.score - b.score);
     } catch (e) {
         console.warn('identifyWeakAreas failed', e);
@@ -161,14 +152,10 @@ export async function identifyWeakAreas() {
 
 // ==================== ANALYTICS CALCULATIONS ====================
 
-/**
- * Calculate comprehensive analytics from all exam results.
- * @param {Array} results - exam results array (optional, if not provided, fetches from DB)
- * @returns {Promise<Object>}
- */
 export async function calculateAllAnalytics(results = null) {
     try {
-        const exams = results || (await db.getAllExamResults()) || [];
+        const rawExams = results || (await db.getAllExamResults()) || [];
+        const exams = filterValidExams(rawExams);
 
         return {
             summary: calculateSummary(exams),
@@ -176,7 +163,9 @@ export async function calculateAllAnalytics(results = null) {
             subjectAnalysis: analyzeSubjects(exams),
             studyPatterns: analyzeStudyPatterns(exams),
             weakAreas: await identifyWeakAreas(),
-            recommendations: generateRecommendations(exams)
+            recommendations: generateRecommendations(exams),
+            // NEW: Include user rating info if available
+            rating: await getUserRatingInfo()
         };
     } catch (e) {
         console.warn('calculateAllAnalytics failed', e);
@@ -186,10 +175,113 @@ export async function calculateAllAnalytics(results = null) {
             subjectAnalysis: [],
             studyPatterns: {},
             weakAreas: [],
-            recommendations: []
+            recommendations: [],
+            rating: null
         };
     }
 }
+
+export async function refreshAnalytics(forceSync = false) {
+    if (sync.isOnline()) {
+        console.log('[Analytics] Syncing data before analytics...');
+        await sync.syncData();
+    } else if (forceSync) {
+        console.warn('[Analytics] Force sync requested but device is offline.');
+    }
+    return await calculateAllAnalytics();
+}
+
+// ==================== USER RATING INFO ====================
+
+/**
+ * Get the current user's rating, rank, and performance summary.
+ * @returns {Promise<Object|null>}
+ */
+export async function getUserRatingInfo() {
+    try {
+        const user = window.app?.getUser?.();
+        if (!user) return null;
+
+        const rating = user.rating || 100;
+        const rank = performanceRating.getRank(rating);
+        const historyEWMA = user.historyEWMA || 0.5;
+        const completedExams = user.completedExams || 0;
+        const reliability = user.startedExams ? 
+            Math.min(1, completedExams / (user.startedExams || 1)) : 1;
+
+        return {
+            rating,
+            rank,
+            historyEWMA,
+            completedExams,
+            reliability,
+            lastExamPR: user.lastExamPR || null
+        };
+    } catch (e) {
+        console.warn('getUserRatingInfo failed', e);
+        return null;
+    }
+}
+
+// ==================== LEADERBOARD ====================
+
+/**
+ * Get the global leaderboard (top users by rating).
+ * @param {number} limit - number of users to return
+ * @returns {Promise<Array>}
+ */
+export async function getLeaderboard(limit = 100) {
+    try {
+        const users = await db.getAllUsers();
+        return users
+            .filter(u => u.rating && u.rating > 0)
+            .sort((a, b) => b.rating - a.rating)
+            .slice(0, limit)
+            .map(u => ({
+                id: u._id,
+                name: u.name || 'Anonymous',
+                rating: u.rating,
+                rank: performanceRating.getRank(u.rating),
+                completedExams: u.completedExams || 0,
+                lastExamPR: u.lastExamPR || null
+            }));
+    } catch (e) {
+        console.warn('getLeaderboard failed', e);
+        return [];
+    }
+}
+
+/**
+ * Get a user's rating history (from exam results).
+ * @param {string} userId - optional (uses current user if not provided)
+ * @param {number} limit - number of entries to return
+ * @returns {Promise<Array>}
+ */
+export async function getRatingHistory(userId = null, limit = 30) {
+    try {
+        const targetUserId = userId || window.app?.getUser?.()?._id;
+        if (!targetUserId) return [];
+
+        const exams = await db.getAllExamResults();
+        const userExams = exams
+            .filter(e => e.userId === targetUserId && e.newRating !== undefined)
+            .sort((a, b) => new Date(a.date) - new Date(b.date))
+            .slice(-limit);
+
+        return userExams.map(e => ({
+            date: e.date,
+            rating: e.newRating,
+            change: e.ratingChange || 0,
+            pr: e.performanceRatio || null,
+            examId: e.examId
+        }));
+    } catch (e) {
+        console.warn('getRatingHistory failed', e);
+        return [];
+    }
+}
+
+// ==================== HELPER FUNCTIONS (INTERNAL) ====================
 
 function calculateSummary(exams) {
     if (!exams.length) {
@@ -207,7 +299,9 @@ function calculateSummary(exams) {
     const totalQuestions = exams.reduce((sum, e) => sum + (e.totalQuestions || 0), 0);
     const totalCorrect = exams.reduce((sum, e) => sum + (e.correctAnswers || 0), 0);
     const averageScore = totalQuestions ? (totalCorrect / totalQuestions) * 100 : 0;
-    const totalStudyTime = exams.reduce((sum, e) => sum + (e.timeSpent || 0), 0) / 60; // minutes
+    const totalMs = exams.reduce((sum, e) => sum + (e.timeSpent || 0), 0);
+    const totalMinutes = totalMs / (1000 * 60);
+    const totalHours = totalMinutes / 60;
     const scores = exams.map(e => e.scorePercentage || 0);
     const bestScore = Math.max(...scores, 0);
     const worstScore = Math.min(...scores, 0);
@@ -216,7 +310,7 @@ function calculateSummary(exams) {
         totalExams,
         totalQuestions,
         averageScore: Math.round(averageScore),
-        totalStudyTime: Math.round(totalStudyTime),
+        totalStudyTime: Math.round(totalHours * 10) / 10,
         bestScore: Math.round(bestScore),
         worstScore: Math.round(worstScore)
     };
@@ -225,16 +319,32 @@ function calculateSummary(exams) {
 function calculateTrends(exams) {
     if (!exams.length) return [];
 
-    // Group by date (YYYY-MM-DD)
     const grouped = {};
-    exams.forEach(exam => {
-        const date = exam.date ? exam.date.split('T')[0] : 'unknown';
-        if (!grouped[date]) {
-            grouped[date] = { scores: [], totalQuestions: 0, time: 0 };
+    exams.forEach((exam, index) => {
+        let dateStr;
+        if (exam.date) {
+            dateStr = exam.date.split('T')[0];
+        } else if (exam.examId && typeof exam.examId === 'string') {
+            const parts = exam.examId.split('_');
+            if (parts.length > 1) {
+                const ts = parseInt(parts[1]);
+                if (!isNaN(ts) && ts > 1000000000) {
+                    dateStr = new Date(ts).toISOString().split('T')[0];
+                }
+            }
         }
-        grouped[date].scores.push(exam.scorePercentage || 0);
-        grouped[date].totalQuestions += exam.totalQuestions || 0;
-        grouped[date].time += exam.timeSpent || 0;
+        if (!dateStr) {
+            const now = new Date();
+            now.setDate(now.getDate() - (exams.length - 1 - index));
+            dateStr = now.toISOString().split('T')[0];
+        }
+
+        if (!grouped[dateStr]) {
+            grouped[dateStr] = { scores: [], totalQuestions: 0, timeMs: 0 };
+        }
+        grouped[dateStr].scores.push(exam.scorePercentage || 0);
+        grouped[dateStr].totalQuestions += exam.totalQuestions || 0;
+        grouped[dateStr].timeMs += exam.timeSpent || 0;
     });
 
     return Object.entries(grouped)
@@ -242,7 +352,7 @@ function calculateTrends(exams) {
             date,
             score: data.scores.reduce((a, b) => a + b, 0) / data.scores.length,
             questions: data.totalQuestions,
-            time: data.time / 60 // minutes
+            time: data.timeMs / (1000 * 60)
         }))
         .sort((a, b) => a.date.localeCompare(b.date));
 }
@@ -261,25 +371,26 @@ function analyzeSubjects(exams) {
                 exams: 0,
                 questions: 0,
                 correct: 0,
-                time: 0
+                timeMs: 0
             };
         }
 
         subjectData[subject].exams++;
         subjectData[subject].questions += exam.totalQuestions || 0;
         subjectData[subject].correct += exam.correctAnswers || 0;
-        subjectData[subject].time += exam.timeSpent || 0;
+        subjectData[subject].timeMs += exam.timeSpent || 0;
     });
 
     return Object.entries(subjectData).map(([subject, data]) => {
         const percentage = data.questions ? (data.correct / data.questions) * 100 : 0;
+        const avgTimeSec = data.questions ? Math.round(data.timeMs / data.questions / 1000) : 0;
         return {
             subject,
             exams: data.exams,
             questions: data.questions,
             correct: data.correct,
             percentage: Math.round(percentage),
-            averageTime: data.questions ? Math.round(data.time / data.questions) : 0,
+            averageTime: avgTimeSec,
             mastery: calculateMasteryLevel(percentage)
         };
     });
@@ -312,7 +423,6 @@ function analyzeStudyPatterns(exams) {
         if (!exam.date) return;
         const date = new Date(exam.date);
         if (isNaN(date)) return;
-
         const day = date.toLocaleDateString('en-US', { weekday: 'long' });
         const hour = date.getHours();
 
@@ -320,7 +430,6 @@ function analyzeStudyPatterns(exams) {
             byDay[day].count++;
             byDay[day].totalScore += exam.scorePercentage || 0;
         }
-
         if (byHour[hour]) {
             byHour[hour].count++;
             byHour[hour].totalScore += exam.scorePercentage || 0;
@@ -351,12 +460,13 @@ function analyzeStudyPatterns(exams) {
         }
     });
 
-    const totalDays = 30; // Look back 30 days
+    const totalDays = 30;
     const uniqueDays = new Set(exams.map(e => e.date?.split('T')[0])).size;
     const consistency = Math.min(100, (uniqueDays / totalDays) * 100);
 
-    const totalTime = exams.reduce((sum, e) => sum + (e.timeSpent || 0), 0);
-    const avgSession = totalTime / exams.length / 60;
+    const totalMs = exams.reduce((sum, e) => sum + (e.timeSpent || 0), 0);
+    const totalMinutes = totalMs / (1000 * 60);
+    const avgSession = exams.length ? totalMinutes / exams.length : 0;
 
     return {
         bestDay,
@@ -386,14 +496,12 @@ function calculateStreak(exams) {
         const prevDate = new Date(dates[i - 1]);
         const thisDate = new Date(dates[i]);
         const diffDays = Math.round((prevDate - thisDate) / (1000 * 60 * 60 * 24));
-
         if (diffDays === 1) {
             streak++;
         } else if (diffDays > 1) {
             break;
         }
     }
-
     return streak;
 }
 
@@ -480,17 +588,6 @@ function identifyWeakAreasSync(exams) {
     return weak.sort((a, b) => a.score - b.score);
 }
 
-// ==================== EXPORT ====================
-
-export {
-    calculateSummary,
-    calculateTrends,
-    analyzeSubjects,
-    analyzeStudyPatterns,
-    generateRecommendations,
-    calculateStreak
-};
-
 // ==================== EXPOSE GLOBALLY ====================
 
 window.analytics = {
@@ -498,6 +595,10 @@ window.analytics = {
     getRecentTopics,
     identifyWeakAreas,
     calculateAllAnalytics,
+    refreshAnalytics,
+    getUserRatingInfo,
+    getLeaderboard,
+    getRatingHistory,
     calculateSummary,
     calculateTrends,
     analyzeSubjects,

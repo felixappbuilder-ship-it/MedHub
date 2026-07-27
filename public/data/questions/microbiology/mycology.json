@@ -1,0 +1,3424 @@
+{
+  "questions": [
+    {
+      "questionId": "mycology_001",
+      "difficulty": 1,
+      "question": "Fungi are eukaryotic organisms characterized by the presence of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Ergosterol in the cell membrane",
+          "isCorrect": true,
+          "explanation": "Fungal cell membranes contain ergosterol, which distinguishes them from bacteria and human cells (cholesterol)."
+        },
+        {
+          "text": "Peptidoglycan in the cell wall",
+          "isCorrect": false,
+          "explanation": "Peptidoglycan is found in bacterial cell walls, not fungi."
+        },
+        {
+          "text": "Chloroplasts",
+          "isCorrect": false,
+          "explanation": "Fungi are heterotrophs and lack chloroplasts."
+        },
+        {
+          "text": "Flagella in all species",
+          "isCorrect": false,
+          "explanation": "Only some fungi (e.g., chytrids) have flagellated spores; most do not."
+        },
+        {
+          "text": "Capsules composed of hyaluronic acid",
+          "isCorrect": false,
+          "explanation": "Some bacteria (e.g., Streptococcus) have hyaluronic acid capsules; fungal capsules are polysaccharides."
+        }
+      ],
+      "explanation": {
+        "overview": "Fungi are eukaryotic, heterotrophic organisms with ergosterol in their cell membranes and chitin in cell walls.",
+        "highYield": "Ergosterol in membrane = fungal target for antifungals (amphotericin B, azoles).",
+        "clinicalCorrelation": "Differences in ergosterol vs cholesterol allow selective toxicity."
+      }
+    },
+    {
+      "questionId": "mycology_002",
+      "difficulty": 1,
+      "question": "The fungal cell wall is composed mainly of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Chitin and glucan",
+          "isCorrect": true,
+          "explanation": "Fungal cell walls contain chitin, β-glucans, and mannans."
+        },
+        {
+          "text": "Peptidoglycan",
+          "isCorrect": false,
+          "explanation": "Peptidoglycan is in bacterial cell walls."
+        },
+        {
+          "text": "Lipopolysaccharide",
+          "isCorrect": false,
+          "explanation": "LPS is in gram-negative bacteria."
+        },
+        {
+          "text": "Cellulose",
+          "isCorrect": false,
+          "explanation": "Cellulose is in plant cell walls."
+        },
+        {
+          "text": "Teichoic acid",
+          "isCorrect": false,
+          "explanation": "Teichoic acids are in gram-positive bacterial cell walls."
+        }
+      ],
+      "explanation": {
+        "overview": "The fungal cell wall is a rigid structure providing shape and protection, composed mainly of chitin and glucans.",
+        "highYield": "Chitin and β-glucan = fungal cell wall; target of echinocandins.",
+        "clinicalCorrelation": "Echinocandins (caspofungin) inhibit β-glucan synthase."
+      }
+    },
+    {
+      "questionId": "mycology_003",
+      "difficulty": 1,
+      "question": "Yeasts are fungi that reproduce primarily by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Budding",
+          "isCorrect": true,
+          "explanation": "Yeasts like Candida and Cryptococcus reproduce asexually by budding (blastoconidia)."
+        },
+        {
+          "text": "Binary fission",
+          "isCorrect": false,
+          "explanation": "Binary fission is typical of bacteria."
+        },
+        {
+          "text": "Spore formation",
+          "isCorrect": false,
+          "explanation": "Spore formation occurs in molds and dimorphic fungi."
+        },
+        {
+          "text": "Fragmentation",
+          "isCorrect": false,
+          "explanation": "Fragmentation is seen in molds."
+        },
+        {
+          "text": "Conjugation",
+          "isCorrect": false,
+          "explanation": "Conjugation is a bacterial gene transfer mechanism."
+        }
+      ],
+      "explanation": {
+        "overview": "Yeasts are unicellular fungi that multiply by budding, forming blastoconidia.",
+        "highYield": "Yeast reproduction = budding (blastoconidia).",
+        "clinicalCorrelation": "Identification of budding yeast in clinical specimens indicates a yeast infection."
+      }
+    },
+    {
+      "questionId": "mycology_004",
+      "difficulty": 1,
+      "question": "Molds are fungi that grow as:",
+      "image": null,
+      "options": [
+        {
+          "text": "Multicellular filaments called hyphae",
+          "isCorrect": true,
+          "explanation": "Molds form tubular structures (hyphae) that branch and intertwine to form mycelium."
+        },
+        {
+          "text": "Single-celled budding cells",
+          "isCorrect": false,
+          "explanation": "Single-celled budding cells are yeasts."
+        },
+        {
+          "text": "Pseudohyphae only",
+          "isCorrect": false,
+          "explanation": "Pseudohyphae are elongated budding cells, not true molds."
+        },
+        {
+          "text": "Spherical cells",
+          "isCorrect": false,
+          "explanation": "Spherical cells describe yeasts."
+        },
+        {
+          "text": "Motile spores",
+          "isCorrect": false,
+          "explanation": "Most fungal spores are non-motile."
+        }
+      ],
+      "explanation": {
+        "overview": "Molds are filamentous fungi that produce hyphae and form colonies with a fuzzy appearance.",
+        "highYield": "Mold = hyphae → mycelium.",
+        "clinicalCorrelation": "Hyphal invasion of tissue is a hallmark of invasive mold infections."
+      }
+    },
+    {
+      "questionId": "mycology_005",
+      "difficulty": 2,
+      "question": "Dimorphic fungi are characterized by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Existing as molds at ambient temperature and as yeasts at body temperature",
+          "isCorrect": true,
+          "explanation": "Dimorphic fungi switch morphology based on temperature: mold in environment (25°C), yeast/spherule in host (37°C)."
+        },
+        {
+          "text": "Existing as yeasts in the environment and molds in tissue",
+          "isCorrect": false,
+          "explanation": "The reverse is true."
+        },
+        {
+          "text": "Having both sexual and asexual reproductive forms",
+          "isCorrect": false,
+          "explanation": "Many fungi have both, but that doesn't define dimorphism."
+        },
+        {
+          "text": "Forming true hyphae and pseudohyphae",
+          "isCorrect": false,
+          "explanation": "Candida does that but is not a true dimorphic."
+        },
+        {
+          "text": "Being able to switch between filamentous and capsular forms",
+          "isCorrect": false,
+          "explanation": "That's not a standard definition."
+        }
+      ],
+      "explanation": {
+        "overview": "Thermal dimorphism is a key virulence factor, allowing conversion to the parasitic yeast form.",
+        "highYield": "Dimorphic: mold at 25°C, yeast at 37°C (Histoplasma, Blastomyces, Coccidioides).",
+        "clinicalCorrelation": "Inhalation of mold spores leads to infection; conversion to yeast aids immune evasion."
+      }
+    },
+    {
+      "questionId": "mycology_006",
+      "difficulty": 2,
+      "question": "Which of the following is a dimorphic fungus?",
+      "image": null,
+      "options": [
+        {
+          "text": "Histoplasma capsulatum",
+          "isCorrect": true,
+          "explanation": "Histoplasma is a classic dimorphic fungus."
+        },
+        {
+          "text": "Candida albicans",
+          "isCorrect": false,
+          "explanation": "Candida can form pseudohyphae but is not thermally dimorphic."
+        },
+        {
+          "text": "Aspergillus fumigatus",
+          "isCorrect": false,
+          "explanation": "Aspergillus is a monomorphic mold."
+        },
+        {
+          "text": "Cryptococcus neoformans",
+          "isCorrect": false,
+          "explanation": "Cryptococcus is a yeast, not dimorphic."
+        },
+        {
+          "text": "Penicillium marneffei",
+          "isCorrect": true,
+          "explanation": "Penicillium (now Talaromyces) marneffei is dimorphic; note: some consider it dimorphic; the question likely expects Histoplasma, but both are valid; but the original answer was A, we'll keep A as correct."
+        }
+      ],
+      "explanation": {
+        "overview": "The classic dimorphic fungi include Histoplasma capsulatum, Blastomyces dermatitidis, Coccidioides immitis/posadasii, Paracoccidioides brasiliensis, Sporothrix schenckii, and Talaromyces marneffei.",
+        "highYield": "Classic dimorphic: Histoplasma, Blastomyces, Coccidioides, Paracoccidioides, Sporothrix, Talaromyces.",
+        "clinicalCorrelation": "Penicillium marneffei is a dimorphic fungus seen in HIV patients in Southeast Asia."
+      }
+    },
+    {
+      "questionId": "mycology_007",
+      "difficulty": 1,
+      "question": "The most common cause of fungal infections worldwide is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Candida species",
+          "isCorrect": true,
+          "explanation": "Candida is the most frequent cause of superficial and invasive fungal infections."
+        },
+        {
+          "text": "Aspergillus fumigatus",
+          "isCorrect": false,
+          "explanation": "Aspergillus is common but Candida is more prevalent."
+        },
+        {
+          "text": "Cryptococcus neoformans",
+          "isCorrect": false,
+          "explanation": "Cryptococcus causes fewer cases globally."
+        },
+        {
+          "text": "Histoplasma capsulatum",
+          "isCorrect": false,
+          "explanation": "Histoplasma is geographically restricted."
+        },
+        {
+          "text": "Dermatophytes",
+          "isCorrect": false,
+          "explanation": "Dermatophytes cause superficial infections but are less common overall than Candida."
+        }
+      ],
+      "explanation": {
+        "overview": "Candida spp. are part of the normal flora and cause opportunistic infections ranging from thrush to systemic candidiasis.",
+        "highYield": "Most common fungal pathogen = Candida.",
+        "clinicalCorrelation": "Candidemia is a leading cause of healthcare-associated bloodstream infections."
+      }
+    },
+    {
+      "questionId": "mycology_008",
+      "difficulty": 2,
+      "question": "Candida albicans is distinguished from other Candida species by its ability to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Form germ tubes in serum",
+          "isCorrect": true,
+          "explanation": "The germ tube test is a rapid presumptive identification for C. albicans."
+        },
+        {
+          "text": "Produce urease",
+          "isCorrect": false,
+          "explanation": "Urease production is a characteristic of Cryptococcus."
+        },
+        {
+          "text": "Grow at 37°C",
+          "isCorrect": false,
+          "explanation": "Most Candida species grow at 37°C."
+        },
+        {
+          "text": "Form capsules",
+          "isCorrect": false,
+          "explanation": "Capsules are a feature of Cryptococcus."
+        },
+        {
+          "text": "Produce aflatoxin",
+          "isCorrect": false,
+          "explanation": "Aflatoxin is produced by Aspergillus flavus."
+        }
+      ],
+      "explanation": {
+        "overview": "The germ tube test is simple and rapid; germ tube-positive yeasts are presumptively C. albicans or C. dubliniensis.",
+        "highYield": "Germ tube test = C. albicans (with some exceptions).",
+        "clinicalCorrelation": "Rapid identification guides early antifungal therapy."
+      }
+    },
+    {
+      "questionId": "mycology_009",
+      "difficulty": 1,
+      "question": "Cryptococcus neoformans is characterized by:",
+      "image": null,
+      "options": [
+        {
+          "text": "A polysaccharide capsule",
+          "isCorrect": true,
+          "explanation": "The thick capsule is a major virulence factor and diagnostic feature."
+        },
+        {
+          "text": "Germ tube formation",
+          "isCorrect": false,
+          "explanation": "Germ tubes are formed by Candida."
+        },
+        {
+          "text": "Dimorphism",
+          "isCorrect": false,
+          "explanation": "Cryptococcus is not dimorphic."
+        },
+        {
+          "text": "Aflatoxin production",
+          "isCorrect": false,
+          "explanation": "Aflatoxin is from Aspergillus."
+        },
+        {
+          "text": "Septate hyphae",
+          "isCorrect": false,
+          "explanation": "Cryptococcus does not form hyphae in typical growth."
+        }
+      ],
+      "explanation": {
+        "overview": "Cryptococcus neoformans is an encapsulated yeast that causes meningitis, especially in HIV/AIDS.",
+        "highYield": "Cryptococcus = encapsulated yeast; India ink stain positive.",
+        "clinicalCorrelation": "Cryptococcal antigen (CrAg) test detects capsular polysaccharide in CSF/serum."
+      }
+    },
+    {
+      "questionId": "mycology_010",
+      "difficulty": 1,
+      "question": "The India ink stain is used to demonstrate the capsule of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cryptococcus neoformans",
+          "isCorrect": true,
+          "explanation": "India ink creates a negative contrast, revealing the clear capsule around the yeast."
+        },
+        {
+          "text": "Candida albicans",
+          "isCorrect": false,
+          "explanation": "Candida does not have a prominent capsule."
+        },
+        {
+          "text": "Aspergillus fumigatus",
+          "isCorrect": false,
+          "explanation": "Aspergillus hyphae are not stained with India ink."
+        },
+        {
+          "text": "Histoplasma capsulatum",
+          "isCorrect": false,
+          "explanation": "Histoplasma is an intracellular yeast without a visible capsule."
+        },
+        {
+          "text": "Blastomyces dermatitidis",
+          "isCorrect": false,
+          "explanation": "Blastomyces yeast is not encapsulated."
+        }
+      ],
+      "explanation": {
+        "overview": "India ink staining of CSF is a rapid method to diagnose cryptococcal meningitis.",
+        "highYield": "India ink = Cryptococcus capsule (halo on dark background).",
+        "clinicalCorrelation": "Sensitivity is lower than CrAg but can provide immediate diagnosis."
+      }
+    },
+    {
+      "questionId": "mycology_011",
+      "difficulty": 1,
+      "question": "Aspergillus fumigatus is associated with which clinical syndrome in immunocompromised patients?",
+      "image": null,
+      "options": [
+        {
+          "text": "Invasive aspergillosis",
+          "isCorrect": true,
+          "explanation": "A. fumigatus is the most common cause of invasive aspergillosis in neutropenic and transplant patients."
+        },
+        {
+          "text": "Cryptococcal meningitis",
+          "isCorrect": false,
+          "explanation": "Cryptococcal meningitis is caused by Cryptococcus."
+        },
+        {
+          "text": "Oral thrush",
+          "isCorrect": false,
+          "explanation": "Oral thrush is caused by Candida."
+        },
+        {
+          "text": "Valley fever",
+          "isCorrect": false,
+          "explanation": "Valley fever is caused by Coccidioides."
+        },
+        {
+          "text": "Histoplasmosis",
+          "isCorrect": false,
+          "explanation": "Histoplasmosis is caused by Histoplasma."
+        }
+      ],
+      "explanation": {
+        "overview": "Invasive aspergillosis typically affects the lungs and sinuses, with angioinvasion leading to infarction and dissemination.",
+        "highYield": "A. fumigatus = invasive aspergillosis in neutropenia.",
+        "clinicalCorrelation": "Galactomannan antigen detection aids early diagnosis."
+      }
+    },
+    {
+      "questionId": "mycology_012",
+      "difficulty": 2,
+      "question": "The microscopic morphology of Aspergillus includes:",
+      "image": null,
+      "options": [
+        {
+          "text": "Septate hyphae branching at 45° angles",
+          "isCorrect": true,
+          "explanation": "Aspergillus hyphae are septate and show dichotomous branching at acute angles."
+        },
+        {
+          "text": "Non-septate hyphae with wide angles",
+          "isCorrect": false,
+          "explanation": "Non-septate hyphae are characteristic of Mucorales."
+        },
+        {
+          "text": "Spherules filled with endospores",
+          "isCorrect": false,
+          "explanation": "Spherules are seen with Coccidioides."
+        },
+        {
+          "text": "Budding yeast with capsules",
+          "isCorrect": false,
+          "explanation": "Budding yeast with capsule is Cryptococcus."
+        },
+        {
+          "text": "Pseudohyphae and blastoconidia",
+          "isCorrect": false,
+          "explanation": "That's Candida."
+        }
+      ],
+      "explanation": {
+        "overview": "Tissue biopsy showing septate, 45° branching hyphae invading blood vessels is suggestive of aspergillosis.",
+        "highYield": "Aspergillus = septate, 45° branching hyphae.",
+        "clinicalCorrelation": "Differentiation from Mucorales (broad, non-septate, 90° branching) is critical for treatment."
+      }
+    },
+    {
+      "questionId": "mycology_013",
+      "difficulty": 2,
+      "question": "Which fungus produces aflatoxin, a potent carcinogen?",
+      "image": null,
+      "options": [
+        {
+          "text": "Aspergillus flavus",
+          "isCorrect": true,
+          "explanation": "A. flavus and A. parasiticus produce aflatoxins, which contaminate grains and peanuts."
+        },
+        {
+          "text": "Penicillium marneffei",
+          "isCorrect": false,
+          "explanation": "Penicillium species can produce mycotoxins but not the classic aflatoxin."
+        },
+        {
+          "text": "Fusarium solani",
+          "isCorrect": false,
+          "explanation": "Fusarium produces trichothecenes and fumonisins."
+        },
+        {
+          "text": "Candida albicans",
+          "isCorrect": false,
+          "explanation": "Candida does not produce aflatoxin."
+        },
+        {
+          "text": "Histoplasma capsulatum",
+          "isCorrect": false,
+          "explanation": "Histoplasma does not produce aflatoxin."
+        }
+      ],
+      "explanation": {
+        "overview": "Aflatoxin B1 is metabolized to a reactive epoxide that forms DNA adducts, leading to hepatocellular carcinoma.",
+        "highYield": "Aflatoxin = Aspergillus flavus → liver cancer.",
+        "clinicalCorrelation": "Aflatoxin exposure combined with hepatitis B greatly increases HCC risk."
+      }
+    },
+    {
+      "questionId": "mycology_014",
+      "difficulty": 2,
+      "question": "Zygomycetes (e.g., Rhizopus, Mucor) are characterized by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Wide, ribbon-like, non-septate hyphae",
+          "isCorrect": true,
+          "explanation": "Mucormycetes have broad, irregular, aseptate or sparsely septate hyphae with right-angle branching."
+        },
+        {
+          "text": "Septate hyphae with acute branching",
+          "isCorrect": false,
+          "explanation": "Septate acute branching is Aspergillus."
+        },
+        {
+          "text": "Budding yeast with capsules",
+          "isCorrect": false,
+          "explanation": "That's Cryptococcus."
+        },
+        {
+          "text": "Dimorphic growth",
+          "isCorrect": false,
+          "explanation": "Mucorales are not dimorphic."
+        },
+        {
+          "text": "Pseudohyphae",
+          "isCorrect": false,
+          "explanation": "Pseudohyphae are from Candida."
+        }
+      ],
+      "explanation": {
+        "overview": "The broad, non-septate hyphae of Mucorales can be distinguished from Aspergillus in tissue sections.",
+        "highYield": "Mucor = broad, non-septate, right-angle branching.",
+        "clinicalCorrelation": "Mucormycosis requires surgical debridement and amphotericin B; echinocandins are not effective."
+      }
+    },
+    {
+      "questionId": "mycology_015",
+      "difficulty": 2,
+      "question": "Mucormycosis (zygomycosis) is most commonly seen in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Diabetic ketoacidosis and neutropenic patients",
+          "isCorrect": true,
+          "explanation": "High glucose and acidemia in DKA, plus iron overload, predispose to mucormycosis."
+        },
+        {
+          "text": "Healthy individuals",
+          "isCorrect": false,
+          "explanation": "It is rare in immunocompetent hosts."
+        },
+        {
+          "text": "HIV patients with low CD4 counts",
+          "isCorrect": false,
+          "explanation": "HIV patients are more at risk for candidiasis and cryptococcosis."
+        },
+        {
+          "text": "Organ transplant recipients on cyclosporine",
+          "isCorrect": false,
+          "explanation": "Transplant recipients are at risk, but DKA is the classic risk factor."
+        },
+        {
+          "text": "Infants",
+          "isCorrect": false,
+          "explanation": "Mucormycosis is rare in infants."
+        }
+      ],
+      "explanation": {
+        "overview": "Mucormycosis has a predilection for patients with DKA, neutropenia, and iron overload, invading blood vessels causing thrombosis and necrosis.",
+        "highYield": "Mucormycosis risk factors: DKA, neutropenia, iron overload.",
+        "clinicalCorrelation": "Rhinocerebral mucormycosis is a classic presentation in DKA."
+      }
+    },
+    {
+      "questionId": "mycology_016",
+      "difficulty": 1,
+      "question": "Dermatophytes are fungi that cause infections of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Skin, hair, and nails (keratinized tissues)",
+          "isCorrect": true,
+          "explanation": "Dermatophytes metabolize keratin and are restricted to keratinized structures."
+        },
+        {
+          "text": "Lungs",
+          "isCorrect": false,
+          "explanation": "Dermatophytes do not cause pulmonary infections."
+        },
+        {
+          "text": "Mucous membranes",
+          "isCorrect": false,
+          "explanation": "Mucous membranes are infected by Candida."
+        },
+        {
+          "text": "Bloodstream",
+          "isCorrect": false,
+          "explanation": "Dermatophytes rarely invade beyond the skin."
+        },
+        {
+          "text": "Brain",
+          "isCorrect": false,
+          "explanation": "They are not neurotropic."
+        }
+      ],
+      "explanation": {
+        "overview": "Dermatophytosis (tinea) is named by body site: tinea capitis (scalp), tinea pedis (feet), tinea corporis (body), etc.",
+        "highYield": "Dermatophytes = keratinophilic; infect skin, hair, nails.",
+        "clinicalCorrelation": "Diagnosis via KOH preparation showing septate hyphae."
+      }
+    },
+    {
+      "questionId": "mycology_017",
+      "difficulty": 1,
+      "question": "Tinea capitis is an infection of the:",
+      "image": null,
+      "options": [
+        {
+          "text": "Scalp",
+          "isCorrect": true,
+          "explanation": "Tinea capitis is dermatophyte infection of the scalp, common in children."
+        },
+        {
+          "text": "Feet",
+          "isCorrect": false,
+          "explanation": "Tinea pedis is athlete's foot."
+        },
+        {
+          "text": "Body",
+          "isCorrect": false,
+          "explanation": "Tinea corporis is ringworm of the body."
+        },
+        {
+          "text": "Groin",
+          "isCorrect": false,
+          "explanation": "Tinea cruris is jock itch."
+        },
+        {
+          "text": "Nails",
+          "isCorrect": false,
+          "explanation": "Tinea unguium (onychomycosis) is nail infection."
+        }
+      ],
+      "explanation": {
+        "overview": "Tinea capitis can cause hair loss and scaling; it's often caused by Trichophyton tonsurans or Microsporum canis.",
+        "highYield": "Tinea capitis = scalp ringworm.",
+        "clinicalCorrelation": "Wood's lamp may show green fluorescence in Microsporum infections."
+      }
+    },
+    {
+      "questionId": "mycology_018",
+      "difficulty": 1,
+      "question": "The KOH (potassium hydroxide) preparation is used to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Dissolve keratin and visualize fungal elements in skin scrapings",
+          "isCorrect": true,
+          "explanation": "KOH digests keratinocytes, leaving fungal hyphae and yeast visible under microscopy."
+        },
+        {
+          "text": "Stain fungal capsules",
+          "isCorrect": false,
+          "explanation": "India ink stains capsules."
+        },
+        {
+          "text": "Detect fungal antigens",
+          "isCorrect": false,
+          "explanation": "Antigen tests use immunoassays."
+        },
+        {
+          "text": "Culture fungi",
+          "isCorrect": false,
+          "explanation": "Culture uses agar media."
+        },
+        {
+          "text": "Perform germ tube test",
+          "isCorrect": false,
+          "explanation": "Germ tube test uses serum."
+        }
+      ],
+      "explanation": {
+        "overview": "KOH preparation is a rapid, inexpensive method to diagnose superficial fungal infections.",
+        "highYield": "KOH mount = clears keratin, reveals hyphae/yeast.",
+        "clinicalCorrelation": "Calcofluor white can be added to enhance fluorescence."
+      }
+    },
+    {
+      "questionId": "mycology_019",
+      "difficulty": 2,
+      "question": "Histoplasma capsulatum is endemic in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Ohio and Mississippi River valleys (USA)",
+          "isCorrect": true,
+          "explanation": "Histoplasma thrives in soil enriched with bird or bat guano in these regions."
+        },
+        {
+          "text": "Southwestern USA",
+          "isCorrect": false,
+          "explanation": "That's endemic for Coccidioides."
+        },
+        {
+          "text": "Southeast Asia",
+          "isCorrect": false,
+          "explanation": "Not endemic."
+        },
+        {
+          "text": "Africa",
+          "isCorrect": false,
+          "explanation": "Histoplasma occurs in Africa but the classic endemic area is the Ohio/Mississippi valleys."
+        },
+        {
+          "text": "Amazon basin",
+          "isCorrect": false,
+          "explanation": "Paracoccidioides is endemic in South America."
+        }
+      ],
+      "explanation": {
+        "overview": "Histoplasmosis is the most common endemic mycosis in the USA, often asymptomatic or causing flu-like illness.",
+        "highYield": "Histoplasma = Ohio/Mississippi valleys (bird/bat droppings).",
+        "clinicalCorrelation": "Cave explorers (spelunkers) and demolition workers are at risk."
+      }
+    },
+    {
+      "questionId": "mycology_020",
+      "difficulty": 2,
+      "question": "Blastomyces dermatitidis is endemic in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Central and southeastern United States",
+          "isCorrect": true,
+          "explanation": "Blastomycosis is found around the Great Lakes and Ohio/Mississippi river valleys."
+        },
+        {
+          "text": "Pacific Northwest",
+          "isCorrect": false,
+          "explanation": "C. gattii is in the Pacific Northwest."
+        },
+        {
+          "text": "Southwest deserts",
+          "isCorrect": false,
+          "explanation": "Coccidioides is in the Southwest."
+        },
+        {
+          "text": "Europe",
+          "isCorrect": false,
+          "explanation": "Rare."
+        },
+        {
+          "text": "Australia",
+          "isCorrect": false,
+          "explanation": "Not endemic."
+        }
+      ],
+      "explanation": {
+        "overview": "Blastomycosis presents as pneumonia or disseminated disease with skin lesions; broad-based budding yeast is diagnostic.",
+        "highYield": "Blastomyces = broad-based budding yeast, endemic in central/southeast US.",
+        "clinicalCorrelation": "Skin involvement with verrucous lesions suggests blastomycosis."
+      }
+    },
+    {
+      "questionId": "mycology_021",
+      "difficulty": 2,
+      "question": "Coccidioides immitis is endemic in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Arid regions of the southwestern United States",
+          "isCorrect": true,
+          "explanation": "Coccidioides is found in desert soils of California, Arizona, New Mexico, Texas."
+        },
+        {
+          "text": "Southeastern USA",
+          "isCorrect": false,
+          "explanation": "Histoplasma and Blastomyces are there."
+        },
+        {
+          "text": "Midwest",
+          "isCorrect": false,
+          "explanation": "Histoplasma and Blastomyces are common."
+        },
+        {
+          "text": "Northeast",
+          "isCorrect": false,
+          "explanation": "Not endemic."
+        },
+        {
+          "text": "Tropical rainforests",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        }
+      ],
+      "explanation": {
+        "overview": "Coccidioidomycosis (Valley fever) is caused by inhalation of arthroconidia; spherules form in tissue.",
+        "highYield": "Coccidioides = Southwest US deserts; spherules in tissue.",
+        "clinicalCorrelation": "Can cause erythema nodosum ('San Joaquin Valley fever')."
+      }
+    },
+    {
+      "questionId": "mycology_022",
+      "difficulty": 2,
+      "question": "Paracoccidioides brasiliensis is endemic in:",
+      "image": null,
+      "options": [
+        {
+          "text": "South America (especially Brazil)",
+          "isCorrect": true,
+          "explanation": "Paracoccidioidomycosis is the most prevalent systemic mycosis in Latin America."
+        },
+        {
+          "text": "Central America",
+          "isCorrect": false,
+          "explanation": "Also occurs but Brazil is the main focus."
+        },
+        {
+          "text": "Mexico",
+          "isCorrect": false,
+          "explanation": "Not primary."
+        },
+        {
+          "text": "Africa",
+          "isCorrect": false,
+          "explanation": "Not endemic."
+        },
+        {
+          "text": "Southeast Asia",
+          "isCorrect": false,
+          "explanation": "Not endemic."
+        }
+      ],
+      "explanation": {
+        "overview": "P. brasiliensis causes a chronic granulomatous disease affecting lungs and mucocutaneous tissues.",
+        "highYield": "Paracoccidioides = South America; 'mariner's wheel' budding.",
+        "clinicalCorrelation": "Mucocutaneous lesions are common in chronic forms."
+      }
+    },
+    {
+      "questionId": "mycology_023",
+      "difficulty": 2,
+      "question": "Sporothrix schenckii causes sporotrichosis, which typically presents as:",
+      "image": null,
+      "options": [
+        {
+          "text": "Lymphocutaneous nodules and ulcers (rose gardener's disease)",
+          "isCorrect": true,
+          "explanation": "Sporotrichosis follows traumatic inoculation, leading to nodular lymphangitis."
+        },
+        {
+          "text": "Pneumonia",
+          "isCorrect": false,
+          "explanation": "Pulmonary sporotrichosis is rare."
+        },
+        {
+          "text": "Meningitis",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        },
+        {
+          "text": "Disseminated disease",
+          "isCorrect": false,
+          "explanation": "Occurs in immunocompromised but lymphocutaneous is classic."
+        },
+        {
+          "text": "Onychomycosis",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        }
+      ],
+      "explanation": {
+        "overview": "S. schenckii is a dimorphic fungus found on plant material; it enters through skin breaks.",
+        "highYield": "Sporotrichosis = lymphocutaneous nodules (rose gardener).",
+        "clinicalCorrelation": "Treatment: itraconazole for lymphocutaneous; amphotericin B for severe."
+      }
+    },
+    {
+      "questionId": "mycology_024",
+      "difficulty": 2,
+      "question": "Penicillium marneffei (Talaromyces marneffei) is an opportunistic dimorphic fungus seen in:",
+      "image": null,
+      "options": [
+        {
+          "text": "HIV patients in Southeast Asia",
+          "isCorrect": true,
+          "explanation": "T. marneffei is a major AIDS-defining illness in Southeast Asia."
+        },
+        {
+          "text": "Transplant recipients in USA",
+          "isCorrect": false,
+          "explanation": "Rare in USA unless travel."
+        },
+        {
+          "text": "Diabetics in Europe",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        },
+        {
+          "text": "Neutropenic patients worldwide",
+          "isCorrect": false,
+          "explanation": "Not the primary risk group."
+        },
+        {
+          "text": "Cystic fibrosis patients",
+          "isCorrect": false,
+          "explanation": "Not associated."
+        }
+      ],
+      "explanation": {
+        "overview": "T. marneffei (renamed Talaromyces marneffei) is a dimorphic fungus causing disseminated infection with skin lesions resembling molluscum contagiosum.",
+        "highYield": "Talaromyces marneffei = HIV, Southeast Asia; dimorphic.",
+        "clinicalCorrelation": "Diagnosis: yeast cells with central septum on microscopy."
+      }
+    },
+    {
+      "questionId": "mycology_025",
+      "difficulty": 1,
+      "question": "Pneumocystis jirovecii (formerly P. carinii) is a cause of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Pneumonia in immunocompromised patients (e.g., HIV)",
+          "isCorrect": true,
+          "explanation": "PCP is an opportunistic pneumonia in AIDS (CD4 <200) and other immunocompromised states."
+        },
+        {
+          "text": "Meningitis",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        },
+        {
+          "text": "Systemic mycosis",
+          "isCorrect": false,
+          "explanation": "PCP is primarily pulmonary."
+        },
+        {
+          "text": "Skin infections",
+          "isCorrect": false,
+          "explanation": "Rare."
+        },
+        {
+          "text": "Urinary tract infection",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "P. jirovecii pneumonia is a major cause of morbidity and mortality in advanced HIV; prophylaxis with TMP-SMX is indicated.",
+        "highYield": "PCP = Pneumocystis pneumonia in immunocompromised.",
+        "clinicalCorrelation": "Diagnosis: cysts in BAL/sputum with GMS stain or PCR."
+      }
+    },
+    {
+      "questionId": "mycology_026",
+      "difficulty": 2,
+      "question": "Pneumocystis jirovecii is classified as a:",
+      "image": null,
+      "options": [
+        {
+          "text": "Fungus (based on molecular analysis)",
+          "isCorrect": true,
+          "explanation": "Molecular phylogeny places Pneumocystis among the Ascomycota."
+        },
+        {
+          "text": "Protozoan",
+          "isCorrect": false,
+          "explanation": "Historically considered a protozoan but now classified as fungus."
+        },
+        {
+          "text": "Bacterium",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Virus",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Alga",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Pneumocystis is an atypical fungus; it lacks ergosterol, making it resistant to many antifungals.",
+        "highYield": "Pneumocystis = fungus (molecular evidence), but atypical.",
+        "clinicalCorrelation": "TMP-SMX works by inhibiting folate synthesis."
+      }
+    },
+    {
+      "questionId": "mycology_027",
+      "difficulty": 2,
+      "question": "The drug of choice for Pneumocystis jirovecii pneumonia is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Trimethoprim-sulfamethoxazole (TMP-SMX)",
+          "isCorrect": true,
+          "explanation": "TMP-SMX is first-line for both prophylaxis and treatment of PCP."
+        },
+        {
+          "text": "Amphotericin B",
+          "isCorrect": false,
+          "explanation": "Not effective against Pneumocystis."
+        },
+        {
+          "text": "Fluconazole",
+          "isCorrect": false,
+          "explanation": "Azoles not effective."
+        },
+        {
+          "text": "Caspofungin",
+          "isCorrect": false,
+          "explanation": "Echinocandins target β-glucan, but TMP-SMX is first-line."
+        },
+        {
+          "text": "Terbinafine",
+          "isCorrect": false,
+          "explanation": "Not effective."
+        }
+      ],
+      "explanation": {
+        "overview": "TMP-SMX inhibits sequential steps in folate synthesis, which is essential for Pneumocystis.",
+        "highYield": "PCP treatment: TMP-SMX (first-line).",
+        "clinicalCorrelation": "Alternatives: pentamidine, atovaquone, dapsone + trimethoprim."
+      }
+    },
+    {
+      "questionId": "mycology_028",
+      "difficulty": 1,
+      "question": "Which antifungal drug is a polyene that binds to ergosterol, forming pores in the fungal membrane?",
+      "image": null,
+      "options": [
+        {
+          "text": "Amphotericin B",
+          "isCorrect": true,
+          "explanation": "Amphotericin B binds ergosterol and disrupts membrane integrity."
+        },
+        {
+          "text": "Fluconazole",
+          "isCorrect": false,
+          "explanation": "Fluconazole inhibits ergosterol synthesis, not direct binding."
+        },
+        {
+          "text": "Caspofungin",
+          "isCorrect": false,
+          "explanation": "Caspofungin inhibits cell wall β-glucan synthesis."
+        },
+        {
+          "text": "Terbinafine",
+          "isCorrect": false,
+          "explanation": "Terbinafine inhibits squalene epoxidase."
+        },
+        {
+          "text": "5-flucytosine",
+          "isCorrect": false,
+          "explanation": "5-FC inhibits nucleic acid synthesis."
+        }
+      ],
+      "explanation": {
+        "overview": "Amphotericin B is a fungicidal agent used for severe systemic mycoses, but it is nephrotoxic.",
+        "highYield": "Polyene = amphotericin B (binds ergosterol).",
+        "clinicalCorrelation": "Liposomal formulations reduce toxicity."
+      }
+    },
+    {
+      "questionId": "mycology_029",
+      "difficulty": 1,
+      "question": "A major toxicity of amphotericin B is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Nephrotoxicity",
+          "isCorrect": true,
+          "explanation": "Amphotericin B causes renal vasoconstriction and tubular injury."
+        },
+        {
+          "text": "Hepatotoxicity",
+          "isCorrect": false,
+          "explanation": "Azoles are more hepatotoxic."
+        },
+        {
+          "text": "Ototoxicity",
+          "isCorrect": false,
+          "explanation": "Not a major concern."
+        },
+        {
+          "text": "Cardiotoxicity",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        },
+        {
+          "text": "Neuropathy",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        }
+      ],
+      "explanation": {
+        "overview": "Renal toxicity is dose-limiting; saline loading can mitigate some damage.",
+        "highYield": "Amphotericin B = nephrotoxic (K+, Mg2+ wasting).",
+        "clinicalCorrelation": "Monitor renal function and electrolytes during therapy."
+      }
+    },
+    {
+      "questionId": "mycology_030",
+      "difficulty": 2,
+      "question": "Azole antifungals (e.g., fluconazole, itraconazole) work by inhibiting:",
+      "image": null,
+      "options": [
+        {
+          "text": "Ergosterol synthesis (14α-demethylase)",
+          "isCorrect": true,
+          "explanation": "Azoles inhibit lanosterol 14α-demethylase, a CYP450 enzyme."
+        },
+        {
+          "text": "Cell wall glucan synthesis",
+          "isCorrect": false,
+          "explanation": "Echinocandins inhibit β-glucan synthase."
+        },
+        {
+          "text": "DNA synthesis",
+          "isCorrect": false,
+          "explanation": "5-FC inhibits nucleic acid synthesis."
+        },
+        {
+          "text": "Protein synthesis",
+          "isCorrect": false,
+          "explanation": "Not the target."
+        },
+        {
+          "text": "Fungal mitosis",
+          "isCorrect": false,
+          "explanation": "Griseofulvin affects mitosis."
+        }
+      ],
+      "explanation": {
+        "overview": "Azoles are fungistatic and have broad activity, including against Candida, Cryptococcus, and dimorphic fungi.",
+        "highYield": "Azoles = 14α-demethylase inhibitors (block ergosterol synthesis).",
+        "clinicalCorrelation": "Fluconazole is not active against Aspergillus or Mucorales."
+      }
+    },
+    {
+      "questionId": "mycology_031",
+      "difficulty": 2,
+      "question": "Fluconazole is particularly effective against:",
+      "image": null,
+      "options": [
+        {
+          "text": "Candida albicans and Cryptococcus neoformans",
+          "isCorrect": true,
+          "explanation": "Fluconazole has excellent activity against most Candida spp. (except C. krusei and C. glabrata) and Cryptococcus."
+        },
+        {
+          "text": "Aspergillus fumigatus",
+          "isCorrect": false,
+          "explanation": "Fluconazole has no activity against Aspergillus."
+        },
+        {
+          "text": "Mucorales",
+          "isCorrect": false,
+          "explanation": "Not effective."
+        },
+        {
+          "text": "Dermatophytes",
+          "isCorrect": false,
+          "explanation": "Terbinafine or itraconazole are better."
+        },
+        {
+          "text": "Sporothrix schenckii",
+          "isCorrect": false,
+          "explanation": "Itraconazole is preferred."
+        }
+      ],
+      "explanation": {
+        "overview": "Fluconazole has good oral bioavailability and penetrates the CNS, making it useful for cryptococcal meningitis maintenance.",
+        "highYield": "Fluconazole = Candida, Cryptococcus (not mold active).",
+        "clinicalCorrelation": "Resistance can emerge in Candida glabrata and krusei."
+      }
+    },
+    {
+      "questionId": "mycology_032",
+      "difficulty": 2,
+      "question": "Echinocandins (e.g., caspofungin) inhibit:",
+      "image": null,
+      "options": [
+        {
+          "text": "β-glucan synthase (cell wall synthesis)",
+          "isCorrect": true,
+          "explanation": "Echinocandins block synthesis of β-glucan, a key cell wall component."
+        },
+        {
+          "text": "Ergosterol synthesis",
+          "isCorrect": false,
+          "explanation": "Azoles and terbinafine do that."
+        },
+        {
+          "text": "Nucleic acid synthesis",
+          "isCorrect": false,
+          "explanation": "5-FC inhibits nucleic acid synthesis."
+        },
+        {
+          "text": "Protein synthesis",
+          "isCorrect": false,
+          "explanation": "Not the target."
+        },
+        {
+          "text": "Mitosis",
+          "isCorrect": false,
+          "explanation": "Griseofulvin."
+        }
+      ],
+      "explanation": {
+        "overview": "Echinocandins are fungicidal against Candida and have static activity against Aspergillus; they lack activity against Cryptococcus and Mucorales.",
+        "highYield": "Echinocandins = β-glucan synthase inhibitors.",
+        "clinicalCorrelation": "Caspofungin is used for invasive candidiasis and salvage therapy for aspergillosis."
+      }
+    },
+    {
+      "questionId": "mycology_033",
+      "difficulty": 2,
+      "question": "Caspofungin is active against which of the following?",
+      "image": null,
+      "options": [
+        {
+          "text": "Candida and Aspergillus species",
+          "isCorrect": true,
+          "explanation": "Echinocandins are fungicidal against Candida and have activity against Aspergillus."
+        },
+        {
+          "text": "Cryptococcus neoformans",
+          "isCorrect": false,
+          "explanation": "Cryptococcus is resistant due to low β-glucan in its capsule."
+        },
+        {
+          "text": "Mucorales",
+          "isCorrect": false,
+          "explanation": "Mucorales are intrinsically resistant."
+        },
+        {
+          "text": "Fusarium",
+          "isCorrect": false,
+          "explanation": "Fusarium is often resistant."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "Not all are covered."
+        }
+      ],
+      "explanation": {
+        "overview": "Echinocandins are first-line for invasive candidiasis and can be used in aspergillosis as salvage.",
+        "highYield": "Caspofungin = Candida + Aspergillus (not Crypto, Mucor).",
+        "clinicalCorrelation": "Renal-safe alternative to amphotericin B."
+      }
+    },
+    {
+      "questionId": "mycology_034",
+      "difficulty": 2,
+      "question": "Terbinafine is an allylamine antifungal that inhibits:",
+      "image": null,
+      "options": [
+        {
+          "text": "Squalene epoxidase (ergosterol synthesis)",
+          "isCorrect": true,
+          "explanation": "Terbinafine inhibits squalene epoxidase, leading to ergosterol depletion and squalene accumulation."
+        },
+        {
+          "text": "14α-demethylase",
+          "isCorrect": false,
+          "explanation": "Azoles inhibit 14α-demethylase."
+        },
+        {
+          "text": "β-glucan synthase",
+          "isCorrect": false,
+          "explanation": "Echinocandins."
+        },
+        {
+          "text": "DNA topoisomerase",
+          "isCorrect": false,
+          "explanation": "Not an antifungal target."
+        },
+        {
+          "text": "RNA polymerase",
+          "isCorrect": false,
+          "explanation": "Not a target."
+        }
+      ],
+      "explanation": {
+        "overview": "Terbinafine is fungicidal against dermatophytes and accumulates in skin and nails.",
+        "highYield": "Terbinafine = squalene epoxidase inhibitor (allylamine).",
+        "clinicalCorrelation": "First-line for onychomycosis due to dermatophytes."
+      }
+    },
+    {
+      "questionId": "mycology_035",
+      "difficulty": 2,
+      "question": "Terbinafine is primarily used for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Dermatophyte infections (onychomycosis, tinea)",
+          "isCorrect": true,
+          "explanation": "Terbinafine is highly effective against dermatophytes due to its accumulation in keratin."
+        },
+        {
+          "text": "Systemic candidiasis",
+          "isCorrect": false,
+          "explanation": "Not first-line for invasive Candida."
+        },
+        {
+          "text": "Cryptococcal meningitis",
+          "isCorrect": false,
+          "explanation": "Not effective."
+        },
+        {
+          "text": "Aspergillosis",
+          "isCorrect": false,
+          "explanation": "Not effective."
+        },
+        {
+          "text": "Mucormycosis",
+          "isCorrect": false,
+          "explanation": "Not effective."
+        }
+      ],
+      "explanation": {
+        "overview": "Terbinafine is the treatment of choice for dermatophyte onychomycosis due to its high cure rate and oral bioavailability.",
+        "highYield": "Terbinafine = dermatophytes (tinea, onychomycosis).",
+        "clinicalCorrelation": "Treatment duration 6-12 weeks for fingernails, 12 weeks for toenails."
+      }
+    },
+    {
+      "questionId": "mycology_036",
+      "difficulty": 2,
+      "question": "5-flucytosine (5-FC) is converted in fungal cells to 5-fluorouracil, which inhibits:",
+      "image": null,
+      "options": [
+        {
+          "text": "DNA and RNA synthesis",
+          "isCorrect": true,
+          "explanation": "5-FU inhibits thymidylate synthase and is incorporated into RNA, disrupting nucleic acid synthesis."
+        },
+        {
+          "text": "Ergosterol synthesis",
+          "isCorrect": false,
+          "explanation": "Not the target."
+        },
+        {
+          "text": "Cell wall synthesis",
+          "isCorrect": false,
+          "explanation": "Not the target."
+        },
+        {
+          "text": "Protein synthesis",
+          "isCorrect": false,
+          "explanation": "Not the primary target."
+        },
+        {
+          "text": "Mitosis",
+          "isCorrect": false,
+          "explanation": "Not the target."
+        }
+      ],
+      "explanation": {
+        "overview": "5-FC is a prodrug that is taken up by fungal cells and converted to 5-FU; resistance develops rapidly if used alone.",
+        "highYield": "5-FC = inhibits DNA/RNA synthesis; always used in combination.",
+        "clinicalCorrelation": "Synergistic with amphotericin B for cryptococcal meningitis."
+      }
+    },
+    {
+      "questionId": "mycology_037",
+      "difficulty": 2,
+      "question": "5-flucytosine is often used in combination with amphotericin B for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cryptococcal meningitis",
+          "isCorrect": true,
+          "explanation": "The combination is standard induction therapy for cryptococcal meningitis."
+        },
+        {
+          "text": "Candidemia",
+          "isCorrect": false,
+          "explanation": "Echinocandins or fluconazole are usually used."
+        },
+        {
+          "text": "Aspergillosis",
+          "isCorrect": false,
+          "explanation": "5-FC is not active against molds."
+        },
+        {
+          "text": "Histoplasmosis",
+          "isCorrect": false,
+          "explanation": "Not used."
+        },
+        {
+          "text": "Coccidioidomycosis",
+          "isCorrect": false,
+          "explanation": "Not used."
+        }
+      ],
+      "explanation": {
+        "overview": "Combination therapy with amphotericin B and flucytosine is recommended for induction phase of cryptococcal meningitis.",
+        "highYield": "Amphotericin B + 5-FC = cryptococcal meningitis induction.",
+        "clinicalCorrelation": "After induction, fluconazole consolidation and maintenance."
+      }
+    },
+    {
+      "questionId": "mycology_038",
+      "difficulty": 2,
+      "question": "The diagnosis of fungal infections often relies on:",
+      "image": null,
+      "options": [
+        {
+          "text": "Culture, microscopy, antigen detection, and molecular methods",
+          "isCorrect": true,
+          "explanation": "A combination of methods is used: direct examination, culture, antigen assays, and PCR."
+        },
+        {
+          "text": "Gram stain only",
+          "isCorrect": false,
+          "explanation": "Gram stain does not reliably detect fungi."
+        },
+        {
+          "text": "Acid-fast stain",
+          "isCorrect": false,
+          "explanation": "Acid-fast stain is for mycobacteria and some Nocardia."
+        },
+        {
+          "text": "Serology only",
+          "isCorrect": false,
+          "explanation": "Serology alone is insufficient."
+        },
+        {
+          "text": "Clinical presentation alone",
+          "isCorrect": false,
+          "explanation": "Laboratory confirmation is essential."
+        }
+      ],
+      "explanation": {
+        "overview": "The diagnostic approach includes KOH mount, calcofluor white, culture on Sabouraud agar, and non-culture methods like galactomannan and β-glucan.",
+        "highYield": "Fungal diagnosis: microscopy, culture, antigen, PCR.",
+        "clinicalCorrelation": "Rapid diagnosis improves outcomes in invasive fungal infections."
+      }
+    },
+    {
+      "questionId": "mycology_039",
+      "difficulty": 2,
+      "question": "The galactomannan assay is used to detect:",
+      "image": null,
+      "options": [
+        {
+          "text": "Aspergillus antigen in serum",
+          "isCorrect": true,
+          "explanation": "Galactomannan is a cell wall polysaccharide released by growing Aspergillus hyphae."
+        },
+        {
+          "text": "Candida antigen",
+          "isCorrect": false,
+          "explanation": "Candida is detected by mannan/anti-mannan assays."
+        },
+        {
+          "text": "Cryptococcal antigen",
+          "isCorrect": false,
+          "explanation": "Cryptococcal antigen (CrAg) is a capsular polysaccharide."
+        },
+        {
+          "text": "Histoplasma antigen",
+          "isCorrect": false,
+          "explanation": "Histoplasma antigen is detected in urine/serum."
+        },
+        {
+          "text": "Coccidioides antibody",
+          "isCorrect": false,
+          "explanation": "Serology detects antibodies."
+        }
+      ],
+      "explanation": {
+        "overview": "Galactomannan is a useful biomarker for invasive aspergillosis, particularly in neutropenic patients.",
+        "highYield": "Galactomannan = Aspergillus antigen (serum/BAL).",
+        "clinicalCorrelation": "False positives can occur with piperacillin-tazobactam or other fungi."
+      }
+    },
+    {
+      "questionId": "mycology_040",
+      "difficulty": 2,
+      "question": "The (1→3)-β-D-glucan assay detects a cell wall component of many fungi except:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cryptococcus and Mucorales",
+          "isCorrect": true,
+          "explanation": "Cryptococcus has a thick capsule that masks glucan, and Mucorales have low glucan content."
+        },
+        {
+          "text": "Candida",
+          "isCorrect": false,
+          "explanation": "Candida has β-glucan."
+        },
+        {
+          "text": "Aspergillus",
+          "isCorrect": false,
+          "explanation": "Aspergillus has β-glucan."
+        },
+        {
+          "text": "Pneumocystis",
+          "isCorrect": false,
+          "explanation": "Pneumocystis has β-glucan."
+        },
+        {
+          "text": "Histoplasma",
+          "isCorrect": false,
+          "explanation": "Histoplasma has β-glucan."
+        }
+      ],
+      "explanation": {
+        "overview": "β-glucan is a pan-fungal antigen; negative in Cryptococcus and Mucorales, which limits its utility for those infections.",
+        "highYield": "β-glucan positive in most fungi EXCEPT Crypto and Mucorales.",
+        "clinicalCorrelation": "Used to diagnose invasive candidiasis and PCP."
+      }
+    },
+    {
+      "questionId": "mycology_041",
+      "difficulty": 2,
+      "question": "The cryptococcal antigen test (CrAg) is performed on:",
+      "image": null,
+      "options": [
+        {
+          "text": "Serum or CSF",
+          "isCorrect": true,
+          "explanation": "CrAg detects capsular polysaccharide; serum or CSF are the preferred specimens."
+        },
+        {
+          "text": "Urine",
+          "isCorrect": false,
+          "explanation": "Urine testing is not standard."
+        },
+        {
+          "text": "Sputum",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        },
+        {
+          "text": "Tissue biopsy",
+          "isCorrect": false,
+          "explanation": "Biopsy can be used but serum/CSF are primary."
+        },
+        {
+          "text": "Skin scrapings",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "CrAg testing is the cornerstone for cryptococcal meningitis diagnosis, with sensitivity >95% in CSF.",
+        "highYield": "CrAg = serum/CSF for cryptococcosis.",
+        "clinicalCorrelation": "Screening for CrAg in HIV patients with low CD4 is recommended."
+      }
+    },
+    {
+      "questionId": "mycology_042",
+      "difficulty": 2,
+      "question": "Fungal culture on Sabouraud dextrose agar is incubated at:",
+      "image": null,
+      "options": [
+        {
+          "text": "25-30°C (room temperature) and 37°C",
+          "isCorrect": true,
+          "explanation": "Sabouraud agar is incubated at both temperatures to allow mold and yeast phases to grow."
+        },
+        {
+          "text": "4°C",
+          "isCorrect": false,
+          "explanation": "Too cold."
+        },
+        {
+          "text": "42°C",
+          "isCorrect": false,
+          "explanation": "Too hot for most fungi."
+        },
+        {
+          "text": "55°C",
+          "isCorrect": false,
+          "explanation": "Thermophilic fungi are rare."
+        },
+        {
+          "text": "Varies by species",
+          "isCorrect": false,
+          "explanation": "Standard incubation is at 25-30°C and 37°C."
+        }
+      ],
+      "explanation": {
+        "overview": "Sabouraud dextrose agar (pH 5.6) is the standard fungal culture medium, often with antibiotics to suppress bacteria.",
+        "highYield": "Fungal culture: 25-30°C + 37°C on Sabouraud agar.",
+        "clinicalCorrelation": "Dimorphic fungi convert between mold and yeast at these temperatures."
+      }
+    },
+    {
+      "questionId": "mycology_043",
+      "difficulty": 2,
+      "question": "Which fungus is a common cause of allergic bronchopulmonary mycoses?",
+      "image": null,
+      "options": [
+        {
+          "text": "Aspergillus fumigatus",
+          "isCorrect": true,
+          "explanation": "ABPA is a hypersensitivity reaction to Aspergillus antigens."
+        },
+        {
+          "text": "Candida albicans",
+          "isCorrect": false,
+          "explanation": "Candida can cause allergic reactions but ABPA is classic for Aspergillus."
+        },
+        {
+          "text": "Histoplasma capsulatum",
+          "isCorrect": false,
+          "explanation": "Not typically."
+        },
+        {
+          "text": "Coccidioides immitis",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        },
+        {
+          "text": "Blastomyces dermatitidis",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        }
+      ],
+      "explanation": {
+        "overview": "Allergic bronchopulmonary aspergillosis (ABPA) occurs in asthmatics and CF patients, leading to bronchiectasis.",
+        "highYield": "ABPA = Aspergillus hypersensitivity (eosinophilia, IgE).",
+        "clinicalCorrelation": "Treated with corticosteroids and sometimes antifungals."
+      }
+    },
+    {
+      "questionId": "mycology_044",
+      "difficulty": 2,
+      "question": "Fungus balls (aspergillomas) typically form in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Pre-existing lung cavities",
+          "isCorrect": true,
+          "explanation": "Aspergillomas are masses of fungal hyphae, fibrin, and debris colonizing old cavities (e.g., from TB)."
+        },
+        {
+          "text": "Normal lung tissue",
+          "isCorrect": false,
+          "explanation": "Require a cavity."
+        },
+        {
+          "text": "Sinuses only",
+          "isCorrect": false,
+          "explanation": "Can occur in sinuses but lung cavities are classic."
+        },
+        {
+          "text": "Blood vessels",
+          "isCorrect": false,
+          "explanation": "Invasive aspergillosis invades vessels, but aspergillomas are intracavitary."
+        },
+        {
+          "text": "Brain parenchyma",
+          "isCorrect": false,
+          "explanation": "Brain abscess possible but not typical aspergilloma."
+        }
+      ],
+      "explanation": {
+        "overview": "Aspergillomas are often asymptomatic but can cause hemoptysis. Treatment is surgical resection or embolization if bleeding.",
+        "highYield": "Aspergilloma = fungus ball in lung cavity.",
+        "clinicalCorrelation": "Chest X-ray shows a mass with air crescent sign."
+      }
+    },
+    {
+      "questionId": "mycology_045",
+      "difficulty": 1,
+      "question": "Oral thrush is commonly caused by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Candida albicans",
+          "isCorrect": true,
+          "explanation": "C. albicans is the most frequent cause of oropharyngeal candidiasis."
+        },
+        {
+          "text": "Aspergillus niger",
+          "isCorrect": false,
+          "explanation": "Aspergillus can cause lung disease, not thrush."
+        },
+        {
+          "text": "Cryptococcus neoformans",
+          "isCorrect": false,
+          "explanation": "Cryptococcus causes meningitis, not oral thrush."
+        },
+        {
+          "text": "Histoplasma capsulatum",
+          "isCorrect": false,
+          "explanation": "Histoplasma causes pulmonary and disseminated disease."
+        },
+        {
+          "text": "Coccidioides immitis",
+          "isCorrect": false,
+          "explanation": "Coccidioides causes Valley fever."
+        }
+      ],
+      "explanation": {
+        "overview": "Oral thrush presents as white, curd-like patches on oral mucosa; common in HIV, diabetics, and steroid inhaler users.",
+        "highYield": "Oral thrush = Candida albicans.",
+        "clinicalCorrelation": "Treatment: topical nystatin or fluconazole."
+      }
+    },
+    {
+      "questionId": "mycology_046",
+      "difficulty": 2,
+      "question": "Chronic mucocutaneous candidiasis is associated with:",
+      "image": null,
+      "options": [
+        {
+          "text": "T-cell deficiency",
+          "isCorrect": true,
+          "explanation": "This condition reflects impaired cell-mediated immunity to Candida."
+        },
+        {
+          "text": "Neutropenia",
+          "isCorrect": false,
+          "explanation": "Neutropenia predisposes to systemic candidiasis, not mucocutaneous."
+        },
+        {
+          "text": "Diabetes mellitus",
+          "isCorrect": false,
+          "explanation": "Diabetes predisposes to mucocutaneous candidiasis but not the classic association with T-cell defects."
+        },
+        {
+          "text": "Antibiotic use",
+          "isCorrect": false,
+          "explanation": "Antibiotics predispose to candidiasis but mucocutaneous chronic form is T-cell related."
+        },
+        {
+          "text": "HIV infection",
+          "isCorrect": false,
+          "explanation": "HIV can cause oral thrush, but the syndrome of CMC is genetic or autoimmune."
+        }
+      ],
+      "explanation": {
+        "overview": "Chronic mucocutaneous candidiasis (CMC) is a primary immunodeficiency often linked to STAT1 mutations or AIRE deficiency.",
+        "highYield": "CMC = T-cell dysfunction → persistent Candida infections of skin/nails/mucosa.",
+        "clinicalCorrelation": "Part of APECED syndrome (autoimmune polyendocrinopathy)."
+      }
+    },
+    {
+      "questionId": "mycology_047",
+      "difficulty": 2,
+      "question": "Fungal keratitis is most commonly associated with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Trauma with plant material (Fusarium, Aspergillus)",
+          "isCorrect": true,
+          "explanation": "Fungal keratitis often follows corneal injury with organic matter in agricultural workers."
+        },
+        {
+          "text": "Contact lens wear (Acanthamoeba)",
+          "isCorrect": false,
+          "explanation": "Contact lenses can cause bacterial keratitis or Acanthamoeba, but fungal keratitis is more with trauma."
+        },
+        {
+          "text": "Bacterial superinfection",
+          "isCorrect": false,
+          "explanation": "Not the primary association."
+        },
+        {
+          "text": "Viral infection",
+          "isCorrect": false,
+          "explanation": "Viral keratitis is usually herpes."
+        },
+        {
+          "text": "Herpes simplex",
+          "isCorrect": false,
+          "explanation": "Herpes causes dendritic ulcers."
+        }
+      ],
+      "explanation": {
+        "overview": "Fusarium and Aspergillus are the most common causes of fungal keratitis, requiring topical natamycin or voriconazole.",
+        "highYield": "Fungal keratitis = plant trauma (Fusarium, Aspergillus).",
+        "clinicalCorrelation": "Delayed diagnosis can lead to corneal perforation."
+      }
+    },
+    {
+      "questionId": "mycology_048",
+      "difficulty": 1,
+      "question": "Onychomycosis is a fungal infection of the:",
+      "image": null,
+      "options": [
+        {
+          "text": "Nails",
+          "isCorrect": true,
+          "explanation": "Onychomycosis is fungal infection of fingernails or toenails, often caused by Trichophyton rubrum."
+        },
+        {
+          "text": "Skin",
+          "isCorrect": false,
+          "explanation": "Skin infection is tinea."
+        },
+        {
+          "text": "Hair",
+          "isCorrect": false,
+          "explanation": "Hair infection is tinea capitis."
+        },
+        {
+          "text": "Mucous membranes",
+          "isCorrect": false,
+          "explanation": "Mucous membranes infected by Candida."
+        },
+        {
+          "text": "Scalp",
+          "isCorrect": false,
+          "explanation": "Tinea capitis."
+        }
+      ],
+      "explanation": {
+        "overview": "Dermatophytes, especially Trichophyton rubrum, are the most common cause of onychomycosis.",
+        "highYield": "Onychomycosis = nail fungus (Trichophyton rubrum).",
+        "clinicalCorrelation": "Oral terbinafine is the treatment of choice."
+      }
+    },
+    {
+      "questionId": "mycology_049",
+      "difficulty": 2,
+      "question": "Tinea versicolor (pityriasis versicolor) is caused by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Malassezia species",
+          "isCorrect": true,
+          "explanation": "Malassezia are lipophilic yeasts that cause hypopigmented or hyperpigmented patches on the trunk."
+        },
+        {
+          "text": "Candida albicans",
+          "isCorrect": false,
+          "explanation": "Not the cause."
+        },
+        {
+          "text": "Trichophyton rubrum",
+          "isCorrect": false,
+          "explanation": "Dermatophyte causing tinea."
+        },
+        {
+          "text": "Epidermophyton floccosum",
+          "isCorrect": false,
+          "explanation": "Dermatophyte."
+        },
+        {
+          "text": "Microsporum canis",
+          "isCorrect": false,
+          "explanation": "Dermatophyte."
+        }
+      ],
+      "explanation": {
+        "overview": "Malassezia is part of normal flora but overgrows under favorable conditions (heat, humidity).",
+        "highYield": "Tinea versicolor = Malassezia furfur.",
+        "clinicalCorrelation": "KOH shows 'spaghetti and meatballs' appearance (yeast and hyphae)."
+      }
+    },
+    {
+      "questionId": "mycology_050",
+      "difficulty": 2,
+      "question": "Malassezia is also associated with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Pityrosporum folliculitis",
+          "isCorrect": false,
+          "explanation": "It's one of the conditions."
+        },
+        {
+          "text": "Seborrheic dermatitis",
+          "isCorrect": false,
+          "explanation": "Malassezia is implicated."
+        },
+        {
+          "text": "Catheter-related fungemia (in parenteral nutrition)",
+          "isCorrect": false,
+          "explanation": "Malassezia can cause fungemia in neonates on lipid infusions."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Malassezia causes these conditions."
+        },
+        {
+          "text": "None of the above",
+          "isCorrect": false,
+          "explanation": "It is associated with all."
+        }
+      ],
+      "explanation": {
+        "overview": "Malassezia species require lipids for growth; they cause seborrheic dermatitis, folliculitis, and occasionally systemic infections.",
+        "highYield": "Malassezia = seborrheic dermatitis, folliculitis, line infections (lipid-rich).",
+        "clinicalCorrelation": "Treatment with topical azoles or selenium sulfide."
+      }
+    },
+    {
+      "questionId": "mycology_051",
+      "difficulty": 2,
+      "question": "The 'bird's nest' appearance of the spherule is characteristic of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Coccidioides immitis",
+          "isCorrect": true,
+          "explanation": "Spherules are large structures (20-200 µm) containing numerous endospores."
+        },
+        {
+          "text": "Blastomyces dermatitidis",
+          "isCorrect": false,
+          "explanation": "Blastomyces forms broad-based budding yeast."
+        },
+        {
+          "text": "Histoplasma capsulatum",
+          "isCorrect": false,
+          "explanation": "Histoplasma is a small intracellular yeast."
+        },
+        {
+          "text": "Paracoccidioides brasiliensis",
+          "isCorrect": false,
+          "explanation": "Paracoccidioides shows multiple budding."
+        },
+        {
+          "text": "Sporothrix schenckii",
+          "isCorrect": false,
+          "explanation": "Sporothrix forms cigar-shaped yeasts."
+        }
+      ],
+      "explanation": {
+        "overview": "Coccidioides spherules are pathognomonic in tissue sections.",
+        "highYield": "Spherule with endospores = Coccidioides.",
+        "clinicalCorrelation": "Spherules rupture and release endospores, propagating infection."
+      }
+    },
+    {
+      "questionId": "mycology_052",
+      "difficulty": 2,
+      "question": "The 'mariner's wheel' appearance refers to the budding of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Paracoccidioides brasiliensis",
+          "isCorrect": true,
+          "explanation": "Multiple narrow-neck buds surrounding a mother cell resemble a ship's wheel."
+        },
+        {
+          "text": "Blastomyces dermatitidis",
+          "isCorrect": false,
+          "explanation": "Broad-based single bud."
+        },
+        {
+          "text": "Histoplasma capsulatum",
+          "isCorrect": false,
+          "explanation": "Small yeasts within macrophages."
+        },
+        {
+          "text": "Candida albicans",
+          "isCorrect": false,
+          "explanation": "Budding yeast and pseudohyphae."
+        },
+        {
+          "text": "Cryptococcus neoformans",
+          "isCorrect": false,
+          "explanation": "Narrow-based budding, not multiple."
+        }
+      ],
+      "explanation": {
+        "overview": "The classic 'pilot's wheel' or 'Mickey Mouse' appearance is due to multiple budding.",
+        "highYield": "Mariner's wheel = Paracoccidioides.",
+        "clinicalCorrelation": "Common in chronic pulmonary and mucocutaneous forms."
+      }
+    },
+    {
+      "questionId": "mycology_053",
+      "difficulty": 2,
+      "question": "Broad-based budding is a characteristic of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Blastomyces dermatitidis",
+          "isCorrect": true,
+          "explanation": "The yeast cell has a single bud attached by a wide base."
+        },
+        {
+          "text": "Cryptococcus neoformans",
+          "isCorrect": false,
+          "explanation": "Cryptococcus has narrow-based budding."
+        },
+        {
+          "text": "Candida albicans",
+          "isCorrect": false,
+          "explanation": "Candida buds are not broad-based."
+        },
+        {
+          "text": "Histoplasma capsulatum",
+          "isCorrect": false,
+          "explanation": "Small, narrow-neck budding."
+        },
+        {
+          "text": "Sporothrix schenckii",
+          "isCorrect": false,
+          "explanation": "Cigar-shaped, not broad-based."
+        }
+      ],
+      "explanation": {
+        "overview": "Broad-based budding is a key diagnostic feature of Blastomyces in tissue or culture.",
+        "highYield": "Broad-based budding yeast = Blastomyces.",
+        "clinicalCorrelation": "Blastomycosis mimics carcinoma due to verrucous skin lesions."
+      }
+    },
+    {
+      "questionId": "mycology_054",
+      "difficulty": 2,
+      "question": "The 'cigar body' form is seen in tissue with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Sporothrix schenckii",
+          "isCorrect": true,
+          "explanation": "Elongated, cigar-shaped yeast cells are characteristic, though rare in tissue."
+        },
+        {
+          "text": "Histoplasma capsulatum",
+          "isCorrect": false,
+          "explanation": "Small oval yeasts."
+        },
+        {
+          "text": "Coccidioides immitis",
+          "isCorrect": false,
+          "explanation": "Spherules."
+        },
+        {
+          "text": "Paracoccidioides brasiliensis",
+          "isCorrect": false,
+          "explanation": "Multiple budding."
+        },
+        {
+          "text": "Aspergillus fumigatus",
+          "isCorrect": false,
+          "explanation": "Hyphae."
+        }
+      ],
+      "explanation": {
+        "overview": "Sporothrix schenckii is a dimorphic fungus that forms yeast in tissue, sometimes appearing as cigar bodies.",
+        "highYield": "Cigar body = Sporothrix.",
+        "clinicalCorrelation": "Asteroid bodies (yeast surrounded by eosinophilic material) are also characteristic."
+      }
+    },
+    {
+      "questionId": "mycology_055",
+      "difficulty": 2,
+      "question": "Fungi that are neurotropic and cause meningitis include:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cryptococcus neoformans and C. gattii",
+          "isCorrect": true,
+          "explanation": "Cryptococcus has a strong tropism for the CNS, especially in immunocompromised patients."
+        },
+        {
+          "text": "Candida albicans",
+          "isCorrect": false,
+          "explanation": "Candida meningitis is rare, usually in neonates or neurosurgical patients."
+        },
+        {
+          "text": "Aspergillus fumigatus",
+          "isCorrect": false,
+          "explanation": "Aspergillus can cause brain abscess but less commonly meningitis."
+        },
+        {
+          "text": "Histoplasma capsulatum",
+          "isCorrect": false,
+          "explanation": "Histoplasma can cause meningitis but less common than Cryptococcus."
+        },
+        {
+          "text": "Coccidioides immitis",
+          "isCorrect": false,
+          "explanation": "Coccidioides meningitis occurs but Cryptococcus is the classic neurotropic fungus."
+        }
+      ],
+      "explanation": {
+        "overview": "Cryptococcus neoformans is the leading cause of fungal meningitis, especially in HIV/AIDS.",
+        "highYield": "Fungal meningitis = Cryptococcus (most common).",
+        "clinicalCorrelation": "CSF CrAg is diagnostic; treatment: amphotericin B + flucytosine."
+      }
+    },
+    {
+      "questionId": "mycology_056",
+      "difficulty": 2,
+      "question": "Cryptococcus gattii differs from C. neoformans in that it:",
+      "image": null,
+      "options": [
+        {
+          "text": "Causes disease in immunocompetent hosts and is endemic in tropical/subtropical regions",
+          "isCorrect": true,
+          "explanation": "C. gattii has caused outbreaks in healthy individuals, associated with eucalyptus trees."
+        },
+        {
+          "text": "Is only found in pigeon droppings",
+          "isCorrect": false,
+          "explanation": "C. neoformans is associated with pigeon droppings."
+        },
+        {
+          "text": "Is sensitive to fluconazole",
+          "isCorrect": false,
+          "explanation": "Both are sensitive."
+        },
+        {
+          "text": "Does not have a capsule",
+          "isCorrect": false,
+          "explanation": "Both have capsules."
+        },
+        {
+          "text": "Is a mold at room temperature",
+          "isCorrect": false,
+          "explanation": "Both are yeasts."
+        }
+      ],
+      "explanation": {
+        "overview": "C. gattii primarily affects immunocompetent people and may cause large cryptococcomas in the lung and brain.",
+        "highYield": "C. gattii: immunocompetent, tropical/subtropical, eucalyptus trees.",
+        "clinicalCorrelation": "Outbreaks in Pacific Northwest (USA/Canada)."
+      }
+    },
+    {
+      "questionId": "mycology_057",
+      "difficulty": 2,
+      "question": "Fusarium species are emerging opportunistic fungi that can cause:",
+      "image": null,
+      "options": [
+        {
+          "text": "Disseminated infections in neutropenic patients",
+          "isCorrect": false,
+          "explanation": "Part of the answer."
+        },
+        {
+          "text": "Keratitis",
+          "isCorrect": false,
+          "explanation": "Also true."
+        },
+        {
+          "text": "Onychomycosis",
+          "isCorrect": false,
+          "explanation": "Yes."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Fusarium causes a wide spectrum including keratitis, onychomycosis, and disseminated disease."
+        },
+        {
+          "text": "None of the above",
+          "isCorrect": false,
+          "explanation": "It causes all."
+        }
+      ],
+      "explanation": {
+        "overview": "Fusarium is resistant to many antifungals; disseminated disease has poor prognosis. It produces characteristic banana-shaped macroconidia.",
+        "highYield": "Fusarium = keratitis, onychomycosis, disseminated in neutropenia.",
+        "clinicalCorrelation": "High-dose amphotericin B or voriconazole may be used."
+      }
+    },
+    {
+      "questionId": "mycology_058",
+      "difficulty": 2,
+      "question": "The treatment of choice for severe histoplasmosis is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Liposomal amphotericin B followed by itraconazole",
+          "isCorrect": true,
+          "explanation": "Severe/disseminated disease requires initial amphotericin B, then step-down to itraconazole."
+        },
+        {
+          "text": "Fluconazole alone",
+          "isCorrect": false,
+          "explanation": "Fluconazole is less effective than itraconazole for histoplasmosis."
+        },
+        {
+          "text": "Caspofungin",
+          "isCorrect": false,
+          "explanation": "Echinocandins are not active against Histoplasma."
+        },
+        {
+          "text": "Terbinafine",
+          "isCorrect": false,
+          "explanation": "Not effective."
+        },
+        {
+          "text": "Ketoconazole",
+          "isCorrect": false,
+          "explanation": "Ketoconazole is less effective and more toxic."
+        }
+      ],
+      "explanation": {
+        "overview": "Itraconazole is the azole of choice for histoplasmosis; amphotericin B for severe cases.",
+        "highYield": "Histoplasmosis: severe → amphotericin B; mild-moderate → itraconazole.",
+        "clinicalCorrelation": "Monitor itraconazole drug levels."
+      }
+    },
+    {
+      "questionId": "mycology_059",
+      "difficulty": 2,
+      "question": "Itraconazole is the drug of choice for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Mild to moderate histoplasmosis, blastomycosis, and sporotrichosis",
+          "isCorrect": true,
+          "explanation": "Itraconazole is effective for these endemic mycoses when disease is not severe."
+        },
+        {
+          "text": "Cryptococcal meningitis",
+          "isCorrect": false,
+          "explanation": "Fluconazole is preferred."
+        },
+        {
+          "text": "Invasive aspergillosis",
+          "isCorrect": false,
+          "explanation": "Voriconazole is first-line."
+        },
+        {
+          "text": "Mucormycosis",
+          "isCorrect": false,
+          "explanation": "Amphotericin B."
+        },
+        {
+          "text": "Candidemia",
+          "isCorrect": false,
+          "explanation": "Echinocandins or fluconazole."
+        }
+      ],
+      "explanation": {
+        "overview": "Itraconazole is the cornerstone for non-life-threatening endemic mycoses, including lymphocutaneous sporotrichosis.",
+        "highYield": "Itraconazole = mild/moderate endemic mycoses.",
+        "clinicalCorrelation": "Requires acidic gastric environment for absorption; avoid antacids."
+      }
+    },
+    {
+      "questionId": "mycology_060",
+      "difficulty": 2,
+      "question": "Prevention of fungal infections in high-risk patients (e.g., transplant recipients) often includes:",
+      "image": null,
+      "options": [
+        {
+          "text": "Prophylactic antifungal agents (e.g., fluconazole, posaconazole)",
+          "isCorrect": true,
+          "explanation": "Antifungal prophylaxis reduces incidence of invasive candidiasis and aspergillosis in high-risk groups."
+        },
+        {
+          "text": "Avoidance of all plants",
+          "isCorrect": false,
+          "explanation": "Avoiding soil and plants helps but prophylaxis is central."
+        },
+        {
+          "text": "Vaccination",
+          "isCorrect": false,
+          "explanation": "No fungal vaccines available."
+        },
+        {
+          "text": "Isolation in negative pressure rooms",
+          "isCorrect": false,
+          "explanation": "Hepa filtration is used for Aspergillus prevention, not negative pressure."
+        },
+        {
+          "text": "Routine surveillance cultures only",
+          "isCorrect": false,
+          "explanation": "Prophylaxis is recommended, not just surveillance."
+        }
+      ],
+      "explanation": {
+        "overview": "Posaconazole or fluconazole prophylaxis is standard in high-risk hematology patients to prevent invasive fungal infections.",
+        "highYield": "Prophylaxis: fluconazole (Candida), posaconazole (mold-active).",
+        "clinicalCorrelation": "Use of HEPA filters and laminar airflow rooms also reduce Aspergillus exposure."
+      }
+    },
+    {
+      "questionId": "mycology_061",
+      "difficulty": 2,
+      "question": "Candida auris is an emerging pathogen known for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Multidrug resistance, difficulty to identify with standard methods, and outbreaks in healthcare settings",
+          "isCorrect": true,
+          "explanation": "C. auris is often resistant to azoles, echinocandins, and amphotericin B, requiring specialized identification."
+        },
+        {
+          "text": "Being intrinsically susceptible to all antifungals",
+          "isCorrect": false,
+          "explanation": "It is frequently multidrug-resistant."
+        },
+        {
+          "text": "Producing aflatoxin",
+          "isCorrect": false,
+          "explanation": "Not associated."
+        },
+        {
+          "text": "Being dimorphic",
+          "isCorrect": false,
+          "explanation": "It is a yeast."
+        },
+        {
+          "text": "Primarily causing dermatophyte infections",
+          "isCorrect": false,
+          "explanation": "Causes invasive candidiasis."
+        }
+      ],
+      "explanation": {
+        "overview": "Candida auris is a serious global health threat due to its resistance, persistence on surfaces, and potential for nosocomial outbreaks.",
+        "highYield": "C. auris = MDR yeast, misidentified, outbreak potential.",
+        "clinicalCorrelation": "Strict contact precautions and specialized disinfectants are required."
+      }
+    },
+    {
+      "questionId": "mycology_062",
+      "difficulty": 1,
+      "question": "Which antifungal class acts by inhibiting fungal microtubule assembly, thus blocking mitosis?",
+      "image": null,
+      "options": [
+        {
+          "text": "Griseofulvin",
+          "isCorrect": true,
+          "explanation": "Griseofulvin disrupts the mitotic spindle by interfering with tubulin."
+        },
+        {
+          "text": "Terbinafine",
+          "isCorrect": false,
+          "explanation": "Terbinafine inhibits squalene epoxidase."
+        },
+        {
+          "text": "Amphotericin B",
+          "isCorrect": false,
+          "explanation": "Binds ergosterol."
+        },
+        {
+          "text": "Fluconazole",
+          "isCorrect": false,
+          "explanation": "Azoles inhibit ergosterol synthesis."
+        },
+        {
+          "text": "Caspofungin",
+          "isCorrect": false,
+          "explanation": "Echinocandins inhibit cell wall synthesis."
+        }
+      ],
+      "explanation": {
+        "overview": "Griseofulvin is an oral fungistatic agent used for dermatophyte infections; it is active only against fungi that contain tubulin.",
+        "highYield": "Griseofulvin = inhibits microtubules (mitosis block).",
+        "clinicalCorrelation": "Requires long treatment courses and fatty meals for absorption."
+      }
+    },
+    {
+      "questionId": "mycology_063",
+      "difficulty": 2,
+      "question": "The characteristic yeast form of Histoplasma capsulatum in macrophages appears as:",
+      "image": null,
+      "options": [
+        {
+          "text": "Small (2-4 µm) oval yeasts within macrophages",
+          "isCorrect": true,
+          "explanation": "Histoplasma yeasts are tiny and are often seen inside histiocytes/macrophages."
+        },
+        {
+          "text": "Large (10-15 µm) yeasts with broad-based buds",
+          "isCorrect": false,
+          "explanation": "Blastomyces has large broad-based buds."
+        },
+        {
+          "text": "Spherules with endospores",
+          "isCorrect": false,
+          "explanation": "Coccidioides."
+        },
+        {
+          "text": "Cigar-shaped yeasts",
+          "isCorrect": false,
+          "explanation": "Sporothrix."
+        },
+        {
+          "text": "Encapsulated yeasts",
+          "isCorrect": false,
+          "explanation": "Cryptococcus."
+        }
+      ],
+      "explanation": {
+        "overview": "The intracellular location and small size of Histoplasma yeasts distinguish it from other fungi.",
+        "highYield": "Histoplasma = small intracellular yeast (macrophages).",
+        "clinicalCorrelation": "Tissue biopsy shows granulomas with tiny yeasts."
+      }
+    },
+    {
+      "questionId": "mycology_064",
+      "difficulty": 1,
+      "question": "Which of the following infections is most commonly associated with the use of intravenous catheters?",
+      "image": null,
+      "options": [
+        {
+          "text": "Candidemia",
+          "isCorrect": true,
+          "explanation": "Candida species are a leading cause of catheter-related bloodstream infections."
+        },
+        {
+          "text": "Aspergillosis",
+          "isCorrect": false,
+          "explanation": "Aspergillosis is primarily respiratory."
+        },
+        {
+          "text": "Mucormycosis",
+          "isCorrect": false,
+          "explanation": "Not typically catheter-related."
+        },
+        {
+          "text": "Histoplasmosis",
+          "isCorrect": false,
+          "explanation": "Inhalation route."
+        },
+        {
+          "text": "Coccidioidomycosis",
+          "isCorrect": false,
+          "explanation": "Inhalation."
+        }
+      ],
+      "explanation": {
+        "overview": "Candidemia is often central line-associated; removal of the catheter is a key component of management.",
+        "highYield": "Line infection → Candida (candidemia).",
+        "clinicalCorrelation": "Blood cultures and β-D-glucan assist in diagnosis."
+      }
+    },
+    {
+      "questionId": "mycology_065",
+      "difficulty": 2,
+      "question": "Which statement is true about Aspergillus terreus?",
+      "image": null,
+      "options": [
+        {
+          "text": "It is often resistant to amphotericin B",
+          "isCorrect": true,
+          "explanation": "A. terreus is intrinsically resistant to amphotericin B and requires alternative therapy."
+        },
+        {
+          "text": "It is the most common cause of aspergillosis",
+          "isCorrect": false,
+          "explanation": "A. fumigatus is most common."
+        },
+        {
+          "text": "It produces aflatoxin",
+          "isCorrect": false,
+          "explanation": "A. flavus produces aflatoxin."
+        },
+        {
+          "text": "It is a dimorphic fungus",
+          "isCorrect": false,
+          "explanation": "Not dimorphic."
+        },
+        {
+          "text": "It is primarily a skin pathogen",
+          "isCorrect": false,
+          "explanation": "It causes invasive aspergillosis."
+        }
+      ],
+      "explanation": {
+        "overview": "A. terreus is notable for amphotericin B resistance; voriconazole is preferred.",
+        "highYield": "A. terreus = resistant to amphotericin B.",
+        "clinicalCorrelation": "Identification to species level is important for guiding therapy."
+      }
+    },
+    {
+      "questionId": "mycology_066",
+      "difficulty": 2,
+      "question": "Which of the following produces a red pigment and can be confused with bacterial colonies?",
+      "image": null,
+      "options": [
+        {
+          "text": "Rhodotorula species",
+          "isCorrect": true,
+          "explanation": "Rhodotorula is a yeast that produces carotenoid pigments, giving colonies a red/orange color."
+        },
+        {
+          "text": "Candida albicans",
+          "isCorrect": false,
+          "explanation": "Cream-colored colonies."
+        },
+        {
+          "text": "Aspergillus niger",
+          "isCorrect": false,
+          "explanation": "Black colonies."
+        },
+        {
+          "text": "Cryptococcus neoformans",
+          "isCorrect": false,
+          "explanation": "Mucoid colonies."
+        },
+        {
+          "text": "Trichosporon",
+          "isCorrect": false,
+          "explanation": "White-cream colonies."
+        }
+      ],
+      "explanation": {
+        "overview": "Rhodotorula is an environmental yeast that can cause opportunistic infections, especially catheter-related fungemia.",
+        "highYield": "Rhodotorula = red yeast.",
+        "clinicalCorrelation": "Susceptible to amphotericin B and flucytosine; resistant to echinocandins."
+      }
+    },
+    {
+      "questionId": "mycology_067",
+      "difficulty": 2,
+      "question": "Which of the following is the most common cause of invasive candidiasis in neutropenic patients?",
+      "image": null,
+      "options": [
+        {
+          "text": "Candida albicans",
+          "isCorrect": true,
+          "explanation": "C. albicans remains the most frequent species, though non-albicans species are increasing."
+        },
+        {
+          "text": "Candida krusei",
+          "isCorrect": false,
+          "explanation": "Less common, inherently fluconazole-resistant."
+        },
+        {
+          "text": "Candida glabrata",
+          "isCorrect": false,
+          "explanation": "Second or third most common; resistance rising."
+        },
+        {
+          "text": "Candida tropicalis",
+          "isCorrect": false,
+          "explanation": "Common but less than albicans."
+        },
+        {
+          "text": "Candida auris",
+          "isCorrect": false,
+          "explanation": "Emerging but not yet most common."
+        }
+      ],
+      "explanation": {
+        "overview": "While C. albicans is still the most frequent, C. glabrata and C. krusei are important due to azole resistance.",
+        "highYield": "Most common invasive Candida = C. albicans.",
+        "clinicalCorrelation": "Susceptibility testing is critical because of resistance trends."
+      }
+    },
+    {
+      "questionId": "mycology_068",
+      "difficulty": 1,
+      "question": "Which fungal genus includes species that produce aflatoxins and also are used to produce statins?",
+      "image": null,
+      "options": [
+        {
+          "text": "Aspergillus",
+          "isCorrect": true,
+          "explanation": "Aspergillus species produce aflatoxins; A. terreus produces lovastatin, a cholesterol-lowering drug."
+        },
+        {
+          "text": "Penicillium",
+          "isCorrect": false,
+          "explanation": "Penicillium produces penicillin, not statins."
+        },
+        {
+          "text": "Candida",
+          "isCorrect": false,
+          "explanation": "Not known for statin production."
+        },
+        {
+          "text": "Fusarium",
+          "isCorrect": false,
+          "explanation": "Produces mycotoxins but not statins."
+        },
+        {
+          "text": "Histoplasma",
+          "isCorrect": false,
+          "explanation": "Not relevant."
+        }
+      ],
+      "explanation": {
+        "overview": "Aspergillus terreus is used industrially to produce the cholesterol-lowering drug lovastatin.",
+        "highYield": "Aspergillus: aflatoxin (flavus) and statin (terreus).",
+        "clinicalCorrelation": "Also an opportunistic pathogen."
+      }
+    },
+    {
+      "questionId": "mycology_069",
+      "difficulty": 2,
+      "question": "Which of the following is a characteristic of the zygomycete Rhizopus?",
+      "image": null,
+      "options": [
+        {
+          "text": "Presence of rhizoids",
+          "isCorrect": true,
+          "explanation": "Rhizopus species have root-like rhizoids, which anchor the mold."
+        },
+        {
+          "text": "Septate hyphae",
+          "isCorrect": false,
+          "explanation": "Mucorales are aseptate."
+        },
+        {
+          "text": "Production of yeast cells at 37°C",
+          "isCorrect": false,
+          "explanation": "Not dimorphic."
+        },
+        {
+          "text": "Growth only on blood agar",
+          "isCorrect": false,
+          "explanation": "Grows on routine media."
+        },
+        {
+          "text": "Capsule formation",
+          "isCorrect": false,
+          "explanation": "No capsule."
+        }
+      ],
+      "explanation": {
+        "overview": "Rhizopus is identified by its rapid growth, cotton-candy appearance, and presence of rhizoids at the base of sporangiophores.",
+        "highYield": "Rhizopus = rhizoids, non-septate hyphae.",
+        "clinicalCorrelation": "Causes rhinocerebral mucormycosis."
+      }
+    },
+    {
+      "questionId": "mycology_070",
+      "difficulty": 2,
+      "question": "A pulmonary fungus ball caused by Aspergillus is best treated by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Surgical resection if there is hemoptysis, or observation if asymptomatic",
+          "isCorrect": true,
+          "explanation": "Antifungals have limited penetration into cavities; surgery is indicated for significant hemoptysis."
+        },
+        {
+          "text": "High-dose fluconazole",
+          "isCorrect": false,
+          "explanation": "Fluconazole lacks activity against Aspergillus."
+        },
+        {
+          "text": "Caspofungin alone",
+          "isCorrect": false,
+          "explanation": "Echinocandins are not curative for aspergillomas."
+        },
+        {
+          "text": "Amphotericin B alone",
+          "isCorrect": false,
+          "explanation": "Systemic therapy alone is often insufficient."
+        },
+        {
+          "text": "No treatment needed",
+          "isCorrect": false,
+          "explanation": "While asymptomatic may be observed, massive hemoptysis is a risk."
+        }
+      ],
+      "explanation": {
+        "overview": "Aspergillomas (fungus balls) in lung cavities often require surgical intervention if causing life-threatening hemoptysis.",
+        "highYield": "Aspergilloma: surgery if bleeding; otherwise observe.",
+        "clinicalCorrelation": "Bronchial artery embolization may be an alternative for hemoptysis."
+      }
+    },
+    {
+      "questionId": "mycology_071",
+      "difficulty": 1,
+      "question": "The term 'mycetoma' refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "A chronic granulomatous infection of subcutaneous tissues caused by fungi (eumycetoma) or actinomycetes",
+          "isCorrect": true,
+          "explanation": "Mycetoma is characterized by swelling, sinus tracts, and grains."
+        },
+        {
+          "text": "A superficial skin infection by Candida",
+          "isCorrect": false,
+          "explanation": "Not mycetoma."
+        },
+        {
+          "text": "Fungal infection of the nail",
+          "isCorrect": false,
+          "explanation": "Onychomycosis."
+        },
+        {
+          "text": "Aspergilloma",
+          "isCorrect": false,
+          "explanation": "Not the same."
+        },
+        {
+          "text": "Allergic bronchopulmonary aspergillosis",
+          "isCorrect": false,
+          "explanation": "Not mycetoma."
+        }
+      ],
+      "explanation": {
+        "overview": "Mycetoma (Madura foot) is a chronic infection caused by fungi (eumycetoma) or actinomycetes (actinomycetoma), producing grains.",
+        "highYield": "Mycetoma = subcutaneous granulomatous infection, grains.",
+        "clinicalCorrelation": "Treatment: surgery plus antifungals (eumycetoma) or antibiotics (actinomycetoma)."
+      }
+    },
+    {
+      "questionId": "mycology_072",
+      "difficulty": 2,
+      "question": "Which of the following fungi produces conidia in chains from a specialized structure called a conidiophore with a swollen vesicle?",
+      "image": null,
+      "options": [
+        {
+          "text": "Aspergillus",
+          "isCorrect": true,
+          "explanation": "Aspergillus has a foot cell, stalk, vesicle, phialides, and chains of conidia."
+        },
+        {
+          "text": "Penicillium",
+          "isCorrect": false,
+          "explanation": "Penicillium has a brush-like conidiophore (penicillus) without a swollen vesicle."
+        },
+        {
+          "text": "Mucor",
+          "isCorrect": false,
+          "explanation": "Mucor has sporangiospores in a sporangium."
+        },
+        {
+          "text": "Cryptococcus",
+          "isCorrect": false,
+          "explanation": "Yeast, no conidia."
+        },
+        {
+          "text": "Sporothrix",
+          "isCorrect": false,
+          "explanation": "Produces rosette-like clusters of conidia."
+        }
+      ],
+      "explanation": {
+        "overview": "The aspergillum-like head (vesicle with phialides and conidia) is a hallmark of Aspergillus.",
+        "highYield": "Aspergillus = vesicle with radiating phialides and conidia.",
+        "clinicalCorrelation": "Microscopy of culture aids in species identification."
+      }
+    },
+    {
+      "questionId": "mycology_073",
+      "difficulty": 1,
+      "question": "Which antifungal is known to cause visual disturbances (blurred vision, color changes) and is used for dermatophyte infections?",
+      "image": null,
+      "options": [
+        {
+          "text": "Griseofulvin",
+          "isCorrect": false,
+          "explanation": "Not typical visual effects."
+        },
+        {
+          "text": "Terbinafine",
+          "isCorrect": false,
+          "explanation": "Rarely causes visual changes."
+        },
+        {
+          "text": "Itraconazole",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        },
+        {
+          "text": "Voriconazole",
+          "isCorrect": true,
+          "explanation": "Voriconazole commonly causes visual disturbances, including photophobia and altered color perception."
+        },
+        {
+          "text": "Fluconazole",
+          "isCorrect": false,
+          "explanation": "Not a major side effect."
+        }
+      ],
+      "explanation": {
+        "overview": "Voriconazole is a triazole used for invasive aspergillosis; transient visual adverse effects are common.",
+        "highYield": "Voriconazole = visual disturbances (photopsia, blurred vision).",
+        "clinicalCorrelation": "These visual effects are reversible upon discontinuation."
+      }
+    },
+    {
+      "questionId": "mycology_074",
+      "difficulty": 2,
+      "question": "In cryptococcal meningitis, which of the following CSF findings is most characteristic?",
+      "image": null,
+      "options": [
+        {
+          "text": "Elevated opening pressure, low glucose, lymphocytic pleocytosis",
+          "isCorrect": true,
+          "explanation": "CSF shows high opening pressure, low glucose, and mononuclear pleocytosis."
+        },
+        {
+          "text": "Normal opening pressure, high glucose",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        },
+        {
+          "text": "Polymorphonuclear predominance",
+          "isCorrect": false,
+          "explanation": "More typical of bacterial meningitis."
+        },
+        {
+          "text": "Xanthochromia",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        },
+        {
+          "text": "Elevated protein only",
+          "isCorrect": false,
+          "explanation": "Multiple parameters are altered."
+        }
+      ],
+      "explanation": {
+        "overview": "Cryptococcal meningitis often presents with markedly elevated intracranial pressure; serial lumbar punctures may be needed.",
+        "highYield": "Cryptococcal CSF: high opening pressure, low glucose, lymphocyte predominant.",
+        "clinicalCorrelation": "India ink and CrAg are diagnostic."
+      }
+    },
+    {
+      "questionId": "mycology_075",
+      "difficulty": 1,
+      "question": "The 'blueberry muffin' skin lesions in congenital infections can be caused by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Congenital candidiasis",
+          "isCorrect": true,
+          "explanation": "Congenital candidiasis presents with a diffuse rash that may have a blueberry muffin appearance."
+        },
+        {
+          "text": "Aspergillosis",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        },
+        {
+          "text": "Cryptococcosis",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        },
+        {
+          "text": "Histoplasmosis",
+          "isCorrect": false,
+          "explanation": "Can cause disseminated disease but not classic blueberry muffin."
+        },
+        {
+          "text": "Sporotrichosis",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        }
+      ],
+      "explanation": {
+        "overview": "Congenital candidiasis is rare; skin lesions appear at birth or soon after, including pustular, vesicular, or blueberry muffin rash.",
+        "highYield": "Congenital Candida = blueberry muffin rash.",
+        "clinicalCorrelation": "Differentiate from TORCH infections."
+      }
+    },
+    {
+      "questionId": "mycology_076",
+      "difficulty": 2,
+      "question": "Which of the following is a major risk factor for invasive aspergillosis?",
+      "image": null,
+      "options": [
+        {
+          "text": "Prolonged neutropenia (<500 neutrophils/µL for >10 days)",
+          "isCorrect": true,
+          "explanation": "Neutropenia is the most important risk factor for invasive aspergillosis."
+        },
+        {
+          "text": "Diabetes mellitus",
+          "isCorrect": false,
+          "explanation": "Risk factor for mucormycosis."
+        },
+        {
+          "text": "HIV with CD4 <50",
+          "isCorrect": false,
+          "explanation": "Risk for cryptococcosis, PCP, MAC."
+        },
+        {
+          "text": "Iron overload",
+          "isCorrect": false,
+          "explanation": "Risk for mucormycosis."
+        },
+        {
+          "text": "Corticosteroid use alone is not a major risk",
+          "isCorrect": false,
+          "explanation": "Corticosteroids also increase risk, but neutropenia is the classic."
+        }
+      ],
+      "explanation": {
+        "overview": "Neutrophils are essential for defense against Aspergillus hyphae; their deficiency predisposes to angioinvasive disease.",
+        "highYield": "Invasive aspergillosis risk: neutropenia, steroid use, transplant.",
+        "clinicalCorrelation": "Prophylaxis with posaconazole in high-risk patients."
+      }
+    },
+    {
+      "questionId": "mycology_077",
+      "difficulty": 2,
+      "question": "Which of the following is a common feature of Sporothrix schenckii in the environment?",
+      "image": null,
+      "options": [
+        {
+          "text": "It is a dimorphic fungus found on plant material and in soil",
+          "isCorrect": true,
+          "explanation": "S. schenckii is a saprophyte on decaying vegetation, sphagnum moss, and hay."
+        },
+        {
+          "text": "It is transmitted via respiratory droplets",
+          "isCorrect": false,
+          "explanation": "Inoculation, not inhalation."
+        },
+        {
+          "text": "It requires a mammalian host for survival",
+          "isCorrect": false,
+          "explanation": "Environmental reservoir."
+        },
+        {
+          "text": "It produces large spherules",
+          "isCorrect": false,
+          "explanation": "Coccidioides produces spherules."
+        },
+        {
+          "text": "It forms rhizoids",
+          "isCorrect": false,
+          "explanation": "Rhizopus."
+        }
+      ],
+      "explanation": {
+        "overview": "Sporothrix schenckii complex is found worldwide in soil and plant material, causing infection after traumatic inoculation.",
+        "highYield": "Sporothrix = environmental dimorphic, plant-associated.",
+        "clinicalCorrelation": "Rose gardener's disease."
+      }
+    },
+    {
+      "questionId": "mycology_078",
+      "difficulty": 1,
+      "question": "Which of the following is NOT a common opportunistic yeast?",
+      "image": null,
+      "options": [
+        {
+          "text": "Coccidioides immitis",
+          "isCorrect": true,
+          "explanation": "Coccidioides is a dimorphic endemic fungus, not a typical opportunistic yeast."
+        },
+        {
+          "text": "Candida glabrata",
+          "isCorrect": false,
+          "explanation": "Opportunistic yeast."
+        },
+        {
+          "text": "Cryptococcus neoformans",
+          "isCorrect": false,
+          "explanation": "Opportunistic yeast."
+        },
+        {
+          "text": "Trichosporon asahii",
+          "isCorrect": false,
+          "explanation": "Emerging opportunistic yeast."
+        },
+        {
+          "text": "Rhodotorula mucilaginosa",
+          "isCorrect": false,
+          "explanation": "Opportunistic yeast."
+        }
+      ],
+      "explanation": {
+        "overview": "Coccidioides is a primary pathogen that causes disease in immunocompetent hosts, not predominantly an opportunist.",
+        "highYield": "Opportunistic yeasts: Candida, Cryptococcus, Trichosporon, Rhodotorula.",
+        "clinicalCorrelation": "Coccidioides is endemic in southwestern US and causes Valley fever."
+      }
+    },
+    {
+      "questionId": "mycology_079",
+      "difficulty": 1,
+      "question": "Which of the following antifungals is available as a topical agent only?",
+      "image": null,
+      "options": [
+        {
+          "text": "Nystatin",
+          "isCorrect": true,
+          "explanation": "Nystatin is a polyene antifungal used topically for oral, cutaneous, and vaginal candidiasis due to its toxicity when given parenterally."
+        },
+        {
+          "text": "Amphotericin B",
+          "isCorrect": false,
+          "explanation": "Amphotericin B is given IV."
+        },
+        {
+          "text": "Fluconazole",
+          "isCorrect": false,
+          "explanation": "Oral and IV."
+        },
+        {
+          "text": "Caspofungin",
+          "isCorrect": false,
+          "explanation": "IV only."
+        },
+        {
+          "text": "Itraconazole",
+          "isCorrect": false,
+          "explanation": "Oral and IV."
+        }
+      ],
+      "explanation": {
+        "overview": "Nystatin is used for superficial Candida infections (thrush, diaper rash) because it is not absorbed from the GI tract.",
+        "highYield": "Nystatin = topical polyene (swish and swallow for thrush).",
+        "clinicalCorrelation": "Too toxic for systemic use."
+      }
+    },
+    {
+      "questionId": "mycology_080",
+      "difficulty": 2,
+      "question": "Which of the following best describes the tissue form of Coccidioides immitis?",
+      "image": null,
+      "options": [
+        {
+          "text": "Large spherules filled with endospores",
+          "isCorrect": true,
+          "explanation": "Coccidioides forms spherules (30-60 µm) that contain numerous endospores."
+        },
+        {
+          "text": "Broad-based budding yeast",
+          "isCorrect": false,
+          "explanation": "Blastomyces."
+        },
+        {
+          "text": "Small intracellular yeast",
+          "isCorrect": false,
+          "explanation": "Histoplasma."
+        },
+        {
+          "text": "Septate hyphae with 45° branching",
+          "isCorrect": false,
+          "explanation": "Aspergillus."
+        },
+        {
+          "text": "Encapsulated yeast",
+          "isCorrect": false,
+          "explanation": "Cryptococcus."
+        }
+      ],
+      "explanation": {
+        "overview": "Spherules are pathognomonic; they rupture and release endospores that can disseminate.",
+        "highYield": "Coccidioides tissue form = spherule with endospores.",
+        "clinicalCorrelation": "Do not culture on open plate due to highly infectious arthroconidia."
+      }
+    },
+    {
+      "questionId": "mycology_081",
+      "difficulty": 2,
+      "question": "A patient with advanced HIV presents with fever and skin lesions resembling molluscum contagiosum. Which fungus is most likely?",
+      "image": null,
+      "options": [
+        {
+          "text": "Talaromyces (Penicillium) marneffei",
+          "isCorrect": true,
+          "explanation": "This dimorphic fungus causes disseminated infection in HIV with characteristic umbilicated skin papules."
+        },
+        {
+          "text": "Histoplasma capsulatum",
+          "isCorrect": false,
+          "explanation": "Can cause skin lesions but molluscum-like is classic for T. marneffei."
+        },
+        {
+          "text": "Cryptococcus neoformans",
+          "isCorrect": false,
+          "explanation": "Skin lesions are papulonodular but not typically molluscum-like."
+        },
+        {
+          "text": "Candida albicans",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        },
+        {
+          "text": "Sporothrix schenckii",
+          "isCorrect": false,
+          "explanation": "Lymphocutaneous."
+        }
+      ],
+      "explanation": {
+        "overview": "T. marneffei is an AIDS-defining illness in Southeast Asia; skin lesions are typical.",
+        "highYield": "Molluscum-like lesions in HIV + travel to SE Asia = T. marneffei.",
+        "clinicalCorrelation": "Diagnosis by blood culture or skin biopsy; treat with amphotericin B then itraconazole."
+      }
+    },
+    {
+      "questionId": "mycology_082",
+      "difficulty": 1,
+      "question": "Which of the following fungi is a common cause of vaginal candidiasis?",
+      "image": null,
+      "options": [
+        {
+          "text": "Candida albicans",
+          "isCorrect": true,
+          "explanation": "C. albicans causes 85-90% of vulvovaginal candidiasis."
+        },
+        {
+          "text": "Aspergillus fumigatus",
+          "isCorrect": false,
+          "explanation": "Not a cause of vaginitis."
+        },
+        {
+          "text": "Cryptococcus neoformans",
+          "isCorrect": false,
+          "explanation": "Not a cause."
+        },
+        {
+          "text": "Trichophyton rubrum",
+          "isCorrect": false,
+          "explanation": "Dermatophyte."
+        },
+        {
+          "text": "Histoplasma capsulatum",
+          "isCorrect": false,
+          "explanation": "Not vaginal."
+        }
+      ],
+      "explanation": {
+        "overview": "Vaginal candidiasis is common, especially with antibiotic use, pregnancy, and diabetes.",
+        "highYield": "Vaginal candidiasis = C. albicans (most common).",
+        "clinicalCorrelation": "Topical azoles or oral fluconazole for treatment."
+      }
+    },
+    {
+      "questionId": "mycology_083",
+      "difficulty": 2,
+      "question": "The 'black yeast' Exophiala (Wangiella) dermatitidis is associated with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Subcutaneous cysts and brain abscesses, particularly in immunocompetent hosts",
+          "isCorrect": true,
+          "explanation": "These dematiaceous fungi cause phaeohyphomycosis, including brain abscesses in immunocompetent individuals."
+        },
+        {
+          "text": "Superficial skin infections only",
+          "isCorrect": false,
+          "explanation": "Can cause deep infections."
+        },
+        {
+          "text": "Systemic candidiasis",
+          "isCorrect": false,
+          "explanation": "Not Candida."
+        },
+        {
+          "text": "Dermatophyte infections",
+          "isCorrect": false,
+          "explanation": "Not a dermatophyte."
+        },
+        {
+          "text": "Allergic fungal sinusitis",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        }
+      ],
+      "explanation": {
+        "overview": "Dematiaceous (melanized) fungi like Exophiala cause a spectrum from superficial skin to life-threatening CNS disease.",
+        "highYield": "Black fungi = brain abscess in immunocompetent.",
+        "clinicalCorrelation": "Surgical excision and antifungal therapy are required."
+      }
+    },
+    {
+      "questionId": "mycology_084",
+      "difficulty": 2,
+      "question": "Which of the following is a serological test used to diagnose coccidioidomycosis?",
+      "image": null,
+      "options": [
+        {
+          "text": "Complement fixation (CF) and immunodiffusion (ID) for antibodies",
+          "isCorrect": true,
+          "explanation": "Serology (IgM and IgG detection) is the primary method for diagnosis."
+        },
+        {
+          "text": "Galactomannan antigen",
+          "isCorrect": false,
+          "explanation": "For Aspergillus."
+        },
+        {
+          "text": "CrAg",
+          "isCorrect": false,
+          "explanation": "For Cryptococcus."
+        },
+        {
+          "text": "Urine Histoplasma antigen",
+          "isCorrect": false,
+          "explanation": "For Histoplasma."
+        },
+        {
+          "text": "Mannan antigen",
+          "isCorrect": false,
+          "explanation": "For Candida."
+        }
+      ],
+      "explanation": {
+        "overview": "CF titer correlates with disease severity; decreasing titer indicates response to treatment.",
+        "highYield": "Coccidioides diagnosis: serology (CF, ID).",
+        "clinicalCorrelation": "Cultures are hazardous due to infectious arthroconidia."
+      }
+    },
+    {
+      "questionId": "mycology_085",
+      "difficulty": 1,
+      "question": "Which of the following is a superficial fungal infection characterized by hypopigmented or hyperpigmented patches on the trunk, often called 'sun fungus'?",
+      "image": null,
+      "options": [
+        {
+          "text": "Tinea versicolor (pityriasis versicolor)",
+          "isCorrect": true,
+          "explanation": "Caused by Malassezia, it alters skin pigmentation."
+        },
+        {
+          "text": "Tinea corporis",
+          "isCorrect": false,
+          "explanation": "Ringworm, annular plaques."
+        },
+        {
+          "text": "Candidiasis",
+          "isCorrect": false,
+          "explanation": "Red, moist patches."
+        },
+        {
+          "text": "Seborrheic dermatitis",
+          "isCorrect": false,
+          "explanation": "Greasy scales on scalp/face."
+        },
+        {
+          "text": "Impetigo",
+          "isCorrect": false,
+          "explanation": "Bacterial infection."
+        }
+      ],
+      "explanation": {
+        "overview": "Tinea versicolor is a common, benign condition, especially in hot, humid climates.",
+        "highYield": "Tinea versicolor = Malassezia, hyper/hypopigmented trunk patches.",
+        "clinicalCorrelation": "KOH shows spaghetti and meatballs."
+      }
+    },
+    {
+      "questionId": "mycology_086",
+      "difficulty": 2,
+      "question": "Which of the following fungi is most likely to cause an outbreak of pulmonary infection in a construction or excavation site?",
+      "image": null,
+      "options": [
+        {
+          "text": "Histoplasma capsulatum",
+          "isCorrect": true,
+          "explanation": "Disturbance of soil contaminated with bird/bat droppings aerosolizes spores, causing outbreaks."
+        },
+        {
+          "text": "Candida albicans",
+          "isCorrect": false,
+          "explanation": "Not environmental outbreaks."
+        },
+        {
+          "text": "Cryptococcus neoformans",
+          "isCorrect": false,
+          "explanation": "Found in pigeon droppings but less outbreak-prone than Histoplasma."
+        },
+        {
+          "text": "Aspergillus fumigatus",
+          "isCorrect": false,
+          "explanation": "Construction dust can aerosolize Aspergillus spores; both can cause outbreaks, but Histoplasma in endemic area with bat/bird droppings is classic."
+        },
+        {
+          "text": "Blastomyces dermatitidis",
+          "isCorrect": false,
+          "explanation": "Associated with moist soil but less outbreak frequency."
+        }
+      ],
+      "explanation": {
+        "overview": "Histoplasmosis outbreaks occur when contaminated soil is disturbed; demolition, cave exploration, and construction are risks.",
+        "highYield": "Histoplasma outbreaks = bird/bat droppings + soil disturbance.",
+        "clinicalCorrelation": "Many exposed individuals may be asymptomatic or have mild flu-like illness."
+      }
+    },
+    {
+      "questionId": "mycology_087",
+      "difficulty": 1,
+      "question": "Which of the following best describes the microscopic appearance of dermatophytes in skin scrapings?",
+      "image": null,
+      "options": [
+        {
+          "text": "Septate hyphae",
+          "isCorrect": true,
+          "explanation": "Dermatophytes are molds that produce septate hyphae, visible in KOH preparation."
+        },
+        {
+          "text": "Budding yeast cells",
+          "isCorrect": false,
+          "explanation": "Yeast cells suggest Candida or Cryptococcus."
+        },
+        {
+          "text": "Pseudohyphae",
+          "isCorrect": false,
+          "explanation": "Pseudohyphae are seen with Candida."
+        },
+        {
+          "text": "Spherules",
+          "isCorrect": false,
+          "explanation": "Coccidioides."
+        },
+        {
+          "text": "Broad-based budding yeast",
+          "isCorrect": false,
+          "explanation": "Blastomyces."
+        }
+      ],
+      "explanation": {
+        "overview": "KOH mount of skin, hair, or nail reveals hyaline, septate hyphae for dermatophytes.",
+        "highYield": "Dermatophytes = septate hyphae in KOH.",
+        "clinicalCorrelation": "Culture on Sabouraud agar for species identification."
+      }
+    },
+    {
+      "questionId": "mycology_088",
+      "difficulty": 1,
+      "question": "Which antifungal is the treatment of choice for esophageal candidiasis?",
+      "image": null,
+      "options": [
+        {
+          "text": "Fluconazole",
+          "isCorrect": true,
+          "explanation": "Oral fluconazole is first-line for esophageal candidiasis."
+        },
+        {
+          "text": "Nystatin",
+          "isCorrect": false,
+          "explanation": "Nystatin is topical, not effective for esophageal."
+        },
+        {
+          "text": "Caspofungin IV only",
+          "isCorrect": false,
+          "explanation": "IV echinocandins are alternative but fluconazole preferred."
+        },
+        {
+          "text": "Amphotericin B",
+          "isCorrect": false,
+          "explanation": "Reserved for refractory cases."
+        },
+        {
+          "text": "Terbinafine",
+          "isCorrect": false,
+          "explanation": "Not indicated."
+        }
+      ],
+      "explanation": {
+        "overview": "Esophageal candidiasis is an AIDS-defining illness; fluconazole is highly effective.",
+        "highYield": "Esophageal candidiasis = fluconazole (oral).",
+        "clinicalCorrelation": "If no response, rule out resistant Candida or other causes (e.g., CMV, HSV)."
+      }
+    },
+    {
+      "questionId": "mycology_089",
+      "difficulty": 2,
+      "question": "Which of the following antifungal agents is associated with squamous cell carcinoma of the skin with prolonged use in transplant patients?",
+      "image": null,
+      "options": [
+        {
+          "text": "Voriconazole",
+          "isCorrect": true,
+          "explanation": "Voriconazole has been linked to photosensitivity and increased risk of skin cancers, including SCC."
+        },
+        {
+          "text": "Fluconazole",
+          "isCorrect": false,
+          "explanation": "Not reported."
+        },
+        {
+          "text": "Itraconazole",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        },
+        {
+          "text": "Caspofungin",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Amphotericin B",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Long-term voriconazole use can cause phototoxicity and has been associated with skin malignancies, particularly in immunocompromised patients.",
+        "highYield": "Voriconazole → photosensitivity, skin cancer risk.",
+        "clinicalCorrelation": "Skin examination and sun protection are recommended."
+      }
+    },
+    {
+      "questionId": "mycology_090",
+      "difficulty": 2,
+      "question": "Which of the following is a non-culture method to detect invasive candidiasis?",
+      "image": null,
+      "options": [
+        {
+          "text": "β-D-glucan assay and T2Candida panel (molecular)",
+          "isCorrect": true,
+          "explanation": "β-D-glucan is a pan-fungal antigen; T2Candida detects Candida DNA directly from blood."
+        },
+        {
+          "text": "Galactomannan",
+          "isCorrect": false,
+          "explanation": "For Aspergillus."
+        },
+        {
+          "text": "Cryptococcal antigen",
+          "isCorrect": false,
+          "explanation": "For Cryptococcus."
+        },
+        {
+          "text": "Urine Histoplasma antigen",
+          "isCorrect": false,
+          "explanation": "For Histoplasma."
+        },
+        {
+          "text": "Coccidioides immunodiffusion",
+          "isCorrect": false,
+          "explanation": "For Coccidioides."
+        }
+      ],
+      "explanation": {
+        "overview": "Rapid diagnostics for Candida include β-D-glucan (sensitive but not specific) and T2Candida MRI (species identification within hours).",
+        "highYield": "Candida: β-D-glucan, T2Candida (molecular).",
+        "clinicalCorrelation": "Early detection of candidemia improves outcomes."
+      }
+    }
+  ]
+}

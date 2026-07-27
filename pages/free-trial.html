@@ -4,22 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Trial – Medical Exam Room Pro</title>
+    <title>Free Trial – MedHub</title>
 
-    <link rel="manifest" href="../manifest.json">
-    <link rel="stylesheet" href="../css/common.css" media="all">
-    <link rel="stylesheet" href="../css/free-trial.css" media="all">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/css/common.css" media="all">
+    <link rel="stylesheet" href="/css/free-trial.css" media="all">
 
-    <script type="module" src="../scripts/utils.js"></script>
-    <script type="module" src="../scripts/ui.js"></script>
-    <script type="module" src="../scripts/router.js"></script>
-    <script type="module" src="../scripts/app.js"></script>
-    <script type="module" src="../scripts/subscription.js"></script>
-    <script type="module" src="../scripts/security.js"></script>
+    <script type="module" src="/scripts/utils.js"></script>
+    <script type="module" src="/scripts/ui.js"></script>
+    <script type="module" src="/scripts/router.js"></script>
+    <script type="module" src="/scripts/app.js"></script>
+    <script type="module" src="/scripts/subscription.js"></script>
+    <script type="module" src="/scripts/security.js"></script>
 
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('../service-worker.js').catch(() => { });
+            navigator.serviceWorker.register('/service-worker.js').catch(() => { });
         }
     </script>
 
@@ -122,8 +122,8 @@
     <div class="page-container">
         <header>
             <div class="logo">
-                <img src="../assets/images/logo.png" alt="Logo" width="40" height="40">
-                <span>MedExamPro</span>
+                <img src="/assets/images/logo.png" alt="Logo" width="40" height="40">
+                <span>MedHub</span>
             </div>
             <button onclick="ui.toggleTheme()" class="btn-outline">🌓</button>
         </header>
@@ -168,7 +168,7 @@
         </main>
     </div>
 
-    <script data-lazy data-src="../scripts/offline.js"></script>
+    <script data-lazy data-src="/scripts/offline.js"></script>
 </body>
 
 </html>

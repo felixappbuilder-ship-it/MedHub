@@ -1,0 +1,3424 @@
+{
+  "questions": [
+    {
+      "questionId": "infection_control_001",
+      "difficulty": 1,
+      "question": "What is the single most important measure to prevent healthcare-associated infections?",
+      "image": null,
+      "options": [
+        {
+          "text": "Hand hygiene",
+          "isCorrect": true,
+          "explanation": "Hand hygiene is the most effective and fundamental measure to prevent transmission of pathogens."
+        },
+        {
+          "text": "Antibiotic stewardship",
+          "isCorrect": false,
+          "explanation": "Antibiotic stewardship reduces resistance but does not replace hand hygiene as the primary preventive measure."
+        },
+        {
+          "text": "Isolation precautions",
+          "isCorrect": false,
+          "explanation": "Isolation is important for specific pathogens but is not universally the single most important measure."
+        },
+        {
+          "text": "Environmental cleaning",
+          "isCorrect": false,
+          "explanation": "Cleaning is essential but secondary to direct hand transmission prevention."
+        },
+        {
+          "text": "Surveillance cultures",
+          "isCorrect": false,
+          "explanation": "Surveillance helps identify carriers but does not stop transmission on its own."
+        }
+      ],
+      "explanation": {
+        "overview": "Hand hygiene (washing with soap and water or using alcohol-based hand rub) is the cornerstone of infection prevention in healthcare settings.",
+        "highYield": "Hand hygiene is the single most important measure to reduce healthcare-associated infections.",
+        "clinicalCorrelation": "Hand hygiene compliance is a key performance indicator in infection control programs worldwide."
+      }
+    },
+    {
+      "questionId": "infection_control_002",
+      "difficulty": 1,
+      "question": "According to the WHO, the 'My 5 Moments for Hand Hygiene' include all of the following EXCEPT:",
+      "image": null,
+      "options": [
+        {
+          "text": "Before patient contact",
+          "isCorrect": false,
+          "explanation": "This is one of the five moments."
+        },
+        {
+          "text": "Before clean/aseptic procedure",
+          "isCorrect": false,
+          "explanation": "This is one of the five moments."
+        },
+        {
+          "text": "After body fluid exposure risk",
+          "isCorrect": false,
+          "explanation": "This is one of the five moments."
+        },
+        {
+          "text": "After patient contact",
+          "isCorrect": false,
+          "explanation": "This is one of the five moments."
+        },
+        {
+          "text": "After leaving the hospital",
+          "isCorrect": true,
+          "explanation": "This is not part of the WHO 'My 5 Moments'; the fifth moment is after touching patient surroundings."
+        }
+      ],
+      "explanation": {
+        "overview": "WHO’s 5 moments are: before patient contact, before aseptic task, after body fluid exposure risk, after patient contact, and after contact with patient surroundings.",
+        "highYield": "The five moments do NOT include 'after leaving the hospital'.",
+        "clinicalCorrelation": "Teaching these moments improves hand hygiene compliance in clinical settings."
+      }
+    },
+    {
+      "questionId": "infection_control_003",
+      "difficulty": 1,
+      "question": "Which type of isolation precautions is used for patients with airborne diseases such as tuberculosis?",
+      "image": null,
+      "options": [
+        {
+          "text": "Airborne precautions",
+          "isCorrect": true,
+          "explanation": "Airborne precautions are required for diseases spread via small droplet nuclei that remain suspended in air."
+        },
+        {
+          "text": "Droplet precautions",
+          "isCorrect": false,
+          "explanation": "Droplet precautions are for larger respiratory droplets (e.g., influenza)."
+        },
+        {
+          "text": "Contact precautions",
+          "isCorrect": false,
+          "explanation": "Contact precautions are for direct or indirect contact transmission."
+        },
+        {
+          "text": "Standard precautions only",
+          "isCorrect": false,
+          "explanation": "Standard precautions alone are insufficient for airborne diseases like tuberculosis."
+        },
+        {
+          "text": "Protective environment",
+          "isCorrect": false,
+          "explanation": "Protective environment protects immunocompromised patients from environmental spores, not for containing airborne pathogens."
+        }
+      ],
+      "explanation": {
+        "overview": "Airborne precautions include negative pressure isolation, N95 respirators, and appropriate ventilation.",
+        "highYield": "TB = airborne precautions (negative pressure room, N95).",
+        "clinicalCorrelation": "Prompt airborne isolation of suspected TB cases reduces nosocomial transmission."
+      }
+    },
+    {
+      "questionId": "infection_control_004",
+      "difficulty": 1,
+      "question": "Droplet precautions are indicated for patients infected with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Influenza virus",
+          "isCorrect": true,
+          "explanation": "Influenza spreads via large respiratory droplets, requiring droplet precautions."
+        },
+        {
+          "text": "Mycobacterium tuberculosis",
+          "isCorrect": false,
+          "explanation": "Tuberculosis requires airborne precautions."
+        },
+        {
+          "text": "Clostridium difficile",
+          "isCorrect": false,
+          "explanation": "C. difficile requires contact precautions due to spore transmission."
+        },
+        {
+          "text": "Varicella-zoster virus (chickenpox)",
+          "isCorrect": false,
+          "explanation": "Chickenpox requires airborne and contact precautions."
+        },
+        {
+          "text": "Norovirus",
+          "isCorrect": false,
+          "explanation": "Norovirus requires contact precautions."
+        }
+      ],
+      "explanation": {
+        "overview": "Droplet precautions (surgical mask, private room) are used for pathogens transmitted via large droplets (>5 µm).",
+        "highYield": "Influenza → droplet precautions.",
+        "clinicalCorrelation": "Droplet precautions are maintained for duration of illness, often combined with standard precautions."
+      }
+    },
+    {
+      "questionId": "infection_control_005",
+      "difficulty": 1,
+      "question": "Contact precautions require healthcare workers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Wear gloves and gown for all patient contact",
+          "isCorrect": true,
+          "explanation": "Contact precautions involve barrier precautions (gloves, gown) to prevent pathogen transmission via direct or indirect contact."
+        },
+        {
+          "text": "Wear a mask only",
+          "isCorrect": false,
+          "explanation": "A mask alone is insufficient; contact precautions focus on skin and clothing protection."
+        },
+        {
+          "text": "Place patient in negative pressure room",
+          "isCorrect": false,
+          "explanation": "Negative pressure is for airborne precautions."
+        },
+        {
+          "text": "Use N95 respirator",
+          "isCorrect": false,
+          "explanation": "N95 respirators are for airborne, not contact, precautions."
+        },
+        {
+          "text": "Limit visitors to immediate family",
+          "isCorrect": false,
+          "explanation": "Visitor restriction may be part of infection control but not the core of contact precautions."
+        }
+      ],
+      "explanation": {
+        "overview": "Contact precautions are applied for pathogens like MRSA, VRE, and C. difficile that are spread by touch.",
+        "highYield": "Contact precautions = gloves and gown for patient contact.",
+        "clinicalCorrelation": "Contact precautions help curb outbreaks of multidrug-resistant organisms in hospitals."
+      }
+    },
+    {
+      "questionId": "infection_control_006",
+      "difficulty": 1,
+      "question": "Standard precautions apply to:",
+      "image": null,
+      "options": [
+        {
+          "text": "All patients, regardless of diagnosis",
+          "isCorrect": true,
+          "explanation": "Standard precautions are fundamental infection prevention measures applied to every patient encounter."
+        },
+        {
+          "text": "Only patients with known infections",
+          "isCorrect": false,
+          "explanation": "Standard precautions are universal and not limited to known infections."
+        },
+        {
+          "text": "Only immunocompromised patients",
+          "isCorrect": false,
+          "explanation": "All patients are covered, not just immunocompromised."
+        },
+        {
+          "text": "Only patients in isolation",
+          "isCorrect": false,
+          "explanation": "Isolation patients receive additional transmission-based precautions."
+        },
+        {
+          "text": "Only during surgical procedures",
+          "isCorrect": false,
+          "explanation": "Standard precautions apply in all clinical settings."
+        }
+      ],
+      "explanation": {
+        "overview": "Standard precautions are the minimum infection prevention practices that apply to all patient care, regardless of suspected or confirmed infection status.",
+        "highYield": "Standard precautions = for every patient, every time.",
+        "clinicalCorrelation": "They include hand hygiene, PPE based on risk, respiratory hygiene, and safe injection practices."
+      }
+    },
+    {
+      "questionId": "infection_control_007",
+      "difficulty": 1,
+      "question": "Which of the following is a component of standard precautions?",
+      "image": null,
+      "options": [
+        {
+          "text": "Hand hygiene",
+          "isCorrect": false,
+          "explanation": "It is one component, but the question asks for a combination."
+        },
+        {
+          "text": "Use of personal protective equipment (PPE) based on risk",
+          "isCorrect": false,
+          "explanation": "It is one component."
+        },
+        {
+          "text": "Respiratory hygiene/cough etiquette",
+          "isCorrect": false,
+          "explanation": "It is one component."
+        },
+        {
+          "text": "Safe injection practices",
+          "isCorrect": false,
+          "explanation": "It is one component."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Standard precautions include all these elements, plus environmental cleaning and handling of contaminated items."
+        }
+      ],
+      "explanation": {
+        "overview": "Standard precautions encompass hand hygiene, PPE, respiratory etiquette, injection safety, and proper handling of equipment and environment.",
+        "highYield": "Standard precautions include hand hygiene, PPE, safe injections, respiratory hygiene.",
+        "clinicalCorrelation": "Adherence to standard precautions reduces occupational exposure to bloodborne pathogens."
+      }
+    },
+    {
+      "questionId": "infection_control_008",
+      "difficulty": 2,
+      "question": "The correct order for donning (putting on) PPE is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Gown, mask, goggles, gloves",
+          "isCorrect": true,
+          "explanation": "This sequence minimizes contamination: gown first, then mask/goggles, finally gloves over gown cuffs."
+        },
+        {
+          "text": "Mask, gown, gloves, goggles",
+          "isCorrect": false,
+          "explanation": "Mask before gown may lead to contamination during gown removal."
+        },
+        {
+          "text": "Gloves, gown, mask, goggles",
+          "isCorrect": false,
+          "explanation": "Gloves should be put on last."
+        },
+        {
+          "text": "Goggles, mask, gown, gloves",
+          "isCorrect": false,
+          "explanation": "Goggles are put on after mask to ensure proper fit."
+        },
+        {
+          "text": "Gown, gloves, mask, goggles",
+          "isCorrect": false,
+          "explanation": "Mask and goggles should be donned before gloves."
+        }
+      ],
+      "explanation": {
+        "overview": "Proper PPE donning sequence: gown → mask/respirator → goggles/face shield → gloves.",
+        "highYield": "Donning order: gown, mask, goggles, gloves.",
+        "clinicalCorrelation": "Following correct sequence ensures maximum protection and reduces self-contamination."
+      }
+    },
+    {
+      "questionId": "infection_control_009",
+      "difficulty": 2,
+      "question": "The correct order for doffing (removing) PPE is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Gloves, gown, goggles, mask",
+          "isCorrect": true,
+          "explanation": "Remove most contaminated items first; gloves, then gown, goggles, and mask last."
+        },
+        {
+          "text": "Gown, gloves, mask, goggles",
+          "isCorrect": false,
+          "explanation": "Gloves should be removed first as they are most contaminated."
+        },
+        {
+          "text": "Mask, goggles, gown, gloves",
+          "isCorrect": false,
+          "explanation": "Mask removal last helps avoid contamination of the face."
+        },
+        {
+          "text": "Goggles, mask, gloves, gown",
+          "isCorrect": false,
+          "explanation": "Gown removal after gloves risks contamination."
+        },
+        {
+          "text": "Gown, goggles, mask, gloves",
+          "isCorrect": false,
+          "explanation": "Gloves are removed before gown."
+        }
+      ],
+      "explanation": {
+        "overview": "Doffing order: gloves → gown → goggles → mask (contaminated to clean).",
+        "highYield": "Doffing order: gloves first, mask last.",
+        "clinicalCorrelation": "Hand hygiene must be performed after removing each piece of PPE."
+      }
+    },
+    {
+      "questionId": "infection_control_010",
+      "difficulty": 2,
+      "question": "Which of the following pathogens requires contact precautions due to its ability to survive on surfaces and resistance to alcohol-based hand rubs?",
+      "image": null,
+      "options": [
+        {
+          "text": "Clostridium difficile",
+          "isCorrect": true,
+          "explanation": "C. difficile spores resist alcohol, so hand washing with soap and water plus contact precautions are essential."
+        },
+        {
+          "text": "Influenza virus",
+          "isCorrect": false,
+          "explanation": "Influenza is susceptible to alcohol and requires droplet precautions."
+        },
+        {
+          "text": "Mycobacterium tuberculosis",
+          "isCorrect": false,
+          "explanation": "TB is airborne, not particularly resistant to alcohol."
+        },
+        {
+          "text": "Measles virus",
+          "isCorrect": false,
+          "explanation": "Measles is airborne; alcohol-based hand rubs inactivate it."
+        },
+        {
+          "text": "Neisseria meningitidis",
+          "isCorrect": false,
+          "explanation": "Meningococcus requires droplet precautions and is alcohol-sensitive."
+        }
+      ],
+      "explanation": {
+        "overview": "C. difficile spores are alcohol-resistant, requiring soap and water hand hygiene and contact precautions.",
+        "highYield": "C. difficile → contact precautions + soap and water (not alcohol rub).",
+        "clinicalCorrelation": "Hand washing with soap and water mechanically removes spores, reducing transmission."
+      }
+    },
+    {
+      "questionId": "infection_control_011",
+      "difficulty": 1,
+      "question": "The most common mode of transmission of healthcare-associated infections is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Contact transmission (direct or indirect)",
+          "isCorrect": true,
+          "explanation": "The hands of healthcare workers are the main vehicle for contact transmission."
+        },
+        {
+          "text": "Droplet transmission",
+          "isCorrect": false,
+          "explanation": "Droplet transmission is common but not the most frequent overall."
+        },
+        {
+          "text": "Airborne transmission",
+          "isCorrect": false,
+          "explanation": "Airborne transmission is less common than contact spread."
+        },
+        {
+          "text": "Vector-borne transmission",
+          "isCorrect": false,
+          "explanation": "Vector-borne transmission is rare in healthcare settings."
+        },
+        {
+          "text": "Common vehicle transmission",
+          "isCorrect": false,
+          "explanation": "Contaminated vehicles (e.g., food, water) cause outbreaks but not the majority of HAIs."
+        }
+      ],
+      "explanation": {
+        "overview": "Contact transmission, mainly via contaminated hands, is the predominant route for healthcare-associated infections.",
+        "highYield": "Most HAIs spread by contact (hands).",
+        "clinicalCorrelation": "This underpins the emphasis on hand hygiene and glove use."
+      }
+    },
+    {
+      "questionId": "infection_control_012",
+      "difficulty": 1,
+      "question": "Which of the following is an example of indirect contact transmission?",
+      "image": null,
+      "options": [
+        {
+          "text": "Pathogen transmitted via contaminated stethoscope",
+          "isCorrect": true,
+          "explanation": "Indirect contact involves transfer via a contaminated object (fomite)."
+        },
+        {
+          "text": "Droplets from a cough landing on a healthcare worker's face",
+          "isCorrect": false,
+          "explanation": "This is droplet transmission."
+        },
+        {
+          "text": "Inhalation of aerosolized tuberculosis bacteria",
+          "isCorrect": false,
+          "explanation": "This is airborne transmission."
+        },
+        {
+          "text": "Needlestick injury",
+          "isCorrect": false,
+          "explanation": "This is percutaneous (sharps) injury."
+        },
+        {
+          "text": "Touching a patient's infected wound",
+          "isCorrect": false,
+          "explanation": "Direct contact involves person-to-person physical touch."
+        }
+      ],
+      "explanation": {
+        "overview": "Indirect contact transmission occurs when pathogens are transferred via contaminated objects or surfaces.",
+        "highYield": "Indirect contact = fomite (e.g., stethoscope, bed rail).",
+        "clinicalCorrelation": "Cleaning shared equipment between patients reduces indirect transmission."
+      }
+    },
+    {
+      "questionId": "infection_control_013",
+      "difficulty": 1,
+      "question": "Sharps safety precautions aim to prevent transmission of bloodborne pathogens such as:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hepatitis B virus",
+          "isCorrect": false,
+          "explanation": "HBV is one bloodborne pathogen, but the answer includes multiple."
+        },
+        {
+          "text": "Hepatitis C virus",
+          "isCorrect": false,
+          "explanation": "HCV is one bloodborne pathogen."
+        },
+        {
+          "text": "HIV",
+          "isCorrect": false,
+          "explanation": "HIV is one bloodborne pathogen."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Sharps injuries can transmit HBV, HCV, and HIV."
+        },
+        {
+          "text": "None of the above",
+          "isCorrect": false,
+          "explanation": "These are major bloodborne pathogens."
+        }
+      ],
+      "explanation": {
+        "overview": "Bloodborne pathogens of primary concern include hepatitis B virus (HBV), hepatitis C virus (HCV), and human immunodeficiency virus (HIV).",
+        "highYield": "Sharps safety protects against HBV, HCV, and HIV.",
+        "clinicalCorrelation": "Post-exposure protocols include baseline testing and prophylaxis for these viruses."
+      }
+    },
+    {
+      "questionId": "infection_control_014",
+      "difficulty": 1,
+      "question": "After a needlestick injury, the first step is to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Wash the area with soap and water",
+          "isCorrect": true,
+          "explanation": "Immediate cleansing reduces the inoculum and is the first action to take."
+        },
+        {
+          "text": "Apply antiseptic",
+          "isCorrect": false,
+          "explanation": "Antiseptic can be applied after washing."
+        },
+        {
+          "text": "Report immediately",
+          "isCorrect": false,
+          "explanation": "Reporting is important but comes after initial wound care."
+        },
+        {
+          "text": "Test the source patient",
+          "isCorrect": false,
+          "explanation": "Source testing is part of the protocol after immediate care and reporting."
+        },
+        {
+          "text": "Start post-exposure prophylaxis",
+          "isCorrect": false,
+          "explanation": "PEP should be initiated as soon as possible after risk assessment, not before washing."
+        }
+      ],
+      "explanation": {
+        "overview": "The first step after a needlestick is to wash the wound with soap and water; then report and follow institutional protocol.",
+        "highYield": "Immediate wound washing with soap and water after needlestick.",
+        "clinicalCorrelation": "Prompt washing can reduce the risk of viral transmission."
+      }
+    },
+    {
+      "questionId": "infection_control_015",
+      "difficulty": 1,
+      "question": "Which of the following is a safe injection practice?",
+      "image": null,
+      "options": [
+        {
+          "text": "Using a single-dose vial for multiple patients",
+          "isCorrect": false,
+          "explanation": "Single-dose vials must not be used for more than one patient."
+        },
+        {
+          "text": "Changing the needle but reusing the syringe",
+          "isCorrect": false,
+          "explanation": "Reusing syringes, even with a new needle, can transmit bloodborne pathogens."
+        },
+        {
+          "text": "Using a new sterile syringe and needle for each patient",
+          "isCorrect": true,
+          "explanation": "A new sterile syringe and needle must be used for every injection."
+        },
+        {
+          "text": "Storing multi-dose vials at room temperature",
+          "isCorrect": false,
+          "explanation": "Storage recommendations depend on the medication; not all can be left at room temperature."
+        },
+        {
+          "text": "Recapping needles after use",
+          "isCorrect": false,
+          "explanation": "Recapping needles increases the risk of needlestick injury and is discouraged."
+        }
+      ],
+      "explanation": {
+        "overview": "Safe injection practices demand a new sterile syringe and needle for each patient and each entry into a medication vial.",
+        "highYield": "One needle, one syringe, one patient, one time.",
+        "clinicalCorrelation": "Syringe reuse has caused outbreaks of hepatitis B and C."
+      }
+    },
+    {
+      "questionId": "infection_control_016",
+      "difficulty": 2,
+      "question": "Multi-dose vials should be:",
+      "image": null,
+      "options": [
+        {
+          "text": "Dedicated to a single patient whenever possible",
+          "isCorrect": false,
+          "explanation": "This is one recommendation."
+        },
+        {
+          "text": "Stored in the refrigerator after opening",
+          "isCorrect": false,
+          "explanation": "Storage conditions depend on the medication."
+        },
+        {
+          "text": "Used within 28 days of opening unless specified",
+          "isCorrect": false,
+          "explanation": "This is a common guideline."
+        },
+        {
+          "text": "Accessed with a new sterile needle each time",
+          "isCorrect": false,
+          "explanation": "This is required to prevent contamination."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "All these practices reduce infection risk when multi-dose vials are used."
+        }
+      ],
+      "explanation": {
+        "overview": "Multi-dose vials carry a contamination risk; they should be used for a single patient if possible, accessed with sterile technique, and dated appropriately.",
+        "highYield": "Multi-dose vials: use single patient, sterile access, 28-day expiration.",
+        "clinicalCorrelation": "Outbreaks of bloodstream infections have been linked to contaminated multi-dose vials."
+      }
+    },
+    {
+      "questionId": "infection_control_017",
+      "difficulty": 1,
+      "question": "Respiratory hygiene/cough etiquette includes:",
+      "image": null,
+      "options": [
+        {
+          "text": "Covering mouth/nose with a tissue when coughing",
+          "isCorrect": false,
+          "explanation": "This is part of respiratory hygiene."
+        },
+        {
+          "text": "Wearing a mask if coughing",
+          "isCorrect": false,
+          "explanation": "Mask use is a component."
+        },
+        {
+          "text": "Hand hygiene after contact with respiratory secretions",
+          "isCorrect": false,
+          "explanation": "Hand hygiene is essential."
+        },
+        {
+          "text": "Spatial separation of coughing patients",
+          "isCorrect": false,
+          "explanation": "Spatial separation (>1 meter) is recommended."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Respiratory hygiene encompasses all these measures to reduce respiratory pathogen spread."
+        }
+      ],
+      "explanation": {
+        "overview": "Respiratory hygiene/cough etiquette is part of standard precautions, aiming to contain respiratory secretions at the source.",
+        "highYield": "Cough etiquette = tissue, mask, hand hygiene, distance.",
+        "clinicalCorrelation": "Implemented during influenza season and respiratory outbreaks."
+      }
+    },
+    {
+      "questionId": "infection_control_018",
+      "difficulty": 1,
+      "question": "Which of the following is a critical element of environmental infection control?",
+      "image": null,
+      "options": [
+        {
+          "text": "Regular cleaning and disinfection of surfaces",
+          "isCorrect": false,
+          "explanation": "This is one element."
+        },
+        {
+          "text": "Use of hospital-grade disinfectants",
+          "isCorrect": false,
+          "explanation": "Proper disinfectants are essential."
+        },
+        {
+          "text": "Cleaning of shared equipment between patients",
+          "isCorrect": false,
+          "explanation": "Equipment must be cleaned between uses."
+        },
+        {
+          "text": "Proper waste management",
+          "isCorrect": false,
+          "explanation": "Waste disposal is part of the environmental program."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Environmental infection control requires a comprehensive approach including all these elements."
+        }
+      ],
+      "explanation": {
+        "overview": "Environmental infection control involves cleaning and disinfecting surfaces and equipment, managing waste, and using appropriate disinfectants.",
+        "highYield": "Environmental control = clean surfaces, disinfect, manage waste.",
+        "clinicalCorrelation": "Contaminated surfaces are a reservoir for pathogens like MRSA and C. difficile."
+      }
+    },
+    {
+      "questionId": "infection_control_019",
+      "difficulty": 2,
+      "question": "Which disinfectant is effective against C. difficile spores?",
+      "image": null,
+      "options": [
+        {
+          "text": "Sodium hypochlorite (bleach)",
+          "isCorrect": true,
+          "explanation": "Bleach is sporicidal and the recommended disinfectant for C. difficile environmental cleaning."
+        },
+        {
+          "text": "Quaternary ammonium compounds",
+          "isCorrect": false,
+          "explanation": "Quats are not sporicidal."
+        },
+        {
+          "text": "70% alcohol",
+          "isCorrect": false,
+          "explanation": "Alcohol does not kill C. difficile spores."
+        },
+        {
+          "text": "Hydrogen peroxide",
+          "isCorrect": false,
+          "explanation": "Hydrogen peroxide at certain concentrations may have sporicidal activity, but bleach is the standard."
+        },
+        {
+          "text": "Phenolics",
+          "isCorrect": false,
+          "explanation": "Phenolics are not reliably sporicidal."
+        }
+      ],
+      "explanation": {
+        "overview": "C. difficile spores require a sporicidal agent; sodium hypochlorite (bleach) is widely used for environmental disinfection.",
+        "highYield": "Bleach kills C. difficile spores.",
+        "clinicalCorrelation": "Use of bleach in rooms of patients with C. difficile reduces transmission."
+      }
+    },
+    {
+      "questionId": "infection_control_020",
+      "difficulty": 1,
+      "question": "The term 'antiseptic' refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "A substance applied to living tissue to inhibit microbes",
+          "isCorrect": true,
+          "explanation": "Antiseptics (e.g., alcohol, chlorhexidine) are used on skin or mucous membranes."
+        },
+        {
+          "text": "A substance used on inanimate surfaces to kill microbes",
+          "isCorrect": false,
+          "explanation": "That defines a disinfectant."
+        },
+        {
+          "text": "The process of eliminating all microorganisms",
+          "isCorrect": false,
+          "explanation": "That is sterilization."
+        },
+        {
+          "text": "A substance that kills spores",
+          "isCorrect": false,
+          "explanation": "Not all antiseptics are sporicidal."
+        },
+        {
+          "text": "An agent that inhibits viruses only",
+          "isCorrect": false,
+          "explanation": "Antiseptics have broader antimicrobial activity."
+        }
+      ],
+      "explanation": {
+        "overview": "Antiseptics are antimicrobial substances applied to living tissue to reduce the microbial load.",
+        "highYield": "Antiseptic = for living tissue (e.g., skin).",
+        "clinicalCorrelation": "Common antiseptics: chlorhexidine, povidone-iodine, alcohol."
+      }
+    },
+    {
+      "questionId": "infection_control_021",
+      "difficulty": 1,
+      "question": "Chlorhexidine gluconate is commonly used for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Preoperative skin antisepsis",
+          "isCorrect": false,
+          "explanation": "It is one use."
+        },
+        {
+          "text": "Oral hygiene (mouthwash)",
+          "isCorrect": false,
+          "explanation": "Chlorhexidine mouthwash is used for gingivitis and oral care."
+        },
+        {
+          "text": "Central line insertion site care",
+          "isCorrect": false,
+          "explanation": "Chlorhexidine is the preferred agent for skin prep before line insertion."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Chlorhexidine is widely used for skin antisepsis, oral care, and catheter site maintenance."
+        },
+        {
+          "text": "None of the above",
+          "isCorrect": false,
+          "explanation": "It is used for all these indications."
+        }
+      ],
+      "explanation": {
+        "overview": "Chlorhexidine gluconate is a broad-spectrum antiseptic with persistent activity used for skin preparation and oral care.",
+        "highYield": "Chlorhexidine = surgical prep, line insertion, mouthwash.",
+        "clinicalCorrelation": "Chlorhexidine bathing of ICU patients reduces CLABSI and MRSA acquisition."
+      }
+    },
+    {
+      "questionId": "infection_control_022",
+      "difficulty": 1,
+      "question": "Alcohol-based hand rubs are effective against:",
+      "image": null,
+      "options": [
+        {
+          "text": "Most bacteria and enveloped viruses",
+          "isCorrect": true,
+          "explanation": "Alcohol denatures proteins and disrupts membranes, killing vegetative bacteria and enveloped viruses."
+        },
+        {
+          "text": "Bacterial spores",
+          "isCorrect": false,
+          "explanation": "Alcohol is not sporicidal."
+        },
+        {
+          "text": "C. difficile spores",
+          "isCorrect": false,
+          "explanation": "C. difficile spores resist alcohol."
+        },
+        {
+          "text": "Protozoan cysts",
+          "isCorrect": false,
+          "explanation": "Protozoan cysts are often resistant to alcohol."
+        },
+        {
+          "text": "Prions",
+          "isCorrect": false,
+          "explanation": "Prions are highly resistant to alcohol."
+        }
+      ],
+      "explanation": {
+        "overview": "Alcohol-based hand rubs are rapid and effective against vegetative bacteria, fungi, and enveloped viruses, but not spores or prions.",
+        "highYield": "Alcohol kills most bacteria and enveloped viruses; not spores.",
+        "clinicalCorrelation": "Use soap and water when hands are visibly soiled or after caring for a patient with C. difficile."
+      }
+    },
+    {
+      "questionId": "infection_control_023",
+      "difficulty": 2,
+      "question": "Surgical site infections (SSIs) can be prevented by all of the following EXCEPT:",
+      "image": null,
+      "options": [
+        {
+          "text": "Routine use of prophylactic antibiotics for all surgeries",
+          "isCorrect": true,
+          "explanation": "Prophylactic antibiotics are indicated only for specific procedures; overuse promotes resistance."
+        },
+        {
+          "text": "Appropriate skin antisepsis",
+          "isCorrect": false,
+          "explanation": "Skin antisepsis is a key preventive measure."
+        },
+        {
+          "text": "Maintaining normothermia",
+          "isCorrect": false,
+          "explanation": "Perioperative hypothermia increases SSI risk."
+        },
+        {
+          "text": "Appropriate hair removal (clipping, not shaving)",
+          "isCorrect": false,
+          "explanation": "Shaving causes microabrasions that can increase infection risk."
+        },
+        {
+          "text": "Sterile surgical technique",
+          "isCorrect": false,
+          "explanation": "Sterile technique is essential to prevent SSIs."
+        }
+      ],
+      "explanation": {
+        "overview": "Surgical site infection prevention bundles include skin preparation, proper hair removal, normothermia, and appropriate antibiotic prophylaxis, not blanket antibiotic use.",
+        "highYield": "Not all surgeries need prophylactic antibiotics.",
+        "clinicalCorrelation": "Guidelines recommend antibiotics within 60 minutes before incision, discontinued within 24 hours."
+      }
+    },
+    {
+      "questionId": "infection_control_024",
+      "difficulty": 2,
+      "question": "The timing of surgical antibiotic prophylaxis is optimal when given:",
+      "image": null,
+      "options": [
+        {
+          "text": "Within 60 minutes before incision",
+          "isCorrect": true,
+          "explanation": "Administration within 60 minutes ensures adequate tissue levels at the time of incision."
+        },
+        {
+          "text": "After incision",
+          "isCorrect": false,
+          "explanation": "Antibiotics after incision are less effective in preventing infection."
+        },
+        {
+          "text": "24 hours before surgery",
+          "isCorrect": false,
+          "explanation": "Too early; tissue levels may be suboptimal by surgery time."
+        },
+        {
+          "text": "At the time of wound closure",
+          "isCorrect": false,
+          "explanation": "By closure, bacteria have already been introduced."
+        },
+        {
+          "text": "In the recovery room",
+          "isCorrect": false,
+          "explanation": "Post-operative prophylaxis is not generally indicated."
+        }
+      ],
+      "explanation": {
+        "overview": "Prophylactic antibiotics should be infused such that bactericidal concentrations are present in serum and tissues at incision.",
+        "highYield": "Surgical prophylaxis: within 60 minutes before incision.",
+        "clinicalCorrelation": "Vancomycin and fluoroquinolones may require longer infusion (120 min) and are given earlier."
+      }
+    },
+    {
+      "questionId": "infection_control_025",
+      "difficulty": 2,
+      "question": "Central line-associated bloodstream infections (CLABSIs) can be prevented by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Use of maximal sterile barriers during insertion",
+          "isCorrect": false,
+          "explanation": "This is a component of CLABSI bundles."
+        },
+        {
+          "text": "Chlorhexidine skin antisepsis",
+          "isCorrect": false,
+          "explanation": "Chlorhexidine prep is a key element."
+        },
+        {
+          "text": "Avoiding femoral site when possible",
+          "isCorrect": false,
+          "explanation": "Femoral lines have higher infection risk."
+        },
+        {
+          "text": "Daily review of line necessity",
+          "isCorrect": false,
+          "explanation": "Prompt removal of unnecessary lines reduces infection risk."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "CLABSI prevention bundles include all these evidence-based measures."
+        }
+      ],
+      "explanation": {
+        "overview": "CLABSI prevention relies on a bundle: hand hygiene, chlorhexidine skin prep, maximal barriers, site selection, and daily review.",
+        "highYield": "CLABSI bundle = max barriers, chlorhexidine, avoid femoral, daily review.",
+        "clinicalCorrelation": "CLABSIs are associated with significant morbidity, mortality, and cost."
+      }
+    },
+    {
+      "questionId": "infection_control_026",
+      "difficulty": 2,
+      "question": "Catheter-associated urinary tract infections (CAUTIs) can be minimized by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Avoiding unnecessary catheterization",
+          "isCorrect": false,
+          "explanation": "This is the most important preventive measure."
+        },
+        {
+          "text": "Using sterile technique during insertion",
+          "isCorrect": false,
+          "explanation": "Sterile insertion reduces early contamination."
+        },
+        {
+          "text": "Maintaining closed drainage system",
+          "isCorrect": false,
+          "explanation": "A closed system prevents ascending infection."
+        },
+        {
+          "text": "Removing catheter as soon as possible",
+          "isCorrect": false,
+          "explanation": "Prompt removal limits the duration of risk."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "CAUTI prevention requires a combination of these strategies."
+        }
+      ],
+      "explanation": {
+        "overview": "CAUTI prevention emphasizes avoiding catheters, using aseptic insertion, maintaining closed drainage, and timely removal.",
+        "highYield": "CAUTI prevention = avoid catheter, sterile insertion, closed system, remove promptly.",
+        "clinicalCorrelation": "CAUTI is the most common healthcare-associated infection."
+      }
+    },
+    {
+      "questionId": "infection_control_027",
+      "difficulty": 2,
+      "question": "Ventilator-associated pneumonia (VAP) prevention strategies include:",
+      "image": null,
+      "options": [
+        {
+          "text": "Elevating head of bed to 30-45°",
+          "isCorrect": false,
+          "explanation": "Head-of-bed elevation reduces aspiration risk."
+        },
+        {
+          "text": "Daily sedation vacations and assessment for extubation",
+          "isCorrect": false,
+          "explanation": "Minimizing sedation and daily spontaneous breathing trials shorten ventilation."
+        },
+        {
+          "text": "Oral care with chlorhexidine",
+          "isCorrect": false,
+          "explanation": "Oral decontamination reduces bacterial colonization."
+        },
+        {
+          "text": "Subglottic suctioning (with appropriate endotracheal tubes)",
+          "isCorrect": false,
+          "explanation": "Subglottic secretion drainage reduces microaspiration."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "VAP bundles consist of these evidence-based interventions."
+        }
+      ],
+      "explanation": {
+        "overview": "VAP prevention bundles include head-of-bed elevation, sedation holidays, oral chlorhexidine, and subglottic suctioning.",
+        "highYield": "VAP bundle = head elevation, sedation vacation, oral care, subglottic suctioning.",
+        "clinicalCorrelation": "VAP increases ICU length of stay and mortality."
+      }
+    },
+    {
+      "questionId": "infection_control_028",
+      "difficulty": 1,
+      "question": "Which of the following is a key component of antibiotic stewardship programs?",
+      "image": null,
+      "options": [
+        {
+          "text": "Prospective audit and feedback",
+          "isCorrect": false,
+          "explanation": "This is one core strategy."
+        },
+        {
+          "text": "Formulary restriction",
+          "isCorrect": false,
+          "explanation": "Restricting certain antibiotics can reduce inappropriate use."
+        },
+        {
+          "text": "Guideline-based prescribing",
+          "isCorrect": false,
+          "explanation": "Clinical pathways guide optimal therapy."
+        },
+        {
+          "text": "Education of prescribers",
+          "isCorrect": false,
+          "explanation": "Education is essential to change prescribing behavior."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Antibiotic stewardship programs integrate multiple interventions to optimize antibiotic use."
+        }
+      ],
+      "explanation": {
+        "overview": "Antibiotic stewardship aims to improve patient outcomes, reduce resistance, and decrease adverse events through coordinated interventions.",
+        "highYield": "Stewardship = audit, restriction, guidelines, education.",
+        "clinicalCorrelation": "Effective programs reduce C. difficile infections and resistance rates."
+      }
+    },
+    {
+      "questionId": "infection_control_029",
+      "difficulty": 1,
+      "question": "The term 'colonization' refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Presence of microorganisms without tissue invasion or immune response",
+          "isCorrect": true,
+          "explanation": "Colonized individuals carry organisms but show no signs of infection."
+        },
+        {
+          "text": "Infection with signs and symptoms",
+          "isCorrect": false,
+          "explanation": "Infection involves a host inflammatory response."
+        },
+        {
+          "text": "Contamination of a wound",
+          "isCorrect": false,
+          "explanation": "Contamination is transient, while colonization can be persistent."
+        },
+        {
+          "text": "Presence of antibodies",
+          "isCorrect": false,
+          "explanation": "This indicates past exposure or immunity."
+        },
+        {
+          "text": "Sterile site with bacteria",
+          "isCorrect": false,
+          "explanation": "Presence of bacteria in a sterile site typically indicates infection."
+        }
+      ],
+      "explanation": {
+        "overview": "Colonization is the presence and multiplication of microorganisms on a host without causing a clinical illness.",
+        "highYield": "Colonization = bug present, no disease.",
+        "clinicalCorrelation": "Colonized patients can serve as reservoirs for transmission (e.g., MRSA nasal carriers)."
+      }
+    },
+    {
+      "questionId": "infection_control_030",
+      "difficulty": 2,
+      "question": "Screening for multidrug-resistant organisms (MDROs) is often performed for high-risk patients to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Implement contact precautions promptly",
+          "isCorrect": true,
+          "explanation": "Active surveillance cultures detect colonization early so that isolation can be initiated."
+        },
+        {
+          "text": "Guide antibiotic therapy",
+          "isCorrect": false,
+          "explanation": "Colonization does not require antibiotic treatment, just isolation."
+        },
+        {
+          "text": "Determine discharge planning",
+          "isCorrect": false,
+          "explanation": "Screening is not primarily for discharge planning."
+        },
+        {
+          "text": "Assess immune status",
+          "isCorrect": false,
+          "explanation": "Screening identifies carriage, not immune function."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "The primary goal is infection control through early isolation."
+        }
+      ],
+      "explanation": {
+        "overview": "Active surveillance cultures (e.g., nasal MRSA PCR) identify colonized patients to implement contact precautions and prevent transmission.",
+        "highYield": "MDRO screening = early isolation (contact precautions).",
+        "clinicalCorrelation": "Decolonization (e.g., mupirocin for MRSA) may be considered in certain settings."
+      }
+    },
+    {
+      "questionId": "infection_control_031",
+      "difficulty": 1,
+      "question": "Which of the following is an example of a healthcare-associated infection?",
+      "image": null,
+      "options": [
+        {
+          "text": "Surgical site infection",
+          "isCorrect": false,
+          "explanation": "SSI is a type of HAI."
+        },
+        {
+          "text": "Catheter-associated UTI",
+          "isCorrect": false,
+          "explanation": "CAUTI is a common HAI."
+        },
+        {
+          "text": "Central line-associated bloodstream infection",
+          "isCorrect": false,
+          "explanation": "CLABSI is a serious HAI."
+        },
+        {
+          "text": "Ventilator-associated pneumonia",
+          "isCorrect": false,
+          "explanation": "VAP is a device-associated HAI."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "All are infections that patients can acquire during the course of receiving treatment for other conditions."
+        }
+      ],
+      "explanation": {
+        "overview": "Healthcare-associated infections (HAIs) include SSI, CAUTI, CLABSI, VAP, and others not present on admission.",
+        "highYield": "Common HAIs: SSI, CAUTI, CLABSI, VAP.",
+        "clinicalCorrelation": "HAIs are tracked nationally to guide prevention efforts."
+      }
+    },
+    {
+      "questionId": "infection_control_032",
+      "difficulty": 1,
+      "question": "The most effective way to reduce antimicrobial resistance is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Prudent use of antibiotics",
+          "isCorrect": true,
+          "explanation": "Reducing unnecessary antibiotic exposure limits selection pressure for resistant strains."
+        },
+        {
+          "text": "Development of new antibiotics",
+          "isCorrect": false,
+          "explanation": "New antibiotics are important but do not directly reduce existing resistance."
+        },
+        {
+          "text": "Vaccination",
+          "isCorrect": false,
+          "explanation": "Vaccines reduce infections and antibiotic need but are not the most direct strategy."
+        },
+        {
+          "text": "Isolation of infected patients",
+          "isCorrect": false,
+          "explanation": "Isolation limits spread but does not tackle the root cause of resistance emergence."
+        },
+        {
+          "text": "Environmental cleaning",
+          "isCorrect": false,
+          "explanation": "Cleaning reduces transmission but is not the primary driver of resistance reduction."
+        }
+      ],
+      "explanation": {
+        "overview": "Antimicrobial resistance is driven by antibiotic overuse; stewardship to optimize prescribing is the cornerstone of resistance control.",
+        "highYield": "Fighting resistance = use antibiotics wisely.",
+        "clinicalCorrelation": "Every unnecessary antibiotic course contributes to resistance."
+      }
+    },
+    {
+      "questionId": "infection_control_033",
+      "difficulty": 1,
+      "question": "Which of the following is a component of transmission-based precautions?",
+      "image": null,
+      "options": [
+        {
+          "text": "Private room or cohorting",
+          "isCorrect": false,
+          "explanation": "This reduces transmission risk."
+        },
+        {
+          "text": "Dedicated patient care equipment",
+          "isCorrect": false,
+          "explanation": "Equipment should not be shared without cleaning."
+        },
+        {
+          "text": "PPE appropriate to mode of transmission",
+          "isCorrect": false,
+          "explanation": "PPE is central to transmission-based precautions."
+        },
+        {
+          "text": "Patient transport restrictions",
+          "isCorrect": false,
+          "explanation": "Limited movement reduces exposure to others."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Transmission-based precautions include all these elements plus standard precautions."
+        }
+      ],
+      "explanation": {
+        "overview": "Transmission-based precautions (contact, droplet, airborne) are used in addition to standard precautions for patients with known or suspected infections.",
+        "highYield": "Transmission precautions = private room, dedicated equipment, appropriate PPE, limited transport.",
+        "clinicalCorrelation": "Proper implementation prevents outbreaks."
+      }
+    },
+    {
+      "questionId": "infection_control_034",
+      "difficulty": 1,
+      "question": "For a patient with suspected pulmonary tuberculosis, which precautions are required?",
+      "image": null,
+      "options": [
+        {
+          "text": "Airborne precautions",
+          "isCorrect": true,
+          "explanation": "TB is transmitted by small airborne particles and requires airborne isolation."
+        },
+        {
+          "text": "Droplet precautions",
+          "isCorrect": false,
+          "explanation": "Large droplets are not the primary mode; TB requires airborne."
+        },
+        {
+          "text": "Contact precautions",
+          "isCorrect": false,
+          "explanation": "TB is not spread by contact."
+        },
+        {
+          "text": "Standard precautions only",
+          "isCorrect": false,
+          "explanation": "Standard precautions alone are insufficient for TB."
+        },
+        {
+          "text": "Protective environment",
+          "isCorrect": false,
+          "explanation": "Protective environment is for immunocompromised patients, not TB."
+        }
+      ],
+      "explanation": {
+        "overview": "Suspected or confirmed pulmonary TB mandates airborne precautions: negative pressure room, N95 respirator, and limited patient movement.",
+        "highYield": "TB = airborne precautions (N95, negative pressure).",
+        "clinicalCorrelation": "Delay in airborne isolation of TB cases has led to nosocomial outbreaks."
+      }
+    },
+    {
+      "questionId": "infection_control_035",
+      "difficulty": 2,
+      "question": "For a patient with measles (rubeola), which precautions are indicated?",
+      "image": null,
+      "options": [
+        {
+          "text": "Airborne precautions",
+          "isCorrect": true,
+          "explanation": "Measles is highly contagious via airborne transmission and requires airborne isolation."
+        },
+        {
+          "text": "Droplet precautions",
+          "isCorrect": false,
+          "explanation": "Droplet precautions are not sufficient; airborne is required."
+        },
+        {
+          "text": "Contact precautions",
+          "isCorrect": false,
+          "explanation": "Contact alone is not adequate."
+        },
+        {
+          "text": "Standard precautions only",
+          "isCorrect": false,
+          "explanation": "Measles requires transmission-based precautions."
+        },
+        {
+          "text": "Protective environment",
+          "isCorrect": false,
+          "explanation": "Not indicated for measles."
+        }
+      ],
+      "explanation": {
+        "overview": "Measles virus is transmitted via airborne route; patients require airborne precautions (negative pressure, N95).",
+        "highYield": "Measles = airborne precautions.",
+        "clinicalCorrelation": "Airborne precautions should be continued for duration of illness (4 days after rash onset in immunocompetent)."
+      }
+    },
+    {
+      "questionId": "infection_control_036",
+      "difficulty": 2,
+      "question": "For a patient with chickenpox (varicella), which precautions are required?",
+      "image": null,
+      "options": [
+        {
+          "text": "Airborne + contact precautions",
+          "isCorrect": true,
+          "explanation": "Varicella is airborne and spread by contact with lesions; both precautions are needed."
+        },
+        {
+          "text": "Droplet precautions",
+          "isCorrect": false,
+          "explanation": "Droplet is insufficient."
+        },
+        {
+          "text": "Contact precautions only",
+          "isCorrect": false,
+          "explanation": "Airborne transmission occurs; contact alone is not enough."
+        },
+        {
+          "text": "Standard precautions only",
+          "isCorrect": false,
+          "explanation": "Transmission-based precautions are required."
+        },
+        {
+          "text": "Protective environment",
+          "isCorrect": false,
+          "explanation": "Not indicated."
+        }
+      ],
+      "explanation": {
+        "overview": "Varicella (chickenpox) is transmitted by airborne particles and direct contact with vesicular fluid, requiring airborne plus contact precautions.",
+        "highYield": "Chickenpox = airborne + contact precautions.",
+        "clinicalCorrelation": "Susceptible healthcare workers should not care for varicella patients; immune staff may enter with N95."
+      }
+    },
+    {
+      "questionId": "infection_control_037",
+      "difficulty": 1,
+      "question": "For a patient with MRSA in a wound, which precautions are indicated?",
+      "image": null,
+      "options": [
+        {
+          "text": "Contact precautions",
+          "isCorrect": true,
+          "explanation": "MRSA is transmitted by direct and indirect contact; contact precautions are required."
+        },
+        {
+          "text": "Airborne precautions",
+          "isCorrect": false,
+          "explanation": "MRSA is not airborne."
+        },
+        {
+          "text": "Droplet precautions",
+          "isCorrect": false,
+          "explanation": "Not transmitted via respiratory droplets."
+        },
+        {
+          "text": "Standard precautions only",
+          "isCorrect": false,
+          "explanation": "Standard precautions alone are not enough for a wound with MRSA."
+        },
+        {
+          "text": "Protective environment",
+          "isCorrect": false,
+          "explanation": "Not indicated."
+        }
+      ],
+      "explanation": {
+        "overview": "MRSA infections or colonization require contact precautions: gloves and gown, private room or cohorting.",
+        "highYield": "MRSA = contact precautions.",
+        "clinicalCorrelation": "Contact precautions for MRSA reduce nosocomial transmission."
+      }
+    },
+    {
+      "questionId": "infection_control_038",
+      "difficulty": 2,
+      "question": "For a patient with Neisseria meningitidis meningitis, which precautions are initially required?",
+      "image": null,
+      "options": [
+        {
+          "text": "Droplet precautions",
+          "isCorrect": true,
+          "explanation": "Meningococcus spreads via large respiratory droplets; droplet precautions are recommended for first 24 hours of effective therapy."
+        },
+        {
+          "text": "Airborne precautions",
+          "isCorrect": false,
+          "explanation": "It is not truly airborne."
+        },
+        {
+          "text": "Contact precautions",
+          "isCorrect": false,
+          "explanation": "Contact is not the primary mode."
+        },
+        {
+          "text": "Standard precautions only",
+          "isCorrect": false,
+          "explanation": "Droplet precautions are needed initially."
+        },
+        {
+          "text": "Protective environment",
+          "isCorrect": false,
+          "explanation": "Not indicated."
+        }
+      ],
+      "explanation": {
+        "overview": "N. meningitidis is transmitted via large droplets; droplet precautions (surgical mask) are used until 24 hours of effective antibiotic therapy.",
+        "highYield": "Meningococcal meningitis → droplet precautions initially.",
+        "clinicalCorrelation": "Post-exposure prophylaxis indicated for close contacts."
+      }
+    },
+    {
+      "questionId": "infection_control_039",
+      "difficulty": 2,
+      "question": "The protective environment is used for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Immunocompromised patients (e.g., stem cell transplant)",
+          "isCorrect": true,
+          "explanation": "A protective environment reduces exposure to environmental fungal spores for highly immunocompromised patients."
+        },
+        {
+          "text": "Patients with airborne diseases",
+          "isCorrect": false,
+          "explanation": "Airborne isolation is for containing infectious patients, not protecting the immunocompromised."
+        },
+        {
+          "text": "Patients with multi-drug resistant organisms",
+          "isCorrect": false,
+          "explanation": "MDRO patients require contact precautions, not protective environment."
+        },
+        {
+          "text": "Patients requiring wound care",
+          "isCorrect": false,
+          "explanation": "Wound care does not necessitate protective environment."
+        },
+        {
+          "text": "All patients",
+          "isCorrect": false,
+          "explanation": "Only indicated for a specific high-risk group."
+        }
+      ],
+      "explanation": {
+        "overview": "Protective environment is a specialized isolation for allogeneic hematopoietic stem cell transplant recipients and similar patients with profound immunosuppression.",
+        "highYield": "Protective environment = immunocompromised (HSCT).",
+        "clinicalCorrelation": "Features positive pressure, HEPA filtration, and restricted activities to prevent invasive aspergillosis."
+      }
+    },
+    {
+      "questionId": "infection_control_040",
+      "difficulty": 2,
+      "question": "Which of the following is a component of a protective environment?",
+      "image": null,
+      "options": [
+        {
+          "text": "HEPA filtration",
+          "isCorrect": false,
+          "explanation": "HEPA filters remove fungal spores."
+        },
+        {
+          "text": "Positive air pressure",
+          "isCorrect": false,
+          "explanation": "Positive pressure keeps unfiltered air out."
+        },
+        {
+          "text": "Sealed rooms",
+          "isCorrect": false,
+          "explanation": "Sealed rooms prevent air leaks."
+        },
+        {
+          "text": "High air changes per hour",
+          "isCorrect": false,
+          "explanation": "High air exchange dilutes contaminants."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "A protective environment incorporates all these engineering controls."
+        }
+      ],
+      "explanation": {
+        "overview": "Protective environments use positive pressure, HEPA filtration, sealed rooms, and high air exchange to minimize fungal spore counts.",
+        "highYield": "Protective environment = positive pressure, HEPA, sealed room.",
+        "clinicalCorrelation": "These measures reduce invasive aspergillosis in HSCT recipients."
+      }
+    },
+    {
+      "questionId": "infection_control_041",
+      "difficulty": 1,
+      "question": "Sterilization differs from disinfection in that sterilization:",
+      "image": null,
+      "options": [
+        {
+          "text": "Eliminates all microorganisms including spores",
+          "isCorrect": true,
+          "explanation": "Sterilization destroys all microbial life; disinfection reduces but may leave spores."
+        },
+        {
+          "text": "Eliminates vegetative bacteria only",
+          "isCorrect": false,
+          "explanation": "Disinfection eliminates vegetative bacteria; sterilization goes further."
+        },
+        {
+          "text": "Is only used for inanimate objects",
+          "isCorrect": false,
+          "explanation": "Both disinfection and sterilization are used for inanimate objects."
+        },
+        {
+          "text": "Is less potent than disinfection",
+          "isCorrect": false,
+          "explanation": "Sterilization is more potent than disinfection."
+        },
+        {
+          "text": "Uses only chemical agents",
+          "isCorrect": false,
+          "explanation": "Sterilization can be physical (steam, dry heat) or chemical."
+        }
+      ],
+      "explanation": {
+        "overview": "Sterilization is the complete destruction of all microorganisms, including bacterial spores, while disinfection reduces but does not guarantee spore elimination.",
+        "highYield": "Sterilization = kills everything including spores.",
+        "clinicalCorrelation": "Critical items (entering sterile tissue) must be sterile."
+      }
+    },
+    {
+      "questionId": "infection_control_042",
+      "difficulty": 2,
+      "question": "The preferred method for sterilizing heat-sensitive surgical instruments is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Ethylene oxide gas",
+          "isCorrect": true,
+          "explanation": "ETO is a low-temperature sterilant for heat- and moisture-sensitive items."
+        },
+        {
+          "text": "Steam autoclave",
+          "isCorrect": false,
+          "explanation": "Autoclaving uses high temperatures and may damage heat-sensitive instruments."
+        },
+        {
+          "text": "Dry heat",
+          "isCorrect": false,
+          "explanation": "Dry heat requires even higher temperatures."
+        },
+        {
+          "text": "Boiling water",
+          "isCorrect": false,
+          "explanation": "Boiling is not a sterilization method."
+        },
+        {
+          "text": "Glutaraldehyde soak",
+          "isCorrect": false,
+          "explanation": "Glutaraldehyde is a high-level disinfectant, not a sterilant for instruments; prolonged soak can sterilize but is not preferred."
+        }
+      ],
+      "explanation": {
+        "overview": "Ethylene oxide (ETO) sterilization is used for heat- and moisture-sensitive devices, requiring aeration after processing.",
+        "highYield": "ETO = low-temperature sterilization for heat-sensitive instruments.",
+        "clinicalCorrelation": "ETO is toxic and carcinogenic; alternative low-temperature methods include hydrogen peroxide plasma."
+      }
+    },
+    {
+      "questionId": "infection_control_043",
+      "difficulty": 2,
+      "question": "High-level disinfection (e.g., using glutaraldehyde or peracetic acid) is used for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Semi-critical items (e.g., endoscopes)",
+          "isCorrect": true,
+          "explanation": "Semi-critical items contact mucous membranes and require high-level disinfection that kills all but high numbers of spores."
+        },
+        {
+          "text": "Critical items (e.g., surgical instruments)",
+          "isCorrect": false,
+          "explanation": "Critical items must be sterile."
+        },
+        {
+          "text": "Non-critical items (e.g., blood pressure cuffs)",
+          "isCorrect": false,
+          "explanation": "Non-critical items require low-level disinfection or cleaning."
+        },
+        {
+          "text": "Skin preparation",
+          "isCorrect": false,
+          "explanation": "Skin is prepared with antiseptics, not high-level disinfectants."
+        },
+        {
+          "text": "Environmental surfaces",
+          "isCorrect": false,
+          "explanation": "Environmental surfaces generally require low- to intermediate-level disinfection."
+        }
+      ],
+      "explanation": {
+        "overview": "High-level disinfection kills all microorganisms except large numbers of bacterial spores; used for semi-critical items like flexible endoscopes.",
+        "highYield": "High-level disinfection = semi-critical items (endoscopes).",
+        "clinicalCorrelation": "Inadequate reprocessing of endoscopes has led to transmission of infections."
+      }
+    },
+    {
+      "questionId": "infection_control_044",
+      "difficulty": 2,
+      "question": "Chemical indicators (e.g., autoclave tape) are used to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Confirm that sterilization conditions were met",
+          "isCorrect": true,
+          "explanation": "Chemical indicators change color when exposed to sterilization parameters (e.g., temperature), but do not confirm sterility."
+        },
+        {
+          "text": "Confirm sterility of items",
+          "isCorrect": false,
+          "explanation": "Only biological indicators can confirm sterility."
+        },
+        {
+          "text": "Measure biological kill",
+          "isCorrect": false,
+          "explanation": "Biological indicators (spore tests) measure biological kill."
+        },
+        {
+          "text": "Monitor time only",
+          "isCorrect": false,
+          "explanation": "They monitor one or more parameters (time, temperature, or sterilant presence)."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "Chemical indicators show exposure to the sterilization process but not that it was sufficient to kill spores."
+        }
+      ],
+      "explanation": {
+        "overview": "Chemical indicators (internal and external) indicate that an item has been exposed to the sterilization process; they do not guarantee sterility.",
+        "highYield": "Chemical indicator = exposure, not sterility proof.",
+        "clinicalCorrelation": "Biological indicators (spore tests) are the gold standard for monitoring sterilization."
+      }
+    },
+    {
+      "questionId": "infection_control_045",
+      "difficulty": 2,
+      "question": "Biological indicators (spore tests) for autoclave monitoring use spores of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Geobacillus stearothermophilus",
+          "isCorrect": true,
+          "explanation": "These spores are highly heat-resistant and are the standard for steam sterilization monitoring."
+        },
+        {
+          "text": "Bacillus subtilis",
+          "isCorrect": false,
+          "explanation": "B. subtilis is used for some dry heat and ethylene oxide indicators."
+        },
+        {
+          "text": "Bacillus atrophaeus",
+          "isCorrect": false,
+          "explanation": "B. atrophaeus is for dry heat and ETO."
+        },
+        {
+          "text": "Clostridium sporogenes",
+          "isCorrect": false,
+          "explanation": "Not the standard indicator."
+        },
+        {
+          "text": "Mycobacterium tuberculosis",
+          "isCorrect": false,
+          "explanation": "Not used as a biological indicator."
+        }
+      ],
+      "explanation": {
+        "overview": "Biological indicators containing Geobacillus stearothermophilus spores are used to test steam autoclave efficacy.",
+        "highYield": "Autoclave spore test = G. stearothermophilus.",
+        "clinicalCorrelation": "Spore tests should be run at least weekly; failure indicates a sterilization process problem."
+      }
+    },
+    {
+      "questionId": "infection_control_046",
+      "difficulty": 2,
+      "question": "For dry heat sterilization, the biological indicator often used is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Bacillus atrophaeus",
+          "isCorrect": true,
+          "explanation": "B. atrophaeus spores are resistant to dry heat and are used to monitor dry heat sterilization."
+        },
+        {
+          "text": "Geobacillus stearothermophilus",
+          "isCorrect": false,
+          "explanation": "G. stearothermophilus is for steam."
+        },
+        {
+          "text": "Bacillus pumilus",
+          "isCorrect": false,
+          "explanation": "Not the standard."
+        },
+        {
+          "text": "Clostridium botulinum",
+          "isCorrect": false,
+          "explanation": "Not used as a monitor."
+        },
+        {
+          "text": "Mycobacterium terrae",
+          "isCorrect": false,
+          "explanation": "Not a biological indicator."
+        }
+      ],
+      "explanation": {
+        "overview": "Bacillus atrophaeus spores are recommended for monitoring dry heat and ethylene oxide sterilization.",
+        "highYield": "Dry heat BI = B. atrophaeus.",
+        "clinicalCorrelation": "Biological indicators confirm that the sterilization process killed the highly resistant spores."
+      }
+    },
+    {
+      "questionId": "infection_control_047",
+      "difficulty": 1,
+      "question": "The process of removing organic material from instruments before sterilization is called:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cleaning",
+          "isCorrect": true,
+          "explanation": "Cleaning physically removes debris and reduces bioburden, essential before disinfection or sterilization."
+        },
+        {
+          "text": "Disinfection",
+          "isCorrect": false,
+          "explanation": "Disinfection kills microbes but does not necessarily remove organic debris."
+        },
+        {
+          "text": "Sterilization",
+          "isCorrect": false,
+          "explanation": "Sterilization follows cleaning."
+        },
+        {
+          "text": "Antisepsis",
+          "isCorrect": false,
+          "explanation": "Antisepsis is for living tissue."
+        },
+        {
+          "text": "Sanitization",
+          "isCorrect": false,
+          "explanation": "Sanitization is a lower-level cleaning process for non-critical items."
+        }
+      ],
+      "explanation": {
+        "overview": "Cleaning is the critical first step in instrument reprocessing, removing organic matter that can interfere with disinfection or sterilization.",
+        "highYield": "Cleaning = removal of debris, prerequisite for sterilization.",
+        "clinicalCorrelation": "If instruments are not properly cleaned, sterilization may fail."
+      }
+    },
+    {
+      "questionId": "infection_control_048",
+      "difficulty": 1,
+      "question": "Which of the following is a key element of a comprehensive infection prevention program?",
+      "image": null,
+      "options": [
+        {
+          "text": "Infection surveillance",
+          "isCorrect": false,
+          "explanation": "Surveillance is core to identifying problems."
+        },
+        {
+          "text": "Outbreak investigation",
+          "isCorrect": false,
+          "explanation": "Investigating clusters is essential."
+        },
+        {
+          "text": "Staff education",
+          "isCorrect": false,
+          "explanation": "Education ensures compliance."
+        },
+        {
+          "text": "Policy development",
+          "isCorrect": false,
+          "explanation": "Policies standardize practice."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "An effective infection prevention program integrates surveillance, investigation, education, and policy."
+        }
+      ],
+      "explanation": {
+        "overview": "Infection prevention programs require surveillance, outbreak response, staff training, and written policies.",
+        "highYield": "Infection control program = surveillance + outbreak investigation + education + policy.",
+        "clinicalCorrelation": "CDC and WHO provide frameworks for infection control program components."
+      }
+    },
+    {
+      "questionId": "infection_control_049",
+      "difficulty": 1,
+      "question": "The role of an infection control committee includes:",
+      "image": null,
+      "options": [
+        {
+          "text": "Reviewing infection data",
+          "isCorrect": false,
+          "explanation": "Data review is a key function."
+        },
+        {
+          "text": "Developing prevention policies",
+          "isCorrect": false,
+          "explanation": "Policy development is critical."
+        },
+        {
+          "text": "Approving new products",
+          "isCorrect": false,
+          "explanation": "The committee may evaluate and approve infection control products."
+        },
+        {
+          "text": "Educating staff",
+          "isCorrect": false,
+          "explanation": "Education is a shared responsibility of the committee."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "The infection control committee oversees all these activities."
+        }
+      ],
+      "explanation": {
+        "overview": "A multidisciplinary infection control committee guides the facility's infection prevention and control program.",
+        "highYield": "Infection control committee = surveillance, policy, product approval, education.",
+        "clinicalCorrelation": "The committee includes representatives from administration, nursing, medicine, microbiology, and environmental services."
+      }
+    },
+    {
+      "questionId": "infection_control_050",
+      "difficulty": 1,
+      "question": "Which of the following is a key performance indicator for infection control?",
+      "image": null,
+      "options": [
+        {
+          "text": "Hand hygiene compliance rates",
+          "isCorrect": false,
+          "explanation": "This is a process measure."
+        },
+        {
+          "text": "Central line infection rates",
+          "isCorrect": false,
+          "explanation": "This is an outcome measure."
+        },
+        {
+          "text": "Surgical site infection rates",
+          "isCorrect": false,
+          "explanation": "Another important outcome measure."
+        },
+        {
+          "text": "Antibiotic usage data",
+          "isCorrect": false,
+          "explanation": "Antibiotic consumption is monitored in stewardship."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Infection control programs track process and outcome indicators."
+        }
+      ],
+      "explanation": {
+        "overview": "Key performance indicators include hand hygiene compliance, device-associated infection rates, SSI rates, and antimicrobial use.",
+        "highYield": "KPIs: hand hygiene %, CLABSI/CAUTI rates, SSI rates, antibiotic use.",
+        "clinicalCorrelation": "Public reporting of HAI rates drives quality improvement."
+      }
+    },
+    {
+      "questionId": "infection_control_051",
+      "difficulty": 1,
+      "question": "The use of personal protective equipment (PPE) is based on:",
+      "image": null,
+      "options": [
+        {
+          "text": "The anticipated exposure to blood/body fluids",
+          "isCorrect": true,
+          "explanation": "PPE selection is risk-based, not diagnosis-based."
+        },
+        {
+          "text": "The patient's diagnosis",
+          "isCorrect": false,
+          "explanation": "Diagnosis may inform risk but PPE is selected by anticipated exposure."
+        },
+        {
+          "text": "The healthcare worker's preference",
+          "isCorrect": false,
+          "explanation": "PPE use follows standard and transmission-based precautions, not personal preference."
+        },
+        {
+          "text": "The time of day",
+          "isCorrect": false,
+          "explanation": "Not a factor."
+        },
+        {
+          "text": "The availability of supplies",
+          "isCorrect": false,
+          "explanation": "While supply may affect practice, the decision should be based on risk."
+        }
+      ],
+      "explanation": {
+        "overview": "PPE is worn according to the task and anticipated exposure to blood, body fluids, secretions, or excretions.",
+        "highYield": "PPE based on anticipated exposure, not diagnosis alone.",
+        "clinicalCorrelation": "Standard precautions require risk assessment before each patient interaction."
+      }
+    },
+    {
+      "questionId": "infection_control_052",
+      "difficulty": 1,
+      "question": "Which type of mask provides the highest level of respiratory protection?",
+      "image": null,
+      "options": [
+        {
+          "text": "N95 respirator",
+          "isCorrect": true,
+          "explanation": "N95 respirators filter at least 95% of airborne particles and must be fit-tested."
+        },
+        {
+          "text": "Surgical mask",
+          "isCorrect": false,
+          "explanation": "Surgical masks are for droplet precautions; they do not provide the same filtration or fit."
+        },
+        {
+          "text": "Procedure mask",
+          "isCorrect": false,
+          "explanation": "Similar to surgical masks, not for airborne protection."
+        },
+        {
+          "text": "Cloth mask",
+          "isCorrect": false,
+          "explanation": "Cloth masks have variable and lower filtration."
+        },
+        {
+          "text": "Face shield alone",
+          "isCorrect": false,
+          "explanation": "A face shield alone does not provide respiratory protection."
+        }
+      ],
+      "explanation": {
+        "overview": "N95 (or higher) respirators are the standard for airborne precautions, offering a tight facial seal and high filtration efficiency.",
+        "highYield": "N95 = highest respiratory protection (fit-tested).",
+        "clinicalCorrelation": "Used when caring for patients with TB, measles, or during aerosol-generating procedures."
+      }
+    },
+    {
+      "questionId": "infection_control_053",
+      "difficulty": 1,
+      "question": "Fit-testing is required for which type of PPE?",
+      "image": null,
+      "options": [
+        {
+          "text": "N95 respirators",
+          "isCorrect": true,
+          "explanation": "Fit-testing ensures an adequate seal to protect against airborne particles."
+        },
+        {
+          "text": "Surgical masks",
+          "isCorrect": false,
+          "explanation": "Surgical masks are not fit-tested."
+        },
+        {
+          "text": "Gloves",
+          "isCorrect": false,
+          "explanation": "Gloves do not require fit-testing."
+        },
+        {
+          "text": "Gowns",
+          "isCorrect": false,
+          "explanation": "Gowns are donned without fit-testing."
+        },
+        {
+          "text": "Face shields",
+          "isCorrect": false,
+          "explanation": "Face shields do not require fit-testing."
+        }
+      ],
+      "explanation": {
+        "overview": "OSHA requires annual fit-testing for N95 respirators to ensure proper protection.",
+        "highYield": "N95 respirators need fit-testing.",
+        "clinicalCorrelation": "Qualitative (taste/smell) or quantitative (particle count) methods are used."
+      }
+    },
+    {
+      "questionId": "infection_control_054",
+      "difficulty": 1,
+      "question": "Which of the following is a bloodborne pathogen standard requirement?",
+      "image": null,
+      "options": [
+        {
+          "text": "Offering hepatitis B vaccination to employees",
+          "isCorrect": false,
+          "explanation": "This is required by the standard."
+        },
+        {
+          "text": "Using sharps disposal containers",
+          "isCorrect": false,
+          "explanation": "Engineering controls like sharps containers are mandated."
+        },
+        {
+          "text": "Implementing universal precautions",
+          "isCorrect": false,
+          "explanation": "Standard (formerly universal) precautions are foundational."
+        },
+        {
+          "text": "Providing PPE",
+          "isCorrect": false,
+          "explanation": "Employers must provide appropriate PPE."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "OSHA's Bloodborne Pathogens Standard encompasses all these requirements."
+        }
+      ],
+      "explanation": {
+        "overview": "The OSHA Bloodborne Pathogens Standard requires hepatitis B vaccination, sharps safety, universal precautions, and provision of PPE.",
+        "highYield": "Bloodborne pathogen standard: vaccine, sharps containers, PPE, universal precautions.",
+        "clinicalCorrelation": "Compliance reduces occupational infections."
+      }
+    },
+    {
+      "questionId": "infection_control_055",
+      "difficulty": 1,
+      "question": "The most common cause of healthcare worker exposure to bloodborne pathogens is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Needlestick injuries",
+          "isCorrect": true,
+          "explanation": "Percutaneous injuries from contaminated sharps are the most frequent cause of occupational exposure."
+        },
+        {
+          "text": "Splash to mucous membranes",
+          "isCorrect": false,
+          "explanation": "Mucous membrane exposures occur but are less common."
+        },
+        {
+          "text": "Contact with non-intact skin",
+          "isCorrect": false,
+          "explanation": "Skin contact is a possible route but not the most common."
+        },
+        {
+          "text": "Aerosolization",
+          "isCorrect": false,
+          "explanation": "Aerosol transmission is not a major bloodborne pathogen route."
+        },
+        {
+          "text": "Sharps disposal",
+          "isCorrect": false,
+          "explanation": "Most injuries occur during use, not disposal."
+        }
+      ],
+      "explanation": {
+        "overview": "Needlestick and other sharps injuries are the primary means of occupational bloodborne pathogen transmission.",
+        "highYield": "Most common exposure = needlestick.",
+        "clinicalCorrelation": "Safety-engineered devices have reduced injury rates."
+      }
+    },
+    {
+      "questionId": "infection_control_056",
+      "difficulty": 2,
+      "question": "Post-exposure prophylaxis (PEP) for HIV should be initiated ideally within:",
+      "image": null,
+      "options": [
+        {
+          "text": "2 hours, but up to 72 hours",
+          "isCorrect": true,
+          "explanation": "PEP is most effective when started within hours; after 72 hours it is not recommended."
+        },
+        {
+          "text": "24-48 hours",
+          "isCorrect": false,
+          "explanation": "It should be started as soon as possible, not delayed to 24-48 hours."
+        },
+        {
+          "text": "One week",
+          "isCorrect": false,
+          "explanation": "After 72 hours, PEP is not generally recommended."
+        },
+        {
+          "text": "One month",
+          "isCorrect": false,
+          "explanation": "Too late."
+        },
+        {
+          "text": "No time limit",
+          "isCorrect": false,
+          "explanation": "Time is critical; PEP is not offered beyond 72 hours."
+        }
+      ],
+      "explanation": {
+        "overview": "HIV PEP should be initiated as soon as possible, ideally within 2 hours, and not later than 72 hours post-exposure.",
+        "highYield": "HIV PEP: start ASAP, <2 hours ideal, ≤72 hours max.",
+        "clinicalCorrelation": "A 28-day course of antiretrovirals is prescribed."
+      }
+    },
+    {
+      "questionId": "infection_control_057",
+      "difficulty": 2,
+      "question": "Healthcare workers immune to hepatitis B have antibody to:",
+      "image": null,
+      "options": [
+        {
+          "text": "HBsAg",
+          "isCorrect": false,
+          "explanation": "HBsAg is the surface antigen, indicating infection."
+        },
+        {
+          "text": "Anti-HBs",
+          "isCorrect": true,
+          "explanation": "Antibody to hepatitis B surface antigen (anti-HBs) indicates immunity from vaccination or past infection."
+        },
+        {
+          "text": "Anti-HBc",
+          "isCorrect": false,
+          "explanation": "Anti-HBc (core antibody) indicates past or current infection, not necessarily immunity."
+        },
+        {
+          "text": "HBeAg",
+          "isCorrect": false,
+          "explanation": "HBeAg indicates active viral replication."
+        },
+        {
+          "text": "Anti-HBe",
+          "isCorrect": false,
+          "explanation": "Anti-HBe may appear after infection but anti-HBs is the marker of immunity."
+        }
+      ],
+      "explanation": {
+        "overview": "Anti-HBs (surface antibody) ≥10 mIU/mL indicates protective immunity to hepatitis B, either from vaccination or resolved infection.",
+        "highYield": "Immunity to HBV = anti-HBs positive.",
+        "clinicalCorrelation": "Post-vaccination serologic testing is recommended for healthcare workers."
+      }
+    },
+    {
+      "questionId": "infection_control_058",
+      "difficulty": 1,
+      "question": "Which of the following is a critical component of tuberculosis infection control in healthcare settings?",
+      "image": null,
+      "options": [
+        {
+          "text": "Administrative controls (screening, isolation)",
+          "isCorrect": false,
+          "explanation": "Administrative controls are the first level of the hierarchy."
+        },
+        {
+          "text": "Environmental controls (ventilation)",
+          "isCorrect": false,
+          "explanation": "Environmental controls reduce droplet nuclei concentration."
+        },
+        {
+          "text": "Respiratory protection (N95s)",
+          "isCorrect": false,
+          "explanation": "Respiratory protection is the last tier."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "TB control requires a hierarchy: administrative, environmental, respiratory protection."
+        },
+        {
+          "text": "None of the above",
+          "isCorrect": false,
+          "explanation": "All three are essential."
+        }
+      ],
+      "explanation": {
+        "overview": "TB infection control relies on three levels: administrative (screening, isolation), environmental (negative pressure, HEPA), and respiratory (N95 respirators).",
+        "highYield": "TB control: administrative, environmental, respiratory protection.",
+        "clinicalCorrelation": "Administrative controls are the most effective because they reduce exposure risk at the source."
+      }
+    },
+    {
+      "questionId": "infection_control_059",
+      "difficulty": 1,
+      "question": "Annual influenza vaccination of healthcare workers is recommended primarily to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Protect patients and staff from influenza",
+          "isCorrect": true,
+          "explanation": "Vaccination reduces influenza transmission to vulnerable patients."
+        },
+        {
+          "text": "Reduce absenteeism",
+          "isCorrect": false,
+          "explanation": "This is a secondary benefit."
+        },
+        {
+          "text": "Fulfill regulatory requirements",
+          "isCorrect": false,
+          "explanation": "Compliance is important but not the primary reason."
+        },
+        {
+          "text": "Improve herd immunity in the community",
+          "isCorrect": false,
+          "explanation": "Community protection is an added effect."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "The primary goal is to protect patients, especially the immunocompromised."
+        }
+      ],
+      "explanation": {
+        "overview": "Healthcare worker influenza vaccination is a patient safety measure, reducing the risk of nosocomial influenza transmission.",
+        "highYield": "Flu vaccine for HCWs → protect patients.",
+        "clinicalCorrelation": "Mandatory vaccination policies have increased coverage."
+      }
+    },
+    {
+      "questionId": "infection_control_060",
+      "difficulty": 1,
+      "question": "Which of the following is a key strategy to prevent transmission of multidrug-resistant organisms (MDROs)?",
+      "image": null,
+      "options": [
+        {
+          "text": "Hand hygiene",
+          "isCorrect": false,
+          "explanation": "Hand hygiene is fundamental."
+        },
+        {
+          "text": "Contact precautions for colonized/infected patients",
+          "isCorrect": false,
+          "explanation": "Contact precautions are a core strategy."
+        },
+        {
+          "text": "Antibiotic stewardship",
+          "isCorrect": false,
+          "explanation": "Stewardship reduces selection pressure."
+        },
+        {
+          "text": "Environmental cleaning",
+          "isCorrect": false,
+          "explanation": "Cleaning reduces environmental reservoirs."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "MDRO prevention requires a multifaceted approach."
+        }
+      ],
+      "explanation": {
+        "overview": "MDRO control bundles include hand hygiene, contact precautions, antimicrobial stewardship, and environmental hygiene.",
+        "highYield": "MDRO prevention = hand hygiene, isolation, stewardship, cleaning.",
+        "clinicalCorrelation": "CRE (carbapenem-resistant Enterobacteriaceae) requires intensified interventions."
+      }
+    },
+    {
+      "questionId": "infection_control_061",
+      "difficulty": 2,
+      "question": "Which of the following patients requires airborne precautions?",
+      "image": null,
+      "options": [
+        {
+          "text": "A patient with known or suspected disseminated herpes zoster",
+          "isCorrect": true,
+          "explanation": "Disseminated zoster is airborne, and airborne plus contact precautions are indicated."
+        },
+        {
+          "text": "A patient with localized herpes zoster in a covered dermatome",
+          "isCorrect": false,
+          "explanation": "Localized zoster requires contact precautions only if the rash is contained."
+        },
+        {
+          "text": "A patient with herpes simplex virus mucocutaneous lesion",
+          "isCorrect": false,
+          "explanation": "HSV does not require airborne precautions."
+        },
+        {
+          "text": "A patient with cytomegalovirus retinitis",
+          "isCorrect": false,
+          "explanation": "CMV is not transmitted via airborne route; standard precautions are sufficient."
+        },
+        {
+          "text": "A patient with Epstein-Barr virus infection",
+          "isCorrect": false,
+          "explanation": "EBV is spread through saliva; standard precautions."
+        }
+      ],
+      "explanation": {
+        "overview": "Disseminated varicella-zoster (including disseminated shingles) requires airborne and contact precautions.",
+        "highYield": "Disseminated zoster = airborne + contact precautions.",
+        "clinicalCorrelation": "Localized zoster in an immunocompetent host with contained lesions needs only contact precautions."
+      }
+    },
+    {
+      "questionId": "infection_control_062",
+      "difficulty": 1,
+      "question": "Alcohol-based hand rub should be used for hand hygiene in which of the following situations?",
+      "image": null,
+      "options": [
+        {
+          "text": "When hands are not visibly soiled",
+          "isCorrect": true,
+          "explanation": "Alcohol-based hand rub is the preferred method for routine hand decontamination if hands are not visibly soiled."
+        },
+        {
+          "text": "After caring for a patient with C. difficile infection",
+          "isCorrect": false,
+          "explanation": "Soap and water are preferred because alcohol does not kill C. difficile spores."
+        },
+        {
+          "text": "When hands are visibly dirty",
+          "isCorrect": false,
+          "explanation": "Visibly soiled hands should be washed with soap and water."
+        },
+        {
+          "text": "Before eating",
+          "isCorrect": false,
+          "explanation": "Hand washing with soap and water is recommended before eating, especially if hands may be soiled."
+        },
+        {
+          "text": "After using the restroom",
+          "isCorrect": false,
+          "explanation": "Soap and water are required after restroom use."
+        }
+      ],
+      "explanation": {
+        "overview": "Alcohol-based hand rubs are effective and convenient when hands are not visibly soiled; soap and water are needed for certain pathogens and situations.",
+        "highYield": "Alcohol rub when hands are not visibly soiled.",
+        "clinicalCorrelation": "Exceptions: C. difficile, visible soiling, restroom use."
+      }
+    },
+    {
+      "questionId": "infection_control_063",
+      "difficulty": 2,
+      "question": "Which of the following is a recommended practice for preventing surgical site infections?",
+      "image": null,
+      "options": [
+        {
+          "text": "Use of chlorhexidine-alcohol for preoperative skin preparation",
+          "isCorrect": true,
+          "explanation": "Chlorhexidine-alcohol is superior to povidone-iodine for reducing SSI risk."
+        },
+        {
+          "text": "Shaving the surgical site with a razor immediately before incision",
+          "isCorrect": false,
+          "explanation": "Shaving causes skin abrasions; clipping is preferred, and if necessary, done shortly before surgery."
+        },
+        {
+          "text": "Administering prophylactic antibiotics for 7 days after surgery",
+          "isCorrect": false,
+          "explanation": "Prolonged prophylaxis increases resistance without benefit; 24 hours is usually sufficient."
+        },
+        {
+          "text": "Keeping the wound covered for at least 2 weeks without changing the dressing",
+          "isCorrect": false,
+          "explanation": "Dressings should be changed as needed to keep the wound clean and dry."
+        },
+        {
+          "text": "Use of perioperative warming blankets only if the patient feels cold",
+          "isCorrect": false,
+          "explanation": "Maintaining normothermia is an evidence-based measure for all patients."
+        }
+      ],
+      "explanation": {
+        "overview": "Preoperative skin preparation with chlorhexidine-alcohol, clipping instead of shaving, appropriate antibiotic prophylaxis, and normothermia are key SSI prevention strategies.",
+        "highYield": "Chlorhexidine-alcohol prep > povidone-iodine for SSI prevention.",
+        "clinicalCorrelation": "SSI bundles have significantly reduced infection rates."
+      }
+    },
+    {
+      "questionId": "infection_control_064",
+      "difficulty": 2,
+      "question": "When managing a patient with carbapenem-resistant Enterobacteriaceae (CRE), which infection control measures are indicated?",
+      "image": null,
+      "options": [
+        {
+          "text": "Contact precautions, single room, dedicated equipment, and enhanced environmental cleaning",
+          "isCorrect": true,
+          "explanation": "CRE requires strict contact precautions with emphasis on environmental cleaning to prevent transmission."
+        },
+        {
+          "text": "Standard precautions only",
+          "isCorrect": false,
+          "explanation": "Standard precautions are insufficient for CRE."
+        },
+        {
+          "text": "Airborne precautions",
+          "isCorrect": false,
+          "explanation": "CRE is not airborne."
+        },
+        {
+          "text": "Droplet precautions",
+          "isCorrect": false,
+          "explanation": "Not transmitted via respiratory droplets."
+        },
+        {
+          "text": "Contact precautions with alcohol-based hand rub as the sole hand hygiene method",
+          "isCorrect": false,
+          "explanation": "Alcohol rub is effective against CRE, but soap and water may also be needed if spores (not relevant) or visible soiling."
+        }
+      ],
+      "explanation": {
+        "overview": "CRE is an urgent threat; infection control includes contact precautions, private room, dedicated equipment, and rigorous environmental cleaning.",
+        "highYield": "CRE = contact precautions + enhanced environmental cleaning.",
+        "clinicalCorrelation": "Active surveillance cultures may be used to detect CRE colonization."
+      }
+    },
+    {
+      "questionId": "infection_control_065",
+      "difficulty": 1,
+      "question": "What is the minimum time for hand washing with soap and water to effectively remove transient flora?",
+      "image": null,
+      "options": [
+        {
+          "text": "15-20 seconds",
+          "isCorrect": true,
+          "explanation": "CDC recommends at least 15 seconds of scrubbing; 20 seconds is often cited."
+        },
+        {
+          "text": "5 seconds",
+          "isCorrect": false,
+          "explanation": "Too short to remove organisms."
+        },
+        {
+          "text": "1 minute",
+          "isCorrect": false,
+          "explanation": "Longer than necessary for routine hand washing."
+        },
+        {
+          "text": "2-3 minutes",
+          "isCorrect": false,
+          "explanation": "Not required for routine hand hygiene."
+        },
+        {
+          "text": "10 seconds",
+          "isCorrect": false,
+          "explanation": "Marginally insufficient; 15 seconds is the minimum."
+        }
+      ],
+      "explanation": {
+        "overview": "Effective hand washing with soap and water requires at least 15-20 seconds of friction to remove transient microorganisms.",
+        "highYield": "Hand wash ≥ 15 seconds.",
+        "clinicalCorrelation": "Singing 'Happy Birthday' twice approximates 20 seconds."
+      }
+    },
+    {
+      "questionId": "infection_control_066",
+      "difficulty": 1,
+      "question": "Which of the following is true regarding the reuse of single-use devices?",
+      "image": null,
+      "options": [
+        {
+          "text": "Single-use devices should never be reused unless they are specifically designed for reprocessing",
+          "isCorrect": true,
+          "explanation": "Reusing single-use devices carries risk of infection and malfunction unless reprocessed by a validated third-party reprocessor that meets FDA requirements."
+        },
+        {
+          "text": "Single-use devices can be reused after simple cleaning",
+          "isCorrect": false,
+          "explanation": "They are not designed for cleaning and resterilization."
+        },
+        {
+          "text": "Only catheters can be reused",
+          "isCorrect": false,
+          "explanation": "No, all single-use devices carry the same label."
+        },
+        {
+          "text": "Reuse is acceptable if the patient consents",
+          "isCorrect": false,
+          "explanation": "Patient consent does not override safety."
+        },
+        {
+          "text": "It is cost-saving and universally recommended",
+          "isCorrect": false,
+          "explanation": "It is not universally recommended due to safety concerns."
+        }
+      ],
+      "explanation": {
+        "overview": "Single-use devices (SUDs) are intended for one use; reprocessing and reusing them is subject to stringent regulatory requirements.",
+        "highYield": "Single-use = do not reuse unless reprocessed by a certified facility.",
+        "clinicalCorrelation": "Third-party reprocessors can safely reprocess some SUDs under FDA oversight."
+      }
+    },
+    {
+      "questionId": "infection_control_067",
+      "difficulty": 2,
+      "question": "Which of the following is an appropriate method for disinfection of an ultrasound probe used on intact skin?",
+      "image": null,
+      "options": [
+        {
+          "text": "Low-level disinfection with quaternary ammonium compounds",
+          "isCorrect": true,
+          "explanation": "Probes contacting intact skin are non-critical and can undergo low-level disinfection."
+        },
+        {
+          "text": "High-level disinfection with glutaraldehyde",
+          "isCorrect": false,
+          "explanation": "High-level disinfection is required only for semi-critical devices (mucous membrane contact)."
+        },
+        {
+          "text": "Sterilization with ethylene oxide",
+          "isCorrect": false,
+          "explanation": "Sterilization is overkill for non-critical items."
+        },
+        {
+          "text": "Wiping with a dry paper towel",
+          "isCorrect": false,
+          "explanation": "That does not disinfect."
+        },
+        {
+          "text": "Autoclaving",
+          "isCorrect": false,
+          "explanation": "Autoclaving would damage the probe."
+        }
+      ],
+      "explanation": {
+        "overview": "Non-critical items like ultrasound probes for intact skin need low-level disinfection between patients.",
+        "highYield": "Intact-skin probe = low-level disinfection.",
+        "clinicalCorrelation": "Endocavitary probes (semi-critical) require high-level disinfection and a probe cover."
+      }
+    },
+    {
+      "questionId": "infection_control_068",
+      "difficulty": 1,
+      "question": "Needleless systems and safety-engineered sharps are required primarily to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Reduce needlestick injuries",
+          "isCorrect": true,
+          "explanation": "These engineering controls are mandated to protect healthcare workers from percutaneous injuries."
+        },
+        {
+          "text": "Improve injection comfort",
+          "isCorrect": false,
+          "explanation": "Not the primary purpose."
+        },
+        {
+          "text": "Increase efficiency of medication delivery",
+          "isCorrect": false,
+          "explanation": "Efficiency is not the main goal."
+        },
+        {
+          "text": "Reduce medication errors",
+          "isCorrect": false,
+          "explanation": "They do not directly reduce medication errors."
+        },
+        {
+          "text": "Eliminate the need for gloves",
+          "isCorrect": false,
+          "explanation": "Gloves are still required for bloodborne pathogen protection."
+        }
+      ],
+      "explanation": {
+        "overview": "Needleless systems and safety-engineered sharps devices are a cornerstone of needlestick injury prevention.",
+        "highYield": "Safety sharps = prevent needlestick injuries.",
+        "clinicalCorrelation": "The Needlestick Safety and Prevention Act mandates the use of these devices."
+      }
+    },
+    {
+      "questionId": "infection_control_069",
+      "difficulty": 2,
+      "question": "In a patient with cystic fibrosis, which pathogen requires contact precautions due to potential for transmission between patients?",
+      "image": null,
+      "options": [
+        {
+          "text": "Burkholderia cepacia complex",
+          "isCorrect": true,
+          "explanation": "B. cepacia is highly transmissible between CF patients and associated with poor outcomes; contact precautions and cohort segregation are recommended."
+        },
+        {
+          "text": "Pseudomonas aeruginosa",
+          "isCorrect": false,
+          "explanation": "P. aeruginosa is common but not as tightly regulated with contact precautions specifically."
+        },
+        {
+          "text": "Staphylococcus aureus",
+          "isCorrect": false,
+          "explanation": "MRSA requires contact precautions, but MSSA does not typically mandate isolation between CF patients."
+        },
+        {
+          "text": "Candida albicans",
+          "isCorrect": false,
+          "explanation": "Candida is part of normal flora and not a major infection control concern in CF."
+        },
+        {
+          "text": "Aspergillus fumigatus",
+          "isCorrect": false,
+          "explanation": "Aspergillus is environmental; not transmitted person-to-person."
+        }
+      ],
+      "explanation": {
+        "overview": "Burkholderia cepacia complex is a significant risk for CF patients; infection control guidelines recommend strict segregation to prevent spread.",
+        "highYield": "CF patients: B. cepacia → contact isolation and separate clinics.",
+        "clinicalCorrelation": "Transmission leads to 'cepacia syndrome', a rapidly progressive pneumonia."
+      }
+    },
+    {
+      "questionId": "infection_control_070",
+      "difficulty": 1,
+      "question": "Which of the following is an example of an administrative measure to improve hand hygiene compliance?",
+      "image": null,
+      "options": [
+        {
+          "text": "Placing alcohol-based hand rub dispensers at the point of care",
+          "isCorrect": false,
+          "explanation": "That is an engineering/environmental change."
+        },
+        {
+          "text": "Educating staff about the importance of hand hygiene and monitoring compliance",
+          "isCorrect": true,
+          "explanation": "Administrative measures include education, training, policies, and monitoring with feedback."
+        },
+        {
+          "text": "Using gloves for all patient contact",
+          "isCorrect": false,
+          "explanation": "Over-reliance on gloves may reduce hand hygiene; gloves do not replace hand washing."
+        },
+        {
+          "text": "Restricting alcohol rub access",
+          "isCorrect": false,
+          "explanation": "This would reduce compliance."
+        },
+        {
+          "text": "Only allowing hand washing with soap and water",
+          "isCorrect": false,
+          "explanation": "Alcohol rub is part of multimodal strategy."
+        }
+      ],
+      "explanation": {
+        "overview": "Administrative support, education, and monitoring with feedback are key to improving hand hygiene adherence.",
+        "highYield": "Administrative measures = education and monitoring.",
+        "clinicalCorrelation": "WHO's multimodal strategy includes system change, training, evaluation, reminders, and institutional safety climate."
+      }
+    },
+    {
+      "questionId": "infection_control_071",
+      "difficulty": 1,
+      "question": "Which of the following organisms is most commonly responsible for catheter-associated urinary tract infections (CAUTI)?",
+      "image": null,
+      "options": [
+        {
+          "text": "Escherichia coli",
+          "isCorrect": true,
+          "explanation": "E. coli is the most common pathogen causing CAUTI, though others like Enterococcus and Pseudomonas are also frequent."
+        },
+        {
+          "text": "Staphylococcus aureus",
+          "isCorrect": false,
+          "explanation": "S. aureus is less common in CAUTI."
+        },
+        {
+          "text": "Candida albicans",
+          "isCorrect": false,
+          "explanation": "Fungal UTIs occur, but bacteria predominate."
+        },
+        {
+          "text": "Clostridium difficile",
+          "isCorrect": false,
+          "explanation": "C. difficile causes gastrointestinal infection, not UTI."
+        },
+        {
+          "text": "Mycobacterium tuberculosis",
+          "isCorrect": false,
+          "explanation": "TB can involve the urinary tract but is rare."
+        }
+      ],
+      "explanation": {
+        "overview": "CAUTIs are most often caused by Enterobacteriaceae, primarily E. coli, due to fecal flora contamination.",
+        "highYield": "Most common CAUTI pathogen = E. coli.",
+        "clinicalCorrelation": "Indwelling urinary catheters should be removed as soon as possible to prevent infection."
+      }
+    },
+    {
+      "questionId": "infection_control_072",
+      "difficulty": 2,
+      "question": "After a blood spill, the recommended initial step for cleaning is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Put on gloves and other appropriate PPE, then absorb the spill with paper towels",
+          "isCorrect": true,
+          "explanation": "First, protect yourself; then contain and absorb the spill before disinfection."
+        },
+        {
+          "text": "Immediately pour bleach on the spill",
+          "isCorrect": false,
+          "explanation": "Bleach should be applied after removal of visible blood, as organic matter inactivates it."
+        },
+        {
+          "text": "Spray the area with water to dilute",
+          "isCorrect": false,
+          "explanation": "Dilution spreads the contamination."
+        },
+        {
+          "text": "Leave it to dry and then scrape off",
+          "isCorrect": false,
+          "explanation": "Drying can aerosolize pathogens."
+        },
+        {
+          "text": "Call environmental services and wait",
+          "isCorrect": false,
+          "explanation": "Nursing staff should manage initial containment."
+        }
+      ],
+      "explanation": {
+        "overview": "Blood spills should be managed by donning PPE, absorbing the bulk fluid, then cleaning and disinfecting the area with an appropriate disinfectant (e.g., bleach 1:10).",
+        "highYield": "Blood spill: PPE first, absorb, then disinfect.",
+        "clinicalCorrelation": "Prompt cleanup reduces risk of bloodborne pathogen transmission."
+      }
+    },
+    {
+      "questionId": "infection_control_073",
+      "difficulty": 1,
+      "question": "Which of the following is NOT a standard precaution?",
+      "image": null,
+      "options": [
+        {
+          "text": "Using an N95 respirator for all patient care",
+          "isCorrect": true,
+          "explanation": "N95s are part of airborne precautions, not routine standard precautions."
+        },
+        {
+          "text": "Performing hand hygiene before and after patient contact",
+          "isCorrect": false,
+          "explanation": "Hand hygiene is a core standard precaution."
+        },
+        {
+          "text": "Wearing gloves when touching blood",
+          "isCorrect": false,
+          "explanation": "This is standard."
+        },
+        {
+          "text": "Using a mask and eye protection if splashes are anticipated",
+          "isCorrect": false,
+          "explanation": "Risk-based use of PPE is standard."
+        },
+        {
+          "text": "Proper handling of contaminated linen",
+          "isCorrect": false,
+          "explanation": "Linen management is part of standard precautions."
+        }
+      ],
+      "explanation": {
+        "overview": "Standard precautions do not routinely include N95 respirators; those are for specific airborne pathogens.",
+        "highYield": "N95 is not a standard precaution—it is for airborne precautions.",
+        "clinicalCorrelation": "Standard precautions assume every patient may be infectious."
+      }
+    },
+    {
+      "questionId": "infection_control_074",
+      "difficulty": 1,
+      "question": "The use of indwelling urinary catheters should be reassessed daily to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Determine if the catheter is still medically necessary",
+          "isCorrect": true,
+          "explanation": "Daily review prompts removal as soon as possible, reducing CAUTI risk."
+        },
+        {
+          "text": "Check for catheter leakage",
+          "isCorrect": false,
+          "explanation": "Leakage is a concern but not the primary reason for reassessment."
+        },
+        {
+          "text": "Ensure the bag is full",
+          "isCorrect": false,
+          "explanation": "Bag emptying is routine, not the daily assessment goal."
+        },
+        {
+          "text": "Collect a urine culture",
+          "isCorrect": false,
+          "explanation": "Cultures are not needed daily."
+        },
+        {
+          "text": "Change the catheter",
+          "isCorrect": false,
+          "explanation": "Catheters should be changed only when clinically indicated."
+        }
+      ],
+      "explanation": {
+        "overview": "Daily review of catheter necessity is a key component of CAUTI prevention, aiming to remove catheters that are no longer needed.",
+        "highYield": "Daily assessment: does the patient still need a catheter?",
+        "clinicalCorrelation": "Prompt catheter removal has reduced CAUTI rates."
+      }
+    },
+    {
+      "questionId": "infection_control_075",
+      "difficulty": 2,
+      "question": "For a patient with Clostridium difficile infection, hand hygiene should be performed with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Soap and water",
+          "isCorrect": true,
+          "explanation": "C. difficile spores are resistant to alcohol; soap and water physically remove spores."
+        },
+        {
+          "text": "Alcohol-based hand rub only",
+          "isCorrect": false,
+          "explanation": "Alcohol does not kill spores."
+        },
+        {
+          "text": "Gloves only, no hand hygiene needed",
+          "isCorrect": false,
+          "explanation": "Gloves are not a substitute for hand hygiene."
+        },
+        {
+          "text": "Chlorhexidine solution",
+          "isCorrect": false,
+          "explanation": "Chlorhexidine is not reliably sporicidal."
+        },
+        {
+          "text": "Any method is acceptable",
+          "isCorrect": false,
+          "explanation": "Soap and water is specifically recommended."
+        }
+      ],
+      "explanation": {
+        "overview": "In the setting of C. difficile infection, hand washing with soap and water is recommended over alcohol-based hand rubs due to spore resistance.",
+        "highYield": "C. difficile → wash hands with soap and water.",
+        "clinicalCorrelation": "Alcohol-based rubs can be used in non-outbreak settings but soap/water is preferred during C. diff care."
+      }
+    },
+    {
+      "questionId": "infection_control_076",
+      "difficulty": 1,
+      "question": "Which of the following is an example of an engineering control to prevent sharps injuries?",
+      "image": null,
+      "options": [
+        {
+          "text": "Self-sheathing needles",
+          "isCorrect": true,
+          "explanation": "Engineering controls isolate or remove the hazard; self-sheathing needles protect the user."
+        },
+        {
+          "text": "Training on proper sharps disposal",
+          "isCorrect": false,
+          "explanation": "This is an administrative/work practice control."
+        },
+        {
+          "text": "Wearing double gloves",
+          "isCorrect": false,
+          "explanation": "This is PPE, not an engineering control."
+        },
+        {
+          "text": "Post-exposure prophylaxis protocols",
+          "isCorrect": false,
+          "explanation": "This is a post-exposure procedure, not an engineering control."
+        },
+        {
+          "text": "Hepatitis B vaccination",
+          "isCorrect": false,
+          "explanation": "Vaccination is an administrative preventive measure."
+        }
+      ],
+      "explanation": {
+        "overview": "Engineering controls like safety-engineered sharps (retractable needles, blunt suture needles) are the most effective way to prevent sharps injuries.",
+        "highYield": "Engineering control = safer device (e.g., self-sheathing needle).",
+        "clinicalCorrelation": "The hierarchy of controls prioritizes engineering over work practices and PPE."
+      }
+    },
+    {
+      "questionId": "infection_control_077",
+      "difficulty": 2,
+      "question": "Which of the following is a correct statement about environmental sampling in infection control?",
+      "image": null,
+      "options": [
+        {
+          "text": "Routine environmental sampling is not generally recommended",
+          "isCorrect": true,
+          "explanation": "Environmental cultures are not routinely performed; they are used in outbreak investigations or to validate cleaning."
+        },
+        {
+          "text": "Air, water, and surface cultures should be performed weekly in all patient care areas",
+          "isCorrect": false,
+          "explanation": "This is unnecessary and not recommended."
+        },
+        {
+          "text": "Culturing endoscopes after reprocessing is standard for all facilities",
+          "isCorrect": false,
+          "explanation": "Periodic culturing of endoscopes is recommended by some guidelines, but not universal routine."
+        },
+        {
+          "text": "Environmental sampling is required by OSHA monthly",
+          "isCorrect": false,
+          "explanation": "Not required."
+        },
+        {
+          "text": "All surfaces in an ICU should be cultured after terminal cleaning",
+          "isCorrect": false,
+          "explanation": "Routine culturing is not standard; visual inspection and ATP bioluminescence may be used."
+        }
+      ],
+      "explanation": {
+        "overview": "Routine environmental sampling is not recommended; it is reserved for specific outbreak investigations or research.",
+        "highYield": "No routine environmental cultures, except during outbreaks.",
+        "clinicalCorrelation": "In outbreak settings, sampling may help identify reservoirs."
+      }
+    },
+    {
+      "questionId": "infection_control_078",
+      "difficulty": 1,
+      "question": "The most common source of central line-associated bloodstream infections (CLABSI) is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Migration of skin organisms along the catheter tract",
+          "isCorrect": true,
+          "explanation": "Most CLABSIs originate from the patient's own skin flora at the insertion site."
+        },
+        {
+          "text": "Contaminated infusate",
+          "isCorrect": false,
+          "explanation": "Contaminated IV fluids are a less common source."
+        },
+        {
+          "text": "Hematogenous seeding from a distant infection",
+          "isCorrect": false,
+          "explanation": "Possible but not the most common mechanism."
+        },
+        {
+          "text": "Contamination of hub by healthcare workers",
+          "isCorrect": false,
+          "explanation": "Hub contamination is a risk, but skin migration is predominant in short-term catheters."
+        },
+        {
+          "text": "Airborne transmission",
+          "isCorrect": false,
+          "explanation": "Airborne transmission is not a cause."
+        }
+      ],
+      "explanation": {
+        "overview": "For short-term central lines, the predominant route of infection is extraluminal migration of skin organisms from the insertion site.",
+        "highYield": "CLABSI source = skin flora migration at insertion site.",
+        "clinicalCorrelation": "Chlorhexidine skin antisepsis reduces this risk."
+      }
+    },
+    {
+      "questionId": "infection_control_079",
+      "difficulty": 2,
+      "question": "Which of the following vaccines is contraindicated in immunocompromised patients due to the risk of disseminated infection?",
+      "image": null,
+      "options": [
+        {
+          "text": "Live attenuated influenza vaccine (LAIV)",
+          "isCorrect": true,
+          "explanation": "LAIV is a live vaccine and should not be given to immunocompromised patients; inactivated influenza vaccine is safe."
+        },
+        {
+          "text": "Inactivated influenza vaccine",
+          "isCorrect": false,
+          "explanation": "Inactivated vaccines are safe for immunocompromised patients."
+        },
+        {
+          "text": "Recombinant hepatitis B vaccine",
+          "isCorrect": false,
+          "explanation": "Recombinant vaccines are not live and are safe."
+        },
+        {
+          "text": "Tetanus toxoid",
+          "isCorrect": false,
+          "explanation": "Toxoid vaccines are inactivated."
+        },
+        {
+          "text": "Pneumococcal polysaccharide vaccine",
+          "isCorrect": false,
+          "explanation": "Polysaccharide vaccines are inactivated."
+        }
+      ],
+      "explanation": {
+        "overview": "Live attenuated vaccines (LAIV, MMR, varicella, yellow fever) are contraindicated in severely immunocompromised patients.",
+        "highYield": "Immunocompromised patients: no live vaccines.",
+        "clinicalCorrelation": "Household contacts of immunocompromised patients should receive inactivated vaccines; some live vaccines may be given to contacts with caution."
+      }
+    },
+    {
+      "questionId": "infection_control_080",
+      "difficulty": 1,
+      "question": "Which of the following is a major risk factor for developing a healthcare-associated infection?",
+      "image": null,
+      "options": [
+        {
+          "text": "Prolonged hospital stay",
+          "isCorrect": true,
+          "explanation": "Longer hospitalization increases exposure to invasive devices, antibiotics, and environmental pathogens."
+        },
+        {
+          "text": "Young age",
+          "isCorrect": false,
+          "explanation": "Extremes of age (neonates and elderly) are at risk, but prolonged stay is a stronger predictor."
+        },
+        {
+          "text": "Being a healthcare worker",
+          "isCorrect": false,
+          "explanation": "Healthcare workers may be at risk of occupational infections, but this is not a general HAI risk."
+        },
+        {
+          "text": "Outpatient surgery",
+          "isCorrect": false,
+          "explanation": "Outpatient procedures have lower infection risk."
+        },
+        {
+          "text": "Use of sterile technique",
+          "isCorrect": false,
+          "explanation": "Sterile technique reduces infection risk."
+        }
+      ],
+      "explanation": {
+        "overview": "Prolonged hospital stay increases the risk of acquiring an HAI due to increased exposure to invasive devices, pathogens, and debilitation.",
+        "highYield": "Long length of stay = increased HAI risk.",
+        "clinicalCorrelation": "Length of stay reduction is a goal of infection prevention."
+      }
+    },
+    {
+      "questionId": "infection_control_081",
+      "difficulty": 2,
+      "question": "Which of the following is the correct procedure for handling a used sharp?",
+      "image": null,
+      "options": [
+        {
+          "text": "Immediately dispose of the entire sharp device into a puncture-resistant sharps container",
+          "isCorrect": true,
+          "explanation": "Used sharps must be placed directly into approved sharps containers without recapping, bending, or breaking."
+        },
+        {
+          "text": "Recap the needle carefully using one-handed technique before disposal",
+          "isCorrect": false,
+          "explanation": "Recapping is discouraged; if absolutely necessary, use one-handed scoop technique, but disposal without recapping is preferred."
+        },
+        {
+          "text": "Remove the needle with a needle clipper and dispose",
+          "isCorrect": false,
+          "explanation": "Needle removal is not recommended as it may cause injury."
+        },
+        {
+          "text": "Place the used sharp on a tray and carry it to the disposal container",
+          "isCorrect": false,
+          "explanation": "Should be disposed of immediately at point of use."
+        },
+        {
+          "text": "Place the sharp in a plastic bag and then into the regular trash",
+          "isCorrect": false,
+          "explanation": "Sharps must go in designated containers, not regular trash."
+        }
+      ],
+      "explanation": {
+        "overview": "The safest practice is immediate disposal of the entire sharp into a puncture-resistant container at the point of use without manipulation.",
+        "highYield": "Sharps: dispose directly at point of use in sharps container.",
+        "clinicalCorrelation": "Sharps containers should be replaced when they are three-quarters full."
+      }
+    },
+    {
+      "questionId": "infection_control_082",
+      "difficulty": 1,
+      "question": "What is the primary purpose of post-exposure prophylaxis (PEP) for hepatitis B?",
+      "image": null,
+      "options": [
+        {
+          "text": "To prevent infection after exposure to the virus",
+          "isCorrect": true,
+          "explanation": "Hepatitis B immune globulin (HBIG) and/or vaccination can prevent infection if given soon after exposure."
+        },
+        {
+          "text": "To treat acute hepatitis B infection",
+          "isCorrect": false,
+          "explanation": "PEP is preventive, not a treatment for established infection."
+        },
+        {
+          "text": "To reduce symptoms of chronic hepatitis B",
+          "isCorrect": false,
+          "explanation": "Not indicated."
+        },
+        {
+          "text": "To boost the immune system generally",
+          "isCorrect": false,
+          "explanation": "Specific not general."
+        },
+        {
+          "text": "To monitor liver function",
+          "isCorrect": false,
+          "explanation": "Monitoring is part of management but not PEP's purpose."
+        }
+      ],
+      "explanation": {
+        "overview": "HBV PEP involves giving HBIG and/or hepatitis B vaccine to unvaccinated or non-immune individuals after a known exposure to prevent infection.",
+        "highYield": "HBV PEP = HBIG + vaccine to prevent infection.",
+        "clinicalCorrelation": "PEP is time-sensitive: ideally within 24 hours of exposure."
+      }
+    },
+    {
+      "questionId": "infection_control_083",
+      "difficulty": 2,
+      "question": "Which of the following is true regarding healthcare worker attire and infection control?",
+      "image": null,
+      "options": [
+        {
+          "text": "White coats and long sleeves should be removed or rolled up during direct patient care to facilitate hand hygiene",
+          "isCorrect": true,
+          "explanation": "Bare below the elbows is recommended in many settings to improve hand and wrist washing."
+        },
+        {
+          "text": "Artificial nails are acceptable for all healthcare workers",
+          "isCorrect": false,
+          "explanation": "Artificial nails are associated with increased gram-negative bacteria and should not be worn when providing direct patient care."
+        },
+        {
+          "text": "Wrist watches are allowed during surgery",
+          "isCorrect": false,
+          "explanation": "Jewelry and watches should be removed during surgical scrubs."
+        },
+        {
+          "text": "Lab coats do not need to be cleaned regularly",
+          "isCorrect": false,
+          "explanation": "Lab coats should be laundered frequently, especially if contaminated."
+        },
+        {
+          "text": "Open-toed shoes are acceptable in all healthcare settings",
+          "isCorrect": false,
+          "explanation": "Closed-toe shoes are recommended for protection."
+        }
+      ],
+      "explanation": {
+        "overview": "Infection control principles support bare-below-the-elbows, removal of jewelry, short natural nails, and regular laundering of uniforms.",
+        "highYield": "Bare below elbows, no artificial nails, no hand/wrist jewelry during patient care.",
+        "clinicalCorrelation": "Artificial nails have been linked to outbreaks of gram-negative infections."
+      }
+    },
+    {
+      "questionId": "infection_control_084",
+      "difficulty": 2,
+      "question": "Which of the following disinfectants is most appropriate for cleaning a blood glucose meter used for multiple patients?",
+      "image": null,
+      "options": [
+        {
+          "text": "70% isopropyl alcohol or a compatible disinfectant wipe",
+          "isCorrect": true,
+          "explanation": "A low- to intermediate-level disinfectant like alcohol is appropriate for non-critical items like glucose meters."
+        },
+        {
+          "text": "Bleach solution (1:10)",
+          "isCorrect": false,
+          "explanation": "Bleach may damage the device and is not necessary for routine disinfection."
+        },
+        {
+          "text": "Autoclaving",
+          "isCorrect": false,
+          "explanation": "Autoclaving would destroy the meter."
+        },
+        {
+          "text": "High-level disinfection with glutaraldehyde",
+          "isCorrect": false,
+          "explanation": "Excessive for non-critical equipment."
+        },
+        {
+          "text": "Soap and water only",
+          "isCorrect": false,
+          "explanation": "Cleaning with water is insufficient to disinfect."
+        }
+      ],
+      "explanation": {
+        "overview": "Blood glucose meters are non-critical items and should be cleaned and disinfected with an appropriate low-level disinfectant (e.g., alcohol wipes) between patients.",
+        "highYield": "Glucose meter disinfection = alcohol or approved wipe.",
+        "clinicalCorrelation": "Shared glucose meters have been implicated in hepatitis B outbreaks."
+      }
+    },
+    {
+      "questionId": "infection_control_085",
+      "difficulty": 1,
+      "question": "The recommended concentration of sodium hypochlorite (bleach) for general environmental disinfection of blood spills is:",
+      "image": null,
+      "options": [
+        {
+          "text": "1:10 dilution of household bleach (5.25% sodium hypochlorite)",
+          "isCorrect": true,
+          "explanation": "A 1:10 dilution provides approximately 5000 ppm available chlorine, effective for blood spills."
+        },
+        {
+          "text": "1:100 dilution",
+          "isCorrect": false,
+          "explanation": "Too weak for blood spills; used for general disinfection."
+        },
+        {
+          "text": "Undiluted bleach",
+          "isCorrect": false,
+          "explanation": "Undiluted bleach is unnecessarily strong and may damage surfaces."
+        },
+        {
+          "text": "1:50 dilution",
+          "isCorrect": false,
+          "explanation": "Not the standard recommended concentration for blood spills."
+        },
+        {
+          "text": "1:5 dilution",
+          "isCorrect": false,
+          "explanation": "Not the standard."
+        }
+      ],
+      "explanation": {
+        "overview": "A 1:10 dilution of household bleach (final concentration ~0.5% sodium hypochlorite) is recommended for cleaning blood and body fluid spills.",
+        "highYield": "Blood spill cleanup: 1:10 bleach.",
+        "clinicalCorrelation": "Must be freshly prepared as bleach solution degrades over time."
+      }
+    },
+    {
+      "questionId": "infection_control_086",
+      "difficulty": 2,
+      "question": "Which of the following is the most effective way to reduce the risk of ventilator-associated pneumonia (VAP)?",
+      "image": null,
+      "options": [
+        {
+          "text": "Implementing a VAP bundle with multiple evidence-based interventions",
+          "isCorrect": true,
+          "explanation": "No single measure is sufficient; a combination (bundle) reduces VAP rates significantly."
+        },
+        {
+          "text": "Using only subglottic suctioning",
+          "isCorrect": false,
+          "explanation": "One component of a bundle."
+        },
+        {
+          "text": "Oral chlorhexidine only",
+          "isCorrect": false,
+          "explanation": "Another component."
+        },
+        {
+          "text": "Head-of-bed elevation only",
+          "isCorrect": false,
+          "explanation": "Also part of the bundle."
+        },
+        {
+          "text": "Daily sedation interruption only",
+          "isCorrect": false,
+          "explanation": "Part of the comprehensive strategy."
+        }
+      ],
+      "explanation": {
+        "overview": "VAP prevention is best achieved through a bundle approach that includes head-of-bed elevation, sedation vacations, DVT/peptic ulcer prophylaxis, oral care, and subglottic drainage.",
+        "highYield": "VAP bundle = multiple measures, not one.",
+        "clinicalCorrelation": "Compliance with all bundle elements is key to success."
+      }
+    },
+    {
+      "questionId": "infection_control_087",
+      "difficulty": 2,
+      "question": "Which of the following organisms requires contact precautions and is also reportable to public health in many jurisdictions due to its high resistance?",
+      "image": null,
+      "options": [
+        {
+          "text": "Candida auris",
+          "isCorrect": true,
+          "explanation": "C. auris is an emerging multidrug-resistant yeast that requires contact precautions and is often reportable."
+        },
+        {
+          "text": "Methicillin-resistant Staphylococcus aureus (MRSA)",
+          "isCorrect": false,
+          "explanation": "MRSA requires contact precautions but is not notifiable in most places."
+        },
+        {
+          "text": "Vancomycin-resistant Enterococcus (VRE)",
+          "isCorrect": false,
+          "explanation": "VRE is contact but not usually notifiable."
+        },
+        {
+          "text": "Extended-spectrum beta-lactamase (ESBL) producing E. coli",
+          "isCorrect": false,
+          "explanation": "ESBL requires contact precautions but not generally notifiable."
+        },
+        {
+          "text": "Candida albicans",
+          "isCorrect": false,
+          "explanation": "Not an MDRO requiring contact precautions or reporting."
+        }
+      ],
+      "explanation": {
+        "overview": "Candida auris is an urgent threat because of its multidrug resistance, ability to persist on surfaces, and potential for outbreaks; it mandates contact precautions and public health notification.",
+        "highYield": "C. auris = contact precautions + reportable.",
+        "clinicalCorrelation": "Special disinfectants effective against C. auris are used for environmental cleaning."
+      }
+    },
+    {
+      "questionId": "infection_control_088",
+      "difficulty": 1,
+      "question": "Which of the following is a key component of infection prevention during construction or renovation in a healthcare facility?",
+      "image": null,
+      "options": [
+        {
+          "text": "Use of dust barriers and negative air pressure in the construction zone",
+          "isCorrect": true,
+          "explanation": "Barriers and negative pressure prevent dissemination of fungal spores to patient areas."
+        },
+        {
+          "text": "Performing construction during busy hours to monitor",
+          "isCorrect": false,
+          "explanation": "Construction should minimize patient exposure, ideally off-hours."
+        },
+        {
+          "text": "Allowing unfiltered ventilation to circulate air",
+          "isCorrect": false,
+          "explanation": "Air filtration is critical."
+        },
+        {
+          "text": "Wetting surfaces with water only",
+          "isCorrect": false,
+          "explanation": "Water may spread contamination; HEPA vacuums are used."
+        },
+        {
+          "text": "Notifying patients only if they ask",
+          "isCorrect": false,
+          "explanation": "Communication is essential."
+        }
+      ],
+      "explanation": {
+        "overview": "Infection control during construction involves physical barriers, negative pressure, HEPA filtration, and dust control to protect immunocompromised patients from invasive aspergillosis.",
+        "highYield": "Construction = dust barriers, negative pressure, HEPA.",
+        "clinicalCorrelation": "Outbreaks of aspergillosis have been linked to construction activities."
+      }
+    },
+    {
+      "questionId": "infection_control_089",
+      "difficulty": 2,
+      "question": "Which of the following is the preferred method to confirm sterilization of implants?",
+      "image": null,
+      "options": [
+        {
+          "text": "Use of a biological indicator with every load",
+          "isCorrect": true,
+          "explanation": "For implantable devices, a biological indicator should be included in every load, and the implant should be quarantined until the result is negative."
+        },
+        {
+          "text": "Chemical indicator on the outside of the pack",
+          "isCorrect": false,
+          "explanation": "Chemical indicators show exposure, not sterility."
+        },
+        {
+          "text": "Documentation of cycle parameters",
+          "isCorrect": false,
+          "explanation": "Parameters alone do not prove sterility."
+        },
+        {
+          "text": "Visual inspection of the instrument",
+          "isCorrect": false,
+          "explanation": "Visual inspection cannot confirm sterility."
+        },
+        {
+          "text": "Using an integrator inside the pack",
+          "isCorrect": false,
+          "explanation": "Integrators are chemical indicators, not as reliable as biological indicators for implants."
+        }
+      ],
+      "explanation": {
+        "overview": "Implants require a higher standard: a biological indicator in every load, and the item should not be released until the BI is negative.",
+        "highYield": "Implants: BI with every load, quarantine until result.",
+        "clinicalCorrelation": "This prevents infection from inadequately sterilized implants."
+      }
+    },
+    {
+      "questionId": "infection_control_090",
+      "difficulty": 2,
+      "question": "A patient on airborne precautions must be transported to radiology. Which of the following is correct?",
+      "image": null,
+      "options": [
+        {
+          "text": "The patient must wear a surgical mask and the transport staff must wear an N95 respirator",
+          "isCorrect": true,
+          "explanation": "The patient wears a surgical mask to contain secretions; healthcare workers wear N95 for airborne protection."
+        },
+        {
+          "text": "Only the patient wears an N95 respirator",
+          "isCorrect": false,
+          "explanation": "The patient wears a surgical mask; N95 is for staff."
+        },
+        {
+          "text": "The patient can be transported without a mask if the elevator is empty",
+          "isCorrect": false,
+          "explanation": "They still need source control."
+        },
+        {
+          "text": "The transporter wears only a surgical mask",
+          "isCorrect": false,
+          "explanation": "Airborne pathogens require N95 for staff."
+        },
+        {
+          "text": "Transport is not allowed; the portable X-ray must be brought to the room",
+          "isCorrect": false,
+          "explanation": "If transport is essential, precautions must be observed; minimizing transport is ideal but not always possible."
+        }
+      ],
+      "explanation": {
+        "overview": "During transport of a patient on airborne precautions, the patient should wear a surgical mask, and staff must wear N95 respirators.",
+        "highYield": "Transport: patient surgical mask, staff N95.",
+        "clinicalCorrelation": "Minimize transport; if necessary, notify receiving area of precautions."
+      }
+    }
+  ]
+}

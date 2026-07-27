@@ -2,42 +2,270 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Performance – Medical Exam Room Pro</title>
-    
-    <link rel="manifest" href="../manifest.json">
-    <link rel="stylesheet" href="../css/common.css" media="all">
-    <link rel="stylesheet" href="../css/performance.css" media="all">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Performance – MedHub</title>
+    <style>
+        /* Shimmer overlay – covers everything until JS loads */
+        #shimmer-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #1a1a2e;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            overflow-y: auto;
+            color: #aaa;
+        }
+        .shimmer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #333;
+        }
+        .shimmer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .shimmer-logo-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 6px;
+            background: #2a2a3e;
+            background: linear-gradient(90deg, #2a2a3e 25%, #444 50%, #2a2a3e 75%);
+            background-size: 200px 100%;
+            animation: shimmer 1.5s infinite;
+        }
+        .shimmer-logo-text {
+            width: 100px;
+            height: 20px;
+            background: #2a2a3e;
+            background: linear-gradient(90deg, #2a2a3e 25%, #444 50%, #2a2a3e 75%);
+            background-size: 200px 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: 4px;
+        }
+        .shimmer-header-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .shimmer-btn-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #2a2a3e;
+            background: linear-gradient(90deg, #2a2a3e 25%, #444 50%, #2a2a3e 75%);
+            background-size: 200px 100%;
+            animation: shimmer 1.5s infinite;
+        }
+        .shimmer-title {
+            height: 30px;
+            width: 60%;
+            margin: 1rem 0;
+            background: #2a2a3e;
+            background: linear-gradient(90deg, #2a2a3e 25%, #444 50%, #2a2a3e 75%);
+            background-size: 200px 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: 4px;
+        }
+        .shimmer-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .shimmer-tab {
+            height: 40px;
+            width: 80px;
+            background: #2a2a3e;
+            background: linear-gradient(90deg, #2a2a3e 25%, #444 50%, #2a2a3e 75%);
+            background-size: 200px 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: 20px;
+        }
+        .shimmer-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .shimmer-card {
+            padding: 1rem;
+            background: #2a2a3e;
+            border-radius: 8px;
+        }
+        .shimmer-card .label {
+            height: 14px;
+            width: 70%;
+            background: #3a3a4e;
+            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
+            background-size: 200px 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+        .shimmer-card .value {
+            height: 28px;
+            width: 50%;
+            background: #3a3a4e;
+            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
+            background-size: 200px 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: 4px;
+        }
+        .shimmer-chart-area {
+            height: 250px;
+            background: #2a2a3e;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, #2a2a3e 25%, #444 50%, #2a2a3e 75%);
+            background-size: 200px 100%;
+            animation: shimmer 1.5s infinite;
+        }
+        .shimmer-two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .shimmer-col {
+            padding: 1rem;
+            background: #2a2a3e;
+            border-radius: 8px;
+        }
+        .shimmer-col .line {
+            height: 16px;
+            width: 100%;
+            margin-bottom: 0.5rem;
+            background: #3a3a4e;
+            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
+            background-size: 200px 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: 4px;
+        }
+        .shimmer-col .line.short {
+            width: 60%;
+        }
+        .shimmer-col .line.long {
+            width: 80%;
+        }
+        .shimmer-footer {
+            display: flex;
+            justify-content: space-around;
+            padding: 0.5rem 0;
+            border-top: 1px solid #333;
+            margin-top: 1rem;
+        }
+        .shimmer-footer-item {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #2a2a3e;
+            background: linear-gradient(90deg, #2a2a3e 25%, #444 50%, #2a2a3e 75%);
+            background-size: 200px 100%;
+            animation: shimmer 1.5s infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: -200px 0; }
+            100% { background-position: calc(200px + 100%) 0; }
+        }
+        /* Hide real content initially */
+        #real-content {
+            display: none;
+        }
+        #real-content.visible {
+            display: block;
+        }
+    </style>
+
+    <!-- Shimmer HTML (visible immediately) -->
+    <div id="shimmer-overlay">
+        <div class="shimmer-header">
+            <div class="shimmer-logo">
+                <div class="shimmer-logo-icon"></div>
+                <div class="shimmer-logo-text"></div>
+            </div>
+            <div class="shimmer-header-actions">
+                <div class="shimmer-btn-icon"></div>
+                <div class="shimmer-btn-icon"></div>
+                <div class="shimmer-btn-icon"></div>
+            </div>
+        </div>
+        <div class="shimmer-title"></div>
+        <div class="shimmer-tabs">
+            <div class="shimmer-tab"></div>
+            <div class="shimmer-tab"></div>
+            <div class="shimmer-tab"></div>
+        </div>
+        <div class="shimmer-grid">
+            <div class="shimmer-card"><div class="label"></div><div class="value"></div></div>
+            <div class="shimmer-card"><div class="label"></div><div class="value"></div></div>
+            <div class="shimmer-card"><div class="label"></div><div class="value"></div></div>
+            <div class="shimmer-card"><div class="label"></div><div class="value"></div></div>
+            <div class="shimmer-card"><div class="label"></div><div class="value"></div></div>
+        </div>
+        <div class="shimmer-chart-area"></div>
+        <div class="shimmer-two-col">
+            <div class="shimmer-col">
+                <div class="line long"></div>
+                <div class="line"></div>
+                <div class="line short"></div>
+                <div class="line"></div>
+            </div>
+            <div class="shimmer-col">
+                <div class="line long"></div>
+                <div class="line"></div>
+                <div class="line short"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+        <div class="shimmer-footer">
+            <div class="shimmer-footer-item"></div>
+            <div class="shimmer-footer-item"></div>
+            <div class="shimmer-footer-item"></div>
+            <div class="shimmer-footer-item"></div>
+        </div>
+    </div>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/css/common.css" media="all">
+    <link rel="stylesheet" href="/css/performance.css" media="all">
     
     <!-- Chart library -->
-    <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script defer src="/libs/chart/chart.min.js"></script>
     
     <!-- Core modules -->
-    <script type="module" src="../scripts/utils.js"></script>
-    <script type="module" src="../scripts/ui.js"></script>
-    <script type="module" src="../scripts/router.js"></script>
-    <script type="module" src="../scripts/app.js"></script>
-    <script type="module" src="../scripts/analytics.js"></script>
-    <script type="module" src="../scripts/db.js"></script>
-    <script type="module" src="../scripts/sync.js"></script>
+    <script type="module" src="/scripts/utils.js"></script>
+    <script type="module" src="/scripts/ui.js"></script>
+    <script type="module" src="/scripts/router.js"></script>
+    <script type="module" src="/scripts/app.js"></script>
+    <script type="module" src="/scripts/analytics.js"></script>
+    <script type="module" src="/scripts/db.js"></script>
+    <script type="module" src="/scripts/sync.js"></script>
+    <script type="module" src="/scripts/convex-client.js"></script>
     
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('../service-worker.js').catch(() => {});
+            navigator.serviceWorker.register('/service-worker.js').catch(() => {});
         }
     </script>
 </head>
 <body>
-    <div class="page-container">
+    <!-- ===== REAL CONTENT (hidden initially) ===== -->
+    <div id="real-content" class="page-container">
+        <!-- Fixed header -->
         <header>
             <div class="logo">
                 <img src="../assets/images/logo.png" alt="Logo" width="40" height="40">
-                <span>MedExamPro</span>
+                <span>MedHub</span>
             </div>
-            <div class="header-right">
-                <span class="streak-badge">🔥 <span id="streak">0</span> day streak</span>
+            <div class="header-actions">
+                <button onclick="router.navigateTo('notifications.html')" class="btn-icon" title="Notifications">🔔</button>
+                <span class="streak-badge">🔥 <span id="streak">0</span></span>
                 <button onclick="ui.toggleTheme()" class="btn-outline">🌓</button>
-                <button onclick="router.navigateTo('subjects.html')" class="btn-text">Subjects</button>
             </div>
         </header>
         
@@ -77,15 +305,25 @@
                     </div>
                 </div>
                 
-                <!-- Score Trend Chart -->
-                <div class="chart-container">
-                    <h2>Score & Study Time Trend</h2>
-                    <div id="trend-chart-container" style="height: 300px;">
-                        <canvas id="score-trend-chart"></canvas>
+                <!-- Interactive Chart Section -->
+                <div class="chart-section">
+                    <div class="chart-header">
+                        <h2>📈 Analytics</h2>
+                        <div class="chart-type-selector">
+                            <button class="chart-btn active" data-chart="score">Score Trend</button>
+                            <button class="chart-btn" data-chart="weekly">Weekly Study</button>
+                            <button class="chart-btn" data-chart="subject">Subject Mastery</button>
+                            <button class="chart-btn" data-chart="accuracy">Accuracy</button>
+                            <button class="chart-btn" data-chart="time-dist">Time Distribution</button>
+                            <button class="chart-btn" data-chart="radar">Radar</button>
+                        </div>
+                    </div>
+                    <div class="chart-container" id="chart-container">
+                        <canvas id="main-chart"></canvas>
                     </div>
                 </div>
                 
-                <!-- Two‑column layout for patterns & weak areas -->
+                <!-- Study Habits & Weak Areas -->
                 <div class="two-column">
                     <div class="card">
                         <h2>📊 Study Habits</h2>
@@ -122,10 +360,12 @@
                 <div id="downloaded-list" class="downloaded-list"></div>
             </div>
             
-            <!-- Action Buttons -->
-            <div class="action-buttons">
-                <button onclick="router.navigateTo('subjects.html')" class="btn-primary">📚 Back to Subjects</button>
-                <button onclick="router.navigateTo('profile.html')" class="btn-secondary">👤 Profile</button>
+            <!-- Footer navigation -->
+            <div class="app-footer">
+                <button class="footer-btn" onclick="router.navigateTo('subjects.html')" title="Subjects">📚</button>
+                <button class="footer-btn" onclick="router.navigateTo('ai.html')" title="AI Tutor">🤖</button>
+                <button class="footer-btn" onclick="router.navigateTo('notes.html')" title="Notes">📝</button>
+                <button class="footer-btn" onclick="router.navigateTo('profile.html')" title="Profile">👤</button>
             </div>
         </main>
     </div>
@@ -147,7 +387,7 @@
             </div>
         </div>
     </div>
-    
+
     <script type="module">
         // ==================== IMPORTS ====================
         import * as app from '../scripts/app.js';
@@ -156,6 +396,11 @@
         import * as utils from '../scripts/utils.js';
         import * as analytics from '../scripts/analytics.js';
         import * as db from '../scripts/db.js';
+        import { convexHttpClient } from '../scripts/convex-client.js';
+
+        // ==================== GLOBAL STATE ====================
+        let analyticsData = null;
+        let chartInstance = null;
 
         // ==================== GLOBAL FUNCTIONS ====================
         window.switchTab = function(tabId) {
@@ -170,14 +415,48 @@
             if (tabId === 'downloaded-tab') renderDownloadedExams();
         };
 
+        document.querySelectorAll('.chart-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.chart-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                renderChart(this.dataset.chart);
+            });
+        });
+
+        // Helper to extract option text from new/old format (same as results.html)
+        function getOptionText(letter, options) {
+            if (!letter || !options || !Array.isArray(options)) return letter || '—';
+            const index = letter.toUpperCase().charCodeAt(0) - 65;
+            if (index < 0 || index >= options.length) return letter;
+            const opt = options[index];
+            return (typeof opt === 'object' && opt !== null) ? opt.text : opt;
+        }
+
+        // Helper to format explanation (object -> HTML)
+        function formatExplanation(explanation) {
+            if (!explanation) return '';
+            if (typeof explanation === 'object') {
+                let parts = [];
+                if (explanation.overview) parts.push(explanation.overview);
+                if (explanation.highYield) parts.push(`<br><strong>High‑Yield:</strong> ${explanation.highYield}`);
+                if (explanation.clinicalCorrelation) parts.push(`<br><strong>Clinical:</strong> ${explanation.clinicalCorrelation}`);
+                return parts.join(' ');
+            }
+            return explanation;
+        }
+
         // ==================== INITIALIZATION ====================
         (async function initPerformance() {
             console.log('[Performance] Initializing...');
+
+            document.getElementById('real-content').classList.remove('visible');
+
             await app.initializeApp();
             ui.applyTheme();
 
             if (!app.checkAuth()) {
                 router.navigateTo('login.html');
+                document.getElementById('shimmer-overlay').style.display = 'none';
                 return;
             }
 
@@ -185,24 +464,26 @@
 
             try {
                 const allResults = await db.getAllExamResults();
-                const analyticsData = await analytics.calculateAllAnalytics(allResults);
+                analyticsData = await analytics.calculateAllAnalytics(allResults);
                 
                 renderSummary(analyticsData.summary);
                 renderSubjectMastery(analyticsData.subjectAnalysis);
-                renderTrendChart(analyticsData.trends);
                 renderStudyPatterns(analyticsData.studyPatterns);
                 renderWeakAreas(analyticsData.weakAreas);
                 renderRecommendations(analyticsData.recommendations);
                 
                 document.getElementById('streak').textContent = analyticsData.studyPatterns?.streak || 0;
+                
+                renderChart('score');
             } catch (error) {
                 console.error('[Performance] Analytics error:', error);
                 ui.showToast('Failed to load analytics', 'error');
             } finally {
                 ui.hideLoading();
+                document.getElementById('shimmer-overlay').style.display = 'none';
+                document.getElementById('real-content').classList.add('visible');
             }
 
-            // Pre-render downloaded exams (will be empty if none)
             renderDownloadedExams();
         })();
 
@@ -212,7 +493,8 @@
             document.getElementById('total-exams').textContent = summary.totalExams || 0;
             document.getElementById('total-questions').textContent = summary.totalQuestions || 0;
             document.getElementById('avg-score').textContent = summary.averageScore ? `${summary.averageScore}%` : '—';
-            document.getElementById('total-time').textContent = summary.totalStudyTime ? `${summary.totalStudyTime}h` : '—';
+            const totalHours = summary.totalStudyTime ? (summary.totalStudyTime / 60).toFixed(1) : '0';
+            document.getElementById('total-time').textContent = `${totalHours}h`;
             document.getElementById('best-score').textContent = summary.bestScore ? `${summary.bestScore}%` : '—';
         }
 
@@ -222,9 +504,7 @@
                 container.innerHTML = '<p class="no-data">No subject data yet. Take some exams!</p>';
                 return;
             }
-
             subjectData.sort((a, b) => b.percentage - a.percentage);
-
             let html = '<div class="subject-grid">';
             subjectData.forEach(s => {
                 const masteryClass = s.mastery || 'beginner';
@@ -232,67 +512,13 @@
                     <div class="subject-card mastery-${masteryClass}">
                         <div class="subject-name">${s.subject}</div>
                         <div class="subject-score">${s.percentage}%</div>
-                        <div class="subject-progress">
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: ${s.percentage}%;"></div>
-                            </div>
-                        </div>
+                        <div class="subject-progress"><div class="progress-bar"><div class="progress-fill" style="width: ${s.percentage}%;"></div></div></div>
                         <div class="subject-stats">${s.correct}/${s.questions} · ⏱️ ${s.averageTime}s</div>
                     </div>
                 `;
             });
             html += '</div>';
             container.innerHTML = html;
-        }
-
-        function renderTrendChart(trends) {
-            if (!trends || trends.length < 2) {
-                document.getElementById('trend-chart-container').innerHTML = '<p class="no-data">Not enough data to show trend.</p>';
-                return;
-            }
-
-            if (typeof Chart === 'undefined') {
-                document.getElementById('trend-chart-container').innerHTML = '<p class="no-data">Chart library not loaded.</p>';
-                return;
-            }
-
-            const ctx = document.getElementById('score-trend-chart').getContext('2d');
-            const labels = trends.map(t => utils.formatDate(t.date, 'short'));
-            const scores = trends.map(t => t.score);
-            const times = trends.map(t => t.time);
-
-            new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [
-                        {
-                            label: 'Score %',
-                            data: scores,
-                            borderColor: '#2563eb',
-                            backgroundColor: 'rgba(37, 99, 235, 0.1)',
-                            tension: 0.2,
-                            yAxisID: 'y'
-                        },
-                        {
-                            label: 'Study Time (min)',
-                            data: times,
-                            borderColor: '#f59e0b',
-                            backgroundColor: 'rgba(245, 158, 11, 0.1)',
-                            tension: 0.2,
-                            yAxisID: 'y1'
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        y: { beginAtZero: true, max: 100, title: { display: true, text: 'Score %' } },
-                        y1: { beginAtZero: true, position: 'right', title: { display: true, text: 'Time (min)' }, grid: { drawOnChartArea: false } }
-                    }
-                }
-            });
         }
 
         function renderStudyPatterns(patterns) {
@@ -309,7 +535,6 @@
                 container.innerHTML = '<p class="no-data">No weak areas identified. Keep up the great work!</p>';
                 return;
             }
-
             let html = '<ul>';
             weakAreas.slice(0, 5).forEach(area => {
                 html += `<li><span class="topic">${area.topic}</span> <span class="score">${Math.round(area.score)}%</span> – ${area.priority} priority</li>`;
@@ -324,13 +549,255 @@
                 container.innerHTML = '<p class="no-data">No recommendations at this time.</p>';
                 return;
             }
-
             let html = '<ul>';
             recs.slice(0, 4).forEach(r => {
                 html += `<li><strong>${r.type.replace('_', ' ')}:</strong> ${r.action}</li>`;
             });
             html += '</ul>';
             container.innerHTML = html;
+        }
+
+        // ==================== CHART RENDERING ====================
+        function renderChart(type) {
+            if (!analyticsData) return;
+            
+            if (chartInstance) {
+                chartInstance.destroy();
+                chartInstance = null;
+            }
+
+            const ctx = document.getElementById('main-chart').getContext('2d');
+            let config = null;
+
+            switch(type) {
+                case 'score': config = getScoreTrendConfig(); break;
+                case 'weekly': config = getWeeklyStudyConfig(); break;
+                case 'subject': config = getSubjectMasteryConfig(); break;
+                case 'accuracy': config = getAccuracyConfig(); break;
+                case 'time-dist': config = getTimeDistributionConfig(); break;
+                case 'radar': config = getRadarConfig(); break;
+                default: config = getScoreTrendConfig();
+            }
+
+            if (config) {
+                chartInstance = new Chart(ctx, config);
+            }
+        }
+
+        function getScoreTrendConfig() {
+            const trends = analyticsData.trends || [];
+            if (trends.length < 2) {
+                return {
+                    type: 'line',
+                    data: {
+                        labels: ['No Data'],
+                        datasets: [{ label: 'Score %', data: [0], borderColor: '#2563eb' }]
+                    },
+                    options: { responsive: true, maintainAspectRatio: false }
+                };
+            }
+            const labels = trends.map(t => utils.formatDate(t.date, 'short'));
+            const scores = trends.map(t => t.score);
+            return {
+                type: 'line',
+                data: {
+                    labels,
+                    datasets: [{
+                        label: 'Score %',
+                        data: scores,
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37,99,235,0.1)',
+                        tension: 0.2,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, max: 100, title: { display: true, text: 'Score %' } }
+                    },
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            };
+        }
+
+        function getWeeklyStudyConfig() {
+            const trends = analyticsData.trends || [];
+            if (trends.length < 2) {
+                return {
+                    type: 'bar',
+                    data: {
+                        labels: ['No Data'],
+                        datasets: [{ label: 'Study Time (min)', data: [0], backgroundColor: '#f59e0b' }]
+                    },
+                    options: { responsive: true, maintainAspectRatio: false }
+                };
+            }
+            const labels = trends.map(t => utils.formatDate(t.date, 'short'));
+            const times = trends.map(t => t.time);
+            return {
+                type: 'bar',
+                data: {
+                    labels,
+                    datasets: [{
+                        label: 'Study Time (min)',
+                        data: times,
+                        backgroundColor: '#f59e0b',
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, title: { display: true, text: 'Minutes' } }
+                    },
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            };
+        }
+
+        function getSubjectMasteryConfig() {
+            const subjectData = analyticsData.subjectAnalysis || [];
+            if (subjectData.length === 0) {
+                return {
+                    type: 'bar',
+                    data: {
+                        labels: ['No Data'],
+                        datasets: [{ label: 'Mastery %', data: [0], backgroundColor: '#2563eb' }]
+                    },
+                    options: { responsive: true, maintainAspectRatio: false, indexAxis: 'y' }
+                };
+            }
+            const sorted = [...subjectData].sort((a, b) => a.percentage - b.percentage);
+            const labels = sorted.map(s => s.subject);
+            const values = sorted.map(s => s.percentage);
+            return {
+                type: 'bar',
+                data: {
+                    labels,
+                    datasets: [{
+                        label: 'Mastery %',
+                        data: values,
+                        backgroundColor: values.map(v => v >= 80 ? '#10b981' : v >= 60 ? '#f59e0b' : '#ef4444'),
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: { beginAtZero: true, max: 100, title: { display: true, text: 'Score %' } }
+                    },
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            };
+        }
+
+        function getAccuracyConfig() {
+            const summary = analyticsData.summary || {};
+            const total = summary.totalQuestions || 0;
+            const correct = summary.correct || 0;
+            const incorrect = total - correct;
+            return {
+                type: 'doughnut',
+                data: {
+                    labels: ['Correct', 'Incorrect'],
+                    datasets: [{
+                        data: [correct, incorrect],
+                        backgroundColor: ['#10b981', '#ef4444'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom' }
+                    }
+                }
+            };
+        }
+
+        function getTimeDistributionConfig() {
+            const subjectData = analyticsData.subjectAnalysis || [];
+            if (subjectData.length === 0) {
+                return {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['No Data'],
+                        datasets: [{ data: [1], backgroundColor: ['#ccc'] }]
+                    },
+                    options: { responsive: true, maintainAspectRatio: false }
+                };
+            }
+            const labels = subjectData.map(s => s.subject);
+            const times = subjectData.map(s => s.exams * 10);
+            const colors = ['#2563eb', '#f59e0b', '#10b981', '#ef4444', '#8b5cf6', '#ec4899', '#14b8a6', '#f97316'];
+            return {
+                type: 'doughnut',
+                data: {
+                    labels,
+                    datasets: [{
+                        data: times,
+                        backgroundColor: colors.slice(0, labels.length)
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom' }
+                    }
+                }
+            };
+        }
+
+        function getRadarConfig() {
+            const subjectData = analyticsData.subjectAnalysis || [];
+            if (subjectData.length < 3) {
+                return {
+                    type: 'radar',
+                    data: {
+                        labels: ['No Data'],
+                        datasets: [{ label: 'Mastery', data: [0], borderColor: '#2563eb' }]
+                    },
+                    options: { responsive: true, maintainAspectRatio: false }
+                };
+            }
+            const labels = subjectData.map(s => s.subject);
+            const values = subjectData.map(s => s.percentage);
+            return {
+                type: 'radar',
+                data: {
+                    labels,
+                    datasets: [{
+                        label: 'Mastery %',
+                        data: values,
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37,99,235,0.2)',
+                        pointBackgroundColor: '#2563eb'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: { min: 0, max: 100 }
+                    },
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            };
         }
 
         // ==================== DOWNLOADED EXAMS ====================
@@ -345,11 +812,7 @@
             exams.forEach(exam => {
                 html += `
                     <div class="downloaded-item" data-examid="${exam.examId}">
-                        <div class="downloaded-header">
-                            <span class="subject">${exam.subject}</span>
-                            <span class="score">${Math.round(exam.score)}%</span>
-                            <span class="date">${utils.formatDate(exam.date)}</span>
-                        </div>
+                        <div class="downloaded-header"><span class="subject">${exam.subject}</span> <span class="score">${Math.round(exam.score)}%</span> <span class="date">${utils.formatDate(exam.date)}</span></div>
                         <div class="downloaded-actions">
                             <button onclick="window.reviewDownloadedExam('${exam.examId}')" class="btn-small">Review</button>
                             <button onclick="window.shareDownloadedExam('${exam.examId}')" class="btn-small btn-secondary">Share</button>
@@ -365,44 +828,36 @@
             const exams = await db.getDownloadedExams();
             const exam = exams.find(e => e.examId === examId);
             if (!exam) return;
-
-            // Create modal for review
             const modal = document.createElement('div');
             modal.className = 'modal-overlay';
             modal.innerHTML = `
-                <div class="modal review-modal" style="width: 80%; max-width: 800px;">
-                    <div class="modal-header">
-                        <h2>Exam Review: ${exam.subject} - ${Math.round(exam.score)}%</h2>
-                        <button class="modal-close">&times;</button>
-                    </div>
-                    <div class="modal-body" style="max-height: 70vh; overflow-y: auto;">
-                        <div class="summary-card" style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                <div class="modal review-modal">
+                    <div class="modal-header"><h2>Exam Review: ${exam.subject} - ${Math.round(exam.score)}%</h2><button class="modal-close">&times;</button></div>
+                    <div class="modal-body">
+                        <div class="summary-card" style="display:flex; gap:1rem; margin-bottom:1rem;">
                             <div class="score-circle" style="width:80px; height:80px; border-radius:50%; background:conic-gradient(var(--accent) ${exam.score}deg, #eee 0deg); display:flex; align-items:center; justify-content:center; font-weight:bold;">${Math.round(exam.score)}%</div>
-                            <div>
-                                <p>Date: ${utils.formatDate(exam.date)}</p>
-                                <p>Questions: ${exam.data.totalQuestions}</p>
-                                <p>Correct: ${exam.data.correctAnswers}</p>
-                            </div>
+                            <div><p>Date: ${utils.formatDate(exam.date)}</p><p>Questions: ${exam.data.totalQuestions}</p><p>Correct: ${exam.data.correctAnswers}</p></div>
                         </div>
                         <div id="modal-review-list" class="review-list"></div>
                     </div>
                 </div>
             `;
             document.body.appendChild(modal);
-
-            // Populate questions
             const list = modal.querySelector('#modal-review-list');
+            // Build the review list with the new structure
             list.innerHTML = exam.data.questions.map((q, idx) => {
                 const isCorrect = q.correct;
+                const userAnswerText = getOptionText(q.userAnswer, q.options);
+                const correctAnswerText = getOptionText(q.correctAnswer, q.options);
+                const explanationHtml = formatExplanation(q.explanation);
                 return `
-                    <div class="review-item ${isCorrect ? 'correct' : 'incorrect'}" style="margin-bottom:1rem; padding:0.5rem; border:1px solid var(--border); border-radius:var(--radius);">
+                    <div class="review-item ${isCorrect ? 'correct' : 'incorrect'}">
                         <div><strong>Q${idx+1}:</strong> ${q.question}</div>
-                        <div><small>Your answer: ${q.userAnswer || '—'} | Correct: ${q.correctAnswer}</small></div>
-                        <div class="explanation" style="margin-top:0.5rem; font-size:0.9rem;">${q.explanation || ''}</div>
+                        <div><small>Your answer: ${userAnswerText} | Correct: ${correctAnswerText}</small></div>
+                        <div class="explanation">${explanationHtml}</div>
                     </div>
                 `;
             }).join('');
-
             modal.querySelector('.modal-close').onclick = () => modal.remove();
             modal.onclick = (e) => { if (e.target === modal) modal.remove(); };
         };
@@ -411,13 +866,31 @@
             const exams = await db.getDownloadedExams();
             const exam = exams.find(e => e.examId === examId);
             if (!exam) return;
-
-            const shareToken = 'share_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-            await db.saveSharedExam(shareToken, exam.data);
-            const shareLink = window.location.origin + '/pages/shared-exam.html?token=' + shareToken;
-
-            document.getElementById('share-link').value = shareLink;
-            document.getElementById('share-modal').style.display = 'flex';
+            if (!navigator.onLine) {
+                ui.showToast('You need to be online to create a share link.', 'error');
+                return;
+            }
+            const user = app.getUser();
+            if (!user || !user._id) {
+                ui.showToast('You must be logged in to share exams.', 'error');
+                return;
+            }
+            ui.showLoading('Creating share link...');
+            try {
+                const result = await convexHttpClient.mutation("sharedExams/mutations:createShare", {
+                    examData: exam.data,
+                    userId: user._id
+                });
+                const shareLink = result.url;
+                document.getElementById('share-link').value = shareLink;
+                document.getElementById('share-modal').style.display = 'flex';
+                ui.showToast('Share link created!', 'success');
+            } catch (error) {
+                console.error('Failed to create share link:', error);
+                ui.showToast(error.message || 'Failed to create share link', 'error');
+            } finally {
+                ui.hideLoading();
+            }
         };
 
         window.copyShareLink = function() {
@@ -435,20 +908,8 @@
             renderDownloadedExams();
             ui.showToast('Exam deleted', 'success');
         };
-
-        // Also expose review for weak area study (optional)
-        window.studyWeakArea = function(topic) {
-            app.setExamConfig({
-                subject: topic.subject,
-                topics: [{ id: topic.topicId, name: topic.topic }],
-                totalQuestions: 10,
-                mode: 'practice',
-                selectionMethod: 'weak_areas'
-            });
-            router.navigateTo('exam-settings.html');
-        };
     </script>
     
-    <script data-lazy data-src="../scripts/offline.js"></script>
+    <script data-lazy data-src="/scripts/offline.js"></script>
 </body>
 </html>

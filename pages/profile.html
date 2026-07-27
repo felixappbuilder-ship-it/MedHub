@@ -4,344 +4,541 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile – Medical Exam Room Pro</title>
+    <title>Profile – MedHub</title>
 
-    <link rel="manifest" href="../manifest.json">
-    <link rel="stylesheet" href="../css/common.css" media="all">
-    <link rel="stylesheet" href="../css/profile.css" media="all">
+    <!-- ===== SHIMMER LOADING STYLES (dark theme, loads before everything) ===== -->
+    <style>
+        /* Shimmer overlay – dark theme hardcoded, appears before JS sets theme */
+        #shimmer-loader {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            background: #0d1117;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0;
+            transition: opacity 0.35s ease-out;
+            opacity: 1;
+            pointer-events: all;
+            overflow-y: auto;
+        }
 
-    <script type="module" src="../scripts/utils.js"></script>
-    <script type="module" src="../scripts/ui.js"></script>
-    <script type="module" src="../scripts/router.js"></script>
-    <script type="module" src="../scripts/app.js"></script>
-    <script type="module" src="../scripts/auth.js"></script>
-    <script type="module" src="../scripts/subscription.js"></script>
-    <script type="module" src="../scripts/security.js"></script>
-    <script type="module" src="../scripts/db.js"></script>
-    <script type="module" src="../scripts/sync.js"></script>
-    <script type="module" src="../scripts/validation.js"></script>
+        #shimmer-loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #shimmer-loader.removed {
+            display: none;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -300px 0;
+            }
+            100% {
+                background-position: 300px 0;
+            }
+        }
+
+        .shimmer-skeleton {
+            background: linear-gradient(90deg,
+                    #1c1f2a 0%,
+                    #252836 40%,
+                    #2a2d3d 50%,
+                    #252836 60%,
+                    #1c1f2a 100%);
+            background-size: 600px 100%;
+            animation: shimmer 1.6s ease-in-out infinite;
+            border-radius: 6px;
+        }
+
+        .shimmer-container {
+            width: 100%;
+            max-width: 600px;
+            padding: 0 1rem;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        /* Header skeleton */
+        .shimmer-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #1e2230;
+            width: 100%;
+            box-sizing: border-box;
+            position: sticky;
+            top: 0;
+            background: #0d1117;
+            z-index: 2;
+        }
+        .shimmer-header-left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .shimmer-logo {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+        .shimmer-brand {
+            width: 60px;
+            height: 18px;
+            border-radius: 4px;
+        }
+        .shimmer-header-btn {
+            width: 70px;
+            height: 20px;
+            border-radius: 4px;
+        }
+        .shimmer-header-right {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .shimmer-icon-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+        }
+
+        /* Sub-header row */
+        .shimmer-subheader {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 1rem;
+            border-bottom: 1px solid #1e2230;
+            width: 100%;
+            box-sizing: border-box;
+            background: #0d1117;
+        }
+        .shimmer-title {
+            width: 90px;
+            height: 22px;
+            border-radius: 4px;
+        }
+        .shimmer-status {
+            width: 140px;
+            height: 16px;
+            border-radius: 4px;
+        }
+
+        /* Tabs skeleton */
+        .shimmer-tabs {
+            display: flex;
+            gap: 0.5rem;
+            padding: 0.75rem 1rem;
+            border-bottom: 2px solid #1e2230;
+            width: 100%;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        .shimmer-tab {
+            width: 80px;
+            height: 36px;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        /* Form skeletons */
+        .shimmer-form {
+            padding: 1rem 1rem 0;
+            width: 100%;
+            box-sizing: border-box;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .shimmer-label {
+            width: 90px;
+            height: 14px;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+        .shimmer-input {
+            width: 100%;
+            height: 42px;
+            border-radius: 6px;
+            margin-bottom: 1.25rem;
+        }
+        .shimmer-row {
+            display: flex;
+            gap: 1rem;
+            width: 100%;
+        }
+        .shimmer-row .shimmer-input-half {
+            flex: 1;
+            height: 42px;
+            border-radius: 6px;
+            margin-bottom: 1.25rem;
+        }
+        .shimmer-btn {
+            width: 140px;
+            height: 40px;
+            border-radius: 30px;
+            margin-top: 0.5rem;
+        }
+
+        /* Subscription card skeleton */
+        .shimmer-card {
+            width: 100%;
+            max-width: 600px;
+            margin: 1.5rem auto;
+            padding: 1rem;
+            box-sizing: border-box;
+            background: #111620;
+            border-radius: 8px;
+            border: 1px solid #1e2230;
+        }
+        .shimmer-card-title {
+            width: 110px;
+            height: 18px;
+            border-radius: 4px;
+            margin-bottom: 0.75rem;
+        }
+        .shimmer-card-line {
+            width: 100%;
+            height: 14px;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+        .shimmer-card-line.short {
+            width: 60%;
+        }
+
+        /* Spinner dot */
+        .shimmer-spinner {
+            width: 28px;
+            height: 28px;
+            border: 3px solid #1e2230;
+            border-top-color: #4f8ef7;
+            border-radius: 50%;
+            animation: shimmer-spin 0.8s linear infinite;
+            margin: 2rem auto 1rem;
+        }
+        @keyframes shimmer-spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .shimmer-loading-text {
+            text-align: center;
+            color: #6b7280;
+            font-family: system-ui, -apple-system, sans-serif;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* Responsive */
+        @media (max-width: 400px) {
+            .shimmer-header-btn {
+                display: none;
+            }
+            .shimmer-tab {
+                width: 60px;
+                height: 30px;
+            }
+            .shimmer-tabs {
+                gap: 0.35rem;
+                padding: 0.5rem 0.6rem;
+            }
+            .shimmer-form {
+                padding: 0.75rem 0.6rem 0;
+            }
+            .shimmer-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+    </style>
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/css/common.css" media="all">
+    <link rel="stylesheet" href="/css/profile.css" media="all">
+
+    <script type="module" src="/scripts/utils.js"></script>
+    <script type="module" src="/scripts/ui.js"></script>
+    <script type="module" src="/scripts/router.js"></script>
+    <script type="module" src="/scripts/app.js"></script>
+    <script type="module" src="/scripts/auth.js"></script>
+    <script type="module" src="/scripts/subscription.js"></script>
+    <script type="module" src="/scripts/security.js"></script>
+    <script type="module" src="/scripts/db.js"></script>
+    <script type="module" src="/scripts/sync.js"></script>
+    <script type="module" src="/scripts/validation.js"></script>
+    <script type="module" src="/scripts/analytics.js"></script>
 
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('../service-worker.js').catch(() => { });
+            navigator.serviceWorker.register('/service-worker.js').catch(() => {});
         }
     </script>
 
-    <script type="module">
-        // Import dependencies
-        import * as app from '../scripts/app.js';
-        import * as auth from '../scripts/auth.js';
-        import * as ui from '../scripts/ui.js';
-        import * as router from '../scripts/router.js';
-        import * as utils from '../scripts/utils.js';
-        import * as validation from '../scripts/validation.js';
-        import * as security from '../scripts/security.js';
-        import * as db from '../scripts/db.js';
-
-        // ==================== INITIALIZATION ====================
-        (async function initProfile() {
-            console.log('[Profile] Initializing...');
-            await app.initializeApp();
-            ui.applyTheme();
-
-            // Authentication check
-            if (!app.checkAuth()) {
-                ui.showToast('Please log in first', 'warning');
-                router.navigateTo('login.html');
-                return;
-            }
-
-            const user = app.getUser();
-            if (!user) {
-                ui.showToast('User data not found', 'error');
-                router.navigateTo('login.html');
-                return;
-            }
-
-            // Populate profile form
-            document.getElementById('full-name').value = user.name || '';
-            document.getElementById('email').value = user.email || '';
-            document.getElementById('phone').value = user.phone || '';
-            document.getElementById('institution').value = user.institution || '';
-            document.getElementById('year-of-study').value = user.yearOfStudy || '';
-
-            // Subscription info
-            const subscription = app.getSubscription();
-            const subEl = document.getElementById('subscription-info');
-            if (subscription?.isActive) {
-                const remaining = subscription.calculateRemainingTime?.() || '';
-                subEl.innerHTML = `
-                <p><strong>Plan:</strong> ${subscription.plan}</p>
-                <p><strong>Expires:</strong> ${utils.formatDate(subscription.expiryDate)} (${remaining} left)</p>
-                <p><strong>Auto-renew:</strong> ${subscription.autoRenew ? 'On' : 'Off'}</p>
-                <button onclick="router.navigateTo('subscription.html')" class="btn-small">Change Plan</button>
-            `;
-            } else {
-                subEl.innerHTML = '<p>No active subscription. <a href="#" onclick="router.navigateTo(\'subscription.html\');return false;">Subscribe now</a></p>';
-            }
-
-            // Load devices
-            await loadDevices();
-
-            // Load preferences
-            loadPreferences(user.preferences);
-
-            // Load statistics
-            await loadStatistics();
-
-            // Set device fingerprint display
-            document.getElementById('device-fp').textContent = security.getDeviceFingerprint() || '—';
-        })();
-
-        // ==================== PROFILE UPDATE ====================
-        window.saveProfile = async function (event) {
-            event.preventDefault();
-
-            const updates = {
-                name: document.getElementById('full-name').value.trim(),
-                email: document.getElementById('email').value.trim(),
-                phone: document.getElementById('phone').value.trim(),
-                institution: document.getElementById('institution').value.trim(),
-                yearOfStudy: parseInt(document.getElementById('year-of-study').value) || null
-            };
-
-            // Validate
-            const validationResult = validation.validateForm(updates, {
-                name: { required: true, min: 2 },
-                email: { required: true, email: true },
-                phone: { required: true, phone: 'KE' }
-            });
-
-            if (!validationResult.valid) {
-                ui.showValidationSummary(validationResult.errors);
-                return;
-            }
-
-            ui.showLoading('Updating profile...');
-            try {
-                await auth.updateProfile(updates);
-                ui.hideLoading();
-                ui.showToast('Profile updated successfully', 'success');
-            } catch (error) {
-                ui.hideLoading();
-                ui.showToast(error.message || 'Update failed', 'error');
-            }
-        };
-
-        // ==================== PASSWORD CHANGE ====================
-        window.changePassword = async function () {
-            const currentPwd = document.getElementById('current-password').value;
-            const newPwd = document.getElementById('new-password').value;
-            const confirmPwd = document.getElementById('confirm-password').value;
-
-            if (!currentPwd || !newPwd || !confirmPwd) {
-                ui.showToast('All password fields are required', 'error');
-                return;
-            }
-
-            if (newPwd !== confirmPwd) {
-                ui.showToast('New passwords do not match', 'error');
-                return;
-            }
-
-            if (!validation.validatePassword(newPwd)) {
-                ui.showToast('Password must be 8+ chars, include uppercase, lowercase, number', 'error');
-                return;
-            }
-
-            const confirmed = await ui.showConfirmationDialog(
-                'Change Password',
-                'You will be logged out from all other devices. Continue?',
-                'warning'
-            );
-            if (!confirmed) return;
-
-            ui.showLoading('Changing password...');
-            try {
-                await auth.changePassword({ currentPassword: currentPwd, newPassword: newPwd });
-                ui.hideLoading();
-                ui.showToast('Password changed successfully', 'success');
-                // Clear password fields
-                document.getElementById('current-password').value = '';
-                document.getElementById('new-password').value = '';
-                document.getElementById('confirm-password').value = '';
-            } catch (error) {
-                ui.hideLoading();
-                ui.showToast(error.message || 'Password change failed', 'error');
-            }
-        };
-
-        // ==================== DEVICE MANAGEMENT ====================
-        async function loadDevices() {
-            const container = document.getElementById('devices-list');
-            try {
-                const devices = await security.getUserDevices?.() || [];
-                if (!devices || devices.length === 0) {
-                    container.innerHTML = '<p class="no-data">No other devices.</p>';
-                    return;
-                }
-                let html = '';
-                devices.forEach(dev => {
-                    html += `
-                    <div class="device-item ${dev.current ? 'current-device' : ''}">
-                        <span class="device-icon">${dev.platform?.includes('Android') ? '📱' : '💻'}</span>
-                        <span class="device-name">${dev.platform || 'Unknown'}</span>
-                        <span class="device-last">Last used: ${utils.formatDate(dev.lastUsed)}</span>
-                        ${dev.current ? '<span class="badge">Current</span>' : ''}
-                        ${!dev.current ? `<button onclick="logoutDevice('${dev.fingerprint}')" class="btn-small">Logout</button>` : ''}
-                    </div>
-                `;
-                });
-                container.innerHTML = html;
-            } catch (error) {
-                container.innerHTML = '<p class="error">Failed to load devices.</p>';
-            }
+    <!-- Inline styles for the fixed header and institutions dropdown -->
+    <style>
+        /* Fixed header (2 rows) */
+        .fixed-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+        }
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-row.top {
+            margin-bottom: 0.3rem;
+        }
+        .header-row .left-group {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .header-row .left-group img {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+        }
+        .header-row .left-group .brand {
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        .header-row .left-group .btn-text {
+            font-size: 0.9rem;
+            padding: 0.3rem 0.6rem;
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background 0.2s, color 0.2s;
+        }
+        .header-row .left-group .btn-text:hover {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+        }
+        .header-row .right-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .header-row .btn-outline {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            padding: 0.3rem 0.6rem;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            line-height: 1;
+            transition: background 0.2s, color 0.2s, border-color 0.2s;
+        }
+        .header-row .btn-outline:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+        .header-row.bottom .title-area {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .header-row.bottom .title-area h1 {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+        #header-status {
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
 
-        window.logoutDevice = async function (fingerprint) {
-            if (await ui.showConfirmationDialog('Logout Device', 'Logout this device?')) {
-                try {
-                    await security.logoutDevice?.(fingerprint);
-                    ui.showToast('Device logged out', 'success');
-                    loadDevices();
-                } catch (error) {
-                    ui.showToast('Failed to logout device', 'error');
-                }
-            }
-        };
-
-        window.logoutAllDevices = async function () {
-            if (await ui.showConfirmationDialog('Logout All Devices', 'Logout from all other devices? (you will stay logged in here)')) {
-                try {
-                    await security.logoutAllOtherDevices?.();
-                    ui.showToast('All other devices logged out', 'success');
-                    loadDevices();
-                } catch (error) {
-                    ui.showToast('Operation failed', 'error');
-                }
-            }
-        };
-
-        // ==================== PREFERENCES ====================
-        function loadPreferences(prefs = {}) {
-            document.getElementById('theme-select').value = prefs.theme || 'auto';
-            document.getElementById('notifications').checked = prefs.notifications?.examReminders ?? true;
-            document.getElementById('sync-mobile').checked = prefs.dataUsage?.syncOnMobile ?? false;
-            document.getElementById('cache-size').value = prefs.dataUsage?.cacheSize || '1gb';
+        /* Institution dropdown with search */
+        .institution-wrapper {
+            position: relative;
         }
-
-        window.savePreferences = async function () {
-            const preferences = {
-                theme: document.getElementById('theme-select').value,
-                notifications: {
-                    examReminders: document.getElementById('notifications').checked,
-                    subscriptionExpiry: true,
-                    newFeatures: false
-                },
-                dataUsage: {
-                    syncOnMobile: document.getElementById('sync-mobile').checked,
-                    downloadImages: 'wifi_only',
-                    cacheSize: document.getElementById('cache-size').value
-                }
-            };
-
-            try {
-                await auth.updatePreferences(preferences);
-                ui.setTheme(preferences.theme);
-                ui.showToast('Preferences saved', 'success');
-            } catch (error) {
-                ui.showToast('Failed to save preferences', 'error');
-            }
-        };
-
-        // ==================== STATISTICS ====================
-        async function loadStatistics() {
-            const stats = await db.getUserStatistics?.() || {};
-            document.getElementById('total-exams').textContent = stats.totalExams || 0;
-            document.getElementById('total-questions').textContent = stats.totalQuestions || 0;
-            document.getElementById('avg-score').textContent = stats.averageScore ? `${Math.round(stats.averageScore)}%` : '—';
-            document.getElementById('study-time').textContent = stats.totalStudyTime ? `${Math.round(stats.totalStudyTime / 60)}h` : '—';
+        .institution-wrapper input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            background: var(--bg-card);
+            color: var(--text-primary);
         }
-
-        // ==================== DATA EXPORT ====================
-        window.exportData = async function () {
-            const confirmed = await ui.showConfirmationDialog(
-                'Export Data',
-                'This may take a few minutes. A JSON file will be downloaded. Continue?',
-                'info'
-            );
-            if (!confirmed) return;
-
-            ui.showLoading('Preparing export...');
-            try {
-                await auth.exportData();
-                ui.hideLoading();
-                ui.showToast('Export started', 'success');
-            } catch (error) {
-                ui.hideLoading();
-                ui.showToast('Export failed', 'error');
-            }
-        };
-
-        // ==================== ACCOUNT DELETION ====================
-        window.deleteAccount = async function () {
-            const confirmText = prompt('Type "DELETE" to confirm permanent account deletion:');
-            if (confirmText !== 'DELETE') {
-                ui.showToast('Deletion cancelled', 'info');
-                return;
-            }
-
-            const password = prompt('Enter your password to confirm:');
-            if (!password) return;
-
-            ui.showLoading('Deleting account...');
-            try {
-                await auth.deleteAccount(password);
-                ui.hideLoading();
-                ui.showToast('Account deleted. Redirecting...', 'info');
-                router.navigateTo('index.html');
-            } catch (error) {
-                ui.hideLoading();
-                ui.showToast(error.message || 'Deletion failed', 'error');
-            }
-        };
-
-        // ==================== LOGOUT ====================
-        window.logout = function () {
-            auth.logout();
-            router.navigateTo('welcome.html');
-        };
-    </script>
+        .institution-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 10;
+            display: none;
+            box-shadow: var(--shadow);
+        }
+        .institution-dropdown.show {
+            display: block;
+        }
+        .institution-dropdown .item {
+            padding: 0.5rem;
+            cursor: pointer;
+            border-bottom: 1px solid var(--border);
+        }
+        .institution-dropdown .item:hover {
+            background: var(--bg-secondary);
+        }
+        .institution-dropdown .item.selected {
+            background: var(--accent);
+            color: white;
+        }
+        .institution-dropdown .no-result {
+            padding: 0.5rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="page-container">
-        <header>
-            <div class="logo">
-                <img src="../assets/images/logo.png" alt="Logo" width="40" height="40">
-                <span>MedExamPro</span>
+    <!-- ===== SHIMMER LOADING SCREEN (first element – dark theme, renders instantly) ===== -->
+    <div id="shimmer-loader">
+        <!-- Sticky header skeleton -->
+        <div class="shimmer-header">
+            <div class="shimmer-header-left">
+                <div class="shimmer-skeleton shimmer-logo"></div>
+                <div class="shimmer-skeleton shimmer-brand"></div>
+                <div class="shimmer-skeleton shimmer-header-btn"></div>
             </div>
-            <div>
-                <button onclick="ui.toggleTheme()" class="btn-outline">🌓</button>
-                <button onclick="logout()" class="btn-text">Logout</button>
+            <div class="shimmer-header-right">
+                <div class="shimmer-skeleton shimmer-icon-btn"></div>
+            </div>
+        </div>
+        <!-- Sub-header row -->
+        <div class="shimmer-subheader">
+            <div class="shimmer-skeleton shimmer-title"></div>
+            <div class="shimmer-skeleton shimmer-status"></div>
+        </div>
+        <!-- Tabs skeleton -->
+        <div class="shimmer-tabs">
+            <div class="shimmer-skeleton shimmer-tab"></div>
+            <div class="shimmer-skeleton shimmer-tab"></div>
+            <div class="shimmer-skeleton shimmer-tab"></div>
+            <div class="shimmer-skeleton shimmer-tab"></div>
+            <div class="shimmer-skeleton shimmer-tab"></div>
+        </div>
+        <!-- Form skeletons -->
+        <div class="shimmer-container">
+            <div class="shimmer-form">
+                <div class="shimmer-skeleton shimmer-label"></div>
+                <div class="shimmer-skeleton shimmer-input"></div>
+
+                <div class="shimmer-skeleton shimmer-label"></div>
+                <div class="shimmer-skeleton shimmer-input"></div>
+
+                <div class="shimmer-skeleton shimmer-label"></div>
+                <div class="shimmer-skeleton shimmer-input"></div>
+
+                <div class="shimmer-row">
+                    <div>
+                        <div class="shimmer-skeleton shimmer-label" style="width:70px;"></div>
+                        <div class="shimmer-skeleton shimmer-input-half"></div>
+                    </div>
+                    <div>
+                        <div class="shimmer-skeleton shimmer-label" style="width:60px;"></div>
+                        <div class="shimmer-skeleton shimmer-input-half"></div>
+                    </div>
+                </div>
+
+                <div class="shimmer-skeleton shimmer-btn"></div>
+            </div>
+
+            <!-- Subscription card skeleton -->
+            <div class="shimmer-card">
+                <div class="shimmer-skeleton shimmer-card-title"></div>
+                <div class="shimmer-skeleton shimmer-card-line"></div>
+                <div class="shimmer-skeleton shimmer-card-line short"></div>
+            </div>
+
+            <!-- Spinner -->
+            <div class="shimmer-spinner"></div>
+            <p class="shimmer-loading-text">Loading your profile&hellip;</p>
+        </div>
+    </div>
+
+    <!-- ===== HIDE SHIMMER (fallback if JS takes too long) ===== -->
+    <script>
+        // Expose a global function to hide the shimmer
+        window.hideShimmer = function() {
+            const loader = document.getElementById('shimmer-loader');
+            if (!loader) return;
+            if (loader.classList.contains('hidden')) return; // already hiding
+            loader.classList.add('hidden');
+            // Remove from DOM after fade-out
+            setTimeout(function() {
+                loader.classList.add('removed');
+                // Optional: fully remove
+                if (loader.parentNode) loader.parentNode.removeChild(loader);
+            }, 400);
+        };
+
+        // Fallback: hide shimmer after 6 seconds max (in case JS fails)
+        setTimeout(window.hideShimmer, 6000);
+
+        // Fallback: hide shimmer on full page load
+        window.addEventListener('load', function() {
+            // Small delay to let the app paint first
+            setTimeout(window.hideShimmer, 300);
+        });
+    </script>
+
+    <div class="page-container">
+        <!-- Fixed Header (2 rows) -->
+        <header class="fixed-header">
+            <div class="header-row top">
+                <div class="left-group">
+                    <img src="/assets/images/logo.png" alt="Logo" width="32" height="32">
+                    <span class="brand">MedHub</span>
+                    <button onclick="router.navigateTo('subjects.html')" class="btn-text">← Subjects</button>
+                    <button onclick="router.navigateTo('performance.html')" class="btn-text">Performance</button>
+                </div>
+                <div class="right-group">
+                    <button onclick="ui.toggleTheme()" class="btn-outline">🌓</button>
+                </div>
+            </div>
+            <div class="header-row bottom">
+                <div class="title-area">
+                    <h1>My Profile</h1>
+                </div>
+                <div id="header-status"></div>
             </div>
         </header>
 
         <main>
-            <h1>My Profile</h1>
-
-            <!-- Profile Tabs -->
+            <!-- Tabs -->
             <div class="tabs">
                 <button class="tab-button active" onclick="ui.switchTab('profile-tab')">👤 Profile</button>
                 <button class="tab-button" onclick="ui.switchTab('security-tab')">🔐 Security</button>
                 <button class="tab-button" onclick="ui.switchTab('devices-tab')">📱 Devices</button>
                 <button class="tab-button" onclick="ui.switchTab('preferences-tab')">⚙️ Preferences</button>
-                <button class="tab-button" onclick="ui.switchTab('stats-tab')">📊 Stats</button>
+                <button class="tab-button" onclick="ui.switchTab('stats-tab')">📊 Perfomance</button>
             </div>
 
             <!-- Profile Tab -->
             <div id="profile-tab" class="tab-content active">
-                <form onsubmit="saveProfile(event)" class="profile-form">
+                <form onsubmit="window.saveProfile(event)" class="profile-form">
                     <div class="form-group">
                         <label for="full-name">Full name</label>
                         <input type="text" id="full-name" name="full-name" required>
@@ -351,15 +548,18 @@
                         <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
-                        <label for="phone">Phone number (M‑Pesa)</label>
+                        <label for="phone">Phone number</label>
                         <input type="tel" id="phone" name="phone" required>
                         <small>Format: 07XX or 2547XX</small>
                     </div>
                     <div class="form-row">
                         <div class="form-group half">
                             <label for="institution">Institution</label>
-                            <input type="text" id="institution" name="institution"
-                                placeholder="e.g., University of Nairobi">
+                            <div class="institution-wrapper">
+                                <input type="text" id="institution" name="institution"
+                                    placeholder="Search institution..." autocomplete="off">
+                                <div id="institution-dropdown" class="institution-dropdown"></div>
+                            </div>
                         </div>
                         <div class="form-group half">
                             <label for="year-of-study">Year of study</label>
@@ -399,24 +599,22 @@
                     <label for="confirm-password">Confirm new password</label>
                     <input type="password" id="confirm-password" autocomplete="new-password">
                 </div>
-                <button onclick="changePassword()" class="btn-primary">Update Password</button>
+                <button onclick="window.changePassword()" class="btn-primary">Update Password</button>
 
                 <hr>
                 <h3>Data & Privacy</h3>
-                <button onclick="exportData()" class="btn-secondary">📤 Export My Data</button>
-                <button onclick="deleteAccount()" class="btn-danger" style="background: #dc2626; color: white;">🗑️
-                    Delete Account</button>
+                <button onclick="window.exportData()" class="btn-secondary">📤 Export My Data</button>
+                <button onclick="window.deleteAccount()" class="btn-danger" style="background: #dc2626; color: white;">🗑️ Delete Account</button>
             </div>
 
             <!-- Devices Tab -->
             <div id="devices-tab" class="tab-content">
                 <div class="devices-header">
                     <h3>Your Devices</h3>
-                    <button onclick="logoutAllDevices()" class="btn-small">Logout all others</button>
+                    <button onclick="window.logoutAllDevices()" class="btn-small">Logout all others</button>
                 </div>
                 <div id="devices-list" class="devices-list"></div>
                 <p class="note">Device fingerprint: <code id="device-fingerprint"></code></p>
-                <script>document.getElementById('device-fingerprint').textContent = security.getDeviceFingerprint() || '—';</script>
             </div>
 
             <!-- Preferences Tab -->
@@ -454,7 +652,7 @@
                     </select>
                 </div>
 
-                <button onclick="savePreferences()" class="btn-primary">Save Preferences</button>
+                <button onclick="window.savePreferences()" class="btn-primary">Save Preferences</button>
             </div>
 
             <!-- Statistics Tab -->
@@ -478,8 +676,7 @@
                         <span class="stat-value" id="study-time">0h</span>
                     </div>
                 </div>
-                <button onclick="router.navigateTo('performance.html')" class="btn-secondary">View Detailed Analytics
-                    →</button>
+                <button onclick="router.navigateTo('performance.html')" class="btn-secondary">View Detailed Analytics →</button>
             </div>
         </main>
 
@@ -488,7 +685,502 @@
         </footer>
     </div>
 
-    <script data-lazy data-src="../scripts/offline.js"></script>
+    <script type="module">
+        // ==================== IMPORTS ====================
+        import * as app from '../scripts/app.js';
+        import * as auth from '../scripts/auth.js';
+        import * as ui from '../scripts/ui.js';
+        import * as router from '../scripts/router.js';
+        import * as utils from '../scripts/utils.js';
+        import * as validation from '../scripts/validation.js';
+        import * as security from '../scripts/security.js';
+        import * as db from '../scripts/db.js';
+        import * as analytics from '../scripts/analytics.js';
+        import * as subscription from '../scripts/subscription.js';
+
+        // ==================== INITIALIZATION ====================
+        (async function initProfile() {
+            console.log('[Profile] Initializing...');
+            await app.initializeApp();
+            ui.applyTheme();
+
+            // Authentication check
+            if (!app.checkAuth()) {
+                ui.showToast('Please log in first', 'warning');
+                router.navigateTo('login.html');
+                // Hide shimmer before redirect
+                if (window.hideShimmer) window.hideShimmer();
+                return;
+            }
+
+            const user = app.getUser();
+            if (!user) {
+                ui.showToast('User data not found', 'error');
+                router.navigateTo('login.html');
+                if (window.hideShimmer) window.hideShimmer();
+                return;
+            }
+
+            // Update header status
+            const sub = app.getSubscription();
+            const statusEl = document.getElementById('header-status');
+            if (sub && sub.isActive) {
+                const remaining = await subscription.formatRemainingTime?.() || '';
+                statusEl.textContent = `${sub.plan} · expires ${utils.formatDate(sub.expiryDate)} (${remaining} left)`;
+            } else {
+                statusEl.textContent = 'No active plan';
+            }
+
+            // Populate profile form
+            document.getElementById('full-name').value = user.name || '';
+            document.getElementById('email').value = user.email || '';
+            document.getElementById('phone').value = user.phone || '';
+            document.getElementById('institution').value = user.institution || '';
+            document.getElementById('year-of-study').value = user.yearOfStudy || '';
+
+            // Subscription info
+            const subEl = document.getElementById('subscription-info');
+            if (sub?.isActive) {
+                const remaining = await subscription.formatRemainingTime?.() || '';
+                subEl.innerHTML = `
+                    <p><strong>Plan:</strong> ${sub.plan}</p>
+                    <p><strong>Expires:</strong> ${utils.formatDate(sub.expiryDate)} (${remaining} left)</p>
+                    <p><strong>Auto-renew:</strong> ${sub.autoRenew ? 'On' : 'Off'}</p>
+                    <button onclick="router.navigateTo('subscription.html')" class="btn-small">Change Plan</button>
+                `;
+            } else {
+                subEl.innerHTML = '<p>No active subscription. <a href="#" onclick="router.navigateTo(\'subscription.html\');return false;">Subscribe now</a></p>';
+            }
+
+            // Load devices
+            await loadDevices();
+
+            // Load preferences
+            loadPreferences(user.preferences);
+
+            // Load statistics (using analytics module)
+            await loadStatistics();
+
+            // Set device fingerprint display
+            const fpEl = document.getElementById('device-fingerprint');
+            if (fpEl) {
+                fpEl.textContent = security.getDeviceFingerprint() || '—';
+            }
+
+            // Initialize institution dropdown
+            initInstitutionDropdown();
+
+            // ===== HIDE THE SHIMMER – profile is fully loaded =====
+            if (window.hideShimmer) {
+                // Small delay so the browser can paint the populated content
+                setTimeout(window.hideShimmer, 150);
+            }
+        })();
+
+        // ==================== INSTITUTION DROPDOWN ====================
+        function initInstitutionDropdown() {
+            const input = document.getElementById('institution');
+            const dropdown = document.getElementById('institution-dropdown');
+
+            // Kenyan medical institutions (both public and private)
+            const institutions = [
+                // Public Universities
+                'University of Nairobi (UoN)',
+                'Moi University',
+                'Kenyatta University (KU)',
+                'Egerton University',
+                'Jomo Kenyatta University of Agriculture and Technology (JKUAT)',
+                'Maseno University',
+                'Masinde Muliro University of Science and Technology (MMUST)',
+                'Technical University of Kenya (TUK)',
+                'Dedan Kimathi University of Technology (DeKUT)',
+                'Kisii University',
+                'Meru University of Science and Technology (MUST)',
+                'South Eastern Kenya University (SEKU)',
+                'University of Eldoret (UoE)',
+                'Chuka University',
+                'Karatina University',
+                'Kaimosi Friends University',
+                'Kirinyaga University (KyU)',
+                'Maasai Mara University',
+                'Rongo University',
+                'Garissa University',
+                'Taita Taveta University',
+                'Turkana University College',
+                // Private Universities
+                'Mount Kenya University (MKU)',
+                'Kenyatta University Teaching, Referral & Research Hospital (KUTRRH)',
+                'Strathmore University',
+                'United States International University Africa (USIU-Africa)',
+                'Africa Nazarene University (ANU)',
+                'Daystar University',
+                'Catholic University of Eastern Africa (CUEA)',
+                'Adventist University of Africa (AUA)',
+                'Pan Africa Christian University (PACU)',
+                'St. Paul\'s University',
+                'University of Eastern Africa, Baraton (UEAB)',
+                'Great Lakes University of Kisumu (GLUK)',
+                'Kenya Methodist University (KeMU)',
+                'Kabarak University',
+                'KCA University',
+                'Pioneer International University (PIU)',
+                'Management University of Africa (MUA)',
+                'Hekima University College',
+                'Tangaza University College',
+                'Nazarene Theological College',
+                'Scott Theological College',
+                // Teaching and Referral Hospitals (with training programs)
+                'Kenyatta National Hospital (KNH)',
+                'Moi Teaching and Referral Hospital (MTRH)',
+                'Coast General Teaching and Referral Hospital',
+                'Kisumu County Hospital',
+                'Nakuru Level 5 Hospital',
+                'Thika Level 5 Hospital',
+                'Kakamega County Referral Hospital',
+                'Embu Level 5 Hospital',
+                'Meru Level 5 Hospital',
+                'Garissa County Referral Hospital',
+                'Homa Bay County Teaching and Referral Hospital',
+                'Machakos County Referral Hospital',
+                'Kisii Level 5 Hospital',
+                'Mama Lucy Kibaki Hospital',
+                'Pumwani Maternity Hospital',
+                // Medical Training Colleges
+                'Kenya Medical Training College (KMTC)',
+                'Nairobi Institute of Health Sciences (NIHS)',
+                'Kampala International University (KIU) - Kenya Campus',
+                'Jomo Kenyatta University of Agriculture and Technology (JKUAT) - Health Sciences',
+                // International/Kenyan partnerships
+                'AMREF International University (AMIU)',
+                'African Medical and Research Foundation (AMREF)',
+                // Other notable medical institutions
+                'Kenyatta University School of Medicine',
+                'University of Nairobi School of Medicine',
+                'Moi University School of Medicine',
+                'Kenyatta University Teaching, Referral & Research Hospital',
+                'International Centre of Insect Physiology and Ecology (ICIPE)',
+                'Kenya Institute of Health Research (KIHR)',
+                'Kenya Medical Research Institute (KEMRI)',
+                'National AIDS Control Council (NACC)',
+                'National Tuberculosis, Leprosy and Lung Disease Program (NTLD)'
+            ];
+
+            // Filter unique and sort
+            const uniqueInstitutions = [...new Set(institutions)].sort();
+
+            let selectedInstitution = '';
+
+            function renderDropdown(filter = '') {
+                const filtered = filter ?
+                    uniqueInstitutions.filter(inst => inst.toLowerCase().includes(filter.toLowerCase())) :
+                    uniqueInstitutions;
+
+                dropdown.innerHTML = '';
+                if (filtered.length === 0) {
+                    dropdown.innerHTML = '<div class="no-result">No institutions found</div>';
+                } else {
+                    filtered.forEach(inst => {
+                        const div = document.createElement('div');
+                        div.className = 'item';
+                        div.textContent = inst;
+                        if (inst === selectedInstitution) {
+                            div.classList.add('selected');
+                        }
+                        div.addEventListener('click', () => {
+                            selectedInstitution = inst;
+                            input.value = inst;
+                            dropdown.classList.remove('show');
+                            dropdown.querySelectorAll('.item').forEach(el => el.classList.remove('selected'));
+                            div.classList.add('selected');
+                        });
+                        dropdown.appendChild(div);
+                    });
+                }
+                dropdown.classList.add('show');
+            }
+
+            input.addEventListener('focus', () => {
+                renderDropdown(input.value);
+            });
+
+            input.addEventListener('input', () => {
+                renderDropdown(input.value);
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!input.contains(e.target) && !dropdown.contains(e.target)) {
+                    dropdown.classList.remove('show');
+                }
+            });
+
+            // On load, if there's a value, show it as selected
+            if (input.value) {
+                selectedInstitution = input.value;
+            }
+        }
+
+        // ==================== PROFILE UPDATE ====================
+        window.saveProfile = async function(event) {
+            event.preventDefault();
+
+            const updates = {
+                name: document.getElementById('full-name').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                phone: document.getElementById('phone').value.trim(),
+                institution: document.getElementById('institution').value.trim(),
+                yearOfStudy: parseInt(document.getElementById('year-of-study').value) || null
+            };
+
+            const validationResult = validation.validateForm(updates, {
+                name: { required: true, min: 2 },
+                email: { required: true, email: true },
+                phone: { required: true, phone: 'KE' }
+            });
+
+            if (!validationResult.valid) {
+                ui.showValidationSummary(validationResult.errors);
+                return;
+            }
+
+            ui.showLoading('Updating profile...');
+            try {
+                await auth.updateProfile(updates);
+                ui.hideLoading();
+                ui.showToast('Profile updated successfully', 'success');
+            } catch (error) {
+                ui.hideLoading();
+                ui.showToast(error.message || 'Update failed', 'error');
+            }
+        };
+
+        // ==================== PASSWORD CHANGE ====================
+        window.changePassword = async function() {
+            const currentPwd = document.getElementById('current-password').value;
+            const newPwd = document.getElementById('new-password').value;
+            const confirmPwd = document.getElementById('confirm-password').value;
+
+            if (!currentPwd || !newPwd || !confirmPwd) {
+                ui.showToast('All password fields are required', 'error');
+                return;
+            }
+
+            if (newPwd !== confirmPwd) {
+                ui.showToast('New passwords do not match', 'error');
+                return;
+            }
+
+            if (!validation.validatePassword(newPwd)) {
+                ui.showToast('Password must be 8+ chars, include uppercase, lowercase, number', 'error');
+                return;
+            }
+
+            const confirmed = await ui.showConfirmationDialog(
+                'Change Password',
+                'You will be logged out from all other devices. Continue?',
+                'warning'
+            );
+            if (!confirmed) return;
+
+            ui.showLoading('Changing password...');
+            try {
+                await auth.changePassword({ currentPassword: currentPwd, newPassword: newPwd });
+                ui.hideLoading();
+                ui.showToast('Password changed successfully', 'success');
+                document.getElementById('current-password').value = '';
+                document.getElementById('new-password').value = '';
+                document.getElementById('confirm-password').value = '';
+            } catch (error) {
+                ui.hideLoading();
+                ui.showToast(error.message || 'Password change failed', 'error');
+            }
+        };
+
+        // ==================== DEVICE MANAGEMENT ====================
+        async function loadDevices() {
+            const container = document.getElementById('devices-list');
+            try {
+                const devices = await security.getUserDevices?.() || [];
+                if (!devices || devices.length === 0) {
+                    container.innerHTML = '<p class="no-data">No other devices.</p>';
+                    return;
+                }
+                let html = '';
+                devices.forEach(dev => {
+                    html += `
+                        <div class="device-item ${dev.current ? 'current-device' : ''}">
+                            <span class="device-icon">${dev.platform?.includes('Android') ? '📱' : '💻'}</span>
+                            <span class="device-name">${dev.platform || 'Unknown'}</span>
+                            <span class="device-last">Last used: ${utils.formatDate(dev.lastUsed)}</span>
+                            ${dev.current ? '<span class="badge">Current</span>' : ''}
+                            ${!dev.current ? `<button onclick="window.logoutDevice('${dev.fingerprint}')" class="btn-small">Logout</button>` : ''}
+                        </div>
+                    `;
+                });
+                container.innerHTML = html;
+            } catch (error) {
+                container.innerHTML = '<p class="error">Failed to load devices.</p>';
+            }
+        }
+
+        window.logoutDevice = async function(fingerprint) {
+            if (await ui.showConfirmationDialog('Logout Device', 'Logout this device?')) {
+                try {
+                    await security.logoutDevice?.(fingerprint);
+                    ui.showToast('Device logged out', 'success');
+                    loadDevices();
+                } catch (error) {
+                    ui.showToast('Failed to logout device', 'error');
+                }
+            }
+        };
+
+        window.logoutAllDevices = async function() {
+            if (await ui.showConfirmationDialog('Logout All Devices', 'Logout from all other devices? (you will stay logged in here)')) {
+                try {
+                    await security.logoutAllOtherDevices?.();
+                    ui.showToast('All other devices logged out', 'success');
+                    loadDevices();
+                } catch (error) {
+                    ui.showToast('Operation failed', 'error');
+                }
+            }
+        };
+
+        // ==================== PREFERENCES ====================
+        function loadPreferences(prefs = {}) {
+            document.getElementById('theme-select').value = prefs.theme || 'auto';
+            document.getElementById('notifications').checked = prefs.notifications?.examReminders ?? true;
+            document.getElementById('sync-mobile').checked = prefs.dataUsage?.syncOnMobile ?? false;
+            document.getElementById('cache-size').value = prefs.dataUsage?.cacheSize || '1gb';
+        }
+
+        window.savePreferences = async function() {
+            const preferences = {
+                theme: document.getElementById('theme-select').value,
+                notifications: {
+                    examReminders: document.getElementById('notifications').checked,
+                    subscriptionExpiry: true,
+                    newFeatures: false
+                },
+                dataUsage: {
+                    syncOnMobile: document.getElementById('sync-mobile').checked,
+                    downloadImages: 'wifi_only',
+                    cacheSize: document.getElementById('cache-size').value
+                }
+            };
+
+            try {
+                await auth.updatePreferences(preferences);
+                ui.setTheme(preferences.theme);
+                ui.showToast('Preferences saved', 'success');
+            } catch (error) {
+                ui.showToast('Failed to save preferences', 'error');
+            }
+        };
+
+        // ==================== STATISTICS ====================
+        async function loadStatistics() {
+            try {
+                // Get all exam results from db
+                const allResults = await db.getAllExamResults() || [];
+                
+                // Calculate statistics from exam results
+                const totalExams = allResults.length;
+                let totalQuestions = 0;
+                let totalCorrect = 0;
+                let totalStudyTime = 0;
+                let bestScore = 0;
+
+                allResults.forEach(exam => {
+                    totalQuestions += exam.totalQuestions || 0;
+                    totalCorrect += exam.correctAnswers || 0;
+                    totalStudyTime += exam.timeSpent || 0;
+                    const score = exam.scorePercentage || 0;
+                    if (score > bestScore) bestScore = score;
+                });
+
+                const avgScore = totalQuestions > 0 ? (totalCorrect / totalQuestions) * 100 : 0;
+                const totalHours = totalStudyTime > 0 ? Math.round(totalStudyTime / (1000 * 60 * 60) * 10) / 10 : 0;
+
+                // Update UI
+                document.getElementById('total-exams').textContent = totalExams || 0;
+                document.getElementById('total-questions').textContent = totalQuestions || 0;
+                document.getElementById('avg-score').textContent = avgScore ? `${Math.round(avgScore)}%` : '—';
+                document.getElementById('study-time').textContent = totalHours ? `${totalHours}h` : '0h';
+
+                // Save to analytics store for persistence
+                await db.saveUserStatistics({
+                    totalExams,
+                    totalQuestions,
+                    averageScore: Math.round(avgScore),
+                    totalStudyTime: totalStudyTime,
+                    bestScore: Math.round(bestScore)
+                });
+
+            } catch (error) {
+                console.error('[Profile] Error loading statistics:', error);
+                // Try to load cached statistics
+                const cached = await db.getUserStatistics();
+                if (cached) {
+                    document.getElementById('total-exams').textContent = cached.totalExams || 0;
+                    document.getElementById('total-questions').textContent = cached.totalQuestions || 0;
+                    document.getElementById('avg-score').textContent = cached.averageScore ? `${cached.averageScore}%` : '—';
+                    document.getElementById('study-time').textContent = cached.totalStudyTime ? `${Math.round(cached.totalStudyTime / 60)}h` : '0h';
+                }
+            }
+        }
+
+        // ==================== DATA EXPORT ====================
+        window.exportData = async function() {
+            const confirmed = await ui.showConfirmationDialog(
+                'Export Data',
+                'This may take a few minutes. A JSON file will be downloaded. Continue?',
+                'info'
+            );
+            if (!confirmed) return;
+
+            ui.showLoading('Preparing export...');
+            try {
+                await auth.exportData();
+                ui.hideLoading();
+                ui.showToast('Export started', 'success');
+            } catch (error) {
+                ui.hideLoading();
+                ui.showToast('Export failed', 'error');
+            }
+        };
+
+        // ==================== ACCOUNT DELETION ====================
+        window.deleteAccount = async function() {
+            const confirmText = prompt('Type "DELETE" to confirm permanent account deletion:');
+            if (confirmText !== 'DELETE') {
+                ui.showToast('Deletion cancelled', 'info');
+                return;
+            }
+
+            const password = prompt('Enter your password to confirm:');
+            if (!password) return;
+
+            ui.showLoading('Deleting account...');
+            try {
+                await auth.deleteAccount(password);
+                ui.hideLoading();
+                ui.showToast('Account deleted. Redirecting...', 'info');
+                router.navigateTo('index.html');
+            } catch (error) {
+                ui.hideLoading();
+                ui.showToast(error.message || 'Deletion failed', 'error');
+            }
+        };
+
+        // ==================== LOGOUT ====================
+        window.logout = function() {
+            auth.logout();
+            router.navigateTo('welcome.html');
+        };
+    </script>
+
+    <script data-lazy data-src="/scripts/offline.js"></script>
 </body>
 
 </html>

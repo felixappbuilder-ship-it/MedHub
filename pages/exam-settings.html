@@ -4,365 +4,571 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configure Exam – Medical Exam Room Pro</title>
+    <title>Configure Exam – MedHub</title>
 
-    <link rel="manifest" href="../manifest.json">
-    <link rel="stylesheet" href="../css/common.css" media="all">
-    <link rel="stylesheet" href="../css/exam-settings.css" media="all">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/css/common.css" media="all">
+    <link rel="stylesheet" href="/css/exam-settings.css" media="all">
 
-    <script type="module" src="../scripts/utils.js"></script>
-    <script type="module" src="../scripts/ui.js"></script>
-    <script type="module" src="../scripts/router.js"></script>
-    <script type="module" src="../scripts/app.js"></script>
-    <script type="module" src="../scripts/exam-engine.js"></script>
-    <script type="module" src="../scripts/questions.js"></script>
-    <script type="module" src="../scripts/analytics.js"></script>
-    <script type="module" src="../scripts/subscription.js"></script>
+    <!-- Core modules (loaded asynchronously) -->
+    <script type="module" src="/scripts/utils.js"></script>
+    <script type="module" src="/scripts/ui.js"></script>
+    <script type="module" src="/scripts/router.js"></script>
+    <script type="module" src="/scripts/app.js"></script>
+    <script type="module" src="/scripts/exam-engine.js"></script>
+    <script type="module" src="/scripts/questions.js"></script>
+    <script type="module" src="/scripts/analytics.js"></script>
+    <script type="module" src="/scripts/subscription.js"></script>
+    <script type="module" src="/scripts/exam-settings.js"></script>
 
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('../service-worker.js').catch(() => { });
+            navigator.serviceWorker.register('/service-worker.js').catch(() => {});
         }
     </script>
 
-    <script type="module">
-        // ==================== IMPORTS ====================
-        import * as app from '../scripts/app.js';
-        import * as ui from '../scripts/ui.js';
-        import * as router from '../scripts/router.js';
-        import * as examEngine from '../scripts/exam-engine.js';
-        import * as questions from '../scripts/questions.js';
-        import * as analytics from '../scripts/analytics.js';
-        import * as utils from '../scripts/utils.js';
-
-        // ==================== INITIALIZATION ====================
-        (async function initExamSettings() {
-            console.log('[ExamSettings] Initializing...');
-            await app.initializeApp();
-            ui.applyTheme();
-
-            // Authentication check (optional – settings page might be accessible without auth, but topics require it)
-            if (!app.checkAuth()) {
-                ui.showToast('Please log in to configure exams', 'warning');
-                router.navigateTo('login.html');
-                return;
-            }
-
-            // Load exam config from app state (set in subject-specific.html)
-            let config = app.getExamConfig() || {};
-
-            // If no config, maybe from quick exam or resume – handle gracefully
-            if (!config.subject) {
-                ui.showToast('No subject selected', 'error');
-                router.navigateTo('subjects.html');
-                return;
-            }
-
-            // Display subject & topic summary
-            const subjectName = config.subject.charAt(0).toUpperCase() + config.subject.slice(1);
-            document.getElementById('config-subject').textContent = subjectName;
-
-            const topics = config.topics || [];
-            const topicNames = topics.length ? topics.map(t => t.name).join(', ') : 'All topics';
-            document.getElementById('config-topics').textContent = topicNames;
-
-            // Available questions in selected topics
-            let available = config.totalQuestions;
-            if (!available && topics.length) {
-                available = topics.reduce((sum, t) => sum + (t.questions || 0), 0);
-            }
-            document.getElementById('available-questions').textContent = `${available} questions available`;
-
-            // Pre-fill settings from config or defaults
-            if (config.mode) document.getElementById('exam-mode').value = config.mode;
-            if (config.questionCount) document.getElementById('question-count').value = config.questionCount;
-
-            // Populate question count dropdown based on available
-            populateQuestionCounts(available);
-
-            // Load saved presets from localStorage
-            loadPresets();
-
-            // Set up event listeners for dynamic updates
-            document.getElementById('exam-mode').addEventListener('change', updateSettingsPreview);
-            document.getElementById('question-count').addEventListener('change', updateSettingsPreview);
-            document.getElementById('difficulty').addEventListener('change', updateSettingsPreview);
-            document.getElementById('timing').addEventListener('change', updateSettingsPreview);
-
-            // Initial preview update
-            updateSettingsPreview();
-        })();
-
-        // ==================== UI HELPERS ====================
-        function populateQuestionCounts(available) {
-            const select = document.getElementById('question-count');
-            select.innerHTML = '';
-
-            const presets = [
-                { value: 10, label: 'Quick Exam (10)' },
-                { value: 25, label: 'Standard (25)' },
-                { value: 50, label: 'Full Exam (50)' },
-                { value: 'custom', label: 'Custom...' }
-            ];
-
-            presets.forEach(p => {
-                if (p.value !== 'custom' && p.value > available) return;
-                const option = document.createElement('option');
-                option.value = p.value;
-                option.textContent = p.label;
-                select.appendChild(option);
-            });
-
-            // Add custom option
-            const customOption = document.createElement('option');
-            customOption.value = 'custom';
-            customOption.textContent = 'Custom...';
-            select.appendChild(customOption);
+    <style>
+        /* Inline styles for challenge UI */
+        #challenge-status {
+            margin: 0.5rem 0;
+            font-weight: 500;
         }
-
-        function updateSettingsPreview() {
-            const mode = document.getElementById('exam-mode').value;
-            const qCount = document.getElementById('question-count').value;
-            const difficulty = document.getElementById('difficulty').value;
-            const timing = document.getElementById('timing').value;
-
-            // Show custom input if custom selected
-            const customContainer = document.getElementById('custom-count-container');
-            if (customContainer) {
-                customContainer.style.display = qCount === 'custom' ? 'block' : 'none';
-            }
-
-            // Update preview text
-            let preview = `${mode} exam • ${qCount === 'custom' ? 'Custom' : qCount} questions • ${difficulty} difficulty • ${timing} timing`;
-            document.getElementById('settings-preview').textContent = preview;
+        .challenge-code-display {
+            background: var(--bg-card);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            font-family: monospace;
+            font-size: 1.2rem;
+            text-align: center;
+            margin: 0.5rem 0;
         }
-
-        function loadPresets() {
-            const presets = utils.getLocalStorage('examPresets', []);
-            const select = document.getElementById('preset-select');
-            if (!select) return;
-            select.innerHTML = '<option value="">Load preset...</option>';
-            presets.forEach((p, i) => {
-                const option = document.createElement('option');
-                option.value = i;
-                option.textContent = p.name;
-                select.appendChild(option);
-            });
+        .waiting-message {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
         }
-
-        // ==================== ACTIONS ====================
-        window.startExam = function () {
-            // Collect all settings
-            let config = app.getExamConfig() || {};
-
-            config.mode = document.getElementById('exam-mode').value;
-
-            let qCount = document.getElementById('question-count').value;
-            if (qCount === 'custom') {
-                qCount = parseInt(document.getElementById('custom-count').value, 10);
-                if (isNaN(qCount) || qCount < 1 || qCount > 100) {
-                    ui.showToast('Question count must be 1–100', 'error');
-                    return;
-                }
-            } else {
-                qCount = parseInt(qCount, 10);
-            }
-            config.questionCount = qCount;
-
-            config.difficulty = document.getElementById('difficulty').value;
-            config.timingMode = document.getElementById('timing').value;
-
-            // Advanced settings from dropdown menu
-            config.preventCopyPaste = document.getElementById('prevent-copy')?.checked ?? true;
-            config.autoSave = document.getElementById('auto-save')?.checked ?? true;
-            config.detectTabSwitch = document.getElementById('detect-tab')?.checked ?? true;
-            config.breakAfter = document.getElementById('break-enabled')?.checked ? 25 : 0;
-
-            // Validate that enough questions are available
-            const availableText = document.getElementById('available-questions').textContent;
-            const available = parseInt(availableText) || 0;
-            if (config.questionCount > available) {
-                ui.showToast(`Only ${available} questions available. Reduce count or select more topics.`, 'warning');
-                return;
-            }
-
-            // Save config and navigate to exam room
-            app.setExamConfig(config);
-            router.navigateTo('exam-room.html');
-        };
-
-        window.savePreset = function () {
-            const presetName = prompt('Enter a name for this preset:');
-            if (!presetName) return;
-
-            const config = collectConfig();
-            const presets = utils.getLocalStorage('examPresets', []);
-            presets.push({ name: presetName, config });
-            utils.setLocalStorage('examPresets', presets);
-            ui.showToast('Preset saved!', 'success');
-            loadPresets();
-        };
-
-        window.loadPreset = function () {
-            const select = document.getElementById('preset-select');
-            const index = select.value;
-            if (!index) return;
-            const presets = utils.getLocalStorage('examPresets', []);
-            const preset = presets[index];
-            if (!preset) return;
-
-            // Apply preset to form
-            document.getElementById('exam-mode').value = preset.config.mode || 'timed';
-            document.getElementById('question-count').value = preset.config.questionCount || 25;
-            document.getElementById('difficulty').value = preset.config.difficulty || 'mixed';
-            document.getElementById('timing').value = preset.config.timingMode || 'adaptive';
-            if (preset.config.questionCount === 'custom') {
-                document.getElementById('custom-count').value = preset.config.customCount || 25;
-            }
-            document.getElementById('prevent-copy').checked = preset.config.preventCopyPaste ?? true;
-            document.getElementById('auto-save').checked = preset.config.autoSave ?? true;
-            document.getElementById('detect-tab').checked = preset.config.detectTabSwitch ?? true;
-            document.getElementById('break-enabled').checked = !!preset.config.breakAfter;
-
-            updateSettingsPreview();
-            ui.showToast('Preset loaded', 'success');
-        };
-
-        window.resetToDefault = function () {
-            document.getElementById('exam-mode').value = 'timed';
-            document.getElementById('question-count').value = '25';
-            document.getElementById('difficulty').value = 'mixed';
-            document.getElementById('timing').value = 'adaptive';
-            document.getElementById('prevent-copy').checked = true;
-            document.getElementById('auto-save').checked = true;
-            document.getElementById('detect-tab').checked = true;
-            document.getElementById('break-enabled').checked = true;
-            document.getElementById('custom-count-container').style.display = 'none';
-            updateSettingsPreview();
-        };
-
-        function collectConfig() {
-            return {
-                mode: document.getElementById('exam-mode').value,
-                questionCount: document.getElementById('question-count').value === 'custom'
-                    ? parseInt(document.getElementById('custom-count').value, 10)
-                    : parseInt(document.getElementById('question-count').value, 10),
-                customCount: document.getElementById('question-count').value === 'custom'
-                    ? parseInt(document.getElementById('custom-count').value, 10)
-                    : undefined,
-                difficulty: document.getElementById('difficulty').value,
-                timingMode: document.getElementById('timing').value,
-                preventCopyPaste: document.getElementById('prevent-copy').checked,
-                autoSave: document.getElementById('auto-save').checked,
-                detectTabSwitch: document.getElementById('detect-tab').checked,
-                breakAfter: document.getElementById('break-enabled').checked ? 25 : 0
-            };
+        .challenge-actions {
+            margin-top: 0.5rem;
         }
-
-        // Expose functions globally for onclick handlers
-        window.startExam = startExam;
-        window.savePreset = savePreset;
-        window.loadPreset = loadPreset;
-        window.resetToDefault = resetToDefault;
-    </script>
+        .challenge-actions .btn-sm {
+            margin-right: 0.5rem;
+        }
+        .challenge-extra.show {
+            display: block;
+        }
+        .challenge-extra {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="page-container">
-        <header>
-            <div class="logo">
-                <img src="../assets/images/logo.png" alt="Logo" width="40" height="40">
-                <span>MedExamPro</span>
-            </div>
-            <button onclick="ui.toggleTheme()" class="btn-outline">🌓</button>
-        </header>
 
-        <div class="top-nav">
-            <button onclick="router.navigateTo('subject-specific.html?subject=' + app.getExamConfig()?.subject)"
-                class="btn-text">← Back to Topics</button>
-            <div class="advanced-menu">
-                <span class="menu-icon">⋮</span>
-                <div class="dropdown-content">
-                    <strong>Advanced Settings</strong>
-                    <hr>
-                    <label><input type="checkbox" id="break-enabled" checked> Break after 25 min (2 min)</label>
-                    <label><input type="checkbox" id="prevent-copy" checked> Prevent copy-paste</label>
-                    <label><input type="checkbox" id="auto-save" checked> Auto-save (30s)</label>
-                    <label><input type="checkbox" id="detect-tab" checked> Detect tab switching</label>
-                </div>
+    <!-- ============================================================ -->
+    <!--  SHIMMER SKELETON (dark theme, appears before any import)     -->
+    <!-- ============================================================ -->
+    <div id="shimmer-skeleton" style="position:fixed; top:0; left:0; right:0; bottom:0; z-index:9999; background:#1a1a2e; display:flex; flex-direction:column; padding:0.5rem 1rem;">
+        <!-- Header skeleton (2 rows) -->
+        <div style="display:flex; justify-content:space-between; align-items:center; padding:0.5rem 0; border-bottom:1px solid #333; margin-bottom:0.3rem;">
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+                <div style="width:32px; height:32px; border-radius:6px; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite;"></div>
+                <div style="width:80px; height:20px; border-radius:4px; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite;"></div>
+                <div style="width:60px; height:20px; border-radius:4px; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite;"></div>
+            </div>
+            <div style="width:40px; height:40px; border-radius:50%; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite;"></div>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom:0.5rem;">
+            <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
+                <div style="width:40px; height:40px; border-radius:50%; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite;"></div>
+                <div style="width:120px; height:24px; border-radius:4px; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite;"></div>
+                <div style="width:160px; height:18px; border-radius:4px; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite;"></div>
+            </div>
+            <div style="display:flex; gap:1rem;">
+                <div style="width:60px; height:24px; border-radius:9999px; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite;"></div>
+                <div style="width:60px; height:24px; border-radius:9999px; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite;"></div>
             </div>
         </div>
 
-        <main class="settings-container">
-            <h2>Configure your exam</h2>
-
-            <div class="info-box">
-                <strong>Subject:</strong> <span id="config-subject"></span> &nbsp;|&nbsp;
-                <strong>Topics:</strong> <span id="config-topics"></span><br>
-                <strong>Available Questions:</strong> <span id="available-questions"></span>
+        <!-- Bottom card skeleton -->
+        <div style="flex:1; display:flex; align-items:center; justify-content:center; margin-top:2rem;">
+            <div style="width:90%; max-width:400px; background:#2a2a3e; border-radius:24px; padding:1.5rem; border:1px solid #444;">
+                <div style="width:60%; height:28px; margin:0 auto 1rem; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite; border-radius:4px;"></div>
+                <div style="height:50px; border-radius:var(--radius); background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite; margin-bottom:0.75rem;"></div>
+                <div style="height:50px; border-radius:var(--radius); background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite; margin-bottom:0.75rem;"></div>
+                <div style="height:50px; border-radius:var(--radius); background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite; margin-bottom:1.5rem;"></div>
+                <div style="height:44px; border-radius:30px; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite;"></div>
             </div>
+        </div>
+    </div>
 
-            <div class="form-group">
-                <label for="exam-mode">Exam Mode</label>
-                <select id="exam-mode">
-                    <option value="practice">Practice Mode (untimed, explanations)</option>
-                    <option value="timed" selected>Timed Exam</option>
-                    <option value="quick">Quick Exam (10q, 5‑8 min)</option>
-                    <option value="standard">Standard Exam (25q, 12‑19 min)</option>
-                    <option value="full">Full Exam (50q, 25‑38 min)</option>
-                    <option value="custom">Custom</option>
-                </select>
+    <!-- ============================================================ -->
+    <!--  REAL CONTENT (hidden until loaded)                         -->
+    <!-- ============================================================ -->
+    <div id="main-content" style="display: none;">
+
+        <!-- Fixed Header (2 rows) -->
+        <header class="fixed-header">
+            <div class="header-row top">
+                <div class="left-group">
+                    <img src="/assets/images/logo.png" alt="Logo" width="32" height="32">
+                    <span class="brand">MedHub</span>
+                    <button onclick="router.navigateTo('subjects.html')" class="btn-text">← Subjects</button>
+                </div>
+                <div class="right-group">
+                    <button onclick="ui.toggleTheme()" class="btn-outline">🌓</button>
+                </div>
             </div>
+            <div class="header-row bottom">
+                <div class="subject-area">
+                    <span class="icon" id="subject-icon">📚</span>
+                    <span class="name" id="subject-name">Physiology</span>
+                    <span class="topics" id="subject-topics">Respiratory • Cardiovascular • Renal</span>
+                </div>
+                <div class="stats" id="subject-stats">
+                    <span id="stat-questions">50 questions</span>
+                    <span id="stat-difficulty">Mixed</span>
+                    <span id="stat-time">≈ 50 min</span>
+                </div>
+            </div>
+        </header>
 
-            <div class="form-group">
-                <label for="question-count">Number of Questions</label>
-                <select id="question-count">
-                    <!-- populated by JS -->
-                </select>
-                <div id="custom-count-container" style="display:none; margin-top: 10px;">
-                    <input type="number" id="custom-count" min="1" max="100" placeholder="Enter number (1‑100)">
+        <!-- Floating Bottom Card -->
+        <div class="bottom-card" id="bottomCard">
+
+            <!-- Step 1: Choose Exam Type -->
+            <div class="card-step active" id="step1">
+                <h3 style="margin-top: 0; text-align: center;">Choose Exam Type</h3>
+                <div class="mode-option" data-mode="standard">
+                    <span class="icon">📝</span>
+                    <div class="info">
+                        <div class="title">Standard Exam</div>
+                        <div class="desc">Real exam simulation</div>
+                    </div>
+                </div>
+                <div class="mode-option" data-mode="challenge">
+                    <span class="icon">👥</span>
+                    <div class="info">
+                        <div class="title">Community Challenge</div>
+                        <div class="desc">Compete with other students</div>
+                    </div>
+                </div>
+                <div class="mode-option" data-mode="revision">
+                    <span class="icon">📖</span>
+                    <div class="info">
+                        <div class="title">Revision</div>
+                        <div class="desc">Learn with explanations</div>
+                    </div>
+                </div>
+                <div class="action-row">
+                    <button class="btn btn-primary" id="continue-btn">Continue →</button>
                 </div>
             </div>
 
-            <div class="form-group">
-                <label for="difficulty">Difficulty Level</label>
-                <select id="difficulty">
-                    <option value="mixed">Mixed Difficulty</option>
-                    <option value="easy">Easy Only</option>
-                    <option value="medium">Medium Only</option>
-                    <option value="hard">Hard Only</option>
-                    <option value="expert">Expert Only</option>
-                </select>
+            <!-- Step 2a: Standard Exam Configuration -->
+            <div class="card-step" id="step2-standard">
+                <h3 style="margin-top: 0;">📝 Standard Exam</h3>
+                <div class="config-group">
+                    <label>Questions</label>
+                    <div class="question-stepper">
+                        <button class="qty-dec">−</button>
+                        <input type="number" id="std-qty" value="50" min="1">
+                        <button class="qty-inc">+</button>
+                        <span class="max-hint" id="std-max-hint">max 100</span>
+                    </div>
+                    <div class="validation-warning" id="std-warning">Number of questions exceeds available questions.</div>
+                </div>
+                <div class="config-group">
+                    <label>Difficulty</label>
+                    <div class="difficulty-group" id="std-difficulty">
+                        <button data-diff="easy">Easy</button>
+                        <button data-diff="mixed" class="active">Mixed</button>
+                        <button data-diff="hard">Hard</button>
+                    </div>
+                </div>
+                <div class="action-row">
+                    <button class="btn btn-secondary back-btn">← Back</button>
+                    <button class="btn btn-primary start-exam-btn">▶ Start Exam</button>
+                </div>
             </div>
 
-            <div class="form-group">
-                <label for="timing">Timer Settings</label>
-                <select id="timing">
-                    <option value="adaptive" selected>Adaptive (21‑54s based on difficulty)</option>
-                    <option value="relaxed">Relaxed (30s fixed)</option>
-                    <option value="strict">Strict (10s fixed)</option>
-                    <option value="none">No Timer</option>
-                </select>
+<!-- Step 2b: Community Challenge Configuration -->
+<div class="card-step" id="step2-challenge">
+    <h3 style="margin-top: 0;">👥 Community Challenge</h3>
+    <div class="config-group">
+        <label>Questions</label>
+        <div class="question-stepper">
+            <button class="qty-dec">−</button>
+            <input type="number" id="challenge-qty" value="50" min="1">
+            <button class="qty-inc">+</button>
+            <span class="max-hint" id="challenge-max-hint">max 100</span>
+        </div>
+        <div class="validation-warning" id="challenge-warning">Number of questions exceeds available questions.</div>
+    </div>
+    <div class="config-group">
+        <label>Challenge Type</label>
+        <div class="challenge-type-group" id="challenge-type">
+            <button data-type="friend" class="active">Friend</button>
+            <button data-type="anyone">Anyone Online</button>
+        </div>
+    </div>
+    <!-- Friend challenge extra -->
+    <div class="challenge-extra show" id="friend-extra">
+        <label>Enter friend's email:</label>
+        <!-- ✅ FIX: changed id to 'invite-friend-input' -->
+        <input type="email" id="invite-friend-input" placeholder="friend@example.com">
+        <div class="action-row" style="margin-top:0.5rem;">
+            <button class="btn btn-secondary" id="send-invite-btn">Send Invite</button>
+            <button class="btn btn-secondary" id="cancel-invite-btn">Cancel</button>
+        </div>
+        <div id="invite-status" style="margin-top:0.5rem; font-size:0.85rem;"></div>
+        <!-- Challenge status display -->
+        <div id="challenge-status" style="margin-top:0.5rem;"></div>
+        <div class="challenge-code-display" id="challenge-code-display">---</div>
+        <div class="waiting-message" id="waiting-message">⏳ Waiting for opponent...</div>
+        <div class="challenge-actions" id="challenge-actions" style="display:none;">
+            <button class="btn-sm" id="copy-challenge-code-btn">📋 Copy Code</button>
+            <button class="btn-sm" id="share-challenge-code-btn">📤 Share Code</button>
+        </div>
+    </div>
+    <!-- Anyone online extra -->
+    <div class="challenge-extra" id="anyone-extra">
+        <label>Invitations</label>
+        <div id="invitation-list" class="user-list">
+            <p style="color:var(--text-muted);">No pending invitations.</p>
+        </div>
+        <div class="action-row">
+            <button class="btn btn-secondary" id="refresh-invitations">🔄 Refresh</button>
+            <button class="btn btn-secondary" id="create-group-btn">Create Group Challenge</button>
+        </div>
+    </div>
+    <div class="action-row">
+        <button class="btn btn-secondary back-btn">← Back</button>
+        <button class="btn btn-primary start-exam-btn" id="challenge-start-btn">Create Challenge →</button>
+    </div>
+</div>
+
+            <!-- Step 2c: Revision Configuration -->
+            <div class="card-step" id="step2-revision">
+                <h3 style="margin-top: 0;">📖 Revision</h3>
+                <div class="config-group">
+                    <label>Questions</label>
+                    <div class="question-stepper">
+                        <button class="qty-dec">−</button>
+                        <input type="number" id="rev-qty" value="30" min="1">
+                        <button class="qty-inc">+</button>
+                        <span class="max-hint" id="rev-max-hint">max 100</span>
+                    </div>
+                    <div class="validation-warning" id="rev-warning">Number of questions exceeds available questions.</div>
+                </div>
+                <div class="config-group">
+                    <label>Difficulty</label>
+                    <div class="difficulty-group" id="rev-difficulty">
+                        <button data-diff="easy">Easy</button>
+                        <button data-diff="mixed" class="active">Mixed</button>
+                        <button data-diff="hard">Hard</button>
+                    </div>
+                </div>
+                <ul class="feature-list">
+                    <li>Instant marking</li>
+                    <li>Answer shown</li>
+                    <li>Explanation shown</li>
+                </ul>
+                <div class="action-row">
+                    <button class="btn btn-secondary back-btn">← Back</button>
+                    <button class="btn btn-primary start-exam-btn">▶ Start Revision</button>
+                </div>
             </div>
 
-            <div class="preview-section">
-                <strong>Preview:</strong> <span id="settings-preview"></span>
-            </div>
+        </div><!-- end bottom-card -->
+    </div><!-- end main-content -->
 
-            <div class="button-group">
-                <button onclick="savePreset()" class="btn-outline">💾 Save Preset</button>
-                <button onclick="router.navigateTo('subject-specific.html?subject=' + app.getExamConfig()?.subject)"
-                    class="btn-outline" style="color:red;">Cancel</button>
-                <button onclick="location.reload()" class="btn-secondary">Reset to Default</button>
-                <button onclick="startExam()" class="btn-primary">Start Exam →</button>
-            </div>
-
-            <p class="footer-note">All settings configured here are applied to your exam. You can save a preset for
-                future use.</p>
-        </main>
+    <!-- ============================================================ -->
+    <!--  SMALL INLINE SPINNER (for backend requests)                -->
+    <!-- ============================================================ -->
+    <div id="inline-spinner" style="display:none; position:fixed; bottom:20px; right:20px; background:var(--bg-card); padding:8px 12px; border-radius:30px; box-shadow:0 2px 10px rgba(0,0,0,0.2); z-index:999; display:flex; align-items:center; gap:8px; font-size:0.9rem; color:var(--text-secondary);">
+        <div class="spinner-small"></div>
+        <span>Loading...</span>
     </div>
 
-    <script data-lazy data-src="../scripts/offline.js"></script>
+    <!-- ============================================================ -->
+    <!--  SCRIPT: Initialize the page                                 -->
+    <!-- ============================================================ -->
+    <!-- ============================================================ -->
+<!--  SCRIPT: Initialize the page                                 -->
+<!-- ============================================================ -->
+<script type="module">
+    import * as examSettings from '../scripts/exam-settings.js';
+    import * as ui from '../scripts/ui.js';
+    import * as router from '../scripts/router.js';
+
+    // ==================== DOM REFS ====================
+    const dom = {
+        shimmer: document.getElementById('shimmer-skeleton'),
+        mainContent: document.getElementById('main-content'),
+        bottomCard: document.getElementById('bottomCard'),
+
+        // Subject summary
+        subjectIcon: document.getElementById('subject-icon'),
+        subjectName: document.getElementById('subject-name'),
+        subjectTopics: document.getElementById('subject-topics'),
+        statQuestions: document.getElementById('stat-questions'),
+        statDifficulty: document.getElementById('stat-difficulty'),
+        statTime: document.getElementById('stat-time'),
+
+        // Steps
+        step1: document.getElementById('step1'),
+        step2Std: document.getElementById('step2-standard'),
+        step2Chal: document.getElementById('step2-challenge'),
+        step2Rev: document.getElementById('step2-revision'),
+
+        // Buttons
+        continueBtn: document.getElementById('continue-btn'),
+        backBtns: document.querySelectorAll('.back-btn'),
+        startBtns: document.querySelectorAll('.start-exam-btn'),
+        challengeStartBtn: document.getElementById('challenge-start-btn'),
+
+        // Question inputs
+        qtyInputs: {
+            std: document.getElementById('std-qty'),
+            challenge: document.getElementById('challenge-qty'),
+            rev: document.getElementById('rev-qty')
+        },
+        maxHints: {
+            std: document.getElementById('std-max-hint'),
+            challenge: document.getElementById('challenge-max-hint'),
+            rev: document.getElementById('rev-max-hint')
+        },
+        warnings: {
+            std: document.getElementById('std-warning'),
+            challenge: document.getElementById('challenge-warning'),
+            rev: document.getElementById('rev-warning')
+        },
+
+        // Difficulty groups
+        stdDifficulty: document.getElementById('std-difficulty'),
+        revDifficulty: document.getElementById('rev-difficulty'),
+
+        // Challenge elements
+        challengeType: document.getElementById('challenge-type'),
+        friendExtra: document.getElementById('friend-extra'),
+        anyoneExtra: document.getElementById('anyone-extra'),
+        challengeStatus: document.getElementById('challenge-status'),
+        challengeCodeDisplay: document.getElementById('challenge-code-display'),
+        waitingMessage: document.getElementById('waiting-message'),
+        challengeActions: document.getElementById('challenge-actions'),
+        inviteStatus: document.getElementById('invite-status'),
+        inviteFriendInput: document.getElementById('invite-friend-input'), // ✅ Fixed ID
+        sendInviteBtn: document.getElementById('send-invite-btn'),
+        cancelInviteBtn: document.getElementById('cancel-invite-btn'),
+        copyChallengeCodeBtn: document.getElementById('copy-challenge-code-btn'),
+        shareChallengeCodeBtn: document.getElementById('share-challenge-code-btn'),
+        refreshInvitations: document.getElementById('refresh-invitations'),
+        createGroupBtn: document.getElementById('create-group-btn'),
+        invitationList: document.getElementById('invitation-list'),
+
+        // Presets (if any)
+        presetSelect: document.getElementById('preset-select'),
+        examMode: document.getElementById('exam-mode'),
+        questionCount: document.getElementById('question-count'),
+        customCount: document.getElementById('custom-count'),
+        customCountContainer: document.getElementById('custom-count-container'),
+        timing: document.getElementById('timing'),
+        preventCopy: document.getElementById('prevent-copy'),
+        autoSave: document.getElementById('auto-save'),
+        detectTab: document.getElementById('detect-tab'),
+        breakEnabled: document.getElementById('break-enabled'),
+    };
+
+    // Pass DOM refs to the module
+    examSettings.setDomRefs(dom);
+
+    // ==================== INIT ====================
+    (async function init() {
+        dom.shimmer.style.display = 'flex';
+        await examSettings.initExamSettings();
+        dom.shimmer.style.display = 'none';
+        dom.mainContent.style.display = 'block';
+        setupEventListeners();
+    })();
+
+    // ==================== EVENT LISTENERS ====================
+    function setupEventListeners() {
+        // Step navigation
+        dom.continueBtn.addEventListener('click', () => {
+            const selected = document.querySelector('.mode-option.selected');
+            if (!selected) {
+                ui.showToast('Please select an exam type', 'warning');
+                return;
+            }
+            const mode = selected.dataset.mode;
+            if (mode === 'standard') showStep('step2-standard');
+            else if (mode === 'challenge') showStep('step2-challenge');
+            else if (mode === 'revision') showStep('step2-revision');
+        });
+
+        dom.backBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                showStep('step1');
+                dom.challengeStatus.textContent = '';
+                dom.challengeCodeDisplay.textContent = '---';
+                dom.waitingMessage.style.display = 'none';
+                dom.challengeActions.style.display = 'none';
+            });
+        });
+
+        dom.startBtns.forEach(btn => {
+            if (btn.id !== 'challenge-start-btn') {
+                btn.addEventListener('click', examSettings.startExam);
+            }
+        });
+
+        // Mode selection
+        document.querySelectorAll('.mode-option').forEach(el => {
+            el.addEventListener('click', function() {
+                document.querySelectorAll('.mode-option').forEach(o => o.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+
+        // Challenge type
+        dom.challengeType.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                dom.challengeType.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                const type = this.dataset.type;
+                dom.friendExtra.classList.toggle('show', type === 'friend');
+                dom.anyoneExtra.classList.toggle('show', type === 'anyone');
+                dom.challengeStatus.textContent = '';
+                dom.challengeCodeDisplay.textContent = '---';
+                dom.waitingMessage.style.display = 'none';
+                dom.challengeActions.style.display = 'none';
+            });
+        });
+
+        // Send invite (real backend) – using dom.inviteFriendInput
+        dom.sendInviteBtn.addEventListener('click', async () => {
+            const email = dom.inviteFriendInput.value.trim();
+            if (!email) {
+                ui.showToast('Please enter a friend\'s email', 'warning');
+                return;
+            }
+            showInlineSpinner('Sending invitation...');
+            try {
+                await examSettings.inviteFriend();
+            } finally {
+                hideInlineSpinner();
+            }
+        });
+
+        // Cancel invite
+        dom.cancelInviteBtn.addEventListener('click', () => {
+            dom.inviteFriendInput.value = '';
+            dom.inviteStatus.textContent = '';
+            dom.challengeStatus.textContent = '';
+            dom.challengeCodeDisplay.textContent = '---';
+            dom.waitingMessage.style.display = 'none';
+            dom.challengeActions.style.display = 'none';
+        });
+
+        // Create challenge (real backend)
+        dom.challengeStartBtn.addEventListener('click', async () => {
+            showInlineSpinner('Creating challenge...');
+            try {
+                await examSettings.startChallenge();
+            } finally {
+                hideInlineSpinner();
+            }
+        });
+
+        // Copy challenge code
+        dom.copyChallengeCodeBtn.addEventListener('click', () => {
+            const code = dom.challengeCodeDisplay.textContent;
+            if (!code || code === '---') {
+                ui.showToast('No challenge code available', 'warning');
+                return;
+            }
+            navigator.clipboard?.writeText(code).then(() => {
+                ui.showToast('Code copied!', 'success');
+            }).catch(() => {
+                const input = document.createElement('input');
+                input.value = code;
+                document.body.appendChild(input);
+                input.select();
+                document.execCommand('copy');
+                input.remove();
+                ui.showToast('Code copied!', 'success');
+            });
+        });
+
+        // Share challenge code
+        dom.shareChallengeCodeBtn.addEventListener('click', () => {
+            const code = dom.challengeCodeDisplay.textContent;
+            if (!code || code === '---') {
+                ui.showToast('No challenge code available', 'warning');
+                return;
+            }
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Challenge Code',
+                    text: `Join my MedHub challenge! Code: ${code}`
+                }).catch(() => {});
+            } else {
+                navigator.clipboard?.writeText(`MedHub Challenge Code: ${code}`).then(() => {
+                    ui.showToast('Code copied to clipboard!', 'success');
+                }).catch(() => {
+                    ui.showToast('Share not supported. Copy manually.', 'warning');
+                });
+            }
+        });
+
+        // Refresh invitations (simulated)
+        dom.refreshInvitations.addEventListener('click', () => {
+            dom.invitationList.innerHTML = `
+                <div>No new invitations.</div>
+                <button style="margin-top:0.5rem; padding:0.3rem; width:100%; background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-sm);">Accept Group Challenge</button>
+                <button style="margin-top:0.3rem; padding:0.3rem; width:100%; background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-sm);">Decline</button>
+            `;
+            ui.showToast('Refreshed (simulated)', 'info');
+        });
+
+        dom.createGroupBtn.addEventListener('click', () => {
+            ui.showToast('Group challenge creation coming soon!', 'info');
+        });
+
+        // Presets (if any)
+        dom.presetSelect?.addEventListener('change', function() {
+            const idx = parseInt(this.value);
+            if (!isNaN(idx)) examSettings.applyPreset(idx);
+        });
+        document.querySelector('[onclick="savePreset()"]')?.addEventListener('click', examSettings.savePreset);
+        document.querySelector('[onclick="resetToDefault()"]')?.addEventListener('click', examSettings.resetToDefault);
+    }
+
+    // ==================== STEP NAVIGATION ====================
+    function showStep(stepId) {
+        document.querySelectorAll('.card-step').forEach(el => el.classList.remove('active'));
+        const step = document.getElementById(stepId);
+        if (step) step.classList.add('active');
+    }
+
+    // ==================== INLINE SPINNER ====================
+    function showInlineSpinner(message) {
+        const spinner = document.getElementById('inline-spinner');
+        spinner.querySelector('span').textContent = message || 'Loading...';
+        spinner.style.display = 'flex';
+    }
+
+    function hideInlineSpinner() {
+        document.getElementById('inline-spinner').style.display = 'none';
+    }
+
+    // Expose globally if needed
+    window.showInlineSpinner = showInlineSpinner;
+    window.hideInlineSpinner = hideInlineSpinner;
+    window.showStep = showStep;
+</script>
+
+    <script data-lazy data-src="/scripts/offline.js"></script>
 </body>
 
 </html>

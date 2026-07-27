@@ -1,0 +1,2854 @@
+{
+  "questions": [
+    {
+      "questionId": "pharma_toxicology_001",
+      "difficulty": 2,
+      "question": "The therapeutic index (TI) is a measure of drug safety. A low therapeutic index indicates:",
+      "image": null,
+      "options": [
+        {
+          "text": "A narrow margin between effective and toxic doses",
+          "isCorrect": true,
+          "explanation": "A low TI (e.g., LD50/ED50) means the toxic dose is close to the effective dose, requiring careful monitoring."
+        },
+        {
+          "text": "A wide margin of safety",
+          "isCorrect": false,
+          "explanation": "A wide margin of safety corresponds to a high therapeutic index."
+        },
+        {
+          "text": "High potency",
+          "isCorrect": false,
+          "explanation": "Potency is the dose required for effect, not related to safety margin."
+        },
+        {
+          "text": "High efficacy",
+          "isCorrect": false,
+          "explanation": "Efficacy is maximum effect, not safety."
+        },
+        {
+          "text": "Rapid elimination",
+          "isCorrect": false,
+          "explanation": "Elimination rate does not directly determine therapeutic index."
+        }
+      ],
+      "explanation": {
+        "overview": "Therapeutic index (TI) = TD50/ED50 (or LD50/ED50). A narrow TI implies that the toxic dose is close to the effective dose, so small changes in dose or blood levels can cause toxicity.",
+        "highYield": "Low TI → narrow safety margin → monitor drug levels (e.g., warfarin, digoxin, lithium, phenytoin).",
+        "clinicalCorrelation": "Drugs with low TI require therapeutic drug monitoring (TDM) to avoid adverse effects."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_002",
+      "difficulty": 2,
+      "question": "Acetaminophen (paracetamol) overdose is a leading cause of acute liver failure. The toxic metabolite responsible for hepatotoxicity is:",
+      "image": null,
+      "options": [
+        {
+          "text": "N-acetyl-p-benzoquinone imine (NAPQI)",
+          "isCorrect": true,
+          "explanation": "NAPQI is produced by CYP2E1 and is normally inactivated by glutathione. In overdose, glutathione depletion leads to NAPQI binding to hepatic proteins and causing centrilobular necrosis."
+        },
+        {
+          "text": "Glucuronide conjugate",
+          "isCorrect": false,
+          "explanation": "Glucuronidation is a detoxification pathway, not the toxic metabolite."
+        },
+        {
+          "text": "Sulfate conjugate",
+          "isCorrect": false,
+          "explanation": "Sulfation is another safe conjugation route."
+        },
+        {
+          "text": "Mercapturic acid",
+          "isCorrect": false,
+          "explanation": "Mercapturic acid is a final excretory product, not the toxic species."
+        },
+        {
+          "text": "Hydroxyacetaminophen",
+          "isCorrect": false,
+          "explanation": "Not the primary hepatotoxic intermediate."
+        }
+      ],
+      "explanation": {
+        "overview": "In overdose, the CYP2E1 pathway produces excessive NAPQI. When glutathione is depleted, NAPQI covalently binds to hepatic proteins, causing cell death.",
+        "highYield": "NAPQI = hepatotoxic; antidote = N-acetylcysteine (repletes glutathione). Most effective within 8–10 hours.",
+        "clinicalCorrelation": "A 4-hour acetaminophen level plotted on the Rumack-Matthew nomogram determines need for NAC."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_003",
+      "difficulty": 1,
+      "question": "The antidote for acetaminophen toxicity is:",
+      "image": null,
+      "options": [
+        {
+          "text": "N-acetylcysteine",
+          "isCorrect": true,
+          "explanation": "NAC replenishes glutathione, directly detoxifies NAPQI, and enhances nontoxic sulfation. It is most effective within 8-10 hours of overdose."
+        },
+        {
+          "text": "Naloxone",
+          "isCorrect": false,
+          "explanation": "Naloxone reverses opioid toxicity."
+        },
+        {
+          "text": "Flumazenil",
+          "isCorrect": false,
+          "explanation": "Flumazenil reverses benzodiazepine effects."
+        },
+        {
+          "text": "Activated charcoal",
+          "isCorrect": false,
+          "explanation": "Activated charcoal can adsorb acetaminophen if given early but is not the antidote."
+        },
+        {
+          "text": "Vitamin K",
+          "isCorrect": false,
+          "explanation": "Vitamin K reverses warfarin."
+        }
+      ],
+      "explanation": {
+        "overview": "N-acetylcysteine (NAC) is the specific antidote for acetaminophen poisoning. It acts as a glutathione precursor and also enhances nontoxic sulfation.",
+        "highYield": "NAC = antidote; give IV or oral (Mucomyst). Check LFTs and INR.",
+        "clinicalCorrelation": "If presentation is >8 hours but <24 hours, NAC is still given; liver transplant may be needed for fulminant failure."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_004",
+      "difficulty": 2,
+      "question": "A patient presents with altered mental status, miosis, bradycardia, and hypoventilation. This toxidrome is classic for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Opioid overdose",
+          "isCorrect": true,
+          "explanation": "Opioid toxidrome: CNS and respiratory depression, miosis (pinpoint pupils), bradycardia, hypotension, and hypothermia."
+        },
+        {
+          "text": "Anticholinergic poisoning",
+          "isCorrect": false,
+          "explanation": "Anticholinergic would cause mydriasis, tachycardia, dry skin, not miosis."
+        },
+        {
+          "text": "Sympathomimetic toxicity",
+          "isCorrect": false,
+          "explanation": "Sympathomimetic would cause hypertension, tachycardia, diaphoresis, mydriasis."
+        },
+        {
+          "text": "Organophosphate poisoning",
+          "isCorrect": false,
+          "explanation": "Organophosphates cause cholinergic excess (SLUDGE) including bradycardia and miosis, but also bronchorrhea and muscle fasciculations."
+        },
+        {
+          "text": "Sedative-hypnotic withdrawal",
+          "isCorrect": false,
+          "explanation": "Sedative withdrawal causes autonomic hyperactivity, not miosis."
+        }
+      ],
+      "explanation": {
+        "overview": "The classic opioid toxidrome includes decreased level of consciousness, respiratory depression, pinpoint pupils, and reduced bowel sounds.",
+        "highYield": "Opioid overdose = miosis + respiratory depression + CNS depression; reversed by naloxone.",
+        "clinicalCorrelation": "If opioid overdose is suspected, give naloxone; be prepared for acute withdrawal if the patient is dependent."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_005",
+      "difficulty": 1,
+      "question": "The antidote for opioid overdose is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Naloxone",
+          "isCorrect": true,
+          "explanation": "Naloxone is a short-acting competitive antagonist at mu-opioid receptors, reversing respiratory depression and sedation."
+        },
+        {
+          "text": "Naltrexone",
+          "isCorrect": false,
+          "explanation": "Naltrexone is an opioid antagonist used for relapse prevention, not acute overdose."
+        },
+        {
+          "text": "Nalmefene",
+          "isCorrect": false,
+          "explanation": "Nalmefene is also an antagonist but naloxone is the standard emergency antidote."
+        },
+        {
+          "text": "Flumazenil",
+          "isCorrect": false,
+          "explanation": "Flumazenil is for benzodiazepines."
+        },
+        {
+          "text": "Atropine",
+          "isCorrect": false,
+          "explanation": "Atropine is for bradycardia or organophosphate poisoning."
+        }
+      ],
+      "explanation": {
+        "overview": "Naloxone is the first-line agent for acute opioid overdose. It can be given IV, IM, or intranasally.",
+        "highYield": "Naloxone: 0.4–2 mg IV/IM/IN, repeat as needed. Short half-life may require redosing.",
+        "clinicalCorrelation": "Always ensure adequate airway and ventilation; naloxone may precipitate withdrawal."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_006",
+      "difficulty": 2,
+      "question": "A patient with anticholinergic poisoning (e.g., from atropine, antihistamines) typically presents with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Mydriasis, tachycardia, dry skin, urinary retention, and delirium",
+          "isCorrect": true,
+          "explanation": "Anticholinergic toxidrome: \"Mad as a hatter, hot as a hare, red as a beet, dry as a bone, blind as a bat\" – delirium, hyperthermia, flushing, dry skin, mydriasis, urinary retention."
+        },
+        {
+          "text": "Miosis, bradycardia, salivation, and diarrhea",
+          "isCorrect": false,
+          "explanation": "That describes cholinergic excess."
+        },
+        {
+          "text": "Hypertension, tachycardia, and diaphoresis",
+          "isCorrect": false,
+          "explanation": "More consistent with sympathomimetic."
+        },
+        {
+          "text": "Sedation and respiratory depression",
+          "isCorrect": false,
+          "explanation": "Classic for opioid/sedative overdose."
+        },
+        {
+          "text": "Seizures and hyperthermia",
+          "isCorrect": false,
+          "explanation": "Serotonin syndrome or stimulant toxicity."
+        }
+      ],
+      "explanation": {
+        "overview": "Anticholinergic poisoning results from blockade of muscarinic receptors, causing a constellation of peripheral and central signs.",
+        "highYield": "Anticholinergic = hyperthermia, flushing, dry mucous membranes, mydriasis, tachycardia, urinary retention, confusion.",
+        "clinicalCorrelation": "Physostigmine can be used in severe cases; benzodiazepines for agitation."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_007",
+      "difficulty": 2,
+      "question": "The antidote for severe anticholinergic poisoning is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Physostigmine",
+          "isCorrect": true,
+          "explanation": "Physostigmine is a centrally acting acetylcholinesterase inhibitor that can reverse anticholinergic delirium. Use with caution due to risk of seizures and bradycardia."
+        },
+        {
+          "text": "Neostigmine",
+          "isCorrect": false,
+          "explanation": "Neostigmine does not cross the blood-brain barrier; cannot reverse central anticholinergic effects."
+        },
+        {
+          "text": "Atropine",
+          "isCorrect": false,
+          "explanation": "Atropine is an anticholinergic; it would worsen the poisoning."
+        },
+        {
+          "text": "Pralidoxime",
+          "isCorrect": false,
+          "explanation": "Pralidoxime is for organophosphate poisoning."
+        },
+        {
+          "text": "Naloxone",
+          "isCorrect": false,
+          "explanation": "Naloxone is for opioid overdose."
+        }
+      ],
+      "explanation": {
+        "overview": "Physostigmine is a tertiary amine that penetrates the CNS and increases acetylcholine levels, reversing central anticholinergic syndrome.",
+        "highYield": "Physostigmine = central and peripheral cholinesterase inhibitor; for anticholinergic delirium. Contraindicated in cardiac conduction defects.",
+        "clinicalCorrelation": "Use physostigmine only for severe delirium/agitation unresponsive to benzodiazepines; have atropine at bedside."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_008",
+      "difficulty": 2,
+      "question": "Organophosphate insecticides inhibit acetylcholinesterase, leading to cholinergic excess. Which of the following is NOT a feature of organophosphate poisoning?",
+      "image": null,
+      "options": [
+        {
+          "text": "Mydriasis",
+          "isCorrect": true,
+          "explanation": "Organophosphates cause miosis (pupillary constriction), not mydriasis."
+        },
+        {
+          "text": "Salivation",
+          "isCorrect": false,
+          "explanation": "Excessive salivation is typical (SLUDGE)."
+        },
+        {
+          "text": "Lacrimation",
+          "isCorrect": false,
+          "explanation": "Increased lacrimation occurs."
+        },
+        {
+          "text": "Urination",
+          "isCorrect": false,
+          "explanation": "Urinary incontinence is part of the syndrome."
+        },
+        {
+          "text": "Bronchorrhea",
+          "isCorrect": false,
+          "explanation": "Profuse bronchial secretions are a hallmark."
+        }
+      ],
+      "explanation": {
+        "overview": "Organophosphates cause cholinergic crisis: muscarinic (DUMBELS – diarrhea, urination, miosis, bradycardia, emesis, lacrimation, salivation) and nicotinic (muscle fasciculations, weakness).",
+        "highYield": "Organophosphate = miosis, not mydriasis; treat with atropine + pralidoxime.",
+        "clinicalCorrelation": "Atropine for muscarinic symptoms; pralidoxime to reactivate acetylcholinesterase before aging."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_009",
+      "difficulty": 2,
+      "question": "The antidotes for organophosphate poisoning are:",
+      "image": null,
+      "options": [
+        {
+          "text": "Atropine and pralidoxime (2-PAM)",
+          "isCorrect": true,
+          "explanation": "Atropine blocks muscarinic receptors; pralidoxime removes the phosphate group from acetylcholinesterase, restoring enzyme activity if given before aging."
+        },
+        {
+          "text": "Atropine only",
+          "isCorrect": false,
+          "explanation": "Atropine treats only muscarinic effects; nicotinic effects and enzyme regeneration require pralidoxime."
+        },
+        {
+          "text": "Pralidoxime only",
+          "isCorrect": false,
+          "explanation": "Pralidoxime alone does not control muscarinic symptoms."
+        },
+        {
+          "text": "Physostigmine",
+          "isCorrect": false,
+          "explanation": "Physostigmine would worsen the cholinergic crisis."
+        },
+        {
+          "text": "Naloxone",
+          "isCorrect": false,
+          "explanation": "Ineffective."
+        }
+      ],
+      "explanation": {
+        "overview": "Dual therapy: atropine titrated to clear chest secretions and heart rate, and pralidoxime to reactivate cholinesterase.",
+        "highYield": "Atropine + pralidoxime; atropine first to stabilize, then pralidoxime.",
+        "clinicalCorrelation": "Pralidoxime must be given early before the enzyme-phosphate bond 'ages' and becomes irreversible."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_010",
+      "difficulty": 3,
+      "question": "The 'aging' of organophosphate-bound acetylcholinesterase refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Irreversible covalent bond formation, making pralidoxime ineffective",
+          "isCorrect": true,
+          "explanation": "Aging is the time-dependent dealkylation of the phosphorylated enzyme, which stabilizes the bond and prevents reactivation by oximes."
+        },
+        {
+          "text": "Spontaneous reactivation of the enzyme",
+          "isCorrect": false,
+          "explanation": "That is the opposite; aging prevents reactivation."
+        },
+        {
+          "text": "Metabolism of the organophosphate",
+          "isCorrect": false,
+          "explanation": "Not the definition."
+        },
+        {
+          "text": "Excretion of the complex",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Development of tolerance",
+          "isCorrect": false,
+          "explanation": "Not tolerance."
+        }
+      ],
+      "explanation": {
+        "overview": "Aging occurs when the organophosphate-enzyme complex undergoes dealkylation, creating a stable, irreversible bond. The time to aging varies by agent (minutes to hours).",
+        "highYield": "Aging = irreversible covalent bond; pralidoxime ineffective after aging. Must give early.",
+        "clinicalCorrelation": "For sarin or VX, aging is very rapid; pralidoxime must be given immediately."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_011",
+      "difficulty": 2,
+      "question": "A patient presents with hypertension, tachycardia, diaphoresis, and mydriasis. This toxidrome suggests:",
+      "image": null,
+      "options": [
+        {
+          "text": "Sympathomimetic poisoning (e.g., cocaine, amphetamine)",
+          "isCorrect": true,
+          "explanation": "Sympathomimetic toxidrome: CNS excitation, hypertension, tachycardia, hyperthermia, diaphoresis, mydriasis."
+        },
+        {
+          "text": "Opioid overdose",
+          "isCorrect": false,
+          "explanation": "Opioids cause CNS depression, miosis, bradycardia."
+        },
+        {
+          "text": "Anticholinergic poisoning",
+          "isCorrect": false,
+          "explanation": "Anticholinergic would include dry skin and urinary retention, not diaphoresis."
+        },
+        {
+          "text": "Organophosphate poisoning",
+          "isCorrect": false,
+          "explanation": "Organophosphates cause miosis, bradycardia, secretions."
+        },
+        {
+          "text": "Benzodiazepine overdose",
+          "isCorrect": false,
+          "explanation": "Benzodiazepines cause sedation, hypotension, respiratory depression."
+        }
+      ],
+      "explanation": {
+        "overview": "Sympathomimetic agents (cocaine, amphetamines, cathinones) increase catecholamine activity, leading to a hyperadrenergic state.",
+        "highYield": "Sympathomimetic = tachycardia + hypertension + mydriasis + diaphoresis + hyperthermia.",
+        "clinicalCorrelation": "Treatment: benzodiazepines for sedation, cooling, and supportive care. Beta-blockers alone may cause unopposed alpha stimulation."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_012",
+      "difficulty": 2,
+      "question": "Cocaine toxicity can cause myocardial infarction due to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Coronary vasospasm and thrombosis, increased myocardial oxygen demand",
+          "isCorrect": true,
+          "explanation": "Cocaine blocks norepinephrine reuptake, causing sympathetic surge (↑HR, ↑BP, ↑contractility) and also induces coronary vasospasm and platelet activation."
+        },
+        {
+          "text": "Direct myocardial necrosis",
+          "isCorrect": false,
+          "explanation": "While chronic use can cause cardiomyopathy, acute MI is mainly vasospasm/thrombosis."
+        },
+        {
+          "text": "Hypotension and shock",
+          "isCorrect": false,
+          "explanation": "Cocaine causes hypertension."
+        },
+        {
+          "text": "Bradycardia",
+          "isCorrect": false,
+          "explanation": "Tachycardia."
+        },
+        {
+          "text": "Electrolyte imbalances",
+          "isCorrect": false,
+          "explanation": "Not the primary mechanism."
+        }
+      ],
+      "explanation": {
+        "overview": "Cocaine-induced myocardial ischemia results from increased oxygen demand (sympathetic activation) and decreased supply (coronary vasospasm, thrombosis).",
+        "highYield": "Cocaine chest pain: give benzodiazepines, aspirin, nitrates; avoid beta-blockers initially (unopposed alpha).",
+        "clinicalCorrelation": "Patients with cocaine-associated MI should be managed with aggressive cardiovascular support and cooling if hyperthermic."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_013",
+      "difficulty": 2,
+      "question": "Benzodiazepine overdose typically causes sedation and ataxia but rarely fatal respiratory depression unless combined with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Other CNS depressants (alcohol, opioids)",
+          "isCorrect": true,
+          "explanation": "Benzodiazepines alone have a high therapeutic index; severe respiratory depression occurs with co-ingestants like ethanol, opioids, or barbiturates."
+        },
+        {
+          "text": "Sympathomimetics",
+          "isCorrect": false,
+          "explanation": "Sympathomimetics would antagonize sedation."
+        },
+        {
+          "text": "Anticholinergics",
+          "isCorrect": false,
+          "explanation": "Anticholinergics cause delirium."
+        },
+        {
+          "text": "Beta-blockers",
+          "isCorrect": false,
+          "explanation": "Not typically synergistic for respiratory depression."
+        },
+        {
+          "text": "Calcium channel blockers",
+          "isCorrect": false,
+          "explanation": "Not a major interaction."
+        }
+      ],
+      "explanation": {
+        "overview": "Pure benzodiazepine overdose generally causes CNS depression but preserved vital signs. Combined with other CNS depressants, life-threatening respiratory depression can occur.",
+        "highYield": "Benzodiazepines alone are rarely fatal; additive CNS depression with alcohol/opioids.",
+        "clinicalCorrelation": "Flumazenil is not routinely recommended due to risk of seizures in mixed overdose or dependent patients."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_014",
+      "difficulty": 2,
+      "question": "The antidote for benzodiazepine overdose is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Flumazenil",
+          "isCorrect": true,
+          "explanation": "Flumazenil is a competitive benzodiazepine receptor antagonist that can reverse sedation. It carries a risk of precipitating seizures, especially in chronic users or mixed overdoses."
+        },
+        {
+          "text": "Naloxone",
+          "isCorrect": false,
+          "explanation": "Naloxone reverses opioids."
+        },
+        {
+          "text": "Physostigmine",
+          "isCorrect": false,
+          "explanation": "For anticholinergic toxicity."
+        },
+        {
+          "text": "Atropine",
+          "isCorrect": false,
+          "explanation": "For bradycardia/organophosphates."
+        },
+        {
+          "text": "Activated charcoal",
+          "isCorrect": false,
+          "explanation": "Charcoal can adsorb benzodiazepines but is not a specific antidote."
+        }
+      ],
+      "explanation": {
+        "overview": "Flumazenil is the specific antidote, but its use is limited to pure benzodiazepine overdose in non-dependent patients.",
+        "highYield": "Flumazenil: use with extreme caution; not for unknown overdose or chronic benzo users.",
+        "clinicalCorrelation": "In general, supportive care and airway management are preferred over flumazenil."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_015",
+      "difficulty": 2,
+      "question": "Tricyclic antidepressant (TCA) overdose is life-threatening due to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Sodium channel blockade, leading to wide QRS, arrhythmias, seizures",
+          "isCorrect": true,
+          "explanation": "TCAs block cardiac fast sodium channels, causing QRS prolongation, ventricular arrhythmias, and hypotension. They also have anticholinergic and CNS effects."
+        },
+        {
+          "text": "Serotonin syndrome",
+          "isCorrect": false,
+          "explanation": "TCAs can contribute to serotonin syndrome when combined with other serotonergics, but their primary overdose toxicity is sodium channel blockade."
+        },
+        {
+          "text": "Hypertensive crisis",
+          "isCorrect": false,
+          "explanation": "TCAs can cause hypotension, not hypertensive crisis."
+        },
+        {
+          "text": "Respiratory depression only",
+          "isCorrect": false,
+          "explanation": "They cause CNS depression but the main threat is cardiac."
+        },
+        {
+          "text": "Hypoglycemia",
+          "isCorrect": false,
+          "explanation": "Not a primary feature."
+        }
+      ],
+      "explanation": {
+        "overview": "TCA overdose is characterized by the \"3 Cs\": cardiac (Na+ channel blockade → wide QRS, arrhythmias), coma, and convulsions.",
+        "highYield": "TCA toxicity: wide QRS >100 ms, seizures. Treat with sodium bicarbonate.",
+        "clinicalCorrelation": "ECG monitoring is crucial; QRS >100 ms predicts seizure risk, >160 ms predicts ventricular arrhythmia risk."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_016",
+      "difficulty": 2,
+      "question": "The treatment of choice for TCA-induced cardiac toxicity (wide QRS) is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Sodium bicarbonate",
+          "isCorrect": true,
+          "explanation": "Sodium bicarbonate alkalinizes the serum, increasing protein binding of TCAs and providing a sodium load to overcome channel blockade, narrowing the QRS complex."
+        },
+        {
+          "text": "Lidocaine",
+          "isCorrect": false,
+          "explanation": "Lidocaine (a class Ib antiarrhythmic) may be used for ventricular arrhythmias but sodium bicarbonate is first-line."
+        },
+        {
+          "text": "Amiodarone",
+          "isCorrect": false,
+          "explanation": "Amiodarone is not first-line and may worsen hypotension."
+        },
+        {
+          "text": "Magnesium sulfate",
+          "isCorrect": false,
+          "explanation": "Magnesium is for torsades de pointes, not TCA toxicity."
+        },
+        {
+          "text": "Atropine",
+          "isCorrect": false,
+          "explanation": "Atropine is for bradycardia."
+        }
+      ],
+      "explanation": {
+        "overview": "Sodium bicarbonate is the mainstay for TCA cardiotoxicity. Alkalinization to pH 7.50–7.55 promotes TCA protein binding and supplies sodium to compete at the channel.",
+        "highYield": "TCA wide QRS → NaHCO3 bolus (1–2 mEq/kg) and titrate to QRS narrowing.",
+        "clinicalCorrelation": "Hyperventilation also provides temporary alkalinization if sodium bicarbonate is not immediately available."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_017",
+      "difficulty": 2,
+      "question": "Lithium toxicity is potentiated by volume depletion and NSAIDs. Early neurological symptoms include:",
+      "image": null,
+      "options": [
+        {
+          "text": "Tremor, ataxia, nystagmus, slurred speech",
+          "isCorrect": true,
+          "explanation": "Mild to moderate lithium toxicity causes fine tremor, ataxia, drowsiness, and dysarthria. Severe toxicity leads to seizures, coma, and cardiovascular collapse."
+        },
+        {
+          "text": "Seizures and coma",
+          "isCorrect": false,
+          "explanation": "These are late, severe manifestations."
+        },
+        {
+          "text": "Agitation and delirium",
+          "isCorrect": false,
+          "explanation": "Not typical early presentation."
+        },
+        {
+          "text": "Peripheral neuropathy",
+          "isCorrect": false,
+          "explanation": "Lithium does not typically cause peripheral neuropathy."
+        },
+        {
+          "text": "Parkinsonism",
+          "isCorrect": false,
+          "explanation": "Parkinsonism is more associated with antipsychotics or MPTP."
+        }
+      ],
+      "explanation": {
+        "overview": "Lithium has a narrow therapeutic index. Early neurotoxicity includes coarse tremor, confusion, ataxia, and nystagmus.",
+        "highYield": "Lithium toxicity: tremor, ataxia, dysarthria → seizures, coma. Precipitants: dehydration, NSAIDs, ACE inhibitors, thiazides.",
+        "clinicalCorrelation": "Severe lithium toxicity (level >2.5 mEq/L or severe symptoms) requires hemodialysis."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_018",
+      "difficulty": 2,
+      "question": "In severe lithium toxicity (e.g., with neurological symptoms), the definitive treatment is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hemodialysis",
+          "isCorrect": true,
+          "explanation": "Lithium is a small ion not bound to proteins; hemodialysis efficiently removes it. Indicated for severe symptoms, renal failure, or levels >4 mEq/L (or >2.5 with neuro symptoms)."
+        },
+        {
+          "text": "Activated charcoal",
+          "isCorrect": false,
+          "explanation": "Charcoal does not adsorb lithium."
+        },
+        {
+          "text": "Forced diuresis",
+          "isCorrect": false,
+          "explanation": "Not effective and may worsen volume depletion."
+        },
+        {
+          "text": "Whole bowel irrigation",
+          "isCorrect": false,
+          "explanation": "WBI can be used if ingestion is very recent and sustained-release, but not definitive."
+        },
+        {
+          "text": "Sodium polystyrene sulfonate",
+          "isCorrect": false,
+          "explanation": "Not effective for lithium."
+        }
+      ],
+      "explanation": {
+        "overview": "Hemodialysis is the treatment of choice for severe lithium poisoning due to its low molecular weight, low protein binding, and small volume of distribution.",
+        "highYield": "Lithium clearance with hemodialysis is high; target lithium <1 mEq/L post-dialysis and monitor for rebound.",
+        "clinicalCorrelation": "After dialysis, lithium levels may rebound due to redistribution from tissues; serial levels are needed."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_019",
+      "difficulty": 2,
+      "question": "Salicylate (aspirin) overdose can cause both respiratory alkalosis and metabolic acidosis. In adults, early toxicity typically presents with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Respiratory alkalosis (tachypnea)",
+          "isCorrect": true,
+          "explanation": "Salicylates directly stimulate the respiratory center, causing hyperventilation and primary respiratory alkalosis. Later, metabolic acidosis (increased anion gap) develops due to uncoupling of oxidative phosphorylation."
+        },
+        {
+          "text": "Metabolic acidosis",
+          "isCorrect": false,
+          "explanation": "Metabolic acidosis appears later; early sign is respiratory alkalosis."
+        },
+        {
+          "text": "Coma",
+          "isCorrect": false,
+          "explanation": "Coma occurs in severe toxicity, not early."
+        },
+        {
+          "text": "Hepatic failure",
+          "isCorrect": false,
+          "explanation": "Not characteristic."
+        },
+        {
+          "text": "Pulmonary edema",
+          "isCorrect": false,
+          "explanation": "Non-cardiogenic pulmonary edema can occur in chronic or severe acute poisoning, not early."
+        }
+      ],
+      "explanation": {
+        "overview": "Salicylate poisoning causes a mixed acid-base disorder: respiratory alkalosis (early, from tachypnea) and metabolic acidosis (late, from lactic acid and organic acids).",
+        "highYield": "Salicylate toxidrome: tinnitus, hyperventilation, vomiting, metabolic acidosis with increased anion gap.",
+        "clinicalCorrelation": "Management: alkalinize urine (NaHCO3) to enhance excretion; hemodialysis for severe poisoning (levels >100 mg/dL or renal failure)."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_020",
+      "difficulty": 2,
+      "question": "A key principle in managing salicylate poisoning is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Urinary alkalinization with sodium bicarbonate to enhance excretion",
+          "isCorrect": true,
+          "explanation": "Raising urine pH >7.5 traps ionized salicylate in the renal tubules, markedly increasing clearance."
+        },
+        {
+          "text": "Urinary acidification",
+          "isCorrect": false,
+          "explanation": "Acidification would increase reabsorption and worsen toxicity."
+        },
+        {
+          "text": "Hemodialysis only for severe cases",
+          "isCorrect": false,
+          "explanation": "True, but urinary alkalinization is also key."
+        },
+        {
+          "text": "Activated charcoal is ineffective",
+          "isCorrect": false,
+          "explanation": "Activated charcoal is effective if given early, but alkalinization is a mainstay."
+        },
+        {
+          "text": "Forced diuresis",
+          "isCorrect": false,
+          "explanation": "Forced diuresis alone is less effective than alkalinization."
+        }
+      ],
+      "explanation": {
+        "overview": "Alkalinizing the urine (target urine pH 7.5–8.0) increases the fraction of ionized salicylate, which is trapped in the tubule and excreted.",
+        "highYield": "Salicylate elimination: NaHCO3 infusion to keep urine pH >7.5; monitor serum potassium (hypokalemia prevents alkalinization).",
+        "clinicalCorrelation": "Even with normal serum pH, give sodium bicarbonate to alkalinize the urine."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_021",
+      "difficulty": 2,
+      "question": "Theophylline toxicity can cause life-threatening seizures and arrhythmias. Its mechanism of toxicity involves:",
+      "image": null,
+      "options": [
+        {
+          "text": "Adenosine receptor antagonism and beta-adrenergic stimulation",
+          "isCorrect": true,
+          "explanation": "Theophylline blocks adenosine receptors (causing CNS stimulation) and inhibits phosphodiesterase, leading to increased cAMP and catecholamine-like effects."
+        },
+        {
+          "text": "Sodium channel blockade",
+          "isCorrect": false,
+          "explanation": "TCAs cause sodium channel blockade."
+        },
+        {
+          "text": "Acetylcholinesterase inhibition",
+          "isCorrect": false,
+          "explanation": "Organophosphates."
+        },
+        {
+          "text": "GABA antagonism",
+          "isCorrect": false,
+          "explanation": "Flumazenil has GABA antagonism."
+        },
+        {
+          "text": "Dopamine receptor blockade",
+          "isCorrect": false,
+          "explanation": "Antipsychotics."
+        }
+      ],
+      "explanation": {
+        "overview": "Theophylline overdose causes excessive beta-adrenergic tone: tachycardia, hypokalemia, hyperglycemia, and seizures due to adenosine antagonism and catecholamine release.",
+        "highYield": "Theophylline toxicity: vomiting, tachycardia, hypokalemia, seizures. Treat with benzodiazepines, beta-blockers (esmolol), and charcoal/hemodialysis.",
+        "clinicalCorrelation": "Seizures in theophylline toxicity are often refractory to usual anticonvulsants; use phenobarbital or benzodiazepines, and hemodialysis for severe cases."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_022",
+      "difficulty": 2,
+      "question": "Iron overdose is common in children. Which of the following is a specific antidote for severe iron poisoning?",
+      "image": null,
+      "options": [
+        {
+          "text": "Deferoxamine",
+          "isCorrect": true,
+          "explanation": "Deferoxamine chelates free iron, forming ferrioxamine which is excreted in urine (causing 'vin rose' colored urine)."
+        },
+        {
+          "text": "Deferasirox",
+          "isCorrect": false,
+          "explanation": "Deferasirox is an oral chelator for chronic iron overload, not acute overdose."
+        },
+        {
+          "text": "Deferiprone",
+          "isCorrect": false,
+          "explanation": "Also for chronic iron overload."
+        },
+        {
+          "text": "EDTA",
+          "isCorrect": false,
+          "explanation": "EDTA chelates lead, not iron."
+        },
+        {
+          "text": "Dimercaprol",
+          "isCorrect": false,
+          "explanation": "Dimercaprol is for arsenic, mercury, lead."
+        }
+      ],
+      "explanation": {
+        "overview": "Deferoxamine is the parenteral chelator used for acute iron poisoning when systemic toxicity is present (metabolic acidosis, shock, or high serum iron).",
+        "highYield": "Iron poisoning: GI phase, latent phase, shock/metabolic acidosis, hepatic necrosis. Deferoxamine for serious toxicity.",
+        "clinicalCorrelation": "Activated charcoal does not adsorb iron; whole bowel irrigation may be considered if many tablets are visible on X-ray."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_023",
+      "difficulty": 2,
+      "question": "Lead poisoning in children can cause developmental delay and anemia. The characteristic laboratory finding is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Basophilic stippling of RBCs",
+          "isCorrect": false,
+          "explanation": "Seen in lead poisoning, but it's not the only finding."
+        },
+        {
+          "text": "Microcytic hypochromic anemia",
+          "isCorrect": false,
+          "explanation": "Lead poisoning causes microcytic anemia, but basophilic stippling is more specific."
+        },
+        {
+          "text": "Elevated free erythrocyte protoporphyrin",
+          "isCorrect": false,
+          "explanation": "Also present."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Lead poisoning leads to inhibition of heme synthesis, resulting in microcytic anemia, basophilic stippling, and increased erythrocyte protoporphyrin (or zinc protoporphyrin)."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All are characteristic."
+        }
+      ],
+      "explanation": {
+        "overview": "Lead inhibits enzymes involved in heme synthesis (ALAD, ferrochelatase), leading to accumulation of protoporphyrins and anemia with basophilic stippling.",
+        "highYield": "Lead poisoning: microcytic anemia + basophilic stippling + elevated zinc protoporphyrin. Also causes neuropathy and encephalopathy.",
+        "clinicalCorrelation": "Blood lead level ≥5 µg/dL is considered elevated in children; chelation therapy indicated for levels >45 µg/dL."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_024",
+      "difficulty": 2,
+      "question": "The antidote for lead poisoning is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Succimer (DMSA) or EDTA",
+          "isCorrect": false,
+          "explanation": "These are used, but the full answer includes dimercaprol for severe cases."
+        },
+        {
+          "text": "Deferoxamine",
+          "isCorrect": false,
+          "explanation": "For iron."
+        },
+        {
+          "text": "Penicillamine",
+          "isCorrect": false,
+          "explanation": "Penicillamine is a chelator for copper (Wilson disease) and lead, but not first-line."
+        },
+        {
+          "text": "Dimercaprol (BAL)",
+          "isCorrect": false,
+          "explanation": "Used for severe lead poisoning, often with EDTA."
+        },
+        {
+          "text": "Both A and D (depending on severity)",
+          "isCorrect": true,
+          "explanation": "Oral succimer (DMSA) is used for mild to moderate poisoning; dimercaprol + EDTA for severe encephalopathy."
+        }
+      ],
+      "explanation": {
+        "overview": "Chelation therapy for lead depends on severity: succimer (oral) for blood lead 45–69 µg/dL; dimercaprol + EDTA for levels >70 µg/dL or encephalopathy.",
+        "highYield": "Lead chelation: Succimer (DMSA) oral; severe → BAL + EDTA.",
+        "clinicalCorrelation": "Remove the source of lead exposure; chelation alone is not sufficient."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_025",
+      "difficulty": 2,
+      "question": "Arsenic poisoning, which can cause gastrointestinal, neurological, and cardiac effects, is treated with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Dimercaprol (BAL) or succimer",
+          "isCorrect": true,
+          "explanation": "Dimercaprol (BAL) is used for severe arsenic poisoning; succimer (DMSA) is an oral alternative. Both chelate arsenic via sulfhydryl groups."
+        },
+        {
+          "text": "Deferoxamine",
+          "isCorrect": false,
+          "explanation": "For iron."
+        },
+        {
+          "text": "EDTA",
+          "isCorrect": false,
+          "explanation": "For lead."
+        },
+        {
+          "text": "Penicillamine",
+          "isCorrect": false,
+          "explanation": "For copper and some heavy metals but not first-line for arsenic."
+        },
+        {
+          "text": "N-acetylcysteine",
+          "isCorrect": false,
+          "explanation": "For acetaminophen."
+        }
+      ],
+      "explanation": {
+        "overview": "Arsenic binds to sulfhydryl groups. Dimercaprol (BAL) and succimer (DMSA) provide sulfhydryl groups to compete with tissue binding.",
+        "highYield": "Arsenic antidotes: BAL (IM), DMSA (oral). Supportive care for GI fluid losses.",
+        "clinicalCorrelation": "Chronic arsenic exposure can cause Mees' lines (transverse white lines on nails), peripheral neuropathy, and skin changes."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_026",
+      "difficulty": 2,
+      "question": "Mercury poisoning (especially from elemental mercury vapor) primarily affects the:",
+      "image": null,
+      "options": [
+        {
+          "text": "Central nervous system and kidneys",
+          "isCorrect": true,
+          "explanation": "Elemental mercury vapor is well-absorbed through the lungs and crosses the blood-brain barrier, causing CNS effects (tremor, erethism, memory loss) and renal toxicity."
+        },
+        {
+          "text": "Liver",
+          "isCorrect": false,
+          "explanation": "Not a primary target."
+        },
+        {
+          "text": "Bone marrow",
+          "isCorrect": false,
+          "explanation": "Not characteristic."
+        },
+        {
+          "text": "Peripheral nerves only",
+          "isCorrect": false,
+          "explanation": "CNS is more prominently affected."
+        },
+        {
+          "text": "Skin",
+          "isCorrect": false,
+          "explanation": "Skin can be affected by some mercury compounds, but not primarily."
+        }
+      ],
+      "explanation": {
+        "overview": "Elemental mercury vapor is lipid-soluble and diffuses into the CNS, causing neuropsychiatric symptoms (erethism: shyness, irritability, tremor) and proximal tubular injury.",
+        "highYield": "Mercury vapor = CNS (tremor, memory loss, gingivitis) + kidneys. Organic mercury (methylmercury) = CNS developmental toxicity.",
+        "clinicalCorrelation": "Chelation with dimercaprol, succimer, or penicillamine may be used, but removal from exposure is critical."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_027",
+      "difficulty": 2,
+      "question": "Carbon monoxide (CO) poisoning causes tissue hypoxia by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Binding to hemoglobin with high affinity, reducing oxygen-carrying capacity and shifting curve left",
+          "isCorrect": true,
+          "explanation": "CO binds to hemoglobin with ~250x the affinity of oxygen, forming carboxyhemoglobin (COHb). It also shifts the oxyhemoglobin dissociation curve left, impairing O2 unloading."
+        },
+        {
+          "text": "Inhibiting cytochrome oxidase",
+          "isCorrect": false,
+          "explanation": "That is cyanide."
+        },
+        {
+          "text": "Causing methemoglobinemia",
+          "isCorrect": false,
+          "explanation": "Methemoglobinemia is from oxidant agents, not CO."
+        },
+        {
+          "text": "Inducing vasodilation",
+          "isCorrect": false,
+          "explanation": "Not primary."
+        },
+        {
+          "text": "Increasing oxygen consumption",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "CO poisoning reduces oxygen delivery by forming COHb and by left-shifting the oxygen-hemoglobin dissociation curve, impairing tissue oxygen extraction.",
+        "highYield": "COHb >20% causes symptoms; treatment: 100% O2 or hyperbaric oxygen for severe cases (loss of consciousness, COHb >25%).",
+        "clinicalCorrelation": "Pulse oximetry cannot differentiate COHb from oxyhemoglobin; use co-oximetry for accurate measurement."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_028",
+      "difficulty": 2,
+      "question": "The definitive treatment for severe carbon monoxide poisoning is:",
+      "image": null,
+      "options": [
+        {
+          "text": "100% normobaric oxygen",
+          "isCorrect": false,
+          "explanation": "Normobaric oxygen is given initially, but hyperbaric oxygen is definitive for severe cases."
+        },
+        {
+          "text": "Hyperbaric oxygen therapy",
+          "isCorrect": true,
+          "explanation": "Hyperbaric oxygen reduces the half-life of COHb from ~4-6 hours (on 100% O2) to ~20-30 minutes and may reduce delayed neurological sequelae."
+        },
+        {
+          "text": "Methylene blue",
+          "isCorrect": false,
+          "explanation": "For methemoglobinemia."
+        },
+        {
+          "text": "Exchange transfusion",
+          "isCorrect": false,
+          "explanation": "Rarely indicated."
+        },
+        {
+          "text": "N-acetylcysteine",
+          "isCorrect": false,
+          "explanation": "For acetaminophen."
+        }
+      ],
+      "explanation": {
+        "overview": "Hyperbaric oxygen (HBO) is recommended for severe CO poisoning, especially with loss of consciousness, neurological signs, cardiac ischemia, or COHb >25%.",
+        "highYield": "HBO shortens COHb half-life and may prevent delayed neuropsychiatric syndrome.",
+        "clinicalCorrelation": "Delayed neurological sequelae can occur days to weeks after apparent recovery."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_029",
+      "difficulty": 2,
+      "question": "Cyanide poisoning (e.g., from smoke inhalation, nitroprusside) causes cellular hypoxia by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Inhibiting cytochrome c oxidase (mitochondrial complex IV)",
+          "isCorrect": true,
+          "explanation": "Cyanide binds to ferric iron (Fe3+) in cytochrome a3, blocking electron transport chain and causing anaerobic metabolism, lactic acidosis, and cellular asphyxia."
+        },
+        {
+          "text": "Binding to hemoglobin",
+          "isCorrect": false,
+          "explanation": "Carbon monoxide binds hemoglobin."
+        },
+        {
+          "text": "Methemoglobin formation",
+          "isCorrect": false,
+          "explanation": "Nitrites cause methemoglobin."
+        },
+        {
+          "text": "Inhibiting glycolysis",
+          "isCorrect": false,
+          "explanation": "Not primary."
+        },
+        {
+          "text": "Depleting ATP",
+          "isCorrect": false,
+          "explanation": "ATP depletion is secondary."
+        }
+      ],
+      "explanation": {
+        "overview": "Cyanide is a mitochondrial poison that inhibits oxidative phosphorylation, causing high anion gap metabolic acidosis and elevated venous PO2.",
+        "highYield": "Cyanide antidotes: hydroxocobalamin (binds CN directly) or sodium nitrite + sodium thiosulfate.",
+        "clinicalCorrelation": "Cyanide poisoning should be suspected in smoke inhalation victims with lactic acidosis and neurological impairment."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_030",
+      "difficulty": 2,
+      "question": "The cyanide antidote kit includes:",
+      "image": null,
+      "options": [
+        {
+          "text": "Amyl nitrite, sodium nitrite, and sodium thiosulfate",
+          "isCorrect": false,
+          "explanation": "This was the classic 'cyanide antidote kit', but hydroxocobalamin is now preferred."
+        },
+        {
+          "text": "Methylene blue",
+          "isCorrect": false,
+          "explanation": "For methemoglobinemia."
+        },
+        {
+          "text": "Hydroxocobalamin",
+          "isCorrect": false,
+          "explanation": "Hydroxocobalamin binds cyanide directly, forming nontoxic cyanocobalamin."
+        },
+        {
+          "text": "Both A and C are available",
+          "isCorrect": true,
+          "explanation": "The traditional kit (nitrites + thiosulfate) and hydroxocobalamin are both used; hydroxocobalamin is now first-line in many settings."
+        },
+        {
+          "text": "N-acetylcysteine",
+          "isCorrect": false,
+          "explanation": "For acetaminophen."
+        }
+      ],
+      "explanation": {
+        "overview": "Cyanide can be treated with hydroxocobalamin (preferred, especially in smoke inhalation) or nitrites (which induce methemoglobin to bind cyanide) plus thiosulfate (which enhances conversion to thiocyanate).",
+        "highYield": "Hydroxocobalamin + sodium thiosulfate is a common regimen.",
+        "clinicalCorrelation": "Nitrites can cause excessive methemoglobinemia, especially in children; avoid in smoke inhalation without confirmed cyanide toxicity."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_031",
+      "difficulty": 2,
+      "question": "Ethylene glycol and methanol poisoning are treated with fomepizole or ethanol, which:",
+      "image": null,
+      "options": [
+        {
+          "text": "Competitively inhibit alcohol dehydrogenase, preventing toxic metabolite formation",
+          "isCorrect": true,
+          "explanation": "Fomepizole (preferred) and ethanol are competitive inhibitors of alcohol dehydrogenase, blocking conversion of ethylene glycol to oxalate and methanol to formate."
+        },
+        {
+          "text": "Increase renal excretion",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        },
+        {
+          "text": "Alkalinize urine",
+          "isCorrect": false,
+          "explanation": "Sodium bicarbonate is used for acidosis."
+        },
+        {
+          "text": "Bind to the alcohols",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Enhance metabolism",
+          "isCorrect": false,
+          "explanation": "Opposite; they slow metabolism."
+        }
+      ],
+      "explanation": {
+        "overview": "Fomepizole is a potent alcohol dehydrogenase inhibitor with a predictable pharmacokinetic profile. Ethanol competes as a substrate, reducing toxic metabolite formation.",
+        "highYield": "Fomepizole is first-line for methanol and ethylene glycol poisoning; give with hemodialysis for severe cases.",
+        "clinicalCorrelation": "Fomepizole dosing: 15 mg/kg load, then 10 mg/kg every 12 hours for 4 doses, then 15 mg/kg every 12 hours until levels are safe."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_032",
+      "difficulty": 2,
+      "question": "A patient with ethylene glycol poisoning may present with:",
+      "image": null,
+      "options": [
+        {
+          "text": "High anion gap metabolic acidosis, calcium oxalate crystals in urine, and acute kidney injury",
+          "isCorrect": true,
+          "explanation": "Ethylene glycol is metabolized to oxalic acid, causing severe metabolic acidosis, calcium oxalate crystalluria, and acute tubular necrosis."
+        },
+        {
+          "text": "Profound CNS depression only",
+          "isCorrect": false,
+          "explanation": "CNS depression occurs initially but is followed by acidosis and renal failure."
+        },
+        {
+          "text": "Respiratory alkalosis",
+          "isCorrect": false,
+          "explanation": "Acidosis is metabolic, not respiratory."
+        },
+        {
+          "text": "Hepatotoxicity",
+          "isCorrect": false,
+          "explanation": "Not a primary feature."
+        },
+        {
+          "text": "Hemolysis",
+          "isCorrect": false,
+          "explanation": "Not characteristic."
+        }
+      ],
+      "explanation": {
+        "overview": "Ethylene glycol toxicity has three stages: neurological (drunkenness, hallucinations), cardiopulmonary (tachypnea, heart failure), and renal (acute kidney injury with flank pain, oliguria).",
+        "highYield": "Ethylene glycol: high anion gap, osmolar gap, calcium oxalate crystals; treat with fomepizole + hemodialysis.",
+        "clinicalCorrelation": "Wood's lamp examination of urine may show fluorescence if fluorescein is added to antifreeze (not diagnostic)."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_033",
+      "difficulty": 2,
+      "question": "Methanol poisoning can cause blindness due to retinal toxicity from formic acid. Treatment includes:",
+      "image": null,
+      "options": [
+        {
+          "text": "Fomepizole and folic acid (leucovorin)",
+          "isCorrect": false,
+          "explanation": "Fomepizole inhibits alcohol dehydrogenase; folic acid enhances formate metabolism."
+        },
+        {
+          "text": "Ethanol and fomepizole are alternatives",
+          "isCorrect": false,
+          "explanation": "Both can be used, but fomepizole preferred."
+        },
+        {
+          "text": "Hemodialysis for severe cases",
+          "isCorrect": false,
+          "explanation": "Indicated for severe acidosis, visual symptoms, or high methanol level."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "The comprehensive treatment includes an ADH inhibitor (fomepizole or ethanol), folic/folinic acid to enhance formate metabolism, and hemodialysis for severe toxicity."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All are essential."
+        }
+      ],
+      "explanation": {
+        "overview": "Methanol is metabolized to formaldehyde and formic acid, which inhibits cytochrome oxidase and causes retinal and basal ganglia toxicity.",
+        "highYield": "Methanol: visual disturbances, high anion gap, osmolar gap. Treat with fomepizole, folinic acid, and hemodialysis if severe.",
+        "clinicalCorrelation": "Characteristic finding on brain MRI: bilateral putaminal necrosis."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_034",
+      "difficulty": 2,
+      "question": "Digitalis (digoxin) toxicity causes arrhythmias and visual disturbances (yellow vision). The antidote is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Digoxin-specific antibody fragments (Digibind)",
+          "isCorrect": true,
+          "explanation": "Digoxin immune Fab binds free digoxin, rapidly reversing cardiotoxicity. Indicated for life-threatening arrhythmias, hyperkalemia (>5.5 mEq/L), or massive ingestion."
+        },
+        {
+          "text": "Atropine",
+          "isCorrect": false,
+          "explanation": "Atropine may be used for bradycardia but is not the antidote."
+        },
+        {
+          "text": "Lidocaine",
+          "isCorrect": false,
+          "explanation": "Lidocaine can treat ventricular arrhythmias but is not specific."
+        },
+        {
+          "text": "Magnesium sulfate",
+          "isCorrect": false,
+          "explanation": "Magnesium can be used for arrhythmias but is not the definitive antidote."
+        },
+        {
+          "text": "Phenytoin",
+          "isCorrect": false,
+          "explanation": "Phenytoin was historically used but not as effective as Fab fragments."
+        }
+      ],
+      "explanation": {
+        "overview": "Digoxin immune Fab is the specific antidote for digoxin and digitoxin poisoning. It binds the drug and enhances renal excretion of the complex.",
+        "highYield": "Digibind for: ventricular arrhythmias, hemodynamic instability, hyperkalemia, or serum digoxin >10 ng/mL (or unknown but severe).",
+        "clinicalCorrelation": "After Fab administration, total digoxin levels rise (bound) but free levels fall; monitor clinically."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_035",
+      "difficulty": 2,
+      "question": "Beta-blocker overdose can cause severe bradycardia and hypotension. An agent that can increase heart rate independently of beta receptors is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glucagon",
+          "isCorrect": true,
+          "explanation": "Glucagon stimulates adenylyl cyclase via a glucagon receptor, increasing cAMP and myocardial contractility/chronotropy independently of beta-receptors."
+        },
+        {
+          "text": "Atropine",
+          "isCorrect": false,
+          "explanation": "Atropine blocks vagal tone and may help, but does not directly stimulate the heart."
+        },
+        {
+          "text": "Epinephrine",
+          "isCorrect": false,
+          "explanation": "Epinephrine acts on beta receptors; high doses may overcome blockade but not bypass."
+        },
+        {
+          "text": "Isoproterenol",
+          "isCorrect": false,
+          "explanation": "Pure beta-agonist, may be ineffective with massive blockade."
+        },
+        {
+          "text": "Dobutamine",
+          "isCorrect": false,
+          "explanation": "Dobutamine is primarily a beta1-agonist."
+        }
+      ],
+      "explanation": {
+        "overview": "Glucagon is used in beta-blocker and calcium channel blocker overdose for its positive inotropic and chronotropic effects via a different receptor pathway.",
+        "highYield": "Glucagon dose: 5–10 mg IV bolus, then infusion; can cause vomiting, hyperglycemia.",
+        "clinicalCorrelation": "High-dose insulin euglycemia therapy is also used for severe beta-blocker/CCB poisoning."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_036",
+      "difficulty": 2,
+      "question": "Calcium channel blocker (CCB) overdose causes hypotension and bradycardia. Treatment includes:",
+      "image": null,
+      "options": [
+        {
+          "text": "Calcium salts (calcium chloride/gluconate)",
+          "isCorrect": false,
+          "explanation": "Calcium overcomes competitive blockade at L-type calcium channels."
+        },
+        {
+          "text": "High-dose insulin euglycemia therapy",
+          "isCorrect": false,
+          "explanation": "Insulin improves myocardial carbohydrate metabolism and contractility."
+        },
+        {
+          "text": "Vasopressors",
+          "isCorrect": false,
+          "explanation": "Norepinephrine or epinephrine may be used for refractory shock."
+        },
+        {
+          "text": "Glucagon",
+          "isCorrect": false,
+          "explanation": "Glucagon can augment cardiac output."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Management of CCB overdose includes all these modalities depending on severity: calcium, high-dose insulin, vasopressors, glucagon, and supportive care."
+        }
+      ],
+      "explanation": {
+        "overview": "CCB overdose results in vasodilation and negative inotropy/chronotropy. Treatment is multimodal.",
+        "highYield": "CCB overdose: calcium gluconate/chloride IV, high-dose insulin (1 unit/kg bolus + infusion), vasopressors.",
+        "clinicalCorrelation": "High-dose insulin euglycemia therapy requires frequent glucose monitoring and potassium replacement."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_037",
+      "difficulty": 2,
+      "question": "Serotonin syndrome is caused by excessive serotonergic activity. Which of the following drug combinations poses the highest risk?",
+      "image": null,
+      "options": [
+        {
+          "text": "MAOI with SSRI",
+          "isCorrect": false,
+          "explanation": "Extremely high risk, but other combinations also risky."
+        },
+        {
+          "text": "SSRI with triptan",
+          "isCorrect": false,
+          "explanation": "Risk exists."
+        },
+        {
+          "text": "SSRI with linezolid",
+          "isCorrect": false,
+          "explanation": "Linezolid is a reversible MAO inhibitor, risk is high."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "All combinations can cause serotonin syndrome; MAOI + SSRI is the most severe, but all are dangerous and require avoidance or careful monitoring."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All pose significant risk."
+        }
+      ],
+      "explanation": {
+        "overview": "Serotonin syndrome is a potentially fatal condition characterized by altered mental status, autonomic instability, and neuromuscular hyperexcitability (clonus, hyperreflexia).",
+        "highYield": "Classic: MAOI + serotonergic drug. Also: SSRIs, SNRIs, triptans, linezolid, tramadol, St. John's wort.",
+        "clinicalCorrelation": "Treatment: discontinue offending agents, supportive care, benzodiazepines, and cyproheptadine (5-HT2 antagonist)."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_038",
+      "difficulty": 2,
+      "question": "Neuroleptic malignant syndrome (NMS) is a life-threatening reaction to antipsychotics. Key features include:",
+      "image": null,
+      "options": [
+        {
+          "text": "Fever, rigidity, altered mental status, autonomic instability",
+          "isCorrect": true,
+          "explanation": "NMS is characterized by severe muscle rigidity, hyperthermia, fluctuating consciousness, and autonomic dysfunction (tachycardia, labile BP)."
+        },
+        {
+          "text": "Hyperreflexia and clonus",
+          "isCorrect": false,
+          "explanation": "More suggestive of serotonin syndrome."
+        },
+        {
+          "text": "Miosis and bradycardia",
+          "isCorrect": false,
+          "explanation": "Opioid/cholinergic toxidrome."
+        },
+        {
+          "text": "Diarrhea and flushing",
+          "isCorrect": false,
+          "explanation": "Not characteristic."
+        },
+        {
+          "text": "Lethargy and respiratory depression",
+          "isCorrect": false,
+          "explanation": "Opioid/benzodiazepine."
+        }
+      ],
+      "explanation": {
+        "overview": "NMS is an idiosyncratic reaction to dopamine antagonists (antipsychotics, metoclopramide). It is a medical emergency.",
+        "highYield": "NMS: lead-pipe rigidity, hyperthermia, autonomic instability, elevated CK. Differentiate from serotonin syndrome (clonus, hyperreflexia).",
+        "clinicalCorrelation": "Management: stop offending drug, supportive care, dantrolene or bromocriptine."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_039",
+      "difficulty": 2,
+      "question": "Malignant hyperthermia is a genetic disorder triggered by volatile anesthetics and succinylcholine. The treatment is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Dantrolene",
+          "isCorrect": false,
+          "explanation": "Dantrolene is essential but not the full answer."
+        },
+        {
+          "text": "Bromocriptine",
+          "isCorrect": false,
+          "explanation": "Used for NMS, not MH."
+        },
+        {
+          "text": "Dantrolene and supportive care",
+          "isCorrect": true,
+          "explanation": "Dantrolene (ryanodine receptor antagonist) halts calcium release; aggressive cooling, hydration, and correction of acidosis/hyperkalemia are also necessary."
+        },
+        {
+          "text": "Sodium bicarbonate",
+          "isCorrect": false,
+          "explanation": "Part of supportive care but not definitive."
+        },
+        {
+          "text": "Cooling measures only",
+          "isCorrect": false,
+          "explanation": "Insufficient."
+        }
+      ],
+      "explanation": {
+        "overview": "Malignant hyperthermia is a hypermetabolic crisis caused by uncontrolled calcium release from the sarcoplasmic reticulum due to RYR1 mutations.",
+        "highYield": "MH: stop trigger, dantrolene 2.5 mg/kg IV, active cooling, treat hyperkalemia.",
+        "clinicalCorrelation": "All triggering agents (volatile anesthetics, succinylcholine) must be removed immediately."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_040",
+      "difficulty": 2,
+      "question": "Isoniazid (INH) overdose can cause severe seizures due to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Pyridoxine (vitamin B6) depletion, reducing GABA synthesis",
+          "isCorrect": true,
+          "explanation": "INH inhibits pyridoxine phosphokinase, causing functional B6 deficiency and decreased GABA production, lowering seizure threshold."
+        },
+        {
+          "text": "Direct CNS excitation",
+          "isCorrect": false,
+          "explanation": "The main mechanism is B6 depletion."
+        },
+        {
+          "text": "Metabolic acidosis",
+          "isCorrect": false,
+          "explanation": "INH can cause lactic acidosis but seizures are primarily due to GABA depletion."
+        },
+        {
+          "text": "Hypoglycemia",
+          "isCorrect": false,
+          "explanation": "Not a primary mechanism."
+        },
+        {
+          "text": "Hypocalcemia",
+          "isCorrect": false,
+          "explanation": "Not."
+        }
+      ],
+      "explanation": {
+        "overview": "INH binds to pyridoxal phosphate, the active form of B6, which is a cofactor for glutamic acid decarboxylase (GABA synthesis). Seizures are refractory to usual anticonvulsants.",
+        "highYield": "INH overdose: seizures, lactic acidosis. Give pyridoxine gram-for-gram of INH ingested or 5 g IV if unknown.",
+        "clinicalCorrelation": "Prophylactic pyridoxine is given with INH therapy to prevent peripheral neuropathy."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_041",
+      "difficulty": 2,
+      "question": "Theophylline toxicity can cause seizures refractory to standard anticonvulsants. Hemodialysis is effective because theophylline:",
+      "image": null,
+      "options": [
+        {
+          "text": "Has low volume of distribution and low protein binding",
+          "isCorrect": true,
+          "explanation": "Theophylline has a Vd of ~0.5 L/kg and ~40% protein binding, making it amenable to removal by hemodialysis."
+        },
+        {
+          "text": "Is highly protein bound",
+          "isCorrect": false,
+          "explanation": "Protein binding limits dialyzability."
+        },
+        {
+          "text": "Has large Vd",
+          "isCorrect": false,
+          "explanation": "A large Vd makes dialysis ineffective."
+        },
+        {
+          "text": "Is rapidly metabolized",
+          "isCorrect": false,
+          "explanation": "Not the reason."
+        },
+        {
+          "text": "Is renally excreted",
+          "isCorrect": false,
+          "explanation": "Not primary reason."
+        }
+      ],
+      "explanation": {
+        "overview": "Theophylline's properties (low Vd, low protein binding, water solubility) make it ideal for hemodialysis in severe toxicity.",
+        "highYield": "Theophylline: consider hemodialysis for seizures, arrhythmias, or serum level >80-100 mg/L.",
+        "clinicalCorrelation": "Multiple-dose activated charcoal also effectively reduces theophylline levels by gut dialysis."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_042",
+      "difficulty": 3,
+      "question": "Valproic acid overdose can cause hyperammonemia and cerebral edema. L-carnitine is used as an adjunct because it:",
+      "image": null,
+      "options": [
+        {
+          "text": "Facilitates mitochondrial fatty acid oxidation and ammonia detoxification",
+          "isCorrect": true,
+          "explanation": "Valproate inhibits carnitine synthesis and fatty acid beta-oxidation; L-carnitine supplementation restores mitochondrial function and reduces ammonia levels."
+        },
+        {
+          "text": "Binds valproate",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Enhances renal excretion",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        },
+        {
+          "text": "Alkalinizes urine",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Reduces absorption",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Valproic acid disrupts the carnitine shuttle, impairing fatty acid metabolism and urea cycle, leading to hyperammonemia. L-carnitine is recommended in acute overdose and for symptomatic hyperammonemia.",
+        "highYield": "VPA overdose: CNS depression, hyperammonemia, hepatotoxicity. L-carnitine 100 mg/kg over 30 min, then 50 mg/kg every 8 hours.",
+        "clinicalCorrelation": "Carnitine deficiency can also be chronic in patients on valproate; supplementation may prevent hyperammonemia."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_043",
+      "difficulty": 2,
+      "question": "Methylene blue is the antidote for methemoglobinemia caused by oxidant drugs (e.g., dapsone, benzocaine). It acts by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Reducing methemoglobin via NADPH methemoglobin reductase",
+          "isCorrect": true,
+          "explanation": "Methylene blue is reduced to leukomethylene blue, which then reduces methemoglobin (Fe3+) back to hemoglobin (Fe2+) using NADPH from the pentose phosphate pathway."
+        },
+        {
+          "text": "Directly binding to the oxidant",
+          "isCorrect": false,
+          "explanation": "Not its action."
+        },
+        {
+          "text": "Increasing hemoglobin synthesis",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Chelating iron",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Alkalinizing blood",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Methylene blue accelerates the NADPH-dependent reduction of methemoglobin. It is ineffective in G6PD deficiency and may cause hemolysis.",
+        "highYield": "Methemoglobinemia: chocolate-brown blood, cyanosis unresponsive to O2. Treat with methylene blue 1-2 mg/kg IV if symptomatic.",
+        "clinicalCorrelation": "Contraindicated in G6PD deficiency; alternative is ascorbic acid or exchange transfusion."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_044",
+      "difficulty": 2,
+      "question": "A patient presents with severe hypertension, tachycardia, and hyperthermia after ingesting an MAOI and tyramine-rich cheese. This is due to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hypertensive crisis from norepinephrine excess",
+          "isCorrect": true,
+          "explanation": "MAOIs inhibit tyramine metabolism; tyramine enters nerve terminals and causes massive norepinephrine release, leading to severe hypertension, tachycardia, and hyperthermia."
+        },
+        {
+          "text": "Serotonin syndrome",
+          "isCorrect": false,
+          "explanation": "Serotonin syndrome involves clonus, hyperreflexia, and is from excess serotonin, not tyramine."
+        },
+        {
+          "text": "Anticholinergic crisis",
+          "isCorrect": false,
+          "explanation": "Different presentation."
+        },
+        {
+          "text": "Cholinergic crisis",
+          "isCorrect": false,
+          "explanation": "Opposite."
+        },
+        {
+          "text": "Sympathomimetic toxicity",
+          "isCorrect": false,
+          "explanation": "It is a form of sympathomimetic excess but specifically tyramine-induced."
+        }
+      ],
+      "explanation": {
+        "overview": "The \"cheese reaction\" occurs when dietary tyramine is not degraded by MAO-A in the gut, leading to excessive norepinephrine release and hypertensive urgency.",
+        "highYield": "MAOI + tyramine = hypertensive crisis; treat with phentolamine or nitroprusside.",
+        "clinicalCorrelation": "Patients on classic MAOIs must avoid aged cheeses, cured meats, red wine, and other tyramine-rich foods."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_045",
+      "difficulty": 1,
+      "question": "Activated charcoal is most effective when administered within what time frame after ingestion?",
+      "image": null,
+      "options": [
+        {
+          "text": "1 hour",
+          "isCorrect": true,
+          "explanation": "Activated charcoal adsorbs drugs in the GI tract and is most effective if given within one hour of ingestion; efficacy declines thereafter."
+        },
+        {
+          "text": "2-4 hours",
+          "isCorrect": false,
+          "explanation": "Less effective than 1 hour."
+        },
+        {
+          "text": "6 hours",
+          "isCorrect": false,
+          "explanation": "Substantially reduced benefit."
+        },
+        {
+          "text": "12 hours",
+          "isCorrect": false,
+          "explanation": "Minimal benefit except for delayed-release formulations."
+        },
+        {
+          "text": "24 hours",
+          "isCorrect": false,
+          "explanation": "Too late."
+        }
+      ],
+      "explanation": {
+        "overview": "Activated charcoal adsorbs toxins and prevents systemic absorption. It is most beneficial within 1 hour of ingestion; later use may be considered for sustained-release preparations.",
+        "highYield": "Charcoal: give 1 g/kg (max 50-100 g) within 1 hour. Not useful for alcohols, lithium, iron, cyanide.",
+        "clinicalCorrelation": "Aspiration risk; ensure protected airway if altered mental status."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_046",
+      "difficulty": 2,
+      "question": "Whole bowel irrigation with polyethylene glycol is indicated for ingestion of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Sustained-release or enteric-coated drugs, heavy metals, drug packets",
+          "isCorrect": true,
+          "explanation": "WBI mechanically propels substances through the GI tract; indicated for sustained-release formulations, iron, lithium, lead, and body-packers."
+        },
+        {
+          "text": "Immediate-release tablets only",
+          "isCorrect": false,
+          "explanation": "Charcoal is preferred for immediate-release."
+        },
+        {
+          "text": "Liquids",
+          "isCorrect": false,
+          "explanation": "Not typically needed."
+        },
+        {
+          "text": "All ingestions",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "It has specific indications."
+        }
+      ],
+      "explanation": {
+        "overview": "Whole bowel irrigation (WBI) uses PEG solution to clear the gut of substances not bound by charcoal or when charcoal is contraindicated.",
+        "highYield": "WBI: for sustained-release drugs, iron, lithium, lead, and illicit drug packets (body packing).",
+        "clinicalCorrelation": "Contraindicated in ileus, obstruction, perforation."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_047",
+      "difficulty": 2,
+      "question": "Forced alkaline diuresis is used to enhance elimination of which drug?",
+      "image": null,
+      "options": [
+        {
+          "text": "Salicylates",
+          "isCorrect": true,
+          "explanation": "Alkaline diuresis traps salicylate (a weak acid) in the ionized form in the renal tubules, enhancing excretion."
+        },
+        {
+          "text": "Lithium",
+          "isCorrect": false,
+          "explanation": "Lithium clearance is not significantly increased by alkaline diuresis; sodium loading may help."
+        },
+        {
+          "text": "Tricyclic antidepressants",
+          "isCorrect": false,
+          "explanation": "TCAs are weak bases, but forced alkaline diuresis is not effective."
+        },
+        {
+          "text": "Digoxin",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Opioids",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Urinary alkalinization (pH >7.5) increases the ionized fraction of weak acids like salicylates and phenobarbital, reducing reabsorption and increasing renal clearance.",
+        "highYield": "Salicylate and phenobarbital: use sodium bicarbonate to alkalinize urine.",
+        "clinicalCorrelation": "Monitor serum potassium; hypokalemia prevents urine alkalinization."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_048",
+      "difficulty": 2,
+      "question": "Acidification of urine (e.g., with ammonium chloride) can enhance elimination of weak bases like:",
+      "image": null,
+      "options": [
+        {
+          "text": "Amphetamines",
+          "isCorrect": true,
+          "explanation": "Weak bases are ionized at acidic pH, reducing reabsorption and increasing excretion. However, this is rarely used clinically due to risk of acidosis and rhabdomyolysis."
+        },
+        {
+          "text": "Phenobarbital",
+          "isCorrect": false,
+          "explanation": "Phenobarbital is a weak acid; alkaline diuresis is used."
+        },
+        {
+          "text": "Salicylates",
+          "isCorrect": false,
+          "explanation": "Weak acid, alkaline diuresis."
+        },
+        {
+          "text": "Lithium",
+          "isCorrect": false,
+          "explanation": "Not a weak base."
+        },
+        {
+          "text": "Ethylene glycol",
+          "isCorrect": false,
+          "explanation": "Not treated with urinary acidification."
+        }
+      ],
+      "explanation": {
+        "overview": "Urinary acidification can theoretically increase elimination of weak bases like amphetamines, but it is no longer recommended due to complications (acidosis, myoglobinuria).",
+        "highYield": "Acidification is historically for amphetamines; modern management is supportive.",
+        "clinicalCorrelation": "Alkaline diuresis for salicylates is still practiced; acidification is obsolete."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_049",
+      "difficulty": 2,
+      "question": "Hemodialysis is most effective for removing toxins with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Low volume of distribution, low molecular weight, low protein binding",
+          "isCorrect": true,
+          "explanation": "Toxins with low Vd (<1 L/kg), small size (<500 Da), and low protein binding are efficiently cleared by hemodialysis."
+        },
+        {
+          "text": "High volume of distribution",
+          "isCorrect": false,
+          "explanation": "High Vd means tissue binding, poor dialyzability."
+        },
+        {
+          "text": "High protein binding",
+          "isCorrect": false,
+          "explanation": "Protein-bound drugs are not available for dialysis."
+        },
+        {
+          "text": "High lipid solubility",
+          "isCorrect": false,
+          "explanation": "Lipid-soluble drugs distribute to tissues."
+        },
+        {
+          "text": "Large molecular weight",
+          "isCorrect": false,
+          "explanation": "Large molecules are poorly removed."
+        }
+      ],
+      "explanation": {
+        "overview": "Hemodialysis is most effective for toxins with small volume of distribution, low molecular weight, low protein binding, and high water solubility (e.g., lithium, salicylate, methanol, ethylene glycol).",
+        "highYield": "IHD indications: 'I STUMBLE' acronym – Isoniazid, Salicylates, Theophylline, Uremia, Methanol, Barbiturates, Lithium, Ethylene glycol.",
+        "clinicalCorrelation": "Refer to toxicologist/nephrologist early for hemodialysis."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_050",
+      "difficulty": 2,
+      "question": "Multiple-dose activated charcoal enhances elimination of some drugs by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Interrupting enterohepatic or enteroenteric recirculation",
+          "isCorrect": true,
+          "explanation": "Repeated charcoal doses can adsorb drugs that are secreted into the GI tract (e.g., via bile) or diffuse back, enhancing elimination ('gut dialysis')."
+        },
+        {
+          "text": "Increasing GI motility",
+          "isCorrect": false,
+          "explanation": "Charcoal does not increase motility significantly."
+        },
+        {
+          "text": "Binding to drugs in blood",
+          "isCorrect": false,
+          "explanation": "Charcoal remains in the gut, not in blood."
+        },
+        {
+          "text": "Alkalinizing urine",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Inducing diarrhea",
+          "isCorrect": false,
+          "explanation": "Some formulations contain cathartics, but the mechanism is adsorption of recirculated drug."
+        }
+      ],
+      "explanation": {
+        "overview": "Multi-dose activated charcoal (MDAC) enhances drug clearance by interrupting enterohepatic recirculation and creating a concentration gradient for drug diffusion from the blood into the gut lumen.",
+        "highYield": "MDAC for: phenobarbital, theophylline, carbamazepine, quinine, dapsone.",
+        "clinicalCorrelation": "Give 0.5-1 g/kg every 4 hours; ensure bowel sounds present and no ileus."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_051",
+      "difficulty": 2,
+      "question": "Which of the following is a delayed manifestation of iron poisoning?",
+      "image": null,
+      "options": [
+        {
+          "text": "Hepatic necrosis",
+          "isCorrect": true,
+          "explanation": "After the GI and latent phases, systemic iron toxicity can cause hepatic necrosis and metabolic acidosis."
+        },
+        {
+          "text": "Immediate vomiting",
+          "isCorrect": false,
+          "explanation": "Vomiting occurs in the first phase (0-6 hours)."
+        },
+        {
+          "text": "Hematemesis",
+          "isCorrect": false,
+          "explanation": "Early GI phase."
+        },
+        {
+          "text": "Diarrhea",
+          "isCorrect": false,
+          "explanation": "Early."
+        },
+        {
+          "text": "Abdominal pain",
+          "isCorrect": false,
+          "explanation": "Early."
+        }
+      ],
+      "explanation": {
+        "overview": "Iron poisoning has four stages: GI (0-6h), latent (6-24h), systemic toxicity (shock, metabolic acidosis, hepatic failure 12-48h), and GI scarring (2-4 weeks).",
+        "highYield": "Delayed iron toxicity: metabolic acidosis, hepatotoxicity, coagulopathy.",
+        "clinicalCorrelation": "Serum iron >500 µg/dL indicates severe poisoning; chelate with deferoxamine."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_052",
+      "difficulty": 2,
+      "question": "Which toxin causes 'black as coal' stool?",
+      "image": null,
+      "options": [
+        {
+          "text": "Bismuth subsalicylate",
+          "isCorrect": true,
+          "explanation": "Bismuth compounds can turn stools black due to bismuth sulfide formation."
+        },
+        {
+          "text": "Iron supplements",
+          "isCorrect": false,
+          "explanation": "Iron causes green/black stool, but bismuth is classic for 'black as coal'."
+        },
+        {
+          "text": "Charcoal",
+          "isCorrect": false,
+          "explanation": "Charcoal causes black stool after administration."
+        },
+        {
+          "text": "Lead",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Arsenic",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Bismuth subsalicylate (Pepto-Bismol) can cause a harmless black discoloration of the tongue and stool.",
+        "highYield": "Bismuth = black stools and tongue; differentiate from melena (tarry, foul-smelling).",
+        "clinicalCorrelation": "Always ask about bismuth use when evaluating black stools to avoid unnecessary GI workup."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_053",
+      "difficulty": 2,
+      "question": "Which of the following antidepressants is safest in overdose due to lack of sodium channel blockade?",
+      "image": null,
+      "options": [
+        {
+          "text": "Citalopram",
+          "isCorrect": true,
+          "explanation": "SSRIs like citalopram do not cause sodium channel blockade; they can cause QT prolongation in overdose but are generally safer than TCAs."
+        },
+        {
+          "text": "Amitriptyline",
+          "isCorrect": false,
+          "explanation": "TCA; significant sodium channel blockade and cardiotoxicity."
+        },
+        {
+          "text": "Imipramine",
+          "isCorrect": false,
+          "explanation": "TCA."
+        },
+        {
+          "text": "Doxepin",
+          "isCorrect": false,
+          "explanation": "TCA."
+        },
+        {
+          "text": "Nortriptyline",
+          "isCorrect": false,
+          "explanation": "TCA."
+        }
+      ],
+      "explanation": {
+        "overview": "TCAs are highly cardiotoxic in overdose. SSRIs and newer antidepressants generally have better safety profiles, though they can cause serotonin syndrome.",
+        "highYield": "SSRI overdose: serotonin syndrome, seizures, QT prolongation (citalopram). No sodium channel blockade.",
+        "clinicalCorrelation": "ECG monitoring is still recommended for SSRI overdose; citalopram >600 mg can cause QT prolongation."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_054",
+      "difficulty": 2,
+      "question": "Which of the following is a major complication of ethylene glycol poisoning that distinguishes it from methanol poisoning?",
+      "image": null,
+      "options": [
+        {
+          "text": "Acute kidney injury with calcium oxalate crystals",
+          "isCorrect": true,
+          "explanation": "Ethylene glycol toxicity produces oxalate crystals that damage the kidneys; methanol does not."
+        },
+        {
+          "text": "Optic neuropathy",
+          "isCorrect": false,
+          "explanation": "Methanol causes optic neuropathy."
+        },
+        {
+          "text": "High anion gap metabolic acidosis",
+          "isCorrect": false,
+          "explanation": "Both cause this."
+        },
+        {
+          "text": "Increased osmolar gap",
+          "isCorrect": false,
+          "explanation": "Both increase osmolar gap."
+        },
+        {
+          "text": "Seizures",
+          "isCorrect": false,
+          "explanation": "Seizures can occur in both."
+        }
+      ],
+      "explanation": {
+        "overview": "Ethylene glycol is metabolized to oxalic acid, leading to calcium oxalate crystal formation and acute tubular necrosis. Methanol targets the retina and basal ganglia.",
+        "highYield": "Ethylene glycol = renal failure + oxalate crystals; Methanol = blindness + basal ganglia necrosis.",
+        "clinicalCorrelation": "Both require fomepizole and hemodialysis for severe poisoning."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_055",
+      "difficulty": 2,
+      "question": "Which of the following is true about naloxone administration in opioid overdose?",
+      "image": null,
+      "options": [
+        {
+          "text": "It can precipitate acute withdrawal in dependent patients",
+          "isCorrect": true,
+          "explanation": "Naloxone rapidly reverses opioid effects, which can cause severe withdrawal (vomiting, agitation, pulmonary edema) in chronic users."
+        },
+        {
+          "text": "It has a long half-life",
+          "isCorrect": false,
+          "explanation": "Naloxone's half-life is short (30-90 min); re-dosing may be needed."
+        },
+        {
+          "text": "It is effective orally",
+          "isCorrect": false,
+          "explanation": "Extensive first-pass metabolism makes it ineffective orally."
+        },
+        {
+          "text": "It is an agonist at mu receptors",
+          "isCorrect": false,
+          "explanation": "It is an antagonist."
+        },
+        {
+          "text": "It causes respiratory depression",
+          "isCorrect": false,
+          "explanation": "It reverses respiratory depression."
+        }
+      ],
+      "explanation": {
+        "overview": "Naloxone is a competitive opioid antagonist with rapid onset and short duration. In dependent patients, it can precipitate acute withdrawal syndrome.",
+        "highYield": "Start naloxone at low doses (0.04 mg IV) in suspected dependence to avoid severe withdrawal.",
+        "clinicalCorrelation": "Naloxone infusion may be required for long-acting opioids like methadone."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_056",
+      "difficulty": 2,
+      "question": "Which of the following is a classic sign of organophosphate poisoning that is nicotinic?",
+      "image": null,
+      "options": [
+        {
+          "text": "Muscle fasciculations",
+          "isCorrect": true,
+          "explanation": "Nicotinic effects of organophosphates include muscle fasciculations, weakness, and paralysis."
+        },
+        {
+          "text": "Salivation",
+          "isCorrect": false,
+          "explanation": "Muscarinic."
+        },
+        {
+          "text": "Lacrimation",
+          "isCorrect": false,
+          "explanation": "Muscarinic."
+        },
+        {
+          "text": "Bradycardia",
+          "isCorrect": false,
+          "explanation": "Muscarinic."
+        },
+        {
+          "text": "Bronchoconstriction",
+          "isCorrect": false,
+          "explanation": "Muscarinic."
+        }
+      ],
+      "explanation": {
+        "overview": "Nicotinic effects: fasciculations, weakness, paralysis, tachycardia, hypertension. Muscarinic: DUMBELS (diaphoresis, urination, miosis, bronchospasm, emesis, lacrimation, salivation).",
+        "highYield": "Nicotinic = muscle twitching and weakness; atropine does not reverse these.",
+        "clinicalCorrelation": "Pralidoxime is needed to treat nicotinic effects by reactivating acetylcholinesterase."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_057",
+      "difficulty": 2,
+      "question": "Which of the following statements about flumazenil use is correct?",
+      "image": null,
+      "options": [
+        {
+          "text": "It should be avoided in patients with unknown ingestion or chronic benzodiazepine use due to seizure risk",
+          "isCorrect": true,
+          "explanation": "Flumazenil can precipitate acute withdrawal and seizures, especially in mixed overdose or in benzodiazepine-dependent patients."
+        },
+        {
+          "text": "It is the first-line treatment for all suspected benzodiazepine overdoses",
+          "isCorrect": false,
+          "explanation": "Supportive care is first-line; flumazenil is reserved for specific situations."
+        },
+        {
+          "text": "It has no adverse effects",
+          "isCorrect": false,
+          "explanation": "Seizures, arrhythmias."
+        },
+        {
+          "text": "It is effective in TCA overdose",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "It can be given orally",
+          "isCorrect": false,
+          "explanation": "IV only."
+        }
+      ],
+      "explanation": {
+        "overview": "Flumazenil is not recommended for routine use due to the risk of precipitating severe withdrawal or seizures. It may be considered in isolated iatrogenic benzodiazepine sedation.",
+        "highYield": "Flumazenil = seizure risk; do not use in unknown overdose or chronic users.",
+        "clinicalCorrelation": "Better to intubate and provide supportive care than to give flumazenil."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_058",
+      "difficulty": 2,
+      "question": "Which of the following toxic alcohols is a component of windshield washer fluid?",
+      "image": null,
+      "options": [
+        {
+          "text": "Methanol",
+          "isCorrect": true,
+          "explanation": "Methanol is commonly found in windshield washer fluid, paint removers, and 'moonshine'."
+        },
+        {
+          "text": "Ethylene glycol",
+          "isCorrect": false,
+          "explanation": "Antifreeze."
+        },
+        {
+          "text": "Isopropyl alcohol",
+          "isCorrect": false,
+          "explanation": "Rubbing alcohol."
+        },
+        {
+          "text": "Propylene glycol",
+          "isCorrect": false,
+          "explanation": "Used as a solvent and in food."
+        },
+        {
+          "text": "Ethanol",
+          "isCorrect": false,
+          "explanation": "Beverage alcohol."
+        }
+      ],
+      "explanation": {
+        "overview": "Methanol poisoning can occur from ingestion of windshield washer fluid, leading to blindness and metabolic acidosis.",
+        "highYield": "Methanol = windshield fluid, 'moonshine'; treat with fomepizole or ethanol, folic acid, dialysis.",
+        "clinicalCorrelation": "An osmolar gap may be present early, converting to an anion gap acidosis as methanol is metabolized."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_059",
+      "difficulty": 3,
+      "question": "Which of the following is a potential complication of sodium bicarbonate therapy in TCA overdose?",
+      "image": null,
+      "options": [
+        {
+          "text": "Hypokalemia",
+          "isCorrect": true,
+          "explanation": "Sodium bicarbonate drives potassium intracellularly, causing hypokalemia, which must be monitored and corrected."
+        },
+        {
+          "text": "Hypercalcemia",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        },
+        {
+          "text": "Metabolic acidosis",
+          "isCorrect": false,
+          "explanation": "Alkalosis."
+        },
+        {
+          "text": "Hyponatremia",
+          "isCorrect": false,
+          "explanation": "Sodium load may cause hypernatremia."
+        },
+        {
+          "text": "Hypomagnesemia",
+          "isCorrect": false,
+          "explanation": "Not characteristic."
+        }
+      ],
+      "explanation": {
+        "overview": "Sodium bicarbonate can cause hypokalemia (intracellular shift), hypernatremia, metabolic alkalosis, and volume overload.",
+        "highYield": "Monitor potassium when using sodium bicarbonate; replace as needed.",
+        "clinicalCorrelation": "Adequate ventilation is essential because bicarbonate generates CO2, which could worsen intracellular acidosis if not exhaled."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_060",
+      "difficulty": 2,
+      "question": "Which of the following is a distinctive feature of serotonin syndrome compared to neuroleptic malignant syndrome?",
+      "image": null,
+      "options": [
+        {
+          "text": "Clonus and hyperreflexia",
+          "isCorrect": true,
+          "explanation": "Serotonin syndrome features neuromuscular hyperexcitability (clonus, hyperreflexia), while NMS features lead-pipe rigidity and bradyreflexia."
+        },
+        {
+          "text": "Lead-pipe rigidity",
+          "isCorrect": false,
+          "explanation": "NMS."
+        },
+        {
+          "text": "Hyperthermia",
+          "isCorrect": false,
+          "explanation": "Both."
+        },
+        {
+          "text": "Altered mental status",
+          "isCorrect": false,
+          "explanation": "Both."
+        },
+        {
+          "text": "Autonomic instability",
+          "isCorrect": false,
+          "explanation": "Both."
+        }
+      ],
+      "explanation": {
+        "overview": "Clonus (inducible or spontaneous) and hyperreflexia are hallmarks of serotonin toxicity, whereas NMS presents with severe rigidity and bradyreflexia.",
+        "highYield": "Serotonin syndrome = clonus + hyperreflexia; NMS = rigidity + bradyreflexia + high CK.",
+        "clinicalCorrelation": "Distinguishing is critical: serotonin syndrome responds to cyproheptadine; NMS may need dantrolene/bromocriptine."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_061",
+      "difficulty": 2,
+      "question": "Which of the following is an appropriate initial treatment for severe agitated delirium due to sympathomimetic toxicity?",
+      "image": null,
+      "options": [
+        {
+          "text": "Benzodiazepines",
+          "isCorrect": true,
+          "explanation": "Benzodiazepines reduce sympathetic outflow and provide sedation without worsening hyperthermia."
+        },
+        {
+          "text": "Haloperidol",
+          "isCorrect": false,
+          "explanation": "Antipsychotics can lower seizure threshold and worsen hyperthermia."
+        },
+        {
+          "text": "Physostigmine",
+          "isCorrect": false,
+          "explanation": "For anticholinergic delirium."
+        },
+        {
+          "text": "Beta-blockers",
+          "isCorrect": false,
+          "explanation": "Beta-blockers alone can cause unopposed alpha stimulation."
+        },
+        {
+          "text": "Activated charcoal",
+          "isCorrect": false,
+          "explanation": "Not for agitation."
+        }
+      ],
+      "explanation": {
+        "overview": "Benzodiazepines are first-line for cocaine, amphetamine, and bath salt-induced agitation and hyperthermia.",
+        "highYield": "Sympathomimetic agitated delirium: give IV diazepam or midazolam; cool aggressively.",
+        "clinicalCorrelation": "Avoid physical restraints; they can worsen hyperthermia and rhabdomyolysis."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_062",
+      "difficulty": 2,
+      "question": "Which of the following drugs causes 'chelation' as a mechanism of action in lead poisoning?",
+      "image": null,
+      "options": [
+        {
+          "text": "Succimer (DMSA)",
+          "isCorrect": true,
+          "explanation": "Succimer is a chelating agent that binds lead via sulfhydryl groups for renal excretion."
+        },
+        {
+          "text": "N-acetylcysteine",
+          "isCorrect": false,
+          "explanation": "For acetaminophen."
+        },
+        {
+          "text": "Sodium bicarbonate",
+          "isCorrect": false,
+          "explanation": "Alkalinizing agent."
+        },
+        {
+          "text": "Methylene blue",
+          "isCorrect": false,
+          "explanation": "For methemoglobinemia."
+        },
+        {
+          "text": "Flumazenil",
+          "isCorrect": false,
+          "explanation": "Benzodiazepine antagonist."
+        }
+      ],
+      "explanation": {
+        "overview": "Chelating agents like succimer, dimercaprol, and EDTA bind heavy metals and enhance their elimination.",
+        "highYield": "Succimer (DMSA) is an oral chelator for lead; EDTA and BAL are parenteral.",
+        "clinicalCorrelation": "Chelation therapy should be used only when indicated based on blood lead levels and symptoms."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_063",
+      "difficulty": 2,
+      "question": "Which of the following is a common effect of beta-blocker overdose?",
+      "image": null,
+      "options": [
+        {
+          "text": "Hypoglycemia",
+          "isCorrect": true,
+          "explanation": "Beta-blockers can mask hypoglycemia symptoms and, in overdose, can cause hypoglycemia in children and the elderly."
+        },
+        {
+          "text": "Hyperglycemia",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        },
+        {
+          "text": "Hyperthermia",
+          "isCorrect": false,
+          "explanation": "Not."
+        },
+        {
+          "text": "Seizures",
+          "isCorrect": false,
+          "explanation": "Rare."
+        },
+        {
+          "text": "Mydriasis",
+          "isCorrect": false,
+          "explanation": "Not characteristic."
+        }
+      ],
+      "explanation": {
+        "overview": "Beta-blocker overdose can cause bradycardia, hypotension, and hypoglycemia (especially in pediatrics).",
+        "highYield": "Beta-blocker overdose: hypoglycemia, bronchospasm (if non-selective), heart block. Treat with glucagon, high-dose insulin.",
+        "clinicalCorrelation": "Monitor glucose in beta-blocker overdose, especially in patients with diabetes."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_064",
+      "difficulty": 3,
+      "question": "Which of the following is true about the elimination kinetics of ethanol?",
+      "image": null,
+      "options": [
+        {
+          "text": "Zero-order kinetics at typical intoxicating concentrations",
+          "isCorrect": true,
+          "explanation": "Ethanol follows zero-order elimination (about 15-20 mg/dL per hour) at moderate to high concentrations."
+        },
+        {
+          "text": "First-order kinetics",
+          "isCorrect": false,
+          "explanation": "Zero-order when enzyme saturated."
+        },
+        {
+          "text": "Michaelis-Menten only at very low concentrations",
+          "isCorrect": false,
+          "explanation": "At low concentrations, it follows first-order."
+        },
+        {
+          "text": "Elimination is independent of concentration",
+          "isCorrect": false,
+          "explanation": "At high concentrations, yes, a constant amount per hour."
+        },
+        {
+          "text": "Excretion is primarily renal",
+          "isCorrect": false,
+          "explanation": "Metabolism by ADH and CYP2E1."
+        }
+      ],
+      "explanation": {
+        "overview": "Ethanol is metabolized primarily by alcohol dehydrogenase. At blood levels above 20 mg/dL, the enzyme is saturated, and elimination follows zero-order kinetics (constant amount/time).",
+        "highYield": "Ethanol elimination: ~15-20 mg/dL/h (zero-order). Not removed by hemodialysis unless very high.",
+        "clinicalCorrelation": "Ethanol infusion used historically for methanol/ethylene glycol poisoning until fomepizole became available."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_065",
+      "difficulty": 2,
+      "question": "Which of the following is a classic symptom of mercury poisoning from elemental mercury vapor?",
+      "image": null,
+      "options": [
+        {
+          "text": "Erethism (shyness, irritability, tremor)",
+          "isCorrect": true,
+          "explanation": "Elemental mercury vapor causes neuropsychiatric symptoms including erethism, tremor, and gingivostomatitis."
+        },
+        {
+          "text": "Optic neuritis",
+          "isCorrect": false,
+          "explanation": "Methanol."
+        },
+        {
+          "text": "Peripheral edema",
+          "isCorrect": false,
+          "explanation": "Not characteristic."
+        },
+        {
+          "text": "Alopecia",
+          "isCorrect": false,
+          "explanation": "Thallium."
+        },
+        {
+          "text": "Mees' lines",
+          "isCorrect": false,
+          "explanation": "Arsenic."
+        }
+      ],
+      "explanation": {
+        "overview": "Erethism is a constellation of personality changes (shyness, emotional lability, irritability) associated with chronic mercury vapor exposure.",
+        "highYield": "Mercury vapor: erethism, tremor, gingivitis, proteinuria. Methylmercury: ataxia, paresthesias, visual field defects.",
+        "clinicalCorrelation": "'Mad hatter' syndrome refers to erethism in hat makers using mercury nitrate."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_066",
+      "difficulty": 2,
+      "question": "Which of the following toxins is correctly paired with its specific antidote?",
+      "image": null,
+      "options": [
+        {
+          "text": "Isoniazid — pyridoxine",
+          "isCorrect": true,
+          "explanation": "High-dose pyridoxine reverses isoniazid-induced GABA deficiency and seizures."
+        },
+        {
+          "text": "Methanol — naloxone",
+          "isCorrect": false,
+          "explanation": "Methanol antidote: fomepizole/ethanol."
+        },
+        {
+          "text": "Ethylene glycol — thiamine",
+          "isCorrect": false,
+          "explanation": "Thiamine is an adjunct, not the primary antidote."
+        },
+        {
+          "text": "Cyanide — N-acetylcysteine",
+          "isCorrect": false,
+          "explanation": "NAC for acetaminophen."
+        },
+        {
+          "text": "Organophosphates — methylene blue",
+          "isCorrect": false,
+          "explanation": "Organophosphates: atropine + pralidoxime."
+        }
+      ],
+      "explanation": {
+        "overview": "Isoniazid-induced seizures are due to functional pyridoxine deficiency; treatment is pyridoxine (5 g IV).",
+        "highYield": "INH = pyridoxine; acetaminophen = NAC; opioids = naloxone; anticholinergic = physostigmine.",
+        "clinicalCorrelation": "Always consider specific antidotes in addition to supportive care."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_067",
+      "difficulty": 2,
+      "question": "Which of the following is a sign of carbon monoxide poisoning?",
+      "image": null,
+      "options": [
+        {
+          "text": "Cherry-red skin (rare, late finding)",
+          "isCorrect": true,
+          "explanation": "Cherry-red discoloration of the skin is a classic but late finding in severe CO poisoning."
+        },
+        {
+          "text": "Cyanosis",
+          "isCorrect": false,
+          "explanation": "COHb does not cause cyanosis; patients may look normal or flushed."
+        },
+        {
+          "text": "Jaundice",
+          "isCorrect": false,
+          "explanation": "Not characteristic."
+        },
+        {
+          "text": "Petechiae",
+          "isCorrect": false,
+          "explanation": "Not."
+        },
+        {
+          "text": "Gray skin",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Classic teaching: cherry-red skin in CO poisoning. However, it is rarely seen in living patients; headache, confusion, and flulike symptoms are more common.",
+        "highYield": "CO poisoning: headache, nausea, confusion, coma; cherry-red skin is late.",
+        "clinicalCorrelation": "Pulse oximetry is falsely normal; diagnose with CO oximetry."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_068",
+      "difficulty": 2,
+      "question": "Which of the following is the mainstay treatment for serotonin syndrome?",
+      "image": null,
+      "options": [
+        {
+          "text": "Benzodiazepines and supportive care",
+          "isCorrect": true,
+          "explanation": "Most cases resolve with discontinuation of the offending agent, benzodiazepines for sedation, and supportive care. Cyproheptadine may be used in moderate to severe cases."
+        },
+        {
+          "text": "Dantrolene",
+          "isCorrect": false,
+          "explanation": "For malignant hyperthermia and sometimes NMS."
+        },
+        {
+          "text": "Bromocriptine",
+          "isCorrect": false,
+          "explanation": "For NMS."
+        },
+        {
+          "text": "Physostigmine",
+          "isCorrect": false,
+          "explanation": "For anticholinergic syndrome."
+        },
+        {
+          "text": "Sodium bicarbonate",
+          "isCorrect": false,
+          "explanation": "Not."
+        }
+      ],
+      "explanation": {
+        "overview": "Management of serotonin syndrome includes cessation of serotonergic drugs, benzodiazepines for agitation, cooling, and cyproheptadine (a 5-HT2A antagonist) for severe cases.",
+        "highYield": "Serotonin syndrome: benzodiazepines + supportive cooling; cyproheptadine 12 mg PO, then 2 mg every 2 hours if needed.",
+        "clinicalCorrelation": "Avoid antipsychotics in serotonin syndrome as they can worsen hyperthermia and mask symptoms."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_069",
+      "difficulty": 2,
+      "question": "Which of the following statements about digoxin immune Fab is true?",
+      "image": null,
+      "options": [
+        {
+          "text": "It may cause hypokalemia as toxicity resolves",
+          "isCorrect": true,
+          "explanation": "As digoxin is neutralized, potassium shifts back into cells, lowering serum potassium. Rapid reversal of hyperkalemia can occur."
+        },
+        {
+          "text": "It directly increases digoxin excretion",
+          "isCorrect": false,
+          "explanation": "The complex is excreted renally but the Fab binding neutralizes free digoxin."
+        },
+        {
+          "text": "It is contraindicated in renal failure",
+          "isCorrect": false,
+          "explanation": "It can be used; clearance of Fab-digoxin complex may be delayed."
+        },
+        {
+          "text": "It increases free digoxin levels",
+          "isCorrect": false,
+          "explanation": "It decreases free levels."
+        },
+        {
+          "text": "It is only effective for acute overdose",
+          "isCorrect": false,
+          "explanation": "Also effective for chronic toxicity."
+        }
+      ],
+      "explanation": {
+        "overview": "Digoxin immune Fab binds free digoxin, reducing its pharmacological effect. Serum potassium may drop as toxicity resolves, requiring monitoring.",
+        "highYield": "After Fab, total digoxin levels are unreliable; monitor clinical status and potassium.",
+        "clinicalCorrelation": "Dosing: 1 vial (40 mg) neutralizes ~0.5 mg of digoxin; can be given empirically in cardiac arrest."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_070",
+      "difficulty": 3,
+      "question": "Which of the following explains why phenobarbital is eliminated faster in alkaline urine?",
+      "image": null,
+      "options": [
+        {
+          "text": "Ionized phenobarbital is trapped in the renal tubule and less reabsorbed",
+          "isCorrect": true,
+          "explanation": "Phenobarbital is a weak acid (pKa ~7.2). In alkaline urine, it becomes ionized and less lipid-soluble, preventing passive tubular reabsorption and increasing excretion."
+        },
+        {
+          "text": "Alkaline urine enhances metabolism",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "It increases glomerular filtration",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "It binds to albumin in urine",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "It increases tubular secretion",
+          "isCorrect": false,
+          "explanation": "Not directly; the mechanism is ion trapping."
+        }
+      ],
+      "explanation": {
+        "overview": "Ion trapping: weak acids (pKa ~7.2) are reabsorbed in acidic urine; alkalinization ionizes them, trapping them in the tubule and increasing clearance.",
+        "highYield": "Alkaline diuresis for phenobarbital: target urine pH >7.5.",
+        "clinicalCorrelation": "Multiple-dose activated charcoal is also effective for phenobarbital."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_071",
+      "difficulty": 2,
+      "question": "Which of the following is a symptom of cholinergic crisis from organophosphate poisoning?",
+      "image": null,
+      "options": [
+        {
+          "text": "Diarrhea",
+          "isCorrect": true,
+          "explanation": "SLUDGE syndrome: salivation, lacrimation, urination, defecation (diarrhea), GI distress, emesis."
+        },
+        {
+          "text": "Dry mouth",
+          "isCorrect": false,
+          "explanation": "Anticholinergic."
+        },
+        {
+          "text": "Mydriasis",
+          "isCorrect": false,
+          "explanation": "Anticholinergic or sympathomimetic."
+        },
+        {
+          "text": "Fever",
+          "isCorrect": false,
+          "explanation": "Fever can occur but diarrhea is more specific."
+        },
+        {
+          "text": "Urinary retention",
+          "isCorrect": false,
+          "explanation": "Anticholinergic."
+        }
+      ],
+      "explanation": {
+        "overview": "Cholinergic excess manifests as muscarinic symptoms (SLUDGE/BBB - bradycardia, bronchospasm, bronchorrhea) and nicotinic (fasciculations, paralysis).",
+        "highYield": "Diarrhea and urinary incontinence are prominent muscarinic features of organophosphate poisoning.",
+        "clinicalCorrelation": "Atropine reverses muscarinic effects but not nicotinic."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_072",
+      "difficulty": 2,
+      "question": "Which of the following is a sign of severe lithium toxicity?",
+      "image": null,
+      "options": [
+        {
+          "text": "Seizures and coma",
+          "isCorrect": true,
+          "explanation": "Severe lithium toxicity presents with altered mental status, seizures, coma, and cardiovascular collapse."
+        },
+        {
+          "text": "Mild tremor",
+          "isCorrect": false,
+          "explanation": "Mild toxicity."
+        },
+        {
+          "text": "Nausea and vomiting",
+          "isCorrect": false,
+          "explanation": "Early."
+        },
+        {
+          "text": "Fine tremor",
+          "isCorrect": false,
+          "explanation": "Mild."
+        },
+        {
+          "text": "Polyuria",
+          "isCorrect": false,
+          "explanation": "Chronic effect (nephrogenic DI)."
+        }
+      ],
+      "explanation": {
+        "overview": "Lithium neurotoxicity ranges from tremor and ataxia (mild) to seizures, coma, and irreversible cerebellar damage (severe).",
+        "highYield": "Severe lithium toxicity: altered consciousness, seizures, myoclonus, cardiac arrhythmias.",
+        "clinicalCorrelation": "Hemodialysis is life-saving in severe lithium poisoning."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_073",
+      "difficulty": 2,
+      "question": "Which of the following is a contraindication to the use of activated charcoal?",
+      "image": null,
+      "options": [
+        {
+          "text": "Caustic ingestion",
+          "isCorrect": true,
+          "explanation": "Activated charcoal is contraindicated in caustic ingestions because it obscures endoscopy and does not adsorb caustics; risk of aspiration and perforation."
+        },
+        {
+          "text": "Acetaminophen overdose within 1 hour",
+          "isCorrect": false,
+          "explanation": "Charcoal is indicated."
+        },
+        {
+          "text": "Aspirin overdose",
+          "isCorrect": false,
+          "explanation": "Charcoal indicated."
+        },
+        {
+          "text": "Phenytoin overdose",
+          "isCorrect": false,
+          "explanation": "Can be used."
+        },
+        {
+          "text": "Carbamazepine overdose",
+          "isCorrect": false,
+          "explanation": "Can be used."
+        }
+      ],
+      "explanation": {
+        "overview": "Activated charcoal should not be used in patients with caustic ingestion, unprotected airway, or ileus/obstruction.",
+        "highYield": "No charcoal for caustics, hydrocarbons, or unprotected airway.",
+        "clinicalCorrelation": "Charcoal does not adsorb lithium, iron, or alcohols."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_074",
+      "difficulty": 2,
+      "question": "Which of the following is a key laboratory finding in salicylate poisoning?",
+      "image": null,
+      "options": [
+        {
+          "text": "Mixed respiratory alkalosis and high anion gap metabolic acidosis",
+          "isCorrect": true,
+          "explanation": "Salicylate poisoning classically produces a mixed acid-base disorder: respiratory alkalosis (from central stimulation) and metabolic acidosis (from uncoupling oxidative phosphorylation)."
+        },
+        {
+          "text": "Isolated respiratory acidosis",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Isolated metabolic alkalosis",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Normal anion gap metabolic acidosis",
+          "isCorrect": false,
+          "explanation": "High anion gap."
+        },
+        {
+          "text": "Respiratory alkalosis with normal pH",
+          "isCorrect": false,
+          "explanation": "pH may be alkalotic initially, but metabolic acidosis develops."
+        }
+      ],
+      "explanation": {
+        "overview": "Salicylate stimulates the respiratory center causing hyperventilation (respiratory alkalosis) and uncouples oxidative phosphorylation causing lactic acidosis.",
+        "highYield": "Salicylate: mixed acid-base disorder, increased anion gap, respiratory alkalosis.",
+        "clinicalCorrelation": "Never allow hypoventilation; it can cause rapid decompensation."
+      }
+    },
+    {
+      "questionId": "pharma_toxicology_075",
+      "difficulty": 2,
+      "question": "Which of the following is a characteristic feature of TCA overdose on ECG?",
+      "image": null,
+      "options": [
+        {
+          "text": "Widening of QRS and terminal R wave in aVR",
+          "isCorrect": true,
+          "explanation": "TCA cardiotoxicity causes QRS prolongation >100 ms, a prominent terminal R wave in aVR, and a prolonged QTc."
+        },
+        {
+          "text": "Prolonged PR interval only",
+          "isCorrect": false,
+          "explanation": "QRS widening is more specific."
+        },
+        {
+          "text": "ST elevation",
+          "isCorrect": false,
+          "explanation": "Not."
+        },
+        {
+          "text": "T wave inversion",
+          "isCorrect": false,
+          "explanation": "Non-specific."
+        },
+        {
+          "text": "Bradycardia with narrow QRS",
+          "isCorrect": false,
+          "explanation": "TCAs cause tachycardia with wide QRS."
+        }
+      ],
+      "explanation": {
+        "overview": "ECG findings in TCA overdose include sinus tachycardia, QRS widening (>100 ms), and a prominent R wave in lead aVR (>3 mm) indicating sodium channel blockade.",
+        "highYield": "QRS >100 ms = risk of seizure; >160 ms = risk of ventricular arrhythmia. R aVR >3 mm suggests TCA toxicity.",
+        "clinicalCorrelation": "Sodium bicarbonate narrows the QRS and improves hemodynamics."
+      }
+    }
+  ]
+}

@@ -1,0 +1,2854 @@
+{
+  "questions": [
+    {
+      "questionId": "sterilization_disinfect_001",
+      "difficulty": 1,
+      "question": "What is the difference between sterilization and disinfection?",
+      "image": null,
+      "options": [
+        {
+          "text": "Sterilization kills all microorganisms including spores; disinfection reduces pathogens",
+          "isCorrect": true,
+          "explanation": "Sterilization eliminates all microbial life; disinfection reduces pathogenic microorganisms but may not kill spores."
+        },
+        {
+          "text": "Sterilization is for inanimate objects only; disinfection is for living tissue",
+          "isCorrect": false,
+          "explanation": "This describes a difference between disinfectants and antiseptics, not the processes themselves."
+        },
+        {
+          "text": "Sterilization uses only heat; disinfection uses chemicals",
+          "isCorrect": false,
+          "explanation": "Sterilization can be achieved by chemicals (e.g., ethylene oxide), and disinfection can use heat (e.g., pasteurization)."
+        },
+        {
+          "text": "There is no difference",
+          "isCorrect": false,
+          "explanation": "They differ in the extent of microbial kill."
+        },
+        {
+          "text": "Disinfection kills all microbes; sterilization reduces pathogens",
+          "isCorrect": false,
+          "explanation": "This is the opposite of the correct definitions."
+        }
+      ],
+      "explanation": {
+        "overview": "Sterilization is the complete elimination or destruction of all forms of microbial life, including bacterial endospores. Disinfection reduces the number of pathogenic microorganisms to a level that does not pose a risk, but does not necessarily kill spores.",
+        "highYield": "Sterilization = kills everything (including spores). Disinfection = kills pathogens, not necessarily spores.",
+        "clinicalCorrelation": "Critical medical items that enter sterile tissue must be sterilized; semicritical items require high-level disinfection."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_002",
+      "difficulty": 1,
+      "question": "Which of the following is a physical method of sterilization?",
+      "image": null,
+      "options": [
+        {
+          "text": "Moist heat (autoclaving)",
+          "isCorrect": true,
+          "explanation": "Autoclaving uses steam under pressure, a physical method."
+        },
+        {
+          "text": "Ethylene oxide gas",
+          "isCorrect": false,
+          "explanation": "Ethylene oxide is a chemical sterilant."
+        },
+        {
+          "text": "Formaldehyde",
+          "isCorrect": false,
+          "explanation": "Formaldehyde is a chemical disinfectant."
+        },
+        {
+          "text": "Glutaraldehyde",
+          "isCorrect": false,
+          "explanation": "Glutaraldehyde is a chemical high-level disinfectant."
+        },
+        {
+          "text": "Chlorhexidine",
+          "isCorrect": false,
+          "explanation": "Chlorhexidine is a chemical antiseptic."
+        }
+      ],
+      "explanation": {
+        "overview": "Physical sterilization methods include moist heat (autoclaving), dry heat, filtration, radiation, and UV light.",
+        "highYield": "Physical sterilization methods: heat (moist/dry), radiation, filtration.",
+        "clinicalCorrelation": "Autoclaving is the most common method for sterilizing surgical instruments."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_003",
+      "difficulty": 2,
+      "question": "The standard conditions for steam sterilization (autoclave) are:",
+      "image": null,
+      "options": [
+        {
+          "text": "121°C at 15 psi for 15-20 minutes",
+          "isCorrect": true,
+          "explanation": "These conditions ensure steam penetrates and kills all microbes, including spores."
+        },
+        {
+          "text": "100°C at atmospheric pressure for 30 minutes",
+          "isCorrect": false,
+          "explanation": "Boiling water at 100°C is not sufficient to kill spores; it's only a disinfectant level."
+        },
+        {
+          "text": "160°C for 2 hours",
+          "isCorrect": false,
+          "explanation": "This is dry heat sterilization, not steam."
+        },
+        {
+          "text": "134°C for 3 minutes",
+          "isCorrect": false,
+          "explanation": "Flash sterilization may use 134°C for a few minutes, but standard gravity displacement is 121°C/15 min."
+        },
+        {
+          "text": "121°C at 10 psi for 10 minutes",
+          "isCorrect": false,
+          "explanation": "Pressure is insufficient to reach the correct temperature and time."
+        }
+      ],
+      "explanation": {
+        "overview": "The gravity displacement autoclave standard is 121°C, 15 psi, for 15–20 minutes. Higher temperatures (e.g., 134°C) can be used for shorter times.",
+        "highYield": "Standard autoclave: 121°C, 15 psi, 15-20 min.",
+        "clinicalCorrelation": "Biological indicators (Geobacillus stearothermophilus) confirm autoclave efficacy."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_004",
+      "difficulty": 2,
+      "question": "Dry heat sterilization (hot air oven) is typically performed at:",
+      "image": null,
+      "options": [
+        {
+          "text": "160-170°C for 2 hours",
+          "isCorrect": true,
+          "explanation": "Dry heat requires higher temperatures and longer times than moist heat due to lower penetrability."
+        },
+        {
+          "text": "121°C for 15 minutes",
+          "isCorrect": false,
+          "explanation": "This is autoclave conditions (moist heat)."
+        },
+        {
+          "text": "100°C for 30 minutes",
+          "isCorrect": false,
+          "explanation": "Insufficient for sterilization."
+        },
+        {
+          "text": "134°C for 3 minutes",
+          "isCorrect": false,
+          "explanation": "Moist heat flash sterilization."
+        },
+        {
+          "text": "180°C for 1 hour",
+          "isCorrect": false,
+          "explanation": "180°C for 30 minutes could also be used, but the standard is 160-170°C for 2 hours."
+        }
+      ],
+      "explanation": {
+        "overview": "Dry heat kills by oxidation; it is used for materials that can withstand high temperatures but not moisture, like glassware and oils.",
+        "highYield": "Dry heat: 160-170°C, 2 hours. Biological indicator: Bacillus atrophaeus.",
+        "clinicalCorrelation": "Used for sterilizing glass syringes, test tubes, and powders."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_005",
+      "difficulty": 2,
+      "question": "Tyndallization (fractional sterilization) involves:",
+      "image": null,
+      "options": [
+        {
+          "text": "Heating at 100°C for 30 minutes on three successive days",
+          "isCorrect": true,
+          "explanation": "This allows spores to germinate between heatings, then the vegetative forms are killed by subsequent heating."
+        },
+        {
+          "text": "Heating at 121°C for 15 minutes once",
+          "isCorrect": false,
+          "explanation": "That is autoclaving, not Tyndallization."
+        },
+        {
+          "text": "Heating at 160°C for 2 hours",
+          "isCorrect": false,
+          "explanation": "Dry heat sterilization."
+        },
+        {
+          "text": "Filtration through bacterial filters",
+          "isCorrect": false,
+          "explanation": "Filtration is a different physical method."
+        },
+        {
+          "text": "Exposure to ethylene oxide",
+          "isCorrect": false,
+          "explanation": "That is chemical sterilization."
+        }
+      ],
+      "explanation": {
+        "overview": "Tyndallization, named after John Tyndall, is a process for sterilizing media that cannot be autoclaved. It involves three cycles of heating at 100°C for 30 minutes, incubating at 37°C between cycles to promote spore germination.",
+        "highYield": "Tyndallization: 100°C x 30 min, 3 days (fractional).",
+        "clinicalCorrelation": "Historically used for media containing sugars or gelatin that degrade at autoclave temperatures."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_006",
+      "difficulty": 1,
+      "question": "Pasteurization is a process of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Heat treatment to reduce pathogens in food/beverages",
+          "isCorrect": true,
+          "explanation": "Pasteurization does not sterilize; it reduces microbial load to a safe level."
+        },
+        {
+          "text": "Complete sterilization of milk",
+          "isCorrect": false,
+          "explanation": "Pasteurized milk still contains some microorganisms."
+        },
+        {
+          "text": "Chemical disinfection",
+          "isCorrect": false,
+          "explanation": "Pasteurization uses heat, not chemicals."
+        },
+        {
+          "text": "Freezing preservation",
+          "isCorrect": false,
+          "explanation": "Freezing preserves but does not necessarily kill pathogens."
+        },
+        {
+          "text": "Irradiation",
+          "isCorrect": false,
+          "explanation": "Irradiation is a separate non-thermal method."
+        }
+      ],
+      "explanation": {
+        "overview": "Pasteurization uses mild heat (e.g., 72°C for 15 seconds for milk) to kill pathogens like Mycobacterium tuberculosis and Salmonella, without significantly altering the food.",
+        "highYield": "Pasteurization = reducing pathogens, not sterilization.",
+        "clinicalCorrelation": "Pasteurization of milk has dramatically reduced foodborne illnesses."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_007",
+      "difficulty": 2,
+      "question": "Which of the following materials cannot be sterilized by autoclaving?",
+      "image": null,
+      "options": [
+        {
+          "text": "Heat-sensitive plastics",
+          "isCorrect": true,
+          "explanation": "Many plastics melt or deform at autoclave temperatures."
+        },
+        {
+          "text": "Surgical instruments",
+          "isCorrect": false,
+          "explanation": "Metal instruments are routinely autoclaved."
+        },
+        {
+          "text": "Culture media",
+          "isCorrect": false,
+          "explanation": "Most culture media can be autoclaved (unless heat-labile)."
+        },
+        {
+          "text": "Liquids in sealed containers",
+          "isCorrect": false,
+          "explanation": "Can be autoclaved if the container is vented or can withstand pressure."
+        },
+        {
+          "text": "Rubber gloves",
+          "isCorrect": false,
+          "explanation": "Some rubber can be autoclaved, though disposable gloves are usually gamma-irradiated."
+        }
+      ],
+      "explanation": {
+        "overview": "Heat-sensitive materials like certain plastics, electronic components, and some pharmaceuticals require low-temperature sterilization (ETO, gas plasma) or radiation.",
+        "highYield": "Autoclave not for heat-sensitive plastics.",
+        "clinicalCorrelation": "Endoscopes with plastic components are often high-level disinfected, not autoclaved."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_008",
+      "difficulty": 1,
+      "question": "Filtration is used to sterilize:",
+      "image": null,
+      "options": [
+        {
+          "text": "Heat-labile liquids (e.g., sera, antibiotics)",
+          "isCorrect": true,
+          "explanation": "Filtration removes bacteria without heat, ideal for temperature-sensitive solutions."
+        },
+        {
+          "text": "Solid materials",
+          "isCorrect": false,
+          "explanation": "Filtration is for liquids or air, not solids."
+        },
+        {
+          "text": "Large volumes of water",
+          "isCorrect": false,
+          "explanation": "Water can be filtered, but the question specifies 'sterilize heat-labile', which is the classic use."
+        },
+        {
+          "text": "Air in operating theaters",
+          "isCorrect": false,
+          "explanation": "Air is filtered, but HEPA filtration is not typically called 'sterilization' of air, rather 'air purification'."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "Filtration is particularly important for heat-labile liquids."
+        }
+      ],
+      "explanation": {
+        "overview": "Membrane filters with pore sizes of 0.22 µm can remove bacteria from solutions, providing a sterile product.",
+        "highYield": "Filtration for heat-sensitive solutions (0.22 µm filter).",
+        "clinicalCorrelation": "Used for sterilizing antibiotic solutions, sera, and vaccines that cannot be autoclaved."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_009",
+      "difficulty": 2,
+      "question": "HEPA filters are used to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Remove airborne microorganisms in laminar flow hoods",
+          "isCorrect": true,
+          "explanation": "HEPA (High-Efficiency Particulate Air) filters capture 99.97% of particles ≥0.3 µm, including bacteria and fungi."
+        },
+        {
+          "text": "Sterilize liquids",
+          "isCorrect": false,
+          "explanation": "Liquid sterilization uses membrane filters, not HEPA."
+        },
+        {
+          "text": "Filter gases for anesthesia",
+          "isCorrect": false,
+          "explanation": "Gases may be filtered with specific filters, but HEPA is mainly for air."
+        },
+        {
+          "text": "Purify water",
+          "isCorrect": false,
+          "explanation": "Water is purified by other filtration methods."
+        },
+        {
+          "text": "Remove endotoxins",
+          "isCorrect": false,
+          "explanation": "Endotoxins require ultrafiltration, not HEPA."
+        }
+      ],
+      "explanation": {
+        "overview": "HEPA filters are critical components of biological safety cabinets, laminar flow hoods, and cleanrooms, providing a sterile air environment.",
+        "highYield": "HEPA filter: removes airborne microbes (not endotoxins).",
+        "clinicalCorrelation": "Used in operating rooms, burn units, and pharmacy IV compounding areas."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_010",
+      "difficulty": 2,
+      "question": "Gamma radiation is used for sterilization of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Heat-sensitive medical devices (syringes, gloves)",
+          "isCorrect": false,
+          "explanation": "Gamma radiation sterilizes many items, including food and pharmaceuticals."
+        },
+        {
+          "text": "Food products",
+          "isCorrect": false,
+          "explanation": "Certain foods are irradiated to extend shelf life."
+        },
+        {
+          "text": "Pharmaceuticals",
+          "isCorrect": false,
+          "explanation": "Some drugs are radiation-sterilized."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Gamma radiation is used for a wide range of products including medical devices, food, and pharmaceuticals."
+        },
+        {
+          "text": "Only metallic instruments",
+          "isCorrect": false,
+          "explanation": "Radiation can also be used on plastics."
+        }
+      ],
+      "explanation": {
+        "overview": "Gamma rays from Cobalt-60 are highly penetrative and kill microbes by damaging DNA, suitable for terminal sterilization of prepackaged items.",
+        "highYield": "Gamma radiation: sterilizes prepackaged devices, foods, drugs.",
+        "clinicalCorrelation": "Many single-use medical items (syringes, catheters, sutures) are gamma-sterilized."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_011",
+      "difficulty": 2,
+      "question": "The mechanism of action of ethylene oxide sterilization is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Alkylation of DNA and proteins",
+          "isCorrect": true,
+          "explanation": "Ethylene oxide (ETO) reacts with amino, carboxyl, and sulfhydryl groups in nucleic acids and proteins, disrupting microbial function."
+        },
+        {
+          "text": "Protein denaturation",
+          "isCorrect": false,
+          "explanation": "That is the mechanism of heat or alcohol."
+        },
+        {
+          "text": "Membrane disruption",
+          "isCorrect": false,
+          "explanation": "Detergents and quaternary ammonium compounds work by membrane disruption."
+        },
+        {
+          "text": "Oxidation of sulfhydryl groups",
+          "isCorrect": false,
+          "explanation": "Oxidation is the mode of peroxides and halogens."
+        },
+        {
+          "text": "Hydrolysis of peptidoglycan",
+          "isCorrect": false,
+          "explanation": "Lysozyme and penicillin work on peptidoglycan."
+        }
+      ],
+      "explanation": {
+        "overview": "Ethylene oxide is a highly reactive alkylating agent that inactivates microorganisms by binding to nucleophilic sites on DNA and proteins.",
+        "highYield": "ETO = alkylating agent (DNA and protein damage).",
+        "clinicalCorrelation": "ETO is used for delicate, heat-sensitive medical devices; toxic residues require aeration."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_012",
+      "difficulty": 2,
+      "question": "Which of the following is a high-level disinfectant/chemical sterilant?",
+      "image": null,
+      "options": [
+        {
+          "text": "Glutaraldehyde",
+          "isCorrect": true,
+          "explanation": "2% glutaraldehyde can kill spores with prolonged contact (≥6-10 hours), functioning as a chemical sterilant."
+        },
+        {
+          "text": "Ethanol 70%",
+          "isCorrect": false,
+          "explanation": "Alcohol is intermediate-level; not sporicidal."
+        },
+        {
+          "text": "Quaternary ammonium compounds",
+          "isCorrect": false,
+          "explanation": "Quats are low-level disinfectants, not sporicidal."
+        },
+        {
+          "text": "Phenol",
+          "isCorrect": false,
+          "explanation": "Phenolic compounds are typically intermediate-level disinfectants."
+        },
+        {
+          "text": "Chlorhexidine",
+          "isCorrect": false,
+          "explanation": "Chlorhexidine is a low- to intermediate-level antiseptic, not sporicidal."
+        }
+      ],
+      "explanation": {
+        "overview": "High-level disinfectants kill all vegetative bacteria, viruses, and fungi, and some spores; prolonged exposure achieves sterilization.",
+        "highYield": "Glutaraldehyde = high-level disinfectant/sterilant.",
+        "clinicalCorrelation": "Used for semicritical items like endoscopes; requires thorough rinsing due to toxicity."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_013",
+      "difficulty": 2,
+      "question": "The phenol coefficient is a measure of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Effectiveness of a disinfectant compared to phenol",
+          "isCorrect": true,
+          "explanation": "It is the ratio of the highest dilution of the test disinfectant that kills the test organism in 10 minutes to the highest dilution of phenol that achieves the same, under standardized conditions."
+        },
+        {
+          "text": "Concentration of phenol in a solution",
+          "isCorrect": false,
+          "explanation": "It is a comparative measure, not a concentration."
+        },
+        {
+          "text": "Toxicity of a disinfectant",
+          "isCorrect": false,
+          "explanation": "It does not measure toxicity."
+        },
+        {
+          "text": "Antimicrobial spectrum",
+          "isCorrect": false,
+          "explanation": "It measures potency, not spectrum."
+        },
+        {
+          "text": "Stability of a disinfectant",
+          "isCorrect": false,
+          "explanation": "Not related to stability."
+        }
+      ],
+      "explanation": {
+        "overview": "The phenol coefficient test is a historical standard for comparing disinfectant efficacy under controlled conditions; a higher coefficient indicates greater potency.",
+        "highYield": "Phenol coefficient = comparison to phenol's bactericidal activity.",
+        "clinicalCorrelation": "Mostly replaced by quantitative suspension tests and use-dilution tests."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_014",
+      "difficulty": 1,
+      "question": "Alcohols (e.g., 70% ethanol) are commonly used as disinfectants because they:",
+      "image": null,
+      "options": [
+        {
+          "text": "Denature proteins and dissolve lipids",
+          "isCorrect": true,
+          "explanation": "Alcohols disrupt cell membranes and coagulate proteins; 70% concentration is optimal because it penetrates better than absolute alcohol."
+        },
+        {
+          "text": "Are sporicidal",
+          "isCorrect": false,
+          "explanation": "Alcohols are not sporicidal."
+        },
+        {
+          "text": "Remain active in organic matter",
+          "isCorrect": false,
+          "explanation": "Alcohols are inactivated by organic debris."
+        },
+        {
+          "text": "Are non-flammable",
+          "isCorrect": false,
+          "explanation": "Alcohols are highly flammable."
+        },
+        {
+          "text": "Have no toxicity",
+          "isCorrect": false,
+          "explanation": "Alcohols can be drying and irritant."
+        }
+      ],
+      "explanation": {
+        "overview": "Alcohols are rapid-acting, broad-spectrum disinfectants ideal for skin antisepsis and surface disinfection, but lack sporicidal activity.",
+        "highYield": "70% ethanol: denatures proteins, dissolves lipids; not sporicidal.",
+        "clinicalCorrelation": "Hand rubs with 60-80% alcohol are effective for routine hand hygiene."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_015",
+      "difficulty": 1,
+      "question": "Chlorhexidine is a:",
+      "image": null,
+      "options": [
+        {
+          "text": "Antiseptic for skin and mucous membranes",
+          "isCorrect": true,
+          "explanation": "Chlorhexidine has broad-spectrum activity and persistent effect on skin."
+        },
+        {
+          "text": "Sterilant for instruments",
+          "isCorrect": false,
+          "explanation": "Chlorhexidine is not a sterilant; it does not kill spores."
+        },
+        {
+          "text": "Disinfectant for surfaces",
+          "isCorrect": false,
+          "explanation": "It can be used on surfaces but is primarily an antiseptic."
+        },
+        {
+          "text": "Sporicide",
+          "isCorrect": false,
+          "explanation": "Not sporicidal."
+        },
+        {
+          "text": "Gas sterilant",
+          "isCorrect": false,
+          "explanation": "It is not a gas."
+        }
+      ],
+      "explanation": {
+        "overview": "Chlorhexidine gluconate is a bisbiguanide antiseptic used for surgical scrubs, skin preparation, and oral rinses, effective against gram-positive and gram-negative bacteria.",
+        "highYield": "Chlorhexidine = antiseptic (not sporicidal).",
+        "clinicalCorrelation": "Used for central line insertion site disinfection and preoperative skin preparation."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_016",
+      "difficulty": 1,
+      "question": "Iodine compounds (iodophors) are used as antiseptics because they:",
+      "image": null,
+      "options": [
+        {
+          "text": "Oxidize cellular components",
+          "isCorrect": false,
+          "explanation": "Iodine oxidizes proteins, but it also denatures proteins and disrupts membranes."
+        },
+        {
+          "text": "Denature proteins",
+          "isCorrect": false,
+          "explanation": "This is one mechanism."
+        },
+        {
+          "text": "Disrupt membranes",
+          "isCorrect": false,
+          "explanation": "Also a mechanism."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Iodine and iodophors act through multiple mechanisms: oxidizing cellular components, denaturing proteins, and disrupting cell membranes."
+        },
+        {
+          "text": "None of the above",
+          "isCorrect": false,
+          "explanation": "All are mechanisms."
+        }
+      ],
+      "explanation": {
+        "overview": "Iodine is a potent, broad-spectrum antiseptic that rapidly penetrates microorganisms and attacks key functional groups of proteins and nucleotides.",
+        "highYield": "Iodine: oxidizing, protein denaturation, membrane disruption.",
+        "clinicalCorrelation": "Povidone-iodine (Betadine) is used for preoperative skin preparation."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_017",
+      "difficulty": 2,
+      "question": "Quaternary ammonium compounds are:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cationic detergents effective against gram-positive bacteria",
+          "isCorrect": true,
+          "explanation": "Quats are positively charged surfactants that disrupt cell membranes; more active against gram-positive organisms."
+        },
+        {
+          "text": "Anionic detergents effective against all microbes",
+          "isCorrect": false,
+          "explanation": "Quats are cationic; anionic detergents (soaps) are not quaternary ammonium compounds."
+        },
+        {
+          "text": "Sporicidal agents",
+          "isCorrect": false,
+          "explanation": "Quats are not sporicidal."
+        },
+        {
+          "text": "Gas sterilants",
+          "isCorrect": false,
+          "explanation": "They are liquid disinfectants."
+        },
+        {
+          "text": "Heavy metal compounds",
+          "isCorrect": false,
+          "explanation": "They are organic nitrogen compounds."
+        }
+      ],
+      "explanation": {
+        "overview": "Quats are low-level disinfectants with good activity against enveloped viruses and gram-positive bacteria, commonly used for environmental surfaces.",
+        "highYield": "Quats = cationic detergents, gram-positive, not sporicidal.",
+        "clinicalCorrelation": "Used in hospital environmental disinfection but easily inactivated by organic matter."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_018",
+      "difficulty": 2,
+      "question": "Which of the following is a limitation of quaternary ammonium compounds?",
+      "image": null,
+      "options": [
+        {
+          "text": "Inactivated by organic matter and soap",
+          "isCorrect": true,
+          "explanation": "Quats bind to proteins in organic debris and are neutralized by anionic detergents (soap)."
+        },
+        {
+          "text": "Corrosive to metals",
+          "isCorrect": false,
+          "explanation": "Quats are generally non-corrosive."
+        },
+        {
+          "text": "Highly toxic",
+          "isCorrect": false,
+          "explanation": "They have low toxicity."
+        },
+        {
+          "text": "Explosive",
+          "isCorrect": false,
+          "explanation": "They are not explosive."
+        },
+        {
+          "text": "Require long exposure times",
+          "isCorrect": false,
+          "explanation": "They act relatively quickly."
+        }
+      ],
+      "explanation": {
+        "overview": "Quats are easily inactivated by organic material and incompatible with anionic surfactants (soaps), requiring thorough cleaning before use.",
+        "highYield": "Quats: inactivated by organic matter and soap.",
+        "clinicalCorrelation": "Always clean surfaces before applying quaternary ammonium disinfectants."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_019",
+      "difficulty": 1,
+      "question": "Hydrogen peroxide is an effective disinfectant due to its:",
+      "image": null,
+      "options": [
+        {
+          "text": "Oxidizing action producing free radicals",
+          "isCorrect": true,
+          "explanation": "Hydrogen peroxide decomposes to produce highly reactive hydroxyl radicals that attack microbial components."
+        },
+        {
+          "text": "Alkylating properties",
+          "isCorrect": false,
+          "explanation": "Alkylation is characteristic of ethylene oxide."
+        },
+        {
+          "text": "Membrane disruption",
+          "isCorrect": false,
+          "explanation": "It does disrupt membranes but primarily via oxidation."
+        },
+        {
+          "text": "Protein coagulation",
+          "isCorrect": false,
+          "explanation": "Protein coagulation is more typical of alcohol or phenol."
+        },
+        {
+          "text": "Acidification",
+          "isCorrect": false,
+          "explanation": "It does not act through acidification."
+        }
+      ],
+      "explanation": {
+        "overview": "Hydrogen peroxide is a broad-spectrum disinfectant that generates hydroxyl radicals causing oxidative damage to DNA, proteins, and lipids.",
+        "highYield": "Hydrogen peroxide = oxidizing agent (free radicals).",
+        "clinicalCorrelation": "Vaporized hydrogen peroxide is used for room and equipment sterilization."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_020",
+      "difficulty": 2,
+      "question": "Peracetic acid is a:",
+      "image": null,
+      "options": [
+        {
+          "text": "Sporicidal chemical sterilant",
+          "isCorrect": true,
+          "explanation": "Peracetic acid rapidly kills spores and other microorganisms, even in the presence of organic matter."
+        },
+        {
+          "text": "Mild antiseptic",
+          "isCorrect": false,
+          "explanation": "It is too caustic for direct tissue application; used as a sterilant."
+        },
+        {
+          "text": "Detergent",
+          "isCorrect": false,
+          "explanation": "It is an oxidizing agent, not primarily a detergent."
+        },
+        {
+          "text": "Gas sterilant",
+          "isCorrect": false,
+          "explanation": "It can be used as a vapor but is usually a liquid sterilant."
+        },
+        {
+          "text": "Halogen compound",
+          "isCorrect": false,
+          "explanation": "It is an organic peroxide, not a halogen."
+        }
+      ],
+      "explanation": {
+        "overview": "Peracetic acid is a powerful, fast-acting oxidizing agent that kills spores, bacteria, viruses, and fungi at low concentrations, used for automated endoscope reprocessors.",
+        "highYield": "Peracetic acid = sporicidal chemical sterilant.",
+        "clinicalCorrelation": "Used for low-temperature sterilization of flexible endoscopes and other heat-sensitive items."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_021",
+      "difficulty": 1,
+      "question": "The term 'antisepsis' refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Application of antimicrobial agents to living tissue",
+          "isCorrect": true,
+          "explanation": "Antisepsis involves using chemical agents (antiseptics) on skin or mucous membranes to inhibit or kill microorganisms."
+        },
+        {
+          "text": "Destruction of all microorganisms",
+          "isCorrect": false,
+          "explanation": "That is sterilization."
+        },
+        {
+          "text": "Removal of microbes from inanimate surfaces",
+          "isCorrect": false,
+          "explanation": "That is disinfection."
+        },
+        {
+          "text": "Reduction of pathogens in food",
+          "isCorrect": false,
+          "explanation": "That is pasteurization or decontamination."
+        },
+        {
+          "text": "Prevention of infection by excluding microbes",
+          "isCorrect": false,
+          "explanation": "That is asepsis."
+        }
+      ],
+      "explanation": {
+        "overview": "Antiseptics are safe for use on living tissue, reducing the microbial load and preventing infection. Disinfectants are for inanimate objects.",
+        "highYield": "Antisepsis = antimicrobial on living tissue (skin/mucosa).",
+        "clinicalCorrelation": "Examples of antiseptics: iodine, chlorhexidine, alcohol."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_022",
+      "difficulty": 2,
+      "question": "Which of the following is a common biological indicator for autoclave validation?",
+      "image": null,
+      "options": [
+        {
+          "text": "Geobacillus stearothermophilus spores",
+          "isCorrect": true,
+          "explanation": "Its spores are highly heat-resistant and serve as the standard challenge organism for steam sterilization."
+        },
+        {
+          "text": "Bacillus subtilis spores",
+          "isCorrect": false,
+          "explanation": "B. subtilis may be used for dry heat, but G. stearothermophilus is for moist heat."
+        },
+        {
+          "text": "Staphylococcus aureus",
+          "isCorrect": false,
+          "explanation": "S. aureus is not particularly resistant."
+        },
+        {
+          "text": "Escherichia coli",
+          "isCorrect": false,
+          "explanation": "E. coli is easily killed."
+        },
+        {
+          "text": "Clostridium sporogenes spores",
+          "isCorrect": false,
+          "explanation": "Not the standard indicator."
+        }
+      ],
+      "explanation": {
+        "overview": "Biological indicators containing spores of Geobacillus stearothermophilus are used to verify the lethality of autoclave cycles; failure to kill the spores indicates inadequate sterilization.",
+        "highYield": "Autoclave BI = Geobacillus stearothermophilus.",
+        "clinicalCorrelation": "BIs are run weekly or with each load of implantable devices."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_023",
+      "difficulty": 3,
+      "question": "For dry heat sterilization, the biological indicator often used is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Bacillus subtilis spores",
+          "isCorrect": false,
+          "explanation": "B. atrophaeus is the correct species; not B. subtilis sensu stricto."
+        },
+        {
+          "text": "Geobacillus stearothermophilus",
+          "isCorrect": false,
+          "explanation": "Used for steam, not dry heat."
+        },
+        {
+          "text": "Clostridium botulinum",
+          "isCorrect": false,
+          "explanation": "C. botulinum is a target of sterilization, not an indicator."
+        },
+        {
+          "text": "Bacillus pumilus",
+          "isCorrect": false,
+          "explanation": "Used for radiation sterilization."
+        },
+        {
+          "text": "Bacillus atrophaeus",
+          "isCorrect": true,
+          "explanation": "Bacillus atrophaeus (formerly B. subtilis var. niger) is resistant to dry heat and is used as the biological indicator."
+        }
+      ],
+      "explanation": {
+        "overview": "Bacillus atrophaeus is used for dry heat and ethylene oxide sterilization validation due to its resistance.",
+        "highYield": "Dry heat BI = Bacillus atrophaeus (not Geobacillus).",
+        "clinicalCorrelation": "Use correct BI for each sterilization method to avoid false sense of security."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_024",
+      "difficulty": 2,
+      "question": "Ethylene oxide sterilization requires:",
+      "image": null,
+      "options": [
+        {
+          "text": "Controlled humidity, temperature, and gas concentration",
+          "isCorrect": true,
+          "explanation": "ETO requires precise parameters for effective sterilization, typically 37-55°C, 40-80% relative humidity, and 400-800 mg/L gas concentration for 2-6 hours."
+        },
+        {
+          "text": "High pressure steam",
+          "isCorrect": false,
+          "explanation": "That is autoclaving."
+        },
+        {
+          "text": "Radiation exposure",
+          "isCorrect": false,
+          "explanation": "That is radiation sterilization."
+        },
+        {
+          "text": "Immersion in liquid",
+          "isCorrect": false,
+          "explanation": "ETO is a gas."
+        },
+        {
+          "text": "Extreme cold",
+          "isCorrect": false,
+          "explanation": "Not a requirement."
+        }
+      ],
+      "explanation": {
+        "overview": "Ethylene oxide sterilization is a multi-parameter process requiring optimal humidity (to hydrate spores), temperature, gas concentration, and time, followed by aeration to remove toxic residues.",
+        "highYield": "ETO: humidity, temperature, gas concentration, time.",
+        "clinicalCorrelation": "Aeration is essential to prevent ETO-related burns and toxicity on patient contact."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_025",
+      "difficulty": 1,
+      "question": "UV light is used for disinfection of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Air and surfaces in operating rooms",
+          "isCorrect": true,
+          "explanation": "Ultraviolet germicidal irradiation (UVGI) inactivates microorganisms in air and on surfaces by damaging their DNA."
+        },
+        {
+          "text": "Liquids",
+          "isCorrect": false,
+          "explanation": "UV penetration in liquids is poor unless very thin layer."
+        },
+        {
+          "text": "Instruments",
+          "isCorrect": false,
+          "explanation": "UV does not sterilize instruments effectively due to shadows."
+        },
+        {
+          "text": "Skin",
+          "isCorrect": false,
+          "explanation": "UV is harmful to skin and eyes."
+        },
+        {
+          "text": "Implants",
+          "isCorrect": false,
+          "explanation": "Implants require sterilization, not UV."
+        }
+      ],
+      "explanation": {
+        "overview": "UV-C light (200-280 nm) is used for air disinfection in TB wards, operating theaters, and biological safety cabinets; it is not sterilizing as it doesn't penetrate well.",
+        "highYield": "UV disinfection: air and surfaces (shadowing limits effect).",
+        "clinicalCorrelation": "Used in biosafety cabinets and water purification."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_026",
+      "difficulty": 1,
+      "question": "The most resistant microbial forms to sterilization are:",
+      "image": null,
+      "options": [
+        {
+          "text": "Bacterial endospores",
+          "isCorrect": true,
+          "explanation": "Endospores (e.g., Bacillus, Clostridium) are extremely resistant to heat, chemicals, and radiation. Prions are more resistant but are not microbes."
+        },
+        {
+          "text": "Prions",
+          "isCorrect": false,
+          "explanation": "Prions are infectious proteins, not microbial forms; they are even more resistant, but the question asks for microbial forms."
+        },
+        {
+          "text": "Viruses",
+          "isCorrect": false,
+          "explanation": "Many viruses are more sensitive than spores."
+        },
+        {
+          "text": "Vegetative bacteria",
+          "isCorrect": false,
+          "explanation": "Easily killed by many methods."
+        },
+        {
+          "text": "Fungal spores",
+          "isCorrect": false,
+          "explanation": "Fungal spores are less resistant than bacterial endospores."
+        }
+      ],
+      "explanation": {
+        "overview": "Bacterial endospores are the most resistant microbial entities to sterilization processes; if a process kills endospores, it kills all other microbes.",
+        "highYield": "Most resistant microbes: bacterial endospores (Bacillus, Clostridium).",
+        "clinicalCorrelation": "Sterilization validation uses spore biological indicators because they are the hardest to kill."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_027",
+      "difficulty": 2,
+      "question": "Which of the following is NOT a sporicidal agent?",
+      "image": null,
+      "options": [
+        {
+          "text": "70% ethanol",
+          "isCorrect": true,
+          "explanation": "Alcohols, including 70% ethanol, are not sporicidal and do not kill bacterial endospores."
+        },
+        {
+          "text": "2% glutaraldehyde",
+          "isCorrect": false,
+          "explanation": "Glutaraldehyde is sporicidal with prolonged exposure."
+        },
+        {
+          "text": "Peracetic acid",
+          "isCorrect": false,
+          "explanation": "Peracetic acid is sporicidal."
+        },
+        {
+          "text": "Hydrogen peroxide vapor",
+          "isCorrect": false,
+          "explanation": "Vaporized hydrogen peroxide is sporicidal."
+        },
+        {
+          "text": "Ethylene oxide",
+          "isCorrect": false,
+          "explanation": "ETO is sporicidal."
+        }
+      ],
+      "explanation": {
+        "overview": "Sporicidal agents include glutaraldehyde, peracetic acid, chlorine dioxide, hydrogen peroxide (vapor), and ethylene oxide. Alcohols and phenolic compounds are not sporicidal.",
+        "highYield": "Not sporicidal: alcohol, phenols, chlorhexidine, quats.",
+        "clinicalCorrelation": "For items contaminated with spores, only sterilization or high-level disinfection with sporicidal agents is effective."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_028",
+      "difficulty": 2,
+      "question": "The D-value (decimal reduction time) is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Time required to kill 90% of microbial population at a given temperature",
+          "isCorrect": true,
+          "explanation": "The D-value is the time (in minutes) at a specified temperature required to reduce a microbial population by 1 log (90%)."
+        },
+        {
+          "text": "Temperature to kill 90% in 10 minutes",
+          "isCorrect": false,
+          "explanation": "That is related to the thermal death point."
+        },
+        {
+          "text": "Time for complete sterilization",
+          "isCorrect": false,
+          "explanation": "Complete sterilization requires more than one D-value (typically 12D for Clostridium botulinum)."
+        },
+        {
+          "text": "Concentration to kill 90%",
+          "isCorrect": false,
+          "explanation": "Concentration is not part of D-value; it is time at a given temperature."
+        },
+        {
+          "text": "Time to reduce spores by 99.999%",
+          "isCorrect": false,
+          "explanation": "That would be 5D (5 log reduction)."
+        }
+      ],
+      "explanation": {
+        "overview": "The D-value is a key parameter in thermal death kinetics, indicating the lethality of a sterilization process; it varies with the microorganism and temperature.",
+        "highYield": "D-value = time for 1-log kill (90%).",
+        "clinicalCorrelation": "Used to calculate sterilization times for canning (botulinum cook = 12D)."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_029",
+      "difficulty": 3,
+      "question": "The Z-value in thermal death kinetics is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Temperature change required to alter D-value by a factor of 10",
+          "isCorrect": true,
+          "explanation": "Z-value (in °C or °F) is the temperature increase needed to reduce the D-value to one-tenth of its original value."
+        },
+        {
+          "text": "Time to achieve sterility",
+          "isCorrect": false,
+          "explanation": "That is the F-value."
+        },
+        {
+          "text": "Concentration exponent",
+          "isCorrect": false,
+          "explanation": "Concentration exponent is η (eta)."
+        },
+        {
+          "text": "Activation energy",
+          "isCorrect": false,
+          "explanation": "Activation energy is a different kinetic parameter."
+        },
+        {
+          "text": "Decimal reduction time",
+          "isCorrect": false,
+          "explanation": "That is D-value."
+        }
+      ],
+      "explanation": {
+        "overview": "The Z-value describes how the thermal sensitivity of a microorganism changes with temperature; a smaller Z means the organism is more sensitive to temperature increases.",
+        "highYield": "Z-value: ΔT to change D by 1 log.",
+        "clinicalCorrelation": "Important in designing thermal processing in food and pharmaceutical industries."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_030",
+      "difficulty": 2,
+      "question": "Which of the following is an example of an intermediate-level disinfectant?",
+      "image": null,
+      "options": [
+        {
+          "text": "70% alcohol",
+          "isCorrect": true,
+          "explanation": "70% alcohol kills vegetative bacteria, most viruses, and fungi, but not spores, fitting the intermediate-level category."
+        },
+        {
+          "text": "2% glutaraldehyde",
+          "isCorrect": false,
+          "explanation": "Glutaraldehyde is high-level."
+        },
+        {
+          "text": "Quaternary ammonium compounds",
+          "isCorrect": false,
+          "explanation": "Quats are low-level."
+        },
+        {
+          "text": "Phenol 5%",
+          "isCorrect": false,
+          "explanation": "Phenolics can be intermediate to low-level, but alcohol is a more classic example."
+        },
+        {
+          "text": "Sodium hypochlorite 0.1%",
+          "isCorrect": false,
+          "explanation": "At higher concentrations, chlorine is high-level; 0.1% is a low-level disinfectant for some uses."
+        }
+      ],
+      "explanation": {
+        "overview": "Intermediate-level disinfectants inactivate Mycobacterium tuberculosis, vegetative bacteria, most viruses, and fungi, but not necessarily bacterial spores.",
+        "highYield": "Intermediate-level disinfectant: 70% alcohol, some iodophors, phenolic compounds.",
+        "clinicalCorrelation": "Used for non-critical items that may be contaminated with mycobacteria or non-enveloped viruses."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_031",
+      "difficulty": 2,
+      "question": "Sodium hypochlorite (bleach) at 0.5% is a:",
+      "image": null,
+      "options": [
+        {
+          "text": "High-level disinfectant",
+          "isCorrect": true,
+          "explanation": "At 0.5% (5000 ppm), sodium hypochlorite can kill spores, making it a high-level disinfectant/chemical sterilant."
+        },
+        {
+          "text": "Low-level disinfectant",
+          "isCorrect": false,
+          "explanation": "Low-level is for non-sporicidal agents like quats."
+        },
+        {
+          "text": "Intermediate-level disinfectant",
+          "isCorrect": false,
+          "explanation": "Intermediate-level agents do not necessarily kill spores; chlorine at this concentration is sporicidal."
+        },
+        {
+          "text": "Antiseptic",
+          "isCorrect": false,
+          "explanation": "Too concentrated for skin; Dakin's solution (0.025%) is an antiseptic."
+        },
+        {
+          "text": "Sterilant",
+          "isCorrect": false,
+          "explanation": "It can be a sterilant with prolonged contact, but 0.5% is typically a high-level disinfectant."
+        }
+      ],
+      "explanation": {
+        "overview": "Sodium hypochlorite is a potent, rapid-acting oxidizer that, at adequate concentrations (≥0.5%), is sporicidal and virucidal.",
+        "highYield": "0.5% bleach = high-level disinfectant.",
+        "clinicalCorrelation": "Used for environmental disinfection in laboratories and hospitals (e.g., blood spill cleaning)."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_032",
+      "difficulty": 3,
+      "question": "Chlorine dioxide is used as a:",
+      "image": null,
+      "options": [
+        {
+          "text": "Gas sterilant",
+          "isCorrect": true,
+          "explanation": "Chlorine dioxide gas is used as a sterilant for enclosed spaces and equipment, especially as an alternative to ETO."
+        },
+        {
+          "text": "Liquid disinfectant",
+          "isCorrect": false,
+          "explanation": "It can be used as liquid, but its prominent use is as a gas sterilant."
+        },
+        {
+          "text": "Antiseptic",
+          "isCorrect": false,
+          "explanation": "It is not used on living tissue."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "Primarily a gas sterilant in healthcare."
+        },
+        {
+          "text": "None of the above",
+          "isCorrect": false,
+          "explanation": "It is a recognized sterilant."
+        }
+      ],
+      "explanation": {
+        "overview": "Chlorine dioxide gas is a low-temperature sterilant effective against spores, viruses, and bacteria, used for decontamination of rooms and equipment.",
+        "highYield": "Chlorine dioxide = gas sterilant.",
+        "clinicalCorrelation": "Used in BSL-4 labs and for building decontamination."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_033",
+      "difficulty": 1,
+      "question": "Which method would be most appropriate to sterilize a heat-sensitive aqueous solution?",
+      "image": null,
+      "options": [
+        {
+          "text": "Filtration through 0.22 µm membrane",
+          "isCorrect": true,
+          "explanation": "Filtration removes bacteria without heat, preserving the stability of the solution."
+        },
+        {
+          "text": "Autoclaving",
+          "isCorrect": false,
+          "explanation": "Autoclaving involves heat, which could degrade the solution."
+        },
+        {
+          "text": "Dry heat",
+          "isCorrect": false,
+          "explanation": "Dry heat would also degrade heat-sensitive components."
+        },
+        {
+          "text": "Ethylene oxide",
+          "isCorrect": false,
+          "explanation": "ETO is a gas for solid items, not liquids."
+        },
+        {
+          "text": "UV irradiation",
+          "isCorrect": false,
+          "explanation": "UV has poor penetration in liquids."
+        }
+      ],
+      "explanation": {
+        "overview": "Membrane filtration is the method of choice for sterilizing heat-labile aqueous solutions, such as antibiotics, vitamins, and sera, without altering their composition.",
+        "highYield": "Sterilize heat-sensitive liquid = 0.22 µm filtration.",
+        "clinicalCorrelation": "Pharmaceutical manufacturing uses filtration for parenteral solutions that cannot be terminally heat-sterilized."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_034",
+      "difficulty": 1,
+      "question": "The most effective method for sterilizing surgical instruments is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Autoclaving (steam sterilization)",
+          "isCorrect": true,
+          "explanation": "Steam under pressure is the most reliable, cost-effective method for metal surgical instruments."
+        },
+        {
+          "text": "Boiling water",
+          "isCorrect": false,
+          "explanation": "Boiling does not kill spores."
+        },
+        {
+          "text": "Chemical disinfection",
+          "isCorrect": false,
+          "explanation": "Disinfection does not eliminate all spores."
+        },
+        {
+          "text": "UV light",
+          "isCorrect": false,
+          "explanation": "UV does not sterilize."
+        },
+        {
+          "text": "Pasteurization",
+          "isCorrect": false,
+          "explanation": "Pasteurization is not sterilization."
+        }
+      ],
+      "explanation": {
+        "overview": "Autoclaving is the gold standard for sterilizing heat- and moisture-resistant surgical instruments, guaranteeing destruction of all microorganisms.",
+        "highYield": "Surgical instruments: autoclave (steam).",
+        "clinicalCorrelation": "If autoclave unavailable, immediate-use steam sterilization (flash) may be used, but wrapped instruments should be processed in a standard cycle."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_035",
+      "difficulty": 2,
+      "question": "Spaulding's classification divides medical devices into:",
+      "image": null,
+      "options": [
+        {
+          "text": "Critical, semi-critical, non-critical",
+          "isCorrect": true,
+          "explanation": "This system categorizes items based on the risk of infection associated with their use."
+        },
+        {
+          "text": "High, medium, low risk",
+          "isCorrect": false,
+          "explanation": "Risk categories are not the Spaulding terms."
+        },
+        {
+          "text": "Sterile, clean, dirty",
+          "isCorrect": false,
+          "explanation": "That is a general state, not the classification."
+        },
+        {
+          "text": "Class I, II, III",
+          "isCorrect": false,
+          "explanation": "That is FDA device classification."
+        },
+        {
+          "text": "Heat-resistant, heat-sensitive",
+          "isCorrect": false,
+          "explanation": "Not Spaulding's criteria."
+        }
+      ],
+      "explanation": {
+        "overview": "Dr. Earle Spaulding's scheme defines the level of reprocessing required: critical (sterilization), semi-critical (high-level disinfection), non-critical (low-level disinfection or cleaning).",
+        "highYield": "Spaulding: critical (sterilize), semi-critical (HLD), non-critical (LLD).",
+        "clinicalCorrelation": "This guides infection control policies for instrument reprocessing."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_036",
+      "difficulty": 1,
+      "question": "A critical medical device (e.g., surgical instrument) must be:",
+      "image": null,
+      "options": [
+        {
+          "text": "Sterilized",
+          "isCorrect": true,
+          "explanation": "Critical items enter sterile tissue or the vascular system; they must be free of all microorganisms."
+        },
+        {
+          "text": "High-level disinfected",
+          "isCorrect": false,
+          "explanation": "HLD may leave some spores; insufficient for critical items."
+        },
+        {
+          "text": "Intermediate-level disinfected",
+          "isCorrect": false,
+          "explanation": "Not adequate for sterile tissue."
+        },
+        {
+          "text": "Low-level disinfected",
+          "isCorrect": false,
+          "explanation": "Too low of a level."
+        },
+        {
+          "text": "Cleaned only",
+          "isCorrect": false,
+          "explanation": "Cleaning does not eliminate all microbes."
+        }
+      ],
+      "explanation": {
+        "overview": "According to Spaulding classification, critical items (those that penetrate skin or mucous membranes) require sterilization.",
+        "highYield": "Critical items = sterilization required.",
+        "clinicalCorrelation": "Examples: surgical instruments, implants, cardiac catheters."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_037",
+      "difficulty": 2,
+      "question": "Semi-critical items (e.g., endoscopes) require at least:",
+      "image": null,
+      "options": [
+        {
+          "text": "High-level disinfection",
+          "isCorrect": true,
+          "explanation": "Semi-critical items contact mucous membranes or non-intact skin; high-level disinfection kills all organisms except some bacterial spores."
+        },
+        {
+          "text": "Sterilization",
+          "isCorrect": false,
+          "explanation": "Sterilization is preferred when possible but high-level disinfection is the minimum."
+        },
+        {
+          "text": "Intermediate-level disinfection",
+          "isCorrect": false,
+          "explanation": "Insufficient for semi-critical items."
+        },
+        {
+          "text": "Low-level disinfection",
+          "isCorrect": false,
+          "explanation": "Not adequate."
+        },
+        {
+          "text": "Cleaning with soap",
+          "isCorrect": false,
+          "explanation": "Cleaning alone is insufficient."
+        }
+      ],
+      "explanation": {
+        "overview": "Semi-critical items (e.g., gastrointestinal endoscopes, bronchoscopes) require at least high-level disinfection because they come into contact with mucous membranes.",
+        "highYield": "Semi-critical: high-level disinfection (HLD).",
+        "clinicalCorrelation": "Flexible endoscopes are often reprocessed with automated endoscope reprocessors using glutaraldehyde or peracetic acid."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_038",
+      "difficulty": 1,
+      "question": "Non-critical items (e.g., blood pressure cuffs) require:",
+      "image": null,
+      "options": [
+        {
+          "text": "Low-level disinfection or cleaning",
+          "isCorrect": true,
+          "explanation": "These items contact intact skin and pose a low risk, so low-level disinfection or simple cleaning is adequate."
+        },
+        {
+          "text": "Sterilization",
+          "isCorrect": false,
+          "explanation": "Overkill for non-critical items."
+        },
+        {
+          "text": "High-level disinfection",
+          "isCorrect": false,
+          "explanation": "Not needed."
+        },
+        {
+          "text": "Pasteurization",
+          "isCorrect": false,
+          "explanation": "Not typically used."
+        },
+        {
+          "text": "No treatment",
+          "isCorrect": false,
+          "explanation": "They do require cleaning or low-level disinfection to prevent cross-contamination."
+        }
+      ],
+      "explanation": {
+        "overview": "Non-critical items that touch only intact skin require the least stringent reprocessing: cleaning or low-level disinfection.",
+        "highYield": "Non-critical: cleaning/low-level disinfection.",
+        "clinicalCorrelation": "Examples: stethoscopes, blood pressure cuffs, bedrails."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_039",
+      "difficulty": 2,
+      "question": "Which of the following is a limitation of using glutaraldehyde as a disinfectant?",
+      "image": null,
+      "options": [
+        {
+          "text": "Irritant fumes and long exposure time required",
+          "isCorrect": true,
+          "explanation": "Glutaraldehyde is a potent irritant to eyes, skin, and respiratory tract, requiring good ventilation; high-level disinfection takes 20-90 minutes."
+        },
+        {
+          "text": "Corrosive to metals",
+          "isCorrect": false,
+          "explanation": "Glutaraldehyde is generally non-corrosive to metals."
+        },
+        {
+          "text": "Inactivated by organic matter",
+          "isCorrect": false,
+          "explanation": "It has activity in the presence of organic matter, but cleaning is still recommended."
+        },
+        {
+          "text": "Explosive",
+          "isCorrect": false,
+          "explanation": "It is not explosive."
+        },
+        {
+          "text": "Limited spectrum",
+          "isCorrect": false,
+          "explanation": "It has a broad spectrum, including spores with prolonged contact."
+        }
+      ],
+      "explanation": {
+        "overview": "Despite its effectiveness, glutaraldehyde is toxic, requiring careful handling, monitoring of vapor levels, and adequate contact time.",
+        "highYield": "Glutaraldehyde limitation: irritant fumes, long contact time.",
+        "clinicalCorrelation": "Healthcare workers must use glutaraldehyde in well-ventilated areas; OPA is an alternative with fewer fumes."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_040",
+      "difficulty": 2,
+      "question": "Ortho-phthalaldehyde (OPA) is an alternative to glutaraldehyde with advantages including:",
+      "image": null,
+      "options": [
+        {
+          "text": "Faster action and less irritation",
+          "isCorrect": true,
+          "explanation": "OPA achieves high-level disinfection in 12 minutes at room temperature and is less irritating to skin and respiratory tract."
+        },
+        {
+          "text": "Lower cost",
+          "isCorrect": false,
+          "explanation": "OPA is generally more expensive."
+        },
+        {
+          "text": "Sporicidal in 5 minutes",
+          "isCorrect": false,
+          "explanation": "It is sporicidal with longer contact, not in 5 minutes."
+        },
+        {
+          "text": "Non-toxic",
+          "isCorrect": false,
+          "explanation": "It is still toxic and requires safe handling."
+        },
+        {
+          "text": "Stable at high temperatures",
+          "isCorrect": false,
+          "explanation": "It is used at room temperature."
+        }
+      ],
+      "explanation": {
+        "overview": "OPA has advantages over glutaraldehyde: faster high-level disinfection, excellent stability, and no need for activation; however, it can stain proteins gray.",
+        "highYield": "OPA: faster HLD, less irritant than glutaraldehyde.",
+        "clinicalCorrelation": "OPA is widely used for urological instruments and endoscopes, but it cannot be used on bladder cancer patients due to potential cross-linking with urine."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_041",
+      "difficulty": 1,
+      "question": "Which sterilization method is suitable for materials that cannot tolerate heat or moisture?",
+      "image": null,
+      "options": [
+        {
+          "text": "Ethylene oxide gas",
+          "isCorrect": true,
+          "explanation": "ETO is a low-temperature chemical sterilization method ideal for heat- and moisture-sensitive items."
+        },
+        {
+          "text": "Autoclaving",
+          "isCorrect": false,
+          "explanation": "Autoclaving uses heat and moisture."
+        },
+        {
+          "text": "Dry heat",
+          "isCorrect": false,
+          "explanation": "Dry heat uses high temperature."
+        },
+        {
+          "text": "Boiling",
+          "isCorrect": false,
+          "explanation": "Boiling is moist heat, not sterilizing."
+        },
+        {
+          "text": "Pasteurization",
+          "isCorrect": false,
+          "explanation": "Pasteurization is heat, not sterilization."
+        }
+      ],
+      "explanation": {
+        "overview": "Ethylene oxide, hydrogen peroxide gas plasma, and ozone are examples of low-temperature sterilization technologies for delicate medical devices.",
+        "highYield": "Heat/moisture sensitive: ETO sterilization.",
+        "clinicalCorrelation": "Used for plastic syringes, catheters, and some electronic components."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_042",
+      "difficulty": 3,
+      "question": "Plasma sterilization (e.g., hydrogen peroxide gas plasma) works by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Creating reactive radicals that kill microbes",
+          "isCorrect": true,
+          "explanation": "In gas plasma sterilization, radiofrequency energy ionizes hydrogen peroxide vapor, generating a cloud of reactive species (free radicals) that inactivate microorganisms."
+        },
+        {
+          "text": "High temperature",
+          "isCorrect": false,
+          "explanation": "It operates at low temperature (≤50°C)."
+        },
+        {
+          "text": "UV radiation",
+          "isCorrect": false,
+          "explanation": "The plasma generates UV, but the primary action is via reactive species."
+        },
+        {
+          "text": "Alkylation",
+          "isCorrect": false,
+          "explanation": "That is ethylene oxide's mechanism."
+        },
+        {
+          "text": "Oxidation only",
+          "isCorrect": false,
+          "explanation": "It includes oxidation from radicals, but the mechanism is generation of reactive species."
+        }
+      ],
+      "explanation": {
+        "overview": "Hydrogen peroxide gas plasma (e.g., STERRAD) uses low-temperature plasma to produce reactive species that destroy microorganisms, leaving no toxic residues.",
+        "highYield": "Gas plasma: reactive radicals (low-temperature).",
+        "clinicalCorrelation": "Suitable for heat-sensitive instruments; cycle time is shorter than ETO."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_043",
+      "difficulty": 2,
+      "question": "The main advantage of radiation sterilization (gamma or electron beam) is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Penetrates packaging and leaves no residue",
+          "isCorrect": true,
+          "explanation": "Radiation can sterilize products in their final packaging without heat or chemicals, leaving no harmful residues."
+        },
+        {
+          "text": "Low cost",
+          "isCorrect": false,
+          "explanation": "Radiation facilities are expensive."
+        },
+        {
+          "text": "Quick process",
+          "isCorrect": false,
+          "explanation": "Electron beam is fast, but gamma can take hours."
+        },
+        {
+          "text": "Safe for all materials",
+          "isCorrect": false,
+          "explanation": "Some plastics become brittle or discolored."
+        },
+        {
+          "text": "No regulatory requirements",
+          "isCorrect": false,
+          "explanation": "There are strict regulations."
+        }
+      ],
+      "explanation": {
+        "overview": "Gamma and electron beam irradiation are cold sterilization methods that can be applied to packaged products, eliminating the need for post-sterilization handling.",
+        "highYield": "Radiation advantage: penetrates packaging, no residue.",
+        "clinicalCorrelation": "Most single-use medical devices (gloves, syringes, sutures) are radiation-sterilized."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_044",
+      "difficulty": 2,
+      "question": "Which of the following is NOT a method of monitoring sterilization efficacy?",
+      "image": null,
+      "options": [
+        {
+          "text": "Measuring pH of the sterilant",
+          "isCorrect": true,
+          "explanation": "pH measurement is not a standard sterilization monitor; biological, chemical, and physical indicators are used."
+        },
+        {
+          "text": "Biological indicators (spore tests)",
+          "isCorrect": false,
+          "explanation": "BIs are a primary monitoring method."
+        },
+        {
+          "text": "Chemical indicators (tape, strips)",
+          "isCorrect": false,
+          "explanation": "Chemical indicators show exposure to sterilization parameters."
+        },
+        {
+          "text": "Physical monitors (time, temperature, pressure)",
+          "isCorrect": false,
+          "explanation": "Physical parameters are recorded and reviewed."
+        },
+        {
+          "text": "Process challenge devices",
+          "isCorrect": false,
+          "explanation": "PCDs verify penetration of the sterilant."
+        }
+      ],
+      "explanation": {
+        "overview": "Sterilization monitoring includes physical (time, temperature, pressure), chemical (indicators), and biological (spore tests) methods to ensure the process was effective.",
+        "highYield": "Monitoring: physical, chemical, biological – not pH.",
+        "clinicalCorrelation": "All three types of monitoring are required for quality assurance in sterile processing departments."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_045",
+      "difficulty": 2,
+      "question": "A biological indicator for ethylene oxide sterilization typically uses spores of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Bacillus atrophaeus",
+          "isCorrect": true,
+          "explanation": "B. atrophaeus (formerly B. subtilis var. niger) is resistant to ethylene oxide and is used as the standard biological indicator."
+        },
+        {
+          "text": "Geobacillus stearothermophilus",
+          "isCorrect": false,
+          "explanation": "G. stearothermophilus is used for steam."
+        },
+        {
+          "text": "Bacillus subtilis",
+          "isCorrect": false,
+          "explanation": "B. subtilis sensu stricto is not the standard."
+        },
+        {
+          "text": "Clostridium sporogenes",
+          "isCorrect": false,
+          "explanation": "Not an indicator organism."
+        },
+        {
+          "text": "Bacillus pumilus",
+          "isCorrect": false,
+          "explanation": "B. pumilus is used for radiation."
+        }
+      ],
+      "explanation": {
+        "overview": "Bacillus atrophaeus is the biological indicator of choice for ethylene oxide and dry heat sterilization.",
+        "highYield": "ETO BI = Bacillus atrophaeus.",
+        "clinicalCorrelation": "Ensure the correct BI is used for the sterilization modality being tested."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_046",
+      "difficulty": 1,
+      "question": "The term 'bactericidal' means:",
+      "image": null,
+      "options": [
+        {
+          "text": "Kills bacteria",
+          "isCorrect": true,
+          "explanation": "-cidal = kills; bacteri = bacteria."
+        },
+        {
+          "text": "Inhibits bacterial growth",
+          "isCorrect": false,
+          "explanation": "That is bacteriostatic."
+        },
+        {
+          "text": "Kills all microorganisms",
+          "isCorrect": false,
+          "explanation": "That is sterilant or sporicidal."
+        },
+        {
+          "text": "Prevents infection",
+          "isCorrect": false,
+          "explanation": "That is antiseptic/prophylactic."
+        },
+        {
+          "text": "Removes bacteria physically",
+          "isCorrect": false,
+          "explanation": "That is degermination or filtration."
+        }
+      ],
+      "explanation": {
+        "overview": "Bactericidal agents kill bacteria; bacteriostatic agents inhibit their growth. The terms are often used in antimicrobial susceptibility testing.",
+        "highYield": "Bactericidal = kills; bacteriostatic = inhibits.",
+        "clinicalCorrelation": "For life-threatening infections (e.g., endocarditis, meningitis), bactericidal agents are often preferred."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_047",
+      "difficulty": 1,
+      "question": "A bacteriostatic agent:",
+      "image": null,
+      "options": [
+        {
+          "text": "Inhibits bacterial growth but does not kill",
+          "isCorrect": true,
+          "explanation": "Bacteriostatic agents prevent replication; if the agent is removed, growth may resume."
+        },
+        {
+          "text": "Kills bacteria",
+          "isCorrect": false,
+          "explanation": "That is bactericidal."
+        },
+        {
+          "text": "Kills spores",
+          "isCorrect": false,
+          "explanation": "That is sporicidal."
+        },
+        {
+          "text": "Neutralizes toxins",
+          "isCorrect": false,
+          "explanation": "Not an antimicrobial mechanism."
+        },
+        {
+          "text": "Promotes bacterial growth",
+          "isCorrect": false,
+          "explanation": "Not a characteristic of an antimicrobial."
+        }
+      ],
+      "explanation": {
+        "overview": "Bacteriostatic agents (e.g., tetracyclines, chloramphenicol) inhibit protein synthesis or other processes, halting growth and allowing the immune system to clear the infection.",
+        "highYield": "Bacteriostatic = inhibit growth, not kill.",
+        "clinicalCorrelation": "Bacteriostatic drugs are effective in immunocompetent patients but may be less suitable in neutropenic patients."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_048",
+      "difficulty": 3,
+      "question": "Which of the following is a sporostatic agent?",
+      "image": null,
+      "options": [
+        {
+          "text": "Sodium nitrite in cured meats",
+          "isCorrect": true,
+          "explanation": "Sodium nitrite prevents spore germination in food products, particularly by inhibiting outgrowth of Clostridium botulinum spores."
+        },
+        {
+          "text": "Ethanol 70%",
+          "isCorrect": false,
+          "explanation": "Ethanol is bactericidal, not sporostatic or sporicidal."
+        },
+        {
+          "text": "Chlorhexidine",
+          "isCorrect": false,
+          "explanation": "Chlorhexidine is bactericidal, not sporostatic."
+        },
+        {
+          "text": "Quaternary ammonium compounds",
+          "isCorrect": false,
+          "explanation": "Quats are low-level disinfectants, not sporostatic."
+        },
+        {
+          "text": "Hydrogen peroxide",
+          "isCorrect": false,
+          "explanation": "Hydrogen peroxide is sporicidal at high concentrations."
+        }
+      ],
+      "explanation": {
+        "overview": "Sporostatic agents inhibit spore germination but do not kill spores. This is crucial in food preservation to prevent botulism.",
+        "highYield": "Sporostatic: sodium nitrite (prevents spore germination).",
+        "clinicalCorrelation": "Not used clinically; important in food industry."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_049",
+      "difficulty": 3,
+      "question": "The use-dilution test evaluates:",
+      "image": null,
+      "options": [
+        {
+          "text": "Efficacy of a disinfectant at various dilutions",
+          "isCorrect": true,
+          "explanation": "The use-dilution test determines the highest dilution of a disinfectant that can kill the test organism on a standard carrier under specified conditions."
+        },
+        {
+          "text": "Toxicity of a disinfectant",
+          "isCorrect": false,
+          "explanation": "Toxicity is not assessed."
+        },
+        {
+          "text": "Concentration of active ingredient",
+          "isCorrect": false,
+          "explanation": "It measures efficacy, not concentration."
+        },
+        {
+          "text": "Stability over time",
+          "isCorrect": false,
+          "explanation": "Not a stability test."
+        },
+        {
+          "text": "Corrosiveness",
+          "isCorrect": false,
+          "explanation": "Corrosiveness is not evaluated."
+        }
+      ],
+      "explanation": {
+        "overview": "The use-dilution test (AOAC method) is a standard test for disinfectant registration, determining the maximum dilution that still yields a specified level of kill.",
+        "highYield": "Use-dilution test = effective disinfectant dilution.",
+        "clinicalCorrelation": "Regulatory bodies require use-dilution data for disinfectant approval."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_050",
+      "difficulty": 1,
+      "question": "Which of the following factors does NOT affect the efficacy of disinfection?",
+      "image": null,
+      "options": [
+        {
+          "text": "Color of the disinfectant",
+          "isCorrect": true,
+          "explanation": "Color does not influence antimicrobial activity."
+        },
+        {
+          "text": "Concentration of disinfectant",
+          "isCorrect": false,
+          "explanation": "Concentration directly impacts efficacy."
+        },
+        {
+          "text": "Presence of organic matter",
+          "isCorrect": false,
+          "explanation": "Organic matter can inactivate or shield microbes."
+        },
+        {
+          "text": "Temperature",
+          "isCorrect": false,
+          "explanation": "Higher temperatures generally enhance disinfectant action."
+        },
+        {
+          "text": "Contact time",
+          "isCorrect": false,
+          "explanation": "Adequate contact time is essential."
+        }
+      ],
+      "explanation": {
+        "overview": "Factors influencing disinfection include concentration, organic load, temperature, contact time, and pH. Color is irrelevant.",
+        "highYield": "Disinfection efficacy: NOT affected by color.",
+        "clinicalCorrelation": "Always consider organic load (e.g., blood) when choosing a disinfectant and its contact time."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_051",
+      "difficulty": 2,
+      "question": "The Spaulding classification for a flexible bronchoscope is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Semi-critical",
+          "isCorrect": true,
+          "explanation": "Bronchoscopes contact mucous membranes but do not normally penetrate sterile tissue, requiring high-level disinfection."
+        },
+        {
+          "text": "Critical",
+          "isCorrect": false,
+          "explanation": "Critical items enter sterile body cavities; bronchoscopes generally do not."
+        },
+        {
+          "text": "Non-critical",
+          "isCorrect": false,
+          "explanation": "Non-critical items only touch intact skin."
+        },
+        {
+          "text": "Low-risk",
+          "isCorrect": false,
+          "explanation": "Not a Spaulding category."
+        },
+        {
+          "text": "Implantable",
+          "isCorrect": false,
+          "explanation": "Not an implant."
+        }
+      ],
+      "explanation": {
+        "overview": "Flexible bronchoscopes are classified as semi-critical because they contact intact mucous membranes. High-level disinfection is the minimum requirement.",
+        "highYield": "Bronchoscope = semi-critical, needs high-level disinfection.",
+        "clinicalCorrelation": "Automated reprocessing with peracetic acid or glutaraldehyde is standard for flexible endoscopes."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_052",
+      "difficulty": 2,
+      "question": "Which of the following is an advantage of hydrogen peroxide gas plasma over ethylene oxide?",
+      "image": null,
+      "options": [
+        {
+          "text": "Shorter cycle time and no toxic residues",
+          "isCorrect": true,
+          "explanation": "Gas plasma cycles are typically under 1 hour and the byproducts are water and oxygen."
+        },
+        {
+          "text": "Lower equipment cost",
+          "isCorrect": false,
+          "explanation": "Gas plasma equipment is expensive."
+        },
+        {
+          "text": "Penetrates packaging better",
+          "isCorrect": false,
+          "explanation": "ETO penetrates some materials better."
+        },
+        {
+          "text": "Compatible with all materials",
+          "isCorrect": false,
+          "explanation": "Not compatible with some materials (e.g., cellulose)."
+        },
+        {
+          "text": "Does not require monitoring",
+          "isCorrect": false,
+          "explanation": "All sterilization methods require monitoring."
+        }
+      ],
+      "explanation": {
+        "overview": "Gas plasma sterilization offers fast turnaround, safety for users (non-toxic byproducts), and environmental friendliness compared to ETO.",
+        "highYield": "Gas plasma advantage: fast, no toxic residue.",
+        "clinicalCorrelation": "Preferred in facilities that need rapid instrument turnaround."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_053",
+      "difficulty": 2,
+      "question": "What is the primary reason 100% ethanol is less effective as a disinfectant than 70% ethanol?",
+      "image": null,
+      "options": [
+        {
+          "text": "100% ethanol coagulates proteins too quickly, forming a protective layer",
+          "isCorrect": true,
+          "explanation": "Absolute alcohol precipitates proteins on the cell surface too rapidly, creating a barrier that prevents further penetration."
+        },
+        {
+          "text": "100% ethanol is sporicidal",
+          "isCorrect": false,
+          "explanation": "Neither concentration is sporicidal."
+        },
+        {
+          "text": "100% ethanol is less stable",
+          "isCorrect": false,
+          "explanation": "Stability is not the primary reason."
+        },
+        {
+          "text": "100% ethanol has lower vapor pressure",
+          "isCorrect": false,
+          "explanation": "Vapor pressure is not the key factor."
+        },
+        {
+          "text": "100% ethanol denatures proteins too slowly",
+          "isCorrect": false,
+          "explanation": "It denatures too rapidly, not too slowly."
+        }
+      ],
+      "explanation": {
+        "overview": "Water is required to facilitate protein denaturation and penetration of alcohol into cells. 70% ethanol penetrates better and denatures proteins more gradually, ensuring lethal effect.",
+        "highYield": "70% ethanol better: penetrates, prevents premature protein coagulation.",
+        "clinicalCorrelation": "Always use 70% alcohol for disinfection, never 100%."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_054",
+      "difficulty": 2,
+      "question": "Formaldehyde is used as a:",
+      "image": null,
+      "options": [
+        {
+          "text": "Gas sterilant and disinfectant",
+          "isCorrect": true,
+          "explanation": "Formaldehyde gas can sterilize enclosed spaces; formalin (37% solution) is a high-level disinfectant."
+        },
+        {
+          "text": "Antiseptic for skin",
+          "isCorrect": false,
+          "explanation": "It is too irritating for routine skin use."
+        },
+        {
+          "text": "Low-level disinfectant",
+          "isCorrect": false,
+          "explanation": "It is a high-level disinfectant/sterilant."
+        },
+        {
+          "text": "Only a preservative",
+          "isCorrect": false,
+          "explanation": "It is used as a sterilant as well."
+        },
+        {
+          "text": "Non-toxic chemical",
+          "isCorrect": false,
+          "explanation": "Formaldehyde is a carcinogen and irritant."
+        }
+      ],
+      "explanation": {
+        "overview": "Formaldehyde is a potent alkylating agent used for high-level disinfection (as formalin) and for room sterilization (as a gas). Its use is limited due to toxicity.",
+        "highYield": "Formaldehyde = gas sterilant and HLD; carcinogenic.",
+        "clinicalCorrelation": "Still used in some pathology labs and for equipment that cannot tolerate heat; requires careful ventilation."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_055",
+      "difficulty": 2,
+      "question": "The cleaning step before disinfection is critical because:",
+      "image": null,
+      "options": [
+        {
+          "text": "Organic debris inactivates many disinfectants and shields microorganisms",
+          "isCorrect": true,
+          "explanation": "Blood, pus, and tissue can neutralize disinfectants and prevent adequate contact with microbes."
+        },
+        {
+          "text": "Cleaning alone achieves sterilization",
+          "isCorrect": false,
+          "explanation": "Cleaning reduces bioburden but does not sterilize."
+        },
+        {
+          "text": "Disinfectants work only on clean surfaces",
+          "isCorrect": false,
+          "explanation": "Some disinfectants have activity in organic load, but cleaning is always recommended."
+        },
+        {
+          "text": "It is a regulatory requirement only",
+          "isCorrect": false,
+          "explanation": "It is scientifically necessary."
+        },
+        {
+          "text": "It extends the life of instruments",
+          "isCorrect": false,
+          "explanation": "While true, the main reason is microbial load reduction."
+        }
+      ],
+      "explanation": {
+        "overview": "Thorough cleaning removes organic matter and reduces bioburden, making disinfection or sterilization more effective. Without cleaning, disinfection may fail.",
+        "highYield": "Cleaning = remove organic debris to ensure disinfection efficacy.",
+        "clinicalCorrelation": "The first step in instrument reprocessing is always cleaning; enzymatic detergents are often used."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_056",
+      "difficulty": 2,
+      "question": "Povidone-iodine kills microorganisms primarily through:",
+      "image": null,
+      "options": [
+        {
+          "text": "Release of free iodine which oxidizes cell components",
+          "isCorrect": true,
+          "explanation": "The iodophor complex slowly releases free iodine, which penetrates and inactivates microbial proteins and nucleic acids."
+        },
+        {
+          "text": "Alkylation",
+          "isCorrect": false,
+          "explanation": "Alkylation is characteristic of ETO and formaldehyde."
+        },
+        {
+          "text": "Membrane puncture",
+          "isCorrect": false,
+          "explanation": "Not the primary mechanism."
+        },
+        {
+          "text": "DNA intercalation",
+          "isCorrect": false,
+          "explanation": "Not the mode of action."
+        },
+        {
+          "text": "Chelation of metals",
+          "isCorrect": false,
+          "explanation": "Not how iodine works."
+        }
+      ],
+      "explanation": {
+        "overview": "Povidone-iodine provides sustained release of iodine, which penetrates microorganisms and oxidizes proteins, nucleotides, and fatty acids, leading to cell death.",
+        "highYield": "Povidone-iodine = free iodine oxidation.",
+        "clinicalCorrelation": "Broad-spectrum antiseptic used for surgical skin preparation; activity persists as long as the color remains."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_057",
+      "difficulty": 2,
+      "question": "Ozone sterilization works by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Powerful oxidation of microbial components",
+          "isCorrect": true,
+          "explanation": "Ozone (O3) is a strong oxidizing agent that disrupts cell walls and attacks nucleic acids."
+        },
+        {
+          "text": "Alkylation",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        },
+        {
+          "text": "Protein coagulation",
+          "isCorrect": false,
+          "explanation": "Not primary."
+        },
+        {
+          "text": "pH reduction",
+          "isCorrect": false,
+          "explanation": "Not the mode of kill."
+        },
+        {
+          "text": "Thermal destruction",
+          "isCorrect": false,
+          "explanation": "Ozone is a low-temperature process."
+        }
+      ],
+      "explanation": {
+        "overview": "Ozone is used for low-temperature sterilization of medical equipment and water disinfection; it leaves no toxic residues.",
+        "highYield": "Ozone = oxidizing sterilant.",
+        "clinicalCorrelation": "Useful for heat-sensitive devices; cycle times are short."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_058",
+      "difficulty": 2,
+      "question": "Which of the following is a diphenol commonly used as an antiseptic?",
+      "image": null,
+      "options": [
+        {
+          "text": "Chlorhexidine",
+          "isCorrect": false,
+          "explanation": "Chlorhexidine is a bisbiguanide, not a diphenol."
+        },
+        {
+          "text": "Triclosan",
+          "isCorrect": true,
+          "explanation": "Triclosan is a bisphenol compound with broad-spectrum antimicrobial activity, used in hand soaps and consumer products."
+        },
+        {
+          "text": "Ethanol",
+          "isCorrect": false,
+          "explanation": "Ethanol is an alcohol."
+        },
+        {
+          "text": "Iodine",
+          "isCorrect": false,
+          "explanation": "Iodine is a halogen."
+        },
+        {
+          "text": "Benzalkonium chloride",
+          "isCorrect": false,
+          "explanation": "That is a quaternary ammonium compound."
+        }
+      ],
+      "explanation": {
+        "overview": "Triclosan is a chlorinated diphenol that inhibits fatty acid synthesis in bacteria, used in antiseptic soaps and toothpaste.",
+        "highYield": "Triclosan = diphenol antiseptic.",
+        "clinicalCorrelation": "Concerns over resistance and environmental persistence have led to restrictions in some regions."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_059",
+      "difficulty": 2,
+      "question": "Which disinfectant is known to retain activity in the presence of organic matter?",
+      "image": null,
+      "options": [
+        {
+          "text": "Sodium hypochlorite (bleach)",
+          "isCorrect": false,
+          "explanation": "Bleach is inactivated by organic matter."
+        },
+        {
+          "text": "Alcohol",
+          "isCorrect": false,
+          "explanation": "Alcohol is neutralized by organic debris."
+        },
+        {
+          "text": "Phenol",
+          "isCorrect": true,
+          "explanation": "Phenolic compounds are less affected by organic material than many other disinfectants."
+        },
+        {
+          "text": "Chlorhexidine",
+          "isCorrect": false,
+          "explanation": "Chlorhexidine is partially inactivated by organic matter."
+        },
+        {
+          "text": "Quats",
+          "isCorrect": false,
+          "explanation": "Quats are readily inactivated."
+        }
+      ],
+      "explanation": {
+        "overview": "Phenolic disinfectants penetrate organic material well and maintain activity in the presence of body fluids, making them useful for environmental disinfection in high-soil areas.",
+        "highYield": "Phenol retains activity in organic matter.",
+        "clinicalCorrelation": "Used in hospital floors, walls, and surfaces contaminated with blood or feces."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_060",
+      "difficulty": 2,
+      "question": "A hospital needs to sterilize a large batch of polyethylene syringes. The most appropriate method is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Ethylene oxide gas",
+          "isCorrect": true,
+          "explanation": "Polyethylene cannot withstand high heat; ethylene oxide is a low-temperature sterilant suitable for plastics."
+        },
+        {
+          "text": "Autoclaving",
+          "isCorrect": false,
+          "explanation": "Polyethylene would melt."
+        },
+        {
+          "text": "Dry heat oven",
+          "isCorrect": false,
+          "explanation": "Would also melt plastic."
+        },
+        {
+          "text": "UV radiation",
+          "isCorrect": false,
+          "explanation": "UV does not sterilize packaged items."
+        },
+        {
+          "text": "Boiling water",
+          "isCorrect": false,
+          "explanation": "Not sterilizing and would deform plastic."
+        }
+      ],
+      "explanation": {
+        "overview": "For heat-sensitive plastic items, ethylene oxide is the traditional low-temperature sterilization method. Gamma radiation is commonly used for commercial manufacturing.",
+        "highYield": "Plastic syringes: ETO or radiation, not heat.",
+        "clinicalCorrelation": "In-house sterilization of plastics often uses ETO or gas plasma."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_061",
+      "difficulty": 2,
+      "question": "The primary mechanism of action of silver compounds as antimicrobials is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Binding to sulfhydryl groups in enzymes and disrupting membranes",
+          "isCorrect": true,
+          "explanation": "Silver ions interact with thiol groups in proteins, inactivate enzymes, and damage cell membranes."
+        },
+        {
+          "text": "Alkylation of DNA",
+          "isCorrect": false,
+          "explanation": "Not alkylation."
+        },
+        {
+          "text": "Oxidation of lipids",
+          "isCorrect": false,
+          "explanation": "Not primarily lipid peroxidation."
+        },
+        {
+          "text": "Inhibition of cell wall synthesis",
+          "isCorrect": false,
+          "explanation": "Silver does not inhibit peptidoglycan synthesis."
+        },
+        {
+          "text": "Chelation of metals",
+          "isCorrect": false,
+          "explanation": "It is the metal itself acting, not chelation."
+        }
+      ],
+      "explanation": {
+        "overview": "Silver sulfadiazine and silver nitrate release Ag+ ions that bind to proteins and nucleic acids, disrupting microbial structure and metabolism.",
+        "highYield": "Silver antimicrobial: sulfhydryl binding, membrane damage.",
+        "clinicalCorrelation": "Silver sulfadiazine used in burn wound care; silver-impregnated catheters reduce UTI risk."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_062",
+      "difficulty": 2,
+      "question": "Which of the following describes 'asepsis'?",
+      "image": null,
+      "options": [
+        {
+          "text": "Absence of pathogenic microorganisms",
+          "isCorrect": true,
+          "explanation": "Asepsis is the state of being free from disease-causing microbes. Aseptic technique aims to prevent contamination."
+        },
+        {
+          "text": "Killing of all microorganisms",
+          "isCorrect": false,
+          "explanation": "That is sterilization."
+        },
+        {
+          "text": "Chemical destruction of pathogens on skin",
+          "isCorrect": false,
+          "explanation": "That is antisepsis."
+        },
+        {
+          "text": "Mechanical removal of microbes",
+          "isCorrect": false,
+          "explanation": "That is degermination."
+        },
+        {
+          "text": "Reduction of microbial load in food",
+          "isCorrect": false,
+          "explanation": "That is decontamination/pasteurization."
+        }
+      ],
+      "explanation": {
+        "overview": "Asepsis refers to techniques and procedures that prevent contamination with microorganisms. Medical asepsis reduces pathogens; surgical asepsis eliminates all microbes.",
+        "highYield": "Asepsis = absence of pathogens (technique to prevent contamination).",
+        "clinicalCorrelation": "Surgical aseptic technique includes hand scrubbing, sterile gowns, gloves, and sterile field."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_063",
+      "difficulty": 2,
+      "question": "Which of the following sterilization methods is least likely to be used for pharmaceutical products?",
+      "image": null,
+      "options": [
+        {
+          "text": "UV radiation",
+          "isCorrect": true,
+          "explanation": "UV has poor penetration and cannot sterilize packaged products, liquids, or opaque materials."
+        },
+        {
+          "text": "Gamma radiation",
+          "isCorrect": false,
+          "explanation": "Gamma is commonly used for pharmaceutical terminal sterilization."
+        },
+        {
+          "text": "Filtration",
+          "isCorrect": false,
+          "explanation": "Widely used for heat-sensitive solutions."
+        },
+        {
+          "text": "Aseptic processing",
+          "isCorrect": false,
+          "explanation": "A common method for products that cannot be terminally sterilized."
+        },
+        {
+          "text": "Dry heat",
+          "isCorrect": false,
+          "explanation": "Used for glassware and heat-stable pharmaceuticals."
+        }
+      ],
+      "explanation": {
+        "overview": "UV radiation is not suitable for pharmaceutical sterilization because it cannot penetrate packaging or bulk materials, and leaves no residual activity.",
+        "highYield": "UV not for pharmaceuticals (poor penetration).",
+        "clinicalCorrelation": "Pharmaceuticals rely on moist heat, dry heat, filtration, radiation, or aseptic processing."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_064",
+      "difficulty": 2,
+      "question": "What is the function of glutaraldehyde as a fixative in addition to disinfection?",
+      "image": null,
+      "options": [
+        {
+          "text": "Cross-links proteins, preserving tissue structure",
+          "isCorrect": true,
+          "explanation": "Glutaraldehyde's aldehyde groups react with amino groups to form cross-links, stabilizing tissues for electron microscopy."
+        },
+        {
+          "text": "Dissolves lipids",
+          "isCorrect": false,
+          "explanation": "It fixes, not dissolves."
+        },
+        {
+          "text": "Hydrolyzes DNA",
+          "isCorrect": false,
+          "explanation": "Not the primary fixing action."
+        },
+        {
+          "text": "Precipitates salts",
+          "isCorrect": false,
+          "explanation": "Not its role."
+        },
+        {
+          "text": "Stains bacteria",
+          "isCorrect": false,
+          "explanation": "It is not a stain."
+        }
+      ],
+      "explanation": {
+        "overview": "Glutaraldehyde is both a powerful disinfectant and an excellent fixative for biological specimens because it cross-links proteins, preserving ultrastructure.",
+        "highYield": "Glutaraldehyde: disinfectant + fixative (cross-links proteins).",
+        "clinicalCorrelation": "Used in pathology and microbiology to fix tissues and biofilms."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_065",
+      "difficulty": 2,
+      "question": "Which of the following is NOT a characteristic of an ideal disinfectant?",
+      "image": null,
+      "options": [
+        {
+          "text": "High toxicity to humans",
+          "isCorrect": true,
+          "explanation": "An ideal disinfectant should be non-toxic to humans and animals, or at least have low toxicity with appropriate safety."
+        },
+        {
+          "text": "Broad-spectrum activity",
+          "isCorrect": false,
+          "explanation": "Broad spectrum is ideal."
+        },
+        {
+          "text": "Rapid action",
+          "isCorrect": false,
+          "explanation": "Rapid kill is desirable."
+        },
+        {
+          "text": "Stability in storage",
+          "isCorrect": false,
+          "explanation": "Stability is important."
+        },
+        {
+          "text": "Compatibility with surfaces",
+          "isCorrect": false,
+          "explanation": "Should not damage materials."
+        }
+      ],
+      "explanation": {
+        "overview": "Ideal disinfectant: broad-spectrum, fast-acting, non-toxic, stable, odorless, non-corrosive, effective in presence of organic matter, and inexpensive. No single disinfectant meets all criteria.",
+        "highYield": "Ideal disinfectant: NOT highly toxic to humans.",
+        "clinicalCorrelation": "Selection of disinfectant involves balancing efficacy with safety and material compatibility."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_066",
+      "difficulty": 2,
+      "question": "Which class of disinfectants is known to be tuberculocidal?",
+      "image": null,
+      "options": [
+        {
+          "text": "Intermediate-level disinfectants (e.g., phenolics, iodophors)",
+          "isCorrect": true,
+          "explanation": "Intermediate-level disinfectants kill Mycobacterium tuberculosis; low-level disinfectants (quats) are not reliably tuberculocidal."
+        },
+        {
+          "text": "Low-level disinfectants only",
+          "isCorrect": false,
+          "explanation": "Low-level disinfectants are not tuberculocidal."
+        },
+        {
+          "text": "Soap and water",
+          "isCorrect": false,
+          "explanation": "Soap is not disinfectant."
+        },
+        {
+          "text": "All antiseptics",
+          "isCorrect": false,
+          "explanation": "Not all antiseptics are tuberculocidal."
+        },
+        {
+          "text": "Quats at any concentration",
+          "isCorrect": false,
+          "explanation": "Quats are not tuberculocidal even at high concentrations."
+        }
+      ],
+      "explanation": {
+        "overview": "A key criterion for intermediate-level disinfectants is activity against Mycobacterium tuberculosis. Examples: phenolics, iodophors, 70% alcohol.",
+        "highYield": "Tuberculocidal = intermediate-level disinfectants.",
+        "clinicalCorrelation": "For surfaces contaminated with TB, use an intermediate-level disinfectant with a tuberculocidal claim."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_067",
+      "difficulty": 2,
+      "question": "Which of the following is a physical means of microbial control that does NOT sterilize?",
+      "image": null,
+      "options": [
+        {
+          "text": "Pasteurization",
+          "isCorrect": true,
+          "explanation": "Pasteurization reduces pathogens but does not achieve sterility."
+        },
+        {
+          "text": "Autoclaving",
+          "isCorrect": false,
+          "explanation": "Autoclaving sterilizes."
+        },
+        {
+          "text": "Gamma irradiation",
+          "isCorrect": false,
+          "explanation": "Radiation at appropriate doses sterilizes."
+        },
+        {
+          "text": "Filtration (0.22 µm)",
+          "isCorrect": false,
+          "explanation": "0.22 µm filtration is considered sterilizing for bacteria."
+        },
+        {
+          "text": "Ethylene oxide",
+          "isCorrect": false,
+          "explanation": "ETO is a sterilant."
+        }
+      ],
+      "explanation": {
+        "overview": "Pasteurization is a heat-based process that reduces microbial numbers to a safe level but does not kill all organisms or spores, thus it is not sterilization.",
+        "highYield": "Pasteurization: physical, reduces pathogens, not sterilization.",
+        "clinicalCorrelation": "Used to make milk, juice, and beer safe without altering flavor significantly."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_068",
+      "difficulty": 2,
+      "question": "What is the purpose of the Bowie-Dick test in steam sterilization?",
+      "image": null,
+      "options": [
+        {
+          "text": "To verify proper air removal from the autoclave chamber",
+          "isCorrect": true,
+          "explanation": "The Bowie-Dick test uses a chemical indicator sheet in a pack to detect residual air, which would prevent steam penetration."
+        },
+        {
+          "text": "To measure temperature uniformity",
+          "isCorrect": false,
+          "explanation": "It detects air leaks or inadequate air removal."
+        },
+        {
+          "text": "To check for steam quality",
+          "isCorrect": false,
+          "explanation": "It is for air removal, not steam dryness."
+        },
+        {
+          "text": "To validate biological indicator performance",
+          "isCorrect": false,
+          "explanation": "BIs are separate."
+        },
+        {
+          "text": "To calibrate pressure gauges",
+          "isCorrect": false,
+          "explanation": "Not its function."
+        }
+      ],
+      "explanation": {
+        "overview": "The Bowie-Dick test is a daily pre-vacuum autoclave test to detect air leaks and incomplete air removal, which could compromise sterilization.",
+        "highYield": "Bowie-Dick = detects air in autoclave (prevents steam penetration).",
+        "clinicalCorrelation": "Performed every day the vacuum autoclave is used, before the first processed load."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_069",
+      "difficulty": 2,
+      "question": "Which method is used to sterilize implantable devices such as pacemakers?",
+      "image": null,
+      "options": [
+        {
+          "text": "Ethylene oxide gas",
+          "isCorrect": true,
+          "explanation": "Implantable devices with electronic components cannot tolerate heat/moisture; ethylene oxide is a low-temperature sterilant."
+        },
+        {
+          "text": "Steam autoclave",
+          "isCorrect": false,
+          "explanation": "Heat would destroy electronics."
+        },
+        {
+          "text": "Dry heat",
+          "isCorrect": false,
+          "explanation": "Heat damage."
+        },
+        {
+          "text": "Boiling",
+          "isCorrect": false,
+          "explanation": "Not sterile."
+        },
+        {
+          "text": "Alcohol immersion",
+          "isCorrect": false,
+          "explanation": "Not sporicidal."
+        }
+      ],
+      "explanation": {
+        "overview": "Heat-sensitive electronic medical devices are sterilized using low-temperature methods like ethylene oxide or gas plasma.",
+        "highYield": "Pacemakers: ETO sterilization.",
+        "clinicalCorrelation": "Terminal sterilization of implants is critical; any failure can lead to devastating infections."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_070",
+      "difficulty": 2,
+      "question": "Which of the following antiseptics has the longest residual activity on skin?",
+      "image": null,
+      "options": [
+        {
+          "text": "Chlorhexidine",
+          "isCorrect": true,
+          "explanation": "Chlorhexidine binds to skin proteins and provides persistent antimicrobial activity for several hours, longer than alcohol or iodine."
+        },
+        {
+          "text": "Ethanol",
+          "isCorrect": false,
+          "explanation": "Alcohol evaporates quickly, no residual effect."
+        },
+        {
+          "text": "Povidone-iodine",
+          "isCorrect": false,
+          "explanation": "Iodine has some residual activity but less than chlorhexidine."
+        },
+        {
+          "text": "Hydrogen peroxide",
+          "isCorrect": false,
+          "explanation": "Rapidly decomposed, no residual."
+        },
+        {
+          "text": "Benzalkonium chloride",
+          "isCorrect": false,
+          "explanation": "Quats have less persistent activity on skin."
+        }
+      ],
+      "explanation": {
+        "overview": "Chlorhexidine is preferred for surgical skin preparation because it provides persistent antimicrobial activity for up to 48 hours.",
+        "highYield": "Longest residual skin antisepsis: chlorhexidine.",
+        "clinicalCorrelation": "Chlorhexidine-based preparations are recommended for central line insertion and surgical site preparation."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_071",
+      "difficulty": 2,
+      "question": "The term 'degermination' refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Mechanical removal of microbes from a limited area (e.g., handwashing)",
+          "isCorrect": true,
+          "explanation": "Degermination is the physical removal of microorganisms, typically by scrubbing or handwashing with soap."
+        },
+        {
+          "text": "Killing of germs with chemicals",
+          "isCorrect": false,
+          "explanation": "That is disinfection or antisepsis."
+        },
+        {
+          "text": "Sterilization of skin",
+          "isCorrect": false,
+          "explanation": "Skin cannot be sterilized."
+        },
+        {
+          "text": "Use of heat to kill pathogens",
+          "isCorrect": false,
+          "explanation": "That is thermal disinfection."
+        },
+        {
+          "text": "Inhibition of spore germination",
+          "isCorrect": false,
+          "explanation": "Not degermination."
+        }
+      ],
+      "explanation": {
+        "overview": "Degermination (e.g., surgical scrub, handwashing) reduces the microbial load on skin by mechanical action and soap/detergent. It does not kill all microbes.",
+        "highYield": "Degermination = mechanical removal (handwashing).",
+        "clinicalCorrelation": "Proper handwashing is the single most important practice to prevent healthcare-associated infections."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_072",
+      "difficulty": 2,
+      "question": "Which gas sterilant is explosive and requires careful handling?",
+      "image": null,
+      "options": [
+        {
+          "text": "Ethylene oxide",
+          "isCorrect": true,
+          "explanation": "Pure ethylene oxide is flammable and explosive; it is often mixed with carbon dioxide or HCFCs to reduce explosion risk."
+        },
+        {
+          "text": "Hydrogen peroxide vapor",
+          "isCorrect": false,
+          "explanation": "Not explosive."
+        },
+        {
+          "text": "Ozone",
+          "isCorrect": false,
+          "explanation": "Unstable but not classified as explosive."
+        },
+        {
+          "text": "Chlorine dioxide",
+          "isCorrect": false,
+          "explanation": "Not explosive under normal conditions."
+        },
+        {
+          "text": "Formaldehyde",
+          "isCorrect": false,
+          "explanation": "Flammable but not explosive in typical use."
+        }
+      ],
+      "explanation": {
+        "overview": "Ethylene oxide is a highly effective low-temperature sterilant but is flammable, explosive, and carcinogenic, requiring strict safety controls.",
+        "highYield": "Explosive sterilant: ethylene oxide.",
+        "clinicalCorrelation": "ETO sterilizers are installed with explosion-proof equipment and aeration chambers."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_073",
+      "difficulty": 2,
+      "question": "Which of the following is a characteristic of bacterial endospores that makes them resistant to disinfection?",
+      "image": null,
+      "options": [
+        {
+          "text": "Thick spore coat, low water content, and dipicolinic acid complex",
+          "isCorrect": true,
+          "explanation": "Spores have multiple protective layers, a dehydrated core, and dipicolinic acid stabilizing DNA and proteins."
+        },
+        {
+          "text": "High lipid content",
+          "isCorrect": false,
+          "explanation": "That's more characteristic of mycobacteria."
+        },
+        {
+          "text": "Flagella",
+          "isCorrect": false,
+          "explanation": "Flagella are for motility, not resistance."
+        },
+        {
+          "text": "Capsule",
+          "isCorrect": false,
+          "explanation": "Capsules aid immune evasion, not disinfection resistance."
+        },
+        {
+          "text": "Exotoxin production",
+          "isCorrect": false,
+          "explanation": "Toxins don't confer resistance."
+        }
+      ],
+      "explanation": {
+        "overview": "The resistance of endospores is due to their multilayered structure, dehydrated core, high concentrations of dipicolinic acid and calcium, and DNA-protecting small acid-soluble proteins.",
+        "highYield": "Spore resistance: thick coat, low water, dipicolinic acid.",
+        "clinicalCorrelation": "This explains why only sporicidal agents (glutaraldehyde, peracetic acid) are effective against Clostridium difficile spores."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_074",
+      "difficulty": 2,
+      "question": "Which of the following is the correct order from most resistant to least resistant to germicides?",
+      "image": null,
+      "options": [
+        {
+          "text": "Spores > mycobacteria > non-enveloped viruses > enveloped viruses > vegetative bacteria",
+          "isCorrect": true,
+          "explanation": "Spores are most resistant; lipid enveloped viruses are most susceptible."
+        },
+        {
+          "text": "Mycobacteria > spores > vegetative bacteria > viruses > prions",
+          "isCorrect": false,
+          "explanation": "Spores are more resistant than mycobacteria."
+        },
+        {
+          "text": "Viruses > spores > bacteria > mycobacteria",
+          "isCorrect": false,
+          "explanation": "Incorrect order."
+        },
+        {
+          "text": "Vegetative bacteria > spores > viruses",
+          "isCorrect": false,
+          "explanation": "Vegetative bacteria are least resistant."
+        },
+        {
+          "text": "All are equally resistant",
+          "isCorrect": false,
+          "explanation": "There is a hierarchy."
+        }
+      ],
+      "explanation": {
+        "overview": "The germicide resistance hierarchy: prions > spores > mycobacteria > non-enveloped viruses > fungi > vegetative bacteria > enveloped viruses.",
+        "highYield": "Resistance: spores > mycobacteria > small non-enveloped viruses > enveloped viruses.",
+        "clinicalCorrelation": "Choosing the correct level of disinfectant depends on the target organism's resistance."
+      }
+    },
+    {
+      "questionId": "sterilization_disinfect_075",
+      "difficulty": 2,
+      "question": "What is the mechanism of action of triclosan?",
+      "image": null,
+      "options": [
+        {
+          "text": "Inhibits bacterial fatty acid synthesis (enoyl-ACP reductase)",
+          "isCorrect": true,
+          "explanation": "Triclosan specifically targets the FabI enzyme in the fatty acid biosynthesis pathway, common to many bacteria."
+        },
+        {
+          "text": "Disrupts cell membrane",
+          "isCorrect": false,
+          "explanation": "Secondary effect; primary target is fatty acid synthesis."
+        },
+        {
+          "text": "Inhibits protein synthesis",
+          "isCorrect": false,
+          "explanation": "Not the primary mode."
+        },
+        {
+          "text": "DNA intercalation",
+          "isCorrect": false,
+          "explanation": "Not a DNA agent."
+        },
+        {
+          "text": "Cell wall synthesis inhibition",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        }
+      ],
+      "explanation": {
+        "overview": "Triclosan blocks lipid biosynthesis by inhibiting enoyl-acyl carrier protein reductase (FabI), preventing bacterial membrane synthesis.",
+        "highYield": "Triclosan = fatty acid synthesis inhibitor (FabI enzyme).",
+        "clinicalCorrelation": "Used in antimicrobial soaps, toothpaste, and consumer products; resistance can develop via mutations in FabI."
+      }
+    }
+  ]
+}

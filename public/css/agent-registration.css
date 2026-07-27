@@ -1,0 +1,108 @@
+/* ========== Agent Registration Page Styles ========== */
+
+/* Agent badge */
+.agent-badge {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  padding: 0.2rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Benefits list */
+.benefits-list {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.benefits-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* Upgrade / notification sections */
+.upgrade-section {
+  text-align: center;
+  padding: 2rem;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.upgrade-section .btn-primary {
+  font-size: 1.2rem;
+  padding: 0.8rem 2.5rem;
+}
+
+/* Form layout */
+.form-section {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Toggle link (e.g., switch between register/upgrade) */
+.toggle-link {
+  cursor: pointer;
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* Security question rows */
+.question-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.question-row select {
+  flex: 1 1 200px;
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.question-row input[type="text"] {
+  flex: 1 1 200px;
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+/* Status message area */
+#status-message {
+  margin-top: 1rem;
+}
+
+/* Alert boxes (used by showStatus) */
+.alert {
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.5rem;
+}
+
+.alert-info {
+  background: var(--brand-primary-light);
+  color: var(--brand-primary-dark);
+}
+
+.alert-error {
+  background: rgba(239, 68, 68, 0.12);
+  color: #ef4444;
+}
+
+.alert-success {
+  background: rgba(16, 185, 129, 0.12);
+  color: #10b981;
+}
+
+.alert-warning {
+  background: rgba(245, 158, 11, 0.12);
+  color: #f59e0b;
+}

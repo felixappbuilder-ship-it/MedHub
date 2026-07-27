@@ -1,0 +1,3514 @@
+{
+  "questions": [
+    {
+      "id": "pharma_pharmacodynamics_001",
+      "questionId": "pharma_pharmacodynamics_001",
+      "difficulty": 1,
+      "question": "Pharmacodynamics is best defined as:",
+      "image": null,
+      "options": [
+        {
+          "text": "What the body does to the drug",
+          "isCorrect": false,
+          "explanation": "That describes pharmacokinetics (ADME)."
+        },
+        {
+          "text": "What the drug does to the body",
+          "isCorrect": true,
+          "explanation": "Pharmacodynamics is the study of the biochemical and physiological effects of drugs and their mechanisms of action."
+        },
+        {
+          "text": "The study of drug absorption",
+          "isCorrect": false,
+          "explanation": "Absorption is part of pharmacokinetics."
+        },
+        {
+          "text": "The study of drug metabolism",
+          "isCorrect": false,
+          "explanation": "Metabolism is part of pharmacokinetics."
+        },
+        {
+          "text": "The study of drug excretion",
+          "isCorrect": false,
+          "explanation": "Excretion is part of pharmacokinetics."
+        }
+      ],
+      "explanation": {
+        "overview": "Pharmacodynamics (PD) describes the relationship between drug concentration at the site of action and the resulting effect, including the time course and intensity of therapeutic and adverse effects.",
+        "highYield": "Pharmacodynamics = what the drug does to the body (effect, mechanism). Pharmacokinetics = what the body does to the drug (ADME).",
+        "clinicalCorrelation": "Understanding PD is essential for predicting therapeutic and toxic effects, and for rational drug selection."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_002",
+      "questionId": "pharma_pharmacodynamics_002",
+      "difficulty": 1,
+      "question": "The primary target for most drugs is:",
+      "image": null,
+      "options": [
+        {
+          "text": "DNA",
+          "isCorrect": false,
+          "explanation": "Some drugs target DNA (e.g., alkylating agents), but it's not the primary target for most."
+        },
+        {
+          "text": "Receptors",
+          "isCorrect": false,
+          "explanation": "Receptors are a major target class, but drugs can act on other targets as well."
+        },
+        {
+          "text": "Enzymes",
+          "isCorrect": false,
+          "explanation": "Enzymes are important drug targets, but not the only one."
+        },
+        {
+          "text": "Ion channels",
+          "isCorrect": false,
+          "explanation": "Ion channels are targets for many drugs, but not exclusively."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Drugs can act on receptors, enzymes, ion channels, transporters, and nucleic acids."
+        }
+      ],
+      "explanation": {
+        "overview": "Drug targets are diverse and include regulatory proteins (receptors, enzymes, ion channels, transporters) and structural or genetic material. Most drugs target proteins.",
+        "highYield": "Drug targets: Receptors, enzymes, ion channels, transporters, DNA. The majority target receptors and enzymes.",
+        "clinicalCorrelation": "Drug specificity for a target determines its therapeutic and side effect profile."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_003",
+      "questionId": "pharma_pharmacodynamics_003",
+      "difficulty": 1,
+      "question": "An agonist is a drug that:",
+      "image": null,
+      "options": [
+        {
+          "text": "Binds to receptors and activates them",
+          "isCorrect": true,
+          "explanation": "Agonists have both affinity and efficacy (intrinsic activity); they bind and activate the receptor to produce a response."
+        },
+        {
+          "text": "Binds to receptors and blocks them",
+          "isCorrect": false,
+          "explanation": "That describes an antagonist."
+        },
+        {
+          "text": "Has no intrinsic activity",
+          "isCorrect": false,
+          "explanation": "Antagonists have zero intrinsic activity."
+        },
+        {
+          "text": "Reverses the effect of another drug",
+          "isCorrect": false,
+          "explanation": "That is a functional or chemical antagonist."
+        },
+        {
+          "text": "Increases the production of endogenous ligands",
+          "isCorrect": false,
+          "explanation": "That is an indirect effect, not necessarily receptor-mediated agonism."
+        }
+      ],
+      "explanation": {
+        "overview": "An agonist is a molecule that binds to a receptor and stabilizes its active conformation, triggering a biological response. Full agonists produce a maximal response; partial agonists produce a submaximal response.",
+        "highYield": "Agonist = affinity + efficacy (intrinsic activity). Antagonist = affinity only.",
+        "clinicalCorrelation": "Agonists are used to mimic endogenous signaling (e.g., salbutamol at β2 receptors in asthma)."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_004",
+      "questionId": "pharma_pharmacodynamics_004",
+      "difficulty": 1,
+      "question": "An antagonist is a drug that:",
+      "image": null,
+      "options": [
+        {
+          "text": "Binds to receptors and prevents activation",
+          "isCorrect": true,
+          "explanation": "Antagonists have affinity for the receptor but lack intrinsic activity; they block agonist-mediated effects."
+        },
+        {
+          "text": "Enhances receptor activation",
+          "isCorrect": false,
+          "explanation": "That is a positive allosteric modulator or agonist."
+        },
+        {
+          "text": "Increases neurotransmitter release",
+          "isCorrect": false,
+          "explanation": "That is an indirect agonist."
+        },
+        {
+          "text": "Has higher efficacy than an agonist",
+          "isCorrect": false,
+          "explanation": "Antagonists have zero efficacy."
+        },
+        {
+          "text": "Is always irreversible",
+          "isCorrect": false,
+          "explanation": "Antagonists can be competitive (reversible) or irreversible."
+        }
+      ],
+      "explanation": {
+        "overview": "An antagonist binds to the receptor but does not activate it. It blocks the binding and/or effect of an agonist. Antagonists are classified as competitive (surmountable) or non-competitive (insurmountable).",
+        "highYield": "Antagonist = affinity, NO efficacy. Blocks agonist effect. Example: naloxone at opioid receptors.",
+        "clinicalCorrelation": "Antagonists are used to counteract excessive agonist activity (e.g., beta-blockers in hyperthyroidism)."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_005",
+      "questionId": "pharma_pharmacodynamics_005",
+      "difficulty": 2,
+      "question": "Affinity refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "The ability of a drug to bind to a receptor",
+          "isCorrect": true,
+          "explanation": "Affinity is the measure of how tightly a drug binds to its receptor, quantified by the dissociation constant Kd."
+        },
+        {
+          "text": "The ability of a drug to produce a response",
+          "isCorrect": false,
+          "explanation": "That is efficacy (intrinsic activity)."
+        },
+        {
+          "text": "The maximum effect a drug can produce",
+          "isCorrect": false,
+          "explanation": "That is efficacy."
+        },
+        {
+          "text": "The dose required for a given effect",
+          "isCorrect": false,
+          "explanation": "That is potency."
+        },
+        {
+          "text": "The rate of drug absorption",
+          "isCorrect": false,
+          "explanation": "Absorption is a pharmacokinetic parameter."
+        }
+      ],
+      "explanation": {
+        "overview": "Affinity describes the strength of the drug-receptor interaction. It is determined by chemical forces (ionic, hydrogen bonds, van der Waals). Kd is the concentration at which 50% of receptors are occupied.",
+        "highYield": "Affinity = strength of binding. Low Kd = high affinity. Both agonists and antagonists can have high affinity.",
+        "clinicalCorrelation": "High-affinity drugs can be used at lower doses, reducing the likelihood of off-target binding."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_006",
+      "questionId": "pharma_pharmacodynamics_006",
+      "difficulty": 2,
+      "question": "Efficacy (intrinsic activity) is defined as:",
+      "image": null,
+      "options": [
+        {
+          "text": "The ability of a drug to bind to a receptor",
+          "isCorrect": false,
+          "explanation": "That is affinity."
+        },
+        {
+          "text": "The maximum effect a drug can produce",
+          "isCorrect": true,
+          "explanation": "Efficacy refers to the maximal response (Emax) attainable from a drug, reflecting its intrinsic activity."
+        },
+        {
+          "text": "The dose required to produce 50% of maximal effect",
+          "isCorrect": false,
+          "explanation": "That is ED50 or EC50, related to potency."
+        },
+        {
+          "text": "The slope of the dose-response curve",
+          "isCorrect": false,
+          "explanation": "Slope reflects the relationship between dose and effect, not efficacy."
+        },
+        {
+          "text": "The duration of drug action",
+          "isCorrect": false,
+          "explanation": "Duration is a pharmacokinetic parameter."
+        }
+      ],
+      "explanation": {
+        "overview": "Efficacy (intrinsic activity) is the ability of a drug to activate the receptor and produce a biological response. Full agonists have efficacy = 1; antagonists have efficacy = 0; partial agonists have 0 < efficacy < 1.",
+        "highYield": "Efficacy = maximal effect (Emax). Determined by intrinsic activity, not dose. Full agonist = 1, partial agonist < 1, antagonist = 0.",
+        "clinicalCorrelation": "A drug with higher efficacy, not higher potency, may be chosen for conditions requiring maximum receptor activation."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_007",
+      "questionId": "pharma_pharmacodynamics_007",
+      "difficulty": 2,
+      "question": "Potency refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "The amount of drug needed to produce a given effect",
+          "isCorrect": true,
+          "explanation": "Potency is the dose (or concentration) required to elicit a specified effect; typically expressed as EC50 or ED50."
+        },
+        {
+          "text": "The maximum effect achievable",
+          "isCorrect": false,
+          "explanation": "That is efficacy."
+        },
+        {
+          "text": "The time to onset of action",
+          "isCorrect": false,
+          "explanation": "Onset is a separate parameter."
+        },
+        {
+          "text": "The duration of action",
+          "isCorrect": false,
+          "explanation": "Duration is a pharmacokinetic property."
+        },
+        {
+          "text": "The safety margin",
+          "isCorrect": false,
+          "explanation": "Safety margin relates to therapeutic index."
+        }
+      ],
+      "explanation": {
+        "overview": "Potency is a comparative measure; a more potent drug requires a lower dose to achieve the same effect. It depends on both affinity and efficacy, as well as pharmacokinetic factors.",
+        "highYield": "Potency = dose needed for a given effect (EC50, ED50). Lower EC50 = more potent. Not related to clinical superiority necessarily.",
+        "clinicalCorrelation": "Highly potent drugs are not necessarily better; they may have a narrow therapeutic window."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_008",
+      "questionId": "pharma_pharmacodynamics_008",
+      "difficulty": 2,
+      "question": "EC50 is defined as:",
+      "image": null,
+      "options": [
+        {
+          "text": "The concentration of drug that produces 50% of maximal effect",
+          "isCorrect": true,
+          "explanation": "EC50 is the concentration producing half of the maximum response (Emax) in a graded dose-response curve."
+        },
+        {
+          "text": "The dose that kills 50% of subjects",
+          "isCorrect": false,
+          "explanation": "That is LD50."
+        },
+        {
+          "text": "The dose that is effective in 50% of subjects",
+          "isCorrect": false,
+          "explanation": "That is ED50 in a quantal dose-response context."
+        },
+        {
+          "text": "The concentration that binds 50% of receptors",
+          "isCorrect": false,
+          "explanation": "That is Kd."
+        },
+        {
+          "text": "The half-life of the drug",
+          "isCorrect": false,
+          "explanation": "Half-life is t1/2."
+        }
+      ],
+      "explanation": {
+        "overview": "EC50 (half-maximal effective concentration) is a measure of drug potency in vitro or in a graded in vivo system. It is derived from the concentration-response curve.",
+        "highYield": "EC50 = concentration for 50% Emax. Lower EC50 = higher potency. Not directly comparable to ED50.",
+        "clinicalCorrelation": "EC50 values help compare drug potencies in laboratory settings."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_009",
+      "questionId": "pharma_pharmacodynamics_009",
+      "difficulty": 2,
+      "question": "ED50 is defined as:",
+      "image": null,
+      "options": [
+        {
+          "text": "The dose that produces 50% of maximal effect in a population",
+          "isCorrect": true,
+          "explanation": "ED50 is the median effective dose; the dose at which 50% of individuals exhibit the specified therapeutic effect."
+        },
+        {
+          "text": "The dose that kills 50% of subjects",
+          "isCorrect": false,
+          "explanation": "That is LD50."
+        },
+        {
+          "text": "The dose that is toxic in 50% of subjects",
+          "isCorrect": false,
+          "explanation": "That is TD50."
+        },
+        {
+          "text": "The dose that occupies 50% of receptors",
+          "isCorrect": false,
+          "explanation": "That relates to Kd."
+        },
+        {
+          "text": "The half-life of the drug",
+          "isCorrect": false,
+          "explanation": "Half-life is t1/2."
+        }
+      ],
+      "explanation": {
+        "overview": "ED50 is determined from a quantal dose-response curve. It reflects the dose required to produce a predefined response in 50% of the population.",
+        "highYield": "ED50 = median effective dose (quantal). Lower ED50 = more potent in the population.",
+        "clinicalCorrelation": "ED50 values are used in determining initial dosing guidelines."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_010",
+      "questionId": "pharma_pharmacodynamics_010",
+      "difficulty": 2,
+      "question": "The therapeutic index (TI) is calculated as:",
+      "image": null,
+      "options": [
+        {
+          "text": "TD50 / ED50",
+          "isCorrect": false,
+          "explanation": "This is one common formula."
+        },
+        {
+          "text": "ED50 / TD50",
+          "isCorrect": false,
+          "explanation": "This would give a value <1."
+        },
+        {
+          "text": "LD50 / ED50",
+          "isCorrect": false,
+          "explanation": "LD50/ED50 is used preclinically."
+        },
+        {
+          "text": "ED50 / LD50",
+          "isCorrect": false,
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "Both A and C",
+          "isCorrect": true,
+          "explanation": "Therapeutic index is TD50/ED50 (clinically) or LD50/ED50 (preclinically); both represent the ratio of toxic to effective dose."
+        }
+      ],
+      "explanation": {
+        "overview": "The therapeutic index quantifies drug safety. A larger TI indicates a wider margin of safety. Drugs with a narrow TI (e.g., warfarin, digoxin, lithium) require careful monitoring.",
+        "highYield": "TI = TD50/ED50 (or LD50/ED50). High TI = safer. Narrow TI drugs need monitoring.",
+        "clinicalCorrelation": "Drugs with narrow TI (warfarin, digoxin, phenytoin) require therapeutic drug monitoring."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_011",
+      "questionId": "pharma_pharmacodynamics_011",
+      "difficulty": 1,
+      "question": "A drug with a high therapeutic index is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Very safe",
+          "isCorrect": true,
+          "explanation": "A high TI means there is a large separation between effective and toxic doses, indicating greater safety."
+        },
+        {
+          "text": "Very potent",
+          "isCorrect": false,
+          "explanation": "Potency relates to ED50, not TI."
+        },
+        {
+          "text": "Highly efficacious",
+          "isCorrect": false,
+          "explanation": "Efficacy relates to Emax."
+        },
+        {
+          "text": "Rapidly absorbed",
+          "isCorrect": false,
+          "explanation": "Absorption is a PK parameter."
+        },
+        {
+          "text": "Highly protein-bound",
+          "isCorrect": false,
+          "explanation": "Protein binding is a PK property."
+        }
+      ],
+      "explanation": {
+        "overview": "A high therapeutic index implies that toxic doses are much higher than therapeutic doses, making the drug relatively safe in overdose or with interindividual variability.",
+        "highYield": "High TI = safe (e.g., penicillin). Low TI = risky (e.g., warfarin).",
+        "clinicalCorrelation": "Penicillins have a high TI; warfarin has a low TI."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_012",
+      "questionId": "pharma_pharmacodynamics_012",
+      "difficulty": 2,
+      "question": "A partial agonist is a drug that:",
+      "image": null,
+      "options": [
+        {
+          "text": "Binds to receptors but produces a submaximal response even at full occupancy",
+          "isCorrect": true,
+          "explanation": "Partial agonists have lower intrinsic activity (efficacy < 1). Even when all receptors are occupied, the maximal response is less than that of a full agonist."
+        },
+        {
+          "text": "Binds irreversibly to receptors",
+          "isCorrect": false,
+          "explanation": "Binding can be reversible or irreversible, not defining a partial agonist."
+        },
+        {
+          "text": "Activates some receptor subtypes but not others",
+          "isCorrect": false,
+          "explanation": "That describes selectivity, not partial agonism."
+        },
+        {
+          "text": "Has low affinity",
+          "isCorrect": false,
+          "explanation": "Partial agonists can have high affinity."
+        },
+        {
+          "text": "Is only partly absorbed",
+          "isCorrect": false,
+          "explanation": "Absorption is irrelevant to pharmacodynamic classification."
+        }
+      ],
+      "explanation": {
+        "overview": "Partial agonists produce a lower Emax than full agonists, acting as agonists in the absence of a full agonist and as antagonists in its presence (by competing for the receptor).",
+        "highYield": "Partial agonist = lower efficacy (Emax < full agonist). Can act as antagonist when co-administered with a full agonist.",
+        "clinicalCorrelation": "Buprenorphine is a partial μ-opioid agonist; it provides analgesia with less respiratory depression but can precipitate withdrawal in opioid-dependent patients."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_013",
+      "questionId": "pharma_pharmacodynamics_013",
+      "difficulty": 3,
+      "question": "In the presence of a full agonist, a partial agonist may act as an antagonist because:",
+      "image": null,
+      "options": [
+        {
+          "text": "It has higher affinity but lower efficacy",
+          "isCorrect": true,
+          "explanation": "If the partial agonist has higher affinity, it can displace the full agonist, reducing the overall response because its efficacy is lower."
+        },
+        {
+          "text": "It has lower affinity and lower efficacy",
+          "isCorrect": false,
+          "explanation": "If it has lower affinity, it won't compete effectively."
+        },
+        {
+          "text": "It binds irreversibly",
+          "isCorrect": false,
+          "explanation": "Irreversible binding is not characteristic of partial agonists."
+        },
+        {
+          "text": "It has no affinity",
+          "isCorrect": false,
+          "explanation": "Partial agonists have affinity."
+        },
+        {
+          "text": "It increases degradation of the full agonist",
+          "isCorrect": false,
+          "explanation": "Not a mechanism."
+        }
+      ],
+      "explanation": {
+        "overview": "A partial agonist can act as an antagonist in the presence of a high-efficacy full agonist if it occupies the receptor and produces a weaker signal, reducing the net effect below that of the full agonist alone.",
+        "highYield": "Partial agonist + full agonist = antagonism if partial agonist has sufficient affinity to compete.",
+        "clinicalCorrelation": "Pindolol (partial β-agonist/antagonist) can reduce the tachycardia caused by isoproterenol (full agonist)."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_014",
+      "questionId": "pharma_pharmacodynamics_014",
+      "difficulty": 3,
+      "question": "An inverse agonist is a drug that:",
+      "image": null,
+      "options": [
+        {
+          "text": "Binds to receptors and produces the opposite effect of an agonist",
+          "isCorrect": true,
+          "explanation": "Inverse agonists bind to constitutively active receptors and stabilize the inactive state, reducing basal signaling."
+        },
+        {
+          "text": "Blocks the effect of an agonist",
+          "isCorrect": false,
+          "explanation": "That is a neutral antagonist."
+        },
+        {
+          "text": "Has no effect on receptor activity",
+          "isCorrect": false,
+          "explanation": "Inverse agonists reduce activity."
+        },
+        {
+          "text": "Increases receptor expression",
+          "isCorrect": false,
+          "explanation": "Not a direct effect."
+        },
+        {
+          "text": "Decreases drug metabolism",
+          "isCorrect": false,
+          "explanation": "Unrelated to receptor action."
+        }
+      ],
+      "explanation": {
+        "overview": "Inverse agonists are ligands that bind to the same receptor as agonists but induce a pharmacological response opposite to that of an agonist by reducing constitutive receptor activity.",
+        "highYield": "Inverse agonist = opposite effect of agonist, reduces basal activity. Example: β-carbolines at GABA-A (anxiogenic), some antihistamines at H1.",
+        "clinicalCorrelation": "Some antipsychotics are inverse agonists at dopamine D2 receptors."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_015",
+      "questionId": "pharma_pharmacodynamics_015",
+      "difficulty": 3,
+      "question": "Constitutively active receptors:",
+      "image": null,
+      "options": [
+        {
+          "text": "Produce a biological response even in the absence of an agonist",
+          "isCorrect": true,
+          "explanation": "Constitutive activity refers to spontaneous receptor signaling without ligand binding."
+        },
+        {
+          "text": "Are only activated by antagonists",
+          "isCorrect": false,
+          "explanation": "Antagonists do not activate; inverse agonists reduce constitutive activity."
+        },
+        {
+          "text": "Cannot be targeted by drugs",
+          "isCorrect": false,
+          "explanation": "They can be targeted by inverse agonists."
+        },
+        {
+          "text": "Are found only in the brain",
+          "isCorrect": false,
+          "explanation": "Found in many tissues."
+        },
+        {
+          "text": "Do not exist in humans",
+          "isCorrect": false,
+          "explanation": "Many GPCRs exhibit constitutive activity."
+        }
+      ],
+      "explanation": {
+        "overview": "Many receptors, especially GPCRs, can spontaneously adopt an active conformation. This constitutive activity provides a basal level of signaling that can be inhibited by inverse agonists.",
+        "highYield": "Constitutive activity = basal receptor signaling without agonist. Inverse agonists reduce it; neutral antagonists have no effect on it.",
+        "clinicalCorrelation": "Mutations causing increased constitutive activity can lead to diseases (e.g., some thyroid adenomas with constitutively active TSH receptors)."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_016",
+      "questionId": "pharma_pharmacodynamics_016",
+      "difficulty": 2,
+      "question": "Competitive antagonism is characterized by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Parallel rightward shift of the dose-response curve without change in maximum",
+          "isCorrect": true,
+          "explanation": "Competitive antagonists increase the EC50 (decrease potency) but the maximum response (Emax) can still be achieved with higher agonist concentrations."
+        },
+        {
+          "text": "Depression of the maximal response",
+          "isCorrect": false,
+          "explanation": "That is noncompetitive antagonism."
+        },
+        {
+          "text": "Irreversible binding to the receptor",
+          "isCorrect": false,
+          "explanation": "Competitive antagonists bind reversibly."
+        },
+        {
+          "text": "Nonparallel shift of the curve",
+          "isCorrect": false,
+          "explanation": "Shift is parallel with competitive."
+        },
+        {
+          "text": "Leftward shift of the curve",
+          "isCorrect": false,
+          "explanation": "Competitive antagonism shifts the curve right."
+        }
+      ],
+      "explanation": {
+        "overview": "A competitive antagonist binds reversibly to the same site as the agonist. Increasing agonist concentration can overcome the blockade, restoring the maximal response.",
+        "highYield": "Competitive antagonist = surmountable, right shift, same Emax. Example: atropine at muscarinic receptors.",
+        "clinicalCorrelation": "Naloxone is a competitive opioid antagonist used to reverse opioid overdose."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_017",
+      "questionId": "pharma_pharmacodynamics_017",
+      "difficulty": 2,
+      "question": "Noncompetitive antagonism results in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Parallel rightward shift",
+          "isCorrect": false,
+          "explanation": "That is competitive."
+        },
+        {
+          "text": "Depression of the maximal response",
+          "isCorrect": true,
+          "explanation": "Noncompetitive antagonists bind irreversibly or to an allosteric site, reducing the number of functional receptors and thus the Emax."
+        },
+        {
+          "text": "Leftward shift of the curve",
+          "isCorrect": false,
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "No change in the curve",
+          "isCorrect": false,
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "Increased potency of the agonist",
+          "isCorrect": false,
+          "explanation": "Potency may be unchanged or decreased."
+        }
+      ],
+      "explanation": {
+        "overview": "Noncompetitive (irreversible or allosteric) antagonists do not compete for the agonist binding site or bind irreversibly, so increasing agonist concentration cannot fully overcome the blockade, and the maximal response is reduced.",
+        "highYield": "Noncompetitive antagonist = insurmountable, reduced Emax. Example: phenoxybenzamine (irreversible α-blocker).",
+        "clinicalCorrelation": "Phenoxybenzamine's irreversible α-blockade cannot be overcome by catecholamines, useful in pheochromocytoma."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_018",
+      "questionId": "pharma_pharmacodynamics_018",
+      "difficulty": 3,
+      "question": "The pA2 value is a measure of:",
+      "image": null,
+      "options": [
+        {
+          "text": "The potency of an antagonist",
+          "isCorrect": true,
+          "explanation": "pA2 is the negative log of the antagonist concentration that necessitates a doubling of agonist concentration to achieve the same effect; it quantifies antagonist potency."
+        },
+        {
+          "text": "The efficacy of an agonist",
+          "isCorrect": false,
+          "explanation": "Efficacy is measured by Emax."
+        },
+        {
+          "text": "The affinity of an agonist",
+          "isCorrect": false,
+          "explanation": "Affinity is Kd or pD2."
+        },
+        {
+          "text": "The therapeutic index",
+          "isCorrect": false,
+          "explanation": "TI is TD50/ED50."
+        },
+        {
+          "text": "The half-life of a drug",
+          "isCorrect": false,
+          "explanation": "Half-life is t1/2."
+        }
+      ],
+      "explanation": {
+        "overview": "pA2 is a pharmacological tool to quantify the potency of a competitive antagonist. Higher pA2 = more potent antagonist.",
+        "highYield": "pA2 = -log[antagonist] needed to double agonist dose for same effect. Higher pA2 = stronger antagonist.",
+        "clinicalCorrelation": "Used in research to compare antagonist potencies."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_019",
+      "questionId": "pharma_pharmacodynamics_019",
+      "difficulty": 3,
+      "question": "Spare receptors are:",
+      "image": null,
+      "options": [
+        {
+          "text": "Receptors that are not needed to produce a maximal response",
+          "isCorrect": true,
+          "explanation": "Spare receptors exist when maximal effect can be achieved with less than 100% receptor occupancy."
+        },
+        {
+          "text": "Receptors that are internalized",
+          "isCorrect": false,
+          "explanation": "Internalization is a separate phenomenon."
+        },
+        {
+          "text": "Receptors that bind only antagonists",
+          "isCorrect": false,
+          "explanation": "Spare receptors can bind agonists."
+        },
+        {
+          "text": "Receptors that are degraded",
+          "isCorrect": false,
+          "explanation": "Not the definition."
+        },
+        {
+          "text": "Receptors that have no function",
+          "isCorrect": false,
+          "explanation": "They are functional, just in excess."
+        }
+      ],
+      "explanation": {
+        "overview": "Spare receptors (receptor reserve) occur when the maximum response is achieved at submaximal receptor occupancy. This amplifies sensitivity to the agonist (leftward shift).",
+        "highYield": "Spare receptors = Emax at <100% occupancy. Increases sensitivity (lower EC50). Common in GPCR systems.",
+        "clinicalCorrelation": "Spare receptors allow for rapid response at low agonist concentrations."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_020",
+      "questionId": "pharma_pharmacodynamics_020",
+      "difficulty": 3,
+      "question": "The presence of spare receptors results in:",
+      "image": null,
+      "options": [
+        {
+          "text": "A rightward shift of the dose-response curve",
+          "isCorrect": false,
+          "explanation": "Rightward shift occurs with antagonists."
+        },
+        {
+          "text": "A leftward shift of the dose-response curve",
+          "isCorrect": true,
+          "explanation": "Spare receptors increase sensitivity, so lower agonist concentrations are needed, shifting the curve leftward (lower EC50)."
+        },
+        {
+          "text": "An increase in the EC50",
+          "isCorrect": false,
+          "explanation": "EC50 is decreased (more potent)."
+        },
+        {
+          "text": "A decrease in the maximal response",
+          "isCorrect": false,
+          "explanation": "Emax is unchanged."
+        },
+        {
+          "text": "No change in the dose-response curve",
+          "isCorrect": false,
+          "explanation": "Curve shifts left."
+        }
+      ],
+      "explanation": {
+        "overview": "Spare receptors create a nonlinear relationship between occupancy and response; a small amount of occupancy yields a large response, increasing apparent potency.",
+        "highYield": "Spare receptors → lower EC50 (left shift), increased sensitivity. Emax unchanged.",
+        "clinicalCorrelation": "Receptor reserve explains why some antagonists must block many receptors before reducing the maximal response."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_021",
+      "questionId": "pharma_pharmacodynamics_021",
+      "difficulty": 2,
+      "question": "Desensitization (tachyphylaxis) refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "A rapid decrease in response to a drug after repeated doses",
+          "isCorrect": true,
+          "explanation": "Tachyphylaxis is a form of acute tolerance where repeated doses over a short period result in diminished response."
+        },
+        {
+          "text": "An increase in response over time",
+          "isCorrect": false,
+          "explanation": "That is sensitization."
+        },
+        {
+          "text": "A delayed onset of action",
+          "isCorrect": false,
+          "explanation": "Not the definition."
+        },
+        {
+          "text": "An allergic reaction",
+          "isCorrect": false,
+          "explanation": "Allergy is immune-mediated."
+        },
+        {
+          "text": "A genetic variation in drug metabolism",
+          "isCorrect": false,
+          "explanation": "That is pharmacogenetics."
+        }
+      ],
+      "explanation": {
+        "overview": "Desensitization/tachyphylaxis is a rapid loss of response, often due to receptor phosphorylation, internalization, or depletion of a mediator. It is reversible after a drug-free period.",
+        "highYield": "Tachyphylaxis = acute tolerance (rapid desensitization). Example: repeated nitroglycerin use leads to loss of effect.",
+        "clinicalCorrelation": "Nitrate-free intervals are used to prevent tolerance to nitroglycerin."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_022",
+      "questionId": "pharma_pharmacodynamics_022",
+      "difficulty": 2,
+      "question": "Tolerance differs from tachyphylaxis in that tolerance:",
+      "image": null,
+      "options": [
+        {
+          "text": "Develops more slowly",
+          "isCorrect": true,
+          "explanation": "Tolerance typically develops over days to weeks of chronic exposure, while tachyphylaxis is rapid (minutes to hours)."
+        },
+        {
+          "text": "Is irreversible",
+          "isCorrect": false,
+          "explanation": "Both can be reversible."
+        },
+        {
+          "text": "Is always due to receptor downregulation",
+          "isCorrect": false,
+          "explanation": "Tolerance can be due to pharmacokinetic, pharmacodynamic, or behavioral mechanisms."
+        },
+        {
+          "text": "Occurs only with opioids",
+          "isCorrect": false,
+          "explanation": "Tolerance develops to many drug classes."
+        },
+        {
+          "text": "Is the same as tachyphylaxis",
+          "isCorrect": false,
+          "explanation": "They differ in time course."
+        }
+      ],
+      "explanation": {
+        "overview": "Tolerance is a gradual decrease in responsiveness to a drug, requiring higher doses to achieve the original effect. Mechanisms include receptor downregulation, desensitization, and metabolic induction.",
+        "highYield": "Tolerance = chronic, slow development. Tachyphylaxis = acute, rapid.",
+        "clinicalCorrelation": "Opioid tolerance requires dose escalation to maintain analgesia."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_023",
+      "questionId": "pharma_pharmacodynamics_023",
+      "difficulty": 2,
+      "question": "Receptor down-regulation is a mechanism of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Tolerance",
+          "isCorrect": true,
+          "explanation": "Chronic agonist exposure can lead to reduced receptor density on the cell surface, contributing to tolerance."
+        },
+        {
+          "text": "Sensitization",
+          "isCorrect": false,
+          "explanation": "Sensitization involves increased responsiveness."
+        },
+        {
+          "text": "Allergic reaction",
+          "isCorrect": false,
+          "explanation": "Not a tolerance mechanism."
+        },
+        {
+          "text": "Drug metabolism",
+          "isCorrect": false,
+          "explanation": "Not receptor-related."
+        },
+        {
+          "text": "Drug absorption",
+          "isCorrect": false,
+          "explanation": "Absorption is PK."
+        }
+      ],
+      "explanation": {
+        "overview": "Receptor down-regulation involves a decrease in receptor number via internalization and degradation, reducing the tissue's sensitivity to an agonist.",
+        "highYield": "Down-regulation = decreased receptor number → tolerance. Example: β-agonists downregulate β-receptors.",
+        "clinicalCorrelation": "Long-term β-agonist use in asthma can cause downregulation and reduced bronchodilator response."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_024",
+      "questionId": "pharma_pharmacodynamics_024",
+      "difficulty": 2,
+      "question": "Up-regulation of receptors may occur following:",
+      "image": null,
+      "options": [
+        {
+          "text": "Chronic administration of an antagonist",
+          "isCorrect": true,
+          "explanation": "Prolonged blockade leads to compensatory increase in receptor number (up-regulation), causing supersensitivity upon antagonist withdrawal."
+        },
+        {
+          "text": "Chronic administration of an agonist",
+          "isCorrect": false,
+          "explanation": "Agonists cause down-regulation."
+        },
+        {
+          "text": "Acute drug administration",
+          "isCorrect": false,
+          "explanation": "Up-regulation requires chronic blockade."
+        },
+        {
+          "text": "Food intake",
+          "isCorrect": false,
+          "explanation": "Not a typical cause."
+        },
+        {
+          "text": "Exercise",
+          "isCorrect": false,
+          "explanation": "Not primary mechanism."
+        }
+      ],
+      "explanation": {
+        "overview": "Up-regulation is an adaptive response to prolonged receptor blockade. Upon sudden discontinuation of the antagonist, the increased number of receptors can cause a rebound effect.",
+        "highYield": "Up-regulation = increased receptor number due to chronic antagonist. Withdrawal → rebound. Example: β-blocker withdrawal → tachycardia.",
+        "clinicalCorrelation": "Abrupt β-blocker cessation can cause rebound hypertension and angina due to up-regulated receptors."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_025",
+      "questionId": "pharma_pharmacodynamics_025",
+      "difficulty": 2,
+      "question": "The dose-response curve for a drug that is a full agonist will have:",
+      "image": null,
+      "options": [
+        {
+          "text": "The same maximum as another full agonist acting at the same receptor",
+          "isCorrect": true,
+          "explanation": "Full agonists by definition have efficacy = 1 and produce the same maximal tissue response when occupying the same receptor system."
+        },
+        {
+          "text": "A higher maximum than another full agonist",
+          "isCorrect": false,
+          "explanation": "If both are full agonists, Emax is the same."
+        },
+        {
+          "text": "A lower maximum than another full agonist",
+          "isCorrect": false,
+          "explanation": "That would be a partial agonist."
+        },
+        {
+          "text": "Variable maximum depending on dose",
+          "isCorrect": false,
+          "explanation": "Emax is a constant property."
+        },
+        {
+          "text": "No maximum",
+          "isCorrect": false,
+          "explanation": "All agonists have an asymptotic maximum."
+        }
+      ],
+      "explanation": {
+        "overview": "Full agonists all achieve the same Emax in a given system. Differences among them are in potency (EC50), not efficacy.",
+        "highYield": "Full agonists: same Emax (efficacy = 1), different potency (EC50).",
+        "clinicalCorrelation": "Morphine and fentanyl are both full μ-opioid agonists with similar max analgesia but different potencies."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_026",
+      "questionId": "pharma_pharmacodynamics_026",
+      "difficulty": 1,
+      "question": "Graded dose-response curves relate:",
+      "image": null,
+      "options": [
+        {
+          "text": "Dose to effect in an individual",
+          "isCorrect": true,
+          "explanation": "Graded curves show the intensity of response as a function of dose in a single biological system."
+        },
+        {
+          "text": "Dose to percentage of population responding",
+          "isCorrect": false,
+          "explanation": "That is a quantal curve."
+        },
+        {
+          "text": "Time to effect",
+          "isCorrect": false,
+          "explanation": "That is a time-response curve."
+        },
+        {
+          "text": "Concentration to receptor occupancy",
+          "isCorrect": false,
+          "explanation": "That is a binding curve."
+        },
+        {
+          "text": "Dose to toxicity",
+          "isCorrect": false,
+          "explanation": "That could be part of a quantal curve."
+        }
+      ],
+      "explanation": {
+        "overview": "Graded (continuous) dose-response curves plot the magnitude of effect against dose or concentration in a single system. They yield EC50 and Emax.",
+        "highYield": "Graded = individual, continuous response. Quantal = population, all-or-none response.",
+        "clinicalCorrelation": "Graded curves are used in in vitro pharmacology and in individual patient dose titration."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_027",
+      "questionId": "pharma_pharmacodynamics_027",
+      "difficulty": 2,
+      "question": "Quantal dose-response curves describe:",
+      "image": null,
+      "options": [
+        {
+          "text": "The relationship between dose and the proportion of a population that responds",
+          "isCorrect": true,
+          "explanation": "Quantal curves plot the percentage of subjects achieving a predefined endpoint (e.g., seizure protection, death) versus dose."
+        },
+        {
+          "text": "The graded effect in an individual",
+          "isCorrect": false,
+          "explanation": "That is a graded curve."
+        },
+        {
+          "text": "The time course of drug action",
+          "isCorrect": false,
+          "explanation": "Time course is separate."
+        },
+        {
+          "text": "The binding affinity to receptors",
+          "isCorrect": false,
+          "explanation": "Binding curves are different."
+        },
+        {
+          "text": "The therapeutic index",
+          "isCorrect": false,
+          "explanation": "TI is derived from quantal curves, but the curve itself shows proportions."
+        }
+      ],
+      "explanation": {
+        "overview": "Quantal (all-or-none) dose-response curves are used to determine ED50, TD50, and LD50 in a population. They reflect interindividual variability.",
+        "highYield": "Quantal = population % responding vs dose. Used to determine ED50, TD50, LD50, and therapeutic index.",
+        "clinicalCorrelation": "Quantal curves help define therapeutic and toxic dose ranges for populations."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_028",
+      "questionId": "pharma_pharmacodynamics_028",
+      "difficulty": 2,
+      "question": "The slope of a quantal dose-response curve reflects:",
+      "image": null,
+      "options": [
+        {
+          "text": "The variability in the population response",
+          "isCorrect": true,
+          "explanation": "A steep slope indicates that most individuals respond over a narrow dose range (low variability); a shallow slope indicates high variability."
+        },
+        {
+          "text": "The potency of the drug",
+          "isCorrect": false,
+          "explanation": "Potency is indicated by the position on the dose axis (ED50)."
+        },
+        {
+          "text": "The efficacy of the drug",
+          "isCorrect": false,
+          "explanation": "Efficacy is not determined from quantal curves."
+        },
+        {
+          "text": "The rate of absorption",
+          "isCorrect": false,
+          "explanation": "Not from this curve."
+        },
+        {
+          "text": "The half-life",
+          "isCorrect": false,
+          "explanation": "Half-life is a PK parameter."
+        }
+      ],
+      "explanation": {
+        "overview": "The steepness of a quantal dose-response curve indicates the range of doses over which the response occurs in the population. A steep curve means a narrow therapeutic window in the population.",
+        "highYield": "Slope of quantal curve = population variability. Steep = homogeneous; shallow = heterogeneous.",
+        "clinicalCorrelation": "Drugs with a steep dose-response curve require careful dose adjustments as small changes can shift many patients from no effect to toxicity."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_029",
+      "questionId": "pharma_pharmacodynamics_029",
+      "difficulty": 3,
+      "question": "Allosteric modulators affect receptor function by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Binding to a site distinct from the agonist binding site",
+          "isCorrect": true,
+          "explanation": "Allosteric modulators bind to a secondary site on the receptor, altering its conformation and affecting agonist binding or efficacy."
+        },
+        {
+          "text": "Competing with the agonist for the same site",
+          "isCorrect": false,
+          "explanation": "That is orthosteric competition."
+        },
+        {
+          "text": "Irreversibly blocking the receptor",
+          "isCorrect": false,
+          "explanation": "Allosteric binding is often reversible."
+        },
+        {
+          "text": "Increasing agonist degradation",
+          "isCorrect": false,
+          "explanation": "Not receptor-mediated."
+        },
+        {
+          "text": "Decreasing agonist synthesis",
+          "isCorrect": false,
+          "explanation": "Not receptor-mediated."
+        }
+      ],
+      "explanation": {
+        "overview": "Allosteric modulators bind to a topographically distinct site and can positively (PAM) or negatively (NAM) modulate the receptor's response to the orthosteric agonist.",
+        "highYield": "Allosteric modulator = binds elsewhere, changes receptor response. PAMs enhance, NAMs inhibit.",
+        "clinicalCorrelation": "Benzodiazepines are PAMs at GABA-A; they enhance GABA-mediated inhibition."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_030",
+      "questionId": "pharma_pharmacodynamics_030",
+      "difficulty": 2,
+      "question": "Benzodiazepines act as positive allosteric modulators at:",
+      "image": null,
+      "options": [
+        {
+          "text": "GABA-A receptors",
+          "isCorrect": true,
+          "explanation": "Benzodiazepines bind to the BZ site on GABA-A receptors, increasing the frequency of chloride channel opening in response to GABA."
+        },
+        {
+          "text": "NMDA receptors",
+          "isCorrect": false,
+          "explanation": "NMDA receptors are glutamate receptors; benzodiazepines act at GABA receptors."
+        },
+        {
+          "text": "Dopamine receptors",
+          "isCorrect": false,
+          "explanation": "Not the primary target."
+        },
+        {
+          "text": "Serotonin receptors",
+          "isCorrect": false,
+          "explanation": "Not the primary target."
+        },
+        {
+          "text": "Opioid receptors",
+          "isCorrect": false,
+          "explanation": "Not the primary target."
+        }
+      ],
+      "explanation": {
+        "overview": "GABA-A receptors are ligand-gated chloride channels. Benzodiazepines bind at an allosteric site, enhancing the receptor's affinity for GABA, increasing chloride influx and neuronal inhibition.",
+        "highYield": "Benzodiazepines = GABA-A PAMs → increase Cl- influx. Anxiolytic, sedative, anticonvulsant.",
+        "clinicalCorrelation": "Flumazenil is a BZ site antagonist used to reverse benzodiazepine overdose."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_031",
+      "questionId": "pharma_pharmacodynamics_031",
+      "difficulty": 3,
+      "question": "Receptor desensitization can involve:",
+      "image": null,
+      "options": [
+        {
+          "text": "Phosphorylation of the receptor",
+          "isCorrect": false,
+          "explanation": "GRK-mediated phosphorylation is one mechanism."
+        },
+        {
+          "text": "Receptor internalization",
+          "isCorrect": false,
+          "explanation": "Internalization (endocytosis) removes receptors from the surface."
+        },
+        {
+          "text": "Uncoupling from G-proteins",
+          "isCorrect": false,
+          "explanation": "β-arrestin binding uncouples GPCRs from G-proteins."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "All are mechanisms of receptor desensitization."
+        },
+        {
+          "text": "None of the above",
+          "isCorrect": false,
+          "explanation": "All listed are valid mechanisms."
+        }
+      ],
+      "explanation": {
+        "overview": "GPCR desensitization is a multistep process: phosphorylation by GRKs, β-arrestin binding (uncoupling), and clathrin-mediated internalization. Chronic stimulation can lead to downregulation.",
+        "highYield": "Desensitization mechanisms: phosphorylation, arrestin binding (uncoupling), internalization, downregulation.",
+        "clinicalCorrelation": "β2-agonist tolerance in asthma involves receptor desensitization."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_032",
+      "questionId": "pharma_pharmacodynamics_032",
+      "difficulty": 1,
+      "question": "The therapeutic window is:",
+      "image": null,
+      "options": [
+        {
+          "text": "The range between the minimum effective dose and the minimum toxic dose",
+          "isCorrect": true,
+          "explanation": "The therapeutic window represents the range of doses that provide efficacy without unacceptable toxicity."
+        },
+        {
+          "text": "The time between administration and effect",
+          "isCorrect": false,
+          "explanation": "That is onset of action."
+        },
+        {
+          "text": "The duration of action",
+          "isCorrect": false,
+          "explanation": "Duration is a separate PK/PD parameter."
+        },
+        {
+          "text": "The volume of distribution",
+          "isCorrect": false,
+          "explanation": "Vd is a PK parameter."
+        },
+        {
+          "text": "The half-life",
+          "isCorrect": false,
+          "explanation": "Half-life is a PK parameter."
+        }
+      ],
+      "explanation": {
+        "overview": "The therapeutic window is the dosage range where the drug is effective without causing toxic effects. For narrow therapeutic window drugs, small dose changes can lead to toxicity or loss of efficacy.",
+        "highYield": "Therapeutic window = effective dose range with acceptable safety. Narrow for warfarin, digoxin, lithium.",
+        "clinicalCorrelation": "Therapeutic drug monitoring is essential for drugs with a narrow therapeutic window."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_033",
+      "questionId": "pharma_pharmacodynamics_033",
+      "difficulty": 2,
+      "question": "A drug that is a competitive antagonist will:",
+      "image": null,
+      "options": [
+        {
+          "text": "Decrease the slope of the agonist dose-response curve",
+          "isCorrect": false,
+          "explanation": "Slope is unchanged; curve shifts right."
+        },
+        {
+          "text": "Increase the EC50 of the agonist",
+          "isCorrect": true,
+          "explanation": "Competitive antagonism reduces agonist potency, requiring higher concentrations for the same effect (increased EC50)."
+        },
+        {
+          "text": "Decrease the maximal response of the agonist",
+          "isCorrect": false,
+          "explanation": "Emax is unchanged."
+        },
+        {
+          "text": "Increase the efficacy of the agonist",
+          "isCorrect": false,
+          "explanation": "Efficacy is unchanged."
+        },
+        {
+          "text": "Have no effect on the agonist curve",
+          "isCorrect": false,
+          "explanation": "It shifts the curve right."
+        }
+      ],
+      "explanation": {
+        "overview": "A competitive antagonist increases EC50 (apparent decrease in potency) without affecting Emax. The degree of shift depends on antagonist concentration and affinity.",
+        "highYield": "Competitive antagonist: ↑ EC50, Emax unchanged. Rightward parallel shift.",
+        "clinicalCorrelation": "Propranolol competitively blocks β-receptors; its effect can be overcome by higher catecholamine levels."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_034",
+      "questionId": "pharma_pharmacodynamics_034",
+      "difficulty": 2,
+      "question": "In the presence of an irreversible antagonist, the agonist dose-response curve shows:",
+      "image": null,
+      "options": [
+        {
+          "text": "Rightward shift with no change in maximum",
+          "isCorrect": false,
+          "explanation": "That is competitive antagonism."
+        },
+        {
+          "text": "Depressed maximum with no shift",
+          "isCorrect": true,
+          "explanation": "Irreversible antagonists reduce the number of functional receptors, decreasing Emax."
+        },
+        {
+          "text": "Leftward shift",
+          "isCorrect": false,
+          "explanation": "Irreversible antagonism does not shift left."
+        },
+        {
+          "text": "No change",
+          "isCorrect": false,
+          "explanation": "The curve is altered."
+        },
+        {
+          "text": "Increased slope",
+          "isCorrect": false,
+          "explanation": "Slope may decrease."
+        }
+      ],
+      "explanation": {
+        "overview": "Irreversible (noncompetitive) antagonists covalently bind or have very slow dissociation, permanently removing receptors. This reduces the maximal response (Emax) and may have no effect on EC50 if spare receptors exist.",
+        "highYield": "Irreversible antagonist: ↓ Emax, EC50 may be unchanged if spare receptors. Insurmountable.",
+        "clinicalCorrelation": "Phenoxybenzamine is an irreversible α-blocker used in pheochromocytoma."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_035",
+      "questionId": "pharma_pharmacodynamics_035",
+      "difficulty": 1,
+      "question": "Drug A has an ED50 of 5 mg, Drug B has an ED50 of 50 mg. Which statement is true?",
+      "image": null,
+      "options": [
+        {
+          "text": "Drug A is more potent than Drug B",
+          "isCorrect": true,
+          "explanation": "Lower ED50 means less drug is needed to achieve the effect, indicating higher potency."
+        },
+        {
+          "text": "Drug A is more efficacious than Drug B",
+          "isCorrect": false,
+          "explanation": "ED50 relates to potency, not efficacy. We don't know Emax."
+        },
+        {
+          "text": "Drug A has a higher therapeutic index",
+          "isCorrect": false,
+          "explanation": "TI requires TD50 also."
+        },
+        {
+          "text": "Drug A has a longer half-life",
+          "isCorrect": false,
+          "explanation": "ED50 does not predict half-life."
+        },
+        {
+          "text": "Drug A is safer than Drug B",
+          "isCorrect": false,
+          "explanation": "Potency does not imply safety."
+        }
+      ],
+      "explanation": {
+        "overview": "Potency is a comparative measure based on the dose required for a given effect. Lower ED50 = higher potency.",
+        "highYield": "Potency: Drug A (ED50 5 mg) > Drug B (ED50 50 mg). Potency ≠ efficacy ≠ safety.",
+        "clinicalCorrelation": "Choosing a drug based solely on potency is not appropriate; efficacy, safety, and therapeutic index matter more."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_036",
+      "questionId": "pharma_pharmacodynamics_036",
+      "difficulty": 2,
+      "question": "Drug X produces a maximal effect of 100 units, Drug Y produces a maximal effect of 80 units at the same receptor. Drug Y is:",
+      "image": null,
+      "options": [
+        {
+          "text": "A partial agonist",
+          "isCorrect": true,
+          "explanation": "Partial agonists have lower maximal efficacy (Emax) than full agonists in the same system."
+        },
+        {
+          "text": "A full agonist",
+          "isCorrect": false,
+          "explanation": "If it were a full agonist, Emax would equal Drug X's."
+        },
+        {
+          "text": "An antagonist",
+          "isCorrect": false,
+          "explanation": "Antagonists have zero efficacy."
+        },
+        {
+          "text": "More potent",
+          "isCorrect": false,
+          "explanation": "We don't know EC50."
+        },
+        {
+          "text": "Less potent",
+          "isCorrect": false,
+          "explanation": "Potency not indicated."
+        }
+      ],
+      "explanation": {
+        "overview": "Efficacy is the maximal effect. A lower Emax relative to a full agonist indicates a partial agonist.",
+        "highYield": "Partial agonist = lower Emax (e.g., 80% of full agonist).",
+        "clinicalCorrelation": "Buprenorphine (partial μ agonist) has a ceiling effect for respiratory depression."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_037",
+      "questionId": "pharma_pharmacodynamics_037",
+      "difficulty": 2,
+      "question": "The term 'intrinsic activity' is synonymous with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Efficacy",
+          "isCorrect": true,
+          "explanation": "Intrinsic activity, a term introduced by Ariëns, is a measure of the ability of a drug to activate the receptor and produce a response; it is equivalent to efficacy."
+        },
+        {
+          "text": "Potency",
+          "isCorrect": false,
+          "explanation": "Potency is dose required, not intrinsic activity."
+        },
+        {
+          "text": "Affinity",
+          "isCorrect": false,
+          "explanation": "Affinity is binding strength."
+        },
+        {
+          "text": "Selectivity",
+          "isCorrect": false,
+          "explanation": "Selectivity is preference for one receptor subtype."
+        },
+        {
+          "text": "Bioavailability",
+          "isCorrect": false,
+          "explanation": "Bioavailability is the fraction reaching systemic circulation."
+        }
+      ],
+      "explanation": {
+        "overview": "Intrinsic activity (α) is the proportionality factor relating receptor occupancy to response. Full agonists α=1, partial agonists 0<α<1, antagonists α=0, inverse agonists α<0.",
+        "highYield": "Intrinsic activity = efficacy (α). Full agonist α=1, partial 0<α<1, antagonist α=0.",
+        "clinicalCorrelation": "This concept is fundamental to understanding drug action and classifying ligands."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_038",
+      "questionId": "pharma_pharmacodynamics_038",
+      "difficulty": 2,
+      "question": "A drug that binds to the same receptor as the natural ligand but produces a weaker response is called:",
+      "image": null,
+      "options": [
+        {
+          "text": "Partial agonist",
+          "isCorrect": true,
+          "explanation": "Partial agonists occupy the receptor but have lower intrinsic activity, producing a submaximal response even at full occupancy."
+        },
+        {
+          "text": "Full agonist",
+          "isCorrect": false,
+          "explanation": "A full agonist produces the maximal response."
+        },
+        {
+          "text": "Antagonist",
+          "isCorrect": false,
+          "explanation": "Antagonists produce no response."
+        },
+        {
+          "text": "Inverse agonist",
+          "isCorrect": false,
+          "explanation": "Inverse agonists produce opposite effects."
+        },
+        {
+          "text": "Allosteric modulator",
+          "isCorrect": false,
+          "explanation": "Allosteric modulators bind to a different site."
+        }
+      ],
+      "explanation": {
+        "overview": "Partial agonists produce a lower Emax than the endogenous full agonist. They can act as antagonists in the presence of high concentrations of the full agonist.",
+        "highYield": "Partial agonist = submaximal response. Binds orthosteric site, lower efficacy.",
+        "clinicalCorrelation": "Aripiprazole is a partial D2 agonist, acting as a dopamine stabilizer."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_039",
+      "questionId": "pharma_pharmacodynamics_039",
+      "difficulty": 2,
+      "question": "The occupancy theory of drug-receptor interaction states that:",
+      "image": null,
+      "options": [
+        {
+          "text": "The effect is proportional to the number of occupied receptors",
+          "isCorrect": true,
+          "explanation": "Classical occupancy theory assumes a linear relationship between receptor occupancy and response."
+        },
+        {
+          "text": "The effect is independent of receptor occupancy",
+          "isCorrect": false,
+          "explanation": "Occupancy drives effect."
+        },
+        {
+          "text": "Only a fraction of receptors need to be occupied for maximal effect",
+          "isCorrect": false,
+          "explanation": "That describes spare receptors, a refinement of occupancy theory."
+        },
+        {
+          "text": "Receptor occupancy is irrelevant",
+          "isCorrect": false,
+          "explanation": "It is central."
+        },
+        {
+          "text": "The effect depends on the rate of binding",
+          "isCorrect": false,
+          "explanation": "Rate theory is a different model."
+        }
+      ],
+      "explanation": {
+        "overview": "Clark's occupancy theory posits that the magnitude of the drug effect is directly proportional to the fraction of receptors occupied. It laid the foundation for quantitative pharmacology.",
+        "highYield": "Occupancy theory: effect ∝ [drug-receptor] complex. Overly simplistic; does not account for spare receptors or partial agonists.",
+        "clinicalCorrelation": "Modern models incorporate signal amplification and constitutive activity."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_040",
+      "questionId": "pharma_pharmacodynamics_040",
+      "difficulty": 3,
+      "question": "The rate theory of drug action suggests that:",
+      "image": null,
+      "options": [
+        {
+          "text": "The response depends on the rate of drug-receptor association and dissociation",
+          "isCorrect": true,
+          "explanation": "Rate theory proposes that the biological stimulus is proportional to the number of drug-receptor associations per unit time, not just occupancy."
+        },
+        {
+          "text": "The response depends only on the number of occupied receptors",
+          "isCorrect": false,
+          "explanation": "That is occupancy theory."
+        },
+        {
+          "text": "The response is independent of time",
+          "isCorrect": false,
+          "explanation": "Rate theory emphasizes kinetics."
+        },
+        {
+          "text": "Receptors must be internalized for effect",
+          "isCorrect": false,
+          "explanation": "Not part of rate theory."
+        },
+        {
+          "text": "Drugs act only by blocking receptors",
+          "isCorrect": false,
+          "explanation": "Rate theory applies to agonists."
+        }
+      ],
+      "explanation": {
+        "overview": "Paton's rate theory suggests that the activation of a receptor is proportional to the rate of drug-receptor association. Agonists have fast on/off rates; antagonists have slow off rates. This explains why some drugs with high affinity are antagonists.",
+        "highYield": "Rate theory: effect ∝ rate of binding. Fast dissociation = agonist; slow dissociation = antagonist.",
+        "clinicalCorrelation": "Rate theory is less widely used but helps explain some phenomena not accounted for by occupancy theory."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_041",
+      "questionId": "pharma_pharmacodynamics_041",
+      "difficulty": 2,
+      "question": "G-protein coupled receptors (GPCRs) are characterized by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Seven transmembrane domains",
+          "isCorrect": true,
+          "explanation": "GPCRs have a characteristic structure of seven α-helical transmembrane spanning domains, an extracellular N-terminus, and intracellular C-terminus."
+        },
+        {
+          "text": "Intrinsic enzyme activity",
+          "isCorrect": false,
+          "explanation": "That describes enzyme-linked receptors (e.g., insulin receptor)."
+        },
+        {
+          "text": "Ion channel function",
+          "isCorrect": false,
+          "explanation": "That describes ligand-gated ion channels."
+        },
+        {
+          "text": "Nuclear localization",
+          "isCorrect": false,
+          "explanation": "That describes nuclear receptors."
+        },
+        {
+          "text": "Single transmembrane domain",
+          "isCorrect": false,
+          "explanation": "Enzyme-linked receptors often have one transmembrane domain."
+        }
+      ],
+      "explanation": {
+        "overview": "GPCRs are the largest family of drug targets. They transduce extracellular signals via heterotrimeric G-proteins (Gs, Gi, Gq, etc.) to intracellular effectors (adenylyl cyclase, phospholipase C).",
+        "highYield": "GPCR = 7-transmembrane receptor. Couples to G-proteins. Examples: muscarinic, adrenergic, opioid, dopamine receptors.",
+        "clinicalCorrelation": "~34% of FDA-approved drugs target GPCRs."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_042",
+      "questionId": "pharma_pharmacodynamics_042",
+      "difficulty": 2,
+      "question": "Ligand-gated ion channels mediate:",
+      "image": null,
+      "options": [
+        {
+          "text": "Fast synaptic transmission",
+          "isCorrect": true,
+          "explanation": "Ionotropic receptors are ion channels that open rapidly upon ligand binding, mediating fast responses (milliseconds) in neurotransmission."
+        },
+        {
+          "text": "Slow metabolic responses",
+          "isCorrect": false,
+          "explanation": "GPCRs mediate slower responses via second messengers."
+        },
+        {
+          "text": "Gene transcription",
+          "isCorrect": false,
+          "explanation": "Nuclear receptors regulate gene expression."
+        },
+        {
+          "text": "Hormone secretion",
+          "isCorrect": false,
+          "explanation": "Hormone secretion can involve multiple receptor types."
+        },
+        {
+          "text": "Cell division",
+          "isCorrect": false,
+          "explanation": "Growth factor receptors regulate cell division."
+        }
+      ],
+      "explanation": {
+        "overview": "Ligand-gated ion channels (ionotropic receptors) are composed of multiple subunits forming a pore. Neurotransmitter binding opens the pore, allowing ion flux and rapid depolarization/hyperpolarization.",
+        "highYield": "Ionotropic receptors = fast synaptic transmission. Examples: nicotinic AChR, GABA-A, NMDA/AMPA (glutamate).",
+        "clinicalCorrelation": "Benzodiazepines, barbiturates, and alcohol act on GABA-A receptors."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_043",
+      "questionId": "pharma_pharmacodynamics_043",
+      "difficulty": 2,
+      "question": "Which of the following is an example of an enzyme-linked receptor?",
+      "image": null,
+      "options": [
+        {
+          "text": "Insulin receptor",
+          "isCorrect": true,
+          "explanation": "The insulin receptor is a receptor tyrosine kinase (RTK); ligand binding activates intrinsic kinase activity, leading to autophosphorylation and signaling cascades."
+        },
+        {
+          "text": "GABA-A receptor",
+          "isCorrect": false,
+          "explanation": "Ligand-gated ion channel."
+        },
+        {
+          "text": "Muscarinic receptor",
+          "isCorrect": false,
+          "explanation": "GPCR."
+        },
+        {
+          "text": "Opioid receptor",
+          "isCorrect": false,
+          "explanation": "GPCR."
+        },
+        {
+          "text": "Adrenergic receptor",
+          "isCorrect": false,
+          "explanation": "GPCR."
+        }
+      ],
+      "explanation": {
+        "overview": "Enzyme-linked receptors have intrinsic enzymatic activity (e.g., tyrosine kinase) or associate with enzymes. Examples include insulin receptor, cytokine receptors (JAK-STAT), and TGF-β receptors.",
+        "highYield": "Insulin receptor = receptor tyrosine kinase (enzyme-linked). Single transmembrane domain.",
+        "clinicalCorrelation": "Many targeted cancer therapies inhibit tyrosine kinases (e.g., imatinib for BCR-ABL)."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_044",
+      "questionId": "pharma_pharmacodynamics_044",
+      "difficulty": 2,
+      "question": "Nuclear receptors primarily regulate:",
+      "image": null,
+      "options": [
+        {
+          "text": "Gene expression",
+          "isCorrect": true,
+          "explanation": "Nuclear receptors are ligand-activated transcription factors that bind to DNA and regulate the transcription of specific genes."
+        },
+        {
+          "text": "Ion flux",
+          "isCorrect": false,
+          "explanation": "Ion channels do that."
+        },
+        {
+          "text": "Second messenger production",
+          "isCorrect": false,
+          "explanation": "GPCRs and enzyme-linked receptors trigger second messengers."
+        },
+        {
+          "text": "Membrane potential",
+          "isCorrect": false,
+          "explanation": "Ion channels regulate membrane potential."
+        },
+        {
+          "text": "Neurotransmitter release",
+          "isCorrect": false,
+          "explanation": "That involves ion channels and GPCRs."
+        }
+      ],
+      "explanation": {
+        "overview": "Nuclear receptors are intracellular proteins that, upon ligand binding, dimerize and bind to hormone response elements (HREs) in DNA, modulating gene transcription. Responses are slow (hours to days).",
+        "highYield": "Nuclear receptors = transcription factors. Slow, genomic effects. Examples: steroid hormones, thyroid hormone, vitamin D, PPARs.",
+        "clinicalCorrelation": "Corticosteroids act via glucocorticoid receptor (nuclear receptor) to suppress inflammatory gene expression."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_045",
+      "questionId": "pharma_pharmacodynamics_045",
+      "difficulty": 2,
+      "question": "Second messengers include all EXCEPT:",
+      "image": null,
+      "options": [
+        {
+          "text": "cAMP",
+          "isCorrect": false,
+          "explanation": "cAMP is a classic second messenger."
+        },
+        {
+          "text": "IP3",
+          "isCorrect": false,
+          "explanation": "IP3 releases calcium from endoplasmic reticulum."
+        },
+        {
+          "text": "DAG",
+          "isCorrect": false,
+          "explanation": "DAG activates protein kinase C."
+        },
+        {
+          "text": "Calcium",
+          "isCorrect": false,
+          "explanation": "Ca2+ is a ubiquitous second messenger."
+        },
+        {
+          "text": "G-protein",
+          "isCorrect": true,
+          "explanation": "G-proteins are transducers (relay signals from receptor to effector), not second messengers."
+        }
+      ],
+      "explanation": {
+        "overview": "Second messengers are intracellular signaling molecules released or generated in response to receptor activation. They amplify the signal. Examples: cAMP, cGMP, IP3, DAG, Ca2+.",
+        "highYield": "Second messengers: cAMP, cGMP, IP3, DAG, Ca2+. G-protein = transducer (not second messenger).",
+        "clinicalCorrelation": "Many drugs target second messenger pathways (e.g., PDE inhibitors increase cAMP/cGMP)."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_046",
+      "questionId": "pharma_pharmacodynamics_046",
+      "difficulty": 2,
+      "question": "Drug selectivity refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "The ability to produce a specific effect without affecting other systems",
+          "isCorrect": true,
+          "explanation": "Selectivity is the degree to which a drug acts on a given receptor subtype or target relative to others."
+        },
+        {
+          "text": "The potency of the drug",
+          "isCorrect": false,
+          "explanation": "Selectivity is about target specificity, not dose."
+        },
+        {
+          "text": "The duration of action",
+          "isCorrect": false,
+          "explanation": "Duration is a PK/PD parameter."
+        },
+        {
+          "text": "The route of administration",
+          "isCorrect": false,
+          "explanation": "Route is a PK consideration."
+        },
+        {
+          "text": "The half-life",
+          "isCorrect": false,
+          "explanation": "Half-life is a PK parameter."
+        }
+      ],
+      "explanation": {
+        "overview": "Selectivity refers to a drug's preference for one receptor subtype over another. High selectivity can reduce off-target side effects, but no drug is absolutely selective at all doses.",
+        "highYield": "Selectivity = preferential action on one target. Example: β1-selective blockers (atenolol) vs non-selective (propranolol).",
+        "clinicalCorrelation": "β1-selective blockers are preferred in asthma to avoid bronchoconstriction from β2 blockade."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_047",
+      "questionId": "pharma_pharmacodynamics_047",
+      "difficulty": 2,
+      "question": "A drug with high specificity binds:",
+      "image": null,
+      "options": [
+        {
+          "text": "To a single receptor type",
+          "isCorrect": true,
+          "explanation": "Specificity means the drug interacts with only one molecular target. However, very few drugs are absolutely specific."
+        },
+        {
+          "text": "To multiple receptor types",
+          "isCorrect": false,
+          "explanation": "That would be non-specific."
+        },
+        {
+          "text": "Only to plasma proteins",
+          "isCorrect": false,
+          "explanation": "That is protein binding."
+        },
+        {
+          "text": "To DNA",
+          "isCorrect": false,
+          "explanation": "Some drugs target DNA, but that doesn't define specificity."
+        },
+        {
+          "text": "To enzymes",
+          "isCorrect": false,
+          "explanation": "Many drugs target enzymes, but specificity means it targets one particular enzyme."
+        }
+      ],
+      "explanation": {
+        "overview": "Specificity is the ability of a drug to interact with a single defined molecular entity. It's a qualitative concept; selectivity is quantitative (preference for one over another).",
+        "highYield": "Specificity = acts at one target only. Selectivity = preference for one target over others. Often used interchangeably but distinct.",
+        "clinicalCorrelation": "Monoclonal antibodies can be highly specific for their antigen."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_048",
+      "questionId": "pharma_pharmacodynamics_048",
+      "difficulty": 3,
+      "question": "The law of mass action applied to drug-receptor binding states that:",
+      "image": null,
+      "options": [
+        {
+          "text": "The rate of binding is proportional to the concentrations of drug and free receptor",
+          "isCorrect": true,
+          "explanation": "According to the law of mass action, the association rate = k_on [Drug][Receptor], and at equilibrium, Kd = [Drug][Receptor]/[Drug-Receptor]."
+        },
+        {
+          "text": "Binding is irreversible",
+          "isCorrect": false,
+          "explanation": "Mass action applies to reversible interactions."
+        },
+        {
+          "text": "Binding is independent of concentration",
+          "isCorrect": false,
+          "explanation": "It is concentration-dependent."
+        },
+        {
+          "text": "Receptors are not saturable",
+          "isCorrect": false,
+          "explanation": "Receptors are saturable, which is accounted for in the model."
+        },
+        {
+          "text": "The effect is always proportional to binding",
+          "isCorrect": false,
+          "explanation": "That's occupancy theory, not the mass action law itself."
+        }
+      ],
+      "explanation": {
+        "overview": "The reversible drug-receptor interaction follows the law of mass action: D + R ⇌ DR. At equilibrium, Kd = [D][R]/[DR]. This forms the basis of receptor occupancy calculations.",
+        "highYield": "Mass action: D + R ⇌ DR. Kd = [D][R]/[DR]. Lower Kd = higher affinity.",
+        "clinicalCorrelation": "Kd values allow comparison of drug binding affinities."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_049",
+      "questionId": "pharma_pharmacodynamics_049",
+      "difficulty": 3,
+      "question": "The dissociation constant (Kd) is:",
+      "image": null,
+      "options": [
+        {
+          "text": "The concentration of drug that occupies 50% of receptors",
+          "isCorrect": true,
+          "explanation": "Kd is the drug concentration at which half of the receptors are occupied at equilibrium."
+        },
+        {
+          "text": "The concentration that produces 50% of maximal effect",
+          "isCorrect": false,
+          "explanation": "That is EC50."
+        },
+        {
+          "text": "The dose that kills 50% of subjects",
+          "isCorrect": false,
+          "explanation": "That is LD50."
+        },
+        {
+          "text": "The rate of drug elimination",
+          "isCorrect": false,
+          "explanation": "That is clearance or half-life."
+        },
+        {
+          "text": "The volume of distribution",
+          "isCorrect": false,
+          "explanation": "Vd is a PK parameter."
+        }
+      ],
+      "explanation": {
+        "overview": "Kd is a measure of affinity. It is the concentration of ligand required to occupy 50% of receptors. Kd = k_off / k_on.",
+        "highYield": "Kd = concentration for 50% receptor occupancy. Low Kd = high affinity.",
+        "clinicalCorrelation": "Drugs with very low Kd can be effective at low concentrations."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_050",
+      "questionId": "pharma_pharmacodynamics_050",
+      "difficulty": 2,
+      "question": "A low Kd value indicates:",
+      "image": null,
+      "options": [
+        {
+          "text": "High affinity",
+          "isCorrect": true,
+          "explanation": "Kd is inversely proportional to affinity; a small Kd means the drug binds tightly to the receptor."
+        },
+        {
+          "text": "Low affinity",
+          "isCorrect": false,
+          "explanation": "Low affinity would have a high Kd."
+        },
+        {
+          "text": "High potency",
+          "isCorrect": false,
+          "explanation": "Affinity is related to potency but not equivalent; potency also involves efficacy and tissue factors."
+        },
+        {
+          "text": "Low potency",
+          "isCorrect": false,
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "High efficacy",
+          "isCorrect": false,
+          "explanation": "Kd measures affinity, not efficacy."
+        }
+      ],
+      "explanation": {
+        "overview": "Kd is the equilibrium dissociation constant. A low Kd indicates strong binding (high affinity); a high Kd indicates weak binding (low affinity).",
+        "highYield": "Kd ∝ 1/affinity. Low Kd = high affinity.",
+        "clinicalCorrelation": "When choosing an antagonist, high affinity (low Kd) ensures effective receptor blockade at low concentrations."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_051",
+      "questionId": "pharma_pharmacodynamics_051",
+      "difficulty": 2,
+      "question": "The maximal response (Emax) of a drug is determined by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Efficacy",
+          "isCorrect": true,
+          "explanation": "Efficacy (intrinsic activity) dictates the maximum effect a drug can produce."
+        },
+        {
+          "text": "Potency",
+          "isCorrect": false,
+          "explanation": "Potency determines the dose needed for a given effect, not the ceiling."
+        },
+        {
+          "text": "Affinity",
+          "isCorrect": false,
+          "explanation": "Affinity contributes to potency but not directly to Emax."
+        },
+        {
+          "text": "Half-life",
+          "isCorrect": false,
+          "explanation": "Half-life is a PK parameter."
+        },
+        {
+          "text": "Bioavailability",
+          "isCorrect": false,
+          "explanation": "Bioavailability affects the fraction reaching the site, but not the intrinsic Emax."
+        }
+      ],
+      "explanation": {
+        "overview": "Emax represents the upper asymptote of the dose-response curve and reflects the drug's efficacy. It cannot be increased by giving more drug.",
+        "highYield": "Emax = efficacy (ceiling effect). Full agonist = high Emax; partial agonist = lower Emax.",
+        "clinicalCorrelation": "Morphine has a higher Emax for analgesia than codeine."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_052",
+      "questionId": "pharma_pharmacodynamics_052",
+      "difficulty": 2,
+      "question": "A drug that is a full agonist at a receptor has an intrinsic activity of:",
+      "image": null,
+      "options": [
+        {
+          "text": "1",
+          "isCorrect": true,
+          "explanation": "By convention, full agonists are assigned an intrinsic activity (α) of 1."
+        },
+        {
+          "text": "0",
+          "isCorrect": false,
+          "explanation": "α=0 is an antagonist."
+        },
+        {
+          "text": "0.5",
+          "isCorrect": false,
+          "explanation": "That would be a partial agonist."
+        },
+        {
+          "text": "-1",
+          "isCorrect": false,
+          "explanation": "α = -1 is an inverse agonist (depending on scale)."
+        },
+        {
+          "text": ">1",
+          "isCorrect": false,
+          "explanation": "α>1 would imply superagonist, but by definition full agonist is 1."
+        }
+      ],
+      "explanation": {
+        "overview": "Intrinsic activity (α) is a measure of the ability of a drug-receptor complex to produce a response. Full agonists have α=1; antagonists have α=0; partial agonists 0<α<1; inverse agonists α<0 (on some scales).",
+        "highYield": "Full agonist α = 1. Partial agonist 0 < α < 1. Antagonist α = 0. Inverse agonist α < 0.",
+        "clinicalCorrelation": "This classification helps predict the net effect when drugs are combined."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_053",
+      "questionId": "pharma_pharmacodynamics_053",
+      "difficulty": 2,
+      "question": "An antagonist has an intrinsic activity of:",
+      "image": null,
+      "options": [
+        {
+          "text": "0",
+          "isCorrect": true,
+          "explanation": "Antagonists bind to the receptor but produce no activation; intrinsic activity is zero."
+        },
+        {
+          "text": "1",
+          "isCorrect": false,
+          "explanation": "That is a full agonist."
+        },
+        {
+          "text": "-1",
+          "isCorrect": false,
+          "explanation": "That is an inverse agonist (on some scales)."
+        },
+        {
+          "text": "0.5",
+          "isCorrect": false,
+          "explanation": "That is a partial agonist."
+        },
+        {
+          "text": ">1",
+          "isCorrect": false,
+          "explanation": "Not applicable."
+        }
+      ],
+      "explanation": {
+        "overview": "Neutral antagonists have zero intrinsic activity; they occupy the receptor without eliciting a response, simply blocking agonist binding.",
+        "highYield": "Antagonist α = 0. Binds, does not activate.",
+        "clinicalCorrelation": "Naloxone (α=0) reverses opioid effects by competitive antagonism."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_054",
+      "questionId": "pharma_pharmacodynamics_054",
+      "difficulty": 3,
+      "question": "The term 'pD2' refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "-log EC50",
+          "isCorrect": true,
+          "explanation": "pD2 is the negative logarithm of the EC50, used to express agonist potency."
+        },
+        {
+          "text": "-log Kd",
+          "isCorrect": false,
+          "explanation": "That is pKd."
+        },
+        {
+          "text": "-log IC50",
+          "isCorrect": false,
+          "explanation": "Used for inhibition."
+        },
+        {
+          "text": "-log LD50",
+          "isCorrect": false,
+          "explanation": "Not a standard term."
+        },
+        {
+          "text": "-log ED50",
+          "isCorrect": false,
+          "explanation": "pD2 is specifically from in vitro concentration-response."
+        }
+      ],
+      "explanation": {
+        "overview": "pD2 = -log(EC50) provides a convenient scale for comparing agonist potencies. Higher pD2 = lower EC50 = more potent agonist.",
+        "highYield": "pD2 = -log(EC50). Higher pD2 = more potent agonist.",
+        "clinicalCorrelation": "pD2 values are used in pharmacological research to compare agonist potencies."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_055",
+      "questionId": "pharma_pharmacodynamics_055",
+      "difficulty": 2,
+      "question": "If two drugs act at the same receptor and produce additive effects, they are likely:",
+      "image": null,
+      "options": [
+        {
+          "text": "Both agonists",
+          "isCorrect": true,
+          "explanation": "Additivity occurs when two agonists acting at the same receptor produce an effect equal to the sum of their individual effects."
+        },
+        {
+          "text": "One agonist and one antagonist",
+          "isCorrect": false,
+          "explanation": "That would result in antagonism, not additivity."
+        },
+        {
+          "text": "Both antagonists",
+          "isCorrect": false,
+          "explanation": "Antagonists produce no effect alone."
+        },
+        {
+          "text": "Allosteric modulators",
+          "isCorrect": false,
+          "explanation": "Allosteric modulators change the response to agonists."
+        },
+        {
+          "text": "Inverse agonists",
+          "isCorrect": false,
+          "explanation": "Inverse agonists reduce basal activity."
+        }
+      ],
+      "explanation": {
+        "overview": "When two drugs with the same mechanism of action (same receptor, both agonists) are combined, the effect is additive if they do not compete for binding sites in a limiting way.",
+        "highYield": "Same receptor agonists → additive effect (if not competing for occupancy limit).",
+        "clinicalCorrelation": "Combining two opioids can provide additive analgesia but also additive side effects."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_056",
+      "questionId": "pharma_pharmacodynamics_056",
+      "difficulty": 2,
+      "question": "Synergism (supra-additive effect) means:",
+      "image": null,
+      "options": [
+        {
+          "text": "The combined effect is greater than the sum of individual effects",
+          "isCorrect": true,
+          "explanation": "Synergism occurs when drugs interact to produce an effect larger than the predicted additive sum."
+        },
+        {
+          "text": "The combined effect is equal to the sum",
+          "isCorrect": false,
+          "explanation": "That is additivity."
+        },
+        {
+          "text": "One drug enhances the effect of another but has no effect alone",
+          "isCorrect": false,
+          "explanation": "That is potentiation."
+        },
+        {
+          "text": "The drugs antagonize each other",
+          "isCorrect": false,
+          "explanation": "That is antagonism."
+        },
+        {
+          "text": "The drugs have no interaction",
+          "isCorrect": false,
+          "explanation": "No interaction is independence."
+        }
+      ],
+      "explanation": {
+        "overview": "Synergism implies that the combined effect exceeds the sum of individual effects. This can be beneficial (e.g., antibiotic combinations) or harmful (e.g., alcohol and benzodiazepines).",
+        "highYield": "Synergism = 1+1 > 2. More than additive.",
+        "clinicalCorrelation": "Trimethoprim + sulfamethoxazole are synergistic because they block sequential steps in folate synthesis."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_057",
+      "questionId": "pharma_pharmacodynamics_057",
+      "difficulty": 2,
+      "question": "Potentiation refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "One drug enhances the effect of another but has no effect alone",
+          "isCorrect": true,
+          "explanation": "Potentiation occurs when an inactive substance (or one without the specific effect) increases the effect of an active drug."
+        },
+        {
+          "text": "Both drugs produce similar effects",
+          "isCorrect": false,
+          "explanation": "That could be additive."
+        },
+        {
+          "text": "The sum of effects is greater than additive",
+          "isCorrect": false,
+          "explanation": "That is synergism."
+        },
+        {
+          "text": "The drugs antagonize each other",
+          "isCorrect": false,
+          "explanation": "Opposite of potentiation."
+        },
+        {
+          "text": "The drugs have no interaction",
+          "isCorrect": false,
+          "explanation": "Potentiation is an interaction."
+        }
+      ],
+      "explanation": {
+        "overview": "Potentiation: drug A has no effect alone but increases the effect of drug B. Synergism: both active alone, combined effect > additive.",
+        "highYield": "Potentiation: inactive enhancer (e.g., clavulanic acid + amoxicillin). Clavulanic acid alone has no antibacterial effect but inhibits β-lactamase, potentiating amoxicillin.",
+        "clinicalCorrelation": "Carbidopa potentiates levodopa by inhibiting peripheral DOPA decarboxylase, with no anti-Parkinson effect alone."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_058",
+      "questionId": "pharma_pharmacodynamics_058",
+      "difficulty": 2,
+      "question": "Antagonism can be:",
+      "image": null,
+      "options": [
+        {
+          "text": "Chemical (drug binds drug)",
+          "isCorrect": false,
+          "explanation": "Example: protamine + heparin."
+        },
+        {
+          "text": "Physiological (opposing effects)",
+          "isCorrect": false,
+          "explanation": "Example: glucagon and insulin on blood glucose."
+        },
+        {
+          "text": "Receptor-mediated",
+          "isCorrect": false,
+          "explanation": "Competitive or noncompetitive at the receptor."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Antagonism can be chemical, physiological, or pharmacological (receptor)."
+        },
+        {
+          "text": "None of the above",
+          "isCorrect": false,
+          "explanation": "All are valid types."
+        }
+      ],
+      "explanation": {
+        "overview": "Drug antagonism may occur via direct chemical interaction (chemical), opposing physiological effects via different pathways (physiological), or blockade at the receptor level (pharmacological).",
+        "highYield": "Types of antagonism: chemical, physiological, pharmacological (competitive/noncompetitive).",
+        "clinicalCorrelation": "Understanding the type of antagonism helps select appropriate antidotes."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_059",
+      "questionId": "pharma_pharmacodynamics_059",
+      "difficulty": 3,
+      "question": "An example of physiological antagonism is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Histamine and epinephrine on blood pressure",
+          "isCorrect": true,
+          "explanation": "Histamine lowers BP via H1 receptors on vascular endothelium (NO); epinephrine raises BP via α1 vasoconstriction. They act on different receptors to produce opposite effects – physiological antagonism."
+        },
+        {
+          "text": "Naloxone and morphine",
+          "isCorrect": false,
+          "explanation": "Receptor (pharmacological) antagonism."
+        },
+        {
+          "text": "Protamine and heparin",
+          "isCorrect": false,
+          "explanation": "Chemical antagonism."
+        },
+        {
+          "text": "Atropine and acetylcholine",
+          "isCorrect": false,
+          "explanation": "Competitive receptor antagonism."
+        },
+        {
+          "text": "Propranolol and isoproterenol",
+          "isCorrect": false,
+          "explanation": "Competitive receptor antagonism."
+        }
+      ],
+      "explanation": {
+        "overview": "Physiological (functional) antagonism occurs when two agonists acting on different receptors produce opposing physiological effects in the same organ or system.",
+        "highYield": "Physiological antagonism = opposite effects via different receptors. Example: histamine (↓BP) vs epinephrine (↑BP).",
+        "clinicalCorrelation": "Epinephrine is used in anaphylaxis to reverse histamine-induced vasodilation and bronchoconstriction."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_060",
+      "questionId": "pharma_pharmacodynamics_060",
+      "difficulty": 2,
+      "question": "Chemical antagonism occurs when:",
+      "image": null,
+      "options": [
+        {
+          "text": "Two drugs combine in solution and inactivate each other",
+          "isCorrect": true,
+          "explanation": "Chemical antagonism involves a direct physicochemical interaction between two drugs, rendering one or both inactive."
+        },
+        {
+          "text": "One drug blocks the receptor of another",
+          "isCorrect": false,
+          "explanation": "That is receptor antagonism."
+        },
+        {
+          "text": "One drug opposes the effect via a different receptor",
+          "isCorrect": false,
+          "explanation": "That is physiological antagonism."
+        },
+        {
+          "text": "The effect is greater than additive",
+          "isCorrect": false,
+          "explanation": "That is synergism."
+        },
+        {
+          "text": "Tolerance develops",
+          "isCorrect": false,
+          "explanation": "Tolerance is a decreased response over time."
+        }
+      ],
+      "explanation": {
+        "overview": "Chemical antagonism is an interaction in which one drug binds to or chelates another, preventing its action. It does not involve a biological receptor.",
+        "highYield": "Chemical antagonism = drug-drug binding/inactivation. Example: protamine (basic) binds heparin (acidic).",
+        "clinicalCorrelation": "Protamine sulfate is the antidote for heparin overdose."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_061",
+      "questionId": "pharma_pharmacodynamics_061",
+      "difficulty": 2,
+      "question": "What is the primary difference between a competitive antagonist and a non-competitive antagonist?",
+      "image": null,
+      "options": [
+        {
+          "text": "A competitive antagonist's effect can be overcome by increasing the agonist concentration; a non-competitive antagonist's effect cannot",
+          "isCorrect": true,
+          "explanation": "Competitive antagonists bind reversibly to the orthosteric site, so high agonist concentrations can displace them. Non-competitive antagonists bind irreversibly or allosterically, reducing Emax."
+        },
+        {
+          "text": "A competitive antagonist binds irreversibly",
+          "isCorrect": false,
+          "explanation": "Competitive antagonists are typically reversible."
+        },
+        {
+          "text": "A non-competitive antagonist has higher affinity for the agonist site",
+          "isCorrect": false,
+          "explanation": "Non-competitive often binds allosterically."
+        },
+        {
+          "text": "A competitive antagonist always has intrinsic activity",
+          "isCorrect": false,
+          "explanation": "Antagonists have zero intrinsic activity."
+        },
+        {
+          "text": "There is no difference",
+          "isCorrect": false,
+          "explanation": "There is a fundamental difference."
+        }
+      ],
+      "explanation": {
+        "overview": "Competitive antagonists compete for the same binding site as the agonist, and their effect is surmountable. Non-competitive antagonists either bind irreversibly or at an allosteric site, making their effect insurmountable.",
+        "highYield": "Competitive = surmountable (right shift, same Emax). Non-competitive = insurmountable (reduced Emax).",
+        "clinicalCorrelation": "This distinction is crucial in overdose management: e.g., naloxone (competitive) can reverse opioid overdose, but irreversible antagonists require new receptor synthesis."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_062",
+      "questionId": "pharma_pharmacodynamics_062",
+      "difficulty": 3,
+      "question": "Which of the following statements about biased agonism (functional selectivity) is TRUE?",
+      "image": null,
+      "options": [
+        {
+          "text": "A biased agonist preferentially activates one signaling pathway over another through the same receptor",
+          "isCorrect": true,
+          "explanation": "Biased agonists stabilize receptor conformations that favor coupling to one downstream effector (e.g., β-arrestin over G-protein), producing pathway-specific effects."
+        },
+        {
+          "text": "A biased agonist blocks all signaling from a receptor",
+          "isCorrect": false,
+          "explanation": "That would be an antagonist."
+        },
+        {
+          "text": "Biased agonism means the drug is selective for different receptor subtypes",
+          "isCorrect": false,
+          "explanation": "That is receptor selectivity, not biased agonism."
+        },
+        {
+          "text": "Biased agonists are always more potent",
+          "isCorrect": false,
+          "explanation": "Potency is separate from bias."
+        },
+        {
+          "text": "Biased agonism does not occur in GPCRs",
+          "isCorrect": false,
+          "explanation": "It is most commonly described for GPCRs."
+        }
+      ],
+      "explanation": {
+        "overview": "Biased agonism (functional selectivity) occurs when a ligand stabilizes a unique receptor conformation that selectively activates certain signaling cascades (e.g., G-protein vs β-arrestin) while not activating others.",
+        "highYield": "Biased agonism = same receptor, different signaling pathway activation. Potential for safer drugs (analgesia without respiratory depression).",
+        "clinicalCorrelation": "Oliceridine is a biased μ-opioid agonist, favoring G-protein signaling over β-arrestin, aiming for analgesia with less respiratory depression and constipation."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_063",
+      "questionId": "pharma_pharmacodynamics_063",
+      "difficulty": 2,
+      "question": "The term 'IC50' refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Concentration of a drug that inhibits a biological process by 50%",
+          "isCorrect": true,
+          "explanation": "IC50 is the half-maximal inhibitory concentration, used to quantify the potency of an inhibitor (antagonist or enzyme inhibitor) in vitro."
+        },
+        {
+          "text": "Concentration that kills 50% of cells",
+          "isCorrect": false,
+          "explanation": "That is LC50 or CC50."
+        },
+        {
+          "text": "Concentration that activates 50% of receptors",
+          "isCorrect": false,
+          "explanation": "That is EC50."
+        },
+        {
+          "text": "The dose that inhibits 50% of an effect in a population",
+          "isCorrect": false,
+          "explanation": "That is ID50."
+        },
+        {
+          "text": "The inhibitory threshold concentration",
+          "isCorrect": false,
+          "explanation": "IC50 is a specific measure."
+        }
+      ],
+      "explanation": {
+        "overview": "IC50 is a standard measure of antagonist or inhibitor potency in vitro. It depends on the agonist concentration used; thus it is a conditional parameter.",
+        "highYield": "IC50 = inhibitory concentration for 50% effect. Lower IC50 = more potent inhibitor.",
+        "clinicalCorrelation": "IC50 values are used to compare antiviral or anticancer drug potencies in cell culture."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_064",
+      "questionId": "pharma_pharmacodynamics_064",
+      "difficulty": 1,
+      "question": "Which of the following drug-receptor bonds is the strongest?",
+      "image": null,
+      "options": [
+        {
+          "text": "Covalent bond",
+          "isCorrect": true,
+          "explanation": "Covalent bonds involve sharing of electrons and are essentially irreversible under physiological conditions."
+        },
+        {
+          "text": "Ionic bond",
+          "isCorrect": false,
+          "explanation": "Ionic bonds are strong but reversible."
+        },
+        {
+          "text": "Hydrogen bond",
+          "isCorrect": false,
+          "explanation": "Weaker than covalent."
+        },
+        {
+          "text": "Van der Waals forces",
+          "isCorrect": false,
+          "explanation": "Weakest forces."
+        },
+        {
+          "text": "Hydrophobic interaction",
+          "isCorrect": false,
+          "explanation": "Weak, but cumulative."
+        }
+      ],
+      "explanation": {
+        "overview": "Covalent bonds are the strongest drug-receptor interactions, often leading to irreversible inhibition (e.g., aspirin acetylates COX, phenoxybenzamine alkylates α-receptors).",
+        "highYield": "Covalent = strongest, irreversible. Example: aspirin + COX, phenoxybenzamine + α-receptor.",
+        "clinicalCorrelation": "Irreversible drugs require new enzyme/receptor synthesis to reverse effect."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_065",
+      "questionId": "pharma_pharmacodynamics_065",
+      "difficulty": 2,
+      "question": "The two-state model of receptor activation proposes that receptors exist in equilibrium between:",
+      "image": null,
+      "options": [
+        {
+          "text": "Active (R*) and inactive (R) conformations",
+          "isCorrect": true,
+          "explanation": "The two-state model posits that receptors spontaneously switch between an inactive state (R) and an active state (R*). Agonists stabilize R*; inverse agonists stabilize R."
+        },
+        {
+          "text": "Open and closed conformations",
+          "isCorrect": false,
+          "explanation": "That's for ion channels."
+        },
+        {
+          "text": "Phosphorylated and dephosphorylated states",
+          "isCorrect": false,
+          "explanation": "That's a modification, not the fundamental model."
+        },
+        {
+          "text": "Bound and unbound states",
+          "isCorrect": false,
+          "explanation": "That describes occupancy, not activation states."
+        },
+        {
+          "text": "Monomer and dimer states",
+          "isCorrect": false,
+          "explanation": "Dimerization is a different concept."
+        }
+      ],
+      "explanation": {
+        "overview": "The two-state (ternary complex) model describes receptors existing in equilibrium between inactive (R) and active (R*) conformations. Agonists shift the equilibrium toward R*; inverse agonists toward R.",
+        "highYield": "Two-state model: R ⇌ R*. Agonists stabilize R*, inverse agonists stabilize R. Explains constitutive activity.",
+        "clinicalCorrelation": "This model underlies the concept of inverse agonism and constitutive receptor activity."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_066",
+      "questionId": "pharma_pharmacodynamics_066",
+      "difficulty": 2,
+      "question": "Which of the following is an example of a drug that acts as a physiological antagonist?",
+      "image": null,
+      "options": [
+        {
+          "text": "Epinephrine in anaphylactic shock (opposing histamine effects)",
+          "isCorrect": true,
+          "explanation": "Epinephrine causes vasoconstriction (α1) and bronchodilation (β2), opposing histamine-induced vasodilation and bronchoconstriction, acting on different receptors."
+        },
+        {
+          "text": "Naloxone in opioid overdose",
+          "isCorrect": false,
+          "explanation": "Naloxone is a competitive receptor antagonist."
+        },
+        {
+          "text": "Flumazenil in benzodiazepine overdose",
+          "isCorrect": false,
+          "explanation": "Flumazenil is a competitive antagonist at the BZ site."
+        },
+        {
+          "text": "Atropine for bradycardia",
+          "isCorrect": false,
+          "explanation": "Atropine is a competitive muscarinic antagonist."
+        },
+        {
+          "text": "Protamine for heparin overdose",
+          "isCorrect": false,
+          "explanation": "Protamine chemically binds heparin."
+        }
+      ],
+      "explanation": {
+        "overview": "Physiological antagonism involves two agonists acting on different receptors to produce opposite effects. Epinephrine's α1-mediated vasoconstriction counteracts histamine's H1-mediated vasodilation.",
+        "highYield": "Physiological antagonist = opposite effect via different receptors. Epinephrine for anaphylaxis.",
+        "clinicalCorrelation": "This is the basis for using epinephrine as the first-line treatment for anaphylaxis."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_067",
+      "questionId": "pharma_pharmacodynamics_067",
+      "difficulty": 2,
+      "question": "A key feature of a quantal dose-response curve is that it:",
+      "image": null,
+      "options": [
+        {
+          "text": "Plots the percentage of the population responding vs. log dose",
+          "isCorrect": true,
+          "explanation": "Quantal curves represent all-or-none responses (e.g., alive/dead, seizure/no seizure) and show the cumulative distribution of responders."
+        },
+        {
+          "text": "Plots the graded response in an individual vs. log concentration",
+          "isCorrect": false,
+          "explanation": "That's a graded curve."
+        },
+        {
+          "text": "Always has a steep slope",
+          "isCorrect": false,
+          "explanation": "Slope varies with population variability."
+        },
+        {
+          "text": "Is used to determine EC50",
+          "isCorrect": false,
+          "explanation": "EC50 from graded curves; quantal gives ED50, TD50, LD50."
+        },
+        {
+          "text": "Cannot determine therapeutic index",
+          "isCorrect": false,
+          "explanation": "TI is derived from quantal curves."
+        }
+      ],
+      "explanation": {
+        "overview": "Quantal dose-response curves are constructed by plotting the cumulative frequency of a defined all-or-none response against log dose. They are used to calculate ED50, TD50, LD50, and therapeutic index.",
+        "highYield": "Quantal curve = population % vs log dose. Yields ED50, TD50, LD50, TI.",
+        "clinicalCorrelation": "Drug approval requires quantal data to define effective and toxic dose ranges."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_068",
+      "questionId": "pharma_pharmacodynamics_068",
+      "difficulty": 3,
+      "question": "In the presence of a non-competitive antagonist, the agonist dose-response curve shows:",
+      "image": null,
+      "options": [
+        {
+          "text": "A decrease in the maximal response (Emax)",
+          "isCorrect": true,
+          "explanation": "Non-competitive antagonism reduces the number of functional receptors, so even at infinite agonist concentration, the Emax is lowered."
+        },
+        {
+          "text": "A rightward parallel shift",
+          "isCorrect": false,
+          "explanation": "That's competitive antagonism."
+        },
+        {
+          "text": "An increase in the EC50 only",
+          "isCorrect": false,
+          "explanation": "EC50 may be unchanged if spare receptors exist."
+        },
+        {
+          "text": "No change in Emax",
+          "isCorrect": false,
+          "explanation": "Emax decreases."
+        },
+        {
+          "text": "A leftward shift",
+          "isCorrect": false,
+          "explanation": "Antagonists do not shift left."
+        }
+      ],
+      "explanation": {
+        "overview": "Non-competitive (irreversible) antagonists covalently modify or allosterically inhibit the receptor, reducing the total receptor pool. Increasing agonist cannot restore the maximal response.",
+        "highYield": "Non-competitive antagonist: ↓ Emax. If spare receptors, EC50 may not change until significant receptor loss.",
+        "clinicalCorrelation": "Aspirin irreversibly acetylates COX-1, producing a non-competitive inhibition that lasts the life of the platelet."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_069",
+      "questionId": "pharma_pharmacodynamics_069",
+      "difficulty": 2,
+      "question": "The term 'rebound effect' upon discontinuation of a drug is often due to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Receptor up-regulation during treatment",
+          "isCorrect": true,
+          "explanation": "Chronic antagonism can cause up-regulation of receptors. Withdrawal removes the block, leaving an increased number of receptors responsive to endogenous agonists, causing a rebound effect."
+        },
+        {
+          "text": "Receptor down-regulation",
+          "isCorrect": false,
+          "explanation": "Down-regulation would decrease responsiveness."
+        },
+        {
+          "text": "Increased drug metabolism",
+          "isCorrect": false,
+          "explanation": "Metabolic changes usually alter levels, not cause rebound."
+        },
+        {
+          "text": "Enhanced drug excretion",
+          "isCorrect": false,
+          "explanation": "Excretion affects levels, not rebound mechanism."
+        },
+        {
+          "text": "Chemical antagonism",
+          "isCorrect": false,
+          "explanation": "Not relevant."
+        }
+      ],
+      "explanation": {
+        "overview": "Sudden withdrawal of an antagonist after prolonged use can lead to a transient overshoot of the endogenous system due to compensatory up-regulation. Example: β-blocker withdrawal causing tachycardia and hypertension.",
+        "highYield": "Rebound = withdrawal of antagonist after up-regulation. Taper doses to prevent.",
+        "clinicalCorrelation": "Clonidine withdrawal can cause severe rebound hypertension."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_070",
+      "questionId": "pharma_pharmacodynamics_070",
+      "difficulty": 3,
+      "question": "Schild regression analysis is used to determine:",
+      "image": null,
+      "options": [
+        {
+          "text": "The pA2 value of a competitive antagonist",
+          "isCorrect": true,
+          "explanation": "Schild analysis plots log(dose ratio -1) versus log antagonist concentration. A slope of 1 indicates competitive antagonism, and the x-intercept gives pA2."
+        },
+        {
+          "text": "The EC50 of an agonist",
+          "isCorrect": false,
+          "explanation": "EC50 is from agonist curve."
+        },
+        {
+          "text": "The Emax of a partial agonist",
+          "isCorrect": false,
+          "explanation": "Emax from dose-response curve."
+        },
+        {
+          "text": "The LD50 of a drug",
+          "isCorrect": false,
+          "explanation": "LD50 from quantal curve."
+        },
+        {
+          "text": "The Kd of an agonist",
+          "isCorrect": false,
+          "explanation": "Kd from binding assays."
+        }
+      ],
+      "explanation": {
+        "overview": "Schild analysis is a pharmacological method to characterize antagonists. A linear Schild plot with slope = 1 confirms competitive antagonism, and the pA2 value quantifies antagonist potency.",
+        "highYield": "Schild plot: slope=1 → competitive antagonism. pA2 = -log Kb (antagonist affinity).",
+        "clinicalCorrelation": "Schild analysis is a research tool, not used clinically, but fundamental to drug development."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_071",
+      "questionId": "pharma_pharmacodynamics_071",
+      "difficulty": 2,
+      "question": "Which of the following best describes the mechanism of action of aspirin?",
+      "image": null,
+      "options": [
+        {
+          "text": "Irreversible inhibition of cyclooxygenase (COX) enzymes",
+          "isCorrect": true,
+          "explanation": "Aspirin acetylates a serine residue in COX-1 and COX-2, irreversibly inhibiting prostaglandin synthesis."
+        },
+        {
+          "text": "Competitive antagonism at opioid receptors",
+          "isCorrect": false,
+          "explanation": "Aspirin is not an opioid."
+        },
+        {
+          "text": "Allosteric modulation of GABA-A receptors",
+          "isCorrect": false,
+          "explanation": "That's benzodiazepines."
+        },
+        {
+          "text": "Inhibition of angiotensin-converting enzyme",
+          "isCorrect": false,
+          "explanation": "That's ACE inhibitors."
+        },
+        {
+          "text": "Activation of β2-adrenoceptors",
+          "isCorrect": false,
+          "explanation": "That's β2 agonists."
+        }
+      ],
+      "explanation": {
+        "overview": "Aspirin covalently acetylates a serine residue in the active site of COX enzymes, irreversibly inhibiting the production of prostaglandins and thromboxanes.",
+        "highYield": "Aspirin = irreversible COX inhibitor. Antiplatelet effect lasts platelet lifetime (7-10 days).",
+        "clinicalCorrelation": "Low-dose aspirin is used for cardiovascular prophylaxis due to selective inhibition of platelet thromboxane A2."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_072",
+      "questionId": "pharma_pharmacodynamics_072",
+      "difficulty": 1,
+      "question": "Which of the following drug classes acts by inhibiting an enzyme?",
+      "image": null,
+      "options": [
+        {
+          "text": "ACE inhibitors",
+          "isCorrect": true,
+          "explanation": "ACE inhibitors (e.g., lisinopril) block angiotensin-converting enzyme, preventing the formation of angiotensin II."
+        },
+        {
+          "text": "β-blockers",
+          "isCorrect": false,
+          "explanation": "β-blockers are receptor antagonists."
+        },
+        {
+          "text": "Calcium channel blockers",
+          "isCorrect": false,
+          "explanation": "They block ion channels."
+        },
+        {
+          "text": "Benzodiazepines",
+          "isCorrect": false,
+          "explanation": "They are allosteric receptor modulators."
+        },
+        {
+          "text": "Opioid agonists",
+          "isCorrect": false,
+          "explanation": "They activate receptors."
+        }
+      ],
+      "explanation": {
+        "overview": "Many drugs target enzymes, acting as inhibitors (e.g., ACE inhibitors, statins, NSAIDs, proton pump inhibitors).",
+        "highYield": "ACE inhibitors = enzyme inhibitors. Statins = HMG-CoA reductase inhibitors. Aspirin = COX inhibitor.",
+        "clinicalCorrelation": "Enzyme inhibition is a common and effective therapeutic strategy."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_073",
+      "questionId": "pharma_pharmacodynamics_073",
+      "difficulty": 2,
+      "question": "Which of the following effects is mediated by Gs protein-coupled receptors?",
+      "image": null,
+      "options": [
+        {
+          "text": "Activation of adenylyl cyclase and increased cAMP",
+          "isCorrect": true,
+          "explanation": "Gs-coupled receptors (e.g., β-adrenoceptors, histamine H2) activate adenylyl cyclase, increasing cAMP production."
+        },
+        {
+          "text": "Inhibition of adenylyl cyclase",
+          "isCorrect": false,
+          "explanation": "That's Gi-coupled receptors (e.g., M2, α2)."
+        },
+        {
+          "text": "Activation of phospholipase C",
+          "isCorrect": false,
+          "explanation": "That's Gq-coupled receptors (e.g., M1, M3, α1)."
+        },
+        {
+          "text": "Direct opening of ion channels",
+          "isCorrect": false,
+          "explanation": "That's ionotropic receptors."
+        },
+        {
+          "text": "Tyrosine kinase activation",
+          "isCorrect": false,
+          "explanation": "Enzyme-linked receptors."
+        }
+      ],
+      "explanation": {
+        "overview": "G-proteins transduce signals from GPCRs. Gs stimulates adenylyl cyclase → ↑cAMP → PKA activation. Examples: β1, β2, β3, D1, H2, serotonin 5-HT4.",
+        "highYield": "Gs = stimulatory G-protein → ↑ adenylyl cyclase → ↑ cAMP.",
+        "clinicalCorrelation": "β-agonists (e.g., dobutamine) and glucagon use Gs signaling."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_074",
+      "questionId": "pharma_pharmacodynamics_074",
+      "difficulty": 2,
+      "question": "Which G-protein subtype activates phospholipase C, leading to IP3 and DAG formation?",
+      "image": null,
+      "options": [
+        {
+          "text": "Gq",
+          "isCorrect": true,
+          "explanation": "Gq family proteins activate phospholipase C-β, which hydrolyzes PIP2 to IP3 (releases Ca2+) and DAG (activates PKC)."
+        },
+        {
+          "text": "Gs",
+          "isCorrect": false,
+          "explanation": "Gs activates adenylyl cyclase."
+        },
+        {
+          "text": "Gi",
+          "isCorrect": false,
+          "explanation": "Gi inhibits adenylyl cyclase."
+        },
+        {
+          "text": "G12/13",
+          "isCorrect": false,
+          "explanation": "G12/13 regulates Rho GTPases."
+        },
+        {
+          "text": "Transducin",
+          "isCorrect": false,
+          "explanation": "Transducin (Gt) activates cGMP phosphodiesterase in vision."
+        }
+      ],
+      "explanation": {
+        "overview": "Gq-coupled receptors (e.g., M1, M3, α1, AT1, V1) activate phospholipase C, generating IP3 and DAG, leading to increased intracellular calcium and PKC activation.",
+        "highYield": "Gq → PLC → IP3 + DAG → ↑Ca2+ + PKC. Receptors: M1, M3, α1, AT1, V1.",
+        "clinicalCorrelation": "Lithium blocks the PIP2 pathway, contributing to its mood-stabilizing effect."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_075",
+      "questionId": "pharma_pharmacodynamics_075",
+      "difficulty": 3,
+      "question": "The Hill coefficient (nH) greater than 1 indicates:",
+      "image": null,
+      "options": [
+        {
+          "text": "Positive cooperativity in ligand binding",
+          "isCorrect": true,
+          "explanation": "A Hill coefficient >1 suggests cooperative binding, where binding of one ligand facilitates binding of subsequent ligands to a multimeric receptor."
+        },
+        {
+          "text": "Negative cooperativity",
+          "isCorrect": false,
+          "explanation": "That would be nH < 1."
+        },
+        {
+          "text": "Non-competitive antagonism",
+          "isCorrect": false,
+          "explanation": "Hill coefficient relates to binding, not antagonism type."
+        },
+        {
+          "text": "Competitive antagonism",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        },
+        {
+          "text": "Receptor downregulation",
+          "isCorrect": false,
+          "explanation": "Not related to Hill coefficient."
+        }
+      ],
+      "explanation": {
+        "overview": "The Hill coefficient is derived from the slope of the Hill plot. nH = 1 indicates independent binding; nH > 1 indicates positive cooperativity (e.g., oxygen binding to hemoglobin); nH < 1 indicates negative cooperativity or multiple binding sites.",
+        "highYield": "Hill coefficient (nH): >1 = positive cooperativity; =1 = no cooperativity; <1 = negative cooperativity/multiple sites.",
+        "clinicalCorrelation": "Hill coefficients help characterize receptor-ligand interactions in drug development."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_076",
+      "questionId": "pharma_pharmacodynamics_076",
+      "difficulty": 2,
+      "question": "Which receptor type is responsible for the vasodilator effect of acetylcholine in intact blood vessels?",
+      "image": null,
+      "options": [
+        {
+          "text": "M3 muscarinic receptors on endothelial cells",
+          "isCorrect": true,
+          "explanation": "ACh activates M3 receptors on vascular endothelium, triggering NO release, which diffuses to smooth muscle causing vasodilation."
+        },
+        {
+          "text": "Nicotinic receptors on smooth muscle",
+          "isCorrect": false,
+          "explanation": "Smooth muscle nicotinic receptors do not mediate vasodilation."
+        },
+        {
+          "text": "M2 muscarinic receptors on smooth muscle",
+          "isCorrect": false,
+          "explanation": "Smooth muscle has M3, not M2; M2 is cardiac."
+        },
+        {
+          "text": "α1 adrenergic receptors on smooth muscle",
+          "isCorrect": false,
+          "explanation": "α1 receptors mediate vasoconstriction."
+        },
+        {
+          "text": "β2 adrenergic receptors on smooth muscle",
+          "isCorrect": false,
+          "explanation": "β2 mediate vasodilation, but ACh acts via muscarinic receptors, not β2."
+        }
+      ],
+      "explanation": {
+        "overview": "Endothelial M3 receptor activation by ACh stimulates eNOS via Ca2+-calmodulin, producing NO. NO activates guanylyl cyclase in smooth muscle, causing relaxation and vasodilation.",
+        "highYield": "ACh → endothelial M3 → NO → smooth muscle relaxation → vasodilation.",
+        "clinicalCorrelation": "In atherosclerosis with endothelial damage, ACh can cause paradoxical vasoconstriction due to direct action on smooth muscle M3."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_077",
+      "questionId": "pharma_pharmacodynamics_077",
+      "difficulty": 3,
+      "question": "Which of the following best describes 'receptor reserve'?",
+      "image": null,
+      "options": [
+        {
+          "text": "A situation where maximal response is achieved with less than full receptor occupancy",
+          "isCorrect": true,
+          "explanation": "Receptor reserve (spare receptors) means that the signaling cascade amplifies the response, so Emax is reached even when a fraction of receptors is occupied."
+        },
+        {
+          "text": "All receptors are occupied but no response occurs",
+          "isCorrect": false,
+          "explanation": "That indicates lack of efficacy."
+        },
+        {
+          "text": "Receptors are stored in vesicles inside the cell",
+          "isCorrect": false,
+          "explanation": "That is receptor trafficking."
+        },
+        {
+          "text": "The drug has very low potency",
+          "isCorrect": false,
+          "explanation": "Receptor reserve increases apparent potency."
+        },
+        {
+          "text": "Antagonists cannot bind",
+          "isCorrect": false,
+          "explanation": "Antagonists can bind."
+        }
+      ],
+      "explanation": {
+        "overview": "Spare receptors provide a functional reserve. They increase sensitivity to agonists (lower EC50) and protect against irreversible antagonists, as maximal effect can be maintained until a large fraction of receptors are inactivated.",
+        "highYield": "Receptor reserve = Emax at <100% occupancy. Left shift of curve, lower EC50.",
+        "clinicalCorrelation": "Receptor reserve is important when considering the effect of irreversible antagonists."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_078",
+      "questionId": "pharma_pharmacodynamics_078",
+      "difficulty": 2,
+      "question": "The primary difference between a full agonist and a partial agonist lies in their:",
+      "image": null,
+      "options": [
+        {
+          "text": "Efficacy (intrinsic activity)",
+          "isCorrect": true,
+          "explanation": "Full agonists have high efficacy (Emax = 100%), while partial agonists have lower efficacy (Emax < 100%) even at full receptor occupancy."
+        },
+        {
+          "text": "Affinity for the receptor",
+          "isCorrect": false,
+          "explanation": "Partial agonists can have high affinity."
+        },
+        {
+          "text": "Rate of metabolism",
+          "isCorrect": false,
+          "explanation": "Metabolism is a PK property."
+        },
+        {
+          "text": "Ability to cross the blood-brain barrier",
+          "isCorrect": false,
+          "explanation": "That's a distribution issue."
+        },
+        {
+          "text": "Route of administration",
+          "isCorrect": false,
+          "explanation": "Route does not define intrinsic pharmacological property."
+        }
+      ],
+      "explanation": {
+        "overview": "The key distinction is efficacy: full agonists produce the maximum tissue response, partial agonists produce a submaximal response.",
+        "highYield": "Full agonist = high efficacy (Emax = 100%). Partial agonist = lower efficacy (Emax < 100%).",
+        "clinicalCorrelation": "Partial agonists like buprenorphine have a ceiling effect, making them safer in overdose."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_079",
+      "questionId": "pharma_pharmacodynamics_079",
+      "difficulty": 1,
+      "question": "Which of the following best describes the term 'placebo'?",
+      "image": null,
+      "options": [
+        {
+          "text": "An inert substance that produces a therapeutic effect due to psychological expectation",
+          "isCorrect": true,
+          "explanation": "A placebo has no pharmacological activity; any benefit arises from the patient's belief in the treatment."
+        },
+        {
+          "text": "A highly potent drug",
+          "isCorrect": false,
+          "explanation": "Placebos are inert."
+        },
+        {
+          "text": "A drug that antagonizes all receptors",
+          "isCorrect": false,
+          "explanation": "Not a placebo."
+        },
+        {
+          "text": "The active ingredient in a medication",
+          "isCorrect": false,
+          "explanation": "That's the active drug."
+        },
+        {
+          "text": "A toxic substance",
+          "isCorrect": false,
+          "explanation": "Placebos are harmless."
+        }
+      ],
+      "explanation": {
+        "overview": "Placebo effects are real physiological changes produced by the patient's expectation of benefit, mediated through endogenous pathways (e.g., endorphin release). Placebos are used as controls in clinical trials.",
+        "highYield": "Placebo = inert substance, effect due to expectation. Placebo effect can activate endogenous opioid and dopamine pathways.",
+        "clinicalCorrelation": "Placebo-controlled trials are the gold standard for evaluating drug efficacy."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_080",
+      "questionId": "pharma_pharmacodynamics_080",
+      "difficulty": 2,
+      "question": "Which of the following is an example of an enzyme-linked receptor that signals via the JAK-STAT pathway?",
+      "image": null,
+      "options": [
+        {
+          "text": "Cytokine receptors (e.g., erythropoietin receptor)",
+          "isCorrect": true,
+          "explanation": "Cytokine receptors lack intrinsic kinase activity but associate with Janus kinases (JAKs). Ligand binding activates JAKs, which phosphorylate STAT transcription factors."
+        },
+        {
+          "text": "Insulin receptor",
+          "isCorrect": false,
+          "explanation": "Insulin receptor has intrinsic tyrosine kinase activity."
+        },
+        {
+          "text": "GABA-A receptor",
+          "isCorrect": false,
+          "explanation": "Ligand-gated ion channel."
+        },
+        {
+          "text": "β-adrenergic receptor",
+          "isCorrect": false,
+          "explanation": "GPCR."
+        },
+        {
+          "text": "Glucocorticoid receptor",
+          "isCorrect": false,
+          "explanation": "Nuclear receptor."
+        }
+      ],
+      "explanation": {
+        "overview": "Type I cytokine receptors (e.g., for EPO, GH, prolactin, many interleukins) signal via associated JAK kinases and STAT transcription factors.",
+        "highYield": "JAK-STAT pathway = cytokine receptors (e.g., EPO, GH, interferons).",
+        "clinicalCorrelation": "JAK inhibitors (tofacitinib, baricitinib) are used in autoimmune diseases."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_081",
+      "questionId": "pharma_pharmacodynamics_081",
+      "difficulty": 2,
+      "question": "Which of the following is a characteristic feature of an inverse agonist?",
+      "image": null,
+      "options": [
+        {
+          "text": "It decreases the basal activity of constitutively active receptors",
+          "isCorrect": true,
+          "explanation": "Inverse agonists bind to the same receptor as agonists but produce the opposite effect by reducing constitutive receptor signaling."
+        },
+        {
+          "text": "It has no effect on receptor activity when administered alone",
+          "isCorrect": false,
+          "explanation": "Inverse agonists reduce basal activity; neutral antagonists have no effect on basal activity."
+        },
+        {
+          "text": "It always has higher potency than an agonist",
+          "isCorrect": false,
+          "explanation": "Potency is independent of being an inverse agonist."
+        },
+        {
+          "text": "It is synonymous with a competitive antagonist",
+          "isCorrect": false,
+          "explanation": "Competitive antagonists block agonists but do not reduce constitutive activity."
+        },
+        {
+          "text": "It only binds to ion channels",
+          "isCorrect": false,
+          "explanation": "Inverse agonism is best characterized for GPCRs."
+        }
+      ],
+      "explanation": {
+        "overview": "Inverse agonists stabilize the inactive conformation of a receptor, reducing signaling below the basal constitutive level. This is clinically relevant for drugs like some antihistamines and antipsychotics.",
+        "highYield": "Inverse agonist = reduces constitutive activity. Produces opposite effect of an agonist.",
+        "clinicalCorrelation": "Some atypical antipsychotics are D2 inverse agonists; they reduce basal dopaminergic signaling."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_082",
+      "questionId": "pharma_pharmacodynamics_082",
+      "difficulty": 3,
+      "question": "The concept of 'spare receptors' implies that:",
+      "image": null,
+      "options": [
+        {
+          "text": "The EC50 is lower than the Kd",
+          "isCorrect": true,
+          "explanation": "If spare receptors exist, 50% of the maximal response occurs at a concentration that occupies less than 50% of receptors, so EC50 < Kd."
+        },
+        {
+          "text": "The EC50 equals the Kd",
+          "isCorrect": false,
+          "explanation": "That would be no spare receptors and linear occupancy-response coupling."
+        },
+        {
+          "text": "The EC50 is higher than the Kd",
+          "isCorrect": false,
+          "explanation": "EC50 > Kd would indicate a threshold before response."
+        },
+        {
+          "text": "The drug has zero efficacy",
+          "isCorrect": false,
+          "explanation": "Zero efficacy is an antagonist."
+        },
+        {
+          "text": "The Emax cannot be reached",
+          "isCorrect": false,
+          "explanation": "Emax is reached at <100% occupancy."
+        }
+      ],
+      "explanation": {
+        "overview": "Spare receptors create signal amplification. EC50 < Kd means half-maximal effect is achieved at a lower concentration than that which occupies half the receptors.",
+        "highYield": "Spare receptors → EC50 < Kd. Increased sensitivity.",
+        "clinicalCorrelation": "This phenomenon explains why some tissues are very sensitive to low hormone concentrations."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_083",
+      "questionId": "pharma_pharmacodynamics_083",
+      "difficulty": 2,
+      "question": "A drug that has no effect by itself but enhances the effect of an endogenous neurotransmitter by binding to a site distinct from the neurotransmitter binding site is called:",
+      "image": null,
+      "options": [
+        {
+          "text": "Positive allosteric modulator",
+          "isCorrect": true,
+          "explanation": "PAMs bind to an allosteric site and increase the receptor's response to the orthosteric agonist without having an effect alone."
+        },
+        {
+          "text": "Orthosteric agonist",
+          "isCorrect": false,
+          "explanation": "Orthosteric agonists bind to the active site."
+        },
+        {
+          "text": "Competitive antagonist",
+          "isCorrect": false,
+          "explanation": "Competitive antagonists bind to the active site."
+        },
+        {
+          "text": "Inverse agonist",
+          "isCorrect": false,
+          "explanation": "Inverse agonists decrease basal activity."
+        },
+        {
+          "text": "Partial agonist",
+          "isCorrect": false,
+          "explanation": "Partial agonists have effect alone."
+        }
+      ],
+      "explanation": {
+        "overview": "Positive allosteric modulators (PAMs) do not activate the receptor directly but potentiate the effect of the endogenous agonist. Benzodiazepines at GABA-A are classic PAMs.",
+        "highYield": "PAM = no effect alone, enhances agonist effect. Example: benzodiazepines (enhance GABA).",
+        "clinicalCorrelation": "PAMs offer a safety advantage because they require the presence of the endogenous agonist."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_084",
+      "questionId": "pharma_pharmacodynamics_084",
+      "difficulty": 1,
+      "question": "The term 'idiosyncratic reaction' refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "A genetically determined abnormal response to a drug",
+          "isCorrect": true,
+          "explanation": "Idiosyncratic reactions are uncommon, unpredictable adverse effects often due to genetic variations in metabolism or immune responses."
+        },
+        {
+          "text": "A dose-related adverse effect",
+          "isCorrect": false,
+          "explanation": "That is a toxic effect."
+        },
+        {
+          "text": "A predictable side effect",
+          "isCorrect": false,
+          "explanation": "Idiosyncratic reactions are unpredictable."
+        },
+        {
+          "text": "An allergic reaction",
+          "isCorrect": false,
+          "explanation": "Allergy is immune-mediated; idiosyncrasy is broader."
+        },
+        {
+          "text": "A beneficial effect",
+          "isCorrect": false,
+          "explanation": "Idiosyncratic implies abnormal, usually harmful."
+        }
+      ],
+      "explanation": {
+        "overview": "Idiosyncratic drug reactions are abnormal, unpredictable responses that are not related to the pharmacological action of the drug. They may be due to genetic predisposition (e.g., G6PD deficiency, porphyria).",
+        "highYield": "Idiosyncratic = genetically determined unusual response, not dose-dependent. Example: primaquine-induced hemolysis in G6PD deficiency.",
+        "clinicalCorrelation": "Screen for G6PD deficiency before prescribing oxidant drugs like primaquine or dapsone."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_085",
+      "questionId": "pharma_pharmacodynamics_085",
+      "difficulty": 2,
+      "question": "Which of the following is an example of a drug acting via a nuclear receptor?",
+      "image": null,
+      "options": [
+        {
+          "text": "Dexamethasone (glucocorticoid receptor)",
+          "isCorrect": true,
+          "explanation": "Corticosteroids like dexamethasone bind to the intracellular glucocorticoid receptor, which translocates to the nucleus and modulates gene transcription."
+        },
+        {
+          "text": "Salbutamol",
+          "isCorrect": false,
+          "explanation": "Salbutamol acts at β2-adrenoceptors (GPCR)."
+        },
+        {
+          "text": "Atropine",
+          "isCorrect": false,
+          "explanation": "Atropine blocks muscarinic receptors (GPCR)."
+        },
+        {
+          "text": "Diazepam",
+          "isCorrect": false,
+          "explanation": "Diazepam is a PAM at GABA-A (ligand-gated ion channel)."
+        },
+        {
+          "text": "Insulin",
+          "isCorrect": false,
+          "explanation": "Insulin acts via receptor tyrosine kinase (enzyme-linked)."
+        }
+      ],
+      "explanation": {
+        "overview": "Nuclear receptors are ligand-activated transcription factors. Corticosteroids, mineralocorticoids, sex steroids, thyroid hormone, and vitamin D all act via nuclear receptors.",
+        "highYield": "Corticosteroids = nuclear receptors. Slow genomic effects (hours). Also have rapid non-genomic effects.",
+        "clinicalCorrelation": "Because effects involve gene transcription, clinical response to steroids is not immediate."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_086",
+      "questionId": "pharma_pharmacodynamics_086",
+      "difficulty": 2,
+      "question": "A patient develops tolerance to the analgesic effect of morphine. Which pharmacodynamic mechanism is most likely responsible?",
+      "image": null,
+      "options": [
+        {
+          "text": "Down-regulation and desensitization of μ-opioid receptors",
+          "isCorrect": true,
+          "explanation": "Chronic opioid exposure leads to receptor phosphorylation, β-arrestin recruitment, internalization, and down-regulation, reducing analgesic response."
+        },
+        {
+          "text": "Up-regulation of μ-opioid receptors",
+          "isCorrect": false,
+          "explanation": "Up-regulation would increase sensitivity."
+        },
+        {
+          "text": "Enhanced metabolism of morphine",
+          "isCorrect": false,
+          "explanation": "Metabolism is a pharmacokinetic tolerance mechanism, not the primary PD mechanism."
+        },
+        {
+          "text": "Increased production of endogenous opioids",
+          "isCorrect": false,
+          "explanation": "Endogenous opioids decrease with chronic opioid use."
+        },
+        {
+          "text": "Antibody formation against morphine",
+          "isCorrect": false,
+          "explanation": "Morphine does not typically elicit antibody responses."
+        }
+      ],
+      "explanation": {
+        "overview": "Pharmacodynamic tolerance to opioids involves adaptive changes at the receptor and post-receptor level, including desensitization (uncoupling of G-protein), receptor internalization, and down-regulation.",
+        "highYield": "Opioid tolerance: μ-receptor down-regulation, desensitization, and anti-opioid neuropeptide upregulation.",
+        "clinicalCorrelation": "Tolerance necessitates dose escalation. Rotating opioids can sometimes partially restore sensitivity."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_087",
+      "questionId": "pharma_pharmacodynamics_087",
+      "difficulty": 3,
+      "question": "What is the principal difference between a competitive antagonist and an inverse agonist when both bind to the same receptor?",
+      "image": null,
+      "options": [
+        {
+          "text": "An inverse agonist reduces basal receptor activity; a competitive antagonist does not affect basal activity",
+          "isCorrect": true,
+          "explanation": "A neutral competitive antagonist blocks agonist binding but has zero intrinsic activity and does not alter constitutive activity. An inverse agonist has negative intrinsic activity, reducing the receptor's basal signaling."
+        },
+        {
+          "text": "A competitive antagonist binds irreversibly; an inverse agonist binds reversibly",
+          "isCorrect": false,
+          "explanation": "Both can bind reversibly."
+        },
+        {
+          "text": "An inverse agonist is more potent",
+          "isCorrect": false,
+          "explanation": "Potency varies individually."
+        },
+        {
+          "text": "A competitive antagonist activates the receptor",
+          "isCorrect": false,
+          "explanation": "Antagonists do not activate."
+        },
+        {
+          "text": "There is no difference",
+          "isCorrect": false,
+          "explanation": "There is a fundamental difference in intrinsic activity."
+        }
+      ],
+      "explanation": {
+        "overview": "Competitive antagonists have zero efficacy and do not affect constitutive activity. Inverse agonists have negative efficacy and suppress basal receptor signaling.",
+        "highYield": "Antagonist: blocks agonist, no effect on basal activity. Inverse agonist: reduces basal activity. Both block agonists.",
+        "clinicalCorrelation": "Some β-blockers (e.g., carvedilol) have inverse agonist properties at β2 receptors, which may contribute to their effects."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_088",
+      "questionId": "pharma_pharmacodynamics_088",
+      "difficulty": 2,
+      "question": "Which second messenger is generated by the action of guanylyl cyclase?",
+      "image": null,
+      "options": [
+        {
+          "text": "cGMP",
+          "isCorrect": true,
+          "explanation": "Guanylyl cyclase converts GTP to cGMP. Soluble guanylyl cyclase is activated by NO; particulate guanylyl cyclase is a receptor for natriuretic peptides."
+        },
+        {
+          "text": "cAMP",
+          "isCorrect": false,
+          "explanation": "Adenylyl cyclase makes cAMP."
+        },
+        {
+          "text": "IP3",
+          "isCorrect": false,
+          "explanation": "Phospholipase C generates IP3."
+        },
+        {
+          "text": "DAG",
+          "isCorrect": false,
+          "explanation": "PLC generates DAG."
+        },
+        {
+          "text": "Calcium",
+          "isCorrect": false,
+          "explanation": "IP3 releases calcium, not directly generated by guanylyl cyclase."
+        }
+      ],
+      "explanation": {
+        "overview": "cGMP is synthesized by guanylyl cyclase (soluble, activated by NO; particulate, activated by ANP/BNP). It activates protein kinase G and is degraded by PDE5.",
+        "highYield": "Guanylyl cyclase → cGMP. NO → sGC → cGMP → vasodilation. ANP → pGC → cGMP → natriuresis.",
+        "clinicalCorrelation": "PDE5 inhibitors (sildenafil) increase cGMP, causing vasodilation for erectile dysfunction and pulmonary hypertension."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_089",
+      "questionId": "pharma_pharmacodynamics_089",
+      "difficulty": 2,
+      "question": "The phenomenon of 'first-dose hypotension' with prazosin is due to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Blockade of α1-adrenoceptors causing venodilation and reduced preload",
+          "isCorrect": true,
+          "explanation": "Prazosin blocks α1 receptors on veins and arteries, causing marked vasodilation and orthostatic hypotension, especially pronounced after the first dose."
+        },
+        {
+          "text": "Blockade of β1-adrenoceptors",
+          "isCorrect": false,
+          "explanation": "β1-blockade reduces heart rate but is not the mechanism."
+        },
+        {
+          "text": "Activation of α2-adrenoceptors",
+          "isCorrect": false,
+          "explanation": "Prazosin is an α1 antagonist."
+        },
+        {
+          "text": "Blockade of muscarinic receptors",
+          "isCorrect": false,
+          "explanation": "It is an adrenergic blocker."
+        },
+        {
+          "text": "Direct vasodilation via nitric oxide",
+          "isCorrect": false,
+          "explanation": "It acts via receptor blockade, not NO."
+        }
+      ],
+      "explanation": {
+        "overview": "α1-blockers like prazosin inhibit sympathetic vasoconstriction, causing vasodilation and a drop in blood pressure, particularly on standing. The first-dose effect is a pronounced orthostatic hypotension due to rapid venodilation.",
+        "highYield": "Prazosin = α1-blocker → vasodilation → first-dose syncope. Start low, titrate slow, give at bedtime.",
+        "clinicalCorrelation": "To minimize first-dose hypotension, initiate prazosin at a low dose and take at bedtime."
+      }
+    },
+    {
+      "id": "pharma_pharmacodynamics_090",
+      "questionId": "pharma_pharmacodynamics_090",
+      "difficulty": 2,
+      "question": "Which of the following best explains why β-blockers are effective in treating angina pectoris?",
+      "image": null,
+      "options": [
+        {
+          "text": "Decreased heart rate and contractility reduce myocardial oxygen demand",
+          "isCorrect": true,
+          "explanation": "β1-blockade reduces heart rate, contractility, and systolic wall tension, decreasing myocardial oxygen consumption."
+        },
+        {
+          "text": "Coronary vasodilation",
+          "isCorrect": false,
+          "explanation": "β-blockers may actually cause coronary vasoconstriction (unopposed α)."
+        },
+        {
+          "text": "Increased cardiac output",
+          "isCorrect": false,
+          "explanation": "Cardiac output decreases."
+        },
+        {
+          "text": "Reduction in blood volume",
+          "isCorrect": false,
+          "explanation": "Not a primary mechanism."
+        },
+        {
+          "text": "Increased heart rate",
+          "isCorrect": false,
+          "explanation": "They decrease heart rate."
+        }
+      ],
+      "explanation": {
+        "overview": "β-blockers reduce the determinants of myocardial oxygen demand (heart rate, contractility, afterload), improving the balance between oxygen supply and demand in ischemic heart disease.",
+        "highYield": "β-blockers for angina: ↓ HR, ↓ contractility → ↓ O2 demand.",
+        "clinicalCorrelation": "β-blockers improve survival post-MI by reducing myocardial workload and arrhythmias."
+      }
+    }
+  ]
+}

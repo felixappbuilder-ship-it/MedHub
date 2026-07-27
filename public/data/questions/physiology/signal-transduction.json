@@ -1,0 +1,3422 @@
+[
+  {
+    "questionId": "signal_transduction_001",
+    "difficulty": 1,
+    "question": "Signal transduction refers to the process by which:",
+    "image": null,
+    "options": [
+      {
+        "text": "An extracellular signal is converted into an intracellular response",
+        "isCorrect": true,
+        "explanation": "Signal transduction describes the entire cascade from receptor activation to cellular changes."
+      },
+      {
+        "text": "Genes are transcribed",
+        "isCorrect": false,
+        "explanation": "Transcription is a possible downstream outcome, not the definition of signal transduction."
+      },
+      {
+        "text": "Proteins are synthesized",
+        "isCorrect": false,
+        "explanation": "Protein synthesis may be regulated by signaling but is not the process itself."
+      },
+      {
+        "text": "ATP is produced",
+        "isCorrect": false,
+        "explanation": "ATP production is part of metabolism, not signal transduction."
+      },
+      {
+        "text": "Cells divide",
+        "isCorrect": false,
+        "explanation": "Cell division can be a result of signal transduction but does not define it."
+      }
+    ],
+    "explanation": {
+      "overview": "Signal transduction is the process by which an extracellular chemical or physical signal is received by a receptor and converted into a series of intracellular events, ultimately leading to a specific cellular response such as altered metabolism, gene expression, or cell movement.",
+      "highYield": "Signal transduction = external signal → intracellular response.",
+      "clinicalCorrelation": "Defects in signal transduction (e.g., oncogenic mutations in Ras, defective insulin signaling) underlie many diseases including cancer and diabetes."
+    }
+  },
+  {
+    "questionId": "signal_transduction_002",
+    "difficulty": 1,
+    "question": "Which of the following is NOT a common type of cell-surface receptor?",
+    "image": null,
+    "options": [
+      {
+        "text": "G protein-coupled receptor (GPCR)",
+        "isCorrect": false,
+        "explanation": "GPCRs are the largest family of cell-surface receptors."
+      },
+      {
+        "text": "Receptor tyrosine kinase (RTK)",
+        "isCorrect": false,
+        "explanation": "RTKs are cell-surface receptors with intrinsic kinase activity."
+      },
+      {
+        "text": "Ion channel-linked receptor",
+        "isCorrect": false,
+        "explanation": "Ligand-gated ion channels are membrane-bound receptors."
+      },
+      {
+        "text": "Intracellular receptor",
+        "isCorrect": true,
+        "explanation": "Intracellular receptors (e.g., steroid receptors) are located inside the cell, not on the surface."
+      },
+      {
+        "text": "Cytokine receptor",
+        "isCorrect": false,
+        "explanation": "Cytokine receptors are cell-surface receptors associated with JAK kinases."
+      }
+    ],
+    "explanation": {
+      "overview": "Cell-surface receptors include GPCRs, RTKs, ion channel-linked receptors, and cytokine receptors. Intracellular receptors, such as nuclear hormone receptors, are located in the cytoplasm or nucleus and are not embedded in the plasma membrane.",
+      "highYield": "Intracellular receptors are NOT cell-surface receptors.",
+      "clinicalCorrelation": "Steroid hormones like cortisol act via intracellular receptors, while peptide hormones like insulin bind to cell-surface RTKs."
+    }
+  },
+  {
+    "questionId": "signal_transduction_003",
+    "difficulty": 1,
+    "question": "G protein-coupled receptors (GPCRs) are characterized by:",
+    "image": null,
+    "options": [
+      {
+        "text": "Seven transmembrane α‑helices",
+        "isCorrect": true,
+        "explanation": "GPCRs have a serpentine structure with seven membrane-spanning alpha-helical domains."
+      },
+      {
+        "text": "Single transmembrane domain",
+        "isCorrect": false,
+        "explanation": "Single-pass receptors include RTKs and some cytokine receptors."
+      },
+      {
+        "text": "Enzymatic activity",
+        "isCorrect": false,
+        "explanation": "GPCRs lack intrinsic enzyme activity; they couple to G proteins."
+      },
+      {
+        "text": "Ion channel pore",
+        "isCorrect": false,
+        "explanation": "Ion channel pores are found in ligand-gated ion channels."
+      },
+      {
+        "text": "Nuclear localization",
+        "isCorrect": false,
+        "explanation": "Nuclear localization is a feature of intracellular receptors."
+      }
+    ],
+    "explanation": {
+      "overview": "GPCRs are the largest receptor family, with a common architecture of seven transmembrane α-helices. Ligand binding induces a conformational change that allows the receptor to act as a guanine nucleotide exchange factor (GEF) for heterotrimeric G proteins.",
+      "highYield": "GPCR = 7 transmembrane helices.",
+      "clinicalCorrelation": "Approximately 30% of marketed drugs target GPCRs, including beta-blockers, antihistamines, and opioids."
+    }
+  },
+  {
+    "questionId": "signal_transduction_004",
+    "difficulty": 2,
+    "question": "Upon activation, a GPCR catalyzes:",
+    "image": null,
+    "options": [
+      {
+        "text": "GDP-GTP exchange on the Gα subunit",
+        "isCorrect": true,
+        "explanation": "The activated GPCR acts as a GEF, promoting GDP release and GTP binding to the Gα subunit."
+      },
+      {
+        "text": "Phosphorylation of the receptor",
+        "isCorrect": false,
+        "explanation": "Phosphorylation is done by GRKs, not the receptor itself."
+      },
+      {
+        "text": "Hydrolysis of ATP",
+        "isCorrect": false,
+        "explanation": "ATP hydrolysis is not part of GPCR signaling."
+      },
+      {
+        "text": "Production of cAMP",
+        "isCorrect": false,
+        "explanation": "cAMP production is carried out by adenylyl cyclase, a downstream effector."
+      },
+      {
+        "text": "Release of Ca2+",
+        "isCorrect": false,
+        "explanation": "Ca2+ release is downstream of PLC/IP3, not a direct GPCR enzymatic activity."
+      }
+    ],
+    "explanation": {
+      "overview": "Ligand‑bound GPCRs facilitate the exchange of GDP for GTP on the α‑subunit of heterotrimeric G proteins. This causes the G protein to dissociate into active Gα‑GTP and Gβγ, both of which can regulate effectors.",
+      "highYield": "GPCR = GEF for Gα (GDP→GTP).",
+      "clinicalCorrelation": "Cholera and pertussis toxins alter GTPase activity of Gα subunits, leading to persistent signaling."
+    }
+  },
+  {
+    "questionId": "signal_transduction_005",
+    "difficulty": 1,
+    "question": "The heterotrimeric G protein consists of which subunits?",
+    "image": null,
+    "options": [
+      {
+        "text": "α, β, γ",
+        "isCorrect": true,
+        "explanation": "Heterotrimeric G proteins are composed of α, β, and γ subunits; the βγ complex functions as a dimer."
+      },
+      {
+        "text": "α, β, δ",
+        "isCorrect": false,
+        "explanation": "There is no δ subunit in heterotrimeric G proteins."
+      },
+      {
+        "text": "α, γ, ε",
+        "isCorrect": false,
+        "explanation": "The ε subunit is not part of the standard G protein."
+      },
+      {
+        "text": "β, γ, δ",
+        "isCorrect": false,
+        "explanation": "The α subunit is essential; no δ."
+      },
+      {
+        "text": "α, β, ε",
+        "isCorrect": false,
+        "explanation": "ε is not a G protein subunit."
+      }
+    ],
+    "explanation": {
+      "overview": "Heterotrimeric G proteins consist of an α subunit (which binds and hydrolyzes GTP) and a tightly associated βγ dimer. In the inactive state, the α subunit binds GDP; upon activation, it exchanges GDP for GTP and dissociates from βγ.",
+      "highYield": "G protein = α + βγ subunits.",
+      "clinicalCorrelation": "Different Gα subtypes (Gαs, Gαi, Gαq, Gα12/13) couple receptors to distinct effectors."
+    }
+  },
+  {
+    "questionId": "signal_transduction_006",
+    "difficulty": 2,
+    "question": "Which of the following is an effector enzyme activated by Gαs?",
+    "image": null,
+    "options": [
+      {
+        "text": "Adenylyl cyclase",
+        "isCorrect": true,
+        "explanation": "Gαs stimulates adenylyl cyclase, increasing cAMP production."
+      },
+      {
+        "text": "Phospholipase C",
+        "isCorrect": false,
+        "explanation": "PLC is activated by Gαq, not Gαs."
+      },
+      {
+        "text": "Guanylyl cyclase",
+        "isCorrect": false,
+        "explanation": "Guanylyl cyclase is activated by nitric oxide or natriuretic peptides."
+      },
+      {
+        "text": "Protein kinase A",
+        "isCorrect": false,
+        "explanation": "PKA is activated by cAMP, not directly by Gαs."
+      },
+      {
+        "text": "Phosphodiesterase",
+        "isCorrect": false,
+        "explanation": "Phosphodiesterases degrade cyclic nucleotides; they are not effectors of Gαs."
+      }
+    ],
+    "explanation": {
+      "overview": "Gαs (stimulatory G protein) activates adenylyl cyclase, which converts ATP to cAMP. This second messenger then activates PKA, leading to phosphorylation of various target proteins.",
+      "highYield": "Gαs → adenylyl cyclase → cAMP ↑.",
+      "clinicalCorrelation": "β‑adrenergic receptors use Gαs to increase heart rate and contractility."
+    }
+  },
+  {
+    "questionId": "signal_transduction_007",
+    "difficulty": 2,
+    "question": "Gαi inhibits which enzyme?",
+    "image": null,
+    "options": [
+      {
+        "text": "Adenylyl cyclase",
+        "isCorrect": true,
+        "explanation": "Gαi directly inhibits adenylyl cyclase, reducing cAMP levels."
+      },
+      {
+        "text": "Phospholipase C",
+        "isCorrect": false,
+        "explanation": "PLC is regulated by Gαq, not inhibited by Gαi."
+      },
+      {
+        "text": "Protein kinase A",
+        "isCorrect": false,
+        "explanation": "PKA is downstream of cAMP; Gαi reduces cAMP, indirectly reducing PKA."
+      },
+      {
+        "text": "Guanylyl cyclase",
+        "isCorrect": false,
+        "explanation": "Guanylyl cyclase is not a target of Gαi."
+      },
+      {
+        "text": "Phospholipase A2",
+        "isCorrect": false,
+        "explanation": "PLA2 is regulated by other pathways."
+      }
+    ],
+    "explanation": {
+      "overview": "Gαi (inhibitory G protein) opposes the action of Gαs by inhibiting adenylyl cyclase, leading to a decrease in intracellular cAMP. Examples include α2‑adrenergic receptors and M2 muscarinic receptors.",
+      "highYield": "Gαi → inhibits adenylyl cyclase → cAMP ↓.",
+      "clinicalCorrelation": "Pertussis toxin ADP‑ribosylates Gαi, uncoupling it from receptors and increasing cAMP in affected cells."
+    }
+  },
+  {
+    "questionId": "signal_transduction_008",
+    "difficulty": 1,
+    "question": "The second messenger cAMP is produced from:",
+    "image": null,
+    "options": [
+      {
+        "text": "ATP",
+        "isCorrect": true,
+        "explanation": "Adenylyl cyclase catalyzes the cyclization of ATP to form cAMP and pyrophosphate."
+      },
+      {
+        "text": "GTP",
+        "isCorrect": false,
+        "explanation": "GTP is the precursor for cGMP, not cAMP."
+      },
+      {
+        "text": "ADP",
+        "isCorrect": false,
+        "explanation": "ADP is not a direct precursor of cAMP."
+      },
+      {
+        "text": "AMP",
+        "isCorrect": false,
+        "explanation": "AMP is the breakdown product of cAMP by phosphodiesterase."
+      },
+      {
+        "text": "cGMP",
+        "isCorrect": false,
+        "explanation": "cGMP is a distinct cyclic nucleotide from GTP."
+      }
+    ],
+    "explanation": {
+      "overview": "Adenylyl cyclase converts adenosine triphosphate (ATP) into cyclic adenosine monophosphate (cAMP), releasing pyrophosphate. cAMP is a ubiquitous second messenger that activates PKA.",
+      "highYield": "cAMP is made from ATP by adenylyl cyclase.",
+      "clinicalCorrelation": "Drugs like β‑agonists increase cAMP in bronchial smooth muscle, causing bronchodilation."
+    }
+  },
+  {
+    "questionId": "signal_transduction_009",
+    "difficulty": 1,
+    "question": "Protein kinase A (PKA) is activated by:",
+    "image": null,
+    "options": [
+      {
+        "text": "cAMP",
+        "isCorrect": true,
+        "explanation": "cAMP binds to the regulatory subunits of PKA, releasing active catalytic subunits."
+      },
+      {
+        "text": "cGMP",
+        "isCorrect": false,
+        "explanation": "cGMP activates PKG, not PKA."
+      },
+      {
+        "text": "Ca2+",
+        "isCorrect": false,
+        "explanation": "Ca2+ activates CaM kinases and PKC."
+      },
+      {
+        "text": "DAG",
+        "isCorrect": false,
+        "explanation": "DAG activates PKC."
+      },
+      {
+        "text": "IP3",
+        "isCorrect": false,
+        "explanation": "IP3 releases Ca2+ but does not directly activate PKA."
+      }
+    ],
+    "explanation": {
+      "overview": "PKA is a tetrameric enzyme consisting of two regulatory (R) and two catalytic (C) subunits. When cAMP binds to the R subunits, the catalytic subunits are released and become active, phosphorylating serine/threonine residues on target proteins.",
+      "highYield": "cAMP binds R subunits → free catalytic subunits = active PKA.",
+      "clinicalCorrelation": "PKA phosphorylates enzymes in glycogen metabolism, contractile proteins, and transcription factors like CREB."
+    }
+  },
+  {
+    "questionId": "signal_transduction_010",
+    "difficulty": 2,
+    "question": "Gαq activates which effector?",
+    "image": null,
+    "options": [
+      {
+        "text": "Phospholipase C (PLC)",
+        "isCorrect": true,
+        "explanation": "Gαq stimulates phospholipase C‑β, which cleaves PIP2 into IP3 and DAG."
+      },
+      {
+        "text": "Adenylyl cyclase",
+        "isCorrect": false,
+        "explanation": "Adenylyl cyclase is regulated by Gαs and Gαi."
+      },
+      {
+        "text": "Guanylyl cyclase",
+        "isCorrect": false,
+        "explanation": "Guanylyl cyclase is activated by NO or natriuretic peptides."
+      },
+      {
+        "text": "Phospholipase A2",
+        "isCorrect": false,
+        "explanation": "PLA2 is not the primary target of Gαq."
+      },
+      {
+        "text": "PI3 kinase",
+        "isCorrect": false,
+        "explanation": "PI3K is mainly downstream of RTKs and some GPCRs via Gβγ."
+      }
+    ],
+    "explanation": {
+      "overview": "Gαq activates phospholipase C‑β, which hydrolyzes phosphatidylinositol 4,5‑bisphosphate (PIP2) to produce the second messengers inositol trisphosphate (IP3) and diacylglycerol (DAG). IP3 releases Ca2+ from the ER; DAG activates PKC.",
+      "highYield": "Gαq → PLC → IP3 + DAG.",
+      "clinicalCorrelation": "α1‑adrenergic receptors signal through Gαq, causing vasoconstriction via IP3‑mediated Ca2+ release."
+    }
+  },
+  {
+    "questionId": "signal_transduction_011",
+    "difficulty": 1,
+    "question": "Phospholipase C cleaves phosphatidylinositol 4,5-bisphosphate (PIP2) into:",
+    "image": null,
+    "options": [
+      {
+        "text": "IP3 and DAG",
+        "isCorrect": true,
+        "explanation": "PLC hydrolyzes PIP2 to generate inositol 1,4,5‑trisphosphate (IP3) and diacylglycerol (DAG)."
+      },
+      {
+        "text": "cAMP and AMP",
+        "isCorrect": false,
+        "explanation": "cAMP and AMP are related to adenylyl cyclase and phosphodiesterase."
+      },
+      {
+        "text": "ATP and Pi",
+        "isCorrect": false,
+        "explanation": "ATP hydrolysis is unrelated."
+      },
+      {
+        "text": "Ca2+ and calmodulin",
+        "isCorrect": false,
+        "explanation": "Ca2+ and calmodulin are effectors, not cleavage products."
+      },
+      {
+        "text": "Arachidonic acid and lysophospholipid",
+        "isCorrect": false,
+        "explanation": "Arachidonic acid is released by PLA2, not PLC."
+      }
+    ],
+    "explanation": {
+      "overview": "PIP2 is a membrane phospholipid. Cleavage by PLC yields water‑soluble IP3 (which diffuses to the ER to release Ca2+) and membrane‑bound DAG (which activates PKC).",
+      "highYield": "PLC → PIP2 → IP3 + DAG.",
+      "clinicalCorrelation": "Lithium, used in bipolar disorder, inhibits inositol monophosphatase and depletes PIP2, reducing IP3/DAG signaling."
+    }
+  },
+  {
+    "questionId": "signal_transduction_012",
+    "difficulty": 1,
+    "question": "IP3 causes release of Ca2+ from which organelle?",
+    "image": null,
+    "options": [
+      {
+        "text": "Endoplasmic reticulum",
+        "isCorrect": true,
+        "explanation": "IP3 binds to IP3 receptors on the ER, opening Ca2+ release channels."
+      },
+      {
+        "text": "Mitochondria",
+        "isCorrect": false,
+        "explanation": "Mitochondria take up Ca2+ but are not the primary IP3‑sensitive store."
+      },
+      {
+        "text": "Golgi apparatus",
+        "isCorrect": false,
+        "explanation": "The Golgi is not a major Ca2+ store responsive to IP3."
+      },
+      {
+        "text": "Lysosomes",
+        "isCorrect": false,
+        "explanation": "Lysosomes store Ca2+ but release is mainly via NAADP or other channels."
+      },
+      {
+        "text": "Nucleus",
+        "isCorrect": false,
+        "explanation": "The nuclear envelope has IP3 receptors, but the main store is the ER."
+      }
+    ],
+    "explanation": {
+      "overview": "IP3 binds to ligand‑gated Ca2+ channels on the endoplasmic reticulum membrane, causing them to open and release stored Ca2+ into the cytoplasm. This Ca2+ signal then activates numerous Ca2+-dependent processes.",
+      "highYield": "IP3 → ER → Ca2+ release.",
+      "clinicalCorrelation": "Dysregulated Ca2+ signaling contributes to cardiac hypertrophy and arrhythmias."
+    }
+  },
+  {
+    "questionId": "signal_transduction_013",
+    "difficulty": 2,
+    "question": "Diacylglycerol (DAG) activates which protein kinase?",
+    "image": null,
+    "options": [
+      {
+        "text": "Protein kinase C (PKC)",
+        "isCorrect": true,
+        "explanation": "DAG, together with Ca2+, binds and activates PKC at the plasma membrane."
+      },
+      {
+        "text": "Protein kinase A",
+        "isCorrect": false,
+        "explanation": "PKA is activated by cAMP, not DAG."
+      },
+      {
+        "text": "Protein kinase G",
+        "isCorrect": false,
+        "explanation": "PKG is activated by cGMP."
+      },
+      {
+        "text": "Calmodulin kinase",
+        "isCorrect": false,
+        "explanation": "CaM kinase is activated by Ca2+/calmodulin."
+      },
+      {
+        "text": "MAP kinase",
+        "isCorrect": false,
+        "explanation": "MAP kinases are activated by phosphorylation cascades."
+      }
+    ],
+    "explanation": {
+      "overview": "DAG remains in the membrane and, with increased Ca2+, recruits and activates protein kinase C (PKC). PKC phosphorylates serine/threonine residues on many target proteins, influencing cell growth, differentiation, and secretion.",
+      "highYield": "DAG + Ca2+ → PKC.",
+      "clinicalCorrelation": "Phorbol esters, tumour promoters, mimic DAG and persistently activate PKC."
+    }
+  },
+  {
+    "questionId": "signal_transduction_014",
+    "difficulty": 2,
+    "question": "Calmodulin is a calcium-binding protein that activates:",
+    "image": null,
+    "options": [
+      {
+        "text": "CaM kinase",
+        "isCorrect": true,
+        "explanation": "Ca2+/calmodulin binds and activates Ca2+/calmodulin-dependent protein kinases (CaMKs)."
+      },
+      {
+        "text": "PKA",
+        "isCorrect": false,
+        "explanation": "PKA is cAMP‑dependent, not calmodulin‑dependent."
+      },
+      {
+        "text": "PKC",
+        "isCorrect": false,
+        "explanation": "PKC is activated by Ca2+ and DAG, but calmodulin is not its direct activator."
+      },
+      {
+        "text": "PLC",
+        "isCorrect": false,
+        "explanation": "PLC is activated by G proteins, not by calmodulin."
+      },
+      {
+        "text": "Adenylyl cyclase",
+        "isCorrect": false,
+        "explanation": "Adenylyl cyclase is regulated by G proteins and Ca2+/calmodulin in some isoforms, but the canonical CaM target is CaM kinase."
+      }
+    ],
+    "explanation": {
+      "overview": "Calmodulin (CaM) is a ubiquitous Ca2+-binding protein. When Ca2+ levels rise, Ca2+/CaM complex activates CaM kinases, which phosphorylate substrates such as CREB, ion channels, and metabolic enzymes.",
+      "highYield": "Ca2+ → calmodulin → CaM kinase.",
+      "clinicalCorrelation": "CaM kinase II is crucial for learning and memory; its dysfunction is implicated in cardiac arrhythmias."
+    }
+  },
+  {
+    "questionId": "signal_transduction_015",
+    "difficulty": 2,
+    "question": "Receptor tyrosine kinases (RTKs) dimerize and autophosphorylate upon ligand binding. This creates docking sites for:",
+    "image": null,
+    "options": [
+      {
+        "text": "SH2 domain-containing proteins",
+        "isCorrect": true,
+        "explanation": "Phosphotyrosine residues are recognized by SH2 domains found in proteins like Grb2, PI3K, and PLCγ."
+      },
+      {
+        "text": "G proteins",
+        "isCorrect": false,
+        "explanation": "G proteins are activated by GPCRs, not RTKs."
+      },
+      {
+        "text": "Adenylyl cyclase",
+        "isCorrect": false,
+        "explanation": "Adenylyl cyclase is a GPCR effector."
+      },
+      {
+        "text": "Phospholipase A2",
+        "isCorrect": false,
+        "explanation": "PLA2 is not a primary RTK‑binding partner."
+      },
+      {
+        "text": "Protein kinase A",
+        "isCorrect": false,
+        "explanation": "PKA is activated by cAMP, not by RTK docking."
+      }
+    ],
+    "explanation": {
+      "overview": "Ligand‑induced RTK dimerization activates its kinase domain, leading to trans‑autophosphorylation of specific tyrosine residues. These phosphotyrosines serve as docking sites for downstream signaling proteins containing SH2 (Src Homology 2) or PTB domains.",
+      "highYield": "RTK autophosphorylation → SH2 protein docking.",
+      "clinicalCorrelation": "Imatinib (Gleevec) is an RTK inhibitor that blocks BCR‑ABL in chronic myeloid leukaemia."
+    }
+  },
+  {
+    "questionId": "signal_transduction_016",
+    "difficulty": 2,
+    "question": "Ras is a small GTPase that is activated by:",
+    "image": null,
+    "options": [
+      {
+        "text": "GEFs (e.g., Sos)",
+        "isCorrect": true,
+        "explanation": "Guanine nucleotide exchange factors (GEFs) like Sos promote GDP release and GTP binding to Ras."
+      },
+      {
+        "text": "GAPs",
+        "isCorrect": false,
+        "explanation": "GAPs accelerate GTP hydrolysis, inactivating Ras."
+      },
+      {
+        "text": "RTK phosphorylation",
+        "isCorrect": false,
+        "explanation": "RTK phosphorylation recruits Grb2‑Sos, which activates Ras, but does not directly activate Ras."
+      },
+      {
+        "text": "Phospholipase C",
+        "isCorrect": false,
+        "explanation": "PLC is an effector downstream of Gαq."
+      },
+      {
+        "text": "Protein kinase C",
+        "isCorrect": false,
+        "explanation": "PKC does not directly activate Ras."
+      }
+    ],
+    "explanation": {
+      "overview": "Ras cycles between an inactive GDP‑bound state and an active GTP‑bound state. Activation is mediated by GEFs (e.g., Sos), which are recruited to the membrane by adaptor proteins like Grb2 upon RTK stimulation. GAPs inactivate Ras.",
+      "highYield": "Ras ON = GEF (Sos), OFF = GAP.",
+      "clinicalCorrelation": "Activating Ras mutations (e.g., G12V) are found in ~30% of human cancers."
+    }
+  },
+  {
+    "questionId": "signal_transduction_017",
+    "difficulty": 2,
+    "question": "The MAP kinase cascade is typically activated by:",
+    "image": null,
+    "options": [
+      {
+        "text": "Ras",
+        "isCorrect": true,
+        "explanation": "Active Ras‑GTP recruits and activates Raf (MAPKKK), initiating the MAPK phosphorylation cascade."
+      },
+      {
+        "text": "cAMP",
+        "isCorrect": false,
+        "explanation": "cAMP activates PKA, not the classic MAPK cascade."
+      },
+      {
+        "text": "Ca2+",
+        "isCorrect": false,
+        "explanation": "Ca2+ can activate some MAPK pathways, but the classic activation is via Ras."
+      },
+      {
+        "text": "DAG",
+        "isCorrect": false,
+        "explanation": "DAG activates PKC, not the Raf‑MEK‑ERK cascade directly."
+      },
+      {
+        "text": "IP3",
+        "isCorrect": false,
+        "explanation": "IP3 releases Ca2+, not directly activating MAPK."
+      }
+    ],
+    "explanation": {
+      "overview": "The prototypical MAP kinase pathway involves Ras → Raf (MAPKKK) → MEK (MAPKK) → ERK (MAPK). ERK phosphorylates cytoplasmic targets and transcription factors, promoting cell proliferation and differentiation.",
+      "highYield": "Ras → Raf → MEK → ERK (MAPK cascade).",
+      "clinicalCorrelation": "BRAF inhibitors (vemurafenib) are used in melanoma with BRAF V600E mutations."
+    }
+  },
+  {
+    "questionId": "signal_transduction_018",
+    "difficulty": 2,
+    "question": "Which of the following is a second messenger generated by receptor guanylyl cyclases?",
+    "image": null,
+    "options": [
+      {
+        "text": "cGMP",
+        "isCorrect": true,
+        "explanation": "Guanylyl cyclases (particulate or soluble) produce cGMP from GTP."
+      },
+      {
+        "text": "cAMP",
+        "isCorrect": false,
+        "explanation": "cAMP is made by adenylyl cyclase."
+      },
+      {
+        "text": "Ca2+",
+        "isCorrect": false,
+        "explanation": "Ca2+ is released from stores, not made by cyclases."
+      },
+      {
+        "text": "IP3",
+        "isCorrect": false,
+        "explanation": "IP3 is produced by PLC."
+      },
+      {
+        "text": "DAG",
+        "isCorrect": false,
+        "explanation": "DAG is also a product of PLC."
+      }
+    ],
+    "explanation": {
+      "overview": "Guanylyl cyclases convert GTP to cGMP. Particulate (membrane) guanylyl cyclases are receptors for natriuretic peptides; soluble guanylyl cyclase is activated by nitric oxide (NO). cGMP activates protein kinase G (PKG).",
+      "highYield": "Guanylyl cyclase → cGMP.",
+      "clinicalCorrelation": "Nitrates (NO donors) and sildenafil (PDE5 inhibitor) act via the cGMP pathway to cause vasodilation."
+    }
+  },
+  {
+    "questionId": "signal_transduction_019",
+    "difficulty": 2,
+    "question": "Nitric oxide (NO) signals by activating:",
+    "image": null,
+    "options": [
+      {
+        "text": "Soluble guanylyl cyclase",
+        "isCorrect": true,
+        "explanation": "NO binds to the heme group of soluble guanylyl cyclase, stimulating cGMP production."
+      },
+      {
+        "text": "Adenylyl cyclase",
+        "isCorrect": false,
+        "explanation": "Adenylyl cyclase is activated by Gαs."
+      },
+      {
+        "text": "Phospholipase C",
+        "isCorrect": false,
+        "explanation": "PLC is activated by Gαq."
+      },
+      {
+        "text": "Protein kinase A",
+        "isCorrect": false,
+        "explanation": "PKA is activated by cAMP."
+      },
+      {
+        "text": "Receptor tyrosine kinase",
+        "isCorrect": false,
+        "explanation": "RTKs are cell‑surface receptors for growth factors."
+      }
+    ],
+    "explanation": {
+      "overview": "NO is a gaseous signaling molecule that diffuses across membranes and binds to the heme iron of soluble guanylyl cyclase (sGC). This activates sGC, increasing cGMP, which relaxes smooth muscle.",
+      "highYield": "NO → soluble guanylyl cyclase → cGMP ↑.",
+      "clinicalCorrelation": "Glyceryl trinitrate (nitroglycerin) is an NO donor used to treat angina."
+    }
+  },
+  {
+    "questionId": "signal_transduction_020",
+    "difficulty": 2,
+    "question": "Phosphoinositide 3-kinase (PI3K) phosphorylates PIP2 to produce:",
+    "image": null,
+    "options": [
+      {
+        "text": "PIP3",
+        "isCorrect": true,
+        "explanation": "PI3K adds a phosphate to the 3‑position of the inositol ring of PIP2, generating PIP3."
+      },
+      {
+        "text": "IP3",
+        "isCorrect": false,
+        "explanation": "IP3 is a soluble messenger from PLC cleavage."
+      },
+      {
+        "text": "DAG",
+        "isCorrect": false,
+        "explanation": "DAG is a product of PLC."
+      },
+      {
+        "text": "PIP",
+        "isCorrect": false,
+        "explanation": "PIP is a less phosphorylated species."
+      },
+      {
+        "text": "Phosphatidic acid",
+        "isCorrect": false,
+        "explanation": "Phosphatidic acid is produced by phospholipase D."
+      }
+    ],
+    "explanation": {
+      "overview": "PI3K phosphorylates phosphatidylinositol 4,5‑bisphosphate (PIP2) to phosphatidylinositol 3,4,5‑trisphosphate (PIP3). PIP3 recruits pleckstrin homology (PH) domain‑containing proteins like Akt and PDK1 to the plasma membrane.",
+      "highYield": "PI3K → PIP2 → PIP3.",
+      "clinicalCorrelation": "PI3K pathway mutations are common in cancer; PTEN phosphatase opposes PI3K."
+    }
+  },
+  {
+    "questionId": "signal_transduction_021",
+    "difficulty": 2,
+    "question": "Akt (protein kinase B) promotes cell survival by:",
+    "image": null,
+    "options": [
+      {
+        "text": "Phosphorylating and inactivating pro-apoptotic proteins (e.g., Bad)",
+        "isCorrect": true,
+        "explanation": "Akt phosphorylates Bad, preventing it from binding and inhibiting Bcl‑2, thus promoting survival."
+      },
+      {
+        "text": "Activating caspases",
+        "isCorrect": false,
+        "explanation": "Caspase activation promotes apoptosis, not survival."
+      },
+      {
+        "text": "Increasing cAMP",
+        "isCorrect": false,
+        "explanation": "cAMP levels are regulated by adenylyl cyclase and phosphodiesterases."
+      },
+      {
+        "text": "Decreasing Ca2+",
+        "isCorrect": false,
+        "explanation": "Akt does not primarily regulate Ca2+."
+      },
+      {
+        "text": "Inhibiting protein synthesis",
+        "isCorrect": false,
+        "explanation": "Akt generally promotes anabolic processes, not inhibition."
+      }
+    ],
+    "explanation": {
+      "overview": "Akt (PKB) is a serine/threonine kinase activated by PIP3 and PDK1. It phosphorylates multiple targets to promote cell growth, proliferation, and survival, such as inactivating Bad, activating mTOR, and inhibiting GSK3β.",
+      "highYield": "Akt = survival kinase; phosphorylates Bad, inhibits apoptosis.",
+      "clinicalCorrelation": "Akt is hyperactivated in many tumours; PI3K/Akt/mTOR pathway is a target for anticancer drugs."
+    }
+  },
+  {
+    "questionId": "signal_transduction_022",
+    "difficulty": 2,
+    "question": "The diagram shows a typical GPCR signaling pathway. What is molecule X?",
+    "image": "gpcr_cAMP_pathway.png",
+    "options": [
+      {
+        "text": "GTP",
+        "isCorrect": false,
+        "explanation": "GTP is bound by Gα, not the second messenger in this pathway."
+      },
+      {
+        "text": "GDP",
+        "isCorrect": false,
+        "explanation": "GDP is the inactive form bound to Gα before exchange."
+      },
+      {
+        "text": "cAMP",
+        "isCorrect": true,
+        "explanation": "Molecule X is cAMP, the second messenger produced by adenylyl cyclase in the diagram."
+      },
+      {
+        "text": "ATP",
+        "isCorrect": false,
+        "explanation": "ATP is the substrate, not the product shown as X."
+      },
+      {
+        "text": "Pi",
+        "isCorrect": false,
+        "explanation": "Inorganic phosphate is not the second messenger."
+      }
+    ],
+    "explanation": {
+      "overview": "In the depicted GPCR pathway, activated Gαs stimulates adenylyl cyclase, which converts ATP to cAMP (molecule X). cAMP activates PKA, leading to downstream effects.",
+      "highYield": "GPCR → Gs → adenylyl cyclase → cAMP.",
+      "clinicalCorrelation": "This pathway is the basis for β‑agonist action in asthma and heart failure."
+    }
+  },
+  {
+    "questionId": "signal_transduction_023",
+    "difficulty": 2,
+    "question": "Which of the following is a characteristic of β‑adrenergic receptor signaling?",
+    "image": null,
+    "options": [
+      {
+        "text": "Gαs activation → cAMP increase → PKA activation",
+        "isCorrect": true,
+        "explanation": "β‑adrenergic receptors couple to Gαs, activating adenylyl cyclase, raising cAMP, and activating PKA."
+      },
+      {
+        "text": "Gαi activation → cAMP decrease",
+        "isCorrect": false,
+        "explanation": "α2‑adrenergic receptors couple to Gαi, not β‑receptors."
+      },
+      {
+        "text": "Gαq activation → IP3/DAG increase",
+        "isCorrect": false,
+        "explanation": "α1‑adrenergic receptors couple to Gαq."
+      },
+      {
+        "text": "Receptor tyrosine kinase activity",
+        "isCorrect": false,
+        "explanation": "Adrenergic receptors are GPCRs, not RTKs."
+      },
+      {
+        "text": "Ion channel opening",
+        "isCorrect": false,
+        "explanation": "β‑adrenoceptors signal through G proteins, not as ion channels."
+      }
+    ],
+    "explanation": {
+      "overview": "β‑adrenergic receptors (β1, β2, β3) are GPCRs coupled to Gαs. Stimulation increases cAMP and activates PKA, which phosphorylates targets such as L‑type Ca2+ channels in the heart (positive chronotropic/inotropic effect).",
+      "highYield": "β‑receptors → Gs → cAMP → PKA.",
+      "clinicalCorrelation": "Beta‑blockers (e.g., propranolol) antagonize these receptors, reducing heart rate and blood pressure."
+    }
+  },
+  {
+    "questionId": "signal_transduction_024",
+    "difficulty": 2,
+    "question": "Cholera toxin causes prolonged activation of Gαs by:",
+    "image": null,
+    "options": [
+      {
+        "text": "ADP‑ribosylating Gαs, inhibiting its GTPase activity",
+        "isCorrect": true,
+        "explanation": "Cholera toxin transfers ADP‑ribose to Gαs, preventing GTP hydrolysis and locking it in the active state."
+      },
+      {
+        "text": "Increasing cAMP degradation",
+        "isCorrect": false,
+        "explanation": "cAMP is not degraded; the effect is sustained activation of adenylyl cyclase."
+      },
+      {
+        "text": "Blocking receptor binding",
+        "isCorrect": false,
+        "explanation": "The toxin acts on Gαs, not the receptor."
+      },
+      {
+        "text": "Activating phospholipase C",
+        "isCorrect": false,
+        "explanation": "PLC is not the target."
+      },
+      {
+        "text": "Increasing intracellular Ca2+",
+        "isCorrect": false,
+        "explanation": "The primary effect is cAMP elevation, not Ca2+."
+      }
+    ],
+    "explanation": {
+      "overview": "Cholera toxin ADP‑ribosylates Gαs at an arginine residue, inhibiting its intrinsic GTPase activity. This results in persistent activation of adenylyl cyclase, high cAMP levels, and massive secretion of Cl‑ and water into the intestinal lumen, causing profuse diarrhoea.",
+      "highYield": "Cholera toxin → ADP‑ribosylates Gαs → GTPase OFF → cAMP stays high.",
+      "clinicalCorrelation": "Cholera leads to life‑threatening dehydration due to cAMP‑driven chloride secretion."
+    }
+  },
+  {
+    "questionId": "signal_transduction_025",
+    "difficulty": 2,
+    "question": "Pertussis toxin affects Gαi by:",
+    "image": null,
+    "options": [
+      {
+        "text": "ADP‑ribosylating it, preventing interaction with receptor",
+        "isCorrect": true,
+        "explanation": "Pertussis toxin ADP‑ribosylates Gαi, uncoupling it from its GPCR and blocking inhibitory signaling."
+      },
+      {
+        "text": "Stimulating its GTPase activity",
+        "isCorrect": false,
+        "explanation": "It inhibits Gαi function, not stimulate GTPase."
+      },
+      {
+        "text": "Increasing its affinity for GDP",
+        "isCorrect": false,
+        "explanation": "It locks Gαi in the inactive state, but the mechanism is ADP‑ribosylation."
+      },
+      {
+        "text": "Blocking effector interaction",
+        "isCorrect": false,
+        "explanation": "The main effect is uncoupling from the receptor."
+      },
+      {
+        "text": "Promoting subunit dissociation",
+        "isCorrect": false,
+        "explanation": "It does not promote dissociation."
+      }
+    ],
+    "explanation": {
+      "overview": "Pertussis toxin ADP‑ribosylates the α subunit of Gαi, preventing it from interacting with its receptor. Thus, inhibitory signals that would normally decrease cAMP are lost, leading to unopposed Gαs activity and elevated cAMP.",
+      "highYield": "Pertussis toxin → ADP‑ribosylates Gαi → uncouples from receptor → loss of inhibition.",
+      "clinicalCorrelation": "Pertussis (whooping cough) is caused by Bordetella pertussis; the toxin contributes to lymphocytosis and respiratory symptoms."
+    }
+  },
+  {
+    "questionId": "signal_transduction_026",
+    "difficulty": 2,
+    "question": "The JAK-STAT pathway is typically activated by:",
+    "image": null,
+    "options": [
+      {
+        "text": "Cytokine receptors",
+        "isCorrect": true,
+        "explanation": "Cytokine receptors (e.g., for interferons, interleukins) associate with JAK kinases, which phosphorylate STAT proteins."
+      },
+      {
+        "text": "GPCRs",
+        "isCorrect": false,
+        "explanation": "GPCRs signal through G proteins, not JAK-STAT directly."
+      },
+      {
+        "text": "RTKs",
+        "isCorrect": false,
+        "explanation": "RTKs mainly signal via Ras‑MAPK and PI3K‑Akt pathways."
+      },
+      {
+        "text": "Steroid hormones",
+        "isCorrect": false,
+        "explanation": "Steroid hormones bind intracellular receptors, not JAK-STAT."
+      },
+      {
+        "text": "Ion channels",
+        "isCorrect": false,
+        "explanation": "Ion channels do not activate JAK-STAT."
+      }
+    ],
+    "explanation": {
+      "overview": "Cytokine receptors lack intrinsic kinase activity but are associated with Janus kinases (JAKs). Ligand binding causes receptor dimerization, JAK activation, and tyrosine phosphorylation of the receptor and STAT (Signal Transducers and Activators of Transcription) proteins. Phosphorylated STATs dimerize and enter the nucleus to regulate genes.",
+      "highYield": "Cytokines → JAK → STAT → gene transcription.",
+      "clinicalCorrelation": "JAK inhibitors (e.g., tofacitinib) are used to treat rheumatoid arthritis and myelofibrosis."
+    }
+  },
+  {
+    "questionId": "signal_transduction_027",
+    "difficulty": 2,
+    "question": "STAT proteins, once phosphorylated, translocate to the nucleus to:",
+    "image": null,
+    "options": [
+      {
+        "text": "Regulate gene transcription",
+        "isCorrect": true,
+        "explanation": "Activated STAT dimers bind to specific DNA response elements, modulating transcription of target genes."
+      },
+      {
+        "text": "Activate ribosomes",
+        "isCorrect": false,
+        "explanation": "Ribosome activation is not a STAT function."
+      },
+      {
+        "text": "Splice mRNA",
+        "isCorrect": false,
+        "explanation": "Splicing occurs in the nucleus but is not mediated by STATs."
+      },
+      {
+        "text": "Degrade DNA",
+        "isCorrect": false,
+        "explanation": "STATs do not degrade DNA."
+      },
+      {
+        "text": "Modify histones",
+        "isCorrect": false,
+        "explanation": "Histone modification is carried out by other enzymes."
+      }
+    ],
+    "explanation": {
+      "overview": "Phosphorylated STATs form homo‑ or heterodimers that translocate to the nucleus, where they bind to γ‑activated site (GAS) elements or other enhancers, driving gene expression involved in inflammation, proliferation, and differentiation.",
+      "highYield": "pSTAT → dimer → nucleus → gene transcription.",
+      "clinicalCorrelation": "Persistent STAT3 activation is oncogenic and found in many lymphomas and solid tumours."
+    }
+  },
+  {
+    "questionId": "signal_transduction_028",
+    "difficulty": 2,
+    "question": "Wnt signaling involves stabilization of which protein?",
+    "image": null,
+    "options": [
+      {
+        "text": "β‑catenin",
+        "isCorrect": true,
+        "explanation": "Wnt inhibits the destruction complex (APC, GSK3β), leading to β‑catenin accumulation and nuclear translocation."
+      },
+      {
+        "text": "α‑catenin",
+        "isCorrect": false,
+        "explanation": "α‑catenin links cadherins to actin, not stabilized by Wnt."
+      },
+      {
+        "text": "E‑cadherin",
+        "isCorrect": false,
+        "explanation": "E‑cadherin is a cell adhesion molecule, not the main target of Wnt stabilization."
+      },
+      {
+        "text": "APC",
+        "isCorrect": false,
+        "explanation": "APC is part of the destruction complex that degrades β‑catenin."
+      },
+      {
+        "text": "GSK3β",
+        "isCorrect": false,
+        "explanation": "GSK3β phosphorylates β‑catenin for degradation; Wnt inactivates GSK3β."
+      }
+    ],
+    "explanation": {
+      "overview": "In the absence of Wnt, β‑catenin is phosphorylated by CK1 and GSK3β within a destruction complex (Axin, APC) and ubiquitinated for proteasomal degradation. Wnt binding to Frizzled/LRP receptors inhibits the complex, stabilizing β‑catenin, which then co‑activates TCF/LEF transcription factors.",
+      "highYield": "Wnt → β‑catenin stabilization → TCF transcription.",
+      "clinicalCorrelation": "APC mutations prevent β‑catenin degradation, causing constitutive Wnt signaling and colorectal cancer."
+    }
+  },
+  {
+    "questionId": "signal_transduction_029",
+    "difficulty": 3,
+    "question": "Hedgehog signaling regulates transcription through the Gli family. In the absence of ligand, Gli is:",
+    "image": null,
+    "options": [
+      {
+        "text": "Proteolytically processed into a repressor",
+        "isCorrect": true,
+        "explanation": "Without Hedgehog, Gli is cleaved to a truncated repressor form that inhibits target genes."
+      },
+      {
+        "text": "Active in nucleus",
+        "isCorrect": false,
+        "explanation": "It is processed into a repressor, not kept active."
+      },
+      {
+        "text": "Bound to receptor",
+        "isCorrect": false,
+        "explanation": "Gli does not bind the receptor; it is downstream."
+      },
+      {
+        "text": "Phosphorylated by PKA",
+        "isCorrect": false,
+        "explanation": "PKA phosphorylation is part of the processing to repressor, but the key event is proteolytic cleavage."
+      },
+      {
+        "text": "Ubiquitinated and degraded",
+        "isCorrect": false,
+        "explanation": "It is cleaved, not completely degraded."
+      }
+    ],
+    "explanation": {
+      "overview": "In the absence of Hedgehog, Gli transcription factors are phosphorylated by PKA, GSK3β, and CK1, leading to partial proteolysis that generates a transcriptional repressor (Gli‑R). Hedgehog binding to Patched relieves inhibition of Smoothened, blocking Gli processing and allowing full‑length activator forms to induce transcription.",
+      "highYield": "No Hedgehog → Gli repressor; +Hedgehog → Gli activator.",
+      "clinicalCorrelation": "Smoothened inhibitors (e.g., vismodegib) treat basal cell carcinoma with aberrant Hedgehog activation."
+    }
+  },
+  {
+    "questionId": "signal_transduction_030",
+    "difficulty": 2,
+    "question": "Notch signaling is unique because:",
+    "image": null,
+    "options": [
+      {
+        "text": "The receptor itself is cleaved to release a transcription factor",
+        "isCorrect": true,
+        "explanation": "Notch undergoes sequential proteolytic cleavages; the intracellular domain (NICD) directly acts as a transcriptional co‑activator."
+      },
+      {
+        "text": "It uses a second messenger",
+        "isCorrect": false,
+        "explanation": "Notch does not generate a diffusible second messenger."
+      },
+      {
+        "text": "It activates Ras",
+        "isCorrect": false,
+        "explanation": "Notch does not signal through Ras."
+      },
+      {
+        "text": "It involves GPCRs",
+        "isCorrect": false,
+        "explanation": "Notch is a single‑pass receptor, not a GPCR."
+      },
+      {
+        "text": "It requires NO",
+        "isCorrect": false,
+        "explanation": "NO is not involved."
+      }
+    ],
+    "explanation": {
+      "overview": "Notch signaling is initiated by binding of Delta/Jagged ligands on an adjacent cell. This triggers ADAM metalloprotease cleavage (S2) and γ‑secretase cleavage (S3), releasing the Notch intracellular domain (NICD). NICD translocates to the nucleus, where it forms a complex with CSL/CBF1 and Mastermind to activate target genes.",
+      "highYield": "Notch receptor itself becomes a transcription co‑activator (NICD).",
+      "clinicalCorrelation": "γ‑Secretase inhibitors are explored for Notch‑dependent cancers (e.g., T‑ALL)."
+    }
+  },
+  {
+    "questionId": "signal_transduction_031",
+    "difficulty": 2,
+    "question": "Calcineurin is a Ca2+/calmodulin-dependent phosphatase that activates which transcription factor in T‑cells?",
+    "image": null,
+    "options": [
+      {
+        "text": "NFAT",
+        "isCorrect": true,
+        "explanation": "Calcineurin dephosphorylates NFAT, allowing it to translocate to the nucleus and activate cytokine genes."
+      },
+      {
+        "text": "NF‑κB",
+        "isCorrect": false,
+        "explanation": "NF‑κB is regulated by IκB kinase and degradation."
+      },
+      {
+        "text": "AP‑1",
+        "isCorrect": false,
+        "explanation": "AP‑1 is activated by MAPK pathways."
+      },
+      {
+        "text": "STAT",
+        "isCorrect": false,
+        "explanation": "STAT is activated by JAK phosphorylation."
+      },
+      {
+        "text": "CREB",
+        "isCorrect": false,
+        "explanation": "CREB is activated by PKA and CaM kinases."
+      }
+    ],
+    "explanation": {
+      "overview": "In T‑cells, increased intracellular Ca2+ activates calcineurin, which dephosphorylates NFAT (Nuclear Factor of Activated T‑cells), exposing its nuclear localization signal. NFAT enters the nucleus and cooperates with AP‑1 to induce IL‑2 and other cytokines.",
+      "highYield": "Ca2+ → calcineurin → dephosphorylate NFAT → cytokine expression.",
+      "clinicalCorrelation": "Cyclosporine and tacrolimus inhibit calcineurin, blocking T‑cell activation and preventing transplant rejection."
+    }
+  },
+  {
+    "questionId": "signal_transduction_032",
+    "difficulty": 2,
+    "question": "The immunosuppressive drugs cyclosporine and FK506 inhibit calcineurin, thereby blocking:",
+    "image": null,
+    "options": [
+      {
+        "text": "NFAT activation",
+        "isCorrect": true,
+        "explanation": "They form complexes with immunophilins that inhibit calcineurin, preventing NFAT dephosphorylation and nuclear entry."
+      },
+      {
+        "text": "NF‑κB activation",
+        "isCorrect": false,
+        "explanation": "NF‑κB is not directly inhibited by these drugs."
+      },
+      {
+        "text": "JAK-STAT signaling",
+        "isCorrect": false,
+        "explanation": "JAK-STAT is targeted by other immunosuppressants."
+      },
+      {
+        "text": "Ras signaling",
+        "isCorrect": false,
+        "explanation": "Ras pathway is not their target."
+      },
+      {
+        "text": "cAMP production",
+        "isCorrect": false,
+        "explanation": "cAMP levels are unaffected."
+      }
+    ],
+    "explanation": {
+      "overview": "Cyclosporine (binds cyclophilin) and tacrolimus/FK506 (binds FKBP12) form drug‑immunophilin complexes that inhibit calcineurin phosphatase activity. This prevents NFAT activation and IL‑2 transcription, suppressing T‑cell proliferation.",
+      "highYield": "Cyclosporine/FK506 → inhibit calcineurin → NFAT blocked.",
+      "clinicalCorrelation": "Widely used in organ transplantation and autoimmune diseases; nephrotoxicity is a major side effect."
+    }
+  },
+  {
+    "questionId": "signal_transduction_033",
+    "difficulty": 2,
+    "question": "NF‑κB is held inactive in the cytoplasm by binding to:",
+    "image": null,
+    "options": [
+      {
+        "text": "IκB",
+        "isCorrect": true,
+        "explanation": "Inhibitor of κB (IκB) masks the nuclear localization signal of NF‑κB, retaining it in the cytoplasm."
+      },
+      {
+        "text": "Calmodulin",
+        "isCorrect": false,
+        "explanation": "Calmodulin is a Ca2+ sensor, not an NF‑κB inhibitor."
+      },
+      {
+        "text": "14‑3‑3",
+        "isCorrect": false,
+        "explanation": "14‑3‑3 proteins bind phosphoserine/phosphothreonine motifs, not NF‑κB."
+      },
+      {
+        "text": "Caveolin",
+        "isCorrect": false,
+        "explanation": "Caveolin is a membrane scaffold protein."
+      },
+      {
+        "text": "Hsp90",
+        "isCorrect": false,
+        "explanation": "Hsp90 is a chaperone, not the primary inhibitor."
+      }
+    ],
+    "explanation": {
+      "overview": "In unstimulated cells, NF‑κB dimers (p50/p65) are sequestered in the cytoplasm by IκBα. Upon stimulation (e.g., TNF‑α, IL‑1), IKK phosphorylates IκBα, targeting it for ubiquitination and proteasomal degradation. Freed NF‑κB translocates to the nucleus and activates pro‑inflammatory and survival genes.",
+      "highYield": "IκB keeps NF‑κB inactive in cytoplasm.",
+      "clinicalCorrelation": "Constitutive NF‑κB activation is seen in many inflammatory diseases and cancers."
+    }
+  },
+  {
+    "questionId": "signal_transduction_034",
+    "difficulty": 2,
+    "question": "The IκB kinase (IKK) complex is activated by signals such as TNF‑α, leading to:",
+    "image": null,
+    "options": [
+      {
+        "text": "Phosphorylation and degradation of IκB",
+        "isCorrect": true,
+        "explanation": "IKK phosphorylates IκB on specific serines, leading to its ubiquitination and proteasomal breakdown."
+      },
+      {
+        "text": "Phosphorylation of NF‑κB",
+        "isCorrect": false,
+        "explanation": "NF‑κB itself is not phosphorylated by IKK for activation."
+      },
+      {
+        "text": "Nuclear export of NF‑κB",
+        "isCorrect": false,
+        "explanation": "It leads to nuclear import, not export."
+      },
+      {
+        "text": "Inhibition of proteasome",
+        "isCorrect": false,
+        "explanation": "Proteasome activity is required for IκB degradation."
+      },
+      {
+        "text": "Activation of caspases",
+        "isCorrect": false,
+        "explanation": "Caspases are not directly activated by IKK."
+      }
+    ],
+    "explanation": {
+      "overview": "The IKK complex (IKKα, IKKβ, NEMO) is activated by various stimuli. It phosphorylates IκBα at Ser32/Ser36, creating a recognition site for β‑TrCP ubiquitin ligase. Subsequent ubiquitination and proteasomal degradation of IκBα release NF‑κB.",
+      "highYield": "TNF‑α → IKK → p‑IκB → degradation → NF‑κB free.",
+      "clinicalCorrelation": "Proteasome inhibitors (e.g., bortezomib) block IκB degradation, reducing NF‑κB activity in multiple myeloma."
+    }
+  },
+  {
+    "questionId": "signal_transduction_035",
+    "difficulty": 2,
+    "question": "The TGF‑β superfamily signals through receptors that are:",
+    "image": null,
+    "options": [
+      {
+        "text": "Serine/threonine kinases",
+        "isCorrect": true,
+        "explanation": "TGF‑β type I and type II receptors have intrinsic serine/threonine kinase activity."
+      },
+      {
+        "text": "Tyrosine kinases",
+        "isCorrect": false,
+        "explanation": "RTKs have tyrosine kinase activity, not TGF‑β receptors."
+      },
+      {
+        "text": "GPCRs",
+        "isCorrect": false,
+        "explanation": "GPCRs are seven‑transmembrane receptors."
+      },
+      {
+        "text": "Ion channels",
+        "isCorrect": false,
+        "explanation": "TGF‑β receptors are not ion channels."
+      },
+      {
+        "text": "Guanylyl cyclases",
+        "isCorrect": false,
+        "explanation": "Guanylyl cyclases are for cGMP signaling."
+      }
+    ],
+    "explanation": {
+      "overview": "The TGF‑β superfamily (TGF‑β, BMPs, activins) signals through a tetrameric complex of type I and type II receptors, both serine/threonine kinases. Ligand binding brings them together, allowing type II to phosphorylate and activate type I, which then phosphorylates R‑Smads.",
+      "highYield": "TGF‑β receptors = serine/threonine kinases.",
+      "clinicalCorrelation": "Mutations in TGF‑β receptors or Smads are found in colorectal and pancreatic cancers."
+    }
+  },
+  {
+    "questionId": "signal_transduction_036",
+    "difficulty": 2,
+    "question": "Receptor Smads (R-Smads) are phosphorylated by TGF‑β receptors and then:",
+    "image": null,
+    "options": [
+      {
+        "text": "Form complexes with co‑Smad (Smad4) and translocate to nucleus",
+        "isCorrect": true,
+        "explanation": "Phosphorylated R‑Smads (Smad1/2/3/5/8) bind Smad4 and move to the nucleus to regulate gene expression."
+      },
+      {
+        "text": "Degrade target proteins",
+        "isCorrect": false,
+        "explanation": "Smads are transcription factors, not proteases."
+      },
+      {
+        "text": "Activate MAP kinase",
+        "isCorrect": false,
+        "explanation": "Smads do not directly activate MAP kinase."
+      },
+      {
+        "text": "Bind to DNA directly",
+        "isCorrect": false,
+        "explanation": "They bind DNA in cooperation with other factors; the complex formation with Smad4 is required."
+      },
+      {
+        "text": "Inhibit transcription",
+        "isCorrect": false,
+        "explanation": "They can activate or repress, but the primary step is Smad complex formation."
+      }
+    ],
+    "explanation": {
+      "overview": "Upon phosphorylation by type I receptors, R‑Smads undergo a conformational change, dissociate from the receptor, and form a complex with the common mediator Smad4. This complex accumulates in the nucleus and, together with co‑activators or co‑repressors, modulates transcription.",
+      "highYield": "pR‑Smad + Smad4 → nucleus → gene regulation.",
+      "clinicalCorrelation": "Smad4 deletion occurs in pancreatic cancer and juvenile polyposis."
+    }
+  },
+  {
+    "questionId": "signal_transduction_037",
+    "difficulty": 2,
+    "question": "The diagram illustrates the MAP kinase cascade. Which kinase is directly activated by Ras?",
+    "image": "mapk_cascade_raf.png",
+    "options": [
+      {
+        "text": "Raf (MAPKKK)",
+        "isCorrect": true,
+        "explanation": "Ras‑GTP recruits Raf to the membrane and activates its kinase activity."
+      },
+      {
+        "text": "MEK (MAPKK)",
+        "isCorrect": false,
+        "explanation": "MEK is phosphorylated and activated by Raf."
+      },
+      {
+        "text": "ERK (MAPK)",
+        "isCorrect": false,
+        "explanation": "ERK is activated by MEK."
+      },
+      {
+        "text": "JNK",
+        "isCorrect": false,
+        "explanation": "JNK is part of a stress‑activated MAPK pathway."
+      },
+      {
+        "text": "p38",
+        "isCorrect": false,
+        "explanation": "p38 is activated by MKK3/6, not directly by Ras."
+      }
+    ],
+    "explanation": {
+      "overview": "In the ERK module, active Ras‑GTP directly binds and activates Raf (MAPKKK). Raf then phosphorylates and activates MEK (MAPKK), which phosphorylates and activates ERK (MAPK).",
+      "highYield": "Ras → Raf → MEK → ERK.",
+      "clinicalCorrelation": "Oncogenic BRAF V600E mutations bypass Ras, causing constitutive MEK‑ERK signaling."
+    }
+  },
+  {
+    "questionId": "signal_transduction_038",
+    "difficulty": 2,
+    "question": "Which of the following is a target of PKA in the regulation of gene expression?",
+    "image": null,
+    "options": [
+      {
+        "text": "CREB (cAMP response element-binding protein)",
+        "isCorrect": true,
+        "explanation": "PKA phosphorylates CREB at Ser133, promoting recruitment of the co‑activator CBP/p300 to cAMP response elements."
+      },
+      {
+        "text": "NF‑κB",
+        "isCorrect": false,
+        "explanation": "NF‑κB is regulated by IKK, not PKA."
+      },
+      {
+        "text": "STAT",
+        "isCorrect": false,
+        "explanation": "STAT is phosphorylated by JAKs."
+      },
+      {
+        "text": "Smad",
+        "isCorrect": false,
+        "explanation": "Smads are phosphorylated by TGF‑β receptors."
+      },
+      {
+        "text": "AP‑1",
+        "isCorrect": false,
+        "explanation": "AP‑1 is activated by MAPK pathways."
+      }
+    ],
+    "explanation": {
+      "overview": "cAMP‑PKA signaling culminates in phosphorylation of the transcription factor CREB. Phosphorylated CREB binds the CRE element and, with CBP/p300, activates transcription of genes involved in metabolism, neuronal plasticity, and survival.",
+      "highYield": "PKA → pCREB → gene transcription.",
+      "clinicalCorrelation": "CREB is implicated in learning and memory; its dysfunction is linked to neurodegenerative diseases."
+    }
+  },
+  {
+    "questionId": "signal_transduction_039",
+    "difficulty": 2,
+    "question": "Epinephrine binding to α1‑adrenergic receptors activates which G protein and effector?",
+    "image": null,
+    "options": [
+      {
+        "text": "Gαq → PLC → IP3/DAG",
+        "isCorrect": true,
+        "explanation": "α1 receptors are coupled to Gαq, leading to phospholipase C activation, IP3‑mediated Ca2+ release, and PKC activation."
+      },
+      {
+        "text": "Gαs → adenylyl cyclase → cAMP",
+        "isCorrect": false,
+        "explanation": "β‑receptors use Gαs."
+      },
+      {
+        "text": "Gαi → inhibition of adenylyl cyclase",
+        "isCorrect": false,
+        "explanation": "α2‑receptors use Gαi."
+      },
+      {
+        "text": "G12/13 → Rho activation",
+        "isCorrect": false,
+        "explanation": "G12/13 regulate Rho GTPase."
+      },
+      {
+        "text": "β‑arrestin signaling",
+        "isCorrect": false,
+        "explanation": "α1 signals via G proteins; β‑arrestin recruitment is a later event."
+      }
+    ],
+    "explanation": {
+      "overview": "α1‑adrenergic receptors (vascular smooth muscle, iris dilator) couple to Gαq, stimulating PLC‑β. IP3 releases Ca2+ causing contraction; DAG activates PKC, contributing to sustained responses.",
+      "highYield": "α1 → Gαq → PLC → IP3 + DAG.",
+      "clinicalCorrelation": "α1‑blockers (e.g., prazosin) are used for hypertension and benign prostatic hyperplasia."
+    }
+  },
+  {
+    "questionId": "signal_transduction_040",
+    "difficulty": 2,
+    "question": "Glucagon acts on liver cells primarily through which signaling pathway?",
+    "image": null,
+    "options": [
+      {
+        "text": "Gαs → cAMP → PKA",
+        "isCorrect": true,
+        "explanation": "The glucagon receptor is a GPCR coupled to Gαs, increasing cAMP and activating PKA, which stimulates glycogenolysis and gluconeogenesis."
+      },
+      {
+        "text": "Gαq → IP3/DAG → PKC",
+        "isCorrect": false,
+        "explanation": "Glucagon does not primarily signal through Gαq."
+      },
+      {
+        "text": "RTK → Ras → MAPK",
+        "isCorrect": false,
+        "explanation": "Glucagon receptor is a GPCR."
+      },
+      {
+        "text": "JAK-STAT",
+        "isCorrect": false,
+        "explanation": "Glucagon does not use JAK-STAT."
+      },
+      {
+        "text": "Guanylyl cyclase → cGMP",
+        "isCorrect": false,
+        "explanation": "Glucagon does not use cGMP."
+      }
+    ],
+    "explanation": {
+      "overview": "Glucagon, secreted by pancreatic α‑cells during fasting, binds to hepatic GPCRs coupled to Gαs. This activates adenylyl cyclase, elevates cAMP, and activates PKA. PKA phosphorylates glycogen phosphorylase kinase and other targets, leading to glucose release.",
+      "highYield": "Glucagon → Gs → cAMP → PKA → glycogen breakdown.",
+      "clinicalCorrelation": "Glucagon injection is used to treat severe hypoglycemia in diabetic patients on insulin."
+    }
+  },
+  {
+    "questionId": "signal_transduction_041",
+    "difficulty": 1,
+    "question": "Insulin signaling is initiated by:",
+    "image": null,
+    "options": [
+      {
+        "text": "Receptor tyrosine kinase autophosphorylation",
+        "isCorrect": true,
+        "explanation": "The insulin receptor is a preformed dimeric RTK; insulin binding activates its kinase domain, leading to trans‑autophosphorylation."
+      },
+      {
+        "text": "GPCR activation",
+        "isCorrect": false,
+        "explanation": "Insulin receptor is not a GPCR."
+      },
+      {
+        "text": "Ion channel opening",
+        "isCorrect": false,
+        "explanation": "Insulin does not bind an ion channel."
+      },
+      {
+        "text": "Steroid receptor binding",
+        "isCorrect": false,
+        "explanation": "Insulin is a peptide hormone, not a steroid."
+      },
+      {
+        "text": "Cytokine receptor dimerization",
+        "isCorrect": false,
+        "explanation": "Although it involves dimerization, the receptor is a tyrosine kinase, not a cytokine receptor."
+      }
+    ],
+    "explanation": {
+      "overview": "The insulin receptor (IR) is a heterotetrameric RTK (α2β2). Insulin binding to the extracellular α‑subunits triggers a conformational change, activating the intracellular β‑subunit kinase domains, which phosphorylate each other and then phosphorylate IRS proteins.",
+      "highYield": "Insulin receptor = RTK; autophosphorylates upon insulin binding.",
+      "clinicalCorrelation": "Insulin resistance in type 2 diabetes involves impaired RTK signaling and downstream PI3K/Akt activation."
+    }
+  },
+  {
+    "questionId": "signal_transduction_042",
+    "difficulty": 2,
+    "question": "IRS (insulin receptor substrate) proteins are phosphorylated on tyrosines and recruit:",
+    "image": null,
+    "options": [
+      {
+        "text": "PI3K and Grb2",
+        "isCorrect": true,
+        "explanation": "Phospho‑IRS binds the SH2 domains of PI3K (p85 subunit) and Grb2, activating the Akt and MAPK pathways, respectively."
+      },
+      {
+        "text": "PLCγ",
+        "isCorrect": false,
+        "explanation": "PLCγ is primarily recruited to activated RTKs like PDGFR."
+      },
+      {
+        "text": "STAT",
+        "isCorrect": false,
+        "explanation": "STATs are recruited to cytokine receptors."
+      },
+      {
+        "text": "JAK",
+        "isCorrect": false,
+        "explanation": "JAKs are associated with cytokine receptors."
+      },
+      {
+        "text": "G proteins",
+        "isCorrect": false,
+        "explanation": "G proteins are coupled to GPCRs."
+      }
+    ],
+    "explanation": {
+      "overview": "IRS proteins are adaptors that, upon tyrosine phosphorylation by the insulin receptor, recruit multiple SH2‑containing signaling molecules. PI3K (via p85) activates the Akt pathway (metabolic effects), while Grb2‑Sos activates the Ras‑MAPK pathway (growth effects).",
+      "highYield": "p‑IRS recruits PI3K (metabolism) and Grb2 (growth).",
+      "clinicalCorrelation": "Downregulation of IRS proteins due to serine phosphorylation is a mechanism of insulin resistance."
+    }
+  },
+  {
+    "questionId": "signal_transduction_043",
+    "difficulty": 2,
+    "question": "A key metabolic effect of insulin is translocation of GLUT4 vesicles to the plasma membrane, mediated by:",
+    "image": null,
+    "options": [
+      {
+        "text": "PI3K → Akt → AS160",
+        "isCorrect": true,
+        "explanation": "Akt phosphorylates AS160 (TBC1D4), inactivating its Rab‑GAP activity and allowing GLUT4 vesicle translocation."
+      },
+      {
+        "text": "PKA",
+        "isCorrect": false,
+        "explanation": "PKA is not involved in GLUT4 translocation."
+      },
+      {
+        "text": "PKC",
+        "isCorrect": false,
+        "explanation": "PKC may play a minor role, but the primary pathway is PI3K‑Akt."
+      },
+      {
+        "text": "MAPK",
+        "isCorrect": false,
+        "explanation": "MAPK pathway regulates gene expression, not acute glucose uptake."
+      },
+      {
+        "text": "CaM kinase",
+        "isCorrect": false,
+        "explanation": "CaM kinase is not the mediator."
+      }
+    ],
+    "explanation": {
+      "overview": "Insulin stimulates glucose uptake in muscle and adipose tissue by promoting the translocation of GLUT4 glucose transporters from intracellular vesicles to the plasma membrane. This is mediated by PI3K‑generated PIP3, activation of Akt, and phosphorylation/inactivation of AS160.",
+      "highYield": "Insulin → PI3K/Akt → AS160 phosphorylation → GLUT4 translocation.",
+      "clinicalCorrelation": "Defects in GLUT4 translocation contribute to insulin resistance in type 2 diabetes."
+    }
+  },
+  {
+    "questionId": "signal_transduction_044",
+    "difficulty": 1,
+    "question": "Phosphodiesterases terminate signaling by:",
+    "image": null,
+    "options": [
+      {
+        "text": "Hydrolyzing cAMP or cGMP",
+        "isCorrect": true,
+        "explanation": "Phosphodiesterases (PDEs) cleave the phosphodiester bond of cyclic nucleotides, converting cAMP to AMP and cGMP to GMP."
+      },
+      {
+        "text": "Dephosphorylating receptors",
+        "isCorrect": false,
+        "explanation": "Phosphatases dephosphorylate proteins."
+      },
+      {
+        "text": "Degrading IP3",
+        "isCorrect": false,
+        "explanation": "IP3 is metabolized by phosphatases, not PDEs."
+      },
+      {
+        "text": "Sequestrating Ca2+",
+        "isCorrect": false,
+        "explanation": "Ca2+ is sequestered by pumps and binding proteins."
+      },
+      {
+        "text": "Inhibiting G proteins",
+        "isCorrect": false,
+        "explanation": "G proteins are inhibited by RGS proteins."
+      }
+    ],
+    "explanation": {
+      "overview": "Phosphodiesterases (PDEs) are enzymes that hydrolyze cAMP and cGMP to their inactive 5′‑monophosphates, terminating second messenger signaling. There are multiple PDE families with different substrate specificities and tissue distributions.",
+      "highYield": "PDE = breaks down cAMP/cGMP.",
+      "clinicalCorrelation": "PDE5 inhibitors (sildenafil) prolong cGMP signaling, treating erectile dysfunction and pulmonary hypertension."
+    }
+  },
+  {
+    "questionId": "signal_transduction_045",
+    "difficulty": 2,
+    "question": "RGS proteins (regulators of G protein signaling) accelerate:",
+    "image": null,
+    "options": [
+      {
+        "text": "GTP hydrolysis by Gα",
+        "isCorrect": true,
+        "explanation": "RGS proteins act as GTPase‑activating proteins (GAPs) for Gα subunits, speeding the conversion of GTP to GDP and turning off signaling."
+      },
+      {
+        "text": "GDP dissociation",
+        "isCorrect": false,
+        "explanation": "GDP dissociation is promoted by GEFs, not RGS."
+      },
+      {
+        "text": "Receptor desensitization",
+        "isCorrect": false,
+        "explanation": "Desensitization is mediated by GRKs and arrestins."
+      },
+      {
+        "text": "Effector activation",
+        "isCorrect": false,
+        "explanation": "RGS proteins terminate effector activation."
+      },
+      {
+        "text": "Subunit reassociation",
+        "isCorrect": false,
+        "explanation": "Reassociation occurs after GTP hydrolysis, but RGS proteins accelerate the hydrolysis step."
+      }
+    ],
+    "explanation": {
+      "overview": "RGS proteins bind to the active Gα‑GTP subunit and enhance its intrinsic GTPase activity, accelerating the return to the inactive GDP‑bound state. This limits the duration of G protein signaling.",
+      "highYield": "RGS = GAP for Gα → faster GTP hydrolysis → signal off.",
+      "clinicalCorrelation": "Mutations in RGS proteins can alter cardiovascular and neuronal signaling sensitivity."
+    }
+  },
+  {
+    "questionId": "signal_transduction_046",
+    "difficulty": 2,
+    "question": "β‑arrestins are involved in GPCR desensitization by:",
+    "image": null,
+    "options": [
+      {
+        "text": "Binding phosphorylated receptors and blocking G protein coupling",
+        "isCorrect": true,
+        "explanation": "After GRK phosphorylation, β‑arrestins bind the receptor, sterically hindering G protein interaction and often promoting clathrin‑mediated endocytosis."
+      },
+      {
+        "text": "Dephosphorylating receptors",
+        "isCorrect": false,
+        "explanation": "Phosphatases dephosphorylate."
+      },
+      {
+        "text": "Increasing cAMP",
+        "isCorrect": false,
+        "explanation": "β‑arrestins do not increase cAMP."
+      },
+      {
+        "text": "Activating G proteins",
+        "isCorrect": false,
+        "explanation": "They uncouple G proteins."
+      },
+      {
+        "text": "Promoting receptor synthesis",
+        "isCorrect": false,
+        "explanation": "Synthesis is a longer‑term regulation."
+      }
+    ],
+    "explanation": {
+      "overview": "Prolonged agonist exposure leads to GPCR phosphorylation by GRKs. β‑arrestins bind to the phosphorylated receptor, preventing further G protein activation (homologous desensitization) and acting as adaptors for clathrin‑mediated endocytosis. They can also initiate G‑protein‑independent signaling.",
+      "highYield": "β‑arrestin binds p‑GPCR → uncouples G protein → desensitization.",
+      "clinicalCorrelation": "Biased agonists that preferentially activate β‑arrestin over G protein pathways are being developed as safer drugs (e.g., opioid analgesics)."
+    }
+  },
+  {
+    "questionId": "signal_transduction_047",
+    "difficulty": 2,
+    "question": "Sphingosine-1-phosphate (S1P) is a lipid mediator that acts via:",
+    "image": null,
+    "options": [
+      {
+        "text": "GPCRs",
+        "isCorrect": true,
+        "explanation": "S1P signals through a family of five specific GPCRs (S1P1‑5)."
+      },
+      {
+        "text": "Intracellular receptors",
+        "isCorrect": false,
+        "explanation": "S1P can have intracellular targets, but its major actions are via cell‑surface GPCRs."
+      },
+      {
+        "text": "RTKs",
+        "isCorrect": false,
+        "explanation": "S1P does not bind RTKs."
+      },
+      {
+        "text": "Ion channels",
+        "isCorrect": false,
+        "explanation": "It does not directly act on ion channels."
+      },
+      {
+        "text": "Guanylyl cyclases",
+        "isCorrect": false,
+        "explanation": "No direct connection."
+      }
+    ],
+    "explanation": {
+      "overview": "Sphingosine‑1‑phosphate (S1P) is a bioactive sphingolipid that is exported from cells and acts through specific G protein‑coupled receptors (S1PR1‑5). It regulates immune cell trafficking, vascular development, and cell survival.",
+      "highYield": "S1P = GPCR agonist (S1P1‑5).",
+      "clinicalCorrelation": "Fingolimod (an S1P receptor modulator) is used in multiple sclerosis to trap lymphocytes in lymph nodes."
+    }
+  },
+  {
+    "questionId": "signal_transduction_048",
+    "difficulty": 2,
+    "question": "The diagram shows a receptor tyrosine kinase pathway. What is the function of Grb2?",
+    "image": "rtk_grb2_sos.png",
+    "options": [
+      {
+        "text": "Links RTK to Sos (Ras GEF)",
+        "isCorrect": true,
+        "explanation": "Grb2 is an adaptor with an SH2 domain (binds pTyr) and two SH3 domains (bind proline‑rich motifs on Sos), bringing Sos to membrane‑bound Ras."
+      },
+      {
+        "text": "Binds PI3K",
+        "isCorrect": false,
+        "explanation": "PI3K is recruited directly to pTyr sites or via adaptors, but Grb2 mainly links to Sos."
+      },
+      {
+        "text": "Activates PLCγ",
+        "isCorrect": false,
+        "explanation": "PLCγ binds phospho‑RTK via its SH2 domain independently."
+      },
+      {
+        "text": "Dephosphorylates receptor",
+        "isCorrect": false,
+        "explanation": "Dephosphorylation is done by protein tyrosine phosphatases."
+      },
+      {
+        "text": "Translocates to nucleus",
+        "isCorrect": false,
+        "explanation": "Grb2 is a cytoplasmic adaptor."
+      }
+    ],
+    "explanation": {
+      "overview": "Grb2 (Growth factor receptor‑bound protein 2) is a small adaptor protein. It binds phosphotyrosine residues on activated RTKs via its SH2 domain, while its SH3 domains bind Sos (Son of Sevenless), a GEF for Ras, thereby activating Ras at the membrane.",
+      "highYield": "Grb2 = adaptor; SH2 binds RTK, SH3 binds Sos → Ras activation.",
+      "clinicalCorrelation": "Inhibition of Grb2‑Sos interaction is a potential anti‑cancer strategy."
+    }
+  },
+  {
+    "questionId": "signal_transduction_049",
+    "difficulty": 3,
+    "question": "Which of the following is a negative feedback regulator of RTK signaling?",
+    "image": null,
+    "options": [
+      {
+        "text": "Sprouty",
+        "isCorrect": true,
+        "explanation": "Sprouty proteins are induced by RTK signaling and inhibit the pathway by sequestering Grb2 or inhibiting Raf."
+      },
+      {
+        "text": "Ras",
+        "isCorrect": false,
+        "explanation": "Ras is an activator, not a negative regulator."
+      },
+      {
+        "text": "Sos",
+        "isCorrect": false,
+        "explanation": "Sos activates Ras."
+      },
+      {
+        "text": "Grb2",
+        "isCorrect": false,
+        "explanation": "Grb2 is a positive adaptor."
+      },
+      {
+        "text": "PLCγ",
+        "isCorrect": false,
+        "explanation": "PLCγ generates second messengers."
+      }
+    ],
+    "explanation": {
+      "overview": "Sprouty (Spry) proteins are evolutionarily conserved feedback inhibitors of RTK signaling. Their expression is induced by the pathway, and they then block Ras/MAPK activation, for example by binding Grb2 and preventing the Grb2‑Sos interaction.",
+      "highYield": "Sprouty = negative feedback inhibitor of RTK→MAPK.",
+      "clinicalCorrelation": "Loss of Sprouty function can enhance RTK signaling and contribute to tumourigenesis."
+    }
+  },
+  {
+    "questionId": "signal_transduction_050",
+    "difficulty": 2,
+    "question": "The tumor suppressor PTEN acts as a phosphatase that dephosphorylates:",
+    "image": null,
+    "options": [
+      {
+        "text": "PIP3 to PIP2",
+        "isCorrect": true,
+        "explanation": "PTEN removes the 3‑phosphate from PIP3, converting it back to PIP2, thus antagonizing PI3K signaling."
+      },
+      {
+        "text": "PIP2 to PIP",
+        "isCorrect": false,
+        "explanation": "PTEN targets the 3‑phosphate, not other positions."
+      },
+      {
+        "text": "Akt",
+        "isCorrect": false,
+        "explanation": "Akt is a protein kinase, not a lipid substrate."
+      },
+      {
+        "text": "mTOR",
+        "isCorrect": false,
+        "explanation": "mTOR is a kinase regulated downstream of Akt."
+      },
+      {
+        "text": "Ras",
+        "isCorrect": false,
+        "explanation": "Ras is a small GTPase."
+      }
+    ],
+    "explanation": {
+      "overview": "PTEN (Phosphatase and Tensin Homolog deleted on chromosome 10) is a lipid phosphatase that dephosphorylates PIP3 at the 3‑position, generating PIP2. By reducing PIP3 levels, it inhibits Akt activation and thus acts as a tumour suppressor.",
+      "highYield": "PTEN = PIP3 → PIP2 (turns off PI3K signal).",
+      "clinicalCorrelation": "PTEN is frequently mutated or deleted in cancers (e.g., prostate, glioblastoma), leading to unchecked Akt/mTOR activation."
+    }
+  },
+  {
+    "questionId": "signal_transduction_051",
+    "difficulty": 2,
+    "question": "Mutations in Ras that impair GTPase activity lead to:",
+    "image": null,
+    "options": [
+      {
+        "text": "Constitutive activation of MAPK pathway",
+        "isCorrect": true,
+        "explanation": "GTPase‑deficient Ras remains GTP‑bound, continuously activating downstream effectors like Raf and promoting proliferation."
+      },
+      {
+        "text": "Loss of RTK signaling",
+        "isCorrect": false,
+        "explanation": "Signaling is overactive, not lost."
+      },
+      {
+        "text": "Increased GAP activity",
+        "isCorrect": false,
+        "explanation": "GAP activity would reduce signaling; mutations impair GTP hydrolysis."
+      },
+      {
+        "text": "Decreased cell proliferation",
+        "isCorrect": false,
+        "explanation": "Oncogenic Ras drives proliferation."
+      },
+      {
+        "text": "Apoptosis",
+        "isCorrect": false,
+        "explanation": "While hyper‑activation can induce senescence, the primary effect is enhanced growth signaling."
+      }
+    ],
+    "explanation": {
+      "overview": "Ras mutations, especially at codons 12, 13, or 61, impair the intrinsic GTPase activity and confer resistance to GAPs. This locks Ras in the active GTP‑bound form, leading to persistent activation of the MAPK and PI3K pathways, driving uncontrolled cell division.",
+      "highYield": "Oncogenic Ras = can't hydrolyze GTP → always ON.",
+      "clinicalCorrelation": "KRAS mutations are common in pancreatic, colorectal, and lung cancers. KRAS inhibitors (e.g., sotorasib) target G12C mutant."
+    }
+  },
+  {
+    "questionId": "signal_transduction_052",
+    "difficulty": 2,
+    "question": "Calcium ions can directly bind and activate which enzyme in the inositol phosphate pathway?",
+    "image": null,
+    "options": [
+      {
+        "text": "PKC",
+        "isCorrect": true,
+        "explanation": "PKC requires Ca2+ and DAG for full activation; Ca2+ binding facilitates its translocation to the membrane."
+      },
+      {
+        "text": "PLC",
+        "isCorrect": false,
+        "explanation": "PLC is activated by G proteins, not directly by Ca2+ (though some isoforms are Ca2+‑sensitive)."
+      },
+      {
+        "text": "Adenylyl cyclase",
+        "isCorrect": false,
+        "explanation": "Adenylyl cyclase is not directly Ca2+‑activated."
+      },
+      {
+        "text": "Guanylyl cyclase",
+        "isCorrect": false,
+        "explanation": "Guanylyl cyclase is activated by NO or peptides."
+      },
+      {
+        "text": "Calcineurin",
+        "isCorrect": false,
+        "explanation": "Calcineurin is Ca2+/calmodulin‑dependent, not directly Ca2+‑activated without calmodulin."
+      }
+    ],
+    "explanation": {
+      "overview": "In the inositol phosphate pathway, IP3‑induced Ca2+ release works together with DAG to activate protein kinase C (PKC). Ca2+ binds to the C2 domain of conventional PKC isozymes, promoting their membrane association.",
+      "highYield": "Ca2+ + DAG → PKC activation.",
+      "clinicalCorrelation": "Dysregulated PKC activity is linked to diabetic complications and cancer."
+    }
+  },
+  {
+    "questionId": "signal_transduction_053",
+    "difficulty": 2,
+    "question": "Ryanodine receptors on the sarcoplasmic reticulum are channels that release Ca2+ in response to:",
+    "image": null,
+    "options": [
+      {
+        "text": "Ca2+ itself (calcium-induced calcium release)",
+        "isCorrect": true,
+        "explanation": "Ryanodine receptors are activated by a small influx of Ca2+ through voltage‑gated channels, releasing large amounts of stored Ca2+."
+      },
+      {
+        "text": "IP3",
+        "isCorrect": false,
+        "explanation": "IP3 receptors are IP3‑gated, not ryanodine receptors."
+      },
+      {
+        "text": "cAMP",
+        "isCorrect": false,
+        "explanation": "cAMP does not directly open ryanodine receptors."
+      },
+      {
+        "text": "DAG",
+        "isCorrect": false,
+        "explanation": "DAG activates PKC, not ryanodine receptors."
+      },
+      {
+        "text": "ATP",
+        "isCorrect": false,
+        "explanation": "ATP may modulate but is not the primary trigger."
+      }
+    ],
+    "explanation": {
+      "overview": "Ryanodine receptors (RyR) are Ca2+ release channels on the sarcoplasmic/endoplasmic reticulum. In cardiac and skeletal muscle, they are triggered by Ca2+ entry (CICR) or direct mechanical coupling, amplifying the Ca2+ signal.",
+      "highYield": "Ryanodine receptor = Ca2+‑induced Ca2+ release.",
+      "clinicalCorrelation": "Malignant hyperthermia is caused by mutations in RyR1, leading to uncontrolled Ca2+ release upon halogenated anesthetics."
+    }
+  },
+  {
+    "questionId": "signal_transduction_054",
+    "difficulty": 2,
+    "question": "Store-operated calcium entry (SOCE) is mediated by:",
+    "image": null,
+    "options": [
+      {
+        "text": "STIM and Orai proteins",
+        "isCorrect": true,
+        "explanation": "STIM senses ER Ca2+ depletion and clusters near the plasma membrane, activating Orai channels to allow Ca2+ influx."
+      },
+      {
+        "text": "IP3 receptors",
+        "isCorrect": false,
+        "explanation": "IP3 receptors release ER Ca2+, but SOCE is the refilling mechanism."
+      },
+      {
+        "text": "Ryanodine receptors",
+        "isCorrect": false,
+        "explanation": "Ryanodine receptors also release Ca2+."
+      },
+      {
+        "text": "Voltage-gated Ca2+ channels",
+        "isCorrect": false,
+        "explanation": "Voltage‑gated channels are activated by depolarization."
+      },
+      {
+        "text": "Na+/Ca2+ exchanger",
+        "isCorrect": false,
+        "explanation": "The exchanger removes Ca2+ from the cell."
+      }
+    ],
+    "explanation": {
+      "overview": "When ER Ca2+ stores are depleted, the ER‑resident protein STIM1 oligomerizes and moves to ER‑plasma membrane junctions, where it gates Orai1 channels, allowing Ca2+ entry to refill stores and sustain signaling.",
+      "highYield": "SOCE = STIM senses low ER Ca2+ → opens Orai channels.",
+      "clinicalCorrelation": "Mutations in STIM1 or Orai1 cause severe combined immunodeficiency due to defective Ca2+ signaling in lymphocytes."
+    }
+  },
+  {
+    "questionId": "signal_transduction_055",
+    "difficulty": 2,
+    "question": "The second messenger cGMP is degraded by:",
+    "image": null,
+    "options": [
+      {
+        "text": "Phosphodiesterase 5 (PDE5)",
+        "isCorrect": true,
+        "explanation": "PDE5 specifically hydrolyzes cGMP; sildenafil inhibits PDE5, enhancing cGMP signaling."
+      },
+      {
+        "text": "Adenylyl cyclase",
+        "isCorrect": false,
+        "explanation": "Adenylyl cyclase produces cAMP."
+      },
+      {
+        "text": "Guanylyl cyclase",
+        "isCorrect": false,
+        "explanation": "Guanylyl cyclase synthesizes cGMP."
+      },
+      {
+        "text": "Protein kinase G",
+        "isCorrect": false,
+        "explanation": "PKG is activated by cGMP, not degrades it."
+      },
+      {
+        "text": "Phospholipase C",
+        "isCorrect": false,
+        "explanation": "PLC acts on PIP2."
+      }
+    ],
+    "explanation": {
+      "overview": "cGMP is inactivated by phosphodiesterases, particularly PDE5, which cleaves it to GMP. PDE5 is highly expressed in vascular smooth muscle and penile corpus cavernosum.",
+      "highYield": "cGMP breakdown: PDE5 → GMP.",
+      "clinicalCorrelation": "Sildenafil (Viagra) inhibits PDE5, increasing cGMP and causing vasodilation in erectile tissue."
+    }
+  },
+  {
+    "questionId": "signal_transduction_056",
+    "difficulty": 2,
+    "question": "Which of the following best describes signal amplification in GPCR pathways?",
+    "image": null,
+    "options": [
+      {
+        "text": "One receptor can activate many G proteins, each activating multiple effectors",
+        "isCorrect": true,
+        "explanation": "A single ligand‑bound GPCR can activate multiple G proteins, each Gα‑GTP can stimulate multiple effector enzymes (e.g., adenylyl cyclase), producing many second messengers, amplifying the signal."
+      },
+      {
+        "text": "Ligand binding directly opens channels",
+        "isCorrect": false,
+        "explanation": "That is characteristic of ionotropic receptors, not GPCRs."
+      },
+      {
+        "text": "Receptor phosphorylates itself",
+        "isCorrect": false,
+        "explanation": "GPCRs are not kinases."
+      },
+      {
+        "text": "Signal is not amplified",
+        "isCorrect": false,
+        "explanation": "GPCR cascades exhibit massive amplification."
+      },
+      {
+        "text": "Amplification occurs only in nucleus",
+        "isCorrect": false,
+        "explanation": "Amplification begins at the membrane."
+      }
+    ],
+    "explanation": {
+      "overview": "Signal amplification is a hallmark of GPCR cascades. One receptor activates many G proteins; each G protein activates an effector that generates hundreds of second messengers (e.g., cAMP), and each second messenger can activate many kinase molecules, leading to exponential signal amplification.",
+      "highYield": "GPCR = huge amplification: 1 receptor → many G proteins → many cAMP.",
+      "clinicalCorrelation": "This amplification allows very low concentrations of hormones to produce robust physiological responses."
+    }
+  },
+  {
+    "questionId": "signal_transduction_057",
+    "difficulty": 1,
+    "question": "The term 'crosstalk' in signaling refers to:",
+    "image": null,
+    "options": [
+      {
+        "text": "Interactions between different signaling pathways",
+        "isCorrect": true,
+        "explanation": "Crosstalk describes how one signaling pathway can influence another, integrating multiple inputs for coordinated cellular responses."
+      },
+      {
+        "text": "Receptor dimerization",
+        "isCorrect": false,
+        "explanation": "Dimerization is a mechanism, not crosstalk."
+      },
+      {
+        "text": "Ligand binding",
+        "isCorrect": false,
+        "explanation": "Ligand binding initiates a specific pathway."
+      },
+      {
+        "text": "Nuclear translocation",
+        "isCorrect": false,
+        "explanation": "Translocation is a step within a pathway."
+      },
+      {
+        "text": "Protein degradation",
+        "isCorrect": false,
+        "explanation": "Degradation is a regulatory mechanism."
+      }
+    ],
+    "explanation": {
+      "overview": "Signaling pathways are not linear and isolated; they interact extensively. Crosstalk occurs at multiple levels (e.g., shared kinases, second messengers, transcriptional regulation) and allows the cell to integrate diverse signals to make decisions (proliferation, differentiation, apoptosis).",
+      "highYield": "Crosstalk = communication between signaling pathways.",
+      "clinicalCorrelation": "Understanding crosstalk is important for combination drug therapies (e.g., targeting both MAPK and PI3K pathways in cancer)."
+    }
+  },
+  {
+    "questionId": "signal_transduction_058",
+    "difficulty": 2,
+    "question": "Scaffold proteins in signaling pathways function to:",
+    "image": null,
+    "options": [
+      {
+        "text": "Bring multiple signaling components together for efficiency and specificity",
+        "isCorrect": true,
+        "explanation": "Scaffolds assemble kinases, phosphatases, and adaptors into a signaling complex, enhancing speed and preventing unwanted crosstalk."
+      },
+      {
+        "text": "Degrade second messengers",
+        "isCorrect": false,
+        "explanation": "Second messengers are degraded by PDEs or phosphatases."
+      },
+      {
+        "text": "Phosphorylate targets",
+        "isCorrect": false,
+        "explanation": "Phosphorylation is done by kinases."
+      },
+      {
+        "text": "Bind DNA",
+        "isCorrect": false,
+        "explanation": "Transcription factors bind DNA."
+      },
+      {
+        "text": "Transport receptors",
+        "isCorrect": false,
+        "explanation": "Receptor transport is mediated by vesicular machinery."
+      }
+    ],
+    "explanation": {
+      "overview": "Scaffold proteins (e.g., KSR in MAPK pathway, JIP in JNK pathway) bind multiple components of a signaling cascade, ensuring spatial proximity and sequential phosphorylation. This enhances signaling fidelity, speed, and compartmentalization.",
+      "highYield": "Scaffolds = organize kinases for efficient signaling.",
+      "clinicalCorrelation": "Scaffold dysfunction can disrupt signaling specificity, contributing to diseases like cancer."
+    }
+  },
+  {
+    "questionId": "signal_transduction_059",
+    "difficulty": 2,
+    "question": "Ubiquitination can regulate signaling by:",
+    "image": null,
+    "options": [
+      {
+        "text": "Targeting proteins for degradation or altering their activity",
+        "isCorrect": true,
+        "explanation": "Ubiquitin can mark proteins for proteasomal degradation, or alter their function, localization, or interactions (e.g., receptor endocytosis)."
+      },
+      {
+        "text": "Increasing cAMP",
+        "isCorrect": false,
+        "explanation": "Ubiquitination does not produce cAMP."
+      },
+      {
+        "text": "Phosphorylating receptors",
+        "isCorrect": false,
+        "explanation": "Phosphorylation is a distinct post‑translational modification."
+      },
+      {
+        "text": "Hydrolyzing GTP",
+        "isCorrect": false,
+        "explanation": "GTP hydrolysis is mediated by GTPases."
+      },
+      {
+        "text": "Binding calcium",
+        "isCorrect": false,
+        "explanation": "Calcium binding is a regulatory mechanism for specific proteins."
+      }
+    ],
+    "explanation": {
+      "overview": "Ubiquitination is the covalent attachment of ubiquitin to lysine residues on target proteins. It can lead to proteasomal degradation (e.g., IκB, cyclins) or serve as a non‑proteolytic signal regulating protein trafficking (e.g., GPCR endocytosis) and complex assembly.",
+      "highYield": "Ubiquitin = tag for degradation or activity change.",
+      "clinicalCorrelation": "Proteasome inhibitors (bortezomib) are used in multiple myeloma; deubiquitinases are emerging drug targets."
+    }
+  },
+  {
+    "questionId": "signal_transduction_060",
+    "difficulty": 2,
+    "question": "The diagram shows a simplified MAPK cascade. What is the role of the scaffold protein?",
+    "image": "mapk_scaffold.png",
+    "options": [
+      {
+        "text": "Binds all three kinases to facilitate sequential phosphorylation",
+        "isCorrect": true,
+        "explanation": "The scaffold (e.g., KSR) tethers Raf, MEK, and ERK, ensuring efficient and specific phosphorylation relay."
+      },
+      {
+        "text": "Phosphorylates ERK",
+        "isCorrect": false,
+        "explanation": "MEK phosphorylates ERK."
+      },
+      {
+        "text": "Dephosphorylates MEK",
+        "isCorrect": false,
+        "explanation": "Scaffolds do not dephosphorylate."
+      },
+      {
+        "text": "Translocates to nucleus",
+        "isCorrect": false,
+        "explanation": "ERK translocates to the nucleus."
+      },
+      {
+        "text": "Activates transcription",
+        "isCorrect": false,
+        "explanation": "Transcription factors are the effectors."
+      }
+    ],
+    "explanation": {
+      "overview": "In the diagram, the scaffold protein physically associates with Raf, MEK, and ERK, bringing them into close proximity. This allows Raf to directly phosphorylate MEK, which then phosphorylates ERK, enhancing the speed and fidelity of the cascade.",
+      "highYield": "Scaffold = brings Raf, MEK, ERK together for efficient activation.",
+      "clinicalCorrelation": "Targeting scaffold‑kinase interactions may offer a way to inhibit specific MAPK modules."
+    }
+  },
+  {
+    "questionId": "signal_transduction_061",
+    "difficulty": 2,
+    "question": "Which second messenger is produced by phospholipase D (PLD) from phosphatidylcholine?",
+    "image": null,
+    "options": [
+      {
+        "text": "Phosphatidic acid",
+        "isCorrect": true,
+        "explanation": "PLD cleaves phosphatidylcholine to produce phosphatidic acid (PA) and choline."
+      },
+      {
+        "text": "IP3",
+        "isCorrect": false,
+        "explanation": "IP3 is produced by PLC."
+      },
+      {
+        "text": "DAG",
+        "isCorrect": false,
+        "explanation": "DAG is a product of PLC; however, PA can be converted to DAG by phosphatidate phosphatase."
+      },
+      {
+        "text": "Arachidonic acid",
+        "isCorrect": false,
+        "explanation": "Arachidonic acid is released by PLA2."
+      },
+      {
+        "text": "cAMP",
+        "isCorrect": false,
+        "explanation": "cAMP is from adenylyl cyclase."
+      }
+    ],
+    "explanation": {
+      "overview": "Phospholipase D (PLD) hydrolyzes the major membrane lipid phosphatidylcholine to generate phosphatidic acid (PA), a lipid second messenger. PA can signal directly or be converted to DAG (by lipid phosphate phosphatase) for sustained PKC activation.",
+      "highYield": "PLD → phosphatidic acid (lipid messenger).",
+      "clinicalCorrelation": "PLD activity is elevated in some cancers, contributing to cell proliferation and survival."
+    }
+  },
+  {
+    "questionId": "signal_transduction_062",
+    "difficulty": 2,
+    "question": "The p53 tumor suppressor acts primarily as a:",
+    "image": null,
+    "options": [
+      {
+        "text": "Transcription factor activated by stress signals",
+        "isCorrect": true,
+        "explanation": "p53 is stabilized in response to DNA damage, hypoxia, or oncogenic stress, and induces genes for cell cycle arrest, apoptosis, or senescence."
+      },
+      {
+        "text": "G protein",
+        "isCorrect": false,
+        "explanation": "p53 is not a G protein."
+      },
+      {
+        "text": "Receptor tyrosine kinase",
+        "isCorrect": false,
+        "explanation": "p53 is not a receptor."
+      },
+      {
+        "text": "Second messenger",
+        "isCorrect": false,
+        "explanation": "p53 is a protein, not a small molecule messenger."
+      },
+      {
+        "text": "Phosphatase",
+        "isCorrect": false,
+        "explanation": "p53 does not have catalytic activity."
+      }
+    ],
+    "explanation": {
+      "overview": "p53 is a key tumour suppressor protein that functions as a transcription factor. Under normal conditions, it is kept low by MDM2‑mediated ubiquitination. Cellular stress signals (DNA damage) lead to its stabilization and activation, driving expression of p21, Bax, and other genes.",
+      "highYield": "p53 = transcription factor, guardian of the genome.",
+      "clinicalCorrelation": "TP53 mutations are the most common genetic alterations in human cancers, preventing apoptosis and cell cycle arrest."
+    }
+  },
+  {
+    "questionId": "signal_transduction_063",
+    "difficulty": 2,
+    "question": "Activation of phospholipase A2 (PLA2) leads to the release of:",
+    "image": null,
+    "options": [
+      {
+        "text": "Arachidonic acid from membrane phospholipids",
+        "isCorrect": true,
+        "explanation": "PLA2 cleaves the sn‑2 fatty acid, releasing arachidonic acid, the precursor for eicosanoids."
+      },
+      {
+        "text": "IP3",
+        "isCorrect": false,
+        "explanation": "IP3 is from PLC."
+      },
+      {
+        "text": "cAMP",
+        "isCorrect": false,
+        "explanation": "cAMP is from adenylyl cyclase."
+      },
+      {
+        "text": "PIP3",
+        "isCorrect": false,
+        "explanation": "PIP3 is from PI3K."
+      },
+      {
+        "text": "Sphingosine‑1‑phosphate",
+        "isCorrect": false,
+        "explanation": "S1P is from sphingolipid metabolism."
+      }
+    ],
+    "explanation": {
+      "overview": "Phospholipase A2 (PLA2) hydrolyzes the ester bond at the sn‑2 position of glycerophospholipids, liberating free arachidonic acid. Arachidonic acid is then metabolized by cyclooxygenases (COX) to prostaglandins or by lipoxygenases to leukotrienes.",
+      "highYield": "PLA2 → arachidonic acid → eicosanoids.",
+      "clinicalCorrelation": "Glucocorticoids inhibit PLA2; NSAIDs inhibit COX, reducing inflammation and pain."
+    }
+  },
+  {
+    "questionId": "signal_transduction_064",
+    "difficulty": 2,
+    "question": "The small GTPase Rho is a key regulator of:",
+    "image": null,
+    "options": [
+      {
+        "text": "Actin cytoskeleton reorganization",
+        "isCorrect": true,
+        "explanation": "Rho family GTPases (Rho, Rac, Cdc42) control actin dynamics, affecting cell shape, migration, and adhesion."
+      },
+      {
+        "text": "cAMP production",
+        "isCorrect": false,
+        "explanation": "cAMP is regulated by adenylyl cyclase."
+      },
+      {
+        "text": "Microtubule stability",
+        "isCorrect": false,
+        "explanation": "Microtubule dynamics are regulated by other proteins, though Rho can influence them indirectly."
+      },
+      {
+        "text": "DNA replication",
+        "isCorrect": false,
+        "explanation": "DNA replication is a nuclear process."
+      },
+      {
+        "text": "Protein synthesis",
+        "isCorrect": false,
+        "explanation": "Protein synthesis is a ribosomal function."
+      }
+    ],
+    "explanation": {
+      "overview": "Rho GTPases cycle between active GTP‑bound and inactive GDP‑bound states. They orchestrate the actin cytoskeleton: RhoA promotes stress fibre formation, Rac promotes lamellipodia, and Cdc42 promotes filopodia.",
+      "highYield": "Rho GTPases = actin remodelling.",
+      "clinicalCorrelation": "Rho kinase inhibitors (e.g., ripasudil) are used in glaucoma to reduce intraocular pressure by relaxing trabecular meshwork."
+    }
+  },
+  {
+    "questionId": "signal_transduction_065",
+    "difficulty": 2,
+    "question": "The tumor suppressor protein APC (adenomatous polyposis coli) exerts its anti‑cancer effect in the Wnt pathway by:",
+    "image": null,
+    "options": [
+      {
+        "text": "Promoting degradation of β‑catenin",
+        "isCorrect": true,
+        "explanation": "APC is part of the destruction complex that binds and facilitates β‑catenin phosphorylation and degradation."
+      },
+      {
+        "text": "Activating Wnt transcription",
+        "isCorrect": false,
+        "explanation": "Wnt transcription is activated by β‑catenin/TCF."
+      },
+      {
+        "text": "Inhibiting GSK3β",
+        "isCorrect": false,
+        "explanation": "GSK3β is part of the destruction complex; APC helps present β‑catenin to GSK3β."
+      },
+      {
+        "text": "Stabilizing β‑catenin",
+        "isCorrect": false,
+        "explanation": "APC promotes β‑catenin degradation."
+      },
+      {
+        "text": "Binding to Wnt ligands",
+        "isCorrect": false,
+        "explanation": "Wnt ligands bind Frizzled receptors."
+      }
+    ],
+    "explanation": {
+      "overview": "APC is a scaffold protein that, together with Axin, presents β‑catenin to CK1 and GSK3β for phosphorylation, leading to its ubiquitination and proteasomal degradation. Loss of APC function leads to β‑catenin accumulation and constitutive TCF target gene expression.",
+      "highYield": "APC = part of β‑catenin destruction complex.",
+      "clinicalCorrelation": "Germline APC mutations cause familial adenomatous polyposis, predisposing to colorectal cancer."
+    }
+  },
+  {
+    "questionId": "signal_transduction_066",
+    "difficulty": 2,
+    "question": "Lipid rafts are specialized membrane domains that concentrate signaling molecules. They are enriched in:",
+    "image": null,
+    "options": [
+      {
+        "text": "Cholesterol and sphingolipids",
+        "isCorrect": true,
+        "explanation": "Lipid rafts are dynamic assemblies rich in cholesterol and sphingolipids, creating ordered domains that recruit specific receptors and signalling proteins."
+      },
+      {
+        "text": "Phosphatidylcholine and phosphatidylethanolamine",
+        "isCorrect": false,
+        "explanation": "These are bulk membrane phospholipids."
+      },
+      {
+        "text": "Cardiolipin",
+        "isCorrect": false,
+        "explanation": "Cardiolipin is in the inner mitochondrial membrane."
+      },
+      {
+        "text": "GPI‑anchored proteins exclusively",
+        "isCorrect": false,
+        "explanation": "Rafts contain many GPI‑anchored proteins, but the enrichment is in cholesterol/sphingolipids."
+      },
+      {
+        "text": "Cyclic nucleotides",
+        "isCorrect": false,
+        "explanation": "Cyclic nucleotides are soluble."
+      }
+    ],
+    "explanation": {
+      "overview": "Lipid rafts are microdomains that serve as platforms for signal transduction. They are enriched in cholesterol, sphingomyelin, and glycolipids, and they accumulate GPI‑anchored proteins, Src family kinases, and G proteins, facilitating interactions.",
+      "highYield": "Lipid rafts = cholesterol/sphingolipid‑rich signaling hubs.",
+      "clinicalCorrelation": "Disruption of lipid rafts may affect T‑cell receptor signaling and pathogen entry."
+    }
+  },
+  {
+    "questionId": "signal_transduction_067",
+    "difficulty": 2,
+    "question": "Second messenger‑gated ion channels are directly opened by:",
+    "image": null,
+    "options": [
+      {
+        "text": "Intracellular cyclic nucleotides or Ca2+",
+        "isCorrect": true,
+        "explanation": "Examples include CNG channels (cAMP/cGMP) in olfaction and vision, and Ca2+‑activated K+ or Cl‑ channels."
+      },
+      {
+        "text": "Voltage changes",
+        "isCorrect": false,
+        "explanation": "Voltage‑gated channels are distinct."
+      },
+      {
+        "text": "Ligand binding to extracellular domain",
+        "isCorrect": false,
+        "explanation": "Ligand‑gated ion channels have extracellular ligand binding."
+      },
+      {
+        "text": "Mechanical stretch",
+        "isCorrect": false,
+        "explanation": "Mechanosensitive channels respond to membrane tension."
+      },
+      {
+        "text": "G protein βγ subunits",
+        "isCorrect": false,
+        "explanation": "Gβγ can directly gate some K+ channels (GIRK), but these are second messenger‑independent."
+      }
+    ],
+    "explanation": {
+      "overview": "Some ion channels are gated by intracellular second messengers rather than voltage or extracellular ligands. Cyclic nucleotide‑gated (CNG) channels in photoreceptors and olfactory neurons are opened by cAMP/cGMP. Ca2+‑activated channels (SK, BK) open in response to Ca2+.",
+      "highYield": "CNG channels = opened by cyclic nucleotides; Ca2+‑activated channels by Ca2+.",
+      "clinicalCorrelation": "Mutations in CNG channels cause retinal degeneration and color blindness."
+    }
+  },
+  {
+    "questionId": "signal_transduction_068",
+    "difficulty": 2,
+    "question": "The Frizzled receptors are GPCRs that are activated by:",
+    "image": null,
+    "options": [
+      {
+        "text": "Wnt ligands",
+        "isCorrect": true,
+        "explanation": "Frizzled (Fzd) receptors are seven‑transmembrane proteins that bind Wnt proteins, initiating canonical (β‑catenin) or non‑canonical (PCP) signaling."
+      },
+      {
+        "text": "Hedgehog",
+        "isCorrect": false,
+        "explanation": "Hedgehog binds Patched."
+      },
+      {
+        "text": "Notch",
+        "isCorrect": false,
+        "explanation": "Notch binds Delta/Jagged."
+      },
+      {
+        "text": "TGF‑β",
+        "isCorrect": false,
+        "explanation": "TGF‑β binds serine/threonine kinase receptors."
+      },
+      {
+        "text": "BMPs",
+        "isCorrect": false,
+        "explanation": "BMPs also bind serine/threonine kinase receptors."
+      }
+    ],
+    "explanation": {
+      "overview": "Frizzled receptors are unusual GPCRs that, together with co‑receptors LRP5/6, bind Wnt proteins. They signal via Dishevelled to inhibit the destruction complex, stabilizing β‑catenin.",
+      "highYield": "Wnt receptors = Frizzled (GPCR) + LRP.",
+      "clinicalCorrelation": "Dysregulation of Frizzled receptors is implicated in cancers and bone diseases."
+    }
+  },
+  {
+    "questionId": "signal_transduction_069",
+    "difficulty": 2,
+    "question": "The Retinoblastoma protein (Rb) restricts cell cycle progression by binding and inhibiting:",
+    "image": null,
+    "options": [
+      {
+        "text": "E2F transcription factors",
+        "isCorrect": true,
+        "explanation": "Hypophosphorylated Rb binds E2F, preventing transcription of S‑phase genes. CDK phosphorylation of Rb releases E2F."
+      },
+      {
+        "text": "p53",
+        "isCorrect": false,
+        "explanation": "p53 and Rb are distinct tumor suppressors."
+      },
+      {
+        "text": "MDM2",
+        "isCorrect": false,
+        "explanation": "MDM2 regulates p53."
+      },
+      {
+        "text": "Ras",
+        "isCorrect": false,
+        "explanation": "Ras is a GTPase."
+      },
+      {
+        "text": "Akt",
+        "isCorrect": false,
+        "explanation": "Akt is a kinase."
+      }
+    ],
+    "explanation": {
+      "overview": "The Rb protein is a key cell cycle regulator. In its active, hypophosphorylated state, it binds E2F transcription factors, repressing genes needed for DNA replication. Mitogenic signals activate cyclin‑CDKs that phosphorylate Rb, inactivating it and releasing E2F.",
+      "highYield": "Rb binds E2F → blocks S‑phase entry.",
+      "clinicalCorrelation": "Loss of Rb function (mutation or viral oncoproteins like HPV E7) leads to uncontrolled cell proliferation."
+    }
+  },
+  {
+    "questionId": "signal_transduction_070",
+    "difficulty": 2,
+    "question": "The second messenger cADPR (cyclic ADP‑ribose) mobilizes Ca2+ by acting on:",
+    "image": null,
+    "options": [
+      {
+        "text": "Ryanodine receptors",
+        "isCorrect": true,
+        "explanation": "cADPR is synthesized by CD38 and sensitizes ryanodine receptors to Ca2+, promoting Ca2+ release from the ER/SR."
+      },
+      {
+        "text": "IP3 receptors",
+        "isCorrect": false,
+        "explanation": "IP3 receptors are gated by IP3."
+      },
+      {
+        "text": "Orai channels",
+        "isCorrect": false,
+        "explanation": "Orai channels are part of SOCE."
+      },
+      {
+        "text": "Voltage‑gated Ca2+ channels",
+        "isCorrect": false,
+        "explanation": "These are plasma membrane channels."
+      },
+      {
+        "text": "Ca2+‑ATPase pumps",
+        "isCorrect": false,
+        "explanation": "Pumps remove Ca2+, not release it."
+      }
+    ],
+    "explanation": {
+      "overview": "Cyclic ADP‑ribose (cADPR) is a second messenger derived from NAD+ by ADP‑ribosyl cyclases (e.g., CD38). It binds to ryanodine receptors (RyR) on the ER/SR and enhances their Ca2+ sensitivity, promoting Ca2+‑induced Ca2+ release.",
+      "highYield": "cADPR → ryanodine receptor → Ca2+ release.",
+      "clinicalCorrelation": "cADPR signaling is involved in insulin secretion, smooth muscle contraction, and fertilization."
+    }
+  },
+  {
+    "questionId": "signal_transduction_071",
+    "difficulty": 2,
+    "question": "Which of the following kinases is directly activated by phosphatidylinositol‑dependent kinase 1 (PDK1)?",
+    "image": null,
+    "options": [
+      {
+        "text": "Akt",
+        "isCorrect": true,
+        "explanation": "PDK1 phosphorylates the activation loop (Thr308) of Akt when both are recruited to the membrane by PIP3."
+      },
+      {
+        "text": "PKA",
+        "isCorrect": false,
+        "explanation": "PKA is activated by cAMP."
+      },
+      {
+        "text": "PKC",
+        "isCorrect": false,
+        "explanation": "PKC is activated by DAG/Ca2+ and has a different activation mechanism."
+      },
+      {
+        "text": "Raf",
+        "isCorrect": false,
+        "explanation": "Raf is activated by Ras."
+      },
+      {
+        "text": "MEK",
+        "isCorrect": false,
+        "explanation": "MEK is activated by Raf."
+      }
+    ],
+    "explanation": {
+      "overview": "PIP3 generated by PI3K recruits Akt (via PH domain) and PDK1 to the membrane. PDK1 then phosphorylates Akt at Thr308 in the kinase domain, partially activating it. Full activation requires phosphorylation at Ser473 by mTORC2.",
+      "highYield": "PDK1 → phosphorylates Akt (Thr308).",
+      "clinicalCorrelation": "Akt activation is critical for survival signaling; PDK1 is a potential cancer target."
+    }
+  },
+  {
+    "questionId": "signal_transduction_072",
+    "difficulty": 2,
+    "question": "The IP3 receptor on the endoplasmic reticulum is a:",
+    "image": null,
+    "options": [
+      {
+        "text": "Ligand‑gated Ca2+ channel",
+        "isCorrect": true,
+        "explanation": "IP3 binds to its receptor, which is a tetrameric Ca2+ channel, causing it to open and release Ca2+."
+      },
+      {
+        "text": "Voltage‑gated Ca2+ channel",
+        "isCorrect": false,
+        "explanation": "It is not voltage‑gated."
+      },
+      {
+        "text": "G protein‑coupled receptor",
+        "isCorrect": false,
+        "explanation": "It is an intracellular channel, not a GPCR."
+      },
+      {
+        "text": "Receptor tyrosine kinase",
+        "isCorrect": false,
+        "explanation": "It has no kinase activity."
+      },
+      {
+        "text": "Ca2+‑ATPase pump",
+        "isCorrect": false,
+        "explanation": "Pumps actively transport Ca2+, not release."
+      }
+    ],
+    "explanation": {
+      "overview": "The inositol 1,4,5‑trisphosphate receptor (IP3R) is a large, tetrameric ion channel located on the ER membrane. Binding of IP3 to its N‑terminus induces a conformational change that opens the channel, allowing Ca2+ to flow down its concentration gradient into the cytosol.",
+      "highYield": "IP3R = ligand‑gated Ca2+ channel.",
+      "clinicalCorrelation": "Dysfunctional IP3Rs are linked to neurodegenerative diseases and certain ataxias."
+    }
+  },
+  {
+    "questionId": "signal_transduction_073",
+    "difficulty": 2,
+    "question": "The process by which a cell becomes less responsive to a continuous stimulus is called:",
+    "image": null,
+    "options": [
+      {
+        "text": "Desensitization",
+        "isCorrect": true,
+        "explanation": "Desensitization, often via receptor phosphorylation, internalization, or degradation, reduces responsiveness despite persistent agonist."
+      },
+      {
+        "text": "Sensitization",
+        "isCorrect": false,
+        "explanation": "Sensitization is increased responsiveness."
+      },
+      {
+        "text": "Potentiation",
+        "isCorrect": false,
+        "explanation": "Potentiation is enhancement of a signal."
+      },
+      {
+        "text": "Downregulation",
+        "isCorrect": false,
+        "explanation": "Downregulation (decreased receptor number) is a form of desensitization but not the broad term."
+      },
+      {
+        "text": "Tachyphylaxis",
+        "isCorrect": false,
+        "explanation": "Tachyphylaxis is rapid desensitization; desensitization is the general concept."
+      }
+    ],
+    "explanation": {
+      "overview": "Homologous desensitization involves phosphorylation of the activated receptor by GRKs, binding of β‑arrestin, and uncoupling from G proteins. Heterologous desensitization involves phosphorylation by second messenger‑activated kinases (e.g., PKA) even in the absence of agonist.",
+      "highYield": "Desensitization = reduced response to sustained signal.",
+      "clinicalCorrelation": "Desensitization of β2‑adrenoceptors in asthma patients can limit bronchodilator efficacy."
+    }
+  },
+  {
+    "questionId": "signal_transduction_074",
+    "difficulty": 2,
+    "question": "Which of the following is NOT a second messenger?",
+    "image": null,
+    "options": [
+      {
+        "text": "Protein kinase A",
+        "isCorrect": true,
+        "explanation": "PKA is an effector kinase, not a second messenger. Second messengers are small molecules like cAMP, Ca2+, IP3, DAG."
+      },
+      {
+        "text": "cAMP",
+        "isCorrect": false,
+        "explanation": "cAMP is a classic second messenger."
+      },
+      {
+        "text": "cGMP",
+        "isCorrect": false,
+        "explanation": "cGMP is a second messenger."
+      },
+      {
+        "text": "IP3",
+        "isCorrect": false,
+        "explanation": "IP3 is a second messenger."
+      },
+      {
+        "text": "Ca2+",
+        "isCorrect": false,
+        "explanation": "Ca2+ is a second messenger."
+      }
+    ],
+    "explanation": {
+      "overview": "Second messengers are small, diffusible intracellular signaling molecules (cAMP, cGMP, Ca2+, IP3, DAG, etc.) that are rapidly produced or released in response to receptor activation and then activate downstream effectors. Protein kinases are effector proteins, not messengers.",
+      "highYield": "PKA is an effector kinase, not a second messenger.",
+      "clinicalCorrelation": "Targeting second messenger pathways (e.g., Ca2+ channel blockers, PDE inhibitors) is a common pharmacologic strategy."
+    }
+  },
+  {
+    "questionId": "signal_transduction_075",
+    "difficulty": 2,
+    "question": "The transcription factor HIF‑1α (hypoxia‑inducible factor 1α) is stabilized under low oxygen conditions because:",
+    "image": null,
+    "options": [
+      {
+        "text": "Prolyl hydroxylase requires O2; its inactivation prevents HIF‑1α degradation",
+        "isCorrect": true,
+        "explanation": "Under normoxia, prolyl hydroxylases (PHDs) hydroxylate HIF‑1α, targeting it for VHL‑mediated ubiquitination and proteasomal degradation. Hypoxia inhibits PHDs, stabilizing HIF‑1α."
+      },
+      {
+        "text": "HIF‑1α gene transcription increases",
+        "isCorrect": false,
+        "explanation": "Regulation is mainly at the protein stability level, not transcription."
+      },
+      {
+        "text": "It binds to cGMP",
+        "isCorrect": false,
+        "explanation": "cGMP is not involved in HIF‑1α stabilization."
+      },
+      {
+        "text": "It is phosphorylated by Akt",
+        "isCorrect": false,
+        "explanation": "Akt can enhance translation of HIF‑1α, but the primary mechanism is O2‑dependent degradation."
+      },
+      {
+        "text": "It is cleaved by γ‑secretase",
+        "isCorrect": false,
+        "explanation": "γ‑secretase is for Notch, not HIF."
+      }
+    ],
+    "explanation": {
+      "overview": "HIF‑1α is a transcription factor that adapts cells to hypoxia. In the presence of O2, prolyl hydroxylase domain (PHD) enzymes hydroxylate two proline residues. This allows the von Hippel‑Lindau (VHL) tumor suppressor to recognize and ubiquitinate HIF‑1α for degradation. Low O2 inhibits PHDs, stabilizing HIF‑1α.",
+      "highYield": "Normoxia: PHD hydroxylates HIF‑1α → VHL → degradation. Hypoxia: PHD inactive → HIF‑1α stable.",
+      "clinicalCorrelation": "Drugs that inhibit PHDs (prolyl hydroxylase inhibitors) are used to treat anemia of chronic kidney disease by stabilizing HIF and increasing erythropoietin."
+    }
+  },
+  {
+    "questionId": "signal_transduction_076",
+    "difficulty": 2,
+    "question": "GPCR kinases (GRKs) phosphorylate:",
+    "image": null,
+    "options": [
+      {
+        "text": "Activated GPCRs on serine/threonine residues",
+        "isCorrect": true,
+        "explanation": "GRKs specifically phosphorylate agonist‑occupied GPCRs, promoting β‑arrestin binding and desensitization."
+      },
+      {
+        "text": "G proteins",
+        "isCorrect": false,
+        "explanation": "G proteins are not GRK substrates."
+      },
+      {
+        "text": "Adenylyl cyclase",
+        "isCorrect": false,
+        "explanation": "Adenylyl cyclase is not a GRK substrate."
+      },
+      {
+        "text": "β‑arrestin",
+        "isCorrect": false,
+        "explanation": "β‑arrestin binds phosphorylated receptors."
+      },
+      {
+        "text": "RTKs",
+        "isCorrect": false,
+        "explanation": "RTKs are autophosphorylated or trans‑phosphorylated on tyrosines."
+      }
+    ],
+    "explanation": {
+      "overview": "GRKs (G protein‑coupled receptor kinases) are a family of serine/threonine kinases that specifically phosphorylate the intracellular loops and C‑terminus of agonist‑activated GPCRs. This phosphorylation creates high‑affinity binding sites for β‑arrestins.",
+      "highYield": "GRKs = phosphorylate activated GPCRs → arrestin binding.",
+      "clinicalCorrelation": "Upregulation of GRK2 in heart failure contributes to β‑adrenoceptor desensitization; its inhibition is a therapeutic target."
+    }
+  },
+  {
+    "questionId": "signal_transduction_077",
+    "difficulty": 2,
+    "question": "Which protein directly binds to PIP3 and is activated at the plasma membrane?",
+    "image": null,
+    "options": [
+      {
+        "text": "Akt (PKB)",
+        "isCorrect": true,
+        "explanation": "Akt's PH domain binds PIP3, recruiting it to the membrane where PDK1 and mTORC2 phosphorylate and activate it."
+      },
+      {
+        "text": "Protein kinase C",
+        "isCorrect": false,
+        "explanation": "PKC is activated by DAG/Ca2+."
+      },
+      {
+        "text": "Protein kinase A",
+        "isCorrect": false,
+        "explanation": "PKA is activated by cAMP."
+      },
+      {
+        "text": "Calmodulin",
+        "isCorrect": false,
+        "explanation": "Calmodulin binds Ca2+."
+      },
+      {
+        "text": "Ras",
+        "isCorrect": false,
+        "explanation": "Ras is a GTPase and not directly PIP3‑binding."
+      }
+    ],
+    "explanation": {
+      "overview": "PIP3, generated by PI3K, serves as a docking site for pleckstrin homology (PH) domain‑containing proteins. Akt (PKB) and PDK1 are the key examples; their PH domains bind PIP3, bringing them together at the membrane for activation.",
+      "highYield": "Akt's PH domain binds PIP3 → membrane recruitment.",
+      "clinicalCorrelation": "PI3K inhibitors (e.g., idelalisib) reduce PIP3 production, blocking Akt activation in cancers."
+    }
+  },
+  {
+    "questionId": "signal_transduction_078",
+    "difficulty": 2,
+    "question": "In the resting state, intracellular [Ca2+] is kept very low (~100 nM) primarily by:",
+    "image": null,
+    "options": [
+      {
+        "text": "Ca2+ ATPase pumps (SERCA) and Na+/Ca2+ exchangers",
+        "isCorrect": true,
+        "explanation": "SERCA pumps Ca2+ into the ER/SR; plasma membrane Ca2+ ATPase and NCX extrude Ca2+ from the cell."
+      },
+      {
+        "text": "IP3 receptors",
+        "isCorrect": false,
+        "explanation": "IP3 receptors release Ca2+, raising intracellular levels."
+      },
+      {
+        "text": "Ryanodine receptors",
+        "isCorrect": false,
+        "explanation": "RyR release Ca2+."
+      },
+      {
+        "text": "Ca2+ channels",
+        "isCorrect": false,
+        "explanation": "Ca2+ channels allow influx."
+      },
+      {
+        "text": "Calmodulin",
+        "isCorrect": false,
+        "explanation": "Calmodulin buffers Ca2+ but does not actively transport it."
+      }
+    ],
+    "explanation": {
+      "overview": "A steep Ca2+ gradient exists across the plasma membrane and ER membrane. This is maintained by active transporters: SERCA pumps Ca2+ into the ER, while plasma membrane Ca2+‑ATPase (PMCA) and Na+/Ca2+ exchanger (NCX) remove Ca2+ from the cell.",
+      "highYield": "Low cytosolic Ca2+ maintained by SERCA, PMCA, NCX.",
+      "clinicalCorrelation": "Inhibition of SERCA (e.g., by thapsigargin) depletes ER Ca2+ stores and triggers ER stress."
+    }
+  },
+  {
+    "questionId": "signal_transduction_079",
+    "difficulty": 2,
+    "question": "The primary effect of DAG and IP3 is to:",
+    "image": null,
+    "options": [
+      {
+        "text": "Activate PKC and release Ca2+ from ER, respectively",
+        "isCorrect": true,
+        "explanation": "DAG activates PKC, while IP3 opens ER Ca2+ channels; together they coordinate calcium and kinase signaling."
+      },
+      {
+        "text": "Increase cAMP and inhibit PKA",
+        "isCorrect": false,
+        "explanation": "That is cAMP‑PKA axis."
+      },
+      {
+        "text": "Activate Ras and MAPK",
+        "isCorrect": false,
+        "explanation": "Ras‑MAPK is mainly activated by RTK pathways."
+      },
+      {
+        "text": "Open ion channels and hyperpolarise the membrane",
+        "isCorrect": false,
+        "explanation": "Not directly their primary function."
+      },
+      {
+        "text": "Degrade phospholipids",
+        "isCorrect": false,
+        "explanation": "They are products of phospholipid hydrolysis."
+      }
+    ],
+    "explanation": {
+      "overview": "DAG and IP3 are the dual second messengers of the phosphoinositide system. IP3 diffuses to the ER and triggers Ca2+ release; DAG remains in the membrane and recruits/activates PKC. Ca2+ often synergizes with DAG to fully activate conventional PKC isoforms.",
+      "highYield": "IP3 → Ca2+; DAG → PKC.",
+      "clinicalCorrelation": "The IP3/DAG pathway mediates many hormone and neurotransmitter actions, including α1‑adrenergic and muscarinic M1/M3 responses."
+    }
+  },
+  {
+    "questionId": "signal_transduction_080",
+    "difficulty": 2,
+    "question": "The nuclear receptor superfamily includes receptors for:",
+    "image": null,
+    "options": [
+      {
+        "text": "Thyroid hormone, retinoic acid, and glucocorticoids",
+        "isCorrect": true,
+        "explanation": "These lipophilic ligands bind intracellular nuclear receptors that directly regulate gene transcription."
+      },
+      {
+        "text": "Insulin and growth factors",
+        "isCorrect": false,
+        "explanation": "These are peptide ligands that bind cell‑surface RTKs."
+      },
+      {
+        "text": "Epinephrine and glucagon",
+        "isCorrect": false,
+        "explanation": "These are peptide/amine hormones acting via GPCRs."
+      },
+      {
+        "text": "Prostaglandins and leukotrienes",
+        "isCorrect": false,
+        "explanation": "These act via cell‑surface GPCRs."
+      },
+      {
+        "text": "Acetylcholine and serotonin",
+        "isCorrect": false,
+        "explanation": "These neurotransmitters act on GPCRs or ion channels."
+      }
+    ],
+    "explanation": {
+      "overview": "Nuclear receptors (type I and II) are ligand‑activated transcription factors. Their ligands are small, lipophilic molecules that diffuse through the plasma membrane and bind receptors in the cytoplasm or nucleus, leading to changes in gene expression.",
+      "highYield": "Nuclear receptors = steroid/thyroid/retinoic acid receptors.",
+      "clinicalCorrelation": "Glucocorticoids exert anti‑inflammatory effects via the glucocorticoid receptor (GR), a nuclear receptor."
+    }
+  },
+  {
+    "questionId": "signal_transduction_081",
+    "difficulty": 2,
+    "question": "In the canonical NF‑κB pathway, the IKK complex phosphorylates IκBα, leading to:",
+    "image": null,
+    "options": [
+      {
+        "text": "Lys48‑linked ubiquitination and proteasomal degradation of IκBα",
+        "isCorrect": true,
+        "explanation": "Phosphorylated IκBα is recognized by β‑TrCP E3 ligase, ubiquitinated, and degraded, releasing NF‑κB."
+      },
+      {
+        "text": "NF‑κB phosphorylation",
+        "isCorrect": false,
+        "explanation": "NF‑κB itself is not the direct target for degradation."
+      },
+      {
+        "text": "Stabilization of IκBα",
+        "isCorrect": false,
+        "explanation": "It leads to degradation, not stabilization."
+      },
+      {
+        "text": "Nuclear export of NF‑κB",
+        "isCorrect": false,
+        "explanation": "It allows nuclear import."
+      },
+      {
+        "text": "Activation of JAK-STAT",
+        "isCorrect": false,
+        "explanation": "NF‑κB is distinct from JAK-STAT."
+      }
+    ],
+    "explanation": {
+      "overview": "Pro‑inflammatory cytokines activate the IKK complex, which phosphorylates IκBα at specific serine residues. This triggers K48‑linked polyubiquitination and rapid degradation by the 26S proteasome, unmasking the nuclear localization signal of NF‑κB.",
+      "highYield": "p‑IκBα → ubiquitination → proteasomal degradation → NF‑κB free.",
+      "clinicalCorrelation": "Bortezomib inhibits the proteasome, preventing IκB degradation and NF‑κB activation in multiple myeloma."
+    }
+  },
+  {
+    "questionId": "signal_transduction_082",
+    "difficulty": 2,
+    "question": "G protein βγ subunits can directly activate:",
+    "image": null,
+    "options": [
+      {
+        "text": "GIRK channels (inwardly rectifying K+ channels)",
+        "isCorrect": true,
+        "explanation": "Free Gβγ dimers can bind and open G protein‑gated inwardly rectifying K+ (GIRK) channels, hyperpolarizing cells (e.g., in heart, brain)."
+      },
+      {
+        "text": "Adenylyl cyclase",
+        "isCorrect": false,
+        "explanation": "Gαs activates adenylyl cyclase; Gβγ can modulate some isoforms."
+      },
+      {
+        "text": "Phospholipase C",
+        "isCorrect": false,
+        "explanation": "Gαq activates PLC; Gβγ can activate PLCβ2/3."
+      },
+      {
+        "text": "Voltage‑gated Ca2+ channels",
+        "isCorrect": false,
+        "explanation": "Gβγ can inhibit some Ca2+ channels, but GIRK is a classic direct target."
+      },
+      {
+        "text": "PDE",
+        "isCorrect": false,
+        "explanation": "Gβγ does not directly activate PDE."
+      }
+    ],
+    "explanation": {
+      "overview": "Dissociated Gβγ subunits are active signaling molecules. They directly open GIRK channels (causing vagal bradycardia), activate PLCβ isoforms, inhibit some Ca2+ channels, and activate PI3Kγ.",
+      "highYield": "Gβγ → opens GIRK K+ channels.",
+      "clinicalCorrelation": "The muscarinic M2 receptor‑mediated bradycardia is due to Gβγ activation of GIRK channels in the sinoatrial node."
+    }
+  },
+  {
+    "questionId": "signal_transduction_083",
+    "difficulty": 2,
+    "question": "PIP3 is dephosphorylated by PTEN, but another phosphatase, SHIP, converts PIP3 to:",
+    "image": null,
+    "options": [
+      {
+        "text": "PI(3,4)P2",
+        "isCorrect": true,
+        "explanation": "SHIP (SH2‑containing inositol 5‑phosphatase) removes the 5‑phosphate from PIP3, generating PI(3,4)P2, which can also signal."
+      },
+      {
+        "text": "PI(4,5)P2",
+        "isCorrect": false,
+        "explanation": "That is the product of PTEN (removes 3‑phosphate)."
+      },
+      {
+        "text": "IP3",
+        "isCorrect": false,
+        "explanation": "IP3 is a soluble messenger."
+      },
+      {
+        "text": "PIP",
+        "isCorrect": false,
+        "explanation": "PIP is monophosphorylated."
+      },
+      {
+        "text": "DAG",
+        "isCorrect": false,
+        "explanation": "DAG is a product of PLC."
+      }
+    ],
+    "explanation": {
+      "overview": "While PTEN removes the 3‑phosphate, SHIP (SH2 domain‑containing inositol polyphosphate 5‑phosphatase) removes the 5‑phosphate from PIP3, generating PI(3,4)P2. This product can still bind some PH domain proteins, modulating signaling rather than fully terminating it.",
+      "highYield": "SHIP converts PIP3 to PI(3,4)P2.",
+      "clinicalCorrelation": "SHIP is a negative regulator in immune cells; reduced SHIP activity is seen in some leukemias."
+    }
+  },
+  {
+    "questionId": "signal_transduction_084",
+    "difficulty": 2,
+    "question": "The protein mTOR (mechanistic target of rapamycin) is a central regulator of cell growth and metabolism. It exists in two complexes; mTORC1 is sensitive to:",
+    "image": null,
+    "options": [
+      {
+        "text": "Rapamycin and amino acid levels",
+        "isCorrect": true,
+        "explanation": "mTORC1 is acutely inhibited by rapamycin and activated by amino acids, growth factors (via Akt/TSC), and energy status."
+      },
+      {
+        "text": "Wnt ligands",
+        "isCorrect": false,
+        "explanation": "Wnt signals to β‑catenin."
+      },
+      {
+        "text": "DNA damage",
+        "isCorrect": false,
+        "explanation": "DNA damage activates p53, not directly mTOR."
+      },
+      {
+        "text": "Steroid hormones",
+        "isCorrect": false,
+        "explanation": "Steroids act via nuclear receptors."
+      },
+      {
+        "text": "cGMP",
+        "isCorrect": false,
+        "explanation": "cGMP signals via PKG."
+      }
+    ],
+    "explanation": {
+      "overview": "mTORC1 (mTOR complex with Raptor) promotes protein synthesis, lipid synthesis, and inhibits autophagy. It is activated by the PI3K/Akt pathway and amino acids (via Rag GTPases), and is potently inhibited by rapamycin (sirolimus).",
+      "highYield": "mTORC1 → cell growth; inhibited by rapamycin.",
+      "clinicalCorrelation": "Rapamycin and its analogs (everolimus) are used as immunosuppressants and anticancer agents."
+    }
+  },
+  {
+    "questionId": "signal_transduction_085",
+    "difficulty": 2,
+    "question": "The hormone atrial natriuretic peptide (ANP) lowers blood pressure by binding to:",
+    "image": null,
+    "options": [
+      {
+        "text": "Particulate guanylyl cyclase receptor, increasing cGMP",
+        "isCorrect": true,
+        "explanation": "ANP binds to NPR‑A, a receptor with intrinsic guanylyl cyclase activity, generating cGMP and causing vasodilation/natriuresis."
+      },
+      {
+        "text": "GPCR → cAMP",
+        "isCorrect": false,
+        "explanation": "ANP does not signal via cAMP."
+      },
+      {
+        "text": "RTK → MAPK",
+        "isCorrect": false,
+        "explanation": "ANP receptor is not an RTK."
+      },
+      {
+        "text": "Ion channel",
+        "isCorrect": false,
+        "explanation": "It is not an ion channel."
+      },
+      {
+        "text": "Intracellular receptor",
+        "isCorrect": false,
+        "explanation": "ANP is a peptide, acting on a cell‑surface receptor."
+      }
+    ],
+    "explanation": {
+      "overview": "Atrial natriuretic peptide (ANP) is released from stretched atrial myocytes. It binds to the NPR‑A receptor, which contains an intracellular guanylyl cyclase domain that produces cGMP. cGMP activates PKG, leading to smooth muscle relaxation, sodium excretion, and diuresis.",
+      "highYield": "ANP → particulate guanylyl cyclase → cGMP.",
+      "clinicalCorrelation": "Sacubitril/valsartan (an ARNI) inhibits neprilysin, which degrades ANP, enhancing its vasodilatory effects in heart failure."
+    }
+  },
+  {
+    "questionId": "signal_transduction_086",
+    "difficulty": 2,
+    "question": "A kinase cascade allows for signal amplification and also:",
+    "image": null,
+    "options": [
+      {
+        "text": "Integration of signals at multiple steps",
+        "isCorrect": true,
+        "explanation": "Multiple kinases provide checkpoints where other inputs can modulate the pathway, allowing complex regulation and crosstalk."
+      },
+      {
+        "text": "Slowing of signal",
+        "isCorrect": false,
+        "explanation": "Cascades can be rapid."
+      },
+      {
+        "text": "Direct gene transcription without translocation",
+        "isCorrect": false,
+        "explanation": "Translocation to nucleus is often required."
+      },
+      {
+        "text": "Degradation of second messengers",
+        "isCorrect": false,
+        "explanation": "Kinases phosphorylate proteins, not degrade messengers."
+      },
+      {
+        "text": "GTPase activity",
+        "isCorrect": false,
+        "explanation": "GTPase activity is for G proteins."
+      }
+    ],
+    "explanation": {
+      "overview": "Multistep kinase cascades (e.g., MAPK) not only amplify the initial signal but provide multiple sites for regulation by feedback, crosstalk, and scaffold proteins, enabling the cell to integrate diverse stimuli before committing to a response.",
+      "highYield": "Kinase cascade = amplification + integration.",
+      "clinicalCorrelation": "Inhibitors at different tiers of a cascade (e.g., BRAF, MEK) can be combined to overcome resistance."
+    }
+  },
+  {
+    "questionId": "signal_transduction_087",
+    "difficulty": 2,
+    "question": "The enzyme that generates diacylglycerol (DAG) directly from phosphatidic acid is:",
+    "image": null,
+    "options": [
+      {
+        "text": "Phosphatidate phosphatase (lipin)",
+        "isCorrect": true,
+        "explanation": "Phosphatidate phosphatase (lipin) removes the phosphate from phosphatidic acid to produce DAG."
+      },
+      {
+        "text": "Phospholipase C",
+        "isCorrect": false,
+        "explanation": "PLC generates DAG from PIP2."
+      },
+      {
+        "text": "Phospholipase D",
+        "isCorrect": false,
+        "explanation": "PLD produces phosphatidic acid."
+      },
+      {
+        "text": "Phospholipase A2",
+        "isCorrect": false,
+        "explanation": "PLA2 releases fatty acid."
+      },
+      {
+        "text": "PI3K",
+        "isCorrect": false,
+        "explanation": "PI3K phosphorylates PIP2."
+      }
+    ],
+    "explanation": {
+      "overview": "DAG can be produced by two main routes: PLC‑mediated hydrolysis of PIP2, and dephosphorylation of phosphatidic acid (PA) by phosphatidate phosphatase (lipin). The latter is important in lipid metabolism and sustained signaling.",
+      "highYield": "Lipin = phosphatase that converts PA → DAG.",
+      "clinicalCorrelation": "Mutations in lipin genes are associated with lipodystrophy and metabolic syndrome."
+    }
+  },
+  {
+    "questionId": "signal_transduction_088",
+    "difficulty": 2,
+    "question": "The drug sildenafil (Viagra) enhances erectile function by inhibiting PDE5, which primarily:",
+    "image": null,
+    "options": [
+      {
+        "text": "Prevents breakdown of cGMP, prolonging vasodilation",
+        "isCorrect": true,
+        "explanation": "PDE5 inhibition increases cGMP levels in corpus cavernosum smooth muscle, leading to relaxation and erection."
+      },
+      {
+        "text": "Increases cAMP production",
+        "isCorrect": false,
+        "explanation": "It does not affect cAMP production."
+      },
+      {
+        "text": "Stimulates guanylyl cyclase",
+        "isCorrect": false,
+        "explanation": "It acts downstream by inhibiting PDE5."
+      },
+      {
+        "text": "Opens Ca2+ channels",
+        "isCorrect": false,
+        "explanation": "No direct effect on Ca2+ channels."
+      },
+      {
+        "text": "Blocks adrenergic receptors",
+        "isCorrect": false,
+        "explanation": "It does not block receptors."
+      }
+    ],
+    "explanation": {
+      "overview": "Sexual stimulation releases nitric oxide (NO) in penile nerves and endothelium, activating guanylyl cyclase and increasing cGMP. cGMP relaxes vascular smooth muscle. PDE5 normally hydrolyzes cGMP; sildenafil blocks PDE5, sustaining cGMP levels and vasodilation.",
+      "highYield": "Sildenafil = PDE5 inhibitor → ↑ cGMP → vasodilation.",
+      "clinicalCorrelation": "Contraindicated with nitrates due to risk of severe hypotension from excessive cGMP accumulation."
+    }
+  },
+  {
+    "questionId": "signal_transduction_089",
+    "difficulty": 2,
+    "question": "Which of the following is an example of a receptor that is a ligand‑gated ion channel?",
+    "image": null,
+    "options": [
+      {
+        "text": "Nicotinic acetylcholine receptor",
+        "isCorrect": true,
+        "explanation": "The nicotinic AChR is a pentameric ion channel that opens upon acetylcholine binding, allowing Na+ influx."
+      },
+      {
+        "text": "Muscarinic acetylcholine receptor",
+        "isCorrect": false,
+        "explanation": "Muscarinic receptors are GPCRs."
+      },
+      {
+        "text": "Insulin receptor",
+        "isCorrect": false,
+        "explanation": "Insulin receptor is an RTK."
+      },
+      {
+        "text": "Glucagon receptor",
+        "isCorrect": false,
+        "explanation": "Glucagon receptor is a GPCR."
+      },
+      {
+        "text": "Cytokine receptor",
+        "isCorrect": false,
+        "explanation": "Cytokine receptors are associated with JAK kinases."
+      }
+    ],
+    "explanation": {
+      "overview": "Ligand‑gated ion channels (ionotropic receptors) are multisubunit transmembrane proteins that form a central pore. Binding of the ligand induces a conformational change, opening the pore and allowing ions to flow, rapidly altering membrane potential.",
+      "highYield": "Nicotinic AChR = ion channel; muscarinic = GPCR.",
+      "clinicalCorrelation": "Neuromuscular blocking agents (curare) act on nicotinic receptors at the motor end plate."
+    }
+  },
+  {
+    "questionId": "signal_transduction_090",
+    "difficulty": 2,
+    "question": "The biological effect of a signaling molecule is terminated by all of the following EXCEPT:",
+    "image": null,
+    "options": [
+      {
+        "text": "Persistent receptor activation",
+        "isCorrect": true,
+        "explanation": "Persistent activation prolongs signaling, not terminate it. Termination mechanisms include receptor internalization, GTP hydrolysis, phosphodiesterase action, and phosphatases."
+      },
+      {
+        "text": "Receptor internalization",
+        "isCorrect": false,
+        "explanation": "Removing receptors from the cell surface stops signaling."
+      },
+      {
+        "text": "GTP hydrolysis by Gα",
+        "isCorrect": false,
+        "explanation": "GTP hydrolysis inactivates G proteins."
+      },
+      {
+        "text": "Phosphodiesterase degradation of cAMP",
+        "isCorrect": false,
+        "explanation": "Hydrolyzing second messengers terminates the signal."
+      },
+      {
+        "text": "Protein phosphatases",
+        "isCorrect": false,
+        "explanation": "Dephosphorylation reverses kinase activity."
+      }
+    ],
+    "explanation": {
+      "overview": "Signal termination is critical to maintain responsiveness. Mechanisms include: receptor desensitization and internalization; G protein inactivation (GTPase activity, RGS proteins); second messenger degradation (PDEs); and protein dephosphorylation (phosphatases). Persistent receptor activation would sustain the signal.",
+      "highYield": "Signal off: internalize, GTP hydrolysis, degrade messengers, dephosphorylate.",
+      "clinicalCorrelation": "Defects in signal termination (e.g., mutant Ras with defective GTPase) lead to chronic activation and cancer."
+    }
+  }
+]

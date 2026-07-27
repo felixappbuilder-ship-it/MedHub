@@ -1,58 +1,19 @@
 // frontend-user/scripts/router.js
 
 /**
- * Full-featured Client-Side Router – GitHub Pages compatible
- * Handles navigation from all buttons in every HTML page.
- * Automatically detects the base path (e.g., /repository-name) and uses it for all navigation.
+ * Client-Side Router – FULL VERSION
+ * Handles navigation from all HTML pages, enforces authentication,
+ * and maps page names to correct absolute paths.
+ *
+ * Subscription and free‑topic access is handled by the page itself
+ * (e.g., exam-room.html), not by the router.
  */
 
 import * as app from './app.js';
 import * as ui from './ui.js';
 import * as utils from './utils.js';
 
-// ==================== DETECT BASE PATH ====================
-<<<<<<< HEAD
-const BASE_PATH = (() => {
-    const path = window.location.pathname;
-    // Look for the last occurrence of '/pages/' to determine the base
-    const pagesIndex = path.lastIndexOf('/pages/');
-    if (pagesIndex !== -1) {
-        return path.substring(0, pagesIndex);
-    }
-    // If not in a pages subfolder, try to strip the filename
-    const lastSlash = path.lastIndexOf('/');
-    if (lastSlash > 0 && !path.endsWith('/')) {
-        // e.g., /repository/index.html -> /repository
-        return path.substring(0, lastSlash);
-    }
-    // Default to empty (site at root)
-    return '';
-})();
-
-console.log('[Router] Base path detected:', BASE_PATH);
-
 // ==================== ROUTE PERMISSIONS ====================
-=======
-// Use import.meta.url to get the script's full URL, then extract the base path up to '/scripts/'
-const scriptUrl = import.meta.url;
-let basePath = '';
-try {
-    const url = new URL(scriptUrl);
-    const pathParts = url.pathname.split('/');
-    // Remove the last two parts: 'scripts' and 'router.js'
-    pathParts.pop(); // remove 'router.js'
-    pathParts.pop(); // remove 'scripts'
-    basePath = pathParts.join('/');
-    if (basePath.endsWith('/')) basePath = basePath.slice(0, -1);
-    // If basePath is empty, leave it as empty string
-} catch (e) {
-    console.warn('[Router] Could not parse base path from script URL, falling back to empty');
-    basePath = '';
-}
-console.log('[Router] Base path detected:', basePath);
-
-// ==================== ROUTE PERMISSION DEFINITIONS ====================
->>>>>>> main
 const ROUTES = {
     public: [
         'index.html',
@@ -70,12 +31,11 @@ const ROUTES = {
         'free-trial.html',
         'payment.html',
         'exam-settings.html',
-        'exam-room.html',
+        'exam-room.html',      // authentication required, but subscription check inside the page
         'results.html',
         'performance.html',
         'profile.html'
-    ],
-    subscriptionRequired: ['exam-room.html']
+    ]
 };
 
 // ==================== ALLOWED NAVIGATION FLOWS ====================
@@ -103,7 +63,9 @@ const FLOW = {
     'forgot-password.html': ['login.html']
 };
 
+
 // ==================== PERMISSION CHECK ====================
+
 function isAllowed(targetPage, currentPage) {
     // Public pages always allowed
     if (ROUTES.public.includes(targetPage)) return true;
@@ -115,82 +77,50 @@ function isAllowed(targetPage, currentPage) {
         return false;
     }
 
-    // Subscription check (only exam-room)
-    if (targetPage === 'exam-room.html') {
-        const hasAccess = app.hasActiveSubscription();
-        if (!hasAccess) {
-            ui.showToast('Subscription required to take exams', 'warning');
-            return false;
-        }
-    }
-
-    // Flow check – if explicitly disallowed, warn but allow (except we can block if desired)
+    // Flow check – if the transition is explicitly forbidden, block it.
+    // But we allow going back to home/welcome always.
     if (FLOW[currentPage] && !FLOW[currentPage].includes(targetPage)) {
-        // Allow going back to home/welcome always
+        // Allow navigation to index or welcome from anywhere
         if (targetPage === 'index.html' || targetPage === 'welcome.html') {
             return true;
         }
-        console.warn(`Navigation from ${currentPage} to ${targetPage} is not in standard flow.`);
+        // Otherwise, allow but warn (could be intentional)
+        console.warn(`Navigation from ${currentPage} to ${targetPage} is not in the standard flow.`);
+        return true;
     }
 
     return true;
 }
 
-<<<<<<< HEAD
-// ==================== URL BUILDING (with base path) ====================
-=======
-// ==================== URL BUILDING ====================
->>>>>>> main
-function buildUrl(target) {
-    // Split target into path and hash (preserve hash)
-    const [pathAndQuery, hash] = target.split('#');
-    const hashPart = hash ? `#${hash}` : '';
+// ==================== URL BUILDER ====================
 
-    // Split path into base and query
+function buildUrl(page) {
+    // Split into path and query/hash
+    const [pathAndQuery, hash] = page.split('#');
     const [base, query] = pathAndQuery.split('?');
-    const queryPart = query ? `?${query}` : '';
+    const cleanBase = base.replace(/^\/+|\/+$/g, ''); // trim slashes
 
-    // Trim any leading/trailing slashes from base
-    const cleanBase = base.replace(/^\/+|\/+$/g, '');
-
-<<<<<<< HEAD
-    // If it's already an absolute path (starts with /), prepend BASE_PATH
-    if (base.startsWith('/')) {
-        return BASE_PATH + base + queryPart + hashPart;
-=======
-    // If it's already an absolute path (starts with /), prepend basePath
-    if (base.startsWith('/')) {
-        return basePath + base + queryPart + hashPart;
->>>>>>> main
-    }
-
-    // Map to correct location
+    let absolutePath;
     if (cleanBase === 'index.html') {
-<<<<<<< HEAD
-        return BASE_PATH + '/index.html' + queryPart + hashPart;
+        absolutePath = '/index.html';
     } else {
-        return BASE_PATH + `/pages/${cleanBase}` + queryPart + hashPart;
-=======
-        return basePath + '/index.html' + queryPart + hashPart;
-    } else {
-        return basePath + `/pages/${cleanBase}` + queryPart + hashPart;
->>>>>>> main
+        absolutePath = `/pages/${cleanBase}`;
     }
+
+    // Add query and hash if present
+    let result = absolutePath;
+    if (query) result += '?' + query;
+    if (hash) result += '#' + hash;
+    return result;
 }
 
-// ==================== PUBLIC API ====================
+// ==================== NAVIGATE ====================
 
-/**
- * Navigate to a page.
- * @param {string} page - as used in onclick handlers (may include query/hash)
- * @param {Object} data - optional data to pass via sessionStorage
- */
 export function navigateTo(page, data = {}) {
     console.log(`[Router] Navigating to: ${page}`);
 
-    // Extract base filename for permission checks (strip query/hash)
-    const base = page.split('?')[0].split('#')[0];
     const current = getCurrentPage();
+    const base = page.split('?')[0].split('#')[0]; // strip query/hash for check
 
     if (!isAllowed(base, current)) {
         return;
@@ -212,49 +142,36 @@ export function navigateTo(page, data = {}) {
     overlay.style.display = 'block';
     overlay.style.opacity = '1';
 
+    // Small delay to allow overlay to show
     setTimeout(() => {
         window.location.href = targetUrl;
     }, 50);
 }
 
-/**
- * Get current page filename from URL.
- * @returns {string} e.g., 'subjects.html'
- */
+// ==================== GET CURRENT PAGE ====================
+
 export function getCurrentPage() {
     const path = window.location.pathname;
-    // Remove base path to get relative path
-    let relativePath = path;
-<<<<<<< HEAD
-    if (BASE_PATH && path.startsWith(BASE_PATH)) {
-        relativePath = path.substring(BASE_PATH.length);
-=======
-    if (basePath && path.startsWith(basePath)) {
-        relativePath = path.substring(basePath.length);
->>>>>>> main
-    }
-    if (relativePath === '/' || relativePath === '/index.html') return 'index.html';
-    const parts = relativePath.split('/');
+    if (path === '/' || path === '/index.html') return 'index.html';
+    const parts = path.split('/');
     const filename = parts[parts.length - 1];
     return filename || 'index.html';
 }
 
-/**
- * Retrieve navigation data passed from previous page.
- * @returns {Object}
- */
+// ==================== NAVIGATION DATA ====================
+
 export function getNavData() {
     const data = sessionStorage.getItem('navData');
     sessionStorage.removeItem('navData');
     return data ? JSON.parse(data) : {};
 }
 
-/**
- * Go back in history.
- */
+// ==================== GO BACK ====================
+
 export function goBack() {
     window.history.back();
 }
 
-// Expose navigateTo globally exactly as the HTML expects
-window.router = { navigateTo };
+// ==================== EXPOSE GLOBALLY ====================
+
+window.router = { navigateTo, goBack };

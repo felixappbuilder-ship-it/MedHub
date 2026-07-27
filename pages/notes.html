@@ -1,0 +1,294 @@
+<!-- frontend-user/pages/notes.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Notes – MedHub</title>
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/css/common.css" media="all">
+    <link rel="stylesheet" href="/css/notes.css" media="all">
+    <!-- Paste this in the <head> of every HTML file after removing the Google Fonts <link> -->
+    <style>
+        /* System font stack – works offline, no external requests */
+        body,
+        input,
+        textarea,
+        select,
+        button {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+    </style>
+
+    <link rel="stylesheet" href="/libs/quill/quill.snow.css">
+    <script src="/libs/quill/quill.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfkit/0.13.0/pdfkit.standalone.js"></script>
+    <!-- Core modules -->
+    <script type="module" src="/scripts/utils.js"></script>
+    <script type="module" src="/scripts/ui.js"></script>
+    <script type="module" src="/scripts/router.js"></script>
+    <script type="module" src="/scripts/app.js"></script>
+    <script type="module" src="/scripts/notes.js"></script>
+    <script type="module" src="/scripts/notes-ui.js"></script>
+    <script type="module" src="/scripts/db.js"></script>
+    <script type="module" src="/scripts/ai.js"></script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js').catch(() => { });
+        }
+    </script>
+
+    <!-- Shimmer loading styles (inline for immediate effect) -->
+    <style>
+        /* Shimmer overlay – full screen, dark theme, on top of everything */
+        #shimmer-loading {
+            position: fixed;
+            inset: 0;
+            background-color: #1a1a2e;
+            /* dark background */
+            color: #ccc;
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 80px;
+            overflow-y: auto;
+            font-family: 'Inter', sans-serif;
+        }
+
+        #shimmer-loading .shimmer-message {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        /* Skeleton grid */
+        .shimmer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.5rem;
+            width: 90%;
+            max-width: 1200px;
+            padding: 0 1rem;
+        }
+
+        .shimmer-card {
+            background: #2a2a3e;
+            border-radius: 12px;
+            padding: 1.5rem;
+            height: 160px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            overflow: hidden;
+        }
+
+        /* Shimmer effect */
+        .shimmer-card .line {
+            height: 16px;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #2a2a3e 25%, #3a3a4e 50%, #2a2a3e 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+
+        .shimmer-card .line.short {
+            width: 60%;
+        }
+
+        .shimmer-card .line.medium {
+            width: 80%;
+        }
+
+        .shimmer-card .line.long {
+            width: 100%;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        /* When page is fully loaded, hide shimmer */
+        body.loaded #shimmer-loading {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- SHIMMER LOADING SCREEN (appears instantly, before JS) -->
+    <div id="shimmer-loading">
+        <div class="shimmer-message">✨ Please wait, loading your notes…</div>
+        <div class="shimmer-grid">
+            <!-- Repeat skeleton cards -->
+            <div class="shimmer-card">
+                <div class="line long"></div>
+                <div class="line medium"></div>
+                <div class="line short"></div>
+            </div>
+            <div class="shimmer-card">
+                <div class="line long"></div>
+                <div class="line medium"></div>
+                <div class="line short"></div>
+            </div>
+            <div class="shimmer-card">
+                <div class="line long"></div>
+                <div class="line medium"></div>
+                <div class="line short"></div>
+            </div>
+            <div class="shimmer-card">
+                <div class="line long"></div>
+                <div class="line medium"></div>
+                <div class="line short"></div>
+            </div>
+            <div class="shimmer-card">
+                <div class="line long"></div>
+                <div class="line medium"></div>
+                <div class="line short"></div>
+            </div>
+            <div class="shimmer-card">
+                <div class="line long"></div>
+                <div class="line medium"></div>
+                <div class="line short"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden MedHub logo for PDF generation -->
+    <img id="medhub-logo-img" src="../assets/images/logo.jpeg" style="display:none;">
+
+    <!-- Header -->
+    <header class="notes-header">
+        <div class="header-left">
+            <span class="hamburger" onclick="toggleHistory()">☰</span>
+            <span class="page-title">My Notes</span>
+        </div>
+        <div class="header-right">
+            <a href="performance.html">📊 Performance</a>
+            <a href="ai.html">🤖 AI Tutor</a>
+            <a href="subjects.html">📚 Subjects</a>
+            <button onclick="ui.toggleTheme()">🌓</button>
+        </div>
+    </header>
+
+    <!-- History Panel -->
+    <div class="history-panel" id="historyPanel">
+        <div class="history-header">
+            <h3>Recent Notes</h3>
+            <span class="close-history" onclick="toggleHistory()">✖</span>
+        </div>
+        <div id="historyList"></div>
+    </div>
+
+    <!-- Dashboard View -->
+    <div id="dashboard-view">
+        <div class="notes-toolbar">
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all" onclick="window.filterNotes('all')">All</button>
+                <button class="filter-tab" data-filter="work" onclick="window.filterNotes('work')">Work</button>
+                <button class="filter-tab" data-filter="personal"
+                    onclick="window.filterNotes('personal')">Personal</button>
+            </div>
+            <input type="text" id="searchNotes" placeholder="🔍 Search notes...">
+        </div>
+        <div class="note-grid" id="notesGrid"></div>
+        <button class="fab" onclick="window.createNewNote()">+</button>
+    </div>
+
+    <!-- Editor View -->
+    <div id="editor-view">
+        <div class="edit-header">
+            <div class="edit-header-left">
+                <span class="back-btn" onclick="window.closeEditor()">❮</span>
+                <span class="page-title">Edit Note</span>
+            </div>
+            <div class="edit-header-right">
+                <span class="tool-icon" onclick="window.toggleLock()" title="Password protect">🔒</span>
+                <span class="tool-icon" onclick="window.shareCurrentNote()" title="Share">🔗</span>
+                <span class="tool-icon" onclick="window.exportPDFCurrent()" title="Export PDF">📄</span>
+                <button class="save-btn" onclick="window.saveNote()">Save</button>
+                <span class="tool-icon" onclick="window.showEditorMenu()">⋮</span>
+            </div>
+        </div>
+        <div class="edit-body">
+            <input type="text" id="noteTitle" placeholder="Note title...">
+            <div class="date-line" id="noteDate"></div>
+            <div id="noteContent"></div>
+        </div>
+    </div>
+
+    <!-- Share Modal -->
+    <div id="share-modal" class="modal-overlay" style="display: none;">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Share Note</h3>
+                <button class="modal-close" onclick="window.closeShareModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="margin-bottom: 0.75rem;">Share this note with others. Anyone with the link can view it.</p>
+                <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+                    <input type="text" id="share-link-input" readonly
+                        style="flex:1; padding:0.5rem; border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--bg-secondary); color:var(--text-primary); font-family:monospace; font-size:0.85rem;">
+                    <button onclick="window.copyShareLink()" class="btn-secondary">📋 Copy</button>
+                    <button onclick="window.shareViaNative()" class="btn-primary">📤 Share</button>
+                </div>
+                <div style="text-align: center; margin: 1rem 0;">
+                    <div id="share-qr-code"
+                        style="display: inline-block; background: white; padding: 0.5rem; border-radius: var(--radius-sm);">
+                    </div>
+                </div>
+                <p style="font-size: 0.85rem; color: var(--text-muted); text-align: center;">Scan the QR code to open on
+                    mobile</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import * as app from '../scripts/app.js';
+        import * as ui from '../scripts/ui.js';
+        import * as notesUI from '../scripts/notes-ui.js';
+
+        // Apply stored theme immediately (fixes theme toggle bug)
+        ui.applyTheme();
+
+        // Expose global functions needed by HTML
+        window.toggleHistory = function () {
+            const panel = document.getElementById('historyPanel');
+            panel.classList.toggle('open');
+            if (panel.classList.contains('open')) {
+                notesUI.updateHistoryPanel();
+            }
+        };
+        window.filterNotes = notesUI.filterNotes;
+        window.createNewNote = notesUI.openNoteEditor;
+        window.closeEditor = notesUI.closeNoteEditor;
+        window.saveNote = notesUI.saveCurrentNote;
+        window.toggleLock = notesUI.toggleLockCurrent;
+        window.shareCurrentNote = notesUI.shareCurrentNote;
+        window.exportPDFCurrent = notesUI.exportPDFCurrent;
+        window.showEditorMenu = notesUI.showEditorMenu;
+        window.closeShareModal = notesUI.closeShareModal;
+        window.copyShareLink = notesUI.copyShareLink;
+        window.shareViaNative = notesUI.shareViaNative;
+
+        (async function () {
+            await app.initializeApp();
+            await notesUI.initNotesPage();       // wait for notes to render
+            // Hide shimmer now that everything is ready
+            document.body.classList.add('loaded');
+        })();
+    </script>
+</body>
+
+</html>

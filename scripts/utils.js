@@ -51,6 +51,41 @@ export function formatCurrency(amount) {
 }
 
 /**
+ * Format milliseconds to human-readable duration string.
+ * @param {number} ms - milliseconds
+ * @returns {string} e.g., "3 months", "30 days", "2 hours"
+ */
+export function formatDuration(ms) {
+    if (!ms || ms < 0) return '0 seconds';
+    const seconds = Math.floor(ms / 1000);
+    const minutes = Math.floor(seconds / 60);
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
+    const months = Math.floor(days / 30);
+    const years = Math.floor(days / 365);
+
+    if (years > 0) return `${years} year${years > 1 ? 's' : ''}`;
+    if (months > 0) return `${months} month${months > 1 ? 's' : ''}`;
+    if (days > 0) return `${days} day${days > 1 ? 's' : ''}`;
+    if (hours > 0) return `${hours} hour${hours > 1 ? 's' : ''}`;
+    if (minutes > 0) return `${minutes} minute${minutes > 1 ? 's' : ''}`;
+    return `${seconds} second${seconds > 1 ? 's' : ''}`;
+}
+
+/**
+ * Format file size in bytes to human-readable string.
+ * @param {number} bytes - file size in bytes
+ * @returns {string} e.g., "2.4 MB"
+ */
+export function formatFileSize(bytes) {
+    if (!bytes || bytes === 0) return '';
+    const sizes = ['B', 'KB', 'MB', 'GB', 'TB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(1024));
+    const value = (bytes / Math.pow(1024, i)).toFixed(1);
+    return `${value} ${sizes[i]}`;
+}
+
+/**
  * Safely parse JSON with fallback
  * @param {string} str - JSON string
  * @param {*} fallback - value to return on error

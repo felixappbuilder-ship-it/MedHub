@@ -746,7 +746,39 @@ class PaymentManager {
 // Create global instance
 const Payment = new PaymentManager();
 
-// Export for use in other files
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = Payment;
+// ==================== MODULE EXPORTS ====================
+// Wrappers that match the imports used by payment.html
+
+export async function initiateMPesaPayment(phoneNumber, planId) {
+  // Hardcoded plan prices (keep in sync with subscription.js PLANS constant)
+  const PLAN_PRICES = {
+    trial: 0,
+    monthly: 350,
+    quarterly: 850,
+    yearly: 2100
+  };
+  const amount = PLAN_PRICES[planId] || 350;
+
+  const paymentData = {
+    phoneNumber,
+    plan: planId,
+    amount,
+    description: `Subscription: ${planId}`,
+    userId: (typeof app !== 'undefined' ? app.getUser()?.id : undefined) || 'demo_user'
+  };
+
+  const result = await Payment.initiateMpesaPayment(paymentData);
+  return {
+    success: result.success,
+    transactionId: result.transactionId
+  };
+}
+
+export async function checkPaymentStatus(transactionId) {
+  const result = await Payment.checkPaymentStatus(transactionId);
+  if (result.success) {
+    // payment.html polling expects a plain status string like 'completed'
+    return result.payment.status;
+  }
+  return 'failed';
 }

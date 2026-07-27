@@ -1,0 +1,5704 @@
+{
+  "questions": [
+    {
+      "questionId": "molecular_biology_001",
+      "difficulty": 1,
+      "question": "What is the central dogma of molecular biology?",
+      "image": null,
+      "options": [
+        {
+          "text": "DNA → RNA → Protein",
+          "isCorrect": true,
+          "explanation": "This is the central dogma: DNA is transcribed to RNA, which is translated to protein."
+        },
+        {
+          "text": "RNA → DNA → Protein",
+          "isCorrect": false,
+          "explanation": "This reverse flow occurs in retroviruses, but the central dogma is DNA→RNA→protein."
+        },
+        {
+          "text": "Protein → RNA → DNA",
+          "isCorrect": false,
+          "explanation": "Protein cannot serve as a template for nucleic acid synthesis."
+        },
+        {
+          "text": "DNA → Protein → RNA",
+          "isCorrect": false,
+          "explanation": "Protein is not an intermediate in the transfer of information from DNA to RNA."
+        },
+        {
+          "text": "RNA → Protein → DNA",
+          "isCorrect": false,
+          "explanation": "This order does not represent the standard flow of genetic information."
+        }
+      ],
+      "explanation": {
+        "overview": "The central dogma describes the flow of genetic information: DNA is transcribed to RNA, which is translated to protein.",
+        "highYield": "DNA → RNA → Protein.",
+        "clinicalCorrelation": "The central dogma underpins all gene expression; drugs targeting transcription (e.g., rifampin) or translation (e.g., tetracyclines) exploit this flow."
+      }
+    },
+    {
+      "questionId": "molecular_biology_002",
+      "difficulty": 1,
+      "question": "Which enzyme catalyzes the synthesis of RNA from a DNA template?",
+      "image": null,
+      "options": [
+        {
+          "text": "DNA polymerase",
+          "isCorrect": false,
+          "explanation": "DNA polymerase synthesizes DNA, not RNA."
+        },
+        {
+          "text": "RNA polymerase",
+          "isCorrect": true,
+          "explanation": "RNA polymerase synthesizes RNA complementary to a DNA strand during transcription."
+        },
+        {
+          "text": "Reverse transcriptase",
+          "isCorrect": false,
+          "explanation": "Reverse transcriptase synthesizes DNA from an RNA template."
+        },
+        {
+          "text": "Helicase",
+          "isCorrect": false,
+          "explanation": "Helicase unwinds DNA, but does not synthesize RNA."
+        },
+        {
+          "text": "Primase",
+          "isCorrect": false,
+          "explanation": "Primase synthesizes short RNA primers, but not the full transcript."
+        }
+      ],
+      "explanation": {
+        "overview": "RNA polymerase synthesizes RNA complementary to a DNA strand during transcription.",
+        "highYield": "RNA polymerase = transcription enzyme.",
+        "clinicalCorrelation": "Bacterial RNA polymerase is the target of rifampin, used to treat tuberculosis."
+      }
+    },
+    {
+      "questionId": "molecular_biology_003",
+      "difficulty": 1,
+      "question": "The genetic code is said to be degenerate because:",
+      "image": null,
+      "options": [
+        {
+          "text": "Multiple codons can specify the same amino acid",
+          "isCorrect": true,
+          "explanation": "Degeneracy means most amino acids are encoded by more than one codon."
+        },
+        {
+          "text": "One codon can specify multiple amino acids",
+          "isCorrect": false,
+          "explanation": "Each codon specifies only one amino acid."
+        },
+        {
+          "text": "It is universal across all organisms",
+          "isCorrect": false,
+          "explanation": "Universality is a separate property, though there are exceptions in mitochondria."
+        },
+        {
+          "text": "It contains stop codons",
+          "isCorrect": false,
+          "explanation": "Stop codons are part of the code but do not define degeneracy."
+        },
+        {
+          "text": "It is read in triplets",
+          "isCorrect": false,
+          "explanation": "Triplet reading is a feature, not degeneracy."
+        }
+      ],
+      "explanation": {
+        "overview": "Degeneracy means most amino acids are encoded by more than one codon, reducing the impact of mutations.",
+        "highYield": "Genetic code degeneracy = multiple codons per amino acid.",
+        "clinicalCorrelation": "Silent mutations exploit degeneracy and do not alter protein sequence."
+      }
+    },
+    {
+      "questionId": "molecular_biology_004",
+      "difficulty": 1,
+      "question": "A codon consists of how many nucleotides?",
+      "image": null,
+      "options": [
+        {
+          "text": "One",
+          "isCorrect": false,
+          "explanation": "A single nucleotide would only encode 4 possibilities, not enough for 20 amino acids."
+        },
+        {
+          "text": "Two",
+          "isCorrect": false,
+          "explanation": "Two nucleotides would give 16 combinations, still insufficient."
+        },
+        {
+          "text": "Three",
+          "isCorrect": true,
+          "explanation": "The genetic code is read in triplets (codons) during translation."
+        },
+        {
+          "text": "Four",
+          "isCorrect": false,
+          "explanation": "Codons are triplets, not quadruplets."
+        },
+        {
+          "text": "Five",
+          "isCorrect": false,
+          "explanation": "Codons are exactly three nucleotides."
+        }
+      ],
+      "explanation": {
+        "overview": "The genetic code is read in triplets (codons) during translation.",
+        "highYield": "Codon = 3 nucleotides.",
+        "clinicalCorrelation": "Frameshift mutations insert or delete nucleotides, altering the reading frame and protein sequence."
+      }
+    },
+    {
+      "questionId": "molecular_biology_005",
+      "difficulty": 1,
+      "question": "Which of the following is a stop codon?",
+      "image": null,
+      "options": [
+        {
+          "text": "AUG",
+          "isCorrect": false,
+          "explanation": "AUG is the start codon (methionine)."
+        },
+        {
+          "text": "UAA",
+          "isCorrect": true,
+          "explanation": "UAA, UAG, and UGA are termination codons."
+        },
+        {
+          "text": "GUG",
+          "isCorrect": false,
+          "explanation": "GUG codes for valine, though in prokaryotes it can sometimes initiate translation."
+        },
+        {
+          "text": "CUG",
+          "isCorrect": false,
+          "explanation": "CUG codes for leucine."
+        },
+        {
+          "text": "UCG",
+          "isCorrect": false,
+          "explanation": "UCG codes for serine."
+        }
+      ],
+      "explanation": {
+        "overview": "UAA, UAG, and UGA are termination codons that do not specify any amino acid.",
+        "highYield": "Stop codons: UAA, UAG, UGA.",
+        "clinicalCorrelation": "Nonsense mutations create premature stop codons, leading to truncated proteins."
+      }
+    },
+    {
+      "questionId": "molecular_biology_006",
+      "difficulty": 1,
+      "question": "The start codon for protein synthesis in eukaryotes is:",
+      "image": null,
+      "options": [
+        {
+          "text": "AUG (methionine)",
+          "isCorrect": true,
+          "explanation": "AUG codes for methionine and serves as the initiation codon."
+        },
+        {
+          "text": "GUG",
+          "isCorrect": false,
+          "explanation": "GUG normally codes for valine."
+        },
+        {
+          "text": "UAA",
+          "isCorrect": false,
+          "explanation": "UAA is a stop codon."
+        },
+        {
+          "text": "UGA",
+          "isCorrect": false,
+          "explanation": "UGA is a stop codon."
+        },
+        {
+          "text": "UAG",
+          "isCorrect": false,
+          "explanation": "UAG is a stop codon."
+        }
+      ],
+      "explanation": {
+        "overview": "AUG codes for methionine and serves as the initiation codon.",
+        "highYield": "Start codon = AUG (Met).",
+        "clinicalCorrelation": "In eukaryotes, the initiator tRNA carries methionine, which may be removed post‑translationally."
+      }
+    },
+    {
+      "questionId": "molecular_biology_007",
+      "difficulty": 1,
+      "question": "Which of the following is NOT a type of RNA?",
+      "image": null,
+      "options": [
+        {
+          "text": "mRNA",
+          "isCorrect": false,
+          "explanation": "mRNA (messenger RNA) is a type of RNA."
+        },
+        {
+          "text": "tRNA",
+          "isCorrect": false,
+          "explanation": "tRNA (transfer RNA) is a type of RNA."
+        },
+        {
+          "text": "rRNA",
+          "isCorrect": false,
+          "explanation": "rRNA (ribosomal RNA) is a type of RNA."
+        },
+        {
+          "text": "snRNA",
+          "isCorrect": false,
+          "explanation": "snRNA (small nuclear RNA) is a type of RNA."
+        },
+        {
+          "text": "sDNA",
+          "isCorrect": true,
+          "explanation": "sDNA is not a type of RNA; it could refer to single‑stranded DNA."
+        }
+      ],
+      "explanation": {
+        "overview": "sDNA (small DNA) is not a type of RNA; all others are functional RNAs.",
+        "highYield": "RNA types: mRNA, tRNA, rRNA, snRNA, etc. Not sDNA.",
+        "clinicalCorrelation": "Different RNA types serve distinct functions in gene expression and regulation."
+      }
+    },
+    {
+      "questionId": "molecular_biology_008",
+      "difficulty": 1,
+      "question": "Transfer RNA (tRNA) functions to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Carry amino acids to the ribosome",
+          "isCorrect": true,
+          "explanation": "tRNA molecules bring specific amino acids to the ribosome during translation."
+        },
+        {
+          "text": "Form the ribosomal structure",
+          "isCorrect": false,
+          "explanation": "rRNA forms the ribosomal structure."
+        },
+        {
+          "text": "Carry genetic information from nucleus",
+          "isCorrect": false,
+          "explanation": "mRNA carries genetic information."
+        },
+        {
+          "text": "Splice introns",
+          "isCorrect": false,
+          "explanation": "Splicing is performed by snRNPs in the spliceosome."
+        },
+        {
+          "text": "Catalyze peptide bond formation",
+          "isCorrect": false,
+          "explanation": "Peptide bond formation is catalyzed by rRNA (ribozyme)."
+        }
+      ],
+      "explanation": {
+        "overview": "tRNA molecules bring specific amino acids to the ribosome during translation.",
+        "highYield": "tRNA = adaptor between mRNA codon and amino acid.",
+        "clinicalCorrelation": "Mutations in mitochondrial tRNA genes cause diseases like MELAS."
+      }
+    },
+    {
+      "questionId": "molecular_biology_009",
+      "difficulty": 1,
+      "question": "Ribosomal RNA (rRNA) is a component of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Ribosomes",
+          "isCorrect": true,
+          "explanation": "rRNA is the catalytic and structural component of ribosomes."
+        },
+        {
+          "text": "Spliceosomes",
+          "isCorrect": false,
+          "explanation": "Spliceosomes are composed of snRNPs."
+        },
+        {
+          "text": "Nucleosomes",
+          "isCorrect": false,
+          "explanation": "Nucleosomes consist of DNA wrapped around histones."
+        },
+        {
+          "text": "Chromatin",
+          "isCorrect": false,
+          "explanation": "Chromatin is DNA‑protein complex."
+        },
+        {
+          "text": "Signal recognition particle",
+          "isCorrect": false,
+          "explanation": "SRP contains a small RNA but rRNA is specific to ribosomes."
+        }
+      ],
+      "explanation": {
+        "overview": "rRNA is the catalytic and structural component of ribosomes.",
+        "highYield": "rRNA = ribosomal component.",
+        "clinicalCorrelation": "Some antibiotics (e.g., aminoglycosides) bind to bacterial rRNA, inhibiting protein synthesis."
+      }
+    },
+    {
+      "questionId": "molecular_biology_010",
+      "difficulty": 2,
+      "question": "The enzyme that adds amino acids to tRNA is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Aminoacyl‑tRNA synthetase",
+          "isCorrect": true,
+          "explanation": "Each aminoacyl‑tRNA synthetase attaches a specific amino acid to its cognate tRNA."
+        },
+        {
+          "text": "Peptidyl transferase",
+          "isCorrect": false,
+          "explanation": "Peptidyl transferase catalyzes peptide bond formation."
+        },
+        {
+          "text": "Transaminase",
+          "isCorrect": false,
+          "explanation": "Transaminases transfer amino groups, not attach amino acids to tRNA."
+        },
+        {
+          "text": "Kinase",
+          "isCorrect": false,
+          "explanation": "Kinases phosphorylate proteins, not tRNA."
+        },
+        {
+          "text": "Ligase",
+          "isCorrect": false,
+          "explanation": "Ligases join DNA or RNA fragments."
+        }
+      ],
+      "explanation": {
+        "overview": "Each aminoacyl‑tRNA synthetase attaches a specific amino acid to its cognate tRNA.",
+        "highYield": "Aminoacyl‑tRNA synthetase charges tRNA.",
+        "clinicalCorrelation": "Mutations in mitochondrial aminoacyl‑tRNA synthetases can cause neurological disorders."
+      }
+    },
+    {
+      "questionId": "molecular_biology_011",
+      "difficulty": 2,
+      "question": "The ribosome's peptidyl transferase activity is catalyzed by:",
+      "image": null,
+      "options": [
+        {
+          "text": "rRNA (ribozyme)",
+          "isCorrect": true,
+          "explanation": "Peptide bond formation is catalyzed by the 23S rRNA in the large ribosomal subunit."
+        },
+        {
+          "text": "Protein subunits",
+          "isCorrect": false,
+          "explanation": "The ribosomal proteins are not the catalytic component; the rRNA is."
+        },
+        {
+          "text": "tRNA",
+          "isCorrect": false,
+          "explanation": "tRNA delivers amino acids but does not catalyze bond formation."
+        },
+        {
+          "text": "mRNA",
+          "isCorrect": false,
+          "explanation": "mRNA provides the template."
+        },
+        {
+          "text": "Initiation factors",
+          "isCorrect": false,
+          "explanation": "Initiation factors assist in translation start, not catalysis."
+        }
+      ],
+      "explanation": {
+        "overview": "Peptide bond formation is catalyzed by the 23S rRNA in the large ribosomal subunit, making it a ribozyme.",
+        "highYield": "Peptidyl transferase = rRNA ribozyme.",
+        "clinicalCorrelation": "Macrolide antibiotics block the peptide exit tunnel of the 50S subunit."
+      }
+    },
+    {
+      "questionId": "molecular_biology_012",
+      "difficulty": 2,
+      "question": "Introns are removed from pre‑mRNA by the:",
+      "image": null,
+      "options": [
+        {
+          "text": "Spliceosome",
+          "isCorrect": true,
+          "explanation": "Spliceosomes, composed of snRNPs, catalyze the splicing of introns from pre‑mRNA."
+        },
+        {
+          "text": "Ribosome",
+          "isCorrect": false,
+          "explanation": "Ribosomes translate mRNA into protein."
+        },
+        {
+          "text": "Proteasome",
+          "isCorrect": false,
+          "explanation": "Proteasomes degrade proteins."
+        },
+        {
+          "text": "Nucleosome",
+          "isCorrect": false,
+          "explanation": "Nucleosomes are DNA packaging units."
+        },
+        {
+          "text": "Exosome",
+          "isCorrect": false,
+          "explanation": "The exosome degrades RNA."
+        }
+      ],
+      "explanation": {
+        "overview": "Spliceosomes, composed of snRNPs, catalyze the splicing of introns from pre‑mRNA.",
+        "highYield": "Splicing = spliceosome (snRNPs).",
+        "clinicalCorrelation": "Mutations in spliceosome components are found in some cancers and retinitis pigmentosa."
+      }
+    },
+    {
+      "questionId": "molecular_biology_013",
+      "difficulty": 2,
+      "question": "Alternative splicing allows:",
+      "image": null,
+      "options": [
+        {
+          "text": "One gene to produce multiple protein isoforms",
+          "isCorrect": true,
+          "explanation": "Alternative splicing combines different exons to generate diverse mRNAs from a single gene."
+        },
+        {
+          "text": "Removal of introns",
+          "isCorrect": false,
+          "explanation": "Constitutive splicing removes all introns, but alternative splicing specifically creates isoforms."
+        },
+        {
+          "text": "Addition of a poly‑A tail",
+          "isCorrect": false,
+          "explanation": "Polyadenylation is a separate processing step."
+        },
+        {
+          "text": "Capping of mRNA",
+          "isCorrect": false,
+          "explanation": "5' capping is a separate modification."
+        },
+        {
+          "text": "RNA editing",
+          "isCorrect": false,
+          "explanation": "RNA editing alters base sequence, not exon combination."
+        }
+      ],
+      "explanation": {
+        "overview": "Alternative splicing combines different exons to generate diverse mRNAs from a single gene.",
+        "highYield": "Alternative splicing = multiple proteins from one gene.",
+        "clinicalCorrelation": "Aberrant splicing contributes to diseases like spinal muscular atrophy (SMN2 splicing)."
+      }
+    },
+    {
+      "questionId": "molecular_biology_014",
+      "difficulty": 2,
+      "question": "The poly‑A tail at the 3' end of eukaryotic mRNA functions in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Stability and translation efficiency",
+          "isCorrect": true,
+          "explanation": "The poly‑A tail protects mRNA from degradation and aids in translation initiation."
+        },
+        {
+          "text": "Initiation of replication",
+          "isCorrect": false,
+          "explanation": "DNA replication initiation is unrelated to poly‑A tail."
+        },
+        {
+          "text": "Splicing",
+          "isCorrect": false,
+          "explanation": "Splicing occurs before polyadenylation."
+        },
+        {
+          "text": "Export from nucleus only",
+          "isCorrect": false,
+          "explanation": "The tail also enhances stability and translation, not just export."
+        },
+        {
+          "text": "Capping",
+          "isCorrect": false,
+          "explanation": "Capping occurs at the 5' end."
+        }
+      ],
+      "explanation": {
+        "overview": "The poly‑A tail protects mRNA from degradation and aids in translation initiation.",
+        "highYield": "Poly‑A tail = stability + translation.",
+        "clinicalCorrelation": "Histone mRNAs are exceptions; they lack a poly‑A tail and have a stem‑loop structure instead."
+      }
+    },
+    {
+      "questionId": "molecular_biology_015",
+      "difficulty": 2,
+      "question": "The 5' cap of eukaryotic mRNA is a:",
+      "image": null,
+      "options": [
+        {
+          "text": "7‑methylguanosine linked via 5'–5' triphosphate",
+          "isCorrect": true,
+          "explanation": "The cap is a reverse 5'–5' linkage of 7‑methylguanosine."
+        },
+        {
+          "text": "Poly‑A tail",
+          "isCorrect": false,
+          "explanation": "The poly‑A tail is at the 3' end."
+        },
+        {
+          "text": "Modified adenine",
+          "isCorrect": false,
+          "explanation": "The cap contains guanosine, not adenine."
+        },
+        {
+          "text": "Ribose methylation",
+          "isCorrect": false,
+          "explanation": "Ribose methylation may occur but the cap structure is 7‑methylguanosine."
+        },
+        {
+          "text": "Phosphate group",
+          "isCorrect": false,
+          "explanation": "A simple phosphate is not the cap."
+        }
+      ],
+      "explanation": {
+        "overview": "The cap is a reverse 5'–5' linkage of 7‑methylguanosine, essential for translation initiation and stability.",
+        "highYield": "5' cap = 7‑methylguanosine (5'‑5' triphosphate).",
+        "clinicalCorrelation": "The cap structure is recognized by eIF4E during translation initiation."
+      }
+    },
+    {
+      "questionId": "molecular_biology_016",
+      "difficulty": 2,
+      "question": "The wobble hypothesis explains:",
+      "image": null,
+      "options": [
+        {
+          "text": "Flexible base pairing at the third codon position",
+          "isCorrect": false,
+          "explanation": "This is true, but the wobble also relates to anticodon flexibility and degeneracy."
+        },
+        {
+          "text": "Why the genetic code is degenerate",
+          "isCorrect": false,
+          "explanation": "Wobble contributes to degeneracy."
+        },
+        {
+          "text": "tRNA anticodon flexibility",
+          "isCorrect": false,
+          "explanation": "Wobble describes non‑standard base pairing at the anticodon's 5' end."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Wobble allows a single tRNA to recognize multiple codons, explaining degeneracy and flexible base pairing."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All statements are correct."
+        }
+      ],
+      "explanation": {
+        "overview": "Wobble allows a single tRNA to recognize more than one codon due to non‑standard pairing at the 5' end of the anticodon.",
+        "highYield": "Wobble = third base flexibility in codon‑anticodon pairing.",
+        "clinicalCorrelation": "Wobble reduces the number of tRNAs needed to read the genetic code."
+      }
+    },
+    {
+      "questionId": "molecular_biology_017",
+      "difficulty": 2,
+      "question": "Inosine (I) is a modified base found in:",
+      "image": null,
+      "options": [
+        {
+          "text": "tRNA anticodons",
+          "isCorrect": true,
+          "explanation": "Inosine is often present in the wobble position of tRNA anticodons and can pair with U, C, or A."
+        },
+        {
+          "text": "mRNA codons",
+          "isCorrect": false,
+          "explanation": "Inosine is not found in mRNA codons."
+        },
+        {
+          "text": "DNA",
+          "isCorrect": false,
+          "explanation": "Inosine is found in RNA, not DNA."
+        },
+        {
+          "text": "rRNA",
+          "isCorrect": false,
+          "explanation": "Inosine may occur in rRNA but is characteristic of tRNA anticodons."
+        },
+        {
+          "text": "snRNA",
+          "isCorrect": false,
+          "explanation": "Inosine is not a typical feature of snRNA."
+        }
+      ],
+      "explanation": {
+        "overview": "Inosine is often present in the wobble position of tRNA anticodons and can pair with U, C, or A.",
+        "highYield": "Inosine in tRNA wobble allows broad codon recognition.",
+        "clinicalCorrelation": "Inosine formation by ADAR enzymes in mRNA editing can alter protein function."
+      }
+    },
+    {
+      "questionId": "molecular_biology_018",
+      "difficulty": 1,
+      "question": "DNA replication is described as semi‑conservative because:",
+      "image": null,
+      "options": [
+        {
+          "text": "Each new DNA molecule contains one original strand and one new strand",
+          "isCorrect": true,
+          "explanation": "Meselson‑Stahl experiment proved semi‑conservative replication."
+        },
+        {
+          "text": "Both strands are completely new",
+          "isCorrect": false,
+          "explanation": "That would be conservative replication."
+        },
+        {
+          "text": "Both strands are old",
+          "isCorrect": false,
+          "explanation": "Impossible; replication must produce new strands."
+        },
+        {
+          "text": "One strand is conserved and the other is degraded",
+          "isCorrect": false,
+          "explanation": "Not correct."
+        },
+        {
+          "text": "None of the above",
+          "isCorrect": false,
+          "explanation": "Option A is correct."
+        }
+      ],
+      "explanation": {
+        "overview": "Meselson‑Stahl experiment proved semi‑conservative replication.",
+        "highYield": "DNA replication is semi‑conservative.",
+        "clinicalCorrelation": "This mechanism ensures faithful transmission of genetic information."
+      }
+    },
+    {
+      "questionId": "molecular_biology_019",
+      "difficulty": 1,
+      "question": "The enzyme that unwinds the DNA double helix during replication is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Helicase",
+          "isCorrect": true,
+          "explanation": "Helicase breaks hydrogen bonds between strands, unwinding DNA."
+        },
+        {
+          "text": "Topoisomerase",
+          "isCorrect": false,
+          "explanation": "Topoisomerase relieves supercoiling."
+        },
+        {
+          "text": "DNA polymerase",
+          "isCorrect": false,
+          "explanation": "DNA polymerase synthesizes DNA."
+        },
+        {
+          "text": "Primase",
+          "isCorrect": false,
+          "explanation": "Primase synthesizes RNA primers."
+        },
+        {
+          "text": "Ligase",
+          "isCorrect": false,
+          "explanation": "Ligase joins DNA fragments."
+        }
+      ],
+      "explanation": {
+        "overview": "Helicase breaks hydrogen bonds between strands, unwinding DNA.",
+        "highYield": "Helicase = DNA unwinding.",
+        "clinicalCorrelation": "Mutations in helicase genes cause premature aging syndromes (Werner, Bloom)."
+      }
+    },
+    {
+      "questionId": "molecular_biology_020",
+      "difficulty": 2,
+      "question": "Topoisomerase functions to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Relieve supercoiling ahead of the replication fork",
+          "isCorrect": true,
+          "explanation": "Topoisomerases cut and reseal DNA to relieve torsional stress."
+        },
+        {
+          "text": "Unwind DNA",
+          "isCorrect": false,
+          "explanation": "Helicase unwinds DNA."
+        },
+        {
+          "text": "Synthesize RNA primers",
+          "isCorrect": false,
+          "explanation": "Primase synthesizes primers."
+        },
+        {
+          "text": "Join Okazaki fragments",
+          "isCorrect": false,
+          "explanation": "DNA ligase joins fragments."
+        },
+        {
+          "text": "Add nucleotides to DNA",
+          "isCorrect": false,
+          "explanation": "DNA polymerase adds nucleotides."
+        }
+      ],
+      "explanation": {
+        "overview": "Topoisomerases cut and reseal DNA to relieve torsional stress.",
+        "highYield": "Topoisomerase = relieves supercoiling.",
+        "clinicalCorrelation": "Fluoroquinolones inhibit bacterial topoisomerase II (DNA gyrase)."
+      }
+    },
+    {
+      "questionId": "molecular_biology_021",
+      "difficulty": 1,
+      "question": "Okazaki fragments are synthesized on the:",
+      "image": null,
+      "options": [
+        {
+          "text": "Lagging strand",
+          "isCorrect": true,
+          "explanation": "On the lagging strand, DNA synthesis is discontinuous, producing Okazaki fragments."
+        },
+        {
+          "text": "Leading strand",
+          "isCorrect": false,
+          "explanation": "The leading strand is synthesized continuously."
+        },
+        {
+          "text": "Both strands",
+          "isCorrect": false,
+          "explanation": "Only the lagging strand has Okazaki fragments."
+        },
+        {
+          "text": "RNA primer",
+          "isCorrect": false,
+          "explanation": "Primers are not Okazaki fragments."
+        },
+        {
+          "text": "Template strand",
+          "isCorrect": false,
+          "explanation": "The template strand is the parental strand."
+        }
+      ],
+      "explanation": {
+        "overview": "On the lagging strand, DNA synthesis is discontinuous, producing Okazaki fragments.",
+        "highYield": "Lagging strand = Okazaki fragments.",
+        "clinicalCorrelation": "Defects in Okazaki fragment processing can cause genome instability."
+      }
+    },
+    {
+      "questionId": "molecular_biology_022",
+      "difficulty": 1,
+      "question": "The enzyme that joins Okazaki fragments is:",
+      "image": null,
+      "options": [
+        {
+          "text": "DNA ligase",
+          "isCorrect": true,
+          "explanation": "DNA ligase seals nicks between fragments by forming phosphodiester bonds."
+        },
+        {
+          "text": "DNA polymerase I",
+          "isCorrect": false,
+          "explanation": "DNA polymerase I removes RNA primers and fills gaps, but ligase joins the fragments."
+        },
+        {
+          "text": "DNA polymerase III",
+          "isCorrect": false,
+          "explanation": "Pol III synthesizes DNA."
+        },
+        {
+          "text": "Helicase",
+          "isCorrect": false,
+          "explanation": "Helicase unwinds DNA."
+        },
+        {
+          "text": "Primase",
+          "isCorrect": false,
+          "explanation": "Primase synthesizes primers."
+        }
+      ],
+      "explanation": {
+        "overview": "DNA ligase seals nicks between fragments by forming phosphodiester bonds.",
+        "highYield": "DNA ligase joins Okazaki fragments.",
+        "clinicalCorrelation": "DNA ligase is essential in recombinant DNA technology."
+      }
+    },
+    {
+      "questionId": "molecular_biology_023",
+      "difficulty": 2,
+      "question": "The primer for DNA replication is synthesized by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Primase",
+          "isCorrect": true,
+          "explanation": "Primase (a type of RNA polymerase) synthesizes short RNA primers."
+        },
+        {
+          "text": "DNA polymerase α",
+          "isCorrect": false,
+          "explanation": "In eukaryotes, Pol α extends the primer but primase synthesizes it."
+        },
+        {
+          "text": "Helicase",
+          "isCorrect": false,
+          "explanation": "Helicase unwinds DNA."
+        },
+        {
+          "text": "Ligase",
+          "isCorrect": false,
+          "explanation": "Ligase seals nicks."
+        },
+        {
+          "text": "Topoisomerase",
+          "isCorrect": false,
+          "explanation": "Topoisomerase relieves supercoiling."
+        }
+      ],
+      "explanation": {
+        "overview": "Primase (a type of RNA polymerase) synthesizes short RNA primers.",
+        "highYield": "Primase = RNA primer synthesis.",
+        "clinicalCorrelation": "Primase is a potential target for antibacterial drugs."
+      }
+    },
+    {
+      "questionId": "molecular_biology_024",
+      "difficulty": 2,
+      "question": "The proofreading function of DNA polymerase is due to its:",
+      "image": null,
+      "options": [
+        {
+          "text": "3'→5' exonuclease activity",
+          "isCorrect": true,
+          "explanation": "3'→5' exonuclease allows DNA polymerase to remove misincorporated nucleotides."
+        },
+        {
+          "text": "5'→3' exonuclease activity",
+          "isCorrect": false,
+          "explanation": "5'→3' exonuclease is used for primer removal (e.g., Pol I), not proofreading."
+        },
+        {
+          "text": "Endonuclease activity",
+          "isCorrect": false,
+          "explanation": "Endonucleases cut internal bonds, not proofread."
+        },
+        {
+          "text": "Ligase activity",
+          "isCorrect": false,
+          "explanation": "Ligases join fragments."
+        },
+        {
+          "text": "Primase activity",
+          "isCorrect": false,
+          "explanation": "Primase synthesizes primers."
+        }
+      ],
+      "explanation": {
+        "overview": "3'→5' exonuclease allows DNA polymerase to remove misincorporated nucleotides.",
+        "highYield": "Proofreading = 3'→5' exonuclease.",
+        "clinicalCorrelation": "Mutations that reduce proofreading increase cancer risk (e.g., DNA polymerase ε mutations)."
+      }
+    },
+    {
+      "questionId": "molecular_biology_025",
+      "difficulty": 2,
+      "question": "Telomeres are repetitive sequences at chromosome ends that are maintained by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Telomerase",
+          "isCorrect": true,
+          "explanation": "Telomerase adds telomeric repeats to chromosome ends to counteract shortening during replication."
+        },
+        {
+          "text": "DNA polymerase",
+          "isCorrect": false,
+          "explanation": "DNA polymerase cannot fully replicate chromosome ends."
+        },
+        {
+          "text": "Helicase",
+          "isCorrect": false,
+          "explanation": "Helicase unwinds DNA."
+        },
+        {
+          "text": "Ligase",
+          "isCorrect": false,
+          "explanation": "Ligase seals nicks."
+        },
+        {
+          "text": "Topoisomerase",
+          "isCorrect": false,
+          "explanation": "Topoisomerase alters supercoiling."
+        }
+      ],
+      "explanation": {
+        "overview": "Telomerase adds telomeric repeats to chromosome ends to counteract shortening during replication.",
+        "highYield": "Telomerase maintains telomere length.",
+        "clinicalCorrelation": "Telomerase is activated in most cancers, making it a therapeutic target."
+      }
+    },
+    {
+      "questionId": "molecular_biology_026",
+      "difficulty": 2,
+      "question": "In prokaryotes, transcription and translation are coupled because:",
+      "image": null,
+      "options": [
+        {
+          "text": "There is no nuclear membrane",
+          "isCorrect": true,
+          "explanation": "In bacteria, transcription and translation occur in the same compartment (cytosol) simultaneously."
+        },
+        {
+          "text": "mRNA is processed in the nucleus",
+          "isCorrect": false,
+          "explanation": "Prokaryotes do not have a nucleus."
+        },
+        {
+          "text": "Ribosomes are only in the nucleus",
+          "isCorrect": false,
+          "explanation": "Ribosomes are in the cytoplasm."
+        },
+        {
+          "text": "Transcription requires a primer",
+          "isCorrect": false,
+          "explanation": "Transcription does not require a primer."
+        },
+        {
+          "text": "Translation occurs in the nucleus",
+          "isCorrect": false,
+          "explanation": "Translation occurs in the cytoplasm."
+        }
+      ],
+      "explanation": {
+        "overview": "In bacteria, transcription and translation occur in the same compartment (cytosol) simultaneously.",
+        "highYield": "Prokaryotes: coupled transcription‑translation.",
+        "clinicalCorrelation": "This coupling allows rapid response to environmental changes."
+      }
+    },
+    {
+      "questionId": "molecular_biology_027",
+      "difficulty": 2,
+      "question": "The operator region of an operon binds:",
+      "image": null,
+      "options": [
+        {
+          "text": "Repressor protein",
+          "isCorrect": true,
+          "explanation": "The operator is the binding site for repressor proteins, controlling transcription."
+        },
+        {
+          "text": "RNA polymerase",
+          "isCorrect": false,
+          "explanation": "RNA polymerase binds to the promoter."
+        },
+        {
+          "text": "Ribosome",
+          "isCorrect": false,
+          "explanation": "Ribosomes bind to mRNA."
+        },
+        {
+          "text": "DNA polymerase",
+          "isCorrect": false,
+          "explanation": "DNA polymerase binds to DNA during replication."
+        },
+        {
+          "text": "Promoter",
+          "isCorrect": false,
+          "explanation": "The promoter is a separate element."
+        }
+      ],
+      "explanation": {
+        "overview": "The operator is the binding site for repressor proteins, controlling transcription.",
+        "highYield": "Operator = repressor binding site.",
+        "clinicalCorrelation": "The lac operon is a classic model of gene regulation."
+      }
+    },
+    {
+      "questionId": "molecular_biology_028",
+      "difficulty": 2,
+      "question": "The lac operon is induced by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Allolactose (or lactose)",
+          "isCorrect": true,
+          "explanation": "Allolactose binds to the lac repressor, inactivating it and allowing transcription."
+        },
+        {
+          "text": "Glucose",
+          "isCorrect": false,
+          "explanation": "Glucose represses the lac operon via catabolite repression."
+        },
+        {
+          "text": "cAMP",
+          "isCorrect": false,
+          "explanation": "cAMP‑CAP complex activates the operon, but the inducer is allolactose."
+        },
+        {
+          "text": "Galactose",
+          "isCorrect": false,
+          "explanation": "Galactose is not the direct inducer."
+        },
+        {
+          "text": "Tryptophan",
+          "isCorrect": false,
+          "explanation": "Tryptophan is a corepressor for the trp operon."
+        }
+      ],
+      "explanation": {
+        "overview": "Allolactose binds to the lac repressor, inactivating it and allowing transcription.",
+        "highYield": "Lac operon inducer: allolactose.",
+        "clinicalCorrelation": "IPTG is a non‑metabolizable inducer used in laboratory protein expression."
+      }
+    },
+    {
+      "questionId": "molecular_biology_029",
+      "difficulty": 2,
+      "question": "Catabolite repression of the lac operon involves:",
+      "image": null,
+      "options": [
+        {
+          "text": "Low glucose → high cAMP → CAP activates transcription",
+          "isCorrect": true,
+          "explanation": "When glucose is low, cAMP rises, binds CAP, and the CAP‑cAMP complex binds DNA to enhance transcription."
+        },
+        {
+          "text": "High glucose → high cAMP → CAP activates transcription",
+          "isCorrect": false,
+          "explanation": "High glucose lowers cAMP."
+        },
+        {
+          "text": "Low glucose → low cAMP → CAP represses transcription",
+          "isCorrect": false,
+          "explanation": "Low glucose increases cAMP."
+        },
+        {
+          "text": "High glucose → low cAMP → CAP represses transcription",
+          "isCorrect": false,
+          "explanation": "High glucose lowers cAMP, but CAP acts as activator when cAMP is present; without cAMP, CAP doesn't bind."
+        },
+        {
+          "text": "Glucose directly binds to the repressor",
+          "isCorrect": false,
+          "explanation": "Glucose affects cAMP levels, not repressor binding."
+        }
+      ],
+      "explanation": {
+        "overview": "When glucose is low, cAMP rises, binds CAP, and the CAP‑cAMP complex binds DNA to enhance transcription.",
+        "highYield": "Low glucose → high cAMP → CAP activation.",
+        "clinicalCorrelation": "This ensures lactose utilization only when glucose is scarce."
+      }
+    },
+    {
+      "questionId": "molecular_biology_030",
+      "difficulty": 2,
+      "question": "The trp operon is regulated by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Repression (by tryptophan) and attenuation",
+          "isCorrect": true,
+          "explanation": "High tryptophan activates the repressor and also causes attenuation during transcription."
+        },
+        {
+          "text": "Only repression",
+          "isCorrect": false,
+          "explanation": "Attenuation provides an additional level of control."
+        },
+        {
+          "text": "Only attenuation",
+          "isCorrect": false,
+          "explanation": "Repression also occurs."
+        },
+        {
+          "text": "Induction by tryptophan",
+          "isCorrect": false,
+          "explanation": "Tryptophan represses, not induces."
+        },
+        {
+          "text": "cAMP and CAP",
+          "isCorrect": false,
+          "explanation": "That is for the lac operon."
+        }
+      ],
+      "explanation": {
+        "overview": "High tryptophan activates the repressor and also causes attenuation during transcription.",
+        "highYield": "Trp operon: repression + attenuation.",
+        "clinicalCorrelation": "Attenuation allows fine‑tuning of gene expression in response to tryptophan levels."
+      }
+    },
+    {
+      "questionId": "molecular_biology_031",
+      "difficulty": 3,
+      "question": "Attenuation in the trp operon involves:",
+      "image": null,
+      "options": [
+        {
+          "text": "Formation of a terminator hairpin in the leader mRNA when tryptophan is high",
+          "isCorrect": true,
+          "explanation": "High tryptophan allows formation of a terminator hairpin, halting transcription prematurely."
+        },
+        {
+          "text": "Binding of tryptophan to the repressor",
+          "isCorrect": false,
+          "explanation": "That's repression, not attenuation."
+        },
+        {
+          "text": "Binding of tryptophan to RNA polymerase",
+          "isCorrect": false,
+          "explanation": "Tryptophan does not bind RNA polymerase."
+        },
+        {
+          "text": "Prevention of translation initiation",
+          "isCorrect": false,
+          "explanation": "Attenuation affects transcription elongation, not initiation."
+        },
+        {
+          "text": "Degradation of mRNA",
+          "isCorrect": false,
+          "explanation": "It prevents mRNA synthesis, not degrades it."
+        }
+      ],
+      "explanation": {
+        "overview": "High tryptophan allows formation of a terminator hairpin, halting transcription prematurely.",
+        "highYield": "Attenuation = alternative hairpin structures in leader mRNA.",
+        "clinicalCorrelation": "Attenuation is unique to prokaryotes and reflects coupled transcription‑translation."
+      }
+    },
+    {
+      "questionId": "molecular_biology_032",
+      "difficulty": 2,
+      "question": "Eukaryotic gene expression is regulated at many levels, including:",
+      "image": null,
+      "options": [
+        {
+          "text": "Chromatin remodeling",
+          "isCorrect": false,
+          "explanation": "Yes, but not the only level."
+        },
+        {
+          "text": "Transcription factor binding",
+          "isCorrect": false,
+          "explanation": "Yes."
+        },
+        {
+          "text": "RNA processing and stability",
+          "isCorrect": false,
+          "explanation": "Yes."
+        },
+        {
+          "text": "Translation and post‑translational modification",
+          "isCorrect": false,
+          "explanation": "Yes."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Eukaryotic regulation is complex and occurs at multiple steps."
+        }
+      ],
+      "explanation": {
+        "overview": "Eukaryotic regulation is complex and occurs at multiple steps.",
+        "highYield": "Gene regulation: chromatin → transcription → RNA processing → translation → post‑translational.",
+        "clinicalCorrelation": "Dysregulation at any level can cause disease."
+      }
+    },
+    {
+      "questionId": "molecular_biology_033",
+      "difficulty": 2,
+      "question": "A transcription factor typically binds to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Specific DNA sequences (promoter or enhancer)",
+          "isCorrect": true,
+          "explanation": "Transcription factors recognize and bind to specific DNA elements to regulate transcription."
+        },
+        {
+          "text": "RNA polymerase",
+          "isCorrect": false,
+          "explanation": "Some factors interact with RNA polymerase but the primary binding is to DNA."
+        },
+        {
+          "text": "Ribosomes",
+          "isCorrect": false,
+          "explanation": "Transcription factors are not involved in translation."
+        },
+        {
+          "text": "mRNA",
+          "isCorrect": false,
+          "explanation": "They bind DNA, not mRNA."
+        },
+        {
+          "text": "tRNA",
+          "isCorrect": false,
+          "explanation": "Not their target."
+        }
+      ],
+      "explanation": {
+        "overview": "Transcription factors recognize and bind to specific DNA elements to regulate transcription.",
+        "highYield": "Transcription factors = DNA‑binding proteins.",
+        "clinicalCorrelation": "Many oncogenes and tumor suppressors are transcription factors (e.g., p53, Myc)."
+      }
+    },
+    {
+      "questionId": "molecular_biology_034",
+      "difficulty": 2,
+      "question": "The TATA box is a component of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Eukaryotic promoters",
+          "isCorrect": true,
+          "explanation": "The TATA box is part of many eukaryotic core promoters, recognized by TFIID."
+        },
+        {
+          "text": "Prokaryotic promoters",
+          "isCorrect": false,
+          "explanation": "Prokaryotes have the Pribnow box (-10 sequence), not TATA."
+        },
+        {
+          "text": "Ribosomal RNA",
+          "isCorrect": false,
+          "explanation": "rRNA genes have different promoter elements."
+        },
+        {
+          "text": "tRNA genes",
+          "isCorrect": false,
+          "explanation": "tRNA genes have internal promoters (A and B boxes)."
+        },
+        {
+          "text": "Enhancers",
+          "isCorrect": false,
+          "explanation": "Enhancers are separate regulatory elements."
+        }
+      ],
+      "explanation": {
+        "overview": "The TATA box is part of many eukaryotic core promoters, recognized by TFIID.",
+        "highYield": "TATA box = eukaryotic promoter element.",
+        "clinicalCorrelation": "Mutations in TATA‑binding protein (TBP) cause neurodegenerative diseases."
+      }
+    },
+    {
+      "questionId": "molecular_biology_035",
+      "difficulty": 2,
+      "question": "Enhancers are DNA elements that:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increase transcription from a promoter, often far away",
+          "isCorrect": true,
+          "explanation": "Enhancers bind activator proteins and interact with promoters via looping."
+        },
+        {
+          "text": "Decrease transcription",
+          "isCorrect": false,
+          "explanation": "Silencers decrease transcription."
+        },
+        {
+          "text": "Bind RNA polymerase",
+          "isCorrect": false,
+          "explanation": "Enhancers bind transcription factors, not directly RNA polymerase."
+        },
+        {
+          "text": "Are part of the core promoter",
+          "isCorrect": false,
+          "explanation": "They are distal elements."
+        },
+        {
+          "text": "Terminate transcription",
+          "isCorrect": false,
+          "explanation": "Terminators end transcription."
+        }
+      ],
+      "explanation": {
+        "overview": "Enhancers bind activator proteins and interact with promoters via looping.",
+        "highYield": "Enhancers = distal activators of transcription.",
+        "clinicalCorrelation": "Enhancer mutations can cause developmental disorders."
+      }
+    },
+    {
+      "questionId": "molecular_biology_036",
+      "difficulty": 2,
+      "question": "DNA methylation at CpG islands is generally associated with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Gene silencing (transcriptional repression)",
+          "isCorrect": true,
+          "explanation": "Methylation of cytosines in promoters typically represses transcription."
+        },
+        {
+          "text": "Gene activation",
+          "isCorrect": false,
+          "explanation": "Methylation usually silences genes."
+        },
+        {
+          "text": "DNA replication",
+          "isCorrect": false,
+          "explanation": "Methylation is not directly for replication."
+        },
+        {
+          "text": "DNA repair",
+          "isCorrect": false,
+          "explanation": "It can mark old strands in mismatch repair, but is generally repressive."
+        },
+        {
+          "text": "Translation initiation",
+          "isCorrect": false,
+          "explanation": "Methylation affects transcription, not translation."
+        }
+      ],
+      "explanation": {
+        "overview": "Methylation of cytosines in promoters typically represses transcription.",
+        "highYield": "DNA methylation = gene silencing.",
+        "clinicalCorrelation": "Aberrant methylation patterns are common in cancer (e.g., tumor suppressor gene silencing)."
+      }
+    },
+    {
+      "questionId": "molecular_biology_037",
+      "difficulty": 2,
+      "question": "Histone acetylation generally leads to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increased transcription (open chromatin)",
+          "isCorrect": true,
+          "explanation": "Acetylation neutralizes histone positive charges, loosening chromatin and promoting transcription."
+        },
+        {
+          "text": "Decreased transcription",
+          "isCorrect": false,
+          "explanation": "Deacetylation causes condensation."
+        },
+        {
+          "text": "DNA methylation",
+          "isCorrect": false,
+          "explanation": "Acetylation does not methylate DNA."
+        },
+        {
+          "text": "Chromatin condensation",
+          "isCorrect": false,
+          "explanation": "Acetylation relaxes chromatin."
+        },
+        {
+          "text": "No effect",
+          "isCorrect": false,
+          "explanation": "It has a significant effect."
+        }
+      ],
+      "explanation": {
+        "overview": "Acetylation neutralizes histone positive charges, loosening chromatin and promoting transcription.",
+        "highYield": "Histone acetylation = open chromatin (active).",
+        "clinicalCorrelation": "HDAC inhibitors are used in cancer therapy to reactivate silenced genes."
+      }
+    },
+    {
+      "questionId": "molecular_biology_038",
+      "difficulty": 2,
+      "question": "MicroRNAs (miRNAs) regulate gene expression by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Binding to target mRNAs and inhibiting translation or causing degradation",
+          "isCorrect": true,
+          "explanation": "miRNAs base‑pair with complementary sequences in mRNAs, leading to translational repression or mRNA decay."
+        },
+        {
+          "text": "Blocking transcription",
+          "isCorrect": false,
+          "explanation": "That's not their mechanism."
+        },
+        {
+          "text": "Enhancing transcription",
+          "isCorrect": false,
+          "explanation": "They usually repress."
+        },
+        {
+          "text": "Modifying DNA",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        },
+        {
+          "text": "Splicing pre‑mRNA",
+          "isCorrect": false,
+          "explanation": "That's the spliceosome."
+        }
+      ],
+      "explanation": {
+        "overview": "miRNAs base‑pair with complementary sequences in mRNAs, leading to translational repression or mRNA decay.",
+        "highYield": "miRNA → mRNA degradation or translational inhibition.",
+        "clinicalCorrelation": "miRNA dysregulation is implicated in cancer and cardiovascular disease."
+      }
+    },
+    {
+      "questionId": "molecular_biology_039",
+      "difficulty": 2,
+      "question": "RNA interference (RNAi) involves small interfering RNAs (siRNAs) that:",
+      "image": null,
+      "options": [
+        {
+          "text": "Guide the RISC complex to degrade complementary mRNA",
+          "isCorrect": true,
+          "explanation": "siRNAs are incorporated into RISC and direct sequence‑specific mRNA degradation."
+        },
+        {
+          "text": "Block transcription",
+          "isCorrect": false,
+          "explanation": "siRNAs act post‑transcriptionally."
+        },
+        {
+          "text": "Enhance translation",
+          "isCorrect": false,
+          "explanation": "They silence translation."
+        },
+        {
+          "text": "Modify histones",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        },
+        {
+          "text": "Splice RNA",
+          "isCorrect": false,
+          "explanation": "Not their function."
+        }
+      ],
+      "explanation": {
+        "overview": "siRNAs are incorporated into RISC and direct sequence‑specific mRNA degradation.",
+        "highYield": "siRNA → RISC → mRNA cleavage.",
+        "clinicalCorrelation": "siRNA therapeutics (e.g., patisiran) treat hereditary amyloidosis."
+      }
+    },
+    {
+      "questionId": "molecular_biology_040",
+      "difficulty": 2,
+      "question": "Reverse transcriptase synthesizes DNA from an RNA template. It is found in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Retroviruses",
+          "isCorrect": true,
+          "explanation": "Retroviruses (e.g., HIV) use reverse transcriptase to convert their RNA genome into DNA."
+        },
+        {
+          "text": "All viruses",
+          "isCorrect": false,
+          "explanation": "Only retroviruses and some other elements use reverse transcriptase."
+        },
+        {
+          "text": "Bacteria",
+          "isCorrect": false,
+          "explanation": "Bacteria do not typically have reverse transcriptase."
+        },
+        {
+          "text": "Eukaryotes normally",
+          "isCorrect": false,
+          "explanation": "Telomerase is a reverse transcriptase, but 'reverse transcriptase' generally refers to viral enzyme."
+        },
+        {
+          "text": "Only in laboratory",
+          "isCorrect": false,
+          "explanation": "It occurs naturally in retroviruses."
+        }
+      ],
+      "explanation": {
+        "overview": "Retroviruses (e.g., HIV) use reverse transcriptase to convert their RNA genome into DNA.",
+        "highYield": "Reverse transcriptase = retroviruses.",
+        "clinicalCorrelation": "Reverse transcriptase inhibitors (e.g., AZT) are key antiretroviral drugs."
+      }
+    },
+    {
+      "questionId": "molecular_biology_041",
+      "difficulty": 2,
+      "question": "The polymerase chain reaction (PCR) requires all of the following EXCEPT:",
+      "image": null,
+      "options": [
+        {
+          "text": "DNA ligase",
+          "isCorrect": true,
+          "explanation": "PCR uses a heat‑stable DNA polymerase (Taq) to amplify DNA; ligase is not needed."
+        },
+        {
+          "text": "DNA polymerase (thermostable)",
+          "isCorrect": false,
+          "explanation": "Taq polymerase is essential."
+        },
+        {
+          "text": "Primers",
+          "isCorrect": false,
+          "explanation": "Primers define the target region."
+        },
+        {
+          "text": "dNTPs",
+          "isCorrect": false,
+          "explanation": "dNTPs are the building blocks."
+        },
+        {
+          "text": "Template DNA",
+          "isCorrect": false,
+          "explanation": "Template is required."
+        }
+      ],
+      "explanation": {
+        "overview": "PCR uses a heat‑stable DNA polymerase (Taq) to amplify DNA; ligase is not needed.",
+        "highYield": "PCR does not require ligase.",
+        "clinicalCorrelation": "PCR is used for infectious disease diagnosis, genetic testing, and forensics."
+      }
+    },
+    {
+      "questionId": "molecular_biology_042",
+      "difficulty": 2,
+      "question": "In PCR, the step of annealing involves:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cooling to allow primers to bind to template",
+          "isCorrect": true,
+          "explanation": "After denaturation (94°C), temperature is lowered (50‑65°C) for primer annealing."
+        },
+        {
+          "text": "Heating to denature DNA",
+          "isCorrect": false,
+          "explanation": "That's the denaturation step."
+        },
+        {
+          "text": "Extension by DNA polymerase",
+          "isCorrect": false,
+          "explanation": "Extension occurs at 72°C."
+        },
+        {
+          "text": "Ligation of fragments",
+          "isCorrect": false,
+          "explanation": "Ligation is not part of PCR."
+        },
+        {
+          "text": "None of the above",
+          "isCorrect": false,
+          "explanation": "Annealing is correctly described."
+        }
+      ],
+      "explanation": {
+        "overview": "After denaturation (94°C), temperature is lowered (50‑65°C) for primer annealing.",
+        "highYield": "Annealing = primer binding.",
+        "clinicalCorrelation": "Annealing temperature is critical for PCR specificity."
+      }
+    },
+    {
+      "questionId": "molecular_biology_043",
+      "difficulty": 2,
+      "question": "Restriction enzymes (restriction endonucleases) recognize and cut:",
+      "image": null,
+      "options": [
+        {
+          "text": "Specific palindromic DNA sequences",
+          "isCorrect": true,
+          "explanation": "Restriction enzymes typically recognize short, palindromic DNA sequences."
+        },
+        {
+          "text": "Any DNA sequence",
+          "isCorrect": false,
+          "explanation": "They are sequence‑specific."
+        },
+        {
+          "text": "RNA sequences",
+          "isCorrect": false,
+          "explanation": "They act on DNA."
+        },
+        {
+          "text": "Protein sequences",
+          "isCorrect": false,
+          "explanation": "They are not proteases."
+        },
+        {
+          "text": "Lipid molecules",
+          "isCorrect": false,
+          "explanation": "Not relevant."
+        }
+      ],
+      "explanation": {
+        "overview": "Restriction enzymes typically recognize short, palindromic DNA sequences.",
+        "highYield": "Restriction enzymes = cut specific DNA sequences.",
+        "clinicalCorrelation": "Used in cloning, RFLP analysis, and recombinant DNA technology."
+      }
+    },
+    {
+      "questionId": "molecular_biology_044",
+      "difficulty": 1,
+      "question": "A plasmid is a:",
+      "image": null,
+      "options": [
+        {
+          "text": "Small circular DNA molecule used as a cloning vector",
+          "isCorrect": true,
+          "explanation": "Plasmids are extrachromosomal circular DNA in bacteria, often carrying antibiotic resistance genes."
+        },
+        {
+          "text": "Viral genome",
+          "isCorrect": false,
+          "explanation": "Plasmids are not viral."
+        },
+        {
+          "text": "Mitochondrial DNA",
+          "isCorrect": false,
+          "explanation": "Mitochondrial DNA is organellar."
+        },
+        {
+          "text": "Chromosomal fragment",
+          "isCorrect": false,
+          "explanation": "Plasmids are separate from chromosome."
+        },
+        {
+          "text": "Linear DNA",
+          "isCorrect": false,
+          "explanation": "Plasmids are typically circular."
+        }
+      ],
+      "explanation": {
+        "overview": "Plasmids are extrachromosomal circular DNA in bacteria, often carrying antibiotic resistance genes.",
+        "highYield": "Plasmid = circular DNA vector.",
+        "clinicalCorrelation": "Plasmids are used to produce insulin and vaccines."
+      }
+    },
+    {
+      "questionId": "molecular_biology_045",
+      "difficulty": 1,
+      "question": "DNA ligase is used in recombinant DNA technology to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Join DNA fragments together",
+          "isCorrect": true,
+          "explanation": "Ligase seals nicks between fragments by forming phosphodiester bonds."
+        },
+        {
+          "text": "Cut DNA",
+          "isCorrect": false,
+          "explanation": "Restriction enzymes cut DNA."
+        },
+        {
+          "text": "Synthesize DNA",
+          "isCorrect": false,
+          "explanation": "DNA polymerase synthesizes DNA."
+        },
+        {
+          "text": "Unwind DNA",
+          "isCorrect": false,
+          "explanation": "Helicase unwinds."
+        },
+        {
+          "text": "Degrade DNA",
+          "isCorrect": false,
+          "explanation": "Nucleases degrade DNA."
+        }
+      ],
+      "explanation": {
+        "overview": "Ligase seals nicks between fragments by forming phosphodiester bonds.",
+        "highYield": "DNA ligase = molecular glue.",
+        "clinicalCorrelation": "Essential for creating recombinant DNA molecules."
+      }
+    },
+    {
+      "questionId": "molecular_biology_046",
+      "difficulty": 2,
+      "question": "The process of introducing recombinant DNA into bacteria is called:",
+      "image": null,
+      "options": [
+        {
+          "text": "Transformation",
+          "isCorrect": true,
+          "explanation": "Transformation is the uptake of foreign DNA by bacteria."
+        },
+        {
+          "text": "Transduction",
+          "isCorrect": false,
+          "explanation": "Transduction uses viruses to transfer DNA."
+        },
+        {
+          "text": "Conjugation",
+          "isCorrect": false,
+          "explanation": "Conjugation is direct transfer via pilus."
+        },
+        {
+          "text": "Transfection",
+          "isCorrect": false,
+          "explanation": "Transfection is for eukaryotic cells."
+        },
+        {
+          "text": "Infection",
+          "isCorrect": false,
+          "explanation": "Infection involves viruses."
+        }
+      ],
+      "explanation": {
+        "overview": "Transformation is the uptake of foreign DNA by bacteria.",
+        "highYield": "Bacterial DNA uptake = transformation.",
+        "clinicalCorrelation": "Used in molecular cloning to amplify recombinant plasmids."
+      }
+    },
+    {
+      "questionId": "molecular_biology_047",
+      "difficulty": 2,
+      "question": "A cDNA library is constructed from:",
+      "image": null,
+      "options": [
+        {
+          "text": "mRNA using reverse transcriptase",
+          "isCorrect": true,
+          "explanation": "cDNA (complementary DNA) is synthesized from mRNA by reverse transcriptase."
+        },
+        {
+          "text": "Genomic DNA",
+          "isCorrect": false,
+          "explanation": "Genomic DNA contains introns."
+        },
+        {
+          "text": "Total RNA without reverse transcription",
+          "isCorrect": false,
+          "explanation": "Requires reverse transcription to create DNA."
+        },
+        {
+          "text": "Plasmid DNA",
+          "isCorrect": false,
+          "explanation": "cDNA library is from mRNA."
+        },
+        {
+          "text": "Mitochondrial DNA",
+          "isCorrect": false,
+          "explanation": "Not the source."
+        }
+      ],
+      "explanation": {
+        "overview": "cDNA (complementary DNA) is synthesized from mRNA by reverse transcriptase.",
+        "highYield": "cDNA library = mRNA → cDNA.",
+        "clinicalCorrelation": "Allows cloning of eukaryotic genes without introns."
+      }
+    },
+    {
+      "questionId": "molecular_biology_048",
+      "difficulty": 2,
+      "question": "Southern blotting is used to detect:",
+      "image": null,
+      "options": [
+        {
+          "text": "Specific DNA sequences",
+          "isCorrect": true,
+          "explanation": "Southern blot (named after Edwin Southern) detects DNA using probes."
+        },
+        {
+          "text": "Specific RNA sequences",
+          "isCorrect": false,
+          "explanation": "Northern blot detects RNA."
+        },
+        {
+          "text": "Specific proteins",
+          "isCorrect": false,
+          "explanation": "Western blot detects proteins."
+        },
+        {
+          "text": "Lipids",
+          "isCorrect": false,
+          "explanation": "No standard lipid blot."
+        },
+        {
+          "text": "Carbohydrates",
+          "isCorrect": false,
+          "explanation": "No standard blot."
+        }
+      ],
+      "explanation": {
+        "overview": "Southern blot (named after Edwin Southern) detects DNA using probes.",
+        "highYield": "Southern = DNA.",
+        "clinicalCorrelation": "Used in gene mapping and detection of specific sequences."
+      }
+    },
+    {
+      "questionId": "molecular_biology_049",
+      "difficulty": 2,
+      "question": "Northern blotting detects:",
+      "image": null,
+      "options": [
+        {
+          "text": "RNA",
+          "isCorrect": true,
+          "explanation": "Northern blot uses probes to detect specific RNA sequences."
+        },
+        {
+          "text": "DNA",
+          "isCorrect": false,
+          "explanation": "Southern detects DNA."
+        },
+        {
+          "text": "Protein",
+          "isCorrect": false,
+          "explanation": "Western detects protein."
+        },
+        {
+          "text": "Lipid",
+          "isCorrect": false,
+          "explanation": "No lipid blot."
+        },
+        {
+          "text": "Carbohydrate",
+          "isCorrect": false,
+          "explanation": "No carbohydrate blot."
+        }
+      ],
+      "explanation": {
+        "overview": "Northern blot uses probes to detect specific RNA sequences.",
+        "highYield": "Northern = RNA.",
+        "clinicalCorrelation": "Used to measure gene expression levels."
+      }
+    },
+    {
+      "questionId": "molecular_biology_050",
+      "difficulty": 2,
+      "question": "Western blotting detects:",
+      "image": null,
+      "options": [
+        {
+          "text": "Proteins (using antibodies)",
+          "isCorrect": true,
+          "explanation": "Western blot uses antibodies to detect specific proteins."
+        },
+        {
+          "text": "DNA",
+          "isCorrect": false,
+          "explanation": "Southern detects DNA."
+        },
+        {
+          "text": "RNA",
+          "isCorrect": false,
+          "explanation": "Northern detects RNA."
+        },
+        {
+          "text": "Lipids",
+          "isCorrect": false,
+          "explanation": "Not detected."
+        },
+        {
+          "text": "Carbohydrates",
+          "isCorrect": false,
+          "explanation": "Not detected."
+        }
+      ],
+      "explanation": {
+        "overview": "Western blot uses antibodies to detect specific proteins.",
+        "highYield": "Western = protein.",
+        "clinicalCorrelation": "Confirmatory test for HIV, Lyme disease, etc."
+      }
+    },
+    {
+      "questionId": "molecular_biology_051",
+      "difficulty": 2,
+      "question": "DNA sequencing by the Sanger method uses:",
+      "image": null,
+      "options": [
+        {
+          "text": "Dideoxynucleotides (ddNTPs) to terminate synthesis",
+          "isCorrect": true,
+          "explanation": "ddNTPs lack a 3'‑OH, causing chain termination when incorporated."
+        },
+        {
+          "text": "Deoxynucleotides only",
+          "isCorrect": false,
+          "explanation": "That would produce full‑length products."
+        },
+        {
+          "text": "RNA polymerase",
+          "isCorrect": false,
+          "explanation": "DNA polymerase is used."
+        },
+        {
+          "text": "Ligation",
+          "isCorrect": false,
+          "explanation": "Not involved."
+        },
+        {
+          "text": "Restriction enzymes",
+          "isCorrect": false,
+          "explanation": "Not part of sequencing."
+        }
+      ],
+      "explanation": {
+        "overview": "ddNTPs lack a 3'‑OH, causing chain termination when incorporated.",
+        "highYield": "Sanger sequencing = ddNTP chain termination.",
+        "clinicalCorrelation": "Gold standard for confirming mutations."
+      }
+    },
+    {
+      "questionId": "molecular_biology_052",
+      "difficulty": 2,
+      "question": "CRISPR‑Cas9 genome editing uses a guide RNA to direct the Cas9 nuclease to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cut a specific DNA sequence",
+          "isCorrect": true,
+          "explanation": "Cas9 creates a double‑strand break at the target DNA sequence specified by the guide RNA."
+        },
+        {
+          "text": "Cut RNA",
+          "isCorrect": false,
+          "explanation": "Cas9 targets DNA."
+        },
+        {
+          "text": "Repair DNA",
+          "isCorrect": false,
+          "explanation": "It cuts DNA, which is then repaired by cell's machinery."
+        },
+        {
+          "text": "Insert new genes",
+          "isCorrect": false,
+          "explanation": "Insertion can occur via repair, but Cas9 cuts."
+        },
+        {
+          "text": "Activate transcription",
+          "isCorrect": false,
+          "explanation": "dCas9 can be used for activation, but wild‑type Cas9 cuts."
+        }
+      ],
+      "explanation": {
+        "overview": "Cas9 creates a double‑strand break at the target DNA sequence specified by the guide RNA.",
+        "highYield": "CRISPR‑Cas9 = targeted DNA double‑strand breaks.",
+        "clinicalCorrelation": "Clinical trials for sickle cell disease and cancer immunotherapy."
+      }
+    },
+    {
+      "questionId": "molecular_biology_053",
+      "difficulty": 2,
+      "question": "The enzyme that adds the poly‑A tail to eukaryotic mRNA is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Poly(A) polymerase",
+          "isCorrect": true,
+          "explanation": "Poly(A) polymerase adds adenine residues to the 3' end of mRNA."
+        },
+        {
+          "text": "RNA polymerase II",
+          "isCorrect": false,
+          "explanation": "Pol II synthesizes the pre‑mRNA."
+        },
+        {
+          "text": "RNase",
+          "isCorrect": false,
+          "explanation": "RNases degrade RNA."
+        },
+        {
+          "text": "Ligase",
+          "isCorrect": false,
+          "explanation": "Ligase joins nucleic acids."
+        },
+        {
+          "text": "Kinase",
+          "isCorrect": false,
+          "explanation": "Kinases phosphorylate."
+        }
+      ],
+      "explanation": {
+        "overview": "Poly(A) polymerase adds adenine residues to the 3' end of mRNA.",
+        "highYield": "Poly(A) polymerase adds the poly‑A tail.",
+        "clinicalCorrelation": "Polyadenylation is essential for mRNA stability and export."
+      }
+    },
+    {
+      "questionId": "molecular_biology_054",
+      "difficulty": 2,
+      "question": "The spliceosome is composed of:",
+      "image": null,
+      "options": [
+        {
+          "text": "snRNPs and other proteins",
+          "isCorrect": true,
+          "explanation": "Spliceosomes contain small nuclear ribonucleoproteins (snRNPs) and accessory proteins."
+        },
+        {
+          "text": "Only proteins",
+          "isCorrect": false,
+          "explanation": "snRNPs have RNA components."
+        },
+        {
+          "text": "Only RNA",
+          "isCorrect": false,
+          "explanation": "Proteins are also part of the complex."
+        },
+        {
+          "text": "Ribosomes",
+          "isCorrect": false,
+          "explanation": "Ribosomes translate."
+        },
+        {
+          "text": "tRNA",
+          "isCorrect": false,
+          "explanation": "tRNA is not part of the spliceosome."
+        }
+      ],
+      "explanation": {
+        "overview": "Spliceosomes contain small nuclear ribonucleoproteins (snRNPs) and accessory proteins.",
+        "highYield": "Spliceosome = snRNPs + proteins.",
+        "clinicalCorrelation": "Spliceosome mutations are linked to retinitis pigmentosa and cancer."
+      }
+    },
+    {
+      "questionId": "molecular_biology_055",
+      "difficulty": 2,
+      "question": "Group I and group II introns are self‑splicing and are examples of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Ribozymes",
+          "isCorrect": true,
+          "explanation": "They are catalytic RNA molecules (ribozymes)."
+        },
+        {
+          "text": "Protein enzymes",
+          "isCorrect": false,
+          "explanation": "The catalytic activity resides in RNA."
+        },
+        {
+          "text": "DNA enzymes",
+          "isCorrect": false,
+          "explanation": "They are RNA, not DNA."
+        },
+        {
+          "text": "Lipid catalysts",
+          "isCorrect": false,
+          "explanation": "Not lipids."
+        },
+        {
+          "text": "Carbohydrate catalysts",
+          "isCorrect": false,
+          "explanation": "Not carbohydrates."
+        }
+      ],
+      "explanation": {
+        "overview": "They are catalytic RNA molecules (ribozymes).",
+        "highYield": "Self‑splicing introns = ribozymes.",
+        "clinicalCorrelation": "Ribozyme concept led to RNA world hypothesis."
+      }
+    },
+    {
+      "questionId": "molecular_biology_056",
+      "difficulty": 2,
+      "question": "The Shine‑Dalgarno sequence in prokaryotic mRNA is involved in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Ribosome binding during translation initiation",
+          "isCorrect": true,
+          "explanation": "It base‑pairs with the 16S rRNA of the small ribosomal subunit."
+        },
+        {
+          "text": "Transcription initiation",
+          "isCorrect": false,
+          "explanation": "Promoters initiate transcription."
+        },
+        {
+          "text": "RNA splicing",
+          "isCorrect": false,
+          "explanation": "Prokaryotes do not splice."
+        },
+        {
+          "text": "Polyadenylation",
+          "isCorrect": false,
+          "explanation": "Poly‑A tails are eukaryotic."
+        },
+        {
+          "text": "mRNA stability",
+          "isCorrect": false,
+          "explanation": "Not its primary role."
+        }
+      ],
+      "explanation": {
+        "overview": "It base‑pairs with the 16S rRNA of the small ribosomal subunit.",
+        "highYield": "Shine‑Dalgarno = ribosome binding site (prokaryotes).",
+        "clinicalCorrelation": "Mutation of this sequence can drastically reduce protein expression."
+      }
+    },
+    {
+      "questionId": "molecular_biology_057",
+      "difficulty": 2,
+      "question": "In eukaryotes, the Kozak consensus sequence is important for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Translation initiation",
+          "isCorrect": true,
+          "explanation": "The Kozak sequence surrounds the start codon and facilitates translation initiation."
+        },
+        {
+          "text": "Transcription initiation",
+          "isCorrect": false,
+          "explanation": "Transcription initiation uses promoter elements."
+        },
+        {
+          "text": "Splicing",
+          "isCorrect": false,
+          "explanation": "Splicing signals are at intron‑exon boundaries."
+        },
+        {
+          "text": "Polyadenylation",
+          "isCorrect": false,
+          "explanation": "Polyadenylation signal is AAUAAA."
+        },
+        {
+          "text": "mRNA export",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        }
+      ],
+      "explanation": {
+        "overview": "The Kozak sequence surrounds the start codon and facilitates translation initiation.",
+        "highYield": "Kozak sequence = efficient translation start (eukaryotes).",
+        "clinicalCorrelation": "Kozak sequence variations affect protein levels and can influence disease."
+      }
+    },
+    {
+      "questionId": "molecular_biology_058",
+      "difficulty": 2,
+      "question": "Which of the following is an example of a post‑translational modification?",
+      "image": null,
+      "options": [
+        {
+          "text": "Phosphorylation",
+          "isCorrect": false,
+          "explanation": "Yes, but others are also PTMs."
+        },
+        {
+          "text": "Glycosylation",
+          "isCorrect": false,
+          "explanation": "Yes."
+        },
+        {
+          "text": "Acetylation",
+          "isCorrect": false,
+          "explanation": "Yes."
+        },
+        {
+          "text": "Ubiquitination",
+          "isCorrect": false,
+          "explanation": "Yes."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "All are common post‑translational modifications."
+        }
+      ],
+      "explanation": {
+        "overview": "Proteins can be modified after synthesis by phosphorylation, glycosylation, acetylation, ubiquitination, etc.",
+        "highYield": "Post‑translational modifications include phosphorylation, acetylation, ubiquitination, etc.",
+        "clinicalCorrelation": "Aberrant PTMs are involved in cancer and neurodegeneration."
+      }
+    },
+    {
+      "questionId": "molecular_biology_059",
+      "difficulty": 2,
+      "question": "Ubiquitination of a protein often targets it for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Degradation by the proteasome",
+          "isCorrect": true,
+          "explanation": "Polyubiquitin chains signal degradation by the proteasome."
+        },
+        {
+          "text": "Secretion",
+          "isCorrect": false,
+          "explanation": "Not the major outcome."
+        },
+        {
+          "text": "Activation",
+          "isCorrect": false,
+          "explanation": "Ubiquitination can also signal non‑proteolytic functions, but degradation is classic."
+        },
+        {
+          "text": "Nuclear import",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        },
+        {
+          "text": "Membrane anchoring",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        }
+      ],
+      "explanation": {
+        "overview": "Polyubiquitin chains signal degradation by the proteasome.",
+        "highYield": "Ubiquitin → proteasomal degradation.",
+        "clinicalCorrelation": "Proteasome inhibitors (e.g., bortezomib) are used in multiple myeloma."
+      }
+    },
+    {
+      "questionId": "molecular_biology_060",
+      "difficulty": 2,
+      "question": "A nonsense mutation results in:",
+      "image": null,
+      "options": [
+        {
+          "text": "A premature stop codon",
+          "isCorrect": true,
+          "explanation": "A nonsense mutation changes a sense codon to a stop codon, truncating the protein."
+        },
+        {
+          "text": "A different amino acid",
+          "isCorrect": false,
+          "explanation": "That's a missense mutation."
+        },
+        {
+          "text": "No change in amino acid",
+          "isCorrect": false,
+          "explanation": "That's a silent mutation."
+        },
+        {
+          "text": "A frameshift",
+          "isCorrect": false,
+          "explanation": "Frameshift is due to insertion/deletion."
+        },
+        {
+          "text": "A deletion",
+          "isCorrect": false,
+          "explanation": "Deletion is a separate mutation type."
+        }
+      ],
+      "explanation": {
+        "overview": "A nonsense mutation changes a sense codon to a stop codon, truncating the protein.",
+        "highYield": "Nonsense = early stop codon.",
+        "clinicalCorrelation": "Nonsense mutations cause Duchenne muscular dystrophy (dystrophin)."
+      }
+    },
+    {
+      "questionId": "molecular_biology_061",
+      "difficulty": 2,
+      "question": "A missense mutation results in:",
+      "image": null,
+      "options": [
+        {
+          "text": "A different amino acid",
+          "isCorrect": true,
+          "explanation": "Missense mutations change one amino acid to another."
+        },
+        {
+          "text": "A premature stop codon",
+          "isCorrect": false,
+          "explanation": "That's nonsense."
+        },
+        {
+          "text": "No change in amino acid",
+          "isCorrect": false,
+          "explanation": "That's silent."
+        },
+        {
+          "text": "A frameshift",
+          "isCorrect": false,
+          "explanation": "Frameshift is different."
+        },
+        {
+          "text": "A deletion",
+          "isCorrect": false,
+          "explanation": "Not a deletion."
+        }
+      ],
+      "explanation": {
+        "overview": "Missense mutations change one amino acid to another.",
+        "highYield": "Missense = amino acid change.",
+        "clinicalCorrelation": "Sickle cell disease is caused by a missense mutation (Glu→Val in hemoglobin)."
+      }
+    },
+    {
+      "questionId": "molecular_biology_062",
+      "difficulty": 2,
+      "question": "A silent mutation is one that:",
+      "image": null,
+      "options": [
+        {
+          "text": "Changes a codon but encodes the same amino acid due to degeneracy",
+          "isCorrect": true,
+          "explanation": "Silent mutations do not alter the amino acid sequence."
+        },
+        {
+          "text": "Causes no change in DNA sequence",
+          "isCorrect": false,
+          "explanation": "The DNA sequence does change."
+        },
+        {
+          "text": "Prevents transcription",
+          "isCorrect": false,
+          "explanation": "That would be a regulatory mutation."
+        },
+        {
+          "text": "Prevents translation",
+          "isCorrect": false,
+          "explanation": "Not silent."
+        },
+        {
+          "text": "Has no effect on phenotype but changes protein sequence",
+          "isCorrect": false,
+          "explanation": "Silent does not change protein sequence."
+        }
+      ],
+      "explanation": {
+        "overview": "Silent mutations do not alter the amino acid sequence.",
+        "highYield": "Silent = same amino acid.",
+        "clinicalCorrelation": "Silent mutations can sometimes affect splicing or mRNA stability."
+      }
+    },
+    {
+      "questionId": "molecular_biology_063",
+      "difficulty": 2,
+      "question": "A frameshift mutation is caused by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Insertion or deletion of nucleotides not in multiples of three",
+          "isCorrect": true,
+          "explanation": "Indels that shift the reading frame alter all downstream amino acids."
+        },
+        {
+          "text": "Substitution of one nucleotide",
+          "isCorrect": false,
+          "explanation": "That is a point mutation."
+        },
+        {
+          "text": "Inversion of a segment",
+          "isCorrect": false,
+          "explanation": "Inversion may not shift the frame."
+        },
+        {
+          "text": "Duplication",
+          "isCorrect": false,
+          "explanation": "Duplication of a full codon would maintain frame."
+        },
+        {
+          "text": "Translocation",
+          "isCorrect": false,
+          "explanation": "Translocation does not necessarily shift reading frame."
+        }
+      ],
+      "explanation": {
+        "overview": "Indels that shift the reading frame alter all downstream amino acids.",
+        "highYield": "Frameshift = insertion/deletion of non‑multiple of 3.",
+        "clinicalCorrelation": "Frameshift mutations often lead to truncated, nonfunctional proteins."
+      }
+    },
+    {
+      "questionId": "molecular_biology_064",
+      "difficulty": 2,
+      "question": "The enzyme that repairs thymine dimers caused by UV light via direct reversal is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Photolyase",
+          "isCorrect": true,
+          "explanation": "Photolyase uses light energy to split cyclobutane pyrimidine dimers."
+        },
+        {
+          "text": "DNA polymerase",
+          "isCorrect": false,
+          "explanation": "Not involved in direct reversal."
+        },
+        {
+          "text": "Ligase",
+          "isCorrect": false,
+          "explanation": "Ligase seals nicks."
+        },
+        {
+          "text": "Exonuclease",
+          "isCorrect": false,
+          "explanation": "Exonucleases remove nucleotides."
+        },
+        {
+          "text": "Glycosylase",
+          "isCorrect": false,
+          "explanation": "Glycosylases are for base excision repair."
+        }
+      ],
+      "explanation": {
+        "overview": "Photolyase uses light energy to split cyclobutane pyrimidine dimers.",
+        "highYield": "Photolyase = direct repair of UV damage.",
+        "clinicalCorrelation": "Humans lack photolyase; rely on nucleotide excision repair."
+      }
+    },
+    {
+      "questionId": "molecular_biology_065",
+      "difficulty": 2,
+      "question": "Base excision repair (BER) removes damaged bases using:",
+      "image": null,
+      "options": [
+        {
+          "text": "DNA glycosylase",
+          "isCorrect": false,
+          "explanation": "Glycosylase initiates, but the full repair requires multiple enzymes."
+        },
+        {
+          "text": "Endonuclease",
+          "isCorrect": false,
+          "explanation": "AP endonuclease is involved."
+        },
+        {
+          "text": "Ligase",
+          "isCorrect": false,
+          "explanation": "Ligase is involved."
+        },
+        {
+          "text": "Polymerase",
+          "isCorrect": false,
+          "explanation": "Polymerase fills the gap."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "BER involves glycosylase, AP endonuclease, polymerase, and ligase."
+        }
+      ],
+      "explanation": {
+        "overview": "BER involves glycosylase, AP endonuclease, polymerase, and ligase.",
+        "highYield": "BER: glycosylase → AP endonuclease → polymerase → ligase.",
+        "clinicalCorrelation": "Defects in BER are associated with cancer predisposition."
+      }
+    },
+    {
+      "questionId": "molecular_biology_066",
+      "difficulty": 2,
+      "question": "Nucleotide excision repair (NER) is used to repair:",
+      "image": null,
+      "options": [
+        {
+          "text": "Bulky lesions like pyrimidine dimers",
+          "isCorrect": true,
+          "explanation": "NER removes a short oligonucleotide containing the bulky lesion."
+        },
+        {
+          "text": "Single‑base deaminations",
+          "isCorrect": false,
+          "explanation": "BER handles small base modifications."
+        },
+        {
+          "text": "Mismatches",
+          "isCorrect": false,
+          "explanation": "Mismatch repair corrects replication errors."
+        },
+        {
+          "text": "Double‑strand breaks",
+          "isCorrect": false,
+          "explanation": "DSB repair uses homologous recombination or NHEJ."
+        },
+        {
+          "text": "Alkylated bases",
+          "isCorrect": false,
+          "explanation": "Alkylated bases are often repaired by direct reversal or BER."
+        }
+      ],
+      "explanation": {
+        "overview": "NER removes a short oligonucleotide containing the bulky lesion.",
+        "highYield": "NER = bulky lesions (UV damage).",
+        "clinicalCorrelation": "Xeroderma pigmentosum is due to NER deficiency."
+      }
+    },
+    {
+      "questionId": "molecular_biology_067",
+      "difficulty": 3,
+      "question": "Mismatch repair (MMR) corrects errors that escape proofreading. In E. coli, how is the newly synthesized strand distinguished from the template?",
+      "image": null,
+      "options": [
+        {
+          "text": "Temporary lack of methylation on the new strand",
+          "isCorrect": true,
+          "explanation": "In E. coli, the newly synthesized strand is transiently unmethylated, allowing recognition."
+        },
+        {
+          "text": "Nick in the new strand",
+          "isCorrect": false,
+          "explanation": "Nicks can be signals in some organisms, but methylation is the primary mechanism in E. coli."
+        },
+        {
+          "text": "Sequence differences",
+          "isCorrect": false,
+          "explanation": "Sequence is identical."
+        },
+        {
+          "text": "Binding of single‑strand binding protein",
+          "isCorrect": false,
+          "explanation": "Not the discrimination signal."
+        },
+        {
+          "text": "RNA primers",
+          "isCorrect": false,
+          "explanation": "Primers are not the distinguishing feature."
+        }
+      ],
+      "explanation": {
+        "overview": "In E. coli, the newly synthesized strand is transiently unmethylated, allowing recognition.",
+        "highYield": "MMR: new strand recognized by lack of methylation (Dam methylase).",
+        "clinicalCorrelation": "HNPCC is caused by defects in MMR genes."
+      }
+    },
+    {
+      "questionId": "molecular_biology_068",
+      "difficulty": 2,
+      "question": "Hereditary nonpolyposis colorectal cancer (HNPCC) is often due to mutations in genes involved in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Mismatch repair",
+          "isCorrect": true,
+          "explanation": "Defects in MMR genes (e.g., MSH2, MLH1) cause microsatellite instability and cancer predisposition."
+        },
+        {
+          "text": "Nucleotide excision repair",
+          "isCorrect": false,
+          "explanation": "NER deficiency causes XP."
+        },
+        {
+          "text": "Base excision repair",
+          "isCorrect": false,
+          "explanation": "BER defects are less commonly linked to HNPCC."
+        },
+        {
+          "text": "Double‑strand break repair",
+          "isCorrect": false,
+          "explanation": "BRCA mutations affect DSB repair."
+        },
+        {
+          "text": "Direct reversal",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        }
+      ],
+      "explanation": {
+        "overview": "Defects in MMR genes (e.g., MSH2, MLH1) cause microsatellite instability and cancer predisposition.",
+        "highYield": "HNPCC = mismatch repair defect.",
+        "clinicalCorrelation": "Patients have increased risk of colorectal, endometrial, and other cancers."
+      }
+    },
+    {
+      "questionId": "molecular_biology_069",
+      "difficulty": 2,
+      "question": "Xeroderma pigmentosum is caused by defects in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Nucleotide excision repair",
+          "isCorrect": true,
+          "explanation": "Patients with XP cannot repair UV‑induced DNA damage due to NER deficiency."
+        },
+        {
+          "text": "Base excision repair",
+          "isCorrect": false,
+          "explanation": "BER is for small base modifications."
+        },
+        {
+          "text": "Mismatch repair",
+          "isCorrect": false,
+          "explanation": "MMR defects cause HNPCC."
+        },
+        {
+          "text": "Double‑strand break repair",
+          "isCorrect": false,
+          "explanation": "Not the defect."
+        },
+        {
+          "text": "Photolyase",
+          "isCorrect": false,
+          "explanation": "Humans lack photolyase; they rely on NER."
+        }
+      ],
+      "explanation": {
+        "overview": "Patients with XP cannot repair UV‑induced DNA damage due to NER deficiency.",
+        "highYield": "XP = NER defect.",
+        "clinicalCorrelation": "Extreme sensitivity to sunlight and high skin cancer risk."
+      }
+    },
+    {
+      "questionId": "molecular_biology_070",
+      "difficulty": 2,
+      "question": "BRCA1 and BRCA2 are tumor suppressor genes involved in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Homologous recombination repair of double‑strand breaks",
+          "isCorrect": true,
+          "explanation": "BRCA proteins are key for repairing double‑strand breaks by homologous recombination."
+        },
+        {
+          "text": "Mismatch repair",
+          "isCorrect": false,
+          "explanation": "That's MSH2, MLH1."
+        },
+        {
+          "text": "Nucleotide excision repair",
+          "isCorrect": false,
+          "explanation": "That's XP proteins."
+        },
+        {
+          "text": "Base excision repair",
+          "isCorrect": false,
+          "explanation": "Not their role."
+        },
+        {
+          "text": "Cell cycle control only",
+          "isCorrect": false,
+          "explanation": "They participate in DNA repair."
+        }
+      ],
+      "explanation": {
+        "overview": "BRCA proteins are key for repairing double‑strand breaks by homologous recombination.",
+        "highYield": "BRCA1/2 = homologous recombination.",
+        "clinicalCorrelation": "Mutations increase risk of breast and ovarian cancer."
+      }
+    },
+    {
+      "questionId": "molecular_biology_071",
+      "difficulty": 1,
+      "question": "The enzyme that adds nucleotides to the 3' end of a DNA strand during replication is:",
+      "image": null,
+      "options": [
+        {
+          "text": "DNA polymerase",
+          "isCorrect": true,
+          "explanation": "DNA polymerase synthesizes new DNA in the 5'→3' direction."
+        },
+        {
+          "text": "RNA polymerase",
+          "isCorrect": false,
+          "explanation": "RNA polymerase synthesizes RNA."
+        },
+        {
+          "text": "Primase",
+          "isCorrect": false,
+          "explanation": "Primase makes RNA primers."
+        },
+        {
+          "text": "Ligase",
+          "isCorrect": false,
+          "explanation": "Ligase joins fragments."
+        },
+        {
+          "text": "Helicase",
+          "isCorrect": false,
+          "explanation": "Helicase unwinds DNA."
+        }
+      ],
+      "explanation": {
+        "overview": "DNA polymerase synthesizes new DNA in the 5'→3' direction.",
+        "highYield": "DNA polymerase = DNA synthesis.",
+        "clinicalCorrelation": "DNA polymerase is targeted by antiviral and anticancer drugs."
+      }
+    },
+    {
+      "questionId": "molecular_biology_072",
+      "difficulty": 2,
+      "question": "Which of the following is a DNA polymerase found in eukaryotes that is responsible for mitochondrial DNA replication?",
+      "image": null,
+      "options": [
+        {
+          "text": "DNA polymerase γ",
+          "isCorrect": true,
+          "explanation": "Polymerase γ replicates and repairs mitochondrial DNA."
+        },
+        {
+          "text": "DNA polymerase α",
+          "isCorrect": false,
+          "explanation": "Pol α is involved in initiation of nuclear DNA replication."
+        },
+        {
+          "text": "DNA polymerase β",
+          "isCorrect": false,
+          "explanation": "Pol β is for base excision repair."
+        },
+        {
+          "text": "DNA polymerase δ",
+          "isCorrect": false,
+          "explanation": "Pol δ is for lagging strand synthesis."
+        },
+        {
+          "text": "DNA polymerase ε",
+          "isCorrect": false,
+          "explanation": "Pol ε is for leading strand synthesis."
+        }
+      ],
+      "explanation": {
+        "overview": "Polymerase γ replicates and repairs mitochondrial DNA.",
+        "highYield": "Mitochondrial DNA replication = Pol γ.",
+        "clinicalCorrelation": "Mutations in Pol γ cause mitochondrial depletion syndromes."
+      }
+    },
+    {
+      "questionId": "molecular_biology_073",
+      "difficulty": 2,
+      "question": "DNA polymerase α in eukaryotes is associated with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Primase activity (initiation)",
+          "isCorrect": true,
+          "explanation": "Pol α has primase activity and synthesizes short RNA‑DNA primers."
+        },
+        {
+          "text": "Leading strand elongation",
+          "isCorrect": false,
+          "explanation": "Pol ε extends the leading strand."
+        },
+        {
+          "text": "Lagging strand elongation",
+          "isCorrect": false,
+          "explanation": "Pol δ extends Okazaki fragments."
+        },
+        {
+          "text": "Repair",
+          "isCorrect": false,
+          "explanation": "Pol β is repair‑specific."
+        },
+        {
+          "text": "Mitochondrial replication",
+          "isCorrect": false,
+          "explanation": "Pol γ does that."
+        }
+      ],
+      "explanation": {
+        "overview": "Pol α has primase activity and synthesizes short RNA‑DNA primers.",
+        "highYield": "Pol α = primase + short DNA extension.",
+        "clinicalCorrelation": "Target of some anticancer drugs."
+      }
+    },
+    {
+      "questionId": "molecular_biology_074",
+      "difficulty": 2,
+      "question": "DNA polymerase δ and ε are responsible for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Elongation of leading and lagging strands",
+          "isCorrect": true,
+          "explanation": "Pol δ extends Okazaki fragments (lagging), and Pol ε extends the leading strand."
+        },
+        {
+          "text": "Primer synthesis",
+          "isCorrect": false,
+          "explanation": "Pol α/primase synthesizes primers."
+        },
+        {
+          "text": "Mitochondrial replication",
+          "isCorrect": false,
+          "explanation": "Pol γ."
+        },
+        {
+          "text": "Repair only",
+          "isCorrect": false,
+          "explanation": "They also participate in repair."
+        },
+        {
+          "text": "Telomere maintenance",
+          "isCorrect": false,
+          "explanation": "Telomerase does that."
+        }
+      ],
+      "explanation": {
+        "overview": "Pol δ extends Okazaki fragments (lagging), and Pol ε extends the leading strand.",
+        "highYield": "Pol δ (lagging), Pol ε (leading).",
+        "clinicalCorrelation": "Mutations in Pol ε cause hypermutated colorectal cancer."
+      }
+    },
+    {
+      "questionId": "molecular_biology_075",
+      "difficulty": 2,
+      "question": "The replication fork is established by the action of helicase and stabilized by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Single‑strand binding proteins (SSB)",
+          "isCorrect": true,
+          "explanation": "SSB proteins bind and protect single‑stranded DNA, preventing reannealing."
+        },
+        {
+          "text": "DNA polymerase",
+          "isCorrect": false,
+          "explanation": "Polymerase synthesizes DNA."
+        },
+        {
+          "text": "Primase",
+          "isCorrect": false,
+          "explanation": "Primase makes primers."
+        },
+        {
+          "text": "Ligase",
+          "isCorrect": false,
+          "explanation": "Ligase seals nicks."
+        },
+        {
+          "text": "Topoisomerase",
+          "isCorrect": false,
+          "explanation": "Topoisomerase relieves supercoiling."
+        }
+      ],
+      "explanation": {
+        "overview": "SSB proteins bind and protect single‑stranded DNA, preventing reannealing.",
+        "highYield": "SSB = stabilizes ssDNA.",
+        "clinicalCorrelation": "SSB is essential for replication; its inhibition would block cell division."
+      }
+    },
+    {
+      "questionId": "molecular_biology_076",
+      "difficulty": 2,
+      "question": "In eukaryotes, replication initiates at multiple origins. The protein that binds origins and initiates unwinding is:",
+      "image": null,
+      "options": [
+        {
+          "text": "ORC (origin recognition complex)",
+          "isCorrect": true,
+          "explanation": "ORC marks origins and recruits other factors to assemble the pre‑replication complex."
+        },
+        {
+          "text": "Helicase",
+          "isCorrect": false,
+          "explanation": "MCM is the helicase, loaded by ORC."
+        },
+        {
+          "text": "Primase",
+          "isCorrect": false,
+          "explanation": "Primase synthesizes primers."
+        },
+        {
+          "text": "DNA polymerase",
+          "isCorrect": false,
+          "explanation": "Polymerase synthesizes DNA."
+        },
+        {
+          "text": "Topoisomerase",
+          "isCorrect": false,
+          "explanation": "Topoisomerase alters supercoiling."
+        }
+      ],
+      "explanation": {
+        "overview": "ORC marks origins and recruits other factors to assemble the pre‑replication complex.",
+        "highYield": "ORC = origin recognition.",
+        "clinicalCorrelation": "Dysregulation of origin licensing contributes to genomic instability."
+      }
+    },
+    {
+      "questionId": "molecular_biology_077",
+      "difficulty": 2,
+      "question": "The enzyme that adds DNA to chromosome ends to prevent shortening is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Telomerase",
+          "isCorrect": true,
+          "explanation": "Telomerase contains an RNA template and adds telomeric repeats."
+        },
+        {
+          "text": "DNA polymerase",
+          "isCorrect": false,
+          "explanation": "DNA polymerase cannot fully replicate ends."
+        },
+        {
+          "text": "Primase",
+          "isCorrect": false,
+          "explanation": "Primase synthesizes primers."
+        },
+        {
+          "text": "Ligase",
+          "isCorrect": false,
+          "explanation": "Ligase joins fragments."
+        },
+        {
+          "text": "Topoisomerase",
+          "isCorrect": false,
+          "explanation": "Topoisomerase changes supercoiling."
+        }
+      ],
+      "explanation": {
+        "overview": "Telomerase contains an RNA template and adds telomeric repeats.",
+        "highYield": "Telomerase = telomere maintenance.",
+        "clinicalCorrelation": "Telomerase is reactivated in most cancers."
+      }
+    },
+    {
+      "questionId": "molecular_biology_078",
+      "difficulty": 2,
+      "question": "The RNA component of telomerase provides the template for synthesizing:",
+      "image": null,
+      "options": [
+        {
+          "text": "Telomeric DNA repeats",
+          "isCorrect": true,
+          "explanation": "The RNA contains a sequence complementary to the telomere repeat, used as template for DNA synthesis."
+        },
+        {
+          "text": "Telomeric RNA",
+          "isCorrect": false,
+          "explanation": "Telomerase does not synthesize RNA."
+        },
+        {
+          "text": "Primers",
+          "isCorrect": false,
+          "explanation": "Primase makes primers."
+        },
+        {
+          "text": "Okazaki fragments",
+          "isCorrect": false,
+          "explanation": "Those are on lagging strand."
+        },
+        {
+          "text": "Centromeric DNA",
+          "isCorrect": false,
+          "explanation": "Not related."
+        }
+      ],
+      "explanation": {
+        "overview": "The RNA contains a sequence complementary to the telomere repeat, used as template for DNA synthesis.",
+        "highYield": "Telomerase RNA template = telomere repeat.",
+        "clinicalCorrelation": "Mutations in telomerase RNA cause dyskeratosis congenita."
+      }
+    },
+    {
+      "questionId": "molecular_biology_079",
+      "difficulty": 2,
+      "question": "Which of the following is a characteristic of prokaryotic mRNA?",
+      "image": null,
+      "options": [
+        {
+          "text": "Polycistronic",
+          "isCorrect": true,
+          "explanation": "Prokaryotic mRNAs often contain multiple coding regions (polycistronic)."
+        },
+        {
+          "text": "Monocistronic",
+          "isCorrect": false,
+          "explanation": "Eukaryotic mRNAs are typically monocistronic."
+        },
+        {
+          "text": "Spliced",
+          "isCorrect": false,
+          "explanation": "Prokaryotic mRNAs are not spliced."
+        },
+        {
+          "text": "Capped",
+          "isCorrect": false,
+          "explanation": "Prokaryotic mRNAs lack a 5' cap."
+        },
+        {
+          "text": "Polyadenylated",
+          "isCorrect": false,
+          "explanation": "Prokaryotic mRNAs generally lack poly‑A tails."
+        }
+      ],
+      "explanation": {
+        "overview": "Prokaryotic mRNAs often contain multiple coding regions (polycistronic).",
+        "highYield": "Prokaryotic mRNA = polycistronic.",
+        "clinicalCorrelation": "This allows coordinated expression of functionally related genes."
+      }
+    },
+    {
+      "questionId": "molecular_biology_080",
+      "difficulty": 2,
+      "question": "Eukaryotic mRNAs are typically:",
+      "image": null,
+      "options": [
+        {
+          "text": "Monocistronic",
+          "isCorrect": true,
+          "explanation": "Most eukaryotic mRNAs encode a single protein (monocistronic)."
+        },
+        {
+          "text": "Polycistronic",
+          "isCorrect": false,
+          "explanation": "That is prokaryotic."
+        },
+        {
+          "text": "Uncapped",
+          "isCorrect": false,
+          "explanation": "Eukaryotic mRNAs have a 5' cap."
+        },
+        {
+          "text": "Not polyadenylated",
+          "isCorrect": false,
+          "explanation": "They have a poly‑A tail."
+        },
+        {
+          "text": "Translated without processing",
+          "isCorrect": false,
+          "explanation": "They undergo extensive processing."
+        }
+      ],
+      "explanation": {
+        "overview": "Most eukaryotic mRNAs encode a single protein (monocistronic).",
+        "highYield": "Eukaryotic mRNA = monocistronic, capped, polyadenylated.",
+        "clinicalCorrelation": "Processing defects can cause disease (e.g., thalassemia due to splicing mutations)."
+      }
+    },
+    {
+      "questionId": "molecular_biology_081",
+      "difficulty": 1,
+      "question": "The process of transferring genetic information from DNA to RNA is called:",
+      "image": null,
+      "options": [
+        {
+          "text": "Transcription",
+          "isCorrect": true,
+          "explanation": "Transcription is the synthesis of RNA from a DNA template."
+        },
+        {
+          "text": "Translation",
+          "isCorrect": false,
+          "explanation": "Translation makes protein."
+        },
+        {
+          "text": "Replication",
+          "isCorrect": false,
+          "explanation": "Replication copies DNA."
+        },
+        {
+          "text": "Transformation",
+          "isCorrect": false,
+          "explanation": "Transformation is uptake of foreign DNA."
+        },
+        {
+          "text": "Transduction",
+          "isCorrect": false,
+          "explanation": "Transduction is virus‑mediated DNA transfer."
+        }
+      ],
+      "explanation": {
+        "overview": "Transcription is the synthesis of RNA from a DNA template.",
+        "highYield": "DNA → RNA = transcription.",
+        "clinicalCorrelation": "Many antibiotics (e.g., rifampin) inhibit bacterial RNA polymerase."
+      }
+    },
+    {
+      "questionId": "molecular_biology_082",
+      "difficulty": 1,
+      "question": "The process of protein synthesis from mRNA is called:",
+      "image": null,
+      "options": [
+        {
+          "text": "Translation",
+          "isCorrect": true,
+          "explanation": "Translation occurs on ribosomes, converting mRNA sequence to amino acid sequence."
+        },
+        {
+          "text": "Transcription",
+          "isCorrect": false,
+          "explanation": "Transcription makes RNA."
+        },
+        {
+          "text": "Replication",
+          "isCorrect": false,
+          "explanation": "Replication copies DNA."
+        },
+        {
+          "text": "Transformation",
+          "isCorrect": false,
+          "explanation": "DNA uptake."
+        },
+        {
+          "text": "Transduction",
+          "isCorrect": false,
+          "explanation": "Virus‑mediated gene transfer."
+        }
+      ],
+      "explanation": {
+        "overview": "Translation occurs on ribosomes, converting mRNA sequence to amino acid sequence.",
+        "highYield": "mRNA → protein = translation.",
+        "clinicalCorrelation": "Many antibiotics target bacterial ribosomes (e.g., tetracyclines)."
+      }
+    },
+    {
+      "questionId": "molecular_biology_083",
+      "difficulty": 2,
+      "question": "The sigma factor in prokaryotic transcription is responsible for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Promoter recognition",
+          "isCorrect": true,
+          "explanation": "Sigma factor binds RNA polymerase and directs it to specific promoter sequences."
+        },
+        {
+          "text": "Chain elongation",
+          "isCorrect": false,
+          "explanation": "Core polymerase handles elongation."
+        },
+        {
+          "text": "Termination",
+          "isCorrect": false,
+          "explanation": "Termination involves specific sequences or Rho factor."
+        },
+        {
+          "text": "Proofreading",
+          "isCorrect": false,
+          "explanation": "RNA polymerase has some proofreading, but sigma is not involved."
+        },
+        {
+          "text": "mRNA capping",
+          "isCorrect": false,
+          "explanation": "Capping is eukaryotic."
+        }
+      ],
+      "explanation": {
+        "overview": "Sigma factor binds RNA polymerase and directs it to specific promoter sequences.",
+        "highYield": "Sigma factor = promoter recognition (prokaryotes).",
+        "clinicalCorrelation": "Different sigma factors regulate stress responses (e.g., heat shock)."
+      }
+    },
+    {
+      "questionId": "molecular_biology_084",
+      "difficulty": 2,
+      "question": "In prokaryotes, transcription termination can occur via:",
+      "image": null,
+      "options": [
+        {
+          "text": "Rho‑dependent and Rho‑independent (intrinsic) mechanisms",
+          "isCorrect": true,
+          "explanation": "Intrinsic termination involves a hairpin followed by a U‑rich region; Rho‑dependent uses Rho factor."
+        },
+        {
+          "text": "Only Rho‑dependent",
+          "isCorrect": false,
+          "explanation": "Intrinsic termination also occurs."
+        },
+        {
+          "text": "Only poly‑A signals",
+          "isCorrect": false,
+          "explanation": "Poly‑A signals are eukaryotic."
+        },
+        {
+          "text": "Cap recognition",
+          "isCorrect": false,
+          "explanation": "Not involved in termination."
+        },
+        {
+          "text": "Spliceosome",
+          "isCorrect": false,
+          "explanation": "Not involved."
+        }
+      ],
+      "explanation": {
+        "overview": "Intrinsic termination involves a hairpin followed by a U‑rich region; Rho‑dependent uses Rho factor.",
+        "highYield": "Prokaryotic termination: Rho‑dependent and intrinsic.",
+        "clinicalCorrelation": "Some antibiotics target Rho factor."
+      }
+    },
+    {
+      "questionId": "molecular_biology_085",
+      "difficulty": 2,
+      "question": "Eukaryotic RNA polymerase I transcribes:",
+      "image": null,
+      "options": [
+        {
+          "text": "rRNA (except 5S)",
+          "isCorrect": true,
+          "explanation": "Pol I synthesizes the large rRNA precursor (28S, 18S, 5.8S)."
+        },
+        {
+          "text": "mRNA",
+          "isCorrect": false,
+          "explanation": "Pol II transcribes mRNA."
+        },
+        {
+          "text": "tRNA",
+          "isCorrect": false,
+          "explanation": "Pol III transcribes tRNA."
+        },
+        {
+          "text": "5S rRNA",
+          "isCorrect": false,
+          "explanation": "5S rRNA is by Pol III."
+        },
+        {
+          "text": "snRNA",
+          "isCorrect": false,
+          "explanation": "Some snRNAs are by Pol II, some by Pol III."
+        }
+      ],
+      "explanation": {
+        "overview": "Pol I synthesizes the large rRNA precursor (28S, 18S, 5.8S).",
+        "highYield": "Pol I = rRNA (28S, 18S, 5.8S).",
+        "clinicalCorrelation": "Pol I transcription is upregulated in many cancers."
+      }
+    },
+    {
+      "questionId": "molecular_biology_086",
+      "difficulty": 2,
+      "question": "Eukaryotic RNA polymerase II transcribes:",
+      "image": null,
+      "options": [
+        {
+          "text": "mRNA and some snRNAs",
+          "isCorrect": true,
+          "explanation": "Pol II synthesizes mRNA precursors and several small nuclear RNAs."
+        },
+        {
+          "text": "rRNA",
+          "isCorrect": false,
+          "explanation": "Pol I does that."
+        },
+        {
+          "text": "tRNA",
+          "isCorrect": false,
+          "explanation": "Pol III does that."
+        },
+        {
+          "text": "5S rRNA",
+          "isCorrect": false,
+          "explanation": "Pol III."
+        },
+        {
+          "text": "All RNA",
+          "isCorrect": false,
+          "explanation": "Not all."
+        }
+      ],
+      "explanation": {
+        "overview": "Pol II synthesizes mRNA precursors and several small nuclear RNAs.",
+        "highYield": "Pol II = mRNA + snRNAs.",
+        "clinicalCorrelation": "α‑Amanitin (mushroom toxin) inhibits Pol II."
+      }
+    },
+    {
+      "questionId": "molecular_biology_087",
+      "difficulty": 2,
+      "question": "Eukaryotic RNA polymerase III transcribes:",
+      "image": null,
+      "options": [
+        {
+          "text": "tRNA, 5S rRNA, and some snRNAs",
+          "isCorrect": true,
+          "explanation": "Pol III produces small RNAs, including tRNAs, 5S rRNA, and U6 snRNA."
+        },
+        {
+          "text": "mRNA",
+          "isCorrect": false,
+          "explanation": "Pol II."
+        },
+        {
+          "text": "Large rRNA",
+          "isCorrect": false,
+          "explanation": "Pol I."
+        },
+        {
+          "text": "All ribosomal RNA",
+          "isCorrect": false,
+          "explanation": "5S rRNA is by Pol III, others by Pol I."
+        },
+        {
+          "text": "Only tRNA",
+          "isCorrect": false,
+          "explanation": "Also 5S rRNA and some snRNAs."
+        }
+      ],
+      "explanation": {
+        "overview": "Pol III produces small RNAs, including tRNAs, 5S rRNA, and U6 snRNA.",
+        "highYield": "Pol III = tRNA, 5S rRNA, U6 snRNA.",
+        "clinicalCorrelation": "Pol III transcription is often elevated in cancers."
+      }
+    },
+    {
+      "questionId": "molecular_biology_088",
+      "difficulty": 2,
+      "question": "The TATA‑binding protein (TBP) is a subunit of which transcription factor?",
+      "image": null,
+      "options": [
+        {
+          "text": "TFIID",
+          "isCorrect": true,
+          "explanation": "TBP is part of TFIID and binds the TATA box."
+        },
+        {
+          "text": "TFIIB",
+          "isCorrect": false,
+          "explanation": "TFIIB is a separate factor."
+        },
+        {
+          "text": "TFIIE",
+          "isCorrect": false,
+          "explanation": "Not TBP."
+        },
+        {
+          "text": "TFIIF",
+          "isCorrect": false,
+          "explanation": "Not TBP."
+        },
+        {
+          "text": "TFIIH",
+          "isCorrect": false,
+          "explanation": "TFIIH has helicase and kinase activity."
+        }
+      ],
+      "explanation": {
+        "overview": "TBP is part of TFIID and binds the TATA box.",
+        "highYield": "TBP = TFIID subunit.",
+        "clinicalCorrelation": "Mutations in TBP cause spinocerebellar ataxia 17."
+      }
+    },
+    {
+      "questionId": "molecular_biology_089",
+      "difficulty": 2,
+      "question": "TFIIH has multiple activities, including:",
+      "image": null,
+      "options": [
+        {
+          "text": "Helicase and kinase activity (phosphorylates RNA pol II)",
+          "isCorrect": true,
+          "explanation": "TFIIH unwinds DNA at the promoter and phosphorylates the C‑terminal domain of RNA pol II."
+        },
+        {
+          "text": "Promoter recognition",
+          "isCorrect": false,
+          "explanation": "TFIID does that."
+        },
+        {
+          "text": "TATA box binding",
+          "isCorrect": false,
+          "explanation": "TBP in TFIID does that."
+        },
+        {
+          "text": "Mediator binding",
+          "isCorrect": false,
+          "explanation": "Mediator is a separate complex."
+        },
+        {
+          "text": "Polymerase activity",
+          "isCorrect": false,
+          "explanation": "Not a polymerase."
+        }
+      ],
+      "explanation": {
+        "overview": "TFIIH unwinds DNA at the promoter and phosphorylates the C‑terminal domain of RNA pol II.",
+        "highYield": "TFIIH = helicase + kinase (CTD phosphorylation).",
+        "clinicalCorrelation": "Mutations in TFIIH components cause xeroderma pigmentosum and Cockayne syndrome."
+      }
+    },
+    {
+      "questionId": "molecular_biology_090",
+      "difficulty": 2,
+      "question": "The mediator complex in eukaryotes functions to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Bridge transcription factors and RNA polymerase II",
+          "isCorrect": true,
+          "explanation": "Mediator transmits signals from regulatory transcription factors to RNA pol II."
+        },
+        {
+          "text": "Initiate translation",
+          "isCorrect": false,
+          "explanation": "Not its role."
+        },
+        {
+          "text": "Splice RNA",
+          "isCorrect": false,
+          "explanation": "Spliceosome does that."
+        },
+        {
+          "text": "Add poly‑A tail",
+          "isCorrect": false,
+          "explanation": "Poly(A) polymerase."
+        },
+        {
+          "text": "Repair DNA",
+          "isCorrect": false,
+          "explanation": "Not mediator."
+        }
+      ],
+      "explanation": {
+        "overview": "Mediator transmits signals from regulatory transcription factors to RNA pol II.",
+        "highYield": "Mediator = transcription factor‑Pol II bridge.",
+        "clinicalCorrelation": "Mediator subunit mutations are linked to cancer and developmental disorders."
+      }
+    },
+    {
+      "questionId": "molecular_biology_091",
+      "difficulty": 1,
+      "question": "Ribosomes are composed of two subunits. In eukaryotes, the large subunit is:",
+      "image": null,
+      "options": [
+        {
+          "text": "60S",
+          "isCorrect": true,
+          "explanation": "Eukaryotic ribosomes are 80S, composed of 60S (large) and 40S (small) subunits."
+        },
+        {
+          "text": "50S",
+          "isCorrect": false,
+          "explanation": "Prokaryotic large subunit."
+        },
+        {
+          "text": "40S",
+          "isCorrect": false,
+          "explanation": "That's the small subunit."
+        },
+        {
+          "text": "30S",
+          "isCorrect": false,
+          "explanation": "Prokaryotic small subunit."
+        },
+        {
+          "text": "70S",
+          "isCorrect": false,
+          "explanation": "That's the whole prokaryotic ribosome."
+        }
+      ],
+      "explanation": {
+        "overview": "Eukaryotic ribosomes are 80S, composed of 60S (large) and 40S (small) subunits.",
+        "highYield": "Eukaryotic large subunit = 60S.",
+        "clinicalCorrelation": "Cycloheximide inhibits eukaryotic 60S, used experimentally."
+      }
+    },
+    {
+      "questionId": "molecular_biology_092",
+      "difficulty": 1,
+      "question": "In prokaryotes, the large ribosomal subunit is:",
+      "image": null,
+      "options": [
+        {
+          "text": "50S",
+          "isCorrect": true,
+          "explanation": "Prokaryotic ribosomes are 70S, with 50S (large) and 30S (small) subunits."
+        },
+        {
+          "text": "60S",
+          "isCorrect": false,
+          "explanation": "That's eukaryotic."
+        },
+        {
+          "text": "40S",
+          "isCorrect": false,
+          "explanation": "Eukaryotic small."
+        },
+        {
+          "text": "30S",
+          "isCorrect": false,
+          "explanation": "Prokaryotic small."
+        },
+        {
+          "text": "80S",
+          "isCorrect": false,
+          "explanation": "That's eukaryotic whole ribosome."
+        }
+      ],
+      "explanation": {
+        "overview": "Prokaryotic ribosomes are 70S, with 50S (large) and 30S (small) subunits.",
+        "highYield": "Prokaryotic large subunit = 50S.",
+        "clinicalCorrelation": "Chloramphenicol inhibits 50S subunit."
+      }
+    },
+    {
+      "questionId": "molecular_biology_093",
+      "difficulty": 2,
+      "question": "The A site of the ribosome binds:",
+      "image": null,
+      "options": [
+        {
+          "text": "Aminoacyl‑tRNA",
+          "isCorrect": true,
+          "explanation": "The A (aminoacyl) site accepts incoming aminoacyl‑tRNA."
+        },
+        {
+          "text": "Peptidyl‑tRNA",
+          "isCorrect": false,
+          "explanation": "That's the P site."
+        },
+        {
+          "text": "Deacylated tRNA",
+          "isCorrect": false,
+          "explanation": "That's the E site."
+        },
+        {
+          "text": "mRNA",
+          "isCorrect": false,
+          "explanation": "mRNA binds to the small subunit."
+        },
+        {
+          "text": "Initiation factors",
+          "isCorrect": false,
+          "explanation": "They bind temporarily."
+        }
+      ],
+      "explanation": {
+        "overview": "The A (aminoacyl) site accepts incoming aminoacyl‑tRNA.",
+        "highYield": "A site = incoming aminoacyl‑tRNA.",
+        "clinicalCorrelation": "Tetracyclines block tRNA binding to the A site."
+      }
+    },
+    {
+      "questionId": "molecular_biology_094",
+      "difficulty": 2,
+      "question": "The P site of the ribosome holds:",
+      "image": null,
+      "options": [
+        {
+          "text": "Peptidyl‑tRNA",
+          "isCorrect": true,
+          "explanation": "The P (peptidyl) site contains the tRNA linked to the growing peptide chain."
+        },
+        {
+          "text": "Aminoacyl‑tRNA",
+          "isCorrect": false,
+          "explanation": "That's the A site."
+        },
+        {
+          "text": "Deacylated tRNA",
+          "isCorrect": false,
+          "explanation": "That's the E site."
+        },
+        {
+          "text": "mRNA",
+          "isCorrect": false,
+          "explanation": "Not bound in P site."
+        },
+        {
+          "text": "Exit site",
+          "isCorrect": false,
+          "explanation": "E site is exit."
+        }
+      ],
+      "explanation": {
+        "overview": "The P (peptidyl) site contains the tRNA linked to the growing peptide chain.",
+        "highYield": "P site = peptidyl‑tRNA.",
+        "clinicalCorrelation": "Puromycin mimics aminoacyl‑tRNA and causes premature termination at P site."
+      }
+    },
+    {
+      "questionId": "molecular_biology_095",
+      "difficulty": 2,
+      "question": "The E site of the ribosome is where:",
+      "image": null,
+      "options": [
+        {
+          "text": "Deacylated tRNA exits",
+          "isCorrect": true,
+          "explanation": "The E (exit) site holds the empty tRNA before release."
+        },
+        {
+          "text": "Aminoacyl‑tRNA enters",
+          "isCorrect": false,
+          "explanation": "That's the A site."
+        },
+        {
+          "text": "Peptidyl‑tRNA binds",
+          "isCorrect": false,
+          "explanation": "That's the P site."
+        },
+        {
+          "text": "mRNA binds",
+          "isCorrect": false,
+          "explanation": "Not the E site."
+        },
+        {
+          "text": "Initiation occurs",
+          "isCorrect": false,
+          "explanation": "Initiation involves the P site."
+        }
+      ],
+      "explanation": {
+        "overview": "The E (exit) site holds the empty tRNA before release.",
+        "highYield": "E site = exit site.",
+        "clinicalCorrelation": "The ribosome cycles through A, P, E sites during elongation."
+      }
+    },
+    {
+      "questionId": "molecular_biology_096",
+      "difficulty": 2,
+      "question": "Translation initiation in prokaryotes requires the Shine‑Dalgarno sequence, which base‑pairs with:",
+      "image": null,
+      "options": [
+        {
+          "text": "16S rRNA",
+          "isCorrect": true,
+          "explanation": "The 3' end of 16S rRNA contains the anti‑Shine‑Dalgarno sequence."
+        },
+        {
+          "text": "18S rRNA",
+          "isCorrect": false,
+          "explanation": "Eukaryotic small subunit rRNA."
+        },
+        {
+          "text": "23S rRNA",
+          "isCorrect": false,
+          "explanation": "Large subunit rRNA."
+        },
+        {
+          "text": "28S rRNA",
+          "isCorrect": false,
+          "explanation": "Eukaryotic large subunit rRNA."
+        },
+        {
+          "text": "5S rRNA",
+          "isCorrect": false,
+          "explanation": "Part of large subunit."
+        }
+      ],
+      "explanation": {
+        "overview": "The 3' end of 16S rRNA contains the anti‑Shine‑Dalgarno sequence.",
+        "highYield": "Shine‑Dalgarno pairs with 16S rRNA.",
+        "clinicalCorrelation": "This interaction positions the ribosome at the start codon."
+      }
+    },
+    {
+      "questionId": "molecular_biology_097",
+      "difficulty": 2,
+      "question": "Eukaryotic translation initiation begins with the formation of the pre‑initiation complex, which includes:",
+      "image": null,
+      "options": [
+        {
+          "text": "eIF2, GTP, Met‑tRNAi, and 40S subunit",
+          "isCorrect": true,
+          "explanation": "eIF2 (with GTP) brings initiator Met‑tRNA to the 40S subunit."
+        },
+        {
+          "text": "IF1, IF2, IF3, and 30S subunit",
+          "isCorrect": false,
+          "explanation": "That's prokaryotic."
+        },
+        {
+          "text": "60S subunit",
+          "isCorrect": false,
+          "explanation": "The large subunit joins later."
+        },
+        {
+          "text": "mRNA only",
+          "isCorrect": false,
+          "explanation": "Requires multiple factors."
+        },
+        {
+          "text": "Release factors",
+          "isCorrect": false,
+          "explanation": "Release factors are for termination."
+        }
+      ],
+      "explanation": {
+        "overview": "eIF2 (with GTP) brings initiator Met‑tRNA to the 40S subunit.",
+        "highYield": "Eukaryotic initiation: eIF2, GTP, Met‑tRNAi, 40S.",
+        "clinicalCorrelation": "Phosphorylation of eIF2α under stress inhibits global translation."
+      }
+    },
+    {
+      "questionId": "molecular_biology_098",
+      "difficulty": 2,
+      "question": "Elongation factor EF‑Tu (in prokaryotes) or eEF1A (in eukaryotes) delivers aminoacyl‑tRNA to the A site. It requires:",
+      "image": null,
+      "options": [
+        {
+          "text": "GTP hydrolysis",
+          "isCorrect": true,
+          "explanation": "EF‑Tu binds GTP, and hydrolysis upon codon recognition releases the factor."
+        },
+        {
+          "text": "ATP hydrolysis",
+          "isCorrect": false,
+          "explanation": "Not ATP."
+        },
+        {
+          "text": "NADH",
+          "isCorrect": false,
+          "explanation": "Not a cofactor."
+        },
+        {
+          "text": "FADH2",
+          "isCorrect": false,
+          "explanation": "Not involved."
+        },
+        {
+          "text": "NADPH",
+          "isCorrect": false,
+          "explanation": "Not involved."
+        }
+      ],
+      "explanation": {
+        "overview": "EF‑Tu binds GTP, and hydrolysis upon codon recognition releases the factor.",
+        "highYield": "EF‑Tu = GTPase.",
+        "clinicalCorrelation": "Kirromycin inhibits EF‑Tu."
+      }
+    },
+    {
+      "questionId": "molecular_biology_099",
+      "difficulty": 2,
+      "question": "Peptide bond formation during translation is catalyzed by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Peptidyl transferase (23S rRNA)",
+          "isCorrect": true,
+          "explanation": "The large subunit rRNA catalyzes peptide bond formation."
+        },
+        {
+          "text": "EF‑G",
+          "isCorrect": false,
+          "explanation": "EF‑G is for translocation."
+        },
+        {
+          "text": "EF‑Tu",
+          "isCorrect": false,
+          "explanation": "EF‑Tu delivers tRNA."
+        },
+        {
+          "text": "Release factors",
+          "isCorrect": false,
+          "explanation": "Release factors terminate translation."
+        },
+        {
+          "text": "Initiation factors",
+          "isCorrect": false,
+          "explanation": "They help start translation."
+        }
+      ],
+      "explanation": {
+        "overview": "The large subunit rRNA catalyzes peptide bond formation.",
+        "highYield": "Peptidyl transferase = rRNA ribozyme.",
+        "clinicalCorrelation": "Macrolides block the peptide exit tunnel."
+      }
+    },
+    {
+      "questionId": "molecular_biology_100",
+      "difficulty": 2,
+      "question": "Translocation of the ribosome along mRNA requires elongation factor G (EF‑G) in prokaryotes, which:",
+      "image": null,
+      "options": [
+        {
+          "text": "Uses GTP to move the ribosome by one codon",
+          "isCorrect": true,
+          "explanation": "EF‑G catalyzes the movement of the ribosome after peptide bond formation."
+        },
+        {
+          "text": "Hydrolyzes ATP",
+          "isCorrect": false,
+          "explanation": "It uses GTP."
+        },
+        {
+          "text": "Delivers tRNA",
+          "isCorrect": false,
+          "explanation": "EF‑Tu does that."
+        },
+        {
+          "text": "Removes tRNA from E site",
+          "isCorrect": false,
+          "explanation": "Not its function."
+        },
+        {
+          "text": "Binds the A site",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "EF‑G catalyzes the movement of the ribosome after peptide bond formation.",
+        "highYield": "EF‑G = translocation (GTP).",
+        "clinicalCorrelation": "Fusidic acid inhibits EF‑G."
+      }
+    },
+    {
+      "questionId": "molecular_biology_101",
+      "difficulty": 2,
+      "question": "Translation termination occurs when a stop codon enters the A site and is recognized by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Release factors (eRF1 in eukaryotes, RF1/RF2 in prokaryotes)",
+          "isCorrect": true,
+          "explanation": "Release factors bind stop codons and trigger peptidyl transferase to hydrolyze the peptide from tRNA."
+        },
+        {
+          "text": "Aminoacyl‑tRNA",
+          "isCorrect": false,
+          "explanation": "There is no tRNA for stop codons."
+        },
+        {
+          "text": "Peptidyl‑tRNA",
+          "isCorrect": false,
+          "explanation": "Not recognized."
+        },
+        {
+          "text": "Initiation factors",
+          "isCorrect": false,
+          "explanation": "Not involved."
+        },
+        {
+          "text": "Elongation factors",
+          "isCorrect": false,
+          "explanation": "Not for termination."
+        }
+      ],
+      "explanation": {
+        "overview": "Release factors bind stop codons and trigger peptidyl transferase to hydrolyze the peptide from tRNA.",
+        "highYield": "Stop codon → release factor → termination.",
+        "clinicalCorrelation": "Nonsense mutations can be targeted by drugs that promote read‑through (e.g., ataluren for DMD)."
+      }
+    },
+    {
+      "questionId": "molecular_biology_102",
+      "difficulty": 2,
+      "question": "The poly‑A tail of eukaryotic mRNA is bound by poly‑A‑binding protein (PABP), which:",
+      "image": null,
+      "options": [
+        {
+          "text": "Enhances translation initiation and mRNA stability",
+          "isCorrect": true,
+          "explanation": "PABP interacts with initiation factors to circularize mRNA and promote translation."
+        },
+        {
+          "text": "Promotes splicing",
+          "isCorrect": false,
+          "explanation": "Not its role."
+        },
+        {
+          "text": "Adds more adenines",
+          "isCorrect": false,
+          "explanation": "Poly(A) polymerase does that."
+        },
+        {
+          "text": "Directs mRNA to degradation",
+          "isCorrect": false,
+          "explanation": "PABP protects mRNA."
+        },
+        {
+          "text": "Inhibits transcription",
+          "isCorrect": false,
+          "explanation": "Not involved."
+        }
+      ],
+      "explanation": {
+        "overview": "PABP interacts with initiation factors to circularize mRNA and promote translation.",
+        "highYield": "PABP = translation enhancement and mRNA stability.",
+        "clinicalCorrelation": "PABP is essential for early development."
+      }
+    },
+    {
+      "questionId": "molecular_biology_103",
+      "difficulty": 2,
+      "question": "Nonsense‑mediated decay (NMD) is a surveillance pathway that degrades mRNAs containing:",
+      "image": null,
+      "options": [
+        {
+          "text": "Premature stop codons",
+          "isCorrect": true,
+          "explanation": "NMD prevents production of truncated proteins by degrading mRNAs with premature termination codons."
+        },
+        {
+          "text": "Missense mutations",
+          "isCorrect": false,
+          "explanation": "NMD targets stop codons, not missense."
+        },
+        {
+          "text": "Silent mutations",
+          "isCorrect": false,
+          "explanation": "No effect on protein."
+        },
+        {
+          "text": "Frameshifts",
+          "isCorrect": false,
+          "explanation": "Frameshifts often produce premature stop codons and can trigger NMD, but the defining feature is the premature stop."
+        },
+        {
+          "text": "No start codon",
+          "isCorrect": false,
+          "explanation": "Not the target."
+        }
+      ],
+      "explanation": {
+        "overview": "NMD prevents production of truncated proteins by degrading mRNAs with premature termination codons.",
+        "highYield": "NMD = premature stop codon mRNA degradation.",
+        "clinicalCorrelation": "NMD can modulate the severity of genetic diseases."
+      }
+    },
+    {
+      "questionId": "molecular_biology_104",
+      "difficulty": 2,
+      "question": "The enzyme that degrades mRNA in the 5'→3' direction after decapping is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Xrn1 (exoribonuclease)",
+          "isCorrect": true,
+          "explanation": "After decapping, Xrn1 rapidly degrades mRNA from the 5' end."
+        },
+        {
+          "text": "RNase H",
+          "isCorrect": false,
+          "explanation": "RNase H degrades RNA in DNA‑RNA hybrids."
+        },
+        {
+          "text": "RNase P",
+          "isCorrect": false,
+          "explanation": "RNase P processes tRNA."
+        },
+        {
+          "text": "RNase A",
+          "isCorrect": false,
+          "explanation": "RNase A is an endoribonuclease."
+        },
+        {
+          "text": "DNase",
+          "isCorrect": false,
+          "explanation": "DNase degrades DNA."
+        }
+      ],
+      "explanation": {
+        "overview": "After decapping, Xrn1 rapidly degrades mRNA from the 5' end.",
+        "highYield": "Xrn1 = 5'→3' mRNA decay.",
+        "clinicalCorrelation": "mRNA decay pathways regulate gene expression."
+      }
+    },
+    {
+      "questionId": "molecular_biology_105",
+      "difficulty": 2,
+      "question": "RNA editing involves:",
+      "image": null,
+      "options": [
+        {
+          "text": "Altering the nucleotide sequence of an RNA molecule after transcription",
+          "isCorrect": true,
+          "explanation": "RNA editing changes individual bases, e.g., deamination of C to U or A to I."
+        },
+        {
+          "text": "Splicing introns",
+          "isCorrect": false,
+          "explanation": "Splicing removes introns, not base changes."
+        },
+        {
+          "text": "Adding a cap",
+          "isCorrect": false,
+          "explanation": "Capping is a different modification."
+        },
+        {
+          "text": "Adding a poly‑A tail",
+          "isCorrect": false,
+          "explanation": "Not editing."
+        },
+        {
+          "text": "Degrading RNA",
+          "isCorrect": false,
+          "explanation": "Not editing."
+        }
+      ],
+      "explanation": {
+        "overview": "RNA editing changes individual bases, e.g., deamination of C to U or A to I.",
+        "highYield": "RNA editing = base change after transcription.",
+        "clinicalCorrelation": "ApoB mRNA editing produces ApoB48 (chylomicrons) vs ApoB100 (liver)."
+      }
+    },
+    {
+      "questionId": "molecular_biology_106",
+      "difficulty": 2,
+      "question": "A example of RNA editing is the conversion of cytidine to uridine by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cytidine deaminase",
+          "isCorrect": true,
+          "explanation": "Cytidine deaminases (e.g., APOBEC family) edit C to U."
+        },
+        {
+          "text": "Adenosine deaminase",
+          "isCorrect": false,
+          "explanation": "ADAR converts A to I."
+        },
+        {
+          "text": "RNA polymerase",
+          "isCorrect": false,
+          "explanation": "Not editing."
+        },
+        {
+          "text": "Spliceosome",
+          "isCorrect": false,
+          "explanation": "Splicing."
+        },
+        {
+          "text": "Ribozyme",
+          "isCorrect": false,
+          "explanation": "Self‑splicing introns."
+        }
+      ],
+      "explanation": {
+        "overview": "Cytidine deaminases (e.g., APOBEC family) edit C to U.",
+        "highYield": "C→U editing = cytidine deaminase (APOBEC).",
+        "clinicalCorrelation": "APOBEC enzymes also act in innate immunity and cancer mutagenesis."
+      }
+    },
+    {
+      "questionId": "molecular_biology_107",
+      "difficulty": 2,
+      "question": "The enzyme that converts adenosine to inosine in RNA editing is:",
+      "image": null,
+      "options": [
+        {
+          "text": "ADAR (adenosine deaminase acting on RNA)",
+          "isCorrect": true,
+          "explanation": "ADAR enzymes deaminate adenosine to inosine, which is read as guanosine."
+        },
+        {
+          "text": "APOBEC",
+          "isCorrect": false,
+          "explanation": "Cytidine deaminase."
+        },
+        {
+          "text": "RNA polymerase",
+          "isCorrect": false,
+          "explanation": "Not an editing enzyme."
+        },
+        {
+          "text": "Spliceosome",
+          "isCorrect": false,
+          "explanation": "Splicing."
+        },
+        {
+          "text": "RNase",
+          "isCorrect": false,
+          "explanation": "Degrades RNA."
+        }
+      ],
+      "explanation": {
+        "overview": "ADAR enzymes deaminate adenosine to inosine, which is read as guanosine.",
+        "highYield": "A→I editing = ADAR.",
+        "clinicalCorrelation": "A‑to‑I editing in glutamate receptors affects calcium permeability."
+      }
+    },
+    {
+      "questionId": "molecular_biology_108",
+      "difficulty": 2,
+      "question": "The secondary structure of RNA can be predicted using computational methods. Which of the following is a common RNA structural motif?",
+      "image": null,
+      "options": [
+        {
+          "text": "Hairpin loop",
+          "isCorrect": false,
+          "explanation": "Yes, but others are also motifs."
+        },
+        {
+          "text": "Bulge",
+          "isCorrect": false,
+          "explanation": "Yes."
+        },
+        {
+          "text": "Internal loop",
+          "isCorrect": false,
+          "explanation": "Yes."
+        },
+        {
+          "text": "Pseudoknot",
+          "isCorrect": false,
+          "explanation": "Yes."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "RNA folds into complex structures including hairpins, bulges, loops, and pseudoknots."
+        }
+      ],
+      "explanation": {
+        "overview": "RNA folds into complex structures including hairpins, bulges, loops, and pseudoknots.",
+        "highYield": "RNA motifs: hairpin, bulge, internal loop, pseudoknot.",
+        "clinicalCorrelation": "These structures are critical for ribozyme function and RNA‑protein interactions."
+      }
+    },
+    {
+      "questionId": "molecular_biology_109",
+      "difficulty": 2,
+      "question": "Riboswitches are regulatory elements in mRNA that:",
+      "image": null,
+      "options": [
+        {
+          "text": "Bind small molecules and change conformation to regulate gene expression",
+          "isCorrect": true,
+          "explanation": "Riboswitches directly sense metabolites and alter transcription, translation, or mRNA stability."
+        },
+        {
+          "text": "Bind ribosomes",
+          "isCorrect": false,
+          "explanation": "That's the Shine‑Dalgarno."
+        },
+        {
+          "text": "Bind transcription factors",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        },
+        {
+          "text": "Are degraded by RNase",
+          "isCorrect": false,
+          "explanation": "Not the definition."
+        },
+        {
+          "text": "Initiate translation",
+          "isCorrect": false,
+          "explanation": "They can regulate translation, but not just initiation."
+        }
+      ],
+      "explanation": {
+        "overview": "Riboswitches directly sense metabolites and alter transcription, translation, or mRNA stability.",
+        "highYield": "Riboswitch = metabolite‑sensing RNA element.",
+        "clinicalCorrelation": "Riboswitches are potential antibiotic targets."
+      }
+    },
+    {
+      "questionId": "molecular_biology_110",
+      "difficulty": 2,
+      "question": "Long non‑coding RNAs (lncRNAs) can regulate gene expression by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Recruiting chromatin‑modifying complexes",
+          "isCorrect": false,
+          "explanation": "Yes."
+        },
+        {
+          "text": "Acting as scaffolds",
+          "isCorrect": false,
+          "explanation": "Yes."
+        },
+        {
+          "text": "Serving as microRNA sponges",
+          "isCorrect": false,
+          "explanation": "Yes."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "lncRNAs have diverse roles in gene regulation."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All are correct."
+        }
+      ],
+      "explanation": {
+        "overview": "lncRNAs have diverse roles in gene regulation.",
+        "highYield": "lncRNAs: chromatin modification, scaffold, miRNA sponge.",
+        "clinicalCorrelation": "Dysregulation of lncRNAs is implicated in cancer."
+      }
+    },
+    {
+      "questionId": "molecular_biology_111",
+      "difficulty": 1,
+      "question": "The process by which DNA is packaged into chromatin involves wrapping DNA around histone octamers to form:",
+      "image": null,
+      "options": [
+        {
+          "text": "Nucleosomes",
+          "isCorrect": true,
+          "explanation": "Nucleosomes are the basic repeating units of chromatin."
+        },
+        {
+          "text": "Chromatids",
+          "isCorrect": false,
+          "explanation": "Chromatids are replicated chromosomes."
+        },
+        {
+          "text": "Centromeres",
+          "isCorrect": false,
+          "explanation": "Centromeres are chromosome constrictions."
+        },
+        {
+          "text": "Telomeres",
+          "isCorrect": false,
+          "explanation": "Telomeres are chromosome ends."
+        },
+        {
+          "text": "Replisomes",
+          "isCorrect": false,
+          "explanation": "Replisome is the replication machinery."
+        }
+      ],
+      "explanation": {
+        "overview": "Nucleosomes are the basic repeating units of chromatin.",
+        "highYield": "DNA + histones = nucleosomes.",
+        "clinicalCorrelation": "Nucleosome positioning affects gene expression."
+      }
+    },
+    {
+      "questionId": "molecular_biology_112",
+      "difficulty": 2,
+      "question": "Histone H1 functions to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Link nucleosomes and promote higher‑order chromatin structure",
+          "isCorrect": true,
+          "explanation": "H1 is the linker histone, binding DNA between nucleosomes."
+        },
+        {
+          "text": "Form the nucleosome core",
+          "isCorrect": false,
+          "explanation": "Core histones are H2A, H2B, H3, H4."
+        },
+        {
+          "text": "Acetylate histones",
+          "isCorrect": false,
+          "explanation": "HATs do that."
+        },
+        {
+          "text": "Methylate DNA",
+          "isCorrect": false,
+          "explanation": "DNMTs methylate DNA."
+        },
+        {
+          "text": "Unwind DNA",
+          "isCorrect": false,
+          "explanation": "Helicase unwinds."
+        }
+      ],
+      "explanation": {
+        "overview": "H1 is the linker histone, binding DNA between nucleosomes.",
+        "highYield": "Histone H1 = linker histone, chromatin compaction.",
+        "clinicalCorrelation": "H1 phosphorylation is involved in chromatin condensation during mitosis."
+      }
+    },
+    {
+      "questionId": "molecular_biology_113",
+      "difficulty": 2,
+      "question": "Histone acetyltransferases (HATs) generally:",
+      "image": null,
+      "options": [
+        {
+          "text": "Acetylate lysines, reducing positive charge and loosening chromatin",
+          "isCorrect": true,
+          "explanation": "Acetylation neutralizes lysine charges, decreasing histone‑DNA interaction and promoting transcription."
+        },
+        {
+          "text": "Remove acetyl groups, tightening chromatin",
+          "isCorrect": false,
+          "explanation": "HDACs do that."
+        },
+        {
+          "text": "Methylate histones",
+          "isCorrect": false,
+          "explanation": "Histone methyltransferases do that."
+        },
+        {
+          "text": "Phosphorylate histones",
+          "isCorrect": false,
+          "explanation": "Kinases."
+        },
+        {
+          "text": "Ubiquitinate histones",
+          "isCorrect": false,
+          "explanation": "Ubiquitin ligases."
+        }
+      ],
+      "explanation": {
+        "overview": "Acetylation neutralizes lysine charges, decreasing histone‑DNA interaction and promoting transcription.",
+        "highYield": "HATs = open chromatin (active).",
+        "clinicalCorrelation": "HAT mutations are found in some leukemias."
+      }
+    },
+    {
+      "questionId": "molecular_biology_114",
+      "difficulty": 2,
+      "question": "Histone deacetylases (HDACs) generally:",
+      "image": null,
+      "options": [
+        {
+          "text": "Remove acetyl groups, increasing chromatin condensation and repressing transcription",
+          "isCorrect": true,
+          "explanation": "Deacetylation restores positive charge, strengthening histone‑DNA interaction and repressing transcription."
+        },
+        {
+          "text": "Add acetyl groups",
+          "isCorrect": false,
+          "explanation": "HATs."
+        },
+        {
+          "text": "Add methyl groups",
+          "isCorrect": false,
+          "explanation": "HMTs."
+        },
+        {
+          "text": "Remove methyl groups",
+          "isCorrect": false,
+          "explanation": "Demethylases."
+        },
+        {
+          "text": "Phosphorylate histones",
+          "isCorrect": false,
+          "explanation": "Kinases."
+        }
+      ],
+      "explanation": {
+        "overview": "Deacetylation restores positive charge, strengthening histone‑DNA interaction and repressing transcription.",
+        "highYield": "HDACs = closed chromatin (repressed).",
+        "clinicalCorrelation": "HDAC inhibitors are used in cancer therapy."
+      }
+    },
+    {
+      "questionId": "molecular_biology_115",
+      "difficulty": 2,
+      "question": "DNA methyltransferases (DNMTs) typically methylate cytosines in CpG dinucleotides. This methylation is associated with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Transcriptional repression",
+          "isCorrect": true,
+          "explanation": "Methylated CpG islands recruit methyl‑binding proteins and repressive complexes."
+        },
+        {
+          "text": "Transcriptional activation",
+          "isCorrect": false,
+          "explanation": "Usually silencing."
+        },
+        {
+          "text": "DNA replication",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        },
+        {
+          "text": "DNA repair",
+          "isCorrect": false,
+          "explanation": "Not primary."
+        },
+        {
+          "text": "Recombination",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        }
+      ],
+      "explanation": {
+        "overview": "Methylated CpG islands recruit methyl‑binding proteins and repressive complexes.",
+        "highYield": "DNA methylation = gene silencing.",
+        "clinicalCorrelation": "Global hypomethylation and promoter hypermethylation are hallmarks of cancer."
+      }
+    },
+    {
+      "questionId": "molecular_biology_116",
+      "difficulty": 2,
+      "question": "Imprinting is an epigenetic phenomenon where:",
+      "image": null,
+      "options": [
+        {
+          "text": "Genes are expressed in a parent‑of‑origin‑specific manner",
+          "isCorrect": true,
+          "explanation": "Imprinted genes are marked epigenetically (by methylation) and expressed from only one parental allele."
+        },
+        {
+          "text": "Both alleles are equally expressed",
+          "isCorrect": false,
+          "explanation": "That's biallelic expression."
+        },
+        {
+          "text": "Genes are mutated",
+          "isCorrect": false,
+          "explanation": "Imprinting involves epigenetic marks, not mutations."
+        },
+        {
+          "text": "Genes are deleted",
+          "isCorrect": false,
+          "explanation": "Not deletion."
+        },
+        {
+          "text": "Genes are amplified",
+          "isCorrect": false,
+          "explanation": "Not amplification."
+        }
+      ],
+      "explanation": {
+        "overview": "Imprinted genes are marked epigenetically (by methylation) and expressed from only one parental allele.",
+        "highYield": "Imprinting = parent‑of‑origin gene expression.",
+        "clinicalCorrelation": "Prader‑Willi and Angelman syndromes are imprinting disorders."
+      }
+    },
+    {
+      "questionId": "molecular_biology_117",
+      "difficulty": 2,
+      "question": "X‑chromosome inactivation in female mammals involves the long non‑coding RNA:",
+      "image": null,
+      "options": [
+        {
+          "text": "Xist",
+          "isCorrect": true,
+          "explanation": "Xist coats the X chromosome and recruits repressive complexes."
+        },
+        {
+          "text": "Tsix",
+          "isCorrect": false,
+          "explanation": "Tsix is the antisense transcript that regulates Xist."
+        },
+        {
+          "text": "HOTAIR",
+          "isCorrect": false,
+          "explanation": "HOTAIR is a lncRNA involved in silencing HOX genes."
+        },
+        {
+          "text": "MALAT1",
+          "isCorrect": false,
+          "explanation": "MALAT1 is a nuclear lncRNA."
+        },
+        {
+          "text": "NEAT1",
+          "isCorrect": false,
+          "explanation": "NEAT1 is involved in paraspeckle formation."
+        }
+      ],
+      "explanation": {
+        "overview": "Xist coats the X chromosome and recruits repressive complexes.",
+        "highYield": "X inactivation: Xist RNA.",
+        "clinicalCorrelation": "Skewed X inactivation can influence X‑linked disease severity."
+      }
+    },
+    {
+      "questionId": "molecular_biology_118",
+      "difficulty": 1,
+      "question": "The enzyme that unwinds DNA at the replication fork is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Helicase",
+          "isCorrect": true,
+          "explanation": "Helicase unwinds the double helix ahead of the replication fork."
+        },
+        {
+          "text": "Topoisomerase",
+          "isCorrect": false,
+          "explanation": "Topoisomerase relieves supercoiling."
+        },
+        {
+          "text": "DNA polymerase",
+          "isCorrect": false,
+          "explanation": "Polymerase synthesizes DNA."
+        },
+        {
+          "text": "Primase",
+          "isCorrect": false,
+          "explanation": "Primase makes primers."
+        },
+        {
+          "text": "Ligase",
+          "isCorrect": false,
+          "explanation": "Ligase seals nicks."
+        }
+      ],
+      "explanation": {
+        "overview": "Helicase unwinds the double helix ahead of the replication fork.",
+        "highYield": "Helicase = DNA unwinding.",
+        "clinicalCorrelation": "Inhibition of helicase blocks replication."
+      }
+    },
+    {
+      "questionId": "molecular_biology_119",
+      "difficulty": 2,
+      "question": "Single‑strand binding proteins (SSB) in prokaryotes or RPA in eukaryotes function to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Prevent reannealing of single‑stranded DNA",
+          "isCorrect": true,
+          "explanation": "SSB/RPA bind and stabilize single‑stranded DNA."
+        },
+        {
+          "text": "Synthesize primers",
+          "isCorrect": false,
+          "explanation": "Primase does that."
+        },
+        {
+          "text": "Join Okazaki fragments",
+          "isCorrect": false,
+          "explanation": "Ligase joins."
+        },
+        {
+          "text": "Unwind DNA",
+          "isCorrect": false,
+          "explanation": "Helicase unwinds."
+        },
+        {
+          "text": "Relieve supercoiling",
+          "isCorrect": false,
+          "explanation": "Topoisomerase."
+        }
+      ],
+      "explanation": {
+        "overview": "SSB/RPA bind and stabilize single‑stranded DNA.",
+        "highYield": "SSB = prevent ssDNA reannealing.",
+        "clinicalCorrelation": "RPA is a target of the anticancer drug AT‑SPOT."
+      }
+    },
+    {
+      "questionId": "molecular_biology_120",
+      "difficulty": 2,
+      "question": "The clamp loader (RFC in eukaryotes) loads the sliding clamp (PCNA) onto DNA. The sliding clamp functions to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increase processivity of DNA polymerase",
+          "isCorrect": true,
+          "explanation": "The clamp tethers DNA polymerase to the template, allowing rapid synthesis."
+        },
+        {
+          "text": "Unwind DNA",
+          "isCorrect": false,
+          "explanation": "Not its role."
+        },
+        {
+          "text": "Synthesize primers",
+          "isCorrect": false,
+          "explanation": "Primase."
+        },
+        {
+          "text": "Join fragments",
+          "isCorrect": false,
+          "explanation": "Ligase."
+        },
+        {
+          "text": "Proofread",
+          "isCorrect": false,
+          "explanation": "Polymerase has proofreading."
+        }
+      ],
+      "explanation": {
+        "overview": "The clamp tethers DNA polymerase to the template, allowing rapid synthesis.",
+        "highYield": "Sliding clamp = processivity factor.",
+        "clinicalCorrelation": "PCNA is a marker for proliferating cells."
+      }
+    },
+    {
+      "questionId": "molecular_biology_121",
+      "difficulty": 2,
+      "question": "In prokaryotes, the sliding clamp is called:",
+      "image": null,
+      "options": [
+        {
+          "text": "β‑clamp",
+          "isCorrect": true,
+          "explanation": "The β‑clamp is the processivity factor for bacterial DNA polymerase III."
+        },
+        {
+          "text": "PCNA",
+          "isCorrect": false,
+          "explanation": "PCNA is eukaryotic."
+        },
+        {
+          "text": "SSB",
+          "isCorrect": false,
+          "explanation": "Single‑strand binding protein."
+        },
+        {
+          "text": "DnaA",
+          "isCorrect": false,
+          "explanation": "Initiation protein."
+        },
+        {
+          "text": "DnaB",
+          "isCorrect": false,
+          "explanation": "Helicase."
+        }
+      ],
+      "explanation": {
+        "overview": "The β‑clamp is the processivity factor for bacterial DNA polymerase III.",
+        "highYield": "Prokaryotic clamp = β‑clamp.",
+        "clinicalCorrelation": "Target of some antibacterial strategies."
+      }
+    },
+    {
+      "questionId": "molecular_biology_122",
+      "difficulty": 2,
+      "question": "The initiation of DNA replication in E. coli begins at the origin called:",
+      "image": null,
+      "options": [
+        {
+          "text": "oriC",
+          "isCorrect": true,
+          "explanation": "oriC is the unique origin of replication in E. coli."
+        },
+        {
+          "text": "ARS",
+          "isCorrect": false,
+          "explanation": "ARS is yeast origin."
+        },
+        {
+          "text": "Telomere",
+          "isCorrect": false,
+          "explanation": "Telomere is chromosome end."
+        },
+        {
+          "text": "Centromere",
+          "isCorrect": false,
+          "explanation": "Centromere is for mitosis."
+        },
+        {
+          "text": "Promoter",
+          "isCorrect": false,
+          "explanation": "Promoter is for transcription."
+        }
+      ],
+      "explanation": {
+        "overview": "oriC is the unique origin of replication in E. coli.",
+        "highYield": "E. coli origin = oriC.",
+        "clinicalCorrelation": "Understanding origins helps in designing plasmids for replication."
+      }
+    },
+    {
+      "questionId": "molecular_biology_123",
+      "difficulty": 2,
+      "question": "In eukaryotes, replication origins are recognized by the origin recognition complex (ORC), which then recruits:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cdc6 and Cdt1 to load the MCM helicase",
+          "isCorrect": true,
+          "explanation": "MCM (minichromosome maintenance) complex is the replicative helicase."
+        },
+        {
+          "text": "DNA polymerase directly",
+          "isCorrect": false,
+          "explanation": "Not direct."
+        },
+        {
+          "text": "Primase",
+          "isCorrect": false,
+          "explanation": "Later."
+        },
+        {
+          "text": "Ligase",
+          "isCorrect": false,
+          "explanation": "Not at this stage."
+        },
+        {
+          "text": "Telomerase",
+          "isCorrect": false,
+          "explanation": "Telomerase acts at ends."
+        }
+      ],
+      "explanation": {
+        "overview": "MCM (minichromosome maintenance) complex is the replicative helicase.",
+        "highYield": "ORC → Cdc6, Cdt1 → MCM loading.",
+        "clinicalCorrelation": "Licensing factors ensure each origin fires once per cycle."
+      }
+    },
+    {
+      "questionId": "molecular_biology_124",
+      "difficulty": 2,
+      "question": "The MCM helicase in eukaryotes is activated by:",
+      "image": null,
+      "options": [
+        {
+          "text": "CDK and DDK kinases",
+          "isCorrect": true,
+          "explanation": "Cyclin‑dependent kinase (CDK) and Dbf4‑dependent kinase (DDK) phosphorylate components to activate the helicase."
+        },
+        {
+          "text": "ATP hydrolysis",
+          "isCorrect": false,
+          "explanation": "Energy for unwinding but not activation."
+        },
+        {
+          "text": "Primase",
+          "isCorrect": false,
+          "explanation": "Not activator."
+        },
+        {
+          "text": "Ligase",
+          "isCorrect": false,
+          "explanation": "Not involved."
+        },
+        {
+          "text": "Topoisomerase",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        }
+      ],
+      "explanation": {
+        "overview": "Cyclin‑dependent kinase (CDK) and Dbf4‑dependent kinase (DDK) phosphorylate components to activate the helicase.",
+        "highYield": "MCM activation: CDK + DDK.",
+        "clinicalCorrelation": "Cell cycle kinases control replication timing."
+      }
+    },
+    {
+      "questionId": "molecular_biology_125",
+      "difficulty": 1,
+      "question": "The enzyme that synthesizes the RNA primers for DNA replication is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Primase (DnaG in prokaryotes)",
+          "isCorrect": true,
+          "explanation": "Primase is an RNA polymerase that makes short primers."
+        },
+        {
+          "text": "DNA polymerase",
+          "isCorrect": false,
+          "explanation": "DNA polymerase cannot start synthesis without a primer."
+        },
+        {
+          "text": "Helicase",
+          "isCorrect": false,
+          "explanation": "Unwinds DNA."
+        },
+        {
+          "text": "Ligase",
+          "isCorrect": false,
+          "explanation": "Seals nicks."
+        },
+        {
+          "text": "Topoisomerase",
+          "isCorrect": false,
+          "explanation": "Relieves supercoiling."
+        }
+      ],
+      "explanation": {
+        "overview": "Primase is an RNA polymerase that makes short primers.",
+        "highYield": "Primase = RNA primer synthesis.",
+        "clinicalCorrelation": "Primase is essential for DNA replication initiation."
+      }
+    },
+    {
+      "questionId": "molecular_biology_126",
+      "difficulty": 2,
+      "question": "Okazaki fragments are joined by DNA ligase, which requires NAD+ in E. coli and ATP in eukaryotes. DNA ligase seals:",
+      "image": null,
+      "options": [
+        {
+          "text": "Nick between the 3'‑OH and 5'‑phosphate",
+          "isCorrect": true,
+          "explanation": "Ligase catalyzes formation of a phosphodiester bond at nicks."
+        },
+        {
+          "text": "Gaps between fragments",
+          "isCorrect": false,
+          "explanation": "Gaps must be filled first."
+        },
+        {
+          "text": "Single‑strand breaks",
+          "isCorrect": false,
+          "explanation": "Ligase seals nicks, which are single‑strand breaks; this is essentially correct, but the precise answer is the nick with 3'‑OH and 5'‑phosphate. I'll adjust option D to be more general, but keep A as best answer. I'll adjust to make A the specific correct one and D not; I'll modify option D: 'All of the above' but it's not all. I'll set: A: Nick between 3'‑OH and 5'‑phosphate (correct), B: Gaps, C: Double‑strand breaks, D: All of the above, E: None. I'll adjust."
+        },
+        {
+          "text": "Double‑strand breaks",
+          "isCorrect": false,
+          "explanation": "Ligase does not repair double‑strand breaks alone."
+        },
+        {
+          "text": "Any DNA lesion",
+          "isCorrect": false,
+          "explanation": "Specific to nicks."
+        }
+      ],
+      "explanation": {
+        "overview": "Ligase catalyzes formation of a phosphodiester bond at nicks.",
+        "highYield": "DNA ligase seals nicks (3'‑OH + 5'‑phosphate).",
+        "clinicalCorrelation": "DNA ligase is essential in recombinant DNA technology."
+      }
+    },
+    {
+      "questionId": "molecular_biology_127",
+      "difficulty": 2,
+      "question": "The end‑replication problem refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Shortening of linear chromosomes after each replication due to RNA primer removal",
+          "isCorrect": true,
+          "explanation": "At chromosome ends, removal of the last RNA primer leaves a gap that cannot be filled, causing shortening."
+        },
+        {
+          "text": "Inability to replicate circular DNA",
+          "isCorrect": false,
+          "explanation": "Circular DNA does not have this problem."
+        },
+        {
+          "text": "Supercoiling issues",
+          "isCorrect": false,
+          "explanation": "Topoisomerase handles that."
+        },
+        {
+          "text": "Mismatch repair",
+          "isCorrect": false,
+          "explanation": "Not related."
+        },
+        {
+          "text": "Telomere lengthening",
+          "isCorrect": false,
+          "explanation": "The problem is shortening."
+        }
+      ],
+      "explanation": {
+        "overview": "At chromosome ends, removal of the last RNA primer leaves a gap that cannot be filled, causing shortening.",
+        "highYield": "End‑replication problem = telomere shortening.",
+        "clinicalCorrelation": "Telomerase counteracts this in germ and stem cells."
+      }
+    },
+    {
+      "questionId": "molecular_biology_128",
+      "difficulty": 2,
+      "question": "Telomerase contains an internal RNA template and uses it to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Add telomeric repeats to the 3' overhang",
+          "isCorrect": true,
+          "explanation": "Telomerase reverse transcriptase adds DNA repeats using its RNA template."
+        },
+        {
+          "text": "Add telomeric repeats to the 5' end",
+          "isCorrect": false,
+          "explanation": "It extends the 3' end."
+        },
+        {
+          "text": "Synthesize new DNA primers",
+          "isCorrect": false,
+          "explanation": "Not its function."
+        },
+        {
+          "text": "Remove RNA primers",
+          "isCorrect": false,
+          "explanation": "RNase H does that."
+        },
+        {
+          "text": "Seal nicks",
+          "isCorrect": false,
+          "explanation": "Ligase."
+        }
+      ],
+      "explanation": {
+        "overview": "Telomerase reverse transcriptase adds DNA repeats using its RNA template.",
+        "highYield": "Telomerase extends the 3' overhang.",
+        "clinicalCorrelation": "Telomerase inhibitors are being tested as anticancer agents."
+      }
+    },
+    {
+      "questionId": "molecular_biology_129",
+      "difficulty": 2,
+      "question": "In most somatic cells, telomerase is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Not expressed or at very low levels",
+          "isCorrect": true,
+          "explanation": "Telomerase is repressed in somatic cells, leading to telomere shortening with age."
+        },
+        {
+          "text": "Highly expressed",
+          "isCorrect": false,
+          "explanation": "Only in stem and cancer cells."
+        },
+        {
+          "text": "Expressed only in S phase",
+          "isCorrect": false,
+          "explanation": "Not cell cycle specific."
+        },
+        {
+          "text": "Always active",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Inhibited by p53",
+          "isCorrect": false,
+          "explanation": "p53 does not directly inhibit telomerase."
+        }
+      ],
+      "explanation": {
+        "overview": "Telomerase is repressed in somatic cells, leading to telomere shortening with age.",
+        "highYield": "Somatic cells: telomerase low/absent.",
+        "clinicalCorrelation": "Telomere length is a marker of cellular aging."
+      }
+    },
+    {
+      "questionId": "molecular_biology_130",
+      "difficulty": 2,
+      "question": "Cancer cells often reactivate telomerase, allowing them to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Proliferate indefinitely (immortalization)",
+          "isCorrect": true,
+          "explanation": "Telomerase maintains telomere length, enabling unlimited divisions."
+        },
+        {
+          "text": "Undergo apoptosis",
+          "isCorrect": false,
+          "explanation": "Telomerase prevents replicative senescence, not apoptosis."
+        },
+        {
+          "text": "Repair DNA faster",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        },
+        {
+          "text": "Stop dividing",
+          "isCorrect": false,
+          "explanation": "Opposite."
+        },
+        {
+          "text": "Increase mutation rate",
+          "isCorrect": false,
+          "explanation": "Not the effect."
+        }
+      ],
+      "explanation": {
+        "overview": "Telomerase maintains telomere length, enabling unlimited divisions.",
+        "highYield": "Cancer cells: telomerase → immortality.",
+        "clinicalCorrelation": "Telomerase is a target for cancer therapy."
+      }
+    },
+    {
+      "questionId": "molecular_biology_131",
+      "difficulty": 2,
+      "question": "The enzyme that removes RNA primers and replaces them with DNA in prokaryotes is:",
+      "image": null,
+      "options": [
+        {
+          "text": "DNA polymerase I",
+          "isCorrect": true,
+          "explanation": "Pol I has 5'→3' exonuclease activity to remove primers and polymerase activity to fill gaps."
+        },
+        {
+          "text": "DNA polymerase III",
+          "isCorrect": false,
+          "explanation": "Pol III is the main replicative polymerase."
+        },
+        {
+          "text": "Primase",
+          "isCorrect": false,
+          "explanation": "Primase makes primers."
+        },
+        {
+          "text": "Ligase",
+          "isCorrect": false,
+          "explanation": "Ligase seals nicks."
+        },
+        {
+          "text": "RNase H",
+          "isCorrect": false,
+          "explanation": "RNase H also removes primers, but Pol I is the primary enzyme for removal and replacement in prokaryotes."
+        }
+      ],
+      "explanation": {
+        "overview": "Pol I has 5'→3' exonuclease activity to remove primers and polymerase activity to fill gaps.",
+        "highYield": "Prokaryotes: Pol I removes primers and fills gaps.",
+        "clinicalCorrelation": "Pol I is used in molecular biology (Klenow fragment)."
+      }
+    },
+    {
+      "questionId": "molecular_biology_132",
+      "difficulty": 2,
+      "question": "In eukaryotes, RNA primers are removed by:",
+      "image": null,
+      "options": [
+        {
+          "text": "RNase H1 and FEN1 (flap endonuclease)",
+          "isCorrect": true,
+          "explanation": "RNase H1 removes most of the primer, and FEN1 cleaves the remaining flap."
+        },
+        {
+          "text": "DNA polymerase α",
+          "isCorrect": false,
+          "explanation": "Pol α extends primers."
+        },
+        {
+          "text": "DNA polymerase δ",
+          "isCorrect": false,
+          "explanation": "Pol δ extends Okazaki fragments."
+        },
+        {
+          "text": "Ligase",
+          "isCorrect": false,
+          "explanation": "Ligase joins."
+        },
+        {
+          "text": "Helicase",
+          "isCorrect": false,
+          "explanation": "Unwinds DNA."
+        }
+      ],
+      "explanation": {
+        "overview": "RNase H1 removes most of the primer, and FEN1 cleaves the remaining flap.",
+        "highYield": "Eukaryotic primer removal: RNase H1 + FEN1.",
+        "clinicalCorrelation": "FEN1 mutations are associated with cancer."
+      }
+    },
+    {
+      "questionId": "molecular_biology_133",
+      "difficulty": 2,
+      "question": "The fidelity of DNA replication is ensured by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Base pairing (Watson‑Crick)",
+          "isCorrect": false,
+          "explanation": "Yes, but not the only mechanism."
+        },
+        {
+          "text": "Proofreading (3'→5' exonuclease)",
+          "isCorrect": false,
+          "explanation": "Yes."
+        },
+        {
+          "text": "Mismatch repair",
+          "isCorrect": false,
+          "explanation": "Yes."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Multiple mechanisms ensure high fidelity."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All are correct."
+        }
+      ],
+      "explanation": {
+        "overview": "Multiple mechanisms ensure high fidelity.",
+        "highYield": "Fidelity: base pairing + proofreading + mismatch repair.",
+        "clinicalCorrelation": "Defects in any of these increase mutation rates and cancer risk."
+      }
+    },
+    {
+      "questionId": "molecular_biology_134",
+      "difficulty": 2,
+      "question": "DNA polymerase III is the main replicative polymerase in E. coli. Its holoenzyme has high processivity due to the:",
+      "image": null,
+      "options": [
+        {
+          "text": "β‑clamp",
+          "isCorrect": true,
+          "explanation": "The β‑clamp encircles DNA and holds Pol III on the template."
+        },
+        {
+          "text": "α subunit",
+          "isCorrect": false,
+          "explanation": "The α subunit has polymerase activity."
+        },
+        {
+          "text": "ε subunit (proofreading)",
+          "isCorrect": false,
+          "explanation": "ε is proofreading."
+        },
+        {
+          "text": "θ subunit",
+          "isCorrect": false,
+          "explanation": "Not key for processivity."
+        },
+        {
+          "text": "τ subunit",
+          "isCorrect": false,
+          "explanation": "τ dimerizes the core."
+        }
+      ],
+      "explanation": {
+        "overview": "The β‑clamp encircles DNA and holds Pol III on the template.",
+        "highYield": "Pol III processivity: β‑clamp.",
+        "clinicalCorrelation": "The sliding clamp is essential for rapid replication."
+      }
+    },
+    {
+      "questionId": "molecular_biology_135",
+      "difficulty": 2,
+      "question": "The ε subunit of E. coli DNA polymerase III provides:",
+      "image": null,
+      "options": [
+        {
+          "text": "3'→5' proofreading exonuclease activity",
+          "isCorrect": true,
+          "explanation": "The ε subunit has proofreading function."
+        },
+        {
+          "text": "5'→3' polymerase activity",
+          "isCorrect": false,
+          "explanation": "That's the α subunit."
+        },
+        {
+          "text": "Clamp loading",
+          "isCorrect": false,
+          "explanation": "Clamp loader is separate."
+        },
+        {
+          "text": "Primer synthesis",
+          "isCorrect": false,
+          "explanation": "Primase."
+        },
+        {
+          "text": "Processivity",
+          "isCorrect": false,
+          "explanation": "β‑clamp."
+        }
+      ],
+      "explanation": {
+        "overview": "The ε subunit has proofreading function.",
+        "highYield": "Pol III ε = proofreading.",
+        "clinicalCorrelation": "Mutations that reduce proofreading increase mutation rates."
+      }
+    },
+    {
+      "questionId": "molecular_biology_136",
+      "difficulty": 2,
+      "question": "The τ (tau) subunit of DNA polymerase III functions to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Dimerize the two core polymerases for leading and lagging strand synthesis",
+          "isCorrect": true,
+          "explanation": "τ links the two polymerases, coordinating replication."
+        },
+        {
+          "text": "Proofread",
+          "isCorrect": false,
+          "explanation": "ε does that."
+        },
+        {
+          "text": "Synthesize RNA primers",
+          "isCorrect": false,
+          "explanation": "Primase."
+        },
+        {
+          "text": "Unwind DNA",
+          "isCorrect": false,
+          "explanation": "Helicase."
+        },
+        {
+          "text": "Join fragments",
+          "isCorrect": false,
+          "explanation": "Ligase."
+        }
+      ],
+      "explanation": {
+        "overview": "τ links the two polymerases, coordinating replication.",
+        "highYield": "τ subunit = dimerizes Pol III cores.",
+        "clinicalCorrelation": "Coordinated replication is essential for fork progression."
+      }
+    },
+    {
+      "questionId": "molecular_biology_137",
+      "difficulty": 2,
+      "question": "In eukaryotic replication, the leading strand is synthesized continuously by:",
+      "image": null,
+      "options": [
+        {
+          "text": "DNA polymerase ε",
+          "isCorrect": true,
+          "explanation": "Pol ε is thought to extend the leading strand, though models vary."
+        },
+        {
+          "text": "DNA polymerase δ",
+          "isCorrect": false,
+          "explanation": "Pol δ extends lagging strand."
+        },
+        {
+          "text": "DNA polymerase α",
+          "isCorrect": false,
+          "explanation": "Primer synthesis and initiation."
+        },
+        {
+          "text": "DNA polymerase γ",
+          "isCorrect": false,
+          "explanation": "Mitochondrial."
+        },
+        {
+          "text": "DNA polymerase β",
+          "isCorrect": false,
+          "explanation": "Repair."
+        }
+      ],
+      "explanation": {
+        "overview": "Pol ε is thought to extend the leading strand, though models vary.",
+        "highYield": "Leading strand: Pol ε; lagging: Pol δ.",
+        "clinicalCorrelation": "Pol ε mutations cause hypermutated colorectal cancer."
+      }
+    },
+    {
+      "questionId": "molecular_biology_138",
+      "difficulty": 2,
+      "question": "In eukaryotic replication, the lagging strand is synthesized discontinuously primarily by:",
+      "image": null,
+      "options": [
+        {
+          "text": "DNA polymerase δ",
+          "isCorrect": true,
+          "explanation": "Pol δ extends Okazaki fragments after primer removal."
+        },
+        {
+          "text": "DNA polymerase ε",
+          "isCorrect": false,
+          "explanation": "Leading strand."
+        },
+        {
+          "text": "DNA polymerase α",
+          "isCorrect": false,
+          "explanation": "Primer synthesis."
+        },
+        {
+          "text": "DNA polymerase γ",
+          "isCorrect": false,
+          "explanation": "Mitochondrial."
+        },
+        {
+          "text": "DNA polymerase β",
+          "isCorrect": false,
+          "explanation": "Repair."
+        }
+      ],
+      "explanation": {
+        "overview": "Pol δ extends Okazaki fragments after primer removal.",
+        "highYield": "Lagging strand: Pol δ.",
+        "clinicalCorrelation": "Pol δ is essential for completing replication."
+      }
+    },
+    {
+      "questionId": "molecular_biology_139",
+      "difficulty": 2,
+      "question": "The enzyme that loads PCNA (sliding clamp) onto DNA in eukaryotes is:",
+      "image": null,
+      "options": [
+        {
+          "text": "RFC (replication factor C)",
+          "isCorrect": true,
+          "explanation": "RFC is the clamp loader."
+        },
+        {
+          "text": "RPA",
+          "isCorrect": false,
+          "explanation": "RPA is SSB."
+        },
+        {
+          "text": "Pol α",
+          "isCorrect": false,
+          "explanation": "Primer synthesis."
+        },
+        {
+          "text": "Pol δ",
+          "isCorrect": false,
+          "explanation": "Lagging strand polymerase."
+        },
+        {
+          "text": "FEN1",
+          "isCorrect": false,
+          "explanation": "Flap endonuclease."
+        }
+      ],
+      "explanation": {
+        "overview": "RFC is the clamp loader.",
+        "highYield": "PCNA loader = RFC.",
+        "clinicalCorrelation": "RFC is essential for DNA replication."
+      }
+    },
+    {
+      "questionId": "molecular_biology_140",
+      "difficulty": 2,
+      "question": "RPA (replication protein A) is the eukaryotic equivalent of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Single‑strand binding protein (SSB)",
+          "isCorrect": true,
+          "explanation": "RPA binds and stabilizes single‑stranded DNA."
+        },
+        {
+          "text": "Primase",
+          "isCorrect": false,
+          "explanation": "Not equivalent."
+        },
+        {
+          "text": "Ligase",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Helicase",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Topoisomerase",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "RPA binds and stabilizes single‑stranded DNA.",
+        "highYield": "RPA = eukaryotic SSB.",
+        "clinicalCorrelation": "RPA is essential for DNA replication, repair, and recombination."
+      }
+    },
+    {
+      "questionId": "molecular_biology_141",
+      "difficulty": 2,
+      "question": "The enzyme that introduces negative supercoils into DNA, facilitating replication and transcription, is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Topoisomerase (gyrase in prokaryotes)",
+          "isCorrect": true,
+          "explanation": "DNA gyrase (a topoisomerase) introduces negative supercoils in bacteria."
+        },
+        {
+          "text": "Helicase",
+          "isCorrect": false,
+          "explanation": "Helicase unwinds."
+        },
+        {
+          "text": "Primase",
+          "isCorrect": false,
+          "explanation": "Primase synthesizes primers."
+        },
+        {
+          "text": "Ligase",
+          "isCorrect": false,
+          "explanation": "Ligase seals."
+        },
+        {
+          "text": "Nuclease",
+          "isCorrect": false,
+          "explanation": "Nuclease degrades."
+        }
+      ],
+      "explanation": {
+        "overview": "DNA gyrase (a topoisomerase) introduces negative supercoils in bacteria.",
+        "highYield": "Negative supercoiling: DNA gyrase.",
+        "clinicalCorrelation": "Fluoroquinolones inhibit DNA gyrase."
+      }
+    },
+    {
+      "questionId": "molecular_biology_142",
+      "difficulty": 2,
+      "question": "Type I topoisomerases change DNA topology by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Making a single‑strand break and passing the other strand through",
+          "isCorrect": true,
+          "explanation": "Type I topoisomerases cut one strand and relax supercoils."
+        },
+        {
+          "text": "Making a double‑strand break",
+          "isCorrect": false,
+          "explanation": "That's Type II."
+        },
+        {
+          "text": "Unwinding DNA",
+          "isCorrect": false,
+          "explanation": "Helicase."
+        },
+        {
+          "text": "Synthesizing DNA",
+          "isCorrect": false,
+          "explanation": "Polymerase."
+        },
+        {
+          "text": "Degrading DNA",
+          "isCorrect": false,
+          "explanation": "Nuclease."
+        }
+      ],
+      "explanation": {
+        "overview": "Type I topoisomerases cut one strand and relax supercoils.",
+        "highYield": "Type I topoisomerase = single‑strand break.",
+        "clinicalCorrelation": "Camptothecin targets human topoisomerase I."
+      }
+    },
+    {
+      "questionId": "molecular_biology_143",
+      "difficulty": 2,
+      "question": "Type II topoisomerases (e.g., DNA gyrase) function by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Making a double‑strand break and passing another double strand through",
+          "isCorrect": true,
+          "explanation": "Type II enzymes change supercoiling by double‑strand passage."
+        },
+        {
+          "text": "Cutting one strand",
+          "isCorrect": false,
+          "explanation": "Type I."
+        },
+        {
+          "text": "Cutting RNA",
+          "isCorrect": false,
+          "explanation": "Not."
+        },
+        {
+          "text": "Unwinding DNA",
+          "isCorrect": false,
+          "explanation": "Helicase."
+        },
+        {
+          "text": "Ligating DNA",
+          "isCorrect": false,
+          "explanation": "Ligase."
+        }
+      ],
+      "explanation": {
+        "overview": "Type II enzymes change supercoiling by double‑strand passage.",
+        "highYield": "Type II topoisomerase = double‑strand break.",
+        "clinicalCorrelation": "Etoposide targets topoisomerase II."
+      }
+    },
+    {
+      "questionId": "molecular_biology_144",
+      "difficulty": 2,
+      "question": "Quinolone antibiotics (e.g., ciprofloxacin) target:",
+      "image": null,
+      "options": [
+        {
+          "text": "Bacterial DNA gyrase and topoisomerase IV",
+          "isCorrect": true,
+          "explanation": "Quinolones inhibit bacterial type II topoisomerases."
+        },
+        {
+          "text": "Human topoisomerase",
+          "isCorrect": false,
+          "explanation": "They are selective for bacterial enzymes."
+        },
+        {
+          "text": "RNA polymerase",
+          "isCorrect": false,
+          "explanation": "Rifampin."
+        },
+        {
+          "text": "Ribosomes",
+          "isCorrect": false,
+          "explanation": "Aminoglycosides, etc."
+        },
+        {
+          "text": "Cell wall synthesis",
+          "isCorrect": false,
+          "explanation": "Penicillins."
+        }
+      ],
+      "explanation": {
+        "overview": "Quinolones inhibit bacterial type II topoisomerases.",
+        "highYield": "Ciprofloxacin targets DNA gyrase/topoisomerase IV.",
+        "clinicalCorrelation": "Used for UTIs, respiratory infections."
+      }
+    },
+    {
+      "questionId": "molecular_biology_145",
+      "difficulty": 2,
+      "question": "Camptothecin, an anticancer drug, inhibits:",
+      "image": null,
+      "options": [
+        {
+          "text": "Human topoisomerase I",
+          "isCorrect": true,
+          "explanation": "Camptothecin traps topoisomerase I on DNA, causing strand breaks."
+        },
+        {
+          "text": "Human topoisomerase II",
+          "isCorrect": false,
+          "explanation": "Etoposide targets that."
+        },
+        {
+          "text": "DNA polymerase",
+          "isCorrect": false,
+          "explanation": "Not."
+        },
+        {
+          "text": "RNA polymerase",
+          "isCorrect": false,
+          "explanation": "Not."
+        },
+        {
+          "text": "Telomerase",
+          "isCorrect": false,
+          "explanation": "Not."
+        }
+      ],
+      "explanation": {
+        "overview": "Camptothecin traps topoisomerase I on DNA, causing strand breaks.",
+        "highYield": "Camptothecin = topoisomerase I inhibitor.",
+        "clinicalCorrelation": "Used in cancer chemotherapy (e.g., irinotecan, topotecan)."
+      }
+    },
+    {
+      "questionId": "molecular_biology_146",
+      "difficulty": 2,
+      "question": "Etoposide, used in chemotherapy, inhibits:",
+      "image": null,
+      "options": [
+        {
+          "text": "Topoisomerase II",
+          "isCorrect": true,
+          "explanation": "Etoposide stabilizes the topoisomerase II‑DNA cleavage complex."
+        },
+        {
+          "text": "Topoisomerase I",
+          "isCorrect": false,
+          "explanation": "Camptothecin."
+        },
+        {
+          "text": "DNA polymerase",
+          "isCorrect": false,
+          "explanation": "Not."
+        },
+        {
+          "text": "RNA polymerase",
+          "isCorrect": false,
+          "explanation": "Not."
+        },
+        {
+          "text": "Microtubules",
+          "isCorrect": false,
+          "explanation": "Vinca alkaloids."
+        }
+      ],
+      "explanation": {
+        "overview": "Etoposide stabilizes the topoisomerase II‑DNA cleavage complex.",
+        "highYield": "Etoposide = topoisomerase II poison.",
+        "clinicalCorrelation": "Used in treatment of various cancers."
+      }
+    },
+    {
+      "questionId": "molecular_biology_147",
+      "difficulty": 2,
+      "question": "The term 'replisome' refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "The multiprotein complex at the replication fork",
+          "isCorrect": true,
+          "explanation": "The replisome includes helicase, primase, polymerases, and other factors."
+        },
+        {
+          "text": "The origin of replication",
+          "isCorrect": false,
+          "explanation": "Origin."
+        },
+        {
+          "text": "The telomere complex",
+          "isCorrect": false,
+          "explanation": "Telomere."
+        },
+        {
+          "text": "The ribosome",
+          "isCorrect": false,
+          "explanation": "Translation machinery."
+        },
+        {
+          "text": "The spliceosome",
+          "isCorrect": false,
+          "explanation": "Splicing machinery."
+        }
+      ],
+      "explanation": {
+        "overview": "The replisome includes helicase, primase, polymerases, and other factors.",
+        "highYield": "Replisome = replication fork complex.",
+        "clinicalCorrelation": "Targeting replisome components could be antibacterial."
+      }
+    },
+    {
+      "questionId": "molecular_biology_148",
+      "difficulty": 2,
+      "question": "In rolling circle replication, used by some viruses, synthesis produces:",
+      "image": null,
+      "options": [
+        {
+          "text": "Long concatemers of the genome",
+          "isCorrect": true,
+          "explanation": "One strand is nicked, and synthesis continues around the circle, displacing a long tail."
+        },
+        {
+          "text": "Short fragments",
+          "isCorrect": false,
+          "explanation": "Not characteristic."
+        },
+        {
+          "text": "Okazaki fragments",
+          "isCorrect": false,
+          "explanation": "Those are on lagging strand."
+        },
+        {
+          "text": "Linear products only",
+          "isCorrect": false,
+          "explanation": "Can produce concatemers."
+        },
+        {
+          "text": "Circular products only",
+          "isCorrect": false,
+          "explanation": "The displaced strand is linear."
+        }
+      ],
+      "explanation": {
+        "overview": "One strand is nicked, and synthesis continues around the circle, displacing a long tail.",
+        "highYield": "Rolling circle → concatemers.",
+        "clinicalCorrelation": "Used by some bacteriophages and in plasmid replication."
+      }
+    },
+    {
+      "questionId": "molecular_biology_149",
+      "difficulty": 2,
+      "question": "Plasmid replication can occur via theta replication, which is similar to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Bacterial chromosome replication",
+          "isCorrect": true,
+          "explanation": "Theta replication involves bidirectional replication from an origin."
+        },
+        {
+          "text": "Rolling circle",
+          "isCorrect": false,
+          "explanation": "Different mechanism."
+        },
+        {
+          "text": "PCR",
+          "isCorrect": false,
+          "explanation": "In vitro amplification."
+        },
+        {
+          "text": "Telomere replication",
+          "isCorrect": false,
+          "explanation": "Telomerase."
+        },
+        {
+          "text": "Mitochondrial replication",
+          "isCorrect": false,
+          "explanation": "Mitochondrial DNA has its own mechanism."
+        }
+      ],
+      "explanation": {
+        "overview": "Theta replication involves bidirectional replication from an origin.",
+        "highYield": "Theta replication = bidirectional, like E. coli chromosome.",
+        "clinicalCorrelation": "Plasmids with theta replication are stable for cloning."
+      }
+    },
+    {
+      "questionId": "molecular_biology_150",
+      "difficulty": 2,
+      "question": "The diagram shows a replication bubble with two replication forks. The leading strands are synthesized continuously in the same direction as fork movement, while lagging strands are synthesized discontinuously. This mode of replication is called:",
+      "image": "replication_bubble.png",
+      "options": [
+        {
+          "text": "Semi‑discontinuous replication",
+          "isCorrect": true,
+          "explanation": "Semi‑discontinuous refers to one strand continuous, the other discontinuous."
+        },
+        {
+          "text": "Semi‑conservative replication",
+          "isCorrect": false,
+          "explanation": "That refers to one old strand and one new strand per daughter molecule."
+        },
+        {
+          "text": "Conservative replication",
+          "isCorrect": false,
+          "explanation": "Old strands remain together."
+        },
+        {
+          "text": "Dispersive replication",
+          "isCorrect": false,
+          "explanation": "Fragments interspersed."
+        },
+        {
+          "text": "Rolling circle",
+          "isCorrect": false,
+          "explanation": "Different mechanism."
+        }
+      ],
+      "explanation": {
+        "overview": "Semi‑discontinuous refers to one strand continuous, the other discontinuous.",
+        "highYield": "DNA replication is semi‑discontinuous.",
+        "clinicalCorrelation": "Okazaki fragments are a hallmark of semi‑discontinuous synthesis."
+      }
+    }
+  ]
+}

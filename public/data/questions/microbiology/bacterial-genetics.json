@@ -1,0 +1,3424 @@
+{
+  "questions": [
+    {
+      "questionId": "bacterial_genetics_001",
+      "difficulty": 1,
+      "question": "Which enzyme is responsible for unwinding the DNA double helix during bacterial DNA replication?",
+      "image": null,
+      "options": [
+        {
+          "text": "DNA helicase",
+          "isCorrect": true,
+          "explanation": "DNA helicase breaks hydrogen bonds between base pairs and unwinds the double helix ahead of the replication fork."
+        },
+        {
+          "text": "DNA polymerase III",
+          "isCorrect": false,
+          "explanation": "DNA polymerase III synthesises new DNA strands but does not unwind the helix."
+        },
+        {
+          "text": "DNA ligase",
+          "isCorrect": false,
+          "explanation": "DNA ligase seals nicks between DNA fragments, not unwinding."
+        },
+        {
+          "text": "Primase",
+          "isCorrect": false,
+          "explanation": "Primase synthesises short RNA primers to start DNA synthesis."
+        },
+        {
+          "text": "Topoisomerase",
+          "isCorrect": false,
+          "explanation": "Topoisomerase relieves supercoiling stress ahead of the replication fork but does not unwind the helix."
+        }
+      ],
+      "explanation": {
+        "overview": "Helicase is the first enzyme acting at the replication fork; it uses ATP to separate the two strands of DNA.",
+        "highYield": "Helicase = unwinds DNA (breaks H‑bonds).",
+        "clinicalCorrelation": "Inhibitors of bacterial helicase are being explored as novel antibiotics."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_002",
+      "difficulty": 1,
+      "question": "The bacterial chromosome is typically:",
+      "image": null,
+      "options": [
+        {
+          "text": "Circular and double-stranded DNA",
+          "isCorrect": true,
+          "explanation": "Most bacteria contain a single circular chromosome consisting of double‑stranded DNA, although some have linear chromosomes."
+        },
+        {
+          "text": "Linear and double-stranded DNA",
+          "isCorrect": false,
+          "explanation": "Linear chromosomes are typical of eukaryotes; only a few bacteria (e.g., Borrelia) have linear chromosomes."
+        },
+        {
+          "text": "Circular and single-stranded DNA",
+          "isCorrect": false,
+          "explanation": "Single‑stranded DNA chromosomes are found in some viruses, not in typical bacteria."
+        },
+        {
+          "text": "Linear and single-stranded DNA",
+          "isCorrect": false,
+          "explanation": "No bacterium possesses a linear single‑stranded chromosome."
+        },
+        {
+          "text": "Circular RNA",
+          "isCorrect": false,
+          "explanation": "RNA is not the genetic material in bacteria; the chromosome is DNA."
+        }
+      ],
+      "explanation": {
+        "overview": "The typical bacterial genome consists of one circular double‑stranded DNA molecule compacted into a nucleoid.",
+        "highYield": "Bacterial chromosome = circular dsDNA.",
+        "clinicalCorrelation": "Differences in chromosome structure can be exploited by quinolone antibiotics that target DNA gyrase, essential for maintaining supercoiling of circular DNA."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_003",
+      "difficulty": 1,
+      "question": "Okazaki fragments are synthesized on the:",
+      "image": null,
+      "options": [
+        {
+          "text": "Lagging strand",
+          "isCorrect": true,
+          "explanation": "On the lagging strand, DNA polymerase must work away from the replication fork, resulting in short discontinuous Okazaki fragments."
+        },
+        {
+          "text": "Leading strand",
+          "isCorrect": false,
+          "explanation": "The leading strand is synthesised continuously in the 5′→3′ direction."
+        },
+        {
+          "text": "Both strands",
+          "isCorrect": false,
+          "explanation": "Only the lagging strand is made discontinuously."
+        },
+        {
+          "text": "Template strand only",
+          "isCorrect": false,
+          "explanation": "Both strands serve as templates, but fragments occur only on the lagging strand."
+        },
+        {
+          "text": "Coding strand only",
+          "isCorrect": false,
+          "explanation": "The coding strand is not directly used as a template during replication."
+        }
+      ],
+      "explanation": {
+        "overview": "Because DNA polymerase can only synthesise in the 5′→3′ direction, one strand (lagging) is made in short pieces.",
+        "highYield": "Okazaki fragments = lagging strand.",
+        "clinicalCorrelation": "Defects in Okazaki fragment processing can lead to genomic instability; in bacteria, these fragments are quickly sealed by ligase."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_004",
+      "difficulty": 1,
+      "question": "Which enzyme seals nicks between Okazaki fragments?",
+      "image": null,
+      "options": [
+        {
+          "text": "DNA ligase",
+          "isCorrect": true,
+          "explanation": "DNA ligase forms the final phosphodiester bond between the 3′‑OH of one fragment and the 5′‑phosphate of the next."
+        },
+        {
+          "text": "DNA polymerase I",
+          "isCorrect": false,
+          "explanation": "DNA polymerase I fills the gaps after primer removal but does not seal the nick."
+        },
+        {
+          "text": "DNA polymerase III",
+          "isCorrect": false,
+          "explanation": "DNA polymerase III is the main replicative enzyme, extending chains but not ligating."
+        },
+        {
+          "text": "Primase",
+          "isCorrect": false,
+          "explanation": "Primase synthesises RNA primers; it has no ligation activity."
+        },
+        {
+          "text": "Helicase",
+          "isCorrect": false,
+          "explanation": "Helicase unwinds DNA, not joins fragments."
+        }
+      ],
+      "explanation": {
+        "overview": "DNA ligase is essential for completing replication and for DNA repair.",
+        "highYield": "Ligase = seals nicks.",
+        "clinicalCorrelation": "Ligase inhibitors are being researched as antibacterial agents because DNA ligation is crucial for bacterial survival."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_005",
+      "difficulty": 1,
+      "question": "The enzyme that synthesizes RNA primers during DNA replication is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Primase",
+          "isCorrect": true,
+          "explanation": "Primase (DnaG) is an RNA polymerase that creates short primers, providing a 3′‑OH for DNA polymerases to extend."
+        },
+        {
+          "text": "DNA polymerase I",
+          "isCorrect": false,
+          "explanation": "DNA polymerase I replaces RNA primers with DNA but does not synthesise primers."
+        },
+        {
+          "text": "DNA polymerase III",
+          "isCorrect": false,
+          "explanation": "DNA polymerase III elongates from primers, but cannot start synthesis de novo."
+        },
+        {
+          "text": "Helicase",
+          "isCorrect": false,
+          "explanation": "Helicase separates strands; it has no polymerising function."
+        },
+        {
+          "text": "RNA polymerase",
+          "isCorrect": false,
+          "explanation": "The main RNA polymerase transcribes genes; primase is a separate, specialised RNA polymerase."
+        }
+      ],
+      "explanation": {
+        "overview": "Primase initiates every Okazaki fragment by laying down a short RNA primer.",
+        "highYield": "Primase = RNA primers.",
+        "clinicalCorrelation": "Because primase is essential, it is a potential antibacterial target."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_006",
+      "difficulty": 2,
+      "question": "Which DNA polymerase is the main replicative enzyme in E. coli?",
+      "image": null,
+      "options": [
+        {
+          "text": "DNA polymerase III",
+          "isCorrect": true,
+          "explanation": "DNA polymerase III is the processive, high‑fidelity enzyme that synthesises the bulk of the new chromosome."
+        },
+        {
+          "text": "DNA polymerase I",
+          "isCorrect": false,
+          "explanation": "Pol I has a role in primer removal and gap filling, not main replication."
+        },
+        {
+          "text": "DNA polymerase II",
+          "isCorrect": false,
+          "explanation": "Pol II is mainly involved in DNA repair."
+        },
+        {
+          "text": "DNA polymerase IV",
+          "isCorrect": false,
+          "explanation": "Pol IV is a translesion polymerase induced during the SOS response."
+        },
+        {
+          "text": "DNA polymerase V",
+          "isCorrect": false,
+          "explanation": "Pol V is also an SOS translesion polymerase."
+        }
+      ],
+      "explanation": {
+        "overview": "DNA pol III holoenzyme is the workhorse of the replication fork, capable of adding ~1000 nucleotides per second.",
+        "highYield": "Pol III = main replicative polymerase.",
+        "clinicalCorrelation": "Errors made by pol III are corrected by its proofreading exonuclease; loss of proofreading increases mutation rates."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_007",
+      "difficulty": 2,
+      "question": "The function of DNA polymerase I is primarily:",
+      "image": null,
+      "options": [
+        {
+          "text": "Removing RNA primers and filling gaps",
+          "isCorrect": true,
+          "explanation": "DNA polymerase I has 5′→3′ exonuclease activity to degrade RNA primers and polymerase activity to fill the resulting gaps with DNA."
+        },
+        {
+          "text": "Unwinding DNA",
+          "isCorrect": false,
+          "explanation": "Unwinding is carried out by helicase."
+        },
+        {
+          "text": "Synthesizing new strands",
+          "isCorrect": false,
+          "explanation": "The principal enzyme for new strand synthesis is pol III."
+        },
+        {
+          "text": "Sealing nicks",
+          "isCorrect": false,
+          "explanation": "Nick sealing is performed by DNA ligase."
+        },
+        {
+          "text": "Supercoiling DNA",
+          "isCorrect": false,
+          "explanation": "Supercoiling is controlled by topoisomerases such as DNA gyrase."
+        }
+      ],
+      "explanation": {
+        "overview": "DNA polymerase I processes Okazaki fragments to create a continuous strand.",
+        "highYield": "Pol I = primer removal + gap filling.",
+        "clinicalCorrelation": "The 5′→3′ exonuclease activity of pol I is exploited in some molecular biology techniques."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_008",
+      "difficulty": 2,
+      "question": "The origin of replication in E. coli is called:",
+      "image": null,
+      "options": [
+        {
+          "text": "oriC",
+          "isCorrect": true,
+          "explanation": "oriC is the ~245 bp sequence where DnaA binds and replication initiation occurs."
+        },
+        {
+          "text": "oriV",
+          "isCorrect": false,
+          "explanation": "oriV is an origin found in some plasmids."
+        },
+        {
+          "text": "oriT",
+          "isCorrect": false,
+          "explanation": "oriT is the origin of transfer in conjugation."
+        },
+        {
+          "text": "oriS",
+          "isCorrect": false,
+          "explanation": "oriS is an origin in herpesviruses, not bacteria."
+        },
+        {
+          "text": "oriP",
+          "isCorrect": false,
+          "explanation": "oriP is the Epstein‑Barr virus origin of replication."
+        }
+      ],
+      "explanation": {
+        "overview": "oriC contains specific DnaA boxes and an AT‑rich region that unwinds to form the replication bubble.",
+        "highYield": "oriC = chromosomal origin in E. coli.",
+        "clinicalCorrelation": "Mutations in oriC can affect cell division and are of interest in synthetic biology for creating stable replicons."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_009",
+      "difficulty": 3,
+      "question": "DnaA protein in bacteria is involved in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Initiation of DNA replication",
+          "isCorrect": true,
+          "explanation": "DnaA binds to DnaA boxes at oriC, causing the DNA to melt and recruiting other replication proteins."
+        },
+        {
+          "text": "Elongation of DNA strands",
+          "isCorrect": false,
+          "explanation": "Elongation is performed by DNA polymerase III."
+        },
+        {
+          "text": "Termination of replication",
+          "isCorrect": false,
+          "explanation": "Termination occurs at Ter sites with Tus protein."
+        },
+        {
+          "text": "Repair of damaged DNA",
+          "isCorrect": false,
+          "explanation": "DnaA is not directly involved in repair pathways."
+        },
+        {
+          "text": "Transcription initiation",
+          "isCorrect": false,
+          "explanation": "Transcription initiation requires sigma factors, not DnaA."
+        }
+      ],
+      "explanation": {
+        "overview": "DnaA is the master initiator that controls the timing of replication once per cell cycle.",
+        "highYield": "DnaA = replication initiator.",
+        "clinicalCorrelation": "DnaA levels and activity are tightly regulated; its dysregulation can cause over‑initiation and genomic instability."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_010",
+      "difficulty": 1,
+      "question": "The term 'semi‑conservative replication' means:",
+      "image": null,
+      "options": [
+        {
+          "text": "Each daughter molecule has one old and one new strand",
+          "isCorrect": true,
+          "explanation": "Meselson and Stahl showed that each new DNA molecule conserves one parental strand."
+        },
+        {
+          "text": "Both strands are newly synthesized",
+          "isCorrect": false,
+          "explanation": "That would be conservative replication, which was disproved."
+        },
+        {
+          "text": "One daughter is completely old, the other completely new",
+          "isCorrect": false,
+          "explanation": "This describes dispersive replication, also disproved."
+        },
+        {
+          "text": "DNA is copied in fragments",
+          "isCorrect": false,
+          "explanation": "Fragmentary synthesis occurs on the lagging strand but is not the definition of semi‑conservative."
+        },
+        {
+          "text": "RNA is used as a template",
+          "isCorrect": false,
+          "explanation": "Reverse transcription uses RNA as a template, but typical replication is DNA‑templated."
+        }
+      ],
+      "explanation": {
+        "overview": "Semi‑conservative replication ensures faithful duplication of the genetic material.",
+        "highYield": "Semi‑conservative = 1 old + 1 new strand per daughter.",
+        "clinicalCorrelation": "Understanding replication is crucial for designing drugs like nucleotide analogs that interfere with DNA synthesis."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_011",
+      "difficulty": 1,
+      "question": "A mutation that changes a single nucleotide base is called a:",
+      "image": null,
+      "options": [
+        {
+          "text": "Point mutation",
+          "isCorrect": true,
+          "explanation": "Point mutations include transitions (purine→purine) and transversions (purine↔pyrimidine)."
+        },
+        {
+          "text": "Frameshift mutation",
+          "isCorrect": false,
+          "explanation": "Frameshift mutations involve insertions or deletions that shift the reading frame."
+        },
+        {
+          "text": "Deletion mutation",
+          "isCorrect": false,
+          "explanation": "A deletion removes one or more nucleotides and is not classified as a simple point mutation."
+        },
+        {
+          "text": "Insertion mutation",
+          "isCorrect": false,
+          "explanation": "An insertion adds nucleotides, often causing a frameshift."
+        },
+        {
+          "text": "Inversion mutation",
+          "isCorrect": false,
+          "explanation": "An inversion reverses a segment of DNA, not a single base change."
+        }
+      ],
+      "explanation": {
+        "overview": "Point mutations are the simplest type of genetic change and can have variable effects on protein function.",
+        "highYield": "Point mutation = single base change.",
+        "clinicalCorrelation": "Many antibiotic resistance mutations (e.g., in gyrA for quinolone resistance) are point mutations."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_012",
+      "difficulty": 2,
+      "question": "Which type of point mutation results in a premature stop codon?",
+      "image": null,
+      "options": [
+        {
+          "text": "Nonsense mutation",
+          "isCorrect": true,
+          "explanation": "A nonsense mutation converts a sense codon into one of the three stop codons (UAA, UAG, UGA), truncating the protein."
+        },
+        {
+          "text": "Missense mutation",
+          "isCorrect": false,
+          "explanation": "Missense mutations change one amino acid to another, not to a stop."
+        },
+        {
+          "text": "Silent mutation",
+          "isCorrect": false,
+          "explanation": "Silent mutations do not change the amino acid sequence."
+        },
+        {
+          "text": "Frameshift mutation",
+          "isCorrect": false,
+          "explanation": "Frameshifts can also cause premature stops, but the definition is due to reading frame disruption."
+        },
+        {
+          "text": "Neutral mutation",
+          "isCorrect": false,
+          "explanation": "A neutral mutation has no effect on fitness, often a missense with a conserved substitution."
+        }
+      ],
+      "explanation": {
+        "overview": "Nonsense mutations often produce non‑functional proteins and can be particularly damaging.",
+        "highYield": "Nonsense = stop codon introduced.",
+        "clinicalCorrelation": "Suppressor tRNAs can sometimes read through stop codons, a phenomenon used in research."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_013",
+      "difficulty": 2,
+      "question": "A mutation that does not alter the amino acid sequence is termed:",
+      "image": null,
+      "options": [
+        {
+          "text": "Silent mutation",
+          "isCorrect": true,
+          "explanation": "Because of the genetic code degeneracy, several codons can encode the same amino acid; a base change that still encodes the same amino acid is silent."
+        },
+        {
+          "text": "Missense mutation",
+          "isCorrect": false,
+          "explanation": "Missense changes the amino acid."
+        },
+        {
+          "text": "Nonsense mutation",
+          "isCorrect": false,
+          "explanation": "Nonsense introduces a stop codon."
+        },
+        {
+          "text": "Frameshift mutation",
+          "isCorrect": false,
+          "explanation": "Frameshifts alter the entire downstream sequence."
+        },
+        {
+          "text": "Loss‑of‑function mutation",
+          "isCorrect": false,
+          "explanation": "A loss‑of‑function mutation can be any type that eliminates protein function, not specifically silent."
+        }
+      ],
+      "explanation": {
+        "overview": "Silent mutations are important in evolution as they can affect mRNA stability or translation efficiency without changing the protein.",
+        "highYield": "Silent = same amino acid.",
+        "clinicalCorrelation": "Silent mutations in some genes can alter splicing or create cryptic splice sites in eukaryotes."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_014",
+      "difficulty": 2,
+      "question": "The insertion or deletion of nucleotides not divisible by 3 causes a:",
+      "image": null,
+      "options": [
+        {
+          "text": "Frameshift mutation",
+          "isCorrect": true,
+          "explanation": "Indels that are not multiples of 3 shift the reading frame, changing every downstream codon and typically leading to a premature stop."
+        },
+        {
+          "text": "Point mutation",
+          "isCorrect": false,
+          "explanation": "Point mutations affect a single nucleotide without adding or removing."
+        },
+        {
+          "text": "Transversion",
+          "isCorrect": false,
+          "explanation": "A transversion is a type of point mutation (purine↔pyrimidine)."
+        },
+        {
+          "text": "Transition",
+          "isCorrect": false,
+          "explanation": "A transition is a point mutation within the same chemical class."
+        },
+        {
+          "text": "Silent mutation",
+          "isCorrect": false,
+          "explanation": "Silent mutations do not alter the amino acid sequence; frameshifts always alter it."
+        }
+      ],
+      "explanation": {
+        "overview": "Frameshift mutations often result in complete loss of protein function and are rarely revertible.",
+        "highYield": "Frameshift = indel not divisible by 3.",
+        "clinicalCorrelation": "Some bacterial virulence factors are phase‑variable due to slipped‑strand mispairing, which causes frameshifts."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_015",
+      "difficulty": 2,
+      "question": "Which of the following is an example of a chemical mutagen?",
+      "image": null,
+      "options": [
+        {
+          "text": "Nitrous acid",
+          "isCorrect": true,
+          "explanation": "Nitrous acid deaminates bases (e.g., cytosine to uracil), causing mutations."
+        },
+        {
+          "text": "UV light",
+          "isCorrect": false,
+          "explanation": "UV light is a physical mutagen that creates pyrimidine dimers."
+        },
+        {
+          "text": "X‑rays",
+          "isCorrect": false,
+          "explanation": "X‑rays are ionising radiation, a physical mutagen."
+        },
+        {
+          "text": "Gamma rays",
+          "isCorrect": false,
+          "explanation": "Gamma rays are also physical mutagens."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "The list includes both chemical and physical agents; the question asks specifically for a chemical mutagen."
+        }
+      ],
+      "explanation": {
+        "overview": "Chemical mutagens directly modify DNA bases, leading to mispairing or damage.",
+        "highYield": "Nitrous acid = chemical mutagen.",
+        "clinicalCorrelation": "Mutagenicity testing (Ames test) screens chemicals for their potential to cause mutations."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_016",
+      "difficulty": 2,
+      "question": "UV light causes DNA damage primarily by inducing:",
+      "image": null,
+      "options": [
+        {
+          "text": "Thymine dimers",
+          "isCorrect": true,
+          "explanation": "UV radiation covalently links adjacent thymine (or cytosine) bases, forming cyclobutane pyrimidine dimers that block replication."
+        },
+        {
+          "text": "Single‑strand breaks",
+          "isCorrect": false,
+          "explanation": "Single‑strand breaks are more characteristic of ionising radiation or oxidative damage."
+        },
+        {
+          "text": "Double‑strand breaks",
+          "isCorrect": false,
+          "explanation": "Double‑strand breaks are severe lesions caused mainly by ionising radiation."
+        },
+        {
+          "text": "Base alkylation",
+          "isCorrect": false,
+          "explanation": "Alkylating agents (e.g., nitrosamines) add alkyl groups to bases."
+        },
+        {
+          "text": "Deamination",
+          "isCorrect": false,
+          "explanation": "Deamination is caused by chemicals like nitrous acid."
+        }
+      ],
+      "explanation": {
+        "overview": "Thymine dimers distort the DNA helix and must be repaired by photoreactivation or nucleotide excision repair.",
+        "highYield": "UV = thymine dimers.",
+        "clinicalCorrelation": "In humans, defective repair of pyrimidine dimers leads to xeroderma pigmentosum."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_017",
+      "difficulty": 3,
+      "question": "The SOS response in bacteria is activated by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Extensive DNA damage",
+          "isCorrect": true,
+          "explanation": "Single‑stranded DNA resulting from damage activates RecA, which triggers cleavage of the LexA repressor, inducing SOS genes."
+        },
+        {
+          "text": "Nutrient starvation",
+          "isCorrect": false,
+          "explanation": "Nutrient starvation triggers the stringent response, not SOS."
+        },
+        {
+          "text": "Heat shock",
+          "isCorrect": false,
+          "explanation": "Heat shock induces a different set of chaperone genes."
+        },
+        {
+          "text": "Oxidative stress",
+          "isCorrect": false,
+          "explanation": "Oxidative stress induces OxyR or SoxRS regulons."
+        },
+        {
+          "text": "Osmotic shock",
+          "isCorrect": false,
+          "explanation": "Osmotic shock triggers osmoregulatory responses."
+        }
+      ],
+      "explanation": {
+        "overview": "The SOS regulon includes DNA repair, translesion polymerases, and cell division inhibitors that allow time for repair.",
+        "highYield": "SOS = DNA damage → RecA → LexA cleavage.",
+        "clinicalCorrelation": "Some antibiotics (e.g., fluoroquinolones) induce the SOS response, which can promote mutation‑driven antibiotic resistance."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_018",
+      "difficulty": 3,
+      "question": "The RecA protein in E. coli functions in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Homologous recombination and SOS induction",
+          "isCorrect": true,
+          "explanation": "RecA catalyses strand exchange in homologous recombination and also stimulates autocleavage of the LexA repressor to induce SOS."
+        },
+        {
+          "text": "DNA replication initiation",
+          "isCorrect": false,
+          "explanation": "Replication initiation is carried out by DnaA."
+        },
+        {
+          "text": "Transcription termination",
+          "isCorrect": false,
+          "explanation": "Termination involves Rho protein or intrinsic terminators."
+        },
+        {
+          "text": "Protein degradation",
+          "isCorrect": false,
+          "explanation": "Protein degradation is carried out by proteases like ClpXP."
+        },
+        {
+          "text": "Cell division",
+          "isCorrect": false,
+          "explanation": "Cell division is coordinated by FtsZ and the divisome."
+        }
+      ],
+      "explanation": {
+        "overview": "RecA is a multifunctional protein central to DNA repair and genetic exchange.",
+        "highYield": "RecA = recombination + SOS coprotease.",
+        "clinicalCorrelation": "RecA is a potential target for anti‑cancer and anti‑bacterial drugs aiming to prevent DNA repair."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_019",
+      "difficulty": 3,
+      "question": "Which enzyme is responsible for nucleotide excision repair of bulky DNA lesions?",
+      "image": null,
+      "options": [
+        {
+          "text": "UvrABC endonuclease",
+          "isCorrect": true,
+          "explanation": "UvrA and UvrB scan for distortions, UvrB–UvrC complex incises the damaged strand, then UvrD helicase removes the fragment."
+        },
+        {
+          "text": "DNA polymerase I",
+          "isCorrect": false,
+          "explanation": "Pol I fills the gap after repair but does not recognise the lesion."
+        },
+        {
+          "text": "DNA ligase",
+          "isCorrect": false,
+          "explanation": "Ligase seals the nick after repair synthesis."
+        },
+        {
+          "text": "MutS",
+          "isCorrect": false,
+          "explanation": "MutS initiates mismatch repair, not nucleotide excision repair."
+        },
+        {
+          "text": "RecA",
+          "isCorrect": false,
+          "explanation": "RecA mediates recombination, not excision repair."
+        }
+      ],
+      "explanation": {
+        "overview": "Nucleotide excision repair is a versatile pathway that removes thymine dimers and other bulky adducts.",
+        "highYield": "NER = UvrABC excision.",
+        "clinicalCorrelation": "Deficiencies in human NER genes cause xeroderma pigmentosum, illustrating conservation of repair pathways."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_020",
+      "difficulty": 3,
+      "question": "Methyl‑directed mismatch repair in E. coli recognizes the newly synthesized strand by its lack of methylation at:",
+      "image": null,
+      "options": [
+        {
+          "text": "GATC sites",
+          "isCorrect": true,
+          "explanation": "Dam methylase methylates adenines in GATC; the newly synthesised strand is transiently unmethylated, allowing MutH to nick it."
+        },
+        {
+          "text": "CG sites",
+          "isCorrect": false,
+          "explanation": "CpG methylation occurs in eukaryotes, not bacterial mismatch repair."
+        },
+        {
+          "text": "CTAG sites",
+          "isCorrect": false,
+          "explanation": "Bacterial methylation is specific to GATC."
+        },
+        {
+          "text": "AGCT sites",
+          "isCorrect": false,
+          "explanation": "The recognition site for Dam is GATC."
+        },
+        {
+          "text": "GAC sites",
+          "isCorrect": false,
+          "explanation": "GAC is not the target for Dam methylase."
+        }
+      ],
+      "explanation": {
+        "overview": "Mismatch repair corrects replication errors by distinguishing the template strand through methylation.",
+        "highYield": "Mismatch repair = GATC methylation.",
+        "clinicalCorrelation": "Loss of mismatch repair in bacteria leads to a mutator phenotype, which can accelerate antibiotic resistance."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_021",
+      "difficulty": 2,
+      "question": "Plasmids that can integrate into the bacterial chromosome are called:",
+      "image": null,
+      "options": [
+        {
+          "text": "Episomes",
+          "isCorrect": true,
+          "explanation": "Episomes are plasmids (e.g., F factor) that can exist autonomously or integrate into the host genome."
+        },
+        {
+          "text": "Col plasmids",
+          "isCorrect": false,
+          "explanation": "Col plasmids encode colicins but may not have integration ability."
+        },
+        {
+          "text": "R plasmids",
+          "isCorrect": false,
+          "explanation": "R plasmids confer antibiotic resistance and are not necessarily episomal."
+        },
+        {
+          "text": "F plasmids",
+          "isCorrect": false,
+          "explanation": "F plasmid is an example of an episome, but the term 'episome' is broader."
+        },
+        {
+          "text": "Virulence plasmids",
+          "isCorrect": false,
+          "explanation": "Virulence plasmids carry toxin or adherence genes; they may or may not integrate."
+        }
+      ],
+      "explanation": {
+        "overview": "Episomes blur the line between plasmid and chromosomal DNA, contributing to horizontal gene transfer.",
+        "highYield": "Episome = integrates into chromosome.",
+        "clinicalCorrelation": "Integrated episomes like F can mobilise chromosomal genes during Hfr conjugation."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_022",
+      "difficulty": 2,
+      "question": "The F plasmid encodes genes for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Conjugation and pilus formation",
+          "isCorrect": true,
+          "explanation": "The tra (transfer) genes on the F plasmid produce the sex pilus and the DNA transfer machinery."
+        },
+        {
+          "text": "Antibiotic resistance",
+          "isCorrect": false,
+          "explanation": "Antibiotic resistance genes are usually carried on R plasmids."
+        },
+        {
+          "text": "Toxin production",
+          "isCorrect": false,
+          "explanation": "Toxin genes are often on virulence plasmids or prophages."
+        },
+        {
+          "text": "Metabolic enzymes",
+          "isCorrect": false,
+          "explanation": "Metabolic plasmids (e.g., TOL plasmid) carry catabolic genes, not F."
+        },
+        {
+          "text": "Bacteriocin production",
+          "isCorrect": false,
+          "explanation": "Bacteriocins are typically encoded by Col plasmids."
+        }
+      ],
+      "explanation": {
+        "overview": "The F (fertility) factor is the prototype conjugative plasmid, enabling bacterial mating.",
+        "highYield": "F plasmid = conjugation genes.",
+        "clinicalCorrelation": "Conjugation is a major route for spreading antibiotic resistance genes among bacteria."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_023",
+      "difficulty": 2,
+      "question": "A cell that contains an F plasmid integrated into its chromosome is called:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hfr (high frequency of recombination)",
+          "isCorrect": true,
+          "explanation": "Integration of the F plasmid creates an Hfr strain, which can transfer chromosomal genes to a recipient."
+        },
+        {
+          "text": "F⁺",
+          "isCorrect": false,
+          "explanation": "F⁺ cells contain an autonomous F plasmid, not integrated."
+        },
+        {
+          "text": "F⁻",
+          "isCorrect": false,
+          "explanation": "F⁻ cells lack the F plasmid."
+        },
+        {
+          "text": "F' (F prime)",
+          "isCorrect": false,
+          "explanation": "F' results when an integrated F excises imprecisely, carrying some chromosomal genes."
+        },
+        {
+          "text": "Recipient",
+          "isCorrect": false,
+          "explanation": "Recipient is a general term for the cell receiving DNA."
+        }
+      ],
+      "explanation": {
+        "overview": "Hfr strains are powerful tools for mapping the bacterial chromosome by interrupted mating experiments.",
+        "highYield": "Hfr = integrated F factor.",
+        "clinicalCorrelation": "Hfr‑mediated transfer can spread chromosomal antibiotic resistance genes."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_024",
+      "difficulty": 3,
+      "question": "In an Hfr × F⁻ cross, what is transferred first?",
+      "image": null,
+      "options": [
+        {
+          "text": "Chromosomal genes near the integration site",
+          "isCorrect": true,
+          "explanation": "Conjugal transfer initiates at oriT within the integrated F plasmid, so chromosomal genes adjacent to the integration site are transferred first."
+        },
+        {
+          "text": "The entire F plasmid",
+          "isCorrect": false,
+          "explanation": "The F plasmid is transferred last because it is at the far end of the transferred strand."
+        },
+        {
+          "text": "The F plasmid genes only",
+          "isCorrect": false,
+          "explanation": "Only a portion of F is transferred early, the rest at the end."
+        },
+        {
+          "text": "Random chromosomal fragments",
+          "isCorrect": false,
+          "explanation": "Transfer is directional and ordered, starting from oriT."
+        },
+        {
+          "text": "Ribosomal RNA genes",
+          "isCorrect": false,
+          "explanation": "No specific gene class is preferentially transferred; proximity to oriT determines order."
+        }
+      ],
+      "explanation": {
+        "overview": "The time of gene entry in Hfr crosses allows mapping of gene order on the chromosome.",
+        "highYield": "Hfr transfer = chromosomal genes first.",
+        "clinicalCorrelation": "Mapping by Hfr crosses was instrumental in early bacterial genetics before genome sequencing."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_025",
+      "difficulty": 2,
+      "question": "An F' plasmid is formed by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Imprecise excision of an integrated F factor",
+          "isCorrect": true,
+          "explanation": "When an Hfr cell reverts to F⁺ by aberrant excision, the excised F plasmid may carry adjacent chromosomal genes, becoming an F' plasmid."
+        },
+        {
+          "text": "Integration of F plasmid",
+          "isCorrect": false,
+          "explanation": "Integration produces Hfr, not F'."
+        },
+        {
+          "text": "Mutation of F plasmid",
+          "isCorrect": false,
+          "explanation": "Mutation alone does not create F'."
+        },
+        {
+          "text": "Conjugation with Hfr",
+          "isCorrect": false,
+          "explanation": "Conjugation transfers DNA but does not create F' in the donor."
+        },
+        {
+          "text": "Transduction",
+          "isCorrect": false,
+          "explanation": "Transduction is phage‑mediated gene transfer."
+        }
+      ],
+      "explanation": {
+        "overview": "F' plasmids can transfer chromosomal genes to recipients, a process called sexduction.",
+        "highYield": "F' = F + chromosomal genes.",
+        "clinicalCorrelation": "F' plasmids can rapidly disseminate beneficial genes through a bacterial population."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_026",
+      "difficulty": 2,
+      "question": "R plasmids typically confer:",
+      "image": null,
+      "options": [
+        {
+          "text": "Antibiotic resistance",
+          "isCorrect": true,
+          "explanation": "R (resistance) plasmids carry one or more antibiotic resistance genes, often within integrons or transposons."
+        },
+        {
+          "text": "Heavy metal resistance",
+          "isCorrect": false,
+          "explanation": "Some R plasmids also have metal resistance, but their defining feature is antibiotic resistance."
+        },
+        {
+          "text": "Virulence factors",
+          "isCorrect": false,
+          "explanation": "Virulence plasmids encode toxins or adherence factors, not primarily antibiotic resistance."
+        },
+        {
+          "text": "Metabolic capabilities",
+          "isCorrect": false,
+          "explanation": "Metabolic plasmids carry genes for utilising unusual substrates."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "R plasmids are specifically associated with drug resistance."
+        }
+      ],
+      "explanation": {
+        "overview": "R plasmids are a major clinical concern because they can spread multidrug resistance between bacterial species.",
+        "highYield": "R plasmid = drug resistance.",
+        "clinicalCorrelation": "ESBL and carbapenemase genes are frequently plasmid‑borne, enabling rapid dissemination."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_027",
+      "difficulty": 2,
+      "question": "Col plasmids produce:",
+      "image": null,
+      "options": [
+        {
+          "text": "Bacteriocins (colicins)",
+          "isCorrect": true,
+          "explanation": "Col plasmids encode colicins, which are antibacterial proteins that kill closely related strains."
+        },
+        {
+          "text": "Toxins",
+          "isCorrect": false,
+          "explanation": "Toxins like diphtheria or cholera toxin are encoded by lysogenic phages or virulence plasmids."
+        },
+        {
+          "text": "Antibiotics",
+          "isCorrect": false,
+          "explanation": "Antibiotics are typically secondary metabolites produced by certain bacteria and fungi, not colicins."
+        },
+        {
+          "text": "Hemolysins",
+          "isCorrect": false,
+          "explanation": "Hemolysins are pore‑forming toxins, often encoded on virulence plasmids."
+        },
+        {
+          "text": "Enterotoxins",
+          "isCorrect": false,
+          "explanation": "Enterotoxins cause intestinal disturbances and are generally not colicins."
+        }
+      ],
+      "explanation": {
+        "overview": "Colicins provide a competitive advantage by eliminating sensitive neighbours in the microbial community.",
+        "highYield": "Col plasmid = bacteriocin.",
+        "clinicalCorrelation": "Bacteriocins are being explored as narrow‑spectrum antimicrobials."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_028",
+      "difficulty": 1,
+      "question": "Transposons are genetic elements that:",
+      "image": null,
+      "options": [
+        {
+          "text": "Move from one location to another in the genome",
+          "isCorrect": true,
+          "explanation": "Transposons (jumping genes) can transpose within the chromosome or between chromosome and plasmid."
+        },
+        {
+          "text": "Integrate into the chromosome as phages",
+          "isCorrect": false,
+          "explanation": "Phage integration is site‑specific recombination, not transposition."
+        },
+        {
+          "text": "Replicate independently of the chromosome",
+          "isCorrect": false,
+          "explanation": "That describes plasmids; transposons rely on the host replicon."
+        },
+        {
+          "text": "Carry only antibiotic resistance genes",
+          "isCorrect": false,
+          "explanation": "Transposons can carry diverse genes, including catabolic or virulence genes."
+        },
+        {
+          "text": "Are always linear",
+          "isCorrect": false,
+          "explanation": "Transposons can be part of circular plasmids or chromosomes."
+        }
+      ],
+      "explanation": {
+        "overview": "Transposons contribute to genetic plasticity by mediating gene mobilisation.",
+        "highYield": "Transposon = mobile genetic element.",
+        "clinicalCorrelation": "Antibiotic resistance genes are often carried on transposons within integrons, facilitating their spread."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_029",
+      "difficulty": 3,
+      "question": "Composite transposons contain:",
+      "image": null,
+      "options": [
+        {
+          "text": "Central genes flanked by insertion sequences",
+          "isCorrect": true,
+          "explanation": "Composite transposons (e.g., Tn5) have two IS elements (in direct or inverted orientation) flanking the cargo genes."
+        },
+        {
+          "text": "Only inverted repeats",
+          "isCorrect": false,
+          "explanation": "Simple IS elements have inverted repeats but no cargo; composite transposons have both IS elements and cargo."
+        },
+        {
+          "text": "Direct repeats",
+          "isCorrect": false,
+          "explanation": "Target‑site duplications are direct repeats, but the transposon structure is defined by flanking IS elements."
+        },
+        {
+          "text": "No repeats",
+          "isCorrect": false,
+          "explanation": "Transposons always have repeats (inverted or direct)."
+        },
+        {
+          "text": "Only antibiotic resistance genes",
+          "isCorrect": false,
+          "explanation": "Composite transposons can carry any gene, not just resistance."
+        }
+      ],
+      "explanation": {
+        "overview": "The flanking IS elements supply the transposase that mobilises the entire segment.",
+        "highYield": "Composite transposon = IS + cargo + IS.",
+        "clinicalCorrelation": "Many antibiotic resistance determinants are located on composite transposons."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_030",
+      "difficulty": 2,
+      "question": "Insertion sequences (IS) contain:",
+      "image": null,
+      "options": [
+        {
+          "text": "Only genes for transposition",
+          "isCorrect": true,
+          "explanation": "IS elements are the simplest transposons, encoding only a transposase flanked by inverted repeats."
+        },
+        {
+          "text": "Genes for antibiotic resistance",
+          "isCorrect": false,
+          "explanation": "IS elements do not carry passenger genes; they only encode transposition functions."
+        },
+        {
+          "text": "Metabolic genes",
+          "isCorrect": false,
+          "explanation": "Metabolic genes are carried by larger transposons or plasmids."
+        },
+        {
+          "text": "Virulence factors",
+          "isCorrect": false,
+          "explanation": "Virulence factors may be on transposons but not on IS elements themselves."
+        },
+        {
+          "text": "Phage genes",
+          "isCorrect": false,
+          "explanation": "Phage genes are on bacteriophages, not IS elements."
+        }
+      ],
+      "explanation": {
+        "overview": "IS elements are ubiquitous and can cause mutations by inserting into genes.",
+        "highYield": "IS = transposase only.",
+        "clinicalCorrelation": "IS elements can promote the mobilisation of neighbouring resistance genes by forming composite transposons."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_031",
+      "difficulty": 2,
+      "question": "The enzyme required for transposition is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Transposase",
+          "isCorrect": true,
+          "explanation": "Transposase recognises the inverted repeats and catalyzes the cut‑and‑paste or replicative transposition."
+        },
+        {
+          "text": "Resolvase",
+          "isCorrect": false,
+          "explanation": "Resolvase acts in site‑specific recombination to resolve cointegrates, but transposase is the primary enzyme."
+        },
+        {
+          "text": "Integrase",
+          "isCorrect": false,
+          "explanation": "Integrase is used by phages and retroviruses, not for typical bacterial transposition."
+        },
+        {
+          "text": "DNA polymerase",
+          "isCorrect": false,
+          "explanation": "DNA polymerase synthesises DNA but does not mobilise transposons."
+        },
+        {
+          "text": "Ligase",
+          "isCorrect": false,
+          "explanation": "Ligase seals DNA but is not the enzyme that moves transposons."
+        }
+      ],
+      "explanation": {
+        "overview": "Transposase is the key recombinase that mobilises transposable elements.",
+        "highYield": "Transposase = movement of transposons.",
+        "clinicalCorrelation": "Some antibiotics (e.g., quinolones) can induce transposase expression, potentially increasing resistance gene mobilisation."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_032",
+      "difficulty": 2,
+      "question": "Which of the following is an example of a site‑specific recombination system in bacteria?",
+      "image": null,
+      "options": [
+        {
+          "text": "Lambda phage integration",
+          "isCorrect": true,
+          "explanation": "Lambda integrase catalyses recombination between attP (phage) and attB (bacterial) sites, a classic site‑specific system."
+        },
+        {
+          "text": "Homologous recombination",
+          "isCorrect": false,
+          "explanation": "Homologous recombination uses RecA and requires extensive sequence similarity."
+        },
+        {
+          "text": "Transposition",
+          "isCorrect": false,
+          "explanation": "Transposition is mediated by transposase, not site‑specific recombinases."
+        },
+        {
+          "text": "Conjugation",
+          "isCorrect": false,
+          "explanation": "Conjugation involves DNA transfer, not site‑specific recombination."
+        },
+        {
+          "text": "Transformation",
+          "isCorrect": false,
+          "explanation": "Transformation is uptake of exogenous DNA, not recombination per se."
+        }
+      ],
+      "explanation": {
+        "overview": "Site‑specific recombination is precise and often used by phages to integrate into the host chromosome.",
+        "highYield": "Lambda integration = site‑specific recombination.",
+        "clinicalCorrelation": "Phage integrases are used as tools in genetic engineering (e.g., Gateway cloning)."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_033",
+      "difficulty": 2,
+      "question": "The enzyme that integrates lambda phage into the host chromosome is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Integrase",
+          "isCorrect": true,
+          "explanation": "Lambda integrase (Int) is a tyrosine recombinase that catalyses strand exchange between attP and attB."
+        },
+        {
+          "text": "Transposase",
+          "isCorrect": false,
+          "explanation": "Transposase moves transposons, not phages."
+        },
+        {
+          "text": "Resolvase",
+          "isCorrect": false,
+          "explanation": "Resolvase resolves cointegrate intermediates but is not the phage integrase."
+        },
+        {
+          "text": "RecA",
+          "isCorrect": false,
+          "explanation": "RecA is involved in homologous recombination, not site‑specific phage integration."
+        },
+        {
+          "text": "DNA gyrase",
+          "isCorrect": false,
+          "explanation": "DNA gyrase is a topoisomerase, not a recombinase."
+        }
+      ],
+      "explanation": {
+        "overview": "Phage integrases catalyse directional recombination, requiring accessory factors for excision.",
+        "highYield": "Lambda integrase = site‑specific recombinase.",
+        "clinicalCorrelation": "Tyrosine recombinases are a diverse family with roles in plasmid stability and integron gene cassettes."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_034",
+      "difficulty": 1,
+      "question": "Bacterial genes organized into a single transcription unit with a common promoter are called:",
+      "image": null,
+      "options": [
+        {
+          "text": "Operons",
+          "isCorrect": true,
+          "explanation": "An operon is a cluster of genes transcribed as a single polycistronic mRNA under one promoter."
+        },
+        {
+          "text": "Regulons",
+          "isCorrect": false,
+          "explanation": "A regulon is a set of operons/genes controlled by the same regulatory protein."
+        },
+        {
+          "text": "Stimulons",
+          "isCorrect": false,
+          "explanation": "A stimulon encompasses all genes that respond to a specific environmental stimulus."
+        },
+        {
+          "text": "Cistrons",
+          "isCorrect": false,
+          "explanation": "A cistron is a genetic unit equivalent to a gene, not a transcriptional cluster."
+        },
+        {
+          "text": "Exons",
+          "isCorrect": false,
+          "explanation": "Exons are coding sequences in eukaryotic genes; bacteria do not have exons."
+        }
+      ],
+      "explanation": {
+        "overview": "Operons allow coordinated regulation of genes involved in a common pathway, a hallmark of bacterial gene organisation.",
+        "highYield": "Operon = one promoter → multiple genes.",
+        "clinicalCorrelation": "The lac operon is the classic model for understanding gene regulation and has been exploited in recombinant protein expression systems."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_035",
+      "difficulty": 1,
+      "question": "The lac operon is inducible by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Lactose (allolactose)",
+          "isCorrect": true,
+          "explanation": "Allolactose, formed from lactose by β‑galactosidase, acts as the inducer by binding and inactivating the Lac repressor."
+        },
+        {
+          "text": "Glucose",
+          "isCorrect": false,
+          "explanation": "Glucose is the preferred carbon source and represses the lac operon via catabolite repression."
+        },
+        {
+          "text": "Galactose",
+          "isCorrect": false,
+          "explanation": "Galactose is a product of lactose hydrolysis but does not induce the operon."
+        },
+        {
+          "text": "cAMP",
+          "isCorrect": false,
+          "explanation": "cAMP is a positive signal that activates CAP but is not the direct inducer of the operon."
+        },
+        {
+          "text": "CAP",
+          "isCorrect": false,
+          "explanation": "CAP is an activator protein, not an inducer."
+        }
+      ],
+      "explanation": {
+        "overview": "The lac operon is only fully active when glucose is low and lactose is present.",
+        "highYield": "Inducer = allolactose.",
+        "clinicalCorrelation": "Lac operon regulation principles are used in IPTG‑inducible protein expression vectors."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_036",
+      "difficulty": 1,
+      "question": "In the absence of lactose, the lac operon is repressed by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Lac repressor binding to operator",
+          "isCorrect": true,
+          "explanation": "The LacI repressor binds the operator and physically blocks RNA polymerase access."
+        },
+        {
+          "text": "CAP binding to operator",
+          "isCorrect": false,
+          "explanation": "CAP binds to a site upstream of the promoter and activates transcription; it does not repress."
+        },
+        {
+          "text": "Glucose binding to repressor",
+          "isCorrect": false,
+          "explanation": "Glucose indirectly affects the operon via cAMP levels, not by binding the repressor."
+        },
+        {
+          "text": "cAMP binding to CAP",
+          "isCorrect": false,
+          "explanation": "cAMP‑CAP complex is an activator; when glucose is high, cAMP is low and activation fails, but this is not the primary repressive mechanism in absence of lactose."
+        },
+        {
+          "text": "Allolactose binding to repressor",
+          "isCorrect": false,
+          "explanation": "Allolactose binding inactivates the repressor, relieving repression."
+        }
+      ],
+      "explanation": {
+        "overview": "The lac operon default state is 'off' due to the Lac repressor.",
+        "highYield": "No lactose → repressor bound → off.",
+        "clinicalCorrelation": "Mutations in the repressor or operator can lead to constitutive expression, a tool for molecular biology."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_037",
+      "difficulty": 2,
+      "question": "Catabolite repression of the lac operon involves:",
+      "image": null,
+      "options": [
+        {
+          "text": "Low cAMP levels when glucose is high",
+          "isCorrect": true,
+          "explanation": "High glucose inhibits adenylate cyclase, lowering cAMP; without cAMP, CAP cannot activate the lac promoter."
+        },
+        {
+          "text": "High cAMP levels when glucose is high",
+          "isCorrect": false,
+          "explanation": "cAMP levels are inversely related to glucose concentration."
+        },
+        {
+          "text": "Direct binding of glucose to repressor",
+          "isCorrect": false,
+          "explanation": "Glucose does not bind the repressor."
+        },
+        {
+          "text": "Glucose binding to operator",
+          "isCorrect": false,
+          "explanation": "Glucose has no direct DNA‑binding role."
+        },
+        {
+          "text": "CAP‑independent transcription",
+          "isCorrect": false,
+          "explanation": "Transcription of the lac operon is CAP‑dependent for full activation."
+        }
+      ],
+      "explanation": {
+        "overview": "Catabolite repression ensures that E. coli uses glucose before other sugars, reflecting a hierarchy of carbon source utilisation.",
+        "highYield": "High glucose → low cAMP → no CAP activation.",
+        "clinicalCorrelation": "Understanding catabolite repression helps optimise industrial fermentation processes using E. coli."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_038",
+      "difficulty": 2,
+      "question": "The CAP‑cAMP complex binds to the lac operon and:",
+      "image": null,
+      "options": [
+        {
+          "text": "Enhances transcription initiation",
+          "isCorrect": true,
+          "explanation": "CAP‑cAMP binds to the CAP site upstream of the promoter, bending DNA and facilitating RNA polymerase recruitment."
+        },
+        {
+          "text": "Represses transcription",
+          "isCorrect": false,
+          "explanation": "CAP‑cAMP is a positive activator, not a repressor."
+        },
+        {
+          "text": "Terminates transcription",
+          "isCorrect": false,
+          "explanation": "Termination is a separate process not mediated by CAP."
+        },
+        {
+          "text": "Inhibits repressor binding",
+          "isCorrect": false,
+          "explanation": "CAP does not directly affect repressor; inducer inactivates the repressor."
+        },
+        {
+          "text": "Degrades mRNA",
+          "isCorrect": false,
+          "explanation": "mRNA degradation is carried out by RNases."
+        }
+      ],
+      "explanation": {
+        "overview": "CAP (catabolite activator protein) is a classic transcription activator that responds to glucose availability.",
+        "highYield": "CAP‑cAMP = activator.",
+        "clinicalCorrelation": "Analogous cAMP‑CRP systems regulate virulence genes in many pathogens."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_039",
+      "difficulty": 2,
+      "question": "The trp operon is regulated by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Repression and attenuation",
+          "isCorrect": true,
+          "explanation": "The trp operon uses a TrpR repressor when tryptophan is abundant, and also transcription attenuation via a leader peptide."
+        },
+        {
+          "text": "Only repression",
+          "isCorrect": false,
+          "explanation": "Attenuation is a second, fine‑tuning mechanism."
+        },
+        {
+          "text": "Only attenuation",
+          "isCorrect": false,
+          "explanation": "Repression by TrpR is the primary switch."
+        },
+        {
+          "text": "Induction",
+          "isCorrect": false,
+          "explanation": "The trp operon is repressible, not inducible."
+        },
+        {
+          "text": "Catabolite repression",
+          "isCorrect": false,
+          "explanation": "Catabolite repression relates to carbon source utilisation, not tryptophan biosynthesis."
+        }
+      ],
+      "explanation": {
+        "overview": "The trp operon exemplifies a biosynthetic operon that is turned off by its end product via two distinct mechanisms.",
+        "highYield": "trp operon = repression + attenuation.",
+        "clinicalCorrelation": "Attenuation is a uniquely prokaryotic regulatory mechanism that provides rapid response to amino acid levels."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_040",
+      "difficulty": 3,
+      "question": "Attenuation in the trp operon involves:",
+      "image": null,
+      "options": [
+        {
+          "text": "Premature termination of transcription",
+          "isCorrect": true,
+          "explanation": "When tryptophan is high, the ribosome translates the leader peptide quickly, allowing a terminator hairpin to form in the mRNA, aborting transcription."
+        },
+        {
+          "text": "Inhibition of translation",
+          "isCorrect": false,
+          "explanation": "Attenuation affects transcription, not translation directly."
+        },
+        {
+          "text": "Degradation of mRNA",
+          "isCorrect": false,
+          "explanation": "The mRNA is not degraded; synthesis is halted prematurely."
+        },
+        {
+          "text": "Binding of repressor to operator",
+          "isCorrect": false,
+          "explanation": "Repressor binding is a separate, earlier regulatory step."
+        },
+        {
+          "text": "Activation by CAP",
+          "isCorrect": false,
+          "explanation": "CAP is not involved in trp operon regulation."
+        }
+      ],
+      "explanation": {
+        "overview": "Attenuation uses translation of a short leader peptide to sense tryptophan levels and control transcription elongation.",
+        "highYield": "High Trp → terminator hairpin → attenuation.",
+        "clinicalCorrelation": "Attenuation mechanisms exist for several amino acid biosynthetic operons and are unique to prokaryotes, making them potential drug targets."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_041",
+      "difficulty": 2,
+      "question": "The sigma factor (σ) in bacterial RNA polymerase is responsible for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Promoter recognition",
+          "isCorrect": true,
+          "explanation": "The sigma subunit binds to the core RNA polymerase and directs it to specific promoter sequences to initiate transcription."
+        },
+        {
+          "text": "Catalyzing phosphodiester bonds",
+          "isCorrect": false,
+          "explanation": "Catalytic activity resides in the β and β' subunits of the core enzyme."
+        },
+        {
+          "text": "Unwinding DNA",
+          "isCorrect": false,
+          "explanation": "DNA unwinding is carried out by the RNA polymerase holoenzyme as a whole, with sigma contributing to melting, but the primary unwinding is not solely sigma."
+        },
+        {
+          "text": "Termination of transcription",
+          "isCorrect": false,
+          "explanation": "Termination involves rho protein or intrinsic hairpin structures."
+        },
+        {
+          "text": "Proofreading",
+          "isCorrect": false,
+          "explanation": "RNA polymerase has some proofreading activity but sigma is not responsible for it."
+        }
+      ],
+      "explanation": {
+        "overview": "Sigma factors determine which genes are transcribed under different conditions.",
+        "highYield": "Sigma = promoter specificity.",
+        "clinicalCorrelation": "Alternative sigma factors control stress responses and virulence gene expression in pathogens."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_042",
+      "difficulty": 2,
+      "question": "The housekeeping sigma factor in E. coli is:",
+      "image": null,
+      "options": [
+        {
+          "text": "σ⁷⁰",
+          "isCorrect": true,
+          "explanation": "σ⁷⁰ (RpoD) is the primary sigma factor that transcribes most genes during exponential growth."
+        },
+        {
+          "text": "σ³²",
+          "isCorrect": false,
+          "explanation": "σ³² (RpoH) is the heat‑shock sigma factor."
+        },
+        {
+          "text": "σ⁵⁴",
+          "isCorrect": false,
+          "explanation": "σ⁵⁴ (RpoN) regulates nitrogen metabolism and other specialised functions."
+        },
+        {
+          "text": "σ²⁸",
+          "isCorrect": false,
+          "explanation": "σ²⁸ (RpoF) controls flagellar and chemotaxis genes."
+        },
+        {
+          "text": "σS",
+          "isCorrect": false,
+          "explanation": "σS (RpoS) is the stationary phase / stress sigma factor."
+        }
+      ],
+      "explanation": {
+        "overview": "σ⁷⁰ recognises the consensus −10 (TATAAT) and −35 promoter elements.",
+        "highYield": "Housekeeping σ = σ⁷⁰.",
+        "clinicalCorrelation": "Mutations in σ⁷⁰ can affect growth rate and susceptibility to certain stresses."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_043",
+      "difficulty": 2,
+      "question": "Alternative sigma factors are used to respond to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Heat shock, stress, or specific conditions",
+          "isCorrect": true,
+          "explanation": "Different sigma factors (e.g., σ³² for heat shock, σS for starvation) redirect RNA polymerase to specific gene sets."
+        },
+        {
+          "text": "All promoters equally",
+          "isCorrect": false,
+          "explanation": "Alternative sigmas recognise distinct promoter sequences."
+        },
+        {
+          "text": "Ribosome binding",
+          "isCorrect": false,
+          "explanation": "Ribosome binding is a translational process, not transcriptional."
+        },
+        {
+          "text": "Translation initiation",
+          "isCorrect": false,
+          "explanation": "Sigma factors are for transcription, not translation."
+        },
+        {
+          "text": "DNA replication",
+          "isCorrect": false,
+          "explanation": "Replication initiation is controlled by DnaA, not sigma factors."
+        }
+      ],
+      "explanation": {
+        "overview": "The sigma factor repertoire allows bacteria to adapt rapidly to environmental changes.",
+        "highYield": "Alternative σ = specialised responses.",
+        "clinicalCorrelation": "In Mycobacterium tuberculosis, alternative sigma factors control latency and virulence, offering potential drug targets."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_044",
+      "difficulty": 3,
+      "question": "Rho‑dependent transcription termination requires:",
+      "image": null,
+      "options": [
+        {
+          "text": "Rho protein and a rut site",
+          "isCorrect": true,
+          "explanation": "Rho binds to the rut (Rho utilisation) site on the nascent RNA, translocates towards RNA polymerase, and disrupts the transcription complex."
+        },
+        {
+          "text": "Only a hairpin structure",
+          "isCorrect": false,
+          "explanation": "A hairpin alone mediates Rho‑independent termination."
+        },
+        {
+          "text": "Poly‑U sequence",
+          "isCorrect": false,
+          "explanation": "Poly‑U is part of intrinsic terminators, not Rho‑dependent."
+        },
+        {
+          "text": "Sigma factor",
+          "isCorrect": false,
+          "explanation": "Sigma factor is for initiation, not termination."
+        },
+        {
+          "text": "CAP",
+          "isCorrect": false,
+          "explanation": "CAP is a transcriptional activator."
+        }
+      ],
+      "explanation": {
+        "overview": "Rho is an ATP‑dependent helicase that terminates transcription at specific sites.",
+        "highYield": "Rho‑dependent = Rho protein + rut site.",
+        "clinicalCorrelation": "Rho is essential in many bacteria and is a target for novel antimicrobials."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_045",
+      "difficulty": 2,
+      "question": "Rho‑independent termination involves:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hairpin followed by U‑rich region",
+          "isCorrect": true,
+          "explanation": "A GC‑rich hairpin stalls RNA polymerase, and the weak rU:dA hybrid causes the transcript to dissociate."
+        },
+        {
+          "text": "Rho binding",
+          "isCorrect": false,
+          "explanation": "Rho is not involved in intrinsic termination."
+        },
+        {
+          "text": "Poly‑A tail",
+          "isCorrect": false,
+          "explanation": "Poly‑A tails are a eukaryotic feature."
+        },
+        {
+          "text": "CAP binding",
+          "isCorrect": false,
+          "explanation": "CAP activates initiation, not termination."
+        },
+        {
+          "text": "RNA polymerase pausing",
+          "isCorrect": false,
+          "explanation": "Pausing is part of the mechanism but the hairpin + U‑rich sequence is the defining feature."
+        }
+      ],
+      "explanation": {
+        "overview": "Intrinsic terminators are the most common termination signals in bacteria.",
+        "highYield": "Intrinsic terminator = hairpin + poly‑U.",
+        "clinicalCorrelation": "Attenuation uses an intrinsic terminator to control transcription of biosynthetic operons."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_046",
+      "difficulty": 2,
+      "question": "The Shine‑Dalgarno sequence is involved in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Translation initiation",
+          "isCorrect": true,
+          "explanation": "The Shine‑Dalgarno (SD) sequence on mRNA base‑pairs with the anti‑SD sequence on 16S rRNA, positioning the ribosome at the start codon."
+        },
+        {
+          "text": "Transcription initiation",
+          "isCorrect": false,
+          "explanation": "Transcription initiation uses promoters, not SD sequences."
+        },
+        {
+          "text": "Transcription termination",
+          "isCorrect": false,
+          "explanation": "Termination signals are hairpins or Rho‑dependent sites."
+        },
+        {
+          "text": "DNA replication",
+          "isCorrect": false,
+          "explanation": "Replication uses origins and primers."
+        },
+        {
+          "text": "Repressor binding",
+          "isCorrect": false,
+          "explanation": "Repressors bind operators, not SD sequences."
+        }
+      ],
+      "explanation": {
+        "overview": "The SD sequence is a key prokaryotic feature that allows translation of polycistronic mRNAs.",
+        "highYield": "SD sequence = ribosome binding site.",
+        "clinicalCorrelation": "Variations in SD sequence strength affect protein expression levels; exploited in synthetic biology."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_047",
+      "difficulty": 2,
+      "question": "The start codon in bacteria is usually:",
+      "image": null,
+      "options": [
+        {
+          "text": "AUG",
+          "isCorrect": true,
+          "explanation": "AUG is the most common start codon, encoding N‑formylmethionine, but GUG and UUG can also serve as starts."
+        },
+        {
+          "text": "GUG",
+          "isCorrect": false,
+          "explanation": "GUG is used less frequently, not usually."
+        },
+        {
+          "text": "UUG",
+          "isCorrect": false,
+          "explanation": "UUG is rare as a start codon."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "While all three can be start codons, AUG is the most typical; the question asks for 'usually'."
+        },
+        {
+          "text": "Only AUG",
+          "isCorrect": false,
+          "explanation": "GUG and UUG can be used, albeit less often."
+        }
+      ],
+      "explanation": {
+        "overview": "The initiator tRNA (tRNAᶠᴹᵉᵗ) recognises AUG (and occasionally GUG/UUG) to begin translation.",
+        "highYield": "Start codon = AUG (GUG, UUG possible).",
+        "clinicalCorrelation": "Some antibiotics (e.g., aminoglycosides) affect translation fidelity at start codons."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_048",
+      "difficulty": 1,
+      "question": "Transfer RNA (tRNA) molecules carry:",
+      "image": null,
+      "options": [
+        {
+          "text": "Amino acids",
+          "isCorrect": true,
+          "explanation": "Each tRNA is charged with a specific amino acid by its cognate aminoacyl‑tRNA synthetase."
+        },
+        {
+          "text": "Nucleotides",
+          "isCorrect": false,
+          "explanation": "tRNAs are composed of nucleotides, but their function is to transport amino acids."
+        },
+        {
+          "text": "Ribosomes",
+          "isCorrect": false,
+          "explanation": "Ribosomes are the macromolecular machines that use tRNAs."
+        },
+        {
+          "text": "mRNA",
+          "isCorrect": false,
+          "explanation": "mRNA carries the genetic code; tRNA is the adaptor."
+        },
+        {
+          "text": "DNA fragments",
+          "isCorrect": false,
+          "explanation": "DNA is not transported by tRNA."
+        }
+      ],
+      "explanation": {
+        "overview": "tRNAs are the adaptors that translate the genetic code into proteins.",
+        "highYield": "tRNA = carries amino acid.",
+        "clinicalCorrelation": "Mutations in mitochondrial tRNAs cause human diseases (e.g., MELAS syndrome)."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_049",
+      "difficulty": 3,
+      "question": "The peptidyl transferase activity of the ribosome is associated with:",
+      "image": null,
+      "options": [
+        {
+          "text": "23S rRNA",
+          "isCorrect": true,
+          "explanation": "Peptidyl transferase is a ribozyme activity residing in the 23S rRNA of the 50S subunit; it catalyses peptide bond formation."
+        },
+        {
+          "text": "16S rRNA",
+          "isCorrect": false,
+          "explanation": "16S rRNA is in the 30S subunit and is involved in mRNA binding and decoding."
+        },
+        {
+          "text": "5S rRNA",
+          "isCorrect": false,
+          "explanation": "5S rRNA is also in the 50S subunit but does not catalyse peptide bond formation."
+        },
+        {
+          "text": "Proteins L2 and L3",
+          "isCorrect": false,
+          "explanation": "Ribosomal proteins assist in folding but the catalytic centre is RNA."
+        },
+        {
+          "text": "mRNA",
+          "isCorrect": false,
+          "explanation": "mRNA provides the template, not the catalytic function."
+        }
+      ],
+      "explanation": {
+        "overview": "The ribosome is a ribozyme; 23S rRNA is the enzyme that forms peptide bonds.",
+        "highYield": "Peptidyl transferase = 23S rRNA.",
+        "clinicalCorrelation": "Many antibiotics (macrolides, chloramphenicol) bind 23S rRNA and inhibit protein synthesis."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_050",
+      "difficulty": 2,
+      "question": "Streptomycin inhibits bacterial protein synthesis by binding to:",
+      "image": null,
+      "options": [
+        {
+          "text": "30S ribosomal subunit",
+          "isCorrect": true,
+          "explanation": "Streptomycin, an aminoglycoside, binds to the 30S subunit, causing misreading of mRNA and inhibiting translocation."
+        },
+        {
+          "text": "50S ribosomal subunit",
+          "isCorrect": false,
+          "explanation": "50S inhibitors include macrolides, chloramphenicol, and clindamycin."
+        },
+        {
+          "text": "tRNA",
+          "isCorrect": false,
+          "explanation": "Streptomycin does not bind to tRNA."
+        },
+        {
+          "text": "mRNA",
+          "isCorrect": false,
+          "explanation": "It does not directly bind mRNA."
+        },
+        {
+          "text": "EF‑Tu",
+          "isCorrect": false,
+          "explanation": "EF‑Tu is a translation factor, not the primary target of streptomycin."
+        }
+      ],
+      "explanation": {
+        "overview": "Aminoglycosides target the 30S subunit, leading to bactericidal activity through protein synthesis inhibition.",
+        "highYield": "Streptomycin = 30S inhibitor.",
+        "clinicalCorrelation": "Resistance to streptomycin often arises from mutations in the ribosomal protein S12 or enzymatic modification of the drug."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_051",
+      "difficulty": 1,
+      "question": "The genetic code is degenerate, meaning:",
+      "image": null,
+      "options": [
+        {
+          "text": "Multiple codons can specify the same amino acid",
+          "isCorrect": true,
+          "explanation": "With 61 sense codons for 20 amino acids, most amino acids are encoded by more than one codon."
+        },
+        {
+          "text": "One codon specifies multiple amino acids",
+          "isCorrect": false,
+          "explanation": "The code is unambiguous: each codon specifies only one amino acid."
+        },
+        {
+          "text": "Codons are not universal",
+          "isCorrect": false,
+          "explanation": "The code is nearly universal, but degeneracy is about redundancy."
+        },
+        {
+          "text": "Code overlaps",
+          "isCorrect": false,
+          "explanation": "The code is non‑overlapping."
+        },
+        {
+          "text": "Code is comma‑less",
+          "isCorrect": false,
+          "explanation": "Comma‑less means there are no punctuation marks between codons, which is true but not the definition of degenerate."
+        }
+      ],
+      "explanation": {
+        "overview": "Degeneracy minimises the impact of point mutations, as many changes are silent.",
+        "highYield": "Degenerate = multiple codons per amino acid.",
+        "clinicalCorrelation": "Codon optimisation is used in biotechnology to enhance protein expression."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_052",
+      "difficulty": 2,
+      "question": "The Ames test is used to detect:",
+      "image": null,
+      "options": [
+        {
+          "text": "Mutagenicity of chemicals",
+          "isCorrect": true,
+          "explanation": "The Ames test measures the reversion frequency of Salmonella histidine auxotrophs, indicating mutagenic potential."
+        },
+        {
+          "text": "Carcinogenicity",
+          "isCorrect": false,
+          "explanation": "While mutagenicity correlates with carcinogenicity, the Ames test directly detects mutagens, not cancer."
+        },
+        {
+          "text": "Antibiotic resistance",
+          "isCorrect": false,
+          "explanation": "Antibiotic resistance is tested by susceptibility assays."
+        },
+        {
+          "text": "Toxicity",
+          "isCorrect": false,
+          "explanation": "Toxicity is assessed via different assays (e.g., LD₅₀)."
+        },
+        {
+          "text": "Mutant frequency",
+          "isCorrect": false,
+          "explanation": "The test measures reversion, not forward mutation frequency."
+        }
+      ],
+      "explanation": {
+        "overview": "Developed by Bruce Ames, the test is a rapid screen for potential carcinogens.",
+        "highYield": "Ames test = mutagen detection.",
+        "clinicalCorrelation": "Many known carcinogens are positive in the Ames test; it is part of regulatory toxicology testing."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_053",
+      "difficulty": 2,
+      "question": "In the Ames test, a positive result is indicated by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increased number of revertant colonies",
+          "isCorrect": true,
+          "explanation": "Mutagenic compounds cause reverse mutations from His⁻ to His⁺, allowing growth on histidine‑free medium."
+        },
+        {
+          "text": "Decreased number of colonies",
+          "isCorrect": false,
+          "explanation": "A decrease suggests toxicity, not mutagenicity."
+        },
+        {
+          "text": "Clear zone around test substance",
+          "isCorrect": false,
+          "explanation": "A zone of inhibition is typical of antibiotic susceptibility testing."
+        },
+        {
+          "text": "Color change in medium",
+          "isCorrect": false,
+          "explanation": "Color change is used in other assays like X‑gal screening."
+        },
+        {
+          "text": "Precipitation",
+          "isCorrect": false,
+          "explanation": "Precipitation is a chemical reaction, not a mutagenicity indicator."
+        }
+      ],
+      "explanation": {
+        "overview": "Reversion of histidine auxotrophy is a quantitative measure of mutagenic potency.",
+        "highYield": "Positive Ames = more revertants.",
+        "clinicalCorrelation": "The test often includes liver S9 fraction to mimic mammalian metabolism, detecting pro‑mutagens."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_054",
+      "difficulty": 1,
+      "question": "A bacteriophage that can undergo both lytic and lysogenic cycles is called:",
+      "image": null,
+      "options": [
+        {
+          "text": "Temperate phage",
+          "isCorrect": true,
+          "explanation": "Temperate phages (e.g., lambda) can either replicate lytically or integrate as a prophage (lysogeny)."
+        },
+        {
+          "text": "Virulent phage",
+          "isCorrect": false,
+          "explanation": "Virulent phages are obligately lytic."
+        },
+        {
+          "text": "Prophage",
+          "isCorrect": false,
+          "explanation": "Prophage is the integrated, dormant state, not the whole phage."
+        },
+        {
+          "text": "Lysogenic phage",
+          "isCorrect": false,
+          "explanation": "'Lysogenic phage' is sometimes used synonymously, but 'temperate' is the standard term."
+        },
+        {
+          "text": "Defective phage",
+          "isCorrect": false,
+          "explanation": "Defective phages have lost genetic material and cannot complete a full cycle."
+        }
+      ],
+      "explanation": {
+        "overview": "The decision between lysis and lysogeny depends on factors like host cell physiology and multiplicity of infection.",
+        "highYield": "Temperate = lytic or lysogenic.",
+        "clinicalCorrelation": "Temperate phages can carry virulence genes (e.g., Shiga toxin, diphtheria toxin) via lysogenic conversion."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_055",
+      "difficulty": 1,
+      "question": "A prophage is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Phage genome integrated into bacterial chromosome",
+          "isCorrect": true,
+          "explanation": "The prophage is the repressed, inactive form of a temperate phage residing in the host genome."
+        },
+        {
+          "text": "Phage particle outside the cell",
+          "isCorrect": false,
+          "explanation": "That is a virion."
+        },
+        {
+          "text": "Phage that has lysed the cell",
+          "isCorrect": false,
+          "explanation": "A phage that lyses a cell is in the lytic cycle."
+        },
+        {
+          "text": "Phage during replication",
+          "isCorrect": false,
+          "explanation": "Replicating phage is in the lytic cycle, not prophage."
+        },
+        {
+          "text": "Phage protein coat",
+          "isCorrect": false,
+          "explanation": "The protein coat is the capsid."
+        }
+      ],
+      "explanation": {
+        "overview": "Prophages replicate passively with the host chromosome until induced.",
+        "highYield": "Prophage = integrated phage DNA.",
+        "clinicalCorrelation": "Prophages can encode toxins; induction by antibiotics can lead to toxin release."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_056",
+      "difficulty": 2,
+      "question": "Lysogenic conversion refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Acquisition of new traits by bacteria due to prophage genes",
+          "isCorrect": true,
+          "explanation": "When a prophage carries genes that alter the bacterial phenotype (e.g., toxin production), it is called lysogenic conversion."
+        },
+        {
+          "text": "Conversion of lytic to lysogenic cycle",
+          "isCorrect": false,
+          "explanation": "That is the process of lysogenization, not conversion."
+        },
+        {
+          "text": "Change in bacterial morphology",
+          "isCorrect": false,
+          "explanation": "Morphological changes can occur but the term specifically refers to phenotype alteration by phage genes."
+        },
+        {
+          "text": "Resistance to superinfection",
+          "isCorrect": false,
+          "explanation": "Superinfection immunity is a separate phenomenon."
+        },
+        {
+          "text": "Release of phage particles",
+          "isCorrect": false,
+          "explanation": "Particle release is part of the lytic cycle."
+        }
+      ],
+      "explanation": {
+        "overview": "Lysogenic conversion is a major mechanism by which bacteria acquire virulence factors.",
+        "highYield": "Lysogenic conversion = prophage‑encoded traits.",
+        "clinicalCorrelation": "Examples: diphtheria toxin, cholera toxin, Shiga toxin, and botulinum toxin are all phage‑encoded."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_057",
+      "difficulty": 2,
+      "question": "Which of the following is an example of lysogenic conversion?",
+      "image": null,
+      "options": [
+        {
+          "text": "Corynebacterium diphtheriae producing diphtheria toxin",
+          "isCorrect": true,
+          "explanation": "The tox gene is carried by a corynephage beta prophage; only lysogenised strains produce toxin."
+        },
+        {
+          "text": "E. coli producing colicins",
+          "isCorrect": false,
+          "explanation": "Colicin production is usually plasmid‑encoded, not phage‑mediated."
+        },
+        {
+          "text": "Bacillus forming endospores",
+          "isCorrect": false,
+          "explanation": "Endospore formation is a native chromosomal trait."
+        },
+        {
+          "text": "Streptococcus producing streptokinase",
+          "isCorrect": false,
+          "explanation": "Streptokinase is not typically associated with phage conversion."
+        },
+        {
+          "text": "Salmonella flagellar variation",
+          "isCorrect": false,
+          "explanation": "Flagellar phase variation is due to chromosomal DNA inversion, not phage."
+        }
+      ],
+      "explanation": {
+        "overview": "Diphtheria toxin is the classic textbook example of lysogenic conversion.",
+        "highYield": "Diphtheria toxin = phage‑encoded.",
+        "clinicalCorrelation": "Only strains carrying the tox⁺ phage cause diphtheria; vaccination targets the toxin."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_058",
+      "difficulty": 2,
+      "question": "The process by which a prophage is excised and initiates lytic cycle is called:",
+      "image": null,
+      "options": [
+        {
+          "text": "Induction",
+          "isCorrect": true,
+          "explanation": "Induction, typically triggered by DNA damage (e.g., UV light, mitomycin C), activates RecA, cleaves the phage repressor, and leads to lytic growth."
+        },
+        {
+          "text": "Repression",
+          "isCorrect": false,
+          "explanation": "Repression maintains the lysogenic state."
+        },
+        {
+          "text": "Transduction",
+          "isCorrect": false,
+          "explanation": "Transduction is the phage‑mediated transfer of bacterial DNA."
+        },
+        {
+          "text": "Conjugation",
+          "isCorrect": false,
+          "explanation": "Conjugation is plasmid‑mediated DNA transfer."
+        },
+        {
+          "text": "Lysogenization",
+          "isCorrect": false,
+          "explanation": "Lysogenization is the establishment of lysogeny, the opposite of induction."
+        }
+      ],
+      "explanation": {
+        "overview": "Induction links the phage life cycle to the host SOS response to DNA damage.",
+        "highYield": "Induction = prophage → lytic cycle.",
+        "clinicalCorrelation": "Induction of toxin‑encoding prophages by antibiotics can exacerbate disease (e.g., Shiga toxin‑producing E. coli)."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_059",
+      "difficulty": 1,
+      "question": "The enzyme that copies RNA into DNA in retroviruses is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Reverse transcriptase",
+          "isCorrect": true,
+          "explanation": "Reverse transcriptase is an RNA‑dependent DNA polymerase used by retroviruses to produce a DNA copy of their RNA genome."
+        },
+        {
+          "text": "RNA polymerase",
+          "isCorrect": false,
+          "explanation": "RNA polymerase synthesises RNA from a DNA template."
+        },
+        {
+          "text": "DNA polymerase",
+          "isCorrect": false,
+          "explanation": "DNA polymerase synthesises DNA from DNA."
+        },
+        {
+          "text": "Integrase",
+          "isCorrect": false,
+          "explanation": "Integrase inserts viral DNA into the host genome."
+        },
+        {
+          "text": "Protease",
+          "isCorrect": false,
+          "explanation": "Protease processes viral polyproteins."
+        }
+      ],
+      "explanation": {
+        "overview": "Although not bacterial, reverse transcriptase is an important enzyme in molecular biology and medicine.",
+        "highYield": "Reverse transcriptase = RNA → DNA.",
+        "clinicalCorrelation": "Reverse transcriptase inhibitors are key drugs in HIV therapy."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_060",
+      "difficulty": 2,
+      "question": "Which of the following is a mechanism of quorum sensing in gram‑negative bacteria?",
+      "image": null,
+      "options": [
+        {
+          "text": "AHL (acyl‑homoserine lactone) system",
+          "isCorrect": true,
+          "explanation": "Gram‑negative bacteria commonly synthesise AHL autoinducers that freely diffuse and bind LuxR‑type regulators to activate gene expression at high cell density."
+        },
+        {
+          "text": "Autoinducing peptide system",
+          "isCorrect": false,
+          "explanation": "AIP (autoinducing peptide) systems are used by gram‑positive bacteria."
+        },
+        {
+          "text": "Two‑component system only",
+          "isCorrect": false,
+          "explanation": "Two‑component systems are signal transduction pathways, but quorum sensing in gram‑negatives specifically uses AHLs."
+        },
+        {
+          "text": "c‑di‑GMP signaling",
+          "isCorrect": false,
+          "explanation": "c‑di‑GMP is a second messenger for biofilm formation and motility, not the primary quorum sensing molecule."
+        },
+        {
+          "text": "ppGpp",
+          "isCorrect": false,
+          "explanation": "ppGpp is the stringent response alarmone."
+        }
+      ],
+      "explanation": {
+        "overview": "Quorum sensing allows bacteria to coordinate group behaviours like biofilm formation and virulence factor expression.",
+        "highYield": "Gram‑negative quorum sensing = AHLs.",
+        "clinicalCorrelation": "Quorum sensing inhibitors are being researched as novel anti‑virulence drugs."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_061",
+      "difficulty": 1,
+      "question": "Which enzyme replaces RNA primers with DNA during bacterial DNA replication?",
+      "image": null,
+      "options": [
+        {
+          "text": "DNA polymerase I",
+          "isCorrect": true,
+          "explanation": "DNA polymerase I uses its 5′→3′ exonuclease activity to remove RNA primers and its polymerase activity to fill the gaps with DNA."
+        },
+        {
+          "text": "DNA polymerase III",
+          "isCorrect": false,
+          "explanation": "Polymerase III is the main replicative enzyme but does not remove primers."
+        },
+        {
+          "text": "Primase",
+          "isCorrect": false,
+          "explanation": "Primase makes the RNA primers, it does not replace them."
+        },
+        {
+          "text": "Ligase",
+          "isCorrect": false,
+          "explanation": "Ligase seals nicks after primers have been replaced."
+        },
+        {
+          "text": "Helicase",
+          "isCorrect": false,
+          "explanation": "Helicase unwinds DNA, not replaces primers."
+        }
+      ],
+      "explanation": {
+        "overview": "DNA polymerase I is the key enzyme that processes Okazaki fragments to create a continuous lagging strand.",
+        "highYield": "Pol I = primer removal + gap filling.",
+        "clinicalCorrelation": "The exonuclease activity of Pol I is used in the nick translation technique for DNA labelling."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_062",
+      "difficulty": 1,
+      "question": "What is the bacterial nucleoid?",
+      "image": null,
+      "options": [
+        {
+          "text": "The region of the cell where the circular chromosome is located",
+          "isCorrect": true,
+          "explanation": "The nucleoid is a dense, irregularly shaped region containing the bacterial chromosome and associated proteins, not surrounded by a membrane."
+        },
+        {
+          "text": "A membrane‑bound organelle containing DNA",
+          "isCorrect": false,
+          "explanation": "Bacteria lack a nuclear membrane; the DNA is not in a true nucleus."
+        },
+        {
+          "text": "A small circular plasmid",
+          "isCorrect": false,
+          "explanation": "Plasmids are extrachromosomal DNA, separate from the nucleoid."
+        },
+        {
+          "text": "The site of protein synthesis",
+          "isCorrect": false,
+          "explanation": "Protein synthesis occurs on ribosomes, not in the nucleoid."
+        },
+        {
+          "text": "A storage granule",
+          "isCorrect": false,
+          "explanation": "Storage granules hold nutrients like glycogen or polyphosphate."
+        }
+      ],
+      "explanation": {
+        "overview": "The nucleoid is the functional equivalent of the nucleus, containing the genome in a compacted state.",
+        "highYield": "Nucleoid = bacterial chromosome region.",
+        "clinicalCorrelation": "Proteins that organise the nucleoid (e.g., HU, H‑NS) influence gene expression and are potential antibiotic targets."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_063",
+      "difficulty": 2,
+      "question": "In bacteria, which topoisomerase introduces negative supercoils into DNA?",
+      "image": null,
+      "options": [
+        {
+          "text": "DNA gyrase",
+          "isCorrect": true,
+          "explanation": "DNA gyrase (topoisomerase II) uses ATP to introduce negative supercoils, which is essential for replication and transcription."
+        },
+        {
+          "text": "Topoisomerase I",
+          "isCorrect": false,
+          "explanation": "Topo I relaxes negative supercoils but does not introduce them."
+        },
+        {
+          "text": "Topoisomerase IV",
+          "isCorrect": false,
+          "explanation": "Topo IV decatenates daughter chromosomes after replication, not supercoils."
+        },
+        {
+          "text": "Helicase",
+          "isCorrect": false,
+          "explanation": "Helicase unwinds DNA, not supercoils."
+        },
+        {
+          "text": "Ligase",
+          "isCorrect": false,
+          "explanation": "Ligase seals nicks, not alters supercoiling."
+        }
+      ],
+      "explanation": {
+        "overview": "DNA gyrase is the only topoisomerase that can actively introduce negative supercoils, making it unique and an excellent drug target.",
+        "highYield": "DNA gyrase = negative supercoils.",
+        "clinicalCorrelation": "Fluoroquinolones (e.g., ciprofloxacin) inhibit DNA gyrase, leading to bacterial cell death."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_064",
+      "difficulty": 2,
+      "question": "A bacterial strain with a mutation in the lacI gene that prevents repressor binding would show:",
+      "image": null,
+      "options": [
+        {
+          "text": "Constitutive expression of lacZYA",
+          "isCorrect": true,
+          "explanation": "The lacI gene encodes the repressor. If it cannot bind the operator, transcription of the operon occurs continuously, regardless of lactose."
+        },
+        {
+          "text": "No expression of lacZYA",
+          "isCorrect": false,
+          "explanation": "A non‑functional repressor leads to expression, not repression."
+        },
+        {
+          "text": "Inducible expression only with lactose",
+          "isCorrect": false,
+          "explanation": "Inducible expression requires a functional repressor that can be inactivated by inducer."
+        },
+        {
+          "text": "Expression only when glucose is present",
+          "isCorrect": false,
+          "explanation": "Glucose affects CAP‑cAMP activation, not repressor function directly."
+        },
+        {
+          "text": "No change in regulation",
+          "isCorrect": false,
+          "explanation": "A mutation in lacI abolishes repression, drastically altering regulation."
+        }
+      ],
+      "explanation": {
+        "overview": "lacI⁻ mutants are constitutive for the lac operon and are used in molecular biology to provide high‑level protein expression.",
+        "highYield": "lacI⁻ = constitutive operon expression.",
+        "clinicalCorrelation": "Constitutive mutants were key in Jacob and Monod's development of the operon model."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_065",
+      "difficulty": 2,
+      "question": "Which type of bacterial genetic transfer requires cell‑to‑cell contact via a pilus?",
+      "image": null,
+      "options": [
+        {
+          "text": "Conjugation",
+          "isCorrect": true,
+          "explanation": "Conjugation involves direct cell‑to‑cell contact through a sex pilus, through which DNA (often a plasmid) is transferred."
+        },
+        {
+          "text": "Transformation",
+          "isCorrect": false,
+          "explanation": "Transformation is the uptake of free DNA from the environment, no contact required."
+        },
+        {
+          "text": "Transduction",
+          "isCorrect": false,
+          "explanation": "Transduction is mediated by bacteriophages, not direct cell contact."
+        },
+        {
+          "text": "Transposition",
+          "isCorrect": false,
+          "explanation": "Transposition is movement of DNA elements within a cell's genome."
+        },
+        {
+          "text": "Lysogeny",
+          "isCorrect": false,
+          "explanation": "Lysogeny is phage integration, not cell‑to‑cell DNA transfer."
+        }
+      ],
+      "explanation": {
+        "overview": "Conjugation is a major mechanism of horizontal gene transfer, especially for antibiotic resistance genes.",
+        "highYield": "Conjugation = pilus‑mediated DNA transfer.",
+        "clinicalCorrelation": "Conjugative plasmids spread multidrug resistance rapidly in hospital settings."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_066",
+      "difficulty": 2,
+      "question": "What is the function of the CRISPR‑Cas system in bacteria?",
+      "image": null,
+      "options": [
+        {
+          "text": "Adaptive immunity against phages and foreign DNA",
+          "isCorrect": true,
+          "explanation": "CRISPR arrays store fragments of phage DNA; Cas proteins use these as guides to cleave matching foreign nucleic acids."
+        },
+        {
+          "text": "DNA replication initiation",
+          "isCorrect": false,
+          "explanation": "Replication initiation is performed by DnaA."
+        },
+        {
+          "text": "Quorum sensing signal production",
+          "isCorrect": false,
+          "explanation": "Quorum sensing uses autoinducers, not CRISPR."
+        },
+        {
+          "text": "Antibiotic synthesis",
+          "isCorrect": false,
+          "explanation": "Antibiotic synthesis genes are organised in biosynthetic gene clusters."
+        },
+        {
+          "text": "Spore formation",
+          "isCorrect": false,
+          "explanation": "Spore formation involves sporulation‑specific sigma factors and other genes."
+        }
+      ],
+      "explanation": {
+        "overview": "CRISPR‑Cas provides bacteria with an RNA‑guided defense mechanism, analogous to an adaptive immune system.",
+        "highYield": "CRISPR‑Cas = bacterial immunity.",
+        "clinicalCorrelation": "CRISPR‑Cas9 has revolutionised gene editing in biotechnology and medicine."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_067",
+      "difficulty": 2,
+      "question": "Which molecule serves as the inducer of the arabinose (ara) operon?",
+      "image": null,
+      "options": [
+        {
+          "text": "Arabinose",
+          "isCorrect": true,
+          "explanation": "Arabinose binds to the AraC protein, converting it from a repressor to an activator, thus inducing transcription."
+        },
+        {
+          "text": "Glucose",
+          "isCorrect": false,
+          "explanation": "Glucose represses the ara operon via catabolite repression."
+        },
+        {
+          "text": "cAMP",
+          "isCorrect": false,
+          "explanation": "cAMP‑CAP is an activator for many catabolic operons but not the direct inducer."
+        },
+        {
+          "text": "Allolactose",
+          "isCorrect": false,
+          "explanation": "Allolactose is the inducer of the lac operon."
+        },
+        {
+          "text": "IPTG",
+          "isCorrect": false,
+          "explanation": "IPTG is a synthetic inducer of the lac operon, not the ara operon."
+        }
+      ],
+      "explanation": {
+        "overview": "The araBAD operon is under dual positive and negative control by AraC, a regulatory protein that changes conformation upon arabinose binding.",
+        "highYield": "Ara operon inducer = arabinose.",
+        "clinicalCorrelation": "The ara operon promoter is used in expression vectors (pBAD) for tight regulation of recombinant proteins."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_068",
+      "difficulty": 3,
+      "question": "During stringent response, the alarmone (p)ppGpp is produced by RelA in response to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Uncharged tRNA in the A site of the ribosome",
+          "isCorrect": true,
+          "explanation": "Amino acid starvation leads to uncharged tRNA binding to the ribosomal A site, activating RelA to synthesise (p)ppGpp."
+        },
+        {
+          "text": "DNA damage",
+          "isCorrect": false,
+          "explanation": "DNA damage triggers the SOS response, not the stringent response."
+        },
+        {
+          "text": "Heat shock",
+          "isCorrect": false,
+          "explanation": "Heat shock activates σ³²‑dependent transcription."
+        },
+        {
+          "text": "Oxidative stress",
+          "isCorrect": false,
+          "explanation": "Oxidative stress induces SoxRS and OxyR regulons."
+        },
+        {
+          "text": "High glucose levels",
+          "isCorrect": false,
+          "explanation": "High glucose affects catabolite repression, not stringent response."
+        }
+      ],
+      "explanation": {
+        "overview": "(p)ppGpp reprograms transcription, down‑regulating rRNA and tRNA genes while up‑regulating amino acid biosynthesis.",
+        "highYield": "Stringent response = uncharged tRNA → (p)ppGpp.",
+        "clinicalCorrelation": "Inhibitors of (p)ppGpp synthesis are being studied as anti‑persister drugs."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_069",
+      "difficulty": 3,
+      "question": "In generalized transduction, what is packaged by the phage?",
+      "image": null,
+      "options": [
+        {
+          "text": "Random fragments of bacterial DNA",
+          "isCorrect": true,
+          "explanation": "During phage assembly, a small percentage of capsids erroneously package host DNA fragments instead of phage genome."
+        },
+        {
+          "text": "Only plasmid DNA",
+          "isCorrect": false,
+          "explanation": "Generalized transduction can package any bacterial DNA, not just plasmids."
+        },
+        {
+          "text": "Specific bacterial genes adjacent to the prophage",
+          "isCorrect": false,
+          "explanation": "That describes specialized transduction."
+        },
+        {
+          "text": "Phage DNA only",
+          "isCorrect": false,
+          "explanation": "Transduction specifically refers to transfer of bacterial DNA."
+        },
+        {
+          "text": "RNA molecules",
+          "isCorrect": false,
+          "explanation": "Phage capsids package DNA, not RNA."
+        }
+      ],
+      "explanation": {
+        "overview": "Generalized transduction is a tool for mapping genes and for strain construction in the laboratory.",
+        "highYield": "Generalized transduction = random host DNA.",
+        "clinicalCorrelation": "Phage‑mediated transduction can spread antibiotic resistance and virulence genes among bacteria."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_070",
+      "difficulty": 3,
+      "question": "The lambda phage repressor, cI, maintains lysogeny by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Binding operators and repressing lytic genes while activating its own expression",
+          "isCorrect": true,
+          "explanation": "cI binds to operators Oᵣ and Oₗ, blocking transcription of lytic genes (e.g., cro) and auto‑activating its own promoter (Pᵣₑ)."
+        },
+        {
+          "text": "Degrading phage DNA",
+          "isCorrect": false,
+          "explanation": "cI is a repressor protein, not a nuclease."
+        },
+        {
+          "text": "Integrating the phage into the chromosome",
+          "isCorrect": false,
+          "explanation": "Integration is carried out by integrase, not cI."
+        },
+        {
+          "text": "Packaging phage particles",
+          "isCorrect": false,
+          "explanation": "Packaging involves terminase and capsid proteins."
+        },
+        {
+          "text": "Hydrolysing the host chromosome",
+          "isCorrect": false,
+          "explanation": "cI does not hydrolyse DNA; it regulates transcription."
+        }
+      ],
+      "explanation": {
+        "overview": "cI is a classic regulator that establishes a bistable genetic switch, maintaining lysogeny until induced.",
+        "highYield": "cI = lambda repressor, maintains lysogeny.",
+        "clinicalCorrelation": "The cI repressor system is a model for understanding genetic switches and gene regulation."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_071",
+      "difficulty": 1,
+      "question": "The bacterial genome is haploid, meaning:",
+      "image": null,
+      "options": [
+        {
+          "text": "It has one copy of each gene (usually)",
+          "isCorrect": true,
+          "explanation": "Most bacteria have a single circular chromosome and hence one copy of most genes, making mutation effects immediately apparent."
+        },
+        {
+          "text": "It has two copies of each gene",
+          "isCorrect": false,
+          "explanation": "Diploid organisms have two copies; bacteria are typically haploid."
+        },
+        {
+          "text": "It has multiple chromosomes",
+          "isCorrect": false,
+          "explanation": "Some bacteria have multiple replicons, but the genome is still functionally haploid."
+        },
+        {
+          "text": "Genes are arranged in pairs",
+          "isCorrect": false,
+          "explanation": "Bacterial genes are not arranged in homologous pairs."
+        },
+        {
+          "text": "All genes are duplicated",
+          "isCorrect": false,
+          "explanation": "Duplication is rare; most genes are present once."
+        }
+      ],
+      "explanation": {
+        "overview": "Haploidy means that mutations are phenotypically unmasked, which is an advantage for genetic studies.",
+        "highYield": "Bacteria = haploid (one gene copy).",
+        "clinicalCorrelation": "This simplifies the study of gene function and drug resistance mutations."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_072",
+      "difficulty": 2,
+      "question": "Which protein stabilises single‑stranded DNA at the replication fork to prevent re‑annealing?",
+      "image": null,
+      "options": [
+        {
+          "text": "SSB (single‑stranded DNA‑binding protein)",
+          "isCorrect": true,
+          "explanation": "SSB binds cooperatively to ssDNA, protecting it from nucleases and preventing secondary structure formation."
+        },
+        {
+          "text": "Helicase",
+          "isCorrect": false,
+          "explanation": "Helicase unwinds the DNA but does not stabilise the single strands."
+        },
+        {
+          "text": "Primase",
+          "isCorrect": false,
+          "explanation": "Primase synthesises primers, not binds ssDNA."
+        },
+        {
+          "text": "Ligase",
+          "isCorrect": false,
+          "explanation": "Ligase seals nicks, not binds ssDNA."
+        },
+        {
+          "text": "Topoisomerase",
+          "isCorrect": false,
+          "explanation": "Topoisomerase relieves supercoiling."
+        }
+      ],
+      "explanation": {
+        "overview": "SSB is essential for smooth progression of the replication fork and for coordinating Okazaki fragment synthesis.",
+        "highYield": "SSB = protects single‑stranded DNA.",
+        "clinicalCorrelation": "SSB is a target for some antibacterial compounds because its inhibition stalls replication."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_073",
+      "difficulty": 2,
+      "question": "A 'reporter gene' is often fused to a promoter of interest to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Monitor gene expression",
+          "isCorrect": true,
+          "explanation": "A reporter gene (e.g., lacZ, gfp) produces an easily measurable product, reflecting the activity of the promoter to which it is fused."
+        },
+        {
+          "text": "Increase mutation rate",
+          "isCorrect": false,
+          "explanation": "Reporter genes are not mutagens."
+        },
+        {
+          "text": "Induce antibiotic resistance",
+          "isCorrect": false,
+          "explanation": "Reporter genes are not resistance markers, though they may be used alongside them."
+        },
+        {
+          "text": "Promote recombination",
+          "isCorrect": false,
+          "explanation": "They do not directly promote recombination."
+        },
+        {
+          "text": "Cause cell lysis",
+          "isCorrect": false,
+          "explanation": "Reporter genes are typically harmless."
+        }
+      ],
+      "explanation": {
+        "overview": "Reporter fusions are a cornerstone of molecular biology, allowing real‑time analysis of transcriptional regulation.",
+        "highYield": "Reporter gene = measure promoter activity.",
+        "clinicalCorrelation": "Reporter systems are used to screen for new antibiotics that target specific pathways."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_074",
+      "difficulty": 1,
+      "question": "What is a defining feature of specialized transduction?",
+      "image": null,
+      "options": [
+        {
+          "text": "Only genes adjacent to the prophage integration site are transferred",
+          "isCorrect": true,
+          "explanation": "Specialized transduction occurs when a temperate phage excises imprecisely, carrying specific nearby host genes with it."
+        },
+        {
+          "text": "Any bacterial gene can be transferred",
+          "isCorrect": false,
+          "explanation": "That characterises generalized transduction."
+        },
+        {
+          "text": "It requires a sex pilus",
+          "isCorrect": false,
+          "explanation": "Pilus is required for conjugation."
+        },
+        {
+          "text": "It involves free DNA uptake",
+          "isCorrect": false,
+          "explanation": "Free DNA uptake is transformation."
+        },
+        {
+          "text": "It only occurs in gram‑positive bacteria",
+          "isCorrect": false,
+          "explanation": "Specialized transduction occurs in both gram‑positive and gram‑negative bacteria."
+        }
+      ],
+      "explanation": {
+        "overview": "Lambda phage with gal or bio genes is a classic example of specialized transduction.",
+        "highYield": "Specialized transduction = specific host genes.",
+        "clinicalCorrelation": "Some toxin genes are spread by specialized transduction when prophages excise aberrantly."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_075",
+      "difficulty": 2,
+      "question": "Phase variation in bacteria refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Reversible ON/OFF switching of gene expression at high frequency",
+          "isCorrect": true,
+          "explanation": "Phase variation often involves reversible DNA inversions, slipped‑strand mispairing, or methylation changes, allowing phenotypic switching."
+        },
+        {
+          "text": "Permanent loss of a gene",
+          "isCorrect": false,
+          "explanation": "Phase variation is reversible, not permanent deletion."
+        },
+        {
+          "text": "Change in colony colour",
+          "isCorrect": false,
+          "explanation": "Colour changes can occur but are not the definition."
+        },
+        {
+          "text": "Induction of a prophage",
+          "isCorrect": false,
+          "explanation": "Prophage induction is a different phenomenon."
+        },
+        {
+          "text": "Resistance to antibiotics",
+          "isCorrect": false,
+          "explanation": "Resistance is usually permanent, not rapidly reversible."
+        }
+      ],
+      "explanation": {
+        "overview": "Phase variation helps pathogens evade the host immune system by altering surface antigens (e.g., flagella, pili).",
+        "highYield": "Phase variation = reversible ON/OFF.",
+        "clinicalCorrelation": "Neisseria gonorrhoeae uses phase variation to change pili expression, aiding immune evasion."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_076",
+      "difficulty": 2,
+      "question": "What is the role of the Dam methylase in E. coli?",
+      "image": null,
+      "options": [
+        {
+          "text": "Methylates adenines in GATC sequences for mismatch repair and replication timing",
+          "isCorrect": true,
+          "explanation": "Dam methylation marks the parental strand for mismatch repair and regulates the initiation of replication."
+        },
+        {
+          "text": "Demethylates DNA",
+          "isCorrect": false,
+          "explanation": "Dam is a methyltransferase, not a demethylase."
+        },
+        {
+          "text": "Repairs oxidative damage",
+          "isCorrect": false,
+          "explanation": "Oxidative damage repair involves other enzymes like MutM and MutY."
+        },
+        {
+          "text": "Initiates transcription",
+          "isCorrect": false,
+          "explanation": "Transcription initiation is carried out by RNA polymerase and sigma factors."
+        },
+        {
+          "text": "Degrades foreign DNA",
+          "isCorrect": false,
+          "explanation": "Restriction enzymes degrade foreign DNA; methylation protects self DNA."
+        }
+      ],
+      "explanation": {
+        "overview": "Dam methylation is crucial for the temporal control of replication and the fidelity of mismatch repair.",
+        "highYield": "Dam = GATC methylation.",
+        "clinicalCorrelation": "Loss of Dam methylation alters virulence gene expression in some pathogens like Salmonella."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_077",
+      "difficulty": 3,
+      "question": "The anti‑termination protein N of phage lambda allows transcription to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Proceed past early terminators to express delayed early genes",
+          "isCorrect": true,
+          "explanation": "N protein binds to the nut site on the nascent mRNA and modifies RNA polymerase, rendering it resistant to termination signals."
+        },
+        {
+          "text": "Terminate earlier than normal",
+          "isCorrect": false,
+          "explanation": "Anti‑termination prevents termination."
+        },
+        {
+          "text": "Switch from lytic to lysogenic mode",
+          "isCorrect": false,
+          "explanation": "Lysogenic switch involves cII and cIII proteins, not N."
+        },
+        {
+          "text": "Integrate into the chromosome",
+          "isCorrect": false,
+          "explanation": "Integration is catalysed by integrase."
+        },
+        {
+          "text": "Package phage DNA",
+          "isCorrect": false,
+          "explanation": "Packaging is carried out by terminase."
+        }
+      ],
+      "explanation": {
+        "overview": "N‑mediated anti‑termination is a key regulatory step that allows sequential gene expression during the lambda lytic cycle.",
+        "highYield": "Lambda N protein = anti‑terminator.",
+        "clinicalCorrelation": "Anti‑termination mechanisms are exploited in some expression systems to increase transcript stability."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_078",
+      "difficulty": 2,
+      "question": "The region of a plasmid responsible for replication is called the:",
+      "image": null,
+      "options": [
+        {
+          "text": "ori (origin of replication)",
+          "isCorrect": true,
+          "explanation": "Plasmids contain an ori sequence that is recognised by host or plasmid‑encoded replication factors."
+        },
+        {
+          "text": "tra operon",
+          "isCorrect": false,
+          "explanation": "The tra operon encodes conjugative transfer functions."
+        },
+        {
+          "text": "Multiple cloning site",
+          "isCorrect": false,
+          "explanation": "The multiple cloning site is a synthetic region for DNA insertion, not replication."
+        },
+        {
+          "text": "Selectable marker",
+          "isCorrect": false,
+          "explanation": "Selectable markers (e.g., antibiotic resistance genes) are for maintenance, not replication origin."
+        },
+        {
+          "text": "Promoter region",
+          "isCorrect": false,
+          "explanation": "Promoters drive transcription, not replication."
+        }
+      ],
+      "explanation": {
+        "overview": "The ori determines the plasmid copy number and host range.",
+        "highYield": "Plasmid ori = replication start.",
+        "clinicalCorrelation": "Different ori types are used to control plasmid copy number in genetic engineering."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_079",
+      "difficulty": 2,
+      "question": "What is the function of the fim switch in E. coli?",
+      "image": null,
+      "options": [
+        {
+          "text": "Reversibly controls expression of type 1 fimbriae",
+          "isCorrect": true,
+          "explanation": "The fim switch is a short invertible DNA element that turns on or off the promoter for fimbrial genes, mediating phase variation."
+        },
+        {
+          "text": "Initiates DNA replication",
+          "isCorrect": false,
+          "explanation": "Replication is initiated at oriC."
+        },
+        {
+          "text": "Codes for antibiotic resistance",
+          "isCorrect": false,
+          "explanation": "Resistance genes are on R plasmids or transposons."
+        },
+        {
+          "text": "Induces the SOS response",
+          "isCorrect": false,
+          "explanation": "SOS is induced by DNA damage."
+        },
+        {
+          "text": "Regulates the lac operon",
+          "isCorrect": false,
+          "explanation": "Lac operon is regulated by LacI repressor."
+        }
+      ],
+      "explanation": {
+        "overview": "The fim switch is a classic example of site‑specific recombination driving phase variation.",
+        "highYield": "fim switch = type 1 fimbriae phase variation.",
+        "clinicalCorrelation": "Fimbrial phase variation helps uropathogenic E. coli adapt to different niches during infection."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_080",
+      "difficulty": 3,
+      "question": "What is the function of the SeqA protein in E. coli?",
+      "image": null,
+      "options": [
+        {
+          "text": "Binds hemimethylated oriC to delay re‑initiation of replication",
+          "isCorrect": true,
+          "explanation": "SeqA sequesters newly replicated hemimethylated origins, preventing premature re‑initiation and ensuring once‑per‑cell‑cycle replication."
+        },
+        {
+          "text": "Sequesters ribosomes",
+          "isCorrect": false,
+          "explanation": "SeqA is not involved in translation."
+        },
+        {
+          "text": "Degrades mRNA",
+          "isCorrect": false,
+          "explanation": "mRNA degradation is carried out by RNases."
+        },
+        {
+          "text": "Activates transcription of ribosomal genes",
+          "isCorrect": false,
+          "explanation": "Transcription of rRNA genes is regulated by ppGpp and other factors."
+        },
+        {
+          "text": "Packages DNA into phage particles",
+          "isCorrect": false,
+          "explanation": "Phage packaging uses terminase."
+        }
+      ],
+      "explanation": {
+        "overview": "SeqA is part of a regulatory network that couples DNA replication to the cell cycle.",
+        "highYield": "SeqA = prevents re‑initiation at oriC.",
+        "clinicalCorrelation": "Disrupting replication timing could be a strategy for antibacterial development."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_081",
+      "difficulty": 1,
+      "question": "Which of the following is true about bacterial mRNA?",
+      "image": null,
+      "options": [
+        {
+          "text": "It is often polycistronic and has a short half‑life",
+          "isCorrect": true,
+          "explanation": "Bacterial mRNAs frequently encode multiple proteins from a single transcript and are rapidly degraded, allowing quick adaptation."
+        },
+        {
+          "text": "It is monocistronic and very stable",
+          "isCorrect": false,
+          "explanation": "Eukaryotic mRNAs tend to be monocistronic and more stable."
+        },
+        {
+          "text": "It contains introns that are spliced out",
+          "isCorrect": false,
+          "explanation": "Bacterial genes generally lack introns."
+        },
+        {
+          "text": "It requires a 5′ cap for translation",
+          "isCorrect": false,
+          "explanation": "5′ cap is a eukaryotic feature; bacteria use Shine‑Dalgarno."
+        },
+        {
+          "text": "It is translated in the nucleus",
+          "isCorrect": false,
+          "explanation": "Bacteria lack a nucleus; transcription and translation are coupled."
+        }
+      ],
+      "explanation": {
+        "overview": "The short half‑life of bacterial mRNA enables rapid changes in gene expression in response to environmental signals.",
+        "highYield": "Bacterial mRNA = polycistronic, short‑lived.",
+        "clinicalCorrelation": "Some antibiotics (e.g., rifampin) target transcription, indirectly affecting mRNA levels."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_082",
+      "difficulty": 2,
+      "question": "Which antibiotic directly inhibits bacterial RNA polymerase?",
+      "image": null,
+      "options": [
+        {
+          "text": "Rifampin",
+          "isCorrect": true,
+          "explanation": "Rifampin binds to the β subunit of RNA polymerase, preventing transcription initiation."
+        },
+        {
+          "text": "Streptomycin",
+          "isCorrect": false,
+          "explanation": "Streptomycin inhibits protein synthesis on the 30S ribosome."
+        },
+        {
+          "text": "Ciprofloxacin",
+          "isCorrect": false,
+          "explanation": "Ciprofloxacin inhibits DNA gyrase."
+        },
+        {
+          "text": "Penicillin",
+          "isCorrect": false,
+          "explanation": "Penicillin inhibits cell wall synthesis."
+        },
+        {
+          "text": "Tetracycline",
+          "isCorrect": false,
+          "explanation": "Tetracycline inhibits protein synthesis on the 30S ribosome."
+        }
+      ],
+      "explanation": {
+        "overview": "Rifampin is a cornerstone of tuberculosis therapy because of its potent inhibition of mycobacterial RNA polymerase.",
+        "highYield": "Rifampin = RNA polymerase inhibitor.",
+        "clinicalCorrelation": "Resistance mutations in rpoB (encoding the β subunit) are a common cause of rifampin resistance in TB."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_083",
+      "difficulty": 2,
+      "question": "The term 'chromosomal island' refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Large, horizontally acquired regions with distinct GC content",
+          "isCorrect": true,
+          "explanation": "Genomic islands often encode virulence or metabolic functions and are identifiable by their atypical base composition."
+        },
+        {
+          "text": "Small circular plasmids",
+          "isCorrect": false,
+          "explanation": "Plasmids are extrachromosomal, not islands."
+        },
+        {
+          "text": "The origin of replication",
+          "isCorrect": false,
+          "explanation": "oriC is a specific sequence, not a large island."
+        },
+        {
+          "text": "Ribosomal RNA operons",
+          "isCorrect": false,
+          "explanation": "rRNA operons are conserved regions, not foreign DNA islands."
+        },
+        {
+          "text": "Phage attachment sites",
+          "isCorrect": false,
+          "explanation": "Phage attachment sites are small, specific sequences."
+        }
+      ],
+      "explanation": {
+        "overview": "Pathogenicity islands (PAIs) in Salmonella, E. coli, and others are a subset of genomic islands that increase virulence.",
+        "highYield": "Genomic island = horizontally acquired DNA.",
+        "clinicalCorrelation": "PAIs often carry type III secretion systems and toxins, contributing to epidemic outbreaks."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_084",
+      "difficulty": 1,
+      "question": "What is a key difference between gram‑positive and gram‑negative quorum sensing?",
+      "image": null,
+      "options": [
+        {
+          "text": "Gram‑positive bacteria use autoinducing peptides (AIPs), gram‑negative use AHLs",
+          "isCorrect": true,
+          "explanation": "Gram‑positive bacteria typically secrete and sense oligopeptides via two‑component systems, while gram‑negatives use small diffusible AHLs."
+        },
+        {
+          "text": "Gram‑positive bacteria do not have quorum sensing",
+          "isCorrect": false,
+          "explanation": "Both groups have quorum sensing but with different signalling molecules."
+        },
+        {
+          "text": "Both use AHLs",
+          "isCorrect": false,
+          "explanation": "AHLs are primarily gram‑negative."
+        },
+        {
+          "text": "Gram‑negative bacteria use AIPs",
+          "isCorrect": false,
+          "explanation": "AIPs are gram‑positive."
+        },
+        {
+          "text": "There is no difference",
+          "isCorrect": false,
+          "explanation": "The chemistry of autoinducers is distinct."
+        }
+      ],
+      "explanation": {
+        "overview": "The type of autoinducer molecule reflects the cell envelope structure; peptides cannot diffuse through the outer membrane of gram‑negatives.",
+        "highYield": "Gram+ QS = AIPs, Gram‑ QS = AHLs.",
+        "clinicalCorrelation": "Targeting quorum sensing may disable virulence without killing bacteria, reducing resistance pressure."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_085",
+      "difficulty": 2,
+      "question": "Which enzyme relaxes positive supercoils ahead of the replication fork in bacteria?",
+      "image": null,
+      "options": [
+        {
+          "text": "Topoisomerase IV and DNA gyrase",
+          "isCorrect": true,
+          "explanation": "DNA gyrase introduces negative supercoils to compensate for unwinding; Topoisomerase IV resolves precatenanes."
+        },
+        {
+          "text": "Only helicase",
+          "isCorrect": false,
+          "explanation": "Helicase unwinds but does not relieve supercoiling."
+        },
+        {
+          "text": "Ligase",
+          "isCorrect": false,
+          "explanation": "Ligase seals nicks."
+        },
+        {
+          "text": "Primase",
+          "isCorrect": false,
+          "explanation": "Primase makes primers."
+        },
+        {
+          "text": "SSB",
+          "isCorrect": false,
+          "explanation": "SSB binds single strands."
+        }
+      ],
+      "explanation": {
+        "overview": "Supercoiling must be carefully managed to prevent DNA tangling and allow fork progression.",
+        "highYield": "Topoisomerases manage supercoils.",
+        "clinicalCorrelation": "Quinolones target both DNA gyrase and topoisomerase IV, leading to double‑strand breaks."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_086",
+      "difficulty": 2,
+      "question": "A mutation that changes a purine to a pyrimidine is called a:",
+      "image": null,
+      "options": [
+        {
+          "text": "Transversion",
+          "isCorrect": true,
+          "explanation": "Transversions are substitutions between a purine (A,G) and a pyrimidine (C,T)."
+        },
+        {
+          "text": "Transition",
+          "isCorrect": false,
+          "explanation": "Transitions are purine→purine or pyrimidine→pyrimidine."
+        },
+        {
+          "text": "Frameshift",
+          "isCorrect": false,
+          "explanation": "Frameshift involves insertions or deletions."
+        },
+        {
+          "text": "Silent",
+          "isCorrect": false,
+          "explanation": "Silent mutations do not change the amino acid."
+        },
+        {
+          "text": "Nonsense",
+          "isCorrect": false,
+          "explanation": "Nonsense creates a stop codon."
+        }
+      ],
+      "explanation": {
+        "overview": "Transversions generally cause more severe changes than transitions because they alter the purine‑pyrimidine pairing.",
+        "highYield": "Transversion = purine ↔ pyrimidine.",
+        "clinicalCorrelation": "Many spontaneous mutations are transitions, but oxidative damage often causes transversions."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_087",
+      "difficulty": 3,
+      "question": "What is the role of the DnaB protein in bacterial replication?",
+      "image": null,
+      "options": [
+        {
+          "text": "It is the replicative helicase that unwinds DNA at the fork",
+          "isCorrect": true,
+          "explanation": "DnaB is a hexameric helicase that translocates along the lagging strand template, unwinding the duplex."
+        },
+        {
+          "text": "It synthesises RNA primers",
+          "isCorrect": false,
+          "explanation": "Primase (DnaG) synthesises primers."
+        },
+        {
+          "text": "It ligates Okazaki fragments",
+          "isCorrect": false,
+          "explanation": "Ligase seals fragments."
+        },
+        {
+          "text": "It initiates replication at oriC",
+          "isCorrect": false,
+          "explanation": "DnaA initiates; DnaB is recruited to expand the melted region."
+        },
+        {
+          "text": "It repairs mismatches",
+          "isCorrect": false,
+          "explanation": "Mismatch repair involves MutS, MutL, MutH."
+        }
+      ],
+      "explanation": {
+        "overview": "DnaB is the primary replicative helicase, essential for fork progression.",
+        "highYield": "DnaB = helicase.",
+        "clinicalCorrelation": "Helicase inhibitors are being explored as broad‑spectrum antibiotics."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_088",
+      "difficulty": 3,
+      "question": "What is the function of the XerCD recombinase system in bacteria?",
+      "image": null,
+      "options": [
+        {
+          "text": "Resolving chromosome dimers into monomers after replication",
+          "isCorrect": true,
+          "explanation": "XerCD recognises dif sites and catalyses site‑specific recombination to separate circular chromosomes that have undergone an odd number of crossovers."
+        },
+        {
+          "text": "Integrating phage DNA",
+          "isCorrect": false,
+          "explanation": "Phage integration uses phage‑encoded integrase."
+        },
+        {
+          "text": "Transposing IS elements",
+          "isCorrect": false,
+          "explanation": "Transposition uses transposase."
+        },
+        {
+          "text": "Repairing double‑strand breaks",
+          "isCorrect": false,
+          "explanation": "DSB repair often involves RecA and RecBCD."
+        },
+        {
+          "text": "Initiating replication",
+          "isCorrect": false,
+          "explanation": "Replication initiation uses DnaA."
+        }
+      ],
+      "explanation": {
+        "overview": "XerCD is essential for chromosome segregation by ensuring that sister chromosomes are separated correctly.",
+        "highYield": "XerCD = chromosome dimer resolution.",
+        "clinicalCorrelation": "Disruption of chromosome segregation can be lethal, making XerCD a potential drug target."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_089",
+      "difficulty": 2,
+      "question": "Which of the following is NOT a mechanism of horizontal gene transfer in bacteria?",
+      "image": null,
+      "options": [
+        {
+          "text": "Binary fission",
+          "isCorrect": true,
+          "explanation": "Binary fission is vertical transmission of genetic material to progeny, not horizontal transfer between cells."
+        },
+        {
+          "text": "Transformation",
+          "isCorrect": false,
+          "explanation": "Transformation is a classical mechanism of HGT."
+        },
+        {
+          "text": "Conjugation",
+          "isCorrect": false,
+          "explanation": "Conjugation is a major HGT mechanism."
+        },
+        {
+          "text": "Transduction",
+          "isCorrect": false,
+          "explanation": "Transduction is phage‑mediated HGT."
+        },
+        {
+          "text": "Transposition",
+          "isCorrect": false,
+          "explanation": "Transposition can move genes within and between genomes, often facilitated by plasmids."
+        }
+      ],
+      "explanation": {
+        "overview": "Horizontal gene transfer is the movement of genetic material between organisms other than by descent.",
+        "highYield": "HGT = conjugation, transformation, transduction.",
+        "clinicalCorrelation": "HGT drives the spread of antibiotic resistance and virulence traits."
+      }
+    },
+    {
+      "questionId": "bacterial_genetics_090",
+      "difficulty": 2,
+      "question": "In the two‑component regulatory system, the sensor kinase typically:",
+      "image": null,
+      "options": [
+        {
+          "text": "Autophosphorylates and transfers phosphate to a response regulator",
+          "isCorrect": true,
+          "explanation": "The sensor kinase (e.g., EnvZ) detects a signal, autophosphorylates at a conserved histidine, and then transfers the phosphate to an aspartate on the cognate response regulator."
+        },
+        {
+          "text": "Directly binds DNA to regulate transcription",
+          "isCorrect": false,
+          "explanation": "DNA binding is usually the function of the response regulator, not the kinase."
+        },
+        {
+          "text": "Catalyses cAMP synthesis",
+          "isCorrect": false,
+          "explanation": "Adenylate cyclase makes cAMP."
+        },
+        {
+          "text": "Terminates transcription",
+          "isCorrect": false,
+          "explanation": "Transcription termination involves Rho or intrinsic terminators."
+        },
+        {
+          "text": "Methylates DNA",
+          "isCorrect": false,
+          "explanation": "DNA methylation is catalysed by specific methyltransferases like Dam."
+        }
+      ],
+      "explanation": {
+        "overview": "Two‑component systems are the predominant signalling mechanism in bacteria, regulating responses to environmental changes.",
+        "highYield": "Two‑component system = sensor kinase → phosphate → response regulator.",
+        "clinicalCorrelation": "Many virulence factors are controlled by two‑component systems, making them attractive drug targets."
+      }
+    }
+  ]
+}

@@ -1,0 +1,2854 @@
+{
+  "questions": [
+    {
+      "questionId": "pharma_intro_001",
+      "difficulty": 1,
+      "question": "What is the definition of a drug in pharmacology?",
+      "image": null,
+      "options": [
+        {
+          "text": "Any substance that can be used to diagnose, treat, or prevent disease",
+          "isCorrect": false,
+          "explanation": "This definition is closer to a medicine; a drug is a broader chemical substance."
+        },
+        {
+          "text": "Any chemical substance that alters physiological function",
+          "isCorrect": true,
+          "explanation": "A drug is any chemical substance that, when introduced into the body, alters physiological function."
+        },
+        {
+          "text": "Any substance that binds to a receptor",
+          "isCorrect": false,
+          "explanation": "Not all drugs act via receptors; some act chemically or physically."
+        },
+        {
+          "text": "Any substance that is administered by a physician",
+          "isCorrect": false,
+          "explanation": "Drugs can be self-administered (OTC) or taken illicitly."
+        },
+        {
+          "text": "Any substance that is toxic to living organisms",
+          "isCorrect": false,
+          "explanation": "Many drugs are not toxic at therapeutic doses."
+        }
+      ],
+      "explanation": {
+        "overview": "In pharmacology, a drug is defined broadly as any chemical substance that alters physiological function when administered to a living organism.",
+        "highYield": "Drug = any chemical that changes body function; medicine = drug used for diagnosis/treatment/prevention.",
+        "clinicalCorrelation": "Understanding the distinction helps in classifying substances like vitamins or hormones when used therapeutically."
+      }
+    },
+    {
+      "questionId": "pharma_intro_002",
+      "difficulty": 1,
+      "question": "Which of the following is NOT a route of drug administration?",
+      "image": null,
+      "options": [
+        {
+          "text": "Oral",
+          "isCorrect": false,
+          "explanation": "Oral is a common enteral route."
+        },
+        {
+          "text": "Intravenous",
+          "isCorrect": false,
+          "explanation": "IV is a parenteral route."
+        },
+        {
+          "text": "Subcutaneous",
+          "isCorrect": false,
+          "explanation": "SC is a parenteral route."
+        },
+        {
+          "text": "Transdermal",
+          "isCorrect": false,
+          "explanation": "Transdermal is a topical route."
+        },
+        {
+          "text": "Catabolic",
+          "isCorrect": true,
+          "explanation": "Catabolic refers to metabolic breakdown, not a route of administration."
+        }
+      ],
+      "explanation": {
+        "overview": "Routes of administration include enteral (oral, sublingual), parenteral (IV, IM, SC), and topical (transdermal, inhalation). Catabolic is a metabolic state.",
+        "highYield": "Catabolic ≠ administration route; remember ADME, not 'catabolic'.",
+        "clinicalCorrelation": "Choosing the right route influences onset, bioavailability, and patient compliance."
+      }
+    },
+    {
+      "questionId": "pharma_intro_003",
+      "difficulty": 1,
+      "question": "The study of the time course of drug absorption, distribution, metabolism, and excretion is called:",
+      "image": null,
+      "options": [
+        {
+          "text": "Pharmacodynamics",
+          "isCorrect": false,
+          "explanation": "Pharmacodynamics is what the drug does to the body."
+        },
+        {
+          "text": "Pharmacokinetics",
+          "isCorrect": true,
+          "explanation": "Pharmacokinetics describes ADME processes over time."
+        },
+        {
+          "text": "Pharmacy",
+          "isCorrect": false,
+          "explanation": "Pharmacy is the profession of preparing and dispensing drugs."
+        },
+        {
+          "text": "Posology",
+          "isCorrect": false,
+          "explanation": "Posology is the study of drug dosages."
+        },
+        {
+          "text": "Therapeutics",
+          "isCorrect": false,
+          "explanation": "Therapeutics is the branch of medicine concerned with treatment of disease."
+        }
+      ],
+      "explanation": {
+        "overview": "Pharmacokinetics (PK) is the study of how the body affects a drug, encompassing Absorption, Distribution, Metabolism, and Excretion (ADME).",
+        "highYield": "Pharmacokinetics = ADME; Pharmacodynamics = drug effect and mechanism.",
+        "clinicalCorrelation": "PK principles guide dosing adjustments in renal or hepatic impairment."
+      }
+    },
+    {
+      "questionId": "pharma_intro_004",
+      "difficulty": 1,
+      "question": "A drug's generic name is also known as its:",
+      "image": null,
+      "options": [
+        {
+          "text": "Trade name",
+          "isCorrect": false,
+          "explanation": "Trade name is the brand name assigned by the manufacturer."
+        },
+        {
+          "text": "Brand name",
+          "isCorrect": false,
+          "explanation": "Brand name is proprietary."
+        },
+        {
+          "text": "Chemical name",
+          "isCorrect": false,
+          "explanation": "Chemical name describes the molecular structure."
+        },
+        {
+          "text": "Nonproprietary name",
+          "isCorrect": true,
+          "explanation": "The generic name (nonproprietary) is the official, universally accepted name not owned by any company."
+        },
+        {
+          "text": "Code name",
+          "isCorrect": false,
+          "explanation": "Code name is used during drug development."
+        }
+      ],
+      "explanation": {
+        "overview": "Drugs have chemical, generic (nonproprietary), and brand (trade) names. The generic name is the international nonproprietary name (INN).",
+        "highYield": "Generic = nonproprietary; e.g., ibuprofen is generic, Advil is brand.",
+        "clinicalCorrelation": "Prescribing by generic name avoids confusion and reduces cost."
+      }
+    },
+    {
+      "questionId": "pharma_intro_005",
+      "difficulty": 2,
+      "question": "Which phase of clinical trials primarily assesses drug safety in a small number of healthy volunteers?",
+      "image": null,
+      "options": [
+        {
+          "text": "Phase I",
+          "isCorrect": true,
+          "explanation": "Phase I trials involve 20-100 healthy volunteers to assess safety, tolerability, and pharmacokinetics."
+        },
+        {
+          "text": "Phase II",
+          "isCorrect": false,
+          "explanation": "Phase II assesses efficacy and dose-finding in a small patient group."
+        },
+        {
+          "text": "Phase III",
+          "isCorrect": false,
+          "explanation": "Phase III confirms efficacy and monitors adverse reactions in large patient populations."
+        },
+        {
+          "text": "Phase IV",
+          "isCorrect": false,
+          "explanation": "Phase IV (post-marketing surveillance) detects long-term effects after approval."
+        },
+        {
+          "text": "Preclinical",
+          "isCorrect": false,
+          "explanation": "Preclinical involves in vitro and animal studies before human trials."
+        }
+      ],
+      "explanation": {
+        "overview": "Clinical drug development proceeds through phases: Phase I (safety in healthy volunteers), Phase II (efficacy/dose in patients), Phase III (large-scale confirmatory), Phase IV (post-marketing).",
+        "highYield": "Phase I = safety & PK in healthy volunteers (except oncology).",
+        "clinicalCorrelation": "Phase I studies often exclude women of childbearing potential due to unknown risks."
+      }
+    },
+    {
+      "questionId": "pharma_intro_006",
+      "difficulty": 2,
+      "question": "The term 'half-life' of a drug refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "The time required for the drug to reach peak concentration",
+          "isCorrect": false,
+          "explanation": "That is Tmax."
+        },
+        {
+          "text": "The time required for the drug concentration to decrease by half",
+          "isCorrect": true,
+          "explanation": "Half-life (t½) is the time for plasma concentration to reduce by 50%."
+        },
+        {
+          "text": "The time required for complete elimination",
+          "isCorrect": false,
+          "explanation": "Complete elimination takes about 4-5 half-lives."
+        },
+        {
+          "text": "The time required for onset of action",
+          "isCorrect": false,
+          "explanation": "Onset depends on absorption and distribution."
+        },
+        {
+          "text": "The duration of therapeutic effect",
+          "isCorrect": false,
+          "explanation": "Duration is longer than half-life."
+        }
+      ],
+      "explanation": {
+        "overview": "Elimination half-life (t½) determines dosing frequency and time to steady state (4-5 half-lives).",
+        "highYield": "Half-life = time to halve plasma concentration; 4-5 half-lives for steady state and elimination.",
+        "clinicalCorrelation": "Drugs with short half-lives require more frequent dosing; those with long half-lives take longer to reach steady state."
+      }
+    },
+    {
+      "questionId": "pharma_intro_007",
+      "difficulty": 2,
+      "question": "Bioavailability refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "The fraction of an administered dose that reaches systemic circulation unchanged",
+          "isCorrect": true,
+          "explanation": "Bioavailability (F) is the proportion of drug that reaches systemic circulation intact."
+        },
+        {
+          "text": "The amount of drug bound to plasma proteins",
+          "isCorrect": false,
+          "explanation": "Protein binding affects distribution but is not bioavailability."
+        },
+        {
+          "text": "The rate of drug absorption",
+          "isCorrect": false,
+          "explanation": "Rate is separate from extent (bioavailability)."
+        },
+        {
+          "text": "The volume of distribution",
+          "isCorrect": false,
+          "explanation": "Vd is a pharmacokinetic parameter distinct from bioavailability."
+        },
+        {
+          "text": "The total amount of drug excreted",
+          "isCorrect": false,
+          "explanation": "Excretion is elimination, not bioavailability."
+        }
+      ],
+      "explanation": {
+        "overview": "Bioavailability (F) = AUC(oral) / AUC(IV) × 100%. IV bioavailability is 100% by definition.",
+        "highYield": "F = fraction reaching systemic circulation; affected by first-pass metabolism and absorption.",
+        "clinicalCorrelation": "Low oral bioavailability may require higher oral doses or alternative routes."
+      }
+    },
+    {
+      "questionId": "pharma_intro_008",
+      "difficulty": 2,
+      "question": "Which route of administration bypasses first-pass metabolism?",
+      "image": null,
+      "options": [
+        {
+          "text": "Oral",
+          "isCorrect": false,
+          "explanation": "Oral drugs undergo first-pass metabolism in the liver."
+        },
+        {
+          "text": "Sublingual",
+          "isCorrect": false,
+          "explanation": "Sublingual bypasses first-pass, but not the only one."
+        },
+        {
+          "text": "Rectal",
+          "isCorrect": false,
+          "explanation": "Rectal partially bypasses first-pass (~50%)."
+        },
+        {
+          "text": "Intravenous",
+          "isCorrect": false,
+          "explanation": "IV completely bypasses first-pass."
+        },
+        {
+          "text": "Both B and D",
+          "isCorrect": true,
+          "explanation": "Sublingual and intravenous routes avoid first-pass hepatic metabolism by directly entering systemic circulation."
+        }
+      ],
+      "explanation": {
+        "overview": "First-pass metabolism occurs when drugs absorbed from the gut pass through the liver before reaching systemic circulation. Routes that bypass this include IV, sublingual, and transdermal.",
+        "highYield": "IV and sublingual = no first-pass metabolism.",
+        "clinicalCorrelation": "Nitroglycerin is given sublingually to avoid extensive first-pass metabolism and achieve rapid effect."
+      }
+    },
+    {
+      "questionId": "pharma_intro_009",
+      "difficulty": 2,
+      "question": "The therapeutic index is a measure of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Drug potency",
+          "isCorrect": false,
+          "explanation": "Potency is the dose required for effect."
+        },
+        {
+          "text": "Drug efficacy",
+          "isCorrect": false,
+          "explanation": "Efficacy is the maximum effect."
+        },
+        {
+          "text": "Drug safety",
+          "isCorrect": true,
+          "explanation": "Therapeutic index = TD50/ED50; higher TI indicates greater safety margin."
+        },
+        {
+          "text": "Drug solubility",
+          "isCorrect": false,
+          "explanation": "Solubility is a physicochemical property."
+        },
+        {
+          "text": "Drug stability",
+          "isCorrect": false,
+          "explanation": "Stability refers to chemical degradation."
+        }
+      ],
+      "explanation": {
+        "overview": "Therapeutic index (TI) = median toxic dose (TD50) / median effective dose (ED50). A larger TI means a wider safety margin.",
+        "highYield": "TI = TD50/ED50; narrow TI drugs (warfarin, digoxin, lithium) require monitoring.",
+        "clinicalCorrelation": "Drugs with narrow TI require therapeutic drug monitoring (TDM) to avoid toxicity."
+      }
+    },
+    {
+      "questionId": "pharma_intro_010",
+      "difficulty": 1,
+      "question": "An agonist is a drug that:",
+      "image": null,
+      "options": [
+        {
+          "text": "Binds to a receptor and activates it",
+          "isCorrect": true,
+          "explanation": "Agonists bind and produce a biological response."
+        },
+        {
+          "text": "Binds to a receptor and blocks it",
+          "isCorrect": false,
+          "explanation": "That is an antagonist."
+        },
+        {
+          "text": "Binds to an allosteric site",
+          "isCorrect": false,
+          "explanation": "Allosteric modulators may enhance or inhibit, not necessarily activate."
+        },
+        {
+          "text": "Has no intrinsic activity",
+          "isCorrect": false,
+          "explanation": "Antagonists have no intrinsic activity."
+        },
+        {
+          "text": "Reverses the effect of another drug",
+          "isCorrect": false,
+          "explanation": "That's functional antagonism or reversal."
+        }
+      ],
+      "explanation": {
+        "overview": "An agonist has both affinity (binding) and intrinsic efficacy (ability to activate the receptor).",
+        "highYield": "Agonist = binds + activates receptor; antagonist = binds but does not activate.",
+        "clinicalCorrelation": "Full agonists produce maximal response; partial agonists produce submaximal response even at full occupancy."
+      }
+    },
+    {
+      "questionId": "pharma_intro_011",
+      "difficulty": 1,
+      "question": "An antagonist is a drug that:",
+      "image": null,
+      "options": [
+        {
+          "text": "Binds to a receptor and prevents activation",
+          "isCorrect": true,
+          "explanation": "Antagonists have affinity but no efficacy; they block agonist action."
+        },
+        {
+          "text": "Enhances receptor activation",
+          "isCorrect": false,
+          "explanation": "That is an agonist or positive allosteric modulator."
+        },
+        {
+          "text": "Increases neurotransmitter release",
+          "isCorrect": false,
+          "explanation": "Not a defining property of antagonists."
+        },
+        {
+          "text": "Has higher efficacy than an agonist",
+          "isCorrect": false,
+          "explanation": "Antagonists have zero efficacy."
+        },
+        {
+          "text": "Is always irreversible",
+          "isCorrect": false,
+          "explanation": "Many antagonists are reversible (competitive)."
+        }
+      ],
+      "explanation": {
+        "overview": "Antagonists block receptor activation by agonists. They have affinity but lack intrinsic efficacy.",
+        "highYield": "Antagonist = binds, blocks; no response on its own.",
+        "clinicalCorrelation": "Naloxone is a competitive antagonist at opioid receptors used to reverse overdose."
+      }
+    },
+    {
+      "questionId": "pharma_intro_012",
+      "difficulty": 2,
+      "question": "What is the term for the dose of a drug that produces 50% of its maximal effect?",
+      "image": null,
+      "options": [
+        {
+          "text": "LD50",
+          "isCorrect": false,
+          "explanation": "LD50 is the lethal dose in 50% of subjects."
+        },
+        {
+          "text": "TD50",
+          "isCorrect": false,
+          "explanation": "TD50 is the toxic dose in 50%."
+        },
+        {
+          "text": "ED50",
+          "isCorrect": false,
+          "explanation": "ED50 is effective dose in 50%."
+        },
+        {
+          "text": "EC50",
+          "isCorrect": false,
+          "explanation": "EC50 is effective concentration in 50%."
+        },
+        {
+          "text": "Both C and D",
+          "isCorrect": true,
+          "explanation": "ED50 (dose) and EC50 (concentration) both refer to 50% of maximal effect."
+        }
+      ],
+      "explanation": {
+        "overview": "ED50 is the dose producing 50% of the maximum response; EC50 is the plasma concentration producing 50% of Emax.",
+        "highYield": "ED50/EC50 = 50% of maximal effect; used to compare potency.",
+        "clinicalCorrelation": "Lower ED50 means higher potency; but potency does not equal clinical superiority."
+      }
+    },
+    {
+      "questionId": "pharma_intro_013",
+      "difficulty": 2,
+      "question": "Which type of drug interaction occurs when two drugs with similar effects are administered together and the combined effect is greater than the sum of their individual effects?",
+      "image": null,
+      "options": [
+        {
+          "text": "Additive",
+          "isCorrect": false,
+          "explanation": "Additive: 1+1=2."
+        },
+        {
+          "text": "Synergistic",
+          "isCorrect": true,
+          "explanation": "Synergism (supra-additive): 1+1>2."
+        },
+        {
+          "text": "Antagonistic",
+          "isCorrect": false,
+          "explanation": "Antagonism reduces the effect."
+        },
+        {
+          "text": "Potentiation",
+          "isCorrect": false,
+          "explanation": "Potentiation is when an inactive substance enhances the effect of an active drug."
+        },
+        {
+          "text": "Competitive",
+          "isCorrect": false,
+          "explanation": "Competitive refers to receptor-level interaction."
+        }
+      ],
+      "explanation": {
+        "overview": "Synergism is a pharmacodynamic interaction where the combined effect exceeds the sum of individual effects.",
+        "highYield": "Synergism = combined effect > sum; e.g., sulfamethoxazole + trimethoprim (sequential blockade).",
+        "clinicalCorrelation": "Synergistic combinations allow lower doses and reduced toxicity."
+      }
+    },
+    {
+      "questionId": "pharma_intro_014",
+      "difficulty": 1,
+      "question": "The term 'placebo' refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "An inactive substance used as a control in trials",
+          "isCorrect": true,
+          "explanation": "A placebo has no pharmacological activity and is used to control for expectation bias."
+        },
+        {
+          "text": "A drug with high potency",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "A drug that causes adverse effects",
+          "isCorrect": false,
+          "explanation": "That's a toxicant."
+        },
+        {
+          "text": "A generic version of a brand-name drug",
+          "isCorrect": false,
+          "explanation": "Generic drugs contain active ingredient."
+        },
+        {
+          "text": "A drug that is administered intravenously",
+          "isCorrect": false,
+          "explanation": "Placebos can be any dosage form."
+        }
+      ],
+      "explanation": {
+        "overview": "Placebos are inert substances used in clinical trials to blind patients and assess the true pharmacological effect of a drug.",
+        "highYield": "Placebo = dummy pill; used as control in RCTs.",
+        "clinicalCorrelation": "Placebo effect can produce significant subjective improvement in up to 30% of patients."
+      }
+    },
+    {
+      "questionId": "pharma_intro_015",
+      "difficulty": 2,
+      "question": "What does 'first-pass metabolism' refer to?",
+      "image": null,
+      "options": [
+        {
+          "text": "Metabolism of a drug before it reaches systemic circulation",
+          "isCorrect": true,
+          "explanation": "First-pass metabolism occurs in the liver and/or gut wall after oral administration."
+        },
+        {
+          "text": "Metabolism after it has distributed to tissues",
+          "isCorrect": false,
+          "explanation": "That is systemic metabolism."
+        },
+        {
+          "text": "Metabolism in the kidneys",
+          "isCorrect": false,
+          "explanation": "Kidneys have some metabolism but not 'first-pass'."
+        },
+        {
+          "text": "The first metabolic step in the liver",
+          "isCorrect": false,
+          "explanation": "It's the pre-systemic metabolism, not just the first step."
+        },
+        {
+          "text": "The initial breakdown of a drug in the stomach",
+          "isCorrect": false,
+          "explanation": "Stomach acid can degrade drugs but first-pass refers to hepatic/gut metabolism."
+        }
+      ],
+      "explanation": {
+        "overview": "First-pass metabolism (presystemic elimination) occurs when orally administered drugs are metabolized in the gut wall or liver before reaching systemic circulation, reducing bioavailability.",
+        "highYield": "First-pass effect = reduced oral bioavailability due to hepatic/gut metabolism.",
+        "clinicalCorrelation": "Drugs with high first-pass metabolism (e.g., nitroglycerin, lidocaine) require parenteral or sublingual routes."
+      }
+    },
+    {
+      "questionId": "pharma_intro_016",
+      "difficulty": 3,
+      "question": "Which of the following is an example of a prodrug?",
+      "image": null,
+      "options": [
+        {
+          "text": "Levothyroxine",
+          "isCorrect": false,
+          "explanation": "Levothyroxine is a synthetic hormone, not a prodrug."
+        },
+        {
+          "text": "Lisinopril",
+          "isCorrect": false,
+          "explanation": "Lisinopril is active as is."
+        },
+        {
+          "text": "Omeprazole",
+          "isCorrect": false,
+          "explanation": "Omeprazole is activated in acid but not a classic prodrug."
+        },
+        {
+          "text": "Codeine",
+          "isCorrect": true,
+          "explanation": "Codeine is metabolized by CYP2D6 to morphine, the active moiety."
+        },
+        {
+          "text": "Metformin",
+          "isCorrect": false,
+          "explanation": "Metformin is active unchanged."
+        }
+      ],
+      "explanation": {
+        "overview": "A prodrug is an inactive compound that undergoes metabolic conversion to an active drug. Examples: codeine → morphine, clopidogrel → active metabolite, enalapril → enalaprilat.",
+        "highYield": "Prodrugs: codeine, clopidogrel, enalapril, levodopa, prednisone.",
+        "clinicalCorrelation": "Prodrugs can improve bioavailability, reduce GI irritation, or target specific tissues."
+      }
+    },
+    {
+      "questionId": "pharma_intro_017",
+      "difficulty": 2,
+      "question": "The volume of distribution (Vd) relates:",
+      "image": null,
+      "options": [
+        {
+          "text": "The dose to the plasma concentration",
+          "isCorrect": true,
+          "explanation": "Vd = Dose / Plasma concentration; it's a proportionality constant."
+        },
+        {
+          "text": "The half-life to clearance",
+          "isCorrect": false,
+          "explanation": "Half-life is related to Vd and clearance: t½ = 0.693 × Vd/Cl."
+        },
+        {
+          "text": "The rate of absorption to elimination",
+          "isCorrect": false,
+          "explanation": "Not the direct definition."
+        },
+        {
+          "text": "The potency to efficacy",
+          "isCorrect": false,
+          "explanation": "Not related."
+        },
+        {
+          "text": "The toxic dose to the effective dose",
+          "isCorrect": false,
+          "explanation": "That's therapeutic index."
+        }
+      ],
+      "explanation": {
+        "overview": "Volume of distribution (Vd) is a theoretical volume that would be necessary to contain the total amount of drug at the same concentration as in plasma.",
+        "highYield": "Vd = Dose / C0; large Vd indicates extensive tissue distribution.",
+        "clinicalCorrelation": "Vd is used to calculate loading dose: LD = Vd × target concentration."
+      }
+    },
+    {
+      "questionId": "pharma_intro_018",
+      "difficulty": 2,
+      "question": "Clearance of a drug is defined as:",
+      "image": null,
+      "options": [
+        {
+          "text": "The volume of plasma cleared of drug per unit time",
+          "isCorrect": true,
+          "explanation": "Clearance (Cl) is the volume of plasma completely cleared of drug per unit time (mL/min or L/h)."
+        },
+        {
+          "text": "The amount of drug eliminated per unit time",
+          "isCorrect": false,
+          "explanation": "That's elimination rate, not clearance."
+        },
+        {
+          "text": "The rate of drug metabolism",
+          "isCorrect": false,
+          "explanation": "Metabolism is one component of clearance."
+        },
+        {
+          "text": "The half-life of the drug",
+          "isCorrect": false,
+          "explanation": "Half-life depends on Vd and Cl."
+        },
+        {
+          "text": "The time to reach steady state",
+          "isCorrect": false,
+          "explanation": "Not clearance."
+        }
+      ],
+      "explanation": {
+        "overview": "Clearance reflects the body's efficiency in eliminating drug; it is the sum of hepatic, renal, and other clearances.",
+        "highYield": "Cl = rate of elimination / plasma concentration; determines maintenance dose rate.",
+        "clinicalCorrelation": "Renal or hepatic impairment reduces clearance, requiring dose adjustment."
+      }
+    },
+    {
+      "questionId": "pharma_intro_019",
+      "difficulty": 2,
+      "question": "Steady-state drug concentration is achieved when:",
+      "image": null,
+      "options": [
+        {
+          "text": "The rate of drug administration equals the rate of elimination",
+          "isCorrect": true,
+          "explanation": "At steady state, input = output; plasma levels plateau."
+        },
+        {
+          "text": "The drug reaches its peak concentration",
+          "isCorrect": false,
+          "explanation": "Peak occurs after each dose, not steady state."
+        },
+        {
+          "text": "The drug is completely absorbed",
+          "isCorrect": false,
+          "explanation": "Absorption may be complete but elimination still occurring."
+        },
+        {
+          "text": "The drug is fully distributed",
+          "isCorrect": false,
+          "explanation": "Distribution equilibrium is part of reaching steady state."
+        },
+        {
+          "text": "The drug is bound to proteins",
+          "isCorrect": false,
+          "explanation": "Protein binding does not define steady state."
+        }
+      ],
+      "explanation": {
+        "overview": "Steady-state concentration (Css) is reached after 4-5 half-lives of regular dosing, when administration rate equals elimination rate.",
+        "highYield": "Css achieved after 4-5 half-lives; loading dose bypasses delay.",
+        "clinicalCorrelation": "Therapeutic drug monitoring should be performed at steady state to interpret levels correctly."
+      }
+    },
+    {
+      "questionId": "pharma_intro_020",
+      "difficulty": 2,
+      "question": "Which of the following factors can affect drug absorption after oral administration?",
+      "image": null,
+      "options": [
+        {
+          "text": "Gastric pH",
+          "isCorrect": false,
+          "explanation": "pH affects ionization and solubility."
+        },
+        {
+          "text": "Gastric emptying time",
+          "isCorrect": false,
+          "explanation": "Delayed emptying slows absorption."
+        },
+        {
+          "text": "Food in the stomach",
+          "isCorrect": false,
+          "explanation": "Food can increase, decrease, or delay absorption."
+        },
+        {
+          "text": "Drug formulation",
+          "isCorrect": false,
+          "explanation": "Immediate vs extended release affects rate."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "All listed factors influence oral drug absorption."
+        }
+      ],
+      "explanation": {
+        "overview": "Oral absorption depends on gastrointestinal physiology (pH, motility, food) and drug properties (solubility, permeability, formulation).",
+        "highYield": "Absorption factors: pH, emptying time, food, formulation, transporters (P-gp).",
+        "clinicalCorrelation": "Some drugs require administration on an empty stomach; others with food to enhance absorption or reduce GI irritation."
+      }
+    },
+    {
+      "questionId": "pharma_intro_021",
+      "difficulty": 2,
+      "question": "A drug with a narrow therapeutic index:",
+      "image": null,
+      "options": [
+        {
+          "text": "Is very safe",
+          "isCorrect": false,
+          "explanation": "Narrow TI drugs are less safe."
+        },
+        {
+          "text": "Requires careful monitoring",
+          "isCorrect": true,
+          "explanation": "Small changes in dose or levels can lead to toxicity or lack of efficacy."
+        },
+        {
+          "text": "Has a high margin of safety",
+          "isCorrect": false,
+          "explanation": "Margin of safety is low."
+        },
+        {
+          "text": "Is always administered orally",
+          "isCorrect": false,
+          "explanation": "Route varies."
+        },
+        {
+          "text": "Has no adverse effects",
+          "isCorrect": false,
+          "explanation": "They have significant adverse effect potential."
+        }
+      ],
+      "explanation": {
+        "overview": "Drugs with a narrow therapeutic index (e.g., warfarin, digoxin, phenytoin, lithium) have a small window between therapeutic and toxic concentrations.",
+        "highYield": "Narrow TI drugs need TDM; small dose changes can have big effects.",
+        "clinicalCorrelation": "Generic substitution of narrow TI drugs may require additional monitoring."
+      }
+    },
+    {
+      "questionId": "pharma_intro_022",
+      "difficulty": 1,
+      "question": "What is the primary site of drug metabolism in the body?",
+      "image": null,
+      "options": [
+        {
+          "text": "Kidneys",
+          "isCorrect": false,
+          "explanation": "Kidneys primarily excrete drugs; some metabolism occurs."
+        },
+        {
+          "text": "Lungs",
+          "isCorrect": false,
+          "explanation": "Minor site."
+        },
+        {
+          "text": "Liver",
+          "isCorrect": true,
+          "explanation": "The liver contains high concentrations of cytochrome P450 and other drug-metabolizing enzymes."
+        },
+        {
+          "text": "Small intestine",
+          "isCorrect": false,
+          "explanation": "Intestinal wall has some CYP3A4 but liver is primary."
+        },
+        {
+          "text": "Brain",
+          "isCorrect": false,
+          "explanation": "Not a major site of metabolism."
+        }
+      ],
+      "explanation": {
+        "overview": "The liver is the principal organ for drug metabolism, particularly via cytochrome P450 enzymes and conjugation reactions.",
+        "highYield": "Liver = primary metabolic organ; CYP enzymes in hepatocytes.",
+        "clinicalCorrelation": "Liver disease can impair drug metabolism and increase risk of toxicity."
+      }
+    },
+    {
+      "questionId": "pharma_intro_023",
+      "difficulty": 2,
+      "question": "Cytochrome P450 enzymes are involved in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Phase I drug metabolism",
+          "isCorrect": true,
+          "explanation": "CYPs catalyze oxidation, reduction, and hydrolysis (Phase I)."
+        },
+        {
+          "text": "Phase II drug metabolism",
+          "isCorrect": false,
+          "explanation": "Phase II involves conjugation (glucuronidation, sulfation, etc.)."
+        },
+        {
+          "text": "Drug absorption",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        },
+        {
+          "text": "Drug distribution",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Drug excretion",
+          "isCorrect": false,
+          "explanation": "Excretion is via kidneys/bile."
+        }
+      ],
+      "explanation": {
+        "overview": "Phase I metabolism introduces or exposes a functional group on the drug molecule, often via CYP-mediated oxidation.",
+        "highYield": "CYP450 = Phase I (oxidation); Phase II = conjugation.",
+        "clinicalCorrelation": "Many drug-drug interactions occur via CYP inhibition or induction."
+      }
+    },
+    {
+      "questionId": "pharma_intro_024",
+      "difficulty": 2,
+      "question": "Glucuronidation is an example of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Phase I metabolism",
+          "isCorrect": false,
+          "explanation": "Phase I includes oxidation, reduction, hydrolysis."
+        },
+        {
+          "text": "Phase II metabolism",
+          "isCorrect": true,
+          "explanation": "Glucuronidation is a conjugation reaction adding glucuronic acid (Phase II)."
+        },
+        {
+          "text": "Phase III transport",
+          "isCorrect": false,
+          "explanation": "Phase III involves drug transporters."
+        },
+        {
+          "text": "Renal excretion",
+          "isCorrect": false,
+          "explanation": "Not metabolism."
+        },
+        {
+          "text": "Biliary excretion",
+          "isCorrect": false,
+          "explanation": "Glucuronidated drugs may be excreted in bile, but the reaction itself is Phase II."
+        }
+      ],
+      "explanation": {
+        "overview": "Phase II conjugation reactions (glucuronidation, sulfation, acetylation) increase water solubility to facilitate excretion.",
+        "highYield": "Glucuronidation = UGT enzymes; common Phase II pathway.",
+        "clinicalCorrelation": "Neonates have immature glucuronidation (e.g., chloramphenicol gray baby syndrome)."
+      }
+    },
+    {
+      "questionId": "pharma_intro_025",
+      "difficulty": 2,
+      "question": "Which of the following best describes drug efficacy?",
+      "image": null,
+      "options": [
+        {
+          "text": "The maximum effect a drug can produce",
+          "isCorrect": true,
+          "explanation": "Efficacy (Emax) is the maximum response achievable from a drug regardless of dose."
+        },
+        {
+          "text": "The dose required to produce a given effect",
+          "isCorrect": false,
+          "explanation": "That is potency."
+        },
+        {
+          "text": "The ability to bind to a receptor",
+          "isCorrect": false,
+          "explanation": "That is affinity."
+        },
+        {
+          "text": "The rate of drug absorption",
+          "isCorrect": false,
+          "explanation": "Not efficacy."
+        },
+        {
+          "text": "The duration of drug action",
+          "isCorrect": false,
+          "explanation": "Not efficacy."
+        }
+      ],
+      "explanation": {
+        "overview": "Efficacy (intrinsic activity) is the capacity of a drug to activate the receptor and produce a response. It determines the maximum therapeutic effect.",
+        "highYield": "Efficacy = maximal effect; Potency = amount needed for effect. They are independent.",
+        "clinicalCorrelation": "A more potent drug is not necessarily more effective; choose based on efficacy for the condition."
+      }
+    },
+    {
+      "questionId": "pharma_intro_026",
+      "difficulty": 2,
+      "question": "Potency of a drug refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "The amount of drug needed to produce a given effect",
+          "isCorrect": true,
+          "explanation": "Potency is a measure of dose required; a more potent drug has a lower ED50."
+        },
+        {
+          "text": "The maximum effect attainable",
+          "isCorrect": false,
+          "explanation": "That is efficacy."
+        },
+        {
+          "text": "The time to onset of action",
+          "isCorrect": false,
+          "explanation": "Not potency."
+        },
+        {
+          "text": "The duration of action",
+          "isCorrect": false,
+          "explanation": "Not potency."
+        },
+        {
+          "text": "The safety margin",
+          "isCorrect": false,
+          "explanation": "Safety margin is therapeutic index."
+        }
+      ],
+      "explanation": {
+        "overview": "Potency is the dose (or concentration) required to produce a specific effect. Potency and efficacy are separate drug properties.",
+        "highYield": "Lower ED50 = higher potency; but maximum effect (efficacy) may be less.",
+        "clinicalCorrelation": "A highly potent drug may have a lower milligram dose but not necessarily a better therapeutic outcome."
+      }
+    },
+    {
+      "questionId": "pharma_intro_027",
+      "difficulty": 3,
+      "question": "What is a 'partial agonist'?",
+      "image": null,
+      "options": [
+        {
+          "text": "A drug that binds to receptors but produces a submaximal response even at full occupancy",
+          "isCorrect": true,
+          "explanation": "Partial agonists have lower efficacy than full agonists; they cannot produce Emax."
+        },
+        {
+          "text": "A drug that binds irreversibly to receptors",
+          "isCorrect": false,
+          "explanation": "Irreversible binding is not defining."
+        },
+        {
+          "text": "A drug that activates some receptor subtypes but not others",
+          "isCorrect": false,
+          "explanation": "That describes subtype selectivity."
+        },
+        {
+          "text": "A drug that has low affinity",
+          "isCorrect": false,
+          "explanation": "Partial agonists can have high affinity."
+        },
+        {
+          "text": "A drug that is only partly absorbed",
+          "isCorrect": false,
+          "explanation": "Absorption not related."
+        }
+      ],
+      "explanation": {
+        "overview": "Partial agonists produce a submaximal response even at 100% receptor occupancy because they have reduced efficacy.",
+        "highYield": "Partial agonist = intermediate efficacy; acts as antagonist in presence of full agonist.",
+        "clinicalCorrelation": "Buprenorphine is a partial agonist at mu-opioid receptors; used for analgesia and opioid dependence."
+      }
+    },
+    {
+      "questionId": "pharma_intro_028",
+      "difficulty": 3,
+      "question": "An inverse agonist is a drug that:",
+      "image": null,
+      "options": [
+        {
+          "text": "Binds to receptors and produces the opposite effect of an agonist",
+          "isCorrect": true,
+          "explanation": "Inverse agonists reduce constitutive receptor activity, producing effects opposite to agonists."
+        },
+        {
+          "text": "Blocks the effect of an agonist",
+          "isCorrect": false,
+          "explanation": "That is a neutral antagonist."
+        },
+        {
+          "text": "Has no effect on receptor activity",
+          "isCorrect": false,
+          "explanation": "They decrease basal activity."
+        },
+        {
+          "text": "Increases receptor expression",
+          "isCorrect": false,
+          "explanation": "Not the definition."
+        },
+        {
+          "text": "Decreases drug metabolism",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Inverse agonists bind to the same receptor as agonists but induce a pharmacological response opposite to that of an agonist by reducing constitutive activity.",
+        "highYield": "Inverse agonist = reduces basal receptor activity; example: some antihistamines, beta-blockers.",
+        "clinicalCorrelation": "Some drugs previously classified as antagonists are actually inverse agonists at constitutively active receptors."
+      }
+    },
+    {
+      "questionId": "pharma_intro_029",
+      "difficulty": 3,
+      "question": "Competitive antagonism is characterized by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Parallel rightward shift of the dose-response curve",
+          "isCorrect": true,
+          "explanation": "The curve shifts right with no change in maximum response."
+        },
+        {
+          "text": "Depression of the maximal response",
+          "isCorrect": false,
+          "explanation": "Noncompetitive antagonists depress Emax."
+        },
+        {
+          "text": "Irreversible binding to the receptor",
+          "isCorrect": false,
+          "explanation": "Competitive antagonists bind reversibly."
+        },
+        {
+          "text": "Nonparallel shift of the dose-response curve",
+          "isCorrect": false,
+          "explanation": "Shift is parallel if competitive."
+        },
+        {
+          "text": "No change in the dose-response curve",
+          "isCorrect": false,
+          "explanation": "There is a right shift."
+        }
+      ],
+      "explanation": {
+        "overview": "A competitive antagonist competes with the agonist for the same binding site, causing a parallel rightward shift of the log dose-response curve; the maximum response is unchanged because it can be overcome by higher agonist concentration.",
+        "highYield": "Competitive antagonist: right shift, same Emax; can be overcome by increasing agonist.",
+        "clinicalCorrelation": "Naloxone at opioid receptors is a competitive antagonist."
+      }
+    },
+    {
+      "questionId": "pharma_intro_030",
+      "difficulty": 3,
+      "question": "Noncompetitive antagonism results in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Parallel rightward shift",
+          "isCorrect": false,
+          "explanation": "That is competitive."
+        },
+        {
+          "text": "Depression of the maximal response",
+          "isCorrect": true,
+          "explanation": "Noncompetitive antagonists reduce Emax; cannot be overcome by increasing agonist concentration."
+        },
+        {
+          "text": "Leftward shift of the curve",
+          "isCorrect": false,
+          "explanation": "Not characteristic."
+        },
+        {
+          "text": "No change in the curve",
+          "isCorrect": false,
+          "explanation": "There is depression."
+        },
+        {
+          "text": "Increased potency of the agonist",
+          "isCorrect": false,
+          "explanation": "No, efficacy is reduced."
+        }
+      ],
+      "explanation": {
+        "overview": "Noncompetitive antagonists bind irreversibly or to an allosteric site, reducing the maximum possible response of the agonist.",
+        "highYield": "Noncompetitive: reduced Emax; irreversible or allosteric.",
+        "clinicalCorrelation": "Phenoxybenzamine irreversibly blocks alpha receptors; effect lasts until new receptors are synthesized."
+      }
+    },
+    {
+      "questionId": "pharma_intro_031",
+      "difficulty": 2,
+      "question": "Which statement about drug distribution is TRUE?",
+      "image": null,
+      "options": [
+        {
+          "text": "Drugs with high protein binding have a large volume of distribution",
+          "isCorrect": false,
+          "explanation": "High protein binding usually limits distribution, resulting in a small Vd."
+        },
+        {
+          "text": "Lipophilic drugs tend to have a larger volume of distribution",
+          "isCorrect": true,
+          "explanation": "Lipophilic drugs cross membranes and accumulate in tissues, leading to large Vd."
+        },
+        {
+          "text": "Drugs that are highly ionized distribute freely into tissues",
+          "isCorrect": false,
+          "explanation": "Ionized drugs are poorly membrane permeable."
+        },
+        {
+          "text": "Distribution is not affected by blood flow",
+          "isCorrect": false,
+          "explanation": "Blood flow affects distribution, especially initially."
+        },
+        {
+          "text": "All drugs distribute equally to all tissues",
+          "isCorrect": false,
+          "explanation": "Distribution is uneven."
+        }
+      ],
+      "explanation": {
+        "overview": "Volume of distribution is larger for lipophilic drugs that extensively partition into tissues. Hydrophilic or highly protein-bound drugs tend to have a small Vd.",
+        "highYield": "Lipophilic = large Vd; hydrophilic/protein-bound = small Vd.",
+        "clinicalCorrelation": "Large Vd means drug may have a long half-life and require loading dose."
+      }
+    },
+    {
+      "questionId": "pharma_intro_032",
+      "difficulty": 2,
+      "question": "The blood-brain barrier restricts the entry of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Lipid-soluble drugs",
+          "isCorrect": false,
+          "explanation": "Lipid-soluble drugs cross BBB easily."
+        },
+        {
+          "text": "Highly protein-bound drugs",
+          "isCorrect": false,
+          "explanation": "Protein binding reduces free drug but does not necessarily prevent crossing if lipophilic."
+        },
+        {
+          "text": "Polar and large molecular weight drugs",
+          "isCorrect": true,
+          "explanation": "The BBB has tight junctions and efflux transporters, limiting entry of hydrophilic and large molecules."
+        },
+        {
+          "text": "Drugs with high affinity for receptors",
+          "isCorrect": false,
+          "explanation": "Not a property."
+        },
+        {
+          "text": "Drugs administered intravenously",
+          "isCorrect": false,
+          "explanation": "IV drugs still must cross BBB."
+        }
+      ],
+      "explanation": {
+        "overview": "The blood-brain barrier (BBB) is formed by tight junctions of capillary endothelial cells and is relatively impermeable to ionized, polar, and large molecules.",
+        "highYield": "BBB: lipophilic, small, uncharged drugs cross; polar/large do not. P-gp efflux also limits entry.",
+        "clinicalCorrelation": "CNS drugs are designed to be lipophilic; inflammation (meningitis) can increase BBB permeability."
+      }
+    },
+    {
+      "questionId": "pharma_intro_033",
+      "difficulty": 2,
+      "question": "Which of the following is a Phase II metabolic reaction?",
+      "image": null,
+      "options": [
+        {
+          "text": "Oxidation",
+          "isCorrect": false,
+          "explanation": "Phase I."
+        },
+        {
+          "text": "Reduction",
+          "isCorrect": false,
+          "explanation": "Phase I."
+        },
+        {
+          "text": "Hydrolysis",
+          "isCorrect": false,
+          "explanation": "Phase I."
+        },
+        {
+          "text": "Acetylation",
+          "isCorrect": true,
+          "explanation": "Acetylation is a conjugation reaction (Phase II), e.g., isoniazid, sulfonamides."
+        },
+        {
+          "text": "Hydroxylation",
+          "isCorrect": false,
+          "explanation": "Phase I."
+        }
+      ],
+      "explanation": {
+        "overview": "Phase II reactions include glucuronidation, sulfation, acetylation, methylation, glutathione conjugation.",
+        "highYield": "Acetylation = Phase II (NAT2 enzyme); slow acetylators at risk for toxicity.",
+        "clinicalCorrelation": "Isoniazid hepatotoxicity is more common in slow acetylators."
+      }
+    },
+    {
+      "questionId": "pharma_intro_034",
+      "difficulty": 3,
+      "question": "Enterohepatic recirculation can prolong a drug's half-life by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increasing liver metabolism",
+          "isCorrect": false,
+          "explanation": "It doesn't increase metabolism."
+        },
+        {
+          "text": "Reabsorption from the intestine after biliary excretion",
+          "isCorrect": true,
+          "explanation": "Drug excreted in bile (often as conjugate) is hydrolyzed back to active drug by gut bacteria and reabsorbed, prolonging action."
+        },
+        {
+          "text": "Decreasing renal clearance",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        },
+        {
+          "text": "Increasing plasma protein binding",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Inhibiting drug metabolism",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Enterohepatic recirculation occurs when a drug is excreted in bile, reabsorbed in the intestine, and returns to the liver, creating a 'recycling' effect that prolongs half-life.",
+        "highYield": "Enterohepatic recycling = longer half-life; seen with digoxin, oral contraceptives, some NSAIDs.",
+        "clinicalCorrelation": "Activated charcoal can interrupt enterohepatic recirculation in overdose (e.g., phenobarbital)."
+      }
+    },
+    {
+      "questionId": "pharma_intro_035",
+      "difficulty": 2,
+      "question": "The rate of drug elimination is usually proportional to plasma concentration in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Zero-order kinetics",
+          "isCorrect": false,
+          "explanation": "Zero-order: constant amount eliminated per time."
+        },
+        {
+          "text": "First-order kinetics",
+          "isCorrect": true,
+          "explanation": "First-order: constant fraction eliminated per unit time, rate ∝ concentration."
+        },
+        {
+          "text": "Michaelis-Menten kinetics",
+          "isCorrect": false,
+          "explanation": "Michaelis-Menten is saturable, not proportional at high concentrations."
+        },
+        {
+          "text": "Saturation kinetics",
+          "isCorrect": false,
+          "explanation": "Saturation = zero-order at high concentrations."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "Not all."
+        }
+      ],
+      "explanation": {
+        "overview": "Most drugs follow first-order elimination kinetics at therapeutic concentrations: a constant fraction of drug is eliminated per unit time.",
+        "highYield": "First-order: elimination rate ∝ concentration; half-life is constant.",
+        "clinicalCorrelation": "First-order drugs: dose adjustments predictably change steady-state concentration."
+      }
+    },
+    {
+      "questionId": "pharma_intro_036",
+      "difficulty": 2,
+      "question": "Zero-order kinetics is observed when:",
+      "image": null,
+      "options": [
+        {
+          "text": "Drug concentration is very low",
+          "isCorrect": false,
+          "explanation": "First-order at low concentrations."
+        },
+        {
+          "text": "Metabolic enzymes are saturated",
+          "isCorrect": true,
+          "explanation": "When enzymes are saturated, a constant amount is eliminated per time, not a fraction."
+        },
+        {
+          "text": "Renal excretion is the main route",
+          "isCorrect": false,
+          "explanation": "Renal excretion can be first-order."
+        },
+        {
+          "text": "Drug is highly protein-bound",
+          "isCorrect": false,
+          "explanation": "Not related."
+        },
+        {
+          "text": "Absorption is rate-limiting",
+          "isCorrect": false,
+          "explanation": "Not the definition."
+        }
+      ],
+      "explanation": {
+        "overview": "Zero-order (saturation) kinetics occurs when drug-metabolizing enzymes are saturated. A constant amount of drug is eliminated per unit time, independent of concentration.",
+        "highYield": "Zero-order: constant amount/time eliminated; half-life increases with dose. Examples: phenytoin, ethanol (at high doses), aspirin (high dose).",
+        "clinicalCorrelation": "Small dose increases can cause disproportionate rise in plasma concentration (nonlinear kinetics)."
+      }
+    },
+    {
+      "questionId": "pharma_intro_037",
+      "difficulty": 3,
+      "question": "Which of the following drugs exhibits zero-order kinetics at therapeutic doses?",
+      "image": null,
+      "options": [
+        {
+          "text": "Phenytoin",
+          "isCorrect": true,
+          "explanation": "Phenytoin follows Michaelis-Menten kinetics; at therapeutic concentrations, the metabolizing enzymes are near saturation, leading to nonlinear elimination."
+        },
+        {
+          "text": "Penicillin",
+          "isCorrect": false,
+          "explanation": "Penicillin follows first-order kinetics."
+        },
+        {
+          "text": "Propranolol",
+          "isCorrect": false,
+          "explanation": "First-order."
+        },
+        {
+          "text": "Furosemide",
+          "isCorrect": false,
+          "explanation": "First-order."
+        },
+        {
+          "text": "Metformin",
+          "isCorrect": false,
+          "explanation": "First-order."
+        }
+      ],
+      "explanation": {
+        "overview": "Phenytoin is a classic example of a drug with saturable metabolism at therapeutic levels, resulting in zero-order kinetics. Small dose increases can lead to toxic levels.",
+        "highYield": "Phenytoin = zero-order kinetics; need to monitor levels closely.",
+        "clinicalCorrelation": "Phenytoin dose adjustments should be in small increments (e.g., 30-50 mg) to avoid toxicity."
+      }
+    },
+    {
+      "questionId": "pharma_intro_038",
+      "difficulty": 2,
+      "question": "What is the loading dose?",
+      "image": null,
+      "options": [
+        {
+          "text": "A large initial dose to achieve therapeutic concentration rapidly",
+          "isCorrect": true,
+          "explanation": "Loading dose = Vd × target concentration, given to quickly achieve therapeutic levels."
+        },
+        {
+          "text": "The maintenance dose given daily",
+          "isCorrect": false,
+          "explanation": "Maintenance dose sustains steady state."
+        },
+        {
+          "text": "The dose that causes toxicity",
+          "isCorrect": false,
+          "explanation": "That is toxic dose."
+        },
+        {
+          "text": "The dose that is half the effective dose",
+          "isCorrect": false,
+          "explanation": "Not related."
+        },
+        {
+          "text": "The dose given during clinical trials",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "A loading dose is a higher initial dose designed to rapidly achieve therapeutic plasma concentrations, especially for drugs with long half-lives.",
+        "highYield": "Loading dose = Vd × Ctarget; bypasses delay to steady state.",
+        "clinicalCorrelation": "Loading doses are used for amiodarone, digoxin, teicoplanin, and some anticonvulsants."
+      }
+    },
+    {
+      "questionId": "pharma_intro_039",
+      "difficulty": 2,
+      "question": "Tachyphylaxis refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Rapidly developing tolerance after repeated doses",
+          "isCorrect": true,
+          "explanation": "Tachyphylaxis is a rapid decrease in response to a drug after a few doses."
+        },
+        {
+          "text": "Increased sensitivity to a drug over time",
+          "isCorrect": false,
+          "explanation": "That is sensitization."
+        },
+        {
+          "text": "Cross-tolerance to related drugs",
+          "isCorrect": false,
+          "explanation": "Cross-tolerance is tolerance to one drug leading to tolerance to another."
+        },
+        {
+          "text": "A paradoxical reaction to a drug",
+          "isCorrect": false,
+          "explanation": "Not tachyphylaxis."
+        },
+        {
+          "text": "Delayed onset of action",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Tachyphylaxis (acute tolerance) is the rapid loss of response to a drug after repeated administration over a short period.",
+        "highYield": "Tachyphylaxis = rapid tolerance; common with nitrates, indirect sympathomimetics.",
+        "clinicalCorrelation": "Nitrate-free interval prevents tachyphylaxis to nitroglycerin."
+      }
+    },
+    {
+      "questionId": "pharma_intro_040",
+      "difficulty": 3,
+      "question": "Which of the following is a type of adverse drug reaction that is dose-related and predictable?",
+      "image": null,
+      "options": [
+        {
+          "text": "Type A (augmented)",
+          "isCorrect": true,
+          "explanation": "Type A reactions are dose-dependent, predictable, and related to the pharmacological action of the drug."
+        },
+        {
+          "text": "Type B (bizarre)",
+          "isCorrect": false,
+          "explanation": "Type B are unpredictable, not dose-related."
+        },
+        {
+          "text": "Type C (chronic)",
+          "isCorrect": false,
+          "explanation": "Type C are associated with long-term use."
+        },
+        {
+          "text": "Type D (delayed)",
+          "isCorrect": false,
+          "explanation": "Type D appear after years of treatment."
+        },
+        {
+          "text": "Type E (end-of-treatment)",
+          "isCorrect": false,
+          "explanation": "Type E are withdrawal reactions."
+        }
+      ],
+      "explanation": {
+        "overview": "The Rawlins-Thompson classification: Type A (augmented) - dose-dependent, predictable; Type B (bizarre) - idiosyncratic, immune-mediated.",
+        "highYield": "Type A ADR = predictable, dose-related (e.g., bleeding with warfarin). Type B = unpredictable (e.g., anaphylaxis).",
+        "clinicalCorrelation": "Most ADRs are Type A; they are often manageable by dose adjustment."
+      }
+    },
+    {
+      "questionId": "pharma_intro_041",
+      "difficulty": 2,
+      "question": "Idiosyncratic drug reactions are:",
+      "image": null,
+      "options": [
+        {
+          "text": "Unpredictable and not dose-related",
+          "isCorrect": true,
+          "explanation": "Idiosyncratic reactions (Type B) are rare, unpredictable, and not directly dose-dependent."
+        },
+        {
+          "text": "Dose-dependent and predictable",
+          "isCorrect": false,
+          "explanation": "Type A."
+        },
+        {
+          "text": "Always allergic in nature",
+          "isCorrect": false,
+          "explanation": "Not always immune-mediated; may be due to genetic polymorphisms."
+        },
+        {
+          "text": "Due to drug interactions",
+          "isCorrect": false,
+          "explanation": "Not necessarily."
+        },
+        {
+          "text": "Caused by overdose",
+          "isCorrect": false,
+          "explanation": "Overdose is Type A."
+        }
+      ],
+      "explanation": {
+        "overview": "Idiosyncratic reactions are uncommon, genetically determined abnormal responses to a drug, often unrelated to its known pharmacology.",
+        "highYield": "Idiosyncratic = unpredictable, patient-specific; e.g., G6PD deficiency with primaquine causing hemolysis.",
+        "clinicalCorrelation": "Genetic testing can identify at-risk individuals before drug exposure."
+      }
+    },
+    {
+      "questionId": "pharma_intro_042",
+      "difficulty": 2,
+      "question": "A drug that is a competitive antagonist of a receptor:",
+      "image": null,
+      "options": [
+        {
+          "text": "Binds reversibly to the active site",
+          "isCorrect": true,
+          "explanation": "Competitive antagonists bind reversibly to the same site as the agonist; can be overcome by increasing agonist concentration."
+        },
+        {
+          "text": "Binds irreversibly to the active site",
+          "isCorrect": false,
+          "explanation": "Irreversible binding is noncompetitive."
+        },
+        {
+          "text": "Binds to an allosteric site",
+          "isCorrect": false,
+          "explanation": "Allosteric modulators bind elsewhere."
+        },
+        {
+          "text": "Has no effect on receptor function",
+          "isCorrect": false,
+          "explanation": "It blocks activation."
+        },
+        {
+          "text": "Activates the receptor",
+          "isCorrect": false,
+          "explanation": "That's an agonist."
+        }
+      ],
+      "explanation": {
+        "overview": "Competitive antagonists compete with the agonist for the same orthosteric binding site on the receptor. Their effect is surmountable by increasing agonist concentration.",
+        "highYield": "Competitive antagonist = reversible, surmountable; causes right shift of dose-response curve.",
+        "clinicalCorrelation": "Beta-blockers (e.g., propranolol) are competitive antagonists at beta-adrenoceptors."
+      }
+    },
+    {
+      "questionId": "pharma_intro_043",
+      "difficulty": 2,
+      "question": "The term 'affinity' refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "The ability of a drug to bind to a receptor",
+          "isCorrect": true,
+          "explanation": "Affinity is the measure of how tightly a drug binds to its receptor (e.g., Kd)."
+        },
+        {
+          "text": "The ability to produce a response",
+          "isCorrect": false,
+          "explanation": "That is efficacy or intrinsic activity."
+        },
+        {
+          "text": "The maximum effect a drug can produce",
+          "isCorrect": false,
+          "explanation": "Efficacy."
+        },
+        {
+          "text": "The dose required for a given effect",
+          "isCorrect": false,
+          "explanation": "Potency."
+        },
+        {
+          "text": "The rate of drug absorption",
+          "isCorrect": false,
+          "explanation": "Not affinity."
+        }
+      ],
+      "explanation": {
+        "overview": "Affinity describes the strength of the drug-receptor interaction. High affinity means strong binding and often correlates with potency.",
+        "highYield": "Affinity = binding; Efficacy = response. A drug can have high affinity but low efficacy (antagonist).",
+        "clinicalCorrelation": "Drugs with high affinity may displace others from receptors, leading to interactions."
+      }
+    },
+    {
+      "questionId": "pharma_intro_044",
+      "difficulty": 2,
+      "question": "The therapeutic window of a drug is:",
+      "image": null,
+      "options": [
+        {
+          "text": "The range between the minimum effective dose and the minimum toxic dose",
+          "isCorrect": true,
+          "explanation": "The therapeutic window is the dosage range providing efficacy without unacceptable toxicity."
+        },
+        {
+          "text": "The time between administration and effect",
+          "isCorrect": false,
+          "explanation": "That is onset of action."
+        },
+        {
+          "text": "The duration of action",
+          "isCorrect": false,
+          "explanation": "Not."
+        },
+        {
+          "text": "The volume of distribution",
+          "isCorrect": false,
+          "explanation": "Not."
+        },
+        {
+          "text": "The half-life",
+          "isCorrect": false,
+          "explanation": "Not."
+        }
+      ],
+      "explanation": {
+        "overview": "The therapeutic window (therapeutic range) is the range of drug concentrations that achieve therapeutic efficacy with minimal toxicity.",
+        "highYield": "Therapeutic window = between minimum effective concentration (MEC) and minimum toxic concentration (MTC).",
+        "clinicalCorrelation": "Therapeutic drug monitoring aims to keep drug levels within this window."
+      }
+    },
+    {
+      "questionId": "pharma_intro_045",
+      "difficulty": 1,
+      "question": "Which route of administration has the fastest onset of action?",
+      "image": null,
+      "options": [
+        {
+          "text": "Oral",
+          "isCorrect": false,
+          "explanation": "Absorption delays onset."
+        },
+        {
+          "text": "Intramuscular",
+          "isCorrect": false,
+          "explanation": "Slower than IV."
+        },
+        {
+          "text": "Subcutaneous",
+          "isCorrect": false,
+          "explanation": "Slower."
+        },
+        {
+          "text": "Intravenous",
+          "isCorrect": true,
+          "explanation": "IV injection delivers drug directly into the bloodstream, bypassing absorption, providing immediate onset."
+        },
+        {
+          "text": "Transdermal",
+          "isCorrect": false,
+          "explanation": "Slowest."
+        }
+      ],
+      "explanation": {
+        "overview": "IV administration has the most rapid onset because the drug enters systemic circulation directly, without an absorption phase.",
+        "highYield": "IV = fastest onset; oral = slowest onset among systemic routes.",
+        "clinicalCorrelation": "In emergencies (e.g., anaphylaxis, status epilepticus), IV route is preferred for immediate effect."
+      }
+    },
+    {
+      "questionId": "pharma_intro_046",
+      "difficulty": 3,
+      "question": "Bioequivalence between two formulations means:",
+      "image": null,
+      "options": [
+        {
+          "text": "They have the same chemical structure",
+          "isCorrect": false,
+          "explanation": "They contain the same active ingredient, but bioequivalence refers to pharmacokinetics."
+        },
+        {
+          "text": "They have comparable bioavailability and similar time to reach peak concentration",
+          "isCorrect": true,
+          "explanation": "Bioequivalent products have no significant difference in rate (Cmax, Tmax) and extent (AUC) of absorption."
+        },
+        {
+          "text": "They are produced by the same manufacturer",
+          "isCorrect": false,
+          "explanation": "Generic manufacturers can produce bioequivalent products."
+        },
+        {
+          "text": "They have the same trade name",
+          "isCorrect": false,
+          "explanation": "Trade names differ."
+        },
+        {
+          "text": "They are administered by the same route",
+          "isCorrect": false,
+          "explanation": "Not sufficient."
+        }
+      ],
+      "explanation": {
+        "overview": "Bioequivalence requires that the 90% confidence intervals for AUC and Cmax ratios fall within 80-125% of the reference product.",
+        "highYield": "Bioequivalence = comparable rate and extent of absorption (Cmax, AUC within 80-125%).",
+        "clinicalCorrelation": "Generic drugs must demonstrate bioequivalence to the brand-name drug to be approved."
+      }
+    },
+    {
+      "questionId": "pharma_intro_047",
+      "difficulty": 2,
+      "question": "A drug that induces hepatic microsomal enzymes will:",
+      "image": null,
+      "options": [
+        {
+          "text": "Decrease metabolism of other drugs",
+          "isCorrect": false,
+          "explanation": "Induction increases metabolism."
+        },
+        {
+          "text": "Increase metabolism of other drugs",
+          "isCorrect": true,
+          "explanation": "Enzyme inducers accelerate the clearance of co-administered drugs metabolized by those enzymes."
+        },
+        {
+          "text": "Have no effect on drug metabolism",
+          "isCorrect": false,
+          "explanation": "They do affect."
+        },
+        {
+          "text": "Increase its own half-life",
+          "isCorrect": false,
+          "explanation": "Induction reduces half-life."
+        },
+        {
+          "text": "Decrease its own clearance",
+          "isCorrect": false,
+          "explanation": "Clearance increases."
+        }
+      ],
+      "explanation": {
+        "overview": "Enzyme induction increases the synthesis of drug-metabolizing enzymes (e.g., CYP3A4), leading to faster metabolism of substrates and potential loss of therapeutic effect.",
+        "highYield": "Inducer = ↓ drug levels; inhibitor = ↑ drug levels. Examples: rifampin, carbamazepine, St. John's wort.",
+        "clinicalCorrelation": "When an inducer is stopped, dose reduction of other drugs may be needed to avoid toxicity."
+      }
+    },
+    {
+      "questionId": "pharma_intro_048",
+      "difficulty": 3,
+      "question": "Rifampicin is a potent:",
+      "image": null,
+      "options": [
+        {
+          "text": "Enzyme inducer",
+          "isCorrect": true,
+          "explanation": "Rifampicin is a potent inducer of CYP3A4, CYP2C9, and other enzymes, as well as P-gp."
+        },
+        {
+          "text": "Enzyme inhibitor",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Antagonist",
+          "isCorrect": false,
+          "explanation": "Not its primary classification."
+        },
+        {
+          "text": "Partial agonist",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Prodrug",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Rifampicin is one of the most potent broad-spectrum enzyme inducers, reducing the efficacy of many drugs including oral contraceptives, warfarin, and antiretrovirals.",
+        "highYield": "Rifampicin = strong inducer; check for drug interactions before prescribing.",
+        "clinicalCorrelation": "Women on rifampicin should use non-hormonal contraception due to contraceptive failure risk."
+      }
+    },
+    {
+      "questionId": "pharma_intro_049",
+      "difficulty": 3,
+      "question": "Ketoconazole is an example of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Enzyme inducer",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Enzyme inhibitor",
+          "isCorrect": true,
+          "explanation": "Ketoconazole is a potent inhibitor of CYP3A4 and other CYPs, leading to increased levels of co-administered drugs."
+        },
+        {
+          "text": "Receptor agonist",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Receptor antagonist",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Prodrug",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Azole antifungals (ketoconazole, itraconazole) are strong CYP3A4 inhibitors, causing many clinically significant drug interactions.",
+        "highYield": "Ketoconazole = CYP3A4 inhibitor; avoid with statins, midazolam, cyclosporine.",
+        "clinicalCorrelation": "Ketoconazole is sometimes used intentionally to boost levels of expensive drugs (e.g., cyclosporine)."
+      }
+    },
+    {
+      "questionId": "pharma_intro_050",
+      "difficulty": 1,
+      "question": "The study of drug absorption, distribution, metabolism, and excretion is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Pharmacodynamics",
+          "isCorrect": false,
+          "explanation": "Pharmacodynamics studies drug effects and mechanisms."
+        },
+        {
+          "text": "Pharmacokinetics",
+          "isCorrect": true,
+          "explanation": "Pharmacokinetics covers ADME (Absorption, Distribution, Metabolism, Excretion)."
+        },
+        {
+          "text": "Pharmacogenomics",
+          "isCorrect": false,
+          "explanation": "Pharmacogenomics studies how genes affect drug response."
+        },
+        {
+          "text": "Pharmacoepidemiology",
+          "isCorrect": false,
+          "explanation": "Study of drug use and effects in populations."
+        },
+        {
+          "text": "Pharmacovigilance",
+          "isCorrect": false,
+          "explanation": "Monitoring of adverse drug reactions."
+        }
+      ],
+      "explanation": {
+        "overview": "Pharmacokinetics describes the time course of drug absorption, distribution, metabolism, and excretion (what the body does to the drug).",
+        "highYield": "PK = ADME; PD = receptor binding and effect.",
+        "clinicalCorrelation": "PK principles are used to design dosing regimens and adjust doses in organ failure."
+      }
+    },
+    {
+      "questionId": "pharma_intro_051",
+      "difficulty": 2,
+      "question": "Which of the following correctly describes the relationship between half-life, volume of distribution, and clearance?",
+      "image": null,
+      "options": [
+        {
+          "text": "t½ = 0.693 × Vd / Cl",
+          "isCorrect": true,
+          "explanation": "Half-life is directly proportional to volume of distribution and inversely proportional to clearance."
+        },
+        {
+          "text": "t½ = Cl / Vd",
+          "isCorrect": false,
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "t½ = 0.693 × Cl / Vd",
+          "isCorrect": false,
+          "explanation": "Inverted."
+        },
+        {
+          "text": "t½ = Vd × Cl",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "t½ = (Vd + Cl) / 2",
+          "isCorrect": false,
+          "explanation": "Not."
+        }
+      ],
+      "explanation": {
+        "overview": "The elimination half-life (t½) is calculated as t½ = 0.693 × Vd / Cl. A large Vd or low clearance prolongs half-life.",
+        "highYield": "t½ ∝ Vd; t½ ∝ 1/Cl.",
+        "clinicalCorrelation": "Changes in protein binding or renal function alter Vd and Cl, affecting half-life and dosing frequency."
+      }
+    },
+    {
+      "questionId": "pharma_intro_052",
+      "difficulty": 2,
+      "question": "Which of the following is an example of a drug that exhibits high first-pass metabolism making oral administration ineffective?",
+      "image": null,
+      "options": [
+        {
+          "text": "Lidocaine",
+          "isCorrect": true,
+          "explanation": "Lidocaine has >90% first-pass metabolism; thus it is given IV or topically."
+        },
+        {
+          "text": "Ibuprofen",
+          "isCorrect": false,
+          "explanation": "Ibuprofen has good oral bioavailability."
+        },
+        {
+          "text": "Paracetamol",
+          "isCorrect": false,
+          "explanation": "Good oral bioavailability."
+        },
+        {
+          "text": "Ciprofloxacin",
+          "isCorrect": false,
+          "explanation": "Oral bioavailability ~70%."
+        },
+        {
+          "text": "Omeprazole",
+          "isCorrect": false,
+          "explanation": "Oral bioavailability ~30-40%, but still effective orally."
+        }
+      ],
+      "explanation": {
+        "overview": "Drugs with very high first-pass metabolism (e.g., nitroglycerin, lidocaine, testosterone) are ineffective orally and require alternative routes.",
+        "highYield": "High first-pass drugs: lidocaine, nitroglycerin, testosterone. Avoid oral route.",
+        "clinicalCorrelation": "Lidocaine is used IV for arrhythmias and locally/topically for anesthesia."
+      }
+    },
+    {
+      "questionId": "pharma_intro_053",
+      "difficulty": 2,
+      "question": "Which of the following best describes the term 'drug tolerance'?",
+      "image": null,
+      "options": [
+        {
+          "text": "A decrease in responsiveness to a drug with repeated use",
+          "isCorrect": true,
+          "explanation": "Tolerance is a reduced effect over time, requiring higher doses to achieve the same effect."
+        },
+        {
+          "text": "An increased effect with repeated use",
+          "isCorrect": false,
+          "explanation": "That is sensitization."
+        },
+        {
+          "text": "An immediate adverse reaction to a drug",
+          "isCorrect": false,
+          "explanation": "Not tolerance."
+        },
+        {
+          "text": "A drug interaction causing enhanced effect",
+          "isCorrect": false,
+          "explanation": "Not."
+        },
+        {
+          "text": "The inability to absorb a drug",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Drug tolerance can be pharmacokinetic (metabolic) or pharmacodynamic (receptor downregulation). It leads to dose escalation.",
+        "highYield": "Tolerance = decreased effect over time; opioids, benzodiazepines, nitrates.",
+        "clinicalCorrelation": "Opioid tolerance necessitates rotation or dose increases; sometimes combined with adjuvants."
+      }
+    },
+    {
+      "questionId": "pharma_intro_054",
+      "difficulty": 2,
+      "question": "Which of the following is NOT a mechanism of drug tolerance?",
+      "image": null,
+      "options": [
+        {
+          "text": "Receptor downregulation",
+          "isCorrect": false,
+          "explanation": "This is a mechanism."
+        },
+        {
+          "text": "Enzyme induction",
+          "isCorrect": false,
+          "explanation": "Metabolic tolerance."
+        },
+        {
+          "text": "Depletion of endogenous mediators",
+          "isCorrect": false,
+          "explanation": "e.g., reserpine depleting catecholamines."
+        },
+        {
+          "text": "Increased receptor sensitivity",
+          "isCorrect": true,
+          "explanation": "This would cause increased response (sensitization), not tolerance."
+        },
+        {
+          "text": "Adaptation of homeostatic mechanisms",
+          "isCorrect": false,
+          "explanation": "Physiological tolerance."
+        }
+      ],
+      "explanation": {
+        "overview": "Tolerance can develop through receptor desensitization/downregulation, enzyme induction (auto-induction), and physiological adaptation. Increased receptor sensitivity would enhance drug effect.",
+        "highYield": "Tolerance mechanisms: receptor downregulation, enzyme induction, homeostasis adaptation.",
+        "clinicalCorrelation": "Understanding tolerance helps prevent withdrawal syndromes upon abrupt discontinuation."
+      }
+    },
+    {
+      "questionId": "pharma_intro_055",
+      "difficulty": 2,
+      "question": "Which of the following routes of administration is most likely to cause a drug to undergo extensive first-pass metabolism?",
+      "image": null,
+      "options": [
+        {
+          "text": "Oral",
+          "isCorrect": true,
+          "explanation": "Oral drugs are absorbed through the GI tract and transported to the liver via the portal vein, undergoing first-pass metabolism."
+        },
+        {
+          "text": "Intravenous",
+          "isCorrect": false,
+          "explanation": "IV bypasses first-pass."
+        },
+        {
+          "text": "Intramuscular",
+          "isCorrect": false,
+          "explanation": "IM avoids first-pass."
+        },
+        {
+          "text": "Sublingual",
+          "isCorrect": false,
+          "explanation": "Sublingual bypasses hepatic first-pass."
+        },
+        {
+          "text": "Transdermal",
+          "isCorrect": false,
+          "explanation": "Transdermal avoids first-pass."
+        }
+      ],
+      "explanation": {
+        "overview": "Oral administration is subject to first-pass metabolism because the drug is absorbed into the portal circulation and passes through the liver before reaching systemic circulation.",
+        "highYield": "Oral → portal vein → liver → systemic circulation = first-pass metabolism.",
+        "clinicalCorrelation": "Oral bioavailability is reduced by first-pass metabolism; some drugs are given sublingually to avoid this."
+      }
+    },
+    {
+      "questionId": "pharma_intro_056",
+      "difficulty": 3,
+      "question": "Which of the following statements about drug excretion is correct?",
+      "image": null,
+      "options": [
+        {
+          "text": "Weakly acidic drugs are more rapidly excreted in alkaline urine",
+          "isCorrect": true,
+          "explanation": "Alkaline urine ionizes weak acids, preventing reabsorption and promoting excretion."
+        },
+        {
+          "text": "Weakly basic drugs are more rapidly excreted in alkaline urine",
+          "isCorrect": false,
+          "explanation": "Alkaline urine decreases ionization of bases, increasing reabsorption."
+        },
+        {
+          "text": "Renal excretion is independent of pH",
+          "isCorrect": false,
+          "explanation": "pH affects ionization and reabsorption."
+        },
+        {
+          "text": "Lipophilic drugs are readily excreted unchanged",
+          "isCorrect": false,
+          "explanation": "Lipophilic drugs are reabsorbed; they need metabolism to hydrophilic metabolites."
+        },
+        {
+          "text": "Glomerular filtration is the only renal elimination mechanism",
+          "isCorrect": false,
+          "explanation": "Tubular secretion and reabsorption also occur."
+        }
+      ],
+      "explanation": {
+        "overview": "Urine pH manipulation can alter drug excretion: alkalinization increases elimination of weak acids (e.g., aspirin, phenobarbital); acidification increases elimination of weak bases.",
+        "highYield": "Alkaline urine = ↑ excretion of weak acids; Acidic urine = ↑ excretion of weak bases.",
+        "clinicalCorrelation": "Sodium bicarbonate is used to alkalinize urine in aspirin overdose to enhance excretion."
+      }
+    },
+    {
+      "questionId": "pharma_intro_057",
+      "difficulty": 2,
+      "question": "Which of the following factors does NOT affect the volume of distribution (Vd) of a drug?",
+      "image": null,
+      "options": [
+        {
+          "text": "Plasma protein binding",
+          "isCorrect": false,
+          "explanation": "High protein binding reduces Vd."
+        },
+        {
+          "text": "Lipid solubility",
+          "isCorrect": false,
+          "explanation": "High lipid solubility increases Vd."
+        },
+        {
+          "text": "Body weight",
+          "isCorrect": false,
+          "explanation": "Vd can be related to body weight."
+        },
+        {
+          "text": "Route of administration",
+          "isCorrect": true,
+          "explanation": "Vd is a pharmacokinetic parameter independent of the route; bioavailability changes with route, not Vd."
+        },
+        {
+          "text": "Tissue binding",
+          "isCorrect": false,
+          "explanation": "Tissue binding increases Vd."
+        }
+      ],
+      "explanation": {
+        "overview": "Volume of distribution is determined by drug properties (lipophilicity, molecular size, pKa, protein binding) and patient factors (body composition). Route of administration affects bioavailability, not Vd.",
+        "highYield": "Vd is independent of route; it's a characteristic of the drug in the body.",
+        "clinicalCorrelation": "Loading dose is based on Vd and target concentration: LD = Vd × Cp target."
+      }
+    },
+    {
+      "questionId": "pharma_intro_058",
+      "difficulty": 2,
+      "question": "Which of the following is an example of a therapeutic use of a partial agonist?",
+      "image": null,
+      "options": [
+        {
+          "text": "Buprenorphine for opioid dependence",
+          "isCorrect": true,
+          "explanation": "Buprenorphine is a partial mu-opioid agonist, reducing cravings and withdrawal while limiting euphoria."
+        },
+        {
+          "text": "Morphine for severe pain",
+          "isCorrect": false,
+          "explanation": "Morphine is a full agonist."
+        },
+        {
+          "text": "Naloxone for opioid overdose",
+          "isCorrect": false,
+          "explanation": "Naloxone is an antagonist."
+        },
+        {
+          "text": "Atenolol for hypertension",
+          "isCorrect": false,
+          "explanation": "Atenolol is a beta-blocker (antagonist)."
+        },
+        {
+          "text": "Epinephrine for anaphylaxis",
+          "isCorrect": false,
+          "explanation": "Epinephrine is a full agonist."
+        }
+      ],
+      "explanation": {
+        "overview": "Partial agonists like buprenorphine have a 'ceiling effect', providing therapeutic benefit with lower risk of respiratory depression compared to full agonists.",
+        "highYield": "Partial agonist = ceiling effect; buprenorphine, aripiprazole, buspirone.",
+        "clinicalCorrelation": "In opioid dependence, buprenorphine can precipitate withdrawal if taken while full agonists are still active."
+      }
+    },
+    {
+      "questionId": "pharma_intro_059",
+      "difficulty": 3,
+      "question": "A patient with liver cirrhosis is likely to have which of the following changes in pharmacokinetics?",
+      "image": null,
+      "options": [
+        {
+          "text": "Decreased first-pass metabolism and increased bioavailability of highly extracted drugs",
+          "isCorrect": true,
+          "explanation": "Cirrhosis reduces hepatic enzyme activity and portal-systemic shunting, decreasing first-pass metabolism and increasing oral bioavailability."
+        },
+        {
+          "text": "Increased first-pass metabolism",
+          "isCorrect": false,
+          "explanation": "Opposite."
+        },
+        {
+          "text": "Increased plasma protein binding",
+          "isCorrect": false,
+          "explanation": "Albumin synthesis is often decreased, reducing protein binding."
+        },
+        {
+          "text": "Increased renal clearance",
+          "isCorrect": false,
+          "explanation": "No; renal function may be unaffected or decrease."
+        },
+        {
+          "text": "Decreased volume of distribution",
+          "isCorrect": false,
+          "explanation": "Vd may increase due to ascites and edema."
+        }
+      ],
+      "explanation": {
+        "overview": "In liver cirrhosis, reduced liver function and shunting decrease first-pass metabolism, increasing the bioavailability of high-extraction drugs. Also, hypoalbuminemia increases free drug concentration.",
+        "highYield": "Cirrhosis → ↓first-pass, ↑oral bioavailability, ↓protein binding, ↓metabolism. Adjust doses.",
+        "clinicalCorrelation": "Drugs like propranolol and lidocaine have increased bioavailability in cirrhosis."
+      }
+    },
+    {
+      "questionId": "pharma_intro_060",
+      "difficulty": 2,
+      "question": "Which of the following statements about the placebo effect is true?",
+      "image": null,
+      "options": [
+        {
+          "text": "It can produce measurable physiological changes through psychological mechanisms",
+          "isCorrect": true,
+          "explanation": "The placebo effect can release endorphins, alter neurotransmitter release, and produce real physiological responses."
+        },
+        {
+          "text": "It only occurs in clinical trials",
+          "isCorrect": false,
+          "explanation": "It can occur in clinical practice."
+        },
+        {
+          "text": "It indicates the drug is ineffective",
+          "isCorrect": false,
+          "explanation": "It is a non-specific effect that can coexist with drug effect."
+        },
+        {
+          "text": "It is always ethical to use placebos therapeutically",
+          "isCorrect": false,
+          "explanation": "Deceptive use of placebos is ethically problematic."
+        },
+        {
+          "text": "It has no biological basis",
+          "isCorrect": false,
+          "explanation": "It has neurobiological underpinnings."
+        }
+      ],
+      "explanation": {
+        "overview": "The placebo effect is a complex psychobiological phenomenon where patient expectations and conditioning produce real physiological changes, mediated in part by endogenous opioid and dopamine pathways.",
+        "highYield": "Placebo effect = real response; involves endorphins, dopamine, and conditioning.",
+        "clinicalCorrelation": "Even open-label placebos can have effects; the therapeutic encounter itself can harness placebo mechanisms."
+      }
+    },
+    {
+      "questionId": "pharma_intro_061",
+      "difficulty": 2,
+      "question": "Which of the following is an example of a drug interaction involving protein binding displacement?",
+      "image": null,
+      "options": [
+        {
+          "text": "Warfarin and aspirin",
+          "isCorrect": false,
+          "explanation": "Pharmacodynamic interaction."
+        },
+        {
+          "text": "Warfarin and phenylbutazone",
+          "isCorrect": true,
+          "explanation": "Phenylbutazone displaces warfarin from albumin, increasing free warfarin and bleeding risk."
+        },
+        {
+          "text": "Warfarin and rifampicin",
+          "isCorrect": false,
+          "explanation": "Enzyme induction."
+        },
+        {
+          "text": "Warfarin and cimetidine",
+          "isCorrect": false,
+          "explanation": "Enzyme inhibition."
+        },
+        {
+          "text": "Warfarin and vitamin K",
+          "isCorrect": false,
+          "explanation": "Pharmacodynamic antagonism."
+        }
+      ],
+      "explanation": {
+        "overview": "Protein binding displacement interactions are clinically significant for drugs with high protein binding (>90%) and narrow therapeutic index, like warfarin and phenytoin.",
+        "highYield": "Displacement: phenylbutazone, sulfonamides with warfarin; valproate with phenytoin.",
+        "clinicalCorrelation": "Displacement effects are usually transient but can be dangerous when combined with other interaction mechanisms."
+      }
+    },
+    {
+      "questionId": "pharma_intro_062",
+      "difficulty": 2,
+      "question": "Which of the following CYP enzymes is involved in the metabolism of the largest proportion of clinically used drugs?",
+      "image": null,
+      "options": [
+        {
+          "text": "CYP3A4",
+          "isCorrect": true,
+          "explanation": "CYP3A4 metabolizes approximately 50% of all drugs."
+        },
+        {
+          "text": "CYP2D6",
+          "isCorrect": false,
+          "explanation": "~25%."
+        },
+        {
+          "text": "CYP2C9",
+          "isCorrect": false,
+          "explanation": "~15%."
+        },
+        {
+          "text": "CYP1A2",
+          "isCorrect": false,
+          "explanation": "~10%."
+        },
+        {
+          "text": "CYP2E1",
+          "isCorrect": false,
+          "explanation": "Smaller proportion."
+        }
+      ],
+      "explanation": {
+        "overview": "CYP3A4 is the most abundant CYP enzyme in the liver and intestine, responsible for metabolizing about half of all marketed drugs.",
+        "highYield": "CYP3A4 = metabolizes ~50% of drugs; major source of drug interactions.",
+        "clinicalCorrelation": "Always check for CYP3A4 inducers/inhibitors when evaluating drug interactions."
+      }
+    },
+    {
+      "questionId": "pharma_intro_063",
+      "difficulty": 3,
+      "question": "A drug has a clearance of 10 L/h and a volume of distribution of 100 L. What is its approximate half-life?",
+      "image": null,
+      "options": [
+        {
+          "text": "6.93 hours",
+          "isCorrect": true,
+          "explanation": "t½ = 0.693 × Vd / Cl = 0.693 × 100 / 10 = 6.93 hours."
+        },
+        {
+          "text": "0.07 hours",
+          "isCorrect": false,
+          "explanation": "Incorrect calculation."
+        },
+        {
+          "text": "10 hours",
+          "isCorrect": false,
+          "explanation": "Wrong."
+        },
+        {
+          "text": "1 hour",
+          "isCorrect": false,
+          "explanation": "Wrong."
+        },
+        {
+          "text": "69.3 hours",
+          "isCorrect": false,
+          "explanation": "Wrong."
+        }
+      ],
+      "explanation": {
+        "overview": "Using the formula t½ = 0.693 × Vd / Cl, plugging in the values gives 6.93 hours.",
+        "highYield": "t½ = 0.693 × Vd / Cl. Memorize this relationship.",
+        "clinicalCorrelation": "Knowing how to estimate half-life helps predict dosing frequency and time to steady state."
+      }
+    },
+    {
+      "questionId": "pharma_intro_064",
+      "difficulty": 2,
+      "question": "Which of the following is a Phase I metabolic reaction?",
+      "image": null,
+      "options": [
+        {
+          "text": "Glucuronidation",
+          "isCorrect": false,
+          "explanation": "Phase II."
+        },
+        {
+          "text": "Sulfation",
+          "isCorrect": false,
+          "explanation": "Phase II."
+        },
+        {
+          "text": "Acetylation",
+          "isCorrect": false,
+          "explanation": "Phase II."
+        },
+        {
+          "text": "Oxidation",
+          "isCorrect": true,
+          "explanation": "Oxidation (often by CYP450) is a Phase I reaction."
+        },
+        {
+          "text": "Methylation",
+          "isCorrect": false,
+          "explanation": "Phase II."
+        }
+      ],
+      "explanation": {
+        "overview": "Phase I reactions include oxidation, reduction, and hydrolysis, introducing or unmasking a functional group.",
+        "highYield": "Phase I: oxidation (CYP450), reduction, hydrolysis. Phase II: conjugation.",
+        "clinicalCorrelation": "Phase I often precedes Phase II; drugs can be metabolized by Phase I alone if water-soluble enough."
+      }
+    },
+    {
+      "questionId": "pharma_intro_065",
+      "difficulty": 2,
+      "question": "Which of the following drug pairs illustrates a synergistic interaction?",
+      "image": null,
+      "options": [
+        {
+          "text": "Amoxicillin and clavulanic acid",
+          "isCorrect": true,
+          "explanation": "Clavulanic acid inhibits beta-lactamase, allowing amoxicillin to work, resulting in synergistic bacterial killing."
+        },
+        {
+          "text": "Warfarin and aspirin",
+          "isCorrect": false,
+          "explanation": "Additive bleeding risk."
+        },
+        {
+          "text": "Naloxone and morphine",
+          "isCorrect": false,
+          "explanation": "Antagonistic."
+        },
+        {
+          "text": "Probenecid and penicillin",
+          "isCorrect": false,
+          "explanation": "Pharmacokinetic (increased penicillin levels)."
+        },
+        {
+          "text": "Ethanol and disulfiram",
+          "isCorrect": false,
+          "explanation": "Disulfiram reaction (aversive)."
+        }
+      ],
+      "explanation": {
+        "overview": "Synergism is when the combined effect of two drugs exceeds the sum of their individual effects. Amoxicillin-clavulanate is a classic example.",
+        "highYield": "Synergistic: amoxicillin-clavulanate, sulfamethoxazole-trimethoprim, levodopa-carbidopa.",
+        "clinicalCorrelation": "Co-formulated synergistic drugs reduce pill burden and improve adherence."
+      }
+    },
+    {
+      "questionId": "pharma_intro_066",
+      "difficulty": 2,
+      "question": "Which of the following is a prodrug that requires activation by CYP2C19?",
+      "image": null,
+      "options": [
+        {
+          "text": "Clopidogrel",
+          "isCorrect": true,
+          "explanation": "Clopidogrel is a prodrug activated by CYP2C19 to an active metabolite that inhibits platelet aggregation."
+        },
+        {
+          "text": "Warfarin",
+          "isCorrect": false,
+          "explanation": "Warfarin is active as is."
+        },
+        {
+          "text": "Heparin",
+          "isCorrect": false,
+          "explanation": "Parenteral, active."
+        },
+        {
+          "text": "Aspirin",
+          "isCorrect": false,
+          "explanation": "Active as is."
+        },
+        {
+          "text": "Dabigatran",
+          "isCorrect": false,
+          "explanation": "Prodrug but activated by esterases."
+        }
+      ],
+      "explanation": {
+        "overview": "Clopidogrel is a prodrug that requires two-step activation, primarily via CYP2C19. Genetic variants or inhibitors of CYP2C19 can reduce its efficacy.",
+        "highYield": "Clopidogrel = CYP2C19 prodrug; omeprazole reduces activation.",
+        "clinicalCorrelation": "Consider alternative antiplatelet drugs (e.g., ticagrelor) in patients on strong CYP2C19 inhibitors."
+      }
+    },
+    {
+      "questionId": "pharma_intro_067",
+      "difficulty": 2,
+      "question": "Which of the following is a common cause of interindividual variability in drug metabolism?",
+      "image": null,
+      "options": [
+        {
+          "text": "Genetic polymorphisms in CYP enzymes",
+          "isCorrect": false,
+          "explanation": "Yes, but not the only one."
+        },
+        {
+          "text": "Age",
+          "isCorrect": false,
+          "explanation": "Yes."
+        },
+        {
+          "text": "Diet and environmental factors",
+          "isCorrect": false,
+          "explanation": "Yes."
+        },
+        {
+          "text": "Disease states (liver, kidney)",
+          "isCorrect": false,
+          "explanation": "Yes."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "All these factors contribute to variability in drug metabolism and response."
+        }
+      ],
+      "explanation": {
+        "overview": "Drug metabolism varies widely between individuals due to genetics, age, diet, disease, and concurrent medications, leading to differences in drug efficacy and toxicity.",
+        "highYield": "Variability sources: genetics (CYP polymorphisms), age, liver/renal function, drug interactions.",
+        "clinicalCorrelation": "Personalized medicine uses pharmacogenomics to individualize drug therapy."
+      }
+    },
+    {
+      "questionId": "pharma_intro_068",
+      "difficulty": 2,
+      "question": "Which of the following best defines the 'ceiling effect' of a partial agonist?",
+      "image": null,
+      "options": [
+        {
+          "text": "Beyond a certain dose, no further increase in therapeutic effect occurs",
+          "isCorrect": true,
+          "explanation": "Partial agonists have lower intrinsic efficacy; increasing dose does not produce a full maximal response."
+        },
+        {
+          "text": "The dose at which toxicity begins",
+          "isCorrect": false,
+          "explanation": "Not ceiling effect."
+        },
+        {
+          "text": "The maximum tolerated dose",
+          "isCorrect": false,
+          "explanation": "Not the same."
+        },
+        {
+          "text": "The therapeutic window",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "The point of receptor saturation",
+          "isCorrect": false,
+          "explanation": "Even at saturation, effect is submaximal."
+        }
+      ],
+      "explanation": {
+        "overview": "The ceiling effect of partial agonists limits their maximal efficacy, providing a safety advantage in situations like respiratory depression with opioids.",
+        "highYield": "Ceiling effect = limited max response; buprenorphine safer in overdose than full agonists.",
+        "clinicalCorrelation": "Buprenorphine's ceiling effect reduces respiratory depression risk compared to morphine."
+      }
+    },
+    {
+      "questionId": "pharma_intro_069",
+      "difficulty": 2,
+      "question": "Which of the following is a characteristic of zero-order elimination kinetics?",
+      "image": null,
+      "options": [
+        {
+          "text": "A constant amount of drug is eliminated per unit time",
+          "isCorrect": true,
+          "explanation": "Zero-order: elimination rate is constant, independent of plasma concentration."
+        },
+        {
+          "text": "A constant fraction of drug is eliminated per unit time",
+          "isCorrect": false,
+          "explanation": "First-order."
+        },
+        {
+          "text": "The half-life is constant",
+          "isCorrect": false,
+          "explanation": "Half-life varies with concentration in zero-order."
+        },
+        {
+          "text": "Elimination follows an exponential decay",
+          "isCorrect": false,
+          "explanation": "Linear decay."
+        },
+        {
+          "text": "The drug has a high therapeutic index",
+          "isCorrect": false,
+          "explanation": "Not related."
+        }
+      ],
+      "explanation": {
+        "overview": "Zero-order (saturation) kinetics occurs when the elimination system is saturated, and a fixed amount of drug is eliminated per hour regardless of concentration.",
+        "highYield": "Zero-order: constant amount/time; plasma concentration declines linearly, not exponentially.",
+        "clinicalCorrelation": "Zero-order kinetics make dose adjustments unpredictable and require careful monitoring."
+      }
+    },
+    {
+      "questionId": "pharma_intro_070",
+      "difficulty": 2,
+      "question": "Which of the following is a type of receptor that, when activated, leads to gene transcription?",
+      "image": null,
+      "options": [
+        {
+          "text": "Intracellular (nuclear) receptors",
+          "isCorrect": true,
+          "explanation": "Steroid hormone receptors, thyroid hormone receptors are intracellular and act as transcription factors."
+        },
+        {
+          "text": "Ligand-gated ion channels",
+          "isCorrect": false,
+          "explanation": "Cause ion flux, not direct gene transcription."
+        },
+        {
+          "text": "G-protein-coupled receptors",
+          "isCorrect": false,
+          "explanation": "Can indirectly affect gene expression, but not primary."
+        },
+        {
+          "text": "Enzyme-linked receptors",
+          "isCorrect": false,
+          "explanation": "Activate intracellular signaling cascades."
+        },
+        {
+          "text": "Transporter proteins",
+          "isCorrect": false,
+          "explanation": "Not receptors per se."
+        }
+      ],
+      "explanation": {
+        "overview": "Nuclear receptors (e.g., glucocorticoid receptor, estrogen receptor) are located intracellularly and, upon ligand binding, translocate to the nucleus to modulate gene transcription.",
+        "highYield": "Nuclear receptors = gene transcription; slow onset, long duration. Examples: corticosteroids, thyroid hormone.",
+        "clinicalCorrelation": "Corticosteroids have delayed effects (hours to days) due to genomic mechanism."
+      }
+    },
+    {
+      "questionId": "pharma_intro_071",
+      "difficulty": 2,
+      "question": "Which of the following is a key difference between pharmacokinetic and pharmacodynamic tolerance?",
+      "image": null,
+      "options": [
+        {
+          "text": "Pharmacokinetic tolerance involves reduced drug levels at the site of action; pharmacodynamic tolerance involves reduced response despite same levels",
+          "isCorrect": true,
+          "explanation": "PK tolerance is due to increased metabolism/clearance; PD tolerance is due to receptor changes."
+        },
+        {
+          "text": "Both involve receptor downregulation",
+          "isCorrect": false,
+          "explanation": "Only PD tolerance."
+        },
+        {
+          "text": "PK tolerance always occurs first",
+          "isCorrect": false,
+          "explanation": "Not necessarily."
+        },
+        {
+          "text": "PD tolerance is not clinically relevant",
+          "isCorrect": false,
+          "explanation": "It is very relevant."
+        },
+        {
+          "text": "There is no difference",
+          "isCorrect": false,
+          "explanation": "Different."
+        }
+      ],
+      "explanation": {
+        "overview": "Pharmacokinetic tolerance results from decreased drug concentration at the target (e.g., enzyme induction). Pharmacodynamic tolerance results from adaptive changes in the target tissue (e.g., receptor downregulation).",
+        "highYield": "PK tolerance = less drug at site; PD tolerance = less effect per unit of drug.",
+        "clinicalCorrelation": "Opioid tolerance is mainly pharmacodynamic; barbiturate tolerance involves both PK and PD."
+      }
+    },
+    {
+      "questionId": "pharma_intro_072",
+      "difficulty": 2,
+      "question": "Which of the following is a major factor contributing to interpatient variability in drug response?",
+      "image": null,
+      "options": [
+        {
+          "text": "Genetic polymorphisms in drug targets and metabolizing enzymes",
+          "isCorrect": true,
+          "explanation": "Pharmacogenomic variations can alter drug metabolism, transport, and receptor sensitivity."
+        },
+        {
+          "text": "Patient compliance alone",
+          "isCorrect": false,
+          "explanation": "Not the only factor."
+        },
+        {
+          "text": "Brand vs generic formulation",
+          "isCorrect": false,
+          "explanation": "Should be bioequivalent."
+        },
+        {
+          "text": "Time of day of administration",
+          "isCorrect": false,
+          "explanation": "Chronopharmacology plays a role but genetics is major."
+        },
+        {
+          "text": "Color of the tablet",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Pharmacogenomic differences, including CYP polymorphisms (e.g., CYP2D6, CYP2C19), can classify patients as poor, intermediate, extensive, or ultra-rapid metabolizers, significantly affecting drug levels and responses.",
+        "highYield": "Genetic variability in CYP enzymes and receptors is a major determinant of drug efficacy and toxicity.",
+        "clinicalCorrelation": "Abacavir hypersensitivity is strongly associated with HLA-B*5701; screening prevents reaction."
+      }
+    },
+    {
+      "questionId": "pharma_intro_073",
+      "difficulty": 2,
+      "question": "Which of the following describes the 'first-pass effect' for a drug with high hepatic extraction ratio?",
+      "image": null,
+      "options": [
+        {
+          "text": "Large fraction of drug is removed during first passage through the liver, resulting in low oral bioavailability",
+          "isCorrect": true,
+          "explanation": "High extraction drugs are efficiently cleared by the liver, leading to low oral bioavailability."
+        },
+        {
+          "text": "The drug is not absorbed from the GI tract",
+          "isCorrect": false,
+          "explanation": "It's absorbed but metabolized."
+        },
+        {
+          "text": "The drug has 100% oral bioavailability",
+          "isCorrect": false,
+          "explanation": "Opposite."
+        },
+        {
+          "text": "The drug is excreted unchanged in urine",
+          "isCorrect": false,
+          "explanation": "Not related."
+        },
+        {
+          "text": "The drug is only given IV",
+          "isCorrect": false,
+          "explanation": "Not necessarily."
+        }
+      ],
+      "explanation": {
+        "overview": "Drugs with high hepatic extraction (e.g., propranolol, lidocaine, verapamil) undergo extensive first-pass metabolism, resulting in very low oral bioavailability despite good GI absorption.",
+        "highYield": "High extraction ratio → low oral bioavailability; small changes in liver function greatly affect levels.",
+        "clinicalCorrelation": "In cirrhosis or heart failure (reduced hepatic blood flow), bioavailability of these drugs increases."
+      }
+    },
+    {
+      "questionId": "pharma_intro_074",
+      "difficulty": 2,
+      "question": "Which of the following is a prodrug that is activated by hydrolysis in the liver to its active form?",
+      "image": null,
+      "options": [
+        {
+          "text": "Enalapril",
+          "isCorrect": true,
+          "explanation": "Enalapril is hydrolyzed by esterases in the liver to enalaprilat, the active ACE inhibitor."
+        },
+        {
+          "text": "Lisinopril",
+          "isCorrect": false,
+          "explanation": "Lisinopril is active as such."
+        },
+        {
+          "text": "Atenolol",
+          "isCorrect": false,
+          "explanation": "Active as is."
+        },
+        {
+          "text": "Hydrochlorothiazide",
+          "isCorrect": false,
+          "explanation": "Active."
+        },
+        {
+          "text": "Furosemide",
+          "isCorrect": false,
+          "explanation": "Active."
+        }
+      ],
+      "explanation": {
+        "overview": "Enalapril is an ester prodrug that is converted to the active diacid enalaprilat. Other ACE inhibitor prodrugs include ramipril, quinapril, and benazepril.",
+        "highYield": "Enalapril, ramipril, etc., are prodrugs; lisinopril and captopril are active as is.",
+        "clinicalCorrelation": "Prodrugs may have improved oral absorption compared to the active drug."
+      }
+    },
+    {
+      "questionId": "pharma_intro_075",
+      "difficulty": 3,
+      "question": "A patient is on phenytoin, a drug with saturable metabolism. When the dose is increased from 300 mg/day to 350 mg/day, the steady-state plasma concentration rises from 12 mg/L to 20 mg/L. What is the most likely explanation?",
+      "image": null,
+      "options": [
+        {
+          "text": "Phenytoin metabolism is near saturation, causing a disproportionate increase in levels",
+          "isCorrect": true,
+          "explanation": "Phenytoin exhibits zero-order kinetics at therapeutic concentrations; small dose increments can cause large increases in plasma levels."
+        },
+        {
+          "text": "Phenytoin absorption has increased",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Patient has developed tolerance",
+          "isCorrect": false,
+          "explanation": "Tolerance would decrease effect, not increase levels."
+        },
+        {
+          "text": "Enzyme induction has occurred",
+          "isCorrect": false,
+          "explanation": "Induction would decrease levels."
+        },
+        {
+          "text": "Protein binding has decreased",
+          "isCorrect": false,
+          "explanation": "Could increase free fraction but total concentration would not necessarily rise that dramatically."
+        }
+      ],
+      "explanation": {
+        "overview": "Phenytoin is a classic example of nonlinear pharmacokinetics due to saturable hepatic metabolism. Once enzymes are saturated, clearance decreases dramatically, and small dose increases lead to toxic levels.",
+        "highYield": "Phenytoin: small dose increase → large concentration jump. Monitor levels and adjust in small increments.",
+        "clinicalCorrelation": "When increasing phenytoin dose, do not exceed 50-100 mg/day increments; use therapeutic drug monitoring."
+      }
+    }
+  ]
+}

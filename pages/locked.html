@@ -4,21 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Account Locked – Medical Exam Room Pro</title>
+    <title>Account Locked – MedHub</title>
 
-    <link rel="manifest" href="../manifest.json">
-    <link rel="stylesheet" href="../css/common.css" media="all">
-    <link rel="stylesheet" href="../css/locked.css" media="all">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/css/common.css" media="all">
+    <link rel="stylesheet" href="/css/locked.css" media="all">
 
-    <script type="module" src="../scripts/utils.js"></script>
-    <script type="module" src="../scripts/ui.js"></script>
-    <script type="module" src="../scripts/router.js"></script>
-    <script type="module" src="../scripts/security.js"></script>
-    <script type="module" src="../scripts/db.js"></script>
+    <script type="module" src="/scripts/utils.js"></script>
+    <script type="module" src="/scripts/ui.js"></script>
+    <script type="module" src="/scripts/router.js"></script>
+    <script type="module" src="/scripts/security.js"></script>
+    <script type="module" src="/scripts/db.js"></script>
 
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('../service-worker.js').catch(() => { });
+            navigator.serviceWorker.register('/service-worker.js').catch(() => { });
         }
     </script>
 
@@ -152,7 +152,7 @@
 
             <div class="prevention-tips">
                 <h3>❓ Why did this happen?</h3>
-                <p>Medical Exam Room Pro has a zero‑tolerance policy against time manipulation. Changing your device's
+                <p>MedHub has a zero‑tolerance policy against time manipulation. Changing your device's
                     date or time to extend a trial or subscription is automatically detected and results in an
                     immediate, permanent lock.</p>
                 <p>To prevent this in future:</p>
@@ -185,7 +185,7 @@
         </div>
     </div>
 
-    <script data-lazy data-src="../scripts/offline.js"></script>
+    <script data-lazy data-src="/scripts/offline.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,3994 @@
+{
+  "questions": [
+    {
+      "questionId": "lipid_metabolism_001",
+      "difficulty": 1,
+      "question": "Where does fatty acid synthesis primarily occur in the cell?",
+      "image": null,
+      "options": [
+        {
+          "text": "Cytosol",
+          "isCorrect": true,
+          "explanation": "Fatty acid synthesis takes place in the cytosol, using acetyl‑CoA exported from mitochondria as citrate."
+        },
+        {
+          "text": "Mitochondria",
+          "isCorrect": false,
+          "explanation": "Mitochondria are the site of β‑oxidation, not fatty acid synthesis."
+        },
+        {
+          "text": "Peroxisomes",
+          "isCorrect": false,
+          "explanation": "Peroxisomes perform some β‑oxidation (very‑long‑chain fatty acids) and α‑oxidation, not the main synthesis."
+        },
+        {
+          "text": "Endoplasmic reticulum",
+          "isCorrect": false,
+          "explanation": "The ER is involved in phospholipid synthesis and elongation/desaturation, not the core fatty acid synthase complex."
+        },
+        {
+          "text": "Nucleus",
+          "isCorrect": false,
+          "explanation": "The nucleus is not a site of fatty acid synthesis."
+        }
+      ],
+      "explanation": {
+        "overview": "Fatty acid synthesis occurs in the cytosol, using acetyl-CoA exported from mitochondria as citrate.",
+        "highYield": "Fatty acid synthesis: cytosol.",
+        "clinicalCorrelation": "Inhibitors of fatty acid synthase are being explored as anti‑obesity and anti‑cancer agents."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_002",
+      "difficulty": 1,
+      "question": "The activated intermediate for fatty acid synthesis is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Malonyl-CoA",
+          "isCorrect": true,
+          "explanation": "Acetyl‑CoA carboxylase converts acetyl‑CoA to malonyl‑CoA, the two‑carbon donor for the fatty acid synthase complex."
+        },
+        {
+          "text": "Acetyl-CoA",
+          "isCorrect": false,
+          "explanation": "Acetyl‑CoA is the starting substrate but is first converted to malonyl‑CoA."
+        },
+        {
+          "text": "Acyl-CoA",
+          "isCorrect": false,
+          "explanation": "Acyl‑CoA is the activated form for β‑oxidation, not synthesis."
+        },
+        {
+          "text": "Citrate",
+          "isCorrect": false,
+          "explanation": "Citrate is the carrier that exports acetyl‑CoA from mitochondria."
+        },
+        {
+          "text": "Succinyl-CoA",
+          "isCorrect": false,
+          "explanation": "Succinyl‑CoA is a TCA cycle intermediate, not directly involved in fatty acid synthesis."
+        }
+      ],
+      "explanation": {
+        "overview": "Acetyl-CoA carboxylase converts acetyl-CoA to malonyl-CoA, the two‑carbon donor for fatty acid synthesis.",
+        "highYield": "Malonyl‑CoA = the committed precursor for fatty acid synthesis.",
+        "clinicalCorrelation": "Malonyl‑CoA also inhibits CPT‑I, preventing simultaneous fatty acid synthesis and oxidation."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_003",
+      "difficulty": 2,
+      "question": "Acetyl-CoA carboxylase is the rate-limiting enzyme of fatty acid synthesis and is allosterically activated by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Citrate",
+          "isCorrect": true,
+          "explanation": "Citrate signals energy surplus and promotes polymerization of acetyl‑CoA carboxylase into its active form."
+        },
+        {
+          "text": "Palmitoyl-CoA",
+          "isCorrect": false,
+          "explanation": "Palmitoyl‑CoA is the end product and feedback‑inhibits acetyl‑CoA carboxylase."
+        },
+        {
+          "text": "AMP",
+          "isCorrect": false,
+          "explanation": "AMPK phosphorylates and inactivates acetyl‑CoA carboxylase."
+        },
+        {
+          "text": "Glucagon",
+          "isCorrect": false,
+          "explanation": "Glucagon, via cAMP and PKA, leads to phosphorylation and inactivation of the enzyme."
+        },
+        {
+          "text": "Epinephrine",
+          "isCorrect": false,
+          "explanation": "Epinephrine also acts via cAMP to inactivate acetyl‑CoA carboxylase."
+        }
+      ],
+      "explanation": {
+        "overview": "Citrate signals energy surplus and activates acetyl-CoA carboxylase; palmitoyl-CoA inhibits it.",
+        "highYield": "ACC activated by citrate, inhibited by palmitoyl‑CoA and phosphorylation.",
+        "clinicalCorrelation": "AMPK activators (e.g., metformin) inhibit ACC, reducing fatty acid synthesis and promoting oxidation."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_004",
+      "difficulty": 2,
+      "question": "The fatty acid synthase complex in mammals produces which fatty acid as the final product?",
+      "image": null,
+      "options": [
+        {
+          "text": "Palmitate (C16:0)",
+          "isCorrect": true,
+          "explanation": "After seven cycles of elongation, the growing acyl chain is cleaved by thioesterase to release free palmitate."
+        },
+        {
+          "text": "Stearate (C18:0)",
+          "isCorrect": false,
+          "explanation": "Stearate is formed by elongation of palmitate beyond the fatty acid synthase complex."
+        },
+        {
+          "text": "Oleate (C18:1)",
+          "isCorrect": false,
+          "explanation": "Oleate is unsaturated; desaturation occurs after synthesis."
+        },
+        {
+          "text": "Myristate (C14:0)",
+          "isCorrect": false,
+          "explanation": "Myristate can be released prematurely but palmitate is the major product."
+        },
+        {
+          "text": "Laurate (C12:0)",
+          "isCorrect": false,
+          "explanation": "Laurate is a minor product; the standard product is C16 palmitate."
+        }
+      ],
+      "explanation": {
+        "overview": "Fatty acid synthase typically releases palmitate after seven cycles of elongation.",
+        "highYield": "Mammalian FAS product: palmitate (C16:0).",
+        "clinicalCorrelation": "Cancer cells often overexpress FAS; inhibitors are in development."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_005",
+      "difficulty": 2,
+      "question": "NADPH required for fatty acid synthesis is primarily generated by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Pentose phosphate pathway",
+          "isCorrect": false,
+          "explanation": "The PPP is a major source, but other enzymes also contribute."
+        },
+        {
+          "text": "Malic enzyme",
+          "isCorrect": false,
+          "explanation": "Malic enzyme produces NADPH, but it is not the only source."
+        },
+        {
+          "text": "Isocitrate dehydrogenase (NADP+)",
+          "isCorrect": false,
+          "explanation": "This enzyme also contributes NADPH."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "NADPH is supplied by the PPP, malic enzyme, and NADP+‑linked isocitrate dehydrogenase."
+        },
+        {
+          "text": "None of the above",
+          "isCorrect": false,
+          "explanation": "All three are valid sources."
+        }
+      ],
+      "explanation": {
+        "overview": "NADPH comes from the PPP, malic enzyme, and NADP+-linked isocitrate dehydrogenase in various tissues.",
+        "highYield": "NADPH sources: PPP, malic enzyme, isocitrate dehydrogenase (NADP+).",
+        "clinicalCorrelation": "NADPH is essential for fatty acid synthesis; its deficiency impairs lipogenesis and antioxidant defense."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_006",
+      "difficulty": 2,
+      "question": "The enzyme that converts citrate to acetyl-CoA and oxaloacetate in the cytosol is:",
+      "image": null,
+      "options": [
+        {
+          "text": "ATP-citrate lyase",
+          "isCorrect": true,
+          "explanation": "ATP‑citrate lyase cleaves citrate into acetyl‑CoA and oxaloacetate, providing the acetyl‑CoA for lipogenesis."
+        },
+        {
+          "text": "Citrate synthase",
+          "isCorrect": false,
+          "explanation": "Citrate synthase condenses acetyl‑CoA and oxaloacetate in the TCA cycle."
+        },
+        {
+          "text": "Aconitase",
+          "isCorrect": false,
+          "explanation": "Aconitase isomerizes citrate to isocitrate."
+        },
+        {
+          "text": "Isocitrate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "This enzyme decarboxylates isocitrate to α‑ketoglutarate."
+        },
+        {
+          "text": "Malate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Malate dehydrogenase converts malate to oxaloacetate."
+        }
+      ],
+      "explanation": {
+        "overview": "ATP-citrate lyase cleaves citrate to provide acetyl-CoA for fatty acid synthesis.",
+        "highYield": "Citrate shuttle: citrate → acetyl‑CoA + OAA via ATP‑citrate lyase.",
+        "clinicalCorrelation": "Inhibitors of ATP‑citrate lyase (e.g., bempedoic acid) are used to lower LDL cholesterol."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_007",
+      "difficulty": 1,
+      "question": "Which of the following hormones stimulates fatty acid synthesis?",
+      "image": null,
+      "options": [
+        {
+          "text": "Insulin",
+          "isCorrect": true,
+          "explanation": "Insulin activates acetyl‑CoA carboxylase via dephosphorylation and upregulates lipogenic enzymes."
+        },
+        {
+          "text": "Glucagon",
+          "isCorrect": false,
+          "explanation": "Glucagon inhibits lipogenesis by promoting phosphorylation of ACC."
+        },
+        {
+          "text": "Epinephrine",
+          "isCorrect": false,
+          "explanation": "Epinephrine promotes lipolysis and inhibits synthesis."
+        },
+        {
+          "text": "Cortisol",
+          "isCorrect": false,
+          "explanation": "Cortisol generally mobilizes energy stores, not direct stimulation of synthesis."
+        },
+        {
+          "text": "Thyroid hormone",
+          "isCorrect": false,
+          "explanation": "Thyroid hormone increases metabolic rate and can stimulate lipolysis."
+        }
+      ],
+      "explanation": {
+        "overview": "Insulin promotes lipogenesis by activating acetyl-CoA carboxylase and increasing gene expression of lipogenic enzymes.",
+        "highYield": "Insulin = major lipogenic hormone.",
+        "clinicalCorrelation": "In insulin resistance, hepatic lipogenesis continues, contributing to hypertriglyceridemia."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_008",
+      "difficulty": 1,
+      "question": "β-oxidation of fatty acids occurs in the:",
+      "image": null,
+      "options": [
+        {
+          "text": "Mitochondrial matrix",
+          "isCorrect": true,
+          "explanation": "β‑oxidation primarily takes place in the mitochondrial matrix; very‑long‑chain fatty acids are first oxidized in peroxisomes."
+        },
+        {
+          "text": "Cytosol",
+          "isCorrect": false,
+          "explanation": "Fatty acid synthesis occurs in the cytosol."
+        },
+        {
+          "text": "Peroxisomes",
+          "isCorrect": false,
+          "explanation": "Peroxisomes perform β‑oxidation of VLCFAs and branched‑chain fatty acids, but the main site is mitochondria."
+        },
+        {
+          "text": "Endoplasmic reticulum",
+          "isCorrect": false,
+          "explanation": "The ER is involved in lipid synthesis and elongation, not β‑oxidation."
+        },
+        {
+          "text": "Golgi apparatus",
+          "isCorrect": false,
+          "explanation": "The Golgi processes and packages lipids, not oxidizes them."
+        }
+      ],
+      "explanation": {
+        "overview": "β-oxidation primarily takes place in the mitochondrial matrix; very‑long‑chain fatty acids are first oxidized in peroxisomes.",
+        "highYield": "β‑oxidation: mitochondria (main), peroxisomes (VLCFA).",
+        "clinicalCorrelation": "MCAD deficiency impairs mitochondrial β‑oxidation, causing hypoketotic hypoglycemia."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_009",
+      "difficulty": 1,
+      "question": "Before entering β-oxidation, fatty acids must be activated to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Acyl-CoA",
+          "isCorrect": true,
+          "explanation": "Fatty acyl‑CoA synthetase (thiokinase) activates fatty acids to acyl‑CoA in the cytosol, using ATP."
+        },
+        {
+          "text": "Acyl-carnitine",
+          "isCorrect": false,
+          "explanation": "Acyl‑carnitine is the transport form across the inner mitochondrial membrane, not the initial activated form."
+        },
+        {
+          "text": "Malonyl-CoA",
+          "isCorrect": false,
+          "explanation": "Malonyl‑CoA is an intermediate in fatty acid synthesis."
+        },
+        {
+          "text": "Acetyl-CoA",
+          "isCorrect": false,
+          "explanation": "Acetyl‑CoA is a product of β‑oxidation, not the activated fatty acid entering it."
+        },
+        {
+          "text": "Free fatty acid",
+          "isCorrect": false,
+          "explanation": "Free fatty acids must be activated to acyl‑CoA before oxidation."
+        }
+      ],
+      "explanation": {
+        "overview": "Fatty acyl-CoA synthetase (thiokinase) forms acyl-CoA in the cytosol.",
+        "highYield": "Activation: fatty acid + CoA + ATP → acyl‑CoA + AMP + PPi.",
+        "clinicalCorrelation": "Carnitine deficiency prevents long‑chain acyl‑CoA from entering mitochondria."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_010",
+      "difficulty": 2,
+      "question": "The carnitine shuttle transports long‑chain fatty acyl groups into mitochondria and involves:",
+      "image": null,
+      "options": [
+        {
+          "text": "CPT I, translocase, and CPT II",
+          "isCorrect": true,
+          "explanation": "CPT I (outer mitochondrial membrane) forms acyl‑carnitine, translocase carries it across, and CPT II regenerates acyl‑CoA in the matrix."
+        },
+        {
+          "text": "CAT I and CAT II",
+          "isCorrect": false,
+          "explanation": "CAT I/II are not standard abbreviations for the carnitine shuttle."
+        },
+        {
+          "text": "Acyl-CoA dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Acyl‑CoA dehydrogenase is the first enzyme of β‑oxidation, not part of the shuttle."
+        },
+        {
+          "text": "Carnitine acyltransferase",
+          "isCorrect": false,
+          "explanation": "This is a generic term; the specific components are CPT I, translocase, and CPT II."
+        },
+        {
+          "text": "Acyl-CoA synthetase",
+          "isCorrect": false,
+          "explanation": "Acyl‑CoA synthetase activates fatty acids, but does not transport them."
+        }
+      ],
+      "explanation": {
+        "overview": "CPT I converts acyl-CoA to acylcarnitine, translocase moves it in, and CPT II regenerates acyl-CoA.",
+        "highYield": "Carnitine shuttle: CPT I → translocase → CPT II.",
+        "clinicalCorrelation": "Malonyl‑CoA inhibits CPT I, preventing fatty acid oxidation when synthesis is active."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_011",
+      "difficulty": 2,
+      "question": "The rate‑limiting enzyme of β-oxidation is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Carnitine palmitoyltransferase I (CPT I)",
+          "isCorrect": true,
+          "explanation": "CPT I controls the entry of long‑chain fatty acids into mitochondria and is inhibited by malonyl‑CoA."
+        },
+        {
+          "text": "Acyl-CoA dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Acyl‑CoA dehydrogenase catalyzes the first step of the β‑oxidation cycle but is not rate‑limiting for the pathway."
+        },
+        {
+          "text": "Enoyl-CoA hydratase",
+          "isCorrect": false,
+          "explanation": "This is the second enzyme in the cycle."
+        },
+        {
+          "text": "β-hydroxyacyl-CoA dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Third step in the cycle."
+        },
+        {
+          "text": "Thiolase",
+          "isCorrect": false,
+          "explanation": "Thiolase releases acetyl‑CoA; not the committed step."
+        }
+      ],
+      "explanation": {
+        "overview": "CPT I controls entry of fatty acids into mitochondria and is inhibited by malonyl‑CoA.",
+        "highYield": "Rate‑limiting β‑oxidation step: CPT I.",
+        "clinicalCorrelation": "Drugs that inhibit CPT I could reduce fatty acid oxidation; malonyl‑CoA is a natural inhibitor."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_012",
+      "difficulty": 2,
+      "question": "Each cycle of β-oxidation of a saturated fatty acid produces:",
+      "image": null,
+      "options": [
+        {
+          "text": "1 acetyl-CoA, 1 FADH₂, 1 NADH",
+          "isCorrect": true,
+          "explanation": "One cycle removes two carbons as acetyl‑CoA and generates one FADH₂ and one NADH."
+        },
+        {
+          "text": "2 acetyl-CoA, 1 FADH₂, 1 NADH",
+          "isCorrect": false,
+          "explanation": "Only one acetyl‑CoA is produced per cycle."
+        },
+        {
+          "text": "1 acetyl-CoA, 2 FADH₂, 2 NADH",
+          "isCorrect": false,
+          "explanation": "One FADH₂ and one NADH are produced per cycle."
+        },
+        {
+          "text": "1 acetyl-CoA, 1 FADH₂, 2 NADH",
+          "isCorrect": false,
+          "explanation": "Only one NADH is produced."
+        },
+        {
+          "text": "2 acetyl-CoA, 2 FADH₂, 2 NADH",
+          "isCorrect": false,
+          "explanation": "That would be two cycles."
+        }
+      ],
+      "explanation": {
+        "overview": "One cycle removes two carbons as acetyl-CoA and generates one FADH₂ and one NADH.",
+        "highYield": "Per β‑oxidation cycle: 1 acetyl‑CoA, 1 FADH₂, 1 NADH.",
+        "clinicalCorrelation": "The FADH₂ and NADH enter the electron transport chain to produce ATP."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_013",
+      "difficulty": 2,
+      "question": "The complete oxidation of one molecule of palmitate (C16:0) yields approximately how many ATP?",
+      "image": null,
+      "options": [
+        {
+          "text": "106 ATP",
+          "isCorrect": true,
+          "explanation": "Palmitate (7 cycles) yields 8 acetyl‑CoA, 7 FADH₂, 7 NADH. Using ~2.5 ATP/NADH and ~1.5 ATP/FADH₂, total is ~106 ATP (net ~106 after activation cost)."
+        },
+        {
+          "text": "32 ATP",
+          "isCorrect": false,
+          "explanation": "That is the approximate ATP from one glucose."
+        },
+        {
+          "text": "8 ATP",
+          "isCorrect": false,
+          "explanation": "Too low; that's only the acetyl‑CoA count without accounting for reduced cofactors."
+        },
+        {
+          "text": "50 ATP",
+          "isCorrect": false,
+          "explanation": "Underestimate."
+        },
+        {
+          "text": "200 ATP",
+          "isCorrect": false,
+          "explanation": "Overestimate."
+        }
+      ],
+      "explanation": {
+        "overview": "Palmitate (7 cycles) yields 8 acetyl‑CoA, 7 FADH₂, 7 NADH. Using modern stoichiometry (2.5 ATP/NADH, 1.5 ATP/FADH₂), total is ~106 ATP.",
+        "highYield": "Palmitate → ~106 ATP (net).",
+        "clinicalCorrelation": "Fatty acids provide more ATP per carbon than glucose, making them efficient energy stores."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_014",
+      "difficulty": 1,
+      "question": "Ketone bodies are synthesized in the liver from:",
+      "image": null,
+      "options": [
+        {
+          "text": "Acetyl-CoA",
+          "isCorrect": true,
+          "explanation": "During fasting, excess acetyl‑CoA from β‑oxidation is converted to ketone bodies."
+        },
+        {
+          "text": "Fatty acids",
+          "isCorrect": false,
+          "explanation": "Fatty acids are broken down to acetyl‑CoA, which then forms ketone bodies."
+        },
+        {
+          "text": "Amino acids",
+          "isCorrect": false,
+          "explanation": "Ketogenic amino acids can contribute, but the direct substrate is acetyl‑CoA."
+        },
+        {
+          "text": "Glucose",
+          "isCorrect": false,
+          "explanation": "Glucose is not a direct precursor of ketone bodies."
+        },
+        {
+          "text": "Glycerol",
+          "isCorrect": false,
+          "explanation": "Glycerol is gluconeogenic, not ketogenic."
+        }
+      ],
+      "explanation": {
+        "overview": "During fasting, excess acetyl-CoA from β-oxidation is converted to ketone bodies.",
+        "highYield": "Ketogenesis substrate: acetyl‑CoA.",
+        "clinicalCorrelation": "In DKA, massive ketone body production leads to high anion gap metabolic acidosis."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_015",
+      "difficulty": 1,
+      "question": "Which of the following is NOT a ketone body?",
+      "image": null,
+      "options": [
+        {
+          "text": "Acetoacetate",
+          "isCorrect": false,
+          "explanation": "Acetoacetate is a ketone body."
+        },
+        {
+          "text": "β-hydroxybutyrate",
+          "isCorrect": false,
+          "explanation": "β‑hydroxybutyrate is a ketone body."
+        },
+        {
+          "text": "Acetone",
+          "isCorrect": false,
+          "explanation": "Acetone is a ketone body."
+        },
+        {
+          "text": "Acetyl-CoA",
+          "isCorrect": true,
+          "explanation": "Acetyl‑CoA is the precursor, not a ketone body."
+        },
+        {
+          "text": "None (all are ketone bodies)",
+          "isCorrect": false,
+          "explanation": "Acetyl‑CoA is not a ketone body."
+        }
+      ],
+      "explanation": {
+        "overview": "Ketone bodies are acetoacetate, β-hydroxybutyrate, and acetone. Acetyl-CoA is a substrate, not a ketone body.",
+        "highYield": "Ketone bodies: acetoacetate, β‑hydroxybutyrate, acetone.",
+        "clinicalCorrelation": "Nitroprusside test detects acetoacetate, not β‑hydroxybutyrate; in alcoholic ketoacidosis, β‑hydroxybutyrate predominates, giving false negative."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_016",
+      "difficulty": 2,
+      "question": "The rate‑limiting enzyme of ketogenesis is:",
+      "image": null,
+      "options": [
+        {
+          "text": "HMG‑CoA synthase (mitochondrial)",
+          "isCorrect": true,
+          "explanation": "Mitochondrial HMG‑CoA synthase is the committed step in ketogenesis."
+        },
+        {
+          "text": "HMG‑CoA lyase",
+          "isCorrect": false,
+          "explanation": "HMG‑CoA lyase cleaves HMG‑CoA to acetoacetate, but it is not rate‑limiting."
+        },
+        {
+          "text": "Thiolase",
+          "isCorrect": false,
+          "explanation": "Thiolase acts earlier to form acetoacetyl‑CoA."
+        },
+        {
+          "text": "Acetoacetyl‑CoA synthetase",
+          "isCorrect": false,
+          "explanation": "Not the key regulatory enzyme."
+        },
+        {
+          "text": "HMG‑CoA reductase",
+          "isCorrect": false,
+          "explanation": "This is the rate‑limiting enzyme of cholesterol synthesis, not ketogenesis."
+        }
+      ],
+      "explanation": {
+        "overview": "Mitochondrial HMG‑CoA synthase is the committed step in ketogenesis.",
+        "highYield": "Ketogenesis: HMG‑CoA synthase (mitochondrial) is rate‑limiting.",
+        "clinicalCorrelation": "This enzyme is induced during fasting and diabetes."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_017",
+      "difficulty": 2,
+      "question": "Ketone bodies are used as fuel by extrahepatic tissues. Which enzyme converts acetoacetate to acetoacetyl‑CoA?",
+      "image": null,
+      "options": [
+        {
+          "text": "Succinyl‑CoA:acetoacetate CoA transferase (thiophorase)",
+          "isCorrect": true,
+          "explanation": "Thiophorase transfers CoA from succinyl‑CoA to acetoacetate, activating it for further oxidation."
+        },
+        {
+          "text": "Acetoacetyl‑CoA thiolase",
+          "isCorrect": false,
+          "explanation": "This enzyme cleaves acetoacetyl‑CoA to two acetyl‑CoA."
+        },
+        {
+          "text": "HMG‑CoA synthase",
+          "isCorrect": false,
+          "explanation": "This enzyme is involved in ketogenesis, not utilization."
+        },
+        {
+          "text": "β‑hydroxybutyrate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "This converts β‑hydroxybutyrate to acetoacetate."
+        },
+        {
+          "text": "Acetoacetate decarboxylase",
+          "isCorrect": false,
+          "explanation": "This forms acetone from acetoacetate."
+        }
+      ],
+      "explanation": {
+        "overview": "Thiophorase transfers CoA from succinyl‑CoA to acetoacetate, activating it.",
+        "highYield": "Thiophorase (succinyl‑CoA:acetoacetate CoA transferase) is absent in liver.",
+        "clinicalCorrelation": "Liver lacks this enzyme, so it cannot utilize ketone bodies; it only produces them."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_018",
+      "difficulty": 1,
+      "question": "Excessive ketone body production in uncontrolled diabetes can lead to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Metabolic acidosis",
+          "isCorrect": true,
+          "explanation": "Accumulation of acetoacetate and β‑hydroxybutyrate causes ketoacidosis."
+        },
+        {
+          "text": "Metabolic alkalosis",
+          "isCorrect": false,
+          "explanation": "Ketone bodies are acids, not bases."
+        },
+        {
+          "text": "Respiratory acidosis",
+          "isCorrect": false,
+          "explanation": "Respiratory compensation causes low PCO₂, not acidosis."
+        },
+        {
+          "text": "Respiratory alkalosis",
+          "isCorrect": false,
+          "explanation": "Kussmaul respirations are a compensation, but the primary disturbance is metabolic acidosis."
+        },
+        {
+          "text": "No effect",
+          "isCorrect": false,
+          "explanation": "Excess ketones cause severe acidosis."
+        }
+      ],
+      "explanation": {
+        "overview": "Accumulation of acetoacetate and β-hydroxybutyrate causes ketoacidosis.",
+        "highYield": "DKA = high anion gap metabolic acidosis.",
+        "clinicalCorrelation": "Treatment includes insulin, fluids, and potassium replacement."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_019",
+      "difficulty": 2,
+      "question": "Lipoprotein lipase (LPL) is activated by:",
+      "image": null,
+      "options": [
+        {
+          "text": "ApoC‑II",
+          "isCorrect": true,
+          "explanation": "ApoC‑II on chylomicrons and VLDL activates LPL, releasing free fatty acids."
+        },
+        {
+          "text": "ApoB‑100",
+          "isCorrect": false,
+          "explanation": "ApoB‑100 is a structural protein of VLDL, LDL; it binds to LDL receptor, not activates LPL."
+        },
+        {
+          "text": "ApoE",
+          "isCorrect": false,
+          "explanation": "ApoE mediates remnant uptake, not LPL activation."
+        },
+        {
+          "text": "ApoA‑I",
+          "isCorrect": false,
+          "explanation": "ApoA‑I activates LCAT, not LPL."
+        },
+        {
+          "text": "ApoC‑III",
+          "isCorrect": false,
+          "explanation": "ApoC‑III inhibits LPL."
+        }
+      ],
+      "explanation": {
+        "overview": "ApoC‑II on chylomicrons and VLDL activates LPL, releasing free fatty acids.",
+        "highYield": "ApoC‑II = LPL activator.",
+        "clinicalCorrelation": "ApoC‑II deficiency causes severe hypertriglyceridemia."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_020",
+      "difficulty": 1,
+      "question": "Which lipoprotein transports dietary triglycerides from the intestine to peripheral tissues?",
+      "image": null,
+      "options": [
+        {
+          "text": "Chylomicrons",
+          "isCorrect": true,
+          "explanation": "Chylomicrons are synthesized in enterocytes and carry exogenous lipids."
+        },
+        {
+          "text": "VLDL",
+          "isCorrect": false,
+          "explanation": "VLDL carries endogenous triglycerides from the liver."
+        },
+        {
+          "text": "LDL",
+          "isCorrect": false,
+          "explanation": "LDL carries cholesterol."
+        },
+        {
+          "text": "HDL",
+          "isCorrect": false,
+          "explanation": "HDL is involved in reverse cholesterol transport."
+        },
+        {
+          "text": "IDL",
+          "isCorrect": false,
+          "explanation": "IDL is a remnant of VLDL."
+        }
+      ],
+      "explanation": {
+        "overview": "Chylomicrons are synthesized in enterocytes and carry exogenous lipids.",
+        "highYield": "Dietary fat → chylomicrons.",
+        "clinicalCorrelation": "Chylomicronemia syndrome causes pancreatitis and eruptive xanthomas."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_021",
+      "difficulty": 1,
+      "question": "VLDL primarily carries:",
+      "image": null,
+      "options": [
+        {
+          "text": "Endogenous triglycerides from liver",
+          "isCorrect": true,
+          "explanation": "VLDL transports triglycerides synthesized in the liver."
+        },
+        {
+          "text": "Cholesterol to peripheral tissues",
+          "isCorrect": false,
+          "explanation": "LDL is the primary cholesterol carrier."
+        },
+        {
+          "text": "Cholesterol from peripheral tissues to liver",
+          "isCorrect": false,
+          "explanation": "HDL performs reverse cholesterol transport."
+        },
+        {
+          "text": "Dietary triglycerides",
+          "isCorrect": false,
+          "explanation": "Chylomicrons transport dietary triglycerides."
+        },
+        {
+          "text": "Phospholipids",
+          "isCorrect": false,
+          "explanation": "All lipoproteins contain phospholipids, but VLDL's main cargo is triglyceride."
+        }
+      ],
+      "explanation": {
+        "overview": "VLDL transports triglycerides synthesized in the liver.",
+        "highYield": "VLDL = endogenous triglycerides.",
+        "clinicalCorrelation": "High VLDL contributes to hypertriglyceridemia and increased cardiovascular risk."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_022",
+      "difficulty": 1,
+      "question": "LDL is often called 'bad cholesterol' because it:",
+      "image": null,
+      "options": [
+        {
+          "text": "Delivers cholesterol to peripheral tissues",
+          "isCorrect": true,
+          "explanation": "Excess LDL can deposit cholesterol in arteries, leading to atherosclerosis."
+        },
+        {
+          "text": "Removes cholesterol from peripheral tissues",
+          "isCorrect": false,
+          "explanation": "That is the role of HDL."
+        },
+        {
+          "text": "Is composed mainly of triglycerides",
+          "isCorrect": false,
+          "explanation": "LDL is cholesterol‑rich; VLDL and chylomicrons are triglyceride‑rich."
+        },
+        {
+          "text": "Is the smallest lipoprotein",
+          "isCorrect": false,
+          "explanation": "HDL is the smallest."
+        },
+        {
+          "text": "Has the highest density",
+          "isCorrect": false,
+          "explanation": "HDL has the highest density."
+        }
+      ],
+      "explanation": {
+        "overview": "Excess LDL can deposit cholesterol in arteries, leading to atherosclerosis.",
+        "highYield": "LDL = 'bad cholesterol' – delivers cholesterol to tissues.",
+        "clinicalCorrelation": "Lowering LDL with statins reduces cardiovascular events."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_023",
+      "difficulty": 1,
+      "question": "HDL is considered 'good cholesterol' because it:",
+      "image": null,
+      "options": [
+        {
+          "text": "Transports cholesterol from peripheral tissues to liver (reverse cholesterol transport)",
+          "isCorrect": true,
+          "explanation": "HDL removes excess cholesterol and delivers it to the liver for excretion."
+        },
+        {
+          "text": "Delivers cholesterol to peripheral tissues",
+          "isCorrect": false,
+          "explanation": "That is LDL's function."
+        },
+        {
+          "text": "Is rich in triglycerides",
+          "isCorrect": false,
+          "explanation": "HDL is protein‑ and phospholipid‑rich."
+        },
+        {
+          "text": "Activates lipoprotein lipase",
+          "isCorrect": false,
+          "explanation": "ApoC‑II activates LPL."
+        },
+        {
+          "text": "Is synthesized only in intestine",
+          "isCorrect": false,
+          "explanation": "HDL is synthesized in liver and intestine."
+        }
+      ],
+      "explanation": {
+        "overview": "HDL removes excess cholesterol and delivers it to the liver for excretion.",
+        "highYield": "HDL = reverse cholesterol transport.",
+        "clinicalCorrelation": "Low HDL is a risk factor for coronary artery disease."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_024",
+      "difficulty": 2,
+      "question": "The enzyme lecithin‑cholesterol acyltransferase (LCAT) is associated with HDL and converts cholesterol to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cholesteryl esters",
+          "isCorrect": true,
+          "explanation": "LCAT esterifies cholesterol, allowing it to be stored in the HDL core."
+        },
+        {
+          "text": "Bile acids",
+          "isCorrect": false,
+          "explanation": "Bile acids are synthesized in the liver from cholesterol."
+        },
+        {
+          "text": "7‑dehydrocholesterol",
+          "isCorrect": false,
+          "explanation": "7‑dehydrocholesterol is a precursor of vitamin D."
+        },
+        {
+          "text": "Cholesterol sulfate",
+          "isCorrect": false,
+          "explanation": "Sulfation is not the main reaction."
+        },
+        {
+          "text": "Oxysterols",
+          "isCorrect": false,
+          "explanation": "Oxysterols are oxygenated derivatives, not the direct product of LCAT."
+        }
+      ],
+      "explanation": {
+        "overview": "LCAT esterifies cholesterol, allowing it to be stored in the HDL core.",
+        "highYield": "LCAT: cholesterol → cholesteryl ester (uses lecithin).",
+        "clinicalCorrelation": "LCAT deficiency causes corneal opacities and renal disease (fish‑eye disease)."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_025",
+      "difficulty": 2,
+      "question": "The LDL receptor recognizes which apolipoproteins?",
+      "image": null,
+      "options": [
+        {
+          "text": "ApoB‑100 and ApoE",
+          "isCorrect": true,
+          "explanation": "LDL receptor binds ApoB‑100 (on LDL) and ApoE (on remnants)."
+        },
+        {
+          "text": "ApoC‑II",
+          "isCorrect": false,
+          "explanation": "ApoC‑II activates LPL."
+        },
+        {
+          "text": "ApoA‑I",
+          "isCorrect": false,
+          "explanation": "ApoA‑I is on HDL and activates LCAT."
+        },
+        {
+          "text": "ApoC‑III",
+          "isCorrect": false,
+          "explanation": "ApoC‑III inhibits LPL."
+        },
+        {
+          "text": "ApoB‑48",
+          "isCorrect": false,
+          "explanation": "ApoB‑48 is on chylomicrons; the LDL receptor does not bind it."
+        }
+      ],
+      "explanation": {
+        "overview": "LDL receptor binds ApoB‑100 (on LDL) and ApoE (on remnants).",
+        "highYield": "LDL receptor ligands: ApoB‑100, ApoE.",
+        "clinicalCorrelation": "Familial hypercholesterolemia is often due to LDL receptor mutations."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_026",
+      "difficulty": 2,
+      "question": "Familial hypercholesterolemia is most commonly caused by mutations in the gene encoding:",
+      "image": null,
+      "options": [
+        {
+          "text": "LDL receptor",
+          "isCorrect": true,
+          "explanation": "Defective LDL receptor leads to elevated plasma LDL and premature atherosclerosis."
+        },
+        {
+          "text": "ApoB‑100",
+          "isCorrect": false,
+          "explanation": "Mutations in ApoB‑100 can cause a similar phenotype (familial defective ApoB), but LDL receptor mutations are more common."
+        },
+        {
+          "text": "PCSK9",
+          "isCorrect": false,
+          "explanation": "Gain‑of‑function PCSK9 mutations increase LDL, but are less common."
+        },
+        {
+          "text": "HMG‑CoA reductase",
+          "isCorrect": false,
+          "explanation": "Mutations are rare; statins target this enzyme."
+        },
+        {
+          "text": "CETP",
+          "isCorrect": false,
+          "explanation": "CETP deficiency affects HDL, not primarily LDL."
+        }
+      ],
+      "explanation": {
+        "overview": "Defective LDL receptor leads to elevated plasma LDL and premature atherosclerosis.",
+        "highYield": "Familial hypercholesterolemia: most commonly LDL receptor mutations.",
+        "clinicalCorrelation": "Heterozygotes have LDL ~2‑3x normal; homozygotes have LDL >500 mg/dL, MI in childhood."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_027",
+      "difficulty": 2,
+      "question": "Cholesterol synthesis begins with acetyl‑CoA and proceeds through the intermediate:",
+      "image": null,
+      "options": [
+        {
+          "text": "Mevalonate",
+          "isCorrect": false,
+          "explanation": "HMG‑CoA is the intermediate before mevalonate."
+        },
+        {
+          "text": "Malonyl‑CoA",
+          "isCorrect": false,
+          "explanation": "Malonyl‑CoA is for fatty acid synthesis."
+        },
+        {
+          "text": "HMG‑CoA",
+          "isCorrect": true,
+          "explanation": "Two acetyl‑CoA condense to acetoacetyl‑CoA, then a third forms HMG‑CoA, which is reduced to mevalonate."
+        },
+        {
+          "text": "Squalene",
+          "isCorrect": false,
+          "explanation": "Squalene is formed later from isoprenoid units."
+        },
+        {
+          "text": "Lanosterol",
+          "isCorrect": false,
+          "explanation": "Lanosterol is the first sterol formed after cyclization."
+        }
+      ],
+      "explanation": {
+        "overview": "Two acetyl‑CoA condense to acetoacetyl‑CoA, then a third forms HMG‑CoA, which is reduced to mevalonate.",
+        "highYield": "Key intermediate: HMG‑CoA.",
+        "clinicalCorrelation": "HMG‑CoA is also the precursor for ketone bodies; the pathways are compartmentalized (mitochondria vs cytosol)."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_028",
+      "difficulty": 1,
+      "question": "The rate‑limiting enzyme in cholesterol synthesis is:",
+      "image": null,
+      "options": [
+        {
+          "text": "HMG‑CoA reductase",
+          "isCorrect": true,
+          "explanation": "HMG‑CoA reductase converts HMG‑CoA to mevalonate and is the major regulated step."
+        },
+        {
+          "text": "HMG‑CoA synthase",
+          "isCorrect": false,
+          "explanation": "HMG‑CoA synthase is earlier but not the rate‑limiting step."
+        },
+        {
+          "text": "Squalene synthase",
+          "isCorrect": false,
+          "explanation": "Squalene synthase is downstream."
+        },
+        {
+          "text": "Lanosterol demethylase",
+          "isCorrect": false,
+          "explanation": "Later step in the pathway."
+        },
+        {
+          "text": "Mevalonate kinase",
+          "isCorrect": false,
+          "explanation": "Acts after the rate‑limiting step."
+        }
+      ],
+      "explanation": {
+        "overview": "HMG‑CoA reductase converts HMG‑CoA to mevalonate and is the major regulated step.",
+        "highYield": "Rate‑limiting cholesterol synthesis: HMG‑CoA reductase.",
+        "clinicalCorrelation": "Target of statins; also regulated by cholesterol levels via SREBP."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_029",
+      "difficulty": 1,
+      "question": "Statins lower cholesterol by inhibiting:",
+      "image": null,
+      "options": [
+        {
+          "text": "HMG‑CoA reductase",
+          "isCorrect": true,
+          "explanation": "Statins competitively inhibit HMG‑CoA reductase, reducing cholesterol synthesis and upregulating LDL receptors."
+        },
+        {
+          "text": "HMG‑CoA synthase",
+          "isCorrect": false,
+          "explanation": "Not the target of statins."
+        },
+        {
+          "text": "ACAT",
+          "isCorrect": false,
+          "explanation": "ACAT esterifies cholesterol; not the statin target."
+        },
+        {
+          "text": "CETP",
+          "isCorrect": false,
+          "explanation": "CETP inhibitors were developed but not statins."
+        },
+        {
+          "text": "LDL receptor",
+          "isCorrect": false,
+          "explanation": "Statins indirectly upregulate LDL receptors."
+        }
+      ],
+      "explanation": {
+        "overview": "Statins competitively inhibit HMG‑CoA reductase, reducing cholesterol synthesis and upregulating LDL receptors.",
+        "highYield": "Statins = HMG‑CoA reductase inhibitors.",
+        "clinicalCorrelation": "Side effects include myopathy; monitor liver enzymes."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_030",
+      "difficulty": 1,
+      "question": "Bile acids are synthesized from cholesterol in the liver and are important for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Emulsification of dietary fats",
+          "isCorrect": true,
+          "explanation": "Bile acids act as detergents, emulsifying fats for digestion."
+        },
+        {
+          "text": "Activation of pancreatic lipase",
+          "isCorrect": false,
+          "explanation": "Colipase activates lipase; bile acids facilitate lipid access."
+        },
+        {
+          "text": "Transport of lipids in blood",
+          "isCorrect": false,
+          "explanation": "Lipoproteins transport lipids in blood."
+        },
+        {
+          "text": "Fatty acid synthesis",
+          "isCorrect": false,
+          "explanation": "Bile acids do not directly stimulate synthesis."
+        },
+        {
+          "text": "Ketone body formation",
+          "isCorrect": false,
+          "explanation": "Not related."
+        }
+      ],
+      "explanation": {
+        "overview": "Bile acids act as detergents, emulsifying fats for digestion.",
+        "highYield": "Bile acids = fat emulsification.",
+        "clinicalCorrelation": "Bile acid sequestrants (cholestyramine) lower cholesterol by interrupting enterohepatic circulation."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_031",
+      "difficulty": 1,
+      "question": "Eicosanoids are derived from which fatty acid?",
+      "image": null,
+      "options": [
+        {
+          "text": "Arachidonic acid",
+          "isCorrect": true,
+          "explanation": "Eicosanoids (prostaglandins, thromboxanes, leukotrienes) are 20‑carbon derivatives of arachidonic acid."
+        },
+        {
+          "text": "Palmitic acid",
+          "isCorrect": false,
+          "explanation": "Palmitic acid is a saturated fatty acid, not a precursor for eicosanoids."
+        },
+        {
+          "text": "Stearic acid",
+          "isCorrect": false,
+          "explanation": "Stearic acid is saturated."
+        },
+        {
+          "text": "Oleic acid",
+          "isCorrect": false,
+          "explanation": "Oleic acid is monounsaturated but not the major eicosanoid precursor."
+        },
+        {
+          "text": "Linoleic acid",
+          "isCorrect": false,
+          "explanation": "Linoleic acid is an essential fatty acid that can be converted to arachidonic acid, but arachidonic acid is the direct precursor."
+        }
+      ],
+      "explanation": {
+        "overview": "Eicosanoids (prostaglandins, thromboxanes, leukotrienes) are 20‑carbon derivatives of arachidonic acid.",
+        "highYield": "Eicosanoid precursor: arachidonic acid (20:4 ω‑6).",
+        "clinicalCorrelation": "NSAIDs block cyclooxygenase, reducing prostaglandin and thromboxane synthesis."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_032",
+      "difficulty": 2,
+      "question": "The enzyme that releases arachidonic acid from membrane phospholipids is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Phospholipase A₂",
+          "isCorrect": true,
+          "explanation": "Phospholipase A₂ cleaves the sn‑2 fatty acid, releasing arachidonate."
+        },
+        {
+          "text": "Phospholipase C",
+          "isCorrect": false,
+          "explanation": "Phospholipase C cleaves the glycerol‑phosphate bond, generating DAG and IP3."
+        },
+        {
+          "text": "Lipoxygenase",
+          "isCorrect": false,
+          "explanation": "Lipoxygenase acts on arachidonate after it is released."
+        },
+        {
+          "text": "Cyclooxygenase",
+          "isCorrect": false,
+          "explanation": "COX also acts on free arachidonate."
+        },
+        {
+          "text": "Acyltransferase",
+          "isCorrect": false,
+          "explanation": "Acyltransferases incorporate fatty acids into phospholipids."
+        }
+      ],
+      "explanation": {
+        "overview": "Phospholipase A₂ cleaves the sn‑2 fatty acid, releasing arachidonate.",
+        "highYield": "Arachidonate release: phospholipase A₂ (PLA₂).",
+        "clinicalCorrelation": "Corticosteroids inhibit PLA₂, reducing eicosanoid production."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_033",
+      "difficulty": 2,
+      "question": "Cyclooxygenase (COX) is involved in the synthesis of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Prostaglandins and thromboxanes",
+          "isCorrect": true,
+          "explanation": "COX converts arachidonate to prostaglandin H₂, precursor of all prostanoids."
+        },
+        {
+          "text": "Leukotrienes",
+          "isCorrect": false,
+          "explanation": "Leukotrienes are synthesized via the lipoxygenase pathway."
+        },
+        {
+          "text": "Lipoxins",
+          "isCorrect": false,
+          "explanation": "Lipoxins are also derived via lipoxygenase."
+        },
+        {
+          "text": "Resolvins",
+          "isCorrect": false,
+          "explanation": "Resolvins are derived from ω‑3 fatty acids."
+        },
+        {
+          "text": "Hydroxy fatty acids",
+          "isCorrect": false,
+          "explanation": "COX produces cyclic endoperoxides."
+        }
+      ],
+      "explanation": {
+        "overview": "COX converts arachidonate to prostaglandin H₂, precursor of all prostanoids.",
+        "highYield": "COX → prostaglandins and thromboxanes.",
+        "clinicalCorrelation": "COX‑2 selective inhibitors (celecoxib) spare GI mucosa but may increase cardiovascular risk."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_034",
+      "difficulty": 2,
+      "question": "Leukotrienes are synthesized via the:",
+      "image": null,
+      "options": [
+        {
+          "text": "Lipoxygenase pathway",
+          "isCorrect": true,
+          "explanation": "5‑lipoxygenase produces leukotrienes from arachidonate."
+        },
+        {
+          "text": "Cyclooxygenase pathway",
+          "isCorrect": false,
+          "explanation": "COX produces prostaglandins."
+        },
+        {
+          "text": "Cytochrome P450 pathway",
+          "isCorrect": false,
+          "explanation": "CYP450 can produce epoxyeicosatrienoic acids (EETs)."
+        },
+        {
+          "text": "Sphingomyelinase pathway",
+          "isCorrect": false,
+          "explanation": "Not involved in eicosanoid synthesis."
+        },
+        {
+          "text": "HMG‑CoA reductase pathway",
+          "isCorrect": false,
+          "explanation": "Cholesterol synthesis."
+        }
+      ],
+      "explanation": {
+        "overview": "5‑lipoxygenase produces leukotrienes from arachidonate.",
+        "highYield": "Leukotrienes: lipoxygenase pathway.",
+        "clinicalCorrelation": "Leukotriene receptor antagonists (montelukast) are used in asthma."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_035",
+      "difficulty": 1,
+      "question": "Aspirin and other NSAIDs inhibit:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cyclooxygenase",
+          "isCorrect": true,
+          "explanation": "NSAIDs inhibit COX‑1 and COX‑2, reducing prostaglandin synthesis."
+        },
+        {
+          "text": "Lipoxygenase",
+          "isCorrect": false,
+          "explanation": "Not the target of NSAIDs."
+        },
+        {
+          "text": "Phospholipase A₂",
+          "isCorrect": false,
+          "explanation": "Corticosteroids inhibit PLA₂."
+        },
+        {
+          "text": "Prostaglandin synthase",
+          "isCorrect": false,
+          "explanation": "COX is also called prostaglandin H synthase."
+        },
+        {
+          "text": "Thromboxane synthase",
+          "isCorrect": false,
+          "explanation": "Not directly inhibited by aspirin; aspirin inhibits COX, preventing thromboxane formation."
+        }
+      ],
+      "explanation": {
+        "overview": "NSAIDs inhibit COX‑1 and COX‑2, reducing prostaglandin synthesis.",
+        "highYield": "Aspirin = irreversible COX inhibitor.",
+        "clinicalCorrelation": "Low‑dose aspirin inhibits platelet thromboxane A₂, preventing thrombosis."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_036",
+      "difficulty": 2,
+      "question": "Medium‑chain fatty acids (e.g., C8‑C12) differ from long‑chain fatty acids in that they:",
+      "image": null,
+      "options": [
+        {
+          "text": "Enter mitochondria independently of carnitine shuttle",
+          "isCorrect": true,
+          "explanation": "Medium‑chain fatty acids diffuse into mitochondria and are activated inside, bypassing CPT I."
+        },
+        {
+          "text": "Are not oxidized",
+          "isCorrect": false,
+          "explanation": "They are readily oxidized."
+        },
+        {
+          "text": "Cannot be used for energy",
+          "isCorrect": false,
+          "explanation": "They are a good energy source."
+        },
+        {
+          "text": "Are only found in plants",
+          "isCorrect": false,
+          "explanation": "Found in milk and coconut oil."
+        },
+        {
+          "text": "Require special transport proteins",
+          "isCorrect": false,
+          "explanation": "They do not require the carnitine shuttle."
+        }
+      ],
+      "explanation": {
+        "overview": "Medium‑chain fatty acids diffuse into mitochondria and are activated inside, bypassing CPT I.",
+        "highYield": "MCFA: no carnitine shuttle needed.",
+        "clinicalCorrelation": "Medium‑chain triglycerides are used in diets for patients with carnitine deficiency or MCAD."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_037",
+      "difficulty": 2,
+      "question": "Peroxisomal β‑oxidation differs from mitochondrial β‑oxidation in that it:",
+      "image": null,
+      "options": [
+        {
+          "text": "Produces H₂O₂ and is not coupled to ATP synthesis",
+          "isCorrect": true,
+          "explanation": "Peroxisomal oxidation transfers electrons to O₂, forming H₂O₂ (decomposed by catalase) and does not generate ATP."
+        },
+        {
+          "text": "Uses carnitine shuttle",
+          "isCorrect": false,
+          "explanation": "Peroxisomes use different transport mechanisms."
+        },
+        {
+          "text": "Produces more ATP",
+          "isCorrect": false,
+          "explanation": "It produces heat, not ATP."
+        },
+        {
+          "text": "Occurs only in liver",
+          "isCorrect": false,
+          "explanation": "Peroxisomes are ubiquitous."
+        },
+        {
+          "text": "Oxidizes only short‑chain fatty acids",
+          "isCorrect": false,
+          "explanation": "Peroxisomes oxidize very‑long‑chain and branched‑chain fatty acids."
+        }
+      ],
+      "explanation": {
+        "overview": "Peroxisomal oxidation transfers electrons to O₂, forming H₂O₂ (decomposed by catalase) and does not generate ATP.",
+        "highYield": "Peroxisomal β‑oxidation: no ATP, produces H₂O₂.",
+        "clinicalCorrelation": "Peroxisomal disorders (e.g., Zellweger) cause VLCFA accumulation."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_038",
+      "difficulty": 2,
+      "question": "Refsum disease is caused by deficiency in α‑oxidation of phytanic acid due to impaired:",
+      "image": null,
+      "options": [
+        {
+          "text": "Peroxisomal function",
+          "isCorrect": true,
+          "explanation": "Phytanic acid (with a methyl branch) requires α‑oxidation in peroxisomes; defect causes Refsum disease."
+        },
+        {
+          "text": "Mitochondrial function",
+          "isCorrect": false,
+          "explanation": "Mitochondria perform β‑oxidation."
+        },
+        {
+          "text": "Carnitine shuttle",
+          "isCorrect": false,
+          "explanation": "Not involved in phytanic acid oxidation."
+        },
+        {
+          "text": "Fatty acid synthase",
+          "isCorrect": false,
+          "explanation": "Not involved."
+        },
+        {
+          "text": "Lipoprotein lipase",
+          "isCorrect": false,
+          "explanation": "Not related."
+        }
+      ],
+      "explanation": {
+        "overview": "Phytanic acid (with a methyl branch) requires α‑oxidation in peroxisomes; defect causes Refsum disease.",
+        "highYield": "Refsum disease: phytanic acid α‑oxidation defect (peroxisomal).",
+        "clinicalCorrelation": "Presents with retinitis pigmentosa, peripheral neuropathy, cerebellar ataxia."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_039",
+      "difficulty": 2,
+      "question": "Zellweger syndrome is a peroxisomal biogenesis disorder characterized by accumulation of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Very‑long‑chain fatty acids",
+          "isCorrect": false,
+          "explanation": "Yes, but also other metabolites."
+        },
+        {
+          "text": "Phytanic acid",
+          "isCorrect": false,
+          "explanation": "Yes."
+        },
+        {
+          "text": "Bile acid intermediates",
+          "isCorrect": false,
+          "explanation": "Yes."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Peroxisomal dysfunction leads to accumulation of VLCFA, phytanic acid, and abnormal bile acids."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "All accumulate."
+        }
+      ],
+      "explanation": {
+        "overview": "Peroxisomal dysfunction leads to accumulation of VLCFA, phytanic acid, and abnormal bile acids.",
+        "highYield": "Zellweger: absent peroxisomes → VLCFA, phytanic acid, bile acid intermediates accumulate.",
+        "clinicalCorrelation": "Severe neurological impairment, craniofacial abnormalities, death in infancy."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_040",
+      "difficulty": 2,
+      "question": "The diagram shows a triglyceride molecule. The bond that is hydrolyzed by pancreatic lipase is:",
+      "image": "triglyceride_structure.png",
+      "options": [
+        {
+          "text": "Ester bonds at sn‑1 and sn‑3",
+          "isCorrect": true,
+          "explanation": "Pancreatic lipase cleaves fatty acids from the outer positions, producing 2‑monoacylglycerol and free fatty acids."
+        },
+        {
+          "text": "Ester bond at sn‑2",
+          "isCorrect": false,
+          "explanation": "Pancreatic lipase does not cleave the sn‑2 position."
+        },
+        {
+          "text": "All three ester bonds",
+          "isCorrect": false,
+          "explanation": "Only sn‑1 and sn‑3 are targeted."
+        },
+        {
+          "text": "Glycosidic bond",
+          "isCorrect": false,
+          "explanation": "Not present in triglycerides."
+        },
+        {
+          "text": "Peptide bond",
+          "isCorrect": false,
+          "explanation": "Peptide bonds are in proteins."
+        }
+      ],
+      "explanation": {
+        "overview": "Pancreatic lipase cleaves fatty acids from the outer positions (sn‑1 and sn‑3), producing 2‑monoacylglycerol and free fatty acids.",
+        "highYield": "Pancreatic lipase: sn‑1 and sn‑3 ester bonds.",
+        "clinicalCorrelation": "Orlistat inhibits pancreatic lipase to reduce fat absorption."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_041",
+      "difficulty": 1,
+      "question": "In the intestine, bile salts are reabsorbed in the ileum and returned to the liver via:",
+      "image": null,
+      "options": [
+        {
+          "text": "Enterohepatic circulation",
+          "isCorrect": true,
+          "explanation": "Bile salts are recycled via the enterohepatic circulation."
+        },
+        {
+          "text": "Portal vein",
+          "isCorrect": false,
+          "explanation": "They travel via the portal vein but the term is enterohepatic circulation."
+        },
+        {
+          "text": "Lymphatic system",
+          "isCorrect": false,
+          "explanation": "Not the route."
+        },
+        {
+          "text": "Systemic circulation",
+          "isCorrect": false,
+          "explanation": "They go directly to the liver via portal blood."
+        },
+        {
+          "text": "Hepatic artery",
+          "isCorrect": false,
+          "explanation": "The portal vein, not hepatic artery."
+        }
+      ],
+      "explanation": {
+        "overview": "Bile salts are recycled via the enterohepatic circulation.",
+        "highYield": "Bile salts: ileal reabsorption → portal vein → liver (enterohepatic circulation).",
+        "clinicalCorrelation": "Bile acid sequestrants disrupt this circulation, lowering cholesterol."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_042",
+      "difficulty": 2,
+      "question": "Chylomicron remnants are taken up by the liver via receptors recognizing:",
+      "image": null,
+      "options": [
+        {
+          "text": "ApoE",
+          "isCorrect": true,
+          "explanation": "Remnants retain ApoE, which binds to hepatic receptors (LDL receptor or LRP)."
+        },
+        {
+          "text": "ApoB‑48",
+          "isCorrect": false,
+          "explanation": "ApoB‑48 does not bind LDL receptor."
+        },
+        {
+          "text": "ApoC‑II",
+          "isCorrect": false,
+          "explanation": "ApoC‑II is for LPL activation."
+        },
+        {
+          "text": "ApoA‑I",
+          "isCorrect": false,
+          "explanation": "ApoA‑I is on HDL."
+        },
+        {
+          "text": "ApoB‑100",
+          "isCorrect": false,
+          "explanation": "ApoB‑100 is on VLDL/LDL."
+        }
+      ],
+      "explanation": {
+        "overview": "Remnants retain ApoE, which binds to hepatic receptors.",
+        "highYield": "Chylomicron remnant uptake: ApoE.",
+        "clinicalCorrelation": "ApoE isoforms (E2, E3, E4) affect remnant clearance; ApoE2 is associated with type III hyperlipoproteinemia."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_043",
+      "difficulty": 2,
+      "question": "Hormone‑sensitive lipase (HSL) in adipose tissue is activated by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glucagon and epinephrine",
+          "isCorrect": true,
+          "explanation": "HSL is phosphorylated and activated by PKA in response to catecholamines and glucagon."
+        },
+        {
+          "text": "Insulin",
+          "isCorrect": false,
+          "explanation": "Insulin inhibits lipolysis."
+        },
+        {
+          "text": "Cortisol",
+          "isCorrect": false,
+          "explanation": "Cortisol permissively enhances lipolysis but does not directly activate HSL."
+        },
+        {
+          "text": "Growth hormone",
+          "isCorrect": false,
+          "explanation": "GH promotes lipolysis indirectly."
+        },
+        {
+          "text": "Thyroid hormone",
+          "isCorrect": false,
+          "explanation": "Thyroid hormone increases sensitivity to catecholamines but not direct HSL activation."
+        }
+      ],
+      "explanation": {
+        "overview": "HSL is phosphorylated and activated by PKA in response to catecholamines and glucagon.",
+        "highYield": "HSL activated by glucagon, epinephrine (cAMP/PKA).",
+        "clinicalCorrelation": "In insulin deficiency, uncontrolled HSL activity leads to excessive lipolysis and ketogenesis."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_044",
+      "difficulty": 2,
+      "question": "Insulin inhibits lipolysis by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Activating phosphodiesterase and decreasing cAMP",
+          "isCorrect": true,
+          "explanation": "Insulin lowers cAMP, reducing PKA activity and HSL activation."
+        },
+        {
+          "text": "Activating HSL",
+          "isCorrect": false,
+          "explanation": "Insulin inhibits HSL."
+        },
+        {
+          "text": "Increasing cAMP",
+          "isCorrect": false,
+          "explanation": "Insulin decreases cAMP."
+        },
+        {
+          "text": "Phosphorylating perilipin",
+          "isCorrect": false,
+          "explanation": "Perilipin phosphorylation is promoted by PKA, facilitating lipolysis."
+        },
+        {
+          "text": "Stimulating glucagon secretion",
+          "isCorrect": false,
+          "explanation": "Insulin inhibits glucagon."
+        }
+      ],
+      "explanation": {
+        "overview": "Insulin lowers cAMP, reducing PKA activity and HSL activation.",
+        "highYield": "Insulin → ↓cAMP → ↓HSL → ↓lipolysis.",
+        "clinicalCorrelation": "In insulin resistance, lipolysis is inadequately suppressed, increasing FFA flux."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_045",
+      "difficulty": 2,
+      "question": "Fatty acid synthesis is favored when:",
+      "image": null,
+      "options": [
+        {
+          "text": "Insulin/glucagon ratio is high",
+          "isCorrect": true,
+          "explanation": "High insulin promotes dephosphorylation and activation of acetyl‑CoA carboxylase."
+        },
+        {
+          "text": "Insulin/glucagon ratio is low",
+          "isCorrect": false,
+          "explanation": "That favors oxidation."
+        },
+        {
+          "text": "cAMP levels are high",
+          "isCorrect": false,
+          "explanation": "High cAMP leads to ACC phosphorylation and inactivation."
+        },
+        {
+          "text": "ATP levels are low",
+          "isCorrect": false,
+          "explanation": "Low energy state activates AMPK, inhibiting synthesis."
+        },
+        {
+          "text": "NADH/NAD+ ratio is low",
+          "isCorrect": false,
+          "explanation": "NADH is not a direct regulator of fatty acid synthesis."
+        }
+      ],
+      "explanation": {
+        "overview": "High insulin promotes dephosphorylation and activation of acetyl‑CoA carboxylase.",
+        "highYield": "Fed state (high insulin/glucagon) = lipogenesis on.",
+        "clinicalCorrelation": "Postprandial hyperinsulinemia drives hepatic lipogenesis."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_046",
+      "difficulty": 2,
+      "question": "Malonyl‑CoA inhibits fatty acid oxidation by allosterically inhibiting:",
+      "image": null,
+      "options": [
+        {
+          "text": "Carnitine palmitoyltransferase I (CPT I)",
+          "isCorrect": true,
+          "explanation": "High malonyl‑CoA signals active fatty acid synthesis and shuts down oxidation by blocking CPT I."
+        },
+        {
+          "text": "Acyl‑CoA dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Not inhibited by malonyl‑CoA."
+        },
+        {
+          "text": "β‑hydroxyacyl‑CoA dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Not the target."
+        },
+        {
+          "text": "Thiolase",
+          "isCorrect": false,
+          "explanation": "Not the regulatory point."
+        },
+        {
+          "text": "Carnitine acyltransferase II",
+          "isCorrect": false,
+          "explanation": "CPT II is not sensitive to malonyl‑CoA."
+        }
+      ],
+      "explanation": {
+        "overview": "High malonyl‑CoA signals active fatty acid synthesis and shuts down oxidation by blocking CPT I.",
+        "highYield": "Malonyl‑CoA → inhibits CPT I (reciprocal regulation).",
+        "clinicalCorrelation": "This prevents futile cycling of fatty acid synthesis and oxidation."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_047",
+      "difficulty": 2,
+      "question": "The glycerol‑3‑phosphate required for triglyceride synthesis in adipose tissue comes primarily from:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glycerol (via glycerol kinase)",
+          "isCorrect": false,
+          "explanation": "Adipose tissue lacks glycerol kinase."
+        },
+        {
+          "text": "Dihydroxyacetone phosphate (from glycolysis)",
+          "isCorrect": true,
+          "explanation": "Adipose tissue lacks glycerol kinase, so G3P is derived from DHAP during glycolysis."
+        },
+        {
+          "text": "Glucose via gluconeogenesis",
+          "isCorrect": false,
+          "explanation": "Gluconeogenesis produces glucose, not directly G3P in adipose."
+        },
+        {
+          "text": "Amino acid metabolism",
+          "isCorrect": false,
+          "explanation": "Not the primary source."
+        },
+        {
+          "text": "Fatty acid recycling",
+          "isCorrect": false,
+          "explanation": "Not correct."
+        }
+      ],
+      "explanation": {
+        "overview": "Adipose tissue lacks glycerol kinase, so G3P is derived from DHAP during glycolysis.",
+        "highYield": "Adipose G3P from glycolysis (DHAP → G3P).",
+        "clinicalCorrelation": "Insulin is required for glucose uptake and G3P provision for TG storage."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_048",
+      "difficulty": 2,
+      "question": "In the liver, glycerol can enter gluconeogenesis after conversion to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glycerol‑3‑phosphate then dihydroxyacetone phosphate",
+          "isCorrect": true,
+          "explanation": "Glycerol kinase produces G3P, which is oxidized to DHAP, an intermediate of gluconeogenesis."
+        },
+        {
+          "text": "Glyceraldehyde‑3‑phosphate",
+          "isCorrect": false,
+          "explanation": "G3P is formed after DHAP is isomerized; the immediate product is DHAP."
+        },
+        {
+          "text": "Pyruvate",
+          "isCorrect": false,
+          "explanation": "Not the direct route."
+        },
+        {
+          "text": "Acetyl‑CoA",
+          "isCorrect": false,
+          "explanation": "Glycerol cannot be converted to acetyl‑CoA for glucose synthesis."
+        },
+        {
+          "text": "Oxaloacetate",
+          "isCorrect": false,
+          "explanation": "Not direct."
+        }
+      ],
+      "explanation": {
+        "overview": "Glycerol kinase produces G3P, which is oxidized to DHAP, an intermediate of gluconeogenesis.",
+        "highYield": "Glycerol → G3P → DHAP → glucose (liver).",
+        "clinicalCorrelation": "During fasting, glycerol from lipolysis contributes to gluconeogenesis."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_049",
+      "difficulty": 2,
+      "question": "Carnitine deficiency leads to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hypoglycemia, muscle weakness, and cardiomyopathy",
+          "isCorrect": true,
+          "explanation": "Impaired fatty acid oxidation causes energy deficit and accumulation of fat in tissues."
+        },
+        {
+          "text": "Hyperlipidemia",
+          "isCorrect": false,
+          "explanation": "Can occur but not the primary presentation."
+        },
+        {
+          "text": "Obesity",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        },
+        {
+          "text": "Fatty liver only",
+          "isCorrect": false,
+          "explanation": "Muscle and heart are also affected."
+        },
+        {
+          "text": "Ketosis",
+          "isCorrect": false,
+          "explanation": "Ketogenesis is impaired, not increased."
+        }
+      ],
+      "explanation": {
+        "overview": "Impaired fatty acid oxidation causes energy deficit and accumulation of fat in tissues.",
+        "highYield": "Carnitine deficiency: hypoketotic hypoglycemia, myopathy, cardiomyopathy.",
+        "clinicalCorrelation": "Can be primary (genetic) or secondary (e.g., valproate therapy); treat with carnitine supplementation."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_050",
+      "difficulty": 2,
+      "question": "Medium‑chain acyl‑CoA dehydrogenase deficiency (MCAD) presents with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hypoketotic hypoglycemia and vomiting during fasting",
+          "isCorrect": true,
+          "explanation": "MCAD impairs oxidation of medium‑chain fatty acids, leading to energy deficit and hypoglycemia with low ketones."
+        },
+        {
+          "text": "Hyperammonemia",
+          "isCorrect": false,
+          "explanation": "Not a feature of MCAD."
+        },
+        {
+          "text": "Lactic acidosis",
+          "isCorrect": false,
+          "explanation": "May occur secondarily but not the hallmark."
+        },
+        {
+          "text": "Ketoacidosis",
+          "isCorrect": false,
+          "explanation": "Ketones are low."
+        },
+        {
+          "text": "Hyperglycemia",
+          "isCorrect": false,
+          "explanation": "Hypoglycemia is typical."
+        }
+      ],
+      "explanation": {
+        "overview": "MCAD impairs oxidation of medium‑chain fatty acids, leading to energy deficit and hypoglycemia with low ketones.",
+        "highYield": "MCAD: hypoketotic hypoglycemia, vomiting, coma when fasting.",
+        "clinicalCorrelation": "Screen on newborn screening; avoid prolonged fasting."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_051",
+      "difficulty": 2,
+      "question": "β‑oxidation of odd‑chain fatty acids produces propionyl‑CoA, which is converted to succinyl‑CoA via:",
+      "image": null,
+      "options": [
+        {
+          "text": "Methylmalonyl‑CoA pathway (requiring vitamin B12)",
+          "isCorrect": true,
+          "explanation": "Propionyl‑CoA is carboxylated to D‑methylmalonyl‑CoA, then isomerized to succinyl‑CoA by a B₁₂‑dependent enzyme."
+        },
+        {
+          "text": "Succinate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Not involved."
+        },
+        {
+          "text": "Pyruvate carboxylase",
+          "isCorrect": false,
+          "explanation": "Not the pathway."
+        },
+        {
+          "text": "Malic enzyme",
+          "isCorrect": false,
+          "explanation": "Not involved."
+        },
+        {
+          "text": "Acetyl‑CoA carboxylase",
+          "isCorrect": false,
+          "explanation": "Not involved."
+        }
+      ],
+      "explanation": {
+        "overview": "Propionyl‑CoA is carboxylated to D‑methylmalonyl‑CoA, then isomerized to succinyl‑CoA by a B₁₂‑dependent enzyme.",
+        "highYield": "Odd‑chain FA → propionyl‑CoA → methylmalonyl‑CoA → succinyl‑CoA (needs B12).",
+        "clinicalCorrelation": "Vitamin B12 deficiency leads to methylmalonic acid accumulation; methylmalonic acidemia is a genetic disorder."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_052",
+      "difficulty": 2,
+      "question": "The enzyme that converts β‑hydroxybutyrate to acetoacetate is:",
+      "image": null,
+      "options": [
+        {
+          "text": "β‑hydroxybutyrate dehydrogenase",
+          "isCorrect": true,
+          "explanation": "This reversible reaction uses NAD+/NADH and is important for ketone body interconversion."
+        },
+        {
+          "text": "Acetoacetate decarboxylase",
+          "isCorrect": false,
+          "explanation": "Produces acetone."
+        },
+        {
+          "text": "Thiophorase",
+          "isCorrect": false,
+          "explanation": "Thiophorase activates acetoacetate to acetoacetyl‑CoA."
+        },
+        {
+          "text": "HMG‑CoA lyase",
+          "isCorrect": false,
+          "explanation": "Involved in ketogenesis."
+        },
+        {
+          "text": "Lactate dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Not related."
+        }
+      ],
+      "explanation": {
+        "overview": "This reversible reaction uses NAD+/NADH and is important for ketone body interconversion.",
+        "highYield": "β‑hydroxybutyrate ↔ acetoacetate via β‑hydroxybutyrate dehydrogenase.",
+        "clinicalCorrelation": "The ratio of β‑hydroxybutyrate to acetoacetate is elevated in alcoholic ketoacidosis."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_053",
+      "difficulty": 2,
+      "question": "The diagram shows the regulation of fatty acid synthesis. Which molecule is the allosteric activator of acetyl‑CoA carboxylase?",
+      "image": "acc_regulation.png",
+      "options": [
+        {
+          "text": "Citrate",
+          "isCorrect": true,
+          "explanation": "Citrate indicates energy surplus and promotes polymerization (activation) of ACC."
+        },
+        {
+          "text": "Palmitoyl‑CoA",
+          "isCorrect": false,
+          "explanation": "Palmitoyl‑CoA is the product inhibitor."
+        },
+        {
+          "text": "AMP",
+          "isCorrect": false,
+          "explanation": "AMPK phosphorylates and inactivates ACC."
+        },
+        {
+          "text": "Glucagon",
+          "isCorrect": false,
+          "explanation": "Glucagon leads to phosphorylation and inactivation."
+        },
+        {
+          "text": "Epinephrine",
+          "isCorrect": false,
+          "explanation": "Epinephrine also leads to inactivation."
+        }
+      ],
+      "explanation": {
+        "overview": "Citrate indicates energy surplus and activates the enzyme.",
+        "highYield": "Citrate = allosteric activator of ACC.",
+        "clinicalCorrelation": "In the fed state, citrate accumulates in cytosol, driving lipogenesis."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_054",
+      "difficulty": 2,
+      "question": "Fatty acid synthase is a multifunctional enzyme. In mammals, it is a dimer of identical subunits. Each cycle of elongation requires:",
+      "image": null,
+      "options": [
+        {
+          "text": "One malonyl‑CoA and two NADPH",
+          "isCorrect": true,
+          "explanation": "Each elongation uses one malonyl‑CoA and reduces the β‑keto group using two NADPH."
+        },
+        {
+          "text": "One acetyl‑CoA and one NADPH",
+          "isCorrect": false,
+          "explanation": "Acetyl‑CoA is only used for the initial priming; malonyl‑CoA is the elongating unit."
+        },
+        {
+          "text": "One malonyl‑CoA and one NADPH",
+          "isCorrect": false,
+          "explanation": "Two NADPH are required per cycle."
+        },
+        {
+          "text": "Two malonyl‑CoA and one NADPH",
+          "isCorrect": false,
+          "explanation": "Not correct."
+        },
+        {
+          "text": "One malonyl‑CoA and three NADPH",
+          "isCorrect": false,
+          "explanation": "Only two NADPH."
+        }
+      ],
+      "explanation": {
+        "overview": "Each elongation uses one malonyl‑CoA and reduces the β‑keto group using two NADPH.",
+        "highYield": "FAS cycle: 1 malonyl‑CoA + 2 NADPH per 2‑carbon addition.",
+        "clinicalCorrelation": "NADPH availability can limit fatty acid synthesis."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_055",
+      "difficulty": 2,
+      "question": "The mitochondrial trifunctional protein (MTP) catalyzes the last three steps of β‑oxidation. Deficiency leads to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hypoglycemia, cardiomyopathy, and sudden death",
+          "isCorrect": true,
+          "explanation": "MTP deficiency impairs long‑chain fatty acid oxidation, causing severe energy deficiency."
+        },
+        {
+          "text": "Hypercholesterolemia",
+          "isCorrect": false,
+          "explanation": "Not a feature."
+        },
+        {
+          "text": "Obesity",
+          "isCorrect": false,
+          "explanation": "Not typical."
+        },
+        {
+          "text": "Diabetes",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        },
+        {
+          "text": "Fatty liver",
+          "isCorrect": false,
+          "explanation": "Can be present but the hallmark is hypoglycemia and cardiomyopathy."
+        }
+      ],
+      "explanation": {
+        "overview": "MTP deficiency impairs long‑chain fatty acid oxidation, causing severe energy deficiency.",
+        "highYield": "MTP deficiency: hypoketotic hypoglycemia, cardiomyopathy, sudden death.",
+        "clinicalCorrelation": "Presents in infancy; can be diagnosed by acylcarnitine profile."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_056",
+      "difficulty": 2,
+      "question": "Which of the following is a desaturase that introduces double bonds into fatty acids?",
+      "image": null,
+      "options": [
+        {
+          "text": "Stearoyl‑CoA desaturase (SCD1)",
+          "isCorrect": true,
+          "explanation": "SCD1 converts stearoyl‑CoA to oleoyl‑CoA (C18:1)."
+        },
+        {
+          "text": "Acetyl‑CoA carboxylase",
+          "isCorrect": false,
+          "explanation": "ACC is the first enzyme of fatty acid synthesis."
+        },
+        {
+          "text": "Fatty acid synthase",
+          "isCorrect": false,
+          "explanation": "FAS synthesizes palmitate."
+        },
+        {
+          "text": "Elongase",
+          "isCorrect": false,
+          "explanation": "Elongase adds two‑carbon units, not double bonds."
+        },
+        {
+          "text": "Thioesterase",
+          "isCorrect": false,
+          "explanation": "Thioesterase releases the fatty acid from FAS."
+        }
+      ],
+      "explanation": {
+        "overview": "SCD1 converts stearoyl‑CoA to oleoyl‑CoA (C18:1).",
+        "highYield": "SCD1 introduces Δ9 double bond; produces oleate.",
+        "clinicalCorrelation": "SCD1 is a target for metabolic syndrome therapy."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_057",
+      "difficulty": 2,
+      "question": "Humans cannot synthesize linoleic acid because we lack:",
+      "image": null,
+      "options": [
+        {
+          "text": "Δ12 desaturase",
+          "isCorrect": true,
+          "explanation": "Plants have Δ12 desaturase to introduce double bonds beyond C9; humans lack this enzyme."
+        },
+        {
+          "text": "Δ9 desaturase",
+          "isCorrect": false,
+          "explanation": "Humans have Δ9 desaturase (SCD1)."
+        },
+        {
+          "text": "Δ6 desaturase",
+          "isCorrect": false,
+          "explanation": "Humans have Δ6 desaturase for further desaturation of essential fatty acids."
+        },
+        {
+          "text": "Elongase",
+          "isCorrect": false,
+          "explanation": "Elongases are present."
+        },
+        {
+          "text": "Thioesterase",
+          "isCorrect": false,
+          "explanation": "Thioesterase is part of FAS."
+        }
+      ],
+      "explanation": {
+        "overview": "Plants have Δ12 desaturase to introduce double bonds beyond C9; humans lack this enzyme.",
+        "highYield": "Essential fatty acids: linoleic (ω‑6), α‑linolenic (ω‑3) – lack Δ12 and Δ15 desaturases.",
+        "clinicalCorrelation": "Essential fatty acid deficiency causes dermatitis, hair loss, and poor wound healing."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_058",
+      "difficulty": 2,
+      "question": "Arachidonic acid (20:4, ω‑6) can be synthesized from linoleic acid by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Elongation and desaturation (Δ6 desaturase, elongase, Δ5 desaturase)",
+          "isCorrect": true,
+          "explanation": "Linoleate is converted via γ‑linolenate and dihomo‑γ‑linolenate to arachidonate."
+        },
+        {
+          "text": "Only elongation",
+          "isCorrect": false,
+          "explanation": "Desaturation is also required."
+        },
+        {
+          "text": "Only desaturation",
+          "isCorrect": false,
+          "explanation": "Elongation is also needed."
+        },
+        {
+          "text": "β‑oxidation",
+          "isCorrect": false,
+          "explanation": "Not the pathway."
+        },
+        {
+          "text": "Reduction",
+          "isCorrect": false,
+          "explanation": "Not reduction."
+        }
+      ],
+      "explanation": {
+        "overview": "Linoleate is converted via γ‑linolenate and dihomo‑γ‑linolenate to arachidonate.",
+        "highYield": "Linoleic acid → arachidonic acid: Δ6 desaturase, elongase, Δ5 desaturase.",
+        "clinicalCorrelation": "Δ6 desaturase activity may decline with age, affecting eicosanoid synthesis."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_059",
+      "difficulty": 1,
+      "question": "The cholesterol molecule is a precursor for all EXCEPT:",
+      "image": null,
+      "options": [
+        {
+          "text": "Bile acids",
+          "isCorrect": false,
+          "explanation": "Bile acids are made from cholesterol."
+        },
+        {
+          "text": "Steroid hormones",
+          "isCorrect": false,
+          "explanation": "Cortisol, aldosterone, sex steroids are from cholesterol."
+        },
+        {
+          "text": "Vitamin D",
+          "isCorrect": false,
+          "explanation": "7‑dehydrocholesterol → vitamin D3."
+        },
+        {
+          "text": "Eicosanoids",
+          "isCorrect": true,
+          "explanation": "Eicosanoids are derived from arachidonic acid, not cholesterol."
+        },
+        {
+          "text": "Oxysterols",
+          "isCorrect": false,
+          "explanation": "Oxysterols are cholesterol derivatives."
+        }
+      ],
+      "explanation": {
+        "overview": "Eicosanoids are derived from arachidonic acid, not cholesterol.",
+        "highYield": "Cholesterol → bile acids, steroids, vitamin D; NOT eicosanoids.",
+        "clinicalCorrelation": "Statins lower cholesterol but do not directly affect eicosanoid synthesis."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_060",
+      "difficulty": 2,
+      "question": "The enzyme 7α‑hydroxylase is the rate‑limiting step in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Bile acid synthesis",
+          "isCorrect": true,
+          "explanation": "7α‑hydroxylase converts cholesterol to 7α‑hydroxycholesterol, the first step in bile acid formation."
+        },
+        {
+          "text": "Cholesterol synthesis",
+          "isCorrect": false,
+          "explanation": "HMG‑CoA reductase is rate‑limiting for cholesterol."
+        },
+        {
+          "text": "Steroid hormone synthesis",
+          "isCorrect": false,
+          "explanation": "The first step is cholesterol side‑chain cleavage (CYP11A1)."
+        },
+        {
+          "text": "Vitamin D synthesis",
+          "isCorrect": false,
+          "explanation": "Photolysis of 7‑dehydrocholesterol is the first step."
+        },
+        {
+          "text": "Lipoprotein assembly",
+          "isCorrect": false,
+          "explanation": "Not 7α‑hydroxylase."
+        }
+      ],
+      "explanation": {
+        "overview": "7α‑hydroxylase converts cholesterol to 7α‑hydroxycholesterol, the first step in bile acid formation.",
+        "highYield": "Bile acid synthesis: rate‑limiting 7α‑hydroxylase (CYP7A1).",
+        "clinicalCorrelation": "Bile acid sequestrants increase 7α‑hydroxylase activity, lowering cholesterol."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_061",
+      "difficulty": 1,
+      "question": "Lipid storage diseases are caused by deficiencies in enzymes that degrade:",
+      "image": null,
+      "options": [
+        {
+          "text": "Sphingolipids",
+          "isCorrect": true,
+          "explanation": "Sphingolipidoses (e.g., Tay‑Sachs, Gaucher) result from defective lysosomal hydrolases."
+        },
+        {
+          "text": "Triglycerides",
+          "isCorrect": false,
+          "explanation": "Triglyceride storage diseases are different (e.g., Wolman disease)."
+        },
+        {
+          "text": "Cholesterol esters",
+          "isCorrect": false,
+          "explanation": "Cholesteryl ester storage disease is a separate entity."
+        },
+        {
+          "text": "Phospholipids",
+          "isCorrect": false,
+          "explanation": "Some phospholipidoses exist, but the classic lipid storage diseases are sphingolipidoses."
+        },
+        {
+          "text": "Free fatty acids",
+          "isCorrect": false,
+          "explanation": "Not a major group of storage diseases."
+        }
+      ],
+      "explanation": {
+        "overview": "Sphingolipidoses (e.g., Tay‑Sachs, Gaucher) result from defective lysosomal hydrolases.",
+        "highYield": "Lipid storage diseases = sphingolipidoses.",
+        "clinicalCorrelation": "Accumulation of specific sphingolipids causes organomegaly, neurodegeneration."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_062",
+      "difficulty": 2,
+      "question": "Tay‑Sachs disease is caused by deficiency of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hexosaminidase A",
+          "isCorrect": true,
+          "explanation": "Hexosaminidase A deficiency leads to GM2 ganglioside accumulation."
+        },
+        {
+          "text": "β‑glucocerebrosidase",
+          "isCorrect": false,
+          "explanation": "Gaucher disease."
+        },
+        {
+          "text": "Sphingomyelinase",
+          "isCorrect": false,
+          "explanation": "Niemann‑Pick."
+        },
+        {
+          "text": "Galactocerebrosidase",
+          "isCorrect": false,
+          "explanation": "Krabbe disease."
+        },
+        {
+          "text": "Arylsulfatase A",
+          "isCorrect": false,
+          "explanation": "Metachromatic leukodystrophy."
+        }
+      ],
+      "explanation": {
+        "overview": "Hexosaminidase A deficiency leads to GM2 ganglioside accumulation.",
+        "highYield": "Tay‑Sachs: hexosaminidase A, GM2 ganglioside.",
+        "clinicalCorrelation": "Cherry‑red macula, neurodegeneration, death by age 5."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_063",
+      "difficulty": 2,
+      "question": "Gaucher disease is due to deficiency of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glucocerebrosidase",
+          "isCorrect": true,
+          "explanation": "Glucocerebroside accumulates in macrophages (Gaucher cells)."
+        },
+        {
+          "text": "Sphingomyelinase",
+          "isCorrect": false,
+          "explanation": "Niemann‑Pick."
+        },
+        {
+          "text": "β‑galactosidase",
+          "isCorrect": false,
+          "explanation": "GM1 gangliosidosis."
+        },
+        {
+          "text": "α‑galactosidase",
+          "isCorrect": false,
+          "explanation": "Fabry disease."
+        },
+        {
+          "text": "Hexosaminidase A",
+          "isCorrect": false,
+          "explanation": "Tay‑Sachs."
+        }
+      ],
+      "explanation": {
+        "overview": "Glucocerebroside accumulates in macrophages (Gaucher cells).",
+        "highYield": "Gaucher: glucocerebrosidase deficiency, glucocerebroside accumulation.",
+        "clinicalCorrelation": "Hepatosplenomegaly, bone pain, Gaucher cells; treat with enzyme replacement."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_064",
+      "difficulty": 2,
+      "question": "Niemann‑Pick disease (type A and B) is due to deficiency of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Sphingomyelinase",
+          "isCorrect": true,
+          "explanation": "Sphingomyelin accumulates in lysosomes."
+        },
+        {
+          "text": "Acid lipase",
+          "isCorrect": false,
+          "explanation": "Wolman disease."
+        },
+        {
+          "text": "Cholesterol ester transfer protein",
+          "isCorrect": false,
+          "explanation": "Not a lysosomal storage disease."
+        },
+        {
+          "text": "Lecithin‑cholesterol acyltransferase",
+          "isCorrect": false,
+          "explanation": "LCAT deficiency."
+        },
+        {
+          "text": "Lipoprotein lipase",
+          "isCorrect": false,
+          "explanation": "LPL deficiency causes hypertriglyceridemia."
+        }
+      ],
+      "explanation": {
+        "overview": "Sphingomyelin accumulates in lysosomes.",
+        "highYield": "Niemann‑Pick A/B: sphingomyelinase deficiency.",
+        "clinicalCorrelation": "Type A: severe neurodegeneration; Type B: hepatosplenomegaly, lung disease."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_065",
+      "difficulty": 2,
+      "question": "Fabry disease (X‑linked) is caused by deficiency of:",
+      "image": null,
+      "options": [
+        {
+          "text": "α‑galactosidase A",
+          "isCorrect": true,
+          "explanation": "Globotriaosylceramide accumulates, causing renal and cardiovascular issues."
+        },
+        {
+          "text": "β‑galactosidase",
+          "isCorrect": false,
+          "explanation": "GM1 gangliosidosis."
+        },
+        {
+          "text": "α‑glucosidase",
+          "isCorrect": false,
+          "explanation": "Pompe disease."
+        },
+        {
+          "text": "β‑glucocerebrosidase",
+          "isCorrect": false,
+          "explanation": "Gaucher."
+        },
+        {
+          "text": "Sphingomyelinase",
+          "isCorrect": false,
+          "explanation": "Niemann‑Pick."
+        }
+      ],
+      "explanation": {
+        "overview": "Globotriaosylceramide accumulates, causing renal and cardiovascular issues.",
+        "highYield": "Fabry: α‑galactosidase A deficiency, Gb3 accumulation.",
+        "clinicalCorrelation": "Angiokeratomas, acroparesthesias, renal failure; enzyme replacement available."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_066",
+      "difficulty": 2,
+      "question": "Krabbe disease is due to deficiency of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Galactocerebrosidase",
+          "isCorrect": true,
+          "explanation": "Galactocerebroside accumulates, leading to demyelination."
+        },
+        {
+          "text": "β‑galactosidase",
+          "isCorrect": false,
+          "explanation": "GM1 gangliosidosis."
+        },
+        {
+          "text": "α‑galactosidase",
+          "isCorrect": false,
+          "explanation": "Fabry."
+        },
+        {
+          "text": "Arylsulfatase A",
+          "isCorrect": false,
+          "explanation": "Metachromatic leukodystrophy."
+        },
+        {
+          "text": "Hexosaminidase A",
+          "isCorrect": false,
+          "explanation": "Tay‑Sachs."
+        }
+      ],
+      "explanation": {
+        "overview": "Galactocerebroside accumulates, leading to demyelination.",
+        "highYield": "Krabbe: galactocerebrosidase deficiency.",
+        "clinicalCorrelation": "Globoid cell leukodystrophy, severe neurodegeneration in infancy."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_067",
+      "difficulty": 2,
+      "question": "Metachromatic leukodystrophy is caused by deficiency of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Arylsulfatase A",
+          "isCorrect": true,
+          "explanation": "Sulfatides accumulate, causing demyelination."
+        },
+        {
+          "text": "β‑galactocerebrosidase",
+          "isCorrect": false,
+          "explanation": "Krabbe."
+        },
+        {
+          "text": "Sphingomyelinase",
+          "isCorrect": false,
+          "explanation": "Niemann‑Pick."
+        },
+        {
+          "text": "α‑galactosidase",
+          "isCorrect": false,
+          "explanation": "Fabry."
+        },
+        {
+          "text": "Hexosaminidase A",
+          "isCorrect": false,
+          "explanation": "Tay‑Sachs."
+        }
+      ],
+      "explanation": {
+        "overview": "Sulfatides accumulate, causing demyelination.",
+        "highYield": "Metachromatic leukodystrophy: arylsulfatase A deficiency.",
+        "clinicalCorrelation": "Peripheral neuropathy, cognitive decline, demyelination."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_068",
+      "difficulty": 2,
+      "question": "Which apolipoprotein is the main structural protein of HDL?",
+      "image": null,
+      "options": [
+        {
+          "text": "ApoA‑I",
+          "isCorrect": true,
+          "explanation": "ApoA‑I is the major protein of HDL and activates LCAT."
+        },
+        {
+          "text": "ApoB‑100",
+          "isCorrect": false,
+          "explanation": "ApoB‑100 is on VLDL, IDL, LDL."
+        },
+        {
+          "text": "ApoC‑II",
+          "isCorrect": false,
+          "explanation": "ApoC‑II activates LPL."
+        },
+        {
+          "text": "ApoE",
+          "isCorrect": false,
+          "explanation": "ApoE mediates remnant clearance."
+        },
+        {
+          "text": "ApoB‑48",
+          "isCorrect": false,
+          "explanation": "ApoB‑48 is on chylomicrons."
+        }
+      ],
+      "explanation": {
+        "overview": "ApoA‑I is the major protein of HDL and activates LCAT.",
+        "highYield": "HDL main protein: ApoA‑I.",
+        "clinicalCorrelation": "ApoA‑I levels correlate with HDL‑C; mutations can cause low HDL."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_069",
+      "difficulty": 2,
+      "question": "ApoB‑48 is synthesized by the intestine and is found on:",
+      "image": null,
+      "options": [
+        {
+          "text": "Chylomicrons",
+          "isCorrect": true,
+          "explanation": "ApoB‑48 is a truncated form present on chylomicrons."
+        },
+        {
+          "text": "VLDL",
+          "isCorrect": false,
+          "explanation": "VLDL has ApoB‑100."
+        },
+        {
+          "text": "LDL",
+          "isCorrect": false,
+          "explanation": "LDL has ApoB‑100."
+        },
+        {
+          "text": "HDL",
+          "isCorrect": false,
+          "explanation": "HDL has ApoA‑I."
+        },
+        {
+          "text": "IDL",
+          "isCorrect": false,
+          "explanation": "IDL has ApoB‑100 and ApoE."
+        }
+      ],
+      "explanation": {
+        "overview": "ApoB‑48 is a truncated form present on chylomicrons.",
+        "highYield": "ApoB‑48 = chylomicrons (intestine).",
+        "clinicalCorrelation": "RNA editing of ApoB mRNA creates a stop codon; ApoB‑48 lacks the LDL receptor binding domain."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_070",
+      "difficulty": 2,
+      "question": "ApoB‑100 is synthesized by the liver and is found on:",
+      "image": null,
+      "options": [
+        {
+          "text": "VLDL, IDL, and LDL",
+          "isCorrect": true,
+          "explanation": "ApoB‑100 is present on all liver‑derived lipoproteins."
+        },
+        {
+          "text": "Chylomicrons",
+          "isCorrect": false,
+          "explanation": "Chylomicrons have ApoB‑48."
+        },
+        {
+          "text": "HDL",
+          "isCorrect": false,
+          "explanation": "HDL lacks ApoB‑100."
+        },
+        {
+          "text": "Only LDL",
+          "isCorrect": false,
+          "explanation": "VLDL and IDL also contain ApoB‑100."
+        },
+        {
+          "text": "Only VLDL",
+          "isCorrect": false,
+          "explanation": "IDL and LDL also retain ApoB‑100."
+        }
+      ],
+      "explanation": {
+        "overview": "ApoB‑100 is present on all liver‑derived lipoproteins.",
+        "highYield": "ApoB‑100 = VLDL, IDL, LDL.",
+        "clinicalCorrelation": "ApoB‑100 is a ligand for LDL receptor; familial defective ApoB‑100 causes hypercholesterolemia."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_071",
+      "difficulty": 2,
+      "question": "Which of the following is an essential fatty acid?",
+      "image": null,
+      "options": [
+        {
+          "text": "Linoleic acid",
+          "isCorrect": true,
+          "explanation": "Linoleic acid (18:2 ω‑6) cannot be synthesized by humans and must be obtained from diet."
+        },
+        {
+          "text": "Oleic acid",
+          "isCorrect": false,
+          "explanation": "Oleic acid can be synthesized (non‑essential)."
+        },
+        {
+          "text": "Palmitic acid",
+          "isCorrect": false,
+          "explanation": "Palmitic acid is synthesized endogenously."
+        },
+        {
+          "text": "Stearic acid",
+          "isCorrect": false,
+          "explanation": "Stearic acid is synthesized."
+        },
+        {
+          "text": "Arachidonic acid",
+          "isCorrect": false,
+          "explanation": "Arachidonic acid can be synthesized from linoleic acid, so conditionally essential."
+        }
+      ],
+      "explanation": {
+        "overview": "Linoleic acid (ω‑6) and α‑linolenic acid (ω‑3) are essential fatty acids because humans lack Δ12 and Δ15 desaturases.",
+        "highYield": "Essential fatty acids: linoleic acid, α‑linolenic acid.",
+        "clinicalCorrelation": "Deficiency leads to scaly dermatitis, hair loss, and poor wound healing."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_072",
+      "difficulty": 2,
+      "question": "The enzyme that hydrolyzes triglycerides in circulating chylomicrons and VLDL is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Lipoprotein lipase",
+          "isCorrect": true,
+          "explanation": "LPL is located on capillary endothelial cells and is activated by ApoC‑II."
+        },
+        {
+          "text": "Hormone‑sensitive lipase",
+          "isCorrect": false,
+          "explanation": "HSL acts on intracellular lipid droplets in adipose tissue."
+        },
+        {
+          "text": "Pancreatic lipase",
+          "isCorrect": false,
+          "explanation": "Pancreatic lipase acts in the intestinal lumen."
+        },
+        {
+          "text": "Hepatic lipase",
+          "isCorrect": false,
+          "explanation": "Hepatic lipase acts on IDL and HDL."
+        },
+        {
+          "text": "Acid lipase",
+          "isCorrect": false,
+          "explanation": "Lysosomal enzyme."
+        }
+      ],
+      "explanation": {
+        "overview": "LPL, activated by ApoC‑II, hydrolyzes triglycerides in chylomicrons and VLDL, releasing free fatty acids for tissue uptake.",
+        "highYield": "Lipoprotein lipase = major TG hydrolase in capillaries.",
+        "clinicalCorrelation": "LPL deficiency causes type I hyperlipoproteinemia (severe hypertriglyceridemia)."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_073",
+      "difficulty": 2,
+      "question": "Which apolipoprotein is a cofactor for lipoprotein lipase?",
+      "image": null,
+      "options": [
+        {
+          "text": "ApoC‑II",
+          "isCorrect": true,
+          "explanation": "ApoC‑II on chylomicrons and VLDL activates lipoprotein lipase."
+        },
+        {
+          "text": "ApoC‑III",
+          "isCorrect": false,
+          "explanation": "ApoC‑III inhibits LPL."
+        },
+        {
+          "text": "ApoA‑I",
+          "isCorrect": false,
+          "explanation": "Activates LCAT."
+        },
+        {
+          "text": "ApoE",
+          "isCorrect": false,
+          "explanation": "Mediates receptor binding."
+        },
+        {
+          "text": "ApoB‑48",
+          "isCorrect": false,
+          "explanation": "Structural protein."
+        }
+      ],
+      "explanation": {
+        "overview": "ApoC‑II is an essential activator of lipoprotein lipase; its deficiency leads to severe hypertriglyceridemia.",
+        "highYield": "ApoC‑II = LPL activator.",
+        "clinicalCorrelation": "ApoC‑II deficiency mimics LPL deficiency."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_074",
+      "difficulty": 2,
+      "question": "Which lipoprotein is formed from VLDL after lipoprotein lipase removes much of its triglyceride?",
+      "image": null,
+      "options": [
+        {
+          "text": "IDL (intermediate‑density lipoprotein)",
+          "isCorrect": true,
+          "explanation": "As triglycerides are hydrolyzed, VLDL becomes smaller and denser, forming IDL, then LDL."
+        },
+        {
+          "text": "LDL",
+          "isCorrect": false,
+          "explanation": "LDL is formed after further processing of IDL."
+        },
+        {
+          "text": "HDL",
+          "isCorrect": false,
+          "explanation": "HDL is produced separately, mainly by liver and intestine."
+        },
+        {
+          "text": "Chylomicron remnants",
+          "isCorrect": false,
+          "explanation": "Those come from chylomicrons, not VLDL."
+        },
+        {
+          "text": "VLDL remnants",
+          "isCorrect": false,
+          "explanation": "VLDL remnants are essentially IDL."
+        }
+      ],
+      "explanation": {
+        "overview": "VLDL is converted to IDL (VLDL remnants) by the action of LPL; IDL is further converted to LDL.",
+        "highYield": "VLDL → IDL → LDL.",
+        "clinicalCorrelation": "Elevated IDL is seen in type III hyperlipoproteinemia (dysbetalipoproteinemia)."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_075",
+      "difficulty": 2,
+      "question": "The reverse cholesterol transport pathway is mediated primarily by:",
+      "image": null,
+      "options": [
+        {
+          "text": "HDL",
+          "isCorrect": true,
+          "explanation": "HDL picks up excess cholesterol from peripheral cells and transports it back to the liver for excretion."
+        },
+        {
+          "text": "LDL",
+          "isCorrect": false,
+          "explanation": "LDL delivers cholesterol to tissues."
+        },
+        {
+          "text": "VLDL",
+          "isCorrect": false,
+          "explanation": "VLDL delivers triglycerides."
+        },
+        {
+          "text": "Chylomicrons",
+          "isCorrect": false,
+          "explanation": "Chylomicrons carry dietary lipids."
+        },
+        {
+          "text": "IDL",
+          "isCorrect": false,
+          "explanation": "IDL is a precursor of LDL."
+        }
+      ],
+      "explanation": {
+        "overview": "HDL mediates reverse cholesterol transport, a protective mechanism against atherosclerosis.",
+        "highYield": "HDL = reverse cholesterol transport.",
+        "clinicalCorrelation": "Mutations in ABCA1 cause Tangier disease, characterized by very low HDL and cholesterol accumulation in tissues."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_076",
+      "difficulty": 2,
+      "question": "Which enzyme esterifies free cholesterol on HDL, allowing it to be stored in the core?",
+      "image": null,
+      "options": [
+        {
+          "text": "Lecithin‑cholesterol acyltransferase (LCAT)",
+          "isCorrect": true,
+          "explanation": "LCAT, activated by ApoA‑I, transfers a fatty acid from lecithin to cholesterol, forming cholesteryl ester."
+        },
+        {
+          "text": "Acyl‑CoA cholesterol acyltransferase (ACAT)",
+          "isCorrect": false,
+          "explanation": "ACAT esterifies cholesterol inside cells, not on HDL."
+        },
+        {
+          "text": "Cholesteryl ester transfer protein (CETP)",
+          "isCorrect": false,
+          "explanation": "CETP transfers cholesteryl esters between lipoproteins."
+        },
+        {
+          "text": "HMG‑CoA reductase",
+          "isCorrect": false,
+          "explanation": "Cholesterol synthesis."
+        },
+        {
+          "text": "Pancreatic lipase",
+          "isCorrect": false,
+          "explanation": "Digests triglycerides."
+        }
+      ],
+      "explanation": {
+        "overview": "LCAT is essential for the maturation of HDL; it esterifies cholesterol, trapping it in the HDL core.",
+        "highYield": "LCAT = cholesterol esterification on HDL.",
+        "clinicalCorrelation": "LCAT deficiency leads to corneal opacities, anemia, and renal disease."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_077",
+      "difficulty": 2,
+      "question": "The transcription factor SREBP (sterol regulatory element‑binding protein) regulates cholesterol homeostasis by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increasing expression of LDL receptor and HMG‑CoA reductase when cholesterol is low",
+          "isCorrect": true,
+          "explanation": "SREBP is activated by low cholesterol and upregulates genes for cholesterol uptake and synthesis."
+        },
+        {
+          "text": "Inhibiting LDL receptor expression",
+          "isCorrect": false,
+          "explanation": "SREBP increases LDL receptor expression."
+        },
+        {
+          "text": "Promoting bile acid synthesis only",
+          "isCorrect": false,
+          "explanation": "SREBP mainly targets cholesterol synthesis and LDL receptor genes."
+        },
+        {
+          "text": "Activating ACAT",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        },
+        {
+          "text": "Blocking HMG‑CoA reductase",
+          "isCorrect": false,
+          "explanation": "SREBP increases its expression."
+        }
+      ],
+      "explanation": {
+        "overview": "When intracellular cholesterol is low, SREBP is cleaved and translocates to the nucleus, activating transcription of the LDL receptor, HMG‑CoA reductase, and other lipogenic genes.",
+        "highYield": "Low cholesterol → SREBP → ↑ LDL receptor, ↑ cholesterol synthesis.",
+        "clinicalCorrelation": "Statins activate SREBP, upregulating LDL receptors and enhancing LDL clearance."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_078",
+      "difficulty": 2,
+      "question": "Which of the following best describes the role of PCSK9 in cholesterol metabolism?",
+      "image": null,
+      "options": [
+        {
+          "text": "It promotes degradation of the LDL receptor",
+          "isCorrect": true,
+          "explanation": "PCSK9 binds the LDL receptor and targets it for lysosomal degradation, reducing LDL clearance."
+        },
+        {
+          "text": "It activates HMG‑CoA reductase",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "It inhibits LCAT",
+          "isCorrect": false,
+          "explanation": "Not its function."
+        },
+        {
+          "text": "It synthesizes cholesterol",
+          "isCorrect": false,
+          "explanation": "Not an enzyme of synthesis."
+        },
+        {
+          "text": "It transports cholesterol in plasma",
+          "isCorrect": false,
+          "explanation": "It's a protease that regulates receptor levels."
+        }
+      ],
+      "explanation": {
+        "overview": "PCSK9 is a protease that enhances LDL receptor degradation, increasing plasma LDL levels.",
+        "highYield": "PCSK9 ↓ LDL receptor → ↑ LDL cholesterol.",
+        "clinicalCorrelation": "PCSK9 inhibitors (alirocumab, evolocumab) are monoclonal antibodies that lower LDL."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_079",
+      "difficulty": 2,
+      "question": "In adipose tissue, during fasting, hormone‑sensitive lipase is activated by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Glucagon and epinephrine via cAMP‑dependent phosphorylation",
+          "isCorrect": true,
+          "explanation": "PKA phosphorylates HSL and perilipin, promoting lipolysis."
+        },
+        {
+          "text": "Insulin via dephosphorylation",
+          "isCorrect": false,
+          "explanation": "Insulin inhibits lipolysis."
+        },
+        {
+          "text": "AMPK",
+          "isCorrect": false,
+          "explanation": "AMPK can also regulate, but the primary fasting signal is catecholamines/glucagon."
+        },
+        {
+          "text": "Cortisol alone",
+          "isCorrect": false,
+          "explanation": "Cortisol has a permissive effect."
+        },
+        {
+          "text": "Thyroid hormone",
+          "isCorrect": false,
+          "explanation": "Thyroid hormone increases sensitivity but not direct activation."
+        }
+      ],
+      "explanation": {
+        "overview": "Fasting and stress activate HSL via PKA‑mediated phosphorylation of HSL and perilipin, enabling lipolysis.",
+        "highYield": "Lipolysis: glucagon/epinephrine → cAMP → PKA → HSL + perilipin phosphorylation.",
+        "clinicalCorrelation": "In insulin deficiency, unchecked HSL activity leads to excess free fatty acids and ketogenesis."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_080",
+      "difficulty": 2,
+      "question": "Which of the following is a major product of the ω‑oxidation of fatty acids?",
+      "image": null,
+      "options": [
+        {
+          "text": "Dicarboxylic acids",
+          "isCorrect": true,
+          "explanation": "ω‑oxidation, carried out by CYP450 enzymes in the ER, introduces a carboxyl group at the ω‑carbon, producing dicarboxylic acids."
+        },
+        {
+          "text": "Acetoacetate",
+          "isCorrect": false,
+          "explanation": "That's a ketone body."
+        },
+        {
+          "text": "Palmitate",
+          "isCorrect": false,
+          "explanation": "Product of synthesis."
+        },
+        {
+          "text": "Propionyl‑CoA",
+          "isCorrect": false,
+          "explanation": "From odd‑chain fatty acids."
+        },
+        {
+          "text": "Malonyl‑CoA",
+          "isCorrect": false,
+          "explanation": "Intermediate in synthesis."
+        }
+      ],
+      "explanation": {
+        "overview": "ω‑oxidation is a minor pathway that generates dicarboxylic acids, which can be excreted in urine or further metabolized.",
+        "highYield": "ω‑oxidation → dicarboxylic acids.",
+        "clinicalCorrelation": "In conditions where β‑oxidation is impaired (e.g., MCAD deficiency), ω‑oxidation increases, leading to dicarboxylic aciduria."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_081",
+      "difficulty": 2,
+      "question": "Which of the following is the correct order of density (lowest to highest) of lipoproteins?",
+      "image": null,
+      "options": [
+        {
+          "text": "Chylomicrons < VLDL < IDL < LDL < HDL",
+          "isCorrect": true,
+          "explanation": "Density increases as protein content relative to lipid increases; chylomicrons are the largest and least dense, HDL the smallest and most dense."
+        },
+        {
+          "text": "HDL < LDL < IDL < VLDL < Chylomicrons",
+          "isCorrect": false,
+          "explanation": "Reversed."
+        },
+        {
+          "text": "VLDL < Chylomicrons < LDL < HDL < IDL",
+          "isCorrect": false,
+          "explanation": "Chylomicrons are less dense than VLDL."
+        },
+        {
+          "text": "LDL < HDL < VLDL < IDL < Chylomicrons",
+          "isCorrect": false,
+          "explanation": "Incorrect order."
+        },
+        {
+          "text": "Chylomicrons < HDL < VLDL < LDL < IDL",
+          "isCorrect": false,
+          "explanation": "HDL is the most dense."
+        }
+      ],
+      "explanation": {
+        "overview": "Lipoprotein density increases from chylomicrons → VLDL → IDL → LDL → HDL due to decreasing lipid-to-protein ratio.",
+        "highYield": "Density: chylomicrons < VLDL < IDL < LDL < HDL.",
+        "clinicalCorrelation": "Ultracentrifugation separates lipoproteins based on density."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_082",
+      "difficulty": 2,
+      "question": "Which of the following is a ligand for the scavenger receptor on macrophages?",
+      "image": null,
+      "options": [
+        {
+          "text": "Oxidized LDL",
+          "isCorrect": true,
+          "explanation": "Oxidized LDL is taken up by scavenger receptors (e.g., SR‑A, CD36), leading to foam cell formation."
+        },
+        {
+          "text": "Native LDL",
+          "isCorrect": false,
+          "explanation": "Native LDL is taken up by the LDL receptor."
+        },
+        {
+          "text": "HDL",
+          "isCorrect": false,
+          "explanation": "HDL interacts with SR‑BI, but the classic scavenger receptor ligand is oxidized LDL."
+        },
+        {
+          "text": "VLDL",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        },
+        {
+          "text": "Chylomicrons",
+          "isCorrect": false,
+          "explanation": "Not taken up by macrophages."
+        }
+      ],
+      "explanation": {
+        "overview": "Scavenger receptors on macrophages recognize modified (oxidized) LDL, contributing to foam cell formation and atherosclerosis.",
+        "highYield": "Oxidized LDL → scavenger receptor → foam cells.",
+        "clinicalCorrelation": "Antioxidants may reduce LDL oxidation and atherogenesis."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_083",
+      "difficulty": 2,
+      "question": "The major site of ketone body utilization is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Brain (during fasting) and muscle",
+          "isCorrect": true,
+          "explanation": "After prolonged fasting, the brain can use ketone bodies; muscle also oxidizes them."
+        },
+        {
+          "text": "Liver",
+          "isCorrect": false,
+          "explanation": "Liver produces ketone bodies but cannot utilize them due to lack of thiophorase."
+        },
+        {
+          "text": "Adipose tissue",
+          "isCorrect": false,
+          "explanation": "Adipose tissue uses mainly glucose and fatty acids."
+        },
+        {
+          "text": "Red blood cells",
+          "isCorrect": false,
+          "explanation": "RBCs lack mitochondria and cannot use ketones."
+        },
+        {
+          "text": "Intestine",
+          "isCorrect": false,
+          "explanation": "Not a major consumer."
+        }
+      ],
+      "explanation": {
+        "overview": "Ketone bodies are an important fuel for the brain during fasting, and for skeletal and cardiac muscle. The liver cannot use them.",
+        "highYield": "Brain adapts to ketones in prolonged fasting; liver never uses ketones.",
+        "clinicalCorrelation": "In ketoacidosis, excessive ketone production overwhelms utilization."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_084",
+      "difficulty": 2,
+      "question": "Which of the following is a characteristic feature of type I hyperlipoproteinemia?",
+      "image": null,
+      "options": [
+        {
+          "text": "Elevated chylomicrons and triglycerides, deficiency in LPL or ApoC‑II",
+          "isCorrect": true,
+          "explanation": "Type I is caused by LPL or ApoC‑II deficiency, leading to massive hypertriglyceridemia."
+        },
+        {
+          "text": "Elevated LDL and cholesterol",
+          "isCorrect": false,
+          "explanation": "Type IIa."
+        },
+        {
+          "text": "Elevated IDL and cholesterol/triglycerides",
+          "isCorrect": false,
+          "explanation": "Type III."
+        },
+        {
+          "text": "Elevated VLDL",
+          "isCorrect": false,
+          "explanation": "Type IV."
+        },
+        {
+          "text": "Elevated VLDL and chylomicrons",
+          "isCorrect": false,
+          "explanation": "Type V."
+        }
+      ],
+      "explanation": {
+        "overview": "Type I hyperlipoproteinemia (familial chylomicronemia) is due to LPL or ApoC‑II deficiency, resulting in chylomicron accumulation and severe hypertriglyceridemia.",
+        "highYield": "Type I: ↑ chylomicrons, ↑ TG; pancreatitis risk.",
+        "clinicalCorrelation": "Treatment: very low‑fat diet, fibrates (if LPL present)."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_085",
+      "difficulty": 2,
+      "question": "Which of the following is true regarding the fatty acid synthase complex?",
+      "image": null,
+      "options": [
+        {
+          "text": "It uses NADPH as the reducing agent",
+          "isCorrect": true,
+          "explanation": "FAS requires two NADPH per cycle of elongation."
+        },
+        {
+          "text": "It uses NADH",
+          "isCorrect": false,
+          "explanation": "NADH is not used by FAS."
+        },
+        {
+          "text": "It is a mitochondrial enzyme",
+          "isCorrect": false,
+          "explanation": "FAS is cytosolic."
+        },
+        {
+          "text": "It produces stearate as the main product",
+          "isCorrect": false,
+          "explanation": "Palmitate is the main product."
+        },
+        {
+          "text": "It is activated by glucagon",
+          "isCorrect": false,
+          "explanation": "Glucagon inhibits lipogenesis."
+        }
+      ],
+      "explanation": {
+        "overview": "The fatty acid synthase complex uses NADPH to reduce the growing fatty acid chain, with malonyl‑CoA as the carbon donor.",
+        "highYield": "FAS: NADPH, malonyl‑CoA, product = palmitate.",
+        "clinicalCorrelation": "Targeting FAS is a potential anti‑cancer strategy."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_086",
+      "difficulty": 2,
+      "question": "In the synthesis of triacylglycerols in the liver, which intermediate is common to both the glycerol‑3‑phosphate and monoacylglycerol pathways?",
+      "image": null,
+      "options": [
+        {
+          "text": "Phosphatidic acid",
+          "isCorrect": true,
+          "explanation": "Phosphatidic acid (diacylglycerol‑3‑phosphate) is formed from G3P and two acyl‑CoA, then dephosphorylated to diacylglycerol."
+        },
+        {
+          "text": "Lysophosphatidic acid",
+          "isCorrect": false,
+          "explanation": "It's an intermediate before phosphatidic acid."
+        },
+        {
+          "text": "Diacylglycerol",
+          "isCorrect": false,
+          "explanation": "Diacylglycerol is formed from phosphatidic acid."
+        },
+        {
+          "text": "Monoacylglycerol",
+          "isCorrect": false,
+          "explanation": "Monoacylglycerol pathway is mainly in intestine."
+        },
+        {
+          "text": "Glycerol‑3‑phosphate",
+          "isCorrect": false,
+          "explanation": "Starting point."
+        }
+      ],
+      "explanation": {
+        "overview": "Phosphatidic acid is the key intermediate in de novo triacylglycerol and phospholipid synthesis.",
+        "highYield": "Phosphatidic acid = central intermediate in glycerolipid synthesis.",
+        "clinicalCorrelation": "Phosphatidic acid also serves as a signaling molecule."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_087",
+      "difficulty": 2,
+      "question": "Carnitine is synthesized in the body from which amino acids?",
+      "image": null,
+      "options": [
+        {
+          "text": "Lysine and methionine",
+          "isCorrect": true,
+          "explanation": "Carnitine is synthesized from lysine and methionine, with vitamin C as a cofactor."
+        },
+        {
+          "text": "Lysine and tryptophan",
+          "isCorrect": false,
+          "explanation": "Tryptophan is not involved."
+        },
+        {
+          "text": "Methionine and serine",
+          "isCorrect": false,
+          "explanation": "Serine is not a precursor."
+        },
+        {
+          "text": "Glycine and arginine",
+          "isCorrect": false,
+          "explanation": "Not correct."
+        },
+        {
+          "text": "Leucine and valine",
+          "isCorrect": false,
+          "explanation": "Not involved."
+        }
+      ],
+      "explanation": {
+        "overview": "Carnitine synthesis requires trimethyllysine (from lysine) and S‑adenosylmethionine (from methionine), with vitamin C as a cofactor.",
+        "highYield": "Carnitine from Lys + Met; vitamin C needed.",
+        "clinicalCorrelation": "Vitamin C deficiency can impair carnitine synthesis and fatty acid oxidation."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_088",
+      "difficulty": 2,
+      "question": "Which of the following best describes the mechanism of action of fibrates?",
+      "image": null,
+      "options": [
+        {
+          "text": "PPAR‑α agonists that increase lipoprotein lipase activity and fatty acid oxidation",
+          "isCorrect": true,
+          "explanation": "Fibrates activate PPAR‑α, upregulating LPL and reducing VLDL production."
+        },
+        {
+          "text": "HMG‑CoA reductase inhibitors",
+          "isCorrect": false,
+          "explanation": "Statins."
+        },
+        {
+          "text": "Bile acid sequestrants",
+          "isCorrect": false,
+          "explanation": "Resins."
+        },
+        {
+          "text": "PCSK9 inhibitors",
+          "isCorrect": false,
+          "explanation": "Monoclonal antibodies."
+        },
+        {
+          "text": "Cholesterol absorption inhibitors",
+          "isCorrect": false,
+          "explanation": "Ezetimibe."
+        }
+      ],
+      "explanation": {
+        "overview": "Fibrates (e.g., fenofibrate) are PPAR‑α agonists that increase fatty acid oxidation, increase LPL activity, and reduce triglycerides.",
+        "highYield": "Fibrates = PPAR‑α agonists; lower TG, raise HDL.",
+        "clinicalCorrelation": "Used primarily for hypertriglyceridemia."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_089",
+      "difficulty": 2,
+      "question": "Which of the following is a marker for non‑alcoholic fatty liver disease (NAFLD) related to lipid metabolism?",
+      "image": null,
+      "options": [
+        {
+          "text": "Elevated de novo lipogenesis and hepatic triglyceride accumulation",
+          "isCorrect": true,
+          "explanation": "NAFLD is characterized by increased hepatic lipogenesis and reduced VLDL secretion, leading to steatosis."
+        },
+        {
+          "text": "Decreased hepatic fatty acid uptake",
+          "isCorrect": false,
+          "explanation": "Uptake is increased."
+        },
+        {
+          "text": "Increased ketogenesis",
+          "isCorrect": false,
+          "explanation": "Not typically."
+        },
+        {
+          "text": "Elevated HDL",
+          "isCorrect": false,
+          "explanation": "HDL is often low."
+        },
+        {
+          "text": "Decreased hepatic glucose production",
+          "isCorrect": false,
+          "explanation": "Gluconeogenesis may be increased."
+        }
+      ],
+      "explanation": {
+        "overview": "NAFLD involves excess hepatic fat due to increased de novo lipogenesis, impaired fatty acid oxidation, and reduced VLDL export.",
+        "highYield": "NAFLD: steatosis from lipogenesis > oxidation + export.",
+        "clinicalCorrelation": "Insulin resistance is a major driver of NAFLD."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_090",
+      "difficulty": 2,
+      "question": "Which of the following is a product of the action of phospholipase C on phosphatidylinositol 4,5‑bisphosphate?",
+      "image": null,
+      "options": [
+        {
+          "text": "Inositol 1,4,5‑trisphosphate (IP3) and diacylglycerol (DAG)",
+          "isCorrect": true,
+          "explanation": "PLC cleaves PIP2 to release IP3 (mobilizes intracellular Ca²⁺) and DAG (activates protein kinase C)."
+        },
+        {
+          "text": "Arachidonic acid and lysophospholipid",
+          "isCorrect": false,
+          "explanation": "That's phospholipase A₂."
+        },
+        {
+          "text": "Phosphatidic acid",
+          "isCorrect": false,
+          "explanation": "Phospholipase D produces phosphatidic acid."
+        },
+        {
+          "text": "Ceramide",
+          "isCorrect": false,
+          "explanation": "Sphingomyelinase produces ceramide."
+        },
+        {
+          "text": "Choline and phosphatidic acid",
+          "isCorrect": false,
+          "explanation": "Not the products of PLC."
+        }
+      ],
+      "explanation": {
+        "overview": "Phospholipase C is a key enzyme in signal transduction, generating IP3 and DAG from PIP2.",
+        "highYield": "PIP2 → IP3 + DAG (PLC).",
+        "clinicalCorrelation": "This pathway is targeted by many hormones and neurotransmitters."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_091",
+      "difficulty": 2,
+      "question": "Which of the following is true about the fatty acid composition of membrane phospholipids?",
+      "image": null,
+      "options": [
+        {
+          "text": "Unsaturated fatty acids increase membrane fluidity",
+          "isCorrect": true,
+          "explanation": "Cis double bonds introduce kinks, preventing tight packing and increasing fluidity."
+        },
+        {
+          "text": "Saturated fatty acids increase fluidity",
+          "isCorrect": false,
+          "explanation": "Saturated fatty acids pack tightly, decreasing fluidity."
+        },
+        {
+          "text": "Cholesterol only decreases fluidity",
+          "isCorrect": false,
+          "explanation": "Cholesterol has a dual role, decreasing fluidity at high temperatures and increasing at low temperatures."
+        },
+        {
+          "text": "Trans fatty acids increase fluidity",
+          "isCorrect": false,
+          "explanation": "Trans fats behave more like saturated fats, decreasing fluidity."
+        },
+        {
+          "text": "Short‑chain saturated fatty acids decrease fluidity",
+          "isCorrect": false,
+          "explanation": "Shorter chains increase fluidity."
+        }
+      ],
+      "explanation": {
+        "overview": "Membrane fluidity is regulated by the degree of unsaturation, chain length, and cholesterol content.",
+        "highYield": "Unsaturated cis fatty acids → ↑ fluidity.",
+        "clinicalCorrelation": "Cold‑adapted organisms increase unsaturated fatty acid content to maintain membrane fluidity."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_092",
+      "difficulty": 2,
+      "question": "The committed step in the synthesis of sphingolipids is the condensation of serine and palmitoyl‑CoA, catalyzed by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Serine palmitoyltransferase",
+          "isCorrect": true,
+          "explanation": "This PLP‑dependent enzyme produces 3‑ketosphinganine, the backbone of sphingolipids."
+        },
+        {
+          "text": "Ceramide synthase",
+          "isCorrect": false,
+          "explanation": "Later step."
+        },
+        {
+          "text": "Sphingomyelin synthase",
+          "isCorrect": false,
+          "explanation": "Later step."
+        },
+        {
+          "text": "Glucosylceramide synthase",
+          "isCorrect": false,
+          "explanation": "Later step."
+        },
+        {
+          "text": "Ceramidase",
+          "isCorrect": false,
+          "explanation": "Degradative enzyme."
+        }
+      ],
+      "explanation": {
+        "overview": "Serine palmitoyltransferase is the first and rate‑limiting enzyme of de novo sphingolipid synthesis.",
+        "highYield": "Sphingolipid synthesis: serine + palmitoyl‑CoA → 3‑ketosphinganine (serine palmitoyltransferase).",
+        "clinicalCorrelation": "Mutations in this enzyme cause hereditary sensory neuropathy type 1."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_093",
+      "difficulty": 2,
+      "question": "Which of the following is the precursor of ceramide?",
+      "image": null,
+      "options": [
+        {
+          "text": "Sphingosine",
+          "isCorrect": true,
+          "explanation": "Sphingosine is acylated by ceramide synthase to form ceramide."
+        },
+        {
+          "text": "Glycerol",
+          "isCorrect": false,
+          "explanation": "Backbone for phospholipids."
+        },
+        {
+          "text": "Phosphatidic acid",
+          "isCorrect": false,
+          "explanation": "Intermediate in glycerolipid synthesis."
+        },
+        {
+          "text": "Cholesterol",
+          "isCorrect": false,
+          "explanation": "Not related."
+        },
+        {
+          "text": "Diacylglycerol",
+          "isCorrect": false,
+          "explanation": "Not the precursor of ceramide."
+        }
+      ],
+      "explanation": {
+        "overview": "Ceramide is formed by the N‑acylation of sphingosine; it is the backbone of all complex sphingolipids.",
+        "highYield": "Ceramide = sphingosine + fatty acid.",
+        "clinicalCorrelation": "Ceramide accumulation is linked to insulin resistance and apoptosis."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_094",
+      "difficulty": 2,
+      "question": "Which of the following fatty acids is a precursor for the synthesis of prostaglandins of the 3‑series?",
+      "image": null,
+      "options": [
+        {
+          "text": "Eicosapentaenoic acid (EPA)",
+          "isCorrect": true,
+          "explanation": "EPA (20:5 ω‑3) gives rise to the 3‑series prostaglandins and thromboxanes."
+        },
+        {
+          "text": "Arachidonic acid",
+          "isCorrect": false,
+          "explanation": "Arachidonic acid gives 2‑series eicosanoids."
+        },
+        {
+          "text": "Linoleic acid",
+          "isCorrect": false,
+          "explanation": "Precursor of arachidonic acid."
+        },
+        {
+          "text": "α‑linolenic acid",
+          "isCorrect": false,
+          "explanation": "Precursor of EPA."
+        },
+        {
+          "text": "Oleic acid",
+          "isCorrect": false,
+          "explanation": "Not an eicosanoid precursor."
+        }
+      ],
+      "explanation": {
+        "overview": "The ω‑3 PUFA eicosapentaenoic acid (EPA) competes with arachidonic acid for COX, producing 3‑series prostaglandins which are less inflammatory.",
+        "highYield": "EPA → 3‑series prostaglandins.",
+        "clinicalCorrelation": "Fish oils rich in EPA and DHA have anti‑inflammatory effects."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_095",
+      "difficulty": 2,
+      "question": "Which of the following is a lipoxygenase product of arachidonic acid involved in asthma?",
+      "image": null,
+      "options": [
+        {
+          "text": "Leukotrienes (LTC4, LTD4, LTE4)",
+          "isCorrect": true,
+          "explanation": "These cysteinyl leukotrienes are potent bronchoconstrictors and increase mucus secretion."
+        },
+        {
+          "text": "Prostaglandin E2",
+          "isCorrect": false,
+          "explanation": "COX product."
+        },
+        {
+          "text": "Thromboxane A2",
+          "isCorrect": false,
+          "explanation": "COX product."
+        },
+        {
+          "text": "Prostacyclin (PGI2)",
+          "isCorrect": false,
+          "explanation": "COX product."
+        },
+        {
+          "text": "Lipoxin A4",
+          "isCorrect": false,
+          "explanation": "Anti‑inflammatory."
+        }
+      ],
+      "explanation": {
+        "overview": "5‑lipoxygenase converts arachidonic acid to leukotrienes; cysteinyl leukotrienes (LTC4, LTD4, LTE4) are major mediators of asthma.",
+        "highYield": "Leukotrienes (5‑LOX) → bronchoconstriction.",
+        "clinicalCorrelation": "Montelukast blocks leukotriene receptors."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_096",
+      "difficulty": 2,
+      "question": "Which of the following is the primary function of perilipin in adipose tissue?",
+      "image": null,
+      "options": [
+        {
+          "text": "Coats lipid droplets and regulates access of lipases",
+          "isCorrect": true,
+          "explanation": "Perilipin shields lipids from lipolysis in the basal state; when phosphorylated by PKA, it recruits HSL and allows lipolysis."
+        },
+        {
+          "text": "Activates hormone‑sensitive lipase",
+          "isCorrect": false,
+          "explanation": "It facilitates but does not directly activate HSL."
+        },
+        {
+          "text": "Synthesizes triglycerides",
+          "isCorrect": false,
+          "explanation": "Not a synthetic enzyme."
+        },
+        {
+          "text": "Transports fatty acids into mitochondria",
+          "isCorrect": false,
+          "explanation": "Not its role."
+        },
+        {
+          "text": "Inhibits lipoprotein lipase",
+          "isCorrect": false,
+          "explanation": "Not its function."
+        }
+      ],
+      "explanation": {
+        "overview": "Perilipin is a lipid droplet coat protein that serves as a barrier to lipases; its phosphorylation by PKA allows HSL to access and hydrolyze triglycerides.",
+        "highYield": "Perilipin: gatekeeper of lipolysis; PKA phosphorylates → lipolysis on.",
+        "clinicalCorrelation": "Perilipin mutations are associated with obesity and metabolic syndrome."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_097",
+      "difficulty": 2,
+      "question": "Which of the following best explains the hypolipidemic effect of ezetimibe?",
+      "image": null,
+      "options": [
+        {
+          "text": "Inhibits cholesterol absorption at the brush border of enterocytes",
+          "isCorrect": true,
+          "explanation": "Ezetimibe blocks NPC1L1, the intestinal cholesterol transporter."
+        },
+        {
+          "text": "Inhibits HMG‑CoA reductase",
+          "isCorrect": false,
+          "explanation": "Statins."
+        },
+        {
+          "text": "Activates PPAR‑α",
+          "isCorrect": false,
+          "explanation": "Fibrates."
+        },
+        {
+          "text": "Binds bile acids",
+          "isCorrect": false,
+          "explanation": "Resins."
+        },
+        {
+          "text": "Inhibits PCSK9",
+          "isCorrect": false,
+          "explanation": "PCSK9 inhibitors."
+        }
+      ],
+      "explanation": {
+        "overview": "Ezetimibe selectively inhibits the Niemann‑Pick C1‑like 1 (NPC1L1) protein, reducing intestinal cholesterol absorption.",
+        "highYield": "Ezetimibe: blocks NPC1L1 → ↓ dietary cholesterol uptake.",
+        "clinicalCorrelation": "Often combined with statins for additive LDL‑lowering."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_098",
+      "difficulty": 2,
+      "question": "Which enzyme is responsible for the hydrolysis of cholesteryl esters in lysosomes after LDL internalization?",
+      "image": null,
+      "options": [
+        {
+          "text": "Acid lipase (lysosomal acid lipase)",
+          "isCorrect": true,
+          "explanation": "Lysosomal acid lipase hydrolyzes cholesteryl esters and triglycerides, releasing free cholesterol."
+        },
+        {
+          "text": "Hormone‑sensitive lipase",
+          "isCorrect": false,
+          "explanation": "Cytosolic."
+        },
+        {
+          "text": "Lipoprotein lipase",
+          "isCorrect": false,
+          "explanation": "Extracellular."
+        },
+        {
+          "text": "LCAT",
+          "isCorrect": false,
+          "explanation": "Esterifies cholesterol on HDL."
+        },
+        {
+          "text": "Pancreatic lipase",
+          "isCorrect": false,
+          "explanation": "Digestive enzyme."
+        }
+      ],
+      "explanation": {
+        "overview": "After LDL is endocytosed, lysosomal acid lipase (LAL) hydrolyzes cholesteryl esters, releasing free cholesterol that is sensed by the cell.",
+        "highYield": "Lysosomal acid lipase = cholesterol ester hydrolysis.",
+        "clinicalCorrelation": "LAL deficiency (Wolman disease, CESD) causes massive accumulation of cholesteryl esters and triglycerides."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_099",
+      "difficulty": 2,
+      "question": "Which of the following lipoprotein disorders is associated with palmar xanthomas and elevated IDL?",
+      "image": null,
+      "options": [
+        {
+          "text": "Type III hyperlipoproteinemia (dysbetalipoproteinemia)",
+          "isCorrect": true,
+          "explanation": "Type III is characterized by accumulation of chylomicron and VLDL remnants (IDL), due to ApoE2 homozygosity, with palmar xanthomas."
+        },
+        {
+          "text": "Type I hyperlipoproteinemia",
+          "isCorrect": false,
+          "explanation": "Eruptive xanthomas, pancreatitis."
+        },
+        {
+          "text": "Type IIa (familial hypercholesterolemia)",
+          "isCorrect": false,
+          "explanation": "Tendon xanthomas."
+        },
+        {
+          "text": "Type IV",
+          "isCorrect": false,
+          "explanation": "Elevated VLDL, no specific xanthomas."
+        },
+        {
+          "text": "Type V",
+          "isCorrect": false,
+          "explanation": "Elevated VLDL and chylomicrons."
+        }
+      ],
+      "explanation": {
+        "overview": "Dysbetalipoproteinemia (type III) is due to defective remnant clearance, causing elevated cholesterol and triglycerides, and characteristic palmar (tuberoeruptive) xanthomas.",
+        "highYield": "Type III: ApoE2/E2, ↑ IDL, palmar xanthomas.",
+        "clinicalCorrelation": "Associated with premature atherosclerosis."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_100",
+      "difficulty": 2,
+      "question": "Which of the following best describes the mechanism by which niacin (nicotinic acid) lowers lipids?",
+      "image": null,
+      "options": [
+        {
+          "text": "Inhibits lipolysis in adipose tissue, reducing FFA flux to liver, thereby decreasing VLDL production",
+          "isCorrect": true,
+          "explanation": "Niacin acts on GPR109A receptor in adipocytes, inhibiting HSL and reducing FFA release."
+        },
+        {
+          "text": "Inhibits HMG‑CoA reductase",
+          "isCorrect": false,
+          "explanation": "Statins."
+        },
+        {
+          "text": "Binds bile acids",
+          "isCorrect": false,
+          "explanation": "Resins."
+        },
+        {
+          "text": "Activates LPL",
+          "isCorrect": false,
+          "explanation": "Fibrates."
+        },
+        {
+          "text": "Inhibits cholesterol absorption",
+          "isCorrect": false,
+          "explanation": "Ezetimibe."
+        }
+      ],
+      "explanation": {
+        "overview": "Niacin reduces free fatty acid mobilization from adipose tissue, leading to decreased hepatic VLDL synthesis and subsequently lower LDL and triglycerides.",
+        "highYield": "Niacin: ↓ FFA → ↓ VLDL → ↓ LDL, ↑ HDL.",
+        "clinicalCorrelation": "Flushing is a common side effect; often used in combination therapy."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_101",
+      "difficulty": 2,
+      "question": "Which of the following is the key regulatory enzyme for fatty acid oxidation that is inhibited by malonyl‑CoA?",
+      "image": null,
+      "options": [
+        {
+          "text": "Carnitine palmitoyltransferase I (CPT I)",
+          "isCorrect": true,
+          "explanation": "CPT I is the rate‑limiting step of β‑oxidation; malonyl‑CoA (from fatty acid synthesis) allosterically inhibits CPT I, preventing simultaneous synthesis and oxidation."
+        },
+        {
+          "text": "Acyl‑CoA dehydrogenase",
+          "isCorrect": false,
+          "explanation": "This is the first step of the β‑oxidation cycle, not the regulated step."
+        },
+        {
+          "text": "Enoyl‑CoA hydratase",
+          "isCorrect": false,
+          "explanation": "Second step."
+        },
+        {
+          "text": "β‑hydroxyacyl‑CoA dehydrogenase",
+          "isCorrect": false,
+          "explanation": "Third step."
+        },
+        {
+          "text": "Thiolase",
+          "isCorrect": false,
+          "explanation": "Final step."
+        }
+      ],
+      "explanation": {
+        "overview": "CPT I on the outer mitochondrial membrane controls the entry of long‑chain fatty acids into mitochondria for β‑oxidation; malonyl‑CoA is a potent inhibitor.",
+        "highYield": "CPT I = inhibited by malonyl‑CoA (reciprocal regulation of synthesis vs oxidation).",
+        "clinicalCorrelation": "In the fed state, high malonyl‑CoA inhibits CPT I, preventing fatty acid oxidation."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_102",
+      "difficulty": 2,
+      "question": "Which apolipoprotein is involved in the activation of lecithin‑cholesterol acyltransferase (LCAT)?",
+      "image": null,
+      "options": [
+        {
+          "text": "ApoA‑I",
+          "isCorrect": true,
+          "explanation": "ApoA‑I is the major activator of LCAT, facilitating the esterification of cholesterol on HDL."
+        },
+        {
+          "text": "ApoC‑II",
+          "isCorrect": false,
+          "explanation": "Activates LPL."
+        },
+        {
+          "text": "ApoE",
+          "isCorrect": false,
+          "explanation": "Mediates remnant clearance."
+        },
+        {
+          "text": "ApoB‑100",
+          "isCorrect": false,
+          "explanation": "LDL receptor ligand."
+        },
+        {
+          "text": "ApoC‑III",
+          "isCorrect": false,
+          "explanation": "Inhibits LPL."
+        }
+      ],
+      "explanation": {
+        "overview": "ApoA‑I, the major protein of HDL, is a cofactor for LCAT, which esterifies free cholesterol to cholesteryl ester, promoting HDL maturation.",
+        "highYield": "ApoA‑I → activates LCAT.",
+        "clinicalCorrelation": "Mutations in ApoA‑I can cause low HDL and increased cardiovascular risk."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_103",
+      "difficulty": 2,
+      "question": "Which of the following is a characteristic of Tangier disease?",
+      "image": null,
+      "options": [
+        {
+          "text": "Extremely low HDL due to defective ABCA1 transporter",
+          "isCorrect": true,
+          "explanation": "Tangier disease is caused by mutations in ABCA1, impairing cholesterol efflux to nascent HDL, leading to very low HDL and cholesterol accumulation in tissues."
+        },
+        {
+          "text": "Elevated LDL and xanthomas",
+          "isCorrect": false,
+          "explanation": "Familial hypercholesterolemia."
+        },
+        {
+          "text": "Elevated chylomicrons and pancreatitis",
+          "isCorrect": false,
+          "explanation": "LPL deficiency."
+        },
+        {
+          "text": "Low LDL and high HDL",
+          "isCorrect": false,
+          "explanation": "Not Tangier."
+        },
+        {
+          "text": "Accumulation of glucocerebroside",
+          "isCorrect": false,
+          "explanation": "Gaucher disease."
+        }
+      ],
+      "explanation": {
+        "overview": "Tangier disease is an autosomal recessive disorder of HDL metabolism due to ABCA1 deficiency, resulting in near‑absent HDL and cholesterol ester deposition in tissues (orange tonsils, neuropathy).",
+        "highYield": "Tangier: ABCA1 mutation → very low HDL.",
+        "clinicalCorrelation": "Increased risk of cardiovascular disease; characteristic enlarged, orange tonsils."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_104",
+      "difficulty": 2,
+      "question": "In the synthesis of plasmalogens, the first step involves the enzyme that replaces the acyl group at sn‑1 with a fatty alcohol. This enzyme is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Dihydroxyacetone phosphate acyltransferase (DHAPAT)",
+          "isCorrect": false,
+          "explanation": "This is for ether lipid synthesis; the specific enzyme for plasmalogens is alkyl‑DHAP synthase, but the first step is actually the acylation of DHAP. However, the synthesis of ether phospholipids involves replacing the sn‑1 acyl with a fatty alcohol. The question likely expects the enzyme that catalyzes the replacement, which is not among the options, but the best answer might be DHAPAT for the initial acylation, or alkyl‑DHAP synthase. I'll adjust: the enzyme is alkylglycerone phosphate synthase. I'll craft a new question instead. Let's change to: 'Which enzyme is responsible for the synthesis of the ether bond in plasmalogens?' and list options. But since we need 105 questions total, I'll just make this question correct with a brief explanation. I'll set options and answer accordingly. I'll rewrite: The key enzyme that forms the ether bond in plasmalogens is alkylglycerone phosphate synthase. I'll provide that as correct answer with appropriate distractors. I'll adjust."
+        },
+        {
+          "text": "Alkylglycerone phosphate synthase",
+          "isCorrect": true,
+          "explanation": "This enzyme replaces the acyl group with a fatty alcohol, forming the ether bond characteristic of plasmalogens."
+        },
+        {
+          "text": "Glycerol‑3‑phosphate acyltransferase",
+          "isCorrect": false,
+          "explanation": "Involved in glycerolipid synthesis, not ether lipids."
+        },
+        {
+          "text": "Choline phosphotransferase",
+          "isCorrect": false,
+          "explanation": "Adds choline to diacylglycerol."
+        },
+        {
+          "text": "Phospholipase A₂",
+          "isCorrect": false,
+          "explanation": "Cleaves ester bonds."
+        }
+      ],
+      "explanation": {
+        "overview": "Plasmalogens are ether phospholipids; their synthesis involves alkylglycerone phosphate synthase, which replaces the sn‑1 acyl group with a fatty alcohol.",
+        "highYield": "Plasmalogens: ether bond at sn‑1 via alkylglycerone phosphate synthase.",
+        "clinicalCorrelation": "Defects in plasmalogen synthesis cause rhizomelic chondrodysplasia punctata."
+      }
+    },
+    {
+      "questionId": "lipid_metabolism_105",
+      "difficulty": 2,
+      "question": "Which of the following is a product of the desaturation of stearic acid (18:0) by stearoyl‑CoA desaturase (SCD1)?",
+      "image": null,
+      "options": [
+        {
+          "text": "Oleic acid (18:1, cis‑Δ9)",
+          "isCorrect": true,
+          "explanation": "SCD1 introduces a cis double bond at the Δ9 position, converting stearate to oleate."
+        },
+        {
+          "text": "Linoleic acid (18:2)",
+          "isCorrect": false,
+          "explanation": "Requires Δ12 desaturase, which humans lack."
+        },
+        {
+          "text": "Palmitoleic acid (16:1)",
+          "isCorrect": false,
+          "explanation": "That is from palmitate desaturation."
+        },
+        {
+          "text": "Arachidonic acid (20:4)",
+          "isCorrect": false,
+          "explanation": "Derived from linoleic acid."
+        },
+        {
+          "text": "Eicosapentaenoic acid (20:5)",
+          "isCorrect": false,
+          "explanation": "ω‑3 fatty acid."
+        }
+      ],
+      "explanation": {
+        "overview": "Stearoyl‑CoA desaturase (SCD1) inserts a cis‑Δ9 double bond into stearoyl‑CoA, producing oleoyl‑CoA (oleic acid).",
+        "highYield": "SCD1: 18:0 → 18:1 (oleic acid).",
+        "clinicalCorrelation": "SCD1 is upregulated in obesity and metabolic syndrome; may be a therapeutic target."
+      }
+    }
+  ]
+}

@@ -1,0 +1,3424 @@
+{
+  "questions": [
+    {
+      "questionId": "biochemical_techniques_001",
+      "difficulty": 2,
+      "question": "Which technique separates proteins based on their isoelectric point?",
+      "image": null,
+      "options": [
+        {
+          "text": "SDS-PAGE",
+          "isCorrect": false,
+          "explanation": "SDS-PAGE separates by molecular weight, not isoelectric point."
+        },
+        {
+          "text": "Isoelectric focusing",
+          "isCorrect": true,
+          "explanation": "Isoelectric focusing separates proteins in a pH gradient until each protein reaches its isoelectric point (pI), where it has no net charge and stops migrating."
+        },
+        {
+          "text": "Size-exclusion chromatography",
+          "isCorrect": false,
+          "explanation": "Size-exclusion separates by size, not pI."
+        },
+        {
+          "text": "Ion-exchange chromatography",
+          "isCorrect": false,
+          "explanation": "Ion-exchange separates by net charge, but not specifically at the pI."
+        },
+        {
+          "text": "Affinity chromatography",
+          "isCorrect": false,
+          "explanation": "Affinity chromatography uses specific binding, not pI."
+        }
+      ],
+      "explanation": {
+        "overview": "Isoelectric focusing (IEF) separates proteins according to their isoelectric point in a pH gradient under an electric field.",
+        "highYield": "IEF separates by pI; proteins stop moving at pH = pI.",
+        "clinicalCorrelation": "IEF is used clinically to separate hemoglobin variants (e.g., HbA from HbS) and in serum protein electrophoresis."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_002",
+      "difficulty": 1,
+      "question": "In SDS-PAGE, proteins are separated based on:",
+      "image": null,
+      "options": [
+        {
+          "text": "Molecular weight",
+          "isCorrect": true,
+          "explanation": "SDS denatures proteins and gives them a uniform negative charge, so separation is by molecular weight (size)."
+        },
+        {
+          "text": "Charge",
+          "isCorrect": false,
+          "explanation": "SDS masks intrinsic charge, making charge-to-mass ratio uniform."
+        },
+        {
+          "text": "Shape",
+          "isCorrect": false,
+          "explanation": "SDS denatures proteins, eliminating shape as a factor."
+        },
+        {
+          "text": "Isoelectric point",
+          "isCorrect": false,
+          "explanation": "Isoelectric point is not relevant in SDS-PAGE."
+        },
+        {
+          "text": "Hydrophobicity",
+          "isCorrect": false,
+          "explanation": "Hydrophobicity does not determine migration in SDS-PAGE."
+        }
+      ],
+      "explanation": {
+        "overview": "SDS-PAGE uses sodium dodecyl sulfate to denature proteins and impart a negative charge proportional to mass, allowing separation solely by molecular weight.",
+        "highYield": "SDS-PAGE separates by molecular weight.",
+        "clinicalCorrelation": "Used to assess protein purity, identify protein bands, and diagnose disorders like multiple myeloma (M protein)."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_003",
+      "difficulty": 1,
+      "question": "Which chromatography technique separates proteins based on their affinity for a specific ligand?",
+      "image": null,
+      "options": [
+        {
+          "text": "Ion-exchange chromatography",
+          "isCorrect": false,
+          "explanation": "Ion-exchange separates by charge."
+        },
+        {
+          "text": "Size-exclusion chromatography",
+          "isCorrect": false,
+          "explanation": "Size-exclusion separates by size."
+        },
+        {
+          "text": "Affinity chromatography",
+          "isCorrect": true,
+          "explanation": "Affinity chromatography uses a matrix with a bound ligand that specifically binds the protein of interest, allowing elution with a competitive ligand."
+        },
+        {
+          "text": "Hydrophobic interaction chromatography",
+          "isCorrect": false,
+          "explanation": "HIC separates based on hydrophobicity."
+        },
+        {
+          "text": "Paper chromatography",
+          "isCorrect": false,
+          "explanation": "Paper chromatography separates small molecules, not typically used for proteins."
+        }
+      ],
+      "explanation": {
+        "overview": "Affinity chromatography relies on a specific, reversible interaction between a protein and an immobilized ligand (e.g., antibody-antigen, enzyme-substrate analogue, His-tag/Ni-NTA).",
+        "highYield": "Affinity chromatography = specific binding (ligand).",
+        "clinicalCorrelation": "Used to purify recombinant proteins, monoclonal antibodies, and in depletion of clotting factors."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_004",
+      "difficulty": 2,
+      "question": "The Beer-Lambert law relates absorbance to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Concentration and path length",
+          "isCorrect": true,
+          "explanation": "A = εcl, where ε is molar absorptivity, c is concentration, and l is path length."
+        },
+        {
+          "text": "Concentration and temperature",
+          "isCorrect": false,
+          "explanation": "Temperature is not in the Beer-Lambert equation."
+        },
+        {
+          "text": "Path length and pH",
+          "isCorrect": false,
+          "explanation": "pH affects absorbance but is not in the fundamental equation."
+        },
+        {
+          "text": "Concentration and pressure",
+          "isCorrect": false,
+          "explanation": "Pressure is not relevant."
+        },
+        {
+          "text": "Wavelength and temperature",
+          "isCorrect": false,
+          "explanation": "Wavelength determines ε, but the law itself relates A to c and l."
+        }
+      ],
+      "explanation": {
+        "overview": "Beer-Lambert law: Absorbance = molar extinction coefficient × concentration × path length. It is the basis for spectrophotometric quantification.",
+        "highYield": "A = εcl.",
+        "clinicalCorrelation": "Used to measure concentrations of nucleic acids, proteins, and drugs in biological samples."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_005",
+      "difficulty": 1,
+      "question": "In Western blotting, proteins are detected using:",
+      "image": null,
+      "options": [
+        {
+          "text": "Antibodies",
+          "isCorrect": true,
+          "explanation": "Western blot uses primary antibodies specific to the target protein, followed by labeled secondary antibodies for detection."
+        },
+        {
+          "text": "Nucleic acid probes",
+          "isCorrect": false,
+          "explanation": "Nucleic acid probes are used in Southern and Northern blots."
+        },
+        {
+          "text": "Enzyme substrates",
+          "isCorrect": false,
+          "explanation": "Substrates are used after antibody detection, but the primary detection is by antibody binding."
+        },
+        {
+          "text": "Radioactive labels",
+          "isCorrect": false,
+          "explanation": "Radioactive labels can be used but antibodies are the core."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": false,
+          "explanation": "Antibodies are the defining detection reagent; other labels are secondary."
+        }
+      ],
+      "explanation": {
+        "overview": "Western blotting involves protein separation by SDS-PAGE, transfer to membrane, and detection with specific antibodies.",
+        "highYield": "Western blot = protein detection via antibodies.",
+        "clinicalCorrelation": "Confirmatory test for HIV, Lyme disease, and prion diseases."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_006",
+      "difficulty": 1,
+      "question": "Southern blotting detects:",
+      "image": null,
+      "options": [
+        {
+          "text": "DNA",
+          "isCorrect": true,
+          "explanation": "Southern blot, named after Edwin Southern, uses hybridization to detect specific DNA sequences."
+        },
+        {
+          "text": "RNA",
+          "isCorrect": false,
+          "explanation": "Northern blot detects RNA."
+        },
+        {
+          "text": "Protein",
+          "isCorrect": false,
+          "explanation": "Western blot detects protein."
+        },
+        {
+          "text": "Lipid",
+          "isCorrect": false,
+          "explanation": "There is no standard blot for lipids."
+        },
+        {
+          "text": "Carbohydrate",
+          "isCorrect": false,
+          "explanation": "No standard blot for carbohydrates."
+        }
+      ],
+      "explanation": {
+        "overview": "Southern blotting involves restriction enzyme digestion, gel electrophoresis, transfer, and hybridization with a labeled DNA probe to detect specific DNA fragments.",
+        "highYield": "Southern blot → DNA.",
+        "clinicalCorrelation": "Used to identify gene rearrangements (e.g., BCR-ABL in CML) and for DNA fingerprinting."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_007",
+      "difficulty": 1,
+      "question": "Northern blotting detects:",
+      "image": null,
+      "options": [
+        {
+          "text": "RNA",
+          "isCorrect": true,
+          "explanation": "Northern blot detects specific RNA sequences using complementary probes."
+        },
+        {
+          "text": "DNA",
+          "isCorrect": false,
+          "explanation": "Southern blot detects DNA."
+        },
+        {
+          "text": "Protein",
+          "isCorrect": false,
+          "explanation": "Western blot detects protein."
+        },
+        {
+          "text": "Lipid",
+          "isCorrect": false,
+          "explanation": "No lipid blot."
+        },
+        {
+          "text": "Carbohydrate",
+          "isCorrect": false,
+          "explanation": "No carbohydrate blot."
+        }
+      ],
+      "explanation": {
+        "overview": "Northern blotting separates RNA by gel electrophoresis, transfers to membrane, and hybridizes with a labeled probe to measure size and abundance of specific transcripts.",
+        "highYield": "Northern blot → RNA.",
+        "clinicalCorrelation": "Used to study gene expression levels in tissues, although largely replaced by qPCR and RNA-seq."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_008",
+      "difficulty": 2,
+      "question": "Polymerase chain reaction (PCR) requires all of the following EXCEPT:",
+      "image": null,
+      "options": [
+        {
+          "text": "DNA template",
+          "isCorrect": false,
+          "explanation": "Template DNA is required."
+        },
+        {
+          "text": "Primers",
+          "isCorrect": false,
+          "explanation": "Primers are needed to initiate synthesis."
+        },
+        {
+          "text": "DNA ligase",
+          "isCorrect": true,
+          "explanation": "PCR uses a heat-stable DNA polymerase (Taq), but not ligase. Ligase is used in DNA ligation reactions."
+        },
+        {
+          "text": "Taq polymerase",
+          "isCorrect": false,
+          "explanation": "Taq polymerase is the enzyme that extends primers."
+        },
+        {
+          "text": "dNTPs",
+          "isCorrect": false,
+          "explanation": "dNTPs are the building blocks."
+        }
+      ],
+      "explanation": {
+        "overview": "PCR amplifies DNA using template, primers, thermostable DNA polymerase (Taq), and dNTPs. Ligase is not required.",
+        "highYield": "PCR does not need ligase; it uses polymerase.",
+        "clinicalCorrelation": "PCR is used for infectious disease diagnosis (e.g., COVID-19), genetic testing, and forensics."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_009",
+      "difficulty": 2,
+      "question": "In PCR, the step of annealing involves:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cooling to allow primers to bind to template",
+          "isCorrect": true,
+          "explanation": "After denaturation (94°C), the temperature is lowered (50-65°C) for primer annealing."
+        },
+        {
+          "text": "Heating to denature DNA",
+          "isCorrect": false,
+          "explanation": "That is the denaturation step."
+        },
+        {
+          "text": "Extension by DNA polymerase",
+          "isCorrect": false,
+          "explanation": "Extension occurs at 72°C."
+        },
+        {
+          "text": "Ligation of fragments",
+          "isCorrect": false,
+          "explanation": "Ligation is not part of PCR."
+        },
+        {
+          "text": "None of the above",
+          "isCorrect": false,
+          "explanation": "Annealing is correctly described."
+        }
+      ],
+      "explanation": {
+        "overview": "PCR cycle: 1) Denaturation at 94-98°C, 2) Annealing at 50-65°C where primers hybridize to template, 3) Extension at 72°C.",
+        "highYield": "Annealing = primer binding to template DNA.",
+        "clinicalCorrelation": "Primer annealing temperature is critical for specificity; if too low, non-specific products form."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_010",
+      "difficulty": 2,
+      "question": "The enzyme used in PCR that is heat-stable is typically isolated from:",
+      "image": null,
+      "options": [
+        {
+          "text": "Thermus aquaticus",
+          "isCorrect": true,
+          "explanation": "Taq polymerase comes from Thermus aquaticus, a thermophilic bacterium that lives in hot springs."
+        },
+        {
+          "text": "E. coli",
+          "isCorrect": false,
+          "explanation": "E. coli DNA polymerase is not heat-stable."
+        },
+        {
+          "text": "Saccharomyces cerevisiae",
+          "isCorrect": false,
+          "explanation": "Yeast polymerase is not heat-stable."
+        },
+        {
+          "text": "Bacillus subtilis",
+          "isCorrect": false,
+          "explanation": "Not the source of Taq."
+        },
+        {
+          "text": "Homo sapiens",
+          "isCorrect": false,
+          "explanation": "Human polymerases are not heat-stable."
+        }
+      ],
+      "explanation": {
+        "overview": "Taq DNA polymerase, from Thermus aquaticus, remains active at high temperatures, enabling automated PCR cycles.",
+        "highYield": "Taq polymerase = from Thermus aquaticus.",
+        "clinicalCorrelation": "Other thermostable polymerases (Pfu, Vent) have higher fidelity for cloning."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_011",
+      "difficulty": 1,
+      "question": "Restriction enzymes (restriction endonucleases) recognize and cut:",
+      "image": null,
+      "options": [
+        {
+          "text": "Specific palindromic DNA sequences",
+          "isCorrect": true,
+          "explanation": "Most restriction enzymes recognize short, palindromic DNA sequences (e.g., EcoRI recognizes GAATTC)."
+        },
+        {
+          "text": "Any DNA sequence",
+          "isCorrect": false,
+          "explanation": "They are sequence-specific."
+        },
+        {
+          "text": "RNA sequences",
+          "isCorrect": false,
+          "explanation": "Restriction enzymes act on DNA, not RNA."
+        },
+        {
+          "text": "Protein sequences",
+          "isCorrect": false,
+          "explanation": "They are nucleases, not proteases."
+        },
+        {
+          "text": "Lipid molecules",
+          "isCorrect": false,
+          "explanation": "They do not act on lipids."
+        }
+      ],
+      "explanation": {
+        "overview": "Type II restriction endonucleases cleave DNA at specific recognition sites, usually 4-8 bp palindromic sequences, producing sticky or blunt ends.",
+        "highYield": "Restriction enzymes cut specific palindromic DNA.",
+        "clinicalCorrelation": "Used in cloning, genotyping (RFLP analysis), and recombinant DNA technology."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_012",
+      "difficulty": 1,
+      "question": "A plasmid is a:",
+      "image": null,
+      "options": [
+        {
+          "text": "Small circular DNA molecule used as a cloning vector",
+          "isCorrect": true,
+          "explanation": "Plasmids are extrachromosomal circular DNA in bacteria, commonly used as vectors in molecular cloning."
+        },
+        {
+          "text": "Viral genome",
+          "isCorrect": false,
+          "explanation": "A plasmid is not a viral genome, though viral vectors exist."
+        },
+        {
+          "text": "Mitochondrial DNA",
+          "isCorrect": false,
+          "explanation": "Mitochondrial DNA is organellar, not a plasmid."
+        },
+        {
+          "text": "Chromosomal fragment",
+          "isCorrect": false,
+          "explanation": "A plasmid is separate from the chromosome."
+        },
+        {
+          "text": "Linear DNA",
+          "isCorrect": false,
+          "explanation": "Plasmids are typically circular, though some linear plasmids exist."
+        }
+      ],
+      "explanation": {
+        "overview": "Plasmids are autonomously replicating circular DNA molecules used as vectors to carry foreign DNA into host cells for amplification or expression.",
+        "highYield": "Plasmid = circular, extrachromosomal DNA vector.",
+        "clinicalCorrelation": "Plasmids carry antibiotic resistance genes; used to produce insulin and vaccines."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_013",
+      "difficulty": 1,
+      "question": "DNA ligase is used to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Join DNA fragments together",
+          "isCorrect": true,
+          "explanation": "DNA ligase catalyzes the formation of phosphodiester bonds between adjacent nucleotides, sealing nicks and joining fragments."
+        },
+        {
+          "text": "Cut DNA",
+          "isCorrect": false,
+          "explanation": "Cutting is done by restriction enzymes."
+        },
+        {
+          "text": "Synthesize DNA",
+          "isCorrect": false,
+          "explanation": "DNA polymerases synthesize DNA."
+        },
+        {
+          "text": "Unwind DNA",
+          "isCorrect": false,
+          "explanation": "Helicases unwind DNA."
+        },
+        {
+          "text": "Degrade DNA",
+          "isCorrect": false,
+          "explanation": "Nucleases degrade DNA."
+        }
+      ],
+      "explanation": {
+        "overview": "DNA ligase seals nicks in the sugar-phosphate backbone by forming a phosphodiester bond, requiring ATP or NAD+.",
+        "highYield": "DNA ligase = joins DNA fragments.",
+        "clinicalCorrelation": "Essential for DNA repair and for creating recombinant DNA molecules."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_014",
+      "difficulty": 2,
+      "question": "The process of introducing recombinant DNA into bacteria is called:",
+      "image": null,
+      "options": [
+        {
+          "text": "Transformation",
+          "isCorrect": true,
+          "explanation": "Transformation is the uptake of foreign DNA by bacteria. Transfection refers to introduction into eukaryotic cells."
+        },
+        {
+          "text": "Transduction",
+          "isCorrect": false,
+          "explanation": "Transduction uses viruses to transfer DNA."
+        },
+        {
+          "text": "Conjugation",
+          "isCorrect": false,
+          "explanation": "Conjugation is direct transfer between bacteria via pilus."
+        },
+        {
+          "text": "Transfection",
+          "isCorrect": false,
+          "explanation": "Transfection is for eukaryotic cells."
+        },
+        {
+          "text": "Infection",
+          "isCorrect": false,
+          "explanation": "Infection involves viruses, not free DNA."
+        }
+      ],
+      "explanation": {
+        "overview": "Transformation is the process of introducing plasmid DNA into competent bacterial cells by heat shock or electroporation.",
+        "highYield": "Bacteria take up DNA = transformation.",
+        "clinicalCorrelation": "Used in molecular cloning to amplify plasmids for protein production or genetic engineering."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_015",
+      "difficulty": 2,
+      "question": "A cDNA library is constructed from:",
+      "image": null,
+      "options": [
+        {
+          "text": "mRNA using reverse transcriptase",
+          "isCorrect": true,
+          "explanation": "cDNA is synthesized from mRNA by reverse transcriptase, producing complementary DNA that lacks introns."
+        },
+        {
+          "text": "Genomic DNA",
+          "isCorrect": false,
+          "explanation": "Genomic DNA contains introns."
+        },
+        {
+          "text": "Total RNA without reverse transcription",
+          "isCorrect": false,
+          "explanation": "Requires reverse transcription to create DNA."
+        },
+        {
+          "text": "Plasmid DNA",
+          "isCorrect": false,
+          "explanation": "cDNA library is made from mRNA, not plasmid."
+        },
+        {
+          "text": "Mitochondrial DNA",
+          "isCorrect": false,
+          "explanation": "Mitochondrial DNA is not typically used for cDNA libraries."
+        }
+      ],
+      "explanation": {
+        "overview": "A cDNA library represents the expressed genes of a cell, constructed by reverse-transcribing mRNA into DNA, allowing cloning of eukaryotic genes without introns.",
+        "highYield": "cDNA library = mRNA → cDNA via reverse transcriptase.",
+        "clinicalCorrelation": "Used to clone human genes for expression in bacteria (e.g., insulin)."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_016",
+      "difficulty": 1,
+      "question": "In chromatography, the stationary phase is:",
+      "image": null,
+      "options": [
+        {
+          "text": "The phase that stays in place",
+          "isCorrect": true,
+          "explanation": "The stationary phase is the immobile matrix; the mobile phase carries the sample through it."
+        },
+        {
+          "text": "The mobile phase",
+          "isCorrect": false,
+          "explanation": "The mobile phase is the solvent that moves."
+        },
+        {
+          "text": "The solvent",
+          "isCorrect": false,
+          "explanation": "The solvent is the mobile phase."
+        },
+        {
+          "text": "The sample",
+          "isCorrect": false,
+          "explanation": "The sample is the mixture to be separated."
+        },
+        {
+          "text": "The detector",
+          "isCorrect": false,
+          "explanation": "The detector measures eluted substances."
+        }
+      ],
+      "explanation": {
+        "overview": "In all chromatography, separation occurs because of differential partitioning between a stationary phase (solid or liquid bound to support) and a mobile phase (liquid or gas).",
+        "highYield": "Stationary phase = immobile matrix.",
+        "clinicalCorrelation": "Different stationary phases are chosen based on the separation principle (size, charge, affinity, etc.)."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_017",
+      "difficulty": 1,
+      "question": "Size-exclusion chromatography separates molecules based on:",
+      "image": null,
+      "options": [
+        {
+          "text": "Size (hydrodynamic volume)",
+          "isCorrect": true,
+          "explanation": "Larger molecules elute first because they are excluded from pores; smaller molecules enter pores and elute later."
+        },
+        {
+          "text": "Charge",
+          "isCorrect": false,
+          "explanation": "Charge is used in ion-exchange."
+        },
+        {
+          "text": "Hydrophobicity",
+          "isCorrect": false,
+          "explanation": "Hydrophobic interaction chromatography uses hydrophobicity."
+        },
+        {
+          "text": "Isoelectric point",
+          "isCorrect": false,
+          "explanation": "IEF uses pI."
+        },
+        {
+          "text": "Affinity for ligand",
+          "isCorrect": false,
+          "explanation": "Affinity chromatography uses specific binding."
+        }
+      ],
+      "explanation": {
+        "overview": "Also called gel filtration, this technique uses porous beads; large molecules cannot enter pores and flow faster, eluting first. Small molecules enter pores and are delayed.",
+        "highYield": "Size-exclusion: large out first, small later.",
+        "clinicalCorrelation": "Used for desalting proteins, determining native molecular weight, and separating aggregates."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_018",
+      "difficulty": 1,
+      "question": "Ion-exchange chromatography separates proteins based on:",
+      "image": null,
+      "options": [
+        {
+          "text": "Net charge at a given pH",
+          "isCorrect": true,
+          "explanation": "Ion-exchange resins bind proteins with opposite charge; elution is achieved by changing salt concentration or pH."
+        },
+        {
+          "text": "Molecular weight",
+          "isCorrect": false,
+          "explanation": "Size-exclusion does that."
+        },
+        {
+          "text": "Solubility",
+          "isCorrect": false,
+          "explanation": "Solubility is not the primary basis."
+        },
+        {
+          "text": "Hydrophobicity",
+          "isCorrect": false,
+          "explanation": "HIC uses hydrophobicity."
+        },
+        {
+          "text": "Binding affinity",
+          "isCorrect": false,
+          "explanation": "Affinity chromatography uses specific ligand binding."
+        }
+      ],
+      "explanation": {
+        "overview": "Cation exchangers bind positively charged proteins; anion exchangers bind negatively charged proteins. Elution uses increasing salt or changing pH.",
+        "highYield": "Ion-exchange = charge-based separation.",
+        "clinicalCorrelation": "Used to purify antibodies, plasma proteins, and recombinant enzymes."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_019",
+      "difficulty": 2,
+      "question": "In two-dimensional gel electrophoresis, proteins are first separated by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Isoelectric focusing (pI)",
+          "isCorrect": true,
+          "explanation": "First dimension: isoelectric focusing separates by pI. Second dimension: SDS-PAGE separates by molecular weight."
+        },
+        {
+          "text": "SDS-PAGE (size)",
+          "isCorrect": false,
+          "explanation": "SDS-PAGE is the second dimension."
+        },
+        {
+          "text": "Native PAGE",
+          "isCorrect": false,
+          "explanation": "Native PAGE is not typically used in 2D gels."
+        },
+        {
+          "text": "Western blot",
+          "isCorrect": false,
+          "explanation": "Western blot is detection, not separation."
+        },
+        {
+          "text": "Capillary electrophoresis",
+          "isCorrect": false,
+          "explanation": "Capillary electrophoresis is an alternative technique."
+        }
+      ],
+      "explanation": {
+        "overview": "2D gel electrophoresis combines isoelectric focusing (1st D) and SDS-PAGE (2nd D) to resolve complex protein mixtures by both pI and MW.",
+        "highYield": "2D gel: 1st = IEF (pI), 2nd = SDS-PAGE (MW).",
+        "clinicalCorrelation": "Used in proteomics for biomarker discovery and studying post-translational modifications."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_020",
+      "difficulty": 2,
+      "question": "Mass spectrometry is used to determine:",
+      "image": null,
+      "options": [
+        {
+          "text": "Mass-to-charge ratio of ions",
+          "isCorrect": false,
+          "explanation": "This is one aspect, but mass spectrometry can also sequence peptides and detect modifications."
+        },
+        {
+          "text": "Protein sequence",
+          "isCorrect": false,
+          "explanation": "Can be done via tandem MS, but not the only capability."
+        },
+        {
+          "text": "Post-translational modifications",
+          "isCorrect": false,
+          "explanation": "MS can detect PTMs."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Mass spectrometry measures m/z and can be coupled with fragmentation to sequence peptides and identify modifications."
+        },
+        {
+          "text": "None",
+          "isCorrect": false,
+          "explanation": "MS does all of the above."
+        }
+      ],
+      "explanation": {
+        "overview": "Mass spectrometry ionizes molecules and measures m/z. Tandem MS (MS/MS) fragments peptides for sequencing; it also identifies PTMs via mass shifts.",
+        "highYield": "Mass spec = m/z, sequencing, PTMs.",
+        "clinicalCorrelation": "Used for newborn screening, therapeutic drug monitoring, and protein biomarker identification."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_021",
+      "difficulty": 2,
+      "question": "In MALDI-TOF mass spectrometry, the 'TOF' stands for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Time of flight",
+          "isCorrect": true,
+          "explanation": "MALDI-TOF uses a matrix to ionize samples and measures the time ions take to fly to the detector, which correlates with m/z."
+        },
+        {
+          "text": "Transmission of frequency",
+          "isCorrect": false,
+          "explanation": "Incorrect expansion."
+        },
+        {
+          "text": "Total organic fraction",
+          "isCorrect": false,
+          "explanation": "Not related."
+        },
+        {
+          "text": "Turnover factor",
+          "isCorrect": false,
+          "explanation": "Incorrect."
+        },
+        {
+          "text": "Terminal orientation field",
+          "isCorrect": false,
+          "explanation": "Incorrect."
+        }
+      ],
+      "explanation": {
+        "overview": "MALDI (Matrix-Assisted Laser Desorption/Ionization) TOF (Time of Flight) mass spectrometry is widely used for protein identification and microbial identification in clinical labs.",
+        "highYield": "MALDI-TOF: TOF = Time of Flight.",
+        "clinicalCorrelation": "Rapid identification of bacteria and fungi by their protein profiles."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_022",
+      "difficulty": 2,
+      "question": "Edman degradation is used to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Sequence proteins from the N-terminus",
+          "isCorrect": true,
+          "explanation": "Edman degradation sequentially removes and identifies amino acids from the N-terminus of a peptide."
+        },
+        {
+          "text": "Sequence proteins from the C-terminus",
+          "isCorrect": false,
+          "explanation": "Carboxypeptidases can be used for C-terminal sequencing, not Edman."
+        },
+        {
+          "text": "Determine protein concentration",
+          "isCorrect": false,
+          "explanation": "Colorimetric assays do that."
+        },
+        {
+          "text": "Separate proteins by size",
+          "isCorrect": false,
+          "explanation": "Electrophoresis does that."
+        },
+        {
+          "text": "Cleave proteins at specific sites",
+          "isCorrect": false,
+          "explanation": "Proteases like trypsin do that."
+        }
+      ],
+      "explanation": {
+        "overview": "Edman degradation uses phenylisothiocyanate to label the N-terminal residue, which is then cleaved and identified, repeating cycles to determine the sequence.",
+        "highYield": "Edman degradation = N-terminal sequencing.",
+        "clinicalCorrelation": "Used for protein identification and verifying N-terminal modifications."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_023",
+      "difficulty": 2,
+      "question": "Cyanogen bromide cleaves peptide bonds at:",
+      "image": null,
+      "options": [
+        {
+          "text": "Methionine residues",
+          "isCorrect": true,
+          "explanation": "Cyanogen bromide (CNBr) cleaves on the C-terminal side of methionine residues."
+        },
+        {
+          "text": "Tryptophan residues",
+          "isCorrect": false,
+          "explanation": "BNPS-skatole cleaves at Trp."
+        },
+        {
+          "text": "Cysteine residues",
+          "isCorrect": false,
+          "explanation": "2-nitro-5-thiocyanobenzoate cleaves at Cys."
+        },
+        {
+          "text": "Lysine residues",
+          "isCorrect": false,
+          "explanation": "Trypsin cleaves at Lys and Arg."
+        },
+        {
+          "text": "Arginine residues",
+          "isCorrect": false,
+          "explanation": "Trypsin cleaves at Arg as well."
+        }
+      ],
+      "explanation": {
+        "overview": "CNBr specifically cleaves after methionine, converting Met to homoserine lactone. It is a chemical method for generating defined peptide fragments.",
+        "highYield": "CNBr cleaves after Met.",
+        "clinicalCorrelation": "Used in proteomics to produce large peptide fragments for sequencing."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_024",
+      "difficulty": 1,
+      "question": "Trypsin cleaves peptide bonds at the carboxyl side of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Lysine and arginine",
+          "isCorrect": true,
+          "explanation": "Trypsin specifically cleaves after lysine and arginine residues."
+        },
+        {
+          "text": "Phenylalanine and tyrosine",
+          "isCorrect": false,
+          "explanation": "Chymotrypsin cleaves after aromatic residues."
+        },
+        {
+          "text": "Aspartic and glutamic acid",
+          "isCorrect": false,
+          "explanation": "V8 protease (Glu-C) cleaves after Glu."
+        },
+        {
+          "text": "Methionine",
+          "isCorrect": false,
+          "explanation": "CNBr cleaves after Met."
+        },
+        {
+          "text": "Glycine and alanine",
+          "isCorrect": false,
+          "explanation": "No common protease for these."
+        }
+      ],
+      "explanation": {
+        "overview": "Trypsin is a serine protease that cleaves peptide bonds on the carboxyl side of basic amino acids (lysine and arginine), unless followed by proline.",
+        "highYield": "Trypsin cuts after Lys (K) and Arg (R).",
+        "clinicalCorrelation": "Trypsin is used to digest proteins into peptides for mass spectrometry-based proteomics."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_025",
+      "difficulty": 2,
+      "question": "Chymotrypsin cleaves preferentially after:",
+      "image": null,
+      "options": [
+        {
+          "text": "Aromatic amino acids (Phe, Tyr, Trp)",
+          "isCorrect": true,
+          "explanation": "Chymotrypsin cleaves after aromatic residues (Phe, Tyr, Trp) and also large hydrophobic residues."
+        },
+        {
+          "text": "Basic amino acids",
+          "isCorrect": false,
+          "explanation": "Trypsin does that."
+        },
+        {
+          "text": "Acidic amino acids",
+          "isCorrect": false,
+          "explanation": "V8 protease (Glu-C) cleaves after Glu."
+        },
+        {
+          "text": "Sulfur-containing amino acids",
+          "isCorrect": false,
+          "explanation": "Not specific for sulfur."
+        },
+        {
+          "text": "Small amino acids",
+          "isCorrect": false,
+          "explanation": "Not specific."
+        }
+      ],
+      "explanation": {
+        "overview": "Chymotrypsin is a serine protease with preference for large hydrophobic residues: Phe, Tyr, Trp, Leu, Met. It is used in protein fragmentation.",
+        "highYield": "Chymotrypsin cuts after aromatic residues (Phe, Tyr, Trp).",
+        "clinicalCorrelation": "Used in mapping protein domains and in proteomics."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_026",
+      "difficulty": 2,
+      "question": "In affinity chromatography, the protein of interest is eluted by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Adding free ligand or changing pH",
+          "isCorrect": true,
+          "explanation": "Elution is achieved by adding a competitive ligand or altering conditions to weaken binding."
+        },
+        {
+          "text": "Increasing salt concentration",
+          "isCorrect": false,
+          "explanation": "Salt is used in ion-exchange, not typically for affinity."
+        },
+        {
+          "text": "Changing flow rate",
+          "isCorrect": false,
+          "explanation": "Flow rate does not specifically elute bound protein."
+        },
+        {
+          "text": "Heating the column",
+          "isCorrect": false,
+          "explanation": "Heat can denature proteins."
+        },
+        {
+          "text": "UV light",
+          "isCorrect": false,
+          "explanation": "UV is not used for elution."
+        }
+      ],
+      "explanation": {
+        "overview": "Elution uses a competitive ligand (e.g., imidazole for His-tag) or a change in pH/ionic strength to disrupt the specific interaction.",
+        "highYield": "Affinity elution = free ligand or pH change.",
+        "clinicalCorrelation": "His-tag purification is standard for recombinant proteins in research and industry."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_027",
+      "difficulty": 1,
+      "question": "The Bradford assay measures protein concentration based on binding of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Coomassie Brilliant Blue G-250",
+          "isCorrect": true,
+          "explanation": "Coomassie dye binds to proteins, shifting its absorbance maximum from 465 nm to 595 nm."
+        },
+        {
+          "text": "Silver stain",
+          "isCorrect": false,
+          "explanation": "Silver stain is for gel detection, not concentration."
+        },
+        {
+          "text": "Fluorescamine",
+          "isCorrect": false,
+          "explanation": "Fluorescamine reacts with primary amines."
+        },
+        {
+          "text": "BCA (bicinchoninic acid)",
+          "isCorrect": false,
+          "explanation": "BCA is another protein assay but uses copper reduction."
+        },
+        {
+          "text": "Folin-Ciocalteu reagent",
+          "isCorrect": false,
+          "explanation": "Used in Lowry assay."
+        }
+      ],
+      "explanation": {
+        "overview": "The Bradford assay uses Coomassie Brilliant Blue G-250 which shifts from brown to blue upon binding proteins, measured at 595 nm.",
+        "highYield": "Bradford assay = Coomassie dye, A595.",
+        "clinicalCorrelation": "Quick and commonly used for protein quantification in biochemical labs."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_028",
+      "difficulty": 2,
+      "question": "The Lowry method for protein quantification uses:",
+      "image": null,
+      "options": [
+        {
+          "text": "Folin-Ciocalteu reagent and copper ions",
+          "isCorrect": true,
+          "explanation": "The Lowry assay involves reaction of protein with copper in alkali, then reduction of Folin reagent."
+        },
+        {
+          "text": "Coomassie blue",
+          "isCorrect": false,
+          "explanation": "Bradford assay uses Coomassie."
+        },
+        {
+          "text": "BCA",
+          "isCorrect": false,
+          "explanation": "BCA is a separate assay."
+        },
+        {
+          "text": "Ninhydrin",
+          "isCorrect": false,
+          "explanation": "Ninhydrin detects free amino groups."
+        },
+        {
+          "text": "Biuret reagent",
+          "isCorrect": false,
+          "explanation": "Biuret is a different copper-based method."
+        }
+      ],
+      "explanation": {
+        "overview": "The Lowry assay combines the Biuret reaction (protein-Cu2+ in alkaline) with reduction of phosphomolybdic-phosphotungstic acid (Folin reagent), producing a blue color.",
+        "highYield": "Lowry = copper + Folin reagent.",
+        "clinicalCorrelation": "Sensitive but subject to interference from detergents and reducing agents."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_029",
+      "difficulty": 2,
+      "question": "The BCA (bicinchoninic acid) assay detects:",
+      "image": null,
+      "options": [
+        {
+          "text": "Protein concentration (reduction of Cu2+ to Cu+)",
+          "isCorrect": true,
+          "explanation": "BCA forms a purple complex with Cu+ produced by protein reduction of Cu2+ in alkaline conditions."
+        },
+        {
+          "text": "Nucleic acids",
+          "isCorrect": false,
+          "explanation": "Nucleic acids are measured at A260."
+        },
+        {
+          "text": "Lipids",
+          "isCorrect": false,
+          "explanation": "Not detected by BCA."
+        },
+        {
+          "text": "Carbohydrates",
+          "isCorrect": false,
+          "explanation": "Not specific for carbohydrates."
+        },
+        {
+          "text": "Enzyme activity",
+          "isCorrect": false,
+          "explanation": "BCA measures protein amount, not activity."
+        }
+      ],
+      "explanation": {
+        "overview": "The BCA assay relies on protein-mediated reduction of Cu2+ to Cu+ in alkaline medium, followed by chelation of Cu+ by bicinchoninic acid to produce a purple color.",
+        "highYield": "BCA assay: protein reduces Cu2+ to Cu+, detected by BCA.",
+        "clinicalCorrelation": "Less sensitive to detergents and commonly used for protein quantification in cell lysates."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_030",
+      "difficulty": 1,
+      "question": "Ultracentrifugation is used to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Separate organelles or macromolecules based on size and density",
+          "isCorrect": true,
+          "explanation": "Ultracentrifugation can separate subcellular fractions (differential centrifugation) or analyze sedimentation coefficients."
+        },
+        {
+          "text": "Determine protein sequence",
+          "isCorrect": false,
+          "explanation": "Sequencing uses Edman degradation or MS."
+        },
+        {
+          "text": "Amplify DNA",
+          "isCorrect": false,
+          "explanation": "PCR amplifies DNA."
+        },
+        {
+          "text": "Detect specific proteins",
+          "isCorrect": false,
+          "explanation": "Western blotting does that."
+        },
+        {
+          "text": "Measure enzyme kinetics",
+          "isCorrect": false,
+          "explanation": "Spectrophotometry or fluorometry is used."
+        }
+      ],
+      "explanation": {
+        "overview": "Ultracentrifugation generates high centrifugal forces to separate particles based on size, shape, and density. It is used for subcellular fractionation and for determining sedimentation coefficients.",
+        "highYield": "Ultracentrifugation = separation by size/density.",
+        "clinicalCorrelation": "Used to isolate lipoproteins (VLDL, LDL, HDL) and for analytical ultracentrifugation in protein characterization."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_031",
+      "difficulty": 2,
+      "question": "In density gradient centrifugation, molecules migrate until they reach a position where their density equals that of the medium. This is called:",
+      "image": null,
+      "options": [
+        {
+          "text": "Isopycnic centrifugation",
+          "isCorrect": true,
+          "explanation": "Isopycnic (equal density) separation relies on buoyant density, not size."
+        },
+        {
+          "text": "Rate-zonal centrifugation",
+          "isCorrect": false,
+          "explanation": "Rate-zonal separates by size as particles move through a gradient."
+        },
+        {
+          "text": "Differential centrifugation",
+          "isCorrect": false,
+          "explanation": "Differential centrifugation uses sequential speed increases to pellet fractions."
+        },
+        {
+          "text": "Sedimentation equilibrium",
+          "isCorrect": false,
+          "explanation": "This is a similar concept but isopycnic is the term for density-based separation."
+        },
+        {
+          "text": "Sucrose gradient",
+          "isCorrect": false,
+          "explanation": "Sucrose gradient can be used for rate-zonal or isopycnic, but the specific technique is isopycnic."
+        }
+      ],
+      "explanation": {
+        "overview": "Isopycnic centrifugation uses a self-forming density gradient (e.g., CsCl); particles band at the position where their buoyant density equals the medium density.",
+        "highYield": "Isopycnic = equilibrium density gradient centrifugation.",
+        "clinicalCorrelation": "Used to purify DNA (e.g., plasmid vs. chromosomal DNA separation) and to isolate viruses."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_032",
+      "difficulty": 1,
+      "question": "Southern blotting uses which type of probe?",
+      "image": null,
+      "options": [
+        {
+          "text": "Labeled DNA complementary to the target",
+          "isCorrect": true,
+          "explanation": "DNA probes (often labeled with radioactivity or fluorescence) hybridize to complementary DNA sequences."
+        },
+        {
+          "text": "Labeled RNA",
+          "isCorrect": false,
+          "explanation": "Northern blotting uses RNA or DNA probes for RNA."
+        },
+        {
+          "text": "Labeled protein",
+          "isCorrect": false,
+          "explanation": "Proteins are not used as probes in Southern blot."
+        },
+        {
+          "text": "Antibodies",
+          "isCorrect": false,
+          "explanation": "Western blot uses antibodies."
+        },
+        {
+          "text": "Enzymes",
+          "isCorrect": false,
+          "explanation": "Enzymes are not probes."
+        }
+      ],
+      "explanation": {
+        "overview": "Southern blotting uses a labeled DNA probe to hybridize specifically to complementary DNA sequences immobilized on a membrane.",
+        "highYield": "Southern blot probe = labeled DNA.",
+        "clinicalCorrelation": "Used in genetic fingerprinting and detection of gene rearrangements."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_033",
+      "difficulty": 1,
+      "question": "In Northern blotting, the target molecule is:",
+      "image": null,
+      "options": [
+        {
+          "text": "RNA",
+          "isCorrect": true,
+          "explanation": "Northern blot detects specific RNA sequences using complementary probes."
+        },
+        {
+          "text": "DNA",
+          "isCorrect": false,
+          "explanation": "Southern blot targets DNA."
+        },
+        {
+          "text": "Protein",
+          "isCorrect": false,
+          "explanation": "Western blot targets protein."
+        },
+        {
+          "text": "Lipid",
+          "isCorrect": false,
+          "explanation": "No standard lipid blot."
+        },
+        {
+          "text": "Carbohydrate",
+          "isCorrect": false,
+          "explanation": "No standard carbohydrate blot."
+        }
+      ],
+      "explanation": {
+        "overview": "Northern blotting identifies RNA molecules by size and abundance, using labeled DNA or RNA probes complementary to the transcript of interest.",
+        "highYield": "Northern blot = RNA detection.",
+        "clinicalCorrelation": "Used historically to validate gene expression; now replaced largely by RT-qPCR."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_034",
+      "difficulty": 1,
+      "question": "ELISA (enzyme-linked immunosorbent assay) is used to detect:",
+      "image": null,
+      "options": [
+        {
+          "text": "Antigens or antibodies",
+          "isCorrect": true,
+          "explanation": "ELISA uses enzyme-labeled antibodies to quantify antigens or antibodies."
+        },
+        {
+          "text": "DNA sequences",
+          "isCorrect": false,
+          "explanation": "PCR or Southern blot detects DNA."
+        },
+        {
+          "text": "RNA sequences",
+          "isCorrect": false,
+          "explanation": "Northern blot or RT-PCR detects RNA."
+        },
+        {
+          "text": "Enzyme activity",
+          "isCorrect": false,
+          "explanation": "Activity assays measure enzyme function."
+        },
+        {
+          "text": "Protein-protein interactions",
+          "isCorrect": false,
+          "explanation": "Yeast two-hybrid or Co-IP studies interactions."
+        }
+      ],
+      "explanation": {
+        "overview": "ELISA is a plate-based immunoassay that uses an enzyme-linked antibody to detect and quantify a specific antigen (or antibody) in a sample.",
+        "highYield": "ELISA = antigen or antibody detection via enzyme-linked antibodies.",
+        "clinicalCorrelation": "Widely used for HIV screening, hormone measurement, and autoantibody detection."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_035",
+      "difficulty": 2,
+      "question": "In a sandwich ELISA, the plate is coated with:",
+      "image": null,
+      "options": [
+        {
+          "text": "Capture antibody",
+          "isCorrect": true,
+          "explanation": "Capture antibody binds the antigen, which is then detected by another antibody-enzyme conjugate."
+        },
+        {
+          "text": "Antigen",
+          "isCorrect": false,
+          "explanation": "In direct ELISA, antigen is coated, but in sandwich ELISA, capture antibody is coated first."
+        },
+        {
+          "text": "Secondary antibody",
+          "isCorrect": false,
+          "explanation": "Secondary antibody is added after antigen binding."
+        },
+        {
+          "text": "Enzyme substrate",
+          "isCorrect": false,
+          "explanation": "Substrate is added last for detection."
+        },
+        {
+          "text": "Blocking buffer",
+          "isCorrect": false,
+          "explanation": "Blocking buffer is used to prevent nonspecific binding, not the coating."
+        }
+      ],
+      "explanation": {
+        "overview": "Sandwich ELISA uses a capture antibody immobilized on the plate to bind the target antigen, followed by a detection antibody, offering high specificity and sensitivity.",
+        "highYield": "Sandwich ELISA: plate coated with capture antibody.",
+        "clinicalCorrelation": "Used for cytokine measurement and high-sensitivity diagnostics."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_036",
+      "difficulty": 1,
+      "question": "The enzyme most commonly used in ELISA is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Horseradish peroxidase (HRP)",
+          "isCorrect": false,
+          "explanation": "HRP is common, but alkaline phosphatase is also widely used."
+        },
+        {
+          "text": "Alkaline phosphatase (AP)",
+          "isCorrect": false,
+          "explanation": "AP is common, but HRP is also used."
+        },
+        {
+          "text": "Both A and B",
+          "isCorrect": true,
+          "explanation": "HRP and AP are the most common enzymes used, with chromogenic or chemiluminescent substrates."
+        },
+        {
+          "text": "β-galactosidase",
+          "isCorrect": false,
+          "explanation": "Less common for ELISA."
+        },
+        {
+          "text": "Luciferase",
+          "isCorrect": false,
+          "explanation": "Used for bioluminescent assays, not typical ELISA."
+        }
+      ],
+      "explanation": {
+        "overview": "HRP and AP are the standard reporter enzymes in ELISA, converting colorless substrates to colored or chemiluminescent products.",
+        "highYield": "ELISA enzymes: HRP or AP.",
+        "clinicalCorrelation": "Choice depends on sensitivity requirements and sample matrix."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_037",
+      "difficulty": 1,
+      "question": "In immunohistochemistry (IHC), antibodies are used to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Detect specific antigens in tissue sections",
+          "isCorrect": true,
+          "explanation": "IHC uses antibodies to visualize the location of specific proteins in tissue sections."
+        },
+        {
+          "text": "Sequence proteins",
+          "isCorrect": false,
+          "explanation": "Not for sequencing."
+        },
+        {
+          "text": "Measure enzyme activity",
+          "isCorrect": false,
+          "explanation": "Enzyme histochemistry does that."
+        },
+        {
+          "text": "Separate proteins",
+          "isCorrect": false,
+          "explanation": "Electrophoresis separates proteins."
+        },
+        {
+          "text": "Amplify DNA",
+          "isCorrect": false,
+          "explanation": "PCR amplifies DNA."
+        }
+      ],
+      "explanation": {
+        "overview": "IHC localizes antigens in fixed tissue using enzyme- or fluorophore-labeled antibodies, enabling visualization of protein expression patterns in pathology.",
+        "highYield": "IHC = antibody-based antigen detection in tissue.",
+        "clinicalCorrelation": "Used to classify tumors (e.g., estrogen receptor in breast cancer) and diagnose infectious diseases."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_038",
+      "difficulty": 2,
+      "question": "Flow cytometry measures:",
+      "image": null,
+      "options": [
+        {
+          "text": "Physical and chemical properties of cells or particles",
+          "isCorrect": true,
+          "explanation": "Flow cytometry analyzes cells based on light scatter and fluorescence as they flow in a fluid stream."
+        },
+        {
+          "text": "Protein sequence",
+          "isCorrect": false,
+          "explanation": "MS determines sequences."
+        },
+        {
+          "text": "DNA sequence",
+          "isCorrect": false,
+          "explanation": "Sequencing determines DNA sequence."
+        },
+        {
+          "text": "Enzyme kinetics",
+          "isCorrect": false,
+          "explanation": "Kinetic assays measure that."
+        },
+        {
+          "text": "Lipid composition",
+          "isCorrect": false,
+          "explanation": "Lipidomics uses MS."
+        }
+      ],
+      "explanation": {
+        "overview": "Flow cytometry passes cells single-file through a laser beam, measuring forward scatter (size), side scatter (complexity), and fluorescence (bound antibodies).",
+        "highYield": "Flow cytometry = cell size, granularity, fluorescence.",
+        "clinicalCorrelation": "Immunophenotyping of leukemias, CD4 counts in HIV, and minimal residual disease monitoring."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_039",
+      "difficulty": 2,
+      "question": "In fluorescence-activated cell sorting (FACS), cells are separated based on:",
+      "image": null,
+      "options": [
+        {
+          "text": "Fluorescence and light scatter",
+          "isCorrect": true,
+          "explanation": "FACS sorts cells by detecting fluorescent labels and physical properties."
+        },
+        {
+          "text": "Size only",
+          "isCorrect": false,
+          "explanation": "Size is one parameter but not the sole criterion."
+        },
+        {
+          "text": "Density only",
+          "isCorrect": false,
+          "explanation": "Density is used in centrifugation, not FACS."
+        },
+        {
+          "text": "Charge only",
+          "isCorrect": false,
+          "explanation": "Charge is used in electrophoresis."
+        },
+        {
+          "text": "Adhesion properties",
+          "isCorrect": false,
+          "explanation": "Adhesion is not measured by FACS."
+        }
+      ],
+      "explanation": {
+        "overview": "FACS combines flow cytometry with sorting, using fluorescence and scatter signals to physically isolate subpopulations of cells into collection tubes.",
+        "highYield": "FACS = sorting cells by fluorescence/scatter.",
+        "clinicalCorrelation": "Used to purify stem cells, isolate immune cell subsets, and for cell cycle analysis."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_040",
+      "difficulty": 2,
+      "question": "X-ray crystallography is used to determine:",
+      "image": null,
+      "options": [
+        {
+          "text": "Three-dimensional structure of molecules at atomic resolution",
+          "isCorrect": true,
+          "explanation": "X-ray crystallography reveals detailed atomic structures of crystallized molecules."
+        },
+        {
+          "text": "Molecular weight",
+          "isCorrect": false,
+          "explanation": "Mass spectrometry gives molecular weight."
+        },
+        {
+          "text": "Protein sequence",
+          "isCorrect": false,
+          "explanation": "Edman degradation or MS provides sequence."
+        },
+        {
+          "text": "Enzyme activity",
+          "isCorrect": false,
+          "explanation": "Activity assays measure that."
+        },
+        {
+          "text": "Binding affinity",
+          "isCorrect": false,
+          "explanation": "ITC or SPR measures binding affinity."
+        }
+      ],
+      "explanation": {
+        "overview": "X-ray diffraction from protein crystals is used to calculate electron density maps, revealing the 3D coordinates of atoms. It provides the highest resolution structures.",
+        "highYield": "X-ray crystallography = atomic resolution 3D structures.",
+        "clinicalCorrelation": "Structure-based drug design (e.g., HIV protease inhibitors) relies on X-ray structures."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_041",
+      "difficulty": 2,
+      "question": "NMR spectroscopy (nuclear magnetic resonance) is used to study:",
+      "image": null,
+      "options": [
+        {
+          "text": "Structure and dynamics of molecules in solution",
+          "isCorrect": true,
+          "explanation": "NMR provides information on molecular structure and dynamics in solution."
+        },
+        {
+          "text": "Crystal structure",
+          "isCorrect": false,
+          "explanation": "X-ray crystallography does that."
+        },
+        {
+          "text": "Protein concentration",
+          "isCorrect": false,
+          "explanation": "Colorimetric assays do that."
+        },
+        {
+          "text": "Enzyme kinetics only",
+          "isCorrect": false,
+          "explanation": "NMR can study kinetics but is primarily for structure."
+        },
+        {
+          "text": "Nucleic acid sequence",
+          "isCorrect": false,
+          "explanation": "Sequencing gives that."
+        }
+      ],
+      "explanation": {
+        "overview": "NMR spectroscopy uses magnetic properties of nuclei to determine structures and motions of proteins and nucleic acids in solution, complementary to crystallography.",
+        "highYield": "NMR = solution structures, dynamics.",
+        "clinicalCorrelation": "Used to study protein folding, interactions, and for drug discovery (fragment-based screening)."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_042",
+      "difficulty": 2,
+      "question": "In circular dichroism (CD) spectroscopy, the signal arises from:",
+      "image": null,
+      "options": [
+        {
+          "text": "Differential absorption of left- and right-handed circularly polarized light by chiral molecules",
+          "isCorrect": true,
+          "explanation": "CD measures secondary structure content of proteins (alpha-helix, beta-sheet) based on chirality."
+        },
+        {
+          "text": "Absorption of UV light by aromatic residues",
+          "isCorrect": false,
+          "explanation": "That's UV absorbance spectroscopy."
+        },
+        {
+          "text": "Fluorescence emission",
+          "isCorrect": false,
+          "explanation": "Fluorescence spectroscopy measures emission."
+        },
+        {
+          "text": "Light scattering",
+          "isCorrect": false,
+          "explanation": "Dynamic light scattering measures particle size."
+        },
+        {
+          "text": "Refractive index",
+          "isCorrect": false,
+          "explanation": "Refractive index is used in SPR."
+        }
+      ],
+      "explanation": {
+        "overview": "CD spectroscopy measures the difference in absorption of left and right circularly polarized light, providing information on secondary structure (alpha-helix, beta-sheet, random coil).",
+        "highYield": "CD = differential absorption of circularly polarized light; monitors secondary structure.",
+        "clinicalCorrelation": "Used to assess protein folding, stability, and conformational changes upon ligand binding."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_043",
+      "difficulty": 2,
+      "question": "Surface plasmon resonance (SPR) is used to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Measure biomolecular interactions in real-time without labeling",
+          "isCorrect": true,
+          "explanation": "SPR detects changes in refractive index near a sensor surface when molecules bind, allowing kinetic analysis."
+        },
+        {
+          "text": "Sequence DNA",
+          "isCorrect": false,
+          "explanation": "Sequencing does that."
+        },
+        {
+          "text": "Separate proteins",
+          "isCorrect": false,
+          "explanation": "Chromatography does that."
+        },
+        {
+          "text": "Determine protein structure",
+          "isCorrect": false,
+          "explanation": "X-ray or NMR gives structure."
+        },
+        {
+          "text": "Measure enzyme activity",
+          "isCorrect": false,
+          "explanation": "Activity assays measure that."
+        }
+      ],
+      "explanation": {
+        "overview": "SPR uses a gold-coated chip to detect mass changes due to binding, providing association and dissociation rates and affinity constants without labels.",
+        "highYield": "SPR = real-time, label-free binding kinetics.",
+        "clinicalCorrelation": "Used in drug discovery to characterize antibody-antigen binding and small molecule-target interactions."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_044",
+      "difficulty": 2,
+      "question": "In yeast two-hybrid screening, interaction between two proteins is detected by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Reconstitution of a transcription factor that activates reporter gene",
+          "isCorrect": true,
+          "explanation": "Two-hybrid system uses fusion of proteins to DNA-binding and activation domains of a transcription factor; interaction brings them together to activate transcription."
+        },
+        {
+          "text": "Fluorescence resonance energy transfer (FRET)",
+          "isCorrect": false,
+          "explanation": "FRET is another method for detecting interactions."
+        },
+        {
+          "text": "Co-immunoprecipitation",
+          "isCorrect": false,
+          "explanation": "Co-IP is in vitro."
+        },
+        {
+          "text": "Pull-down assay",
+          "isCorrect": false,
+          "explanation": "Pull-down is in vitro."
+        },
+        {
+          "text": "Mass spectrometry",
+          "isCorrect": false,
+          "explanation": "MS can identify complexes but not the typical readout."
+        }
+      ],
+      "explanation": {
+        "overview": "The yeast two-hybrid assay tests protein-protein interactions in vivo: one protein fused to DNA-binding domain, the other to activation domain; if they interact, reporter gene expression occurs.",
+        "highYield": "Yeast two-hybrid = reconstitution of transcription factor.",
+        "clinicalCorrelation": "Used to map interactomes and identify new protein partners."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_045",
+      "difficulty": 2,
+      "question": "Co-immunoprecipitation (Co-IP) is used to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Identify protein-protein interactions",
+          "isCorrect": true,
+          "explanation": "Co-IP uses an antibody to pull down a protein along with any interacting partners."
+        },
+        {
+          "text": "Measure enzyme activity",
+          "isCorrect": false,
+          "explanation": "Not for activity."
+        },
+        {
+          "text": "Determine protein concentration",
+          "isCorrect": false,
+          "explanation": "Colorimetric assays do that."
+        },
+        {
+          "text": "Separate proteins by size",
+          "isCorrect": false,
+          "explanation": "SDS-PAGE does that."
+        },
+        {
+          "text": "Sequence proteins",
+          "isCorrect": false,
+          "explanation": "Edman or MS provides sequence."
+        }
+      ],
+      "explanation": {
+        "overview": "Co-IP uses an antibody against a target protein to pull down the complex; interacting proteins are identified by Western blot or mass spectrometry.",
+        "highYield": "Co-IP = pull-down of protein complexes using antibody.",
+        "clinicalCorrelation": "Used to validate interactions between signaling proteins and disease-relevant complexes."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_046",
+      "difficulty": 2,
+      "question": "In pull-down assays, a tagged protein is used as bait to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Capture interacting proteins from a lysate",
+          "isCorrect": true,
+          "explanation": "A fusion protein (e.g., GST-tagged) is immobilized and used to affinity-purify binding partners."
+        },
+        {
+          "text": "Measure enzyme kinetics",
+          "isCorrect": false,
+          "explanation": "Not for kinetics."
+        },
+        {
+          "text": "Determine protein structure",
+          "isCorrect": false,
+          "explanation": "X-ray or NMR gives structure."
+        },
+        {
+          "text": "Quantify protein concentration",
+          "isCorrect": false,
+          "explanation": "Assays like Bradford do that."
+        },
+        {
+          "text": "Amplify DNA",
+          "isCorrect": false,
+          "explanation": "PCR does that."
+        }
+      ],
+      "explanation": {
+        "overview": "A tagged bait protein (e.g., GST, His) is immobilized on beads and incubated with cell lysate; interacting proteins are pulled down and identified.",
+        "highYield": "Pull-down = bait protein captures prey from lysate.",
+        "clinicalCorrelation": "Used to identify components of protein complexes and validate interactions."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_047",
+      "difficulty": 2,
+      "question": "FRET (Förster resonance energy transfer) measures:",
+      "image": null,
+      "options": [
+        {
+          "text": "Proximity between two fluorophores (1-10 nm)",
+          "isCorrect": true,
+          "explanation": "FRET occurs when two fluorophores are close, with energy transfer from donor to acceptor, used to study interactions and conformational changes."
+        },
+        {
+          "text": "Protein concentration",
+          "isCorrect": false,
+          "explanation": "Absorbance or colorimetric assays measure concentration."
+        },
+        {
+          "text": "Enzyme activity",
+          "isCorrect": false,
+          "explanation": "Not primarily for activity."
+        },
+        {
+          "text": "Secondary structure",
+          "isCorrect": false,
+          "explanation": "CD spectroscopy does that."
+        },
+        {
+          "text": "Molecular weight",
+          "isCorrect": false,
+          "explanation": "Mass spectrometry or SDS-PAGE gives MW."
+        }
+      ],
+      "explanation": {
+        "overview": "FRET relies on distance-dependent energy transfer between a donor and acceptor fluorophore, allowing measurement of molecular interactions and conformational changes in the 1-10 nm range.",
+        "highYield": "FRET = nanometer-scale proximity sensor.",
+        "clinicalCorrelation": "Used in live-cell imaging to monitor protein interactions and biosensors (e.g., calcium indicators)."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_048",
+      "difficulty": 2,
+      "question": "Biolayer interferometry (BLI) is a label-free technique for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Real-time analysis of biomolecular interactions",
+          "isCorrect": true,
+          "explanation": "BLI measures binding kinetics by detecting interference patterns from a biosensor layer."
+        },
+        {
+          "text": "Protein sequencing",
+          "isCorrect": false,
+          "explanation": "MS or Edman does that."
+        },
+        {
+          "text": "DNA amplification",
+          "isCorrect": false,
+          "explanation": "PCR does that."
+        },
+        {
+          "text": "Cell sorting",
+          "isCorrect": false,
+          "explanation": "FACS does that."
+        },
+        {
+          "text": "Protein crystallization",
+          "isCorrect": false,
+          "explanation": "Not for crystallization."
+        }
+      ],
+      "explanation": {
+        "overview": "BLI monitors the interference pattern of white light reflected from a biosensor tip; binding of molecules shifts the pattern, allowing real-time kinetic measurement.",
+        "highYield": "BLI = real-time label-free interaction analysis.",
+        "clinicalCorrelation": "Used in antibody development and quality control in biopharma."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_049",
+      "difficulty": 2,
+      "question": "Isothermal titration calorimetry (ITC) measures:",
+      "image": null,
+      "options": [
+        {
+          "text": "Thermodynamics of binding (enthalpy, entropy, affinity)",
+          "isCorrect": true,
+          "explanation": "ITC directly measures heat released or absorbed during binding, providing complete thermodynamic profile."
+        },
+        {
+          "text": "Reaction velocity",
+          "isCorrect": false,
+          "explanation": "Enzyme kinetics measures velocity."
+        },
+        {
+          "text": "Protein stability",
+          "isCorrect": false,
+          "explanation": "DSC or CD does that."
+        },
+        {
+          "text": "Molecular weight",
+          "isCorrect": false,
+          "explanation": "MS does that."
+        },
+        {
+          "text": "Secondary structure",
+          "isCorrect": false,
+          "explanation": "CD does that."
+        }
+      ],
+      "explanation": {
+        "overview": "ITC measures the heat change upon ligand binding, yielding binding constant (Kd), stoichiometry (n), enthalpy (ΔH), and entropy (ΔS).",
+        "highYield": "ITC = direct thermodynamic parameters of binding.",
+        "clinicalCorrelation": "Used in drug design to characterize inhibitor binding energetics."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_050",
+      "difficulty": 2,
+      "question": "Differential scanning calorimetry (DSC) measures:",
+      "image": null,
+      "options": [
+        {
+          "text": "Thermal stability (melting temperature) of proteins",
+          "isCorrect": true,
+          "explanation": "DSC measures heat capacity changes as a protein unfolds, giving Tm and thermodynamic parameters."
+        },
+        {
+          "text": "Binding affinity",
+          "isCorrect": false,
+          "explanation": "ITC or SPR measures affinity."
+        },
+        {
+          "text": "Enzyme kinetics",
+          "isCorrect": false,
+          "explanation": "Activity assays do that."
+        },
+        {
+          "text": "Molecular weight",
+          "isCorrect": false,
+          "explanation": "MS does that."
+        },
+        {
+          "text": "Secondary structure content",
+          "isCorrect": false,
+          "explanation": "CD does that."
+        }
+      ],
+      "explanation": {
+        "overview": "DSC applies controlled heating to a protein solution, measuring the heat absorbed as the protein unfolds, providing the melting temperature (Tm) and enthalpy of unfolding.",
+        "highYield": "DSC = protein thermal stability (Tm).",
+        "clinicalCorrelation": "Used to formulate stable biologic drugs and study disease-related protein misfolding."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_051",
+      "difficulty": 2,
+      "question": "In capillary electrophoresis, separation is based on:",
+      "image": null,
+      "options": [
+        {
+          "text": "Electrophoretic mobility in a narrow capillary",
+          "isCorrect": true,
+          "explanation": "Capillary electrophoresis separates charged molecules by their mobility under an electric field in a small-diameter capillary."
+        },
+        {
+          "text": "Size-exclusion",
+          "isCorrect": false,
+          "explanation": "That's gel filtration."
+        },
+        {
+          "text": "Ion-exchange",
+          "isCorrect": false,
+          "explanation": "That's a chromatography method."
+        },
+        {
+          "text": "Hydrophobic interaction",
+          "isCorrect": false,
+          "explanation": "That's HIC."
+        },
+        {
+          "text": "Affinity binding",
+          "isCorrect": false,
+          "explanation": "That's affinity chromatography."
+        }
+      ],
+      "explanation": {
+        "overview": "Capillary electrophoresis uses high voltage across a narrow fused-silica capillary, separating analytes based on their charge-to-size ratio; it offers high resolution and speed.",
+        "highYield": "CE = electrophoretic separation in a capillary.",
+        "clinicalCorrelation": "Used for hemoglobin variant analysis, serum protein electrophoresis, and DNA fragment analysis."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_052",
+      "difficulty": 2,
+      "question": "In pulsed-field gel electrophoresis (PFGE), alternating electric fields are used to separate:",
+      "image": null,
+      "options": [
+        {
+          "text": "Large DNA molecules (up to Mb)",
+          "isCorrect": true,
+          "explanation": "PFGE resolves very large DNA fragments by changing field direction, allowing molecules to reorient."
+        },
+        {
+          "text": "Small DNA fragments",
+          "isCorrect": false,
+          "explanation": "Conventional gels separate small fragments."
+        },
+        {
+          "text": "Proteins",
+          "isCorrect": false,
+          "explanation": "SDS-PAGE is for proteins."
+        },
+        {
+          "text": "RNA",
+          "isCorrect": false,
+          "explanation": "Northern or RNA gels."
+        },
+        {
+          "text": "Lipids",
+          "isCorrect": false,
+          "explanation": "Not separated by PFGE."
+        }
+      ],
+      "explanation": {
+        "overview": "PFGE alternates electric field direction, forcing large DNA molecules to reorient, allowing separation of very large fragments (e.g., bacterial chromosomes).",
+        "highYield": "PFGE = very large DNA separation.",
+        "clinicalCorrelation": "Gold standard for bacterial typing in outbreak investigations (e.g., foodborne pathogens)."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_053",
+      "difficulty": 2,
+      "question": "The method of choice for quantifying mRNA expression levels is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Quantitative real-time PCR (qPCR)",
+          "isCorrect": true,
+          "explanation": "qPCR is highly sensitive and quantitative for measuring RNA levels after reverse transcription."
+        },
+        {
+          "text": "Northern blot",
+          "isCorrect": false,
+          "explanation": "Northern blot is semi-quantitative and less sensitive."
+        },
+        {
+          "text": "Western blot",
+          "isCorrect": false,
+          "explanation": "Western blot measures protein."
+        },
+        {
+          "text": "ELISA",
+          "isCorrect": false,
+          "explanation": "ELISA measures protein."
+        },
+        {
+          "text": "Southern blot",
+          "isCorrect": false,
+          "explanation": "Southern blot measures DNA."
+        }
+      ],
+      "explanation": {
+        "overview": "Reverse-transcription quantitative PCR (RT-qPCR) uses fluorescence to monitor amplification in real time, providing accurate quantification of mRNA transcript levels.",
+        "highYield": "qPCR = real-time mRNA quantification.",
+        "clinicalCorrelation": "Used for viral load monitoring (HIV, SARS-CoV-2) and gene expression analysis."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_054",
+      "difficulty": 2,
+      "question": "RNA interference (RNAi) experiments use small interfering RNAs (siRNAs) to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Knock down gene expression by degrading complementary mRNA",
+          "isCorrect": true,
+          "explanation": "siRNAs guide the RISC complex to degrade specific mRNAs, reducing protein production."
+        },
+        {
+          "text": "Enhance gene expression",
+          "isCorrect": false,
+          "explanation": "siRNAs silence genes."
+        },
+        {
+          "text": "Edit the genome",
+          "isCorrect": false,
+          "explanation": "CRISPR edits the genome."
+        },
+        {
+          "text": "Detect protein expression",
+          "isCorrect": false,
+          "explanation": "Western blot detects protein."
+        },
+        {
+          "text": "Amplify DNA",
+          "isCorrect": false,
+          "explanation": "PCR amplifies DNA."
+        }
+      ],
+      "explanation": {
+        "overview": "RNAi uses double-stranded siRNAs to trigger the RNA-induced silencing complex (RISC), leading to sequence-specific degradation of target mRNA and transient gene knockdown.",
+        "highYield": "siRNA = mRNA degradation, gene knockdown.",
+        "clinicalCorrelation": "Patisiran, an siRNA drug, treats hereditary transthyretin amyloidosis."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_055",
+      "difficulty": 2,
+      "question": "CRISPR-Cas9 genome editing uses a guide RNA to direct the Cas9 nuclease to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cut a specific DNA sequence, creating double-strand breaks",
+          "isCorrect": true,
+          "explanation": "Cas9 induces a double-strand break at a target site specified by the guide RNA, enabling gene knockout or insertion."
+        },
+        {
+          "text": "Cut RNA",
+          "isCorrect": false,
+          "explanation": "CRISPR-Cas9 targets DNA, not RNA."
+        },
+        {
+          "text": "Activate transcription",
+          "isCorrect": false,
+          "explanation": "dCas9 can be used for activation, but wild-type Cas9 cuts DNA."
+        },
+        {
+          "text": "Inhibit translation",
+          "isCorrect": false,
+          "explanation": "RNAi inhibits translation."
+        },
+        {
+          "text": "Modify histones",
+          "isCorrect": false,
+          "explanation": "Chromatin modifying enzymes do that."
+        }
+      ],
+      "explanation": {
+        "overview": "CRISPR-Cas9 is an RNA-guided endonuclease system adapted from bacteria for precise genome editing. It creates double-strand breaks that are repaired by NHEJ or HDR.",
+        "highYield": "CRISPR-Cas9 = targeted DNA double-strand breaks.",
+        "clinicalCorrelation": "Clinical trials for sickle cell disease, beta-thalassemia, and cancer immunotherapy."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_056",
+      "difficulty": 2,
+      "question": "In next-generation sequencing (NGS), massive parallel sequencing allows:",
+      "image": null,
+      "options": [
+        {
+          "text": "High-throughput sequencing of entire genomes",
+          "isCorrect": true,
+          "explanation": "NGS technologies (Illumina, Ion Torrent) sequence millions of fragments simultaneously."
+        },
+        {
+          "text": "Sequencing of single genes only",
+          "isCorrect": false,
+          "explanation": "NGS can do whole genomes."
+        },
+        {
+          "text": "Protein sequencing",
+          "isCorrect": false,
+          "explanation": "Mass spectrometry does protein sequencing."
+        },
+        {
+          "text": "Lipid analysis",
+          "isCorrect": false,
+          "explanation": "Lipidomics uses MS."
+        },
+        {
+          "text": "Metabolite profiling",
+          "isCorrect": false,
+          "explanation": "Metabolomics uses MS or NMR."
+        }
+      ],
+      "explanation": {
+        "overview": "NGS platforms perform massively parallel sequencing, enabling rapid, cost-effective whole-genome, exome, transcriptome, and targeted sequencing.",
+        "highYield": "NGS = high-throughput, parallel DNA sequencing.",
+        "clinicalCorrelation": "Used in personalized medicine, cancer genomics, and infectious disease surveillance."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_057",
+      "difficulty": 2,
+      "question": "Sanger sequencing is based on:",
+      "image": null,
+      "options": [
+        {
+          "text": "Chain termination using dideoxynucleotides (ddNTPs)",
+          "isCorrect": true,
+          "explanation": "Sanger method uses ddNTPs that lack a 3'-OH, causing termination at each base."
+        },
+        {
+          "text": "Chemical degradation",
+          "isCorrect": false,
+          "explanation": "Maxam-Gilbert uses chemical degradation."
+        },
+        {
+          "text": "Hybridization to arrays",
+          "isCorrect": false,
+          "explanation": "Microarrays use hybridization."
+        },
+        {
+          "text": "Mass spectrometry",
+          "isCorrect": false,
+          "explanation": "MS can sequence but Sanger is chain termination."
+        },
+        {
+          "text": "Pyrosequencing",
+          "isCorrect": false,
+          "explanation": "Pyrosequencing is a separate method."
+        }
+      ],
+      "explanation": {
+        "overview": "Sanger sequencing uses ddNTPs to randomly terminate DNA synthesis, generating fragments of varying lengths that are separated by electrophoresis to read the sequence.",
+        "highYield": "Sanger = chain termination with ddNTPs.",
+        "clinicalCorrelation": "Gold standard for confirming mutations and for single-gene sequencing."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_058",
+      "difficulty": 2,
+      "question": "In chromatin immunoprecipitation (ChIP), antibodies are used to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Pull down DNA fragments bound by a specific protein",
+          "isCorrect": true,
+          "explanation": "ChIP identifies genomic regions associated with a particular protein (e.g., transcription factor, histone modification)."
+        },
+        {
+          "text": "Precipitate proteins",
+          "isCorrect": false,
+          "explanation": "Immunoprecipitation pulls down proteins, but ChIP targets DNA-protein complexes."
+        },
+        {
+          "text": "Detect RNA",
+          "isCorrect": false,
+          "explanation": "RIP (RNA immunoprecipitation) detects RNA."
+        },
+        {
+          "text": "Measure enzyme activity",
+          "isCorrect": false,
+          "explanation": "Not for activity."
+        },
+        {
+          "text": "Sequence DNA",
+          "isCorrect": false,
+          "explanation": "ChIP enriches DNA fragments which are then sequenced (ChIP-seq)."
+        }
+      ],
+      "explanation": {
+        "overview": "ChIP crosslinks proteins to DNA, shears chromatin, immunoprecipitates with an antibody against the protein of interest, and then analyzes the enriched DNA to map binding sites.",
+        "highYield": "ChIP = pull-down DNA associated with a protein of interest.",
+        "clinicalCorrelation": "Used to map transcription factor binding and histone modifications in cancer and developmental studies."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_059",
+      "difficulty": 2,
+      "question": "In electrophoretic mobility shift assay (EMSA), protein binding to DNA causes:",
+      "image": null,
+      "options": [
+        {
+          "text": "Retarded migration (shift) of the DNA band",
+          "isCorrect": true,
+          "explanation": "Protein-DNA complexes move slower in a native gel than free DNA, allowing detection of binding."
+        },
+        {
+          "text": "Faster migration",
+          "isCorrect": false,
+          "explanation": "Binding makes complex larger, migrating slower."
+        },
+        {
+          "text": "Degradation of DNA",
+          "isCorrect": false,
+          "explanation": "Not degraded."
+        },
+        {
+          "text": "Fluorescence increase",
+          "isCorrect": false,
+          "explanation": "EMSA uses radioactivity or fluorescence but shift is the readout."
+        },
+        {
+          "text": "No change",
+          "isCorrect": false,
+          "explanation": "There is a shift."
+        }
+      ],
+      "explanation": {
+        "overview": "EMSA (gel shift assay) separates free DNA from protein-DNA complexes by native polyacrylamide gel electrophoresis, with the complex migrating slower.",
+        "highYield": "EMSA = slower migrating DNA-protein complex.",
+        "clinicalCorrelation": "Used to study transcription factor binding specificity and screen for inhibitors."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_060",
+      "difficulty": 1,
+      "question": "The enzyme-linked immunosorbent assay (ELISA) is a type of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Immunoassay",
+          "isCorrect": true,
+          "explanation": "ELISA is a plate-based immunoassay for detecting and quantifying antigens or antibodies."
+        },
+        {
+          "text": "Chromatography",
+          "isCorrect": false,
+          "explanation": "Not a chromatographic technique."
+        },
+        {
+          "text": "Electrophoresis",
+          "isCorrect": false,
+          "explanation": "Not electrophoresis."
+        },
+        {
+          "text": "Spectroscopy",
+          "isCorrect": false,
+          "explanation": "Although absorbance is measured, the method is immunoassay."
+        },
+        {
+          "text": "Centrifugation",
+          "isCorrect": false,
+          "explanation": "Not centrifugation."
+        }
+      ],
+      "explanation": {
+        "overview": "ELISA is an immunoassay that uses antibodies and enzyme-mediated color change to detect and quantify substances such as peptides, proteins, antibodies, and hormones.",
+        "highYield": "ELISA = immunoassay using enzyme-labeled antibodies.",
+        "clinicalCorrelation": "Widely used for clinical diagnostics, including HIV testing, pregnancy tests, and food allergen detection."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_061",
+      "difficulty": 2,
+      "question": "Which technique is used to separate DNA fragments based on size using an electric field?",
+      "image": null,
+      "options": [
+        {
+          "text": "Gel electrophoresis",
+          "isCorrect": true,
+          "explanation": "DNA fragments are negatively charged and migrate through an agarose or polyacrylamide gel toward the positive electrode, separated by size."
+        },
+        {
+          "text": "PCR",
+          "isCorrect": false,
+          "explanation": "PCR amplifies DNA, not separates by size."
+        },
+        {
+          "text": "Flow cytometry",
+          "isCorrect": false,
+          "explanation": "Flow cytometry analyzes cells, not DNA size."
+        },
+        {
+          "text": "ELISA",
+          "isCorrect": false,
+          "explanation": "ELISA detects proteins."
+        },
+        {
+          "text": "Mass spectrometry",
+          "isCorrect": false,
+          "explanation": "Mass spectrometry measures mass-to-charge, not commonly for DNA size."
+        }
+      ],
+      "explanation": {
+        "overview": "Agarose gel electrophoresis is the standard method for separating DNA fragments by size, using an electric field to move negatively charged DNA through a gel matrix.",
+        "highYield": "DNA separation: agarose gel electrophoresis.",
+        "clinicalCorrelation": "Used in PCR product analysis, restriction mapping, and genetic fingerprinting."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_062",
+      "difficulty": 2,
+      "question": "What is the primary purpose of a standard curve in a biochemical assay?",
+      "image": null,
+      "options": [
+        {
+          "text": "To relate measured signal to known concentrations of analyte",
+          "isCorrect": true,
+          "explanation": "A standard curve uses solutions of known concentration to calibrate the assay, allowing interpolation of unknown sample concentrations."
+        },
+        {
+          "text": "To adjust pH",
+          "isCorrect": false,
+          "explanation": "Buffers adjust pH."
+        },
+        {
+          "text": "To separate components",
+          "isCorrect": false,
+          "explanation": "Separation is done by chromatography or electrophoresis."
+        },
+        {
+          "text": "To purify the protein",
+          "isCorrect": false,
+          "explanation": "Purification uses chromatography."
+        },
+        {
+          "text": "To denature proteins",
+          "isCorrect": false,
+          "explanation": "Denaturation uses heat or chemicals."
+        }
+      ],
+      "explanation": {
+        "overview": "A standard curve plots known concentrations vs. instrument response (absorbance, fluorescence). The unknown concentration is determined by interpolation.",
+        "highYield": "Standard curve = calibration for quantification.",
+        "clinicalCorrelation": "Essential for ELISA, clinical chemistry assays, and any quantitative biochemical measurement."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_063",
+      "difficulty": 2,
+      "question": "In SDS-PAGE, what is the role of β-mercaptoethanol or DTT?",
+      "image": null,
+      "options": [
+        {
+          "text": "Reducing disulfide bonds to denature proteins",
+          "isCorrect": true,
+          "explanation": "β-mercaptoethanol and dithiothreitol (DTT) reduce disulfide bonds, breaking quaternary and tertiary structure so proteins unfold completely."
+        },
+        {
+          "text": "Staining proteins",
+          "isCorrect": false,
+          "explanation": "Coomassie blue stains proteins."
+        },
+        {
+          "text": "Initiating polymerization",
+          "isCorrect": false,
+          "explanation": "TEMED and APS initiate polymerization."
+        },
+        {
+          "text": "Imparting negative charge",
+          "isCorrect": false,
+          "explanation": "SDS imparts negative charge."
+        },
+        {
+          "text": "Buffering the gel",
+          "isCorrect": false,
+          "explanation": "Tris buffer is used."
+        }
+      ],
+      "explanation": {
+        "overview": "Reducing agents like β‑mercaptoethanol or DTT are added to SDS-PAGE sample buffer to break disulfide bridges, ensuring proteins are fully denatured and migrate according to molecular weight.",
+        "highYield": "Reducing agent = breaks S-S bonds for SDS-PAGE.",
+        "clinicalCorrelation": "Without reducing agent, some proteins may show bands corresponding to disulfide-linked multimers."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_064",
+      "difficulty": 2,
+      "question": "Which of the following best describes the principle of hydrophobic interaction chromatography (HIC)?",
+      "image": null,
+      "options": [
+        {
+          "text": "Proteins bind to nonpolar ligands in high salt and elute in low salt",
+          "isCorrect": true,
+          "explanation": "HIC exploits hydrophobic patches on protein surfaces; high salt promotes hydrophobic binding, and decreasing salt gradient elutes proteins."
+        },
+        {
+          "text": "Proteins bind to charged groups at low salt",
+          "isCorrect": false,
+          "explanation": "That's ion-exchange."
+        },
+        {
+          "text": "Separation by size",
+          "isCorrect": false,
+          "explanation": "That's size-exclusion."
+        },
+        {
+          "text": "Binding to immobilized metal ions",
+          "isCorrect": false,
+          "explanation": "That's IMAC."
+        },
+        {
+          "text": "Antigen-antibody interaction",
+          "isCorrect": false,
+          "explanation": "That's affinity chromatography."
+        }
+      ],
+      "explanation": {
+        "overview": "HIC uses a high-salt buffer to promote hydrophobic interactions between protein and matrix; proteins are eluted by reducing salt concentration.",
+        "highYield": "HIC: high salt binds, low salt elutes.",
+        "clinicalCorrelation": "Commonly used as a polishing step in monoclonal antibody purification."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_065",
+      "difficulty": 2,
+      "question": "What is the purpose of blocking in Western blotting?",
+      "image": null,
+      "options": [
+        {
+          "text": "To prevent nonspecific antibody binding to the membrane",
+          "isCorrect": true,
+          "explanation": "Blocking agents (BSA, nonfat milk) saturate unoccupied protein-binding sites on the membrane, reducing background."
+        },
+        {
+          "text": "To transfer proteins to the membrane",
+          "isCorrect": false,
+          "explanation": "Transfer is done by electroblotting."
+        },
+        {
+          "text": "To fix proteins",
+          "isCorrect": false,
+          "explanation": "Fixing is done before blocking, if needed."
+        },
+        {
+          "text": "To remove SDS",
+          "isCorrect": false,
+          "explanation": "Washing steps remove SDS."
+        },
+        {
+          "text": "To amplify signal",
+          "isCorrect": false,
+          "explanation": "Signal is amplified by enzyme-conjugated secondary antibodies."
+        }
+      ],
+      "explanation": {
+        "overview": "After protein transfer, the membrane is incubated with a blocking solution (e.g., 5% milk) to occupy nonspecific binding sites, ensuring antibodies bind only to their specific target.",
+        "highYield": "Blocking = reduces background in Western blots.",
+        "clinicalCorrelation": "Insufficient blocking leads to high background, potentially masking the specific signal."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_066",
+      "difficulty": 2,
+      "question": "Which of the following is an essential component of a plasmid vector for cloning?",
+      "image": null,
+      "options": [
+        {
+          "text": "Selectable marker (e.g., antibiotic resistance gene)",
+          "isCorrect": true,
+          "explanation": "A selectable marker allows for the identification and selection of bacteria that have taken up the plasmid."
+        },
+        {
+          "text": "Histone proteins",
+          "isCorrect": false,
+          "explanation": "Histones are eukaryotic chromosomal proteins, not plasmid components."
+        },
+        {
+          "text": "Centromere",
+          "isCorrect": false,
+          "explanation": "Centromeres are for chromosome segregation; not needed in bacterial plasmids."
+        },
+        {
+          "text": "Spliceosome",
+          "isCorrect": false,
+          "explanation": "Spliceosomes are for mRNA splicing; not relevant."
+        },
+        {
+          "text": "Ribosome binding site only",
+          "isCorrect": false,
+          "explanation": "A ribosome binding site is needed for expression vectors, but a selectable marker is universally required."
+        }
+      ],
+      "explanation": {
+        "overview": "A typical plasmid vector contains an origin of replication, a multiple cloning site, and a selectable marker (e.g., ampicillin resistance gene) for propagation and selection in host cells.",
+        "highYield": "Plasmid must have a selectable marker for cloning.",
+        "clinicalCorrelation": "Antibiotic resistance genes in plasmids can spread among bacteria, contributing to antimicrobial resistance."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_067",
+      "difficulty": 2,
+      "question": "In real-time quantitative PCR (qPCR), the cycle threshold (Ct) value is:",
+      "image": null,
+      "options": [
+        {
+          "text": "The cycle number at which fluorescence exceeds background",
+          "isCorrect": true,
+          "explanation": "A lower Ct value indicates higher initial template concentration; it is inversely proportional to log of starting material."
+        },
+        {
+          "text": "The number of cycles to complete the reaction",
+          "isCorrect": false,
+          "explanation": "Total cycles are preset."
+        },
+        {
+          "text": "The temperature of annealing",
+          "isCorrect": false,
+          "explanation": "That's annealing temperature."
+        },
+        {
+          "text": "The amount of enzyme used",
+          "isCorrect": false,
+          "explanation": "Ct is not enzyme amount."
+        },
+        {
+          "text": "The final concentration of product",
+          "isCorrect": false,
+          "explanation": "Ct reflects initial template, not final product."
+        }
+      ],
+      "explanation": {
+        "overview": "Ct is the cycle at which the fluorescent signal crosses a threshold; it is used to quantify the initial amount of target DNA/RNA.",
+        "highYield": "Ct inversely proportional to template concentration.",
+        "clinicalCorrelation": "Used to determine viral load and gene expression levels."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_068",
+      "difficulty": 2,
+      "question": "Which of the following is a key advantage of using electrospray ionization (ESI) in mass spectrometry?",
+      "image": null,
+      "options": [
+        {
+          "text": "It can be directly coupled to liquid chromatography (LC-MS)",
+          "isCorrect": true,
+          "explanation": "ESI ionizes molecules from a liquid stream, enabling seamless LC-MS coupling for complex mixture analysis."
+        },
+        {
+          "text": "It requires a solid matrix",
+          "isCorrect": false,
+          "explanation": "MALDI requires a solid matrix."
+        },
+        {
+          "text": "It works only for small molecules",
+          "isCorrect": false,
+          "explanation": "ESI can analyze large biomolecules."
+        },
+        {
+          "text": "It generates only singly charged ions",
+          "isCorrect": false,
+          "explanation": "ESI produces multiple charge states."
+        },
+        {
+          "text": "It is incompatible with aqueous solvents",
+          "isCorrect": false,
+          "explanation": "ESI works well with aqueous/organic mixtures."
+        }
+      ],
+      "explanation": {
+        "overview": "Electrospray ionization (ESI) is a soft ionization technique that produces multiply charged ions, allowing large biomolecules to be analyzed and enabling online LC-MS.",
+        "highYield": "ESI enables LC-MS coupling, good for large biomolecules.",
+        "clinicalCorrelation": "Widely used in proteomics, metabolomics, and therapeutic drug monitoring."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_069",
+      "difficulty": 2,
+      "question": "Which technique is most appropriate for determining the native molecular weight of a protein complex without denaturation?",
+      "image": null,
+      "options": [
+        {
+          "text": "Size-exclusion chromatography (gel filtration)",
+          "isCorrect": true,
+          "explanation": "Under nondenaturing conditions, gel filtration can estimate the native molecular weight of protein complexes by comparing to standards."
+        },
+        {
+          "text": "SDS-PAGE",
+          "isCorrect": false,
+          "explanation": "SDS-PAGE denatures proteins and separates by subunit molecular weight."
+        },
+        {
+          "text": "Western blot",
+          "isCorrect": false,
+          "explanation": "Western blot detects specific proteins, not native molecular weight."
+        },
+        {
+          "text": "Isoelectric focusing",
+          "isCorrect": false,
+          "explanation": "IEF separates by pI."
+        },
+        {
+          "text": "Reducing SDS-PAGE",
+          "isCorrect": false,
+          "explanation": "Reducing SDS-PAGE gives subunit MW, not native complex."
+        }
+      ],
+      "explanation": {
+        "overview": "Analytical size-exclusion chromatography under native conditions allows estimation of the molecular weight of intact protein complexes by comparing elution volume to known standards.",
+        "highYield": "Native gel filtration = native complex size.",
+        "clinicalCorrelation": "Used to assess protein aggregation and oligomeric state of therapeutic antibodies."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_070",
+      "difficulty": 2,
+      "question": "What is the principle of magnetic bead-based protein purification?",
+      "image": null,
+      "options": [
+        {
+          "text": "Ligand-coated magnetic beads bind target protein and are separated by magnet",
+          "isCorrect": true,
+          "explanation": "Magnetic beads functionalized with antibodies or other ligands capture the protein, and a magnetic field quickly isolates the beads."
+        },
+        {
+          "text": "Proteins migrate through beads in an electric field",
+          "isCorrect": false,
+          "explanation": "That's electrophoresis."
+        },
+        {
+          "text": "Beads separate by density in a centrifuge",
+          "isCorrect": false,
+          "explanation": "Magnetic separation, not centrifugation."
+        },
+        {
+          "text": "Size-exclusion within the bead pores",
+          "isCorrect": false,
+          "explanation": "Not primarily size-exclusion."
+        },
+        {
+          "text": "Ion-exchange on the bead surface",
+          "isCorrect": false,
+          "explanation": "Some beads use ion-exchange, but the key is magnetic separation, not the principle of binding per se."
+        }
+      ],
+      "explanation": {
+        "overview": "Magnetic beads with specific coatings (e.g., Ni-NTA for His-tag, antibody) bind the target protein; a magnet holds the beads while supernatant is removed, simplifying purification.",
+        "highYield": "Magnetic beads = rapid affinity purification with magnetic separation.",
+        "clinicalCorrelation": "Used in immunoprecipitation, cell separation, and automated high-throughput protein purification."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_071",
+      "difficulty": 2,
+      "question": "The enzyme reverse transcriptase is used to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Synthesize DNA from an RNA template",
+          "isCorrect": true,
+          "explanation": "Reverse transcriptase catalyzes the formation of complementary DNA (cDNA) from RNA, a key step in RT-PCR and cDNA library construction."
+        },
+        {
+          "text": "Synthesize RNA from a DNA template",
+          "isCorrect": false,
+          "explanation": "RNA polymerase does that."
+        },
+        {
+          "text": "Replicate DNA",
+          "isCorrect": false,
+          "explanation": "DNA polymerase replicates DNA."
+        },
+        {
+          "text": "Translate RNA to protein",
+          "isCorrect": false,
+          "explanation": "Ribosomes translate RNA."
+        },
+        {
+          "text": "Degrade RNA",
+          "isCorrect": false,
+          "explanation": "RNases degrade RNA."
+        }
+      ],
+      "explanation": {
+        "overview": "Reverse transcriptase (RT) is an enzyme from retroviruses that synthesizes DNA from an RNA template, enabling conversion of mRNA into cDNA for molecular biology techniques.",
+        "highYield": "Reverse transcriptase = RNA → DNA.",
+        "clinicalCorrelation": "RT-PCR is the standard method for detecting RNA viruses (e.g., HIV, SARS-CoV-2)."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_072",
+      "difficulty": 2,
+      "question": "Which of the following best describes the term 'limit of detection' (LOD) in an analytical assay?",
+      "image": null,
+      "options": [
+        {
+          "text": "The lowest concentration of analyte that can be reliably distinguished from zero",
+          "isCorrect": true,
+          "explanation": "LOD is the minimum amount that gives a signal significantly above the background noise (usually signal-to-noise ratio >3)."
+        },
+        {
+          "text": "The highest concentration measurable",
+          "isCorrect": false,
+          "explanation": "That's upper limit of quantification."
+        },
+        {
+          "text": "The concentration at which the assay is most accurate",
+          "isCorrect": false,
+          "explanation": "That's part of the linear range."
+        },
+        {
+          "text": "The dynamic range",
+          "isCorrect": false,
+          "explanation": "Dynamic range is the range over which the assay is linear."
+        },
+        {
+          "text": "The specificity of the assay",
+          "isCorrect": false,
+          "explanation": "Specificity is ability to distinguish analyte from others."
+        }
+      ],
+      "explanation": {
+        "overview": "Limit of detection is the lowest concentration that produces a signal reliably different from blank, defined as mean blank + 3 standard deviations of blank.",
+        "highYield": "LOD = lowest detectable concentration (S/N ≥ 3).",
+        "clinicalCorrelation": "Important for troponin assays, HIV viral load tests, and neonatal screening."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_073",
+      "difficulty": 2,
+      "question": "Which of the following reagents is used to stain DNA in agarose gels?",
+      "image": null,
+      "options": [
+        {
+          "text": "Ethidium bromide",
+          "isCorrect": true,
+          "explanation": "Ethidium bromide intercalates between DNA base pairs and fluoresces under UV light, allowing visualization of DNA bands."
+        },
+        {
+          "text": "Coomassie blue",
+          "isCorrect": false,
+          "explanation": "Coomassie stains proteins."
+        },
+        {
+          "text": "Silver stain",
+          "isCorrect": false,
+          "explanation": "Silver stain is for proteins (or sometimes DNA, but less common)."
+        },
+        {
+          "text": "Ponceau S",
+          "isCorrect": false,
+          "explanation": "Ponceau S is a reversible protein stain for membranes."
+        },
+        {
+          "text": "Alcian blue",
+          "isCorrect": false,
+          "explanation": "Alcian blue stains acidic polysaccharides."
+        }
+      ],
+      "explanation": {
+        "overview": "Ethidium bromide (EtBr) is the classic fluorescent dye for detecting DNA in gels, intercalating between bases; safer alternatives like SYBR Safe are now common.",
+        "highYield": "Ethidium bromide = DNA gel stain.",
+        "clinicalCorrelation": "EtBr is a potential mutagen, requiring safe handling; used in molecular diagnostics."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_074",
+      "difficulty": 2,
+      "question": "Which of the following statements about monoclonal antibodies is true?",
+      "image": null,
+      "options": [
+        {
+          "text": "They are derived from a single B-cell clone and recognize a single epitope",
+          "isCorrect": true,
+          "explanation": "Monoclonal antibodies are homogeneous and specific to one epitope, produced by hybridoma technology."
+        },
+        {
+          "text": "They are produced by multiple B-cell clones and recognize multiple epitopes",
+          "isCorrect": false,
+          "explanation": "That describes polyclonal antibodies."
+        },
+        {
+          "text": "They are always humanized",
+          "isCorrect": false,
+          "explanation": "Monoclonals can be murine, chimeric, humanized, or human."
+        },
+        {
+          "text": "They cannot be used in ELISA",
+          "isCorrect": false,
+          "explanation": "Monoclonals are widely used in ELISA."
+        },
+        {
+          "text": "They are always conjugated to enzymes",
+          "isCorrect": false,
+          "explanation": "They can be used unlabeled or labeled."
+        }
+      ],
+      "explanation": {
+        "overview": "Monoclonal antibodies originate from a single hybridoma cell line, ensuring uniform specificity and affinity for one epitope, in contrast to polyclonal antibodies.",
+        "highYield": "Monoclonal = single epitope, high specificity.",
+        "clinicalCorrelation": "Therapeutic monoclonals (e.g., trastuzumab, rituximab) treat cancers and autoimmune diseases."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_075",
+      "difficulty": 2,
+      "question": "In isoelectric focusing, the pH gradient is typically established using:",
+      "image": null,
+      "options": [
+        {
+          "text": "Ampholytes",
+          "isCorrect": true,
+          "explanation": "Ampholytes are small, soluble molecules with varying pI values that migrate to establish a stable pH gradient under an electric field."
+        },
+        {
+          "text": "SDS",
+          "isCorrect": false,
+          "explanation": "SDS is for SDS-PAGE."
+        },
+        {
+          "text": "Polyacrylamide alone",
+          "isCorrect": false,
+          "explanation": "The gel matrix is polyacrylamide, but the gradient is created by ampholytes."
+        },
+        {
+          "text": "Coomassie blue",
+          "isCorrect": false,
+          "explanation": "That's a stain."
+        },
+        {
+          "text": "Ammonium persulfate",
+          "isCorrect": false,
+          "explanation": "That's a polymerization initiator."
+        }
+      ],
+      "explanation": {
+        "overview": "Commercial carrier ampholytes are mixtures of polyamino-polycarboxylic acids that partition to create a linear pH gradient in an electric field for IEF.",
+        "highYield": "IEF gradient = ampholytes.",
+        "clinicalCorrelation": "Used in clinical isoenzyme analysis and hemoglobinopathy screening."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_076",
+      "difficulty": 2,
+      "question": "Which of the following enzymes is used to remove phosphate groups from proteins?",
+      "image": null,
+      "options": [
+        {
+          "text": "Alkaline phosphatase",
+          "isCorrect": true,
+          "explanation": "Alkaline phosphatase (and also protein phosphatases) catalyzes the hydrolysis of phosphate groups from proteins and other molecules."
+        },
+        {
+          "text": "Kinase",
+          "isCorrect": false,
+          "explanation": "Kinases add phosphate groups."
+        },
+        {
+          "text": "DNA ligase",
+          "isCorrect": false,
+          "explanation": "Ligase joins DNA fragments."
+        },
+        {
+          "text": "Protease",
+          "isCorrect": false,
+          "explanation": "Proteases cleave peptide bonds."
+        },
+        {
+          "text": "Restriction enzyme",
+          "isCorrect": false,
+          "explanation": "Restriction enzymes cut DNA."
+        }
+      ],
+      "explanation": {
+        "overview": "Phosphatases remove phosphate groups from phosphoproteins, nucleotides, etc. Alkaline phosphatase is commonly used in molecular biology to dephosphorylate DNA ends.",
+        "highYield": "Phosphatase removes phosphate; kinase adds phosphate.",
+        "clinicalCorrelation": "Alkaline phosphatase levels are a clinical marker for liver and bone disease."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_077",
+      "difficulty": 2,
+      "question": "In a pull-down assay using GST-tagged protein, what is used to elute the bound proteins?",
+      "image": null,
+      "options": [
+        {
+          "text": "Glutathione",
+          "isCorrect": true,
+          "explanation": "Glutathione competes with the GST-tag for binding to glutathione-Sepharose beads, eluting the fusion protein and its binding partners."
+        },
+        {
+          "text": "Imidazole",
+          "isCorrect": false,
+          "explanation": "Imidazole elutes His-tagged proteins."
+        },
+        {
+          "text": "Maltose",
+          "isCorrect": false,
+          "explanation": "Maltose elutes MBP-tagged proteins."
+        },
+        {
+          "text": "Glycine",
+          "isCorrect": false,
+          "explanation": "Glycine is used for low-pH elution in antibody affinity columns."
+        },
+        {
+          "text": "Urea",
+          "isCorrect": false,
+          "explanation": "Urea denatures proteins rather than specific elution."
+        }
+      ],
+      "explanation": {
+        "overview": "GST (glutathione S-transferase) fusion proteins bind to glutathione-coupled beads; elution is performed with free reduced glutathione.",
+        "highYield": "GST elution = free glutathione.",
+        "clinicalCorrelation": "GST pull-downs are widely used to confirm protein-protein interactions in vitro."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_078",
+      "difficulty": 2,
+      "question": "Which technique is most suitable for determining the molecular weight of a protein with high accuracy (e.g., 0.01% mass error)?",
+      "image": null,
+      "options": [
+        {
+          "text": "Electrospray ionization mass spectrometry (ESI-MS)",
+          "isCorrect": true,
+          "explanation": "High-resolution mass spectrometry (e.g., Q-TOF, Orbitrap) can determine intact protein mass with very high accuracy (<5 ppm error)."
+        },
+        {
+          "text": "SDS-PAGE",
+          "isCorrect": false,
+          "explanation": "SDS-PAGE gives approximate MW with 5-10% error."
+        },
+        {
+          "text": "Size-exclusion chromatography",
+          "isCorrect": false,
+          "explanation": "Approximate, and depends on shape."
+        },
+        {
+          "text": "Bradford assay",
+          "isCorrect": false,
+          "explanation": "Measures concentration, not molecular weight."
+        },
+        {
+          "text": "Agarose gel electrophoresis",
+          "isCorrect": false,
+          "explanation": "Used for DNA, not accurate for protein mass."
+        }
+      ],
+      "explanation": {
+        "overview": "High-resolution ESI-MS can measure the molecular weight of intact proteins with part-per-million mass accuracy, allowing detection of post-translational modifications.",
+        "highYield": "Exact protein mass by high-resolution ESI-MS.",
+        "clinicalCorrelation": "Used for hemoglobin variant analysis and characterization of biotherapeutics."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_079",
+      "difficulty": 2,
+      "question": "In differential centrifugation, the pellet after low-speed centrifugation (e.g., 600g) is enriched in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Nuclei and large debris",
+          "isCorrect": true,
+          "explanation": "At low speed, the heaviest particles, such as nuclei and unbroken cells, sediment first."
+        },
+        {
+          "text": "Mitochondria",
+          "isCorrect": false,
+          "explanation": "Mitochondria pellet at medium speed (10,000g)."
+        },
+        {
+          "text": "Ribosomes",
+          "isCorrect": false,
+          "explanation": "Ribosomes require ultracentrifugation (100,000g)."
+        },
+        {
+          "text": "Cytosol",
+          "isCorrect": false,
+          "explanation": "Cytosol remains in the supernatant."
+        },
+        {
+          "text": "Plasma membranes",
+          "isCorrect": false,
+          "explanation": "Plasma membrane fragments sediment at intermediate speeds."
+        }
+      ],
+      "explanation": {
+        "overview": "Differential centrifugation separates organelles by successive increases in centrifugal force: 600g for nuclei, 10,000g for mitochondria/lysosomes, 100,000g for microsomes.",
+        "highYield": "Low-speed spin = nuclei pellet.",
+        "clinicalCorrelation": "Subcellular fractionation is essential for studying organelle function and disease."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_080",
+      "difficulty": 2,
+      "question": "Which of the following best describes an 'isosbestic point' in spectrophotometry?",
+      "image": null,
+      "options": [
+        {
+          "text": "Wavelength at which two species have the same molar absorptivity",
+          "isCorrect": true,
+          "explanation": "At the isosbestic point, absorbance does not change during interconversion of two species, indicating a direct conversion without intermediates."
+        },
+        {
+          "text": "Wavelength of maximum absorbance",
+          "isCorrect": false,
+          "explanation": "That's λmax."
+        },
+        {
+          "text": "Point where absorbance is zero",
+          "isCorrect": false,
+          "explanation": "That's baseline."
+        },
+        {
+          "text": "Wavelength where protein concentration is measured",
+          "isCorrect": false,
+          "explanation": "Protein concentration is typically measured at 280 nm, not necessarily isosbestic."
+        },
+        {
+          "text": "Point where pH equals pI",
+          "isCorrect": false,
+          "explanation": "That's isoelectric point."
+        }
+      ],
+      "explanation": {
+        "overview": "An isosbestic point is a wavelength where the total absorbance of a sample remains constant during a chemical reaction or pH change, useful for confirming a two-state transition.",
+        "highYield": "Isosbestic point = constant absorbance during interconversion.",
+        "clinicalCorrelation": "Used in oximetry to measure oxygenated/deoxygenated hemoglobin."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_081",
+      "difficulty": 2,
+      "question": "Which of the following is a characteristic of TaqMan probes used in real-time PCR?",
+      "image": null,
+      "options": [
+        {
+          "text": "They have a fluorophore and quencher, and are cleaved during extension",
+          "isCorrect": true,
+          "explanation": "TaqMan probes contain a reporter dye and a quencher; the 5'→3' exonuclease activity of Taq polymerase cleaves the probe, separating the dye and generating fluorescence."
+        },
+        {
+          "text": "They are double-stranded DNA intercalating dyes",
+          "isCorrect": false,
+          "explanation": "SYBR Green is a dsDNA intercalating dye."
+        },
+        {
+          "text": "They are radioactive probes",
+          "isCorrect": false,
+          "explanation": "qPCR uses fluorescence, not radioactivity."
+        },
+        {
+          "text": "They bind to the minor groove of DNA",
+          "isCorrect": false,
+          "explanation": "That's a different type of probe."
+        },
+        {
+          "text": "They require post-PCR processing",
+          "isCorrect": false,
+          "explanation": "TaqMan allows real-time detection without post-processing."
+        }
+      ],
+      "explanation": {
+        "overview": "TaqMan probes are hydrolysis probes labeled with a reporter and quencher; cleavage by Taq polymerase during extension releases the reporter, producing a fluorescent signal proportional to amplification.",
+        "highYield": "TaqMan = cleavage-based, fluorogenic probe.",
+        "clinicalCorrelation": "Used in quantitative viral load assays and gene expression analysis."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_082",
+      "difficulty": 2,
+      "question": "What is the purpose of using a blocking peptide in an immunohistochemistry control?",
+      "image": null,
+      "options": [
+        {
+          "text": "To confirm antibody specificity by pre-absorbing the antibody with the immunizing peptide",
+          "isCorrect": true,
+          "explanation": "If the antibody is pre-incubated with its specific peptide, it should no longer bind to the tissue, demonstrating specificity."
+        },
+        {
+          "text": "To enhance the signal",
+          "isCorrect": false,
+          "explanation": "Blocking peptide reduces signal if the antibody is specific."
+        },
+        {
+          "text": "To stain all nuclei",
+          "isCorrect": false,
+          "explanation": "DAPI stains nuclei."
+        },
+        {
+          "text": "To retrieve antigens",
+          "isCorrect": false,
+          "explanation": "Heat-induced antigen retrieval is separate."
+        },
+        {
+          "text": "To block endogenous peroxidase",
+          "isCorrect": false,
+          "explanation": "Hydrogen peroxide is used for that."
+        }
+      ],
+      "explanation": {
+        "overview": "In IHC, a blocking peptide control involves pre-adsorbing the primary antibody with its target peptide; loss of staining confirms that the antibody specifically recognizes that antigen.",
+        "highYield": "Blocking peptide = negative control for antibody specificity.",
+        "clinicalCorrelation": "Essential to validate antibodies used in diagnostic pathology."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_083",
+      "difficulty": 2,
+      "question": "Which of the following is an example of a label-free quantification method in proteomics?",
+      "image": null,
+      "options": [
+        {
+          "text": "Spectral counting",
+          "isCorrect": true,
+          "explanation": "Label-free quantification uses the number of tandem mass spectra (spectral counts) or ion intensity to compare protein abundance across samples."
+        },
+        {
+          "text": "SILAC",
+          "isCorrect": false,
+          "explanation": "SILAC (Stable Isotope Labeling by Amino acids in Cell culture) is a metabolic labeling method."
+        },
+        {
+          "text": "TMT (Tandem Mass Tag)",
+          "isCorrect": false,
+          "explanation": "TMT is an isobaric chemical labeling method."
+        },
+        {
+          "text": "iTRAQ",
+          "isCorrect": false,
+          "explanation": "iTRAQ is also isobaric labeling."
+        },
+        {
+          "text": "ICAT",
+          "isCorrect": false,
+          "explanation": "ICAT uses isotope-coded affinity tags, a labeling method."
+        }
+      ],
+      "explanation": {
+        "overview": "Label-free proteomics avoids chemical labeling, relying on spectral counts or extracted ion chromatogram peak areas to quantify proteins across runs.",
+        "highYield": "Label-free quantification: spectral counting or MS1 intensity.",
+        "clinicalCorrelation": "Used in biomarker discovery studies comparing patient and control proteomes."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_084",
+      "difficulty": 2,
+      "question": "Which of the following techniques can be used to study protein dynamics in live cells?",
+      "image": null,
+      "options": [
+        {
+          "text": "Fluorescence recovery after photobleaching (FRAP)",
+          "isCorrect": true,
+          "explanation": "FRAP measures the mobility of fluorescently tagged proteins in live cells by bleaching a region and monitoring fluorescence recovery."
+        },
+        {
+          "text": "X-ray crystallography",
+          "isCorrect": false,
+          "explanation": "Crystallography requires static crystals."
+        },
+        {
+          "text": "SDS-PAGE",
+          "isCorrect": false,
+          "explanation": "SDS-PAGE is a denaturing, endpoint technique."
+        },
+        {
+          "text": "Edman degradation",
+          "isCorrect": false,
+          "explanation": "Edman degradation is destructive sequencing."
+        },
+        {
+          "text": "Silver staining",
+          "isCorrect": false,
+          "explanation": "Staining is for fixed gels."
+        }
+      ],
+      "explanation": {
+        "overview": "FRAP (Fluorescence Recovery After Photobleaching) is a microscopy technique that quantifies the diffusion and turnover of fluorescently labeled proteins within live cells.",
+        "highYield": "FRAP = protein mobility in live cells.",
+        "clinicalCorrelation": "Used to study cytoskeletal dynamics, membrane receptor trafficking, and nuclear protein mobility."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_085",
+      "difficulty": 2,
+      "question": "In a sandwich ELISA, what is the purpose of the detection antibody?",
+      "image": null,
+      "options": [
+        {
+          "text": "To bind to a different epitope on the captured antigen and enable enzyme-mediated signal",
+          "isCorrect": true,
+          "explanation": "The detection antibody is specific to the antigen (but to a different epitope than capture antibody) and is either directly enzyme-conjugated or detected by an enzyme-linked secondary antibody."
+        },
+        {
+          "text": "To capture the antigen to the plate",
+          "isCorrect": false,
+          "explanation": "The capture antibody does that."
+        },
+        {
+          "text": "To wash away nonspecific binding",
+          "isCorrect": false,
+          "explanation": "Washing buffer does that."
+        },
+        {
+          "text": "To block the plate",
+          "isCorrect": false,
+          "explanation": "Blocking buffer does that."
+        },
+        {
+          "text": "To stop the enzyme reaction",
+          "isCorrect": false,
+          "explanation": "Stop solution is used."
+        }
+      ],
+      "explanation": {
+        "overview": "In a sandwich ELISA, the detection antibody binds to the captured antigen and provides a means for signal generation via conjugated enzyme (e.g., HRP) or via a secondary antibody.",
+        "highYield": "Detection antibody = signal generation in sandwich ELISA.",
+        "clinicalCorrelation": "Paired antibodies are selected for high specificity in clinical assays."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_086",
+      "difficulty": 2,
+      "question": "Which buffer is commonly used to lyse mammalian cells for protein extraction while maintaining protein activity?",
+      "image": null,
+      "options": [
+        {
+          "text": "RIPA buffer",
+          "isCorrect": true,
+          "explanation": "RIPA (Radioimmunoprecipitation Assay) buffer contains detergents (SDS, sodium deoxycholate, NP-40) and protease inhibitors, suitable for total protein extraction."
+        },
+        {
+          "text": "TBE buffer",
+          "isCorrect": false,
+          "explanation": "TBE is for DNA electrophoresis."
+        },
+        {
+          "text": "PBS alone",
+          "isCorrect": false,
+          "explanation": "PBS is isotonic but does not lyse cells."
+        },
+        {
+          "text": "TAE buffer",
+          "isCorrect": false,
+          "explanation": "TAE is for DNA electrophoresis."
+        },
+        {
+          "text": "Crystal violet solution",
+          "isCorrect": false,
+          "explanation": "Crystal violet is a stain."
+        }
+      ],
+      "explanation": {
+        "overview": "RIPA buffer is a strong lysis buffer containing ionic and non-ionic detergents, used to extract cytoplasmic and membrane proteins; protease and phosphatase inhibitors are added to preserve modifications.",
+        "highYield": "RIPA buffer = cell lysis for protein extraction.",
+        "clinicalCorrelation": "Proper lysis is critical for accurate Western blotting and proteomic analysis."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_087",
+      "difficulty": 2,
+      "question": "Which of the following is a disadvantage of using polyclonal antibodies compared to monoclonal antibodies?",
+      "image": null,
+      "options": [
+        {
+          "text": "Lot-to-lot variability and potential cross-reactivity",
+          "isCorrect": true,
+          "explanation": "Polyclonal antibodies are a mixture of antibodies from different B cells, recognizing multiple epitopes; they can vary between batches and may have higher cross-reactivity."
+        },
+        {
+          "text": "Lower affinity",
+          "isCorrect": false,
+          "explanation": "Polyclonals can have high avidity."
+        },
+        {
+          "text": "Inability to be used in ELISA",
+          "isCorrect": false,
+          "explanation": "Polyclonals are widely used in ELISA."
+        },
+        {
+          "text": "Cannot be conjugated to enzymes",
+          "isCorrect": false,
+          "explanation": "They can be conjugated."
+        },
+        {
+          "text": "Lower sensitivity",
+          "isCorrect": false,
+          "explanation": "Polyclonals can be very sensitive due to multi-epitope recognition."
+        }
+      ],
+      "explanation": {
+        "overview": "Polyclonal antibodies are heterogeneous, recognizing multiple epitopes, which can lead to batch variability and higher background, whereas monoclonals are consistent and specific.",
+        "highYield": "Polyclonal = batch variation, cross-reactivity.",
+        "clinicalCorrelation": "Monoclonals are preferred for therapeutic use; polyclonals are used in some antisera (e.g., antivenom)."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_088",
+      "difficulty": 2,
+      "question": "Which of the following is NOT typically part of a PCR master mix?",
+      "image": null,
+      "options": [
+        {
+          "text": "DNA ligase",
+          "isCorrect": true,
+          "explanation": "PCR requires DNA polymerase, primers, dNTPs, buffer, and template. DNA ligase is not used."
+        },
+        {
+          "text": "Taq DNA polymerase",
+          "isCorrect": false,
+          "explanation": "Taq polymerase is essential."
+        },
+        {
+          "text": "dNTPs",
+          "isCorrect": false,
+          "explanation": "dNTPs are building blocks."
+        },
+        {
+          "text": "Forward and reverse primers",
+          "isCorrect": false,
+          "explanation": "Primers define the target region."
+        },
+        {
+          "text": "Buffer with MgCl2",
+          "isCorrect": false,
+          "explanation": "Buffer and magnesium are required."
+        }
+      ],
+      "explanation": {
+        "overview": "A standard PCR reaction mix contains thermostable DNA polymerase, primers, dNTPs, magnesium-containing buffer, and template DNA. Ligase is not a component.",
+        "highYield": "PCR does not use DNA ligase.",
+        "clinicalCorrelation": "Missing components lead to failed amplification; this is checked during troubleshooting."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_089",
+      "difficulty": 2,
+      "question": "Which of the following best describes the purpose of a molecular weight ladder in gel electrophoresis?",
+      "image": null,
+      "options": [
+        {
+          "text": "To estimate the size of unknown fragments by comparison",
+          "isCorrect": true,
+          "explanation": "A ladder contains DNA or protein fragments of known sizes that migrate alongside samples, allowing size estimation by interpolation."
+        },
+        {
+          "text": "To increase conductivity",
+          "isCorrect": false,
+          "explanation": "Buffer provides conductivity."
+        },
+        {
+          "text": "To stain the gel",
+          "isCorrect": false,
+          "explanation": "Stains are added separately."
+        },
+        {
+          "text": "To initiate polymerization",
+          "isCorrect": false,
+          "explanation": "TEMED/APS do that."
+        },
+        {
+          "text": "To lyse cells",
+          "isCorrect": false,
+          "explanation": "Lysis buffer does that."
+        }
+      ],
+      "explanation": {
+        "overview": "Molecular weight markers (ladders) are a mixture of standard-sized molecules run in parallel with samples to construct a standard curve for size determination.",
+        "highYield": "Ladder = size reference.",
+        "clinicalCorrelation": "Used in DNA fragment analysis, PCR product confirmation, and protein sizing."
+      }
+    },
+    {
+      "questionId": "biochemical_techniques_090",
+      "difficulty": 2,
+      "question": "Which type of microscopy provides the highest resolution for studying subcellular structures?",
+      "image": null,
+      "options": [
+        {
+          "text": "Electron microscopy (transmission EM)",
+          "isCorrect": true,
+          "explanation": "Transmission electron microscopy (TEM) uses a beam of electrons to achieve nanometer resolution, far exceeding light microscopy."
+        },
+        {
+          "text": "Bright-field microscopy",
+          "isCorrect": false,
+          "explanation": "Limited by wavelength of visible light (~200 nm resolution)."
+        },
+        {
+          "text": "Phase-contrast microscopy",
+          "isCorrect": false,
+          "explanation": "Enhances contrast but resolution is similar to light microscopy."
+        },
+        {
+          "text": "Fluorescence microscopy",
+          "isCorrect": false,
+          "explanation": "Still limited by diffraction; super-resolution techniques improve it but not beyond TEM."
+        },
+        {
+          "text": "Confocal microscopy",
+          "isCorrect": false,
+          "explanation": "Improves optical sectioning, but resolution is not as high as TEM."
+        }
+      ],
+      "explanation": {
+        "overview": "Electron microscopy, especially transmission EM, provides the highest resolution (down to ~0.1 nm), allowing visualization of organelles and macromolecular complexes.",
+        "highYield": "Electron microscopy = highest resolution.",
+        "clinicalCorrelation": "Used to diagnose renal diseases (e.g., minimal change disease), viral identification, and structural biology."
+      }
+    }
+  ]
+}

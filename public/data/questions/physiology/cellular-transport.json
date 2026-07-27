@@ -1,0 +1,4099 @@
+{
+  "questions": [
+    {
+      "id": "cellular_transport_001",
+      "questionId": "cellular_transport_001",
+      "difficulty": 1,
+      "question": "The movement of a substance across a membrane down its electrochemical gradient without energy expenditure is called:",
+      "image": null,
+      "options": [
+        {
+          "text": "Active transport",
+          "isCorrect": false,
+          "explanation": "Active transport requires energy, moving substances against their gradient."
+        },
+        {
+          "text": "Passive transport",
+          "isCorrect": true,
+          "explanation": "Passive transport occurs down an electrochemical gradient without ATP input."
+        },
+        {
+          "text": "Secondary active transport",
+          "isCorrect": false,
+          "explanation": "Secondary active transport uses an ion gradient, not directly ATP, but moves at least one solute against its gradient."
+        },
+        {
+          "text": "Vesicular transport",
+          "isCorrect": false,
+          "explanation": "Vesicular transport involves membrane budding and fusion, not simple gradient movement."
+        },
+        {
+          "text": "Phagocytosis",
+          "isCorrect": false,
+          "explanation": "Phagocytosis is a form of endocytosis requiring energy."
+        }
+      ],
+      "explanation": {
+        "overview": "Passive transport includes simple diffusion, facilitated diffusion, and osmosis, all driven by gradients without energy consumption.",
+        "highYield": "Passive transport = down gradient, no ATP. Examples: diffusion of O2, facilitated diffusion of glucose via GLUT.",
+        "clinicalCorrelation": "Many drugs diffuse passively; lipid solubility and ionization influence their absorption."
+      }
+    },
+    {
+      "id": "cellular_transport_002",
+      "questionId": "cellular_transport_002",
+      "difficulty": 2,
+      "question": "Simple diffusion of a nonpolar molecule across a lipid bilayer is directly proportional to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Concentration gradient and lipid solubility",
+          "isCorrect": true,
+          "explanation": "Fick's law states flux = permeability × concentration gradient; permeability depends on oil/water partition coefficient (lipid solubility) and diffusion coefficient (size)."
+        },
+        {
+          "text": "Concentration gradient only",
+          "isCorrect": false,
+          "explanation": "Lipid solubility also matters; polar molecules cannot cross even with a steep gradient."
+        },
+        {
+          "text": "Lipid solubility only",
+          "isCorrect": false,
+          "explanation": "Without a concentration gradient, net flux is zero."
+        },
+        {
+          "text": "Molecular size only",
+          "isCorrect": false,
+          "explanation": "Size affects permeability, but gradient and lipid solubility are primary."
+        },
+        {
+          "text": "Temperature only",
+          "isCorrect": false,
+          "explanation": "Temperature affects kinetics but is not the main determinant."
+        }
+      ],
+      "explanation": {
+        "overview": "Fick's law: J = P × ΔC. P ∝ (lipid solubility) / (molecular size). Simple diffusion requires both a gradient and membrane permeability.",
+        "highYield": "Fick's law: flux ∝ concentration gradient × permeability. Permeability increases with lipophilicity, decreases with size.",
+        "clinicalCorrelation": "Drug design: adding hydrophobic groups can increase passive membrane permeability."
+      }
+    },
+    {
+      "id": "cellular_transport_003",
+      "questionId": "cellular_transport_003",
+      "difficulty": 1,
+      "question": "Which of the following substances crosses the plasma membrane most readily by simple diffusion?",
+      "image": null,
+      "options": [
+        {
+          "text": "Glucose",
+          "isCorrect": false,
+          "explanation": "Glucose is polar and requires GLUT transporters."
+        },
+        {
+          "text": "Sodium ions",
+          "isCorrect": false,
+          "explanation": "Ions are charged and need channels or carriers."
+        },
+        {
+          "text": "Oxygen",
+          "isCorrect": true,
+          "explanation": "O2 is small and nonpolar; it dissolves in the lipid bilayer and diffuses rapidly."
+        },
+        {
+          "text": "Amino acids",
+          "isCorrect": false,
+          "explanation": "Amino acids are polar and require specific transporters."
+        },
+        {
+          "text": "Potassium ions",
+          "isCorrect": false,
+          "explanation": "K+ is charged and needs ion channels."
+        }
+      ],
+      "explanation": {
+        "overview": "Lipid bilayers are permeable to small, nonpolar molecules (O2, CO2, N2, steroid hormones) and very small polar molecules (water, urea) to a lesser extent. Ions and large polar molecules need transport proteins.",
+        "highYield": "Simple diffusion: small, nonpolar > small, uncharged polar > large, polar > ions. O2 and CO2 cross easily.",
+        "clinicalCorrelation": "Anesthetic gases work because they rapidly diffuse across cell membranes."
+      }
+    },
+    {
+      "id": "cellular_transport_004",
+      "questionId": "cellular_transport_004",
+      "difficulty": 2,
+      "question": "Facilitated diffusion differs from simple diffusion in that facilitated diffusion:",
+      "image": null,
+      "options": [
+        {
+          "text": "Requires energy",
+          "isCorrect": false,
+          "explanation": "Both are passive; facilitated diffusion does not use ATP."
+        },
+        {
+          "text": "Exhibits saturation kinetics",
+          "isCorrect": true,
+          "explanation": "Carrier proteins have a finite number of binding sites, so at high substrate concentrations, transport rate reaches Vmax."
+        },
+        {
+          "text": "Moves substances against their gradient",
+          "isCorrect": false,
+          "explanation": "Facilitated diffusion is still down gradient."
+        },
+        {
+          "text": "Is not specific",
+          "isCorrect": false,
+          "explanation": "Carriers are highly specific for their substrates."
+        },
+        {
+          "text": "Occurs only in water",
+          "isCorrect": false,
+          "explanation": "Facilitated diffusion occurs in cell membranes."
+        }
+      ],
+      "explanation": {
+        "overview": "Carrier-mediated facilitated diffusion shows saturation (Vmax), stereospecificity, and competitive inhibition, similar to enzyme kinetics.",
+        "highYield": "Facilitated diffusion: saturable, specific, can be competitively inhibited. Example: GLUT transporters.",
+        "clinicalCorrelation": "In diabetes, GLUT4 translocation is impaired, reducing glucose uptake in muscle and fat."
+      }
+    },
+    {
+      "id": "cellular_transport_005",
+      "questionId": "cellular_transport_005",
+      "difficulty": 2,
+      "question": "The glucose transporter GLUT1 is an example of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Uniporter",
+          "isCorrect": true,
+          "explanation": "GLUT1 transports glucose alone down its concentration gradient, making it a uniporter."
+        },
+        {
+          "text": "Symporter",
+          "isCorrect": false,
+          "explanation": "Symporters move two or more solutes in the same direction."
+        },
+        {
+          "text": "Antiporter",
+          "isCorrect": false,
+          "explanation": "Antiporters exchange solutes in opposite directions."
+        },
+        {
+          "text": "Ion channel",
+          "isCorrect": false,
+          "explanation": "Ion channels are pores, not carriers."
+        },
+        {
+          "text": "Pump",
+          "isCorrect": false,
+          "explanation": "Pumps use ATP."
+        }
+      ],
+      "explanation": {
+        "overview": "GLUT1 is a facilitative uniporter that allows glucose to enter cells down its concentration gradient. It is constitutively expressed in most cells.",
+        "highYield": "GLUT1 = uniporter, passive, glucose. GLUT2 (liver, pancreas), GLUT3 (neurons), GLUT4 (insulin-sensitive).",
+        "clinicalCorrelation": "GLUT1 deficiency causes reduced glucose transport into the brain, leading to seizures and developmental delay."
+      }
+    },
+    {
+      "id": "cellular_transport_006",
+      "questionId": "cellular_transport_006",
+      "difficulty": 2,
+      "question": "Ion channels are characterized by all of the following EXCEPT:",
+      "image": null,
+      "options": [
+        {
+          "text": "Selectivity for certain ions",
+          "isCorrect": false,
+          "explanation": "Ion channels are selective via size and charge of pore."
+        },
+        {
+          "text": "Gating by voltage, ligand, or stretch",
+          "isCorrect": false,
+          "explanation": "Channels can be opened by voltage, ligands, or mechanical force."
+        },
+        {
+          "text": "High transport rate (up to 10⁸ ions/sec)",
+          "isCorrect": false,
+          "explanation": "Channels are very fast; carriers are slower."
+        },
+        {
+          "text": "Active transport of ions",
+          "isCorrect": true,
+          "explanation": "Ion channels are passive; they do not use energy or move ions against a gradient."
+        },
+        {
+          "text": "Passive movement down electrochemical gradient",
+          "isCorrect": false,
+          "explanation": "That is true."
+        }
+      ],
+      "explanation": {
+        "overview": "Ion channels are passive conduits that allow ions to flow rapidly down their electrochemical gradients. They can be gated but do not perform active transport.",
+        "highYield": "Ion channels: selective, gated, fast, passive. Pumps: active, slow (100-1000 ions/sec).",
+        "clinicalCorrelation": "Channelopathies (e.g., cystic fibrosis, long QT syndrome) result from ion channel mutations."
+      }
+    },
+    {
+      "id": "cellular_transport_007",
+      "questionId": "cellular_transport_007",
+      "difficulty": 1,
+      "question": "The Na+/K+ ATPase pump maintains intracellular sodium concentration low by pumping:",
+      "image": null,
+      "options": [
+        {
+          "text": "Na+ in, K+ out",
+          "isCorrect": false,
+          "explanation": "That would increase intracellular Na+."
+        },
+        {
+          "text": "Na+ out, K+ in",
+          "isCorrect": true,
+          "explanation": "The pump exports 3 Na+ and imports 2 K+ per ATP."
+        },
+        {
+          "text": "Na+ out, K+ out",
+          "isCorrect": false,
+          "explanation": "K+ is moved in."
+        },
+        {
+          "text": "Na+ in, K+ in",
+          "isCorrect": false,
+          "explanation": "Na+ is pumped out."
+        },
+        {
+          "text": "H+ out, K+ in",
+          "isCorrect": false,
+          "explanation": "That describes the gastric H+/K+ ATPase."
+        }
+      ],
+      "explanation": {
+        "overview": "The Na+/K+ ATPase is a P-type ATPase that uses ATP to maintain high intracellular K+ and low intracellular Na+. It is electrogenic (net +1 charge out).",
+        "highYield": "Na+/K+ ATPase: 3 Na+ out, 2 K+ in, 1 ATP. Electrogenic. Creates gradients for secondary transport.",
+        "clinicalCorrelation": "Digoxin inhibits the Na+/K+ ATPase, increasing intracellular Na+ and Ca2+ in cardiac myocytes, increasing contractility."
+      }
+    },
+    {
+      "id": "cellular_transport_008",
+      "questionId": "cellular_transport_008",
+      "difficulty": 1,
+      "question": "Primary active transport directly uses energy from:",
+      "image": null,
+      "options": [
+        {
+          "text": "ATP hydrolysis",
+          "isCorrect": true,
+          "explanation": "Primary active transporters are ATPases that hydrolyze ATP to move solutes against their gradients."
+        },
+        {
+          "text": "Ion gradients",
+          "isCorrect": false,
+          "explanation": "That's secondary active transport."
+        },
+        {
+          "text": "Light",
+          "isCorrect": false,
+          "explanation": "Light is used by bacteriorhodopsin, but not typical primary active transport in human cells."
+        },
+        {
+          "text": "Electron transport",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        },
+        {
+          "text": "NADH oxidation",
+          "isCorrect": false,
+          "explanation": "NADH provides electrons for ATP synthesis, but not directly for transport pumps."
+        }
+      ],
+      "explanation": {
+        "overview": "Primary active transport couples the energy of ATP hydrolysis directly to solute movement. Examples: Na+/K+ ATPase, Ca2+ ATPase (SERCA, PMCA), H+/K+ ATPase.",
+        "highYield": "Primary active = directly uses ATP. Pumps: Na+/K+ ATPase, Ca2+ ATPase, H+ ATPase (gastric).",
+        "clinicalCorrelation": "Proton pump inhibitors (omeprazole) inhibit the gastric H+/K+ ATPase."
+      }
+    },
+    {
+      "id": "cellular_transport_009",
+      "questionId": "cellular_transport_009",
+      "difficulty": 2,
+      "question": "Secondary active transport uses energy derived from:",
+      "image": null,
+      "options": [
+        {
+          "text": "ATP",
+          "isCorrect": false,
+          "explanation": "Primary active transport uses ATP directly."
+        },
+        {
+          "text": "An electrochemical gradient established by primary active transport",
+          "isCorrect": true,
+          "explanation": "Secondary transporters harness the Na+ gradient created by the Na+/K+ ATPase to move other solutes against their gradient."
+        },
+        {
+          "text": "Light",
+          "isCorrect": false,
+          "explanation": "Not relevant."
+        },
+        {
+          "text": "Redox reactions",
+          "isCorrect": false,
+          "explanation": "Not directly."
+        },
+        {
+          "text": "Phosphorylation",
+          "isCorrect": false,
+          "explanation": "Phosphorylation can regulate, but the energy source is the ion gradient."
+        }
+      ],
+      "explanation": {
+        "overview": "Secondary active transport (cotransport) uses the energy stored in the Na+ gradient. It is divided into symport (same direction) and antiport (opposite directions).",
+        "highYield": "Secondary active = uses Na+ gradient (set by Na+/K+ ATPase). SGLT (Na+-glucose symport), NCX (Na+-Ca2+ antiport).",
+        "clinicalCorrelation": "SGLT2 inhibitors (empagliflozin) block renal glucose reabsorption, treating diabetes."
+      }
+    },
+    {
+      "id": "cellular_transport_010",
+      "questionId": "cellular_transport_010",
+      "difficulty": 2,
+      "question": "The sodium-glucose linked transporter (SGLT) in the proximal tubule is a:",
+      "image": null,
+      "options": [
+        {
+          "text": "Uniporter",
+          "isCorrect": false,
+          "explanation": "Uniporters move only one solute."
+        },
+        {
+          "text": "Symporter",
+          "isCorrect": true,
+          "explanation": "SGLT cotransports Na+ and glucose in the same direction (into the cell) using the Na+ gradient."
+        },
+        {
+          "text": "Antiporter",
+          "isCorrect": false,
+          "explanation": "Antiporters move solutes in opposite directions."
+        },
+        {
+          "text": "Channel",
+          "isCorrect": false,
+          "explanation": "It is a carrier, not a pore."
+        },
+        {
+          "text": "Pump",
+          "isCorrect": false,
+          "explanation": "SGLT is not an ATPase; it's secondary active transport."
+        }
+      ],
+      "explanation": {
+        "overview": "SGLT1 and SGLT2 are symporters that couple downhill Na+ influx to uphill glucose (or galactose) uptake. SGLT2 is the major renal glucose transporter.",
+        "highYield": "SGLT = Na+-glucose symporter (secondary active). SGLT1 (gut, kidney), SGLT2 (kidney, high capacity).",
+        "clinicalCorrelation": "SGLT2 inhibitors (e.g., empagliflozin) block renal glucose reabsorption, causing glucosuria and lowering blood glucose."
+      }
+    },
+    {
+      "id": "cellular_transport_011",
+      "questionId": "cellular_transport_011",
+      "difficulty": 2,
+      "question": "The sodium-calcium exchanger (NCX) in cardiac muscle is an example of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Uniporter",
+          "isCorrect": false,
+          "explanation": "Uniporters carry one solute."
+        },
+        {
+          "text": "Symporter",
+          "isCorrect": false,
+          "explanation": "NCX moves Na+ and Ca2+ in opposite directions."
+        },
+        {
+          "text": "Antiporter",
+          "isCorrect": true,
+          "explanation": "NCX exchanges 3 Na+ (in) for 1 Ca2+ (out) in forward mode, or reverse mode during depolarization."
+        },
+        {
+          "text": "Channel",
+          "isCorrect": false,
+          "explanation": "It is a carrier, not a channel."
+        },
+        {
+          "text": "Pump",
+          "isCorrect": false,
+          "explanation": "It uses the Na+ gradient, not ATP directly (secondary active)."
+        }
+      ],
+      "explanation": {
+        "overview": "The Na+/Ca2+ exchanger (NCX) is a secondary active antiporter that is important for Ca2+ extrusion in cardiac myocytes during diastole.",
+        "highYield": "NCX = 3 Na+ in, 1 Ca2+ out (forward). Uses Na+ gradient. Contributes to cardiac relaxation.",
+        "clinicalCorrelation": "Digoxin-induced Na+/K+ ATPase inhibition increases intracellular Na+, reducing NCX-mediated Ca2+ extrusion, increasing cardiac contractility."
+      }
+    },
+    {
+      "id": "cellular_transport_012",
+      "questionId": "cellular_transport_012",
+      "difficulty": 2,
+      "question": "Which of the following is an example of a P‑type ATPase?",
+      "image": null,
+      "options": [
+        {
+          "text": "Na+/K+ ATPase",
+          "isCorrect": true,
+          "explanation": "P-type ATPases are phosphorylated during their catalytic cycle. Na+/K+ ATPase is a classic example."
+        },
+        {
+          "text": "V‑type ATPase",
+          "isCorrect": false,
+          "explanation": "V-type ATPases are not phosphorylated; they acidify organelles."
+        },
+        {
+          "text": "F‑type ATPase (ATP synthase)",
+          "isCorrect": false,
+          "explanation": "F-type ATPase synthesizes ATP, not hydrolyzes for transport."
+        },
+        {
+          "text": "ABC transporter",
+          "isCorrect": false,
+          "explanation": "ABC transporters bind ATP but do not form a phosphorylated intermediate."
+        },
+        {
+          "text": "GLUT1",
+          "isCorrect": false,
+          "explanation": "GLUT1 is a passive uniporter, not an ATPase."
+        }
+      ],
+      "explanation": {
+        "overview": "P-type ATPases form a phosphorylated intermediate during ion translocation. Examples: Na+/K+ ATPase, Ca2+ ATPase (SERCA, PMCA), H+/K+ ATPase.",
+        "highYield": "P-type ATPases: phosphorylated intermediate. Include Na+/K+ pump, Ca2+ pump, gastric H+/K+ pump.",
+        "clinicalCorrelation": "Omeprazole inhibits the H+/K+ ATPase; digoxin inhibits the Na+/K+ ATPase."
+      }
+    },
+    {
+      "id": "cellular_transport_013",
+      "questionId": "cellular_transport_013",
+      "difficulty": 2,
+      "question": "The sarcoplasmic reticulum Ca2+ ATPase (SERCA) functions to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Pump Ca2+ into the SR during muscle relaxation",
+          "isCorrect": true,
+          "explanation": "SERCA actively transports Ca2+ from the cytosol back into the SR, lowering cytosolic Ca2+ and causing relaxation."
+        },
+        {
+          "text": "Release Ca2+ from SR during contraction",
+          "isCorrect": false,
+          "explanation": "Ryanodine receptors release Ca2+."
+        },
+        {
+          "text": "Exchange Ca2+ for Na+",
+          "isCorrect": false,
+          "explanation": "That's NCX."
+        },
+        {
+          "text": "Buffer cytosolic Ca2+",
+          "isCorrect": false,
+          "explanation": "It actively transports, not just buffering."
+        },
+        {
+          "text": "Synthesize ATP",
+          "isCorrect": false,
+          "explanation": "SERCA hydrolyzes ATP, not synthesizes."
+        }
+      ],
+      "explanation": {
+        "overview": "SERCA is a P-type ATPase on the SR membrane. It pumps 2 Ca2+ into the SR per ATP, essential for muscle relaxation and refilling SR Ca2+ stores.",
+        "highYield": "SERCA = SR Ca2+ ATPase. Lowers cytosolic Ca2+ → relaxation. Inhibited by thapsigargin.",
+        "clinicalCorrelation": "Reduced SERCA activity contributes to diastolic dysfunction in heart failure."
+      }
+    },
+    {
+      "id": "cellular_transport_014",
+      "questionId": "cellular_transport_014",
+      "difficulty": 1,
+      "question": "The diagram illustrates the Na+/K+ ATPase. Which ion is transported outward?",
+      "image": "nakatpase_diagram.png",
+      "options": [
+        {
+          "text": "Sodium",
+          "isCorrect": true,
+          "explanation": "3 Na+ ions bind intracellularly and are pumped out."
+        },
+        {
+          "text": "Potassium",
+          "isCorrect": false,
+          "explanation": "K+ is pumped into the cell."
+        },
+        {
+          "text": "Calcium",
+          "isCorrect": false,
+          "explanation": "Ca2+ is transported by Ca2+ ATPase or NCX."
+        },
+        {
+          "text": "Chloride",
+          "isCorrect": false,
+          "explanation": "Cl- has its own channels and transporters."
+        },
+        {
+          "text": "Hydrogen",
+          "isCorrect": false,
+          "explanation": "H+ is transported by other pumps."
+        }
+      ],
+      "explanation": {
+        "overview": "The Na+/K+ ATPase exports 3 Na+ ions and imports 2 K+ ions. This creates the Na+ and K+ gradients essential for excitability and secondary transport.",
+        "highYield": "Outward: 3 Na+. Inward: 2 K+.",
+        "clinicalCorrelation": "The pump consumes a large fraction of cellular ATP; its activity is critical for cell volume regulation."
+      }
+    },
+    {
+      "id": "cellular_transport_015",
+      "questionId": "cellular_transport_015",
+      "difficulty": 2,
+      "question": "Ouabain inhibits the Na+/K+ ATPase by binding to the:",
+      "image": null,
+      "options": [
+        {
+          "text": "ATP binding site",
+          "isCorrect": false,
+          "explanation": "It binds from the extracellular side, not the ATP site."
+        },
+        {
+          "text": "Phosphorylation domain",
+          "isCorrect": false,
+          "explanation": "It binds the extracellular K+ binding site."
+        },
+        {
+          "text": "Extracellular K+ site",
+          "isCorrect": true,
+          "explanation": "Cardiac glycosides (ouabain, digoxin) bind to the K+ site from the outside, stabilizing the phosphorylated form and inhibiting the pump."
+        },
+        {
+          "text": "Intracellular Na+ site",
+          "isCorrect": false,
+          "explanation": "Binding is extracellular."
+        },
+        {
+          "text": "Lipid bilayer",
+          "isCorrect": false,
+          "explanation": "It binds the protein."
+        }
+      ],
+      "explanation": {
+        "overview": "Ouabain and digoxin are cardiac glycosides that bind to the extracellular K+ binding site of the Na+/K+ ATPase, inhibiting its activity.",
+        "highYield": "Ouabain/digoxin = Na+/K+ ATPase inhibitor. Binds extracellular K+ site → increases intracellular Na+ → NCX → increased Ca2+ → positive inotropy.",
+        "clinicalCorrelation": "Digoxin is used for heart failure and atrial fibrillation, but has a narrow therapeutic window."
+      }
+    },
+    {
+      "id": "cellular_transport_016",
+      "questionId": "cellular_transport_016",
+      "difficulty": 2,
+      "question": "Inhibition of the Na+/K+ ATPase leads to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Increased intracellular Na+ and decreased intracellular K+",
+          "isCorrect": true,
+          "explanation": "Pump failure causes Na+ accumulation and K+ loss, dissipating gradients."
+        },
+        {
+          "text": "Increased intracellular K+ and decreased intracellular Na+",
+          "isCorrect": false,
+          "explanation": "Opposite."
+        },
+        {
+          "text": "Hyperpolarization",
+          "isCorrect": false,
+          "explanation": "Membrane potential may depolarize slightly due to gradient loss."
+        },
+        {
+          "text": "Increased Ca2+ efflux via NCX",
+          "isCorrect": false,
+          "explanation": "NCX may reverse or Ca2+ efflux decreases because the Na+ gradient is reduced."
+        },
+        {
+          "text": "Increased cell volume",
+          "isCorrect": false,
+          "explanation": "Cell swelling does occur due to osmotic gain, but the primary ionic effect is Na+ increase, K+ decrease. The question is best answered with the ion changes directly."
+        }
+      ],
+      "explanation": {
+        "overview": "Na+/K+ ATPase inhibition causes intracellular Na+ to rise and K+ to fall. The reduced Na+ gradient impairs secondary transport and can lead to cell swelling.",
+        "highYield": "Pump inhibition → ↑ [Na+]i, ↓ [K+]i, cell swelling, depolarization.",
+        "clinicalCorrelation": "In digitalis toxicity, hyperkalemia occurs due to pump inhibition, which is an important sign."
+      }
+    },
+    {
+      "id": "cellular_transport_017",
+      "questionId": "cellular_transport_017",
+      "difficulty": 2,
+      "question": "The resting membrane potential is primarily determined by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Na+ equilibrium potential",
+          "isCorrect": false,
+          "explanation": "At rest, Na+ permeability is low."
+        },
+        {
+          "text": "K+ equilibrium potential",
+          "isCorrect": true,
+          "explanation": "The resting membrane is most permeable to K+ via leak channels, so the potential approaches EK (~ -90 mV)."
+        },
+        {
+          "text": "Ca2+ equilibrium potential",
+          "isCorrect": false,
+          "explanation": "Ca2+ permeability is very low at rest."
+        },
+        {
+          "text": "Cl- equilibrium potential",
+          "isCorrect": false,
+          "explanation": "Cl- distributes passively; its contribution is less than K+."
+        },
+        {
+          "text": "Na+/K+ ATPase activity",
+          "isCorrect": false,
+          "explanation": "The pump maintains gradients but only contributes ~ -5 mV directly."
+        }
+      ],
+      "explanation": {
+        "overview": "The resting membrane potential (~ -70 mV) is close to EK because the membrane has high K+ conductance at rest (leak channels). Other ions contribute slightly (GHK equation).",
+        "highYield": "Resting Vm ∝ EK (high K+ permeability). EK = -90 mV, but actual Vm ~ -70 mV due to small Na+ leak.",
+        "clinicalCorrelation": "Hypokalemia hyperpolarizes; hyperkalemia depolarizes, affecting cardiac excitability."
+      }
+    },
+    {
+      "id": "cellular_transport_018",
+      "questionId": "cellular_transport_018",
+      "difficulty": 2,
+      "question": "The Nernst equation calculates:",
+      "image": null,
+      "options": [
+        {
+          "text": "Membrane potential",
+          "isCorrect": false,
+          "explanation": "GHK equation gives the membrane potential with multiple ions."
+        },
+        {
+          "text": "Equilibrium potential for an ion",
+          "isCorrect": true,
+          "explanation": "The Nernst equation gives the potential at which an ion's electrical and chemical driving forces are balanced."
+        },
+        {
+          "text": "Action potential amplitude",
+          "isCorrect": false,
+          "explanation": "Amplitude depends on voltage-gated channels."
+        },
+        {
+          "text": "Ion flux rate",
+          "isCorrect": false,
+          "explanation": "Flux depends on driving force and permeability."
+        },
+        {
+          "text": "Conductance",
+          "isCorrect": false,
+          "explanation": "Conductance is a measure of channel permeability."
+        }
+      ],
+      "explanation": {
+        "overview": "The Nernst equation: E = (RT/zF) × ln([ion]out/[ion]in). At 37°C, E ≈ 61/z × log([out]/[in]) in mV.",
+        "highYield": "Nernst equation: equilibrium potential for one ion. EK ≈ -90 mV, ENa ≈ +60 mV.",
+        "clinicalCorrelation": "Used to understand how changes in ion concentrations affect membrane potential."
+      }
+    },
+    {
+      "id": "cellular_transport_019",
+      "questionId": "cellular_transport_019",
+      "difficulty": 2,
+      "question": "For a typical neuron at rest, the equilibrium potential for K+ is approximately:",
+      "image": null,
+      "options": [
+        {
+          "text": "-90 mV",
+          "isCorrect": true,
+          "explanation": "With [K+]in = 140 mM and [K+]out = 4 mM, EK = 61 log(4/140) ≈ -90 mV."
+        },
+        {
+          "text": "-70 mV",
+          "isCorrect": false,
+          "explanation": "That is the resting membrane potential, not EK."
+        },
+        {
+          "text": "-60 mV",
+          "isCorrect": false,
+          "explanation": "Closer to ECl or some cells' resting potential."
+        },
+        {
+          "text": "+30 mV",
+          "isCorrect": false,
+          "explanation": "That's near the peak of an action potential (ENa)."
+        },
+        {
+          "text": "0 mV",
+          "isCorrect": false,
+          "explanation": "Not correct."
+        }
+      ],
+      "explanation": {
+        "overview": "EK is determined by the K+ concentration gradient. Typical values: [K+]i ~140, [K+]o ~4, so EK ≈ -90 mV.",
+        "highYield": "EK ≈ -90 mV. ENa ≈ +60 mV. ECl ≈ -70 mV (passive distribution).",
+        "clinicalCorrelation": "Changes in plasma K+ shift EK and alter resting membrane potential, affecting nerve and muscle excitability."
+      }
+    },
+    {
+      "id": "cellular_transport_020",
+      "questionId": "cellular_transport_020",
+      "difficulty": 3,
+      "question": "The Goldman-Hodgkin-Katz equation takes into account:",
+      "image": null,
+      "options": [
+        {
+          "text": "Only K+ concentrations",
+          "isCorrect": false,
+          "explanation": "That would be the Nernst equation."
+        },
+        {
+          "text": "Multiple ions and their relative permeabilities",
+          "isCorrect": true,
+          "explanation": "GHK equation calculates Vm considering Na+, K+, Cl- concentrations and their permeabilities."
+        },
+        {
+          "text": "Active transport rates",
+          "isCorrect": false,
+          "explanation": "It assumes passive diffusion."
+        },
+        {
+          "text": "Only Na+ and K+ concentrations",
+          "isCorrect": false,
+          "explanation": "It can include Cl-."
+        },
+        {
+          "text": "Membrane capacitance",
+          "isCorrect": false,
+          "explanation": "Capacitance affects the time course, not the steady-state potential."
+        }
+      ],
+      "explanation": {
+        "overview": "The GHK voltage equation: Vm = (RT/F) ln( (PK[K+]o + PNa[Na+]o + PCl[Cl-]i) / (PK[K+]i + PNa[Na+]i + PCl[Cl-]o) ). It predicts resting Vm from ion permeabilities.",
+        "highYield": "GHK equation: Vm depends on permeabilities and concentrations of multiple ions.",
+        "clinicalCorrelation": "Changes in ion permeabilities (e.g., opening of channels) shift membrane potential as predicted by GHK."
+      }
+    },
+    {
+      "id": "cellular_transport_021",
+      "questionId": "cellular_transport_021",
+      "difficulty": 2,
+      "question": "Which of the following would depolarize a cell?",
+      "image": null,
+      "options": [
+        {
+          "text": "Increasing K+ permeability",
+          "isCorrect": false,
+          "explanation": "Increased K+ permeability hyperpolarizes toward EK."
+        },
+        {
+          "text": "Decreasing Na+ permeability",
+          "isCorrect": false,
+          "explanation": "Would reduce depolarizing current, possibly hyperpolarizing."
+        },
+        {
+          "text": "Opening Na+ channels",
+          "isCorrect": true,
+          "explanation": "Na+ influx moves membrane potential toward ENa (+60 mV), causing depolarization."
+        },
+        {
+          "text": "Opening Cl- channels",
+          "isCorrect": false,
+          "explanation": "Cl- influx can hyperpolarize or stabilize, depending on ECl."
+        },
+        {
+          "text": "Hyperpolarizing current",
+          "isCorrect": false,
+          "explanation": "Hyperpolarizing current makes Vm more negative."
+        }
+      ],
+      "explanation": {
+        "overview": "Depolarization is a shift toward less negative potentials, usually due to Na+ or Ca2+ influx. Hyperpolarization is due to K+ efflux or Cl- influx.",
+        "highYield": "Depolarization: Na+ channels open → ENa (+60 mV) shift. Hyperpolarization: K+ channels open → EK (-90 mV) shift.",
+        "clinicalCorrelation": "Epilepsy and arrhythmias involve excessive depolarization."
+      }
+    },
+    {
+      "id": "cellular_transport_022",
+      "questionId": "cellular_transport_022",
+      "difficulty": 2,
+      "question": "A membrane that is permeable only to K+ will have a potential equal to:",
+      "image": null,
+      "options": [
+        {
+          "text": "EK",
+          "isCorrect": true,
+          "explanation": "If only K+ can cross, Vm will equal the K+ equilibrium potential."
+        },
+        {
+          "text": "ENa",
+          "isCorrect": false,
+          "explanation": "Na+ cannot cross."
+        },
+        {
+          "text": "0 mV",
+          "isCorrect": false,
+          "explanation": "Not correct."
+        },
+        {
+          "text": "ECl",
+          "isCorrect": false,
+          "explanation": "Cl- not permeable."
+        },
+        {
+          "text": "Resting potential",
+          "isCorrect": false,
+          "explanation": "Resting potential is determined by multiple ions; a pure K+ permeable membrane would be at EK, not resting Vm."
+        }
+      ],
+      "explanation": {
+        "overview": "In a cell permeable to only one ion, the Nernst equation gives the membrane potential. This is approximated in glial cells (K+ selective).",
+        "highYield": "Pure K+ permeability → Vm = EK. Pure Na+ permeability → Vm = ENa.",
+        "clinicalCorrelation": "Astrocytes have predominantly K+ conductance and are excellent K+ buffers."
+      }
+    },
+    {
+      "id": "cellular_transport_023",
+      "questionId": "cellular_transport_023",
+      "difficulty": 2,
+      "question": "Voltage-gated sodium channels are characterized by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Rapid activation and slow inactivation",
+          "isCorrect": true,
+          "explanation": "NaV channels activate within <1 ms upon depolarization and inactivate over a few milliseconds, contributing to the refractory period."
+        },
+        {
+          "text": "Slow activation and rapid inactivation",
+          "isCorrect": false,
+          "explanation": "Activation is rapid."
+        },
+        {
+          "text": "No inactivation",
+          "isCorrect": false,
+          "explanation": "They have a fast inactivation gate."
+        },
+        {
+          "text": "Activation by hyperpolarization",
+          "isCorrect": false,
+          "explanation": "They are activated by depolarization."
+        },
+        {
+          "text": "Permeability to K+",
+          "isCorrect": false,
+          "explanation": "They are highly Na+ selective."
+        }
+      ],
+      "explanation": {
+        "overview": "Voltage-gated Na+ channels have activation (m) gates that open quickly and inactivation (h) gates that close more slowly, terminating Na+ current.",
+        "highYield": "NaV: rapid activation, rapid inactivation. Inactivation removed by repolarization. Underlies action potential upstroke.",
+        "clinicalCorrelation": "Local anesthetics and antiarrhythmics block NaV channels."
+      }
+    },
+    {
+      "id": "cellular_transport_024",
+      "questionId": "cellular_transport_024",
+      "difficulty": 2,
+      "question": "The refractory period in neurons is primarily due to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Inactivation of Na+ channels and delayed K+ channel opening",
+          "isCorrect": true,
+          "explanation": "Na+ channel inactivation prevents immediate re-excitation; delayed rectifier K+ channels hyperpolarize the membrane."
+        },
+        {
+          "text": "Sustained Na+ influx",
+          "isCorrect": false,
+          "explanation": "Na+ influx is brief."
+        },
+        {
+          "text": "Cl- influx",
+          "isCorrect": false,
+          "explanation": "Not primary."
+        },
+        {
+          "text": "Na+/K+ ATPase overactivity",
+          "isCorrect": false,
+          "explanation": "The pump is not primarily responsible for refractoriness."
+        },
+        {
+          "text": "Ca2+ entry",
+          "isCorrect": false,
+          "explanation": "Not the main mechanism."
+        }
+      ],
+      "explanation": {
+        "overview": "Absolute refractory period: Na+ channels are inactivated. Relative refractory period: some Na+ channels recovered, but K+ conductance is high, requiring stronger stimulus.",
+        "highYield": "Refractory period: Na+ channel inactivation + high K+ conductance. Limits AP frequency.",
+        "clinicalCorrelation": "Antiarrhythmics prolong refractoriness to prevent re-entrant tachycardias."
+      }
+    },
+    {
+      "id": "cellular_transport_025",
+      "questionId": "cellular_transport_025",
+      "difficulty": 1,
+      "question": "Which of the following is responsible for the rising phase of an action potential?",
+      "image": null,
+      "options": [
+        {
+          "text": "Na+ influx",
+          "isCorrect": true,
+          "explanation": "Voltage-gated Na+ channels open, Na+ rushes in, depolarizing the cell."
+        },
+        {
+          "text": "K+ efflux",
+          "isCorrect": false,
+          "explanation": "K+ efflux causes repolarization."
+        },
+        {
+          "text": "Cl- influx",
+          "isCorrect": false,
+          "explanation": "Cl- influx hyperpolarizes."
+        },
+        {
+          "text": "Ca2+ influx",
+          "isCorrect": false,
+          "explanation": "Ca2+ contributes to the plateau in cardiac cells, not the fast upstroke in neurons."
+        },
+        {
+          "text": "Na+ efflux",
+          "isCorrect": false,
+          "explanation": "Na+ efflux would hyperpolarize."
+        }
+      ],
+      "explanation": {
+        "overview": "The action potential upstroke is due to regenerative opening of voltage-gated Na+ channels and rapid Na+ influx, driving Vm toward ENa (+60 mV).",
+        "highYield": "Upstroke = Na+ influx (NaV). Repolarization = K+ efflux (Kv).",
+        "clinicalCorrelation": "Tetrodotoxin blocks NaV channels, abolishing action potentials."
+      }
+    },
+    {
+      "id": "cellular_transport_026",
+      "questionId": "cellular_transport_026",
+      "difficulty": 2,
+      "question": "The falling phase (repolarization) of an action potential is mainly due to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Na+ channel inactivation and K+ efflux",
+          "isCorrect": true,
+          "explanation": "Na+ channels inactivate, stopping Na+ influx, while voltage-gated K+ channels open, allowing K+ efflux to restore negative potential."
+        },
+        {
+          "text": "Ca2+ influx",
+          "isCorrect": false,
+          "explanation": "Ca2+ would depolarize or prolong the AP."
+        },
+        {
+          "text": "Cl- influx",
+          "isCorrect": false,
+          "explanation": "Cl- influx can help repolarization but is not the main mechanism in most neurons."
+        },
+        {
+          "text": "Na+/K+ pump activity",
+          "isCorrect": false,
+          "explanation": "The pump is too slow to drive repolarization directly."
+        },
+        {
+          "text": "Na+ efflux",
+          "isCorrect": false,
+          "explanation": "Na+ efflux is not responsible; it's K+ efflux."
+        }
+      ],
+      "explanation": {
+        "overview": "Repolarization occurs as Na+ channels inactivate and delayed rectifier K+ channels open, increasing K+ conductance and driving Vm back toward EK.",
+        "highYield": "Repolarization: Na+ inactivation + K+ activation. Hyperpolarization: sustained K+ conductance (afterhyperpolarization).",
+        "clinicalCorrelation": "Drugs that block K+ channels (e.g., amiodarone) prolong repolarization, widening the action potential."
+      }
+    },
+    {
+      "id": "cellular_transport_027",
+      "questionId": "cellular_transport_027",
+      "difficulty": 2,
+      "question": "The absolute refractory period is the time during which:",
+      "image": null,
+      "options": [
+        {
+          "text": "No new action potential can be initiated regardless of stimulus strength",
+          "isCorrect": true,
+          "explanation": "Because Na+ channels are inactivated."
+        },
+        {
+          "text": "A stronger stimulus can initiate an action potential",
+          "isCorrect": false,
+          "explanation": "That's the relative refractory period."
+        },
+        {
+          "text": "The membrane is hyperpolarized",
+          "isCorrect": false,
+          "explanation": "Hyperpolarization is afterhyperpolarization, not absolute."
+        },
+        {
+          "text": "Na+ channels are closed but not inactivated",
+          "isCorrect": false,
+          "explanation": "They are inactivated."
+        },
+        {
+          "text": "K+ channels are all closed",
+          "isCorrect": false,
+          "explanation": "K+ channels are open."
+        }
+      ],
+      "explanation": {
+        "overview": "During the absolute refractory period, Na+ channels are inactivated, and no stimulus, however strong, can elicit another action potential. This ensures unidirectional propagation.",
+        "highYield": "Absolute refractory period = Na+ channel inactivation. Relative = some Na+ recovered, but K+ conductance high.",
+        "clinicalCorrelation": "Refractory periods prevent re-entry; their prolongation is antiarrhythmic."
+      }
+    },
+    {
+      "id": "cellular_transport_028",
+      "questionId": "cellular_transport_028",
+      "difficulty": 2,
+      "question": "Saltatory conduction in myelinated axons occurs because:",
+      "image": null,
+      "options": [
+        {
+          "text": "Action potentials jump from node to node",
+          "isCorrect": true,
+          "explanation": "Myelin insulates internodal regions, so depolarization spreads passively to the next node, where Na+ channels regenerate the AP."
+        },
+        {
+          "text": "Myelin increases membrane capacitance",
+          "isCorrect": false,
+          "explanation": "Myelin decreases capacitance, allowing faster passive spread."
+        },
+        {
+          "text": "Na+ channels are evenly distributed",
+          "isCorrect": false,
+          "explanation": "They cluster at nodes."
+        },
+        {
+          "text": "K+ channels are abundant under myelin",
+          "isCorrect": false,
+          "explanation": "K+ channels are mainly at juxtaparanodal regions."
+        },
+        {
+          "text": "Axons are larger",
+          "isCorrect": false,
+          "explanation": "Large diameter also increases conduction velocity, but saltatory conduction is due to myelin."
+        }
+      ],
+      "explanation": {
+        "overview": "Myelination increases membrane resistance and decreases capacitance, allowing local circuit currents to spread rapidly to the next node of Ranvier, where the AP is regenerated. Conduction appears to 'jump'.",
+        "highYield": "Saltatory conduction: APs regenerate only at nodes. Myelin → faster conduction, energy efficient.",
+        "clinicalCorrelation": "Demyelinating diseases (e.g., multiple sclerosis) slow or block conduction."
+      }
+    },
+    {
+      "id": "cellular_transport_029",
+      "questionId": "cellular_transport_029",
+      "difficulty": 1,
+      "question": "The diagram shows a myelinated axon. Action potentials occur at:",
+      "image": "node_of_ranvier.png",
+      "options": [
+        {
+          "text": "Nodes of Ranvier",
+          "isCorrect": true,
+          "explanation": "Voltage-gated Na+ channels are concentrated at nodes."
+        },
+        {
+          "text": "Internodal regions",
+          "isCorrect": false,
+          "explanation": "Internodes are insulated by myelin."
+        },
+        {
+          "text": "Schwann cells",
+          "isCorrect": false,
+          "explanation": "Schwann cells produce myelin but do not generate APs."
+        },
+        {
+          "text": "Axon hillock",
+          "isCorrect": false,
+          "explanation": "The axon hillock is the initial segment where APs are initiated, but propagation occurs at nodes."
+        },
+        {
+          "text": "Synaptic terminals",
+          "isCorrect": false,
+          "explanation": "APs reach terminals, but regeneration occurs at nodes along the axon."
+        }
+      ],
+      "explanation": {
+        "overview": "The axon initial segment (AIS) initiates the AP; nodes of Ranvier allow saltatory conduction. Myelin prevents ion flow across internodal membrane.",
+        "highYield": "Nodes of Ranvier = high NaV channel density = AP regeneration.",
+        "clinicalCorrelation": "In Guillain-Barré syndrome, segmental demyelination slows conduction."
+      }
+    },
+    {
+      "id": "cellular_transport_030",
+      "questionId": "cellular_transport_030",
+      "difficulty": 2,
+      "question": "Which of the following statements about facilitated diffusion via carriers is TRUE?",
+      "image": null,
+      "options": [
+        {
+          "text": "It can transport substances against their concentration gradient",
+          "isCorrect": false,
+          "explanation": "Facilitated diffusion is passive, down gradient."
+        },
+        {
+          "text": "It exhibits competitive inhibition",
+          "isCorrect": true,
+          "explanation": "Carriers have specific binding sites; structurally similar molecules can compete."
+        },
+        {
+          "text": "It is not saturable",
+          "isCorrect": false,
+          "explanation": "It is saturable (Vmax)."
+        },
+        {
+          "text": "It requires ATP",
+          "isCorrect": false,
+          "explanation": "It does not."
+        },
+        {
+          "text": "It only transports ions",
+          "isCorrect": false,
+          "explanation": "It transports various polar molecules (glucose, amino acids)."
+        }
+      ],
+      "explanation": {
+        "overview": "Facilitated diffusion via carrier proteins shows saturation kinetics, stereospecificity, and competitive inhibition. It is passive and bidirectional.",
+        "highYield": "Carrier-mediated transport: competitive inhibition, saturation, specificity.",
+        "clinicalCorrelation": "GLUT transporters can be competitively inhibited by certain glucose analogues (experimentally)."
+      }
+    },
+    {
+      "id": "cellular_transport_031",
+      "questionId": "cellular_transport_031",
+      "difficulty": 1,
+      "question": "Aquaporins facilitate the transport of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Water",
+          "isCorrect": true,
+          "explanation": "Aquaporins are water-specific channels."
+        },
+        {
+          "text": "Ions",
+          "isCorrect": false,
+          "explanation": "Ions do not pass through aquaporins."
+        },
+        {
+          "text": "Glucose",
+          "isCorrect": false,
+          "explanation": "Glucose uses GLUT transporters."
+        },
+        {
+          "text": "Urea",
+          "isCorrect": false,
+          "explanation": "Some aquaporins (AQP9) are slightly permeable to urea, but water is the primary substrate."
+        },
+        {
+          "text": "Gases",
+          "isCorrect": false,
+          "explanation": "Gases diffuse through lipid bilayer."
+        }
+      ],
+      "explanation": {
+        "overview": "Aquaporins are integral membrane proteins that form pores allowing rapid water movement. AQP2 in collecting duct is regulated by ADH.",
+        "highYield": "Aquaporins = water channels. AQP2: ADH-regulated in kidney collecting duct.",
+        "clinicalCorrelation": "Mutations in AQP2 cause nephrogenic diabetes insipidus."
+      }
+    },
+    {
+      "id": "cellular_transport_032",
+      "questionId": "cellular_transport_032",
+      "difficulty": 2,
+      "question": "Cystic fibrosis is caused by a defect in which type of transporter?",
+      "image": null,
+      "options": [
+        {
+          "text": "Na+/K+ ATPase",
+          "isCorrect": false,
+          "explanation": "CFTR is not the Na+/K+ pump."
+        },
+        {
+          "text": "CFTR chloride channel",
+          "isCorrect": true,
+          "explanation": "CFTR is a cAMP-regulated Cl- channel. Mutations lead to thick secretions."
+        },
+        {
+          "text": "GLUT2",
+          "isCorrect": false,
+          "explanation": "Glucose transporter."
+        },
+        {
+          "text": "SGLT1",
+          "isCorrect": false,
+          "explanation": "Sodium-glucose symporter."
+        },
+        {
+          "text": "Aquaporin-2",
+          "isCorrect": false,
+          "explanation": "Water channel, mutated in nephrogenic DI."
+        }
+      ],
+      "explanation": {
+        "overview": "CFTR is an ABC transporter that functions as a Cl- channel. The most common mutation is ΔF508, causing misfolding and degradation.",
+        "highYield": "CF = CFTR mutation → ↓ Cl- secretion → thick mucus in lungs, pancreas, etc.",
+        "clinicalCorrelation": "Ivacaftor potentiates CFTR function in specific mutations."
+      }
+    },
+    {
+      "id": "cellular_transport_033",
+      "questionId": "cellular_transport_033",
+      "difficulty": 1,
+      "question": "Phagocytosis is a form of endocytosis involving:",
+      "image": null,
+      "options": [
+        {
+          "text": "Uptake of fluid and solutes",
+          "isCorrect": false,
+          "explanation": "That's pinocytosis."
+        },
+        {
+          "text": "Engulfment of large particles or microorganisms",
+          "isCorrect": true,
+          "explanation": "Phagocytosis is the ingestion of large particles (>0.5 µm) by specialized cells."
+        },
+        {
+          "text": "Receptor-mediated uptake of specific molecules",
+          "isCorrect": false,
+          "explanation": "That's receptor-mediated endocytosis (e.g., LDL)."
+        },
+        {
+          "text": "Pinocytosis",
+          "isCorrect": false,
+          "explanation": "Pinocytosis is cell drinking."
+        },
+        {
+          "text": "Exocytosis",
+          "isCorrect": false,
+          "explanation": "Exocytosis is secretion."
+        }
+      ],
+      "explanation": {
+        "overview": "Phagocytosis is a receptor-mediated, actin-dependent process by which immune cells (macrophages, neutrophils) engulf pathogens or debris.",
+        "highYield": "Phagocytosis = cell eating. Mediated by Fc receptors, complement receptors. Requires actin polymerization.",
+        "clinicalCorrelation": "Defects in phagocytosis cause chronic granulomatous disease or leukocyte adhesion deficiency."
+      }
+    },
+    {
+      "id": "cellular_transport_034",
+      "questionId": "cellular_transport_034",
+      "difficulty": 2,
+      "question": "Receptor-mediated endocytosis involves:",
+      "image": null,
+      "options": [
+        {
+          "text": "Non-specific uptake of extracellular fluid",
+          "isCorrect": false,
+          "explanation": "That's pinocytosis."
+        },
+        {
+          "text": "Binding of ligands to receptors followed by vesicle formation",
+          "isCorrect": true,
+          "explanation": "Ligand binding to specific receptors triggers clathrin-coated pit formation and internalization."
+        },
+        {
+          "text": "Secretion of hormones",
+          "isCorrect": false,
+          "explanation": "That's exocytosis."
+        },
+        {
+          "text": "Fusion of vesicles with plasma membrane",
+          "isCorrect": false,
+          "explanation": "Exocytosis."
+        },
+        {
+          "text": "Uptake of bacteria",
+          "isCorrect": false,
+          "explanation": "That's phagocytosis."
+        }
+      ],
+      "explanation": {
+        "overview": "Receptor-mediated endocytosis is a selective process for taking up specific macromolecules (e.g., LDL, transferrin, hormones) via clathrin-coated vesicles.",
+        "highYield": "Receptor-mediated endocytosis: clathrin, adaptor proteins, specific cargo. Example: LDL uptake via LDL receptor.",
+        "clinicalCorrelation": "Familial hypercholesterolemia results from defective LDL receptor endocytosis."
+      }
+    },
+    {
+      "id": "cellular_transport_035",
+      "questionId": "cellular_transport_035",
+      "difficulty": 2,
+      "question": "Clathrin-coated vesicles are involved in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Endocytosis from plasma membrane",
+          "isCorrect": true,
+          "explanation": "Clathrin coats vesicles budding from the plasma membrane and TGN during endocytosis and some intracellular trafficking."
+        },
+        {
+          "text": "Transport from ER to Golgi",
+          "isCorrect": false,
+          "explanation": "ER to Golgi uses COPII vesicles."
+        },
+        {
+          "text": "Transport from Golgi to ER",
+          "isCorrect": false,
+          "explanation": "Retrograde transport uses COPI vesicles."
+        },
+        {
+          "text": "Exocytosis",
+          "isCorrect": false,
+          "explanation": "Exocytosis involves secretory vesicles, not necessarily clathrin."
+        },
+        {
+          "text": "Phagocytosis",
+          "isCorrect": false,
+          "explanation": "Phagocytosis uses actin, not clathrin."
+        }
+      ],
+      "explanation": {
+        "overview": "Clathrin forms a triskelion structure that polymerizes into a basket-like coat, driving vesicle formation at the plasma membrane (endocytosis) and trans-Golgi network.",
+        "highYield": "Clathrin = endocytosis (LDL, transferrin) + TGN to endosomes. COPI = Golgi to ER. COPII = ER to Golgi.",
+        "clinicalCorrelation": "Some viruses hijack clathrin-mediated endocytosis for cell entry."
+      }
+    },
+    {
+      "id": "cellular_transport_036",
+      "questionId": "cellular_transport_036",
+      "difficulty": 2,
+      "question": "Caveolae are flask-shaped invaginations rich in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Clathrin",
+          "isCorrect": false,
+          "explanation": "Caveolae have caveolin, not clathrin."
+        },
+        {
+          "text": "Caveolin",
+          "isCorrect": true,
+          "explanation": "Caveolin proteins oligomerize to form caveolar coat. Involved in endocytosis, signal transduction, and lipid regulation."
+        },
+        {
+          "text": "COPII",
+          "isCorrect": false,
+          "explanation": "COPII is for ER-to-Golgi transport."
+        },
+        {
+          "text": "Dynamin",
+          "isCorrect": false,
+          "explanation": "Dynamin pinches off vesicles, but caveolae are defined by caveolin."
+        },
+        {
+          "text": "Actin",
+          "isCorrect": false,
+          "explanation": "Actin is involved but not the characteristic coat."
+        }
+      ],
+      "explanation": {
+        "overview": "Caveolae are small, flask-shaped plasma membrane invaginations enriched in cholesterol, sphingolipids, and caveolin proteins. They participate in endocytosis, mechanosensing, and signaling.",
+        "highYield": "Caveolae = caveolin, lipid rafts. Not clathrin. Involved in transcytosis and signaling.",
+        "clinicalCorrelation": "Caveolin mutations are linked to muscular dystrophy and lipodystrophy."
+      }
+    },
+    {
+      "id": "cellular_transport_037",
+      "questionId": "cellular_transport_037",
+      "difficulty": 1,
+      "question": "Exocytosis is the process by which cells:",
+      "image": null,
+      "options": [
+        {
+          "text": "Take up fluid droplets",
+          "isCorrect": false,
+          "explanation": "That's pinocytosis."
+        },
+        {
+          "text": "Secrete substances by vesicle fusion with plasma membrane",
+          "isCorrect": true,
+          "explanation": "Exocytosis releases molecules (e.g., neurotransmitters, hormones) by fusing vesicles with the plasma membrane."
+        },
+        {
+          "text": "Engulf large particles",
+          "isCorrect": false,
+          "explanation": "Phagocytosis."
+        },
+        {
+          "text": "Recycle membrane receptors",
+          "isCorrect": false,
+          "explanation": "Recycling can involve endocytosis and re-exocytosis, but exocytosis specifically is secretion."
+        },
+        {
+          "text": "Internalize pathogens",
+          "isCorrect": false,
+          "explanation": "Phagocytosis."
+        }
+      ],
+      "explanation": {
+        "overview": "Exocytosis is the fusion of intracellular vesicles with the plasma membrane, releasing their contents into the extracellular space. It can be constitutive or regulated (e.g., neurotransmitter release).",
+        "highYield": "Exocytosis = secretion. Regulated by Ca2+ (synaptic vesicles) or constitutively (plasma membrane proteins).",
+        "clinicalCorrelation": "Botulinum toxin cleaves SNARE proteins, inhibiting exocytosis of acetylcholine."
+      }
+    },
+    {
+      "id": "cellular_transport_038",
+      "questionId": "cellular_transport_038",
+      "difficulty": 2,
+      "question": "Transcytosis involves:",
+      "image": null,
+      "options": [
+        {
+          "text": "Transport across a cell via endocytosis and exocytosis",
+          "isCorrect": true,
+          "explanation": "Transcytosis moves molecules from one side of a polarized cell to the other, e.g., across endothelial or epithelial barriers."
+        },
+        {
+          "text": "Movement between cells",
+          "isCorrect": false,
+          "explanation": "That's paracellular transport."
+        },
+        {
+          "text": "Transport through gap junctions",
+          "isCorrect": false,
+          "explanation": "Gap junctions are direct cytoplasmic connections."
+        },
+        {
+          "text": "Direct diffusion through lipid bilayer",
+          "isCorrect": false,
+          "explanation": "Transcytosis is vesicular, not simple diffusion."
+        },
+        {
+          "text": "Active transport via pumps",
+          "isCorrect": false,
+          "explanation": "Transcytosis involves vesicles, not pumps."
+        }
+      ],
+      "explanation": {
+        "overview": "Transcytosis combines endocytosis, vesicular trafficking, and exocytosis to transport macromolecules across a cell layer. Important for IgA transport and nutrient delivery.",
+        "highYield": "Transcytosis = across cell via vesicles. Example: maternal IgG across placenta, IgA across epithelia.",
+        "clinicalCorrelation": "Transcytosis of LDL across endothelium contributes to atherosclerosis."
+      }
+    },
+    {
+      "id": "cellular_transport_039",
+      "questionId": "cellular_transport_039",
+      "difficulty": 1,
+      "question": "Pinocytosis refers to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cell drinking – non‑specific uptake of extracellular fluid",
+          "isCorrect": true,
+          "explanation": "Pinocytosis is constitutive internalization of fluid and small solutes."
+        },
+        {
+          "text": "Receptor-mediated uptake",
+          "isCorrect": false,
+          "explanation": "That's specific."
+        },
+        {
+          "text": "Engulfment of particles",
+          "isCorrect": false,
+          "explanation": "Phagocytosis."
+        },
+        {
+          "text": "Secretion of vesicles",
+          "isCorrect": false,
+          "explanation": "Exocytosis."
+        },
+        {
+          "text": "Ion transport",
+          "isCorrect": false,
+          "explanation": "Pinocytosis is a bulk fluid uptake process."
+        }
+      ],
+      "explanation": {
+        "overview": "Pinocytosis (fluid-phase endocytosis) is a non-selective process by which cells internalize extracellular fluid and whatever is dissolved in it. It occurs continuously in many cells.",
+        "highYield": "Pinocytosis = cell drinking. Non-specific, clathrin-independent or dependent.",
+        "clinicalCorrelation": "Certain toxins and viruses can enter cells via pinocytosis."
+      }
+    },
+    {
+      "id": "cellular_transport_040",
+      "questionId": "cellular_transport_040",
+      "difficulty": 1,
+      "question": "The movement of water across a membrane due to osmotic pressure difference is called:",
+      "image": null,
+      "options": [
+        {
+          "text": "Diffusion",
+          "isCorrect": false,
+          "explanation": "Diffusion is solute movement."
+        },
+        {
+          "text": "Osmosis",
+          "isCorrect": true,
+          "explanation": "Osmosis is the net movement of water through a semipermeable membrane from low solute to high solute concentration."
+        },
+        {
+          "text": "Filtration",
+          "isCorrect": false,
+          "explanation": "Filtration is driven by hydrostatic pressure."
+        },
+        {
+          "text": "Active transport",
+          "isCorrect": false,
+          "explanation": "Active transport requires energy."
+        },
+        {
+          "text": "Facilitated diffusion",
+          "isCorrect": false,
+          "explanation": "Facilitated diffusion is for solutes via carriers."
+        }
+      ],
+      "explanation": {
+        "overview": "Osmosis is a passive process driven by differences in water potential. Water moves to dilute the side with higher solute concentration.",
+        "highYield": "Osmosis = water movement across semipermeable membrane. Dependent on osmolarity.",
+        "clinicalCorrelation": "Osmosis underlies cerebral edema in hyponatremia and the use of mannitol."
+      }
+    },
+    {
+      "id": "cellular_transport_041",
+      "questionId": "cellular_transport_041",
+      "difficulty": 2,
+      "question": "Osmotic pressure is proportional to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Number of solute particles (osmoles)",
+          "isCorrect": true,
+          "explanation": "Osmotic pressure depends on total number of dissolved particles, not their size or charge (van't Hoff's law: π = iCRT)."
+        },
+        {
+          "text": "Size of solute molecules",
+          "isCorrect": false,
+          "explanation": "Size is not a factor; one molecule = one osmole regardless of size."
+        },
+        {
+          "text": "Charge of solute",
+          "isCorrect": false,
+          "explanation": "Charge affects the number of particles if dissociation occurs, but not directly."
+        },
+        {
+          "text": "Temperature",
+          "isCorrect": false,
+          "explanation": "Temperature is a factor in the equation, but the question asks what it is proportional to primarily – the number of particles. The original answer says 'Number of solute particles'. I'll respect that."
+        },
+        {
+          "text": "Pressure",
+          "isCorrect": false,
+          "explanation": "Osmotic pressure causes water movement; it's not proportional to external pressure."
+        }
+      ],
+      "explanation": {
+        "overview": "Osmotic pressure (π) = CRT for non-dissociating solutes, or iCRT for dissociating solutes. It depends on concentration, not size.",
+        "highYield": "Osmotic pressure ∝ number of particles (osmoles). 1 M NaCl ≈ 2 Osm. 1 M glucose ≈ 1 Osm.",
+        "clinicalCorrelation": "Plasma osmolality is calculated as 2×[Na] + glucose/18 + BUN/2.8."
+      }
+    },
+    {
+      "id": "cellular_transport_042",
+      "questionId": "cellular_transport_042",
+      "difficulty": 1,
+      "question": "If a cell is placed in a hypotonic solution, water will:",
+      "image": null,
+      "options": [
+        {
+          "text": "Enter the cell, causing swelling",
+          "isCorrect": true,
+          "explanation": "Hypotonic = lower effective osmolality outside; water enters cell to equalize concentration."
+        },
+        {
+          "text": "Leave the cell, causing shrinkage",
+          "isCorrect": false,
+          "explanation": "That's hypertonic."
+        },
+        {
+          "text": "Not move",
+          "isCorrect": false,
+          "explanation": "Isotonic conditions."
+        },
+        {
+          "text": "Move in both directions equally",
+          "isCorrect": false,
+          "explanation": "Net movement is inward."
+        },
+        {
+          "text": "Be actively pumped out",
+          "isCorrect": false,
+          "explanation": "Water movement is passive."
+        }
+      ],
+      "explanation": {
+        "overview": "In a hypotonic solution, the extracellular osmolality is lower, so water flows into the cell, causing swelling and potential lysis.",
+        "highYield": "Hypotonic → cell swells. Hypertonic → cell shrinks. Isotonic → no change.",
+        "clinicalCorrelation": "Rapid correction of hyponatremia can cause osmotic demyelination syndrome."
+      }
+    },
+    {
+      "id": "cellular_transport_043",
+      "questionId": "cellular_transport_043",
+      "difficulty": 1,
+      "question": "A 0.9% NaCl solution is isotonic to human cells because it has the same:",
+      "image": null,
+      "options": [
+        {
+          "text": "Osmolality as intracellular fluid",
+          "isCorrect": true,
+          "explanation": "0.9% NaCl (~154 mM) has an osmolality of ~308 mOsm/L (effectively ~290 mOsm/kg after osmotic coefficient), similar to plasma and ICF."
+        },
+        {
+          "text": "pH as blood",
+          "isCorrect": false,
+          "explanation": "pH is separate; 0.9% NaCl pH is ~5.5."
+        },
+        {
+          "text": "Sodium concentration as plasma",
+          "isCorrect": false,
+          "explanation": "0.9% NaCl has 154 mM Na+, which is slightly higher than plasma (~140 mM)."
+        },
+        {
+          "text": "Chloride concentration as plasma",
+          "isCorrect": false,
+          "explanation": "Chloride is higher (154 vs 105)."
+        },
+        {
+          "text": "Viscosity",
+          "isCorrect": false,
+          "explanation": "Not relevant."
+        }
+      ],
+      "explanation": {
+        "overview": "Isotonic solutions have the same effective osmolality as the cell interior, so no net water movement occurs. 0.9% NaCl is isotonic; 0.45% NaCl is hypotonic; 3% NaCl is hypertonic.",
+        "highYield": "Isotonic: 0.9% saline, 5% dextrose (initially). Used for volume expansion.",
+        "clinicalCorrelation": "Large volumes of normal saline can cause hyperchloremic metabolic acidosis."
+      }
+    },
+    {
+      "id": "cellular_transport_044",
+      "questionId": "cellular_transport_044",
+      "difficulty": 2,
+      "question": "Filtration is the movement of fluid through a porous membrane due to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Hydrostatic pressure gradient",
+          "isCorrect": true,
+          "explanation": "Filtration is driven by pressure differences, as in glomerular filtration and capillary exchange."
+        },
+        {
+          "text": "Osmotic pressure gradient",
+          "isCorrect": false,
+          "explanation": "That's osmosis."
+        },
+        {
+          "text": "Concentration gradient",
+          "isCorrect": false,
+          "explanation": "That's diffusion."
+        },
+        {
+          "text": "Electrical gradient",
+          "isCorrect": false,
+          "explanation": "Drives ion movement."
+        },
+        {
+          "text": "Temperature gradient",
+          "isCorrect": false,
+          "explanation": "Not primary."
+        }
+      ],
+      "explanation": {
+        "overview": "Filtration is a passive process where fluid is pushed through a membrane by a hydrostatic pressure gradient. Starling forces in capillaries involve filtration and absorption.",
+        "highYield": "Filtration ∝ hydrostatic pressure difference. Glomerular filtration rate is driven by glomerular capillary pressure.",
+        "clinicalCorrelation": "In hypertension, increased glomerular capillary pressure can cause hyperfiltration and kidney damage."
+      }
+    },
+    {
+      "id": "cellular_transport_045",
+      "questionId": "cellular_transport_045",
+      "difficulty": 2,
+      "question": "The diagram illustrates simple diffusion. Which line represents the rate of diffusion versus concentration difference?",
+      "image": "diffusion_rate_graph.png",
+      "options": [
+        {
+          "text": "Linear increasing line through origin",
+          "isCorrect": true,
+          "explanation": "Simple diffusion rate is directly proportional to concentration difference (Fick's law)."
+        },
+        {
+          "text": "Curved line plateauing at high concentration",
+          "isCorrect": false,
+          "explanation": "That's facilitated diffusion (saturation)."
+        },
+        {
+          "text": "Exponential curve",
+          "isCorrect": false,
+          "explanation": "Not simple diffusion."
+        },
+        {
+          "text": "Sigmoidal curve",
+          "isCorrect": false,
+          "explanation": "Allosteric kinetics."
+        },
+        {
+          "text": "Horizontal line",
+          "isCorrect": false,
+          "explanation": "Rate would be constant, not diffusion."
+        }
+      ],
+      "explanation": {
+        "overview": "Simple diffusion follows first-order kinetics; flux increases linearly with concentration gradient. No saturation.",
+        "highYield": "Simple diffusion: linear relationship between rate and ΔC. Facilitated diffusion: saturable (Michaelis-Menten).",
+        "clinicalCorrelation": "Drugs that enter by simple diffusion have predictable kinetics."
+      }
+    },
+    {
+      "id": "cellular_transport_046",
+      "questionId": "cellular_transport_046",
+      "difficulty": 2,
+      "question": "Facilitated diffusion kinetics show saturation because:",
+      "image": null,
+      "options": [
+        {
+          "text": "Limited number of transporters",
+          "isCorrect": true,
+          "explanation": "At high substrate concentrations, all carrier binding sites are occupied, achieving Vmax."
+        },
+        {
+          "text": "Transporter phosphorylation",
+          "isCorrect": false,
+          "explanation": "Phosphorylation may regulate but not cause saturation per se."
+        },
+        {
+          "text": "ATP depletion",
+          "isCorrect": false,
+          "explanation": "Facilitated diffusion does not use ATP."
+        },
+        {
+          "text": "Competitive inhibition",
+          "isCorrect": false,
+          "explanation": "Inhibition is a separate phenomenon."
+        },
+        {
+          "text": "Membrane fluidity changes",
+          "isCorrect": false,
+          "explanation": "Not primary."
+        }
+      ],
+      "explanation": {
+        "overview": "Carrier proteins have a finite number of binding sites. When all are occupied, the transport rate cannot increase, leading to saturation (Vmax).",
+        "highYield": "Saturation = all carriers occupied → Vmax. Km = affinity. Analogous to enzyme kinetics.",
+        "clinicalCorrelation": "SGLT2 has high capacity; SGLT1 has high affinity."
+      }
+    },
+    {
+      "id": "cellular_transport_047",
+      "questionId": "cellular_transport_047",
+      "difficulty": 2,
+      "question": "The Michaelis-Menten constant (Km) for a facilitated diffusion transporter reflects:",
+      "image": null,
+      "options": [
+        {
+          "text": "Substrate concentration at half-maximal transport",
+          "isCorrect": true,
+          "explanation": "Km is the substrate concentration at which transport is half of Vmax; it indicates the transporter's affinity (lower Km = higher affinity)."
+        },
+        {
+          "text": "Maximum transport rate",
+          "isCorrect": false,
+          "explanation": "That's Vmax."
+        },
+        {
+          "text": "Affinity for ATP",
+          "isCorrect": false,
+          "explanation": "Transporters don't bind ATP."
+        },
+        {
+          "text": "Number of transporters",
+          "isCorrect": false,
+          "explanation": "Number affects Vmax."
+        },
+        {
+          "text": "Turnover number",
+          "isCorrect": false,
+          "explanation": "Turnover number also influences Vmax."
+        }
+      ],
+      "explanation": {
+        "overview": "Km is a measure of the transporter's affinity for its substrate. A low Km means the transporter is saturated at low substrate concentrations.",
+        "highYield": "Km = [S] at ½ Vmax. Low Km = high affinity. High Km = low affinity.",
+        "clinicalCorrelation": "GLUT2 (high Km) in pancreas acts as a glucose sensor; GLUT1 (low Km) ensures basal glucose uptake."
+      }
+    },
+    {
+      "id": "cellular_transport_048",
+      "questionId": "cellular_transport_048",
+      "difficulty": 2,
+      "question": "Which of the following transport processes is NOT saturable?",
+      "image": null,
+      "options": [
+        {
+          "text": "Facilitated diffusion via GLUT",
+          "isCorrect": false,
+          "explanation": "GLUT transporters saturate."
+        },
+        {
+          "text": "Simple diffusion",
+          "isCorrect": true,
+          "explanation": "Simple diffusion does not involve a carrier; rate increases linearly with concentration without saturating."
+        },
+        {
+          "text": "Primary active transport",
+          "isCorrect": false,
+          "explanation": "Pumps saturate at high substrate."
+        },
+        {
+          "text": "Secondary active transport",
+          "isCorrect": false,
+          "explanation": "Carriers, including symporters and antiporters, saturate."
+        },
+        {
+          "text": "Receptor-mediated endocytosis",
+          "isCorrect": false,
+          "explanation": "Receptor binding saturates."
+        }
+      ],
+      "explanation": {
+        "overview": "Simple diffusion is the only non-saturable process because it does not depend on a finite number of binding sites or carriers.",
+        "highYield": "Simple diffusion: non-saturable, linear. All carrier/channel-mediated processes are saturable.",
+        "clinicalCorrelation": "In overdose, passive reabsorption in renal tubules can be manipulated by altering urine pH."
+      }
+    },
+    {
+      "id": "cellular_transport_049",
+      "questionId": "cellular_transport_049",
+      "difficulty": 2,
+      "question": "The unidirectional flux of an ion through an open channel is determined by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Electrochemical gradient and channel conductance",
+          "isCorrect": true,
+          "explanation": "Ion current I = g × (Vm - Eion), where g is conductance (number and open probability of channels) and (Vm - Eion) is driving force."
+        },
+        {
+          "text": "Only concentration gradient",
+          "isCorrect": false,
+          "explanation": "Electrical gradient also matters."
+        },
+        {
+          "text": "Only voltage",
+          "isCorrect": false,
+          "explanation": "Both voltage and concentration contribute to driving force."
+        },
+        {
+          "text": "ATP concentration",
+          "isCorrect": false,
+          "explanation": "Channels are passive."
+        },
+        {
+          "text": "Number of carriers",
+          "isCorrect": false,
+          "explanation": "Channels, not carriers."
+        }
+      ],
+      "explanation": {
+        "overview": "The ion current through a channel follows Ohm's law: I = γ × Po × N × (Vm - Erev), where γ is single-channel conductance, Po is open probability, N is number of channels.",
+        "highYield": "Ion flux = driving force × conductance. Driving force = Vm - Eion.",
+        "clinicalCorrelation": "Changing driving force (e.g., by altering ion concentration) changes ion current and can be antiarrhythmic."
+      }
+    },
+    {
+      "id": "cellular_transport_050",
+      "questionId": "cellular_transport_050",
+      "difficulty": 2,
+      "question": "In cardiac muscle, the L-type calcium channel is voltage-gated and important for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Action potential plateau",
+          "isCorrect": true,
+          "explanation": "L-type Ca2+ channels open during depolarization, maintaining the plateau phase and triggering Ca2+-induced Ca2+ release."
+        },
+        {
+          "text": "Rapid depolarization",
+          "isCorrect": false,
+          "explanation": "That's Na+ channels."
+        },
+        {
+          "text": "Repolarization",
+          "isCorrect": false,
+          "explanation": "K+ channels."
+        },
+        {
+          "text": "Pacemaker potential",
+          "isCorrect": false,
+          "explanation": "Pacemaker cells use funny channels (HCN) and T-type Ca2+."
+        },
+        {
+          "text": "Resting potential",
+          "isCorrect": false,
+          "explanation": "K+ leak channels."
+        }
+      ],
+      "explanation": {
+        "overview": "L-type Ca2+ channels (Cav1.2) are responsible for the long plateau (phase 2) of the cardiac action potential, allowing Ca2+ entry and contraction.",
+        "highYield": "L-type Ca2+ = plateau phase, cardiac. Blocked by dihydropyridines (nifedipine), verapamil, diltiazem.",
+        "clinicalCorrelation": "Calcium channel blockers reduce cardiac contractility and are used in hypertension and angina."
+      }
+    },
+    {
+      "id": "cellular_transport_051",
+      "questionId": "cellular_transport_051",
+      "difficulty": 2,
+      "question": "The patch-clamp technique allows measurement of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Current through single ion channels",
+          "isCorrect": true,
+          "explanation": "Patch clamp can isolate a tiny membrane patch, allowing resolution of single-channel currents."
+        },
+        {
+          "text": "Membrane potential",
+          "isCorrect": false,
+          "explanation": "It can also control and measure Vm, but its claim to fame is single-channel recording."
+        },
+        {
+          "text": "Intracellular calcium",
+          "isCorrect": false,
+          "explanation": "Fluorescent dyes measure Ca2+."
+        },
+        {
+          "text": "pH",
+          "isCorrect": false,
+          "explanation": "Microelectrodes or dyes."
+        },
+        {
+          "text": "Transporter kinetics",
+          "isCorrect": false,
+          "explanation": "Patch clamp is for channels, although some transporters can be studied with giant patch."
+        }
+      ],
+      "explanation": {
+        "overview": "Erwin Neher and Bert Sakmann developed the patch-clamp technique, which can measure picoampere currents flowing through single ion channels, revolutionizing electrophysiology.",
+        "highYield": "Patch clamp = single-channel recording. Configurations: cell-attached, inside-out, outside-out, whole-cell.",
+        "clinicalCorrelation": "Used to study channelopathies and drug effects on specific ion channels."
+      }
+    },
+    {
+      "id": "cellular_transport_052",
+      "questionId": "cellular_transport_052",
+      "difficulty": 2,
+      "question": "Which of the following is an example of a ligand-gated ion channel?",
+      "image": null,
+      "options": [
+        {
+          "text": "Voltage-gated Na+ channel",
+          "isCorrect": false,
+          "explanation": "Activated by voltage, not ligand."
+        },
+        {
+          "text": "Nicotinic acetylcholine receptor",
+          "isCorrect": true,
+          "explanation": "ACh binding opens this non-selective cation channel."
+        },
+        {
+          "text": "Na+/K+ ATPase",
+          "isCorrect": false,
+          "explanation": "It's a pump, not a channel."
+        },
+        {
+          "text": "GLUT1",
+          "isCorrect": false,
+          "explanation": "Carrier, not channel."
+        },
+        {
+          "text": "Aquaporin-4",
+          "isCorrect": false,
+          "explanation": "Water channel, not ligand-gated."
+        }
+      ],
+      "explanation": {
+        "overview": "Ligand-gated ion channels (ionotropic receptors) open upon binding of a neurotransmitter. Examples: nicotinic AChR, GABA-A, AMPA, NMDA, 5-HT3.",
+        "highYield": "Ligand-gated: nicotinic (Na+/K+), GABA-A (Cl-), AMPA (Na+), NMDA (Ca2+).",
+        "clinicalCorrelation": "Benzodiazepines are positive allosteric modulators of GABA-A."
+      }
+    },
+    {
+      "id": "cellular_transport_053",
+      "questionId": "cellular_transport_053",
+      "difficulty": 1,
+      "question": "The resting membrane potential is closest to the equilibrium potential for which ion because of high resting permeability?",
+      "image": null,
+      "options": [
+        {
+          "text": "Na+",
+          "isCorrect": false,
+          "explanation": "Na+ permeability is low at rest."
+        },
+        {
+          "text": "K+",
+          "isCorrect": true,
+          "explanation": "K+ leak channels are abundant, making membrane potential near EK."
+        },
+        {
+          "text": "Cl-",
+          "isCorrect": false,
+          "explanation": "Cl- permeability is moderate but Vm is primarily determined by K+."
+        },
+        {
+          "text": "Ca2+",
+          "isCorrect": false,
+          "explanation": "Ca2+ permeability is very low at rest."
+        },
+        {
+          "text": "H+",
+          "isCorrect": false,
+          "explanation": "Protons are not the major ion."
+        }
+      ],
+      "explanation": {
+        "overview": "The resting membrane's high K+ conductance (via leak channels) pulls Vm close to EK. The small Na+ leak makes Vm slightly less negative than EK.",
+        "highYield": "Resting Vm ~ -70 mV because PK >> PNa. EK = -90 mV, ENa = +60 mV.",
+        "clinicalCorrelation": "Potassium imbalances significantly affect resting membrane potential."
+      }
+    },
+    {
+      "id": "cellular_transport_054",
+      "questionId": "cellular_transport_054",
+      "difficulty": 2,
+      "question": "A decrease in extracellular K+ concentration will cause the resting membrane potential to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Depolarize",
+          "isCorrect": false,
+          "explanation": "Decreased [K+]o makes EK more negative, hyperpolarizing."
+        },
+        {
+          "text": "Hyperpolarize",
+          "isCorrect": true,
+          "explanation": "EK = 61 log([K+]o/[K+]i). Lower [K+]o → more negative EK → hyperpolarization."
+        },
+        {
+          "text": "Remain unchanged",
+          "isCorrect": false,
+          "explanation": "It changes."
+        },
+        {
+          "text": "Become positive",
+          "isCorrect": false,
+          "explanation": "Not possible."
+        },
+        {
+          "text": "Oscillate",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Hypokalemia increases the K+ gradient, making EK more negative. This hyperpolarizes cells, reducing excitability.",
+        "highYield": "↓ [K+]o → hyperpolarization (more negative Vm). ↑ [K+]o → depolarization.",
+        "clinicalCorrelation": "Hypokalemia can cause muscle weakness and cardiac arrhythmias due to hyperpolarization."
+      }
+    },
+    {
+      "id": "cellular_transport_055",
+      "questionId": "cellular_transport_055",
+      "difficulty": 2,
+      "question": "Tetrodotoxin (TTX) blocks which type of channel?",
+      "image": null,
+      "options": [
+        {
+          "text": "Voltage-gated Na+ channels",
+          "isCorrect": true,
+          "explanation": "TTX binds to the pore of NaV channels, blocking Na+ influx and preventing action potentials."
+        },
+        {
+          "text": "Voltage-gated K+ channels",
+          "isCorrect": false,
+          "explanation": "K+ channels are blocked by TEA, 4-AP."
+        },
+        {
+          "text": "Voltage-gated Ca2+ channels",
+          "isCorrect": false,
+          "explanation": "Ca2+ channels blocked by dihydropyridines."
+        },
+        {
+          "text": "Ligand-gated channels",
+          "isCorrect": false,
+          "explanation": "Not TTX target."
+        },
+        {
+          "text": "Na+/K+ ATPase",
+          "isCorrect": false,
+          "explanation": "Inhibited by ouabain."
+        }
+      ],
+      "explanation": {
+        "overview": "TTX is a potent neurotoxin from pufferfish that selectively blocks voltage-gated Na+ channels, causing paralysis and death.",
+        "highYield": "TTX = NaV blocker. Saxitoxin (shellfish) also. Local anesthetics also block NaV but with different binding site.",
+        "clinicalCorrelation": "TTX poisoning causes paresthesias, paralysis, respiratory failure."
+      }
+    },
+    {
+      "id": "cellular_transport_056",
+      "questionId": "cellular_transport_056",
+      "difficulty": 2,
+      "question": "Local anesthetics like lidocaine block nerve conduction by inhibiting:",
+      "image": null,
+      "options": [
+        {
+          "text": "Voltage-gated Na+ channels",
+          "isCorrect": true,
+          "explanation": "Lidocaine binds to the intracellular side of NaV channels, stabilizing the inactivated state."
+        },
+        {
+          "text": "Voltage-gated K+ channels",
+          "isCorrect": false,
+          "explanation": "Not primary target."
+        },
+        {
+          "text": "Na+/K+ ATPase",
+          "isCorrect": false,
+          "explanation": "Not the mechanism."
+        },
+        {
+          "text": "Calcium channels",
+          "isCorrect": false,
+          "explanation": "Not the main target."
+        },
+        {
+          "text": "GABA receptors",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "Local anesthetics like lidocaine and bupivacaine block voltage-gated Na+ channels in a use-dependent manner, preventing action potential initiation and propagation.",
+        "highYield": "Lidocaine = NaV blocker. Binds intracellularly. Use-dependent: more block at higher firing rates.",
+        "clinicalCorrelation": "Lidocaine is also a class Ib antiarrhythmic."
+      }
+    },
+    {
+      "id": "cellular_transport_057",
+      "questionId": "cellular_transport_057",
+      "difficulty": 2,
+      "question": "The force driving passive transport is:",
+      "image": null,
+      "options": [
+        {
+          "text": "Concentration gradient",
+          "isCorrect": false,
+          "explanation": "One type of gradient."
+        },
+        {
+          "text": "Electrochemical gradient",
+          "isCorrect": false,
+          "explanation": "For ions."
+        },
+        {
+          "text": "Hydrostatic pressure gradient",
+          "isCorrect": false,
+          "explanation": "For filtration."
+        },
+        {
+          "text": "Osmotic gradient",
+          "isCorrect": false,
+          "explanation": "For water."
+        },
+        {
+          "text": "All of the above",
+          "isCorrect": true,
+          "explanation": "Passive transport can be driven by any of these gradients without energy input."
+        }
+      ],
+      "explanation": {
+        "overview": "Passive transport encompasses any movement down a gradient—chemical, electrical, pressure, or osmotic—requiring no metabolic energy.",
+        "highYield": "Passive transport driving forces: concentration, electrical, pressure, osmotic.",
+        "clinicalCorrelation": "Understanding driving forces helps predict fluid and solute movement in disease."
+      }
+    },
+    {
+      "id": "cellular_transport_058",
+      "questionId": "cellular_transport_058",
+      "difficulty": 2,
+      "question": "The diagram shows a carrier protein in the membrane. Which type of transport does it represent if it moves a single solute down its gradient?",
+      "image": "uniporter_diagram.png",
+      "options": [
+        {
+          "text": "Uniporter facilitated diffusion",
+          "isCorrect": true,
+          "explanation": "A uniporter transports a single molecule down its gradient."
+        },
+        {
+          "text": "Symporter",
+          "isCorrect": false,
+          "explanation": "Symporters carry multiple solutes in same direction."
+        },
+        {
+          "text": "Antiporter",
+          "isCorrect": false,
+          "explanation": "Antiporters exchange solutes."
+        },
+        {
+          "text": "Primary active transport",
+          "isCorrect": false,
+          "explanation": "Would show ATP binding."
+        },
+        {
+          "text": "Channel",
+          "isCorrect": false,
+          "explanation": "Channels are pores, not carriers that undergo conformational change."
+        }
+      ],
+      "explanation": {
+        "overview": "Uniporters are carrier proteins that facilitate the passive movement of one solute down its concentration gradient. GLUT1 is a classic example.",
+        "highYield": "Uniporter = one solute, down gradient, passive.",
+        "clinicalCorrelation": "GLUT transporters are uniporters; their dysfunction leads to metabolic disorders."
+      }
+    },
+    {
+      "id": "cellular_transport_059",
+      "questionId": "cellular_transport_059",
+      "difficulty": 2,
+      "question": "The stoichiometry of the Na+/K+ ATPase (3 Na+ out, 2 K+ in) makes it electrogenic because:",
+      "image": null,
+      "options": [
+        {
+          "text": "It exports more positive charge than it imports",
+          "isCorrect": true,
+          "explanation": "Net efflux of 1 positive charge per cycle contributes a small hyperpolarizing current (~ -5 mV)."
+        },
+        {
+          "text": "It imports more positive charge than it exports",
+          "isCorrect": false,
+          "explanation": "Opposite."
+        },
+        {
+          "text": "It is neutral",
+          "isCorrect": false,
+          "explanation": "It is not neutral."
+        },
+        {
+          "text": "It generates ATP",
+          "isCorrect": false,
+          "explanation": "It hydrolyzes ATP."
+        },
+        {
+          "text": "It creates a proton gradient",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "An electrogenic pump moves net charge across the membrane. The Na+/K+ ATPase exports one net positive charge, contributing directly to the resting membrane potential.",
+        "highYield": "Na+/K+ ATPase: 3 Na+ out, 2 K+ in = net +1 out → electrogenic, hyperpolarizing.",
+        "clinicalCorrelation": "Digitalis toxicity reduces pump activity, depolarizing cardiac cells."
+      }
+    },
+    {
+      "id": "cellular_transport_060",
+      "questionId": "cellular_transport_060",
+      "difficulty": 2,
+      "question": "In epithelial cells, the Na+/K+ ATPase is typically located on the:",
+      "image": null,
+      "options": [
+        {
+          "text": "Apical membrane",
+          "isCorrect": false,
+          "explanation": "Usually basolateral."
+        },
+        {
+          "text": "Basolateral membrane",
+          "isCorrect": true,
+          "explanation": "The pump is on the basolateral side, maintaining low intracellular Na+ to drive apical secondary active transport."
+        },
+        {
+          "text": "Tight junctions",
+          "isCorrect": false,
+          "explanation": "Tight junctions are between cells."
+        },
+        {
+          "text": "Desmosomes",
+          "isCorrect": false,
+          "explanation": "Cell adhesion structures."
+        },
+        {
+          "text": "Gap junctions",
+          "isCorrect": false,
+          "explanation": "Intercellular channels."
+        }
+      ],
+      "explanation": {
+        "overview": "Epithelial cells are polarized. Na+/K+ ATPase localizes to the basolateral membrane, creating a Na+ gradient that drives apical transport (e.g., SGLT, NHE).",
+        "highYield": "Na+/K+ ATPase: basolateral. Apical: SGLT, NHE, ENaC. Transcellular transport.",
+        "clinicalCorrelation": "Defects in polarity lead to secretory diarrhea or malabsorption."
+      }
+    },
+    {
+      "id": "cellular_transport_061",
+      "questionId": "cellular_transport_061",
+      "difficulty": 2,
+      "question": "Glucose absorption in the small intestine involves SGLT1 on the apical membrane and GLUT2 on the basolateral membrane. This is an example of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Transcellular transport",
+          "isCorrect": true,
+          "explanation": "Glucose crosses the cell by moving through two different transporters across the apical and basolateral membranes."
+        },
+        {
+          "text": "Paracellular transport",
+          "isCorrect": false,
+          "explanation": "Paracellular is between cells."
+        },
+        {
+          "text": "Simple diffusion",
+          "isCorrect": false,
+          "explanation": "Involves carriers."
+        },
+        {
+          "text": "Vesicular transport",
+          "isCorrect": false,
+          "explanation": "Not vesicle-mediated."
+        },
+        {
+          "text": "Ion exchange",
+          "isCorrect": false,
+          "explanation": "That is one part but overall it's transcellular."
+        }
+      ],
+      "explanation": {
+        "overview": "Transcellular transport moves substances across a cell layer by sequential passage through the apical and basolateral membranes. SGLT1 actively takes up glucose; GLUT2 facilitates its basolateral exit.",
+        "highYield": "Glucose absorption: apical SGLT1 (Na+-glucose symport), basolateral GLUT2 (facilitated).",
+        "clinicalCorrelation": "Oral rehydration solution uses Na+-glucose cotransport to enhance water absorption."
+      }
+    },
+    {
+      "id": "cellular_transport_062",
+      "questionId": "cellular_transport_062",
+      "difficulty": 2,
+      "question": "The V-type ATPase is found in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Plasma membrane of neurons",
+          "isCorrect": false,
+          "explanation": "P-type ATPase there."
+        },
+        {
+          "text": "Lysosomal and endosomal membranes",
+          "isCorrect": true,
+          "explanation": "V-ATPases pump H+ into organelles like lysosomes and endosomes, acidifying them."
+        },
+        {
+          "text": "Mitochondrial inner membrane",
+          "isCorrect": false,
+          "explanation": "F-type ATPase."
+        },
+        {
+          "text": "Sarcoplasmic reticulum",
+          "isCorrect": false,
+          "explanation": "SERCA is P-type."
+        },
+        {
+          "text": "Golgi apparatus",
+          "isCorrect": false,
+          "explanation": "Golgi also has V-ATPase, but the classic location is lysosomes/endosomes."
+        }
+      ],
+      "explanation": {
+        "overview": "Vacuolar (V-type) ATPases use ATP to pump protons into organelles, lowering luminal pH without a phosphorylated intermediate. They are also found in some plasma membranes (e.g., renal intercalated cells).",
+        "highYield": "V-ATPase: proton pump, acidifies lysosomes, endosomes, vacuoles. Not phosphorylated.",
+        "clinicalCorrelation": "Bafilomycin A1 inhibits V-ATPase; osteoclast V-ATPase acidifies bone resorption lacuna."
+      }
+    },
+    {
+      "id": "cellular_transport_063",
+      "questionId": "cellular_transport_063",
+      "difficulty": 2,
+      "question": "F-type ATPases (ATP synthases) are found in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Mitochondria and chloroplasts",
+          "isCorrect": true,
+          "explanation": "F-type ATP synthase uses the proton gradient to synthesize ATP in mitochondria (inner membrane) and chloroplasts (thylakoid)."
+        },
+        {
+          "text": "Plasma membrane",
+          "isCorrect": false,
+          "explanation": "Not normally."
+        },
+        {
+          "text": "Lysosomes",
+          "isCorrect": false,
+          "explanation": "V-ATPase there."
+        },
+        {
+          "text": "Endoplasmic reticulum",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Nucleus",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "F-type ATPase (ATP synthase) is a molecular motor that synthesizes ATP as protons flow down their gradient. It is reversible and can also pump protons using ATP under certain conditions.",
+        "highYield": "F-ATPase = ATP synthase (mitochondria, chloroplasts). Uses proton motive force to make ATP.",
+        "clinicalCorrelation": "Oligomycin inhibits mitochondrial ATP synthase."
+      }
+    },
+    {
+      "id": "cellular_transport_064",
+      "questionId": "cellular_transport_064",
+      "difficulty": 2,
+      "question": "ABC transporters (ATP-binding cassette) are involved in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Export of drugs and toxins",
+          "isCorrect": true,
+          "explanation": "ABC transporters use ATP to pump substrates out of cells; many export drugs and xenobiotics."
+        },
+        {
+          "text": "Import of glucose",
+          "isCorrect": false,
+          "explanation": "GLUTs are SLC transporters, not ABC."
+        },
+        {
+          "text": "Na+/K+ exchange",
+          "isCorrect": false,
+          "explanation": "P-type ATPase."
+        },
+        {
+          "text": "Ca2+ uptake",
+          "isCorrect": false,
+          "explanation": "SERCA is P-type."
+        },
+        {
+          "text": "Water transport",
+          "isCorrect": false,
+          "explanation": "Aquaporins."
+        }
+      ],
+      "explanation": {
+        "overview": "The ABC superfamily includes P-glycoprotein (MDR1), CFTR, and TAP transporters. They bind and hydrolyze ATP to transport various molecules.",
+        "highYield": "ABC transporters: ATP-driven efflux pumps. MDR1 exports chemotherapeutics, CFTR is a Cl- channel.",
+        "clinicalCorrelation": "Overexpression of P-glycoprotein confers multidrug resistance in cancer."
+      }
+    },
+    {
+      "id": "cellular_transport_065",
+      "questionId": "cellular_transport_065",
+      "difficulty": 2,
+      "question": "The multidrug resistance protein (MDR1, P-glycoprotein) is an ABC transporter that:",
+      "image": null,
+      "options": [
+        {
+          "text": "Extrudes chemotherapeutic drugs from cancer cells",
+          "isCorrect": true,
+          "explanation": "P-glycoprotein pumps a wide variety of hydrophobic drugs out of cells, reducing intracellular concentrations."
+        },
+        {
+          "text": "Pumps glucose into cells",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Transports oxygen",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Regulates pH",
+          "isCorrect": false,
+          "explanation": "Not primary."
+        },
+        {
+          "text": "Imports amino acids",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "P-glycoprotein (ABCB1) is an ATP-dependent efflux pump located on the apical surface of many cells (intestine, kidney, blood-brain barrier). It limits absorption and enhances excretion of xenobiotics.",
+        "highYield": "P-gp = MDR1, ABCB1. Pumps out drugs → reduces bioavailability, contributes to drug resistance.",
+        "clinicalCorrelation": "Inhibiting P-gp can increase chemotherapy efficacy but also toxicity."
+      }
+    },
+    {
+      "id": "cellular_transport_066",
+      "questionId": "cellular_transport_066",
+      "difficulty": 2,
+      "question": "A mutation in the CFTR gene leads to defective Cl- transport. CFTR is a member of which transporter family?",
+      "image": null,
+      "options": [
+        {
+          "text": "ABC transporter family",
+          "isCorrect": true,
+          "explanation": "CFTR is an ABC transporter (ABCC7) that uniquely functions as a chloride channel."
+        },
+        {
+          "text": "P-type ATPase",
+          "isCorrect": false,
+          "explanation": "Not an ATPase; it's a channel."
+        },
+        {
+          "text": "V-type ATPase",
+          "isCorrect": false,
+          "explanation": "Proton pump."
+        },
+        {
+          "text": "SLC family",
+          "isCorrect": false,
+          "explanation": "SLC are mostly solute carriers."
+        },
+        {
+          "text": "Aquaporin",
+          "isCorrect": false,
+          "explanation": "Water channel."
+        }
+      ],
+      "explanation": {
+        "overview": "CFTR (Cystic Fibrosis Transmembrane Conductance Regulator) is a member of the ABC transporter family but acts as a cAMP-regulated Cl- channel, not a pump.",
+        "highYield": "CFTR = ABC transporter (ABCC7), a Cl- channel. Mutation ΔF508 is most common in CF.",
+        "clinicalCorrelation": "CFTR modulator drugs (ivacaftor, lumacaftor) restore function in specific mutations."
+      }
+    },
+    {
+      "id": "cellular_transport_067",
+      "questionId": "cellular_transport_067",
+      "difficulty": 2,
+      "question": "Which of the following processes requires GTP-binding proteins?",
+      "image": null,
+      "options": [
+        {
+          "text": "Vesicle docking and fusion",
+          "isCorrect": true,
+          "explanation": "Rab GTPases regulate vesicle tethering; SNARE proteins mediate fusion. GTP hydrolysis drives cycle."
+        },
+        {
+          "text": "Na+/K+ ATPase activity",
+          "isCorrect": false,
+          "explanation": "Uses ATP, not GTP."
+        },
+        {
+          "text": "Glucose transport via GLUT1",
+          "isCorrect": false,
+          "explanation": "Facilitated diffusion, no GTP."
+        },
+        {
+          "text": "Simple diffusion",
+          "isCorrect": false,
+          "explanation": "No proteins involved."
+        },
+        {
+          "text": "Osmosis",
+          "isCorrect": false,
+          "explanation": "No GTP."
+        }
+      ],
+      "explanation": {
+        "overview": "Intracellular vesicle trafficking relies on Rab GTPases (tethering) and SNARE proteins (fusion). Dynamin, a GTPase, is involved in vesicle scission.",
+        "highYield": "Rab GTPases → vesicle tethering. SNAREs → fusion. Dynamin (GTPase) → scission.",
+        "clinicalCorrelation": "Tetanus and botulinum toxins cleave SNARE proteins, blocking neurotransmitter release."
+      }
+    },
+    {
+      "id": "cellular_transport_068",
+      "questionId": "cellular_transport_068",
+      "difficulty": 2,
+      "question": "SNARE proteins are essential for:",
+      "image": null,
+      "options": [
+        {
+          "text": "Membrane fusion during exocytosis",
+          "isCorrect": true,
+          "explanation": "v-SNAREs on vesicles pair with t-SNAREs on target membrane to form a tight SNARE complex that drives fusion."
+        },
+        {
+          "text": "Ion channel gating",
+          "isCorrect": false,
+          "explanation": "Not SNARE."
+        },
+        {
+          "text": "ATP synthesis",
+          "isCorrect": false,
+          "explanation": "ATP synthase."
+        },
+        {
+          "text": "DNA replication",
+          "isCorrect": false,
+          "explanation": "Not SNARE."
+        },
+        {
+          "text": "Protein folding",
+          "isCorrect": false,
+          "explanation": "Chaperones do that."
+        }
+      ],
+      "explanation": {
+        "overview": "SNARE (Soluble NSF Attachment Protein REceptor) proteins form a coiled-coil complex that brings membranes together and provides energy for fusion. They are targets of clostridial toxins.",
+        "highYield": "SNAREs = fusion machinery. v-SNARE (synaptobrevin) + t-SNARE (syntaxin, SNAP-25).",
+        "clinicalCorrelation": "Botulinum toxin cleaves SNAREs → blocks ACh release → flaccid paralysis."
+      }
+    },
+    {
+      "id": "cellular_transport_069",
+      "questionId": "cellular_transport_069",
+      "difficulty": 2,
+      "question": "Dynamin is a GTPase involved in:",
+      "image": null,
+      "options": [
+        {
+          "text": "Pinching off clathrin-coated vesicles",
+          "isCorrect": true,
+          "explanation": "Dynamin assembles as a ring around the vesicle neck and hydrolyzes GTP to constrict and sever the membrane."
+        },
+        {
+          "text": "Vesicle fusion",
+          "isCorrect": false,
+          "explanation": "SNAREs mediate fusion."
+        },
+        {
+          "text": "ATP hydrolysis",
+          "isCorrect": false,
+          "explanation": "It hydrolyzes GTP, not ATP."
+        },
+        {
+          "text": "Calcium release",
+          "isCorrect": false,
+          "explanation": "Not its function."
+        },
+        {
+          "text": "Microtubule polymerization",
+          "isCorrect": false,
+          "explanation": "Tubulin does that."
+        }
+      ],
+      "explanation": {
+        "overview": "Dynamin is a large GTPase that polymerizes around the necks of budding vesicles. GTP hydrolysis provides the mechanical force for membrane scission.",
+        "highYield": "Dynamin = GTPase, pinches off vesicles. Clathrin-dependent endocytosis.",
+        "clinicalCorrelation": "Dynamin mutations can cause Charcot-Marie-Tooth neuropathy."
+      }
+    },
+    {
+      "id": "cellular_transport_070",
+      "questionId": "cellular_transport_070",
+      "difficulty": 2,
+      "question": "The diagram shows receptor-mediated endocytosis. What is the structure labeled X?",
+      "image": "clathrin_coat.png",
+      "options": [
+        {
+          "text": "Clathrin coat",
+          "isCorrect": true,
+          "explanation": "X is the polygonal clathrin coat that assembles on the cytoplasmic face, driving vesicle formation."
+        },
+        {
+          "text": "Caveolin",
+          "isCorrect": false,
+          "explanation": "Caveolin coats caveolae."
+        },
+        {
+          "text": "Dynamin ring",
+          "isCorrect": false,
+          "explanation": "Dynamin is at the neck."
+        },
+        {
+          "text": "Adaptor protein",
+          "isCorrect": false,
+          "explanation": "AP2 adaptor links clathrin to receptors."
+        },
+        {
+          "text": "Receptor",
+          "isCorrect": false,
+          "explanation": "Receptors are embedded in the membrane."
+        }
+      ],
+      "explanation": {
+        "overview": "Clathrin triskelions assemble into a basket-like lattice, deforming the membrane into a bud. Adaptor proteins (AP2) link clathrin to cargo receptors.",
+        "highYield": "Clathrin coat → invagination → dynamin scission → uncoating → endosome.",
+        "clinicalCorrelation": "Inhibiting clathrin-mediated endocytosis can affect viral entry."
+      }
+    },
+    {
+      "id": "cellular_transport_071",
+      "questionId": "cellular_transport_071",
+      "difficulty": 2,
+      "question": "Which of the following transporters is responsible for the uptake of glucose into neurons?",
+      "image": null,
+      "options": [
+        {
+          "text": "GLUT1",
+          "isCorrect": false,
+          "explanation": "GLUT1 is in BBB and erythrocytes."
+        },
+        {
+          "text": "GLUT2",
+          "isCorrect": false,
+          "explanation": "Liver, pancreas, kidney."
+        },
+        {
+          "text": "GLUT3",
+          "isCorrect": true,
+          "explanation": "GLUT3 is the major glucose transporter in neurons, with high affinity for glucose."
+        },
+        {
+          "text": "GLUT4",
+          "isCorrect": false,
+          "explanation": "Insulin-sensitive in muscle and fat."
+        },
+        {
+          "text": "SGLT1",
+          "isCorrect": false,
+          "explanation": "Sodium-glucose symporter in gut and kidney."
+        }
+      ],
+      "explanation": {
+        "overview": "GLUT3 has a high affinity (low Km) for glucose, ensuring that neurons can efficiently take up glucose even at low blood concentrations.",
+        "highYield": "GLUT3 = neuronal glucose transporter, high affinity. GLUT1 = endothelial (BBB), erythrocytes. GLUT4 = insulin-regulated.",
+        "clinicalCorrelation": "Hypoglycemia deprives neurons of glucose; GLUT3 affinity helps compensate."
+      }
+    },
+    {
+      "id": "cellular_transport_072",
+      "questionId": "cellular_transport_072",
+      "difficulty": 2,
+      "question": "The sodium-potassium pump creates gradients that are essential for all of the following EXCEPT:",
+      "image": null,
+      "options": [
+        {
+          "text": "Secondary active transport",
+          "isCorrect": false,
+          "explanation": "Na+ gradient drives secondary transport."
+        },
+        {
+          "text": "Resting membrane potential",
+          "isCorrect": false,
+          "explanation": "K+ gradient sets the potential."
+        },
+        {
+          "text": "Action potential generation",
+          "isCorrect": false,
+          "explanation": "Na+ and K+ gradients are required."
+        },
+        {
+          "text": "Simple diffusion of oxygen",
+          "isCorrect": true,
+          "explanation": "Oxygen diffuses passively without involvement of ion gradients."
+        },
+        {
+          "text": "Cell volume regulation",
+          "isCorrect": false,
+          "explanation": "Pump maintains osmotic balance."
+        }
+      ],
+      "explanation": {
+        "overview": "The Na+/K+ ATPase is crucial for maintaining ion gradients used in secondary transport, excitability, and volume control, but O2 transport is independent.",
+        "highYield": "Na+/K+ pump → gradients for transport, excitability, volume. Not needed for O2 diffusion.",
+        "clinicalCorrelation": "Pump inhibition leads to cell swelling and depolarization."
+      }
+    },
+    {
+      "id": "cellular_transport_073",
+      "questionId": "cellular_transport_073",
+      "difficulty": 3,
+      "question": "Which of the following is a characteristic of channel-mediated transport but NOT carrier-mediated transport?",
+      "image": null,
+      "options": [
+        {
+          "text": "Saturability",
+          "isCorrect": false,
+          "explanation": "Both can be saturated (channels saturate by open probability/conductance, though not by binding in the same way; but traditionally carriers saturate more classically). However channels are much faster."
+        },
+        {
+          "text": "High transport rate (up to 10⁸ ions/sec)",
+          "isCorrect": true,
+          "explanation": "Ion channels allow passive flux at rates orders of magnitude faster than carriers (100-1000/sec)."
+        },
+        {
+          "text": "Stereospecificity",
+          "isCorrect": false,
+          "explanation": "Carriers are stereospecific; channels are selective by charge and size."
+        },
+        {
+          "text": "Competitive inhibition",
+          "isCorrect": false,
+          "explanation": "Characteristic of carriers."
+        },
+        {
+          "text": "Conformational change during transport",
+          "isCorrect": false,
+          "explanation": "Carriers undergo conformational changes; channels open/close but do not cycle through conformational states for each ion."
+        }
+      ],
+      "explanation": {
+        "overview": "Ion channels are pores that, when open, allow millions of ions to pass per second. Carriers (uniporters, pumps) have slower turnover rates (hundreds to thousands per second) because they undergo conformational changes for each transport cycle.",
+        "highYield": "Channels: high speed (10⁶-10⁸ ions/sec). Carriers: slower (10²-10⁴/sec), saturable, stereospecific.",
+        "clinicalCorrelation": "The fast kinetics of channels enable rapid signaling in neurons and muscle."
+      }
+    },
+    {
+      "id": "cellular_transport_074",
+      "questionId": "cellular_transport_074",
+      "difficulty": 2,
+      "question": "Which of the following best describes the mechanism of the glucose transporter GLUT2 in the pancreatic β-cell?",
+      "image": null,
+      "options": [
+        {
+          "text": "Low affinity, high capacity glucose transporter that allows glucose sensing",
+          "isCorrect": true,
+          "explanation": "GLUT2 has a high Km (~15-20 mM), so its transport rate increases linearly with blood glucose, enabling the β-cell to sense glucose levels and release insulin proportionally."
+        },
+        {
+          "text": "High affinity, low capacity transporter for constant glucose uptake",
+          "isCorrect": false,
+          "explanation": "That describes GLUT1/3."
+        },
+        {
+          "text": "Insulin-dependent glucose transporter",
+          "isCorrect": false,
+          "explanation": "GLUT4 is insulin-dependent."
+        },
+        {
+          "text": "Active sodium-glucose cotransporter",
+          "isCorrect": false,
+          "explanation": "SGLT is active; GLUT2 is passive."
+        },
+        {
+          "text": "GLUT2 is found only in neurons",
+          "isCorrect": false,
+          "explanation": "Found in liver, pancreas, kidney, intestine."
+        }
+      ],
+      "explanation": {
+        "overview": "GLUT2 has a high Km, so it transports glucose in proportion to plasma glucose concentration. This makes it an ideal glucose sensor in pancreatic β-cells and hepatocytes.",
+        "highYield": "GLUT2 = high Km, high capacity. Liver, β-cells, kidney. Not insulin-sensitive.",
+        "clinicalCorrelation": "Mutations in GLUT2 cause Fanconi-Bickel syndrome."
+      }
+    },
+    {
+      "id": "cellular_transport_075",
+      "questionId": "cellular_transport_075",
+      "difficulty": 2,
+      "question": "Cardiac glycosides (e.g., digoxin) increase myocardial contractility by:",
+      "image": null,
+      "options": [
+        {
+          "text": "Inhibiting Na+/K+ ATPase, leading to increased intracellular Ca2+ via NCX",
+          "isCorrect": true,
+          "explanation": "Pump inhibition raises [Na+]i, reducing the driving force for Ca2+ extrusion by NCX, thus increasing [Ca2+]i and contractility."
+        },
+        {
+          "text": "Activating β-adrenoceptors",
+          "isCorrect": false,
+          "explanation": "Not direct."
+        },
+        {
+          "text": "Blocking L-type Ca2+ channels",
+          "isCorrect": false,
+          "explanation": "That would decrease contractility."
+        },
+        {
+          "text": "Increasing K+ efflux",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Stimulating phosphodiesterase",
+          "isCorrect": false,
+          "explanation": "Milrinone does that."
+        }
+      ],
+      "explanation": {
+        "overview": "Digoxin binds to the Na+/K+ ATPase, raising intracellular Na+. This reduces the Na+ gradient, so the Na+/Ca2+ exchanger (NCX) works less efficiently in forward mode, causing Ca2+ accumulation in myocytes.",
+        "highYield": "Digoxin: inhibit Na+/K+ ATPase → ↑[Na+]i → ↓NCX forward → ↑[Ca2+]i → positive inotropy.",
+        "clinicalCorrelation": "Toxicity: hyperkalemia, arrhythmias. Monitor levels, K+, renal function."
+      }
+    },
+    {
+      "id": "cellular_transport_076",
+      "questionId": "cellular_transport_076",
+      "difficulty": 2,
+      "question": "Which of the following transporters is responsible for the absorption of bile acids in the terminal ileum?",
+      "image": null,
+      "options": [
+        {
+          "text": "Apical sodium-dependent bile acid transporter (ASBT)",
+          "isCorrect": true,
+          "explanation": "ASBT (SLC10A2) is a Na+-dependent symporter that reclaims bile acids in the ileum, part of enterohepatic circulation."
+        },
+        {
+          "text": "GLUT2",
+          "isCorrect": false,
+          "explanation": "Glucose transporter."
+        },
+        {
+          "text": "SGLT1",
+          "isCorrect": false,
+          "explanation": "Glucose/galactose transporter."
+        },
+        {
+          "text": "P-glycoprotein",
+          "isCorrect": false,
+          "explanation": "Efflux transporter."
+        },
+        {
+          "text": "Aquaporin",
+          "isCorrect": false,
+          "explanation": "Water."
+        }
+      ],
+      "explanation": {
+        "overview": "Bile acids are efficiently recycled via the enterohepatic circulation. ASBT on the apical membrane of ileocytes mediates Na+-coupled uptake.",
+        "highYield": "ASBT = ileal bile acid transporter (Na+ symport). Recycles bile acids.",
+        "clinicalCorrelation": "Bile acid sequestrants (cholestyramine) bind bile acids, increasing fecal excretion and lowering cholesterol."
+      }
+    },
+    {
+      "id": "cellular_transport_077",
+      "questionId": "cellular_transport_077",
+      "difficulty": 2,
+      "question": "The resting membrane potential of a typical neuron is approximately -70 mV. Which equation best describes this potential?",
+      "image": null,
+      "options": [
+        {
+          "text": "Nernst equation for K+",
+          "isCorrect": false,
+          "explanation": "Nernst gives EK = -90 mV; resting Vm is less negative due to other ions."
+        },
+        {
+          "text": "Goldman-Hodgkin-Katz equation",
+          "isCorrect": true,
+          "explanation": "GHK accounts for multiple ions and their permeabilities, predicting the -70 mV resting potential."
+        },
+        {
+          "text": "Ohm's law",
+          "isCorrect": false,
+          "explanation": "Ohm's law relates current and voltage."
+        },
+        {
+          "text": "Nernst equation for Na+",
+          "isCorrect": false,
+          "explanation": "ENa is +60 mV."
+        },
+        {
+          "text": "Henderson-Hasselbalch equation",
+          "isCorrect": false,
+          "explanation": "Used for pH."
+        }
+      ],
+      "explanation": {
+        "overview": "The GHK equation considers Na+, K+, and Cl- concentrations and permeabilities to calculate the resting membrane potential, which is ~ -70 mV.",
+        "highYield": "GHK equation: Vm = RT/F ln(...). Accounts for multiple ion permeabilities.",
+        "clinicalCorrelation": "Changes in ion permeabilities during action potentials are described by GHK."
+      }
+    },
+    {
+      "id": "cellular_transport_078",
+      "questionId": "cellular_transport_078",
+      "difficulty": 2,
+      "question": "Which of the following is a characteristic of facilitated diffusion through GLUT transporters?",
+      "image": null,
+      "options": [
+        {
+          "text": "Requires ATP",
+          "isCorrect": false,
+          "explanation": "Passive."
+        },
+        {
+          "text": "Moves glucose against its gradient",
+          "isCorrect": false,
+          "explanation": "Down gradient."
+        },
+        {
+          "text": "Saturable and inhibited by cytochalasin B",
+          "isCorrect": true,
+          "explanation": "GLUTs are saturable carriers and can be competitively inhibited by cytochalasin B (a fungal metabolite)."
+        },
+        {
+          "text": "Transports Na+ with glucose",
+          "isCorrect": false,
+          "explanation": "That's SGLT."
+        },
+        {
+          "text": "Only expressed in the brain",
+          "isCorrect": false,
+          "explanation": "Various GLUTs are expressed in many tissues."
+        }
+      ],
+      "explanation": {
+        "overview": "GLUT proteins are facilitative uniporters that show Michaelis-Menten kinetics. Cytochalasin B is a classic inhibitor used in research to block GLUT-mediated glucose transport.",
+        "highYield": "GLUT: passive, saturable, inhibited by cytochalasin B, phloretin.",
+        "clinicalCorrelation": "GLUT inhibitors are explored for cancer therapy (Warburg effect)."
+      }
+    },
+    {
+      "id": "cellular_transport_079",
+      "questionId": "cellular_transport_079",
+      "difficulty": 2,
+      "question": "Which of the following is an example of paracellular transport?",
+      "image": null,
+      "options": [
+        {
+          "text": "Glucose absorption via SGLT1",
+          "isCorrect": false,
+          "explanation": "Transcellular."
+        },
+        {
+          "text": "Reabsorption of Ca2+ in the renal tubule via tight junction pathway",
+          "isCorrect": true,
+          "explanation": "Paracellular transport is the movement of substances between cells, across tight junctions."
+        },
+        {
+          "text": "K+ efflux through voltage-gated channels",
+          "isCorrect": false,
+          "explanation": "Transmembrane."
+        },
+        {
+          "text": "Receptor-mediated endocytosis of LDL",
+          "isCorrect": false,
+          "explanation": "Vesicular."
+        },
+        {
+          "text": "Na+/K+ ATPase activity",
+          "isCorrect": false,
+          "explanation": "Transmembrane pump."
+        }
+      ],
+      "explanation": {
+        "overview": "Paracellular transport occurs through the spaces between epithelial or endothelial cells, regulated by tight junction permeability. It is passive and driven by gradients.",
+        "highYield": "Paracellular = between cells. Transcellular = through cells. Tight junctions regulate paracellular permeability.",
+        "clinicalCorrelation": "In inflammatory bowel disease, tight junction disruption increases paracellular permeability."
+      }
+    },
+    {
+      "id": "cellular_transport_080",
+      "questionId": "cellular_transport_080",
+      "difficulty": 2,
+      "question": "The Na+/H+ exchanger (NHE) in the proximal tubule is a:",
+      "image": null,
+      "options": [
+        {
+          "text": "Primary active transporter",
+          "isCorrect": false,
+          "explanation": "Secondary active."
+        },
+        {
+          "text": "Secondary active antiporter",
+          "isCorrect": true,
+          "explanation": "NHE uses the Na+ gradient (inward) to extrude H+ (outward), making it an antiporter."
+        },
+        {
+          "text": "Simple diffusion channel",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Uniporter",
+          "isCorrect": false,
+          "explanation": "Moves two ions in opposite directions."
+        },
+        {
+          "text": "ABC transporter",
+          "isCorrect": false,
+          "explanation": "It's an SLC transporter."
+        }
+      ],
+      "explanation": {
+        "overview": "NHE (sodium-hydrogen exchanger) is a secondary active antiporter that uses the downhill Na+ gradient to drive H+ secretion, important for pH regulation and Na+ reabsorption.",
+        "highYield": "NHE = Na+-H+ antiporter (secondary active). Proximal tubule → reabsorb Na+, secrete H+.",
+        "clinicalCorrelation": "NHE3 is inhibited by angiotensin II and is a target for some antihypertensives."
+      }
+    },
+    {
+      "id": "cellular_transport_081",
+      "questionId": "cellular_transport_081",
+      "difficulty": 2,
+      "question": "Which of the following is a voltage-gated ion channel that opens in response to depolarization and is critical for neurotransmitter release?",
+      "image": null,
+      "options": [
+        {
+          "text": "Voltage-gated Ca2+ channel (P/Q type)",
+          "isCorrect": true,
+          "explanation": "P/Q-type (Cav2.1) Ca2+ channels at the presynaptic terminal open upon depolarization, allowing Ca2+ influx that triggers vesicle fusion and neurotransmitter release."
+        },
+        {
+          "text": "Voltage-gated Na+ channel",
+          "isCorrect": false,
+          "explanation": "Important for AP propagation, not direct release."
+        },
+        {
+          "text": "Voltage-gated K+ channel",
+          "isCorrect": false,
+          "explanation": "Repolarization."
+        },
+        {
+          "text": "Ligand-gated Cl- channel",
+          "isCorrect": false,
+          "explanation": "Post-synaptic."
+        },
+        {
+          "text": "Leak K+ channel",
+          "isCorrect": false,
+          "explanation": "Resting potential."
+        }
+      ],
+      "explanation": {
+        "overview": "Presynaptic Ca2+ channels (Cav2.1, Cav2.2) convert electrical signals into chemical signals by triggering synaptic vesicle exocytosis.",
+        "highYield": "P/Q-type Ca2+ channel = presynaptic, triggers neurotransmitter release.",
+        "clinicalCorrelation": "Lambert-Eaton myasthenic syndrome involves autoantibodies against presynaptic Ca2+ channels."
+      }
+    },
+    {
+      "id": "cellular_transport_082",
+      "questionId": "cellular_transport_082",
+      "difficulty": 2,
+      "question": "The inner mitochondrial membrane contains uncoupling proteins (UCPs) that:",
+      "image": null,
+      "options": [
+        {
+          "text": "Allow protons to leak back into the matrix, dissipating the proton gradient",
+          "isCorrect": true,
+          "explanation": "UCPs (e.g., UCP1 in brown fat) provide a pathway for H+ to re-enter the matrix without ATP synthesis, generating heat."
+        },
+        {
+          "text": "Actively transport ATP out of the mitochondria",
+          "isCorrect": false,
+          "explanation": "That's adenine nucleotide translocase."
+        },
+        {
+          "text": "Synthesize ATP",
+          "isCorrect": false,
+          "explanation": "ATP synthase does that."
+        },
+        {
+          "text": "Pump Ca2+ into the mitochondria",
+          "isCorrect": false,
+          "explanation": "Mitochondrial Ca2+ uniporter."
+        },
+        {
+          "text": "Block electron transport",
+          "isCorrect": false,
+          "explanation": "Not their function."
+        }
+      ],
+      "explanation": {
+        "overview": "Uncoupling proteins, particularly UCP1 (thermogenin), dissipate the mitochondrial proton gradient, diverting energy from ATP synthesis to heat production. Important in thermogenesis.",
+        "highYield": "UCP1 = proton leak → uncouples oxidative phosphorylation → heat generation. Brown adipose tissue.",
+        "clinicalCorrelation": "DNP (2,4-dinitrophenol) is a chemical uncoupler; dangerous, causes hyperthermia."
+      }
+    },
+    {
+      "id": "cellular_transport_083",
+      "questionId": "cellular_transport_083",
+      "difficulty": 3,
+      "question": "The organic anion transporter (OAT) family in the kidney is important for the secretion of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Penicillins, uric acid, and NSAIDs",
+          "isCorrect": true,
+          "explanation": "OATs on the basolateral membrane of proximal tubule cells take up organic anions from the blood, which are then secreted into urine via apical transporters (e.g., MRP2)."
+        },
+        {
+          "text": "Glucose",
+          "isCorrect": false,
+          "explanation": "SGLT."
+        },
+        {
+          "text": "Sodium",
+          "isCorrect": false,
+          "explanation": "Various Na+ channels and transporters."
+        },
+        {
+          "text": "Amino acids",
+          "isCorrect": false,
+          "explanation": "Specific amino acid transporters."
+        },
+        {
+          "text": "Potassium",
+          "isCorrect": false,
+          "explanation": "K+ channels and transporters."
+        }
+      ],
+      "explanation": {
+        "overview": "Organic anion transporters (OAT1, OAT3) and organic cation transporters (OCTs) mediate the tubular secretion of many drugs and endogenous compounds, important for drug elimination and nephrotoxicity.",
+        "highYield": "OATs secrete penicillins, methotrexate, uric acid, NSAIDs. Probenecid inhibits OATs.",
+        "clinicalCorrelation": "Probenecid blocks OAT, increasing penicillin levels."
+      }
+    },
+    {
+      "id": "cellular_transport_084",
+      "questionId": "cellular_transport_084",
+      "difficulty": 2,
+      "question": "Which of the following best explains the mechanism of action of the diuretic furosemide?",
+      "image": null,
+      "options": [
+        {
+          "text": "Blocks Na+-K+-2Cl- symporter in the thick ascending limb",
+          "isCorrect": true,
+          "explanation": "Furosemide inhibits NKCC2, preventing reabsorption of Na+, K+, and Cl-, reducing the medullary osmotic gradient and causing diuresis."
+        },
+        {
+          "text": "Inhibits carbonic anhydrase in proximal tubule",
+          "isCorrect": false,
+          "explanation": "Acetazolamide."
+        },
+        {
+          "text": "Blocks ENaC in collecting duct",
+          "isCorrect": false,
+          "explanation": "Amiloride."
+        },
+        {
+          "text": "Antagonizes aldosterone receptor",
+          "isCorrect": false,
+          "explanation": "Spironolactone."
+        },
+        {
+          "text": "Inhibits SGLT2",
+          "isCorrect": false,
+          "explanation": "Empagliflozin."
+        }
+      ],
+      "explanation": {
+        "overview": "Loop diuretics like furosemide are potent natriuretics that act on the Na+-K+-2Cl- cotransporter (NKCC2) in the thick ascending limb, blocking the countercurrent multiplier.",
+        "highYield": "Furosemide = NKCC2 inhibitor (apical). Loop diuretic. Used in edema, heart failure, hypercalcemia.",
+        "clinicalCorrelation": "Can cause hypokalemia, metabolic alkalosis, and ototoxicity."
+      }
+    },
+    {
+      "id": "cellular_transport_085",
+      "questionId": "cellular_transport_085",
+      "difficulty": 2,
+      "question": "Which of the following is the primary mechanism for iodide uptake into thyroid follicular cells?",
+      "image": null,
+      "options": [
+        {
+          "text": "Na+/I- symporter (NIS)",
+          "isCorrect": true,
+          "explanation": "NIS is a secondary active symporter that uses the Na+ gradient to concentrate iodide in the thyroid for hormone synthesis."
+        },
+        {
+          "text": "Iodide channels",
+          "isCorrect": false,
+          "explanation": "No specific channels."
+        },
+        {
+          "text": "Facilitated diffusion via pendrin",
+          "isCorrect": false,
+          "explanation": "Pendrin is involved in iodide efflux at the apical membrane."
+        },
+        {
+          "text": "Simple diffusion",
+          "isCorrect": false,
+          "explanation": "Iodide needs active transport."
+        },
+        {
+          "text": "Na+/I- antiporter",
+          "isCorrect": false,
+          "explanation": "Symport, not antiport."
+        }
+      ],
+      "explanation": {
+        "overview": "The sodium-iodide symporter (NIS) actively transports iodide into thyroid cells against its concentration gradient, a crucial step for thyroid hormone biosynthesis.",
+        "highYield": "NIS = Na+/I- symporter. Basolateral. Energy from Na+ gradient.",
+        "clinicalCorrelation": "Radioactive iodine is taken up via NIS for thyroid imaging and ablation."
+      }
+    },
+    {
+      "id": "cellular_transport_086",
+      "questionId": "cellular_transport_086",
+      "difficulty": 2,
+      "question": "The permeability of the blood-brain barrier to lipid-insoluble substances is extremely low because:",
+      "image": null,
+      "options": [
+        {
+          "text": "Capillary endothelial cells have tight junctions and lack fenestrations",
+          "isCorrect": true,
+          "explanation": "Brain capillaries are continuous with tight junctions, no fenestrations, and low transcytosis, restricting paracellular and transcellular passage of polar molecules."
+        },
+        {
+          "text": "Astrocytes produce enzymes that degrade polar molecules",
+          "isCorrect": false,
+          "explanation": "Astrocytes support barrier, but tight junctions are the main barrier."
+        },
+        {
+          "text": "Blood flow is too slow",
+          "isCorrect": false,
+          "explanation": "Not the reason."
+        },
+        {
+          "text": "Capillaries lack a basement membrane",
+          "isCorrect": false,
+          "explanation": "They have a basement membrane."
+        },
+        {
+          "text": "P-glycoprotein actively transports all polar molecules out",
+          "isCorrect": false,
+          "explanation": "P-gp effluxes some, but tight junctions are the primary structural barrier."
+        }
+      ],
+      "explanation": {
+        "overview": "The BBB is formed by tight junctions between cerebral endothelial cells, absence of fenestrations, and efflux transporters. This prevents free diffusion of most polar compounds.",
+        "highYield": "BBB: tight junctions, no fenestrations, low pinocytosis, P-gp efflux. Protects brain.",
+        "clinicalCorrelation": "Only lipophilic drugs or those with specific transporters cross the BBB easily."
+      }
+    },
+    {
+      "id": "cellular_transport_087",
+      "questionId": "cellular_transport_087",
+      "difficulty": 2,
+      "question": "Which of the following correctly pairs a transport process with its energy source?",
+      "image": null,
+      "options": [
+        {
+          "text": "SGLT – Na+ electrochemical gradient",
+          "isCorrect": true,
+          "explanation": "SGLT uses the downhill Na+ gradient (secondary active transport) to uptake glucose."
+        },
+        {
+          "text": "Na+/K+ ATPase – K+ gradient",
+          "isCorrect": false,
+          "explanation": "It uses ATP directly."
+        },
+        {
+          "text": "GLUT4 – ATP",
+          "isCorrect": false,
+          "explanation": "GLUT4 is facilitated diffusion, passive."
+        },
+        {
+          "text": "Aquaporins – Na+ gradient",
+          "isCorrect": false,
+          "explanation": "Water movement is driven by osmotic gradient."
+        },
+        {
+          "text": "NCX – ATP",
+          "isCorrect": false,
+          "explanation": "NCX uses the Na+ gradient (secondary)."
+        }
+      ],
+      "explanation": {
+        "overview": "Primary active transport uses ATP; secondary uses ion gradients; facilitated diffusion and channels are passive.",
+        "highYield": "Primary active = ATP (Na+/K+ pump). Secondary active = ion gradient (SGLT, NCX). Passive = gradient (GLUT, channels).",
+        "clinicalCorrelation": "Defects in energy supply (e.g., ischemia) impair active transport first."
+      }
+    },
+    {
+      "id": "cellular_transport_088",
+      "questionId": "cellular_transport_088",
+      "difficulty": 2,
+      "question": "The net driving force for ion movement across a membrane is the difference between the membrane potential and the:",
+      "image": null,
+      "options": [
+        {
+          "text": "Equilibrium potential for that ion",
+          "isCorrect": true,
+          "explanation": "Driving force = Vm - Eion. If Vm ≠ Eion, the ion will flow if channels are open."
+        },
+        {
+          "text": "Threshold potential",
+          "isCorrect": false,
+          "explanation": "Threshold triggers AP."
+        },
+        {
+          "text": "Resting potential",
+          "isCorrect": false,
+          "explanation": "Not specific."
+        },
+        {
+          "text": "Action potential amplitude",
+          "isCorrect": false,
+          "explanation": "Not the driving force."
+        },
+        {
+          "text": "Nernst potential for K+ only",
+          "isCorrect": false,
+          "explanation": "For any ion it's its own Eion."
+        }
+      ],
+      "explanation": {
+        "overview": "Electrochemical driving force = Vm - Eion. If the membrane potential is more positive than Eion, there is an outward driving force for a cation.",
+        "highYield": "Driving force = Vm - Eion. Current = conductance × driving force.",
+        "clinicalCorrelation": "During an action potential, Vm approaches ENa, so Na+ driving force decreases; it inactivates."
+      }
+    },
+    {
+      "id": "cellular_transport_089",
+      "questionId": "cellular_transport_089",
+      "difficulty": 2,
+      "question": "In the kidney proximal tubule, bicarbonate reabsorption is coupled to:",
+      "image": null,
+      "options": [
+        {
+          "text": "Na+/H+ exchange (NHE3) and carbonic anhydrase activity",
+          "isCorrect": true,
+          "explanation": "H+ secreted via NHE3 combines with filtered HCO3- to form CO2 and H2O (via carbonic anhydrase); CO2 diffuses into cell, re-forms HCO3-, which is transported basolaterally."
+        },
+        {
+          "text": "Na+/K+ ATPase alone",
+          "isCorrect": false,
+          "explanation": "Pump sets gradient but not directly coupling."
+        },
+        {
+          "text": "SGLT2",
+          "isCorrect": false,
+          "explanation": "Glucose reabsorption."
+        },
+        {
+          "text": "Cl-/HCO3- exchanger (pendrin)",
+          "isCorrect": false,
+          "explanation": "That's in intercalated cells of collecting duct."
+        },
+        {
+          "text": "Aquaporin-1",
+          "isCorrect": false,
+          "explanation": "Water reabsorption."
+        }
+      ],
+      "explanation": {
+        "overview": "The proximal tubule reabsorbs ~80% of filtered bicarbonate via luminal H+ secretion (NHE3) and intracellular carbonic anhydrase. This process is saturable and generates net bicarbonate reabsorption.",
+        "highYield": "Proximal HCO3- reabsorption: NHE3 + carbonic anhydrase. Acetazolamide inhibits carbonic anhydrase.",
+        "clinicalCorrelation": "Acetazolamide causes bicarbonate wasting and metabolic acidosis."
+      }
+    },
+    {
+      "id": "cellular_transport_090",
+      "questionId": "cellular_transport_090",
+      "difficulty": 2,
+      "question": "The movement of substances from the peritubular capillary into the tubular lumen of the nephron is called:",
+      "image": null,
+      "options": [
+        {
+          "text": "Secretion",
+          "isCorrect": true,
+          "explanation": "Tubular secretion moves substances from blood into tubular fluid via transporters in the basolateral and apical membranes."
+        },
+        {
+          "text": "Reabsorption",
+          "isCorrect": false,
+          "explanation": "Reabsorption is from lumen to blood."
+        },
+        {
+          "text": "Filtration",
+          "isCorrect": false,
+          "explanation": "Glomerular filtration is bulk flow into Bowman's space."
+        },
+        {
+          "text": "Excretion",
+          "isCorrect": false,
+          "explanation": "Excretion = filtration + secretion - reabsorption, not a specific transport process."
+        },
+        {
+          "text": "Diffusion",
+          "isCorrect": false,
+          "explanation": "Secretion uses transporters, not passive diffusion."
+        }
+      ],
+      "explanation": {
+        "overview": "Renal secretion involves organic anion transporters (OATs) and organic cation transporters (OCTs) on the basolateral membrane, followed by apical efflux. Important for drug elimination.",
+        "highYield": "Secretion = blood → tubule. Reabsorption = tubule → blood. Both involve transporters.",
+        "clinicalCorrelation": "Penicillin is actively secreted; probenecid blocks this to prolong penicillin levels."
+      }
+    },
+    {
+      "id": "cellular_transport_091",
+      "questionId": "cellular_transport_091",
+      "difficulty": 2,
+      "question": "Which of the following best describes the function of the basolateral Na+/K+ ATPase in renal tubular cells?",
+      "image": null,
+      "options": [
+        {
+          "text": "Maintains low intracellular Na+ and high intracellular K+, creating gradients for secondary transport",
+          "isCorrect": true,
+          "explanation": "The pump's activity is essential for generating the Na+ gradient that drives reabsorption of glucose, amino acids, bicarbonate, etc."
+        },
+        {
+          "text": "Directly reabsorbs glucose from the lumen",
+          "isCorrect": false,
+          "explanation": "SGLT does that."
+        },
+        {
+          "text": "Secretes K+ into the tubular lumen",
+          "isCorrect": false,
+          "explanation": "K+ secretion is mediated by ROMK and BK channels."
+        },
+        {
+          "text": "Actively secretes H+",
+          "isCorrect": false,
+          "explanation": "H+ secretion is via NHE and H+ ATPase."
+        },
+        {
+          "text": "Transports water",
+          "isCorrect": false,
+          "explanation": "Aquaporins do that."
+        }
+      ],
+      "explanation": {
+        "overview": "The basolateral Na+/K+ ATPase is the engine of renal transport. It consumes ATP to maintain the electrochemical Na+ gradient used by virtually all apical Na+-coupled transporters.",
+        "highYield": "Na+/K+ ATPase = basolateral, creates Na+ gradient. Drives Na+-coupled reabsorption.",
+        "clinicalCorrelation": "Ischemia impairs pump, leading to cellular swelling and acute tubular necrosis."
+      }
+    },
+    {
+      "id": "cellular_transport_092",
+      "questionId": "cellular_transport_092",
+      "difficulty": 2,
+      "question": "The Na+-K+-2Cl- cotransporter (NKCC2) in the thick ascending limb is an example of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Electroneutral symporter",
+          "isCorrect": true,
+          "explanation": "NKCC2 transports 1 Na+, 1 K+, and 2 Cl- ions, resulting in no net charge movement (electroneutral)."
+        },
+        {
+          "text": "Electrogenic symporter",
+          "isCorrect": false,
+          "explanation": "Electrogenic would have net charge movement."
+        },
+        {
+          "text": "Antiporter",
+          "isCorrect": false,
+          "explanation": "Ions move in same direction."
+        },
+        {
+          "text": "ATPase",
+          "isCorrect": false,
+          "explanation": "Secondary active."
+        },
+        {
+          "text": "Ligand-gated channel",
+          "isCorrect": false,
+          "explanation": "Carrier, not channel."
+        }
+      ],
+      "explanation": {
+        "overview": "NKCC2 is an electroneutral symporter that is the target of loop diuretics. It moves all ions in the same direction without net charge transfer.",
+        "highYield": "NKCC2: electroneutral, 1Na+:1K+:2Cl-. Inhibited by furosemide.",
+        "clinicalCorrelation": "Bartter syndrome is caused by mutations in NKCC2 or related transporters."
+      }
+    },
+    {
+      "id": "cellular_transport_093",
+      "questionId": "cellular_transport_093",
+      "difficulty": 2,
+      "question": "The epithelial sodium channel (ENaC) in the collecting duct is:",
+      "image": null,
+      "options": [
+        {
+          "text": "A ligand-gated ion channel",
+          "isCorrect": false,
+          "explanation": "ENaC is constitutively open and regulated by hormones, not directly ligand-gated."
+        },
+        {
+          "text": "A voltage-gated ion channel",
+          "isCorrect": false,
+          "explanation": "Not voltage-gated."
+        },
+        {
+          "text": "An aldosterone-regulated Na+ channel",
+          "isCorrect": true,
+          "explanation": "ENaC expression and open probability are increased by aldosterone, leading to Na+ reabsorption."
+        },
+        {
+          "text": "A Na+/Cl- symporter",
+          "isCorrect": false,
+          "explanation": "NCC is a Na+-Cl- symporter."
+        },
+        {
+          "text": "A primary active pump",
+          "isCorrect": false,
+          "explanation": "Passive Na+ entry."
+        }
+      ],
+      "explanation": {
+        "overview": "ENaC is an amiloride-sensitive Na+ channel on the apical membrane of principal cells. It mediates aldosterone-stimulated Na+ reabsorption and is critical for volume and K+ homeostasis.",
+        "highYield": "ENaC: amiloride-sensitive, aldosterone-upregulated. Na+ reabsorption in collecting duct.",
+        "clinicalCorrelation": "Liddle syndrome = gain-of-function ENaC mutation → hypertension, hypokalemia."
+      }
+    },
+    {
+      "id": "cellular_transport_094",
+      "questionId": "cellular_transport_094",
+      "difficulty": 3,
+      "question": "The co-translational insertion of proteins into the endoplasmic reticulum membrane involves which translocation channel?",
+      "image": null,
+      "options": [
+        {
+          "text": "Sec61 translocon",
+          "isCorrect": true,
+          "explanation": "The Sec61 complex forms a pore in the ER membrane for translocating nascent polypeptides into the ER lumen or inserting membrane proteins."
+        },
+        {
+          "text": "TIM/TOM complex",
+          "isCorrect": false,
+          "explanation": "Mitochondrial import."
+        },
+        {
+          "text": "Nuclear pore complex",
+          "isCorrect": false,
+          "explanation": "Nuclear transport."
+        },
+        {
+          "text": "Aquaporin",
+          "isCorrect": false,
+          "explanation": "Water."
+        },
+        {
+          "text": "Clathrin",
+          "isCorrect": false,
+          "explanation": "Vesicle coat."
+        }
+      ],
+      "explanation": {
+        "overview": "The Sec61 translocon is an evolutionarily conserved protein-conducting channel in the ER membrane. It is essential for the biogenesis of secretory and membrane proteins.",
+        "highYield": "Sec61 translocon = ER protein translocation channel. Co-translational import.",
+        "clinicalCorrelation": "Some bacterial toxins (e.g., Shiga toxin) exploit retrograde transport via Sec61 to enter the cytosol."
+      }
+    },
+    {
+      "id": "cellular_transport_095",
+      "questionId": "cellular_transport_095",
+      "difficulty": 2,
+      "question": "The mitochondrial permeability transition pore (mPTP) is a non-selective channel that opens under conditions of:",
+      "image": null,
+      "options": [
+        {
+          "text": "High matrix Ca2+ and oxidative stress, leading to cell death",
+          "isCorrect": true,
+          "explanation": "mPTP opening dissipates the proton gradient, causes mitochondrial swelling, and releases pro-apoptotic factors."
+        },
+        {
+          "text": "Low ATP, stimulating ATP synthesis",
+          "isCorrect": false,
+          "explanation": "Its opening is harmful."
+        },
+        {
+          "text": "High K+ in the matrix",
+          "isCorrect": false,
+          "explanation": "Not the trigger."
+        },
+        {
+          "text": "Activation of cytochrome c oxidase",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Binding of insulin",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "The mPTP is a large conductance pore in the inner mitochondrial membrane. Its prolonged opening during ischemia-reperfusion leads to necrotic cell death.",
+        "highYield": "mPTP: opens with ↑Ca2+, ROS → cytochrome c release, apoptosis/necrosis. Cyclosporine A inhibits.",
+        "clinicalCorrelation": "Ischemia-reperfusion injury involves mPTP opening; cardioprotective strategies aim to prevent it."
+      }
+    },
+    {
+      "id": "cellular_transport_096",
+      "questionId": "cellular_transport_096",
+      "difficulty": 2,
+      "question": "Which of the following is a function of P-type ATPases other than ion transport?",
+      "image": null,
+      "options": [
+        {
+          "text": "Maintaining cell shape by interacting with the cytoskeleton",
+          "isCorrect": false,
+          "explanation": "Some ATPases have structural roles, but the question is generic. Perhaps phospholipid transport? Actually some P-type ATPases (flippases) transport phospholipids. I'll create an answer focusing on flippase."
+        },
+        {
+          "text": "Transporting phospholipids across the bilayer (flippase activity)",
+          "isCorrect": true,
+          "explanation": "P4-type ATPases function as flippases, translocating aminophospholipids from the outer to inner leaflet of the membrane, maintaining asymmetry."
+        },
+        {
+          "text": "DNA replication",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Protein degradation",
+          "isCorrect": false,
+          "explanation": "Proteasome."
+        },
+        {
+          "text": "Carbohydrate synthesis",
+          "isCorrect": false,
+          "explanation": "No."
+        }
+      ],
+      "explanation": {
+        "overview": "P-type ATPases include flippases that transport phospholipids, creating membrane asymmetry. This is essential for cell signaling (phosphatidylserine exposure in apoptosis) and vesicle budding.",
+        "highYield": "P-type ATPase flippases: translocate PS, PE to inner leaflet. Maintain membrane asymmetry.",
+        "clinicalCorrelation": "Scott syndrome: defective flippase leading to impaired blood clotting due to reduced PS exposure on platelets."
+      }
+    },
+    {
+      "id": "cellular_transport_097",
+      "questionId": "cellular_transport_097",
+      "difficulty": 2,
+      "question": "Which of the following would increase the rate of simple diffusion of a weak acid across a lipid bilayer?",
+      "image": null,
+      "options": [
+        {
+          "text": "Decreasing the pH of the solution, making the acid more uncharged",
+          "isCorrect": true,
+          "explanation": "Weak acids are more lipid-soluble in their un-ionized form. Lower pH increases the proportion of the uncharged acid, enhancing diffusion."
+        },
+        {
+          "text": "Increasing the pH",
+          "isCorrect": false,
+          "explanation": "That would ionize the acid, decreasing permeability."
+        },
+        {
+          "text": "Increasing the molecular weight",
+          "isCorrect": false,
+          "explanation": "Larger size reduces permeability."
+        },
+        {
+          "text": "Making the molecule more polar",
+          "isCorrect": false,
+          "explanation": "Polar decreases permeability."
+        },
+        {
+          "text": "Decreasing the concentration gradient",
+          "isCorrect": false,
+          "explanation": "Decreases rate."
+        }
+      ],
+      "explanation": {
+        "overview": "The rate of simple diffusion of weak acids and bases depends on their ionization state. Uncharged forms are more permeant. This is the basis of pH partitioning in drug absorption and renal excretion.",
+        "highYield": "Weak acid: un-ionized at low pH → better absorption. Weak base: un-ionized at high pH.",
+        "clinicalCorrelation": "Urinary alkalinization increases excretion of weak acids (e.g., salicylate) by trapping the ionized form in urine."
+      }
+    },
+    {
+      "id": "cellular_transport_098",
+      "questionId": "cellular_transport_098",
+      "difficulty": 2,
+      "question": "The glucose transporter in skeletal muscle and adipose tissue that is insulin-responsive is:",
+      "image": null,
+      "options": [
+        {
+          "text": "GLUT4",
+          "isCorrect": true,
+          "explanation": "GLUT4 is stored in intracellular vesicles and translocated to the plasma membrane upon insulin signaling, increasing glucose uptake."
+        },
+        {
+          "text": "GLUT1",
+          "isCorrect": false,
+          "explanation": "Constitutive, ubiquitous."
+        },
+        {
+          "text": "GLUT2",
+          "isCorrect": false,
+          "explanation": "Liver, pancreas."
+        },
+        {
+          "text": "GLUT3",
+          "isCorrect": false,
+          "explanation": "Neurons."
+        },
+        {
+          "text": "SGLT1",
+          "isCorrect": false,
+          "explanation": "Sodium-dependent, gut/kidney."
+        }
+      ],
+      "explanation": {
+        "overview": "Insulin stimulates GLUT4 translocation via the PI3K/Akt pathway, facilitating postprandial glucose disposal. GLUT4 is the major insulin-regulated glucose transporter.",
+        "highYield": "GLUT4 = insulin-dependent. Skeletal muscle, adipose tissue. ↓ in insulin resistance.",
+        "clinicalCorrelation": "In type 2 diabetes, impaired GLUT4 translocation contributes to hyperglycemia."
+      }
+    },
+    {
+      "id": "cellular_transport_099",
+      "questionId": "cellular_transport_099",
+      "difficulty": 2,
+      "question": "Which of the following statements about exocytosis of neurotransmitter-containing vesicles is TRUE?",
+      "image": null,
+      "options": [
+        {
+          "text": "It is triggered by an increase in intracellular Ca2+ concentration",
+          "isCorrect": true,
+          "explanation": "Voltage-gated Ca2+ influx triggers SNARE-mediated fusion of synaptic vesicles with the presynaptic membrane."
+        },
+        {
+          "text": "It requires ATP hydrolysis directly at the fusion step",
+          "isCorrect": false,
+          "explanation": "Fusion is driven by SNARE complex assembly; ATP is needed for vesicle recycling, not fusion itself."
+        },
+        {
+          "text": "It is independent of membrane proteins",
+          "isCorrect": false,
+          "explanation": "Requires SNAREs, synaptotagmin, etc."
+        },
+        {
+          "text": "It occurs only in dendrites",
+          "isCorrect": false,
+          "explanation": "Occurs at presynaptic terminals."
+        },
+        {
+          "text": "It is inhibited by tetrodotoxin directly",
+          "isCorrect": false,
+          "explanation": "TTX blocks Na+ channels, preventing depolarization, but not directly fusion."
+        }
+      ],
+      "explanation": {
+        "overview": "Neurotransmitter release is a Ca2+-regulated exocytotic process. Synaptotagmin acts as the Ca2+ sensor, triggering SNARE-mediated membrane fusion.",
+        "highYield": "Ca2+ entry → synaptotagmin → SNARE complex → vesicle fusion → neurotransmitter release.",
+        "clinicalCorrelation": "Lambert-Eaton syndrome: antibodies against presynaptic Ca2+ channels impair neurotransmitter release."
+      }
+    },
+    {
+      "id": "cellular_transport_100",
+      "questionId": "cellular_transport_100",
+      "difficulty": 2,
+      "question": "The peptide transporter PEPT1 in the small intestine is responsible for the absorption of:",
+      "image": null,
+      "options": [
+        {
+          "text": "Di- and tripeptides and certain drugs (e.g., β-lactam antibiotics)",
+          "isCorrect": true,
+          "explanation": "PEPT1 is an H+-coupled symporter that takes up small peptides and peptide-mimetic drugs."
+        },
+        {
+          "text": "Free amino acids",
+          "isCorrect": false,
+          "explanation": "Amino acids have separate transporters."
+        },
+        {
+          "text": "Glucose",
+          "isCorrect": false,
+          "explanation": "SGLT1/GLUT2."
+        },
+        {
+          "text": "Bile acids",
+          "isCorrect": false,
+          "explanation": "ASBT."
+        },
+        {
+          "text": "Fatty acids",
+          "isCorrect": false,
+          "explanation": "Diffusion or protein-mediated uptake."
+        }
+      ],
+      "explanation": {
+        "overview": "PEPT1 is a proton-coupled oligopeptide transporter that mediates uptake of di- and tripeptides from dietary protein digestion, and also several drugs (β-lactams, ACE inhibitors).",
+        "highYield": "PEPT1 = H+/peptide symporter. Absorbs di/tripeptides and drugs like amoxicillin.",
+        "clinicalCorrelation": "Prodrugs like valacyclovir utilize PEPT1 for improved absorption."
+      }
+    },
+    {
+      "id": "cellular_transport_101",
+      "questionId": "cellular_transport_101",
+      "difficulty": 3,
+      "question": "The selectivity filter of a potassium channel (KcsA) selects for K+ over Na+ based on:",
+      "image": null,
+      "options": [
+        {
+          "text": "Precise coordination of dehydrated K+ ions by carbonyl oxygens in the pore",
+          "isCorrect": true,
+          "explanation": "The selectivity filter contains a sequence of carbonyl oxygens that mimic the hydration shell of K+, energetically favoring K+ passage over smaller Na+."
+        },
+        {
+          "text": "Size exclusion solely by pore diameter",
+          "isCorrect": false,
+          "explanation": "Pore is wide enough for Na+, but the energetic cost of dehydration is too high."
+        },
+        {
+          "text": "Binding of K+ to an ATPase",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "Active transport of K+",
+          "isCorrect": false,
+          "explanation": "Channels are passive."
+        },
+        {
+          "text": "The presence of a gate that only K+ can open",
+          "isCorrect": false,
+          "explanation": "Gate is separate from selectivity."
+        }
+      ],
+      "explanation": {
+        "overview": "K+ channels achieve high selectivity by precisely coordinating dehydrated K+ ions in the selectivity filter, while Na+ is excluded because the energy required to dehydrate it is not compensated by coordination.",
+        "highYield": "K+ channel selectivity: carbonyl oxygens mimic hydration shell. Na+ too small to be optimally coordinated.",
+        "clinicalCorrelation": "hERG K+ channel blockade by drugs can cause long QT syndrome."
+      }
+    },
+    {
+      "id": "cellular_transport_102",
+      "questionId": "cellular_transport_102",
+      "difficulty": 2,
+      "question": "The anion exchanger 1 (AE1, Band 3) in erythrocytes mediates:",
+      "image": null,
+      "options": [
+        {
+          "text": "Cl-/HCO3- exchange, facilitating CO2 transport",
+          "isCorrect": true,
+          "explanation": "Band 3 exchanges intracellular HCO3- for plasma Cl-, essential for CO2 carriage in blood (chloride shift)."
+        },
+        {
+          "text": "Na+/K+ exchange",
+          "isCorrect": false,
+          "explanation": "That's the Na+/K+ ATPase."
+        },
+        {
+          "text": "Glucose uniport",
+          "isCorrect": false,
+          "explanation": "GLUT1."
+        },
+        {
+          "text": "Water transport",
+          "isCorrect": false,
+          "explanation": "Aquaporin-1."
+        },
+        {
+          "text": "Oxygen transport",
+          "isCorrect": false,
+          "explanation": "Hemoglobin carries O2."
+        }
+      ],
+      "explanation": {
+        "overview": "Band 3 (AE1) is an integral membrane protein that catalyzes the electroneutral exchange of Cl- for HCO3-. This chloride shift is vital for CO2 transport from tissues to lungs.",
+        "highYield": "AE1 = Cl-/HCO3- antiporter. RBCs: HCO3- out, Cl- in at tissues; reverse at lungs.",
+        "clinicalCorrelation": "Mutations in AE1 cause hereditary spherocytosis and distal renal tubular acidosis."
+      }
+    },
+    {
+      "id": "cellular_transport_103",
+      "questionId": "cellular_transport_103",
+      "difficulty": 2,
+      "question": "Which of the following statements about gap junctions is correct?",
+      "image": null,
+      "options": [
+        {
+          "text": "They are formed by connexins and allow direct passage of ions and small molecules between adjacent cells",
+          "isCorrect": true,
+          "explanation": "Gap junctions are composed of connexin hexamers (connexons) that dock with those of neighboring cells, forming intercellular channels."
+        },
+        {
+          "text": "They are tight junctions that seal the paracellular space",
+          "isCorrect": false,
+          "explanation": "That's tight junctions (claudins, occludins)."
+        },
+        {
+          "text": "They require ATP for gating",
+          "isCorrect": false,
+          "explanation": "Not directly ATP-gated."
+        },
+        {
+          "text": "They are only found in neurons",
+          "isCorrect": false,
+          "explanation": "Ubiquitous, e.g., cardiac muscle, smooth muscle, glia."
+        },
+        {
+          "text": "They transport large proteins",
+          "isCorrect": false,
+          "explanation": "Limit ~1 kDa."
+        }
+      ],
+      "explanation": {
+        "overview": "Gap junctions are clusters of intercellular channels that allow the exchange of ions, second messengers (cAMP, Ca2+), and metabolites, enabling electrical and metabolic coupling.",
+        "highYield": "Gap junction = connexin, connexon. Allows <1 kDa molecules. Electrical synapse.",
+        "clinicalCorrelation": "Connexin mutations cause Charcot-Marie-Tooth disease, cataracts, and deafness."
+      }
+    },
+    {
+      "id": "cellular_transport_104",
+      "questionId": "cellular_transport_104",
+      "difficulty": 2,
+      "question": "The action of digitalis on the Na+/K+ ATPase results in increased cardiac contractility because:",
+      "image": null,
+      "options": [
+        {
+          "text": "Intracellular Na+ increases, reducing Ca2+ extrusion by NCX",
+          "isCorrect": true,
+          "explanation": "Elevated [Na+]i decreases the driving force for forward NCX, so less Ca2+ is extruded, and more is stored in SR, leading to stronger contraction."
+        },
+        {
+          "text": "It directly opens L-type Ca2+ channels",
+          "isCorrect": false,
+          "explanation": "No."
+        },
+        {
+          "text": "It increases cAMP",
+          "isCorrect": false,
+          "explanation": "β-agonists do that."
+        },
+        {
+          "text": "It blocks K+ channels, prolonging action potential",
+          "isCorrect": false,
+          "explanation": "Not primary."
+        },
+        {
+          "text": "It sensitizes contractile proteins to Ca2+",
+          "isCorrect": false,
+          "explanation": "Not mechanism."
+        }
+      ],
+      "explanation": {
+        "overview": "The positive inotropic effect of cardiac glycosides is due to inhibition of the Na+ pump, causing a rise in intracellular Na+, which via NCX leads to increased intracellular Ca2+.",
+        "highYield": "Digitalis: ↓ Na+/K+ ATPase → ↑ [Na+]i → ↓ NCX forward → ↑ [Ca2+]i → ↑ contractility.",
+        "clinicalCorrelation": "Digitalis toxicity can cause arrhythmias (e.g., atrial tachycardia with block)."
+      }
+    },
+    {
+      
+      "questionId": "cellular_transport_105",
+      "difficulty": 2,
+      "question": "Which of the following is an example of a drug that acts by blocking a voltage-gated ion channel?",
+      "image": null,
+      "options": [
+        {
+          "text": "Lidocaine (Na+ channel blocker)",
+          "isCorrect": true,
+          "explanation": "Lidocaine blocks NaV channels, preventing action potential propagation."
+        },
+        {
+          "text": "Sildenafil (PDE5 inhibitor)",
+          "isCorrect": false,
+          "explanation": "Enzyme inhibitor."
+        },
+        {
+          "text": "Propranolol (β-blocker)",
+          "isCorrect": false,
+          "explanation": "Receptor antagonist."
+        },
+        {
+          "text": "Omeprazole (proton pump inhibitor)",
+          "isCorrect": false,
+          "explanation": "Inhibits P-type ATPase."
+        },
+        {
+          "text": "Furosemide (NKCC2 inhibitor)",
+          "isCorrect": false,
+          "explanation": "Blocks a carrier, not a channel."
+        }
+      ],
+      "explanation": {
+        "overview": "Many drugs target voltage-gated ion channels. Examples: local anesthetics (NaV), calcium channel blockers (Cav), antiarrhythmics (various).",
+        "highYield": "Lidocaine = NaV blocker. Nifedipine = L-type Ca2+ blocker. Amiodarone = multiple channels.",
+        "clinicalCorrelation": "Channel blockers are used in pain, epilepsy, arrhythmias, and hypertension."
+      }
+    }
+  ]
+}

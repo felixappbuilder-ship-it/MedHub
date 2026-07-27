@@ -1,0 +1,304 @@
+/* frontend-user/css/subjects.css */
+
+/* ===== Subjects Page – Mobile‑first ===== */
+
+/* ----- Fixed Header (top bar) ----- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 10vh;
+    min-height: 60px;
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.logo img {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.header-actions button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    color: var(--text-primary);
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.header-actions button:hover {
+    background: var(--bg-secondary);
+}
+
+/* ----- Second Bar (greeting + subscription status) ----- */
+.second-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+}
+
+.second-bar h2 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.subscription-info {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.status-subscribe-btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.status-subscribe-btn:hover {
+    background: var(--accent-dark);
+}
+
+/* ----- Quick Actions Banner ----- */
+.welcome-banner {
+    background: var(--bg-secondary);
+    border-radius: var(--radius);
+    padding: 0.75rem;
+    margin: 0.5rem;
+}
+
+.quick-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.quick-actions button {
+    min-height: 44px;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+}
+
+/* ----- Main Title ----- */
+main h1 {
+    font-size: 1.8rem;
+    margin: 1rem 0.5rem;
+}
+
+/* ----- Subject Grid ----- */
+.subject-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0.5rem;
+    margin-bottom: 70px; /* space for fixed footer */
+}
+
+.subject-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    border-top-width: 4px;
+    border-top-style: solid;
+    display: flex;
+    flex-direction: column;
+}
+
+.subject-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.subject-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.02);
+}
+
+.subject-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.25rem;
+}
+
+.subject-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.progress-bar {
+    height: 8px;
+    background: var(--border);
+    border-radius: 9999px;
+    margin: 0.5rem 0;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 9999px;
+    transition: width 0.3s;
+}
+
+/* Card action buttons (row) */
+.card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.action-btn-sm {
+    flex: 1;
+    padding: 0.5rem 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+}
+
+.action-btn-sm:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+.btn-study {
+    width: 100%;
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    font-size: 1rem;
+    min-height: 48px;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 0.5rem;
+}
+
+.btn-study:hover {
+    background: var(--accent-dark);
+}
+
+/* ----- Fixed Footer ----- */
+.app-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+}
+
+.footer-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.2s;
+    border-radius: 50%;
+    min-width: 48px;
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-btn.active {
+    color: var(--accent);
+}
+
+.footer-btn:hover {
+    background: var(--bg-secondary);
+}
+
+/* ----- Responsive grid ----- */
+@media screen and (min-width: 480px) {
+    .subject-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .card-actions {
+        gap: 0.3rem;
+    }
+    .action-btn-sm {
+        font-size: 0.7rem;
+        padding: 0.4rem 0.2rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .subject-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .subject-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ----- Utility ----- */
+.no-data {
+    text-align: center;
+    color: var(--text-muted);
+    padding: 2rem 1rem;
+    font-style: italic;
+}

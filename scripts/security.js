@@ -2,8 +2,8 @@
 
 /**
  * Security & Anti-Cheating Module – OFFLINE FRIENDLY
- * Provides device fingerprinting, time manipulation detection with user-friendly warnings,
- * and account locking only under extreme conditions (repeated violations).
+ * Provides device fingerprinting, time manipulation detection, account locking,
+ * and session validation using the new session management system.
  * Follows WhatsApp-style approach: warn first, block functionality until time is corrected,
  * and only lock after multiple attempts.
  */
@@ -12,9 +12,10 @@ import * as utils from './utils.js';
 import * as ui from './ui.js';
 import * as app from './app.js';
 import * as db from './db.js';
+import { convexHttpClient } from './convex-client.js';
 
 // Constants
-const MAX_TIME_DRIFT_MS = 10 * 60 * 1000; // 10 minutes tolerance (increased from 5)
+const MAX_TIME_DRIFT_MS = 10 * 60 * 1000; // 10 minutes tolerance
 const WARNING_THRESHOLD_MS = 3 * 60 * 1000; // 3 minutes – show warning
 const LOCK_THRESHOLD_COUNT = 3; // number of violations before lock
 const LOCK_WINDOW_MS = 24 * 60 * 60 * 1000; // 24 hours
@@ -22,8 +23,6 @@ const SERVER_TIME_CACHE_TTL = 60 * 1000; // 1 minute
 
 let serverTimeCache = null;
 let serverTimeCacheExpiry = 0;
-let violationCount = 0;
-let lastViolationTime = 0;
 
 // ==================== DEVICE FINGERPRINT ====================
 
@@ -73,6 +72,31 @@ export function getDeviceFingerprint() {
  */
 export function setDeviceFingerprint(fp) {
     utils.setLocalStorage('deviceFingerprint', fp);
+}
+
+// ==================== SESSION MANAGEMENT HELPERS ====================
+
+/**
+ * Get the current session ID from localStorage (set during login)
+ * @returns {string|null}
+ */
+export function getSessionId() {
+    return utils.getLocalStorage('sessionId') || null;
+}
+
+/**
+ * Check if the current session is still valid on the backend.
+ * @returns {Promise<boolean>}
+ */
+export async function validateSessionWithBackend() {
+    const token = utils.getLocalStorage('accessToken');
+    if (!token) return false;
+    try {
+        const result = await convexHttpClient.action("auth/actions:verifyToken", { token });
+        return result.success;
+    } catch {
+        return false;
+    }
 }
 
 // ==================== TIME MANIPULATION DETECTION ====================
@@ -184,9 +208,11 @@ export async function getSafeTimestamp() {
 
 /**
  * Check time consistency on app start and periodically
- * @returns {Promise<boolean>} true if time is acceptable (or offline)
+ * Also validates the session if online.
+ * @returns {Promise<boolean>} true if time is acceptable and session valid (or offline)
  */
 export async function checkTimeConsistency() {
+    // 1. Check time manipulation
     const result = await detectTimeManipulation();
     
     if (result.action === 'lock') {
@@ -201,11 +227,33 @@ export async function checkTimeConsistency() {
     } else if (result.action === 'warn') {
         ui.showToast(result.message, 'warning', 5000);
         app.setAppSetting('timeBlocked', false);
-        return true;
     } else {
         app.setAppSetting('timeBlocked', false);
-        return true;
     }
+
+    // 2. If online, also validate session via token verification
+    if (navigator.onLine) {
+        const token = utils.getLocalStorage('accessToken');
+        if (token) {
+            try {
+                const verifyResult = await convexHttpClient.action("auth/actions:verifyToken", { token });
+                if (!verifyResult.success) {
+                    // Token invalid or session revoked – force logout
+                    ui.showToast('Your session has expired or been revoked. Please login again.', 'warning');
+                    await app.clearUser();
+                    utils.removeLocalStorage('accessToken');
+                    utils.removeLocalStorage('sessionId');
+                    window.location.href = '/pages/login.html';
+                    return false;
+                }
+                // Session is valid; update lastSeen (optional) – will be updated on next request
+            } catch (err) {
+                console.warn('[Security] Session validation error:', err);
+            }
+        }
+    }
+
+    return true;
 }
 
 // ==================== VIOLATION TRACKING ====================
@@ -244,6 +292,7 @@ async function lockAccount(reason, details) {
     app.clearUser();
     app.clearSubscription();
     utils.removeLocalStorage('accessToken');
+    utils.removeLocalStorage('sessionId');
 }
 
 export async function getLockStatus() {
@@ -257,6 +306,7 @@ export async function logSecurityEvent(event, details) {
         event,
         timestamp: Date.now(),
         deviceFingerprint: getDeviceFingerprint(),
+        sessionId: getSessionId(),
         details
     };
     
@@ -283,12 +333,15 @@ export async function logSecurityEvent(event, details) {
 // ==================== SESSION VALIDATION ====================
 
 export async function validateSession() {
+    // 1. Check lock status
     const lockStatus = await getLockStatus();
     if (lockStatus.locked) return false;
     
+    // 2. Check time consistency (also validates token/session)
     const timeOk = await checkTimeConsistency();
     if (!timeOk) return false;
     
+    // 3. Check device fingerprint match (if user has a stored fingerprint)
     const user = app.getUser();
     if (user && user.deviceFingerprint && user.deviceFingerprint !== getDeviceFingerprint()) {
         ui.showToast('New device detected. Please verify your identity.', 'warning', 5000);
@@ -306,12 +359,46 @@ export async function initSecurity() {
     }, 5 * 60 * 1000);
 }
 
+// ==================== Device Management Stubs ====================
+
+/**
+ * Get list of user's active devices/sessions.
+ * @returns {Promise<Array>}
+ */
+export async function getUserDevices() {
+  // TODO: Fetch from backend (e.g., get sessions list)
+  // For now, return an empty array so the profile page doesn't crash.
+  return [];
+}
+
+/**
+ * Log out a specific device/session.
+ * @param {string} deviceId
+ * @returns {Promise<Object>}
+ */
+export async function logoutDevice(deviceId) {
+  console.log('[security] logoutDevice', deviceId);
+  // TODO: Call backend to revoke session/device
+  return { success: true };
+}
+
+/**
+ * Log out all other devices except current.
+ * @returns {Promise<Object>}
+ */
+export async function logoutAllOtherDevices() {
+  console.log('[security] logoutAllOtherDevices');
+  // TODO: Call backend to revoke all other sessions
+  return { success: true };
+}
 // ==================== EXPOSE GLOBALLY ====================
 
 window.security = {
     generateDeviceFingerprint,
     getDeviceFingerprint,
     setDeviceFingerprint,
+    getSessionId,
+    validateSessionWithBackend,
     detectTimeManipulation,
     validateClientTime,
     getSafeTimestamp,

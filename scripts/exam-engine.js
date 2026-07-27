@@ -2,14 +2,22 @@
 
 /**
  * Core Exam Engine
+ * Supports Standard, Revision, and Challenge modes.
  * Manages exam lifecycle: question selection, answers, navigation,
  * auto-save, results calculation, and records seen questions.
+ *
+ * Updated for new JSON structure:
+ *   - options: [{ text, isCorrect, explanation }]
+ *   - explanation: { overview, highYield, clinicalCorrelation }
+ *
+ * Options are shuffled after loading to avoid pattern bias.
  */
 
 import * as utils from './utils.js';
 import * as questions from './questions.js';
 import * as db from './db.js';
 import * as ui from './ui.js';
+import * as performanceRating from './performance-rating-v2.js'; // ADDED
 
 // Internal state (not exported)
 let examState = {
@@ -19,8 +27,53 @@ let examState = {
     currentIndex: 0,
     startTime: null,
     isFinished: false,
-    examId: null
+    examId: null,
+
+    // Revision / Challenge additions
+    submittedQuestions: [],  // boolean array: has this question been submitted?
+    showExplanation: [],    // boolean array: should explanation be visible?
+    seed: null,
+    cycle: 1,
+    challengeId: null,
+    challengeCode: null,
+    opponent: null,
+    lobbyAvgPR: null,        // for performance rating
+    opponentRating: null     // for performance rating
 };
+
+// ==================== Helpers ====================
+
+/**
+ * Fisher–Yates shuffle (in‑place). Returns the same array reference.
+ * @param {Array} arr
+ * @returns {Array}
+ */
+function shuffleArray(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+}
+
+/**
+ * Determine the correct answer letter from the new option objects.
+ * Falls back to old `q.correct` if options are plain strings.
+ * @param {Object} q - question object
+ * @returns {string} e.g. 'A'
+ */
+function getCorrectAnswerLetter(q) {
+    if (!q || !q.options || !Array.isArray(q.options)) return 'A';
+    // Check if options are objects (new format)
+    if (typeof q.options[0] === 'object') {
+        const idx = q.options.findIndex(opt => opt.isCorrect === true);
+        if (idx >= 0) {
+            return String.fromCharCode(65 + idx);
+        }
+    }
+    // Fallback for old format (option strings + q.correct)
+    return q.correct || 'A';
+}
 
 // ==================== Initialization ====================
 
@@ -36,18 +89,42 @@ export async function createExam(config) {
     examState.examId = 'exam_' + Date.now() + '_' + Math.random().toString(36).substr(2, 8);
     examState.currentIndex = 0;
     examState.isFinished = false;
+    examState.seed = config.seed || null;
+    examState.cycle = config.cycle || 1;
+    examState.challengeId = config.challengeId || null;
+    examState.challengeCode = config.challengeCode || null;
+    examState.opponent = config.opponent || null;
+    examState.lobbyAvgPR = config.lobbyAvgPR || 0.5; // default if not provided
+    examState.opponentRating = config.opponentRating || 100;
 
-    // Load questions from questions.js
-    const questionList = await questions.getQuestionsForExam(config);
+    // Load questions from questions.js (passing seed, cycle, mode)
+    const questionList = await questions.getQuestionsForExam({
+        ...config,
+        seed: examState.seed,
+        cycle: examState.cycle,
+        mode: config.mode
+    });
     if (!questionList || questionList.length === 0) {
         throw new Error('No questions available for the selected topics');
     }
+
+    // 🔀 Shuffle options for every question (in‑place, stays same for session)
+    questionList.forEach(q => {
+        if (q.options && Array.isArray(q.options)) {
+            // Shuffle the options array – the correct answer will be at a random position
+            shuffleArray(q.options);
+        }
+    });
+
     examState.questions = questionList;
+    const qCount = questionList.length;
     examState.answers = questionList.map(() => ({
         selectedOption: null,
         timeSpent: 0,
         flagged: false
     }));
+    examState.submittedQuestions = questionList.map(() => false);
+    examState.showExplanation = questionList.map(() => false);
 }
 
 export function startExam() {
@@ -63,6 +140,16 @@ export function getCurrentQuestion() {
 
 export function getCurrentAnswer() {
     return examState.answers[examState.currentIndex];
+}
+
+/**
+ * Get the answer object for a specific question index.
+ * @param {number} index
+ * @returns {Object|null}
+ */
+export function getAnswer(index) {
+    if (index < 0 || index >= examState.answers.length) return null;
+    return examState.answers[index];
 }
 
 export function getSubject() {
@@ -99,13 +186,131 @@ export function getQuestionState(index) {
     };
 }
 
+export function getMode() {
+    return examState.config?.mode || 'standard';
+}
+
+export function getSeed() {
+    return examState.seed;
+}
+
+export function getCycle() {
+    return examState.cycle;
+}
+
+export function getChallengeCode() {
+    return examState.challengeCode;
+}
+
+export function getChallengeId() {
+    return examState.challengeId;
+}
+
+export function getOpponent() {
+    return examState.opponent;
+}
+
+export function isRevisionMode() {
+    return examState.config?.mode === 'revision';
+}
+
+export function isChallengeMode() {
+    return examState.config?.mode === 'challenge';
+}
+
+export function isQuestionSubmitted(index = examState.currentIndex) {
+    return examState.submittedQuestions[index] || false;
+}
+
+/**
+ * Get revision feedback for the current question (new format).
+ * @returns {Object|null} 
+ *  { selectedOption, correctOption, selectedText, correctText,
+ *    selectedExplanation, correctExplanation, overallExplanation, isCorrect }
+ */
+export function getRevisionFeedback() {
+    const idx = examState.currentIndex;
+    const q = examState.questions[idx];
+    const answer = examState.answers[idx];
+    if (!q || !answer || !answer.selectedOption) return null;
+
+    const selectedLetter = answer.selectedOption;
+    const correctLetter = getCorrectAnswerLetter(q);
+    const isCorrect = selectedLetter === correctLetter;
+
+    // Find the option objects
+    const selectedIdx = selectedLetter.charCodeAt(0) - 65;
+    const correctIdx = correctLetter.charCodeAt(0) - 65;
+
+    const selectedObj = q.options?.[selectedIdx] || {};
+    const correctObj = q.options?.[correctIdx] || {};
+
+    // Build feedback: use option text and its specific explanation
+    return {
+        selectedOption: selectedLetter,
+        correctOption: correctLetter,
+        selectedText: selectedObj.text || 'Option not available',
+        correctText: correctObj.text || 'Option not available',
+        selectedExplanation: selectedObj.explanation || 'No explanation for your choice.',
+        correctExplanation: correctObj.explanation || 'No explanation for the correct answer.',
+        overallExplanation: q.explanation || { overview: 'No overall explanation available.' },
+        isCorrect
+    };
+}
+
+/**
+ * Get all questions (used by shared mode to render everything at once).
+ * @returns {Array}
+ */
+export function getAllQuestions() {
+    return examState.questions;
+}
+
 // ==================== Actions ====================
 
+/**
+ * Submit an answer for the current question.
+ */
 export function submitAnswer(selectedOption, timeSpent) {
     if (examState.isFinished) return;
-    const answer = examState.answers[examState.currentIndex];
+
+    // Prevent resubmission in Revision mode
+    const idx = examState.currentIndex;
+    if (examState.submittedQuestions[idx]) return;
+
+    const answer = examState.answers[idx];
     answer.selectedOption = selectedOption;
     answer.timeSpent = timeSpent;
+
+    // Mark as submitted
+    examState.submittedQuestions[idx] = true;
+
+    // If Revision mode, show explanation immediately
+    if (isRevisionMode()) {
+        examState.showExplanation[idx] = true;
+    }
+}
+
+/**
+ * Submit an answer for a specific question index (used by shared mode).
+ * @param {number} index
+ * @param {string} selectedOption - e.g., 'A'
+ * @param {number} timeSpent - seconds
+ */
+export function submitAnswerAtIndex(index, selectedOption, timeSpent) {
+    if (examState.isFinished) return;
+    if (index < 0 || index >= examState.questions.length) return;
+
+    // In shared mode we allow resubmission (override previous answer)
+    const answer = examState.answers[index];
+    answer.selectedOption = selectedOption;
+    answer.timeSpent = timeSpent;
+    examState.submittedQuestions[index] = true;
+
+    // If Revision mode (though shared uses its own logic), show explanation
+    if (isRevisionMode()) {
+        examState.showExplanation[index] = true;
+    }
 }
 
 export function toggleCurrentFlag() {
@@ -113,6 +318,18 @@ export function toggleCurrentFlag() {
     const answer = examState.answers[examState.currentIndex];
     answer.flagged = !answer.flagged;
     return answer.flagged;
+}
+
+/**
+ * Toggle the flagged state for a specific question index.
+ * @param {number} index
+ * @returns {boolean} new flagged state
+ */
+export function toggleFlagAtIndex(index) {
+    if (examState.isFinished) return false;
+    if (index < 0 || index >= examState.answers.length) return false;
+    examState.answers[index].flagged = !examState.answers[index].flagged;
+    return examState.answers[index].flagged;
 }
 
 export function isCurrentQuestionFlagged() {
@@ -157,7 +374,13 @@ export async function autoSave() {
         answers: examState.answers,
         currentIndex: examState.currentIndex,
         startTime: examState.startTime,
-        timeSpent: Date.now() - examState.startTime
+        timeSpent: Date.now() - examState.startTime,
+        submittedQuestions: examState.submittedQuestions,
+        showExplanation: examState.showExplanation,
+        seed: examState.seed,
+        cycle: examState.cycle,
+        challengeId: examState.challengeId,
+        challengeCode: examState.challengeCode
     };
     await db.saveExamProgress(progress).catch(err => console.warn('Auto-save failed', err));
 }
@@ -177,6 +400,12 @@ export async function loadSavedExam() {
     examState.currentIndex = saved.currentIndex;
     examState.startTime = saved.startTime;
     examState.isFinished = false;
+    examState.submittedQuestions = saved.submittedQuestions || questionList.map(() => false);
+    examState.showExplanation = saved.showExplanation || questionList.map(() => false);
+    examState.seed = saved.seed || null;
+    examState.cycle = saved.cycle || 1;
+    examState.challengeId = saved.challengeId || null;
+    examState.challengeCode = saved.challengeCode || null;
     return examState.config;
 }
 
@@ -186,7 +415,17 @@ export async function endExam() {
     examState.isFinished = true;
     const totalTime = Date.now() - examState.startTime;
 
-    // Calculate results
+    // Calculate total allocated time (in seconds)
+    let timeAllocated = 0;
+    if (examState.config.timingMode === 'fixed') {
+        timeAllocated = examState.config.questionCount * (examState.config.fixedTimePerQuestion || 30);
+    } else if (examState.config.timingMode === 'adaptive') {
+        timeAllocated = examState.questions.reduce((sum, q) => sum + (q.difficulty * 10 + 20), 0);
+    } else {
+        timeAllocated = examState.config.questionCount * 30;
+    }
+
+    // Build local results
     const results = {
         examId: examState.examId,
         subject: examState.config.subject,
@@ -196,31 +435,51 @@ export async function endExam() {
         correctAnswers: 0,
         scorePercentage: 0,
         timeSpent: totalTime,
+        timeAllocated: timeAllocated,
         averageTimePerQuestion: totalTime / examState.questions.length / 1000,
         questions: [],
         topics: [],
-        weakAreas: []
+        weakAreas: [],
+        seed: examState.seed,
+        cycle: examState.cycle,
+        challengeId: examState.challengeId,
+        challengeCode: examState.challengeCode,
+        revisionCompleted: examState.submittedQuestions.every(v => v),
+        // Performance Rating fields (will be filled later)
+        performanceRatio: null,
+        factors: null,
+        previousRating: null,
+        newRating: null,
+        ratingChange: null,
+        rank: null,
+        achievements: [],
+        historyEWMA: null,
+        reliability: null,
+        integrity: null,
+        historyCount: 0
     };
 
     const topicMap = {};
 
     examState.questions.forEach((q, idx) => {
         const answer = examState.answers[idx];
-        const isCorrect = answer.selectedOption === q.correct;
+        const correctLetter = getCorrectAnswerLetter(q);   // compute from shuffled options
+        const isCorrect = answer.selectedOption === correctLetter;
         if (isCorrect) results.correctAnswers++;
 
         const qResult = {
             id: q.id,
             question: q.question,
-            options: q.options,
-            correctAnswer: q.correct,
+            options: q.options,               // shuffled options
+            correctAnswer: correctLetter,     // computed correct letter
             userAnswer: answer.selectedOption,
             timeSpent: answer.timeSpent,
             correct: isCorrect,
-            explanation: q.explanation,
+            explanation: q.explanation,       // object or string
             topic: q.topic,
             difficulty: q.difficulty,
-            flagged: answer.flagged
+            flagged: answer.flagged,
+            submitted: examState.submittedQuestions[idx]
         };
         results.questions.push(qResult);
 
@@ -247,33 +506,101 @@ export async function endExam() {
     // Identify weak areas (<70%)
     results.weakAreas = results.topics.filter(t => t.percentage < 70).map(t => t.topic);
 
+    // ============================================================
+    // PERFORMANCE RATING ENGINE INTEGRATION
+    // ============================================================
+    try {
+        const user = app.getUser();
+        if (user && user._id) {
+            const prResult = await performanceRating.computeFullPerformance(
+                results.examId,
+                user._id,
+                examState.lobbyAvgPR || 0.5,
+                examState.opponentRating || 100
+            );
+
+            // Merge performance rating data into results
+            results.performanceRatio = prResult.pr;
+            results.factors = prResult.factors;
+            results.previousRating = prResult.previousRating;
+            results.newRating = prResult.newRating;
+            results.ratingChange = prResult.ratingChange;
+            results.rank = prResult.rank;
+            results.achievements = prResult.achievements;
+            results.historyEWMA = prResult.historyEWMA;
+            results.reliability = prResult.reliability;
+            results.integrity = prResult.integrity;
+            results.historyCount = prResult.historyCount;
+
+            // Update user's rating and history in IndexedDB and app state
+            user.rating = prResult.newRating;
+            user.rank = prResult.rank.rank;
+            user.historyEWMA = prResult.historyEWMA;
+            user.completedExams = (user.completedExams || 0) + 1;
+            user.lastExamPR = prResult.pr;
+            await db.saveUser(user);
+            app.setUser(user);
+        }
+    } catch (err) {
+        console.warn('Performance Rating computation failed:', err);
+        // Continue without rating – exam results are still valid
+    }
+
     // Save to database
     await db.saveExamResult(results);
 
-    // Record seen questions for repetition prevention
-    const questionIds = results.questions.map(q => q.id);
-    // Group by topic
-    const byTopic = {};
-    results.questions.forEach(q => {
-        if (!byTopic[q.topic]) byTopic[q.topic] = [];
-        byTopic[q.topic].push(q.id);
-    });
-    for (const [topic, ids] of Object.entries(byTopic)) {
-        await db.addSeenQuestions(results.subject, ids, topic);
+    // Record seen questions for repetition prevention (except Challenge mode)
+    if (examState.config.mode !== 'challenge') {
+        const questionIds = results.questions.map(q => q.id);
+        const byTopic = {};
+        results.questions.forEach(q => {
+            if (!byTopic[q.topic]) byTopic[q.topic] = [];
+            byTopic[q.topic].push(q.id);
+        });
+        for (const [topic, ids] of Object.entries(byTopic)) {
+            await db.addSeenQuestions(results.subject, ids, topic);
+        }
     }
 
     return results;
 }
 
+/**
+ * Get the current exam configuration.
+ * @returns {Object|null}
+ */
+export function getConfig() {
+    return examState.config;
+}
+
 // ==================== Export ====================
+
+// Live proxy for backward compatibility with `import { config } from ...`
+export const config = new Proxy({}, {
+  get(_, prop) { return examState.config?.[prop]; },
+  set(_, prop, value) { if (examState.config) { examState.config[prop] = value; return true; } return false; },
+  has(_, prop) { return examState.config ? prop in examState.config : false; },
+  ownKeys() { return examState.config ? Object.keys(examState.config) : []; },
+  getOwnPropertyDescriptor(_, prop) {
+    if (examState.config && prop in examState.config) {
+      return { configurable: true, enumerable: true, value: examState.config[prop] };
+    }
+    return undefined;
+  }
+});
 
 export const examEngine = {
     createExam,
     startExam,
+    getConfig,
     getCurrentQuestion,
     getCurrentAnswer,
+    getAnswer,
+    getAllQuestions,
     submitAnswer,
+    submitAnswerAtIndex,
     toggleCurrentFlag,
+    toggleFlagAtIndex,
     isCurrentQuestionFlagged,
     next,
     prev,
@@ -286,5 +613,15 @@ export const examEngine = {
     getSubject,
     autoSave,
     loadSavedExam,
-    endExam
+    endExam,
+    getMode,
+    getSeed,
+    getCycle,
+    getChallengeCode,
+    getChallengeId,
+    getOpponent,
+    isRevisionMode,
+    isChallengeMode,
+    isQuestionSubmitted,
+    getRevisionFeedback
 };
