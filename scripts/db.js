@@ -1020,6 +1020,119 @@ export async function deleteConversation(convId) {
     }
 }
 
+// ==================== CONVERSATIONS (BULK OPERATIONS) ====================
+
+/**
+ * Save multiple conversations at once.
+ * @param {Array} conversations - array of conversation objects
+ * @returns {Promise<void>}
+ */
+export async function saveConversations(conversations) {
+    if (!conversations || !conversations.length) return;
+    try {
+        const store = await getStore('conversations', 'readwrite');
+        const tx = store.transaction;
+        return new Promise((resolve, reject) => {
+            let completed = 0;
+            for (const conv of conversations) {
+                if (!conv.id) {
+                    conv.id = conv._id || ('conv_' + Math.random().toString(36).substr(2, 9));
+                }
+                const request = store.put(conv);
+                request.onsuccess = () => {
+                    completed++;
+                    if (completed === conversations.length) resolve();
+                };
+                request.onerror = (err) => reject(err);
+            }
+        });
+    } catch (e) {
+        console.warn('[DB] saveConversations failed, using localStorage fallback', e);
+        const all = utils.getLocalStorage('conversations_fallback', {});
+        for (const conv of conversations) {
+            if (conv.id) {
+                all[conv.id] = conv;
+            }
+        }
+        utils.setLocalStorage('conversations_fallback', all);
+    }
+}
+
+/**
+ * Get all conversations (optionally filtered by userId).
+ * @param {string} userId - optional; if provided, returns only user's conversations
+ * @returns {Promise<Array>}
+ */
+export async function getConversations(userId) {
+    if (userId) {
+        return getConversationsByUser(userId);
+    }
+    // If no userId, return all conversations (fallback)
+    try {
+        const store = await getStore('conversations', 'readonly');
+        return new Promise((resolve, reject) => {
+            const request = store.getAll();
+            request.onsuccess = () => resolve(request.result || []);
+            request.onerror = (err) => reject(err);
+        });
+    } catch (e) {
+        const convs = utils.getLocalStorage('conversations_fallback', {});
+        return Object.values(convs);
+    }
+}
+
+/**
+ * Clear all conversations.
+ * @returns {Promise<void>}
+ */
+export async function clearConversations() {
+    try {
+        const store = await getStore('conversations', 'readwrite');
+        return new Promise((resolve, reject) => {
+            const request = store.clear();
+            request.onsuccess = () => resolve();
+            request.onerror = (err) => reject(err);
+        });
+    } catch (e) {
+        utils.removeLocalStorage('conversations_fallback');
+    }
+}
+
+/**
+ * Atomically update a conversation's ID (e.g., when a local ID is replaced by a server ID).
+ * This deletes the old record and inserts the new one to prevent duplicates.
+ * @param {string} oldId - the current local ID
+ * @param {string} newId - the new server ID
+ * @param {Object} updatedData - the full conversation object with the new ID
+ * @returns {Promise<void>}
+ */
+export async function replaceConversationId(oldId, newId, updatedData) {
+    if (!oldId || !newId || !updatedData) return;
+    try {
+        const store = await getStore('conversations', 'readwrite');
+        // First, delete the old record
+        await new Promise((resolve, reject) => {
+            const delReq = store.delete(oldId);
+            delReq.onsuccess = () => resolve();
+            delReq.onerror = () => reject(delReq.error);
+        });
+        // Then insert the new record
+        await new Promise((resolve, reject) => {
+            const putReq = store.put(updatedData);
+            putReq.onsuccess = () => resolve();
+            putReq.onerror = () => reject(putReq.error);
+        });
+    } catch (e) {
+        console.warn('[DB] replaceConversationId failed', e);
+        // Fallback: try to save the new record and delete the old separately
+        try {
+            await saveConversation(updatedData);
+            await deleteConversation(oldId);
+        } catch (e2) {
+            console.error('[DB] replaceConversationId fallback also failed', e2);
+        }
+    }
+}
 // ==================== SHARED CONVERSATIONS ====================
 export async function saveSharedConversation(token, conversationData, expiryHours = 24) {
     const expiry = Date.now() + expiryHours * 60 * 60 * 1000;

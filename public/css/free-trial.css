@@ -1,7 +1,143 @@
+/* ===========================
+   FREE TRIAL PAGE STYLES
+   (works with common.css variables)
+   =========================== */
+
+/* ---------- FIXED SUPERIOR HEADER ---------- */
+.header-superior {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0 20px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    backdrop-filter: blur(6px);
+}
+
+.header-superior-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    display: block;
+    border-radius: 6px;
+}
+
+.logo-text {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.3px;
+}
+
+/* Theme toggle button */
+.btn-theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background 0.2s, transform 0.15s, border-color 0.2s;
+    color: var(--text);
+}
+
+.btn-theme-toggle:hover {
+    background: var(--accent-light);
+    border-color: var(--accent);
+    transform: scale(1.05);
+}
+
+.btn-theme-toggle:active {
+    transform: scale(0.96);
+}
+
+/* ---------- SCROLLABLE INFERIOR NAV ---------- */
+.header-inferior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 20px 0;
+    padding: 0 5px;
+    flex-wrap: wrap;
+}
+
+/* Common button style for nav buttons */
+.btn-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 18px;
+    border-radius: 28px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.1s;
+    white-space: nowrap;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+}
+
+.btn-nav:hover {
+    background: var(--accent-light);
+    border-color: var(--accent);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.btn-nav:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.btn-nav-icon {
+    font-size: 1rem;
+}
+
+/* Slight color distinction for the right button (subscription) */
+.btn-nav-right {
+    background: var(--accent);
+    color: #fff;
+    border-color: transparent;
+}
+
+.btn-nav-right:hover {
+    background: var(--accent-dark, #1a4f9e);
+    border-color: transparent;
+    color: white;
+}
+
+/* ---------- PAGE CONTAINER OFFSET ---------- */
+.page-container {
+    padding-top: 100px;  /* 60px header + 20px inferior nav + extra */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* ---------- MAIN TRIAL CONTENT ---------- */
 .trial-container {
     max-width: 650px;
-    margin: 2rem auto;
+    margin: 0 auto;
 }
+
 .trial-card.highlight {
     background: linear-gradient(145deg, var(--accent), #1a4f9e);
     color: white;
@@ -10,16 +146,19 @@
     border-radius: var(--radius-lg);
     margin-bottom: 2rem;
 }
+
 .trial-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
 }
+
 .trial-duration {
     font-size: 3rem;
     font-weight: 700;
     line-height: 1;
     margin-bottom: 0.5rem;
 }
+
 .features-list {
     background: var(--bg-card);
     border: 1px solid var(--border);
@@ -27,33 +166,155 @@
     padding: 1.5rem;
     margin-bottom: 2rem;
 }
+
 .features-list h3 {
     margin-bottom: 1rem;
 }
+
 .features-list ul {
     list-style: none;
     margin-bottom: 1.5rem;
 }
+
 .features-list li {
     padding: 0.5rem 0;
     border-bottom: 1px solid var(--border);
 }
+
 .features-list li:last-child {
     border-bottom: none;
 }
+
 .limitations {
     color: var(--warning);
 }
+
 .warning-box {
-    background: rgba(245, 158, 11, 0.1);
+    background: rgba(245, 158, 11, 0.08);
     border-left: 4px solid var(--warning);
     padding: 1rem;
     border-radius: 0 var(--radius) var(--radius) 0;
     margin-bottom: 2rem;
     font-size: 0.875rem;
 }
+
+/* ---------- CTA SECTION (only the trial button remains) ---------- */
 .trial-actions {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+/* Big primary button */
+.btn-primary.btn-large {
+    display: block;
+    width: 100%;
+    padding: 16px 24px;
+    border-radius: 32px;
+    background: var(--accent);
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+
+.btn-primary.btn-large:hover {
+    background: var(--accent-dark, #1a4f9e);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.btn-primary.btn-large:active {
+    transform: translateY(0);
+}
+
+.btn-primary.btn-large:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* ---------- RESPONSIVE ADAPTATIONS ---------- */
+@media (max-width: 768px) {
+    .header-superior {
+        height: 54px;
+        padding: 0 16px;
+    }
+
+    .logo-text {
+        font-size: 1.1rem;
+    }
+
+    .page-container {
+        padding-top: 86px; /* 54px header + 32px for nav + spacing */
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .header-inferior {
+        flex-wrap: nowrap; /* keep side by side */
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    .btn-nav {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+        border-radius: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-superior {
+        height: 50px;
+        padding: 0 12px;
+    }
+
+    .btn-theme-toggle {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
+    .page-container {
+        padding-top: 78px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .header-inferior {
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+
+    .btn-nav {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+        border-radius: 20px;
+        gap: 4px;
+    }
+
+    .btn-nav-icon {
+        font-size: 0.9rem;
+    }
+
+    .trial-card.highlight {
+        padding: 1.5rem;
+    }
+
+    .trial-duration {
+        font-size: 2.2rem;
+    }
+
+    .btn-primary.btn-large {
+        font-size: 1rem;
+        padding: 14px 20px;
+        border-radius: 28px;
+    }
 }

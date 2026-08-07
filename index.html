@@ -29,6 +29,64 @@
 
     <!-- Page‑specific init – runs after DOM, calls imported modules -->
     <script defer>
+        // ---- Referral Modal Controls ----
+        function showReferralModal(code) {
+            const modal = document.getElementById('referral-modal');
+            const codeDisplay = document.getElementById('ref-code-display');
+            if (codeDisplay) codeDisplay.textContent = code;
+            if (modal) modal.style.display = 'flex';
+        }
+
+        function closeReferralModal() {
+            const modal = document.getElementById('referral-modal');
+            if (modal) modal.style.display = 'none';
+        }
+
+        function copyReferralCode() {
+            const code = document.getElementById('ref-code-display')?.textContent || '';
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(code).then(() => {
+                    showToast('Referral code copied!');
+                }).catch(() => fallbackCopy(code));
+            } else {
+                fallbackCopy(code);
+            }
+        }
+
+        function fallbackCopy(code) {
+            const input = document.createElement('input');
+            input.value = code;
+            document.body.appendChild(input);
+            input.select();
+            document.execCommand('copy');
+            input.remove();
+            showToast('Referral code copied!');
+        }
+
+        function showToast(msg) {
+            const existing = document.querySelector('.toast-message');
+            if (existing) existing.remove();
+            const toast = document.createElement('div');
+            toast.className = 'toast-message';
+            toast.textContent = msg;
+            Object.assign(toast.style, {
+                position: 'fixed',
+                bottom: '30px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                background: '#1f2937',
+                color: '#fff',
+                padding: '12px 24px',
+                borderRadius: '60px',
+                fontSize: '0.95rem',
+                zIndex: '99999',
+                boxShadow: '0 8px 30px rgba(0,0,0,0.3)',
+                animation: 'modalSlideUp 0.3s ease'
+            });
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 2500);
+        }
+
         (async function initIndex() {
             // Wait for deferred scripts to load
             await new Promise(resolve => window.addEventListener('load', resolve));
@@ -43,26 +101,11 @@
             ui.applyTheme();
             ui.setupInstallPrompt('install-btn');
 
-            // ---- REFERRAL DETECTION ----
+            // ---- REFERRAL DETECTION – show floating modal instead of banner ----
             const refCode = window.referral?.detectReferralFromURL?.() || window.referral?.getStoredReferralCode?.();
             if (refCode) {
                 console.log('[Index] Referral detected:', refCode);
-                // Show referral banner
-                const banner = document.createElement('div');
-                banner.className = 'referral-banner';
-                banner.innerHTML = `
-                    <div class="referral-banner-content">
-                        <p>🎉 You were referred by a MedHub user! Sign up to get started.</p>
-                        <button onclick="router.navigateTo('signup.html')" class="btn-primary">Sign Up Now</button>
-                        <button class="btn-text close-banner" onclick="this.parentElement.parentElement.remove()">✕</button>
-                    </div>
-                `;
-                const heroSection = document.querySelector('.hero');
-                if (heroSection) {
-                    heroSection.parentNode.insertBefore(banner, heroSection.nextSibling);
-                } else {
-                    document.querySelector('main').prepend(banner);
-                }
+                showReferralModal(refCode);
             }
 
             // ---- FEATURE CARDS ----
@@ -132,6 +175,31 @@
                 </p>
             </footer>
         </main>
+    </div>
+
+    <!-- ============================================
+         FLOATING REFERRAL MODAL
+         ============================================ -->
+    <div id="referral-modal" class="referral-modal" style="display:none;">
+        <div class="referral-modal-overlay" onclick="closeReferralModal()"></div>
+        <div class="referral-modal-card">
+            <button class="referral-modal-close" onclick="closeReferralModal()" aria-label="Close">✕</button>
+            <div class="referral-modal-icon">🎉</div>
+            <h2>You've been referred!</h2>
+            <p class="referral-modal-message">
+                A MedHub user thought you'd love this. Sign up now and get started with 10,000+ offline medical questions.
+            </p>
+            <div class="referral-modal-code">
+                <span>Code: <strong id="ref-code-display">XXXXXX</strong></span>
+                <button class="btn-copy" onclick="copyReferralCode()">📋 Copy</button>
+            </div>
+            <button onclick="router.navigateTo('signup.html')" class="referral-modal-btn">
+                Claim Your Spot
+            </button>
+            <p class="referral-modal-footer">
+                Already a member? <a href="login.html">Log in</a>
+            </p>
+        </div>
     </div>
 
     <!-- Lazy offline script -->

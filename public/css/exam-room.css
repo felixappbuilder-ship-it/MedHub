@@ -102,7 +102,7 @@ body {
 .question-navigator {
     background: var(--bg-card);
     border-bottom: 1px solid var(--border);
-    padding: 8px 12px;
+    padding: 12px 32px 16px 16px;
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
@@ -117,21 +117,21 @@ body {
    ================================================================ */
 .dash-progress {
     display: flex;
-    gap: 6px;
+    gap: 8px;             /* was 6px – more breathing room */
     align-items: center;
     flex-wrap: nowrap;
     overflow-x: auto;
-    padding: 0 2px;
+    padding: 4px 2px 6px; /* extra bottom padding to separate from content below */
     width: 100%;
 }
 .dash {
-    height: 4px;
-    border-radius: 2px;
-    background: var(--border-dark);   /* unanswered */
+    height: 6px;
+    border-radius: 3px;
+    background: var(--border-dark);
     transition: all 0.25s ease;
     cursor: pointer;
     flex-shrink: 0;
-    width: 10px;
+    width: 14px;
 }
 .dash.answered { background: var(--success); }
 .dash.flagged { background: var(--warning); }
@@ -148,6 +148,7 @@ body {
     height: 100vh;
     background: var(--bg-primary);
     font-family: 'Segoe UI', system-ui, sans-serif;
+    overflow: hidden;
 }
 .revision-header {
     background: var(--bg-card);
@@ -174,7 +175,8 @@ body {
 .revision-main {
     flex: 1;
     overflow-y: auto;
-    padding: 1rem 1.5rem;
+    padding: 1rem 1.5rem 2rem;
+    min-height: 0;
 }
 .revision-question-card {
     background: var(--bg-card);
@@ -184,9 +186,30 @@ body {
     max-width: 800px;
     margin: 0 auto;
 }
-.revision-q-header { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem; }
-.revision-q-number { font-weight: 700; color: var(--accent); font-size: 1rem; }
-.revision-q-text { flex: 1; font-weight: 500; font-size: 1.1rem; }
+.revision-q-header {
+    display: flex;
+    flex-direction: column;       /* stack number row and text */
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+.q-number-row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.revision-q-number {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 1rem;
+}
+.revision-q-text {
+    flex: 1;
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-top: 0.25rem;          /* natural spacing from the number */
+}
 
 /* Answer list inside revision */
 #answers-list-rev .option-item {
@@ -223,11 +246,13 @@ body {
 
 /* Revision Footer */
 .revision-footer {
-    margin-top: 2rem;
+    flex-shrink: 0;               /* prevents the footer from being squashed */
     display: flex;
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
+    padding: 1rem 0 0.5rem;
+    margin-top: auto;             /* pushes footer to bottom if there's space */
 }
 .revision-footer .btn { min-width: 120px; padding: 0.6rem 1.2rem; border-radius: 30px; font-weight: 600; }
 .revision-footer .btn-primary { background: var(--accent); color: white; border: none; }
@@ -638,4 +663,22 @@ body {
     .revision-footer, .shared-footer { flex-direction: column; align-items: stretch; }
     .floating-discuss-btn { bottom: 16px; right: 12px; width: 48px; height: 48px; font-size: 1.1rem; }
     .discussion-sheet { border-radius: 16px 16px 0 0; }
+}
+@media (max-width: 480px) {
+    .revision-footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .revision-footer .btn {
+        width: 100%;
+        min-width:  80px !important;
+        padding: 0.5rem 0.75rem !important;
+        font-size: 0.85rem !important;
+    }
+    .revision-main {
+        padding: 0.75rem;
+    }
+    .revision-q-header {
+        gap: 0.25rem;
+    }
 }

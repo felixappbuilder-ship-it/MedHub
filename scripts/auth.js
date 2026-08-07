@@ -167,7 +167,7 @@ export async function register(userData) {
                 platform: deviceInfoObj.platform || 'web',
                 lastIp: deviceInfoObj.lastIp
             },
-            referralCode: referralCode || null,
+            referralCode: referralCode || undefined,
             isAgent: isAgent,
             agentVerified: agentVerified
         });

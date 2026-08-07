@@ -1,27 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subscription Plans – MedHub</title>
-    
+
     <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="/css/common.css" media="all">
     <link rel="stylesheet" href="/css/subscription.css" media="all">
-    
-    <!-- Inline dark theme fallback + shimmer styles -->
+
     <style id="theme-style">
+        :root {
+            --bg-primary: #1a1a2e;
+            --bg-secondary: #222240;
+            --bg-card: #2a2a3e;
+            --border: #444;
+            --text-primary: #eee;
+            --text-secondary: #bbb;
+            --text-muted: #999;
+            --accent: #4f8cff;
+            --accent-dark: #3a6fd8;
+            --danger: #e74c3c;
+            --warning: #f39c12;
+            --success: #27ae60;
+            --radius: 12px;
+            --radius-sm: 6px;
+            --radius-lg: 16px;
+            --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.4);
+            --shadow-xl: 0 12px 40px rgba(0, 0, 0, 0.5);
+            --transition: all 0.25s ease;
+        }
+
         body {
-            background: #1a1a2e;
-            color: #eee;
+            background: var(--bg-primary);
+            color: var(--text-primary);
             margin: 0;
             padding: 0;
             font-family: system-ui, -apple-system, sans-serif;
+            min-height: 100vh;
         }
+
+        /* ===== SHIMMER ===== */
         @keyframes shimmer {
-            0% { background-position: -200px 0; }
-            100% { background-position: calc(200px + 100%) 0; }
+            0% {
+                background-position: -200px 0;
+            }
+
+            100% {
+                background-position: calc(200px + 100%) 0;
+            }
         }
+
         .shimmer-plan-card {
             background: #2a2a3e;
             border: 1px solid #444;
@@ -31,6 +61,7 @@
             flex-direction: column;
             gap: 0.75rem;
         }
+
         .shimmer-line {
             height: 16px;
             background: #3a3a4e;
@@ -39,17 +70,40 @@
             animation: shimmer 1.5s infinite;
             border-radius: 4px;
         }
-        .shimmer-title { height: 24px; width: 60%; }
-        .shimmer-price { height: 32px; width: 40%; }
-        .shimmer-duration { height: 18px; width: 50%; }
-        .shimmer-feature { height: 14px; width: 80%; }
-        .shimmer-btn { height: 40px; width: 100%; border-radius: var(--radius-sm); }
+
+        .shimmer-title {
+            height: 24px;
+            width: 60%;
+        }
+
+        .shimmer-price {
+            height: 32px;
+            width: 40%;
+        }
+
+        .shimmer-duration {
+            height: 18px;
+            width: 50%;
+        }
+
+        .shimmer-feature {
+            height: 14px;
+            width: 80%;
+        }
+
+        .shimmer-btn {
+            height: 40px;
+            width: 100%;
+            border-radius: var(--radius-sm);
+        }
+
         .shimmer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 1.5rem;
             margin: 2rem 0;
         }
+
         .shimmer-banner {
             height: 60px;
             background: #2a2a3e;
@@ -59,66 +113,83 @@
             background-size: 200px 100%;
             animation: shimmer 1.5s infinite;
         }
+
         .shimmer-header {
             padding: 0.5rem 1rem;
             background: #1e1e2f;
             border-bottom: 1px solid #333;
         }
+
         .shimmer-header-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
+
         .shimmer-header-bottom {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-top: 0.5rem;
         }
+
         .shimmer-logo {
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
+
         .shimmer-logo-icon {
-            width: 40px; height: 40px; border-radius: 6px;
+            width: 40px;
+            height: 40px;
+            border-radius: 6px;
             background: #3a3a4e;
             background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
             background-size: 200px 100%;
             animation: shimmer 1.5s infinite;
         }
+
         .shimmer-logo-text {
-            width: 80px; height: 20px;
+            width: 80px;
+            height: 20px;
             background: #3a3a4e;
             background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
             background-size: 200px 100%;
             animation: shimmer 1.5s infinite;
             border-radius: 4px;
         }
+
         .shimmer-btn-sm {
-            width: 40px; height: 40px; border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
             background: #3a3a4e;
             background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
             background-size: 200px 100%;
             animation: shimmer 1.5s infinite;
             display: inline-block;
         }
+
         .shimmer-title-large {
-            height: 28px; width: 200px;
+            height: 28px;
+            width: 200px;
             background: #3a3a4e;
             background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
             background-size: 200px 100%;
             animation: shimmer 1.5s infinite;
             border-radius: 4px;
         }
+
         .shimmer-status {
-            height: 28px; width: 140px;
+            height: 28px;
+            width: 140px;
             background: #3a3a4e;
             background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
             background-size: 200px 100%;
             animation: shimmer 1.5s infinite;
             border-radius: 4px;
         }
+
         .shimmer-payment-info {
             height: 80px;
             background: #2a2a3e;
@@ -128,19 +199,12 @@
             background-size: 200px 100%;
             animation: shimmer 1.5s infinite;
         }
-        .shimmer-text-btn {
-            width: 120px; height: 40px;
-            background: #3a3a4e;
-            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-            border-radius: 4px;
-            margin: 0 auto;
+
+        #real-content {
+            display: none;
         }
-        #real-content { display: none; }
     </style>
 
-    <!-- Core modules -->
     <script type="module" src="/scripts/utils.js"></script>
     <script type="module" src="/scripts/ui.js"></script>
     <script type="module" src="/scripts/router.js"></script>
@@ -148,14 +212,15 @@
     <script type="module" src="/scripts/subscription.js"></script>
     <script type="module" src="/scripts/security.js"></script>
     <script type="module" src="/scripts/db.js"></script>
-    
+    <script type="module" src="/scripts/payment.js"></script>
+
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/service-worker.js').catch(() => {});
+            navigator.serviceWorker.register('/service-worker.js').catch(() => { });
         }
     </script>
 
-    <style>
+ <style>
         /* Real header layout */
         .sub-header {
             background: var(--bg-card);
@@ -230,132 +295,243 @@
         }
     </style>
 
-    <script type="module">
+<script type="module">
         import * as app from '../scripts/app.js';
         import * as ui from '../scripts/ui.js';
         import * as router from '../scripts/router.js';
         import * as subscription from '../scripts/subscription.js';
         import * as utils from '../scripts/utils.js';
+        // No need to import payment as we use window.Payment
+
+        function calculatePremiumDays(amount) {
+            const amt = Math.round(amount);
+            let days = 0;
+            if (amt === 300) return 30;
+            if (amt === 850) return 90;
+            if (amt === 2100) return 270;
+            if (amt < 300) days = amt / 11.75;
+            else if (amt > 300 && amt < 850) days = 30 + (amt - 300) / 11.1944;
+            else if (amt > 850) days = 90 + (amt - 850) / 9.5277;
+            return Math.floor(days);
+        }
 
         let plansList = [];
         let trialEligible = false;
+        let customPlan = null;
+        let isProcessing = false;
+
+        function createCustomPlan(amount) {
+            const days = calculatePremiumDays(amount);
+            const durationText = days > 0 ? `${days} days` : 'Invalid amount';
+            return {
+                id: 'custom',
+                name: 'Custom Amount',
+                price: amount,
+                duration: days,
+                durationText: durationText,
+                features: ['Pay any amount', 'Get pro‑rated days', 'No fixed commitment'],
+                ctaText: `Pay KES ${amount}`,
+                ctaColor: 'primary'
+            };
+        }
+
+        function updateCustomDuration(amount, previewElId) {
+            const days = calculatePremiumDays(amount);
+            const previewEl = document.getElementById(previewElId);
+            if (previewEl) {
+                if (days > 0) {
+                    previewEl.innerHTML = `<strong>${days} days</strong> of access`;
+                } else {
+                    previewEl.innerHTML = `<span style="color: var(--danger);">Minimum KES 50 required</span>`;
+                }
+            }
+            customPlan = createCustomPlan(amount);
+        }
+
+        function switchBodyView(viewName) {
+            document.querySelectorAll('.body-view').forEach(v => v.classList.remove('active'));
+            const target = document.getElementById('view-' + viewName);
+            if (target) target.classList.add('active');
+            if (viewName === 'stk-plans') renderInlinePlans();
+            if (viewName === 'c2b-details') resetC2BForm();
+        }
+
+        function resetC2BForm() {
+            document.getElementById('c2b-phone').value = '';
+            document.getElementById('c2b-mpesa-code').value = '';
+            const statusDiv = document.getElementById('verification-status');
+            statusDiv.className = 'verification-status';
+            statusDiv.style.display = 'none';
+            statusDiv.innerHTML = '';
+            isProcessing = false;
+            const btn = document.querySelector('#c2b-claim-form button');
+            if (btn) btn.disabled = false;
+        }
+
+        function renderInlinePlans() {
+            const container = document.getElementById('inline-plan-cards');
+            if (!container) return;
+            const defaultAmount = 300;
+            customPlan = createCustomPlan(defaultAmount);
+            const orderedPlans = [];
+            orderedPlans.push(customPlan);
+            const regularPlans = plansList.filter(p => p.id !== 'trial' && p.id !== 'custom');
+            const order = ['monthly', 'quarterly', 'yearly'];
+            regularPlans.sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id));
+            orderedPlans.push(...regularPlans);
+
+            container.innerHTML = orderedPlans.map(plan => {
+                let cardClass = 'plan-card';
+                if (plan.popular) cardClass += ' popular';
+                if (plan.id === 'custom') cardClass += ' custom-card';
+                const durationDisplay = plan.durationText || utils.formatDuration(plan.duration);
+                if (plan.id === 'custom') {
+                    const previewText = plan.duration > 0 ? `<strong>${plan.duration} days</strong> of access` : 'Minimum KES 50 required';
+                    return `
+                        <div class="${cardClass}" onclick="window.initiateCustomPayment()">
+                            <h3>${plan.name}</h3>
+                            <div class="price">
+                                <input type="number" id="inline-custom-amount" min="50" max="150000" placeholder="Enter amount (KES)" value="${defaultAmount}" onclick="event.stopPropagation();" oninput="window.updateInlineCustomAmount(this.value)">
+                            </div>
+                            <div class="duration"><span id="inline-custom-duration-preview" class="custom-duration-preview">${previewText}</span></div>
+                            <ul class="features">${plan.features.map(f => `<li>✓ ${f}</li>`).join('')}</ul>
+                            <button onclick="event.stopPropagation(); window.initiateCustomPayment();">Pay Now</button>
+                        </div>`;
+                }
+                return `
+                    <div class="${cardClass}" onclick="window.selectPlanInline('${plan.id}')">
+                        <h3>${plan.name}</h3>
+                        <div class="price">${plan.price === 0 ? 'FREE' : `KES ${plan.price}`}</div>
+                        <div class="duration">${durationDisplay}</div>
+                        <ul class="features">${plan.features.map(f => `<li>✓ ${f}</li>`).join('')}</ul>
+                        ${plan.limitations ? `<p class="limitations">${plan.limitations.join(', ')}</p>` : ''}
+                        <button>${plan.ctaText || 'Select'}</button>
+                    </div>`;
+            }).join('');
+            updateCustomDuration(defaultAmount, 'inline-custom-duration-preview');
+        }
+
+        window.updateInlineCustomAmount = function (value) {
+            updateCustomDuration(parseFloat(value) || 0, 'inline-custom-duration-preview');
+        };
+
+        window.selectPlanInline = function (planId) {
+            const plan = plansList.find(p => p.id === planId);
+            if (!plan) { ui.showToast('Plan not found', 'error'); return; }
+            app.setSelectedPlan(plan);
+            router.navigateTo('payment.html');
+        };
+
+        window.initiateCustomPayment = function () {
+            let plan = customPlan;
+            if (!plan) {
+                const input = document.getElementById('inline-custom-amount');
+                plan = createCustomPlan(parseFloat(input?.value) || 300);
+            }
+            if (!plan || plan.duration <= 0) {
+                ui.showToast('Please enter a valid amount (minimum KES 50)', 'error');
+                return;
+            }
+            app.setSelectedPlan(plan);
+            router.navigateTo('payment.html');
+        };
+
+        window.selectPaymentMethod = function (method) {
+            if (isProcessing && method === 'c2b') return;
+            if (method === 'trial') {
+                if (!trialEligible) { ui.showToast('Free trial not available', 'warning'); return; }
+                router.navigateTo('free-trial.html');
+                return;
+            }
+            if (method === 'stk') { switchBodyView('stk-plans'); return; }
+            if (method === 'c2b') {
+                switchBodyView('c2b-details');
+                document.getElementById('c2b-expected-amount').textContent = 'any amount';
+                resetC2BForm();
+            }
+        };
+
+        window.goBackToMethodSelection = function () {
+            switchBodyView('method-selection');
+        };
+
+        // ✅ FIXED: Use window.Payment.claimManualPayment
+        window.verifyC2BPayment = async function (event) {
+            event.preventDefault();
+            if (isProcessing) return;
+            const phone = document.getElementById('c2b-phone').value.trim();
+            const mpesaCode = document.getElementById('c2b-mpesa-code').value.trim();
+            if (!phone && !mpesaCode) {
+                ui.showToast('Please enter either your phone number or M-Pesa code.', 'warning');
+                return;
+            }
+            const btn = document.querySelector('#c2b-claim-form button');
+            btn.disabled = true;
+            isProcessing = true;
+            const statusDiv = document.getElementById('verification-status');
+            statusDiv.className = 'verification-status';
+            statusDiv.style.display = 'block';
+            statusDiv.innerHTML = '⏳ Checking payment...';
+            statusDiv.style.background = '#fff3cd';
+            statusDiv.style.color = '#856404';
+            statusDiv.style.border = '1px solid #ffc107';
+            try {
+                // ✅ Using the globally exposed Payment instance
+                const result = await window.Payment.claimManualPayment({ mpesaCode, phoneNumber: phone });
+                statusDiv.className = 'verification-status success';
+                statusDiv.innerHTML = `✅ ${result.message || 'Subscription activated successfully!'} <button class="close-status" onclick="document.getElementById('verification-status').style.display='none'">&times;</button>`;
+                await subscription.syncSubscription(true);
+                setTimeout(() => window.location.reload(), 2000);
+            } catch (err) {
+                statusDiv.className = 'verification-status error';
+                statusDiv.innerHTML = `❌ ${err.message || 'Payment verification failed.'} <button class="close-status" onclick="document.getElementById('verification-status').style.display='none'">&times;</button>`;
+                btn.disabled = false;
+                isProcessing = false;
+            }
+        };
+
+        function renderHeaderStatus(sub) {
+            const container = document.getElementById('status-area');
+            if (!container) return;
+            if (sub && sub.isActive) {
+                const remaining = subscription.formatRemainingTime?.(sub.expiryDate) || '';
+                container.innerHTML = `<span class="status-text">Plan: ${sub.plan} · expires ${utils.formatDate(sub.expiryDate)}</span><span class="status-text">(${remaining} left)</span>`;
+                return;
+            }
+            if (trialEligible) {
+                container.innerHTML = `<span class="status-text">No active plan</span><button class="trial-btn" onclick="router.navigateTo('free-trial.html')">Start Free Trial</button>`;
+                return;
+            }
+            container.innerHTML = `<span class="status-text">No active plan</span><span class="status-text" style="color: var(--danger);">Please subscribe</span>`;
+        }
 
         (async function initSubscription() {
-            console.log('[Subscription] Initializing...');
             await app.initializeApp();
             ui.applyTheme();
-
             if (!app.checkAuth()) {
                 ui.showToast('Please log in to view subscriptions', 'warning');
                 router.navigateTo('login.html');
                 return;
             }
-
-            // Get current subscription and trial eligibility
             const currentSub = app.getSubscription();
             trialEligible = await subscription.checkTrialEligibility();
-
-            // Render header status
             renderHeaderStatus(currentSub);
-
-            // Load plans and render
-            const plans = await subscription.getSubscriptionPlans();
-            plansList = plans;
-            renderPlanCards(plans);
-
-            // Disable trial card if not eligible
-            const trialCard = document.querySelector('.trial-card');
-            if (trialCard && !trialEligible) {
-                trialCard.classList.add('disabled');
-            }
-
-            // Hide shimmer, show real content
+            plansList = await subscription.getSubscriptionPlans();
             document.getElementById('shimmer-content').style.display = 'none';
             document.getElementById('real-content').style.display = 'block';
+            switchBodyView('method-selection');
+            const trialOption = document.querySelector('.payment-option.trial-option');
+            if (trialOption) {
+                if (!trialEligible) trialOption.classList.add('hidden');
+                else trialOption.classList.remove('hidden');
+            }
         })();
-
-        function renderHeaderStatus(sub) {
-            const statusContainer = document.getElementById('status-area');
-            if (!statusContainer) return;
-
-            // Case: active subscription
-            if (sub && sub.isActive) {
-                const remaining = subscription.formatRemainingTime?.(sub.expiryDate) || '';
-                statusContainer.innerHTML = `
-                    <span class="status-text">Plan: ${sub.plan} · expires ${utils.formatDate(sub.expiryDate)}</span>
-                    <span class="status-text">(${remaining} left)</span>
-                `;
-                return;
-            }
-
-            // Case: no active subscription, but trial eligible
-            if (trialEligible) {
-                statusContainer.innerHTML = `
-                    <span class="status-text">No active plan</span>
-                    <button class="trial-btn" onclick="router.navigateTo('free-trial.html')">Start Free Trial</button>
-                `;
-                return;
-            }
-
-            // Case: no active subscription, trial not eligible (used or expired)
-            statusContainer.innerHTML = `
-                <span class="status-text">No active plan</span>
-                <span class="status-text" style="color: var(--danger);">Please subscribe</span>
-            `;
-        }
-
-        function renderPlanCards(plans) {
-            const container = document.getElementById('plan-cards');
-            if (!container) return;
-
-            container.innerHTML = plans.map(plan => {
-                let cardClass = 'plan-card';
-                if (plan.popular) cardClass += ' popular';
-                if (plan.id === 'trial') cardClass += ' trial-card';
-
-                const durationDisplay = plan.durationText || utils.formatDuration(plan.duration);
-
-                return `
-                    <div class="${cardClass}" onclick="selectPlanCard('${plan.id}')">
-                        <h3>${plan.name}</h3>
-                        <div class="price">${plan.price === 0 ? 'FREE' : `KES ${plan.price}`}</div>
-                        <div class="duration">${durationDisplay}</div>
-                        <ul class="features">
-                            ${plan.features.map(f => `<li>✓ ${f}</li>`).join('')}
-                        </ul>
-                        ${plan.limitations ? `<p class="limitations">${plan.limitations.join(', ')}</p>` : ''}
-                        <button class="btn-${plan.ctaColor || 'primary'}">
-                            ${plan.ctaText || 'Select'}
-                        </button>
-                    </div>
-                `;
-            }).join('');
-        }
-
-        window.selectPlanCard = function(planId) {
-            const card = document.querySelector(`.plan-card[onclick*="'${planId}'"]`);
-            if (card && card.classList.contains('disabled')) {
-                ui.showToast('Free trial already used on this device', 'warning');
-                return;
-            }
-            const plan = plansList.find(p => p.id === planId);
-            if (!plan) {
-                ui.showToast('Plan not found', 'error');
-                return;
-            }
-            if (planId === 'trial') {
-                router.navigateTo('free-trial.html');
-            } else {
-                app.setSelectedPlan(plan);
-                router.navigateTo('payment.html');
-            }
-        };
     </script>
 </head>
 
 <body>
     <div class="page-container">
-        <!-- ===== SHIMMER CONTENT ===== -->
+        <!-- SHIMMER -->
         <div id="shimmer-content">
             <div class="shimmer-header">
                 <div class="shimmer-header-top">
@@ -363,20 +539,17 @@
                         <div class="shimmer-logo-icon"></div>
                         <div class="shimmer-logo-text"></div>
                     </div>
-                    <div>
-                        <span class="shimmer-btn-sm" style="margin-right: 0.5rem;"></span>
-                        <span class="shimmer-btn-sm"></span>
-                    </div>
+                    <div><span class="shimmer-btn-sm" style="margin-right:0.5rem;"></span><span
+                            class="shimmer-btn-sm"></span></div>
                 </div>
                 <div class="shimmer-header-bottom">
                     <div class="shimmer-title-large"></div>
                     <div class="shimmer-status"></div>
                 </div>
             </div>
-            <main style="padding: 1rem;">
+            <main style="padding:1rem;">
                 <div class="shimmer-banner"></div>
                 <div class="shimmer-grid">
-                    <!-- 4 shimmer cards -->
                     <div class="shimmer-plan-card">
                         <div class="shimmer-line shimmer-title"></div>
                         <div class="shimmer-line shimmer-price"></div>
@@ -415,18 +588,19 @@
                     </div>
                 </div>
                 <div class="shimmer-payment-info"></div>
-                <div class="shimmer-text-btn" style="margin-top: 2rem;"></div>
+                <div
+                    style="height:40px;width:120px;background:#2a2a3e;border-radius:var(--radius-sm);margin:2rem auto 0;background:linear-gradient(90deg,#2a2a3e 25%,#444 50%,#2a2a3e 75%);background-size:200px 100%;animation:shimmer 1.5s infinite;">
+                </div>
             </main>
         </div>
 
-        <!-- ===== REAL CONTENT ===== -->
+        <!-- REAL CONTENT -->
         <div id="real-content">
             <!-- Header with two rows -->
             <div class="sub-header">
                 <div class="sub-header-top">
                     <div class="left-group">
-                        <img src="../assets/images/logo.png" alt="Logo" width="36" height="36" style="border-radius: 6px;">
-                        <span style="font-weight: 600; font-size: 1.2rem;">MedHub</span>
+                        
                         <button onclick="router.navigateTo('subjects.html')" class="btn-text" style="font-size: 0.9rem;">← Back</button>
                     </div>
                     <div class="right-group">
@@ -441,18 +615,108 @@
                 </div>
             </div>
 
-            <main>
-                <div id="current-plan" class="current-plan-banner" style="display: none;"></div>
-                <div id="plan-cards" class="plan-grid"></div>
+        <div class="main-body">
+            <!-- Method Selection -->
+            <div id="view-method-selection" class="body-view active">
+                <h2 class="section-title">Select Payment Method</h2>
+                <p class="section-subtitle">Choose how you'd like to subscribe to premium access</p>
+                <div class="payment-options">
+                    <div class="payment-option trial-option" onclick="selectPaymentMethod('trial')">
+                        <div class="option-header">
+                            <span class="icon">🎁</span>
+                            <div class="text">
+                                <div class="title">Start Free Trial</div>
+                                <div class="desc">3 hours of full premium access – no payment</div>
+                            </div>
+                            <span class="badge">Limited</span>
+                        </div>
+                        <ul class="trial-features">
+                            <li>✓ Full access to all subjects</li>
+                            <li>✓ Practice questions & explanations</li>
+                            <li>✓ No payment details needed</li>
+                        </ul>
+                        <p class="trial-limitations">⏳ 3 hours only · 🔒 One-time use</p>
+                    </div>
+                    <div class="payment-option" onclick="selectPaymentMethod('stk')">
+                        <div class="option-header">
+                            <span class="icon">📱</span>
+                            <div class="text">
+                                <div class="title">In-App Payment (STK Push)</div>
+                                <div class="desc">Pay via M‑Pesa prompt on your phone – instant activation</div>
+                            </div>
+                            <span class="badge">Instant</span>
+                        </div>
+                    </div>
+                    <div class="payment-option" onclick="selectPaymentMethod('c2b')">
+                        <div class="option-header">
+                            <span class="icon">🏦</span>
+                            <div class="text">
+                                <div class="title">Pay via M-PESA Buy Goods (C2B)</div>
+                                <div class="desc">Pay to Till Number and verify manually</div>
+                            </div>
+                            <span class="badge">Alternative</span>
+                        </div>
+                    </div>
+                </div>
                 <div class="payment-info">
                     <p>💳 M‑Pesa only. After payment, access is granted instantly.</p>
                     <p>🔒 Time manipulation locks your account – never change device time.</p>
                 </div>
-                <!-- Back button removed as per request -->
-            </main>
+            </div>
+
+            <!-- STK Plans -->
+            <div id="view-stk-plans" class="body-view">
+                <h2 class="section-title">Choose a Plan</h2>
+                <p class="section-subtitle">Select your preferred subscription plan below</p>
+                <div id="inline-plan-cards" class="plan-grid"></div>
+                <div class="footer-back">
+                    <button class="inline-back-btn" onclick="goBackToMethodSelection()">← Back to payment
+                        methods</button>
+                </div>
+                <div class="payment-info">
+                    <p>💳 M‑Pesa only. After payment, access is granted instantly.</p>
+                    <p>🔒 Time manipulation locks your account – never change device time.</p>
+                </div>
+            </div>
+
+            <!-- C2B Details -->
+            <div id="view-c2b-details" class="body-view">
+                <h2 class="section-title">Pay via M-PESA Buy Goods</h2>
+                <p class="section-subtitle">Follow the steps below to complete your payment</p>
+                <div id="c2b-instructions" class="c2b-instructions">
+                    <ol>
+                        <li>Open the M‑PESA menu.</li>
+                        <li>Select <strong>"Lipa na M‑PESA"</strong>.</li>
+                        <li>Select <strong>"Buy Goods and Services"</strong>.</li>
+                        <li>Enter Till Number: <span class="till-number">3521027</span></li>
+                        <li>Enter the amount corresponding to your plan (e.g., <span id="c2b-expected-amount">any
+                                amount</span>).</li>
+                        <li>Complete the payment using your M‑PESA PIN.</li>
+                    </ol>
+                </div>
+                <div id="c2b-claim-form" class="c2b-claim-form">
+                    <div class="form-group">
+                        <label for="c2b-phone">Phone Number (optional)</label>
+                        <input type="tel" id="c2b-phone" placeholder="e.g. 0712345678">
+                        <div class="hint">Enter the phone number used for the payment.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="c2b-mpesa-code">M‑Pesa Transaction Code (optional)</label>
+                        <input type="text" id="c2b-mpesa-code" placeholder="e.g. LJ4X7K3F">
+                        <div class="hint">Enter the 10‑digit code from your M‑Pesa confirmation SMS.</div>
+                    </div>
+                    <button class="btn-primary" onclick="verifyC2BPayment(event)">Verify Payment</button>
+                </div>
+                <div id="verification-status" class="verification-status"></div>
+                <div class="footer-back">
+                    <button class="inline-back-btn" onclick="goBackToMethodSelection()">← Back to payment
+                        methods</button>
+                </div>
+            </div>
         </div>
     </div>
-    
+    </div>
     <script data-lazy data-src="/scripts/offline.js"></script>
 </body>
+
 </html>

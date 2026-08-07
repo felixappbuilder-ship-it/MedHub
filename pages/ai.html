@@ -288,9 +288,31 @@
         
         import ai from '/scripts/ai.js';
 
+        // ─── Dynamic header offset – fixes overlap on any screen size ─────────
+function updateHeaderOffset() {
+    const header = document.getElementById('topBar');
+    if (!header) return;
+
+    const headerHeight = header.offsetHeight;
+    document.documentElement.style.setProperty('--header-height', headerHeight + 'px');
+
+    // Calculate the true visible height for the app area
+    const appHeight = window.innerHeight - headerHeight;
+    document.documentElement.style.setProperty('--app-height', appHeight + 'px');
+}
+        window.addEventListener('resize', updateHeaderOffset);
+        if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', updateHeaderOffset);
+    window.visualViewport.addEventListener('scroll', updateHeaderOffset);
+}
+        // ───────────────────────────────────────────────────────────────────────
+
         (async function init() {
             await app.initializeApp();
             ui.applyTheme();
+
+            // Measure header now (it exists in the DOM)
+            updateHeaderOffset();
 
             if (!app.checkAuth()) {
                 router.navigateTo('login.html');
@@ -316,6 +338,9 @@
                 subscribeBtn.style.display = 'inline-block';
             }
 
+            // Recalculate header offset after status change (it might affect height)
+            updateHeaderOffset();
+
             // Initialize chat UI
             const chatUI = new AIChatUI();
             await chatUI.init();
@@ -323,6 +348,8 @@
             // Hide shimmer, show real content
             document.getElementById('shimmer-content').style.display = 'none';
             document.getElementById('real-content').style.display = 'block';
+            updateHeaderOffset();                       // measure the header now that it's visible
+            requestAnimationFrame(updateHeaderOffset);  // safety – measure again on next frame
         })();
     </script>
 </body>

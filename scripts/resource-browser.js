@@ -2,8 +2,9 @@
 
 /**
  * Resource Browser Module
- * Now with offline thumbnail caching – thumbnails are fetched and stored in IndexedDB
- * as soon as the resource list is loaded, regardless of file download status.
+ * - Displays resources with public thumbnails (no caching).
+ * - When user downloads a file, the thumbnail is also downloaded and cached offline.
+ * - Downloaded thumbnails are shown from cache; undownloaded ones use the public URL.
  */
 
 import * as content from './content.js';
@@ -29,7 +30,6 @@ const TYPE_NAMES = {
     visual: 'Visual Concepts'
 };
 const FAVORITES_KEY = 'favorite_resources';
-const MAX_THUMBNAIL_CONCURRENT = 3;   // limit concurrent thumbnail fetches
 
 // ==================== STATE ====================
 let currentSubject = null;
@@ -43,7 +43,7 @@ let allDocuments = [];
 const activeDownloads = new Map();
 export const docMap = new Map();
 
-// Thumbnail cache – maps resourceId -> object URL (to avoid regenerating)
+// Thumbnail cache – maps resourceId -> object URL (only for downloaded items)
 const thumbnailCache = new Map();
 
 // ==================== DOM REFS ====================
@@ -101,20 +101,20 @@ function applyFiltersAndRender() {
 }
 
 /**
- * Returns an src for the thumbnail:
- * - cached blob URL if available
- * - network URL if online
- * - placeholder otherwise
+ * Returns the thumbnail source:
+ * - If downloaded and cached: object URL from IndexedDB
+ * - Else if public URL exists: the public URL (for display only)
+ * - Otherwise: null (placeholder)
  */
 function getThumbnailSrc(doc) {
+    // If we have a cached blob (from download), use it
     if (thumbnailCache.has(doc._id)) {
         return thumbnailCache.get(doc._id);
     }
-    // If online and has a URL, use it (will be cached in background)
-    if (navigator.onLine && doc.thumbnailUrl) {
+    // Otherwise, use the public URL (if available)
+    if (doc.thumbnailUrl) {
         return doc.thumbnailUrl;
     }
-    // Offline and not cached – show placeholder
     return null;
 }
 
@@ -237,6 +237,8 @@ function attachCardEventListeners() {
             const manifest = content.getDownloadManifest();
             delete manifest[id];
             content.setDownloadManifest(manifest);
+            // Also remove thumbnail cache
+            thumbnailCache.delete(id);
             const doc = docMap.get(id);
             if (doc) {
                 const card = btn.closest('.resource-card');
@@ -250,6 +252,48 @@ function attachCardEventListeners() {
     document.addEventListener('click', () => {
         document.querySelectorAll('.menu-dropdown.open').forEach(m => m.classList.remove('open'));
     });
+}
+
+// ==================== THUMBNAIL CACHING (ONLY DURING DOWNLOAD) ====================
+
+/**
+ * Fetch and store a thumbnail using a signed URL from the backend.
+ * Called only during download – not during normal browsing.
+ */
+async function cacheThumbnail(doc) {
+    const resourceId = doc._id;
+    if (thumbnailCache.has(resourceId)) return true;
+
+    // 1. Check IndexedDB first (in case it was cached earlier)
+    const existing = await db.getThumbnailBlob(resourceId);
+    if (existing) {
+        const url = URL.createObjectURL(existing);
+        thumbnailCache.set(resourceId, url);
+        return true;
+    }
+
+    if (!navigator.onLine) return false;
+    if (!doc.r2ThumbnailKey) return false;
+
+    try {
+        // Request a signed URL from the backend
+        const result = await convexHttpClient.action('resources/actions:getThumbnailUrl', {
+            r2Key: doc.r2ThumbnailKey
+        });
+        if (!result.success) return false;
+
+        const response = await fetch(result.data.url);
+        if (!response.ok) return false;
+
+        const blob = await response.blob();
+        await db.saveThumbnailBlob(resourceId, blob);
+        const url = URL.createObjectURL(blob);
+        thumbnailCache.set(resourceId, url);
+        return true;
+    } catch (err) {
+        console.warn(`[Thumbnail] Signed URL fetch failed for ${resourceId}:`, err);
+        return false;
+    }
 }
 
 // ==================== DOWNLOAD LOGIC ====================
@@ -295,6 +339,7 @@ async function startDownload(resourceId) {
             return;
         }
 
+        // 1. Get signed download URL for the main file
         const result = await convexHttpClient.action('resources/actions:getDownloadUrl', {
             token,
             resourceId
@@ -310,6 +355,7 @@ async function startDownload(resourceId) {
         }
         const { downloadUrl } = result.data;
 
+        // 2. Download the main file with progress
         const response = await fetch(downloadUrl, {
             signal: abortController.signal
         });
@@ -337,6 +383,7 @@ async function startDownload(resourceId) {
         const blob = new Blob(chunks);
         await db.saveFileBlob(resourceId, blob);
 
+        // 3. Update download manifest
         const manifest = content.getDownloadManifest();
         manifest[resourceId] = {
             downloadedAt: Date.now(),
@@ -345,6 +392,12 @@ async function startDownload(resourceId) {
         };
         content.setDownloadManifest(manifest);
 
+        // 4. Cache the thumbnail (using signed URL)
+        if (doc) {
+            await cacheThumbnail(doc);
+        }
+
+        // 5. Update UI to show the resource as downloaded
         if (doc) {
             card.outerHTML = createResourceCard(doc);
             attachCardEventListeners();
@@ -365,59 +418,6 @@ async function startDownload(resourceId) {
     } finally {
         activeDownloads.delete(resourceId);
     }
-}
-
-// ==================== THUMBNAIL CACHING ====================
-
-/**
- * Downloads and stores a single thumbnail blob in IndexedDB.
- * Returns an object URL for immediate use.
- */
-async function cacheThumbnail(resourceId, thumbnailUrl) {
-    // Skip if already cached in memory
-    if (thumbnailCache.has(resourceId)) return;
-
-    // Check if already in IndexedDB
-    const existing = await db.getThumbnailBlob(resourceId);
-    if (existing) {
-        const url = URL.createObjectURL(existing);
-        thumbnailCache.set(resourceId, url);
-        return;
-    }
-
-    if (!navigator.onLine || !thumbnailUrl) return; // can't download offline
-
-    try {
-        const response = await fetch(thumbnailUrl);
-        if (!response.ok) throw new Error('Failed to fetch thumbnail');
-        const blob = await response.blob();
-        await db.saveThumbnailBlob(resourceId, blob);
-        const url = URL.createObjectURL(blob);
-        thumbnailCache.set(resourceId, url);
-    } catch (err) {
-        console.warn(`Failed to cache thumbnail for ${resourceId}:`, err);
-    }
-}
-
-/**
- * Processes all uncached thumbnails in the background with concurrency limit.
- */
-async function cacheAllThumbnails(documents) {
-    const toCache = documents.filter(doc => doc.thumbnailUrl && !thumbnailCache.has(doc._id));
-    if (toCache.length === 0) return;
-
-    // Avoid overwhelming network – process in batches
-    const queue = [...toCache];
-    const workers = new Array(MAX_THUMBNAIL_CONCURRENT).fill(null).map(async () => {
-        while (queue.length > 0) {
-            const doc = queue.shift();
-            await cacheThumbnail(doc._id, doc.thumbnailUrl);
-        }
-    });
-    await Promise.allSettled(workers);
-
-    // After caching, refresh the grid if we're still displaying these documents
-    applyFiltersAndRender();
 }
 
 // ==================== LOAD RESOURCES ====================
@@ -457,9 +457,6 @@ async function loadResources(reset = true) {
     isLoading = false;
 
     applyFiltersAndRender();
-
-    // Start background thumbnail caching (non-blocking)
-    cacheAllThumbnails(result.documents);
 }
 
 // ==================== VIEWER COORDINATION ====================
@@ -479,23 +476,7 @@ export async function initResourceBrowser(subject, type) {
     const typeName = TYPE_NAMES[type] || 'Resources';
     pageTitle.textContent = `${typeName} – ${subject}`;
 
-    // Pre-populate thumbnail cache from IndexedDB for already cached thumbnails
-    // (so we can show them immediately without waiting for network)
-    // This is optional but improves perceived performance.
-    // We'll do this after the first loadResources so we have the doc list.
     await loadResources(true);
-
-    // Now that we have documents, try to load any existing thumbnails from DB
-    for (const doc of allDocuments) {
-        if (doc.thumbnailUrl) {
-            const blob = await db.getThumbnailBlob(doc._id);
-            if (blob && !thumbnailCache.has(doc._id)) {
-                thumbnailCache.set(doc._id, URL.createObjectURL(blob));
-            }
-        }
-    }
-    // Re-render to use cached thumbnails if available
-    applyFiltersAndRender();
 
     // ---- Event listeners ----
     searchInput.addEventListener('input', debounce(() => applyFiltersAndRender(), 300));
@@ -521,11 +502,6 @@ export async function initResourceBrowser(subject, type) {
         if (!e.target.closest('.filter-wrapper')) {
             filterDropdown.classList.remove('open');
         }
-    });
-
-    // Listen for coming back online – re-cache any missing thumbnails
-    window.addEventListener('online', () => {
-        cacheAllThumbnails(allDocuments);
     });
 }
 

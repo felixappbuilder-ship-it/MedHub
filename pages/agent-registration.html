@@ -1,13 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Become a MedHub Agent</title>
+
   <link rel="manifest" href="/manifest.json">
-  <link rel="stylesheet" href="/css/common.css">
-  <link rel="stylesheet" href="/css/agent-registration.css">
+  <link rel="stylesheet" href="/css/common.css" media="all">
+  <link rel="stylesheet" href="/css/agent-registration.css" media="all">
+
   <style>
+    /* ===== SHIMMER LOADING (dark theme, blocks white flash) ===== */
+    #shimmer-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 99999;
+      background: #0d0f14;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.6s ease;
+      pointer-events: none;
+    }
+
+    #shimmer-overlay.hidden {
+      opacity: 0;
+    }
+
+    #shimmer-overlay .shimmer-logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #1a1f2a 30%, #2a3140 60%, #1a1f2a 90%);
+      background-size: 300% 300%;
+      animation: shimmerPulse 1.8s ease-in-out infinite;
+      margin-bottom: 1.5rem;
+    }
+
+    #shimmer-overlay .shimmer-text {
+      width: 200px;
+      height: 18px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #1a1f2a 30%, #2a3140 60%, #1a1f2a 90%);
+      background-size: 300% 300%;
+      animation: shimmerPulse 1.8s ease-in-out infinite;
+      margin-bottom: 0.6rem;
+    }
+
+    #shimmer-overlay .shimmer-text.short {
+      width: 140px;
+    }
+
+    #shimmer-overlay .shimmer-text.long {
+      width: 260px;
+    }
+
+    @keyframes shimmerPulse {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* ===== FIXED HEADER ===== */
+    .fixed-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+    }
+
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-row.top {
+      margin-bottom: 0.3rem;
+    }
+
+    .header-row .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .header-row .logo-area img {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+    }
+
+    .header-row .logo-area span {
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    .header-row .btn-outline {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      padding: 0.3rem 0.6rem;
+      border-radius: 30px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      line-height: 1;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+
+    .header-row .btn-outline:hover {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    .header-row .nav-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0.3rem 0.6rem;
+    }
+
+    .header-row .nav-link:hover {
+      color: var(--text-primary);
+      text-decoration: underline;
+    }
+
+    .header-row .agent-program-badge {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--accent);
+      background: rgba(99, 102, 241, 0.12);
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      white-space: nowrap;
+    }
+
+    /* ===== MAIN LAYOUT ===== */
+    .page-container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem 2rem;
+      /* ensure scrolling works */
+      min-height: calc(100vh - 120px);
+      overflow-y: auto;
+    }
+
+    /* ===== AGENT BADGE ===== */
     .agent-badge {
       display: inline-block;
       background: var(--accent);
@@ -18,222 +175,1163 @@
       font-weight: 600;
       margin-bottom: 1rem;
     }
+
+    /* ===== BENEFITS ===== */
     .benefits-list {
       margin: 1rem 0;
       padding-left: 1.5rem;
     }
+
     .benefits-list li {
       margin-bottom: 0.5rem;
     }
+
+    /* ===== UPGRADE SECTION (logged-in) ===== */
     .upgrade-section {
       text-align: center;
-      padding: 2rem;
+      padding: 2rem 1.5rem;
       background: var(--bg-card);
       border-radius: var(--radius);
       border: 1px solid var(--border);
+      transition: border-color 0.3s;
     }
+
     .upgrade-section .btn-primary {
       font-size: 1.2rem;
       padding: 0.8rem 2.5rem;
     }
-    .form-section {
-      max-width: 500px;
-      margin: 0 auto;
-    }
-    .toggle-link {
+
+    /* ===== NEON BUTTON (upgrade) ===== */
+    .btn-neon {
+      position: relative;
+      font-size: 1.2rem;
+      padding: 0.9rem 2.8rem;
+      border-radius: 60px;
+      border: 2px solid var(--accent);
+      background: transparent;
+      color: var(--accent);
+      font-weight: 700;
       cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 8px rgba(99, 102, 241, 0.2), 0 0 20px rgba(99, 102, 241, 0.08);
+      animation: neonPulse 2.2s ease-in-out infinite;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-neon:hover {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 0 16px rgba(99, 102, 241, 0.5), 0 0 40px rgba(99, 102, 241, 0.25);
+      transform: scale(1.02);
+    }
+
+    .btn-neon:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      animation: none;
+      box-shadow: none;
+    }
+
+    @keyframes neonPulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 6px rgba(99, 102, 241, 0.2), 0 0 16px rgba(99, 102, 241, 0.08);
+      }
+
+      50% {
+        box-shadow: 0 0 14px rgba(99, 102, 241, 0.5), 0 0 36px rgba(99, 102, 241, 0.2);
+      }
+    }
+
+    /* ===== TERMS CHECKBOX ===== */
+    .agent-terms-wrap {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      margin: 1.2rem 0 1.8rem;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+
+    .agent-terms-wrap input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--accent);
+      margin-top: 2px;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .agent-terms-wrap label {
+      cursor: pointer;
+      line-height: 1.5;
+    }
+
+    .agent-terms-wrap a {
       color: var(--accent);
       text-decoration: underline;
     }
+
+    /* ===== STATUS MESSAGE ===== */
+    #status-message {
+      margin-top: 1rem;
+    }
+
+    .alert {
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-sm);
+      margin-bottom: 0.5rem;
+    }
+
+    .alert-info {
+      background: rgba(99, 102, 241, 0.10);
+      color: var(--accent);
+    }
+
+    .alert-error {
+      background: rgba(239, 68, 68, 0.12);
+      color: #ef4444;
+    }
+
+    .alert-success {
+      background: rgba(16, 185, 129, 0.12);
+      color: #10b981;
+    }
+
+    .alert-warning {
+      background: rgba(245, 158, 11, 0.12);
+      color: #f59e0b;
+    }
+
+    /* ===== MODAL OVERLAY (floating card) ===== */
+    #auth-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(6px);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    #auth-modal-overlay.active {
+      display: flex;
+    }
+
+    .auth-modal-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      max-width: 500px;
+      width: 100%;
+      padding: 2rem 1.8rem 1.8rem;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      animation: modalFadeIn 0.3s ease;
+      position: relative;
+      /* scrollable content inside modal */
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    @keyframes modalFadeIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.94) translateY(12px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    .auth-modal-card .close-modal {
+      position: absolute;
+      top: 0.6rem;
+      right: 1rem;
+      font-size: 1.6rem;
+      cursor: pointer;
+      color: var(--text-muted);
+      background: none;
+      border: none;
+      line-height: 1;
+      padding: 0.2rem 0.5rem;
+      transition: color 0.2s;
+    }
+
+    .auth-modal-card .close-modal:hover {
+      color: var(--text-primary);
+    }
+
+    .auth-modal-card h2 {
+      margin-bottom: 0.5rem;
+      font-size: 1.4rem;
+    }
+
+    .auth-modal-card .modal-sub {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .auth-modal-card .choice-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .auth-modal-card .choice-buttons button {
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: var(--radius-sm);
+      font-size: 1rem;
+      font-weight: 600;
+      border: 2px solid var(--border);
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .auth-modal-card .choice-buttons button:hover {
+      border-color: var(--accent);
+      background: rgba(99, 102, 241, 0.08);
+    }
+
+    .auth-modal-card .choice-buttons .btn-primary-choice {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .auth-modal-card .choice-buttons .btn-primary-choice:hover {
+      background: var(--accent-hover);
+      border-color: var(--accent-hover);
+    }
+
+    /* ===== LOGIN SHEET (inside modal) ===== */
+    #login-sheet {
+      display: none;
+      margin-top: 0.5rem;
+    }
+
+    #login-sheet.active {
+      display: block;
+    }
+
+    #login-sheet .form-group {
+      margin-bottom: 1rem;
+    }
+
+    #login-sheet .form-group label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+      font-size: 0.9rem;
+    }
+
+    #login-sheet .form-group input {
+      width: 100%;
+      padding: 0.7rem 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      font-size: 0.95rem;
+    }
+
+    #login-sheet .form-group input:focus {
+      outline: 2px solid var(--accent);
+      border-color: transparent;
+    }
+
+    #login-sheet .form-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0.2rem 0 1.2rem;
+      font-size: 0.88rem;
+    }
+
+    #login-sheet .form-row label {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+    }
+
+    #login-sheet .form-row .btn-link {
+      background: none;
+      border: none;
+      color: var(--accent);
+      cursor: pointer;
+      text-decoration: underline;
+      font-size: 0.88rem;
+      padding: 0;
+    }
+
+    #login-sheet .form-row .btn-link:hover {
+      color: var(--accent-hover);
+    }
+
+    #login-sheet .btn-primary {
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: var(--radius-sm);
+      font-size: 1rem;
+      font-weight: 600;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    #login-sheet .btn-primary:hover {
+      background: var(--accent-hover);
+    }
+
+    #login-sheet .alt-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    #login-sheet .alt-actions .btn-text {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      text-decoration: underline;
+      font-size: 0.88rem;
+      padding: 0.2rem;
+    }
+
+    #login-sheet .alt-actions .btn-text:hover {
+      color: var(--text-primary);
+    }
+
+    /* ===== REGISTRATION FLOW (inside modal) ===== */
+    #registration-flow {
+      display: none;
+      margin-top: 0.5rem;
+    }
+
+    #registration-flow.active {
+      display: block;
+    }
+
+    #registration-flow .step-indicator {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    #registration-flow .step {
+      display: none;
+    }
+
+    #registration-flow .step.active {
+      display: block;
+    }
+
+    #registration-flow .form-group {
+      margin-bottom: 1rem;
+    }
+
+    #registration-flow .form-group label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+      font-size: 0.9rem;
+    }
+
+    #registration-flow .form-group input,
+    #registration-flow .form-group select {
+      width: 100%;
+      padding: 0.7rem 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      font-size: 0.95rem;
+    }
+
+    #registration-flow .form-group input:focus,
+    #registration-flow .form-group select:focus {
+      outline: 2px solid var(--accent);
+      border-color: transparent;
+    }
+
+    #registration-flow .form-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    #registration-flow .form-row .half {
+      flex: 1 1 180px;
+    }
+
+    #registration-flow .button-group {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+
+    #registration-flow .button-group .btn-primary {
+      flex: 1;
+      padding: 0.7rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    #registration-flow .button-group .btn-primary:hover {
+      background: var(--accent-hover);
+    }
+
+    #registration-flow .button-group .btn-secondary {
+      flex: 0 0 auto;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    #registration-flow .button-group .btn-secondary:hover {
+      background: var(--border);
+    }
+
+    #registration-flow .checkbox-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.88rem;
+      margin: 0.5rem 0;
+    }
+
+    #registration-flow .checkbox-group input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--accent);
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    #registration-flow .checkbox-group label {
+      cursor: pointer;
+      line-height: 1.5;
+    }
+
+    #registration-flow .checkbox-group a {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    #registration-flow .success-step {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    #registration-flow .success-step .success-icon {
+      font-size: 3.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    #registration-flow .success-step h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.3rem;
+    }
+
+    #registration-flow .success-step p {
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 500px) {
+      .fixed-header {
+        padding: 0.4rem 0.8rem;
+      }
+
+      .header-row .logo-area span {
+        font-size: 1rem;
+      }
+
+      .header-row .agent-program-badge {
+        font-size: 0.78rem;
+        padding: 0.2rem 0.7rem;
+      }
+
+      .page-container {
+        padding: 0.8rem 1rem 1.5rem;
+      }
+
+      .auth-modal-card {
+        padding: 1.5rem 1.2rem;
+        max-height: 85vh;
+      }
+
+      .upgrade-section {
+        padding: 1.5rem 1rem;
+      }
+
+      .btn-neon {
+        font-size: 1rem;
+        padding: 0.7rem 2rem;
+      }
+
+      #registration-flow .form-row {
+        flex-direction: column;
+        gap: 0;
+      }
+
+      #registration-flow .form-row .half {
+        flex: 1 1 auto;
+      }
+    }
+
+    /* ===== UTILITY ===== */
+    .hidden {
+      display: none !important;
+    }
+
+    .mt-1 {
+      margin-top: 0.5rem;
+    }
+
+    .mt-2 {
+      margin-top: 1rem;
+    }
+
+    .text-muted {
+      color: var(--text-muted);
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    /* ===== SCROLL FIXES ===== */
+    /* ensure modal content is scrollable */
+    .auth-modal-card::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .auth-modal-card::-webkit-scrollbar-track {
+      background: var(--bg-secondary);
+    }
+
+    .auth-modal-card::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 4px;
+    }
+
+    /* make sure page body can scroll */
+    body {
+      overflow-y: auto;
+      min-height: 100vh;
+    }
+
+    /* header is sticky, so main content starts below it */
+    .page-container {
+      padding-top: 1rem;
+    }
   </style>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js').catch(() => { });
+    }
+  </script>
 </head>
+
 <body>
-  <div class="page-container">
-    <header>
-      <div class="logo">
-        <img src="/assets/images/logo.png" alt="Logo" width="40" height="40">
-        <span>MedHub</span>
-      </div>
-      <button onclick="ui.toggleTheme()" class="btn-outline">🌓</button>
-    </header>
-
-    <main>
-      <div class="auth-container">
-        <div class="auth-card">
-          <div class="auth-header">
-            <span class="agent-badge">🤝 Agent Program</span>
-            <h1>Become a MedHub Agent</h1>
-            <p>Earn KSh 40 per referral and KSh 15 per renewal</p>
-          </div>
-
-          <!-- Display area for logged-in user upgrade -->
-          <div id="logged-in-upgrade" style="display: none;">
-            <div class="upgrade-section">
-              <h2>Welcome, <span id="agent-user-name"></span>!</h2>
-              <p>You are currently a <strong>normal user</strong>. Upgrade to become a MedHub Agent and start earning commissions.</p>
-              <ul class="benefits-list">
-                <li>✅ Refer new students – earn KSh 40 per first subscription</li>
-                <li>✅ Earn KSh 15 for every renewal</li>
-                <li>✅ No active subscription required to refer</li>
-                <li>✅ Track your referrals and earnings in your dashboard</li>
-              </ul>
-              <button id="upgrade-btn" class="btn-primary">Upgrade to Agent</button>
-              <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">Your account will be verified by admin within 24 hours.</p>
-            </div>
-          </div>
-
-          <!-- Registration form for new users -->
-          <div id="register-form" style="display: none;">
-            <h2>Create Agent Account</h2>
-            <p>Fill in your details to register as a MedHub Agent.</p>
-
-            <form id="agent-register-form" class="form-section">
-              <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" required>
-              </div>
-              <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" required>
-              </div>
-              <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" required>
-                <small>Format: 07XX or 2547XX</small>
-              </div>
-              <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" required>
-                <small>8+ chars, include uppercase, lowercase, number</small>
-              </div>
-              <div class="form-group">
-                <label for="confirm-password">Confirm Password</label>
-                <input type="password" id="confirm-password" required>
-              </div>
-
-              <!-- Security Questions (same as normal registration) -->
-              <div class="form-group">
-                <label>Security Questions (3 required)</label>
-                <div id="security-questions-container">
-                  <div class="question-row">
-                    <select class="question-select" data-index="0">
-                      <option value="">Select a question</option>
-                      <option value="What is your place of birth?">What is your place of birth?</option>
-                      <option value="What was the name of your primary school?">What was the name of your primary school?</option>
-                      <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
-                      <option value="What was the name of your first pet?">What was the name of your first pet?</option>
-                      <option value="What is your favorite book?">What is your favorite book?</option>
-                    </select>
-                    <input type="text" class="answer-input" placeholder="Answer" data-index="0">
-                  </div>
-                  <div class="question-row">
-                    <select class="question-select" data-index="1">
-                      <option value="">Select a question</option>
-                      <option value="What is your place of birth?">What is your place of birth?</option>
-                      <option value="What was the name of your primary school?">What was the name of your primary school?</option>
-                      <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
-                      <option value="What was the name of your first pet?">What was the name of your first pet?</option>
-                      <option value="What is your favorite book?">What is your favorite book?</option>
-                    </select>
-                    <input type="text" class="answer-input" placeholder="Answer" data-index="1">
-                  </div>
-                  <div class="question-row">
-                    <select class="question-select" data-index="2">
-                      <option value="">Select a question</option>
-                      <option value="What is your place of birth?">What is your place of birth?</option>
-                      <option value="What was the name of your primary school?">What was the name of your primary school?</option>
-                      <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
-                      <option value="What was the name of your first pet?">What was the name of your first pet?</option>
-                      <option value="What is your favorite book?">What is your favorite book?</option>
-                    </select>
-                    <input type="text" class="answer-input" placeholder="Answer" data-index="2">
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group checkbox">
-                <label>
-                  <input type="checkbox" id="agent-terms" required>
-                  I agree to the <a href="#" onclick="ui.showToast('Terms of Service for Agents','info')">Agent Terms</a> and will promote MedHub responsibly.
-                </label>
-              </div>
-
-              <button type="submit" class="btn-primary" id="register-agent-btn">Register as Agent</button>
-            </form>
-            <p style="margin-top: 1rem; text-align: center;">
-              Already have an account? <a href="#" onclick="showUpgrade()" class="toggle-link">Upgrade to Agent</a>
-            </p>
-          </div>
-
-          <!-- Status messages -->
-          <div id="status-message" style="margin-top: 1rem;"></div>
-        </div>
-      </div>
-    </main>
+  <!-- ===== SHIMMER OVERLAY (dark theme, hides white flash) ===== -->
+  <div id="shimmer-overlay">
+    <div class="shimmer-logo"></div>
+    <div class="shimmer-text"></div>
+    <div class="shimmer-text short"></div>
+    <div class="shimmer-text long" style="margin-top:0.4rem;"></div>
   </div>
 
+  <!-- ===== FIXED HEADER ===== -->
+  <header class="fixed-header" id="app-header">
+    <div class="header-row top">
+      <div class="logo-area">
+        <img src="/assets/images/logo.png" alt="MedHub" width="32" height="32">
+        <span>MedHub</span>
+      </div>
+      <button id="theme-toggle" class="btn-outline" aria-label="Toggle theme">🌓</button>
+    </div>
+    <div class="header-row bottom">
+      <button id="home-btn" class="nav-link">← Home</button>
+      <span class="agent-program-badge">🤝 Agent Program</span>
+    </div>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <div class="page-container" id="app-main">
+
+    <!-- ===== SECTION: LOGGED-IN USER (UPGRADE) ===== -->
+    <div id="logged-in-view" class="hidden">
+      <div class="upgrade-section" id="upgrade-section">
+        <span class="agent-badge">🤝 Agent Program</span>
+        <h2>Welcome, <span id="agent-user-name">Agent</span>!</h2>
+        <p style="margin-bottom:0.8rem;">You are currently a <strong>normal user</strong>. Upgrade to become a MedHub
+          Agent and start earning commissions.</p>
+
+        <ul class="benefits-list" style="text-align:left;display:inline-block;">
+          <li>✅ Refer new students – earn KSh 40 per first subscription</li>
+          <li>✅ Earn KSh 15 for every renewal</li>
+          <li>✅ No active subscription required to refer</li>
+          <li>✅ Track your referrals and earnings in your dashboard</li>
+        </ul>
+
+        <!-- Agent Terms Checkbox -->
+        <div class="agent-terms-wrap">
+          <input type="checkbox" id="agent-terms-check">
+          <label for="agent-terms-check">
+            I accept the
+            <a href="#" id="agent-terms-link" data-page="agent-terms.html">Agent Terms &amp; Conditions</a>
+            and agree to promote MedHub responsibly.
+          </label>
+        </div>
+
+        <!-- Neon Upgrade Button -->
+        <button id="upgrade-btn" class="btn-neon" disabled>⬆ Upgrade to Agent</button>
+
+        <!-- Status message area -->
+        <div id="status-message"></div>
+      </div>
+
+      <!-- After upgrade: Start Earning button (initially hidden) -->
+      <div id="after-upgrade-view" class="hidden" style="text-align:center;padding:1.5rem 0;">
+        <div style="font-size:2.8rem;margin-bottom:0.5rem;">🎉</div>
+        <h2>Congratulations, <span id="agent-name-after">Agent</span>!</h2>
+        <p style="color:var(--text-muted);margin-bottom:1.5rem;">You are now a MedHub Agent. Start your earning journey
+          today.</p>
+        <button id="start-earning-btn" class="btn-primary" style="font-size:1.15rem;padding:0.8rem 2.8rem;">🚀 Start
+          Your Earning</button>
+      </div>
+    </div>
+
+    <!-- ===== SECTION: NOT LOGGED IN (REGISTER / AMBASSADOR) ===== -->
+    <div id="not-logged-in-view">
+      <div class="upgrade-section" style="text-align:center;padding:2rem 1.5rem;">
+        <span class="agent-badge">🤝 Agent Program</span>
+        <h2 style="margin-bottom:0.2rem;">Upcoming Ambassador</h2>
+        <p style="color:var(--text-muted);margin-bottom:1.5rem;">Join the MedHub Agent program and help others while you
+          earn.</p>
+
+        <ul class="benefits-list" style="text-align:left;display:inline-block;">
+          <li>✅ Earn KSh 40 per referral</li>
+          <li>✅ Earn KSh 15 per renewal</li>
+          <li>✅ No subscription required to refer</li>
+          <li>✅ Full dashboard &amp; tracking</li>
+        </ul>
+
+        <button id="register-agent-btn" class="btn-primary" style="font-size:1.2rem;padding:0.8rem 2.8rem;">
+          📋 Register as MedHub Agent
+        </button>
+        <p style="margin-top:0.8rem;font-size:0.85rem;color:var(--text-muted);">Help others as you earn.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== AUTH MODAL (floating card) ===== -->
+  <div id="auth-modal-overlay">
+    <div class="auth-modal-card" id="auth-modal-card">
+      <button class="close-modal" id="close-modal-btn">✕</button>
+
+      <!-- === CHOICE SCREEN === -->
+      <div id="modal-choice">
+        <h2>🔑 Account Required</h2>
+        <p class="modal-sub">Do you already have an active account with MedHub?</p>
+        <div class="choice-buttons">
+          <button id="choice-yes" class="btn-primary-choice">✅ Yes, I have an account</button>
+          <button id="choice-no">❌ No, I need to register</button>
+        </div>
+      </div>
+
+      <!-- === LOGIN SHEET === -->
+      <div id="login-sheet">
+        <h2 style="font-size:1.2rem;">Login to your account</h2>
+        <p class="modal-sub" style="font-size:0.85rem;">Enter your email/phone and password.</p>
+
+        <form id="modal-login-form" onsubmit="return false;">
+          <div class="form-group">
+            <label for="modal-login-email">Email or Phone (254...)</label>
+            <input type="text" id="modal-login-email" placeholder="e.g., 254712345678 or student@example.com"
+              autocomplete="username" required>
+          </div>
+          <div class="form-group">
+            <label for="modal-login-password">Password</label>
+            <input type="password" id="modal-login-password" placeholder="••••••••" autocomplete="current-password"
+              required>
+          </div>
+          <div class="form-row">
+            <label>
+              <input type="checkbox" id="modal-remember"> Remember me
+            </label>
+            <button type="button" id="modal-forgot-pw" class="btn-link">Forgot password?</button>
+          </div>
+          <button type="submit" id="modal-login-submit" class="btn-primary">Login</button>
+          <div class="alt-actions">
+            <button type="button" id="modal-go-register" class="btn-text">I don't have an account →</button>
+            <button type="button" id="modal-go-choice" class="btn-text" style="font-size:0.8rem;">← Back</button>
+          </div>
+          <div id="modal-login-status" style="margin-top:0.8rem;font-size:0.88rem;"></div>
+        </form>
+      </div>
+
+      <!-- === REGISTRATION FLOW === -->
+      <div id="registration-flow">
+        <h2 style="font-size:1.2rem;">Create Agent Account</h2>
+        <p class="step-indicator" id="reg-step-indicator">Step 1 of 2: Personal Info</p>
+
+        <!-- STEP 1: Personal Information -->
+        <div id="reg-step1" class="step active">
+          <form id="reg-step1-form" onsubmit="return false;">
+            <div class="form-group">
+              <label for="reg-name">Full Name</label>
+              <input type="text" id="reg-name" placeholder="e.g., John Mwangi" required>
+            </div>
+            <div class="form-group">
+              <label for="reg-email">Email Address</label>
+              <input type="email" id="reg-email" placeholder="student@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="reg-phone">Phone Number</label>
+              <input type="tel" id="reg-phone" placeholder="e.g., 0712345678" required>
+              <small style="display:block;font-size:0.78rem;color:var(--text-muted);">Format: 07XXXXXXXX or
+                2547XXXXXXXX</small>
+            </div>
+            <div class="form-row">
+              <div class="form-group half">
+                <label for="reg-password">Password</label>
+                <input type="password" id="reg-password" placeholder="••••••••" required>
+              </div>
+              <div class="form-group half">
+                <label for="reg-confirm">Confirm Password</label>
+                <input type="password" id="reg-confirm" placeholder="••••••••" required>
+              </div>
+            </div>
+            <div id="reg-pw-strength" style="font-size:0.78rem;margin-bottom:0.8rem;"></div>
+
+            <!-- Referral Code (optional) -->
+            <div class="form-group">
+              <label for="reg-referral">Referral Code <span
+                  style="color:var(--text-muted);font-weight:normal;">(optional)</span></label>
+              <input type="text" id="reg-referral" placeholder="e.g., FHX7P4M2">
+              <div id="reg-referral-status" style="font-size:0.78rem;margin-top:0.2rem;"></div>
+            </div>
+
+            <!-- Three documents: Terms, Privacy, Agent Terms -->
+            <div
+              style="margin:1rem 0 0.8rem;padding:0.8rem;background:var(--bg-secondary);border-radius:var(--radius-sm);border:1px solid var(--border);">
+              <p style="font-weight:600;margin-bottom:0.4rem;font-size:0.9rem;">📄 Please review and accept:</p>
+              <div class="checkbox-group">
+                <input type="checkbox" id="reg-terms-doc">
+                <label for="reg-terms-doc">I agree to the <a href="/pages/terms.html" target="_blank">Terms of
+                    Service</a></label>
+              </div>
+              <div class="checkbox-group">
+                <input type="checkbox" id="reg-privacy-doc">
+                <label for="reg-privacy-doc">I agree to the <a href="/pages/privacy.html" target="_blank">Privacy
+                    Policy</a></label>
+              </div>
+              <div class="checkbox-group">
+                <input type="checkbox" id="reg-agent-terms-doc">
+                <label for="reg-agent-terms-doc">I agree to the <a href="#" id="reg-agent-terms-link"
+                    data-page="agent-terms.html">Agent Terms &amp; Conditions</a></label>
+              </div>
+            </div>
+
+            <div class="button-group">
+              <button type="button" id="reg-back-choice" class="btn-secondary">← Back</button>
+              <button type="button" id="reg-go-step2" class="btn-primary">Next →</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- STEP 2: Security Questions -->
+        <div id="reg-step2" class="step">
+          <form id="reg-step2-form" onsubmit="return false;">
+            <p style="font-size:0.88rem;color:var(--text-muted);margin-bottom:1rem;">Choose three different questions
+              and provide answers.</p>
+
+            <div class="form-group">
+              <label for="reg-sq1">Question 1</label>
+              <select id="reg-sq1">
+                <option value="">-- Select --</option>
+                <option value="What is your place of birth?">What is your place of birth?</option>
+                <option value="What was the name of your primary school?">What was the name of your primary school?
+                </option>
+                <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
+                <option value="What was the name of your first pet?">What was the name of your first pet?</option>
+                <option value="What is your favorite book?">What is your favorite book?</option>
+                <option value="What is your favorite food?">What is your favorite food?</option>
+                <option value="What city were you born in?">What city were you born in?</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="reg-ans1">Answer 1</label>
+              <input type="text" id="reg-ans1" placeholder="Your answer" required>
+            </div>
+
+            <div class="form-group">
+              <label for="reg-sq2">Question 2</label>
+              <select id="reg-sq2">
+                <option value="">-- Select --</option>
+                <option value="What is your place of birth?">What is your place of birth?</option>
+                <option value="What was the name of your primary school?">What was the name of your primary school?
+                </option>
+                <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
+                <option value="What was the name of your first pet?">What was the name of your first pet?</option>
+                <option value="What is your favorite book?">What is your favorite book?</option>
+                <option value="What is your favorite food?">What is your favorite food?</option>
+                <option value="What city were you born in?">What city were you born in?</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="reg-ans2">Answer 2</label>
+              <input type="text" id="reg-ans2" placeholder="Your answer" required>
+            </div>
+
+            <div class="form-group">
+              <label for="reg-sq3">Question 3</label>
+              <select id="reg-sq3">
+                <option value="">-- Select --</option>
+                <option value="What is your place of birth?">What is your place of birth?</option>
+                <option value="What was the name of your primary school?">What was the name of your primary school?
+                </option>
+                <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
+                <option value="What was the name of your first pet?">What was the name of your first pet?</option>
+                <option value="What is your favorite book?">What is your favorite book?</option>
+                <option value="What is your favorite food?">What is your favorite food?</option>
+                <option value="What city were you born in?">What city were you born in?</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="reg-ans3">Answer 3</label>
+              <input type="text" id="reg-ans3" placeholder="Your answer" required>
+            </div>
+
+            <div class="button-group">
+              <button type="button" id="reg-back-step1" class="btn-secondary">← Back</button>
+              <button type="button" id="reg-submit" class="btn-primary">✅ Register</button>
+            </div>
+            <div id="reg-status" style="margin-top:0.8rem;font-size:0.88rem;"></div>
+          </form>
+        </div>
+
+        <!-- STEP 3: Success (congratulations) -->
+        <div id="reg-step3" class="step">
+          <div class="success-step">
+            <div class="success-icon">🎉</div>
+            <h3>Congratulations, <span id="reg-success-name">Agent</span>!</h3>
+            <p>Your agent account has been created successfully. Start your earning journey now.</p>
+            <button id="reg-start-journey" class="btn-primary" style="font-size:1.05rem;padding:0.7rem 2.4rem;">🚀 Start
+              Your Journey</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SCRIPTS ===== -->
   <script type="module">
+    // ================================================================
+    //  IMPORTS
+    // ================================================================
     import * as app from '../scripts/app.js';
-    import * as ui from '../scripts/ui.js';
     import * as auth from '../scripts/auth.js';
+    import * as ui from '../scripts/ui.js';
     import * as router from '../scripts/router.js';
     import * as validation from '../scripts/validation.js';
     import * as security from '../scripts/security.js';
+    import * as utils from '../scripts/utils.js';
+    import * as referral from '../scripts/referral.js';
     import { convexHttpClient } from '../scripts/convex-client.js';
-    import { getToken } from '../scripts/auth.js';
 
-    // ==================== STATE ====================
+    // ================================================================
+    //  SHIMMER HIDE
+    // ================================================================
+    function hideShimmer() {
+      const overlay = document.getElementById('shimmer-overlay');
+      overlay.classList.add('hidden');
+      setTimeout(() => {
+        overlay.style.display = 'none';
+      }, 700);
+    }
+
+    // ================================================================
+    //  STATE
+    // ================================================================
     let currentUser = null;
     let isLoggedIn = false;
+    let registrationData = {
+      name: '',
+      email: '',
+      phone: '',
+      password: '',
+      confirm: '',
+      referral: '',
+      terms: false,
+      privacy: false,
+      agentTerms: false,
+      securityQuestions: [
+        { question: '', answer: '' },
+        { question: '', answer: '' },
+        { question: '', answer: '' }
+      ]
+    };
 
-    // ==================== DOM REFS ====================
-    const loggedInUpgrade = document.getElementById('logged-in-upgrade');
-    const registerForm = document.getElementById('register-form');
-    const upgradeBtn = document.getElementById('upgrade-btn');
+    // ================================================================
+    //  DOM REFS
+    // ================================================================
+    const shimmer = document.getElementById('shimmer-overlay');
+    const themeToggle = document.getElementById('theme-toggle');
+    const homeBtn = document.getElementById('home-btn');
+
+    const loggedInView = document.getElementById('logged-in-view');
+    const notLoggedInView = document.getElementById('not-logged-in-view');
     const agentUserName = document.getElementById('agent-user-name');
-    const registerFormEl = document.getElementById('agent-register-form');
+    const agentNameAfter = document.getElementById('agent-name-after');
+    const upgradeBtn = document.getElementById('upgrade-btn');
+    const termsCheck = document.getElementById('agent-terms-check');
     const statusMsg = document.getElementById('status-message');
+    const afterUpgradeView = document.getElementById('after-upgrade-view');
+    const startEarningBtn = document.getElementById('start-earning-btn');
+    const registerAgentBtn = document.getElementById('register-agent-btn');
 
-    // ==================== HELPERS ====================
-    function showStatus(message, type = 'info') {
-      statusMsg.innerHTML = `<div class="alert alert-${type}">${message}</div>`;
+    // Modal
+    const modalOverlay = document.getElementById('auth-modal-overlay');
+    const modalChoice = document.getElementById('modal-choice');
+    const loginSheet = document.getElementById('login-sheet');
+    const regFlow = document.getElementById('registration-flow');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+    const choiceYes = document.getElementById('choice-yes');
+    const choiceNo = document.getElementById('choice-no');
+    const modalGoRegister = document.getElementById('modal-go-register');
+    const modalGoChoice = document.getElementById('modal-go-choice');
+    const modalForgotPw = document.getElementById('modal-forgot-pw');
+
+    // Login sheet
+    const modalLoginEmail = document.getElementById('modal-login-email');
+    const modalLoginPassword = document.getElementById('modal-login-password');
+    const modalLoginSubmit = document.getElementById('modal-login-submit');
+    const modalLoginStatus = document.getElementById('modal-login-status');
+    const modalRemember = document.getElementById('modal-remember');
+
+    // Registration flow
+    const regStep1 = document.getElementById('reg-step1');
+    const regStep2 = document.getElementById('reg-step2');
+    const regStep3 = document.getElementById('reg-step3');
+    const regStepIndicator = document.getElementById('reg-step-indicator');
+    const regName = document.getElementById('reg-name');
+    const regEmail = document.getElementById('reg-email');
+    const regPhone = document.getElementById('reg-phone');
+    const regPassword = document.getElementById('reg-password');
+    const regConfirm = document.getElementById('reg-confirm');
+    const regReferral = document.getElementById('reg-referral');
+    const regReferralStatus = document.getElementById('reg-referral-status');
+    const regTermsDoc = document.getElementById('reg-terms-doc');
+    const regPrivacyDoc = document.getElementById('reg-privacy-doc');
+    const regAgentTermsDoc = document.getElementById('reg-agent-terms-doc');
+    const regGoStep2 = document.getElementById('reg-go-step2');
+    const regBackStep1 = document.getElementById('reg-back-step1');
+    const regBackChoice = document.getElementById('reg-back-choice');
+    const regSubmit = document.getElementById('reg-submit');
+    const regStatus = document.getElementById('reg-status');
+    const regSuccessName = document.getElementById('reg-success-name');
+    const regStartJourney = document.getElementById('reg-start-journey');
+    const regPwStrength = document.getElementById('reg-pw-strength');
+
+    // ================================================================
+    //  HELPERS
+    // ================================================================
+    function showStatus(msg, type = 'info') {
+      statusMsg.innerHTML = `<div class="alert alert-${type}">${msg}</div>`;
     }
 
     function clearStatus() {
       statusMsg.innerHTML = '';
     }
 
-    function showUpgrade() {
-      loggedInUpgrade.style.display = 'block';
-      registerForm.style.display = 'none';
-      clearStatus();
+    function showLoginStatus(msg, type = 'info') {
+      modalLoginStatus.innerHTML = `<div class="alert alert-${type}" style="font-size:0.85rem;">${msg}</div>`;
     }
 
-    function showRegister() {
-      loggedInUpgrade.style.display = 'none';
-      registerForm.style.display = 'block';
-      clearStatus();
+    function clearLoginStatus() {
+      modalLoginStatus.innerHTML = '';
     }
 
-    // ==================== INIT ====================
-    (async function initAgentRegistration() {
-      await app.initializeApp();
-      ui.applyTheme();
-      currentUser = app.getUser();
-      isLoggedIn = !!currentUser;
+    function showRegStatus(msg, type = 'info') {
+      regStatus.innerHTML = `<div class="alert alert-${type}" style="font-size:0.85rem;">${msg}</div>`;
+    }
 
-      if (isLoggedIn) {
-        // If already logged in, show upgrade option
-        agentUserName.textContent = currentUser.name || currentUser.displayName || 'User';
-        showUpgrade();
+    function clearRegStatus() {
+      regStatus.innerHTML = '';
+    }
+
+    function showModal() {
+      modalOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function hideModal() {
+      modalOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+      // Reset views
+      modalChoice.style.display = 'block';
+      loginSheet.classList.remove('active');
+      regFlow.classList.remove('active');
+      clearLoginStatus();
+      clearRegStatus();
+      // Reset registration steps
+      regStep1.classList.add('active');
+      regStep2.classList.remove('active');
+      regStep3.classList.remove('active');
+      regStepIndicator.textContent = 'Step 1 of 2: Personal Info';
+    }
+
+    function showLoginSheet() {
+      modalChoice.style.display = 'none';
+      loginSheet.classList.add('active');
+      regFlow.classList.remove('active');
+      clearLoginStatus();
+    }
+
+    function showRegistrationFlow() {
+      modalChoice.style.display = 'none';
+      loginSheet.classList.remove('active');
+      regFlow.classList.add('active');
+      regStep1.classList.add('active');
+      regStep2.classList.remove('active');
+      regStep3.classList.remove('active');
+      regStepIndicator.textContent = 'Step 1 of 2: Personal Info';
+      clearRegStatus();
+    }
+
+    function showChoice() {
+      modalChoice.style.display = 'block';
+      loginSheet.classList.remove('active');
+      regFlow.classList.remove('active');
+      clearLoginStatus();
+      clearRegStatus();
+    }
+
+    // ================================================================
+    //  THEME
+    // ================================================================
+    themeToggle.addEventListener('click', () => {
+      ui.toggleTheme();
+    });
+
+    // ================================================================
+    //  HOME BUTTON
+    // ================================================================
+    homeBtn.addEventListener('click', () => {
+      const user = app.getUser();
+      if (user) {
+        router.navigateTo('subjects.html');
       } else {
-        // Show registration form for new agent
-        showRegister();
+        router.navigateTo('welcome.html');
+      }
+    });
+
+    // ================================================================
+    //  AGENT TERMS LINK
+    // ================================================================
+    document.getElementById('agent-terms-link').addEventListener('click', (e) => {
+      e.preventDefault();
+      ui.showToast('Loading Agent Terms...', 'info');
+      router.navigateTo('agent-terms.html');
+    });
+    document.getElementById('reg-agent-terms-link').addEventListener('click', (e) => {
+      e.preventDefault();
+      ui.showToast('Loading Agent Terms...', 'info');
+      router.navigateTo('agent-terms.html');
+    });
+
+    // ================================================================
+    //  TERMS CHECKBOX → ENABLE NEON BUTTON
+    // ================================================================
+    termsCheck.addEventListener('change', () => {
+      upgradeBtn.disabled = !termsCheck.checked;
+    });
+
+    // ================================================================
+    //  INIT
+    // ================================================================
+    (async function init() {
+      try {
+        // Apply theme first (dark by default, matches shimmer)
+        ui.applyTheme();
+
+        // Initialize app
+        await app.initializeApp();
+
+        // Check auth
+        currentUser = app.getUser();
+        isLoggedIn = !!currentUser;
+
+        if (isLoggedIn) {
+          // Show logged-in view
+          loggedInView.classList.remove('hidden');
+          notLoggedInView.classList.add('hidden');
+          const displayName = currentUser.name || currentUser.displayName || 'User';
+          agentUserName.textContent = displayName;
+          agentNameAfter.textContent = displayName;
+          // Pre-fill any stored email for login sheet? Not needed here.
+        } else {
+          // Show not-logged-in view
+          loggedInView.classList.add('hidden');
+          notLoggedInView.classList.remove('hidden');
+        }
+
+        // Hide shimmer
+        hideShimmer();
+
+      } catch (err) {
+        console.error('[Agent] Init error:', err);
+        // Still hide shimmer so user sees something
+        hideShimmer();
       }
     })();
 
-    // ==================== UPGRADE EXISTING USER ====================
+    // ================================================================
+    //  UPGRADE LOGGED-IN USER
+    // ================================================================
     upgradeBtn.addEventListener('click', async () => {
+      if (!termsCheck.checked) {
+        showStatus('Please accept the Agent Terms & Conditions first.', 'warning');
+        return;
+      }
+
       const confirmed = await ui.showConfirmationDialog(
         'Become an Agent',
         'Are you sure you want to become a MedHub Agent? Your account will be reviewed by admin within 24 hours.',
@@ -243,14 +1341,18 @@
 
       ui.showLoading('Upgrading to agent...');
       try {
-        const token = getToken();
-        const result = await convexHttpClient.action("users/mutations:upgradeToAgent", { token });
+        const token = auth.getToken();
+        const result = await convexHttpClient.action('users/mutations:upgradeToAgent', { token });
         ui.hideLoading();
         if (result.success) {
-          ui.showToast(result.data.message, 'success');
-          // Reload user data to reflect new role
-          await app.syncUserData();
-          router.navigateTo('referral.html');
+          ui.showToast(result.data.message || 'Upgrade successful!', 'success');
+          // Hide upgrade section, show "after upgrade" view
+          document.getElementById('upgrade-section').classList.add('hidden');
+          afterUpgradeView.classList.remove('hidden');
+          // Update name
+          const displayName = currentUser.name || currentUser.displayName || 'User';
+          agentNameAfter.textContent = displayName;
+          clearStatus();
         } else {
           ui.showToast(result.message || 'Upgrade failed', 'error');
         }
@@ -261,109 +1363,420 @@
       }
     });
 
-    // ==================== REGISTER NEW AGENT ====================
-    registerFormEl.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      clearStatus();
+    // ================================================================
+    //  START EARNING (after upgrade)
+    // ================================================================
+    startEarningBtn.addEventListener('click', () => {
+      router.navigateTo('referral.html');
+    });
 
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const password = document.getElementById('password').value;
-      const confirm = document.getElementById('confirm-password').value;
-
-      // Gather security questions
-      const questionSelects = document.querySelectorAll('.question-select');
-      const answerInputs = document.querySelectorAll('.answer-input');
-      const securityQuestions = [];
-      for (let i = 0; i < 3; i++) {
-        const q = questionSelects[i].value.trim();
-        const a = answerInputs[i].value.trim();
-        if (!q || !a) {
-          showStatus('Please fill in all security questions and answers.', 'error');
-          return;
+    // ================================================================
+    //  REGISTER AGENT (not logged in) → OPEN MODAL
+    // ================================================================
+    registerAgentBtn.addEventListener('click', () => {
+      showModal();
+      showChoice();
+      // Reset login sheet fields
+      modalLoginEmail.value = '';
+      modalLoginPassword.value = '';
+      modalRemember.checked = false;
+      clearLoginStatus();
+      // Reset registration fields (keep as-is, but we'll clear on new)
+      // Better to reset on show
+      regName.value = '';
+      regEmail.value = '';
+      regPhone.value = '';
+      regPassword.value = '';
+      regConfirm.value = '';
+      regReferral.value = '';
+      regTermsDoc.checked = false;
+      regPrivacyDoc.checked = false;
+      regAgentTermsDoc.checked = false;
+      regStep1.classList.add('active');
+      regStep2.classList.remove('active');
+      regStep3.classList.remove('active');
+      regStepIndicator.textContent = 'Step 1 of 2: Personal Info';
+      clearRegStatus();
+      regPwStrength.textContent = '';
+      regReferralStatus.textContent = '';
+      // Try to detect referral from URL
+      const urlRef = referral.detectReferralFromURL();
+      if (urlRef) {
+        regReferral.value = urlRef;
+        regReferral.readOnly = true;
+        regReferralStatus.textContent = '⏳ Validating...';
+        validateReferralCode(urlRef);
+      } else {
+        const storedRef = referral.getStoredReferralCode();
+        if (storedRef) {
+          regReferral.value = storedRef;
+          regReferral.readOnly = true;
+          regReferralStatus.textContent = '⏳ Validating...';
+          validateReferralCode(storedRef);
         }
-        securityQuestions.push({ question: q, answer: a });
-      }
-
-      // Validation
-      const validationResult = validation.validateForm({ name, email, phone, password, confirm }, {
-        name: { required: true, min: 2 },
-        email: { required: true, email: true },
-        phone: { required: true, phone: 'KE' },
-        password: { required: true, min: 8 },
-        confirm: { required: true }
-      });
-
-      if (!validationResult.valid) {
-        ui.showValidationSummary(validationResult.errors);
-        return;
-      }
-
-      if (password !== confirm) {
-        showStatus('Passwords do not match.', 'error');
-        return;
-      }
-
-      if (!validation.validatePassword(password)) {
-        showStatus('Password must be 8+ chars, include uppercase, lowercase, and a number.', 'error');
-        return;
-      }
-
-      const terms = document.getElementById('agent-terms').checked;
-      if (!terms) {
-        showStatus('You must agree to the Agent Terms to register.', 'error');
-        return;
-      }
-
-      ui.showLoading('Registering agent account...');
-      try {
-        const deviceFingerprint = security.getDeviceFingerprint();
-        const result = await auth.register({
-          name,
-          email,
-          phone,
-          password,
-          securityQuestions,
-          deviceFingerprint,
-          deviceInfo: { platform: 'web' },
-          referralCode: null, // agents can still be referred by someone, but not required
-          isAgent: true,        // ✅ This is key
-          agentVerified: false, // wait for admin verification
-        });
-
-        ui.hideLoading();
-        if (result) {
-          ui.showToast('Agent registration successful! You can now refer students.', 'success');
-          // Redirect to referral dashboard
-          setTimeout(() => {
-            router.navigateTo('referral.html');
-          }, 2000);
-        }
-      } catch (err) {
-        ui.hideLoading();
-        showStatus(err.message || 'Registration failed', 'error');
-        console.error('[Agent] Registration error:', err);
       }
     });
 
-    // ==================== TOGGLE VIEWS ====================
-    // The toggle link inside the register form calls showUpgrade()
-    // The toggle link inside the upgrade section could be added if needed.
-    // Also we can add a "Register as new agent" link in the upgrade section.
-    // But for simplicity, we already have the link in the register form.
+    // ================================================================
+    //  MODAL CHOICE HANDLERS
+    // ================================================================
+    choiceYes.addEventListener('click', () => {
+      showLoginSheet();
+      // Focus email field
+      setTimeout(() => modalLoginEmail.focus(), 100);
+    });
 
-    // Add toggle to upgrade section (if user wants to register as new instead)
-    // We'll add a small link in the upgrade section:
-    const upgradeSection = document.querySelector('.upgrade-section');
-    const switchToRegister = document.createElement('p');
-    switchToRegister.style.marginTop = '1rem';
-    switchToRegister.innerHTML = 'Not the user you are logged in as? <a href="#" onclick="showRegister()" class="toggle-link">Register a new agent account</a>';
-    upgradeSection.appendChild(switchToRegister);
+    choiceNo.addEventListener('click', () => {
+      showRegistrationFlow();
+      // Focus name field
+      setTimeout(() => regName.focus(), 100);
+    });
 
-    // Expose functions globally for inline onclick
-    window.showUpgrade = showUpgrade;
-    window.showRegister = showRegister;
+    modalGoRegister.addEventListener('click', () => {
+      showRegistrationFlow();
+    });
+
+    modalGoChoice.addEventListener('click', () => {
+      showChoice();
+    });
+
+    closeModalBtn.addEventListener('click', hideModal);
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) hideModal();
+    });
+
+    // ================================================================
+    //  LOGIN SHEET: SUBMIT
+    // ================================================================
+    modalLoginSubmit.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const email = modalLoginEmail.value.trim();
+      const password = modalLoginPassword.value;
+      const remember = modalRemember.checked;
+
+      if (!email) {
+        showLoginStatus('Please enter your email or phone.', 'error');
+        return;
+      }
+      if (!password || password.length < 8) {
+        showLoginStatus('Password must be at least 8 characters.', 'error');
+        return;
+      }
+
+      ui.showLoading('Logging in...');
+      try {
+        const deviceFingerprint = security.generateDeviceFingerprint();
+        const deviceInfo = {
+          platform: navigator.platform,
+          userAgent: navigator.userAgent,
+          screen: `${screen.width}x${screen.height}`,
+          timezone: new Date().getTimezoneOffset()
+        };
+
+        const user = await auth.login(email, password, { deviceFingerprint, deviceInfo });
+
+        if (remember) {
+          utils.setLocalStorage('rememberedEmail', email);
+        } else {
+          utils.removeLocalStorage('rememberedEmail');
+        }
+
+        ui.hideLoading();
+
+        // Now send upgrade request
+        ui.showLoading('Upgrading to agent...');
+        try {
+          const token = auth.getToken();
+          const result = await convexHttpClient.action('users/mutations:upgradeToAgent', { token });
+          ui.hideLoading();
+          if (result.success) {
+            ui.showToast(result.data.message || 'Upgrade successful!', 'success');
+            // Close modal, show congratulations
+            hideModal();
+            // Show after-upgrade view on main page
+            loggedInView.classList.remove('hidden');
+            notLoggedInView.classList.add('hidden');
+            const displayName = user.name || user.displayName || 'User';
+            agentUserName.textContent = displayName;
+            agentNameAfter.textContent = displayName;
+            document.getElementById('upgrade-section').classList.add('hidden');
+            afterUpgradeView.classList.remove('hidden');
+            // Also show a toast congratulation
+            ui.showToast('🎉 Congratulations! You are now a MedHub Agent.', 'success');
+          } else {
+            ui.showToast(result.message || 'Upgrade failed', 'error');
+            // Still logged in, but upgrade failed
+            hideModal();
+            // Refresh page state
+            window.location.reload();
+          }
+        } catch (err) {
+          ui.hideLoading();
+          ui.showToast(err.message || 'Upgrade failed', 'error');
+          hideModal();
+          window.location.reload();
+        }
+
+      } catch (error) {
+        ui.hideLoading();
+        showLoginStatus(error.message || 'Login failed', 'error');
+        if (error.code === 'ACCOUNT_LOCKED') {
+          router.navigateTo('locked.html?reason=time_manipulation');
+        }
+      }
+    });
+
+    // ================================================================
+    //  LOGIN SHEET: FORGOT PASSWORD
+    // ================================================================
+    modalForgotPw.addEventListener('click', () => {
+      router.navigateTo('forgot-password.html');
+      hideModal();
+    });
+
+    // ================================================================
+    //  REGISTRATION: STEP 1 → STEP 2
+    // ================================================================
+    regGoStep2.addEventListener('click', () => {
+      const name = regName.value.trim();
+      const email = regEmail.value.trim();
+      const phone = regPhone.value.trim();
+      const password = regPassword.value;
+      const confirm = regConfirm.value;
+      const terms = regTermsDoc.checked;
+      const privacy = regPrivacyDoc.checked;
+      const agentTerms = regAgentTermsDoc.checked;
+
+      // Validate
+      if (!name || name.length < 2) {
+        showRegStatus('Please enter your full name (min 2 characters).', 'error');
+        return;
+      }
+      if (!email || !validation.validateEmail(email)) {
+        showRegStatus('Please enter a valid email address.', 'error');
+        return;
+      }
+      if (!phone || !validation.validatePhone(phone)) {
+        showRegStatus('Please enter a valid Kenyan phone number (e.g., 0712345678).', 'error');
+        return;
+      }
+      if (!password || password.length < 8) {
+        showRegStatus('Password must be at least 8 characters.', 'error');
+        return;
+      }
+      if (password !== confirm) {
+        showRegStatus('Passwords do not match.', 'error');
+        return;
+      }
+      if (!terms || !privacy || !agentTerms) {
+        showRegStatus('Please accept all three documents: Terms, Privacy, and Agent Terms.', 'error');
+        return;
+      }
+
+      // Check password strength
+      const strength = validation.checkPasswordStrength(password);
+      if (strength.score < 2) {
+        showRegStatus('Password is too weak. Use a mix of uppercase, lowercase, numbers, and special characters.', 'error');
+        return;
+      }
+
+      // Save data
+      registrationData.name = name;
+      registrationData.email = email;
+      registrationData.phone = validation.formatKenyanPhone(phone) || phone;
+      registrationData.password = password;
+      registrationData.confirm = confirm;
+      registrationData.referral = regReferral.value.trim().toUpperCase();
+      registrationData.terms = terms;
+      registrationData.privacy = privacy;
+      registrationData.agentTerms = agentTerms;
+
+      // Move to step 2
+      regStep1.classList.remove('active');
+      regStep2.classList.add('active');
+      regStepIndicator.textContent = 'Step 2 of 2: Security Questions';
+      clearRegStatus();
+    });
+
+    // ================================================================
+    //  REGISTRATION: BACK TO STEP 1
+    // ================================================================
+    regBackStep1.addEventListener('click', () => {
+      regStep2.classList.remove('active');
+      regStep1.classList.add('active');
+      regStepIndicator.textContent = 'Step 1 of 2: Personal Info';
+      clearRegStatus();
+    });
+
+    // ================================================================
+    //  REGISTRATION: BACK TO CHOICE
+    // ================================================================
+    regBackChoice.addEventListener('click', () => {
+      showChoice();
+    });
+
+    // ================================================================
+    //  REGISTRATION: SUBMIT (step 2)
+    // ================================================================
+    regSubmit.addEventListener('click', async () => {
+      const q1 = document.getElementById('reg-sq1').value;
+      const a1 = document.getElementById('reg-ans1').value.trim();
+      const q2 = document.getElementById('reg-sq2').value;
+      const a2 = document.getElementById('reg-ans2').value.trim();
+      const q3 = document.getElementById('reg-sq3').value;
+      const a3 = document.getElementById('reg-ans3').value.trim();
+
+      if (!q1 || !a1 || !q2 || !a2 || !q3 || !a3) {
+        showRegStatus('Please fill in all security questions and answers.', 'error');
+        return;
+      }
+
+      const questions = [q1, q2, q3];
+      const unique = new Set(questions);
+      if (unique.size !== 3) {
+        showRegStatus('Please choose three different questions.', 'error');
+        return;
+      }
+
+      registrationData.securityQuestions = [
+        { question: q1, answer: a1 },
+        { question: q2, answer: a2 },
+        { question: q3, answer: a3 }
+      ];
+
+      ui.showLoading('Creating agent account...');
+      try {
+        const deviceFingerprint = security.generateDeviceFingerprint();
+        const deviceInfo = {
+          platform: navigator.platform,
+          userAgent: navigator.userAgent,
+          screen: `${screen.width}x${screen.height}`,
+          timezone: new Date().getTimezoneOffset()
+        };
+
+        const userData = {
+          name: registrationData.name,
+          email: registrationData.email,
+          phone: registrationData.phone,
+          password: registrationData.password,
+          securityQuestions: registrationData.securityQuestions,
+          deviceFingerprint,
+          deviceInfo,
+          isAgent: true,
+          agentVerified: false
+        };
+
+        const user = await auth.register(
+          userData,
+          deviceInfo,
+          registrationData.referral || null,
+          true // isAgent = true
+        );
+
+        ui.hideLoading();
+
+        // Check auth
+        if (!app.checkAuth()) {
+          // Fallback: reload
+          window.location.href = '/pages/referral.html';
+          return;
+        }
+
+        // Show success (step 3)
+        regStep2.classList.remove('active');
+        regStep3.classList.add('active');
+        regStepIndicator.textContent = '✅ Account Created!';
+        regSuccessName.textContent = registrationData.name;
+        clearRegStatus();
+
+        ui.showToast('🎉 Agent registration successful!', 'success');
+
+      } catch (error) {
+        ui.hideLoading();
+        showRegStatus(error.message || 'Registration failed', 'error');
+      }
+    });
+
+    // ================================================================
+    //  REGISTRATION: START JOURNEY (after success)
+    // ================================================================
+    regStartJourney.addEventListener('click', () => {
+      hideModal();
+      router.navigateTo('referral.html');
+    });
+
+    // ================================================================
+    //  REFERRAL CODE VALIDATION (in registration)
+    // ================================================================
+    async function validateReferralCode(code) {
+      if (!code) return;
+      try {
+        const result = await referral.validateReferralCode(code);
+        if (result.valid) {
+          regReferralStatus.textContent = `✅ Referred by ${result.referrerName || 'a MedHub user'}`;
+          regReferralStatus.style.color = 'var(--success)';
+        } else {
+          regReferralStatus.textContent = '⚠️ Invalid referral code. You can still sign up without one.';
+          regReferralStatus.style.color = 'var(--warning)';
+          regReferral.readOnly = false;
+        }
+      } catch (err) {
+        console.warn('[Agent] Referral validation error:', err);
+        regReferralStatus.textContent = '⚠️ Could not validate. You can still sign up.';
+        regReferralStatus.style.color = 'var(--warning)';
+        regReferral.readOnly = false;
+      }
+    }
+
+    // Live referral validation on input
+    regReferral.addEventListener('input', () => {
+      const code = regReferral.value.trim().toUpperCase();
+      if (code.length >= 4) {
+        validateReferralCode(code);
+      } else {
+        regReferralStatus.textContent = '';
+      }
+    });
+
+    // ================================================================
+    //  PASSWORD STRENGTH METER (registration)
+    // ================================================================
+    regPassword.addEventListener('input', () => {
+      const val = regPassword.value;
+      if (val.length === 0) {
+        regPwStrength.textContent = '';
+        return;
+      }
+      const strength = validation.checkPasswordStrength(val);
+      let label = 'Weak';
+      let color = '#ef4444';
+      if (strength.score >= 4) {
+        label = 'Strong';
+        color = '#10b981';
+      } else if (strength.score >= 2) {
+        label = 'Medium';
+        color = '#f59e0b';
+      }
+      regPwStrength.textContent = `Password strength: ${label}`;
+      regPwStrength.style.color = color;
+    });
+
+    // ================================================================
+    //  EXPOSE SOME FUNCTIONS GLOBALLY (for inline use if needed)
+    // ================================================================
+    window.agentUI = {
+      showModal,
+      hideModal,
+      showLoginSheet,
+      showRegistrationFlow,
+      showChoice,
+      showStatus,
+      clearStatus
+    };
+
+    console.log('[Agent] Agent Registration UI initialized.');
   </script>
+
 </body>
+
 </html>

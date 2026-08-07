@@ -10,6 +10,237 @@
     <link rel="stylesheet" href="/css/common.css" media="all">
     <link rel="stylesheet" href="/css/free-trial.css" media="all">
 
+    <!-- ========== INLINE SHIMMER STYLES (loads before anything, dark mode default) ========== -->
+    <style>
+        :root {
+            --shimmer-bg: #12151c;
+            --shimmer-skeleton: #1e2230;
+            --shimmer-highlight: #2a2f3d;
+        }
+
+        #shimmer-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            background: var(--shimmer-bg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 0;
+            transition: opacity 0.4s ease;
+            opacity: 1;
+            pointer-events: all;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        #shimmer-overlay.shimmer-hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Skeleton wrapper – matches content max-width */
+        .shimmer-content {
+            width: 100%;
+            max-width: 650px;
+            padding: 16px 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 76px;
+            /* clears the skeleton header */;
+        }
+
+        /* Skeleton header bar */
+        .shimmer-header-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100000;
+            height: 60px;
+            background: var(--shimmer-bg);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-sizing: border-box;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .shimmer-header-bar .sk-circle {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--shimmer-skeleton);
+            animation: shimmerPulse 1.6s infinite;
+        }
+
+        .shimmer-header-bar .sk-pill {
+            width: 44px;
+            height: 38px;
+            border-radius: 19px;
+            background: var(--shimmer-skeleton);
+            animation: shimmerPulse 1.6s infinite;
+            animation-delay: 0.15s;
+        }
+
+        /* Inferior nav skeleton */
+        .shimmer-nav-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 4px;
+        }
+
+        .shimmer-nav-row .sk-btn {
+            width: 130px;
+            height: 38px;
+            border-radius: 22px;
+            background: var(--shimmer-skeleton);
+            animation: shimmerPulse 1.6s infinite;
+            animation-delay: 0.25s;
+        }
+
+        .shimmer-nav-row .sk-btn:last-child {
+            animation-delay: 0.35s;
+        }
+
+        /* Large card skeleton */
+        .sk-card {
+            width: 100%;
+            height: 160px;
+            border-radius: 16px;
+            background: var(--shimmer-skeleton);
+            animation: shimmerPulse 1.6s infinite;
+            animation-delay: 0.1s;
+        }
+
+        /* Feature lines */
+        .sk-line-group {
+            background: var(--shimmer-skeleton);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            animation: shimmerPulse 1.6s infinite;
+            animation-delay: 0.2s;
+        }
+
+        .sk-line {
+            height: 16px;
+            border-radius: 8px;
+            background: var(--shimmer-highlight);
+            animation: shimmerPulse 1.6s infinite;
+        }
+
+        .sk-line.w75 {
+            width: 75%;
+            animation-delay: 0.3s;
+        }
+        .sk-line.w60 {
+            width: 60%;
+            animation-delay: 0.4s;
+        }
+        .sk-line.w85 {
+            width: 85%;
+            animation-delay: 0.5s;
+        }
+        .sk-line.w50 {
+            width: 50%;
+            animation-delay: 0.6s;
+        }
+
+        /* Warning box skeleton */
+        .sk-warning {
+            width: 100%;
+            height: 52px;
+            border-radius: 0 12px 12px 0;
+            border-left: 4px solid var(--shimmer-highlight);
+            background: var(--shimmer-skeleton);
+            animation: shimmerPulse 1.6s infinite;
+            animation-delay: 0.45s;
+        }
+
+        /* CTA button skeleton */
+        .sk-cta {
+            width: 100%;
+            height: 52px;
+            border-radius: 28px;
+            background: var(--shimmer-skeleton);
+            animation: shimmerPulse 1.6s infinite;
+            animation-delay: 0.55s;
+            margin-top: 4px;
+        }
+
+        /* Pulse animation – mimics shimmer */
+        @keyframes shimmerPulse {
+            0%,
+            100% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive shimmer */
+        @media (max-width: 480px) {
+            .shimmer-content {
+                padding: 12px 14px;
+                gap: 12px;
+                margin-top: 68px;
+            }
+            .shimmer-header-bar {
+                height: 52px;
+                padding: 0 14px;
+            }
+            .shimmer-header-bar .sk-circle {
+                width: 32px;
+                height: 32px;
+            }
+            .shimmer-header-bar .sk-pill {
+                width: 36px;
+                height: 32px;
+                border-radius: 16px;
+            }
+            .shimmer-nav-row .sk-btn {
+                width: 105px;
+                height: 34px;
+                border-radius: 18px;
+            }
+            .sk-card {
+                height: 130px;
+            }
+            .sk-cta {
+                height: 44px;
+                border-radius: 24px;
+            }
+        }
+    </style>
+
+    <!-- Inline script: shimmer hide function + fallback timeout -->
+    <script>
+        window.hideShimmer = function () {
+            const shimmer = document.getElementById('shimmer-overlay');
+            if (shimmer && !shimmer.classList.contains('shimmer-hidden')) {
+                shimmer.classList.add('shimmer-hidden');
+                // Remove from DOM after transition
+                setTimeout(() => {
+                    if (shimmer && shimmer.parentNode) {
+                        shimmer.remove();
+                    }
+                }, 450);
+            }
+        };
+        // Fallback: hide shimmer after 15 seconds if something fails
+        setTimeout(function () {
+            window.hideShimmer();
+        }, 15000);
+    </script>
+
     <script type="module" src="/scripts/utils.js"></script>
     <script type="module" src="/scripts/ui.js"></script>
     <script type="module" src="/scripts/router.js"></script>
@@ -24,7 +255,6 @@
     </script>
 
     <script type="module">
-        // Import dependencies
         import * as app from '../scripts/app.js';
         import * as auth from '../scripts/auth.js';
         import * as ui from '../scripts/ui.js';
@@ -33,51 +263,70 @@
         import * as subscription from '../scripts/subscription.js';
         import * as utils from '../scripts/utils.js';
 
-        // Initialize page
         (async function initFreeTrial() {
             console.log('[FreeTrial] Initializing...');
 
-            await app.initializeApp();
-            ui.applyTheme();
-
-            if (!app.checkAuth()) {
-                console.log('[FreeTrial] Not authenticated, redirecting to login');
-                ui.showToast('Please log in to start free trial', 'warning');
-                router.navigateTo('login.html');
-                return;
-            }
-
-            const user = app.getUser();
-            console.log('[FreeTrial] User:', user);
-
-            if (user) {
-                const welcomeEl = document.getElementById('user-welcome');
-                if (welcomeEl) welcomeEl.textContent = `Welcome, ${user.name}!`;
-            }
-
             try {
-                const eligible = await subscription.checkTrialEligibility();
-                if (!eligible) {
-                    ui.showToast('Free trial already used on this device', 'warning');
-                    document.getElementById('trial-actions').innerHTML = `
-                    <p>You have already used your free trial.</p>
-                    <button onclick="router.navigateTo('subscription.html')" class="btn-primary">View Subscription Plans</button>
-                `;
-                    document.getElementById('begin-trial-btn').disabled = true;
+                await app.initializeApp();
+                ui.applyTheme();
+
+                if (!app.checkAuth()) {
+                    console.log('[FreeTrial] Not authenticated, redirecting to login');
+                    ui.showToast('Please log in to start free trial', 'warning');
+                    router.navigateTo('login.html');
+                    window.hideShimmer();
+                    return;
                 }
-            } catch (error) {
-                console.error('[FreeTrial] Eligibility check failed:', error);
+
+                const user = app.getUser();
+                console.log('[FreeTrial] User:', user);
+
+                if (user) {
+                    const welcomeEl = document.getElementById('user-welcome');
+                    if (welcomeEl) welcomeEl.textContent = `Welcome, ${user.name}!`;
+                }
+
+                // Hide shimmer once basic UI is ready
+                window.hideShimmer();
+
+                // Async eligibility check
+                try {
+                    const eligible = await subscription.checkTrialEligibility();
+                    if (!eligible) {
+                        ui.showToast('Free trial already used on this device', 'warning');
+                        const trialActions = document.getElementById('trial-actions');
+                        if (trialActions) {
+                            trialActions.innerHTML = `
+                                <p style="text-align:center;color:var(--text-secondary);margin-bottom:0.75rem;">
+                                    ⚠️ You have already used your free trial on this device.
+                                </p>
+                                <button id="begin-trial-btn" class="btn-primary btn-large" disabled
+                                    style="opacity:0.5;cursor:not-allowed;">
+                                    🚀 Begin Free Trial
+                                </button>
+                                <p style="text-align:center;font-size:0.85rem;color:var(--text-secondary);">
+                                    Use the <strong>View Subscription Plans</strong> button above to upgrade.
+                                </p>
+                            `;
+                        }
+                    }
+                } catch (error) {
+                    console.error('[FreeTrial] Eligibility check failed:', error);
+                    // Non-blocking – user can still try
+                }
+            } catch (fatalError) {
+                console.error('[FreeTrial] Initialization failed:', fatalError);
+                window.hideShimmer();
+                ui.showToast('Something went wrong. Please refresh the page.', 'error');
             }
         })();
 
         window.beginTrial = async function () {
             console.log('[FreeTrial] Starting trial activation...');
 
-            // ✅ CORRECTED: await the async function
             const timeCheck = await security.detectTimeManipulation();
             console.log('[FreeTrial] Time check result:', timeCheck);
 
-            // Allow trial even if time check warns (but not if blocked/locked)
             if (timeCheck.action === 'block' || timeCheck.action === 'lock') {
                 ui.showToast(timeCheck.message || 'Time integrity check failed. Cannot activate trial.', 'error');
                 return;
@@ -119,15 +368,69 @@
 </head>
 
 <body>
-    <div class="page-container">
-        <header>
-            <div class="logo">
-                <img src="/assets/images/logo.png" alt="Logo" width="40" height="40">
-                <span>MedHub</span>
-            </div>
-            <button onclick="ui.toggleTheme()" class="btn-outline">🌓</button>
-        </header>
 
+    <!-- ==================== SHIMMER OVERLAY ==================== -->
+    <!-- Renders instantly in dark mode before any other content -->
+    <div id="shimmer-overlay" aria-hidden="true">
+        <!-- Skeleton fixed header -->
+        <div class="shimmer-header-bar">
+            <div class="sk-circle"></div>
+            <div class="sk-pill"></div>
+        </div>
+
+        <!-- Skeleton page content -->
+        <div class="shimmer-content">
+            <!-- Inferior nav skeletons -->
+            <div class="shimmer-nav-row">
+                <div class="sk-btn"></div>
+                <div class="sk-btn"></div>
+            </div>
+
+            <!-- Trial card skeleton -->
+            <div class="sk-card"></div>
+
+            <!-- Features skeleton -->
+            <div class="sk-line-group">
+                <div class="sk-line w75"></div>
+                <div class="sk-line w60"></div>
+                <div class="sk-line w85"></div>
+                <div class="sk-line w50"></div>
+            </div>
+
+            <!-- Warning box skeleton -->
+            <div class="sk-warning"></div>
+
+            <!-- CTA skeleton -->
+            <div class="sk-cta"></div>
+        </div>
+    </div>
+    <!-- ==================== END SHIMMER OVERLAY ==================== -->
+
+    <!-- ==================== FIXED SUPERIOR HEADER ==================== -->
+    <header class="header-superior" id="header-superior">
+        <div class="header-superior-left">
+            <img src="/assets/images/logo.png" alt="MedHub Logo" width="36" height="36" class="logo-img">
+            <span class="logo-text">MedHub</span>
+        </div>
+        <button onclick="ui.toggleTheme()" class="btn-theme-toggle" title="Toggle theme" aria-label="Toggle dark/light theme">
+            <span class="theme-icon">🌓</span>
+        </button>
+    </header>
+
+    <!-- ==================== PAGE CONTAINER ==================== -->
+    <div class="page-container">
+
+        <!-- ==================== INFERIOR NAV (scrollable, not fixed) ==================== -->
+        <nav class="header-inferior" id="header-inferior">
+            <button onclick="goToSubjects()" class="btn-nav btn-nav-left">
+                <span class="btn-nav-icon">←</span> Back to Subjects
+            </button>
+            <button onclick="goToSubscription()" class="btn-nav btn-nav-right">
+                View Subscription Plans <span class="btn-nav-icon">💳</span>
+            </button>
+        </nav>
+
+        <!-- ==================== MAIN CONTENT ==================== -->
         <main class="trial-container">
             <h1>✨ 3‑Hour Free Trial</h1>
 
@@ -158,12 +461,11 @@
                 This will be detected and your account will be locked immediately.
             </div>
 
+            <!-- Only the CTA remains here; nav buttons are in the inferior header -->
             <div id="trial-actions" class="trial-actions">
-                <button id="begin-trial-btn" onclick="beginTrial()" class="btn-primary btn-large">🚀 Begin Free
-                    Trial</button>
-                <button onclick="router.navigateTo('subscription.html')" class="btn-secondary">View Subscription
-                    Plans</button>
-                <button onclick="router.navigateTo('subjects.html')" class="btn-text">← Back to Subjects</button>
+                <button id="begin-trial-btn" onclick="beginTrial()" class="btn-primary btn-large">
+                    🚀 Begin Free Trial
+                </button>
             </div>
         </main>
     </div>

@@ -59,6 +59,79 @@
         .challenge-extra {
             display: none;
         }
+
+        /* ============================================================
+           OVERRIDE: Make bottom card push down dynamically
+           ============================================================ */
+        .bottom-card {
+            position: fixed !important;
+            top: 0;
+            bottom: 0 !important;
+            left: 0;
+            right: 0;
+            height: auto !important;
+            max-height: none !important;
+            border-top: 2px solid var(--accent);
+            border-radius: 24px 24px 0 0;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.2);
+            padding: 1.5rem 1.5rem 1rem;
+            overflow-y: auto;
+            z-index: 50;
+            transition: transform 0.3s ease, top 0.3s ease;
+            transform: translateY(0);
+        }
+        .bottom-card.closed {
+            transform: translateY(100%);
+        }
+
+        /* Join code input section (step 1) */
+        .join-code-row {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+        .join-code-row p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+        .join-code-row input {
+            transition: border-color 0.2s;
+        }
+        .join-code-row input:focus {
+            border-color: var(--accent);
+        }
+
+        /* Share link area */
+        .share-link-area {
+            margin-top: 0.75rem;
+            display: none;
+        }
+        .share-link-area label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        .share-link-area input {
+            font-family: monospace;
+            font-size: 0.9rem;
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            color: var(--text-primary);
+        }
+        .share-link-area .btn-sm {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            padding: 0.3rem 0.8rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .share-link-area .btn-sm:hover {
+            background: var(--border);
+        }
     </style>
 </head>
 
@@ -107,7 +180,7 @@
     <div id="main-content" style="display: none;">
 
         <!-- Fixed Header (2 rows) -->
-        <header class="fixed-header">
+        <header class="fixed-header" id="fixedHeader">
             <div class="header-row top">
                 <div class="left-group">
                     <img src="/assets/images/logo.png" alt="Logo" width="32" height="32">
@@ -132,7 +205,7 @@
             </div>
         </header>
 
-        <!-- Floating Bottom Card -->
+        <!-- Floating Bottom Card (now with dynamic top) -->
         <div class="bottom-card" id="bottomCard">
 
             <!-- Step 1: Choose Exam Type -->
@@ -161,6 +234,26 @@
                 </div>
                 <div class="action-row">
                     <button class="btn btn-primary" id="continue-btn">Continue →</button>
+                </div>
+
+                <!-- NEW: Join by code section -->
+                <div class="join-code-row">
+                    <p>Have a challenge code?</p>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <input type="text" id="join-code-input" placeholder="Enter code" style="flex:1; max-width:200px; padding:0.5rem; border-radius:var(--radius-sm); border:1px solid var(--border); background:var(--bg-card); color:var(--text-primary);">
+                        <button id="join-code-btn" class="btn btn-primary" style="flex:0; padding:0.5rem 1rem;">Join</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2-join: Join Challenge (pre-filled via URL or manual) -->
+            <div class="card-step" id="step2-join">
+                <h3 style="margin-top: 0; text-align: center;">🔗 Join Challenge</h3>
+                <div class="challenge-code-display" id="join-code-display">---</div>
+                <p id="join-status" style="color:var(--text-secondary); font-size:0.9rem; text-align: center;"></p>
+                <div class="action-row">
+                    <button class="btn btn-secondary back-btn">← Back</button>
+                    <button class="btn btn-primary" id="join-start-btn">Join & Start</button>
                 </div>
             </div>
 
@@ -191,61 +284,67 @@
                 </div>
             </div>
 
-<!-- Step 2b: Community Challenge Configuration -->
-<div class="card-step" id="step2-challenge">
-    <h3 style="margin-top: 0;">👥 Community Challenge</h3>
-    <div class="config-group">
-        <label>Questions</label>
-        <div class="question-stepper">
-            <button class="qty-dec">−</button>
-            <input type="number" id="challenge-qty" value="50" min="1">
-            <button class="qty-inc">+</button>
-            <span class="max-hint" id="challenge-max-hint">max 100</span>
-        </div>
-        <div class="validation-warning" id="challenge-warning">Number of questions exceeds available questions.</div>
-    </div>
-    <div class="config-group">
-        <label>Challenge Type</label>
-        <div class="challenge-type-group" id="challenge-type">
-            <button data-type="friend" class="active">Friend</button>
-            <button data-type="anyone">Anyone Online</button>
-        </div>
-    </div>
-    <!-- Friend challenge extra -->
-    <div class="challenge-extra show" id="friend-extra">
-        <label>Enter friend's email:</label>
-        <!-- ✅ FIX: changed id to 'invite-friend-input' -->
-        <input type="email" id="invite-friend-input" placeholder="friend@example.com">
-        <div class="action-row" style="margin-top:0.5rem;">
-            <button class="btn btn-secondary" id="send-invite-btn">Send Invite</button>
-            <button class="btn btn-secondary" id="cancel-invite-btn">Cancel</button>
-        </div>
-        <div id="invite-status" style="margin-top:0.5rem; font-size:0.85rem;"></div>
-        <!-- Challenge status display -->
-        <div id="challenge-status" style="margin-top:0.5rem;"></div>
-        <div class="challenge-code-display" id="challenge-code-display">---</div>
-        <div class="waiting-message" id="waiting-message">⏳ Waiting for opponent...</div>
-        <div class="challenge-actions" id="challenge-actions" style="display:none;">
-            <button class="btn-sm" id="copy-challenge-code-btn">📋 Copy Code</button>
-            <button class="btn-sm" id="share-challenge-code-btn">📤 Share Code</button>
-        </div>
-    </div>
-    <!-- Anyone online extra -->
-    <div class="challenge-extra" id="anyone-extra">
-        <label>Invitations</label>
-        <div id="invitation-list" class="user-list">
-            <p style="color:var(--text-muted);">No pending invitations.</p>
-        </div>
-        <div class="action-row">
-            <button class="btn btn-secondary" id="refresh-invitations">🔄 Refresh</button>
-            <button class="btn btn-secondary" id="create-group-btn">Create Group Challenge</button>
-        </div>
-    </div>
-    <div class="action-row">
-        <button class="btn btn-secondary back-btn">← Back</button>
-        <button class="btn btn-primary start-exam-btn" id="challenge-start-btn">Create Challenge →</button>
-    </div>
-</div>
+            <!-- Step 2b: Community Challenge Configuration -->
+            <div class="card-step" id="step2-challenge">
+                <h3 style="margin-top: 0;">👥 Community Challenge</h3>
+                <div class="config-group">
+                    <label>Questions</label>
+                    <div class="question-stepper">
+                        <button class="qty-dec">−</button>
+                        <input type="number" id="challenge-qty" value="50" min="1">
+                        <button class="qty-inc">+</button>
+                        <span class="max-hint" id="challenge-max-hint">max 100</span>
+                    </div>
+                    <div class="validation-warning" id="challenge-warning">Number of questions exceeds available questions.</div>
+                </div>
+                <div class="config-group">
+                    <label>Challenge Type</label>
+                    <div class="challenge-type-group" id="challenge-type">
+                        <button data-type="friend" class="active">Friend</button>
+                        <button data-type="anyone">Anyone Online</button>
+                    </div>
+                </div>
+                <!-- Friend challenge extra -->
+                <div class="challenge-extra show" id="friend-extra">
+                    <label>Enter friend's email:</label>
+                    <input type="email" id="invite-friend-input" placeholder="friend@example.com">
+                    <div class="action-row" style="margin-top:0.5rem;">
+                        <button class="btn btn-secondary" id="send-invite-btn">Send Invite</button>
+                        <button class="btn btn-secondary" id="cancel-invite-btn">Cancel</button>
+                    </div>
+                    <div id="invite-status" style="margin-top:0.5rem; font-size:0.85rem;"></div>
+                    <div id="challenge-status" style="margin-top:0.5rem;"></div>
+                    <div class="challenge-code-display" id="challenge-code-display">---</div>
+                    <div class="waiting-message" id="waiting-message">⏳ Waiting for opponent...</div>
+                    <div class="challenge-actions" id="challenge-actions" style="display:none;">
+                        <button class="btn-sm" id="copy-challenge-code-btn">📋 Copy Code</button>
+                        <button class="btn-sm" id="share-challenge-code-btn">📤 Share Code</button>
+                    </div>
+                    <!-- NEW: shareable link area (hidden by default) -->
+                    <div class="share-link-area" id="share-link-area">
+                        <label>Share this link:</label>
+                        <div style="display:flex; gap:0.5rem; margin-top:0.25rem;">
+                            <input type="text" id="share-link-input" readonly>
+                            <button class="btn-sm" id="copy-share-link-btn">📋 Copy</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Anyone online extra -->
+                <div class="challenge-extra" id="anyone-extra">
+                    <label>Invitations</label>
+                    <div id="invitation-list" class="user-list">
+                        <p style="color:var(--text-muted);">No pending invitations.</p>
+                    </div>
+                    <div class="action-row">
+                        <button class="btn btn-secondary" id="refresh-invitations">🔄 Refresh</button>
+                        <button class="btn btn-secondary" id="create-group-btn">Create Group Challenge</button>
+                    </div>
+                </div>
+                <div class="action-row">
+                    <button class="btn btn-secondary back-btn">← Back</button>
+                    <button class="btn btn-primary start-exam-btn" id="challenge-start-btn">Create Challenge →</button>
+                </div>
+            </div>
 
             <!-- Step 2c: Revision Configuration -->
             <div class="card-step" id="step2-revision">
@@ -285,7 +384,7 @@
     <!-- ============================================================ -->
     <!--  SMALL INLINE SPINNER (for backend requests)                -->
     <!-- ============================================================ -->
-    <div id="inline-spinner" style="display:none; position:fixed; bottom:20px; right:20px; background:var(--bg-card); padding:8px 12px; border-radius:30px; box-shadow:0 2px 10px rgba(0,0,0,0.2); z-index:999; display:flex; align-items:center; gap:8px; font-size:0.9rem; color:var(--text-secondary);">
+    <div id="inline-spinner" style="display:none; position:fixed; bottom:20px; right:20px; background:var(--bg-card); padding:8px 12px; border-radius:30px; box-shadow:0 2px 10px rgba(0,0,0,0.2); z-index:999; align-items:center; gap:8px; font-size:0.9rem; color:var(--text-secondary);">
         <div class="spinner-small"></div>
         <span>Loading...</span>
     </div>
@@ -293,280 +392,390 @@
     <!-- ============================================================ -->
     <!--  SCRIPT: Initialize the page                                 -->
     <!-- ============================================================ -->
-    <!-- ============================================================ -->
-<!--  SCRIPT: Initialize the page                                 -->
-<!-- ============================================================ -->
-<script type="module">
-    import * as examSettings from '../scripts/exam-settings.js';
-    import * as ui from '../scripts/ui.js';
-    import * as router from '../scripts/router.js';
+    <script type="module">
+        import * as examSettings from '../scripts/exam-settings.js';
+        import * as ui from '../scripts/ui.js';
+        import * as router from '../scripts/router.js';
 
-    // ==================== DOM REFS ====================
-    const dom = {
-        shimmer: document.getElementById('shimmer-skeleton'),
-        mainContent: document.getElementById('main-content'),
-        bottomCard: document.getElementById('bottomCard'),
+        // ==================== DOM REFS ====================
+        const dom = {
+            shimmer: document.getElementById('shimmer-skeleton'),
+            mainContent: document.getElementById('main-content'),
+            bottomCard: document.getElementById('bottomCard'),
+            fixedHeader: document.getElementById('fixedHeader'),
 
-        // Subject summary
-        subjectIcon: document.getElementById('subject-icon'),
-        subjectName: document.getElementById('subject-name'),
-        subjectTopics: document.getElementById('subject-topics'),
-        statQuestions: document.getElementById('stat-questions'),
-        statDifficulty: document.getElementById('stat-difficulty'),
-        statTime: document.getElementById('stat-time'),
+            subjectIcon: document.getElementById('subject-icon'),
+            subjectName: document.getElementById('subject-name'),
+            subjectTopics: document.getElementById('subject-topics'),
+            statQuestions: document.getElementById('stat-questions'),
+            statDifficulty: document.getElementById('stat-difficulty'),
+            statTime: document.getElementById('stat-time'),
 
-        // Steps
-        step1: document.getElementById('step1'),
-        step2Std: document.getElementById('step2-standard'),
-        step2Chal: document.getElementById('step2-challenge'),
-        step2Rev: document.getElementById('step2-revision'),
+            step1: document.getElementById('step1'),
+            step2Std: document.getElementById('step2-standard'),
+            step2Chal: document.getElementById('step2-challenge'),
+            step2Rev: document.getElementById('step2-revision'),
+            step2Join: document.getElementById('step2-join'),
 
-        // Buttons
-        continueBtn: document.getElementById('continue-btn'),
-        backBtns: document.querySelectorAll('.back-btn'),
-        startBtns: document.querySelectorAll('.start-exam-btn'),
-        challengeStartBtn: document.getElementById('challenge-start-btn'),
+            continueBtn: document.getElementById('continue-btn'),
+            backBtns: document.querySelectorAll('.back-btn'),
+            startBtns: document.querySelectorAll('.start-exam-btn'),
+            challengeStartBtn: document.getElementById('challenge-start-btn'),
 
-        // Question inputs
-        qtyInputs: {
-            std: document.getElementById('std-qty'),
-            challenge: document.getElementById('challenge-qty'),
-            rev: document.getElementById('rev-qty')
-        },
-        maxHints: {
-            std: document.getElementById('std-max-hint'),
-            challenge: document.getElementById('challenge-max-hint'),
-            rev: document.getElementById('rev-max-hint')
-        },
-        warnings: {
-            std: document.getElementById('std-warning'),
-            challenge: document.getElementById('challenge-warning'),
-            rev: document.getElementById('rev-warning')
-        },
+            qtyInputs: {
+                std: document.getElementById('std-qty'),
+                challenge: document.getElementById('challenge-qty'),
+                rev: document.getElementById('rev-qty')
+            },
+            maxHints: {
+                std: document.getElementById('std-max-hint'),
+                challenge: document.getElementById('challenge-max-hint'),
+                rev: document.getElementById('rev-max-hint')
+            },
+            warnings: {
+                std: document.getElementById('std-warning'),
+                challenge: document.getElementById('challenge-warning'),
+                rev: document.getElementById('rev-warning')
+            },
 
-        // Difficulty groups
-        stdDifficulty: document.getElementById('std-difficulty'),
-        revDifficulty: document.getElementById('rev-difficulty'),
+            stdDifficulty: document.getElementById('std-difficulty'),
+            revDifficulty: document.getElementById('rev-difficulty'),
 
-        // Challenge elements
-        challengeType: document.getElementById('challenge-type'),
-        friendExtra: document.getElementById('friend-extra'),
-        anyoneExtra: document.getElementById('anyone-extra'),
-        challengeStatus: document.getElementById('challenge-status'),
-        challengeCodeDisplay: document.getElementById('challenge-code-display'),
-        waitingMessage: document.getElementById('waiting-message'),
-        challengeActions: document.getElementById('challenge-actions'),
-        inviteStatus: document.getElementById('invite-status'),
-        inviteFriendInput: document.getElementById('invite-friend-input'), // ✅ Fixed ID
-        sendInviteBtn: document.getElementById('send-invite-btn'),
-        cancelInviteBtn: document.getElementById('cancel-invite-btn'),
-        copyChallengeCodeBtn: document.getElementById('copy-challenge-code-btn'),
-        shareChallengeCodeBtn: document.getElementById('share-challenge-code-btn'),
-        refreshInvitations: document.getElementById('refresh-invitations'),
-        createGroupBtn: document.getElementById('create-group-btn'),
-        invitationList: document.getElementById('invitation-list'),
+            challengeType: document.getElementById('challenge-type'),
+            friendExtra: document.getElementById('friend-extra'),
+            anyoneExtra: document.getElementById('anyone-extra'),
+            challengeStatus: document.getElementById('challenge-status'),
+            challengeCodeDisplay: document.getElementById('challenge-code-display'),
+            waitingMessage: document.getElementById('waiting-message'),
+            challengeActions: document.getElementById('challenge-actions'),
+            inviteStatus: document.getElementById('invite-status'),
+            inviteFriendInput: document.getElementById('invite-friend-input'),
+            sendInviteBtn: document.getElementById('send-invite-btn'),
+            cancelInviteBtn: document.getElementById('cancel-invite-btn'),
+            copyChallengeCodeBtn: document.getElementById('copy-challenge-code-btn'),
+            shareChallengeCodeBtn: document.getElementById('share-challenge-code-btn'),
+            refreshInvitations: document.getElementById('refresh-invitations'),
+            createGroupBtn: document.getElementById('create-group-btn'),
+            invitationList: document.getElementById('invitation-list'),
 
-        // Presets (if any)
-        presetSelect: document.getElementById('preset-select'),
-        examMode: document.getElementById('exam-mode'),
-        questionCount: document.getElementById('question-count'),
-        customCount: document.getElementById('custom-count'),
-        customCountContainer: document.getElementById('custom-count-container'),
-        timing: document.getElementById('timing'),
-        preventCopy: document.getElementById('prevent-copy'),
-        autoSave: document.getElementById('auto-save'),
-        detectTab: document.getElementById('detect-tab'),
-        breakEnabled: document.getElementById('break-enabled'),
-    };
+            // New join elements
+            joinCodeInput: document.getElementById('join-code-input'),
+            joinCodeBtn: document.getElementById('join-code-btn'),
+            joinCodeDisplay: document.getElementById('join-code-display'),
+            joinStatus: document.getElementById('join-status'),
+            joinStartBtn: document.getElementById('join-start-btn'),
 
-    // Pass DOM refs to the module
-    examSettings.setDomRefs(dom);
+            // Share link elements
+            shareLinkArea: document.getElementById('share-link-area'),
+            shareLinkInput: document.getElementById('share-link-input'),
+            copyShareLinkBtn: document.getElementById('copy-share-link-btn'),
 
-    // ==================== INIT ====================
-    (async function init() {
-        dom.shimmer.style.display = 'flex';
-        await examSettings.initExamSettings();
-        dom.shimmer.style.display = 'none';
-        dom.mainContent.style.display = 'block';
-        setupEventListeners();
-    })();
+            // Presets (if any)
+            presetSelect: document.getElementById('preset-select'),
+            examMode: document.getElementById('exam-mode'),
+            questionCount: document.getElementById('question-count'),
+            customCount: document.getElementById('custom-count'),
+            customCountContainer: document.getElementById('custom-count-container'),
+            timing: document.getElementById('timing'),
+            preventCopy: document.getElementById('prevent-copy'),
+            autoSave: document.getElementById('auto-save'),
+            detectTab: document.getElementById('detect-tab'),
+            breakEnabled: document.getElementById('break-enabled'),
+        };
 
-    // ==================== EVENT LISTENERS ====================
-    function setupEventListeners() {
-        // Step navigation
-        dom.continueBtn.addEventListener('click', () => {
-            const selected = document.querySelector('.mode-option.selected');
-            if (!selected) {
-                ui.showToast('Please select an exam type', 'warning');
-                return;
+        // Pass DOM refs to the module
+        examSettings.setDomRefs(dom);
+
+        // ==================== DYNAMIC CARD POSITIONING ====================
+        function updateBottomCardPosition() {
+            const header = dom.fixedHeader;
+            const card = dom.bottomCard;
+            if (header && card) {
+                const headerBottom = header.getBoundingClientRect().bottom;
+                card.style.top = headerBottom + 'px';
             }
-            const mode = selected.dataset.mode;
-            if (mode === 'standard') showStep('step2-standard');
-            else if (mode === 'challenge') showStep('step2-challenge');
-            else if (mode === 'revision') showStep('step2-revision');
-        });
+        }
 
-        dom.backBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                showStep('step1');
-                dom.challengeStatus.textContent = '';
-                dom.challengeCodeDisplay.textContent = '---';
-                dom.waitingMessage.style.display = 'none';
-                dom.challengeActions.style.display = 'none';
+        // Listen for resize and any changes that may affect header height
+        window.addEventListener('resize', updateBottomCardPosition);
+        // Use ResizeObserver to watch for header size changes (e.g., when subjects are added)
+        const headerObserver = new ResizeObserver(() => {
+            updateBottomCardPosition();
+        });
+        if (dom.fixedHeader) {
+            headerObserver.observe(dom.fixedHeader);
+        }
+
+        // ==================== SHAREABLE LINK HELPER ====================
+        function getShareableLink(code) {
+            return `${window.location.origin}${window.location.pathname}?exam=${code}`;
+        }
+
+        // Expose globally so exam-settings.js can call it after challenge creation
+        window.showShareableLink = (code) => {
+            if (dom.shareLinkArea && dom.shareLinkInput) {
+                dom.shareLinkInput.value = getShareableLink(code);
+                dom.shareLinkArea.style.display = 'block';
+            }
+        };
+
+        // ==================== INIT ====================
+        (async function init() {
+            dom.shimmer.style.display = 'flex';
+            await examSettings.initExamSettings();
+            dom.shimmer.style.display = 'none';
+            dom.mainContent.style.display = 'block';
+            updateBottomCardPosition();
+
+            // Auto-join from URL parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const examCode = urlParams.get('exam');
+            if (examCode) {
+                // Show join step with code
+                if (dom.joinCodeDisplay) dom.joinCodeDisplay.textContent = examCode;
+                showStep('step2-join');
+                // Optional: auto-join after a brief delay (user can also click)
+                // setTimeout(() => { dom.joinStartBtn?.click(); }, 800);
+            }
+
+            setupEventListeners();
+        })();
+
+        // ==================== EVENT LISTENERS ====================
+        function setupEventListeners() {
+            // Step navigation
+            dom.continueBtn.addEventListener('click', () => {
+                const selected = document.querySelector('.mode-option.selected');
+                if (!selected) {
+                    ui.showToast('Please select an exam type', 'warning');
+                    return;
+                }
+                const mode = selected.dataset.mode;
+                if (mode === 'standard') showStep('step2-standard');
+                else if (mode === 'challenge') showStep('step2-challenge');
+                else if (mode === 'revision') showStep('step2-revision');
+                updateBottomCardPosition();
             });
-        });
 
-        dom.startBtns.forEach(btn => {
-            if (btn.id !== 'challenge-start-btn') {
-                btn.addEventListener('click', examSettings.startExam);
-            }
-        });
-
-        // Mode selection
-        document.querySelectorAll('.mode-option').forEach(el => {
-            el.addEventListener('click', function() {
-                document.querySelectorAll('.mode-option').forEach(o => o.classList.remove('selected'));
-                this.classList.add('selected');
-            });
-        });
-
-        // Challenge type
-        dom.challengeType.querySelectorAll('button').forEach(btn => {
-            btn.addEventListener('click', function() {
-                dom.challengeType.querySelectorAll('button').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                const type = this.dataset.type;
-                dom.friendExtra.classList.toggle('show', type === 'friend');
-                dom.anyoneExtra.classList.toggle('show', type === 'anyone');
-                dom.challengeStatus.textContent = '';
-                dom.challengeCodeDisplay.textContent = '---';
-                dom.waitingMessage.style.display = 'none';
-                dom.challengeActions.style.display = 'none';
-            });
-        });
-
-        // Send invite (real backend) – using dom.inviteFriendInput
-        dom.sendInviteBtn.addEventListener('click', async () => {
-            const email = dom.inviteFriendInput.value.trim();
-            if (!email) {
-                ui.showToast('Please enter a friend\'s email', 'warning');
-                return;
-            }
-            showInlineSpinner('Sending invitation...');
-            try {
-                await examSettings.inviteFriend();
-            } finally {
-                hideInlineSpinner();
-            }
-        });
-
-        // Cancel invite
-        dom.cancelInviteBtn.addEventListener('click', () => {
-            dom.inviteFriendInput.value = '';
-            dom.inviteStatus.textContent = '';
-            dom.challengeStatus.textContent = '';
-            dom.challengeCodeDisplay.textContent = '---';
-            dom.waitingMessage.style.display = 'none';
-            dom.challengeActions.style.display = 'none';
-        });
-
-        // Create challenge (real backend)
-        dom.challengeStartBtn.addEventListener('click', async () => {
-            showInlineSpinner('Creating challenge...');
-            try {
-                await examSettings.startChallenge();
-            } finally {
-                hideInlineSpinner();
-            }
-        });
-
-        // Copy challenge code
-        dom.copyChallengeCodeBtn.addEventListener('click', () => {
-            const code = dom.challengeCodeDisplay.textContent;
-            if (!code || code === '---') {
-                ui.showToast('No challenge code available', 'warning');
-                return;
-            }
-            navigator.clipboard?.writeText(code).then(() => {
-                ui.showToast('Code copied!', 'success');
-            }).catch(() => {
-                const input = document.createElement('input');
-                input.value = code;
-                document.body.appendChild(input);
-                input.select();
-                document.execCommand('copy');
-                input.remove();
-                ui.showToast('Code copied!', 'success');
-            });
-        });
-
-        // Share challenge code
-        dom.shareChallengeCodeBtn.addEventListener('click', () => {
-            const code = dom.challengeCodeDisplay.textContent;
-            if (!code || code === '---') {
-                ui.showToast('No challenge code available', 'warning');
-                return;
-            }
-            if (navigator.share) {
-                navigator.share({
-                    title: 'Challenge Code',
-                    text: `Join my MedHub challenge! Code: ${code}`
-                }).catch(() => {});
-            } else {
-                navigator.clipboard?.writeText(`MedHub Challenge Code: ${code}`).then(() => {
-                    ui.showToast('Code copied to clipboard!', 'success');
-                }).catch(() => {
-                    ui.showToast('Share not supported. Copy manually.', 'warning');
+            dom.backBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    showStep('step1');
+                    dom.challengeStatus.textContent = '';
+                    dom.challengeCodeDisplay.textContent = '---';
+                    dom.waitingMessage.style.display = 'none';
+                    dom.challengeActions.style.display = 'none';
+                    updateBottomCardPosition();
                 });
-            }
-        });
+            });
 
-        // Refresh invitations (simulated)
-        dom.refreshInvitations.addEventListener('click', () => {
-            dom.invitationList.innerHTML = `
-                <div>No new invitations.</div>
-                <button style="margin-top:0.5rem; padding:0.3rem; width:100%; background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-sm);">Accept Group Challenge</button>
-                <button style="margin-top:0.3rem; padding:0.3rem; width:100%; background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-sm);">Decline</button>
-            `;
-            ui.showToast('Refreshed (simulated)', 'info');
-        });
+            dom.startBtns.forEach(btn => {
+                if (btn.id !== 'challenge-start-btn' && btn.id !== 'join-start-btn') {
+                    btn.addEventListener('click', examSettings.startExam);
+                }
+            });
 
-        dom.createGroupBtn.addEventListener('click', () => {
-            ui.showToast('Group challenge creation coming soon!', 'info');
-        });
+            // Mode selection
+            document.querySelectorAll('.mode-option').forEach(el => {
+                el.addEventListener('click', function() {
+                    document.querySelectorAll('.mode-option').forEach(o => o.classList.remove('selected'));
+                    this.classList.add('selected');
+                });
+            });
 
-        // Presets (if any)
-        dom.presetSelect?.addEventListener('change', function() {
-            const idx = parseInt(this.value);
-            if (!isNaN(idx)) examSettings.applyPreset(idx);
-        });
-        document.querySelector('[onclick="savePreset()"]')?.addEventListener('click', examSettings.savePreset);
-        document.querySelector('[onclick="resetToDefault()"]')?.addEventListener('click', examSettings.resetToDefault);
-    }
+            // Challenge type
+            dom.challengeType.querySelectorAll('button').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    dom.challengeType.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const type = this.dataset.type;
+                    dom.friendExtra.classList.toggle('show', type === 'friend');
+                    dom.anyoneExtra.classList.toggle('show', type === 'anyone');
+                    dom.challengeStatus.textContent = '';
+                    dom.challengeCodeDisplay.textContent = '---';
+                    dom.waitingMessage.style.display = 'none';
+                    dom.challengeActions.style.display = 'none';
+                    // Hide share link when switching type
+                    if (dom.shareLinkArea) dom.shareLinkArea.style.display = 'none';
+                    updateBottomCardPosition();
+                });
+            });
 
-    // ==================== STEP NAVIGATION ====================
-    function showStep(stepId) {
-        document.querySelectorAll('.card-step').forEach(el => el.classList.remove('active'));
-        const step = document.getElementById(stepId);
-        if (step) step.classList.add('active');
-    }
+            // Send invite
+            dom.sendInviteBtn.addEventListener('click', async () => {
+                const email = dom.inviteFriendInput.value.trim();
+                if (!email) {
+                    ui.showToast('Please enter a friend\'s email', 'warning');
+                    return;
+                }
+                showInlineSpinner('Sending invitation...');
+                try {
+                    await examSettings.inviteFriend();
+                } finally {
+                    hideInlineSpinner();
+                }
+            });
 
-    // ==================== INLINE SPINNER ====================
-    function showInlineSpinner(message) {
-        const spinner = document.getElementById('inline-spinner');
-        spinner.querySelector('span').textContent = message || 'Loading...';
-        spinner.style.display = 'flex';
-    }
+            // Cancel invite
+            dom.cancelInviteBtn.addEventListener('click', () => {
+                dom.inviteFriendInput.value = '';
+                dom.inviteStatus.textContent = '';
+                dom.challengeStatus.textContent = '';
+                dom.challengeCodeDisplay.textContent = '---';
+                dom.waitingMessage.style.display = 'none';
+                dom.challengeActions.style.display = 'none';
+                if (dom.shareLinkArea) dom.shareLinkArea.style.display = 'none';
+            });
 
-    function hideInlineSpinner() {
-        document.getElementById('inline-spinner').style.display = 'none';
-    }
+            // Create challenge (FIX: disable button immediately to prevent double clicks)
+            dom.challengeStartBtn.addEventListener('click', async function () {
+                if (this.disabled) return;          // already in progress
+                this.disabled = true;
+                this.textContent = 'Creating…';
+                
+                showInlineSpinner('Creating challenge...');
+                try {
+                    await examSettings.startChallenge();
+                } finally {
+                    hideInlineSpinner();
+                    // Re‑enable only if the UI hasn't moved on (challenge still not created)
+                    this.disabled = false;
+                    this.textContent = 'Create Challenge →';
+                }
+            });
 
-    // Expose globally if needed
-    window.showInlineSpinner = showInlineSpinner;
-    window.hideInlineSpinner = hideInlineSpinner;
-    window.showStep = showStep;
-</script>
+            // Copy challenge code (old behaviour)
+            dom.copyChallengeCodeBtn.addEventListener('click', () => {
+                const code = dom.challengeCodeDisplay.textContent;
+                if (!code || code === '---') {
+                    ui.showToast('No challenge code available', 'warning');
+                    return;
+                }
+                navigator.clipboard?.writeText(code).then(() => {
+                    ui.showToast('Code copied!', 'success');
+                }).catch(() => {
+                    const input = document.createElement('input');
+                    input.value = code;
+                    document.body.appendChild(input);
+                    input.select();
+                    document.execCommand('copy');
+                    input.remove();
+                    ui.showToast('Code copied!', 'success');
+                });
+            });
+
+            // Share challenge code (old behaviour)
+            dom.shareChallengeCodeBtn.addEventListener('click', () => {
+                const code = dom.challengeCodeDisplay.textContent;
+                if (!code || code === '---') {
+                    ui.showToast('No challenge code available', 'warning');
+                    return;
+                }
+                if (navigator.share) {
+                    navigator.share({
+                        title: 'Challenge Code',
+                        text: `Join my MedHub challenge! Code: ${code}`
+                    }).catch(() => {});
+                } else {
+                    navigator.clipboard?.writeText(`MedHub Challenge Code: ${code}`).then(() => {
+                        ui.showToast('Code copied to clipboard!', 'success');
+                    }).catch(() => {
+                        ui.showToast('Share not supported. Copy manually.', 'warning');
+                    });
+                }
+            });
+
+            // Refresh invitations (simulated)
+            dom.refreshInvitations.addEventListener('click', () => {
+                dom.invitationList.innerHTML = `
+                    <div>No new invitations.</div>
+                    <button style="margin-top:0.5rem; padding:0.3rem; width:100%; background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-sm);">Accept Group Challenge</button>
+                    <button style="margin-top:0.3rem; padding:0.3rem; width:100%; background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-sm);">Decline</button>
+                `;
+                ui.showToast('Refreshed (simulated)', 'info');
+            });
+
+            dom.createGroupBtn.addEventListener('click', () => {
+                ui.showToast('Group challenge creation coming soon!', 'info');
+            });
+
+            // --- NEW JOIN CODE HANDLERS ---
+            // Join code button in step1
+            dom.joinCodeBtn.addEventListener('click', () => {
+                const code = dom.joinCodeInput.value.trim();
+                if (!code) {
+                    ui.showToast('Please enter a challenge code', 'warning');
+                    return;
+                }
+                dom.joinCodeDisplay.textContent = code;
+                showStep('step2-join');
+            });
+
+            // Join & Start button in step2-join
+            dom.joinStartBtn.addEventListener('click', async function () {
+                if (this.disabled) return;
+                const code = dom.joinCodeDisplay.textContent;
+                if (!code || code === '---') {
+                    ui.showToast('Invalid challenge code', 'error');
+                    return;
+                }
+                this.disabled = true;
+                this.textContent = 'Joining…';
+                showInlineSpinner('Joining challenge...');
+                try {
+                    await examSettings.joinChallenge(code);
+                } finally {
+                    hideInlineSpinner();
+                    this.disabled = false;
+                    this.textContent = 'Join & Start';
+                }
+            });
+
+            // Copy shareable link button
+            dom.copyShareLinkBtn.addEventListener('click', () => {
+                const link = dom.shareLinkInput.value;
+                if (!link) return;
+                navigator.clipboard?.writeText(link).then(() => {
+                    ui.showToast('Link copied!', 'success');
+                }).catch(() => {
+                    ui.showToast('Failed to copy link', 'error');
+                });
+            });
+
+            // Presets
+            dom.presetSelect?.addEventListener('change', function() {
+                const idx = parseInt(this.value);
+                if (!isNaN(idx)) examSettings.applyPreset(idx);
+            });
+            document.querySelector('[onclick="savePreset()"]')?.addEventListener('click', examSettings.savePreset);
+            document.querySelector('[onclick="resetToDefault()"]')?.addEventListener('click', examSettings.resetToDefault);
+        }
+
+        // ==================== STEP NAVIGATION ====================
+        function showStep(stepId) {
+            document.querySelectorAll('.card-step').forEach(el => el.classList.remove('active'));
+            const step = document.getElementById(stepId);
+            if (step) step.classList.add('active');
+            // Ensure card position is correct after showing a step
+            updateBottomCardPosition();
+        }
+
+        // ==================== INLINE SPINNER ====================
+        function showInlineSpinner(message) {
+            const spinner = document.getElementById('inline-spinner');
+            spinner.querySelector('span').textContent = message || 'Loading...';
+            spinner.style.display = 'flex';
+        }
+
+        function hideInlineSpinner() {
+            document.getElementById('inline-spinner').style.display = 'none';
+        }
+
+        // Expose globally if needed
+        window.showInlineSpinner = showInlineSpinner;
+        window.hideInlineSpinner = hideInlineSpinner;
+        window.showStep = showStep;
+        window.updateBottomCardPosition = updateBottomCardPosition;
+    </script>
 
     <script data-lazy data-src="/scripts/offline.js"></script>
 </body>

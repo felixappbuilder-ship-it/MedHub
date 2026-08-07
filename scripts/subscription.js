@@ -43,7 +43,7 @@ const PLANS = {
     monthly: {
         id: 'monthly',
         name: 'Monthly Plan',
-        price: 350,
+        price: 300,
         duration: 30 * 24 * 60 * 60 * 1000,
         durationText: '30 days',
         features: [
@@ -53,7 +53,7 @@ const PLANS = {
             'Certificate generation',
             'Priority support'
         ],
-        ctaText: 'Subscribe – KES 350',
+        ctaText: 'Subscribe – KES 300',
         ctaColor: 'success',
         popular: false
     },
@@ -69,9 +69,9 @@ const PLANS = {
             'Detailed analytics',
             'Certificate generation',
             'Priority support',
-            'Save KES 200'
+            'Save KES 50'
         ],
-        savings: 'Save KES 200',
+        savings: 'Save KES 50',
         ctaText: 'Subscribe – KES 850',
         ctaColor: 'success',
         popular: true
@@ -88,9 +88,9 @@ const PLANS = {
             'Detailed analytics',
             'Certificate generation',
             'Priority support',
-            'Save KES 1,100'
+            'Save KES 1,500'
         ],
-        savings: 'Save KES 1,100',
+        savings: 'Save KES 1,500',
         ctaText: 'Subscribe – KES 2,100',
         ctaColor: 'success'
     }
@@ -295,7 +295,7 @@ export async function getTrialRemaining() {
     return utils.formatTime(Math.floor(remainingMs / 1000));
 }
 
-// ==================== PLAN MANAGEMENT (UI USES LOCAL PLANS) ====================
+// ==================== PLAN MANAGEMENT ====================
 
 /**
  * Get all available subscription plans (returns local PLANS constant – no backend call).
@@ -316,21 +316,41 @@ export function selectPlan(planId) {
 }
 
 /**
+ * Set a custom plan with a user-defined amount.
+ * @param {number} amount - custom amount in KES
+ */
+export function setCustomPlan(amount) {
+    const plan = {
+        id: 'custom',
+        name: 'Custom Amount',
+        price: amount,
+        duration: amount,
+        durationText: 'Custom',
+        features: ['Pay as you wish', 'Flexible access'],
+        ctaText: `Pay KES ${amount}`,
+        ctaColor: 'primary'
+    };
+    app.setSelectedPlan(plan);
+}
+
+/**
  * Purchase subscription (initiates M‑Pesa payment).
- * @param {string} planId
- * @param {string} phoneNumber
+ * @param {string} planId - plan identifier (e.g., 'monthly', 'custom')
+ * @param {string} phoneNumber - M‑Pesa phone number
+ * @param {number|null} customAmount - required if planId === 'custom'
  * @returns {Promise<Object>} transaction details
  */
-export async function purchaseSubscription(planId, phoneNumber) {
+export async function purchaseSubscription(planId, phoneNumber, customAmount = null) {
     requireOnline();
     const token = getToken();
     if (!token) throw new Error('Not authenticated');
     try {
-        // ✅ Action
         const result = await convexHttpClient.action("subscriptions/actions:purchaseSubscription", {
             token,
             planName: planId,
-            deviceFingerprint: security.getDeviceFingerprint()
+            deviceFingerprint: security.getDeviceFingerprint(),
+            phoneNumber,
+            customAmount, // only used when planId === 'custom'
         });
         if (!result.success) {
             if (result.error === 'invalid_token' || result.message?.toLowerCase().includes('token')) {
@@ -440,6 +460,7 @@ export async function activatePlan(subscriptionData) {
   app.setSubscription(subscriptionData);
   return subscriptionData;
 }
+
 // ==================== SYNC LOCAL COPY ====================
 
 export async function syncSubscription(forceOnline = false) {
@@ -458,7 +479,8 @@ window.subscription = {
     getTrialRemaining,
     getSubscriptionPlans,
     selectPlan,
-    purchaseSubscription,
+    setCustomPlan,          // NEW
+    purchaseSubscription,   // updated to accept customAmount
     cancelSubscription,
     isTopicFree,
     areAllTopicsFree,

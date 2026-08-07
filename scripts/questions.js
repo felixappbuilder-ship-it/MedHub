@@ -37,7 +37,6 @@ const TOPICS = {
         { id: 'cross-sectional-anatomy', name: 'Cross‑Sectional Anatomy', questions: 75 }
     ],
 
-
     physiology: [
         { id: 'introduction-homeostasis', name: 'Introduction & Homeostasis', questions: 75 },
         { id: 'cell-physiology', name: 'Cell Physiology', questions: 120 },
@@ -298,19 +297,24 @@ export async function getQuestionsForExam(config) {
     if (!selectedTopics || selectedTopics.length === 0) throw new Error('No topics selected');
     if (!questionCount || questionCount < 1) throw new Error('Invalid question count');
 
+    // Normalize to array of topic IDs (strings)
+    const topicIds = selectedTopics.map(t => 
+        (typeof t === 'object' && t.id) ? t.id : (typeof t === 'string' ? t : String(t))
+    );
+
     // Check cache in IndexedDB
     const cachedTopics = {};
-    for (const topic of selectedTopics) {
-        const existing = await db.getQuestions({ subject, topic: topic.id });
+    for (const topicId of topicIds) {
+        const existing = await db.getQuestions({ subject, topic: topicId });
         if (existing && existing.length > 0) {
-            cachedTopics[topic.id] = existing;
+            cachedTopics[topicId] = existing;
         }
     }
 
     // Load missing topics
-    const loadPromises = selectedTopics.map(async (topic) => {
-        if (cachedTopics[topic.id]) return cachedTopics[topic.id];
-        const questions = await loadTopicQuestions(subject, topic.id);
+    const loadPromises = topicIds.map(async (topicId) => {
+        if (cachedTopics[topicId]) return cachedTopics[topicId];
+        const questions = await loadTopicQuestions(subject, topicId);
         await db.saveQuestions(questions);
         return questions;
     });

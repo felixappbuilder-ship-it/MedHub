@@ -2,8 +2,10 @@
 
 /**
  * Exam Settings Module
- * Handles configuration, validation, challenge creation, and exam start.
+ * Handles configuration, validation, challenge creation, exam start, and joining challenges.
  * Integrated with Convex backend for challenge system.
+ * 
+ * Uses a self‑contained base64url blob for challenge config – no topic map required for decoding.
  */
 
 import * as app from './app.js';
@@ -34,13 +36,227 @@ let challengeState = {
     isCreator: false,
 };
 
+// Lock to prevent double creation
+let creatingChallenge = false;
+
 // DOM refs will be set by the HTML bootstrap
 let dom = {};
 let pollInterval = null;
 
-// Topic mapping: name -> numeric ID (based on alphabetical order)
+// Topic mapping (still used for settings page UI, NOT for challenge encoding)
 let topicIdMap = {};
 let fullTopicNames = [];
+
+// ==================== PERSISTENCE HELPERS ====================
+const CHALLENGE_STORAGE_KEY = 'activeChallengeState';
+
+function saveChallengeState() {
+    if (!challengeState.challengeCode) return;
+    const data = { ...challengeState };
+    try {
+        localStorage.setItem(CHALLENGE_STORAGE_KEY, JSON.stringify(data));
+    } catch (e) {
+        console.warn('Failed to save challenge state', e);
+    }
+}
+
+function loadChallengeState() {
+    try {
+        const saved = localStorage.getItem(CHALLENGE_STORAGE_KEY);
+        if (!saved) return false;
+        const parsed = JSON.parse(saved);
+        // Only restore if it looks valid and not finished
+        if (parsed.challengeCode && parsed.status && 
+            parsed.status !== 'completed' && parsed.status !== 'archived') {
+            challengeState = parsed;
+            return true;
+        }
+    } catch (e) {
+        console.warn('Failed to load challenge state', e);
+    }
+    return false;
+}
+
+function clearChallengeState() {
+    localStorage.removeItem(CHALLENGE_STORAGE_KEY);
+}
+
+// ==================== PENDING EXAM CONFIG STORAGE ====================
+const PENDING_CONFIG_KEY = 'pendingExamConfig';
+
+function savePendingExamConfig(config) {
+    try {
+        localStorage.setItem(PENDING_CONFIG_KEY, JSON.stringify(config));
+        console.log('[ExamSettings] Saved pending exam config');
+    } catch (e) {
+        console.warn('[ExamSettings] Failed to save pending exam config', e);
+    }
+}
+
+// ==================== BASE64URL HELPERS ====================
+const BASE64URL_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
+
+function base64urlEncode(buffer) {
+    const bytes = new Uint8Array(buffer);
+    let result = '';
+    for (let i = 0; i < bytes.length; i += 3) {
+        const a = bytes[i];
+        const b = bytes[i + 1] || 0;
+        const c = bytes[i + 2] || 0;
+        result += BASE64URL_CHARS[a >> 2];
+        result += BASE64URL_CHARS[((a & 3) << 4) | (b >> 4)];
+        result += BASE64URL_CHARS[((b & 15) << 2) | (c >> 6)];
+        result += BASE64URL_CHARS[c & 63];
+    }
+    // Do NOT remove trailing 'A's – keep the string length a multiple of 4
+    return result;
+}
+
+function base64urlDecode(str) {
+    // Safety: ensure length is a multiple of 4 by appending 'A' padding if needed
+    while (str.length % 4 !== 0) {
+        str += 'A';
+    }
+    const bytes = [];
+    for (let i = 0; i < str.length; i += 4) {
+        const a = BASE64URL_CHARS.indexOf(str[i] || 'A');
+        const b = BASE64URL_CHARS.indexOf(str[i + 1] || 'A');
+        const c = BASE64URL_CHARS.indexOf(str[i + 2] || 'A');
+        const d = BASE64URL_CHARS.indexOf(str[i + 3] || 'A');
+        bytes.push((a << 2) | (b >> 4));
+        bytes.push(((b & 15) << 4) | (c >> 2));
+        bytes.push(((c & 3) << 6) | d);
+    }
+    return new Uint8Array(bytes);
+}
+
+// ==================== BLOB ENCODER / DECODER ====================
+/**
+ * Pack exam configuration into a compact URL‑safe string.
+ * Structure (binary):
+ *   version:1 | subjectLen:1 | subject:subjectLen | topicCount:1 | (topicLen:1 | topic)*
+ *   questionCount:1 | difficulty:1 | seed:4 | timingMode:1 | cycle:1 | flags:1
+ */
+export function encodeExamConfig(cfg) {
+    const subjectBytes = new TextEncoder().encode(cfg.subject);
+    if (subjectBytes.length > 255) throw new Error('Subject name too long');
+
+    const topicNames = cfg.topics || []; // array of strings
+    const topicData = [];
+    for (const t of topicNames) {
+        const enc = new TextEncoder().encode(t);
+        if (enc.length > 255) throw new Error(`Topic name too long: ${t}`);
+        topicData.push(enc.length, ...enc);
+    }
+
+    const seedInt = parseInt(cfg.seed || '0', 16) || 0;
+    const difficultyVal = { easy: 0, mixed: 1, hard: 2 }[cfg.difficulty] ?? 1;
+    const timingVal = cfg.timingMode === 'fixed' ? 1 : 0;
+    const cycle = cfg.cycle || 1;
+
+    let flags = 0;
+    if (cfg.isChallenge) flags |= 1;
+    if (cfg.preventCopyPaste) flags |= 2;
+    if (cfg.autoSave) flags |= 4;
+    if (cfg.detectTabSwitch) flags |= 8;
+    if (cfg.breakAfter > 0) flags |= 16;
+
+    const bufferSize =
+        1 + 1 + subjectBytes.length + 1 + topicData.length +
+        1 + 1 + 4 + 1 + 1 + 1;
+    const buf = new ArrayBuffer(bufferSize);
+    const view = new DataView(buf);
+    let off = 0;
+
+    view.setUint8(off++, 0x01); // version
+    view.setUint8(off++, subjectBytes.length);
+    new Uint8Array(buf, off, subjectBytes.length).set(subjectBytes);
+    off += subjectBytes.length;
+
+    view.setUint8(off++, topicNames.length);
+    for (const byte of topicData) {
+        view.setUint8(off++, byte);
+    }
+
+    view.setUint8(off++, cfg.questionCount);
+    view.setUint8(off++, difficultyVal);
+    view.setUint32(off, seedInt, false); // big-endian
+    off += 4;
+    view.setUint8(off++, timingVal);
+    view.setUint8(off++, cycle);
+    view.setUint8(off++, flags);
+
+    return base64urlEncode(buf);
+}
+
+/**
+ * Unpack a blob string back into a full exam config object.
+ */
+export function decodeExamConfig(blob) {
+    const bytes = base64urlDecode(blob);
+    const view = new DataView(bytes.buffer);
+    let off = 0;
+
+    const version = view.getUint8(off++);
+    if (version !== 0x01) throw new Error('Unsupported blob version');
+
+    const subjectLen = view.getUint8(off++);
+    const subject = new TextDecoder().decode(bytes.slice(off, off + subjectLen));
+    off += subjectLen;
+
+    const topicCount = view.getUint8(off++);
+    const topics = [];
+    for (let i = 0; i < topicCount; i++) {
+        const len = view.getUint8(off++);
+        const name = new TextDecoder().decode(bytes.slice(off, off + len));
+        off += len;
+        topics.push(name);
+    }
+
+    const questionCount = view.getUint8(off++);
+    const diffVal = view.getUint8(off++);
+    const difficulty = ['easy', 'mixed', 'hard'][diffVal] || 'mixed';
+    const seedInt = view.getUint32(off, false); off += 4;
+    const seed = seedInt.toString(16).padStart(8, '0').toUpperCase();
+    const timingMode = view.getUint8(off++) === 1 ? 'fixed' : 'adaptive';
+    const cycle = view.getUint8(off++);
+    const flags = view.getUint8(off++);
+
+    return {
+        subject,
+        topics,              // full names, ready for exam engine
+        questionCount,
+        difficulty,
+        seed,
+        cycle,
+        timingMode,
+        mode: (flags & 1) ? 'challenge' : 'standard',
+        isChallenge: !!(flags & 1),
+        preventCopyPaste: !!(flags & 2),
+        autoSave: !!(flags & 4),
+        detectTabSwitch: !!(flags & 8),
+        breakAfter: (flags & 16) ? 25 : 0,
+    };
+}
+
+// ==================== TOPIC MAPPING HELPERS (for settings UI only) ====================
+function buildTopicMap(topicNames) {
+    const sorted = [...topicNames].sort((a, b) => a.localeCompare(b));
+    const map = {};
+    sorted.forEach((name, index) => {
+        map[name] = index + 1;
+    });
+    return map;
+}
+
+function encodeTopics(names, map) {
+    return names.map(name => map[name] || 0);
+}
+
+function decodeTopics(numbers, map) {
+    const reverseMap = Object.fromEntries(Object.entries(map).map(([k, v]) => [v, k]));
+    return numbers.map(num => reverseMap[num] || 'unknown');
+}
 
 // ==================== DOM SETUP ====================
 export function setDomRefs(refs) {
@@ -63,43 +279,11 @@ export function setDomRefs(refs) {
     dom.challengeActions = dom.challengeActions || document.getElementById('challenge-actions');
     dom.waitingMessage = dom.waitingMessage || document.getElementById('waiting-message');
     dom.challengeStartBtn = dom.challengeStartBtn || document.getElementById('challenge-start-btn');
-}
-
-// ==================== TOPIC MAPPING HELPERS ====================
-/**
- * Build a deterministic mapping from topic name to numeric ID.
- * Sorts topics alphabetically to ensure consistency across users.
- * @param {Array<string>} topicNames - full list of topic names for the subject
- * @returns {Object} map { topicName: numericId }
- */
-function buildTopicMap(topicNames) {
-    const sorted = [...topicNames].sort((a, b) => a.localeCompare(b));
-    const map = {};
-    sorted.forEach((name, index) => {
-        map[name] = index + 1; // 1‑based IDs
-    });
-    return map;
-}
-
-/**
- * Encode topic names to numeric IDs using the built map.
- * @param {Array<string>} names - selected topic names
- * @param {Object} map - topicIdMap
- * @returns {Array<number>}
- */
-function encodeTopics(names, map) {
-    return names.map(name => map[name] || 0);
-}
-
-/**
- * Decode numeric IDs back to topic names.
- * @param {Array<number>} numbers - topic IDs
- * @param {Object} map - topicIdMap
- * @returns {Array<string>}
- */
-function decodeTopics(numbers, map) {
-    const reverseMap = Object.fromEntries(Object.entries(map).map(([k, v]) => [v, k]));
-    return numbers.map(num => reverseMap[num] || 'unknown');
+    // Join elements (may be undefined if not on page)
+    dom.joinCodeDisplay = dom.joinCodeDisplay || document.getElementById('join-code-display');
+    dom.joinStatus = dom.joinStatus || document.getElementById('join-status');
+    dom.joinStartBtn = dom.joinStartBtn || document.getElementById('join-start-btn');
+    dom.shareLinkArea = dom.shareLinkArea || document.getElementById('share-link-area');
 }
 
 // ==================== INITIALIZATION ====================
@@ -116,38 +300,51 @@ export async function initExamSettings() {
     }
 
     config = app.getExamConfig() || {};
-    if (!config.subject) {
+    
+    // Allow the page to load without a subject if we are joining via ?exam=
+    const urlParams = new URLSearchParams(window.location.search);
+    const examCode = urlParams.get('exam');
+    if (!examCode && !config.subject) {
         ui.showToast('No subject selected', 'error');
         router.navigateTo('subjects.html');
         return;
     }
 
-    // Load subject metadata (which includes all topics)
-    const meta = await questions.getSubjectMeta(config.subject);
-    const allTopics = meta.topics || [];
-    // Extract topic names (some may be objects, some strings)
-    const topicNames = allTopics.map(t => typeof t === 'object' ? t.name : t);
-    // Store full sorted list for later use
-    fullTopicNames = [...topicNames].sort((a, b) => a.localeCompare(b));
-    // Build the deterministic map
-    topicIdMap = buildTopicMap(fullTopicNames);
-    console.log('[ExamSettings] Topic map built:', topicIdMap);
+    if (config.subject) {
+        const meta = await questions.getSubjectMeta(config.subject);
+        const allTopics = meta.topics || [];
+        const topicNames = allTopics.map(t => typeof t === 'object' ? t.name : t);
+        fullTopicNames = [...topicNames].sort((a, b) => a.localeCompare(b));
+        topicIdMap = buildTopicMap(fullTopicNames);
+        const topics = config.topics || [];
+        const totalQ = topics.reduce((sum, t) => sum + (t.questions || 0), 0);
+        maxQuestions = Math.min(totalQ, 100);
+        updateSubjectDisplay(meta, topics);
+        updateStats(maxQuestions);
+        setMaxQuestions(maxQuestions);
+    } else {
+        // Joiner – placeholder values, will be overridden when challenge data arrives
+        maxQuestions = 100;
+        setMaxQuestions(100);
+    }
 
-    const topics = config.topics || [];
-    const totalQ = topics.reduce((sum, t) => sum + (t.questions || 0), 0);
-    maxQuestions = Math.min(totalQ, 100);
-    const estimatedTime = Math.ceil(maxQuestions * 0.75);
-
-    updateSubjectDisplay(meta, topics);
-    updateStats(maxQuestions);
-    setMaxQuestions(maxQuestions);
     setupValidation();
     setupSteppers();
     setupDifficultyButtons();
     setupChallengeUI();
 
+    // Restore any active challenge from a previous session
+    if (loadChallengeState()) {
+        console.log('[ExamSettings] Restored active challenge:', challengeState.challengeCode);
+        showChallengeUI();
+        // Resume polling if still waiting
+        if (challengeState.status === 'created' || challengeState.status === 'waiting') {
+            startPolling();
+        }
+    }
+
     console.log('[ExamSettings] Initialized successfully.');
-    return { meta, topics, maxQuestions, estimatedTime };
+    return { maxQuestions };
 }
 
 // ==================== UI UPDATES ====================
@@ -332,6 +529,9 @@ function updateChallengeStatus() {
     };
     dom.challengeStatus.textContent = statusMap[challengeState.status] || 'Unknown status';
     if (dom.waitingMessage) dom.waitingMessage.style.display = (challengeState.status === 'waiting' || challengeState.status === 'created') ? 'block' : 'none';
+    if (dom.joinStatus && challengeState.status) {
+        dom.joinStatus.textContent = statusMap[challengeState.status] || '';
+    }
 }
 
 // ==================== CHALLENGE API CALLS ====================
@@ -349,50 +549,57 @@ async function getAuthToken() {
     return token;
 }
 
+// -------------------- CREATE CHALLENGE (sends blob) --------------------
 export async function createChallenge() {
+    if (creatingChallenge) {
+        console.warn('[ExamSettings] Challenge creation already in progress – skipping.');
+        return false;
+    }
+    creatingChallenge = true;
+
     console.log('[ExamSettings] createChallenge() called');
     try {
         const token = await getAuthToken();
-        const cfg = collectConfig();
-        console.log('[ExamSettings] Config for challenge:', cfg);
+        const cfg = collectConfig();               // returns config with topic names
+        const blob = encodeExamConfig(cfg);        // compact string
 
-        // cfg.topics already contains numeric IDs (from collectConfig)
+        // Send only the blob to the backend
         const result = await convexHttpClient.action('challenges/actions:createChallenge', {
             token,
-            seed: cfg.seed,
-            cycle: cfg.cycle,
-            config: {
-                subject: cfg.subject,
-                topics: cfg.topics,
-                questionCount: cfg.questionCount,
-                difficulty: cfg.difficulty,
-                mode: 'challenge',
-            }
+            blob,                                  // backend stores this opaque string
         });
         console.log('[ExamSettings] createChallenge response:', result);
         if (!result.success) {
             ui.showToast(result.message || 'Failed to create challenge', 'error');
             return false;
         }
-        challengeState.challengeId = result.data.challengeId;
-        challengeState.challengeCode = result.data.challengeCode;
+
+        challengeState.challengeCode = result.data.code;
         challengeState.expiresAt = result.data.expiresAt;
         challengeState.status = 'created';
         challengeState.isCreator = true;
         challengeState.seed = cfg.seed;
         challengeState.cycle = cfg.cycle;
+
+        saveChallengeState();   // persist across refreshes
         showChallengeUI();
         ui.showToast(`Challenge created! Code: ${challengeState.challengeCode}`, 'success');
         startPolling();
-        console.log('[ExamSettings] Challenge created successfully, polling started.');
+
+        if (window.showShareableLink) {
+            window.showShareableLink(challengeState.challengeCode);
+        }
         return true;
     } catch (err) {
         console.error('[ExamSettings] createChallenge error:', err);
         ui.showToast(err.message || 'Challenge creation failed', 'error');
         return false;
+    } finally {
+        creatingChallenge = false;
     }
 }
 
+// -------------------- INVITE FRIEND (unchanged) --------------------
 export async function inviteFriend() {
     const email = dom.inviteFriendInput?.value?.trim();
     if (!email) {
@@ -406,7 +613,6 @@ export async function inviteFriend() {
     console.log('[ExamSettings] inviteFriend() called for email:', email);
     try {
         const token = await getAuthToken();
-        console.log('[ExamSettings] Calling convex action: challenges/actions:inviteFriend');
         const result = await convexHttpClient.action('challenges/actions:inviteFriend', {
             token,
             challengeCode: challengeState.challengeCode,
@@ -425,23 +631,63 @@ export async function inviteFriend() {
     }
 }
 
-async function checkChallengeStatus() {
-    if (!challengeState.challengeCode) return;
-    console.log('[ExamSettings] checkChallengeStatus() polling...');
+// -------------------- JOIN CHALLENGE (fetches blob and starts exam) --------------------
+export async function joinChallenge(code) {
+    if (!code) {
+        ui.showToast('No challenge code provided', 'error');
+        return false;
+    }
+    console.log('[ExamSettings] joinChallenge() called with code:', code);
     try {
         const token = await getAuthToken();
-        console.log('[ExamSettings] Calling convex action: challenges/actions:getChallengeStatus');
-        // ✅ FIXED: use .action and the correct path
+        const result = await convexHttpClient.action('challenges/actions:joinChallenge', {
+            token,
+            challengeCode: code,
+        });
+        console.log('[ExamSettings] joinChallenge response:', result);
+        if (!result.success) {
+            ui.showToast(result.message || 'Failed to join challenge', 'error');
+            return false;
+        }
+
+        const { blob, challengeId } = result.data;
+        // Decode the blob immediately – no topic map required
+        const fullConfig = decodeExamConfig(blob);
+        fullConfig.challengeCode = code;
+        fullConfig.challengeId = challengeId;
+        fullConfig.opponent = null;   // will be set later if needed
+        fullConfig.isChallenge = true;
+        fullConfig.mode = 'challenge';
+
+        // ✅ Save the configuration for the exam room
+        savePendingExamConfig(fullConfig);
+
+        app.setExamConfig(fullConfig);
+        ui.showToast('Joined successfully! Starting exam...', 'success');
+        // Navigate directly to exam room – both players can now start
+        setTimeout(() => {
+            router.navigateTo('exam-room.html');
+        }, 300);
+        return true;
+    } catch (err) {
+        console.error('[ExamSettings] joinChallenge error:', err);
+        ui.showToast(err.message || 'Join failed', 'error');
+        return false;
+    }
+}
+
+// -------------------- POLLING: check challenge status --------------------
+async function checkChallengeStatus() {
+    if (!challengeState.challengeCode) return;
+    try {
+        const token = await getAuthToken();
         const result = await convexHttpClient.action('challenges/actions:getChallengeStatus', {
             token,
             challengeCode: challengeState.challengeCode,
         });
-        console.log('[ExamSettings] getChallengeStatus response:', result);
-        if (!result.success) {
-            console.warn('[ExamSettings] Status check failed:', result.message);
-            return;
-        }
-        const { status, opponent, creator, config: challengeConfig, expiresAt } = result.data;
+        if (!result.success) return;
+
+        const { status, opponent, creator, blob, expiresAt } = result.data;
         challengeState.status = status;
         challengeState.opponent = opponent;
         challengeState.expiresAt = expiresAt;
@@ -449,25 +695,22 @@ async function checkChallengeStatus() {
         updateChallengeStatus();
 
         if (status === 'ready') {
-            console.log('[ExamSettings] Challenge is ready, opponent joined!');
             stopPolling();
+            clearChallengeState();   // no longer needed
             ui.showToast('Opponent joined! Starting exam...', 'success');
-            // Decode topics from numbers back to names for the local exam engine
-            const decodedTopics = decodeTopics(challengeConfig.topics, topicIdMap);
-            const finalConfig = {
-                subject: challengeConfig.subject,
-                topics: decodedTopics, // now topic names
-                questionCount: challengeConfig.questionCount,
-                difficulty: challengeConfig.difficulty,
-                mode: 'challenge',
-                isChallenge: true,
-                seed: challengeState.seed,
-                cycle: challengeState.cycle,
-                challengeCode: challengeState.challengeCode,
-                challengeId: challengeState.challengeId,
-                opponent: opponent,
-            };
-            app.setExamConfig(finalConfig);
+
+            // Decode the blob (creator also gets the same blob)
+            const fullConfig = decodeExamConfig(blob);
+            fullConfig.challengeCode = challengeState.challengeCode;
+            fullConfig.challengeId = challengeState.challengeId;
+            fullConfig.opponent = opponent;
+            fullConfig.isChallenge = true;
+            fullConfig.mode = 'challenge';
+
+            // ✅ Save the configuration for the exam room
+            savePendingExamConfig(fullConfig);
+
+            app.setExamConfig(fullConfig);
             setTimeout(() => {
                 router.navigateTo('exam-room.html');
             }, 500);
@@ -481,7 +724,7 @@ function startPolling() {
     stopPolling();
     console.log('[ExamSettings] Starting polling every 3 seconds...');
     pollInterval = setInterval(checkChallengeStatus, 3000);
-    checkChallengeStatus(); // immediate check
+    checkChallengeStatus(); // immediate first check
 }
 
 function stopPolling() {
@@ -548,6 +791,9 @@ export function startExam() {
         detectTabSwitch: true,
         breakAfter: 0
     };
+
+    // ✅ Save the configuration for the exam room
+    savePendingExamConfig(finalConfig);
 
     app.setExamConfig(finalConfig);
     dom.bottomCard.classList.add('closed');
@@ -624,7 +870,8 @@ export function resetToDefault() {
     updateSettingsPreview();
 }
 
-// ==================== COLLECT CONFIG ====================
+// ==================== COLLECT CONFIG (returns topic names, not numbers) ====================
+// ==================== COLLECT CONFIG (returns topic IDs) ====================
 export function collectConfig() {
     const activeStep = document.querySelector('.card-step.active');
     let mode = 'standard';
@@ -648,21 +895,18 @@ export function collectConfig() {
     }
 
     let questionCount = 10;
-    if (qtyInput) {
-        questionCount = parseInt(qtyInput.value, 10) || 10;
-    }
+    if (qtyInput) questionCount = parseInt(qtyInput.value, 10) || 10;
 
     let difficulty = 'mixed';
     if (difficultyGroup) {
         const activeBtn = difficultyGroup.querySelector('.active');
-        if (activeBtn) {
-            difficulty = activeBtn.dataset.diff || 'mixed';
-        }
+        if (activeBtn) difficulty = activeBtn.dataset.diff || 'mixed';
     }
 
-    // Encode selected topics to numbers using the deterministic map
-    const selectedTopicNames = (config.topics || []).map(t => typeof t === 'object' ? t.name : t);
-    const topicNumbers = encodeTopics(selectedTopicNames, topicIdMap);
+    // ⭐ Extract topic IDs from config.topics (objects with id/name, or strings)
+    const selectedTopicIds = (config.topics || []).map(t =>
+        typeof t === 'object' ? t.id : t
+    );
 
     const timingMode = dom.timing ? dom.timing.value : 'adaptive';
     const preventCopyPaste = dom.preventCopy ? dom.preventCopy.checked : true;
@@ -671,16 +915,16 @@ export function collectConfig() {
     const breakAfter = dom.breakEnabled && dom.breakEnabled.checked ? 25 : 0;
 
     return {
-        mode: mode,
+        mode,
         subject: config.subject,
-        topics: topicNumbers,
-        questionCount: questionCount,
-        difficulty: difficulty,
-        timingMode: timingMode,
-        preventCopyPaste: preventCopyPaste,
-        autoSave: autoSave,
-        detectTabSwitch: detectTabSwitch,
-        breakAfter: breakAfter,
+        topics: selectedTopicIds,        // ← now returns IDs (not names)
+        questionCount,
+        difficulty,
+        timingMode,
+        preventCopyPaste,
+        autoSave,
+        detectTabSwitch,
+        breakAfter,
         seed: Math.random().toString(36).substring(2, 10).toUpperCase(),
         cycle: 1,
         isChallenge: mode === 'challenge'
@@ -721,8 +965,11 @@ window.examSettings = {
     startExam,
     createChallenge,
     inviteFriend,
+    joinChallenge,
     checkChallengeStatus,
     startChallenge,
     cleanup,
-    dom
+    dom,
+    encodeExamConfig,
+    decodeExamConfig
 };

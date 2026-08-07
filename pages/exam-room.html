@@ -10,12 +10,15 @@
     <link rel="stylesheet" href="/css/common.css" media="all">
     <link rel="stylesheet" href="/css/exam-room.css" media="all">
 
-    <!-- Shimmer + responsive overrides -->
+    <!-- Shimmer + responsive overrides + shared room styles -->
     <style>
         /* ========== SHIMMER OVERLAY (dark theme) ========== */
         #shimmer-overlay {
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: #0f172a;
             z-index: 9999;
             display: flex;
@@ -27,41 +30,57 @@
             color: #94a3b8;
             font-family: system-ui, -apple-system, sans-serif;
         }
+
         .shimmer-header {
-            width: 100%; max-width: 600px;
-            display: flex; align-items: center; gap: 1rem;
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
             margin-bottom: 2rem;
         }
+
         .shimmer-back-btn {
-            width: 50px; height: 20px;
+            width: 50px;
+            height: 20px;
             background: #1e293b;
             background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
             background-size: 200px 100%;
             animation: shimmer 1.5s infinite;
             border-radius: 4px;
         }
+
         .shimmer-header-title {
-            flex: 1; height: 24px;
+            flex: 1;
+            height: 24px;
             background: #1e293b;
             background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
             background-size: 200px 100%;
             animation: shimmer 1.5s infinite;
             border-radius: 4px;
         }
+
         .shimmer-content {
-            width: 100%; max-width: 600px;
-            display: flex; flex-direction: column; gap: 1rem;
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
+
         .shimmer-question-block {
-            width: 100%; height: 28px;
+            width: 100%;
+            height: 28px;
             background: #1e293b;
             background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
             background-size: 200px 100%;
             animation: shimmer 1.5s infinite;
             border-radius: 4px;
         }
+
         .shimmer-image-block {
-            width: 100%; height: 120px;
+            width: 100%;
+            height: 120px;
             background: #1e293b;
             background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
             background-size: 200px 100%;
@@ -69,35 +88,63 @@
             border-radius: 8px;
             margin: 0.5rem 0;
         }
+
         .shimmer-option {
-            display: flex; align-items: center; gap: 0.75rem; width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            width: 100%;
         }
+
         .shimmer-radio {
-            width: 20px; height: 20px; border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
             background: #1e293b;
             background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
             background-size: 200px 100%;
             animation: shimmer 1.5s infinite;
             flex-shrink: 0;
         }
+
         .shimmer-option-text {
-            flex: 1; height: 16px;
+            flex: 1;
+            height: 16px;
             background: #1e293b;
             background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
             background-size: 200px 100%;
             animation: shimmer 1.5s infinite;
             border-radius: 4px;
         }
+
         .shimmer-separator {
-            width: 100%; height: 1px; background: #334155; margin: 0.5rem 0;
+            width: 100%;
+            height: 1px;
+            background: #334155;
+            margin: 0.5rem 0;
         }
+
         .shimmer-message {
-            font-size: 0.9rem; color: #64748b; text-align: center;
-            margin-top: 0.5rem; font-style: italic;
+            font-size: 0.9rem;
+            color: #64748b;
+            text-align: center;
+            margin-top: 0.5rem;
+            font-style: italic;
         }
+
         @keyframes shimmer {
-            0% { background-position: -200px 0; }
-            100% { background-position: calc(200px + 100%) 0; }
+            0% {
+                background-position: -200px 0;
+            }
+
+            100% {
+                background-position: calc(200px + 100%) 0;
+            }
+        }
+
+        .revision-main {
+            padding-bottom: 4rem !important;
+            /* enough room for the footer on all screens */
         }
 
         /* ========== RESPONSIVE STANDARD SIDEBAR ========== */
@@ -105,11 +152,13 @@
             .exam-main {
                 flex-direction: column !important;
             }
+
             .question-section {
                 flex: 1 1 auto !important;
                 border-right: none !important;
                 padding-bottom: 0.5rem;
             }
+
             .nav-sidebar {
                 flex: 0 0 auto !important;
                 flex-direction: row !important;
@@ -119,12 +168,14 @@
                 border-top: 2px solid var(--border);
                 background: var(--bg-card);
             }
+
             .nav-controls {
                 flex-direction: row !important;
                 gap: 0.5rem;
                 align-items: center;
                 flex: 1;
             }
+
             .question-grid {
                 flex-direction: row !important;
                 max-height: none;
@@ -132,14 +183,18 @@
                 overflow-x: auto;
                 flex: 1;
             }
+
             .q-btn {
-                width: 36px; height: 36px;
+                width: 36px;
+                height: 36px;
                 aspect-ratio: auto;
                 font-size: 0.75rem;
             }
+
             .btn-nav {
                 display: none;
             }
+
             .btn-submit {
                 margin-top: 0;
                 margin-left: 0.5rem;
@@ -148,18 +203,121 @@
                 width: auto;
             }
         }
+
+        @media (max-width: 480px) {
+            .revision-footer {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .revision-footer .btn {
+                width: 100%;
+                min-width: unset;
+                min-width: 80px !important;
+                /* <-- ADD THIS */
+                padding: 0.5rem 0.75rem !important;
+                /* <-- ADD THIS */
+                font-size: 0.85rem !important;
+                /* <-- ADD THIS */
+            }
+
+            .revision-main {
+                padding: 0.75rem;
+            }
+
+            .revision-q-header {
+                gap: 0.25rem;
+            }
+        }
+
+        /* ========== SHARED ROOM ADDITIONAL STYLES ========== */
+        .question-navigator {
+            padding: 12px 32px 12px 16px;
+            /* increased right padding to keep dashes away from scrollbar */
+        }
+
+        .participants-badge {
+            cursor: pointer;
+            transition: all 0.25s;
+        }
+
+        .participants-badge.updating {
+            animation: badge-pop 0.4s ease-out;
+        }
+
+        @keyframes badge-pop {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .chat-message {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            animation: msg-fade-in 0.3s ease-out;
+        }
+
+        @keyframes msg-fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .chat-message.own-message .chat-body {
+            background: #eef1ff;
+            align-self: flex-end;
+        }
+
+        .chat-message.own-message .chat-author {
+            justify-content: flex-end;
+        }
+
+        .chat-author {
+            font-weight: 700;
+            font-size: 0.78rem;
+            color: #1a1d23;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .chat-body {
+            background: #f5f6f8;
+            padding: 8px 12px;
+            border-radius: 12px;
+            font-size: 0.88rem;
+            display: inline-block;
+            align-self: flex-start;
+            max-width: 85%;
+            word-break: break-word;
+        }
     </style>
 
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/service-worker.js').catch(() => {});
+            navigator.serviceWorker.register('/service-worker.js').catch(() => { });
         }
     </script>
 </head>
 
 <body>
 
-    <!-- ========== SHIMMER OVERLAY (visible immediately) ========== -->
+    <!-- ========== SHIMMER OVERLAY ========== -->
     <div id="shimmer-overlay">
         <div class="shimmer-header">
             <div class="shimmer-back-btn"></div>
@@ -243,7 +401,9 @@
             </aside>
         </main>
         <footer class="exam-footer">
-            <div class="progress-bar"><div id="progress-fill-std" class="progress-fill" style="width:0%;"></div></div>
+            <div class="progress-bar">
+                <div id="progress-fill-std" class="progress-fill" style="width:0%;"></div>
+            </div>
             <div class="progress-stats"><span id="answered-count-std">0/50</span> answered</div>
             <div class="legend">
                 <div class="legend-item"><span class="dot answered"></span> Answered</div>
@@ -274,7 +434,8 @@
             </div>
             <div class="progress-text">
                 <span>Progress: <strong id="progress-fraction-rev">0/0</strong></span>
-                <span>Answered: <strong id="answered-rev">0</strong> | Remaining: <strong id="remaining-rev">0</strong></span>
+                <span>Answered: <strong id="answered-rev">0</strong> | Remaining: <strong
+                        id="remaining-rev">0</strong></span>
             </div>
         </div>
 
@@ -285,14 +446,14 @@
         <main class="revision-main">
             <div class="revision-question-card">
                 <div class="revision-q-header">
-                    <span id="q-counter-rev" class="revision-q-number">Q1</span>
+                    <div class="q-number-row">
+                        <span id="q-counter-rev" class="revision-q-number">Question 1 / 10</span>
+                        <button id="flag-btn-rev" onclick="toggleFlag()" class="btn-flag">🏴</button>
+                    </div>
                     <span id="q-text-rev" class="revision-q-text"></span>
-                    <button id="flag-btn-rev" onclick="toggleFlag()" class="btn-flag">🏴</button>
                 </div>
                 <div id="q-image-rev" class="question-image"></div>
                 <div id="answers-list-rev" class="answer-list"></div>
-
-                <!-- Overall explanation (shown after submission) -->
                 <div id="overall-explanation-rev" class="overall-explanation" style="display:none;">
                     <div class="explanation-title">📖 Explanation</div>
                     <div class="explanation-body" id="overall-overview"></div>
@@ -300,11 +461,11 @@
                     <div class="clinical-correlation" id="overall-clinical" style="margin-top:10px;"></div>
                 </div>
             </div>
-
             <div class="revision-footer">
                 <button onclick="prevQuestion()" class="btn-secondary" id="prev-btn-rev">← Previous</button>
                 <button onclick="submitAnswer()" class="btn-primary" id="submit-btn-rev">Submit Answer</button>
-                <button onclick="nextQuestion()" class="btn-primary" id="next-btn-rev" style="display:none;">Next →</button>
+                <button onclick="nextQuestion()" class="btn-primary" id="next-btn-rev" style="display:none;">Next
+                    →</button>
             </div>
         </main>
     </div>
@@ -318,13 +479,13 @@
                 <div class="title-group">
                     <span class="room-title" id="shared-room-title">📚 Shared Challenge</span>
                     <div class="room-meta">
-                        <span class="meta-item">Created by <strong id="shared-creator">Felix</strong></span>
-                        <span class="meta-item">• Topic: <span id="shared-topic">Upper Limb</span></span>
+                        <span class="meta-item">Created by <strong id="shared-creator">—</strong></span>
+                        <span class="meta-item">• Topic: <span id="shared-topic">—</span></span>
                     </div>
                 </div>
                 <div style="display:flex;align-items:center;gap:10px;flex-shrink:0;">
                     <span class="timer" id="shared-timer">⏱ 15:00</span>
-                    <span class="participants-badge" id="shared-participants">👥 42</span>
+                    <span class="participants-badge" id="shared-participants">👥 —</span>
                 </div>
             </header>
 
@@ -334,7 +495,8 @@
                 </div>
                 <div class="progress-text">
                     <span>Progress: <strong id="shared-progress-fraction">0/0</strong></span>
-                    <span>Answered: <strong id="shared-answered-count">0</strong> | Remaining: <strong id="shared-remaining-count">0</strong></span>
+                    <span>Answered: <strong id="shared-answered-count">0</strong> | Remaining: <strong
+                            id="shared-remaining-count">0</strong></span>
                 </div>
             </div>
 
@@ -346,8 +508,9 @@
 
             <div class="submit-area" id="shared-submit-area">
                 <div class="submit-info">
-                    Answered: <strong id="shared-submit-answered">0</strong>/15 &nbsp;|&nbsp;
-                    Unanswered: <strong id="shared-submit-unanswered">15</strong>
+                    Answered: <strong id="shared-submit-answered">0</strong>/<span id="shared-total-questions">0</span>
+                    &nbsp;|&nbsp;
+                    Unanswered: <strong id="shared-submit-unanswered">0</strong>
                 </div>
                 <button class="submit-btn" id="shared-submit-btn" disabled>Submit Revision</button>
             </div>
@@ -359,9 +522,12 @@
         </button>
 
         <div class="discussion-sheet" id="shared-discussion-sheet">
-            <div class="sheet-drag-handle" id="shared-sheet-drag-handle"><div class="drag-bar"></div></div>
+            <div class="sheet-drag-handle" id="shared-sheet-drag-handle">
+                <div class="drag-bar"></div>
+            </div>
             <div class="sheet-header">
-                <h3>💬 Discussion <span id="shared-msg-count" style="font-weight:400;font-size:0.8rem;color:#6b7280;">(0 messages)</span></h3>
+                <h3>💬 Discussion <span id="shared-msg-count" style="font-weight:400;font-size:0.8rem;color:#6b7280;">(0
+                        messages)</span></h3>
                 <button class="sheet-close-btn" id="shared-sheet-close-btn">✕</button>
             </div>
             <div class="sheet-content" id="shared-sheet-content">
@@ -373,12 +539,9 @@
                         Do not share direct answers. Respect all participants.
                     </div>
                 </div>
-                <div class="online-presence">
+                <div class="online-presence" id="shared-online-presence">
                     <span class="presence-label">Online Now:</span>
-                    <span class="presence-user"><span class="online-dot"></span> Felix</span>
-                    <span class="presence-user"><span class="online-dot"></span> Mercy</span>
-                    <span class="presence-user"><span class="online-dot"></span> Brian</span>
-                    <span class="presence-user"><span class="online-dot"></span> Jane</span>
+                    <span id="shared-online-users">—</span>
                 </div>
                 <div class="mood-section">
                     <div class="mood-title">🎭 Community Mood</div>
@@ -420,7 +583,7 @@
     <script type="module" src="/scripts/db.js"></script>
     <script type="module" src="/scripts/security.js"></script>
     <script type="module" src="/scripts/subscription.js"></script>
-
+    <script type="module" src="/scripts/exam-chat.js"></script>
     <script type="module">
         import * as app from '../scripts/app.js';
         import * as ui from '../scripts/ui.js';
@@ -431,9 +594,11 @@
         import * as db from '../scripts/db.js';
         import * as security from '../scripts/security.js';
         import * as subscription from '../scripts/subscription.js';
+        import * as examChat from '../scripts/exam-chat.js';
 
         // ── GLOBALS ──
         let timerInstance = null;
+        let globalTimerInstance = null;  // shared mode global timer
         let autoSaveInterval = null;
         let examMode = 'standard';
         let currentQuestionIndex = 0;
@@ -446,7 +611,17 @@
             shared: document.getElementById('shared-layout')
         };
         const shimmer = document.getElementById('shimmer-overlay');
-
+        // Helper to scroll the footer into view if it's off-screen
+        function ensureFooterVisible() {
+            const footer = document.querySelector('.revision-footer');
+            if (!footer) return;
+            const rect = footer.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            // If the bottom of the footer is below the viewport or the top is above, scroll
+            if (rect.bottom > windowHeight || rect.top < 0) {
+                footer.scrollIntoView({ block: 'end', behavior: 'smooth' });
+            }
+        }
         // ── INIT ──
         (async function initExamRoom() {
             console.log('[ExamRoom] Initializing...');
@@ -461,6 +636,19 @@
             }
 
             let config = app.getExamConfig();
+            if (!config) {
+                const pending = localStorage.getItem('pendingExamConfig');
+                if (pending) {
+                    try {
+                        config = JSON.parse(pending);
+                        app.setExamConfig(config);
+                        console.log('[ExamRoom] Loaded pending exam config from localStorage');
+                    } catch (e) {
+                        console.warn('[ExamRoom] Failed to parse pending exam config', e);
+                    }
+                }
+            }
+
             if (!config) {
                 const saved = await examEngine.loadSavedExam();
                 if (saved) {
@@ -503,6 +691,7 @@
                 await examEngine.createExam(config);
                 examEngine.startExam();
                 totalQuestions = examEngine.totalQuestions();
+                localStorage.removeItem('pendingExamConfig');
 
                 if (examMode === 'standard') {
                     setupStandardUI();
@@ -512,20 +701,19 @@
                     setupSharedUI();
                 }
 
-                // Reveal the real layout and hide shimmer
                 layout.style.display = 'flex';
                 shimmer.style.display = 'none';
 
-                renderQuestion();
-                startTimer();
-                setupAutoSave();   // silent auto‑save
+                if (examMode !== 'shared') {
+                    renderQuestion();
+                    startTimer();
+                    if (examMode === 'revision') {
+                        setTimeout(ensureFooterVisible, 200);
+                    }
+                }
+                setupAutoSave();
                 setupEventListeners();
                 updateProgress();
-
-                if (examMode === 'shared') {
-                    initDiscussion();
-                }
-
             } catch (error) {
                 shimmer.style.display = 'none';
                 console.error('[ExamRoom] Failed to start exam:', error);
@@ -607,6 +795,7 @@
         function initSharedMode() {
             const questionsList = examEngine.getAllQuestions();
             totalQuestions = questionsList.length;
+            document.getElementById('shared-total-questions').textContent = totalQuestions;
             if (totalQuestions === 0) {
                 ui.showToast('No questions for this challenge', 'error');
                 return;
@@ -640,12 +829,80 @@
                 confirmText: document.getElementById('shared-confirm-text'),
                 confirmCancel: document.getElementById('shared-confirm-cancel'),
                 confirmSubmit: document.getElementById('shared-confirm-submit'),
-                moodOptions: document.getElementById('shared-mood-options')
+                moodOptions: document.getElementById('shared-mood-options'),
+                onlineUsers: document.getElementById('shared-online-users')
             };
 
             els.title.textContent = '📚 Shared Challenge';
-            els.creator.textContent = examEngine.getOpponent() || 'Community';
             els.topic.textContent = examEngine.getSubject() || 'Mixed Topics';
+
+            // Define config (used for roomId and potentially elsewhere)
+            // Define config (used for roomId and potentially elsewhere)
+            const config = app.getExamConfig() || JSON.parse(localStorage.getItem('pendingExamConfig') || '{}');
+
+            // ── Compute total exam time from per‑question difficulty allocations ──
+            const DIFFICULTY_SECONDS = { 1: 21, 2: 30, 3: 42, 4: 54, 5: 54 };  // seconds
+            let totalExamSeconds = 0;
+            questionsList.forEach(q => {
+                const diff = q.difficulty || 3;
+                totalExamSeconds += DIFFICULTY_SECONDS[diff] || 42;
+            });
+
+            // ── Start global countdown with clean inline colours ──
+            if (globalTimerInstance) globalTimerInstance.stop();
+            globalTimerInstance = timer.createTimer(1, 'fixed', totalExamSeconds);
+            globalTimerInstance.start(
+                (timeData) => {
+                    const remaining = timeData.remaining;           // milliseconds
+                    const totalSec = Math.floor(remaining / 1000);
+                    const m = Math.floor(totalSec / 60);
+                    const s = totalSec % 60;
+                    els.timer.textContent = `⏱ ${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+
+                    // Inline colour – no background classes
+                    const colors = { green: '#10b981', yellow: '#f59e0b', red: '#ef4444' };
+                    els.timer.style.color = colors[timeData.color] || '#e67e22';
+                    els.timer.style.fontWeight = timeData.shouldFlash ? 'bold' : '600';
+
+                    // Flash warning when very low
+                    if (timeData.shouldFlash) {
+                        els.timer.classList.add('warning');
+                    } else {
+                        els.timer.classList.remove('warning');
+                    }
+                },
+                () => {
+                    // Auto‑submit only when timer truly expires and exam is still active
+                    if (!isFinished) {
+                        ui.showToast('⏰ Time is up! Submitting your answers.', 'warning');
+                        submitSharedExam(els, questionsList);
+                    }
+                }
+            );
+
+            // ── Real participants & creator via exam-chat.js ──
+            const roomId = config.challengeCode || 'shared-room-default';
+            examChat.initChat(roomId, {
+                onChatUpdate: (messages) => {
+                    renderChat(els, messages);
+                    if (sheetState === 'closed' && messages.length > 0) {
+                        els.discussBadge.style.display = 'flex';
+                        els.discussBadge.textContent = messages.length;
+                    }
+                },
+                onParticipantUpdate: (data) => {
+                    els.creator.textContent = data.creator || 'Unknown';
+                    els.participants.textContent = `👥 ${data.count || 0}`;
+                    els.participants.classList.add('updating');
+                    setTimeout(() => els.participants.classList.remove('updating'), 400);
+                    // Update online users list
+                    if (els.onlineUsers && data.onlineUsers) {
+                        els.onlineUsers.innerHTML = data.onlineUsers.map(u =>
+                            `<span class="presence-user"><span class="online-dot"></span> ${u}</span>`
+                        ).join('') || '—';
+                    }
+                }
+            });
 
             const SECTION_SIZE = 10;
             const orderedSections = {};
@@ -666,8 +923,6 @@
             renderSections(els.questionsArea, orderedSections, els);
             attachSharedHandlers(els, questionsList);
             updateAllSharedUI(els, questionsList);
-
-            startSharedTimer(els.timer, 15 * 60, () => submitSharedExam(els, questionsList));
 
             els.submitBtn.addEventListener('click', () => {
                 if (isFinished) return;
@@ -773,7 +1028,7 @@
         }
         function attachSharedHandlers(els, questionsList) {
             document.querySelectorAll('#shared-layout .option-item').forEach(item => {
-                item.addEventListener('click', function(e) {
+                item.addEventListener('click', function (e) {
                     if (isFinished) return;
                     const idx = parseInt(this.dataset.index);
                     const optionLetter = this.dataset.option;
@@ -781,7 +1036,7 @@
                 });
             });
             document.querySelectorAll('#shared-layout .flag-btn').forEach(btn => {
-                btn.addEventListener('click', function(e) {
+                btn.addEventListener('click', function (e) {
                     e.stopPropagation();
                     if (isFinished) return;
                     const idx = parseInt(this.dataset.index);
@@ -870,38 +1125,41 @@
                 }
             }
         }
-        function startSharedTimer(timerEl, seconds, onExpire) {
-            let remaining = seconds;
-            const update = () => {
-                const m = Math.floor(remaining / 60), s = remaining % 60;
-                timerEl.textContent = `⏱ ${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
-                timerEl.classList.toggle('warning', remaining <= 120);
-            };
-            update();
-            const interval = setInterval(() => {
-                if (isFinished) return clearInterval(interval);
-                remaining--;
-                update();
-                if (remaining <= 0) { clearInterval(interval); onExpire(); }
-            }, 1000);
+        async function submitSharedExam(els, questionsList) {
+            if (isFinished) return;
+            isFinished = true;
+
+            // Stop the global timer (if running)
+            if (globalTimerInstance) {
+                globalTimerInstance.stop();
+                globalTimerInstance = null;
+            }
+
+            ui.showLoading('Submitting...');
+            try {
+                const results = await examEngine.endExam();
+                await db.saveExamResult(results);
+                ui.hideLoading();
+                ui.showToast('Exam completed!', 'success');
+                router.navigateTo('results.html', { examId: results.examId });
+            } catch (error) {
+                ui.hideLoading();
+                ui.showToast('Error finishing exam: ' + error.message, 'error');
+                router.navigateTo('subjects.html');
+            }
         }
 
-        // ── DISCUSSION (unchanged) ──
-        let chatMessagesData = [];
+        // ── DISCUSSION (via exam-chat.js) ──
         let sheetState = 'closed';
         function initDiscussion(els) {
-            chatMessagesData = [
-                { author: 'Felix', body: 'This brachial plexus question is tricky 😅' },
-                { author: 'Mercy', body: 'Embryology will finish me 😭' }
-            ];
-            renderChat(els);
             els.floatingBtn.addEventListener('click', () => {
                 if (sheetState === 'closed') openSheet('half', els); else closeSheet(els);
             });
             els.sheetCloseBtn.addEventListener('click', () => closeSheet(els));
-            els.chatSendBtn.addEventListener('click', () => sendMessage(els));
-            els.chatInput.addEventListener('keydown', e => { if (e.key === 'Enter') sendMessage(els); });
+            els.chatSendBtn.addEventListener('click', () => sendChatMessage(els));
+            els.chatInput.addEventListener('keydown', e => { if (e.key === 'Enter') sendChatMessage(els); });
 
+            // Drag logic
             let dragStart = 0, startY = 0, isDragging = false;
             els.sheetDragHandle.addEventListener('pointerdown', e => {
                 if (sheetState === 'closed') return;
@@ -926,6 +1184,7 @@
                 else if (currentY < 65) openSheet('half', els);
                 else closeSheet(els);
             });
+
             els.moodOptions.addEventListener('click', e => {
                 const chip = e.target.closest('.mood-chip');
                 if (!chip) return;
@@ -934,13 +1193,27 @@
                 chip.classList.add('voted');
                 setTimeout(() => chip.classList.remove('voted'), 500);
             });
-            setInterval(() => { if (!isFinished && Math.random() < 0.4) simulateIncoming(els); }, 25000);
         }
+
+        async function sendChatMessage(els) {
+            const text = els.chatInput.value.trim();
+            if (!text) return;
+            const success = await examChat.sendMessage(text);
+            if (success) {
+                els.chatInput.value = '';
+                // Render is handled by the onChatUpdate callback
+            } else {
+                ui.showToast('Message failed to send', 'error');
+            }
+        }
+
         function openSheet(state, els) {
             els.discussionSheet.classList.remove('half-open', 'full-open');
             els.discussionSheet.classList.add(state === 'half' ? 'half-open' : 'full-open');
             sheetState = state;
             els.floatingBtn.classList.add('hidden');
+            els.discussBadge.style.display = 'none';
+            els.sheetContent.scrollTop = els.sheetContent.scrollHeight;
         }
         function closeSheet(els) {
             els.discussionSheet.classList.remove('half-open', 'full-open');
@@ -948,56 +1221,31 @@
             sheetState = 'closed';
             els.floatingBtn.classList.remove('hidden');
         }
-        function sendMessage(els) {
-            const text = els.chatInput.value.trim();
-            if (!text) return;
-            chatMessagesData.push({ author: 'You', body: text });
-            els.chatInput.value = '';
-            renderChat(els);
-            els.sheetContent.scrollTop = els.sheetContent.scrollHeight;
-        }
-        function renderChat(els) {
-            els.chatMessages.innerHTML = chatMessagesData.map(m => `<div class="chat-message"><span class="chat-author">${m.author}</span><span class="chat-body">${m.body}</span></div>`).join('');
-            document.getElementById('shared-msg-count').textContent = `(${chatMessagesData.length} messages)`;
-        }
-        function simulateIncoming(els) {
-            const msgs = [{ author: 'Mercy', body: 'Anyone else stuck on Q8?' }, { author: 'Brian', body: 'Check the lecture notes!' }];
-            chatMessagesData.push(msgs[Math.floor(Math.random() * msgs.length)]);
-            renderChat(els);
-            if (sheetState === 'closed') {
-                els.discussBadge.style.display = 'flex';
-                els.discussBadge.textContent = 'New';
-            }
-        }
-        async function submitSharedExam(els, questionsList) {
-            if (isFinished) return;
-            isFinished = true;
-            ui.showLoading('Submitting...');
-            try {
-                const results = await examEngine.endExam();
-                await db.saveExamResult(results);
-                ui.hideLoading();
-                ui.showToast('Exam completed!', 'success');
-                router.navigateTo('results.html', { examId: results.examId });
-            } catch (error) {
-                ui.hideLoading();
-                ui.showToast('Error finishing exam: ' + error.message, 'error');
-                router.navigateTo('subjects.html');
-            }
+
+        function renderChat(els, messages) {
+            if (!messages) messages = [];
+            els.chatMessages.innerHTML = messages.map(m =>
+                `<div class="chat-message ${m.author === 'You' ? 'own-message' : ''}">
+                    <span class="chat-author">${m.author === 'You' ? '<span class="author-you">You</span>' : m.author}</span>
+                    <span class="chat-body">${m.body}</span>
+                </div>`
+            ).join('');
+            document.getElementById('shared-msg-count').textContent = `(${messages.length} messages)`;
         }
 
-        // ── CORE RENDER FUNCTION (unchanged) ──
+        // ── CORE RENDER FUNCTION ──
         function renderQuestion() {
+            if (examMode === 'shared') return;
             const current = examEngine.getCurrentQuestion();
             if (!current) return;
 
             const isStd = examMode === 'standard';
             const isRev = examMode === 'revision';
-            const qCounter = document.getElementById(isStd ? 'q-counter-std' : (isRev ? 'q-counter-rev' : 'q-counter-shared'));
-            const qText = document.getElementById(isStd ? 'q-text-std' : (isRev ? 'q-text-rev' : 'q-text-shared'));
-            const qImage = document.getElementById(isStd ? 'q-image-std' : (isRev ? 'q-image-rev' : 'q-image-shared'));
-            const answersList = document.getElementById(isStd ? 'answers-list-std' : (isRev ? 'answers-list-rev' : 'answers-list-shared'));
-            const flagBtn = document.getElementById(isStd ? 'flag-btn-std' : (isRev ? 'flag-btn-rev' : 'flag-btn-shared'));
+            const qCounter = document.getElementById(isStd ? 'q-counter-std' : 'q-counter-rev');
+            const qText = document.getElementById(isStd ? 'q-text-std' : 'q-text-rev');
+            const qImage = document.getElementById(isStd ? 'q-image-std' : 'q-image-rev');
+            const answersList = document.getElementById(isStd ? 'answers-list-std' : 'answers-list-rev');
+            const flagBtn = document.getElementById(isStd ? 'flag-btn-std' : 'flag-btn-rev');
 
             qCounter.textContent = `Question ${currentQuestionIndex + 1} / ${totalQuestions}`;
             qText.textContent = current.question;
@@ -1023,7 +1271,7 @@
             if (overallDiv) overallDiv.style.display = 'none';
 
             answersList.querySelectorAll('.option-item').forEach(item => {
-                item.addEventListener('click', function() {
+                item.addEventListener('click', function () {
                     const letter = this.dataset.option;
                     if (isStd) window.submitAnswerStd(letter);
                     else if (isRev) {
@@ -1057,6 +1305,7 @@
                     submitBtn.style.display = 'none';
                     nextBtn.style.display = 'block';
                     nextBtn.disabled = false;
+
                 } else {
                     document.querySelectorAll('#answers-list-rev .option-item').forEach(el => el.style.pointerEvents = 'auto');
                     submitBtn.style.display = 'block';
@@ -1064,7 +1313,7 @@
                     nextBtn.disabled = true;
                 }
             }
-
+            if (isRev) setTimeout(ensureFooterVisible, 100);
             updateProgress();
             if (isStd) updateNavGridStandard();
             else if (isRev) updateDashNavigatorRevision('rev-dash-progress');
@@ -1109,13 +1358,13 @@
             }
         }
 
-        window.submitAnswerStd = async function(letter) {
+        window.submitAnswerStd = async function (letter) {
             const timeSpent = timerInstance?.getTimeSpent() / 1000 || 0;
             examEngine.submitAnswer(letter, timeSpent);
             renderQuestion();
             await examEngine.autoSave();
         };
-        window.submitAnswer = function() {
+        window.submitAnswer = function () {
             const answer = examEngine.getCurrentAnswer();
             if (!answer || !answer.selectedOption) {
                 ui.showToast('Please select an option', 'warning');
@@ -1123,17 +1372,18 @@
             }
             renderQuestion();
         };
-        window.nextQuestion = function() {
+        window.nextQuestion = function () {
             if (examEngine.hasNext()) {
                 examEngine.next();
                 currentQuestionIndex++;
                 renderQuestion();
+                setTimeout(ensureFooterVisible, 100);
                 resetTimerForCurrentQuestion();
             } else if (examMode === 'standard' || examMode === 'revision') {
                 finishExam();
             }
         };
-        window.prevQuestion = function() {
+        window.prevQuestion = function () {
             if (examEngine.hasPrev()) {
                 examEngine.prev();
                 currentQuestionIndex--;
@@ -1141,18 +1391,18 @@
                 resetTimerForCurrentQuestion();
             }
         };
-        window.jumpToQuestion = function(index) {
+        window.jumpToQuestion = function (index) {
             examEngine.goTo(index);
             currentQuestionIndex = index;
             renderQuestion();
             resetTimerForCurrentQuestion();
         };
-        window.toggleFlag = function() {
+        window.toggleFlag = function () {
             examEngine.toggleCurrentFlag();
             renderQuestion();
             examEngine.autoSave();
         };
-        window.submitExam = function() {
+        window.submitExam = function () {
             if (examMode === 'standard') {
                 ui.showConfirmationDialog('Submit Exam', 'Are you sure?', 'warning').then(ok => { if (ok) finishExam(); });
             }
@@ -1175,19 +1425,19 @@
         }
 
         function startTimer() {
-            if (examMode === 'revision') return;
+            if (examMode === 'revision' || examMode === 'shared') return;
             const difficulty = examEngine.getCurrentQuestion()?.difficulty || 3;
             const config = examEngine.getConfig();
-            const timingMode = examEngine.config?.timingMode || 'adaptive';
-            const customTime = examEngine.config?.fixedTimePerQuestion || 30;
+            const timingMode = config?.timingMode || 'adaptive';
+            const customTime = config?.fixedTimePerQuestion || 30;
             timerInstance = timer.createTimer(difficulty, timingMode, customTime);
-            const timerElId = examMode === 'standard' ? 'timer-display-std' : 'shared-timer';
+            const timerElId = 'timer-display-std';
             const timerEl = document.getElementById(timerElId);
             if (!timerEl) return;
             timerInstance.start(
                 (timeData) => {
                     timerEl.textContent = timer.formatTime(timeData.remaining);
-                    const parent = timerEl.closest('.timer, .timer-rev, .timer');
+                    const parent = timerEl.closest('.timer');
                     if (parent) {
                         parent.className = `timer ${timeData.color}`;
                         if (timeData.shouldFlash) parent.classList.add('flash');
@@ -1198,14 +1448,12 @@
         }
         function resetTimerForCurrentQuestion() {
             if (timerInstance) timerInstance.stop();
-            if (examMode !== 'revision') startTimer();
+            if (examMode !== 'revision' && examMode !== 'shared') startTimer();
         }
 
         function setupAutoSave() {
             autoSaveInterval = setInterval(async () => {
-                if (!isFinished) {
-                    await examEngine.autoSave();
-                }
+                if (!isFinished) await examEngine.autoSave();
             }, 30000);
         }
 
@@ -1238,11 +1486,11 @@
             }
         }
 
-        window.toggleFullscreen = function() {
+        window.toggleFullscreen = function () {
             if (!document.fullscreenElement) document.documentElement.requestFullscreen();
             else document.exitFullscreen();
         };
-        window.toggleDistractionFree = function() {
+        window.toggleDistractionFree = function () {
             document.body.classList.toggle('distraction-free');
         };
 
@@ -1270,9 +1518,13 @@
         window.addEventListener('beforeunload', () => {
             if (autoSaveInterval) clearInterval(autoSaveInterval);
             if (timerInstance) timerInstance.stop();
+            if (globalTimerInstance) globalTimerInstance.stop();
+            examChat.stopChat();
             examEngine.autoSave();
         });
     </script>
+
     <script data-lazy data-src="/scripts/offline.js"></script>
 </body>
+
 </html>

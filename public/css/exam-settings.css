@@ -167,10 +167,12 @@
 }
 
 /* ============================================================
-   FLOATING BOTTOM CARD
+   FLOATING BOTTOM CARD  (now with dynamic top via JS)
    ============================================================ */
 .bottom-card {
     position: fixed;
+    /* top is set dynamically by JS to match header bottom */
+    top: auto;                /* fallback, overridden by inline style */
     bottom: 0;
     left: 0;
     right: 0;
@@ -179,11 +181,12 @@
     border-radius: 24px 24px 0 0;
     box-shadow: 0 -10px 30px rgba(0,0,0,0.2);
     padding: 1.5rem 1.5rem 1rem;
-    height: 75vh;
-    max-height: 75vh;
+    /* height is auto – card stretches from dynamic top to bottom */
+    height: auto;
+    max-height: none;
     overflow-y: auto;
     z-index: 50;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, top 0.3s ease;
     transform: translateY(0);
 }
 .bottom-card.closed {
@@ -503,8 +506,9 @@
 @media (max-width: 640px) {
     .bottom-card {
         padding: 1rem;
-        height: 80vh;
-        max-height: 80vh;
+        /* Let the card fill the screen naturally, no fixed height */
+        height: auto;
+        max-height: none;
     }
     .header-row.bottom .subject-area {
         flex-direction: column;

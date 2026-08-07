@@ -7,6 +7,8 @@
  * 
  * Throttling: sync runs at most once per hour (or on demand via force).
  * Push & pull only happen after the 1‑hour cooldown, and then all pending data is exchanged.
+ * 
+ * Note: Conversations are synced in real‑time via the AI module, so they are excluded from this batch sync.
  */
 
 import * as utils from './utils.js';
@@ -47,12 +49,10 @@ let syncState = {
     lastPush: {
         exams: 0,
         notes: 0,
-        conversations: 0,
     },
     lastPull: {
         exams: 0,
         notes: 0,
-        conversations: 0,
     }
 };
 
@@ -72,8 +72,8 @@ function loadSyncState() {
 function getDefaultSyncState() {
     return {
         lastFullSync: 0,
-        lastPush: { exams: 0, notes: 0, conversations: 0 },
-        lastPull: { exams: 0, notes: 0, conversations: 0 }
+        lastPush: { exams: 0, notes: 0 },
+        lastPull: { exams: 0, notes: 0 }
     };
 }
 
@@ -146,13 +146,10 @@ export async function syncData(force = false) {
     if (!force && !isSyncAllowed()) {
         const last = getLastSyncTime();
         const nextAllowed = last + SYNC_COOLDOWN_MS;
-        // If last is 0, that means never synced – allow the first sync.
-        // But if last is 0, we should allow sync. So we check if last === 0, then skip the cooldown.
         if (last !== 0) {
             console.log(`[Sync] Cooldown active (next sync at ${new Date(nextAllowed).toLocaleTimeString()}). Skipping.`);
             return;
         }
-        // fall through – first sync allowed
     }
 
     console.log('[Sync] Starting full sync...');
@@ -195,10 +192,10 @@ export async function syncData(force = false) {
 async function pushAllData(user, token) {
     await pushExamResults(user, token);
     await pushNotes(user, token);
-    await pushConversations(user, token);
+    // Conversations are synced separately in real-time (AI module) – skip here.
 }
 
-// --- Push Exam Results (unchanged) ---
+// --- Push Exam Results ---
 async function pushExamResults(user, token) {
     const lastPushTime = syncState.lastPush.exams;
     const exams = await db.getAllExamResults();
@@ -279,7 +276,7 @@ async function pushExamResults(user, token) {
     }
 }
 
-// --- Push Notes (FIXED: preserve local id, set serverId) ---
+// --- Push Notes ---
 async function pushNotes(user, token) {
     const notes = await db.getNotesByUser(user._id);
     const newNotes = notes.filter(n => n.synced === false);
@@ -344,49 +341,6 @@ async function pushNotes(user, token) {
         console.log(`[Sync] Pushed ${newNotes.length} notes.`);
     } catch (err) {
         console.error('[Sync] Push notes failed:', err);
-        throw err;
-    }
-}
-
-// --- Push Conversations (unchanged) ---
-async function pushConversations(user, token) {
-    const lastPushTime = syncState.lastPush.conversations;
-    const conversations = await db.getConversationsByUser(user._id);
-    const newConvs = conversations.filter(c => (c.updatedAt || 0) > lastPushTime);
-    if (newConvs.length === 0) {
-        console.log('[Sync] No new conversations to push.');
-        return;
-    }
-
-    console.log(`[Sync] Pushing ${newConvs.length} conversations...`);
-    try {
-        for (const conv of newConvs) {
-            const messages = conv.messages || [];
-            const result = await convexHttpClient.mutation("conversations/mutations:saveConversation", {
-                token,
-                conversationId: conv.serverId || conv._id || undefined,
-                title: conv.title || 'Untitled',
-                messages: messages.map(msg => ({
-                    role: msg.role || 'user',
-                    content: msg.content
-                }))
-            });
-            if (result.success) {
-                const serverId = result.data.conversationId;
-                await db.saveConversation({
-                    ...conv,
-                    serverId: serverId,
-                    synced: true
-                });
-            } else {
-                throw new Error(result.message);
-            }
-        }
-        syncState.lastPush.conversations = Date.now();
-        saveSyncState();
-        console.log(`[Sync] Pushed ${newConvs.length} conversations.`);
-    } catch (err) {
-        console.error('[Sync] Push conversations failed:', err);
         throw err;
     }
 }
@@ -463,10 +417,10 @@ export async function pushSingleNote(noteId) {
 async function pullAllData(user, token) {
     await pullExamResults(user, token);
     await pullNotes(user, token);
-    await pullConversations(user, token);
+    // Conversations are synced separately in real-time – skip here.
 }
 
-// --- Pull Exam Results (unchanged) ---
+// --- Pull Exam Results ---
 async function pullExamResults(user, token) {
     const lastPullTime = syncState.lastPull.exams;
     try {
@@ -524,7 +478,7 @@ async function pullExamResults(user, token) {
     }
 }
 
-// --- Pull Notes (FIXED: preserve local id, set serverId) ---
+// --- Pull Notes ---
 async function pullNotes(user, token) {
     const lastPullTime = syncState.lastPull.notes;
     try {
@@ -598,53 +552,6 @@ async function pullNotes(user, token) {
     }
 }
 
-// --- Pull Conversations (unchanged) ---
-async function pullConversations(user, token) {
-    const lastPullTime = syncState.lastPull.conversations;
-    try {
-        const result = await convexHttpClient.action("conversations/actions:getConversations", {
-            token,
-            limit: 20,
-            since: lastPullTime,
-        });
-        if (result.success && result.data && result.data.conversations && result.data.conversations.length > 0) {
-            const newConvs = result.data.conversations;
-            for (const conv of newConvs) {
-                const existing = await db.getConversationByServerId(conv._id);
-                if (existing && existing.updatedAt && existing.updatedAt > conv.updatedAt) continue;
-                if (existing) {
-                    await db.saveConversation({
-                        ...existing,
-                        title: conv.title,
-                        updatedAt: conv.updatedAt,
-                        synced: true,
-                        serverId: conv._id
-                    });
-                } else {
-                    const newId = 'conv_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-                    await db.saveConversation({
-                        id: newId,
-                        userId: user._id,
-                        title: conv.title,
-                        messages: [],
-                        createdAt: conv.createdAt,
-                        updatedAt: conv.updatedAt,
-                        synced: true,
-                        serverId: conv._id
-                    });
-                }
-            }
-            syncState.lastPull.conversations = Date.now();
-            saveSyncState();
-            console.log(`[Sync] Pulled ${newConvs.length} conversations.`);
-        } else {
-            console.log('[Sync] No new conversations pulled.');
-        }
-    } catch (err) {
-        console.error('[Sync] Pull conversations failed:', err);
-    }
-}
-
 // ==================== SYNC QUEUE PROCESSING ====================
 
 async function processSyncQueue(token) {
@@ -658,7 +565,6 @@ async function processSyncQueue(token) {
             await db.removeFromSyncQueue(item.id);
         } catch (err) {
             console.error(`[Sync] Failed to process queue item ${item.id}:`, err);
-            // Special handling for note_delete: if the note was already deleted on server, remove the item
             if (item.type === 'note_delete' && err.message && (err.message.includes('not found') || err.message.includes('does not exist'))) {
                 console.warn(`[Sync] Removing note_delete item ${item.id} because note was not found on server.`);
                 await db.removeFromSyncQueue(item.id);
@@ -698,7 +604,7 @@ async function processSyncItem(item, token) {
     }
 }
 
-// --- Process Note Deletion (expects data.serverId) ---
+// --- Process Note Deletion ---
 async function processNoteDeletion(data, token) {
     if (!data || !data.serverId) {
         console.warn('[Sync] Invalid note deletion data:', data);
@@ -714,7 +620,6 @@ async function processNoteDeletion(data, token) {
         }
         console.log(`[Sync] Successfully deleted note ${data.serverId} from server`);
     } catch (err) {
-        // If note already deleted (404 or not found), treat as success
         if (err.message && (err.message.includes('not found') || err.message.includes('does not exist') || err.message.includes('404'))) {
             console.warn(`[Sync] Note ${data.serverId} already deleted on server.`);
             return;
@@ -835,7 +740,6 @@ export function setupBackgroundSync() {
     const interval = SYNC_INTERVAL_MS + Math.floor(Math.random() * 5 * 60 * 1000);
     syncInterval = setInterval(() => {
         if (onlineStatus) {
-            // Background sync respects the 1‑hour cooldown
             syncData(false).catch(err => console.warn('[Sync] Background sync failed', err));
         }
     }, interval);
@@ -843,7 +747,6 @@ export function setupBackgroundSync() {
 
 export function triggerBackgroundSync() {
     if (onlineStatus) {
-        // Manual trigger from UI bypasses cooldown
         syncData(true).catch(err => console.warn('[Sync] Manual sync failed', err));
     }
 }
@@ -873,9 +776,6 @@ export async function getPendingSyncs() {
 
 // ==================== RESET SYNC TIMER ON LOGIN ====================
 
-/**
- * Call this after a successful login or registration to force an immediate sync.
- */
 export function resetSyncTimer() {
     console.log('[Sync] Resetting sync timer (force sync on next call)');
     setLastSyncTime(0);

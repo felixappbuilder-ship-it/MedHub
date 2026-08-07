@@ -199,9 +199,18 @@
         .change-plan-btn:hover {
             background: var(--border);
         }
-        /* Remove the old standalone change plan button */
-        .old-change-plan {
-            display: none !important;
+        #payment-status {
+            margin-top: 1rem;
+        }
+        #status-message {
+            padding: 0.75rem;
+            border-radius: 6px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+        }
+        .poll-attempt {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
         }
     </style>
 
@@ -215,6 +224,9 @@
         import * as payment from '../scripts/payment.js';
         import * as subscription from '../scripts/subscription.js';
         import * as auth from '../scripts/auth.js';
+
+        // Store the poll cancellation function
+        let cancelPoll = null;
 
         (async function initPayment() {
             console.log('[Payment] Initializing...');
@@ -239,7 +251,6 @@
             // Display plan info – use durationText or format duration
             document.getElementById('plan-name').textContent = plan.name;
             document.getElementById('plan-price').textContent = `KES ${plan.price}`;
-            // Use durationText if available, else formatDuration
             const durationDisplay = plan.durationText || utils.formatDuration(plan.duration);
             document.getElementById('plan-duration').textContent = durationDisplay;
 
@@ -272,6 +283,11 @@
             const phone = document.getElementById('phone').value.trim();
             const plan = app.getSelectedPlan();
 
+            if (!plan) {
+                ui.showToast('No plan selected', 'error');
+                return;
+            }
+
             if (!validation.validatePhone(phone)) {
                 ui.showToast('Enter a valid Kenyan phone (07XX or 2547XX)', 'error');
                 return;
@@ -280,6 +296,12 @@
             const formattedPhone = validation.formatKenyanPhone(phone);
             ui.showLoading('Initiating payment...');
 
+            // Reset any previous poll
+            if (cancelPoll) {
+                cancelPoll();
+                cancelPoll = null;
+            }
+
             try {
                 const result = await payment.initiateMPesaPayment(formattedPhone, plan.id);
                 const transactionId = result.transactionId;
@@ -287,81 +309,90 @@
                 ui.hideLoading();
                 ui.showToast('Check your phone for M‑Pesa prompt', 'info');
 
-                startPolling(transactionId, plan);
+                // Show status container
+                const statusEl = document.getElementById('payment-status');
+                statusEl.style.display = 'block';
+                document.getElementById('status-message').textContent = '⏳ Waiting for payment confirmation...';
+                document.getElementById('poll-attempt').textContent = '';
+
+                // Use the new pollPaymentStatus method: 15s interval, 10 attempts
+                cancelPoll = payment.pollPaymentStatus(
+                    transactionId,
+                    {
+                        onUpdate: ({ status, attempt }) => {
+                            console.log(`[Poll ${attempt}/10] Status: ${status}`);
+                            document.getElementById('poll-attempt').textContent = `Checking (${attempt}/10)...`;
+                            if (status === 'pending') {
+                                document.getElementById('status-message').textContent = '⏳ Waiting for M‑Pesa confirmation...';
+                            } else {
+                                document.getElementById('status-message').textContent = `Status: ${status}`;
+                            }
+                        },
+                        onComplete: async ({ status, timedOut }) => {
+                            cancelPoll = null;
+                            if (timedOut) {
+                                document.getElementById('status-message').textContent = '⏰ Payment not confirmed after 150 seconds. Please check your M‑Pesa app or try again.';
+                                document.getElementById('retry-btn').style.display = 'block';
+                                ui.showToast('Payment timeout. Check M‑Pesa or retry.', 'warning');
+                            } else if (status === 'completed') {
+                                document.getElementById('status-message').textContent = '✅ Payment successful! Updating subscription...';
+                                ui.showToast('Payment successful! Updating subscription...', 'success');
+                                const user = app.getUser();
+                                if (user && plan) {
+                                    const now = new Date();
+                                    let expiryDate;
+                                    switch (plan.id) {
+                                        case 'monthly':
+                                            expiryDate = new Date(now.setMonth(now.getMonth() + 1));
+                                            break;
+                                        case 'quarterly':
+                                            expiryDate = new Date(now.setMonth(now.getMonth() + 3));
+                                            break;
+                                        case 'yearly':
+                                            expiryDate = new Date(now.setFullYear(now.getFullYear() + 1));
+                                            break;
+                                        default:
+                                            expiryDate = new Date(now.setHours(now.getHours() + 3));
+                                    }
+                                    const subscriptionData = {
+                                        userId: user.id,
+                                        plan: plan.id,
+                                        isActive: true,
+                                        expiryDate: expiryDate.toISOString(),
+                                        autoRenew: false
+                                    };
+                                    await subscription.activatePlan(subscriptionData);
+                                    app.setSubscription(subscriptionData);
+                                }
+                                setTimeout(() => router.navigateTo('subjects.html'), 1500);
+                            } else {
+                                document.getElementById('status-message').textContent = `❌ Payment ${status}. Please try again.`;
+                                document.getElementById('retry-btn').style.display = 'block';
+                                ui.showToast(`Payment ${status}. Please retry.`, 'error');
+                            }
+                            document.getElementById('poll-attempt').textContent = '';
+                        }
+                    },
+                    15000, // 15 seconds
+                    10     // 10 attempts = 150 seconds total
+                );
             } catch (error) {
                 ui.hideLoading();
                 ui.showToast(error.message || 'Payment initiation failed', 'error');
             }
         };
 
-        function startPolling(transactionId, plan) {
-            let attempts = 0;
-            const maxAttempts = 60;
-
-            const interval = setInterval(async () => {
-                attempts++;
-                try {
-                    const status = await payment.checkPaymentStatus(transactionId);
-
-                    if (status === 'completed') {
-                        clearInterval(interval);
-                        ui.showToast('Payment successful! Updating subscription...', 'success');
-
-                        const user = app.getUser();
-                        if (user && plan) {
-                            const now = new Date();
-                            let expiryDate;
-                            switch (plan.id) {
-                                case 'monthly':
-                                    expiryDate = new Date(now.setMonth(now.getMonth() + 1));
-                                    break;
-                                case 'quarterly':
-                                    expiryDate = new Date(now.setMonth(now.getMonth() + 3));
-                                    break;
-                                case 'yearly':
-                                    expiryDate = new Date(now.setFullYear(now.getFullYear() + 1));
-                                    break;
-                                default:
-                                    expiryDate = new Date(now.setHours(now.getHours() + 3));
-                            }
-                            const subscriptionData = {
-                                userId: user.id,
-                                plan: plan.id,
-                                isActive: true,
-                                expiryDate: expiryDate.toISOString(),
-                                autoRenew: false
-                            };
-                            await subscription.activatePlan(subscriptionData);
-                            app.setSubscription(subscriptionData);
-                        }
-
-                        router.navigateTo('subjects.html');
-                    } else if (status === 'failed') {
-                        clearInterval(interval);
-                        ui.showToast('Payment failed. Please retry.', 'error');
-                        document.getElementById('retry-btn').style.display = 'block';
-                    }
-
-                    if (attempts >= maxAttempts) {
-                        clearInterval(interval);
-                        ui.showToast('Payment timeout. Check M‑Pesa or retry.', 'warning');
-                        document.getElementById('retry-btn').style.display = 'block';
-                    }
-                } catch (err) {
-                    console.warn('Polling error', err);
-                }
-            }, 5000);
-
-            window.__paymentPolling = interval;
-        }
-
         window.retryPayment = function () {
             document.getElementById('retry-btn').style.display = 'none';
+            document.getElementById('status-message').textContent = '🔄 Retrying...';
             initiatePayment(new Event('submit'));
         };
 
         window.addEventListener('beforeunload', () => {
-            if (window.__paymentPolling) clearInterval(window.__paymentPolling);
+            if (cancelPoll) {
+                cancelPoll();
+                cancelPoll = null;
+            }
         });
     </script>
 </head>
@@ -448,16 +479,18 @@
                     <div class="payment-instructions">
                         <p>📱 1. After clicking Pay, check your phone for an M‑Pesa prompt.</p>
                         <p>🔢 2. Enter your M‑Pesa PIN to confirm.</p>
-                        <p>⏳ 3. Wait for confirmation – this may take up to 1 minute.</p>
+                        <p>⏳ 3. Wait for confirmation – this may take up to 2 minutes.</p>
                     </div>
 
                     <button type="submit" class="btn-primary btn-large">💰 Pay Now</button>
                     <button id="retry-btn" type="button" onclick="retryPayment()" class="btn-secondary"
                         style="display:none;">↻ Retry Payment</button>
-                    <!-- Change Plan button removed from bottom -->
                 </form>
 
-                <div id="payment-status"></div>
+                <div id="payment-status" style="display:none;">
+                    <div id="status-message" style="padding: 0.75rem; border-radius: 6px; background: var(--bg-secondary); border: 1px solid var(--border);"></div>
+                    <div id="poll-attempt" class="poll-attempt" style="margin-top: 0.5rem;"></div>
+                </div>
             </main>
         </div>
     </div>
