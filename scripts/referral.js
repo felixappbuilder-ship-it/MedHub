@@ -21,6 +21,9 @@ const STORAGE_KEY_REFERRAL_CODE = 'referral_code';
 const STORAGE_KEY_REFERRAL_DATA = 'referral_data';
 const STORAGE_KEY_AGENT_DATA = 'agent_data';
 
+// Base URL for referral links (production)
+const BASE_URL = 'https://medhub.edgeone.app';
+
 // ==================== TOKEN ERROR HANDLER ====================
 
 function handleTokenError(error) {
@@ -277,8 +280,7 @@ export async function requestWithdrawal(amount, phoneNumber) {
 // ==================== GENERATE REFERRAL LINK ====================
 
 export function generateReferralLink(referralCode) {
-    const baseUrl = window.location.origin;
-    return `${baseUrl}/?ref=${referralCode}`;
+    return `${BASE_URL}/?ref=${encodeURIComponent(referralCode)}`;
 }
 
 export function copyReferralLink(referralCode) {
@@ -303,11 +305,34 @@ export function shareReferralLink(referralCode) {
         text: 'Use my referral link to join MedHub and get started with premium medical exam prep:',
         url: link
     };
-    if (navigator.share) {
-        navigator.share(shareData).catch(() => {});
-    } else {
-        copyReferralLink(referralCode);
+
+    // 1. Try Capacitor Share (if available)
+    if (window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.Share) {
+        window.Capacitor.Plugins.Share.share({
+            title: shareData.title,
+            text: shareData.text,
+            url: shareData.url,
+            dialogTitle: 'Share Referral Link'
+        }).catch(() => {
+            // Fallback to Web Share or clipboard
+            fallbackShare(shareData);
+        });
     }
+    // 2. Try Web Share API
+    else if (navigator.share) {
+        navigator.share(shareData).catch(() => {
+            fallbackShare(shareData);
+        });
+    }
+    // 3. Fallback to clipboard
+    else {
+        fallbackShare(shareData);
+    }
+}
+
+// Helper fallback for share
+function fallbackShare(shareData) {
+    copyReferralLink(shareData.url.split('?ref=')[1]); // extract code from URL
 }
 
 // ==================== EXPOSE GLOBALLY ====================

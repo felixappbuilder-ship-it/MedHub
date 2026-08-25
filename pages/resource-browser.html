@@ -63,20 +63,37 @@
             background: #3a3a4e;
         }
 
-        /* ---- Viewer Styles ---- */
+        /* ---- Viewer Styles (theme‑aware) ---- */
         .viewer-container {
-            background: #1a1a2e;
+            background: var(--bg-primary, #1a1a2e);
+            touch-action: auto;
+            overflow: auto;
         }
         .viewer-header {
-            background: #1e1e2f;
-            border-bottom: 1px solid #333;
-            position: relative; /* Needed for outline drawer */
+            background: var(--bg-card, #1e1e2f);
+            border-bottom: 1px solid var(--border, #333);
+            position: relative;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .viewer-footer {
+            background: var(--bg-card, #1e1e2f);
+            border-top: 1px solid var(--border, #333);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .viewer-header.hidden,
+        .viewer-footer.hidden {
+            transform: translateY(-100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+        .viewer-footer.hidden {
+            transform: translateY(100%);
         }
         .viewer-header button {
-            color: #eee;
+            color: var(--text-primary, #eee);
         }
 
-        /* Loading dots (fallback – viewer.js injects these too) */
+        /* Loading dots */
         .viewer-loading-dots {
             display: flex;
             align-items: center;
@@ -114,7 +131,7 @@
             outline: 2px solid var(--accent);
         }
 
-        /* ---- Outline drawer (inside header) ---- */
+        /* Outline drawer */
         .outline-drawer {
             position: absolute;
             top: 100%;
@@ -133,20 +150,17 @@
         .outline-drawer.open {
             display: block;
         }
-        /* viewer.js renders <ul class="outline-list"> */
         .outline-drawer ul.outline-list {
             list-style: none;
             margin: 0;
             padding: 0.3rem 0;
         }
-        /* Each list item */
         .outline-drawer li.outline-item {
             padding: 0;
             margin: 0;
             border-bottom: 1px solid var(--border-light);
             font-size: 0.85rem;
         }
-        /* Links inside items */
         .outline-drawer li.outline-item a {
             display: block;
             padding: 0.4rem 1rem;
@@ -159,16 +173,31 @@
         .outline-drawer li.outline-item a:hover {
             background: var(--bg-secondary);
         }
-        /* Nesting levels (padding added by renderOutlineItems) */
         .outline-drawer li.outline-item.level-1 a { padding-left: 1.5rem; }
         .outline-drawer li.outline-item.level-2 a { padding-left: 2.5rem; }
         .outline-drawer li.outline-item.level-3 a { padding-left: 3.5rem; }
-
         .outline-drawer .outline-empty {
             padding: 0.5rem 1rem;
             color: var(--text-muted);
             font-style: italic;
             border: none;
+        }
+
+        /* Ensure images can be zoomed */
+        .viewer-main img {
+            touch-action: none;
+            max-width: 100%;
+            height: auto;
+        }
+        .viewer-main {
+            overflow: auto;
+            touch-action: auto;
+        }
+
+        /* Auto‑hide classes (applied by viewer.js) */
+        .viewer-header.hidden,
+        .viewer-footer.hidden {
+            transition: transform 0.3s ease, opacity 0.3s ease;
         }
     </style>
 
@@ -227,7 +256,7 @@
 
         <main class="main-with-header">
             <div id="resource-grid" class="resource-grid">
-                <!-- 8 skeleton cards -->
+                <!-- 8 skeleton cards (same as before) -->
                 <div class="shimmer-card"><div class="shimmer-thumbnail"></div><div class="shimmer-info"><div class="shimmer-line shimmer-title"></div><div class="shimmer-line shimmer-meta"></div><div class="shimmer-line shimmer-badge"></div><div class="shimmer-line shimmer-stats"></div><div class="shimmer-actions"><div class="shimmer-btn"></div><div class="shimmer-menu"></div></div></div></div>
                 <div class="shimmer-card"><div class="shimmer-thumbnail"></div><div class="shimmer-info"><div class="shimmer-line shimmer-title"></div><div class="shimmer-line shimmer-meta"></div><div class="shimmer-line shimmer-badge"></div><div class="shimmer-line shimmer-stats"></div><div class="shimmer-actions"><div class="shimmer-btn"></div><div class="shimmer-menu"></div></div></div></div>
                 <div class="shimmer-card"><div class="shimmer-thumbnail"></div><div class="shimmer-info"><div class="shimmer-line shimmer-title"></div><div class="shimmer-line shimmer-meta"></div><div class="shimmer-line shimmer-badge"></div><div class="shimmer-line shimmer-stats"></div><div class="shimmer-actions"><div class="shimmer-btn"></div><div class="shimmer-menu"></div></div></div></div>
@@ -246,9 +275,9 @@
     </div>
 
     <!-- ===== VIEWER VIEW (Embedded) ===== -->
-    <div id="viewer" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 2000; background: var(--bg-primary);">
-        <div class="viewer-container" style="height: 100%; display: flex; flex-direction: column;">
-            <header class="viewer-header" style="position: relative;">
+    <div id="viewer" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 2000; background: var(--bg-primary); touch-action: auto; overflow: auto;">
+        <div class="viewer-container" style="height: 100%; display: flex; flex-direction: column; touch-action: auto;">
+            <header class="viewer-header" id="viewer-header" style="position: relative; touch-action: auto;">
                 <div class="left-group">
                     <button id="viewer-outline-btn" class="btn-icon" title="Document outline">☰</button>
                     <button id="viewer-back-btn" class="btn-icon" aria-label="Back to resources">←</button>
@@ -275,7 +304,7 @@
                 <div class="outline-drawer" id="viewer-outline-drawer"></div>
             </header>
 
-            <main class="viewer-main" id="viewer-main">
+            <main class="viewer-main" id="viewer-main" style="touch-action: auto; overflow: auto;">
                 <div class="loading-container" id="viewer-loading">
                     <div class="spinner"></div>
                     <p>Loading document...</p>
@@ -283,7 +312,7 @@
                 <progress id="viewer-progress" style="display: none; width: 80%; margin: 1rem auto;"></progress>
             </main>
 
-            <div class="viewer-footer" id="viewer-footer" style="display: none;">
+            <div class="viewer-footer" id="viewer-footer" style="display: none; touch-action: auto;">
                 <div class="page-nav">
                     <button id="viewer-prev-page" disabled>◀ Previous</button>
                     <span>

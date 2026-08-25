@@ -506,9 +506,67 @@
             headerObserver.observe(dom.fixedHeader);
         }
 
-        // ==================== SHAREABLE LINK HELPER ====================
+        // ==================== BASE URL FOR SHAREABLE LINKS ====================
+        const BASE_URL = 'https://medhub.edgeone.app';
+        const PAGE_PATH = '/pages/exam-settings.html';
+
+        /**
+         * Generate the full shareable link for a challenge.
+         * @param {string} code - The challenge code.
+         * @returns {string} Full URL.
+         */
         function getShareableLink(code) {
-            return `${window.location.origin}${window.location.pathname}?exam=${code}`;
+            return `${BASE_URL}${PAGE_PATH}?exam=${encodeURIComponent(code)}`;
+        }
+
+        /**
+         * Share the challenge link using Capacitor Share, Web Share, or clipboard.
+         * @param {string} code - The challenge code.
+         */
+        function shareChallengeLink(code) {
+            const link = getShareableLink(code);
+            const shareData = {
+                title: 'Join my MedHub Challenge!',
+                text: 'Join my medical exam challenge on MedHub!',
+                url: link
+            };
+
+            // 1. Try Capacitor Share
+            if (window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.Share) {
+                window.Capacitor.Plugins.Share.share({
+                    title: shareData.title,
+                    text: shareData.text,
+                    url: shareData.url,
+                    dialogTitle: 'Share Challenge'
+                }).catch(() => {
+                    fallbackShare(shareData);
+                });
+            }
+            // 2. Try Web Share API
+            else if (navigator.share) {
+                navigator.share(shareData).catch(() => {
+                    fallbackShare(shareData);
+                });
+            }
+            // 3. Clipboard fallback
+            else {
+                fallbackShare(shareData);
+            }
+        }
+
+        function fallbackShare(shareData) {
+            navigator.clipboard?.writeText(shareData.url).then(() => {
+                ui.showToast('Link copied to clipboard!', 'success');
+            }).catch(() => {
+                // Legacy fallback
+                const textarea = document.createElement('textarea');
+                textarea.value = shareData.url;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                ui.showToast('Link copied!', 'success');
+            });
         }
 
         // Expose globally so exam-settings.js can call it after challenge creation
@@ -518,6 +576,9 @@
                 dom.shareLinkArea.style.display = 'block';
             }
         };
+
+        // Also expose share function for the share button
+        window.shareChallengeLink = shareChallengeLink;
 
         // ==================== INIT ====================
         (async function init() {
@@ -534,8 +595,6 @@
                 // Show join step with code
                 if (dom.joinCodeDisplay) dom.joinCodeDisplay.textContent = examCode;
                 showStep('step2-join');
-                // Optional: auto-join after a brief delay (user can also click)
-                // setTimeout(() => { dom.joinStartBtn?.click(); }, 800);
             }
 
             setupEventListeners();
@@ -663,25 +722,14 @@
                 });
             });
 
-            // Share challenge code (old behaviour)
+            // Share challenge code (now shares the full link using Capacitor/Web Share)
             dom.shareChallengeCodeBtn.addEventListener('click', () => {
                 const code = dom.challengeCodeDisplay.textContent;
                 if (!code || code === '---') {
                     ui.showToast('No challenge code available', 'warning');
                     return;
                 }
-                if (navigator.share) {
-                    navigator.share({
-                        title: 'Challenge Code',
-                        text: `Join my MedHub challenge! Code: ${code}`
-                    }).catch(() => {});
-                } else {
-                    navigator.clipboard?.writeText(`MedHub Challenge Code: ${code}`).then(() => {
-                        ui.showToast('Code copied to clipboard!', 'success');
-                    }).catch(() => {
-                        ui.showToast('Share not supported. Copy manually.', 'warning');
-                    });
-                }
+                shareChallengeLink(code);
             });
 
             // Refresh invitations (simulated)

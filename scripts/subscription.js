@@ -16,6 +16,7 @@ import * as ui from './ui.js';
 import { convexHttpClient } from './convex-client.js';
 import { getToken, logout } from './auth.js';
 import * as security from './security.js';
+import * as timeVerifier from './timeVerifier.js'; // ✅ New import
 
 // ==================== CONSTANTS (ORIGINAL UI PLANS) ====================
 
@@ -149,6 +150,8 @@ export async function getSubscriptionStatus(forceRefresh = false) {
                 await db.saveSubscription(normalizedSub);
                 utils.setLocalStorage('subscription', normalizedSub);
                 app.setSubscription(normalizedSub);
+                // ✅ After successful backend sync, reset time verifier (trust server time)
+                timeVerifier.resetTimeVerifier();
                 return normalizedSub;
             } else if (result && !result.success) {
                 if (result.error === 'invalid_token' || result.message?.toLowerCase().includes('token')) {
@@ -175,6 +178,8 @@ export async function getSubscriptionStatus(forceRefresh = false) {
  * @returns {Promise<boolean>}
  */
 export async function hasActiveSubscription() {
+    // ✅ Verify time before using Date.now()
+    if (!timeVerifier.verifyTime()) return false;
     const sub = await getSubscriptionStatus();
     if (!sub) {
         console.log('[Subscription] No subscription object');
@@ -195,6 +200,7 @@ export async function hasActiveSubscription() {
  * @returns {Promise<boolean>}
  */
 export async function isTrialActive() {
+    if (!timeVerifier.verifyTime()) return false;
     const sub = await getSubscriptionStatus();
     return sub && sub.plan === 'trial' && sub.isActive && new Date(sub.expiryDate).getTime() > Date.now();
 }
@@ -204,6 +210,7 @@ export async function isTrialActive() {
  * @returns {Promise<boolean>}
  */
 export async function isPaidSubscription() {
+    if (!timeVerifier.verifyTime()) return false;
     const sub = await getSubscriptionStatus();
     return sub && sub.plan !== 'trial' && sub.isActive && new Date(sub.expiryDate).getTime() > Date.now();
 }
@@ -274,6 +281,8 @@ export async function startFreeTrial({ deviceFingerprint }) {
         await db.saveSubscription(normalizedSub);
         utils.setLocalStorage('subscription', normalizedSub);
         app.setSubscription(normalizedSub);
+        // ✅ Reset time verifier after successful trial start
+        timeVerifier.resetTimeVerifier();
         return normalizedSub;
     } catch (err) {
         console.error('Failed to start trial', err);
@@ -286,6 +295,7 @@ export async function startFreeTrial({ deviceFingerprint }) {
  * @returns {Promise<string|null>} human readable time remaining
  */
 export async function getTrialRemaining() {
+    if (!timeVerifier.verifyTime()) return null;
     const sub = await getSubscriptionStatus();
     if (!sub || sub.plan !== 'trial' || !sub.isActive) return null;
     const now = Date.now();
@@ -425,6 +435,7 @@ export async function canExportResults() {
 // ==================== TIME CALCULATIONS ====================
 
 export async function calculateRemainingTime() {
+    if (!timeVerifier.verifyTime()) return 0;
     const sub = await getSubscriptionStatus();
     if (!sub || !sub.isActive) return 0;
     const now = Date.now();
@@ -458,6 +469,8 @@ export async function activatePlan(subscriptionData) {
   await db.saveSubscription(subscriptionData);
   utils.setLocalStorage('subscription', subscriptionData);
   app.setSubscription(subscriptionData);
+  // ✅ Reset time verifier after activation
+  timeVerifier.resetTimeVerifier();
   return subscriptionData;
 }
 

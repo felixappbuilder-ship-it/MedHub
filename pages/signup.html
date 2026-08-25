@@ -21,7 +21,7 @@
     <script type="module" src="/scripts/referral.js"></script>
 
     <style>
-        /* Fixed header styles */
+        /* Fixed header styles (unchanged) */
         .fixed-header {
             position: sticky;
             top: 0;
@@ -90,7 +90,7 @@
 
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/service-worker.js').catch(() => { });
+            navigator.serviceWorker.register('/service-worker.js').catch(() => {});
         }
     </script>
 </head>
@@ -107,7 +107,8 @@
         </div>
         <div class="header-row bottom">
             <button onclick="window.router?.navigateTo('welcome.html')" class="nav-link">← Back to Home</button>
-            <button onclick="window.router?.navigateTo('login.html')" class="nav-link login-link">Already have an account? Login</button>
+            <!-- Login link – will be updated by script to include redirect parameter -->
+            <button id="loginLink" class="nav-link login-link">Already have an account? Login</button>
         </div>
     </header>
 
@@ -159,8 +160,8 @@
                 <div class="form-group checkbox">
                     <label>
                         <input type="checkbox" id="terms" name="terms" required>
-                        I agree to the <a href="../pages/terms.html">Terms of Service</a> and <a
-                            href="/pages/privacy.html">Privacy Policy</a>
+                        I agree to the <a href="/terms.html">Terms of Service</a> and <a
+                            href="/privacy.html">Privacy Policy</a>
                     </label>
                     <div class="error-message" data-for="terms"></div>
                 </div>
@@ -260,10 +261,9 @@
         <div id="step3" class="step" style="display:none; text-align: center;">
             <div class="success-icon">✅</div>
             <h2>Account created successfully!</h2>
-            <p>Your account has been created. You will be redirected to start your free trial in <span
+            <p id="successMessage">Your account has been created. You will be redirected to start your free trial in <span
                     id="countdown">3</span> seconds.</p>
-            <button onclick="window.router?.navigateTo('free-trial.html')" class="btn-primary">Go to Free Trial
-                now</button>
+            <button id="redirectNowBtn" class="btn-primary">Go to Free Trial now</button>
         </div>
     </main>
 
@@ -278,6 +278,34 @@
         import * as utils from '../scripts/utils.js';
         import * as db from '../scripts/db.js';
         import * as referral from '../scripts/referral.js';
+
+        // ==================== DEEP LINK REDIRECT ====================
+        const redirectParam = new URLSearchParams(window.location.search).get('redirect');
+        let redirectTarget = null;
+        if (redirectParam) {
+            try {
+                // Decode the URL (it was encoded by welcome.html)
+                redirectTarget = decodeURIComponent(redirectParam);
+                // Ensure it's a relative path (starts with /pages/ or /)
+                if (!redirectTarget.startsWith('/')) {
+                    redirectTarget = null;
+                }
+            } catch (e) {
+                redirectTarget = null;
+            }
+        }
+
+        // ==================== UPDATE LOGIN LINK ====================
+        const loginLink = document.getElementById('loginLink');
+        if (loginLink) {
+            loginLink.onclick = () => {
+                let url = 'login.html';
+                if (redirectTarget) {
+                    url += `?redirect=${encodeURIComponent(redirectTarget)}`;
+                }
+                router.navigateTo(url);
+            };
+        }
 
         // ==================== STATE ====================
         let formData = {
@@ -334,7 +362,12 @@
             ui.applyTheme();
 
             if (app.checkAuth()) {
-                router.navigateTo('subjects.html');
+                // If already logged in, go to redirect or subjects
+                if (redirectTarget) {
+                    window.location.href = redirectTarget;
+                } else {
+                    router.navigateTo('subjects.html');
+                }
                 return;
             }
 
@@ -420,9 +453,7 @@
             sessionStorage.setItem('signupData', JSON.stringify(formData));
         };
 
-        // ✅ Back button: NO validation, just go back
         window.goToStep1 = function () {
-            // Save whatever is currently entered in step 2 (but don't validate)
             const sq1 = document.getElementById('sq1').value;
             const ans1 = document.getElementById('answer1').value.trim();
             const sq2 = document.getElementById('sq2').value;
@@ -430,12 +461,10 @@
             const sq3 = document.getElementById('sq3').value;
             const ans3 = document.getElementById('answer3').value.trim();
 
-            // Update formData if we have valid selections (optional)
             if (sq1 && ans1) formData.securityQuestions[0] = { question: sq1, answer: ans1 };
             if (sq2 && ans2) formData.securityQuestions[1] = { question: sq2, answer: ans2 };
             if (sq3 && ans3) formData.securityQuestions[2] = { question: sq3, answer: ans3 };
 
-            // Navigate back
             document.getElementById('step2').style.display = 'none';
             document.getElementById('step1').style.display = 'block';
             document.getElementById('step-indicator').textContent = 'Step 1 of 3: Personal Information';
@@ -490,12 +519,11 @@
                     deviceInfo
                 };
 
-                // Pass referral code and isAgent=false (normal user)
                 const user = await auth.register(userData, deviceInfo, formData.referralCode || null, false);
 
                 if (!app.checkAuth()) {
                     console.warn('Auth check failed after registration, forcing reload.');
-                    window.location.href = '/pages/free-trial.html';
+                    window.location.href = '/free-trial.html';
                     return;
                 }
 
@@ -507,6 +535,21 @@
 
                 sessionStorage.removeItem('signupData');
 
+                // ===== HANDLE DEEP LINK REDIRECT =====
+                let finalTarget = redirectTarget || '/free-trial.html';
+                // Update success message
+                const successMsg = document.getElementById('successMessage');
+                if (redirectTarget) {
+                    successMsg.innerHTML =
+                        `Your account has been created. You will be redirected to your intended page in <span id="countdown">3</span> seconds.`;
+                    // Update button text
+                    document.getElementById('redirectNowBtn').textContent = 'Go to your page now';
+                } else {
+                    successMsg.innerHTML =
+                        `Your account has been created. You will be redirected to start your free trial in <span id="countdown">3</span> seconds.`;
+                }
+
+                // Countdown and redirect
                 let countdown = 3;
                 const countdownEl = document.getElementById('countdown');
                 const interval = setInterval(() => {
@@ -514,9 +557,15 @@
                     countdownEl.textContent = countdown;
                     if (countdown <= 0) {
                         clearInterval(interval);
-                        router.navigateTo('free-trial.html');
+                        router.navigateTo(finalTarget);
                     }
                 }, 1000);
+
+                // Button to redirect immediately
+                document.getElementById('redirectNowBtn').onclick = () => {
+                    clearInterval(interval);
+                    router.navigateTo(finalTarget);
+                };
 
             } catch (error) {
                 ui.hideLoading();
@@ -524,10 +573,12 @@
             }
         };
 
-        // Expose functions globally for onclick
+        // ===== EXPOSE GLOBALLY for inline onclick handlers =====
         window.goToStep2 = goToStep2;
         window.goToStep1 = goToStep1;
         window.goToStep3 = goToStep3;
+        window.ui = ui;
+        window.router = router;
     </script>
 
     <script data-lazy data-src="/scripts/offline.js"></script>

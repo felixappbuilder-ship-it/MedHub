@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="/css/common.css" media="all">
     <link rel="stylesheet" href="/css/payment.css" media="all">
 
-    <!-- Inline dark fallback + shimmer styles -->
+    <!-- Inline dark fallback + shimmer styles (unchanged, dark only) -->
     <style id="theme-style">
         body {
-            background: #1a1a2e;
-            color: #eee;
+            background: var(--bg-primary, #1a1a2e);
+            color: var(--text-primary, #eee);
             margin: 0;
             padding: 0;
             font-family: system-ui, -apple-system, sans-serif;
@@ -139,7 +139,7 @@
         }
     </script>
 
-    <!-- Additional styles for header layout -->
+    <!-- Additional styles for header layout (now theme‑aware) -->
     <style>
         .pay-header {
             background: var(--bg-card);
@@ -164,6 +164,7 @@
         .pay-header-top .left-group .brand {
             font-weight: 600;
             font-size: 1.2rem;
+            color: var(--text-primary);
         }
         .pay-header-top .right-group {
             display: flex;
@@ -179,6 +180,7 @@
         .pay-header-bottom h2 {
             font-size: 1.4rem;
             margin: 0;
+            color: var(--text-primary);
         }
         .pay-header-bottom .plan-summary {
             font-size: 0.9rem;
@@ -207,15 +209,74 @@
             border-radius: 6px;
             background: var(--bg-secondary);
             border: 1px solid var(--border);
+            color: var(--text-primary);
         }
         .poll-attempt {
             font-size: 0.9rem;
             color: var(--text-secondary);
         }
+        .btn-text {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            cursor: pointer;
+            font-size: 0.9rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+        }
+        .btn-text:hover {
+            background: var(--bg-card);
+            border-color: var(--accent);
+        }
+        .btn-outline {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            cursor: pointer;
+            border-radius: var(--radius-sm);
+            padding: 0.3rem 0.6rem;
+            transition: var(--transition);
+        }
+        .btn-outline:hover {
+            background: var(--bg-card);
+            border-color: var(--accent);
+        }
+        .btn-primary.btn-large {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.9rem;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+            margin-bottom: 0.75rem;
+        }
+        .btn-primary.btn-large:hover {
+            background: var(--accent-dark);
+        }
+        #retry-btn {
+            width: 100%;
+            padding: 0.8rem;
+            font-size: 1rem;
+            border-radius: var(--radius-sm);
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        #retry-btn:hover {
+            background: var(--bg-card);
+            border-color: var(--accent);
+        }
     </style>
 
     <script type="module">
-        // Import dependencies
+        // ... (JS remains unchanged) ...
         import * as app from '../scripts/app.js';
         import * as ui from '../scripts/ui.js';
         import * as router from '../scripts/router.js';
@@ -225,7 +286,6 @@
         import * as subscription from '../scripts/subscription.js';
         import * as auth from '../scripts/auth.js';
 
-        // Store the poll cancellation function
         let cancelPoll = null;
 
         (async function initPayment() {
@@ -233,14 +293,12 @@
             await app.initializeApp();
             ui.applyTheme();
 
-            // Check authentication
             if (!app.checkAuth()) {
                 ui.showToast('Please log in first', 'warning');
                 router.navigateTo('login.html');
                 return;
             }
 
-            // Get the full plan object from app state
             const plan = app.getSelectedPlan();
             if (!plan) {
                 ui.showToast('No plan selected', 'error');
@@ -248,35 +306,29 @@
                 return;
             }
 
-            // Display plan info – use durationText or format duration
             document.getElementById('plan-name').textContent = plan.name;
             document.getElementById('plan-price').textContent = `KES ${plan.price}`;
             const durationDisplay = plan.durationText || utils.formatDuration(plan.duration);
             document.getElementById('plan-duration').textContent = durationDisplay;
 
-            // Update header summary
             const summaryEl = document.getElementById('plan-summary');
             if (summaryEl) {
                 summaryEl.innerHTML = `<strong>${plan.name}</strong> · ${durationDisplay} · <strong>KES ${plan.price}</strong>`;
             }
 
-            // Prefill phone from user profile
             const user = app.getUser();
             if (user?.phone) {
                 document.getElementById('phone').value = user.phone;
             }
 
-            // Setup live validation for phone
             validation.setupLiveValidation('payment-form', {
                 phone: { required: true, phone: 'KE' }
             });
 
-            // Hide shimmer, show real content
             document.getElementById('shimmer-content').style.display = 'none';
             document.getElementById('real-content').style.display = 'block';
         })();
 
-        // Expose initiatePayment globally for onclick
         window.initiatePayment = async function (event) {
             event.preventDefault();
 
@@ -296,7 +348,6 @@
             const formattedPhone = validation.formatKenyanPhone(phone);
             ui.showLoading('Initiating payment...');
 
-            // Reset any previous poll
             if (cancelPoll) {
                 cancelPoll();
                 cancelPoll = null;
@@ -309,13 +360,11 @@
                 ui.hideLoading();
                 ui.showToast('Check your phone for M‑Pesa prompt', 'info');
 
-                // Show status container
                 const statusEl = document.getElementById('payment-status');
                 statusEl.style.display = 'block';
                 document.getElementById('status-message').textContent = '⏳ Waiting for payment confirmation...';
                 document.getElementById('poll-attempt').textContent = '';
 
-                // Use the new pollPaymentStatus method: 15s interval, 10 attempts
                 cancelPoll = payment.pollPaymentStatus(
                     transactionId,
                     {
@@ -373,8 +422,8 @@
                             document.getElementById('poll-attempt').textContent = '';
                         }
                     },
-                    15000, // 15 seconds
-                    10     // 10 attempts = 150 seconds total
+                    15000,
+                    10
                 );
             } catch (error) {
                 ui.hideLoading();
@@ -401,6 +450,7 @@
     <div class="page-container">
         <!-- ===== SHIMMER CONTENT ===== -->
         <div id="shimmer-content">
+            <!-- ... (same as before) ... -->
             <div class="shimmer-header">
                 <div class="shimmer-header-top">
                     <div class="shimmer-logo">

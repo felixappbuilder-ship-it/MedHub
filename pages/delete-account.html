@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Delete Account – MedHub</title>
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/css/common.css" media="all">
+    <link rel="stylesheet" href="/css/delete-account.css" media="all">
+
+    <!-- Core modules -->
+    <script type="module" src="/scripts/utils.js"></script>
+    <script type="module" src="/scripts/ui.js"></script>
+    <script type="module" src="/scripts/router.js"></script>
+    <script type="module" src="/scripts/app.js"></script>
+    <script type="module" src="/scripts/auth.js"></script>
+    <script type="module" src="/scripts/db.js"></script>
+    <script type="module" src="/scripts/security.js"></script>
+
+    <style>
+        /* Shimmer overlay – loads before content */
+        .shimmer-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--bg-primary);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .shimmer-overlay .spinner {
+            width: 48px;
+            height: 48px;
+            border: 4px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .shimmer-overlay.hidden { display: none; }
+
+        /* Main content hidden initially */
+        #main-content { display: none; }
+
+        /* ===== LOGIN SHEET ===== */
+        #login-sheet {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--overlay);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+        #login-sheet .login-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: var(--shadow-lg);
+        }
+        #login-sheet .login-card h2 {
+            margin-top: 0;
+        }
+        #login-sheet .login-card .form-group {
+            margin-bottom: 1rem;
+        }
+        #login-sheet .login-card .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+        #login-sheet .login-card .form-group input {
+            width: 100%;
+            padding: 0.6rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            background: var(--bg-card);
+            color: var(--text-primary);
+        }
+        #login-sheet .login-card .button-group {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        #login-sheet .login-card .btn {
+            flex: 1;
+            padding: 0.6rem;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        #login-sheet .login-card .btn-primary {
+            background: var(--accent);
+            color: white;
+            border: 1px solid var(--accent);
+        }
+        #login-sheet .login-card .btn-secondary {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+        .login-error {
+            color: var(--danger);
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        /* ===== DELETE PAGE SPECIFIC ===== */
+        .delete-container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 1.5rem 1rem;
+        }
+        .warning-card {
+            display: flex;
+            gap: 1rem;
+            background: var(--bg-warning, #fff3cd);
+            border-left: 4px solid var(--danger);
+            padding: 1.2rem;
+            border-radius: var(--radius);
+            margin-bottom: 2rem;
+        }
+        .warning-card .warning-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+        .warning-card .warning-text strong {
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+        .info-section {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 1.2rem;
+            border: 1px solid var(--border);
+        }
+        .info-section h2 {
+            font-size: 1.1rem;
+            margin-top: 0;
+            margin-bottom: 0.8rem;
+        }
+        .delete-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .delete-list li {
+            padding: 0.4rem 0;
+            border-bottom: 1px solid var(--border-light, #eee);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .delete-list li:last-child { border-bottom: none; }
+        .delete-list li::before {
+            content: "🗑️";
+            margin-right: 0.5rem;
+            opacity: 0.7;
+        }
+        .retained p, .offline p, .subscription-note p {
+            margin: 0.5rem 0;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        .retained a {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+        .confirmation-section {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+        .confirm-step {
+            margin-bottom: 1.2rem;
+        }
+        .confirm-step label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+        .confirm-step input {
+            width: 100%;
+            padding: 0.6rem 0.8rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            background: var(--bg-input);
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+        .confirm-error {
+            color: var(--danger);
+            font-size: 0.85rem;
+            margin-top: 0.2rem;
+        }
+        .button-group {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 0.6rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            font-size: 0.95rem;
+            transition: background 0.2s;
+        }
+        .btn-secondary {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+        .btn-secondary:hover {
+            background: var(--bg-hover);
+        }
+        .btn-danger {
+            background: var(--danger);
+            color: white;
+            border: 1px solid var(--danger);
+        }
+        .btn-danger:hover:not(:disabled) {
+            background: var(--danger-dark, #c0392b);
+        }
+        .btn-danger:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .btn-text {
+            background: none;
+            border: none;
+            color: var(--accent);
+            cursor: pointer;
+            font-weight: 500;
+            padding: 0.2rem 0.4rem;
+        }
+        .btn-text:hover { text-decoration: underline; }
+        .btn-outline {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            padding: 0.3rem 0.6rem;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            line-height: 1;
+            transition: background 0.2s, color 0.2s, border-color 0.2s;
+        }
+        .btn-outline:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .delete-header {
+            padding: 0.5rem 1rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg-card);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .header-row.top { margin-bottom: 0.3rem; }
+        .left-group, .right-group {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .brand {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .page-title {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+        #user-status {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .header-row { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+            .header-row .left-group { width: 100%; }
+            .header-row .right-group { width: 100%; justify-content: flex-end; }
+            .delete-container { padding: 1rem 0.8rem; }
+        }
+    </style>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js').catch(() => {});
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Shimmer -->
+    <div id="shimmer-overlay" class="shimmer-overlay">
+        <div class="spinner"></div>
+        <p style="margin-top: 1rem; color: var(--text-secondary);">Loading...</p>
+    </div>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <div id="main-content">
+        <!-- Fixed header (2 rows) -->
+        <header class="delete-header">
+            <div class="header-row top">
+                <div class="left-group">
+                    <img src="/assets/images/logo.png" alt="Logo" width="32" height="32">
+                    <span class="brand">MedHub</span>
+                    <button onclick="router.navigateTo('settings.html')" class="btn-text">← Settings</button>
+                </div>
+                <div class="right-group">
+                    <button onclick="ui.toggleTheme()" class="btn-outline">🌓</button>
+                </div>
+            </div>
+            <div class="header-row bottom">
+                <h1 class="page-title">Delete Account</h1>
+                <div id="user-status" style="font-size: 0.85rem; color: var(--text-muted);"></div>
+            </div>
+        </header>
+
+        <main class="delete-container">
+            <!-- Warning Card -->
+            <div class="warning-card">
+                <div class="warning-icon">⚠️</div>
+                <div class="warning-text">
+                    <strong>This action cannot be undone.</strong>
+                    <p>Deleting your MedHub account permanently removes your personal data from our systems. Some information may be retained for legal or compliance reasons (see below).</p>
+                </div>
+            </div>
+
+            <!-- What will be deleted (matches backend deleteAllUserData) -->
+            <section class="info-section">
+                <h2>What will be deleted immediately?</h2>
+                <ul class="delete-list">
+                    <li>Your account profile (name, email, phone, username, display name)</li>
+                    <li>All security questions and answers</li>
+                    <li>All devices and active sessions (you'll be logged out everywhere)</li>
+                    <li>All exam results, answers, and progress</li>
+                    <li>All seen questions and question tracking</li>
+                    <li>All personal notes, flashcards, and note attachments</li>
+                    <li>All AI conversations, chat history, and conversation chunks</li>
+                    <li>All shared links (exams, notes, conversations) created by you</li>
+                    <li>All notifications sent to you</li>
+                    <li>All withdrawal requests and wallet transactions</li>
+                    <li>All subscription records (including trial and paid plans)</li>
+                    <li>All referral links and referral relationships (your referral code becomes invalid)</li>
+                    <li>Any other user‑generated content directly associated with your account</li>
+                </ul>
+            </section>
+
+            <!-- What is anonymised (not deleted) -->
+            <section class="info-section retained">
+                <h2>What will be anonymised (not deleted)?</h2>
+                <p><strong>Payments and transaction records</strong> – Your payment history will be dissociated from your identity (user ID set to <code>null</code>) but kept for financial audit, tax, and accounting purposes as required by law.</p>
+                <p><strong>Audit logs and security events</strong> – System logs that record actions performed by your account will be anonymised (actor ID set to <code>"deleted_user"</code>) to preserve operational integrity without identifying you.</p>
+                <p>These anonymised records are retained only for the period required by applicable regulations and handled in accordance with our <a href="/pages/privacy.html" target="_blank">Privacy Policy</a>.</p>
+            </section>
+
+            <!-- Offline data -->
+            <section class="info-section offline">
+                <h2>Offline data on your device</h2>
+                <p>Some data may remain cached in your browser or IndexedDB until you manually clear your browsing data or uninstall the PWA. To remove all local copies, you can clear your site data from your browser settings.</p>
+            </section>
+
+            <!-- Subscriptions note -->
+            <section class="info-section subscription-note">
+                <h2>Active subscriptions</h2>
+                <p>Deleting your account does <strong>not</strong> automatically cancel any active subscriptions managed through third‑party payment providers (e.g., M‑Pesa). Please cancel them separately before deleting your account to avoid future charges.</p>
+            </section>
+
+            <!-- Confirmation Section -->
+            <section class="confirmation-section" id="confirmation-section">
+                <div class="confirm-step">
+                    <label for="delete-confirm-input">
+                        To confirm, type <strong>DELETE</strong> below:
+                    </label>
+                    <input type="text" id="delete-confirm-input" placeholder="DELETE" autocomplete="off" />
+                    <div id="confirm-error" class="confirm-error"></div>
+                </div>
+
+                <!-- Re‑authentication (password) -->
+                <div class="confirm-step" id="password-step">
+                    <label for="delete-password-input">Enter your password to confirm identity:</label>
+                    <input type="password" id="delete-password-input" placeholder="Your password" autocomplete="current-password" />
+                    <div id="password-error" class="confirm-error"></div>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn btn-secondary" id="cancel-delete-btn">Cancel</button>
+                    <button class="btn btn-danger" id="confirm-delete-btn" disabled>Permanently Delete My Account</button>
+                </div>
+            </section>
+        </main>
+
+        <!-- ===== LOGIN SHEET (hidden if logged in) ===== -->
+        <div id="login-sheet">
+            <div class="login-card">
+                <h2>Please log in</h2>
+                <p>You must be logged in to delete your account.</p>
+                <div class="form-group">
+                    <label for="login-email">Email or phone</label>
+                    <input type="text" id="login-email" placeholder="email or 2547..." />
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="Your password" />
+                </div>
+                <div id="login-error" class="login-error"></div>
+                <div class="button-group">
+                    <button class="btn btn-secondary" id="login-cancel-btn">Cancel</button>
+                    <button class="btn btn-primary" id="login-submit-btn">Log In</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script type="module">
+        import * as app from '/scripts/app.js';
+        import * as auth from '/scripts/auth.js';
+        import * as ui from '/scripts/ui.js';
+        import * as router from '/scripts/router.js';
+        import * as utils from '/scripts/utils.js';
+        import * as db from '/scripts/db.js';
+        import * as security from '/scripts/security.js';
+
+        // DOM refs
+        const shimmer = document.getElementById('shimmer-overlay');
+        const mainContent = document.getElementById('main-content');
+        const loginSheet = document.getElementById('login-sheet');
+        const userStatus = document.getElementById('user-status');
+        const deleteConfirmInput = document.getElementById('delete-confirm-input');
+        const deletePasswordInput = document.getElementById('delete-password-input');
+        const confirmBtn = document.getElementById('confirm-delete-btn');
+        const cancelBtn = document.getElementById('cancel-delete-btn');
+        const confirmError = document.getElementById('confirm-error');
+        const passwordError = document.getElementById('password-error');
+
+        // Login sheet refs
+        const loginEmail = document.getElementById('login-email');
+        const loginPassword = document.getElementById('login-password');
+        const loginSubmitBtn = document.getElementById('login-submit-btn');
+        const loginCancelBtn = document.getElementById('login-cancel-btn');
+        const loginError = document.getElementById('login-error');
+
+        let isLoggedIn = false;
+        let currentUser = null;
+
+        // ===== INIT =====
+        async function init() {
+            shimmer.classList.remove('hidden');
+            mainContent.style.display = 'none';
+
+            await app.initializeApp();
+            ui.applyTheme();
+
+            isLoggedIn = app.checkAuth();
+            currentUser = app.getUser();
+
+            if (isLoggedIn && currentUser) {
+                userStatus.textContent = `👤 ${currentUser.name || currentUser.email}`;
+                loginSheet.style.display = 'none';
+                mainContent.style.display = 'block';
+                setupDeleteFlow();
+            } else {
+                // Show login sheet
+                mainContent.style.display = 'none';
+                loginSheet.style.display = 'flex';
+                setupLoginSheet();
+            }
+
+            shimmer.classList.add('hidden');
+        }
+
+        // ===== DELETE FLOW =====
+        function setupDeleteFlow() {
+            // Enable/disable confirm button based on "DELETE" input
+            deleteConfirmInput.addEventListener('input', () => {
+                const val = deleteConfirmInput.value.trim();
+                const isDelete = val === 'DELETE';
+                confirmBtn.disabled = !isDelete || !deletePasswordInput.value.trim();
+                confirmError.textContent = '';
+                if (val && val !== 'DELETE') {
+                    confirmError.textContent = 'Please type DELETE exactly.';
+                }
+            });
+
+            deletePasswordInput.addEventListener('input', () => {
+                const isDelete = deleteConfirmInput.value.trim() === 'DELETE';
+                confirmBtn.disabled = !isDelete || !deletePasswordInput.value.trim();
+                passwordError.textContent = '';
+            });
+
+            // Cancel
+            cancelBtn.addEventListener('click', () => {
+                router.navigateTo('settings.html');
+            });
+
+            // Confirm delete
+            confirmBtn.addEventListener('click', async () => {
+                const password = deletePasswordInput.value.trim();
+                if (!password) {
+                    passwordError.textContent = 'Please enter your password.';
+                    return;
+                }
+                if (deleteConfirmInput.value.trim() !== 'DELETE') {
+                    confirmError.textContent = 'Please type DELETE exactly.';
+                    return;
+                }
+
+                const token = auth.getToken();
+                if (!token) {
+                    ui.showToast('Session expired. Please log in again.', 'error');
+                    loginSheet.style.display = 'flex';
+                    return;
+                }
+
+                ui.showLoading('Deleting your account...');
+                try {
+                    // Call auth.deleteAccount (which calls the backend action)
+                    await auth.deleteAccount(password);
+                    // The auth.deleteAccount function already logs out and clears storage
+                    ui.hideLoading();
+                    ui.showToast('Account permanently deleted.', 'success');
+                    // Redirect to welcome page
+                    router.navigateTo('welcome.html');
+                } catch (err) {
+                    ui.hideLoading();
+                    passwordError.textContent = err.message || 'Invalid password or verification failed.';
+                }
+            });
+        }
+
+        // ===== LOGIN SHEET =====
+        function setupLoginSheet() {
+            loginSubmitBtn.addEventListener('click', async () => {
+                const identifier = loginEmail.value.trim();
+                const password = loginPassword.value.trim();
+                if (!identifier || !password) {
+                    loginError.textContent = 'Please fill in both fields.';
+                    loginError.style.display = 'block';
+                    return;
+                }
+                loginError.style.display = 'none';
+                ui.showLoading('Logging in...');
+                try {
+                    const deviceFingerprint = security.generateDeviceFingerprint();
+                    const user = await auth.login(identifier, password, {
+                        platform: 'web',
+                        deviceFingerprint
+                    });
+                    ui.hideLoading();
+                    // Re‑initialize the page after login
+                    await init();
+                } catch (err) {
+                    ui.hideLoading();
+                    loginError.textContent = err.message || 'Login failed.';
+                    loginError.style.display = 'block';
+                }
+            });
+
+            loginCancelBtn.addEventListener('click', () => {
+                router.navigateTo('settings.html');
+            });
+
+            // Press Enter to submit
+            loginPassword.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') loginSubmitBtn.click();
+            });
+            loginEmail.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') loginPassword.focus();
+            });
+        }
+
+        // ===== START =====
+        init();
+    </script>
+
+    <script data-lazy data-src="/scripts/offline.js"></script>
+</body>
+</html>

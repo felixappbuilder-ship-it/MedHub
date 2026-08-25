@@ -813,7 +813,7 @@
           <input type="checkbox" id="agent-terms-check">
           <label for="agent-terms-check">
             I accept the
-            <a href="#" id="agent-terms-link" data-page="agent-terms.html">Agent Terms &amp; Conditions</a>
+            <a href="agent-terms.html" id="agent-terms-link" data-page="agent-terms.html">Agent Terms &amp; Conditions</a>
             and agree to promote MedHub responsibly.
           </label>
         </div>
@@ -954,17 +954,17 @@
               <p style="font-weight:600;margin-bottom:0.4rem;font-size:0.9rem;">📄 Please review and accept:</p>
               <div class="checkbox-group">
                 <input type="checkbox" id="reg-terms-doc">
-                <label for="reg-terms-doc">I agree to the <a href="/pages/terms.html" target="_blank">Terms of
+                <label for="reg-terms-doc">I agree to the <a href="terms.html" target="_blank">Terms of
                     Service</a></label>
               </div>
               <div class="checkbox-group">
                 <input type="checkbox" id="reg-privacy-doc">
-                <label for="reg-privacy-doc">I agree to the <a href="/pages/privacy.html" target="_blank">Privacy
+                <label for="reg-privacy-doc">I agree to the <a href="privacy.html" target="_blank">Privacy
                     Policy</a></label>
               </div>
               <div class="checkbox-group">
                 <input type="checkbox" id="reg-agent-terms-doc">
-                <label for="reg-agent-terms-doc">I agree to the <a href="#" id="reg-agent-terms-link"
+                <label for="reg-agent-terms-doc">I agree to the <a href="agent-terms.html" id="reg-agent-terms-link"
                     data-page="agent-terms.html">Agent Terms &amp; Conditions</a></label>
               </div>
             </div>
@@ -1678,7 +1678,7 @@
         // Check auth
         if (!app.checkAuth()) {
           // Fallback: reload
-          window.location.href = '/pages/referral.html';
+          window.location.href = '/referral.html';
           return;
         }
 

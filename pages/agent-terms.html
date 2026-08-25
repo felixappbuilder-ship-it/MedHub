@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Agent Terms & Conditions – MedHub</title>
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/css/common.css" media="all">
+
+    <style>
+        /* ===== PAGE-SPECIFIC STYLES ===== */
+        :root {
+            --toc-bg: var(--bg-secondary);
+            --toc-border: var(--border);
+        }
+
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .page-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem 1.2rem 2rem;
+        }
+
+        /* ---- FIXED HEADER (2 rows) ---- */
+        .fixed-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+            backdrop-filter: blur(8px);
+        }
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-row.top { margin-bottom: 0.3rem; }
+        .header-row .left-group {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .header-row .left-group img {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+        }
+        .header-row .left-group .brand {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+        }
+        .header-row .left-group .btn-text {
+            font-size: 0.9rem;
+            padding: 0.3rem 0.6rem;
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .header-row .left-group .btn-text:hover {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+        }
+        .header-row .right-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .header-row .btn-outline {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            padding: 0.3rem 0.6rem;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            line-height: 1;
+            transition: background 0.2s, color 0.2s, border-color 0.2s;
+        }
+        .header-row .btn-outline:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+        .header-row.bottom .title-area h1 {
+            font-size: 1.3rem;
+            margin: 0;
+        }
+        .header-row.bottom .title-area .sub {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-left: 0.5rem;
+        }
+
+        /* ---- TABLE OF CONTENTS ---- */
+        .toc {
+            background: var(--toc-bg);
+            border: 1px solid var(--toc-border);
+            border-radius: var(--radius);
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0 2.5rem;
+        }
+        .toc h2 {
+            font-size: 1.1rem;
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+        }
+        .toc ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 0.4rem 1rem;
+        }
+        .toc li {
+            font-size: 0.9rem;
+        }
+        .toc a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .toc a:hover {
+            text-decoration: underline;
+            color: var(--accent-dark);
+        }
+
+        /* ---- CONTENT ---- */
+        .terms-content h2 {
+            font-size: 1.4rem;
+            margin-top: 2.5rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .terms-content h3 {
+            font-size: 1.1rem;
+            margin-top: 1.8rem;
+            margin-bottom: 0.4rem;
+        }
+        .terms-content p, .terms-content li {
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+        .terms-content ul, .terms-content ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .terms-content li {
+            margin-bottom: 0.3rem;
+        }
+        .terms-content strong {
+            color: var(--text-primary);
+        }
+        .terms-content .highlight-box {
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--accent);
+            padding: 1rem 1.2rem;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 1.5rem 0;
+        }
+        .terms-content .highlight-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ---- ACCEPT BUTTON ---- */
+        .accept-section {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .accept-section .btn-primary {
+            padding: 0.75rem 2.5rem;
+            font-weight: 600;
+            border-radius: 30px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .accept-section .btn-primary:hover {
+            background: var(--accent-dark);
+        }
+        .accept-section .btn-secondary {
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            border-radius: 30px;
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .accept-section .btn-secondary:hover {
+            background: var(--bg-secondary);
+        }
+
+        /* ---- RESPONSIVE ---- */
+        @media (max-width: 640px) {
+            .page-container { padding: 0.8rem 0.8rem 1.5rem; }
+            .toc ul { grid-template-columns: 1fr; }
+            .accept-section { flex-direction: column; align-items: stretch; }
+            .accept-section .btn-primary,
+            .accept-section .btn-secondary { width: 100%; text-align: center; }
+            .header-row.bottom .title-area h1 { font-size: 1.1rem; }
+            .header-row.bottom .title-area .sub { display: block; margin-left: 0; font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- FIXED HEADER -->
+    <header class="fixed-header">
+        <div class="header-row top">
+            <div class="left-group">
+                <img src="/assets/images/logo.png" alt="Logo" width="32" height="32">
+                <span class="brand">MedHub</span>
+                <button onclick="window.history.back()" class="btn-text">← Back</button>
+            </div>
+            <div class="right-group">
+                <button onclick="window.ui?.toggleTheme()" class="btn-outline">🌓</button>
+            </div>
+        </div>
+        <div class="header-row bottom">
+            <div class="title-area">
+                <h1>Agent Terms <span class="sub">Campus Agent Program</span></h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div class="page-container">
+
+        <!-- TABLE OF CONTENTS -->
+        <nav class="toc" aria-label="Table of Contents">
+            <h2>📋 Quick Navigation</h2>
+            <ul>
+                <li><a href="#section-1">1. Role &amp; Purpose</a></li>
+                <li><a href="#section-2">2. Eligibility &amp; Application</a></li>
+                <li><a href="#section-3">3. Earning Structure</a></li>
+                <li><a href="#section-4">4. Referral Attribution</a></li>
+                <li><a href="#section-5">5. Prohibited Activities</a></li>
+                <li><a href="#section-6">6. Wallet &amp; Withdrawals</a></li>
+                <li><a href="#section-7">7. Fraud Investigations</a></li>
+                <li><a href="#section-8">8. Head Agents</a></li>
+                <li><a href="#section-9">9. Non‑Exclusivity</a></li>
+                <li><a href="#section-10">10. Termination &amp; Suspension</a></li>
+                <li><a href="#section-11">11. Taxes</a></li>
+                <li><a href="#section-12">12. Limitation of Liability</a></li>
+                <li><a href="#section-13">13. Data Protection</a></li>
+                <li><a href="#section-14">14. Force Majeure</a></li>
+                <li><a href="#section-15">15. Changes to Terms</a></li>
+                <li><a href="#section-16">16. Contact Information</a></li>
+                <li><a href="#section-17">17. Governing Law</a></li>
+                <li><a href="#section-18">18. Entire Agreement</a></li>
+                <li><a href="#section-19">19. Severability</a></li>
+                <li><a href="#section-20">20. Acceptance</a></li>
+            </ul>
+        </nav>
+
+        <!-- TERMS CONTENT -->
+        <div class="terms-content">
+
+            <p><strong>Last Updated:</strong> August 2026 &nbsp;|&nbsp; <strong>Version:</strong> 2.0 (Revised)</p>
+            <p>Thank you for your interest in becoming a MedHub Campus Agent. This document outlines the terms, responsibilities, earnings structure, and expectations for agents representing MedHub on campus and online. By applying and being accepted as an agent, you agree to comply with these Terms &amp; Conditions.</p>
+
+            <!-- Section 1 -->
+            <h2 id="section-1">1. Role &amp; Purpose</h2>
+            <p>A MedHub Campus Agent is a verified promoter who helps medical students discover and adopt MedHub. Agents are <strong>not employees</strong>; they are independent partners who earn commissions for bringing in new subscribers and for retaining existing ones.</p>
+            <p>The goal of the program is to grow MedHub through trusted peer‑to‑peer recommendations, making medical exam preparation more accessible while rewarding those who help others succeed.</p>
+
+            <!-- Section 2 -->
+            <h2 id="section-2">2. Eligibility &amp; Application</h2>
+            <p>To become a MedHub Campus Agent you must:</p>
+            <ul>
+                <li>Be at least 18 years old.</li>
+                <li>Be a student at a recognised medical school, or have a strong network within the medical student community.</li>
+                <li>Complete the agent application and verification process (your identity and institution will be verified).</li>
+                <li>Agree to abide by these Terms &amp; Conditions.</li>
+            </ul>
+            <div class="highlight-box">
+                <p><strong>Important:</strong></p>
+                <ul>
+                    <li>Submission of an application does not guarantee acceptance into the Agent Program.</li>
+                    <li>MedHub reserves the right to approve or reject any application at its sole discretion.</li>
+                    <li>MedHub may request additional information or documentation to verify your eligibility.</li>
+                    <li>Agents are <strong>not required</strong> to have an active MedHub subscription, but they are encouraged to use the app so they can speak authentically about its benefits.</li>
+                </ul>
+            </div>
+
+            <!-- Section 3 -->
+            <h2 id="section-3">3. Earning Structure</h2>
+            <p>Agents earn commissions based on the subscriptions they refer:</p>
+            <ul>
+                <li><strong>New subscriber</strong> (first paid subscription) → <strong>KSh 40</strong> per new user</li>
+                <li><strong>Renewal</strong> (subsequent paid subscriptions) → <strong>KSh 15</strong> per renewal</li>
+            </ul>
+            <p><strong>Commission Validation – Important</strong></p>
+            <p>A commission is considered earned only after <strong>ALL</strong> of the following conditions are met:</p>
+            <ol>
+                <li>The subscription payment has been successfully received and verified by MedHub.</li>
+                <li>The payment is not refunded, reversed, charged back, or cancelled.</li>
+                <li>The subscriber's account is not found to be fraudulent, duplicate, or in violation of MedHub's Terms of Service.</li>
+                <li>The subscriber's account remains in good standing for at least <strong>7 days</strong> after the initial payment (to prevent chargeback fraud).</li>
+            </ol>
+            <p>Agents acknowledge that:</p>
+            <ul>
+                <li>Commissions are provisional until the above conditions are satisfied.</li>
+                <li>MedHub may reverse or withhold commissions arising from refunded, reversed, fraudulent, duplicate, or disputed transactions.</li>
+                <li>MedHub's systems will automatically adjust the agent's wallet if a refund or chargeback occurs on a referred subscription.</li>
+            </ul>
+
+            <!-- Section 4 -->
+            <h2 id="section-4">4. Referral Attribution</h2>
+            <p><strong>How Referrals Are Credited</strong></p>
+            <ul>
+                <li>A referral is attributed according to MedHub's referral tracking system.</li>
+                <li>When a new user clicks an agent's referral link, the system records the agent's referral code.</li>
+                <li>The referral is credited only when the new user completes their first paid subscription.</li>
+                <li>Where multiple referral links are used (e.g., a user clicks multiple links), the referral will be credited based on the system's recorded attribution (the first link clicked and recorded).</li>
+            </ul>
+            <p><strong>MedHub's Records Are Final</strong></p>
+            <p>MedHub's referral records shall be final and conclusive. In the event of a dispute regarding referral attribution, MedHub's system logs shall prevail.</p>
+            <p><strong>No Commission on Self-Referrals</strong></p>
+            <p>Agents are not entitled to commissions for:</p>
+            <ul>
+                <li>Their own subscriptions.</li>
+                <li>Accounts owned or controlled by them.</li>
+                <li>Family members or friends created solely to generate commissions.</li>
+                <li>Duplicate or multiple accounts created by the same individual.</li>
+            </ul>
+
+            <!-- Section 5 -->
+            <h2 id="section-5">5. Prohibited Activities</h2>
+            <p>Agents are strictly prohibited from:</p>
+            <p><strong>Misrepresentation</strong></p>
+            <ul>
+                <li>Misrepresenting MedHub's features, pricing, benefits, or affiliation.</li>
+                <li>Making false or misleading claims about the app or its competitors.</li>
+            </ul>
+            <p><strong>Spam &amp; Harassment</strong></p>
+            <ul>
+                <li>Sending unsolicited bulk messages (spam) via email, SMS, WhatsApp, or any other channel.</li>
+                <li>Harassing, pressuring, or coercing potential users.</li>
+            </ul>
+            <p><strong>Fraudulent Activities</strong></p>
+            <ul>
+                <li>Creating fake accounts, using bots, or employing automated scripts to generate artificial referrals.</li>
+                <li>Using referral links on coupon websites, cashback sites, automated advertising platforms, or any platform intended solely to exploit referral rewards (referral link abuse).</li>
+                <li>Using artificial intelligence, bots, fake traffic, or any artificial methods intended to generate referrals.</li>
+                <li>Engaging in any activity that violates applicable laws or regulations.</li>
+            </ul>
+            <p><strong>Brand Usage</strong></p>
+            <ul>
+                <li>Agents may only use official MedHub logos, posters, and promotional materials provided by MedHub.</li>
+                <li>Modification of branding or creating misleading advertisements is strictly prohibited.</li>
+                <li>Agents may not imply any formal affiliation, endorsement, or employment relationship with MedHub beyond the Agent Program.</li>
+            </ul>
+            <p><strong>Competitor Promotion</strong></p>
+            <ul>
+                <li>Agents may not simultaneously promote competing medical exam preparation platforms in a way that conflicts with MedHub's interests.</li>
+                <li>Agents must not use their MedHub agent status to promote competing products.</li>
+            </ul>
+            <p>Violation of these prohibitions may result in immediate termination of the agent relationship and forfeiture of all commissions.</p>
+
+            <!-- Section 6 -->
+            <h2 id="section-6">6. Wallet &amp; Withdrawals</h2>
+            <p><strong>Wallet</strong></p>
+            <ul>
+                <li>All commissions appear in your Agent Wallet.</li>
+                <li>You can view your balance, referral history, and withdrawal status in the Referral Dashboard (inside the MedHub app).</li>
+                <li>Commissions are posted to your wallet after they are earned (as defined in Section 3).</li>
+            </ul>
+            <p><strong>Withdrawals</strong></p>
+            <ul>
+                <li>Minimum withdrawal: <strong>KSh 100</strong>.</li>
+                <li>Withdrawal requests can be submitted via the app (you must provide a valid M‑Pesa phone number).</li>
+                <li>Withdrawals are processed manually in the initial phase (within 48 hours) and will later be automated via M‑Pesa (Daraja B2C).</li>
+                <li>Identity verification may be required before processing withdrawals, particularly for withdrawals exceeding KSh 1,000 or for agents with high referral volumes.</li>
+            </ul>
+            <p><strong>Payment Errors</strong></p>
+            <ul>
+                <li>If commissions are paid in error due to a system fault, accounting mistake, or fraud, MedHub reserves the right to recover or deduct the incorrect amount from future commissions.</li>
+                <li>If your wallet balance is negative (due to refunds or chargebacks), MedHub reserves the right to recover the shortfall from future commissions or by other lawful means.</li>
+            </ul>
+
+            <!-- Section 7 -->
+            <h2 id="section-7">7. Fraud Investigations</h2>
+            <p>MedHub takes fraud prevention seriously.</p>
+            <p><strong>Right to Investigate</strong></p>
+            <ul>
+                <li>MedHub reserves the right to delay withdrawals while investigating suspicious activity.</li>
+                <li>During an investigation, commissions may be temporarily withheld.</li>
+                <li>MedHub may request additional information from the agent to assist with the investigation.</li>
+            </ul>
+            <p><strong>Investigation Triggers</strong></p>
+            <p>Suspicious activity may include, but is not limited to:</p>
+            <ul>
+                <li>Unusual referral patterns (e.g., a large number of referrals in a short period).</li>
+                <li>Multiple referrals from the same IP address or device.</li>
+                <li>Referrals from duplicate or suspicious accounts.</li>
+                <li>Complaints from referred users about being misled.</li>
+            </ul>
+            <p><strong>Consequences</strong></p>
+            <ul>
+                <li>If fraud is confirmed, MedHub may terminate the agent relationship.</li>
+                <li>All unpaid commissions may be forfeited.</li>
+                <li>MedHub may take legal action if warranted.</li>
+            </ul>
+
+            <!-- Section 8 -->
+            <h2 id="section-8">8. Head Agents</h2>
+            <p>MedHub may appoint Head Agents with additional responsibilities and a separate commission structure.</p>
+            <ul>
+                <li>Head Agents may oversee regional agent networks.</li>
+                <li>Head Agents may receive additional compensation (e.g., a percentage of commissions earned by agents in their network).</li>
+                <li>Appointment and removal of Head Agents is at MedHub's sole discretion.</li>
+                <li>The specific terms for Head Agents will be set out in a separate agreement.</li>
+            </ul>
+
+            <!-- Section 9 -->
+            <h2 id="section-9">9. Non‑Exclusivity &amp; Conflicts of Interest</h2>
+            <ul>
+                <li>Participation in the Agent Program is non‑exclusive.</li>
+                <li>Agents remain free to participate in other lawful activities, provided they do not misrepresent MedHub or create conflicts of interest.</li>
+                <li>Agents must not use their MedHub agent status to promote competing products.</li>
+                <li>If a conflict of interest arises, the agent must disclose it to MedHub promptly.</li>
+            </ul>
+
+            <!-- Section 10 -->
+            <h2 id="section-10">10. Termination &amp; Suspension</h2>
+            <p><strong>Grounds for Termination</strong></p>
+            <p>MedHub may suspend or terminate an agent's participation in the program where it reasonably believes:</p>
+            <ul>
+                <li>These Terms have been violated.</li>
+                <li>Continued participation may pose a risk to the Agent Program, MedHub, or its users.</li>
+                <li>The agent has engaged in fraudulent, abusive, or misleading conduct.</li>
+            </ul>
+            <p><strong>Process</strong></p>
+            <ul>
+                <li>MedHub will provide notice of termination (where feasible).</li>
+                <li>Unpaid commissions that are already earned (as defined in Section 3) will be paid in the next withdrawal cycle, provided the agent is not terminated for fraud or violation of these Terms.</li>
+                <li>If terminated for cause, all unpaid commissions may be forfeited.</li>
+            </ul>
+            <p><strong>Voluntary Withdrawal</strong></p>
+            <ul>
+                <li>Agents may withdraw from the program at any time by notifying MedHub.</li>
+                <li>Commissions already earned but not yet paid will be paid in the next withdrawal cycle (provided minimum balance is met).</li>
+            </ul>
+
+            <!-- Section 11 -->
+            <h2 id="section-11">11. Taxes</h2>
+            <ul>
+                <li>Agents are solely responsible for any taxes applicable to their earnings.</li>
+                <li>Where required by law, MedHub may deduct applicable taxes before payment.</li>
+                <li>Agents may be required to provide tax identification information for compliance purposes.</li>
+                <li>MedHub will issue payment records that agents may use for tax reporting.</li>
+            </ul>
+
+            <!-- Section 12 -->
+            <h2 id="section-12">12. Limitation of Liability</h2>
+            <ul>
+                <li>MedHub provides the Agent Program "as is" and does not guarantee any specific income.</li>
+                <li>MedHub is not responsible for any losses, damages, or expenses incurred by agents in connection with their promotional activities.</li>
+                <li>Agents are independent partners and are solely responsible for their own taxes, expenses, and legal compliance related to their earnings.</li>
+                <li>In no event shall MedHub's liability to an agent exceed the total commissions paid to that agent in the preceding 12 months.</li>
+            </ul>
+
+            <!-- Section 13 -->
+            <h2 id="section-13">13. Data Protection &amp; Privacy</h2>
+            <ul>
+                <li>MedHub collects and processes agent data (name, contact details, institution, referral statistics) in accordance with our <a href="/pages/privacy.html">Privacy Policy</a>.</li>
+                <li>We will not share your personal data with third parties except as required to process payments, to comply with legal obligations, or as specified in our Privacy Policy.</li>
+                <li>Agents must handle referral data (e.g., emails, phone numbers) with care and not share it with unauthorised parties.</li>
+                <li>Agents shall comply with applicable data protection laws when collecting or using personal data of potential referrals.</li>
+            </ul>
+
+            <!-- Section 14 -->
+            <h2 id="section-14">14. Force Majeure</h2>
+            <p>MedHub shall not be liable for delays or failures caused by events beyond its reasonable control, including but not limited to:</p>
+            <ul>
+                <li>Network failures or internet outages.</li>
+                <li>Payment service outages (M‑Pesa, banks).</li>
+                <li>Natural disasters, fires, floods, or earthquakes.</li>
+                <li>Governmental actions, strikes, or civil unrest.</li>
+                <li>Cyberattacks, system failures, or third‑party service disruptions.</li>
+            </ul>
+
+            <!-- Section 15 -->
+            <h2 id="section-15">15. Changes to Terms</h2>
+            <ul>
+                <li>MedHub reserves the right to update or modify these Terms &amp; Conditions at any time.</li>
+                <li>Agents will be notified of significant changes via email or through the app.</li>
+                <li>Continued participation after changes constitutes acceptance of the new terms.</li>
+                <li>If an agent does not agree to the changes, they may withdraw from the program.</li>
+            </ul>
+
+            <!-- Section 16 -->
+            <h2 id="section-16">16. Contact Information &amp; Communication</h2>
+            <p>For all agent-related inquiries, please contact:</p>
+            <p><strong>📧 agents@medhub.co.ke</strong><br>
+            <strong>📱 +254 746 834527</strong></p>
+            <p>MedHub will communicate with agents primarily via:</p>
+            <ul>
+                <li>In-app notifications.</li>
+                <li>Email (using the address provided during registration).</li>
+                <li>WhatsApp or SMS for urgent matters.</li>
+            </ul>
+            <p>Agents are responsible for keeping their contact information updated.</p>
+
+            <!-- Section 17 -->
+            <h2 id="section-17">17. Governing Law &amp; Dispute Resolution</h2>
+            <ul>
+                <li>These Terms &amp; Conditions are governed by the laws of the Republic of Kenya.</li>
+                <li>Any disputes shall first be resolved amicably through good faith discussions.</li>
+                <li>If amicable resolution is not possible within 14 days, either party may refer the dispute to mediation or, if necessary, to the courts of Kenya.</li>
+            </ul>
+
+            <!-- Section 18 -->
+            <h2 id="section-18">18. Entire Agreement</h2>
+            <p>These Terms &amp; Conditions constitute the entire agreement between the Agent and MedHub regarding the Agent Program.</p>
+            <p>No oral or written statement, representation, or agreement not expressly set forth herein shall be binding.</p>
+
+            <!-- Section 19 -->
+            <h2 id="section-19">19. Severability</h2>
+            <p>If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions shall remain in full force and effect.</p>
+
+            <!-- Section 20 -->
+            <h2 id="section-20">20. Acceptance</h2>
+            <p>By applying to become a MedHub Campus Agent, you acknowledge that you have read, understood, and agree to abide by these Terms &amp; Conditions. You also confirm that you are authorised to enter into this agreement.</p>
+            <div class="highlight-box">
+                <p><strong>Let’s build the future of medical education together, one student at a time.</strong></p>
+            </div>
+
+        </div><!-- /terms-content -->
+
+        <!-- ACCEPT / BACK BUTTONS -->
+        <div class="accept-section">
+            <div>
+                <button class="btn-secondary" onclick="window.history.back()">← Back</button>
+            </div>
+            <div>
+                <button class="btn-primary" id="acceptBtn">✅ I Agree &amp; Continue</button>
+            </div>
+        </div>
+
+    </div><!-- /page-container -->
+
+    <script>
+        // Theme toggle (uses ui.js if available, otherwise fallback)
+        document.querySelector('.btn-outline')?.addEventListener('click', function() {
+            if (window.ui && typeof window.ui.toggleTheme === 'function') {
+                window.ui.toggleTheme();
+            } else {
+                document.body.classList.toggle('dark-theme');
+                const isDark = document.body.classList.contains('dark-theme');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            }
+        });
+
+        // Apply stored theme on load
+        (function applyTheme() {
+            if (window.ui && typeof window.ui.applyTheme === 'function') {
+                window.ui.applyTheme();
+            } else {
+                const theme = localStorage.getItem('theme') || 'auto';
+                if (theme === 'dark' || (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.body.classList.add('dark-theme');
+                } else {
+                    document.body.classList.remove('dark-theme');
+                }
+            }
+        })();
+
+        // Accept button: redirect to agent signup or home
+        document.getElementById('acceptBtn')?.addEventListener('click', function() {
+            // Check if user is logged in; if not, go to signup with agent flag
+            const token = localStorage.getItem('accessToken');
+            if (token) {
+                // Already logged in: go to agent application page (or referral dashboard)
+                window.location.href = '/pages/agent-apply.html';
+            } else {
+                // Not logged in: go to signup with agent flag
+                window.location.href = '/pages/signup.html?isAgent=true';
+            }
+        });
+    </script>
+
+</body>
+</html>

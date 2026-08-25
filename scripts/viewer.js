@@ -40,6 +40,7 @@ const MIN_ZOOM = 0.25;
 const MAX_ZOOM = 5.0;
 const SEARCH_DEBOUNCE = 300; // ms
 const LAZY_LOAD_MARGIN = '200px';
+const AUTO_HIDE_DELAY = 3000; // ms
 
 // =========================================================================
 // State
@@ -62,6 +63,20 @@ let renderTasks = new Map();
 let abortController = null;
 let cleanupFunctions = [];
 let scrollTimeout = null;
+
+// Auto-hide state
+let autoHideTimer = null;
+let lastTapTime = 0;
+let isHeaderVisible = true;
+
+// Pinch state
+let initialPinchDistance = 0;
+let initialPinchScale = 1;
+
+// Image element reference for image pinch
+let imageElement = null;
+let imagePinchInitialScale = 1;
+let imagePinchInitialDistance = 0;
 
 // =========================================================================
 // DOM helpers
@@ -114,7 +129,7 @@ function refreshElements() {
 }
 
 // =========================================================================
-// CSS injection for loading dots
+// CSS injection for loading dots & auto-hide styles
 // =========================================================================
 
 function injectViewerStyles() {
@@ -141,6 +156,36 @@ function injectViewerStyles() {
     @keyframes viewer-dot-bounce {
       0%, 80%, 100% { transform: translateY(0); }
       40% { transform: translateY(-0.5em); }
+    }
+
+    /* Auto-hide header/footer */
+    .viewer-header {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .viewer-header.hidden {
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+    .viewer-footer {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .viewer-footer.hidden {
+      transform: translateY(100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Prevent browser pinch-zoom interfering with our custom pinch */
+    .viewer-container {
+      touch-action: none;
+    }
+    .viewer-main {
+      touch-action: pan-y pinch-zoom;
     }
   `;
   document.head.appendChild(style);
@@ -217,6 +262,8 @@ function destroyCurrentDocument() {
   if (viewerEls.main) {
     viewerEls.main.removeEventListener('scroll', onScrollHandler);
   }
+
+  imageElement = null;
 }
 
 // =========================================================================
@@ -320,14 +367,16 @@ async function renderCurrentLayout() {
     onScrollHandler = null;
   }
 
+  // Attach double-tap and pinch events to the main area
+  main.addEventListener('click', handleDoubleTap);
+  setupPinchZoom(main);
+
   if (viewMode === 'scroll') {
     main.classList.add('scroll-view');
     main.classList.remove('page-view');
     await renderAllPagesScroll();
-    // Attach scroll listener to detect visible page
     onScrollHandler = onScroll;
     main.addEventListener('scroll', onScrollHandler);
-    // Initial detection
     setTimeout(() => detectVisiblePage(), 100);
   } else {
     main.classList.remove('scroll-view');
@@ -339,11 +388,15 @@ async function renderCurrentLayout() {
   if (textLayerContainer) textLayerContainer.innerHTML = '';
   updateZoomDisplay();
   updateNavButtons();
+
+  // Reset auto-hide timer on any interaction
+  resetAutoHideTimer();
 }
 
 function onScroll() {
   clearTimeout(scrollTimeout);
   scrollTimeout = setTimeout(() => detectVisiblePage(), 50);
+  resetAutoHideTimer();
 }
 
 function detectVisiblePage() {
@@ -359,7 +412,6 @@ function detectVisiblePage() {
 
   wrappers.forEach((wrapper, index) => {
     const rect = wrapper.getBoundingClientRect();
-    // Convert to main's scroll coordinates
     const wrapperTop = rect.top + main.scrollTop - main.getBoundingClientRect().top;
     const wrapperBottom = wrapperTop + rect.height;
     const visibleHeight = Math.min(wrapperBottom, viewportBottom) - Math.max(wrapperTop, viewportTop);
@@ -457,6 +509,8 @@ async function renderPageToCanvas(pageNum) {
     canvas.height = viewport.height;
     canvas.width = viewport.width;
     canvas.style.display = 'block';
+    canvas.style.width = viewport.width + 'px';
+    canvas.style.height = viewport.height + 'px';
 
     const context = canvas.getContext('2d');
     const renderTask = page.render({ canvasContext: context, viewport });
@@ -688,9 +742,50 @@ function renderImage(blob) {
   img.style.maxWidth = '100%';
   img.style.maxHeight = '100%';
   img.style.objectFit = 'contain';
+  img.style.transformOrigin = 'center center';
+  img.style.transition = 'transform 0.1s';
   main.innerHTML = '';
   main.appendChild(img);
+  imageElement = img;
   if (footer) footer.style.display = 'none';
+
+  // Attach double-tap to image container as well
+  main.addEventListener('click', handleDoubleTap);
+  setupImagePinch();
+}
+
+function setupImagePinch() {
+  if (!imageElement) return;
+  const container = imageElement.parentElement;
+  if (!container) return;
+
+  container.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 2) {
+      const dx = e.touches[0].clientX - e.touches[1].clientX;
+      const dy = e.touches[0].clientY - e.touches[1].clientY;
+      imagePinchInitialDistance = Math.hypot(dx, dy);
+      imagePinchInitialScale = parseFloat(imageElement.style.transform?.replace(/[^0-9.]/g, '')) || 1;
+      e.preventDefault();
+    }
+  }, { passive: false });
+
+  container.addEventListener('touchmove', (e) => {
+    if (e.touches.length === 2) {
+      const dx = e.touches[0].clientX - e.touches[1].clientX;
+      const dy = e.touches[0].clientY - e.touches[1].clientY;
+      const distance = Math.hypot(dx, dy);
+      if (imagePinchInitialDistance > 0) {
+        let scale = imagePinchInitialScale * (distance / imagePinchInitialDistance);
+        scale = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, scale));
+        imageElement.style.transform = `scale(${scale})`;
+        e.preventDefault();
+      }
+    }
+  }, { passive: false });
+
+  container.addEventListener('touchend', () => {
+    imagePinchInitialDistance = 0;
+  });
 }
 
 // =========================================================================
@@ -800,6 +895,89 @@ async function navigateToDest(dest) {
 }
 
 // =========================================================================
+// Auto‑hide / Double‑tap / Pinch helpers
+// =========================================================================
+
+function showHeaderFooter() {
+  const header = document.querySelector('.viewer-header');
+  const footer = document.getElementById('viewer-footer');
+  if (header) header.classList.remove('hidden');
+  if (footer) footer.classList.remove('hidden');
+  isHeaderVisible = true;
+  resetAutoHideTimer();
+}
+
+function hideHeaderFooter() {
+  const header = document.querySelector('.viewer-header');
+  const footer = document.getElementById('viewer-footer');
+  if (header) header.classList.add('hidden');
+  if (footer) footer.classList.add('hidden');
+  isHeaderVisible = false;
+}
+
+function resetAutoHideTimer() {
+  if (autoHideTimer) clearTimeout(autoHideTimer);
+  autoHideTimer = setTimeout(() => {
+    if (isHeaderVisible) hideHeaderFooter();
+  }, AUTO_HIDE_DELAY);
+}
+
+function handleDoubleTap(e) {
+  const now = Date.now();
+  if (now - lastTapTime < 300) {
+    // Double tap detected
+    if (isHeaderVisible) {
+      hideHeaderFooter();
+    } else {
+      showHeaderFooter();
+    }
+    lastTapTime = 0;
+  } else {
+    lastTapTime = now;
+  }
+}
+
+function setupPinchZoom(container) {
+  let touchStartX = 0, touchStartY = 0;
+  let initialDistance = 0;
+  let initialScale = 1;
+
+  container.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 2) {
+      const dx = e.touches[0].clientX - e.touches[1].clientX;
+      const dy = e.touches[0].clientY - e.touches[1].clientY;
+      initialDistance = Math.hypot(dx, dy);
+      initialScale = currentScale;
+      e.preventDefault();
+    } else if (e.touches.length === 1) {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }
+  }, { passive: false });
+
+  container.addEventListener('touchmove', (e) => {
+    if (e.touches.length === 2) {
+      const dx = e.touches[0].clientX - e.touches[1].clientX;
+      const dy = e.touches[0].clientY - e.touches[1].clientY;
+      const distance = Math.hypot(dx, dy);
+      if (initialDistance > 0) {
+        const scaleFactor = distance / initialDistance;
+        let newScale = initialScale * scaleFactor;
+        newScale = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, newScale));
+        setZoom(newScale);
+        e.preventDefault();
+      }
+    }
+  }, { passive: false });
+
+  container.addEventListener('touchend', (e) => {
+    if (e.touches.length < 2) {
+      initialDistance = 0;
+    }
+  });
+}
+
+// =========================================================================
 // Controls & Event Wiring
 // =========================================================================
 
@@ -844,26 +1022,19 @@ function setupControls() {
       els.pageInput.value = page;
 
       if (viewMode === 'page') {
-        // Page mode: navigate to the exact page
         if (page !== currentPage) {
           currentPage = page;
           renderCurrentLayout();
         }
       } else {
-        // Scroll mode: scroll to the page AND force its render immediately
         const wrapper = document.querySelector(`.canvas-wrapper[data-page="${page}"]`);
         if (wrapper) {
-          // Cancel all current render tasks to prioritise this page
           renderTasks.forEach(task => task.cancel());
           renderTasks.clear();
-
-          // If the page hasn't been rendered yet, do it now
           if (!wrapper.querySelector('canvas')) {
             lazyRenderPage(page, wrapper);
           }
-
           wrapper.scrollIntoView({ behavior: 'smooth' });
-          // Update the current page after scrolling finishes
           setTimeout(() => {
             currentPage = page;
             updatePageNumberDisplay();
@@ -1025,7 +1196,7 @@ function setupControls() {
     () => document.removeEventListener('dragover', dragOverHandler)
   );
 
-  // ---------- Touch swipe ----------
+  // ---------- Touch swipe (page mode) ----------
   let touchStartX = 0;
   const touchStart = (e) => {
     if (viewMode !== 'page') return;
@@ -1058,10 +1229,16 @@ function setupControls() {
   // ---------- Back ----------
   if (els.backBtn) {
     const handler = () => {
+      // First try to close embedded viewer
       if (typeof window.closeViewer === 'function') {
         window.closeViewer();
       } else {
-        window.history.back();
+        // Fallback: navigate back
+        if (window.history.length > 1) {
+          window.history.back();
+        } else {
+          router.navigateTo('subjects.html');
+        }
       }
     };
     els.backBtn.addEventListener('click', handler);
@@ -1121,7 +1298,6 @@ function updateNavButtons() {
     viewerEls.prevBtn.disabled = currentPage <= 1;
     viewerEls.nextBtn.disabled = currentPage >= totalPages;
   }
-  // Update page input min/max
   if (viewerEls.pageInput) {
     viewerEls.pageInput.min = 1;
     viewerEls.pageInput.max = totalPages;
@@ -1157,7 +1333,7 @@ function escapeHtml(text) {
 
 export async function loadDocumentInPage(docId) {
   refreshElements();
-  injectViewerStyles(); // make sure the dots style exists
+  injectViewerStyles();
   currentDocId = docId;
   isLocalFile = false;
 
