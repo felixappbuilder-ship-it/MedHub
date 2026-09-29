@@ -1,9 +1,4 @@
-/**
- * Time Verification Module
- * Detects device clock rollbacks by storing the last verified timestamp.
- * On each check, compare current time with stored timestamp.
- * If current < last - tolerance (1 minute), treat as manipulation → force logout.
- */
+// scripts/timeVerifier.js
 
 const STORAGE_KEY = 'timeVerifier_lastCheck';
 const TOLERANCE_MS = 60000; // 1 minute
@@ -43,6 +38,30 @@ export function verifyTime() {
 }
 
 /**
+ * Get a safe timestamp – returns the last verified timestamp if it exists and is within tolerance,
+ * otherwise returns null and triggers a re‑verification.
+ * @returns {number|null} safe timestamp or null if time is invalid
+ */
+export function getSafeTimestamp() {
+    const last = getLastVerified();
+    if (last !== null) {
+        const now = Date.now();
+        if (now >= last - TOLERANCE_MS) {
+            // Time is within tolerance – update and return
+            setLastVerified(now);
+            return now;
+        } else {
+            console.error('[TimeVerifier] Time rollback detected via getSafeTimestamp');
+            window.dispatchEvent(new CustomEvent('time-tamper-detected'));
+            return null;
+        }
+    }
+    // No previous timestamp – set and return current time
+    setLastVerified(Date.now());
+    return Date.now();
+}
+
+/**
  * Reset the timestamp to current time (e.g., after successful login or backend sync).
  */
 export function resetTimeVerifier() {
@@ -54,4 +73,9 @@ export function resetTimeVerifier() {
  */
 export function setTimeVerifier(timestamp) {
     setLastVerified(timestamp);
+}
+
+// Also export the internal getter for debugging
+export function getLastVerifiedTimestamp() {
+    return getLastVerified();
 }

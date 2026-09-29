@@ -1,2607 +1,753 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>Performance – MedHub</title>
-    <style>
-        #shimmer-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #1a1a2e;
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            padding: 1rem;
-            overflow-y: auto;
-            color: #aaa;
-        }
-        .shimmer-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #333;
-        }
-        .shimmer-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .shimmer-logo-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 6px;
-            background: #2a2a3e;
-            background: linear-gradient(90deg, #2a2a3e 25%, #444 50%, #2a2a3e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-        }
-        .shimmer-logo-text {
-            width: 100px;
-            height: 20px;
-            background: #2a2a3e;
-            background: linear-gradient(90deg, #2a2a3e 25%, #444 50%, #2a2a3e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-            border-radius: 4px;
-        }
-        .shimmer-header-actions {
-            display: flex;
-            gap: 0.5rem;
-        }
-        .shimmer-btn-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: #2a2a3e;
-            background: linear-gradient(90deg, #2a2a3e 25%, #444 50%, #2a2a3e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-        }
-        .shimmer-title {
-            height: 30px;
-            width: 60%;
-            margin: 1rem 0;
-            background: #2a2a3e;
-            background: linear-gradient(90deg, #2a2a3e 25%, #444 50%, #2a2a3e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-            border-radius: 4px;
-        }
-        .shimmer-tabs {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-        .shimmer-tab {
-            height: 40px;
-            width: 80px;
-            background: #2a2a3e;
-            background: linear-gradient(90deg, #2a2a3e 25%, #444 50%, #2a2a3e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-            border-radius: 20px;
-        }
-        .shimmer-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        .shimmer-card {
-            padding: 1rem;
-            background: #2a2a3e;
-            border-radius: 8px;
-        }
-        .shimmer-card .label {
-            height: 14px;
-            width: 70%;
-            background: #3a3a4e;
-            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-            border-radius: 4px;
-            margin-bottom: 0.5rem;
-        }
-        .shimmer-card .value {
-            height: 28px;
-            width: 50%;
-            background: #3a3a4e;
-            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-            border-radius: 4px;
-        }
-        .shimmer-chart-area {
-            height: 250px;
-            background: #2a2a3e;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(90deg, #2a2a3e 25%, #444 50%, #2a2a3e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-        }
-        .shimmer-two-col {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        .shimmer-col {
-            padding: 1rem;
-            background: #2a2a3e;
-            border-radius: 8px;
-        }
-        .shimmer-col .line {
-            height: 16px;
-            width: 100%;
-            margin-bottom: 0.5rem;
-            background: #3a3a4e;
-            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-            border-radius: 4px;
-        }
-        .shimmer-col .line.short {
-            width: 60%;
-        }
-        .shimmer-col .line.long {
-            width: 80%;
-        }
-        .shimmer-footer {
-            display: flex;
-            justify-content: space-around;
-            padding: 0.5rem 0;
-            border-top: 1px solid #333;
-            margin-top: 1rem;
-        }
-        .shimmer-footer-item {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: #2a2a3e;
-            background: linear-gradient(90deg, #2a2a3e 25%, #444 50%, #2a2a3e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-        }
-        @keyframes shimmer {
-            0% { background-position: -200px 0; }
-            100% { background-position: calc(200px + 100%) 0; }
-        }
-        #real-content { display: none; }
-        #real-content.visible { display: block; }
-    </style>
-
-    <link rel="manifest" href="/manifest.json" />
-    <link rel="stylesheet" href="/css/common.css" media="all" />
-    <link rel="stylesheet" href="/css/performance.css" media="all" />
-
-    <script defer src="/libs/chart/chart.min.js"></script>
-    <script type="module" src="/scripts/utils.js"></script>
-    <script type="module" src="/scripts/ui.js"></script>
-    <script type="module" src="/scripts/router.js"></script>
-    <script type="module" src="/scripts/app.js"></script>
-    <script type="module" src="/scripts/analytics.js"></script>
-    <script type="module" src="/scripts/db.js"></script>
-    <script type="module" src="/scripts/sync.js"></script>
-    <script type="module" src="/scripts/convex-client.js"></script>
-
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/service-worker.js').catch(() => {});
-        }
-    </script>
-</head>
-<body>
-
-    <!-- ===== SHIMMER ===== -->
-    <div id="shimmer-overlay">
-        <div class="shimmer-header">
-            <div class="shimmer-logo">
-                <div class="shimmer-logo-icon"></div>
-                <div class="shimmer-logo-text"></div>
-            </div>
-            <div class="shimmer-header-actions">
-                <div class="shimmer-btn-icon"></div>
-                <div class="shimmer-btn-icon"></div>
-                <div class="shimmer-btn-icon"></div>
-            </div>
-        </div>
-        <div class="shimmer-title"></div>
-        <div class="shimmer-tabs">
-            <div class="shimmer-tab"></div>
-            <div class="shimmer-tab"></div>
-            <div class="shimmer-tab"></div>
-            <div class="shimmer-tab"></div>
-        </div>
-        <div class="shimmer-grid">
-            <div class="shimmer-card"><div class="label"></div><div class="value"></div></div>
-            <div class="shimmer-card"><div class="label"></div><div class="value"></div></div>
-            <div class="shimmer-card"><div class="label"></div><div class="value"></div></div>
-            <div class="shimmer-card"><div class="label"></div><div class="value"></div></div>
-            <div class="shimmer-card"><div class="label"></div><div class="value"></div></div>
-        </div>
-        <div class="shimmer-chart-area"></div>
-        <div class="shimmer-two-col">
-            <div class="shimmer-col">
-                <div class="line long"></div>
-                <div class="line"></div>
-                <div class="line short"></div>
-                <div class="line"></div>
-            </div>
-            <div class="shimmer-col">
-                <div class="line long"></div>
-                <div class="line"></div>
-                <div class="line short"></div>
-                <div class="line"></div>
-            </div>
-        </div>
-        <div class="shimmer-footer">
-            <div class="shimmer-footer-item"></div>
-            <div class="shimmer-footer-item"></div>
-            <div class="shimmer-footer-item"></div>
-            <div class="shimmer-footer-item"></div>
-        </div>
+<section class="page performance-page" data-page="performance" data-script="/scripts/pages/performance.js"
+  data-style="/css/performance.css" data-title="Performance" data-auth="required" data-cache="true"
+  data-transition="fade">
+  <!-- Shimmer overlay -->
+  <div id="shimmer-overlay">
+    <div class="shimmer-header">
+      <div class="shimmer-logo">
+        <div class="shimmer-logo-icon"></div>
+        <div class="shimmer-logo-text"></div>
+      </div>
+      <div class="shimmer-header-actions">
+        <div class="shimmer-btn-icon"></div>
+        <div class="shimmer-btn-icon"></div>
+        <div class="shimmer-btn-icon"></div>
+      </div>
     </div>
+    <div class="shimmer-title"></div>
+    <div class="shimmer-tabs">
+      <div class="shimmer-tab"></div>
+      <div class="shimmer-tab"></div>
+      <div class="shimmer-tab"></div>
+      <div class="shimmer-tab"></div>
+    </div>
+    <div class="shimmer-grid">
+      <div class="shimmer-card">
+        <div class="label"></div>
+        <div class="value"></div>
+      </div>
+      <div class="shimmer-card">
+        <div class="label"></div>
+        <div class="value"></div>
+      </div>
+      <div class="shimmer-card">
+        <div class="label"></div>
+        <div class="value"></div>
+      </div>
+      <div class="shimmer-card">
+        <div class="label"></div>
+        <div class="value"></div>
+      </div>
+      <div class="shimmer-card">
+        <div class="label"></div>
+        <div class="value"></div>
+      </div>
+    </div>
+    <div class="shimmer-chart-area"></div>
+    <div class="shimmer-two-col">
+      <div class="shimmer-col">
+        <div class="line long"></div>
+        <div class="line"></div>
+        <div class="line short"></div>
+        <div class="line"></div>
+      </div>
+      <div class="shimmer-col">
+        <div class="line long"></div>
+        <div class="line"></div>
+        <div class="line short"></div>
+        <div class="line"></div>
+      </div>
+    </div>
+    <div class="shimmer-footer">
+      <div class="shimmer-footer-item"></div>
+      <div class="shimmer-footer-item"></div>
+      <div class="shimmer-footer-item"></div>
+      <div class="shimmer-footer-item"></div>
+    </div>
+  </div>
 
-    <!-- ===== REAL CONTENT ===== -->
-    <div id="real-content" class="page-container">
+  <!-- Real content -->
+  <div id="real-content" class="page-container">
 
-        <!-- Fixed header -->
-        <header>
-            <div class="logo">
-                <img src="../assets/images/logo.png" alt="Logo" width="40" height="40" />
-                <span>MedHub</span>
+    <!-- Fixed header -->
+    <header>
+      <div class="logo">
+        <img src="/assets/images/logo.png" alt="Logo" width="40" height="40" />
+        <span>MedVix</span>
+      </div>
+      <div class="header-actions">
+        <button id="notifBtn" class="btn-icon" title="Notifications">🔔</button>
+        <span class="streak-badge">🔥 <span id="streak">0</span></span>
+        <button id="themeToggle" class="btn-outline">🌓</button>
+      </div>
+    </header>
+
+    <main>
+      <h1>Performance Analytics</h1>
+
+      <!-- Tabs (5) -->
+      <div class="tabs" id="tabsContainer">
+        <button class="tab-button active" data-tab="summary-tab">📊 Summary</button>
+        <button class="tab-button" data-tab="subjects-tab">📚 Subjects</button>
+        <button class="tab-button" data-tab="downloaded-tab">📥 Downloaded</button>
+        <button class="tab-button" data-tab="planner-tab">📅 Planner</button>
+        <button class="tab-button" data-tab="academic-tab">🎓 Academic Profile</button>
+      </div>
+
+      <!-- ─── SUMMARY TAB ─── -->
+      <div id="summary-tab" class="tab-content active">
+        <div class="summary-grid">
+          <div class="stat-card">
+            <div class="stat-label">Exams Taken</div>
+            <div class="stat-value" id="total-exams">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Questions</div>
+            <div class="stat-value" id="total-questions">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Avg Score</div>
+            <div class="stat-value" id="avg-score">0%</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Study Time</div>
+            <div class="stat-value" id="total-time">0h</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Best Score</div>
+            <div class="stat-value" id="best-score">0%</div>
+          </div>
+        </div>
+
+        <div class="chart-section">
+          <div class="chart-header">
+            <h2>📈 Analytics</h2>
+            <div class="chart-type-selector">
+              <button class="chart-btn active" data-chart="score">Score Trend</button>
+              <button class="chart-btn" data-chart="weekly">Weekly Study</button>
+              <button class="chart-btn" data-chart="subject">Subject Mastery</button>
+              <button class="chart-btn" data-chart="accuracy">Accuracy</button>
+              <button class="chart-btn" data-chart="time-dist">Time Distribution</button>
+              <button class="chart-btn" data-chart="radar">Radar</button>
             </div>
-            <div class="header-actions">
-                <button onclick="router.navigateTo('notifications.html')" class="btn-icon" title="Notifications">🔔</button>
-                <span class="streak-badge">🔥 <span id="streak">0</span></span>
-                <button onclick="ui.toggleTheme()" class="btn-outline">🌓</button>
+          </div>
+          <div class="chart-container" id="chart-container">
+            <canvas id="main-chart"></canvas>
+          </div>
+        </div>
+
+        <div class="two-column">
+          <div class="card">
+            <h2>📊 Study Habits</h2>
+            <div class="stats-list">
+              <p><strong>Best day:</strong> <span id="best-day"></span></p>
+              <p><strong>Best time:</strong> <span id="best-time"></span></p>
+              <p><strong>Avg session:</strong> <span id="avg-session"></span></p>
+              <p><strong>Consistency:</strong> <span id="consistency"></span></p>
             </div>
-        </header>
+          </div>
+          <div class="card">
+            <h2>⚠️ Weak Areas</h2>
+            <div id="weak-areas-list"></div>
+            <button id="weakStudyBtn" class="btn-small">Study Weak Areas</button>
+          </div>
+        </div>
 
-        <main>
-            <h1>Performance Analytics</h1>
+        <div class="card recommendations-card">
+          <h2>🎯 Personalized Recommendations</h2>
+          <div id="recommendations-list"></div>
+        </div>
+      </div>
 
-            <!-- Tabs (5) -->
-            <div class="tabs">
-                <button class="tab-button active" onclick="window.switchTab('summary-tab')">📊 Summary</button>
-                <button class="tab-button" onclick="window.switchTab('subjects-tab')">📚 Subjects</button>
-                <button class="tab-button" onclick="window.switchTab('downloaded-tab')">📥 Downloaded</button>
-                <button class="tab-button" onclick="window.switchTab('planner-tab')">📅 Planner</button>
-                <button class="tab-button" onclick="window.switchTab('academic-tab')">🎓 Academic Profile</button>
+      <!-- ─── SUBJECTS TAB ─── -->
+      <div id="subjects-tab" class="tab-content">
+        <h2>Subject Mastery</h2>
+        <div id="subject-mastery" class="subject-mastery"></div>
+      </div>
+
+      <!-- ─── DOWNLOADED TAB ─── -->
+      <div id="downloaded-tab" class="tab-content">
+        <h2>Downloaded Exams (last 10)</h2>
+        <div id="downloaded-list" class="downloaded-list"></div>
+      </div>
+
+      <!-- ─── PLANNER TAB ─── -->
+      <div id="planner-tab" class="tab-content">
+        <div class="planner-container">
+          <h2 style="margin:0.5rem 0 0.25rem 0;">📚 MedVix Study Planner</h2>
+
+          <div class="planner-button-bar" id="planner-button-bar">
+            <button class="planner-btn active" data-planner="timetable">🗓️ Timetable</button>
+            <button class="planner-btn" data-planner="topics">📖 Topic Planner</button>
+            <button class="planner-btn" data-planner="sessions">⏱️ Study Sessions</button>
+            <button class="planner-btn" data-planner="streaks">🔥 Study Streaks</button>
+            <button class="planner-btn" data-planner="reminders">🔔 Reminders</button>
+            <button class="planner-btn" data-planner="exams">📅 Exam Countdown</button>
+            <button class="planner-btn" data-planner="checklist">✅ Checklist</button>
+            <button class="planner-btn" data-planner="ai">🤖 AI Planner</button>
+          </div>
+
+          <div id="planner-timetable" class="planner-module-container active">
+            <div class="planner-module">
+              <h3>🗓️ Timetable</h3>
+              <div class="timetable-grid" id="timetable-container"></div>
+              <div style="margin-top:0.75rem; display:flex; gap:0.5rem; flex-wrap:wrap;">
+                <select id="tt-day-select"
+                  style="padding:0.4rem 0.6rem; border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--bg-secondary); color:var(--text-primary);">
+                  <option value="Monday">Monday</option>
+                  <option value="Tuesday">Tuesday</option>
+                  <option value="Wednesday">Wednesday</option>
+                  <option value="Thursday">Thursday</option>
+                  <option value="Friday">Friday</option>
+                  <option value="Saturday">Saturday</option>
+                  <option value="Sunday">Sunday</option>
+                </select>
+                <input id="tt-time" type="text" placeholder="08:00–10:00"
+                  style="padding:0.4rem 0.6rem; border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--bg-secondary); color:var(--text-primary); width:140px;">
+                <input id="tt-subject" type="text" placeholder="Subject"
+                  style="padding:0.4rem 0.6rem; border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--bg-secondary); color:var(--text-primary); width:120px;">
+                <select id="tt-color"
+                  style="padding:0.4rem 0.6rem; border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--bg-secondary); color:var(--text-primary);">
+                  <option value="anatomy">Anatomy</option>
+                  <option value="physiology">Physiology</option>
+                  <option value="biochemistry">Biochemistry</option>
+                  <option value="revision">Revision</option>
+                  <option value="mcq">MCQ</option>
+                  <option value="pathology">Pathology</option>
+                  <option value="pharmacology">Pharmacology</option>
+                </select>
+                <button id="addTimetableBtn"
+                  style="padding:0.4rem 1rem; background:var(--accent); color:#fff; border:none; border-radius:var(--radius-sm); cursor:pointer;">+
+                  Add</button>
+              </div>
             </div>
+          </div>
 
-            <!-- ─── SUMMARY TAB ─── -->
-            <div id="summary-tab" class="tab-content active">
-                <div class="summary-grid">
-                    <div class="stat-card">
-                        <div class="stat-label">Exams Taken</div>
-                        <div class="stat-value" id="total-exams">0</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-label">Questions</div>
-                        <div class="stat-value" id="total-questions">0</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-label">Avg Score</div>
-                        <div class="stat-value" id="avg-score">0%</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-label">Study Time</div>
-                        <div class="stat-value" id="total-time">0h</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-label">Best Score</div>
-                        <div class="stat-value" id="best-score">0%</div>
-                    </div>
+          <div id="planner-topics" class="planner-module-container">
+            <div class="planner-module">
+              <h3>📖 Topic Planner</h3>
+              <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.75rem;">
+                <input id="tp-subject" type="text" placeholder="Subject"
+                  style="padding:0.4rem 0.6rem; border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--bg-secondary); color:var(--text-primary); flex:1; min-width:120px;">
+                <input id="tp-topic" type="text" placeholder="Topic"
+                  style="padding:0.4rem 0.6rem; border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--bg-secondary); color:var(--text-primary); flex:1; min-width:120px;">
+                <select id="tp-status"
+                  style="padding:0.4rem 0.6rem; border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--bg-secondary); color:var(--text-primary);">
+                  <option value="not-started">🔴 Not Started</option>
+                  <option value="in-progress">🟡 In Progress</option>
+                  <option value="needs-revision">🔵 Needs Revision</option>
+                  <option value="completed">🟢 Completed</option>
+                </select>
+                <button id="addTopicBtn"
+                  style="padding:0.4rem 1rem; background:var(--accent); color:#fff; border:none; border-radius:var(--radius-sm); cursor:pointer;">+
+                  Add</button>
+              </div>
+              <div id="topic-planner-list" class="topic-list"></div>
+            </div>
+          </div>
+
+          <div id="planner-sessions" class="planner-module-container">
+            <div class="planner-module">
+              <h3>⏱️ Study Sessions</h3>
+              <div class="session-stats">
+                <div class="session-stat">
+                  <div class="num" id="ss-today">0h</div>
+                  <div class="label">Today</div>
+                </div>
+                <div class="session-stat">
+                  <div class="num" id="ss-week">0h</div>
+                  <div class="label">This Week</div>
+                </div>
+                <div class="session-stat">
+                  <div class="num" id="ss-avg">0m</div>
+                  <div class="label">Avg Session</div>
+                </div>
+              </div>
+              <div class="session-form">
+                <input id="ss-subject" type="text" placeholder="Subject" />
+                <input id="ss-topic" type="text" placeholder="Topic" />
+                <input id="ss-start" type="datetime-local" />
+                <input id="ss-end" type="datetime-local" />
+                <textarea id="ss-notes" placeholder="Optional notes"></textarea>
+                <button id="addSessionBtn">Log Session</button>
+              </div>
+              <div id="session-log" class="session-log"></div>
+            </div>
+          </div>
+
+          <div id="planner-streaks" class="planner-module-container">
+            <div class="planner-module">
+              <h3>🔥 Study Streaks</h3>
+              <div class="streak-display">
+                <div class="streak-item"><span class="emoji">🔥</span>
+                  <div class="count" id="streak-current">0</div>
+                  <div class="label">Current Streak</div>
+                </div>
+                <div class="streak-item"><span class="emoji">🏆</span>
+                  <div class="count" id="streak-longest">0</div>
+                  <div class="label">Longest Streak</div>
+                </div>
+                <div class="streak-item"><span class="emoji">📅</span>
+                  <div class="count" id="streak-month">0/0</div>
+                  <div class="label">This Month</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="planner-reminders" class="planner-module-container">
+            <div class="planner-module">
+              <h3>🔔 Study Reminders</h3>
+              <div class="reminder-list" id="reminder-list">
+                <div class="reminder-item"><span class="icon">⏰</span> Anatomy starts in 15 minutes.</div>
+                <div class="reminder-item"><span class="icon">🎯</span> Today's Goal: <span class="goal-badge">Study 3
+                    hours</span></div>
+                <div class="reminder-item"><span class="icon">📝</span> Revision reminder: Review Histology</div>
+              </div>
+            </div>
+          </div>
+
+          <div id="planner-exams" class="planner-module-container">
+            <div class="planner-module">
+              <h3>📅 Exam Countdown</h3>
+              <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.75rem;">
+                <input id="ec-name" type="text" placeholder="Exam name"
+                  style="padding:0.4rem 0.6rem; border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--bg-secondary); color:var(--text-primary); flex:1; min-width:120px;">
+                <input id="ec-date" type="date"
+                  style="padding:0.4rem 0.6rem; border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--bg-secondary); color:var(--text-primary);">
+                <button id="addExamBtn"
+                  style="padding:0.4rem 1rem; background:var(--accent); color:#fff; border:none; border-radius:var(--radius-sm); cursor:pointer;">+
+                  Add Exam</button>
+              </div>
+              <div id="exam-cards" class="exam-cards"></div>
+            </div>
+          </div>
+
+          <div id="planner-checklist" class="planner-module-container">
+            <div class="planner-module">
+              <h3>✅ Daily Checklist</h3>
+              <div class="checklist-progress">
+                <div class="progress-ring" id="checklist-ring">0%</div>
+                <div class="progress-text" id="checklist-text">0 / 0 completed</div>
+              </div>
+              <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.75rem;">
+                <input id="cl-task" type="text" placeholder="Task name"
+                  style="padding:0.4rem 0.6rem; border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--bg-secondary); color:var(--text-primary); flex:1; min-width:120px;">
+                <button id="addChecklistBtn"
+                  style="padding:0.4rem 1rem; background:var(--accent); color:#fff; border:none; border-radius:var(--radius-sm); cursor:pointer;">+
+                  Add</button>
+              </div>
+              <div id="checklist-items" class="checklist-items"></div>
+            </div>
+          </div>
+
+          <div id="planner-ai" class="planner-module-container">
+            <div class="planner-module">
+              <h3>🤖 AI Study Planner <span class="badge">Premium</span></h3>
+              <div class="ai-planner-box">
+                <span class="premium-tag">✦ Premium Feature</span>
+                <div class="ai-form">
+                  <input id="ai-exam-date" type="date" placeholder="Exam date" />
+                  <input id="ai-subjects" type="text" placeholder="Subjects (comma separated)" />
+                  <input id="ai-hours" type="number" placeholder="Study hours/day" min="1" max="24" value="4" />
+                  <input id="ai-weak" type="text" placeholder="Weak subjects" />
+                  <input id="ai-time" type="text" placeholder="Preferred times (e.g. 08:00-12:00)" />
+                  <button id="generateAIPlanBtn">✨ Generate Plan</button>
+                </div>
+                <div id="ai-result" class="ai-result">Enter your details and click Generate Plan.</div>
+
+                <div class="ai-actions" id="ai-actions" style="display:none;">
+                  <button class="btn-adopt" id="adoptAIPlanBtn">✅ Adopt Plan</button>
+                  <button class="btn-regenerate" id="regenerateAIPlanBtn">🔄 Regenerate</button>
+                  <button class="btn-amend" id="amendAIPlanBtn">✏️ Amend Plan</button>
+                  <button class="btn-cancel" id="cancelAIPlanBtn">❌ Cancel</button>
                 </div>
 
-                <div class="chart-section">
-                    <div class="chart-header">
-                        <h2>📈 Analytics</h2>
-                        <div class="chart-type-selector">
-                            <button class="chart-btn active" data-chart="score">Score Trend</button>
-                            <button class="chart-btn" data-chart="weekly">Weekly Study</button>
-                            <button class="chart-btn" data-chart="subject">Subject Mastery</button>
-                            <button class="chart-btn" data-chart="accuracy">Accuracy</button>
-                            <button class="chart-btn" data-chart="time-dist">Time Distribution</button>
-                            <button class="chart-btn" data-chart="radar">Radar</button>
-                        </div>
-                    </div>
-                    <div class="chart-container" id="chart-container">
-                        <canvas id="main-chart"></canvas>
-                    </div>
+                <div class="amend-area" id="amend-area">
+                  <textarea id="amend-text" placeholder="Describe your amendments..."></textarea>
+                  <button id="sendAmendmentBtn">📤 Send</button>
                 </div>
-
-                <div class="two-column">
-                    <div class="card">
-                        <h2>📊 Study Habits</h2>
-                        <div class="stats-list">
-                            <p><strong>Best day:</strong> <span id="best-day"></span></p>
-                            <p><strong>Best time:</strong> <span id="best-time"></span></p>
-                            <p><strong>Avg session:</strong> <span id="avg-session"></span></p>
-                            <p><strong>Consistency:</strong> <span id="consistency"></span></p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <h2>⚠️ Weak Areas</h2>
-                        <div id="weak-areas-list"></div>
-                        <button onclick="router.navigateTo('subject-specific.html?focus=weak')" class="btn-small">Study Weak Areas</button>
-                    </div>
-                </div>
-
-                <div class="card recommendations-card">
-                    <h2>🎯 Personalized Recommendations</h2>
-                    <div id="recommendations-list"></div>
-                </div>
+              </div>
             </div>
+          </div>
 
-            <!-- ─── SUBJECTS TAB ─── -->
-            <div id="subjects-tab" class="tab-content">
-                <h2>Subject Mastery</h2>
-                <div id="subject-mastery" class="subject-mastery"></div>
-            </div>
+        </div><!-- /planner-container -->
+      </div><!-- /planner-tab -->
 
-            <!-- ─── DOWNLOADED TAB ─── -->
-            <div id="downloaded-tab" class="tab-content">
-                <h2>Downloaded Exams (last 10)</h2>
-                <div id="downloaded-list" class="downloaded-list"></div>
-            </div>
+      <!-- ─── ACADEMIC PROFILE TAB ─── -->
+      <div id="academic-tab" class="tab-content">
+        <div class="academic-container">
+          <h2 style="margin:0.5rem 0 0.25rem 0;">🎓 Academic Profile</h2>
 
-            <!-- ─── PLANNER TAB (4th div) ─── -->
-            <div id="planner-tab" class="tab-content">
-                <div class="planner-container">
-
-                    <h2 style="margin:0.5rem 0 0.25rem 0;">📚 MedHub Study Planner</h2>
-
-                    <div class="planner-button-bar" id="planner-button-bar">
-                        <button class="planner-btn active" data-planner="timetable">🗓️ Timetable</button>
-                        <button class="planner-btn" data-planner="topics">📖 Topic Planner</button>
-                        <button class="planner-btn" data-planner="sessions">⏱️ Study Sessions</button>
-                        <button class="planner-btn" data-planner="streaks">🔥 Study Streaks</button>
-                        <button class="planner-btn" data-planner="reminders">🔔 Reminders</button>
-                        <button class="planner-btn" data-planner="exams">📅 Exam Countdown</button>
-                        <button class="planner-btn" data-planner="checklist">✅ Checklist</button>
-                        <button class="planner-btn" data-planner="ai">🤖 AI Planner</button>
-                    </div>
-
-                    <div id="planner-timetable" class="planner-module-container active">
-                        <div class="planner-module">
-                            <h3>🗓️ Timetable</h3>
-                            <div class="timetable-grid" id="timetable-container"></div>
-                            <div style="margin-top:0.75rem; display:flex; gap:0.5rem; flex-wrap:wrap;">
-                                <select id="tt-day-select" style="padding:0.4rem 0.6rem; border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--bg-secondary); color:var(--text-primary);">
-                                    <option value="Monday">Monday</option>
-                                    <option value="Tuesday">Tuesday</option>
-                                    <option value="Wednesday">Wednesday</option>
-                                    <option value="Thursday">Thursday</option>
-                                    <option value="Friday">Friday</option>
-                                    <option value="Saturday">Saturday</option>
-                                    <option value="Sunday">Sunday</option>
-                                </select>
-                                <input id="tt-time" type="text" placeholder="08:00–10:00" style="padding:0.4rem 0.6rem; border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--bg-secondary); color:var(--text-primary); width:140px;">
-                                <input id="tt-subject" type="text" placeholder="Subject" style="padding:0.4rem 0.6rem; border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--bg-secondary); color:var(--text-primary); width:120px;">
-                                <select id="tt-color" style="padding:0.4rem 0.6rem; border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--bg-secondary); color:var(--text-primary);">
-                                    <option value="anatomy">Anatomy</option>
-                                    <option value="physiology">Physiology</option>
-                                    <option value="biochemistry">Biochemistry</option>
-                                    <option value="revision">Revision</option>
-                                    <option value="mcq">MCQ</option>
-                                    <option value="pathology">Pathology</option>
-                                    <option value="pharmacology">Pharmacology</option>
-                                </select>
-                                <button onclick="addTimetableSlot()" style="padding:0.4rem 1rem; background:var(--accent); color:#fff; border:none; border-radius:var(--radius-sm); cursor:pointer;">+ Add</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="planner-topics" class="planner-module-container">
-                        <div class="planner-module">
-                            <h3>📖 Topic Planner</h3>
-                            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.75rem;">
-                                <input id="tp-subject" type="text" placeholder="Subject" style="padding:0.4rem 0.6rem; border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--bg-secondary); color:var(--text-primary); flex:1; min-width:120px;">
-                                <input id="tp-topic" type="text" placeholder="Topic" style="padding:0.4rem 0.6rem; border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--bg-secondary); color:var(--text-primary); flex:1; min-width:120px;">
-                                <select id="tp-status" style="padding:0.4rem 0.6rem; border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--bg-secondary); color:var(--text-primary);">
-                                    <option value="not-started">🔴 Not Started</option>
-                                    <option value="in-progress">🟡 In Progress</option>
-                                    <option value="needs-revision">🔵 Needs Revision</option>
-                                    <option value="completed">🟢 Completed</option>
-                                </select>
-                                <button onclick="addTopicItem()" style="padding:0.4rem 1rem; background:var(--accent); color:#fff; border:none; border-radius:var(--radius-sm); cursor:pointer;">+ Add</button>
-                            </div>
-                            <div id="topic-planner-list" class="topic-list"></div>
-                        </div>
-                    </div>
-
-                    <div id="planner-sessions" class="planner-module-container">
-                        <div class="planner-module">
-                            <h3>⏱️ Study Sessions</h3>
-                            <div class="session-stats">
-                                <div class="session-stat"><div class="num" id="ss-today">0h</div><div class="label">Today</div></div>
-                                <div class="session-stat"><div class="num" id="ss-week">0h</div><div class="label">This Week</div></div>
-                                <div class="session-stat"><div class="num" id="ss-avg">0m</div><div class="label">Avg Session</div></div>
-                            </div>
-                            <div class="session-form">
-                                <input id="ss-subject" type="text" placeholder="Subject" />
-                                <input id="ss-topic" type="text" placeholder="Topic" />
-                                <input id="ss-start" type="datetime-local" />
-                                <input id="ss-end" type="datetime-local" />
-                                <textarea id="ss-notes" placeholder="Optional notes"></textarea>
-                                <button onclick="addStudySession()">Log Session</button>
-                            </div>
-                            <div id="session-log" class="session-log"></div>
-                        </div>
-                    </div>
-
-                    <div id="planner-streaks" class="planner-module-container">
-                        <div class="planner-module">
-                            <h3>🔥 Study Streaks</h3>
-                            <div class="streak-display">
-                                <div class="streak-item"><span class="emoji">🔥</span><div class="count" id="streak-current">0</div><div class="label">Current Streak</div></div>
-                                <div class="streak-item"><span class="emoji">🏆</span><div class="count" id="streak-longest">0</div><div class="label">Longest Streak</div></div>
-                                <div class="streak-item"><span class="emoji">📅</span><div class="count" id="streak-month">0/0</div><div class="label">This Month</div></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="planner-reminders" class="planner-module-container">
-                        <div class="planner-module">
-                            <h3>🔔 Study Reminders</h3>
-                            <div class="reminder-list" id="reminder-list">
-                                <div class="reminder-item"><span class="icon">⏰</span> Anatomy starts in 15 minutes.</div>
-                                <div class="reminder-item"><span class="icon">🎯</span> Today's Goal: <span class="goal-badge">Study 3 hours</span></div>
-                                <div class="reminder-item"><span class="icon">📝</span> Revision reminder: Review Histology</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="planner-exams" class="planner-module-container">
-                        <div class="planner-module">
-                            <h3>📅 Exam Countdown</h3>
-                            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.75rem;">
-                                <input id="ec-name" type="text" placeholder="Exam name" style="padding:0.4rem 0.6rem; border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--bg-secondary); color:var(--text-primary); flex:1; min-width:120px;">
-                                <input id="ec-date" type="date" style="padding:0.4rem 0.6rem; border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--bg-secondary); color:var(--text-primary);">
-                                <button onclick="addExamCountdown()" style="padding:0.4rem 1rem; background:var(--accent); color:#fff; border:none; border-radius:var(--radius-sm); cursor:pointer;">+ Add Exam</button>
-                            </div>
-                            <div id="exam-cards" class="exam-cards"></div>
-                        </div>
-                    </div>
-
-                    <div id="planner-checklist" class="planner-module-container">
-                        <div class="planner-module">
-                            <h3>✅ Daily Checklist</h3>
-                            <div class="checklist-progress">
-                                <div class="progress-ring" id="checklist-ring">0%</div>
-                                <div class="progress-text" id="checklist-text">0 / 0 completed</div>
-                            </div>
-                            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.75rem;">
-                                <input id="cl-task" type="text" placeholder="Task name" style="padding:0.4rem 0.6rem; border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--bg-secondary); color:var(--text-primary); flex:1; min-width:120px;">
-                                <button onclick="addChecklistItem()" style="padding:0.4rem 1rem; background:var(--accent); color:#fff; border:none; border-radius:var(--radius-sm); cursor:pointer;">+ Add</button>
-                            </div>
-                            <div id="checklist-items" class="checklist-items"></div>
-                        </div>
-                    </div>
-
-                    <div id="planner-ai" class="planner-module-container">
-                        <div class="planner-module">
-                            <h3>🤖 AI Study Planner <span class="badge">Premium</span></h3>
-                            <div class="ai-planner-box">
-                                <span class="premium-tag">✦ Premium Feature</span>
-                                <div class="ai-form">
-                                    <input id="ai-exam-date" type="date" placeholder="Exam date" />
-                                    <input id="ai-subjects" type="text" placeholder="Subjects (comma separated)" />
-                                    <input id="ai-hours" type="number" placeholder="Study hours/day" min="1" max="24" value="4" />
-                                    <input id="ai-weak" type="text" placeholder="Weak subjects" />
-                                    <input id="ai-time" type="text" placeholder="Preferred times (e.g. 08:00-12:00)" />
-                                    <button onclick="generateAIPlan()">✨ Generate Plan</button>
-                                </div>
-                                <div id="ai-result" class="ai-result">Enter your details and click Generate Plan.</div>
-
-                                <div class="ai-actions" id="ai-actions" style="display:none;">
-                                    <button class="btn-adopt" onclick="adoptAIPlan()">✅ Adopt Plan</button>
-                                    <button class="btn-regenerate" onclick="regenerateAIPlan()">🔄 Regenerate</button>
-                                    <button class="btn-amend" onclick="showAmendInput()">✏️ Amend Plan</button>
-                                    <button class="btn-cancel" onclick="cancelAIPlan()">❌ Cancel</button>
-                                </div>
-
-                                <div class="amend-area" id="amend-area">
-                                    <textarea id="amend-text" placeholder="Describe your amendments..."></textarea>
-                                    <button onclick="sendAmendment()">📤 Send</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div><!-- /planner-container -->
-            </div><!-- /planner-tab -->
-
-<!-- ─── ACADEMIC PROFILE TAB (5th div) ─── -->
-<div id="academic-tab" class="tab-content">
-    <div class="academic-container">
-
-        <h2 style="margin:0.5rem 0 0.25rem 0;">🎓 Academic Profile</h2>
-
-        <div class="academic-button-bar" id="academic-button-bar">
+          <div class="academic-button-bar" id="academic-button-bar">
             <button class="academic-btn active" data-academic="overview">🏠 Overview</button>
             <button class="academic-btn" data-academic="mpre">📊 MPREv2</button>
             <button class="academic-btn" data-academic="competition">🏆 Competition</button>
             <button class="academic-btn" data-academic="growth">🎖️ Growth</button>
             <button class="academic-btn" data-academic="activity">⚙️ Activity</button>
-        </div>
+          </div>
 
-        <!-- ─── 1. Overview ─── -->
-        <div id="academic-overview" class="academic-module-container active">
+          <!-- ─── 1. Overview ─── -->
+          <div id="academic-overview" class="academic-module-container active">
             <div class="academic-module">
-                <h3>🏠 Overview <span class="badge">Who am I academically?</span></h3>
+              <h3>🏠 Overview <span class="badge">Who am I academically?</span></h3>
 
-                <div class="hero-card">
-                    <div class="avatar" id="avatar-container" onclick="document.getElementById('avatar-upload').click()" style="cursor:pointer;">
-                        <img id="avatar-img" src="" style="width:100%;height:100%;border-radius:50%;object-fit:cover;display:none;" />
-                        <span id="avatar-initials" style="display:flex;">FW</span>
-                    </div>
-                    <div>
-                        <div class="name" id="academic-name">Loading...</div>
-                        <div class="year" id="academic-year">Year 2 · MBChB</div>
-                        <div class="rank-badge" id="academic-rank-badge">🏆 Expert</div>
-                        <div class="mpre-score" id="academic-mpre-score">2678</div>
-                        <div class="rank-label" id="academic-rank-label">Top 8% · MPREv2</div>
-                    </div>
+              <div class="hero-card">
+                <div class="avatar" id="avatar-container" onclick="document.getElementById('avatar-upload').click()"
+                  style="cursor:pointer;">
+                  <img id="avatar-img" src=""
+                    style="width:100%;height:100%;border-radius:50%;object-fit:cover;display:none;" />
+                  <span id="avatar-initials" style="display:flex;">FW</span>
                 </div>
+                <div>
+                  <div class="name" id="academic-name">Loading...</div>
+                  <div class="year" id="academic-year">Year 2 · MBChB</div>
+                  <div class="rank-badge" id="academic-rank-badge">🏆 Expert</div>
+                  <div class="mpre-score" id="academic-mpre-score">2678</div>
+                  <div class="rank-label" id="academic-rank-label">Top 8% · MPREv2</div>
+                </div>
+              </div>
 
-                <div class="stat-grid-2x2">
-                    <div class="stat-card-sm"><div class="num" id="academic-exams">0</div><div class="label">Exams</div></div>
-                    <div class="stat-card-sm"><div class="num" id="academic-questions">0</div><div class="label">Questions</div></div>
-                    <div class="stat-card-sm"><div class="num" id="academic-accuracy">0%</div><div class="label">Accuracy</div></div>
-                    <div class="stat-card-sm"><div class="num" id="academic-streak">0</div><div class="label">Study Streak</div></div>
+              <div class="stat-grid-2x2">
+                <div class="stat-card-sm">
+                  <div class="num" id="academic-exams">0</div>
+                  <div class="label">Exams</div>
                 </div>
+                <div class="stat-card-sm">
+                  <div class="num" id="academic-questions">0</div>
+                  <div class="label">Questions</div>
+                </div>
+                <div class="stat-card-sm">
+                  <div class="num" id="academic-accuracy">0%</div>
+                  <div class="label">Accuracy</div>
+                </div>
+                <div class="stat-card-sm">
+                  <div class="num" id="academic-streak">0</div>
+                  <div class="label">Study Streak</div>
+                </div>
+              </div>
 
-                <!-- Real Doughnut Chart for Accuracy -->
-                <div style="background:var(--bg-secondary); border-radius:var(--radius-small); padding:1rem; margin-bottom:1.5rem; text-align:center;">
-                    <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.5rem;">Accuracy Distribution</div>
-                    <div style="width:100%; max-width:250px; margin:0 auto;">
-                        <canvas id="overview-pie-chart"></canvas>
-                    </div>
+              <!-- Real Doughnut Chart for Accuracy -->
+              <div
+                style="background:var(--bg-secondary); border-radius:var(--radius-small); padding:1rem; margin-bottom:1.5rem; text-align:center;">
+                <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.5rem;">Accuracy Distribution
                 </div>
+                <div style="width:100%; max-width:250px; margin:0 auto;">
+                  <canvas id="overview-pie-chart"></canvas>
+                </div>
+              </div>
 
-                <div class="mini-achievement" id="latest-badge-container">
-                    <span class="icon">🏅</span>
-                    <div class="info">
-                        <div class="title" id="latest-badge-title">No badges yet</div>
-                        <div class="sub" id="latest-badge-sub">Keep studying!</div>
-                    </div>
+              <div class="mini-achievement" id="latest-badge-container">
+                <span class="icon">🏅</span>
+                <div class="info">
+                  <div class="title" id="latest-badge-title">No badges yet</div>
+                  <div class="sub" id="latest-badge-sub">Keep studying!</div>
                 </div>
+              </div>
 
-                <div class="quick-links">
-                    <div class="quick-link" onclick="window.switchTab('summary-tab')">Subject Performance <span class="arrow">→</span></div>
-<div class="quick-link" onclick="window.switchTab('subjects-tab')">Exam History <span class="arrow">→</span></div>
-<div class="quick-link" onclick="window.switchTab('planner-tab')">Study Planner <span class="arrow">→</span></div>
-                </div>
+              <div class="quick-links">
+                <div class="quick-link" data-tab="summary-tab">Subject Performance <span class="arrow">→</span></div>
+                <div class="quick-link" data-tab="subjects-tab">Exam History <span class="arrow">→</span></div>
+                <div class="quick-link" data-tab="planner-tab">Study Planner <span class="arrow">→</span></div>
+              </div>
             </div>
-        </div>
+          </div>
 
-        <!-- ─── 2. MPREv2 Analytics ─── -->
-        <div id="academic-mpre" class="academic-module-container">
+          <!-- ─── 2. MPREv2 Analytics ─── -->
+          <div id="academic-mpre" class="academic-module-container">
             <div class="academic-module">
-                <h3>📊 MPREv2 Analytics <span class="badge">Why this rating?</span></h3>
+              <h3>📊 MPREv2 Analytics <span class="badge">Why this rating?</span></h3>
 
-                <div class="rating-card">
-                    <div class="score" id="academic-mpre-score-val">0</div>
-                    <div class="stars" id="academic-mpre-stars">☆☆☆☆☆</div>
-                    <div class="rank-label" id="academic-mpre-rank">Seed</div>
-                </div>
+              <div class="rating-card">
+                <div class="score" id="academic-mpre-score-val">0</div>
+                <div class="stars" id="academic-mpre-stars">☆☆☆☆☆</div>
+                <div class="rank-label" id="academic-mpre-rank">Seed</div>
+              </div>
 
-                <!-- Real Radar Chart for Factors -->
-                <div style="background:var(--bg-secondary); border-radius:var(--radius-small); padding:1rem; margin-bottom:1.5rem; text-align:center;">
-                    <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.5rem;">Factor Analysis (Radar)</div>
-                    <div style="width:100%; max-width:350px; margin:0 auto;">
-                        <canvas id="mpre-radar-chart"></canvas>
-                    </div>
+              <!-- Real Radar Chart for Factors -->
+              <div
+                style="background:var(--bg-secondary); border-radius:var(--radius-small); padding:1rem; margin-bottom:1.5rem; text-align:center;">
+                <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.5rem;">Factor Analysis (Radar)
                 </div>
+                <div style="width:100%; max-width:350px; margin:0 auto;">
+                  <canvas id="mpre-radar-chart"></canvas>
+                </div>
+              </div>
 
-                <!-- Real Doughnut Chart for Factor Weights -->
-                <div style="background:var(--bg-secondary); border-radius:var(--radius-small); padding:1rem; margin-bottom:1.5rem; text-align:center;">
-                    <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.5rem;">Factor Weight Distribution</div>
-                    <div style="width:100%; max-width:250px; margin:0 auto;">
-                        <canvas id="mpre-doughnut-chart"></canvas>
-                    </div>
+              <!-- Real Doughnut Chart for Factor Weights -->
+              <div
+                style="background:var(--bg-secondary); border-radius:var(--radius-small); padding:1rem; margin-bottom:1.5rem; text-align:center;">
+                <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.5rem;">Factor Weight Distribution
                 </div>
+                <div style="width:100%; max-width:250px; margin:0 auto;">
+                  <canvas id="mpre-doughnut-chart"></canvas>
+                </div>
+              </div>
 
-                <div class="progress-bar-list" id="mpre-progress-bars">
-                    <!-- Generated dynamically via JS -->
-                </div>
+              <div class="progress-bar-list" id="mpre-progress-bars">
+                <!-- Generated dynamically via JS -->
+              </div>
 
-                <div class="timeline" id="mpre-timeline">
-                    <!-- Generated dynamically via JS -->
-                </div>
+              <div class="timeline" id="mpre-timeline">
+                <!-- Generated dynamically via JS -->
+              </div>
 
-                <div class="ai-summary">
-                    <div class="title">🤖 AI Recommendation</div>
-                    <div class="body" id="ai-recommendation-body">
-                        Complete more exams to get personalized AI recommendations!
-                    </div>
+              <div class="ai-summary">
+                <div class="title">🤖 AI Recommendation</div>
+                <div class="body" id="ai-recommendation-body">
+                  Complete more exams to get personalized AI recommendations!
                 </div>
+              </div>
             </div>
-        </div>
+          </div>
 
-        <!-- ─── 3. Competition ─── -->
-        <div id="academic-competition" class="academic-module-container">
+          <!-- ─── 3. Competition ─── -->
+          <div id="academic-competition" class="academic-module-container">
             <div class="academic-module">
-                <h3>🏆 Competition <span class="badge">How do I compare?</span></h3>
+              <h3>🏆 Competition <span class="badge">How do I compare?</span></h3>
 
-                <div class="leaderboard-tabs">
-                    <button class="active" onclick="renderLeaderboard('global')">Global</button>
-                    <button onclick="renderLeaderboard('school')">School</button>
-                    <button onclick="renderLeaderboard('friends')">Friends</button>
-                    <button onclick="renderLeaderboard('weekly')">Weekly</button>
-                    <button onclick="renderLeaderboard('monthly')">Monthly</button>
+              <div class="leaderboard-tabs">
+                <button class="active" data-leaderboard="global">Global</button>
+                <button data-leaderboard="school">School</button>
+                <button data-leaderboard="friends">Friends</button>
+                <button data-leaderboard="weekly">Weekly</button>
+                <button data-leaderboard="monthly">Monthly</button>
+              </div>
+
+              <table class="leaderboard-table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>MPRE</th>
+                    <th>Δ</th>
+                  </tr>
+                </thead>
+                <tbody id="leaderboard-body">
+                  <tr>
+                    <td colspan="4" style="text-align:center;color:var(--text-muted);">Loading leaderboard...</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="timeline" id="comp-timeline">
+                <!-- Generated dynamically via JS -->
+              </div>
+
+              <div class="stat-grid-2x2">
+                <div class="stat-card-sm">
+                  <div class="num" id="comp-wins">0</div>
+                  <div class="label">Wins</div>
                 </div>
-
-                <table class="leaderboard-table">
-                    <thead><tr><th>#</th><th>Name</th><th>MPRE</th><th>Δ</th></tr></thead>
-                    <tbody id="leaderboard-body">
-                        <tr><td colspan="4" style="text-align:center;color:var(--text-muted);">Loading leaderboard...</td></tr>
-                    </tbody>
-                </table>
-
-                <div class="timeline" id="comp-timeline">
-                    <!-- Generated dynamically via JS -->
+                <div class="stat-card-sm">
+                  <div class="num" id="comp-top3">0</div>
+                  <div class="label">Top 3</div>
                 </div>
-
-                <div class="stat-grid-2x2">
-                    <div class="stat-card-sm"><div class="num" id="comp-wins">0</div><div class="label">Wins</div></div>
-                    <div class="stat-card-sm"><div class="num" id="comp-top3">0</div><div class="label">Top 3</div></div>
-                    <div class="stat-card-sm"><div class="num" id="comp-challenges">0</div><div class="label">Challenges</div></div>
-                    <div class="stat-card-sm"><div class="num" id="comp-winrate">0%</div><div class="label">Win Rate</div></div>
+                <div class="stat-card-sm">
+                  <div class="num" id="comp-challenges">0</div>
+                  <div class="label">Challenges</div>
                 </div>
-
-                <div style="display:flex; justify-content:space-between; align-items:center; padding:0.5rem 0; border-top:1px solid var(--border); margin-top:0.5rem;">
-                    <div style="font-size:0.8rem;color:var(--text-muted);">Rank History</div>
-                    <div id="rank-history-container" style="display:flex; gap:0.3rem; font-size:0.7rem; flex-wrap:wrap;">
-                        <!-- Generated via JS -->
-                    </div>
+                <div class="stat-card-sm">
+                  <div class="num" id="comp-winrate">0%</div>
+                  <div class="label">Win Rate</div>
                 </div>
+              </div>
 
-                <div class="mini-achievement" style="margin-top:1rem;">
-                    <span class="icon">👑</span>
-                    <div class="info">
-                        <div class="title" id="rival-title">Closest Rival: None</div>
-                        <div class="sub" id="rival-sub">Keep competing to find your rival!</div>
-                    </div>
+              <div
+                style="display:flex; justify-content:space-between; align-items:center; padding:0.5rem 0; border-top:1px solid var(--border); margin-top:0.5rem;">
+                <div style="font-size:0.8rem;color:var(--text-muted);">Rank History</div>
+                <div id="rank-history-container" style="display:flex; gap:0.3rem; font-size:0.7rem; flex-wrap:wrap;">
+                  <!-- Generated via JS -->
                 </div>
+              </div>
+
+              <div class="mini-achievement" style="margin-top:1rem;">
+                <span class="icon">👑</span>
+                <div class="info">
+                  <div class="title" id="rival-title">Closest Rival: None</div>
+                  <div class="sub" id="rival-sub">Keep competing to find your rival!</div>
+                </div>
+              </div>
             </div>
-        </div>
+          </div>
 
-        <!-- ─── 4. Growth ─── -->
-        <div id="academic-growth" class="academic-module-container">
+          <!-- ─── 4. Growth ─── -->
+          <div id="academic-growth" class="academic-module-container">
             <div class="academic-module">
-                <h3>🎖️ Growth <span class="badge">Am I building good habits?</span></h3>
+              <h3>🎖️ Growth <span class="badge">Am I building good habits?</span></h3>
 
-                <div class="badge-gallery" id="badge-gallery">
-                    <!-- Generated via JS -->
-                </div>
+              <div class="badge-gallery" id="badge-gallery">
+                <!-- Generated via JS -->
+              </div>
 
-                <div class="progress-bar-list">
-                    <div class="progress-bar-item">
-                        <div class="row"><span class="label">Question Crusher</span><span class="value" id="growth-questions-crusher">0 / 10,000</span></div>
-                        <div class="track"><div class="fill" id="growth-questions-fill" style="width:0%;"></div></div>
-                    </div>
-                    <div class="progress-bar-item">
-                        <div class="row"><span class="label">Study Streak</span><span class="value" id="growth-streak-progress">0 / 30</span></div>
-                        <div class="track"><div class="fill" id="growth-streak-fill" style="width:0%;"></div></div>
-                    </div>
-                </div>
-
-                <div style="margin-bottom:1.5rem;">
-                    <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.5rem;">Study Heatmap</div>
-                    <div class="heatmap" id="study-heatmap">
-                        <!-- Generated via JS -->
-                    </div>
-                </div>
-
-                <div class="stat-grid-2x2">
-                    <div class="stat-card-sm"><div class="num" id="growth-avg-q">0</div><div class="label">Avg Questions/day</div></div>
-                    <div class="stat-card-sm"><div class="num" id="growth-best-time">—</div><div class="label">Best Time</div></div>
-                    <div class="stat-card-sm"><div class="num" id="growth-longest">0</div><div class="label">Longest Session</div></div>
-                    <div class="stat-card-sm"><div class="num" id="growth-avg-session">0</div><div class="label">Avg Session (min)</div></div>
-                </div>
-
-                <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius-small);padding:1rem;margin-top:0.5rem;">
-                    <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.75rem;">Learning Trends</div>
-                    <div style="display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;">
-                        <div>
-                            <div style="font-size:0.7rem;color:var(--text-muted);text-align:center;">Questions</div>
-                            <div id="questions-trend-chart" style="display:flex;align-items:flex-end;gap:4px;height:60px;padding-top:10px;">
-                                <!-- Generated via JS -->
-                            </div>
-                        </div>
-                        <div>
-                            <div style="font-size:0.7rem;color:var(--text-muted);text-align:center;">Study Hours</div>
-                            <div id="hours-trend-chart" style="display:flex;align-items:flex-end;gap:4px;height:60px;padding-top:10px;">
-                                <!-- Generated via JS -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ─── 5. Activity ─── -->
-        <div id="academic-activity" class="academic-module-container">
-            <div class="academic-module">
-                <h3>⚙️ Activity <span class="badge">What have I done recently?</span></h3>
-
-                <div class="timeline" id="activity-feed">
-                    <!-- Generated via JS -->
-                </div>
-
-                <div style="display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.5rem;" id="notifications-container">
-                    <!-- Generated via JS -->
-                </div>
-
-                <div style="margin-bottom:1.5rem;">
-                    <div style="font-size:0.9rem;font-weight:500;margin-bottom:0.5rem;">Privacy</div>
-                    <div class="toggle-row"><span>Public Profile</span><div class="toggle-switch on" onclick="this.classList.toggle('on')"><div class="knob"></div></div></div>
-                    <div class="toggle-row"><span>Show Rank</span><div class="toggle-switch on" onclick="this.classList.toggle('on')"><div class="knob"></div></div></div>
-                    <div class="toggle-row"><span>Show MPRE</span><div class="toggle-switch on" onclick="this.classList.toggle('on')"><div class="knob"></div></div></div>
-                    <div class="toggle-row"><span>Show Badges</span><div class="toggle-switch" onclick="this.classList.toggle('on')"><div class="knob"></div></div></div>
-                    <div class="toggle-row"><span>Show Competition</span><div class="toggle-switch" onclick="this.classList.toggle('on')"><div class="knob"></div></div></div>
-                </div>
-
-                <button class="share-btn-large" onclick="shareAcademicProfile()">📤 Share Academic Profile</button>
-                <button class="share-btn-secondary" onclick="copyProfileLink()">🔗 Copy Profile Link</button>
-
-                <div class="ai-summary" style="margin-top:1.5rem;">
-                    <div class="title">🤖 Academic Summary</div>
-                    <div class="body" id="academic-summary-body">
-                        Complete more exams to get your AI summary!
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div><!-- /academic-container -->
-</div><!-- /academic-tab -->
-
-<!-- Hidden file input for avatar upload -->
-<input type="file" id="avatar-upload" accept="image/*" style="display:none;" />
-<div id="academic-tab" class="tab-content">
-    <div class="academic-container">
-
-        <h2 style="margin:0.5rem 0 0.25rem 0;">🎓 Academic Profile</h2>
-
-        <div class="academic-button-bar" id="academic-button-bar">
-            <button class="academic-btn active" data-academic="overview">🏠 Overview</button>
-            <button class="academic-btn" data-academic="mpre">📊 MPREv2</button>
-            <button class="academic-btn" data-academic="competition">🏆 Competition</button>
-            <button class="academic-btn" data-academic="growth">🎖️ Growth</button>
-            <button class="academic-btn" data-academic="activity">⚙️ Activity</button>
-        </div>
-
-        <!-- ─── 1. Overview ─── -->
-        <div id="academic-overview" class="academic-module-container active">
-            <div class="academic-module">
-                <h3>🏠 Overview <span class="badge">Who am I academically?</span></h3>
-
-                <div class="hero-card">
-                    <div class="avatar">FW</div>
-                    <div>
-                        <div class="name">Felix Wanzala</div>
-                        <div class="year">Year 2 · MBChB</div>
-                        <div class="rank-badge">🏆 Expert</div>
-                        <div class="mpre-score">2678</div>
-                        <div class="rank-label">Top 8% · MPREv2</div>
-                    </div>
-                </div>
-
-                <div class="stat-grid-2x2">
-                    <div class="stat-card-sm"><div class="num">182</div><div class="label">Exams</div></div>
-                    <div class="stat-card-sm"><div class="num">18,450</div><div class="label">Questions</div></div>
-                    <div class="stat-card-sm"><div class="num">91%</div><div class="label">Accuracy</div></div>
-                    <div class="stat-card-sm"><div class="num">14</div><div class="label">Study Streak</div></div>
-                </div>
-
-                <!-- Real Doughnut Chart for Accuracy -->
-                <div style="background:var(--bg-secondary); border-radius:var(--radius-small); padding:1rem; margin-bottom:1.5rem; text-align:center;">
-                    <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.5rem;">Accuracy Distribution</div>
-                    <div style="width:100%; max-width:250px; margin:0 auto;">
-                        <canvas id="overview-pie-chart"></canvas>
-                    </div>
-                </div>
-
-                <div class="mini-achievement">
-                    <span class="icon">🏅</span>
-                    <div class="info">
-                        <div class="title">Anatomy Master</div>
-                        <div class="sub">Unlocked Yesterday</div>
-                    </div>
-                </div>
-
-                <div class="quick-links">
-                    <div class="quick-link" onclick="router.navigateTo('subject-specific.html')">Subject Performance <span class="arrow">→</span></div>
-                    <div class="quick-link" onclick="router.navigateTo('exam-history.html')">Exam History <span class="arrow">→</span></div>
-                    <div class="quick-link" onclick="router.navigateTo('study-planner.html')">Study Planner <span class="arrow">→</span></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ─── 2. MPREv2 Analytics ─── -->
-        <div id="academic-mpre" class="academic-module-container">
-            <div class="academic-module">
-                <h3>📊 MPREv2 Analytics <span class="badge">Why this rating?</span></h3>
-
-                <div class="rating-card">
-                    <div class="score">2678</div>
-                    <div class="stars">★★★★☆</div>
-                    <div class="rank-label">Expert</div>
-                </div>
-
-                <!-- Real Radar Chart for Factors -->
-                <div style="background:var(--bg-secondary); border-radius:var(--radius-small); padding:1rem; margin-bottom:1.5rem; text-align:center;">
-                    <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.5rem;">Factor Analysis (Radar)</div>
-                    <div style="width:100%; max-width:350px; margin:0 auto;">
-                        <canvas id="mpre-radar-chart"></canvas>
-                    </div>
-                </div>
-
-                <!-- Real Doughnut Chart for Factor Weights -->
-                <div style="background:var(--bg-secondary); border-radius:var(--radius-small); padding:1rem; margin-bottom:1.5rem; text-align:center;">
-                    <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.5rem;">Factor Weight Distribution</div>
-                    <div style="width:100%; max-width:250px; margin:0 auto;">
-                        <canvas id="mpre-doughnut-chart"></canvas>
-                    </div>
-                </div>
-
-                <div class="progress-bar-list">
-                    <div class="progress-bar-item">
-                        <div class="row"><span class="label">Accuracy</span><span class="value">95%</span></div>
-                        <div class="track"><div class="fill" style="width:95%;"></div></div>
-                    </div>
-                    <div class="progress-bar-item">
-                        <div class="row"><span class="label">Difficulty</span><span class="value">89%</span></div>
-                        <div class="track"><div class="fill" style="width:89%;"></div></div>
-                    </div>
-                    <div class="progress-bar-item">
-                        <div class="row"><span class="label">Consistency</span><span class="value">82%</span></div>
-                        <div class="track"><div class="fill" style="width:82%;"></div></div>
-                    </div>
-                    <div class="progress-bar-item">
-                        <div class="row"><span class="label">Speed</span><span class="value">87%</span></div>
-                        <div class="track"><div class="fill" style="width:87%;"></div></div>
-                    </div>
-                    <div class="progress-bar-item">
-                        <div class="row"><span class="label">Improvement</span><span class="value">71%</span></div>
-                        <div class="track"><div class="fill" style="width:71%;"></div></div>
-                    </div>
-                    <div class="progress-bar-item">
-                        <div class="row"><span class="label">Activity</span><span class="value">90%</span></div>
-                        <div class="track"><div class="fill" style="width:90%;"></div></div>
-                    </div>
-                    <div class="progress-bar-item">
-                        <div class="row"><span class="label">Confidence</span><span class="value">83%</span></div>
-                        <div class="track"><div class="fill" style="width:83%;"></div></div>
-                    </div>
-                    <div class="progress-bar-item">
-                        <div class="row"><span class="label">Stability</span><span class="value">94%</span></div>
-                        <div class="track"><div class="fill" style="width:94%;"></div></div>
-                    </div>
-                </div>
-
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div><strong>Yesterday</strong><br><span style="font-size:0.8rem;color:var(--text-muted);">Community Challenge</span></div>
-                        <div class="change positive">+18</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div><strong>Monday</strong><br><span style="font-size:0.8rem;color:var(--text-muted);">Anatomy Mock</span></div>
-                        <div class="change positive">+6</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div><strong>Saturday</strong><br><span style="font-size:0.8rem;color:var(--text-muted);">Timed Exam</span></div>
-                        <div class="change negative">-4</div>
-                    </div>
-                </div>
-
-                <div class="ai-summary">
-                    <div class="title">🤖 AI Recommendation</div>
-                    <div class="body">
-                        <strong>Improve Speed</strong> · Estimated Gain <span class="highlight">+28 MPRE</span><br>
-                        Recommended: <strong>Timed Physiology Quiz</strong>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ─── 3. Competition ─── -->
-        <div id="academic-competition" class="academic-module-container">
-            <div class="academic-module">
-                <h3>🏆 Competition <span class="badge">How do I compare?</span></h3>
-
-                <div class="leaderboard-tabs">
-                    <button class="active">Global</button>
-                    <button>School</button>
-                    <button>Friends</button>
-                    <button>Weekly</button>
-                    <button>Monthly</button>
-                </div>
-
-                <table class="leaderboard-table">
-                    <thead><tr><th>#</th><th>Name</th><th>MPRE</th><th>Δ</th></tr></thead>
-                    <tbody>
-                        <tr><td class="rank-num">1</td><td class="name">Alice</td><td class="score">2950</td><td class="movement up">↑2</td></tr>
-                        <tr><td class="rank-num">2</td><td class="name">Felix</td><td class="score">2924</td><td class="movement up">↑1</td></tr>
-                        <tr><td class="rank-num">3</td><td class="name">John</td><td class="score">2918</td><td class="movement down">↓1</td></tr>
-                        <tr><td class="rank-num">4</td><td class="name">Sarah</td><td class="score">2892</td><td class="movement">→</td></tr>
-                        <tr><td class="rank-num">5</td><td class="name">Mike</td><td class="score">2865</td><td class="movement up">↑3</td></tr>
-                    </tbody>
-                </table>
-
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div><strong>Yesterday</strong><br><span style="font-size:0.8rem;color:var(--text-muted);">🏆 Anatomy Challenge</span></div>
-                        <div><span style="font-weight:600;">1/132</span> · 94% · <span class="change positive">+18 MPRE</span></div>
-                    </div>
-                    <div class="timeline-item">
-                        <div><strong>Last Week</strong><br><span style="font-size:0.8rem;color:var(--text-muted);">Physiology Battle</span></div>
-                        <div><span style="font-weight:600;">5/92</span> · <span class="change positive">+8</span></div>
-                    </div>
-                </div>
-
-                <div class="stat-grid-2x2">
-                    <div class="stat-card-sm"><div class="num">28</div><div class="label">Wins</div></div>
-                    <div class="stat-card-sm"><div class="num">54</div><div class="label">Top 3</div></div>
-                    <div class="stat-card-sm"><div class="num">91</div><div class="label">Challenges</div></div>
-                    <div class="stat-card-sm"><div class="num">62%</div><div class="label">Win Rate</div></div>
-                </div>
-
-                <div style="display:flex; justify-content:space-between; align-items:center; padding:0.5rem 0; border-top:1px solid var(--border); margin-top:0.5rem;">
-                    <div style="font-size:0.8rem;color:var(--text-muted);">Rank History</div>
-                    <div style="display:flex; gap:0.3rem; font-size:0.7rem;">
-                        <span style="background:var(--bg-secondary);padding:0.15rem 0.5rem;border-radius:12px;">Seed</span>
-                        <span style="background:var(--bg-secondary);padding:0.15rem 0.5rem;border-radius:12px;">Scholar</span>
-                        <span style="background:var(--bg-secondary);padding:0.15rem 0.5rem;border-radius:12px;">Advanced</span>
-                        <span style="background:var(--accent);color:#fff;padding:0.15rem 0.5rem;border-radius:12px;">Expert</span>
-                    </div>
-                </div>
-
-                <div class="mini-achievement" style="margin-top:1rem;">
-                    <span class="icon">👑</span>
-                    <div class="info">
-                        <div class="title">Closest Rival: James</div>
-                        <div class="sub">You 2914 · James 2890 · <span class="highlight">+24 MPRE</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ─── 4. Growth ─── -->
-        <div id="academic-growth" class="academic-module-container">
-            <div class="academic-module">
-                <h3>🎖️ Growth <span class="badge">Am I building good habits?</span></h3>
-
-                <div class="badge-gallery">
-                    <div class="badge-item unlocked">🏅</div>
-                    <div class="badge-item unlocked">🔥</div>
-                    <div class="badge-item unlocked">⚡</div>
-                    <div class="badge-item unlocked">👑</div>
-                    <div class="badge-item unlocked">📚</div>
-                    <div class="badge-item unlocked">🩺</div>
-                    <div class="badge-item unlocked">⭐</div>
-                    <div class="badge-item unlocked">🎯</div>
-                    <div class="badge-item locked">🔒</div>
-                    <div class="badge-item locked">🔒</div>
-                    <div class="badge-item locked">🔒</div>
-                    <div class="badge-item locked">🔒</div>
-                </div>
-
-                <div class="progress-bar-list">
-                    <div class="progress-bar-item">
-                        <div class="row"><span class="label">Question Crusher</span><span class="value">8,450 / 10,000</span></div>
-                        <div class="track"><div class="fill" style="width:84.5%;"></div></div>
-                    </div>
-                    <div class="progress-bar-item">
-                        <div class="row"><span class="label">30 Day Streak</span><span class="value">22 / 30</span></div>
-                        <div class="track"><div class="fill" style="width:73%;"></div></div>
-                    </div>
-                </div>
-
-                <div style="margin-bottom:1.5rem;">
-                    <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.5rem;">Study Heatmap</div>
-                    <div class="heatmap">
-                        <div class="cell active"></div><div class="cell active"></div><div class="cell active"></div><div class="cell semi"></div><div class="cell active"></div><div class="cell active"></div><div class="cell"></div>
-                        <div class="cell active"></div><div class="cell"></div><div class="cell active"></div><div class="cell active"></div><div class="cell active"></div><div class="cell"></div><div class="cell active"></div>
-                        <div class="cell active"></div><div class="cell active"></div><div class="cell"></div><div class="cell active"></div><div class="cell active"></div><div class="cell semi"></div><div class="cell active"></div>
-                        <div class="cell"></div><div class="cell active"></div><div class="cell active"></div><div class="cell active"></div><div class="cell"></div><div class="cell active"></div><div class="cell active"></div>
-                    </div>
-                </div>
-
-                <div class="stat-grid-2x2">
-                    <div class="stat-card-sm"><div class="num">52</div><div class="label">Avg Questions/day</div></div>
-                    <div class="stat-card-sm"><div class="num">7PM</div><div class="label">Best Time</div></div>
-                    <div class="stat-card-sm"><div class="num">138</div><div class="label">Longest Session</div></div>
-                    <div class="stat-card-sm"><div class="num">43</div><div class="label">Avg Session (min)</div></div>
-                </div>
-
-                <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius-small);padding:1rem;margin-top:0.5rem;">
-                    <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.75rem;">Learning Trends</div>
-                    <div style="display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;">
-                        <div>
-                            <div style="font-size:0.7rem;color:var(--text-muted);text-align:center;">Questions</div>
-                            <div style="display:flex;align-items:flex-end;gap:4px;height:60px;padding-top:10px;">
-                                <div style="width:20px;height:20px;background:var(--accent);border-radius:2px;"></div>
-                                <div style="width:20px;height:35px;background:var(--accent);border-radius:2px;"></div>
-                                <div style="width:20px;height:50px;background:var(--accent);border-radius:2px;"></div>
-                                <div style="width:20px;height:55px;background:var(--accent);border-radius:2px;"></div>
-                                <div style="width:20px;height:30px;background:var(--accent);border-radius:2px;"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div style="font-size:0.7rem;color:var(--text-muted);text-align:center;">Study Hours</div>
-                            <div style="display:flex;align-items:flex-end;gap:4px;height:60px;padding-top:10px;">
-                                <div style="width:20px;height:15px;background:var(--warning);border-radius:2px;"></div>
-                                <div style="width:20px;height:30px;background:var(--warning);border-radius:2px;"></div>
-                                <div style="width:20px;height:40px;background:var(--warning);border-radius:2px;"></div>
-                                <div style="width:20px;height:35px;background:var(--warning);border-radius:2px;"></div>
-                                <div style="width:20px;height:20px;background:var(--warning);border-radius:2px;"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ─── 5. Activity ─── -->
-        <div id="academic-activity" class="academic-module-container">
-            <div class="academic-module">
-                <h3>⚙️ Activity <span class="badge">What have I done recently?</span></h3>
-
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div><strong>Today</strong><br><span style="font-size:0.8rem;color:var(--text-muted);">Completed Anatomy Mock</span></div>
-                        <div><span style="font-weight:600;">93%</span> · <span class="change positive">+14 MPRE</span></div>
-                    </div>
-                    <div class="timeline-item">
-                        <div><strong>Yesterday</strong><br><span style="font-size:0.8rem;color:var(--text-muted);">Reached Expert</span></div>
-                        <div><span class="change positive">🏆</span></div>
-                    </div>
-                    <div class="timeline-item">
-                        <div><strong>2 Days Ago</strong><br><span style="font-size:0.8rem;color:var(--text-muted);">Won Community Challenge</span></div>
-                        <div><span class="change positive">🥇</span></div>
-                    </div>
-                </div>
-
-                <div style="display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.5rem;">
-                    <div class="mini-achievement">
-                        <span class="icon">🏅</span>
-                        <div class="info"><div class="title">New Badge Unlocked</div><div class="sub">Anatomy Master</div></div>
-                    </div>
-                    <div class="mini-achievement">
-                        <span class="icon">📊</span>
-                        <div class="info"><div class="title">Leaderboard Updated</div><div class="sub">You moved up to #2</div></div>
-                    </div>
-                    <div class="mini-achievement">
-                        <span class="icon">⚔️</span>
-                        <div class="info"><div class="title">Friend Challenge</div><div class="sub">Sarah challenged you to a mock</div></div>
-                    </div>
-                </div>
-
-                <div style="margin-bottom:1.5rem;">
-                    <div style="font-size:0.9rem;font-weight:500;margin-bottom:0.5rem;">Privacy</div>
-                    <div class="toggle-row"><span>Public Profile</span><div class="toggle-switch on" onclick="this.classList.toggle('on')"><div class="knob"></div></div></div>
-                    <div class="toggle-row"><span>Show Rank</span><div class="toggle-switch on" onclick="this.classList.toggle('on')"><div class="knob"></div></div></div>
-                    <div class="toggle-row"><span>Show MPRE</span><div class="toggle-switch on" onclick="this.classList.toggle('on')"><div class="knob"></div></div></div>
-                    <div class="toggle-row"><span>Show Badges</span><div class="toggle-switch" onclick="this.classList.toggle('on')"><div class="knob"></div></div></div>
-                    <div class="toggle-row"><span>Show Competition</span><div class="toggle-switch" onclick="this.classList.toggle('on')"><div class="knob"></div></div></div>
-                </div>
-
-                <button class="share-btn-large">📤 Share Academic Profile</button>
-                <button class="share-btn-secondary">🔗 Copy Profile Link</button>
-
-                <div class="ai-summary" style="margin-top:1.5rem;">
-                    <div class="title">🤖 Academic Summary</div>
-                    <div class="body">
-                        You improved <span class="highlight">18%</span> this month.<br>
-                        Strength: <span class="highlight">Consistency</span> · Needs Work: <span class="highlight">Speed</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div><!-- /academic-container -->
-</div><!-- /academic-tab -->
-
-            <!-- Footer navigation -->
-            <div class="app-footer">
-                <button class="footer-btn" onclick="router.navigateTo('subjects.html')" title="Subjects">📚</button>
-                <button class="footer-btn" onclick="router.navigateTo('ai.html')" title="AI Tutor">🤖</button>
-                <button class="footer-btn" onclick="router.navigateTo('notes.html')" title="Notes">📝</button>
-                <button class="footer-btn" onclick="router.navigateTo('profile.html')" title="Profile">👤</button>
-            </div>
-        </main>
-    </div>
-
-    <!-- Share Modal -->
-    <div id="share-modal" class="modal-overlay" style="display:none;">
-        <div class="modal">
-            <div class="modal-header">
-                <h3>Share Exam</h3>
-                <button class="modal-close" onclick="document.getElementById('share-modal').style.display='none'">&times;</button>
-            </div>
-            <div class="modal-body">
-                <p>Share this link with others. They can view the exam results without logging in.</p>
-                <div style="display:flex; gap:0.5rem; margin:1rem 0;">
-                    <input type="text" id="share-link" readonly style="flex:1; padding:0.5rem;" />
-                    <button onclick="window.copyShareLink()" class="btn-secondary">Copy</button>
-                </div>
-                <p class="small">Anyone with this link can view your exam results.</p>
-            </div>
-        </div>
-    </div>
-
-<script type="module">
-    // ==================== IMPORTS ====================
-    import * as app from '../scripts/app.js';
-    import * as ui from '../scripts/ui.js';
-    import * as router from '../scripts/router.js';
-    import * as utils from '../scripts/utils.js';
-    import * as analytics from '../scripts/analytics.js';
-    import * as db from '../scripts/db.js';
-    import { convexHttpClient } from '../scripts/convex-client.js';
-    import { PerformanceAI } from '../scripts/performance-ai.js';
-    import * as performanceRating from '../scripts/performance-rating-v2.js';
-
-    // ==================== GLOBAL STATE ====================
-    let analyticsData = null;
-    let chartInstance = null;
-    let performanceAI = null;
-
-    // ==================== GLOBAL FUNCTIONS ====================
-    window.switchTab = function(tabId) {
-        document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-        document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
-        document.getElementById(tabId).classList.add('active');
-        document.querySelectorAll('.tab-button').forEach(b => {
-            const label = b.textContent.trim();
-            if (tabId === 'summary-tab' && label.includes('Summary')) b.classList.add('active');
-            else if (tabId === 'subjects-tab' && label.includes('Subjects')) b.classList.add('active');
-            else if (tabId === 'downloaded-tab' && label.includes('Downloaded')) b.classList.add('active');
-            else if (tabId === 'planner-tab' && label.includes('Planner')) b.classList.add('active');
-            else if (tabId === 'academic-tab' && label.includes('Academic')) b.classList.add('active');
-        });
-        if (tabId === 'downloaded-tab') renderDownloadedExams();
-        if (tabId === 'planner-tab') renderAllPlannerModules();
-    };
-
-    // ─── Planner button switching ───
-    function setupPlannerButtons() {
-        const buttons = document.querySelectorAll('.planner-btn');
-        const containers = {
-            timetable: document.getElementById('planner-timetable'),
-            topics: document.getElementById('planner-topics'),
-            sessions: document.getElementById('planner-sessions'),
-            streaks: document.getElementById('planner-streaks'),
-            reminders: document.getElementById('planner-reminders'),
-            exams: document.getElementById('planner-exams'),
-            checklist: document.getElementById('planner-checklist'),
-            ai: document.getElementById('planner-ai'),
-        };
-
-        buttons.forEach(btn => {
-            btn.addEventListener('click', function() {
-                buttons.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                const key = this.dataset.planner;
-                Object.keys(containers).forEach(k => {
-                    containers[k].classList.toggle('active', k === key);
-                });
-                if (key === 'timetable') renderTimetable();
-                else if (key === 'topics') renderTopics();
-                else if (key === 'sessions') renderSessions();
-                else if (key === 'streaks') renderStreaks();
-                else if (key === 'exams') renderExams();
-                else if (key === 'checklist') renderChecklist();
-            });
-        });
-    }
-
-    // ─── Academic Profile button switching ───
-    function setupAcademicButtons() {
-        const buttons = document.querySelectorAll('.academic-btn');
-        const containers = {
-            overview: document.getElementById('academic-overview'),
-            mpre: document.getElementById('academic-mpre'),
-            competition: document.getElementById('academic-competition'),
-            growth: document.getElementById('academic-growth'),
-            activity: document.getElementById('academic-activity'),
-        };
-
-        buttons.forEach(btn => {
-            btn.addEventListener('click', function() {
-                buttons.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                const key = this.dataset.academic;
-                Object.keys(containers).forEach(k => {
-                    containers[k].classList.toggle('active', k === key);
-                });
-            });
-        });
-    }
-
-    document.querySelectorAll('.chart-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            document.querySelectorAll('.chart-btn').forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-            renderChart(this.dataset.chart);
-        });
-    });
-
-    function getOptionText(letter, options) {
-        if (!letter || !options || !Array.isArray(options)) return letter || '—';
-        const index = letter.toUpperCase().charCodeAt(0) - 65;
-        if (index < 0 || index >= options.length) return letter;
-        const opt = options[index];
-        return (typeof opt === 'object' && opt !== null) ? opt.text : opt;
-    }
-
-    function formatExplanation(explanation) {
-        if (!explanation) return '';
-        if (typeof explanation === 'object') {
-            let parts = [];
-            if (explanation.overview) parts.push(explanation.overview);
-            if (explanation.highYield) parts.push(`<br><strong>High‑Yield:</strong> ${explanation.highYield}`);
-            if (explanation.clinicalCorrelation) parts.push(`<br><strong>Clinical:</strong> ${explanation.clinicalCorrelation}`);
-            return parts.join(' ');
-        }
-        return explanation;
-    }
-
-    // ==================== PROFILE PHOTO UPLOAD ====================
-    document.getElementById('avatar-upload').addEventListener('change', function(e) {
-        const file = e.target.files[0];
-        if (!file) return;
-        const reader = new FileReader();
-        reader.onload = function(event) {
-            const dataUrl = event.target.result;
-            localStorage.setItem('userAvatar', dataUrl);
-            updateAvatar(dataUrl);
-        };
-        reader.readAsDataURL(file);
-    });
-
-    function updateAvatar(dataUrl) {
-        const img = document.getElementById('avatar-img');
-        const initials = document.getElementById('avatar-initials');
-        if (dataUrl) {
-            img.src = dataUrl;
-            img.style.display = 'block';
-            initials.style.display = 'none';
-        } else {
-            img.style.display = 'none';
-            initials.style.display = 'flex';
-        }
-    }
-
-    // ==================== INIT ====================
-    (async function initPerformance() {
-        console.log('[Performance] Initializing...');
-        document.getElementById('real-content').classList.remove('visible');
-        await app.initializeApp();
-        ui.applyTheme();
-        if (!app.checkAuth()) {
-            router.navigateTo('login.html');
-            document.getElementById('shimmer-overlay').style.display = 'none';
-            return;
-        }
-        ui.showLoading('Loading analytics...');
-        try {
-            const allResults = await db.getAllExamResults();
-            analyticsData = await analytics.calculateAllAnalytics(allResults);
-            renderSummary(analyticsData.summary);
-            renderSubjectMastery(analyticsData.subjectAnalysis);
-            renderStudyPatterns(analyticsData.studyPatterns);
-            renderWeakAreas(analyticsData.weakAreas);
-            renderRecommendations(analyticsData.recommendations);
-            document.getElementById('streak').textContent = analyticsData.studyPatterns?.streak || 0;
-            renderChart('score');
-
-            // Render the Academic Profile with real data
-            const user = app.getUser();
-            renderAcademicProfile(analyticsData, user);
-
-            // Load saved avatar
-            const savedAvatar = localStorage.getItem('userAvatar');
-            if (savedAvatar) updateAvatar(savedAvatar);
-
-        } catch (error) {
-            console.error('[Performance] Analytics error:', error);
-            ui.showToast('Failed to load analytics', 'error');
-        } finally {
-            ui.hideLoading();
-            document.getElementById('shimmer-overlay').style.display = 'none';
-            document.getElementById('real-content').classList.add('visible');
-        }
-        renderDownloadedExams();
-        renderAllPlannerModules();
-        setupPlannerButtons();
-        setupAcademicButtons();
-
-        // Initialize PerformanceAI
-        performanceAI = new PerformanceAI({
-            onPlanGenerated: (planData) => {
-                document.getElementById('ai-actions').style.display = 'flex';
-                window._lastAIPlan = planData;
-            },
-            onPlanAdopted: () => {
-                ui.showToast('Plan adopted successfully! All modules updated.', 'success');
-                renderAllPlannerModules();
-                document.getElementById('ai-actions').style.display = 'none';
-            },
-            onPlanRegenerated: (planData) => {
-                document.getElementById('ai-actions').style.display = 'flex';
-                window._lastAIPlan = planData;
-                ui.showToast('Plan regenerated!', 'info');
-            },
-            onPlanAmended: (planData) => {
-                document.getElementById('ai-actions').style.display = 'flex';
-                window._lastAIPlan = planData;
-                ui.showToast('Plan amended successfully!', 'success');
-            },
-            onPlanCancelled: () => {
-                document.getElementById('ai-actions').style.display = 'none';
-                document.getElementById('ai-result').innerHTML = 'Plan cancelled.';
-                window._lastAIPlan = null;
-                ui.showToast('Plan cancelled.', 'info');
-            },
-            onAmendInputShow: () => {
-                document.getElementById('amend-area').classList.add('visible');
-            },
-            onAmendInputHide: () => {
-                document.getElementById('amend-area').classList.remove('visible');
-            }
-        });
-
-        window.generateAIPlan = function() {
-            const examDate = document.getElementById('ai-exam-date').value;
-            const subjects = document.getElementById('ai-subjects').value.trim();
-            const hours = parseFloat(document.getElementById('ai-hours').value) || 4;
-            const weak = document.getElementById('ai-weak').value.trim();
-            const preferred = document.getElementById('ai-time').value.trim();
-
-            if (!examDate || !subjects) {
-                ui.showToast('Please fill in at least exam date and subjects.', 'error');
-                return;
-            }
-
-            const result = performanceAI.generatePlan(examDate, subjects, hours, weak, preferred);
-            document.getElementById('ai-result').innerHTML = result.display;
-            if (result.success) {
-                document.getElementById('ai-actions').style.display = 'flex';
-            }
-        };
-
-        window.adoptAIPlan = function() {
-            if (window._lastAIPlan) {
-                performanceAI.adoptPlan(window._lastAIPlan);
-            } else {
-                ui.showToast('No plan to adopt. Generate a plan first.', 'error');
-            }
-        };
-
-        window.regenerateAIPlan = function() {
-            if (window._lastAIPlan) {
-                const result = performanceAI.regeneratePlan();
-                if (result) {
-                    document.getElementById('ai-result').innerHTML = result.display;
-                }
-            } else {
-                ui.showToast('No plan to regenerate. Generate a plan first.', 'error');
-            }
-        };
-
-        window.showAmendInput = function() {
-            performanceAI.showAmendInput();
-        };
-
-        window.sendAmendment = function() {
-            const text = document.getElementById('amend-text').value.trim();
-            if (!text) {
-                ui.showToast('Please describe your amendments.', 'error');
-                return;
-            }
-            const result = performanceAI.amendPlan(text);
-            if (result) {
-                document.getElementById('ai-result').innerHTML = result.display;
-                document.getElementById('amend-text').value = '';
-            }
-        };
-
-        window.cancelAIPlan = function() {
-            performanceAI.cancelPlan();
-        };
-
-        window.toggleTopicStatus = window.toggleTopicStatus;
-        window.toggleChecklist = window.toggleChecklist;
-        window.addTimetableSlot = window.addTimetableSlot;
-        window.addTopicItem = window.addTopicItem;
-        window.addStudySession = window.addStudySession;
-        window.addExamCountdown = window.addExamCountdown;
-        window.addChecklistItem = window.addChecklistItem;
-
-    })();
-
-    // ==================== RENDER SUMMARY ====================
-    function renderSummary(summary) {
-        if (!summary) return;
-        document.getElementById('total-exams').textContent = summary.totalExams || 0;
-        document.getElementById('total-questions').textContent = summary.totalQuestions || 0;
-        document.getElementById('avg-score').textContent = summary.averageScore ? `${summary.averageScore}%` : '—';
-        const totalHours = summary.totalStudyTime ? (summary.totalStudyTime / 60).toFixed(1) : '0';
-        document.getElementById('total-time').textContent = `${totalHours}h`;
-        document.getElementById('best-score').textContent = summary.bestScore ? `${summary.bestScore}%` : '—';
-    }
-
-    function renderSubjectMastery(subjectData) {
-        const container = document.getElementById('subject-mastery');
-        if (!subjectData || subjectData.length === 0) {
-            container.innerHTML = '<p class="no-data">No subject data yet. Take some exams!</p>';
-            return;
-        }
-        subjectData.sort((a, b) => b.percentage - a.percentage);
-        let html = '<div class="subject-grid">';
-        subjectData.forEach(s => {
-            const masteryClass = s.mastery || 'beginner';
-            html += `
-                <div class="subject-card mastery-${masteryClass}">
-                    <div class="subject-name">${s.subject}</div>
-                    <div class="subject-score">${s.percentage}%</div>
-                    <div class="subject-progress"><div class="progress-bar"><div class="progress-fill" style="width:${s.percentage}%;"></div></div></div>
-                    <div class="subject-stats">${s.correct}/${s.questions} · ⏱️ ${s.averageTime}s</div>
-                </div>
-            `;
-        });
-        html += '</div>';
-        container.innerHTML = html;
-    }
-
-    function renderStudyPatterns(patterns) {
-        if (!patterns) return;
-        document.getElementById('best-day').textContent = patterns.bestDay || '—';
-        document.getElementById('best-time').textContent = patterns.bestHour !== null ? `${patterns.bestHour}:00` : '—';
-        document.getElementById('avg-session').textContent = patterns.averageSessionTime ? `${patterns.averageSessionTime} min` : '—';
-        document.getElementById('consistency').textContent = patterns.consistency ? `${patterns.consistency}%` : '—';
-    }
-
-    function renderWeakAreas(weakAreas) {
-        const container = document.getElementById('weak-areas-list');
-        if (!weakAreas || weakAreas.length === 0) {
-            container.innerHTML = '<p class="no-data">No weak areas identified. Keep up the great work!</p>';
-            return;
-        }
-        let html = '<ul>';
-        weakAreas.slice(0, 5).forEach(area => {
-            html += `<li><span class="topic">${area.topic}</span> <span class="score">${Math.round(area.score)}%</span> – ${area.priority} priority</li>`;
-        });
-        html += '</ul>';
-        container.innerHTML = html;
-    }
-
-    function renderRecommendations(recs) {
-        const container = document.getElementById('recommendations-list');
-        if (!recs || recs.length === 0) {
-            container.innerHTML = '<p class="no-data">No recommendations at this time.</p>';
-            return;
-        }
-        let html = '<ul>';
-        recs.slice(0, 4).forEach(r => {
-            html += `<li><strong>${r.type.replace('_', ' ')}:</strong> ${r.action}</li>`;
-        });
-        html += '</ul>';
-        container.innerHTML = html;
-    }
-
-    // ==================== CHARTS ====================
-    function renderChart(type) {
-        if (!analyticsData) return;
-        if (chartInstance) { chartInstance.destroy();
-            chartInstance = null; }
-        const ctx = document.getElementById('main-chart').getContext('2d');
-        let config = null;
-        switch (type) {
-            case 'score':
-                config = getScoreTrendConfig();
-                break;
-            case 'weekly':
-                config = getWeeklyStudyConfig();
-                break;
-            case 'subject':
-                config = getSubjectMasteryConfig();
-                break;
-            case 'accuracy':
-                config = getAccuracyConfig();
-                break;
-            case 'time-dist':
-                config = getTimeDistributionConfig();
-                break;
-            case 'radar':
-                config = getRadarConfig();
-                break;
-            default:
-                config = getScoreTrendConfig();
-        }
-        if (config) chartInstance = new Chart(ctx, config);
-    }
-
-    function getScoreTrendConfig() {
-        const trends = analyticsData.trends || [];
-        if (trends.length < 2) {
-            return { type: 'line', data: { labels: ['No Data'], datasets: [{ label: 'Score %', data: [0],
-                        borderColor: '#2563eb' }] }, options: { responsive: true, maintainAspectRatio: false } };
-        }
-        const labels = trends.map(t => utils.formatDate(t.date, 'short'));
-        const scores = trends.map(t => t.score);
-        return {
-            type: 'line',
-            data: { labels, datasets: [{ label: 'Score %', data: scores, borderColor: '#2563eb',
-                    backgroundColor: 'rgba(37,99,235,0.1)', tension: 0.2, fill: true }] },
-            options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, max: 100,
-                        title: { display: true, text: 'Score %' } } }, plugins: { legend: { display: false } } }
-        };
-    }
-
-    function getWeeklyStudyConfig() {
-        const trends = analyticsData.trends || [];
-        if (trends.length < 2) {
-            return { type: 'bar', data: { labels: ['No Data'], datasets: [{ label: 'Study Time (min)', data: [0],
-                        backgroundColor: '#f59e0b' }] }, options: { responsive: true, maintainAspectRatio: false } };
-        }
-        const labels = trends.map(t => utils.formatDate(t.date, 'short'));
-        const times = trends.map(t => t.time);
-        return {
-            type: 'bar',
-            data: { labels, datasets: [{ label: 'Study Time (min)', data: times, backgroundColor: '#f59e0b',
-                    borderRadius: 4 }] },
-            options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true,
-                        title: { display: true, text: 'Minutes' } } }, plugins: { legend: { display: false } } }
-        };
-    }
-
-    function getSubjectMasteryConfig() {
-        const subjectData = analyticsData.subjectAnalysis || [];
-        if (subjectData.length === 0) {
-            return { type: 'bar', data: { labels: ['No Data'], datasets: [{ label: 'Mastery %', data: [0],
-                        backgroundColor: '#2563eb' }] }, options: { responsive: true, maintainAspectRatio: false,
-                    indexAxis: 'y' } };
-        }
-        const sorted = [...subjectData].sort((a, b) => a.percentage - b.percentage);
-        const labels = sorted.map(s => s.subject);
-        const values = sorted.map(s => s.percentage);
-        return {
-            type: 'bar',
-            data: { labels, datasets: [{ label: 'Mastery %', data: values, backgroundColor: values.map(v => v >= 80 ?
-                        '#10b981' : v >= 60 ? '#f59e0b' : '#ef4444'), borderRadius: 4 }] },
-            options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, scales: { x: { beginAtZero: true,
-                        max: 100, title: { display: true, text: 'Score %' } } }, plugins: { legend: { display: false } } }
-        };
-    }
-
-    function getAccuracyConfig() {
-        const summary = analyticsData.summary || {};
-        const total = summary.totalQuestions || 0;
-        const correct = summary.correct || 0;
-        const incorrect = total - correct;
-        return {
-            type: 'doughnut',
-            data: { labels: ['Correct', 'Incorrect'], datasets: [{ data: [correct, incorrect],
-                    backgroundColor: ['#10b981', '#ef4444'], borderWidth: 0 }] },
-            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
-        };
-    }
-
-    function getTimeDistributionConfig() {
-        const subjectData = analyticsData.subjectAnalysis || [];
-        if (subjectData.length === 0) {
-            return { type: 'doughnut', data: { labels: ['No Data'], datasets: [{ data: [1], backgroundColor: ['#ccc'] }] },
-                options: { responsive: true, maintainAspectRatio: false } };
-        }
-        const labels = subjectData.map(s => s.subject);
-        const times = subjectData.map(s => s.exams * 10);
-        const colors = ['#2563eb', '#f59e0b', '#10b981', '#ef4444', '#8b5cf6', '#ec4899', '#14b8a6', '#f97316'];
-        return {
-            type: 'doughnut',
-            data: { labels, datasets: [{ data: times, backgroundColor: colors.slice(0, labels.length) }] },
-            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
-        };
-    }
-
-    function getRadarConfig() {
-        const subjectData = analyticsData.subjectAnalysis || [];
-        if (subjectData.length < 3) {
-            return { type: 'radar', data: { labels: ['No Data'], datasets: [{ label: 'Mastery', data: [0],
-                        borderColor: '#2563eb' }] }, options: { responsive: true, maintainAspectRatio: false } };
-        }
-        const labels = subjectData.map(s => s.subject);
-        const values = subjectData.map(s => s.percentage);
-        return {
-            type: 'radar',
-            data: { labels, datasets: [{ label: 'Mastery %', data: values, borderColor: '#2563eb',
-                    backgroundColor: 'rgba(37,99,235,0.2)', pointBackgroundColor: '#2563eb' }] },
-            options: { responsive: true, maintainAspectRatio: false, scales: { r: { min: 0, max: 100 } },
-                plugins: { legend: { display: false } } }
-        };
-    }
-
-    // ==================== ACADEMIC PROFILE RENDERER ====================
-    function renderAcademicProfile(data, user) {
-        if (!data) return;
-        const summary = data.summary || {};
-        const patterns = data.studyPatterns || {};
-        const trends = data.trends || [];
-        const exams = data.exams || []; // Not returned by calculateAllAnalytics directly, but we can use trends or re-fetch.
-        // We'll compute factors using the same logic as renderAcademicCharts
-        const factors = computeAcademicFactors(data);
-
-        // ---- 1. Hero Card ----
-        const nameEl = document.getElementById('academic-name');
-        const yearEl = document.getElementById('academic-year');
-        const rankBadge = document.getElementById('academic-rank-badge');
-        const mpreScore = document.getElementById('academic-mpre-score');
-        const rankLabel = document.getElementById('academic-rank-label');
-
-        if (user) {
-            nameEl.textContent = user.displayName || user.name || 'Student';
-            yearEl.textContent = user.year || 'Year 1';
-        } else {
-            nameEl.textContent = 'Guest';
-            yearEl.textContent = 'Year 1';
-        }
-
-        const ratingInfo = data.rating || { rating: 100 };
-        const rank = performanceRating.getRank(ratingInfo.rating);
-        rankBadge.textContent = `🏆 ${rank.label}`;
-        mpreScore.textContent = Math.round(ratingInfo.rating);
-        rankLabel.textContent = `Rank ${rank.rank} · MPREv2`;
-
-        // ---- 2. Overview Stats ----
-        document.getElementById('academic-exams').textContent = summary.totalExams || 0;
-        document.getElementById('academic-questions').textContent = summary.totalQuestions || 0;
-        document.getElementById('academic-accuracy').textContent = summary.averageScore ? `${Math.round(summary.averageScore)}%` : '0%';
-        document.getElementById('academic-streak').textContent = patterns.streak || 0;
-
-        // ---- 3. MPRE Card ----
-        document.getElementById('academic-mpre-score-val').textContent = Math.round(ratingInfo.rating);
-        const stars = Math.min(5, Math.floor((ratingInfo.rating - 100) / 400) + 1);
-        document.getElementById('academic-mpre-stars').textContent = '★'.repeat(Math.max(0, stars)) + '☆'.repeat(5 - Math.max(0, stars));
-        document.getElementById('academic-mpre-rank').textContent = rank.label;
-
-        // ---- 4. MPRE Progress Bars ----
-        const progressContainer = document.getElementById('mpre-progress-bars');
-        const factorKeys = ['Accuracy', 'Difficulty', 'Consistency', 'Speed', 'Improvement', 'Activity', 'Confidence', 'Stability'];
-        let progressHtml = '';
-        factorKeys.forEach(key => {
-            const val = factors[key] || 0;
-            progressHtml += `
+              <div class="progress-bar-list">
                 <div class="progress-bar-item">
-                    <div class="row"><span class="label">${key}</span><span class="value">${Math.round(val)}%</span></div>
-                    <div class="track"><div class="fill" style="width:${Math.round(val)}%;"></div></div>
+                  <div class="row"><span class="label">Question Crusher</span><span class="value"
+                      id="growth-questions-crusher">0 / 10,000</span></div>
+                  <div class="track">
+                    <div class="fill" id="growth-questions-fill" style="width:0%;"></div>
+                  </div>
                 </div>
-            `;
-        });
-        progressContainer.innerHTML = progressHtml;
-
-        // ---- 5. MPRE Timeline (Rating Changes) ----
-        const timelineContainer = document.getElementById('mpre-timeline');
-        const changes = getRatingChanges(trends);
-        if (changes.length === 0) {
-            timelineContainer.innerHTML = '<div style="color:var(--text-muted);font-size:0.9rem;text-align:center;">No recent rating changes.</div>';
-        } else {
-            let timelineHtml = '';
-            changes.slice(0, 5).forEach(change => {
-                const cls = change.change >= 0 ? 'positive' : 'negative';
-                timelineHtml += `
-                    <div class="timeline-item">
-                        <div><strong>${change.label}</strong><br><span style="font-size:0.8rem;color:var(--text-muted);">${change.desc}</span></div>
-                        <div class="change ${cls}">${change.change >= 0 ? '+' : ''}${Math.round(change.change)}</div>
-                    </div>
-                `;
-            });
-            timelineContainer.innerHTML = timelineHtml;
-        }
-
-        // ---- 6. AI Recommendation ----
-        const aiRecEl = document.getElementById('ai-recommendation-body');
-        if (data.aiInsights && data.aiInsights.insights) {
-            aiRecEl.textContent = data.aiInsights.insights;
-        } else {
-            aiRecEl.textContent = 'Complete more exams to get personalized AI recommendations!';
-        }
-
-        // ---- 7. Competition / Leaderboard ----
-        renderLeaderboard('global');
-
-        // ---- 8. Competition Stats ----
-        const wins = exams.filter(e => e.scorePercentage >= 80).length;
-        const top3 = exams.filter(e => e.scorePercentage >= 70).slice(0, 3).length;
-        const challenges = exams.length;
-        const winRate = challenges > 0 ? Math.round((wins / challenges) * 100) : 0;
-        document.getElementById('comp-wins').textContent = wins;
-        document.getElementById('comp-top3').textContent = top3;
-        document.getElementById('comp-challenges').textContent = challenges;
-        document.getElementById('comp-winrate').textContent = `${winRate}%`;
-
-        // ---- 9. Competition Timeline (Community Exams) ----
-        const compTimeline = document.getElementById('comp-timeline');
-        if (exams.length === 0) {
-            compTimeline.innerHTML = '<div style="color:var(--text-muted);font-size:0.9rem;text-align:center;">No competition history yet.</div>';
-        } else {
-            const recent = exams.slice(-3).reverse();
-            let html = '';
-            recent.forEach(exam => {
-                const date = exam.date ? new Date(exam.date) : new Date();
-                const label = date.toLocaleDateString('en-US', { weekday: 'long' });
-                const isWin = exam.scorePercentage >= 80;
-                html += `
-                    <div class="timeline-item">
-                        <div><strong>${label}</strong><br><span style="font-size:0.8rem;color:var(--text-muted);">${exam.subject}</span></div>
-                        <div><span style="font-weight:600;">${Math.round(exam.scorePercentage)}%</span> ${isWin ? '🏆' : ''}</div>
-                    </div>
-                `;
-            });
-            compTimeline.innerHTML = html;
-        }
-
-        // ---- 10. Rank History ----
-        const rankHistoryContainer = document.getElementById('rank-history-container');
-        const rankHistory = getRankHistory(rank);
-        rankHistoryContainer.innerHTML = rankHistory.map(r => 
-            `<span style="background:${r.isCurrent ? 'var(--accent)' : 'var(--bg-secondary)'};color:${r.isCurrent ? '#fff' : 'var(--text-primary)'};padding:0.15rem 0.5rem;border-radius:12px;">${r.label}</span>`
-        ).join('');
-
-        // ---- 11. Rival Spotlight ----
-        const rivalTitle = document.getElementById('rival-title');
-        const rivalSub = document.getElementById('rival-sub');
-        // Simple rival: user with closest rating above or below
-        (async () => {
-            try {
-                const leaderboard = await analytics.getLeaderboard(50);
-                const currentRating = ratingInfo.rating;
-                let closest = null;
-                let minDiff = Infinity;
-                for (const u of leaderboard) {
-                    if (u.id === user?._id) continue;
-                    const diff = Math.abs(u.rating - currentRating);
-                    if (diff < minDiff) {
-                        minDiff = diff;
-                        closest = u;
-                    }
-                }
-                if (closest) {
-                    rivalTitle.textContent = `Closest Rival: ${closest.name}`;
-                    rivalSub.textContent = `You ${Math.round(currentRating)} · ${closest.name} ${Math.round(closest.rating)} · ${currentRating > closest.rating ? '+' : ''}${Math.round(currentRating - closest.rating)} MPRE`;
-                } else {
-                    rivalTitle.textContent = 'No rival found';
-                    rivalSub.textContent = 'Compete in more exams to find your rival!';
-                }
-            } catch (e) {
-                rivalTitle.textContent = 'Rival data unavailable';
-                rivalSub.textContent = '';
-            }
-        })();
-
-        // ---- 12. Growth Stats ----
-        const totalQ = summary.totalQuestions || 0;
-        document.getElementById('growth-questions-crusher').textContent = `${totalQ} / 10,000`;
-        document.getElementById('growth-questions-fill').style.width = `${Math.min(100, (totalQ / 10000) * 100)}%`;
-        const streak = patterns.streak || 0;
-        document.getElementById('growth-streak-progress').textContent = `${streak} / 30`;
-        document.getElementById('growth-streak-fill').style.width = `${Math.min(100, (streak / 30) * 100)}%`;
-
-        document.getElementById('growth-avg-q').textContent = patterns.averageQuestionsPerDay || 0;
-        document.getElementById('growth-best-time').textContent = patterns.bestHour !== null ? `${patterns.bestHour}:00` : '—';
-        document.getElementById('growth-longest').textContent = patterns.longestSession || 0;
-        document.getElementById('growth-avg-session').textContent = patterns.averageSessionTime || 0;
-
-        // ---- 13. Heatmap ----
-        const heatmapContainer = document.getElementById('study-heatmap');
-        const heatmapData = generateHeatmap(trends);
-        heatmapContainer.innerHTML = heatmapData.map(d => 
-            `<div class="cell ${d.active ? (d.semi ? 'semi' : 'active') : ''}"></div>`
-        ).join('');
-
-        // ---- 14. Learning Trends (Bar charts) ----
-        const questionTrendContainer = document.getElementById('questions-trend-chart');
-        const hourTrendContainer = document.getElementById('hours-trend-chart');
-        if (trends.length > 0) {
-            const recentTrends = trends.slice(-5);
-            const qMax = Math.max(...recentTrends.map(t => t.questions || 0), 1);
-            const hMax = Math.max(...recentTrends.map(t => t.time || 0), 1);
-            questionTrendContainer.innerHTML = recentTrends.map(t => 
-                `<div style="width:20px;height:${(t.questions / qMax) * 50 + 10}px;background:var(--accent);border-radius:2px;"></div>`
-            ).join('');
-            hourTrendContainer.innerHTML = recentTrends.map(t => 
-                `<div style="width:20px;height:${(t.time / hMax) * 50 + 10}px;background:var(--warning);border-radius:2px;"></div>`
-            ).join('');
-        } else {
-            questionTrendContainer.innerHTML = '<div style="color:var(--text-muted);font-size:0.8rem;">No data</div>';
-            hourTrendContainer.innerHTML = '<div style="color:var(--text-muted);font-size:0.8rem;">No data</div>';
-        }
-
-        // ---- 15. Activity Feed ----
-        const activityFeed = document.getElementById('activity-feed');
-        if (exams.length === 0) {
-            activityFeed.innerHTML = '<div style="color:var(--text-muted);font-size:0.9rem;text-align:center;">No recent activity.</div>';
-        } else {
-            const recentExams = exams.slice(-5).reverse();
-            let feedHtml = '';
-            recentExams.forEach(exam => {
-                const date = exam.date ? new Date(exam.date) : new Date();
-                const label = date.toLocaleDateString('en-US', { weekday: 'long' });
-                const change = exam.ratingChange || 0;
-                const cls = change >= 0 ? 'positive' : 'negative';
-                feedHtml += `
-                    <div class="timeline-item">
-                        <div><strong>${label}</strong><br><span style="font-size:0.8rem;color:var(--text-muted);">${exam.subject}</span></div>
-                        <div><span style="font-weight:600;">${Math.round(exam.scorePercentage)}%</span> · <span class="change ${cls}">${change >= 0 ? '+' : ''}${Math.round(change)} MPRE</span></div>
-                    </div>
-                `;
-            });
-            activityFeed.innerHTML = feedHtml;
-        }
-
-        // ---- 16. Latest Badge ----
-        const badgeContainer = document.getElementById('latest-badge-container');
-        const achievements = data.rating?.achievements || [];
-        if (achievements.length > 0) {
-            const latest = achievements[achievements.length - 1];
-            document.getElementById('latest-badge-title').textContent = latest.name;
-            document.getElementById('latest-badge-sub').textContent = `Unlocked ${latest.date || 'recently'}`;
-            badgeContainer.querySelector('.icon').textContent = latest.icon || '🏅';
-        } else {
-            document.getElementById('latest-badge-title').textContent = 'No badges yet';
-            document.getElementById('latest-badge-sub').textContent = 'Keep studying!';
-        }
-
-        // ---- 17. Badge Gallery ----
-        const galleryContainer = document.getElementById('badge-gallery');
-        const allBadges = [
-            { id: 'perfect_score', icon: '⭐', unlocked: achievements.some(a => a.id === 'perfect_score') },
-            { id: 'speed_demon', icon: '⚡', unlocked: achievements.some(a => a.id === 'speed_demon') },
-            { id: 'consistent', icon: '📊', unlocked: achievements.some(a => a.id === 'consistent') },
-            { id: 'rank_proficient', icon: '📚', unlocked: achievements.some(a => a.id === 'rank_proficient') },
-            { id: 'rank_expert', icon: '🚀', unlocked: achievements.some(a => a.id === 'rank_expert') },
-            { id: 'rank_master', icon: '👑', unlocked: achievements.some(a => a.id === 'rank_master') },
-            { id: 'rank_luminary', icon: '🌟', unlocked: achievements.some(a => a.id === 'rank_luminary') },
-            { id: 'anatomy_master', icon: '🩺', unlocked: true }, // Example
-        ];
-        galleryContainer.innerHTML = allBadges.map(b => 
-            `<div class="badge-item ${b.unlocked ? 'unlocked' : 'locked'}">${b.icon}</div>`
-        ).join('');
-
-        // ---- 18. Academic Summary (AI) ----
-        const summaryBody = document.getElementById('academic-summary-body');
-        if (data.aiInsights && data.aiInsights.insights) {
-            summaryBody.innerHTML = data.aiInsights.insights;
-        } else {
-            summaryBody.textContent = 'Complete more exams to get your AI summary!';
-        }
-
-        // ---- 19. Render Charts (Pie, Radar, Doughnut) ----
-        renderAcademicCharts(data, factors);
-
-        // ---- 20. Update Avatar Initials ----
-        const initialsSpan = document.getElementById('avatar-initials');
-        if (user) {
-            const name = user.displayName || user.name || 'Student';
-            initialsSpan.textContent = name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase();
-        } else {
-            initialsSpan.textContent = '?';
-        }
-    }
-
-    // ==================== ACADEMIC CHARTS (Data‑driven) ====================
-    function computeAcademicFactors(data) {
-        const summary = data.summary || {};
-        const patterns = data.studyPatterns || {};
-        const trends = data.trends || [];
-
-        const totalExams = summary.totalExams || 1;
-        const totalQuestions = summary.totalQuestions || 1;
-        const avgScore = summary.averageScore || 0;
-        const totalTime = summary.totalStudyTime || 0; // minutes
-
-        const accuracy = Math.min(100, Math.max(0, avgScore));
-        const consistency = patterns.consistency !== undefined ? Math.min(100, Math.max(0, patterns.consistency)) : 50;
-        const avgTimePerQ = totalQuestions > 0 ? (totalTime * 60) / totalQuestions : 60;
-        const speed = Math.min(100, Math.max(0, 100 - ((avgTimePerQ - 10) / 50) * 100));
-
-        let improvement = 0;
-        if (trends.length >= 3) {
-            const firstScores = trends.slice(0, 3).map(t => t.score);
-            const lastScores = trends.slice(-3).map(t => t.score);
-            const firstAvg = firstScores.reduce((a, b) => a + b, 0) / firstScores.length;
-            const lastAvg = lastScores.reduce((a, b) => a + b, 0) / lastScores.length;
-            improvement = Math.min(100, Math.max(0, ((lastAvg - firstAvg) / firstAvg) * 100));
-        }
-
-        const examsPerWeek = totalExams / (patterns.weeksActive || 1);
-        const activity = Math.min(100, Math.max(0, (examsPerWeek / 5) * 100));
-        const confidence = Math.min(100, Math.max(0, (totalExams / 200) * 100));
-
-        let stability = 50;
-        if (trends.length >= 5) {
-            const scores = trends.map(t => t.score);
-            const mean = scores.reduce((a, b) => a + b, 0) / scores.length;
-            const variance = scores.reduce((a, b) => a + (b - mean) ** 2, 0) / scores.length;
-            const stdDev = Math.sqrt(variance);
-            stability = Math.min(100, Math.max(0, 100 - (stdDev / 30) * 100));
-        }
-
-        const difficulty = accuracy;
-
-        return {
-            Accuracy: Math.round(accuracy),
-            Consistency: Math.round(consistency),
-            Speed: Math.round(speed),
-            Improvement: Math.round(improvement),
-            Activity: Math.round(activity),
-            Confidence: Math.round(confidence),
-            Stability: Math.round(stability),
-            Difficulty: Math.round(difficulty)
-        };
-    }
-
-    function renderAcademicCharts(data, factors) {
-        if (!data) return;
-
-        // ---- 1. Overview Pie Chart ----
-        const pieCtx = document.getElementById('overview-pie-chart');
-        if (pieCtx) {
-            const summary = data.summary || {};
-            const total = summary.totalQuestions || 100;
-            const correct = summary.correct || 90;
-            const incorrect = Math.max(0, total - correct);
-            new Chart(pieCtx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['Correct', 'Incorrect'],
-                    datasets: [{
-                        data: [correct, incorrect],
-                        backgroundColor: ['#10b981', '#ef4444'],
-                        borderWidth: 0
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: true,
-                    plugins: {
-                        legend: { position: 'bottom', labels: { boxWidth: 12 } }
-                    }
-                }
-            });
-        }
-
-        // ---- 2. MPREv2 Radar Chart ----
-        const radarCtx = document.getElementById('mpre-radar-chart');
-        if (radarCtx) {
-            new Chart(radarCtx, {
-                type: 'radar',
-                data: {
-                    labels: Object.keys(factors),
-                    datasets: [{
-                        label: 'MPREv2 Factors',
-                        data: Object.values(factors),
-                        backgroundColor: 'rgba(37, 99, 235, 0.2)',
-                        borderColor: '#2563eb',
-                        pointBackgroundColor: '#2563eb'
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: true,
-                    scales: {
-                        r: {
-                            min: 0,
-                            max: 100,
-                            ticks: { stepSize: 20, font: { size: 10 } }
-                        }
-                    },
-                    plugins: {
-                        legend: { display: false }
-                    }
-                }
-            });
-        }
-
-        // ---- 3. MPREv2 Doughnut ----
-        const doughnutCtx = document.getElementById('mpre-doughnut-chart');
-        if (doughnutCtx) {
-            const labels = Object.keys(factors);
-            const data = Object.values(factors);
-            const colors = ['#2563eb', '#f59e0b', '#10b981', '#ef4444', '#8b5cf6', '#ec4899', '#14b8a6', '#f97316'];
-            new Chart(doughnutCtx, {
-                type: 'doughnut',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        data: data,
-                        backgroundColor: colors.slice(0, data.length),
-                        borderWidth: 0
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: true,
-                    plugins: {
-                        legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 10 } } }
-                    }
-                }
-            });
-        }
-    }
-
-    // ==================== HELPER FUNCTIONS FOR ACADEMIC PROFILE ====================
-    function getRatingChanges(trends) {
-        if (!trends || trends.length < 2) return [];
-        const changes = [];
-        for (let i = 1; i < trends.length; i++) {
-            const diff = trends[i].score - trends[i-1].score;
-            if (diff !== 0) {
-                changes.push({
-                    label: utils.formatDate(trends[i].date, 'short'),
-                    desc: trends[i].date ? new Date(trends[i].date).toLocaleDateString('en-US', { weekday: 'long' }) : 'Unknown',
-                    change: diff
-                });
-            }
-        }
-        return changes.slice(-5).reverse();
-    }
-
-    function getRankHistory(currentRank) {
-        const allRanks = performanceRating.getRank(100).label; // not used, just placeholder
-        const ranks = ['Seed', 'Aspire', 'Scholar', 'Proficient', 'Advanced', 'Expert', 'Elite', 'Master', 'Apex', 'Luminary'];
-        const idx = ranks.indexOf(currentRank.label);
-        return ranks.map((r, i) => ({
-            label: r,
-            isCurrent: i === idx
-        }));
-    }
-
-    function generateHeatmap(trends) {
-        const days = 28; // 4 weeks
-        const cells = [];
-        for (let i = 0; i < days; i++) {
-            const date = new Date();
-            date.setDate(date.getDate() - (days - 1 - i));
-            const dateStr = date.toISOString().split('T')[0];
-            const trend = trends.find(t => t.date === dateStr);
-            if (trend && trend.questions > 0) {
-                cells.push({ active: true, semi: false });
-            } else if (trend) {
-                cells.push({ active: false, semi: false });
-            } else {
-                cells.push({ active: false, semi: false });
-            }
-        }
-        return cells;
-    }
-
-    // ==================== LEADERBOARD RENDERER ====================
-    async function renderLeaderboard(filter = 'global') {
-        const container = document.getElementById('leaderboard-body');
-        container.innerHTML = '<tr><td colspan="4" style="text-align:center;color:var(--text-muted);">Loading...</td></tr>';
-        try {
-            const users = await analytics.getLeaderboard(20);
-            const currentUser = app.getUser();
-            let html = '';
-            users.forEach((u, idx) => {
-                const isMe = u.id === currentUser?._id;
-                const movement = idx === 0 ? '→' : (idx < users.length - 1 ? '↓' : '↑');
-                const change = idx === 0 ? 0 : (users[idx-1].rating - u.rating);
-                html += `
-                    <tr style="${isMe ? 'background:var(--bg-secondary);font-weight:600;' : ''}">
-                        <td class="rank-num">${idx + 1}</td>
-                        <td class="name">${u.name} ${isMe ? '(You)' : ''}</td>
-                        <td class="score">${Math.round(u.rating)}</td>
-                        <td class="movement ${change > 0 ? 'up' : change < 0 ? 'down' : ''}">${change > 0 ? '↑' : change < 0 ? '↓' : '→'}${Math.abs(change)}</td>
-                    </tr>
-                `;
-            });
-            container.innerHTML = html || '<tr><td colspan="4" style="text-align:center;color:var(--text-muted);">No users found.</td></tr>';
-        } catch (e) {
-            container.innerHTML = '<tr><td colspan="4" style="text-align:center;color:var(--text-muted);">Failed to load leaderboard.</td></tr>';
-        }
-    }
-
-    window.renderLeaderboard = renderLeaderboard;
-
-    // ==================== SHARE & COPY FUNCTIONS ====================
-    window.shareAcademicProfile = function() {
-        if (navigator.share) {
-            navigator.share({
-                title: 'MedHub Academic Profile',
-                text: 'Check out my academic performance on MedHub!',
-                url: window.location.href
-            }).catch(() => {});
-        } else {
-            copyProfileLink();
-        }
-    };
-
-    window.copyProfileLink = function() {
-        const url = window.location.href;
-        navigator.clipboard.writeText(url).then(() => {
-            ui.showToast('Profile link copied to clipboard!', 'success');
-        }).catch(() => {
-            // Fallback
-            const textarea = document.createElement('textarea');
-            textarea.value = url;
-            document.body.appendChild(textarea);
-            textarea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textarea);
-            ui.showToast('Profile link copied!', 'success');
-        });
-    };
-
-    // ==================== DOWNLOADED EXAMS ====================
-    async function renderDownloadedExams() {
-        const exams = await db.getDownloadedExams();
-        const container = document.getElementById('downloaded-list');
-        if (!exams || exams.length === 0) {
-            container.innerHTML = '<p class="no-data">No downloaded exams yet. Download exams from results page.</p>';
-            return;
-        }
-        let html = '';
-        exams.forEach(exam => {
-            html += `
-                <div class="downloaded-item" data-examid="${exam.examId}">
-                    <div class="downloaded-header"><span class="subject">${exam.subject}</span> <span class="score">${Math.round(exam.score)}%</span> <span class="date">${utils.formatDate(exam.date)}</span></div>
-                    <div class="downloaded-actions">
-                        <button onclick="window.reviewDownloadedExam('${exam.examId}')" class="btn-small">Review</button>
-                        <button onclick="window.shareDownloadedExam('${exam.examId}')" class="btn-small btn-secondary">Share</button>
-                        <button onclick="window.deleteDownloadedExam('${exam.examId}')" class="btn-small btn-danger">Delete</button>
-                    </div>
+                <div class="progress-bar-item">
+                  <div class="row"><span class="label">Study Streak</span><span class="value"
+                      id="growth-streak-progress">0 / 30</span></div>
+                  <div class="track">
+                    <div class="fill" id="growth-streak-fill" style="width:0%;"></div>
+                  </div>
                 </div>
-            `;
-        });
-        container.innerHTML = html;
-    }
+              </div>
 
-    window.reviewDownloadedExam = async function(examId) {
-        const exams = await db.getDownloadedExams();
-        const exam = exams.find(e => e.examId === examId);
-        if (!exam) return;
-        const modal = document.createElement('div');
-        modal.className = 'modal-overlay';
-        modal.innerHTML = `
-            <div class="modal review-modal">
-                <div class="modal-header"><h2>Exam Review: ${exam.subject} - ${Math.round(exam.score)}%</h2><button class="modal-close">&times;</button></div>
-                <div class="modal-body">
-                    <div class="summary-card" style="display:flex; gap:1rem; margin-bottom:1rem;">
-                        <div class="score-circle" style="width:80px; height:80px; border-radius:50%; background:conic-gradient(var(--accent) ${exam.score}deg, #eee 0deg); display:flex; align-items:center; justify-content:center; font-weight:bold;">${Math.round(exam.score)}%</div>
-                        <div><p>Date: ${utils.formatDate(exam.date)}</p><p>Questions: ${exam.data.totalQuestions}</p><p>Correct: ${exam.data.correctAnswers}</p></div>
-                    </div>
-                    <div id="modal-review-list" class="review-list"></div>
+              <div style="margin-bottom:1.5rem;">
+                <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.5rem;">Study Heatmap</div>
+                <div class="heatmap" id="study-heatmap">
+                  <!-- Generated via JS -->
                 </div>
+              </div>
+
+              <div class="stat-grid-2x2">
+                <div class="stat-card-sm">
+                  <div class="num" id="growth-avg-q">0</div>
+                  <div class="label">Avg Questions/day</div>
+                </div>
+                <div class="stat-card-sm">
+                  <div class="num" id="growth-best-time">—</div>
+                  <div class="label">Best Time</div>
+                </div>
+                <div class="stat-card-sm">
+                  <div class="num" id="growth-longest">0</div>
+                  <div class="label">Longest Session</div>
+                </div>
+                <div class="stat-card-sm">
+                  <div class="num" id="growth-avg-session">0</div>
+                  <div class="label">Avg Session (min)</div>
+                </div>
+              </div>
+
+              <div
+                style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius-small);padding:1rem;margin-top:0.5rem;">
+                <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.75rem;">Learning Trends</div>
+                <div style="display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;">
+                  <div>
+                    <div style="font-size:0.7rem;color:var(--text-muted);text-align:center;">Questions</div>
+                    <div id="questions-trend-chart"
+                      style="display:flex;align-items:flex-end;gap:4px;height:60px;padding-top:10px;">
+                      <!-- Generated via JS -->
+                    </div>
+                  </div>
+                  <div>
+                    <div style="font-size:0.7rem;color:var(--text-muted);text-align:center;">Study Hours</div>
+                    <div id="hours-trend-chart"
+                      style="display:flex;align-items:flex-end;gap:4px;height:60px;padding-top:10px;">
+                      <!-- Generated via JS -->
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-        `;
-        document.body.appendChild(modal);
-        const list = modal.querySelector('#modal-review-list');
-        list.innerHTML = exam.data.questions.map((q, idx) => {
-            const isCorrect = q.correct;
-            const userAnswerText = getOptionText(q.userAnswer, q.options);
-            const correctAnswerText = getOptionText(q.correctAnswer, q.options);
-            const explanationHtml = formatExplanation(q.explanation);
-            return `
-                <div class="review-item ${isCorrect ? 'correct' : 'incorrect'}">
-                    <div><strong>Q${idx+1}:</strong> ${q.question}</div>
-                    <div><small>Your answer: ${userAnswerText} | Correct: ${correctAnswerText}</small></div>
-                    <div class="explanation">${explanationHtml}</div>
+          </div>
+
+          <!-- ─── 5. Activity ─── -->
+          <div id="academic-activity" class="academic-module-container">
+            <div class="academic-module">
+              <h3>⚙️ Activity <span class="badge">What have I done recently?</span></h3>
+
+              <div class="timeline" id="activity-feed">
+                <!-- Generated via JS -->
+              </div>
+
+              <div style="display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.5rem;"
+                id="notifications-container">
+                <!-- Generated via JS -->
+              </div>
+
+              <div style="margin-bottom:1.5rem;">
+                <div style="font-size:0.9rem;font-weight:500;margin-bottom:0.5rem;">Privacy</div>
+                <div class="toggle-row"><span>Public Profile</span>
+                  <div class="toggle-switch on" id="toggle-public">
+                    <div class="knob"></div>
+                  </div>
                 </div>
-            `;
-        }).join('');
-        modal.querySelector('.modal-close').onclick = () => modal.remove();
-        modal.onclick = (e) => { if (e.target === modal) modal.remove(); };
-    };
-
-    window.shareDownloadedExam = async function(examId) {
-        const exams = await db.getDownloadedExams();
-        const exam = exams.find(e => e.examId === examId);
-        if (!exam) return;
-        if (!navigator.onLine) { ui.showToast('You need to be online to create a share link.', 'error'); return; }
-        const user = app.getUser();
-        if (!user || !user._id) { ui.showToast('You must be logged in to share exams.', 'error'); return; }
-        ui.showLoading('Creating share link...');
-        try {
-            const result = await convexHttpClient.mutation("sharedExams/mutations:createShare", { examData: exam.data,
-                userId: user._id });
-            document.getElementById('share-link').value = result.url;
-            document.getElementById('share-modal').style.display = 'flex';
-            ui.showToast('Share link created!', 'success');
-        } catch (error) {
-            console.error('Failed to create share link:', error);
-            ui.showToast(error.message || 'Failed to create share link', 'error');
-        } finally { ui.hideLoading(); }
-    };
-
-    window.copyShareLink = function() {
-        const link = document.getElementById('share-link');
-        link.select();
-        document.execCommand('copy');
-        ui.showToast('Link copied to clipboard!', 'success');
-    };
-
-    window.deleteDownloadedExam = async function(examId) {
-        if (!confirm('Delete this downloaded exam?')) return;
-        let exams = await db.getDownloadedExams();
-        exams = exams.filter(e => e.examId !== examId);
-        await db.saveDownloadedExams(exams);
-        renderDownloadedExams();
-        ui.showToast('Exam deleted', 'success');
-    };
-
-    // =========================================================================
-    //  PLANNER MODULES – core logic
-    // =========================================================================
-
-    const LS_KEYS = {
-        timetable: 'medhub_planner_timetable',
-        topics: 'medhub_planner_topics',
-        sessions: 'medhub_planner_sessions',
-        streaks: 'medhub_planner_streaks',
-        exams: 'medhub_planner_exams',
-        checklist: 'medhub_planner_checklist',
-    };
-
-    function loadData(key, fallback) {
-        try { const raw = localStorage.getItem(key); return raw ? JSON.parse(raw) : fallback; } catch { return fallback; }
-    }
-
-    function saveData(key, data) {
-        localStorage.setItem(key, JSON.stringify(data));
-    }
-
-    function getToday() {
-        return new Date().toISOString().split('T')[0];
-    }
-
-    function getWeekStart() {
-        const d = new Date();
-        const day = d.getDay();
-        const diff = d.getDate() - day + (day === 0 ? -6 : 1);
-        const m = new Date(d.setDate(diff));
-        return m.toISOString().split('T')[0];
-    }
-
-    function formatTime(iso) {
-        if (!iso) return '—';
-        const d = new Date(iso);
-        return d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-    }
-
-    function formatDateShort(iso) {
-        if (!iso) return '—';
-        const d = new Date(iso);
-        return d.toLocaleDateString([], { month: 'short', day: 'numeric' });
-    }
-
-    function renderTimetable() {
-        const data = loadData(LS_KEYS.timetable, {});
-        const container = document.getElementById('timetable-container');
-        const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-        let html = '';
-        days.forEach(day => {
-            const slots = data[day] || [];
-            html += `<div class="timetable-day"><div class="day-label">${day}</div>`;
-            if (slots.length === 0) {
-                html += `<div style="color:var(--text-muted);font-size:0.85rem;">No sessions</div>`;
-            } else {
-                slots.forEach(s => {
-                    html +=
-                        `<div class="timetable-slot"><span class="time">${s.time}</span><span class="subject-tag ${s.color}">${s.subject}</span></div>`;
-                });
-            }
-            html += `</div>`;
-        });
-        container.innerHTML = html;
-    }
-
-    window.addTimetableSlot = function() {
-        const day = document.getElementById('tt-day-select').value;
-        const time = document.getElementById('tt-time').value.trim();
-        const subject = document.getElementById('tt-subject').value.trim();
-        const color = document.getElementById('tt-color').value;
-        if (!time || !subject) { ui.showToast('Please fill in time and subject.', 'error'); return; }
-        const data = loadData(LS_KEYS.timetable, {});
-        if (!data[day]) data[day] = [];
-        data[day].push({ time, subject, color });
-        saveData(LS_KEYS.timetable, data);
-        renderTimetable();
-        document.getElementById('tt-time').value = '';
-        document.getElementById('tt-subject').value = '';
-        ui.showToast('Session added to timetable!', 'success');
-    };
-
-    function renderTopics() {
-        const data = loadData(LS_KEYS.topics, []);
-        const container = document.getElementById('topic-planner-list');
-        if (data.length === 0) {
-            container.innerHTML = '<div style="color:var(--text-muted);font-size:0.9rem;">No topics yet. Add one above.</div>';
-            return;
-        }
-        const statusMap = {
-            'not-started': '🔴 Not Started',
-            'in-progress': '🟡 In Progress',
-            'needs-revision': '🔵 Needs Revision',
-            'completed': '🟢 Completed'
-        };
-        let html = '';
-        data.forEach((item, idx) => {
-            const statusLabel = statusMap[item.status] || item.status;
-            html += `
-                <div class="topic-item" onclick="window.toggleTopicStatus(${idx})">
-                    <span class="status-icon">${statusLabel.split(' ')[0]}</span>
-                    <span class="topic-name"><strong>${item.subject}</strong> — ${item.topic}</span>
-                    <span class="status-label ${item.status}">${statusLabel}</span>
+                <div class="toggle-row"><span>Show Rank</span>
+                  <div class="toggle-switch on" id="toggle-rank">
+                    <div class="knob"></div>
+                  </div>
                 </div>
-            `;
-        });
-        container.innerHTML = html;
-    }
-
-    window.toggleTopicStatus = function(idx) {
-        const data = loadData(LS_KEYS.topics, []);
-        if (!data[idx]) return;
-        const order = ['not-started', 'in-progress', 'needs-revision', 'completed'];
-        const current = data[idx].status;
-        let nextIdx = order.indexOf(current) + 1;
-        if (nextIdx >= order.length) nextIdx = 0;
-        data[idx].status = order[nextIdx];
-        saveData(LS_KEYS.topics, data);
-        renderTopics();
-        ui.showToast(`Status changed to ${order[nextIdx].replace('-',' ')}`, 'info');
-    };
-
-    window.addTopicItem = function() {
-        const subject = document.getElementById('tp-subject').value.trim();
-        const topic = document.getElementById('tp-topic').value.trim();
-        const status = document.getElementById('tp-status').value;
-        if (!subject || !topic) { ui.showToast('Please fill in subject and topic.', 'error'); return; }
-        const data = loadData(LS_KEYS.topics, []);
-        data.push({ subject, topic, status });
-        saveData(LS_KEYS.topics, data);
-        renderTopics();
-        document.getElementById('tp-subject').value = '';
-        document.getElementById('tp-topic').value = '';
-        ui.showToast('Topic added!', 'success');
-    };
-
-    function renderSessions() {
-        const data = loadData(LS_KEYS.sessions, []);
-        const container = document.getElementById('session-log');
-        const today = getToday();
-        const weekStart = getWeekStart();
-
-        let todayTotal = 0,
-            weekTotal = 0,
-            durations = [];
-        data.forEach(s => {
-            const d = s.start ? s.start.split('T')[0] : '';
-            if (d === today) todayTotal += s.duration || 0;
-            if (d >= weekStart) weekTotal += s.duration || 0;
-            if (s.duration) durations.push(s.duration);
-        });
-        const avg = durations.length > 0 ? Math.round(durations.reduce((a, b) => a + b, 0) / durations.length) : 0;
-
-        document.getElementById('ss-today').textContent = (todayTotal / 60).toFixed(1) + 'h';
-        document.getElementById('ss-week').textContent = (weekTotal / 60).toFixed(1) + 'h';
-        document.getElementById('ss-avg').textContent = avg + 'm';
-
-        if (data.length === 0) {
-            container.innerHTML = '<div style="color:var(--text-muted);font-size:0.85rem;">No sessions logged yet.</div>';
-            return;
-        }
-        let html = '';
-        data.slice().reverse().slice(0, 10).forEach(s => {
-            const startFmt = s.start ? formatTime(s.start) : '—';
-            const endFmt = s.end ? formatTime(s.end) : '—';
-            html +=
-                `<div class="entry"><span><strong>${s.subject}</strong> ${s.topic ? '– '+s.topic : ''}</span><span>${startFmt}–${endFmt} (${s.duration || 0}m)</span></div>`;
-        });
-        container.innerHTML = html;
-    }
-
-    window.addStudySession = function() {
-        const subject = document.getElementById('ss-subject').value.trim();
-        const topic = document.getElementById('ss-topic').value.trim();
-        const start = document.getElementById('ss-start').value;
-        const end = document.getElementById('ss-end').value;
-        const notes = document.getElementById('ss-notes').value.trim();
-        if (!subject || !start || !end) { ui.showToast('Please fill in subject, start and end times.', 'error'); return; }
-        const startMs = new Date(start).getTime();
-        const endMs = new Date(end).getTime();
-        if (endMs <= startMs) { ui.showToast('End time must be after start time.', 'error'); return; }
-        const duration = Math.round((endMs - startMs) / 60000);
-        const data = loadData(LS_KEYS.sessions, []);
-        data.push({ subject, topic, start, end, duration, notes, date: getToday() });
-        saveData(LS_KEYS.sessions, data);
-        renderSessions();
-        document.getElementById('ss-subject').value = '';
-        document.getElementById('ss-topic').value = '';
-        document.getElementById('ss-start').value = '';
-        document.getElementById('ss-end').value = '';
-        document.getElementById('ss-notes').value = '';
-        ui.showToast(`Session logged: ${duration} minutes!`, 'success');
-    };
-
-    function renderStreaks() {
-        const data = loadData(LS_KEYS.streaks, { current: 0, longest: 0, lastDate: null, monthDays: [] });
-        const today = getToday();
-        let current = data.current || 0;
-        let longest = data.longest || 0;
-
-        const sessions = loadData(LS_KEYS.sessions, []);
-        const studiedToday = sessions.some(s => s.date === today);
-        const studiedYesterday = sessions.some(s => s.date === getYesterday());
-
-        if (studiedToday && data.lastDate !== today) {
-            if (data.lastDate === getYesterday()) {
-                current += 1;
-            } else if (data.lastDate !== today) {
-                current = 1;
-            }
-            data.lastDate = today;
-            if (current > longest) longest = current;
-            data.current = current;
-            data.longest = longest;
-            const monthKey = today.substring(0, 7);
-            const monthDays = data.monthDays || [];
-            if (!monthDays.includes(today)) monthDays.push(today);
-            data.monthDays = monthDays;
-            saveData(LS_KEYS.streaks, data);
-        } else if (!studiedToday && data.lastDate !== today && data.lastDate !== getYesterday()) {
-            if (data.lastDate !== today) {
-                current = 0;
-                data.current = 0;
-                data.lastDate = today;
-                saveData(LS_KEYS.streaks, data);
-            }
-        }
-
-        document.getElementById('streak-current').textContent = current;
-        document.getElementById('streak-longest').textContent = longest;
-
-        const monthKey = today.substring(0, 7);
-        const monthDays = data.monthDays || [];
-        const daysInMonth = getDaysInMonth(today);
-        const count = monthDays.filter(d => d.startsWith(monthKey)).length;
-        document.getElementById('streak-month').textContent = `${count}/${daysInMonth}`;
-    }
-
-    function getYesterday() {
-        const d = new Date();
-        d.setDate(d.getDate() - 1);
-        return d.toISOString().split('T')[0];
-    }
-
-    function getDaysInMonth(dateStr) {
-        const d = new Date(dateStr + 'T00:00:00');
-        const year = d.getFullYear();
-        const month = d.getMonth() + 1;
-        return new Date(year, month, 0).getDate();
-    }
-
-    function renderExams() {
-        const data = loadData(LS_KEYS.exams, []);
-        const container = document.getElementById('exam-cards');
-        if (data.length === 0) {
-            container.innerHTML = '<div style="color:var(--text-muted);font-size:0.9rem;">No exams added yet.</div>';
-            return;
-        }
-        let html = '';
-        data.forEach(exam => {
-            const now = new Date();
-            const examDate = new Date(exam.date + 'T00:00:00');
-            const diff = Math.ceil((examDate - now) / (1000 * 60 * 60 * 24));
-            const days = diff > 0 ? diff : 0;
-            html += `
-                <div class="exam-card">
-                    <div class="exam-name">${exam.name}</div>
-                    <div class="exam-date">🗓️ ${formatDateShort(exam.date)}</div>
-                    <div class="countdown">⏳ ${days}</div>
-                    <div class="countdown-label">Days Remaining</div>
+                <div class="toggle-row"><span>Show MPRE</span>
+                  <div class="toggle-switch on" id="toggle-mpre">
+                    <div class="knob"></div>
+                  </div>
                 </div>
-            `;
-        });
-        container.innerHTML = html;
-    }
-
-    window.addExamCountdown = function() {
-        const name = document.getElementById('ec-name').value.trim();
-        const date = document.getElementById('ec-date').value;
-        if (!name || !date) { ui.showToast('Please fill in exam name and date.', 'error'); return; }
-        const data = loadData(LS_KEYS.exams, []);
-        data.push({ name, date });
-        saveData(LS_KEYS.exams, data);
-        renderExams();
-        document.getElementById('ec-name').value = '';
-        document.getElementById('ec-date').value = '';
-        ui.showToast('Exam added!', 'success');
-    };
-
-    function renderChecklist() {
-        const data = loadData(LS_KEYS.checklist, []);
-        const container = document.getElementById('checklist-items');
-        const total = data.length;
-        const done = data.filter(d => d.done).length;
-        const pct = total > 0 ? Math.round((done / total) * 100) : 0;
-
-        document.getElementById('checklist-text').textContent = `${done} / ${total} completed`;
-        document.getElementById('checklist-ring').textContent = pct + '%';
-        document.getElementById('checklist-ring').style.background =
-            `conic-gradient(var(--accent) ${pct * 3.6}deg, var(--border) 0deg)`;
-
-        if (total === 0) {
-            container.innerHTML = '<div style="color:var(--text-muted);font-size:0.9rem;">No tasks yet. Add one above.</div>';
-            return;
-        }
-        let html = '';
-        data.forEach((item, idx) => {
-            html += `
-                <div class="checklist-item ${item.done ? 'done' : ''}" onclick="window.toggleChecklist(${idx})">
-                    <span class="check-box">${item.done ? '✅' : '☐'}</span>
-                    <span class="task-name">${item.task}</span>
+                <div class="toggle-row"><span>Show Badges</span>
+                  <div class="toggle-switch" id="toggle-badges">
+                    <div class="knob"></div>
+                  </div>
                 </div>
-            `;
-        });
-        container.innerHTML = html;
-    }
+                <div class="toggle-row"><span>Show Competition</span>
+                  <div class="toggle-switch" id="toggle-competition">
+                    <div class="knob"></div>
+                  </div>
+                </div>
+              </div>
 
-    window.toggleChecklist = function(idx) {
-        const data = loadData(LS_KEYS.checklist, []);
-        if (!data[idx]) return;
-        data[idx].done = !data[idx].done;
-        saveData(LS_KEYS.checklist, data);
-        renderChecklist();
-    };
+              <button id="shareProfileBtn" class="share-btn-large">📤 Share Academic Profile</button>
+              <button id="copyProfileBtn" class="share-btn-secondary">🔗 Copy Profile Link</button>
 
-    window.addChecklistItem = function() {
-        const task = document.getElementById('cl-task').value.trim();
-        if (!task) { ui.showToast('Please enter a task.', 'error'); return; }
-        const data = loadData(LS_KEYS.checklist, []);
-        data.push({ task, done: false });
-        saveData(LS_KEYS.checklist, data);
-        renderChecklist();
-        document.getElementById('cl-task').value = '';
-        ui.showToast('Task added!', 'success');
-    };
+              <div class="ai-summary" style="margin-top:1.5rem;">
+                <div class="title">🤖 Academic Summary</div>
+                <div class="body" id="academic-summary-body">
+                  Complete more exams to get your AI summary!
+                </div>
+              </div>
+            </div>
+          </div>
 
-    function renderAllPlannerModules() {
-        renderTimetable();
-        renderTopics();
-        renderSessions();
-        renderStreaks();
-        renderExams();
-        renderChecklist();
-    }
+        </div><!-- /academic-container -->
+      </div><!-- /academic-tab -->
 
-    const origSwitch = window.switchTab;
-    window.switchTab = function(tabId) {
-        origSwitch(tabId);
-        if (tabId === 'planner-tab') renderAllPlannerModules();
-    };
+      <!-- Footer navigation -->
+      <div class="app-footer">
+        <button class="footer-btn" data-route="subjects" title="Subjects">📚
+          <span>Subjects</span>
+        </button>
 
-    setInterval(() => {
-        if (document.getElementById('planner-tab').classList.contains('active')) {
-            renderSessions();
-            renderStreaks();
-        }
-    }, 30000);
-</script>
+        <button class="footer-btn" data-route="ai" title="AI Tutor">🤖
+          <span>AI Tutor</span>
+        </button>
 
-    <script data-lazy data-src="/scripts/offline.js"></script>
-</body>
-</html>
+        <button class="footer-btn" data-route="notes" title="Notes">📝
+          <span>Notes</span>
+        </button>
+
+        <button class="footer-btn" data-route="profile" title="Profile">👤
+          <span>Profile</span>
+        </button>
+        
+      </div>
+    </main>
+  </div>
+
+
+  <!-- Share Modal -->
+  <div id="share-modal" class="modal-overlay" style="display:none;">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Share Exam</h3>
+        <button id="closeShareModalBtn" class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>Share this link with others. They can view the exam results without logging in.</p>
+        <div style="display:flex; gap:0.5rem; margin:1rem 0;">
+          <input type="text" id="share-link" readonly style="flex:1; padding:0.5rem;" />
+          <button id="copyShareLinkBtn" class="btn-secondary">Copy</button>
+          <button id="shareNativeBtn" class="btn-secondary">📤 Share</button>
+        </div>
+        <p class="small">Anyone with this link can view your exam results.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hidden file input for avatar upload -->
+  <input type="file" id="avatar-upload" accept="image/*" style="display:none;" />
+
+  <!-- Templates for planner modules (if needed) – not used in this fragment -->
+</section>

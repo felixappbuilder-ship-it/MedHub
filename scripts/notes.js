@@ -1,4 +1,4 @@
-// frontend-user/scripts/notes.js
+// scripts/notes.js
 
 /**
  * Notes Management Module – Fully featured
@@ -8,7 +8,7 @@
  * Uses IndexedDB via db.js and localStorage fallback.
  */
 
-import * as app from './app.js';
+import * as auth from './auth.js';
 import * as utils from './utils.js';
 import * as db from './db.js';
 import * as sync from './sync.js';
@@ -32,7 +32,7 @@ async function verifyPassword(password, hash) {
 
 // ==================== Helper: get current user ID ====================
 function getCurrentUserId() {
-    const user = app.getUser();
+    const user = auth.getUser();
     if (!user) return null;
     return user._id || user.id;
 }

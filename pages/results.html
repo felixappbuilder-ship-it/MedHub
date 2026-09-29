@@ -1,387 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
+<section
+  class="page results-page"
+  data-page="results"
+  data-script="/scripts/pages/results.js"
+  data-style="/css/results.css"
+  data-title="Exam Results"
+  data-auth="required"
+  data-cache="true"
+  data-transition="fade"
+>
+  <div class="page-container">
+    <!-- FIXED HEADER (2 rows) -->
+    <header class="results-header-fixed">
+      <div class="header-row top">
+        <div class="left-group">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exam Results – MedHub</title>
+          <button id="subjectsBtn" class="btn-text">Subjects</button>
+        </div>
+        <div class="right-group">
+          <button id="themeToggle" class="btn-outline">🌓</button>
+        </div>
+      </div>
+      <div class="header-row bottom">
+        <h1 class="page-title">Exam Results</h1>
+        <div class="action-group">
+          <button id="downloadBtn" class="btn-download">
+            <i class="fas fa-download"></i> Download Exam
+          </button>
+          <button id="analyticsBtn" class="btn-analytics">
+            <i class="fas fa-chart-line"></i> Analytics
+          </button>
+        </div>
+      </div>
+    </header>
 
-    <link rel="manifest" href="/manifest.json">
-    <link rel="stylesheet" href="/css/common.css" media="all">
-    <link rel="stylesheet" href="/css/results.css" media="all">
-
-    <script type="module" src="/scripts/utils.js"></script>
-    <script type="module" src="/scripts/ui.js"></script>
-    <script type="module" src="/scripts/router.js"></script>
-    <script type="module" src="/scripts/app.js"></script>
-    <script type="module" src="/scripts/analytics.js"></script>
-    <script type="module" src="/scripts/db.js"></script>
-    <script type="module" src="/scripts/sync.js"></script>
-
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/service-worker.js').catch(() => {});
-        }
-    </script>
-</head>
-
-<body>
-    <div class="page-container">
-        <!-- FIXED HEADER (2 rows) -->
-        <header class="results-header-fixed">
-            <div class="header-row top">
-                <div class="left-group">
-                    <img src="../assets/images/logo.png" alt="Logo" width="36" height="36">
-                    <span class="brand">MedHub</span>
-                    <button onclick="router.navigateTo('subjects.html')" class="btn-text">Subjects</button>
-                </div>
-                <div class="right-group">
-                    <button onclick="ui.toggleTheme()" class="btn-outline">🌓</button>
-                </div>
+    <main>
+      <!-- Score Summary Card -->
+      <div class="summary-card" id="summaryCard">
+        <div class="score-section">
+          <div class="score-circle" id="scoreCircle">
+            <span id="score-percentage">0%</span>
+          </div>
+          <div class="score-stats">
+            <div class="stat-row">
+              <span class="stat-label">Correct</span>
+              <span class="stat-value" id="correct-count">0/0</span>
             </div>
-            <div class="header-row bottom">
-                <h1 class="page-title">Exam Results</h1>
-                <div class="action-group">
-                    <button onclick="window.downloadExam()" class="btn-download">
-                        <i class="fas fa-download"></i> Download Exam
-                    </button>
-                    <button onclick="router.navigateTo('performance.html')" class="btn-analytics">
-                        <i class="fas fa-chart-line"></i> Analytics
-                    </button>
-                </div>
+            <div class="stat-row">
+              <span class="stat-label">Time</span>
+              <span class="stat-value" id="time-stats">0s / 0s (0%)</span>
             </div>
-        </header>
+          </div>
+        </div>
+        <div class="meta-section">
+          <div class="meta-item">
+            <span class="meta-label">Grade</span>
+            <span class="meta-value" id="grade">-</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Date</span>
+            <span class="meta-value" id="exam-date">-</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Subject</span>
+            <span class="meta-value" id="exam-subject">-</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Mode</span>
+            <span class="meta-value" id="exam-mode">-</span>
+          </div>
+        </div>
+      </div>
 
-        <main>
-            <!-- Score Summary Card -->
-            <div class="summary-card" id="summaryCard">
-                <div class="score-section">
-                    <div class="score-circle" id="scoreCircle">
-                        <span id="score-percentage">0%</span>
-                    </div>
-                    <div class="score-stats">
-                        <div class="stat-row">
-                            <span class="stat-label">Correct</span>
-                            <span class="stat-value" id="correct-count">0/0</span>
-                        </div>
-                        <div class="stat-row">
-                            <span class="stat-label">Time</span>
-                            <span class="stat-value" id="time-stats">0s / 0s (0%)</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="meta-section">
-                    <div class="meta-item">
-                        <span class="meta-label">Grade</span>
-                        <span class="meta-value" id="grade">-</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">Date</span>
-                        <span class="meta-value" id="exam-date">-</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">Subject</span>
-                        <span class="meta-value" id="exam-subject">-</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">Mode</span>
-                        <span class="meta-value" id="exam-mode">-</span>
-                    </div>
-                </div>
-            </div>
+      <!-- Topic Performance -->
+      <div id="topic-performance" class="topic-section" style="display:none;"></div>
 
-            <!-- Topic Performance -->
-            <div id="topic-performance" class="topic-section" style="display:none;"></div>
+      <!-- Recommendations -->
+      <div id="recommendations" class="recommendations" style="display:none;"></div>
 
-            <!-- Recommendations -->
-            <div id="recommendations" class="recommendations" style="display:none;"></div>
-
-            <!-- Question Review -->
-            <div class="review-section" id="reviewSection" style="display:none;">
-                <h2>Question Review</h2>
-                <div id="review-list" class="review-list"></div>
-            </div>
-        </main>
-    </div>
-
-    <script type="module">
-        import * as app from '../scripts/app.js';
-        import * as ui from '../scripts/ui.js';
-        import * as router from '../scripts/router.js';
-        import * as utils from '../scripts/utils.js';
-        import * as db from '../scripts/db.js';
-        import * as sync from '../scripts/sync.js';
-
-        let currentExamId = null;
-        let currentExamData = null; // store the full exam object
-
-        (async function initResults() {
-            console.log('[Results] Initializing...');
-            await app.initializeApp();
-            ui.applyTheme();
-
-            if (!app.checkAuth()) {
-                ui.showToast('Please log in to view results', 'warning');
-                router.navigateTo('login.html');
-                return;
-            }
-
-            let examId = new URLSearchParams(window.location.search).get('examId');
-            if (!examId) {
-                const navData = router.getNavData();
-                if (navData && navData.examId) examId = navData.examId;
-            }
-
-            if (!examId) {
-                ui.showToast('No exam ID provided', 'error');
-                setTimeout(() => router.navigateTo('subjects.html'), 2000);
-                return;
-            }
-
-            currentExamId = examId;
-            console.log('[Results] Loading exam ID:', currentExamId);
-            ui.showLoading('Loading results...');
-
-            try {
-                let results = await db.getExamResult(currentExamId);
-                if (!results) {
-                    const lastExam = utils.getLocalStorage('lastExam', null);
-                    if (lastExam && lastExam.examId === currentExamId) {
-                        results = lastExam;
-                        console.log('[Results] Using localStorage fallback');
-                    }
-                }
-
-                if (!results) {
-                    ui.hideLoading();
-                    document.querySelector('main').innerHTML = `
-                        <div class="error-state">
-                            <h2>Results Not Found</h2>
-                            <p>We couldn't find the exam results.</p>
-                            <button onclick="router.navigateTo('subjects.html')" class="btn-primary">Back to Subjects</button>
-                        </div>
-                    `;
-                    return;
-                }
-
-                // Store for later use
-                currentExamData = results;
-
-                displaySummary(results);
-
-                if (results.topics && results.topics.length > 0) {
-                    renderTopicPerformance(results.topics);
-                    document.getElementById('topic-performance').style.display = 'block';
-                }
-                if (results.weakAreas && results.weakAreas.length > 0) {
-                    displayRecommendations(results.weakAreas);
-                    document.getElementById('recommendations').style.display = 'block';
-                }
-                if (results.questions && results.questions.length > 0) {
-                    renderReviewList(results.questions);
-                    document.getElementById('reviewSection').style.display = 'block';
-                }
-
-                // We no longer call sync.syncExamResults() here
-                // The sync will happen via background sync or after download.
-
-            } catch (error) {
-                console.error('[Results] Error loading results:', error);
-                ui.showToast('Failed to load results: ' + error.message, 'error');
-            } finally {
-                ui.hideLoading();
-            }
-        })();
-
-        // ── DISPLAY FUNCTIONS ──
-
-        function displaySummary(results) {
-            const score = Math.round(results.scorePercentage);
-            document.getElementById('score-percentage').textContent = `${score}%`;
-            document.getElementById('correct-count').textContent =
-                `${results.correctAnswers}/${results.totalQuestions}`;
-
-            const timeAlloc = results.timeAllocated || (results.totalQuestions * 30);
-            const timeSpentSec = Math.floor(results.timeSpent / 1000);
-            const timePercent = timeAlloc > 0 ? Math.round((timeSpentSec / timeAlloc) * 100) : 0;
-            document.getElementById('time-stats').textContent =
-                `${utils.formatTime(timeSpentSec)} / ${utils.formatTime(timeAlloc)} (${timePercent}%)`;
-
-            let grade = 'F';
-            if (score >= 80) grade = 'A';
-            else if (score >= 70) grade = 'B';
-            else if (score >= 60) grade = 'C';
-            else if (score >= 50) grade = 'D';
-            document.getElementById('grade').textContent = grade;
-
-            document.getElementById('exam-date').textContent = utils.formatDate(results.date);
-            document.getElementById('exam-subject').textContent = results.subject || 'General';
-            document.getElementById('exam-mode').textContent = results.mode || 'Timed';
-
-            updatePieChart(score);
-        }
-
-        function updatePieChart(percentage) {
-            const circle = document.getElementById('scoreCircle');
-            const angle = (percentage / 100) * 360;
-            circle.style.background =
-                `conic-gradient(var(--accent) 0deg, var(--accent) ${angle}deg, var(--border) ${angle}deg, var(--border) 360deg)`;
-        }
-
-        function renderReviewList(questions) {
-            const container = document.getElementById('review-list');
-            if (!questions || questions.length === 0) {
-                container.innerHTML = '<p class="no-data">No questions to review.</p>';
-                return;
-            }
-
-            container.innerHTML = questions.map((q, idx) => {
-                const isCorrect = q.correct;
-                const statusClass = isCorrect ? 'correct' : 'incorrect';
-                const statusIcon = isCorrect ? '✅' : '❌';
-
-                function getOptionText(letter) {
-                    if (!letter || !q.options || !Array.isArray(q.options)) return letter || '—';
-                    const index = letter.toUpperCase().charCodeAt(0) - 65;
-                    if (index < 0 || index >= q.options.length) return letter;
-                    const opt = q.options[index];
-                    return (typeof opt === 'object' && opt !== null) ? opt.text : opt;
-                }
-
-                const userAnswerText = getOptionText(q.userAnswer);
-                const correctAnswerText = getOptionText(q.correctAnswer);
-
-                let explanationHtml = '';
-                if (q.explanation) {
-                    if (typeof q.explanation === 'object') {
-                        const parts = [];
-                        if (q.explanation.overview) parts.push(q.explanation.overview);
-                        if (q.explanation.highYield) parts.push(`<br><strong>High‑Yield:</strong> ${q.explanation.highYield}`);
-                        if (q.explanation.clinicalCorrelation) parts.push(`<br><strong>Clinical:</strong> ${q.explanation.clinicalCorrelation}`);
-                        explanationHtml = parts.join(' ');
-                    } else {
-                        explanationHtml = q.explanation;
-                    }
-                }
-
-                return `
-                    <div class="review-item ${statusClass}">
-                        <div class="review-header">
-                            <span class="q-num">Q${idx + 1}</span>
-                            <span class="status">${statusIcon}</span>
-                            <span class="topic-tag">${q.topic || 'General'}</span>
-                            <span class="time-spent">⏱️ ${q.timeSpent || 0}s</span>
-                        </div>
-                        <div class="review-question">${q.question}</div>
-                        <div class="review-answers">
-                            <div><strong>Your answer:</strong> ${userAnswerText}</div>
-                            <div><strong>Correct answer:</strong> ${correctAnswerText}</div>
-                        </div>
-                        <div class="review-explanation">
-                            <strong>Explanation:</strong> ${explanationHtml || 'No explanation available.'}
-                        </div>
-                        ${q.flagged ? '<span class="flagged-badge">🏴 Flagged</span>' : ''}
-                    </div>
-                `;
-            }).join('');
-        }
-
-        function renderTopicPerformance(topicData) {
-            const container = document.getElementById('topic-performance');
-            if (!topicData || topicData.length === 0) {
-                container.innerHTML = '<p class="no-data">No topic data available.</p>';
-                return;
-            }
-
-            topicData.sort((a, b) => a.percentage - b.percentage);
-
-            let html = '<h3>Topic Performance</h3><ul class="topic-list">';
-            topicData.forEach(t => {
-                const color = t.percentage >= 70 ? 'green' : (t.percentage >= 50 ? 'orange' : 'red');
-                html += `
-                    <li>
-                        <span class="topic-name">${t.topic}</span>
-                        <span class="topic-score" style="color: ${color};">${Math.round(t.percentage)}%</span>
-                        <span class="topic-count">${t.correct}/${t.questions}</span>
-                        <div class="topic-bar">
-                            <div class="bar-fill" style="width: ${t.percentage}%; background: ${color};"></div>
-                        </div>
-                    </li>
-                `;
-            });
-            html += '</ul>';
-            container.innerHTML = html;
-        }
-
-        function displayRecommendations(weakAreas) {
-            const container = document.getElementById('recommendations');
-            if (!weakAreas || weakAreas.length === 0) {
-                container.innerHTML = '<p class="no-data">Great job! No weak areas detected.</p>';
-                return;
-            }
-            let html = '<h3>📚 Recommended Focus</h3><ul>';
-            weakAreas.forEach(area => {
-                html += `<li>🔍 Focus on <strong>${area}</strong> – review related topics.</li>`;
-            });
-            html += '</ul>';
-            container.innerHTML = html;
-        }
-
-        // ── DOWNLOAD EXAM ──
-        window.downloadExam = function () {
-            if (!currentExamId) {
-                ui.showToast('No exam ID found', 'error');
-                return;
-            }
-            if (!currentExamData) {
-                ui.showToast('Exam data not loaded', 'error');
-                return;
-            }
-
-            // Mark as downloaded and save to downloaded list
-            const examWithDownload = {
-                ...currentExamData,
-                downloaded: true,  // explicitly set
-            };
-
-            saveDownloadedExam(examWithDownload).then(() => {
-                // Now trigger sync to push this exam to backend (including questions)
-                // Pass the exam with downloaded: true so that sync.js sends questions
-                if (navigator.onLine) {
-                    sync.syncExamResults(examWithDownload).catch(err => {
-                        console.warn('[Results] Immediate sync after download failed:', err);
-                    });
-                }
-                ui.showToast('Exam downloaded and synced to cloud', 'success');
-            }).catch(err => {
-                console.error('[Results] Download error:', err);
-                ui.showToast('Failed to download exam', 'error');
-            });
-        };
-
-        async function saveDownloadedExam(exam) {
-            try {
-                let downloaded = await db.getDownloadedExams() || [];
-                downloaded = downloaded.filter(e => e.examId !== exam.examId);
-                downloaded.unshift({
-                    examId: exam.examId,
-                    subject: exam.subject,
-                    date: exam.date,
-                    score: exam.scorePercentage,
-                    data: exam
-                });
-                if (downloaded.length > 10) downloaded = downloaded.slice(0, 10);
-                await db.saveDownloadedExams(downloaded);
-                // Also save the exam with updated downloaded flag in the main store
-                await db.saveExamResult(exam);
-            } catch (err) {
-                console.error('[Results] Error saving downloaded exam:', err);
-                throw err;
-            }
-        }
-    </script>
-
-    <script data-lazy data-src="/scripts/offline.js"></script>
-</body>
-
-</html>
+      <!-- Question Review -->
+      <div class="review-section" id="reviewSection" style="display:none;">
+        <h2>Question Review</h2>
+        <div id="review-list" class="review-list"></div>
+      </div>
+    </main>
+  </div>
+</section>

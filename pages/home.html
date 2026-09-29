@@ -1,0 +1,69 @@
+<section
+  class="page home-page"
+  data-page="home"
+  data-script="/scripts/pages/home.js"
+  data-style="/css/index.css"
+  data-title="MedVix – Kenya's #1 Offline Medical QB"
+  data-auth="none"
+  data-cache="true"
+  data-transition="fade"
+>
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="logo">
+      <img src="/assets/images/logo.png" alt="MedVix Logo" width="40" height="40" />
+      <span>MedVix</span>
+    </div>
+    <button id="themeToggle" class="btn-outline" aria-label="Toggle theme">🌓</button>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main>
+    <section class="hero">
+      <h1>Serious medical exam prep.<br>
+        <span class="accent">Works anywhere, even without internet.</span>
+      </h1>
+      <div class="cta-buttons">
+        <button id="getStartedBtn" class="btn-primary">Get Started</button>
+        <button id="installBtn" class="btn-secondary" style="display:none;">📲 Install App</button>
+      </div>
+    </section>
+
+    <section id="feature-grid" class="feature-grid"></section>
+    <section id="testimonials" class="testimonials"></section>
+    <section id="faq-section" class="faq"></section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>📞 0746834527 | ✉️ felixappbuilder@gmail.com</p>
+    <p>
+      <a href="/privacy">Privacy Policy</a> |
+      <a href="/terms">Terms</a> |
+      <a href="/referral">💰 Refer &amp; Earn</a>
+    </p>
+  </footer>
+
+  <!-- ===== REFERRAL MODAL ===== -->
+  <div id="referral-modal" class="modal-overlay" style="display:none;">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>You've been referred!</h3>
+        <button class="modal-close" id="closeReferralBtn" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>A MedVix user thought you'd love this. Sign up now and get started with 10,000+ offline medical questions.</p>
+        <div style="display:flex; gap:0.5rem; margin-top:1rem; align-items:center;">
+          <input type="text" id="ref-code-display" readonly value="XXXXXX" style="flex:1; padding:0.5rem;" />
+          <button id="copyReferralBtn" class="btn-secondary">📋 Copy</button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="claimBtn" class="btn-primary">Claim Your Spot</button>
+      </div>
+      <p style="text-align:center; font-size:0.85rem; margin-top:0.75rem; color:var(--text-muted);">
+        Already a member? <a href="/login">Log in</a>
+      </p>
+    </div>
+  </div>
+</section>

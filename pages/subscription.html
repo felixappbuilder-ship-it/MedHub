@@ -1,825 +1,184 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subscription Plans – MedHub</title>
-
-    <link rel="manifest" href="/manifest.json">
-    <link rel="stylesheet" href="/css/common.css" media="all">
-    <link rel="stylesheet" href="/css/subscription.css" media="all">
-
-    <style id="theme-style">
-        /* ===== SHIMMER (dark only, unchanged) ===== */
-        @keyframes shimmer {
-            0% {
-                background-position: -200px 0;
-            }
-            100% {
-                background-position: calc(200px + 100%) 0;
-            }
-        }
-
-        .shimmer-plan-card {
-            background: #2a2a3e;
-            border: 1px solid #444;
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .shimmer-line {
-            height: 16px;
-            background: #3a3a4e;
-            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-            border-radius: 4px;
-        }
-
-        .shimmer-title {
-            height: 24px;
-            width: 60%;
-        }
-
-        .shimmer-price {
-            height: 32px;
-            width: 40%;
-        }
-
-        .shimmer-duration {
-            height: 18px;
-            width: 50%;
-        }
-
-        .shimmer-feature {
-            height: 14px;
-            width: 80%;
-        }
-
-        .shimmer-btn {
-            height: 40px;
-            width: 100%;
-            border-radius: var(--radius-sm);
-        }
-
-        .shimmer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .shimmer-banner {
-            height: 60px;
-            background: #2a2a3e;
-            border-radius: var(--radius);
-            margin-bottom: 2rem;
-            background: linear-gradient(90deg, #2a2a3e 25%, #444 50%, #2a2a3e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-        }
-
-        .shimmer-header {
-            padding: 0.5rem 1rem;
-            background: #1e1e2f;
-            border-bottom: 1px solid #333;
-        }
-
-        .shimmer-header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .shimmer-header-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 0.5rem;
-        }
-
-        .shimmer-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .shimmer-logo-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 6px;
-            background: #3a3a4e;
-            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-        }
-
-        .shimmer-logo-text {
-            width: 80px;
-            height: 20px;
-            background: #3a3a4e;
-            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-            border-radius: 4px;
-        }
-
-        .shimmer-btn-sm {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: #3a3a4e;
-            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-            display: inline-block;
-        }
-
-        .shimmer-title-large {
-            height: 28px;
-            width: 200px;
-            background: #3a3a4e;
-            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-            border-radius: 4px;
-        }
-
-        .shimmer-status {
-            height: 28px;
-            width: 140px;
-            background: #3a3a4e;
-            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-            border-radius: 4px;
-        }
-
-        .shimmer-payment-info {
-            height: 80px;
-            background: #2a2a3e;
-            border-radius: var(--radius);
-            margin-top: 2rem;
-            background: linear-gradient(90deg, #2a2a3e 25%, #444 50%, #2a2a3e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-        }
-
-        #real-content {
-            display: none;
-        }
-
-        /* Additional theme‑aware overrides for the real content */
-        .sub-header {
-            background: var(--bg-card);
-            border-bottom: 1px solid var(--border);
-        }
-        .status-area .status-text {
-            color: var(--text-secondary);
-        }
-        .trial-btn {
-            background: var(--accent);
-            color: white;
-        }
-        .trial-btn:hover {
-            background: var(--accent-dark);
-        }
-        .plan-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-        }
-        .plan-card:hover {
-            box-shadow: var(--shadow-lg);
-        }
-        .plan-card.popular {
-            border-color: var(--accent);
-            box-shadow: 0 4px 12px rgba(79, 140, 255, 0.2);
-        }
-        .plan-card.popular::before {
-            background: var(--accent);
-            color: white;
-        }
-        .plan-card .price {
-            color: var(--accent);
-        }
-        .plan-card .features li {
-            color: var(--text-secondary);
-        }
-        .plan-card .features li::before {
-            color: var(--accent);
-        }
-        .plan-card .limitations {
-            color: var(--warning);
-        }
-        .plan-card button {
-            background: var(--accent);
-            color: white;
-        }
-        .plan-card button:hover {
-            background: var(--accent-dark);
-        }
-        .custom-card .price input {
-            background: var(--bg-secondary);
-            color: var(--text-primary);
-            border: 1px solid var(--border);
-        }
-        .custom-card .price input:focus {
-            border-color: var(--accent);
-        }
-        .custom-duration-preview {
-            color: var(--text-secondary);
-        }
-        .custom-duration-preview strong {
-            color: var(--text-primary);
-        }
-        .c2b-instructions {
-            background: var(--bg-secondary);
-        }
-        .c2b-instructions .till-number {
-            background: var(--bg-card);
-            border: 1px dashed var(--border);
-        }
-        .c2b-claim-form .form-group input {
-            background: var(--bg-secondary);
-            color: var(--text-primary);
-            border: 1px solid var(--border);
-        }
-        .c2b-claim-form .form-group input:focus {
-            border-color: var(--accent);
-        }
-        .c2b-claim-form .form-group .hint {
-            color: var(--text-secondary);
-        }
-        .c2b-claim-form .btn-primary {
-            background: var(--accent);
-            color: white;
-        }
-        .c2b-claim-form .btn-primary:hover:not(:disabled) {
-            background: var(--accent-dark);
-        }
-        .inline-back-btn {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            color: var(--text-primary);
-        }
-        .inline-back-btn:hover {
-            background: var(--bg-card);
-            border-color: var(--accent);
-        }
-        .payment-info {
-            background: var(--bg-secondary);
-            color: var(--text-muted);
-        }
-        .payment-option {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-        }
-        .payment-option:hover {
-            border-color: var(--accent);
-            background: var(--bg-card);
-        }
-        .payment-option .text .desc {
-            color: var(--text-secondary);
-        }
-        .payment-option .badge {
-            background: var(--accent);
-            color: white;
-        }
-        .trial-features li {
-            color: var(--text-secondary);
-        }
-        .trial-features li::before {
-            color: var(--accent);
-        }
-        .trial-limitations {
-            color: var(--warning);
-        }
-        .section-title {
-            color: var(--text-primary);
-        }
-        .section-subtitle {
-            color: var(--text-muted);
-        }
-        .main-body {
-            padding: 1.5rem 1rem;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        .sub-header-bottom h1 {
-            color: var(--text-primary);
-        }
-        .btn-text {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            color: var(--text-primary);
-        }
-        .btn-text:hover {
-            background: var(--bg-card);
-            border-color: var(--accent);
-        }
-        .btn-outline {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            color: var(--text-primary);
-        }
-        .btn-outline:hover {
-            background: var(--bg-card);
-            border-color: var(--accent);
-        }
-        body {
-            background: var(--bg-primary);
-            color: var(--text-primary);
-        }
-    </style>
-
-    <script type="module" src="/scripts/utils.js"></script>
-    <script type="module" src="/scripts/ui.js"></script>
-    <script type="module" src="/scripts/router.js"></script>
-    <script type="module" src="/scripts/app.js"></script>
-    <script type="module" src="/scripts/subscription.js"></script>
-    <script type="module" src="/scripts/security.js"></script>
-    <script type="module" src="/scripts/db.js"></script>
-    <script type="module" src="/scripts/payment.js"></script>
-
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/service-worker.js').catch(() => { });
-        }
-    </script>
-
-    <style>
-        /* Real header layout (overrides from subscription.css are already theme‑aware) */
-        /* But we keep the structural CSS here as it's already fine. */
-        .sub-header { background: var(--bg-card); border-bottom: 1px solid var(--border); padding: 0.5rem 1rem; }
-        .sub-header-top { display: flex; justify-content: space-between; align-items: center; }
-        .sub-header-top .left-group { display: flex; align-items: center; gap: 0.5rem; }
-        .sub-header-top .right-group { display: flex; align-items: center; gap: 0.5rem; }
-        .sub-header-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 0.3rem; }
-        .sub-header-bottom h1 { font-size: 1.4rem; margin: 0; color: var(--text-primary); }
-        .status-area { display: flex; align-items: center; gap: 0.75rem; font-size: 0.9rem; }
-        .status-area .status-text { color: var(--text-secondary); }
-        .trial-btn { background: var(--accent); color: white; border: none; padding: 0.3rem 0.8rem; border-radius: 30px; font-weight: 600; cursor: pointer; }
-        .trial-btn:hover { background: var(--accent-dark); }
-        .sub-back-bottom { display: none; }
-        .plan-card { cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
-        .plan-card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
-        .plan-card.disabled { opacity: 0.6; pointer-events: none; cursor: not-allowed; }
-        .plan-card button { pointer-events: none; }
-        .btn-primary { background: var(--accent); color: white; border: none; padding: 0.75rem; border-radius: var(--radius-sm); font-weight: 600; cursor: pointer; }
-        .btn-primary:hover { background: var(--accent-dark); }
-        .btn-secondary { background: var(--bg-secondary); border: 1px solid var(--border); color: var(--text-primary); }
-        .btn-secondary:hover { background: var(--bg-card); }
-    </style>
-
-    <script type="module">
-        // ... same JavaScript as before, unchanged ...
-        import * as app from '../scripts/app.js';
-        import * as ui from '../scripts/ui.js';
-        import * as router from '../scripts/router.js';
-        import * as subscription from '../scripts/subscription.js';
-        import * as utils from '../scripts/utils.js';
-        import * as db from '../scripts/db.js';
-
-        function calculatePremiumDays(amount) {
-            const amt = Math.round(amount);
-            let days = 0;
-            if (amt === 300) return 30;
-            if (amt === 850) return 90;
-            if (amt === 2100) return 270;
-            if (amt < 300) days = amt / 11.75;
-            else if (amt > 300 && amt < 850) days = 30 + (amt - 300) / 11.1944;
-            else if (amt > 850) days = 90 + (amt - 850) / 9.5277;
-            return Math.floor(days);
-        }
-
-        let plansList = [];
-        let trialEligible = false;
-        let customPlan = null;
-        let isProcessing = false;
-
-        function createCustomPlan(amount) {
-            const days = calculatePremiumDays(amount);
-            const durationText = days > 0 ? `${days} days` : 'Invalid amount';
-            return {
-                id: 'custom',
-                name: 'Custom Amount',
-                price: amount,
-                duration: days,
-                durationText: durationText,
-                features: ['Pay any amount', 'Get pro‑rated days', 'No fixed commitment'],
-                ctaText: `Pay KES ${amount}`,
-                ctaColor: 'primary'
-            };
-        }
-
-        function updateCustomDuration(amount, previewElId) {
-            const days = calculatePremiumDays(amount);
-            const previewEl = document.getElementById(previewElId);
-            if (previewEl) {
-                if (days > 0) {
-                    previewEl.innerHTML = `<strong>${days} days</strong> of access`;
-                } else {
-                    previewEl.innerHTML = `<span style="color: var(--danger);">Minimum KES 50 required</span>`;
-                }
-            }
-            customPlan = createCustomPlan(amount);
-        }
-
-        function switchBodyView(viewName) {
-            document.querySelectorAll('.body-view').forEach(v => v.classList.remove('active'));
-            const target = document.getElementById('view-' + viewName);
-            if (target) target.classList.add('active');
-            if (viewName === 'stk-plans') renderInlinePlans();
-            if (viewName === 'c2b-details') resetC2BForm();
-        }
-
-        function resetC2BForm() {
-            document.getElementById('c2b-phone').value = '';
-            document.getElementById('c2b-mpesa-code').value = '';
-            const statusDiv = document.getElementById('verification-status');
-            statusDiv.className = 'verification-status';
-            statusDiv.style.display = 'none';
-            statusDiv.innerHTML = '';
-            isProcessing = false;
-            const btn = document.querySelector('#c2b-claim-form button');
-            if (btn) btn.disabled = false;
-        }
-
-        function renderInlinePlans() {
-            const container = document.getElementById('inline-plan-cards');
-            if (!container) return;
-            const defaultAmount = 300;
-            customPlan = createCustomPlan(defaultAmount);
-            const orderedPlans = [];
-            orderedPlans.push(customPlan);
-            const regularPlans = plansList.filter(p => p.id !== 'trial' && p.id !== 'custom');
-            const order = ['monthly', 'quarterly', 'yearly'];
-            regularPlans.sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id));
-            orderedPlans.push(...regularPlans);
-
-            container.innerHTML = orderedPlans.map(plan => {
-                let cardClass = 'plan-card';
-                if (plan.popular) cardClass += ' popular';
-                if (plan.id === 'custom') cardClass += ' custom-card';
-                const durationDisplay = plan.durationText || utils.formatDuration(plan.duration);
-                if (plan.id === 'custom') {
-                    const previewText = plan.duration > 0 ? `<strong>${plan.duration} days</strong> of access` : 'Minimum KES 50 required';
-                    return `
-                        <div class="${cardClass}" onclick="window.initiateCustomPayment()">
-                            <h3>${plan.name}</h3>
-                            <div class="price">
-                                <input type="number" id="inline-custom-amount" min="50" max="150000" placeholder="Enter amount (KES)" value="${defaultAmount}" onclick="event.stopPropagation();" oninput="window.updateInlineCustomAmount(this.value)">
-                            </div>
-                            <div class="duration"><span id="inline-custom-duration-preview" class="custom-duration-preview">${previewText}</span></div>
-                            <ul class="features">${plan.features.map(f => `<li>✓ ${f}</li>`).join('')}</ul>
-                            <button onclick="event.stopPropagation(); window.initiateCustomPayment();">Pay Now</button>
-                        </div>`;
-                }
-                return `
-                    <div class="${cardClass}" onclick="window.selectPlanInline('${plan.id}')">
-                        <h3>${plan.name}</h3>
-                        <div class="price">${plan.price === 0 ? 'FREE' : `KES ${plan.price}`}</div>
-                        <div class="duration">${durationDisplay}</div>
-                        <ul class="features">${plan.features.map(f => `<li>✓ ${f}</li>`).join('')}</ul>
-                        ${plan.limitations ? `<p class="limitations">${plan.limitations.join(', ')}</p>` : ''}
-                        <button>${plan.ctaText || 'Select'}</button>
-                    </div>`;
-            }).join('');
-            updateCustomDuration(defaultAmount, 'inline-custom-duration-preview');
-        }
-
-        window.updateInlineCustomAmount = function (value) {
-            updateCustomDuration(parseFloat(value) || 0, 'inline-custom-duration-preview');
-        };
-
-        window.selectPlanInline = function (planId) {
-            const plan = plansList.find(p => p.id === planId);
-            if (!plan) { ui.showToast('Plan not found', 'error'); return; }
-            app.setSelectedPlan(plan);
-            router.navigateTo('payment.html');
-        };
-
-        window.initiateCustomPayment = function () {
-            let plan = customPlan;
-            if (!plan) {
-                const input = document.getElementById('inline-custom-amount');
-                plan = createCustomPlan(parseFloat(input?.value) || 300);
-            }
-            if (!plan || plan.duration <= 0) {
-                ui.showToast('Please enter a valid amount (minimum KES 50)', 'error');
-                return;
-            }
-            app.setSelectedPlan(plan);
-            router.navigateTo('payment.html');
-        };
-
-        window.selectPaymentMethod = function (method) {
-            if (isProcessing && method === 'c2b') return;
-            if (method === 'trial') {
-                if (!trialEligible) { ui.showToast('Free trial not available', 'warning'); return; }
-                router.navigateTo('free-trial.html');
-                return;
-            }
-            if (method === 'stk') { switchBodyView('stk-plans'); return; }
-            if (method === 'c2b') {
-                switchBodyView('c2b-details');
-                document.getElementById('c2b-expected-amount').textContent = 'any amount';
-                resetC2BForm();
-            }
-        };
-
-        window.goBackToMethodSelection = function () {
-            switchBodyView('method-selection');
-        };
-
-        window.verifyC2BPayment = async function (event) {
-            event.preventDefault();
-            if (isProcessing) return;
-            const phone = document.getElementById('c2b-phone').value.trim();
-            const mpesaCode = document.getElementById('c2b-mpesa-code').value.trim();
-            if (!phone && !mpesaCode) {
-                ui.showToast('Please enter either your phone number or M-Pesa code.', 'warning');
-                return;
-            }
-            const btn = document.querySelector('#c2b-claim-form button');
-            btn.disabled = true;
-            isProcessing = true;
-            const statusDiv = document.getElementById('verification-status');
-            statusDiv.className = 'verification-status';
-            statusDiv.style.display = 'block';
-            statusDiv.innerHTML = '⏳ Checking payment...';
-            statusDiv.style.background = '#fff3cd';
-            statusDiv.style.color = '#856404';
-            statusDiv.style.border = '1px solid #ffc107';
-            try {
-                const result = await window.Payment.claimManualPayment({ mpesaCode, phoneNumber: phone });
-                statusDiv.className = 'verification-status success';
-                statusDiv.innerHTML = `✅ ${result.message || 'Subscription activated successfully!'} <button class="close-status" onclick="document.getElementById('verification-status').style.display='none'">&times;</button>`;
-                await subscription.syncSubscription(true);
-                setTimeout(() => window.location.reload(), 2000);
-            } catch (err) {
-                statusDiv.className = 'verification-status error';
-                statusDiv.innerHTML = `❌ ${err.message || 'Payment verification failed.'} <button class="close-status" onclick="document.getElementById('verification-status').style.display='none'">&times;</button>`;
-                btn.disabled = false;
-                isProcessing = false;
-            }
-        };
-
-        function renderHeaderStatus(sub) {
-            const container = document.getElementById('status-area');
-            if (!container) return;
-            if (sub && sub.isActive) {
-                const remaining = subscription.formatRemainingTime?.(sub.expiryDate) || '';
-                container.innerHTML = `<span class="status-text">Plan: ${sub.plan} · expires ${utils.formatDate(sub.expiryDate)}</span><span class="status-text">(${remaining} left)</span>`;
-                return;
-            }
-            if (trialEligible) {
-                container.innerHTML = `<span class="status-text">No active plan</span><button class="trial-btn" onclick="router.navigateTo('free-trial.html')">Start Free Trial</button>`;
-                return;
-            }
-            container.innerHTML = `<span class="status-text">No active plan</span><span class="status-text" style="color: var(--danger);">Please subscribe</span>`;
-        }
-
-        // =========== OFFLINE‑FIRST INITIALISATION ===========
-        (async function initSubscription() {
-            await app.initializeApp();
-            ui.applyTheme();
-            if (!app.checkAuth()) {
-                ui.showToast('Please log in to view subscriptions', 'warning');
-                router.navigateTo('login.html');
-                return;
-            }
-
-            let currentSub = app.getSubscription();
-            if (!currentSub) {
-                try {
-                    currentSub = await db.getSubscription();
-                    if (currentSub) app.setSubscription(currentSub);
-                } catch (e) { /* ignore */ }
-            }
-
-            plansList = await subscription.getSubscriptionPlans();
-            renderHeaderStatus(currentSub);
-            document.getElementById('shimmer-content').style.display = 'none';
-            document.getElementById('real-content').style.display = 'block';
-            switchBodyView('method-selection');
-
-            if (navigator.onLine) {
-                try {
-                    trialEligible = await subscription.checkTrialEligibility();
-                    const freshSub = await subscription.getSubscriptionStatus(true);
-                    if (freshSub) {
-                        currentSub = freshSub;
-                        renderHeaderStatus(freshSub);
-                    }
-                } catch (e) {
-                    console.warn('Background refresh failed', e);
-                    trialEligible = false;
-                }
-            } else {
-                trialEligible = false;
-            }
-
-            const trialOption = document.querySelector('.payment-option.trial-option');
-            if (trialOption) {
-                if (!trialEligible) trialOption.classList.add('hidden');
-                else trialOption.classList.remove('hidden');
-            }
-        })();
-    </script>
-</head>
-
-<body>
-    <div class="page-container">
-        <!-- SHIMMER -->
-        <div id="shimmer-content">
-            <div class="shimmer-header">
-                <div class="shimmer-header-top">
-                    <div class="shimmer-logo">
-                        <div class="shimmer-logo-icon"></div>
-                        <div class="shimmer-logo-text"></div>
-                    </div>
-                    <div><span class="shimmer-btn-sm" style="margin-right:0.5rem;"></span><span
-                            class="shimmer-btn-sm"></span></div>
-                </div>
-                <div class="shimmer-header-bottom">
-                    <div class="shimmer-title-large"></div>
-                    <div class="shimmer-status"></div>
-                </div>
-            </div>
-            <main style="padding:1rem;">
-                <div class="shimmer-banner"></div>
-                <div class="shimmer-grid">
-                    <div class="shimmer-plan-card">
-                        <div class="shimmer-line shimmer-title"></div>
-                        <div class="shimmer-line shimmer-price"></div>
-                        <div class="shimmer-line shimmer-duration"></div>
-                        <div class="shimmer-line shimmer-feature"></div>
-                        <div class="shimmer-line shimmer-feature"></div>
-                        <div class="shimmer-line shimmer-feature"></div>
-                        <div class="shimmer-btn"></div>
-                    </div>
-                    <div class="shimmer-plan-card">
-                        <div class="shimmer-line shimmer-title"></div>
-                        <div class="shimmer-line shimmer-price"></div>
-                        <div class="shimmer-line shimmer-duration"></div>
-                        <div class="shimmer-line shimmer-feature"></div>
-                        <div class="shimmer-line shimmer-feature"></div>
-                        <div class="shimmer-line shimmer-feature"></div>
-                        <div class="shimmer-btn"></div>
-                    </div>
-                    <div class="shimmer-plan-card">
-                        <div class="shimmer-line shimmer-title"></div>
-                        <div class="shimmer-line shimmer-price"></div>
-                        <div class="shimmer-line shimmer-duration"></div>
-                        <div class="shimmer-line shimmer-feature"></div>
-                        <div class="shimmer-line shimmer-feature"></div>
-                        <div class="shimmer-line shimmer-feature"></div>
-                        <div class="shimmer-btn"></div>
-                    </div>
-                    <div class="shimmer-plan-card">
-                        <div class="shimmer-line shimmer-title"></div>
-                        <div class="shimmer-line shimmer-price"></div>
-                        <div class="shimmer-line shimmer-duration"></div>
-                        <div class="shimmer-line shimmer-feature"></div>
-                        <div class="shimmer-line shimmer-feature"></div>
-                        <div class="shimmer-line shimmer-feature"></div>
-                        <div class="shimmer-btn"></div>
-                    </div>
-                </div>
-                <div class="shimmer-payment-info"></div>
-                <div
-                    style="height:40px;width:120px;background:#2a2a3e;border-radius:var(--radius-sm);margin:2rem auto 0;background:linear-gradient(90deg,#2a2a3e 25%,#444 50%,#2a2a3e 75%);background-size:200px 100%;animation:shimmer 1.5s infinite;">
-                </div>
-            </main>
+<section
+  class="page subscription-page"
+  data-page="subscription"
+  data-script="/scripts/pages/subscription.js"
+  data-style="/css/subscription.css"
+  data-title="Subscription Plans"
+  data-auth="required"
+  data-cache="true"
+  data-transition="fade"
+>
+  <!-- ===== SHIMMER CONTENT ===== -->
+  <div id="shimmer-content">
+    <div class="shimmer-header">
+      <div class="shimmer-header-top">
+        <div class="shimmer-logo">
+          <div class="shimmer-logo-icon"></div>
+          <div class="shimmer-logo-text"></div>
         </div>
-
-        <!-- REAL CONTENT -->
-        <div id="real-content">
-            <!-- Header with two rows -->
-            <div class="sub-header">
-                <div class="sub-header-top">
-                    <div class="left-group">
-                        <button onclick="router.navigateTo('subjects.html')" class="btn-text" style="font-size: 0.9rem;">← Back</button>
-                    </div>
-                    <div class="right-group">
-                        <button onclick="ui.toggleTheme()" class="btn-outline" style="padding: 0.3rem 0.6rem;">🌓</button>
-                    </div>
-                </div>
-                <div class="sub-header-bottom">
-                    <h1>Subscription Plans</h1>
-                    <div id="status-area" class="status-area">
-                        <!-- dynamically filled -->
-                    </div>
-                </div>
-            </div>
-
-            <div class="main-body">
-                <!-- Method Selection -->
-                <div id="view-method-selection" class="body-view active">
-                    <h2 class="section-title">Select Payment Method</h2>
-                    <p class="section-subtitle">Choose how you'd like to subscribe to premium access</p>
-                    <div class="payment-options">
-                        <div class="payment-option trial-option" onclick="selectPaymentMethod('trial')">
-                            <div class="option-header">
-                                <span class="icon">🎁</span>
-                                <div class="text">
-                                    <div class="title">Start Free Trial</div>
-                                    <div class="desc">3 hours of full premium access – no payment</div>
-                                </div>
-                                <span class="badge">Limited</span>
-                            </div>
-                            <ul class="trial-features">
-                                <li>✓ Full access to all subjects</li>
-                                <li>✓ Practice questions & explanations</li>
-                                <li>✓ No payment details needed</li>
-                            </ul>
-                            <p class="trial-limitations">⏳ 3 hours only · 🔒 One-time use</p>
-                        </div>
-                        <div class="payment-option" onclick="selectPaymentMethod('stk')">
-                            <div class="option-header">
-                                <span class="icon">📱</span>
-                                <div class="text">
-                                    <div class="title">In-App Payment (STK Push)</div>
-                                    <div class="desc">Pay via M‑Pesa prompt on your phone – instant activation</div>
-                                </div>
-                                <span class="badge">Instant</span>
-                            </div>
-                        </div>
-                        <div class="payment-option" onclick="selectPaymentMethod('c2b')">
-                            <div class="option-header">
-                                <span class="icon">🏦</span>
-                                <div class="text">
-                                    <div class="title">Pay via M-PESA Buy Goods (C2B)</div>
-                                    <div class="desc">Pay to Till Number and verify manually</div>
-                                </div>
-                                <span class="badge">Alternative</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="payment-info">
-                        <p>💳 M‑Pesa only. After payment, access is granted instantly.</p>
-                        <p>🔒 Time manipulation locks your account – never change device time.</p>
-                    </div>
-                </div>
-
-                <!-- STK Plans -->
-                <div id="view-stk-plans" class="body-view">
-                    <h2 class="section-title">Choose a Plan</h2>
-                    <p class="section-subtitle">Select your preferred subscription plan below</p>
-                    <div id="inline-plan-cards" class="plan-grid"></div>
-                    <div class="footer-back">
-                        <button class="inline-back-btn" onclick="goBackToMethodSelection()">← Back to payment
-                            methods</button>
-                    </div>
-                    <div class="payment-info">
-                        <p>💳 M‑Pesa only. After payment, access is granted instantly.</p>
-                        <p>🔒 Time manipulation locks your account – never change device time.</p>
-                    </div>
-                </div>
-
-                <!-- C2B Details -->
-                <div id="view-c2b-details" class="body-view">
-                    <h2 class="section-title">Pay via M-PESA Buy Goods</h2>
-                    <p class="section-subtitle">Follow the steps below to complete your payment</p>
-                    <div id="c2b-instructions" class="c2b-instructions">
-                        <ol>
-                            <li>Open the M‑PESA menu.</li>
-                            <li>Select <strong>"Lipa na M‑PESA"</strong>.</li>
-                            <li>Select <strong>"Buy Goods and Services"</strong>.</li>
-                            <li>Enter Till Number: <span class="till-number">3521027</span></li>
-                            <li>Enter the amount corresponding to your plan (e.g., <span id="c2b-expected-amount">any
-                                    amount</span>).</li>
-                            <li>Complete the payment using your M‑PESA PIN.</li>
-                        </ol>
-                    </div>
-                    <div id="c2b-claim-form" class="c2b-claim-form">
-                        <div class="form-group">
-                            <label for="c2b-phone">Phone Number (optional)</label>
-                            <input type="tel" id="c2b-phone" placeholder="e.g. 0712345678">
-                            <div class="hint">Enter the phone number used for the payment.</div>
-                        </div>
-                        <div class="form-group">
-                            <label for="c2b-mpesa-code">M‑Pesa Transaction Code (optional)</label>
-                            <input type="text" id="c2b-mpesa-code" placeholder="e.g. LJ4X7K3F">
-                            <div class="hint">Enter the 10‑digit code from your M‑Pesa confirmation SMS.</div>
-                        </div>
-                        <button class="btn-primary" onclick="verifyC2BPayment(event)">Verify Payment</button>
-                    </div>
-                    <div id="verification-status" class="verification-status"></div>
-                    <div class="footer-back">
-                        <button class="inline-back-btn" onclick="goBackToMethodSelection()">← Back to payment
-                            methods</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div><span class="shimmer-btn-sm" style="margin-right:0.5rem;"></span><span class="shimmer-btn-sm"></span></div>
+      </div>
+      <div class="shimmer-header-bottom">
+        <div class="shimmer-title-large"></div>
+        <div class="shimmer-status"></div>
+      </div>
     </div>
-    <script data-lazy data-src="/scripts/offline.js"></script>
-</body>
+    <main style="padding:1rem;">
+      <div class="shimmer-banner"></div>
+      <div class="shimmer-grid">
+        <div class="shimmer-plan-card">
+          <div class="shimmer-line shimmer-title"></div>
+          <div class="shimmer-line shimmer-price"></div>
+          <div class="shimmer-line shimmer-duration"></div>
+          <div class="shimmer-line shimmer-feature"></div>
+          <div class="shimmer-line shimmer-feature"></div>
+          <div class="shimmer-line shimmer-feature"></div>
+          <div class="shimmer-btn"></div>
+        </div>
+        <div class="shimmer-plan-card">
+          <div class="shimmer-line shimmer-title"></div>
+          <div class="shimmer-line shimmer-price"></div>
+          <div class="shimmer-line shimmer-duration"></div>
+          <div class="shimmer-line shimmer-feature"></div>
+          <div class="shimmer-line shimmer-feature"></div>
+          <div class="shimmer-line shimmer-feature"></div>
+          <div class="shimmer-btn"></div>
+        </div>
+        <div class="shimmer-plan-card">
+          <div class="shimmer-line shimmer-title"></div>
+          <div class="shimmer-line shimmer-price"></div>
+          <div class="shimmer-line shimmer-duration"></div>
+          <div class="shimmer-line shimmer-feature"></div>
+          <div class="shimmer-line shimmer-feature"></div>
+          <div class="shimmer-line shimmer-feature"></div>
+          <div class="shimmer-btn"></div>
+        </div>
+        <div class="shimmer-plan-card">
+          <div class="shimmer-line shimmer-title"></div>
+          <div class="shimmer-line shimmer-price"></div>
+          <div class="shimmer-line shimmer-duration"></div>
+          <div class="shimmer-line shimmer-feature"></div>
+          <div class="shimmer-line shimmer-feature"></div>
+          <div class="shimmer-line shimmer-feature"></div>
+          <div class="shimmer-btn"></div>
+        </div>
+      </div>
+      <div class="shimmer-payment-info"></div>
+      <div style="height:40px;width:120px;background:#2a2a3e;border-radius:var(--radius-sm);margin:2rem auto 0;background:linear-gradient(90deg,#2a2a3e 25%,#444 50%,#2a2a3e 75%);background-size:200px 100%;animation:shimmer 1.5s infinite;"></div>
+    </main>
+  </div>
 
-</html>
+  <!-- ===== REAL CONTENT ===== -->
+  <div id="real-content">
+    <!-- Header with two rows -->
+    <div class="sub-header">
+      <div class="sub-header-top">
+        <div class="left-group">
+          <button id="backBtn" class="btn-text" style="font-size: 0.9rem;">← Back</button>
+        </div>
+        <div class="right-group">
+          <button id="themeToggle" class="btn-outline" style="padding: 0.3rem 0.6rem;">🌓</button>
+        </div>
+      </div>
+      <div class="sub-header-bottom">
+        <h1>Subscription Plans</h1>
+        <div id="status-area" class="status-area">
+          <!-- dynamically filled -->
+        </div>
+      </div>
+    </div>
+
+    <div class="main-body">
+      <!-- Method Selection -->
+      <div id="view-method-selection" class="body-view active">
+        <h2 class="section-title">Select Payment Method</h2>
+        <p class="section-subtitle">Choose how you'd like to subscribe to premium access</p>
+        <div class="payment-options">
+          <div class="payment-option trial-option" id="trialOption">
+            <div class="option-header">
+              <span class="icon">🎁</span>
+              <div class="text">
+                <div class="title">Start Free Trial</div>
+                <div class="desc">3 hours of full premium access – no payment</div>
+              </div>
+              <span class="badge">Limited</span>
+            </div>
+            <ul class="trial-features">
+              <li>✓ Full access to all subjects</li>
+              <li>✓ Practice questions & explanations</li>
+              <li>✓ No payment details needed</li>
+            </ul>
+            <p class="trial-limitations">⏳ 3 hours only · 🔒 One-time use</p>
+          </div>
+          <div class="payment-option" id="stkOption">
+            <div class="option-header">
+              <span class="icon">📱</span>
+              <div class="text">
+                <div class="title">In-App Payment (STK Push)</div>
+                <div class="desc">Pay via M‑Pesa prompt on your phone – instant activation</div>
+              </div>
+              <span class="badge">Instant</span>
+            </div>
+          </div>
+          <div class="payment-option" id="c2bOption">
+            <div class="option-header">
+              <span class="icon">🏦</span>
+              <div class="text">
+                <div class="title">Pay via M-PESA Buy Goods (C2B)</div>
+                <div class="desc">Pay to Till Number and verify manually</div>
+              </div>
+              <span class="badge">Alternative</span>
+            </div>
+          </div>
+        </div>
+        <div class="payment-info">
+          <p>💳 M‑Pesa only. After payment, access is granted instantly.</p>
+          <p>🔒 Time manipulation locks your account – never change device time.</p>
+        </div>
+      </div>
+
+      <!-- STK Plans -->
+      <div id="view-stk-plans" class="body-view">
+        <h2 class="section-title">Choose a Plan</h2>
+        <p class="section-subtitle">Select your preferred subscription plan below</p>
+        <div id="inline-plan-cards" class="plan-grid"></div>
+        <div class="footer-back">
+          <button id="backToMethodsBtn" class="inline-back-btn">← Back to payment methods</button>
+        </div>
+        <div class="payment-info">
+          <p>💳 M‑Pesa only. After payment, access is granted instantly.</p>
+          <p>🔒 Time manipulation locks your account – never change device time.</p>
+        </div>
+      </div>
+
+      <!-- C2B Details -->
+      <div id="view-c2b-details" class="body-view">
+        <h2 class="section-title">Pay via M-PESA Buy Goods</h2>
+        <p class="section-subtitle">Follow the steps below to complete your payment</p>
+        <div id="c2b-instructions" class="c2b-instructions">
+          <ol>
+            <li>Open the M‑PESA menu.</li>
+            <li>Select <strong>"Lipa na M‑PESA"</strong>.</li>
+            <li>Select <strong>"Buy Goods and Services"</strong>.</li>
+            <li>Enter Till Number: <span class="till-number">3521027</span></li>
+            <li>Enter the amount corresponding to your plan (e.g., <span id="c2b-expected-amount">any amount</span>).</li>
+            <li>Complete the payment using your M‑PESA PIN.</li>
+          </ol>
+        </div>
+        <div id="c2b-claim-form" class="c2b-claim-form">
+
+          <div class="form-group">
+            <label for="c2b-mpesa-code">M‑Pesa Transaction Code </label>
+            <input type="text" id="c2b-mpesa-code" placeholder="e.g. LJ4X7K3F">
+            <div class="hint">Enter the 10‑digit code from your M‑Pesa confirmation SMS.</div>
+          </div>
+          <button id="verifyC2BBtn" class="btn-primary">Verify Payment</button>
+        </div>
+        <div id="verification-status" class="verification-status"></div>
+        <div class="footer-back">
+          <button id="backToMethodsC2BBtn" class="inline-back-btn">← Back to payment methods</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

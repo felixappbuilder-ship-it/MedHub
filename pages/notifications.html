@@ -1,157 +1,140 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Notifications – MedHub</title>
+<section
+  class="page notifications-page"
+  data-page="notifications"
+  data-script="/scripts/pages/notifications.js"
+  data-style="/css/notifications.css"
+  data-title="Notifications"
+  data-auth="required"
+  data-cache="true"
+  data-transition="fade"
+>
+  <div id="app" class="notification-app">
 
-    <link rel="manifest" href="/manifest.json">
-    <link rel="stylesheet" href="/css/common.css" media="all">
-    <link rel="stylesheet" href="/css/notifications.css" media="all">
+    <!-- ===== HEADER ===== -->
+    <header class="notif-header">
+      <div class="header-left">
+        <button id="backBtn" class="btn-back" aria-label="Back">←</button>
+        <h1>Notifications</h1>
+        <span class="unread-badge" id="unreadBadge">0</span>
+      </div>
+      <div class="header-right">
+        <button id="markAllReadBtn" class="btn-icon" title="Mark all read">✅</button>
+        <button id="settingsBtn" class="btn-icon" title="Settings">⚙️</button>
+      </div>
+    </header>
 
-    <!-- Core modules -->
-    <script type="module" src="/scripts/utils.js"></script>
-    <script type="module" src="/scripts/ui.js"></script>
-    <script type="module" src="/scripts/router.js"></script>
-    <script type="module" src="/scripts/app.js"></script>
-    <script type="module" src="/scripts/notifications.js"></script>
-    <script type="module" src="/scripts/help.js"></script>
-
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/service-worker.js').catch(() => {});
-        }
-    </script>
-</head>
-<body>
-    <div id="app" class="notification-app">
-
-        <!-- ===== HEADER ===== -->
-        <header class="notif-header">
-            <div class="header-left">
-                <button onclick="router.navigateTo('subjects.html')" class="btn-back" aria-label="Back">←</button>
-                <h1>Notifications</h1>
-                <span class="unread-badge" id="unreadBadge">0</span>
-            </div>
-            <div class="header-right">
-                <button onclick="window.notifications?.markAllRead()" class="btn-icon" title="Mark all read">✅</button>
-                <button onclick="router.navigateTo('profile.html')" class="btn-icon" title="Settings">⚙️</button>
-            </div>
-        </header>
-
-        <!-- ===== TOOLBAR ===== -->
-        <div class="notif-toolbar">
-            <div class="filter-tabs" id="filterTabs">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="unread">Unread</button>
-                <button class="filter-btn" data-filter="pinned">Pinned</button>
-                <button class="filter-btn" data-filter="archived">Archived</button>
-                <button class="filter-btn" data-filter="important">Important</button>
-            </div>
-            <div class="sort-options">
-                <select id="sortSelect" aria-label="Sort notifications">
-                    <option value="newest">Newest</option>
-                    <option value="oldest">Oldest</option>
-                    <option value="priority">Priority</option>
-                </select>
-            </div>
-        </div>
-
-        <!-- ===== SEARCH ===== -->
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Search notifications..." autocomplete="off">
-            <button class="clear-search" id="clearSearch" aria-label="Clear search">✕</button>
-        </div>
-
-        <!-- ===== FILTER CHIPS ===== -->
-        <div class="filter-chips" id="filterChips">
-            <button class="chip active" data-category="all">All</button>
-            <button class="chip" data-category="study">Study</button>
-            <button class="chip" data-category="exams">Exams</button>
-            <button class="chip" data-category="community">Community</button>
-            <button class="chip" data-category="achievements">Achievements</button>
-            <button class="chip" data-category="ai">AI</button>
-            <button class="chip" data-category="payments">Payments</button>
-            <button class="chip" data-category="updates">Updates</button>
-            <button class="chip" data-category="system">System</button>
-            <button class="chip" data-category="security">Security</button>
-            <button class="chip" data-category="downloads">Downloads</button>
-            <button class="chip" data-category="admin">Admin</button>
-        </div>
-
-        <!-- ===== STATISTICS ===== -->
-        <div class="stats-row" id="statsRow">
-            <span class="stat-item"><strong id="statUnread">0</strong> Unread</span>
-            <span class="stat-item"><strong id="statRead">0</strong> Read</span>
-            <span class="stat-item"><strong id="statPinned">0</strong> Pinned</span>
-            <span class="stat-item"><strong id="statArchived">0</strong> Archived</span>
-            <span class="stat-item"><strong id="statCritical">0</strong> Critical</span>
-            <span class="stat-item"><strong id="statToday">0</strong> Today</span>
-        </div>
-
-        <!-- ===== NOTIFICATION LIST ===== -->
-        <div id="notificationContainer" class="notification-list">
-            <!-- Cards will be rendered here by notifications.js -->
-        </div>
-
-        <!-- ===== LOADING / EMPTY / ERROR STATES ===== -->
-        <div id="loadingState" class="state-message loading" style="display:none;">
-            <div class="skeleton-card"></div>
-            <div class="skeleton-card"></div>
-            <div class="skeleton-card"></div>
-        </div>
-
-        <div id="emptyState" class="state-message empty" style="display:none;">
-            <div class="empty-icon">🎉</div>
-            <h3>You're all caught up!</h3>
-            <p>No notifications to show.</p>
-            <button onclick="window.notifications?.refresh()" class="btn-secondary">Refresh</button>
-        </div>
-
-        <div id="errorState" class="state-message error" style="display:none;">
-            <div class="error-icon">⚠️</div>
-            <h3>Something went wrong</h3>
-            <p>Could not load notifications.</p>
-            <button onclick="window.notifications?.load()" class="btn-primary">Retry</button>
-        </div>
-
-        <!-- ===== FLOATING BUTTONS ===== -->
-        <div class="floating-buttons">
-            <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fab" title="Scroll to top">⬆</button>
-            <button onclick="window.notifications?.openHelp()" class="fab" title="Help">❓</button>
-            <!-- Admin compose button (visible only to admins) -->
-            <button id="composeBtn" style="display:none;" onclick="window.notifications?.openCompose()" class="fab" title="Compose">✏️</button>
-        </div>
-
-        <!-- ===== HELP OVERLAY ===== -->
-        <div id="helpOverlay" class="help-overlay" style="display:none;"></div>
-
+    <!-- ===== TOOLBAR ===== -->
+    <div class="notif-toolbar">
+      <div class="filter-tabs" id="filterTabs">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="unread">Unread</button>
+        <button class="filter-btn" data-filter="pinned">Pinned</button>
+        <button class="filter-btn" data-filter="archived">Archived</button>
+        <button class="filter-btn" data-filter="important">Important</button>
+      </div>
+      <div class="sort-options">
+        <select id="sortSelect" aria-label="Sort notifications">
+          <option value="newest">Newest</option>
+          <option value="oldest">Oldest</option>
+          <option value="priority">Priority</option>
+        </select>
+      </div>
     </div>
 
-    <!-- Templates (hidden, cloned by JS) -->
-    <template id="notificationCardTemplate">
-        <div class="notif-card" data-id="">
-            <div class="card-header">
-                <div class="card-icon"></div>
-                <div class="card-title-area">
-                    <div class="card-title"></div>
-                    <div class="card-subtitle"></div>
-                </div>
-                <div class="card-actions">
-                    <button class="pin-btn" title="Pin">📌</button>
-                    <button class="archive-btn" title="Archive">📦</button>
-                    <button class="delete-btn" title="Delete">🗑️</button>
-                </div>
-            </div>
-            <div class="card-body"></div>
-            <div class="card-media"></div>
-            <div class="card-progress"></div>
-            <div class="card-buttons"></div>
-            <div class="card-footer">
-                <span class="card-time"></span>
-                <span class="card-priority"></span>
-            </div>
+    <!-- ===== SEARCH ===== -->
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search notifications..." autocomplete="off">
+      <button class="clear-search" id="clearSearch" aria-label="Clear search">✕</button>
+    </div>
+
+    <!-- ===== FILTER CHIPS ===== -->
+    <div class="filter-chips" id="filterChips">
+      <button class="chip active" data-category="all">All</button>
+      <button class="chip" data-category="study">Study</button>
+      <button class="chip" data-category="exams">Exams</button>
+      <button class="chip" data-category="community">Community</button>
+      <button class="chip" data-category="achievements">Achievements</button>
+      <button class="chip" data-category="ai">AI</button>
+      <button class="chip" data-category="payments">Payments</button>
+      <button class="chip" data-category="updates">Updates</button>
+      <button class="chip" data-category="system">System</button>
+      <button class="chip" data-category="security">Security</button>
+      <button class="chip" data-category="downloads">Downloads</button>
+      <button class="chip" data-category="admin">Admin</button>
+    </div>
+
+    <!-- ===== STATISTICS ===== -->
+    <div class="stats-row" id="statsRow">
+      <span class="stat-item"><strong id="statUnread">0</strong> Unread</span>
+      <span class="stat-item"><strong id="statRead">0</strong> Read</span>
+      <span class="stat-item"><strong id="statPinned">0</strong> Pinned</span>
+      <span class="stat-item"><strong id="statArchived">0</strong> Archived</span>
+      <span class="stat-item"><strong id="statCritical">0</strong> Critical</span>
+      <span class="stat-item"><strong id="statToday">0</strong> Today</span>
+    </div>
+
+    <!-- ===== NOTIFICATION LIST ===== -->
+    <div id="notificationContainer" class="notification-list">
+      <!-- Cards will be rendered here by notifications.js -->
+    </div>
+
+    <!-- ===== LOADING / EMPTY / ERROR STATES ===== -->
+    <div id="loadingState" class="state-message loading" style="display:none;">
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+    </div>
+
+    <div id="emptyState" class="state-message empty" style="display:none;">
+      <div class="empty-icon">🎉</div>
+      <h3>You're all caught up!</h3>
+      <p>No notifications to show.</p>
+      <button id="refreshEmptyBtn" class="btn-secondary">Refresh</button>
+    </div>
+
+    <div id="errorState" class="state-message error" style="display:none;">
+      <div class="error-icon">⚠️</div>
+      <h3>Something went wrong</h3>
+      <p>Could not load notifications.</p>
+      <button id="retryBtn" class="btn-primary">Retry</button>
+    </div>
+
+    <!-- ===== FLOATING BUTTONS ===== -->
+    <div class="floating-buttons">
+      <button id="scrollTopBtn" class="fab" title="Scroll to top">⬆</button>
+      <button id="helpBtn" class="fab" title="Help">❓</button>
+      <!-- Admin compose button (visible only to admins) -->
+      <button id="composeBtn" style="display:none;" class="fab" title="Compose">✏️</button>
+    </div>
+
+    <!-- ===== HELP OVERLAY ===== -->
+    <div id="helpOverlay" class="help-overlay" style="display:none;"></div>
+
+  </div>
+
+  <!-- Templates (hidden, cloned by JS) -->
+  <template id="notificationCardTemplate">
+    <div class="notif-card" data-id="">
+      <div class="card-header">
+        <div class="card-icon"></div>
+        <div class="card-title-area">
+          <div class="card-title"></div>
+          <div class="card-subtitle"></div>
         </div>
-    </template>
-</body>
-</html>
+        <div class="card-actions">
+          <button class="pin-btn" title="Pin">📌</button>
+          <button class="archive-btn" title="Archive">📦</button>
+          <button class="delete-btn" title="Delete">🗑️</button>
+        </div>
+      </div>
+      <div class="card-body"></div>
+      <div class="card-media"></div>
+      <div class="card-progress"></div>
+      <div class="card-buttons"></div>
+      <div class="card-footer">
+        <span class="card-time"></span>
+        <span class="card-priority"></span>
+      </div>
+    </div>
+  </template>
+</section>

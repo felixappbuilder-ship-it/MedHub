@@ -1,4 +1,4 @@
-// frontend-user/scripts/referral-ui.js
+// scripts/referral-ui.js
 
 /**
  * Referral UI Module
@@ -9,7 +9,7 @@
 import * as referral from './referral.js';
 import * as ui from './ui.js';
 import * as utils from './utils.js';
-import * as app from './app.js';
+import * as router from './router.js'; // for clean navigation
 
 // ==================== RENDER DASHBOARD ====================
 
@@ -128,11 +128,20 @@ function renderUserDashboard(container, data) {
                 ⭐ You are a verified Agent! You earn <strong>KES 40</strong> per new subscriber and <strong>KES 15</strong> per renewal.
             </div>
         ` : `
-            <div class="become-agent" style="display: none;">
-                <p>Want to earn more? <a href="#" onclick="router.navigateTo('agent-signup.html')">Become a Campus Agent</a> and earn KES 40 per referral!</p>
+            <div class="become-agent">
+                <p>Want to earn more? <a href="#" id="becomeAgentLink">Become a Campus Agent</a> and earn KES 40 per referral!</p>
             </div>
         `}
     `;
+
+    // Attach listener for "Become a Campus Agent" link
+    const becomeLink = container.querySelector('#becomeAgentLink');
+    if (becomeLink) {
+        becomeLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            router.navigateTo('agent-signup'); // clean URL
+        });
+    }
 }
 
 // ==================== AGENT DASHBOARD ====================

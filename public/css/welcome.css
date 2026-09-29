@@ -1,29 +1,164 @@
-/* ===== welcome.css ===== */
+/* public/css/welcome.css */
+
+/* ===== HEADER ===== */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: var(--bg-secondary, #fff);
+  border-bottom: 1px solid var(--border, #e2e8f0);
+}
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--text-primary, #0f172a);
+}
+header .logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+}
+header .btn-outline {
+  background: transparent;
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: 9999px;
+  padding: 0.4rem 0.9rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1;
+  transition: background 0.2s, border-color 0.2s;
+  color: var(--text-primary, #0f172a);
+}
+header .btn-outline:hover {
+  background: var(--bg-hover, #f1f5f9);
+  border-color: var(--text-muted, #94a3b8);
+}
+
+/* ===== PAGE CONTAINER ===== */
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-primary, #f8fafc);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+main {
+  flex: 1 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* ===== WELCOME CARD ===== */
 .welcome-card {
   max-width: 550px;
-  margin: 3rem auto;
+  width: 100%;
   padding: 2.5rem;
-  background: var(--surface);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
+  background: var(--bg-card, #ffffff);
+  border-radius: var(--radius-lg, 16px);
+  box-shadow: var(--shadow-lg, 0 10px 40px rgba(0, 0, 0, 0.08));
   text-align: center;
 }
 .welcome-card h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
+  color: var(--text-primary, #0f172a);
 }
 .welcome-card p {
-  color: var(--text-secondary);
+  color: var(--text-secondary, #475569);
   margin-bottom: 2rem;
 }
+
+/* ===== ACTION BUTTONS ===== */
 .action-buttons {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   margin-top: 2rem;
 }
+.action-buttons .btn-primary,
+.action-buttons .btn-secondary,
+.action-buttons .btn-link {
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+}
+.action-buttons .btn-primary {
+  background: var(--accent, #2563eb);
+  color: #fff;
+}
+.action-buttons .btn-primary:hover {
+  background: var(--accent-dark, #1d4ed8);
+  transform: scale(1.01);
+}
+.action-buttons .btn-secondary {
+  background: transparent;
+  color: var(--text-primary, #0f172a);
+  border: 1px solid var(--border, #e2e8f0);
+}
+.action-buttons .btn-secondary:hover {
+  background: var(--bg-hover, #f1f5f9);
+}
+.action-buttons .btn-link {
+  background: transparent;
+  color: var(--text-secondary, #475569);
+  font-weight: 500;
+}
+.action-buttons .btn-link:hover {
+  color: var(--accent, #2563eb);
+  text-decoration: underline;
+}
+
+/* ===== GUEST NOTE ===== */
 .guest-note {
   font-size: 0.875rem;
-  color: var(--text-muted);
+  color: var(--text-muted, #94a3b8);
   margin-top: 1.5rem;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  flex-shrink: 0;
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+footer .btn-text {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary, #475569);
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+footer .btn-text:hover {
+  background: var(--bg-hover, #f1f5f9);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+  header {
+    padding: 0.75rem 1rem;
+  }
+  header .logo span {
+    font-size: 1rem;
+  }
+  .welcome-card {
+    padding: 1.5rem;
+  }
+  .welcome-card h2 {
+    font-size: 1.5rem;
+  }
 }

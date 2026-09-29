@@ -1,0 +1,64 @@
+/* ==========================================================================
+   OFFLINE — page-specific styles
+   Requires common.css (tokens, h1 base, p base, button reset, --transition,
+   --radius, --accent, --accent-dark).
+   Adds ONLY: centered shell, big icon, page heading/paragraph overrides,
+   retry button, and a phone-breakpoint tweak.
+   ========================================================================== */
+
+/* ---------- Full-page centered shell ---------- */
+.offline-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    text-align: center;
+    padding: 2rem;
+}
+
+.offline-icon {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+
+/* ---------- Heading override ----------
+   Common sets h1 margin-bottom: 0.5rem + color: var(--text-primary).
+   Only the margin is different here. */
+h1 {
+    margin-bottom: 1rem;
+}
+
+/* ---------- Paragraph override ----------
+   Common sets p margin-bottom: 1rem only.
+   Page widens the gap and adds centered color + max-width. */
+p {
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+    max-width: 500px;
+}
+
+/* ---------- Retry button ---------- */
+.btn-retry {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.btn-retry:hover {
+    background: var(--accent-dark);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 480px) {
+    .offline-icon { font-size: 3.5rem; }
+    h1            { font-size: 1.5rem; }
+    .btn-retry {
+        width: 100%;
+        max-width: 300px;
+    }
+}

@@ -1,165 +1,171 @@
-// frontend-user/scripts/router.js
+// scripts/router.js
 
 /**
- * Client-Side Router – FULL VERSION
- * Handles navigation from all HTML pages, enforces authentication,
- * and maps page names to correct absolute paths.
+ * SPA Router – Full Version (Clean URLs)
+ * Handles static, dynamic, query, hash routes.
+ * No `.html` in URLs or internal page names.
  *
- * Subscription and free‑topic access is handled by the page itself
- * (e.g., exam-room.html), not by the router.
+ * Pages are resolved dynamically – no static lists required.
+ * Authentication is enforced by page-manager based on each page's `data-auth`.
  */
 
-import * as app from './app.js';
 import * as ui from './ui.js';
-import * as utils from './utils.js';
+import * as auth from './auth.js';
+import { navigateTo as pageManagerNavigate } from './page-manager.js';
 
-// ==================== ROUTE PERMISSIONS ====================
-const ROUTES = {
-    public: [
-        'index.html',
-        'welcome.html',
-        'login.html',
-        'signup.html',
-        'forgot-password.html',
-        'locked.html',
-        'shared-exam.html'
-    ],
-    protected: [
-        'subjects.html',
-        'subject-specific.html',
-        'subscription.html',
-        'free-trial.html',
-        'payment.html',
-        'exam-settings.html',
-        'exam-room.html',      // authentication required, but subscription check inside the page
-        'results.html',
-        'performance.html',
-        'profile.html'
-    ]
-};
+// ==================== STATIC PERMISSION LISTS ====================
+const PUBLIC_PAGES = [
+    'home', 'index', 'welcome', 'login', 'signup', 'forgot-password',
+    'locked', 'shared-exam', 'shared-note', 'privacy', 'terms', 'agent-terms', 'error'
+];
 
-// ==================== ALLOWED NAVIGATION FLOWS ====================
-const FLOW = {
-    'index.html': ['welcome.html'],
-    'welcome.html': ['login.html', 'signup.html', 'subjects.html'],
-    'login.html': ['subjects.html', 'forgot-password.html'],
-    'signup.html': ['free-trial.html', 'subjects.html'],
-    'subjects.html': [
-        'subject-specific.html',
-        'exam-settings.html',
-        'performance.html',
-        'profile.html',
-        'subscription.html'
-    ],
-    'subject-specific.html': ['exam-settings.html', 'subjects.html'],
-    'exam-settings.html': ['exam-room.html', 'subject-specific.html', 'subjects.html'],
-    'exam-room.html': ['results.html', 'subjects.html'],
-    'results.html': ['exam-settings.html', 'subjects.html', 'performance.html'],
-    'performance.html': ['subjects.html', 'profile.html', 'subject-specific.html'],
-    'profile.html': ['subjects.html'],
-    'subscription.html': ['payment.html', 'free-trial.html', 'subjects.html'],
-    'payment.html': ['subscription.html', 'subjects.html'],
-    'free-trial.html': ['subscription.html', 'subjects.html'],
-    'forgot-password.html': ['login.html']
-};
+const PROTECTED_PAGES = [
+    'subjects', 'subject-specific', 'exam-settings', 'exam-room', 'results',
+    'performance', 'profile', 'subscription', 'free-trial', 'payment',
+    'referral', 'agent-registration', 'ai', 'notes', 'notifications',
+    'resource-browser', 'pdf-settings'
+];
 
+// ==================== DYNAMIC ROUTE PATTERNS ====================
+const DYNAMIC_ROUTES = [
+    { pattern: /^exam\/(.+)$/, page: 'exam', paramKey: 'id' },
+    { pattern: /^resource\/viewer\/(.+)$/, page: 'resource-viewer', paramKey: 'id' },
+    { pattern: /^shared-exam\/(.+)$/, page: 'shared-exam', paramKey: 'token' }
+];
 
 // ==================== PERMISSION CHECK ====================
-
 function isAllowed(targetPage, currentPage) {
-    // Public pages always allowed
-    if (ROUTES.public.includes(targetPage)) return true;
+    if (PUBLIC_PAGES.includes(targetPage)) return true;
 
-    // Authentication check
-    const isLoggedIn = app.checkAuth();
-    if (!isLoggedIn && ROUTES.protected.includes(targetPage)) {
-        ui.showToast('Please log in first', 'warning');
-        return false;
-    }
-
-    // Flow check – if the transition is explicitly forbidden, block it.
-    // But we allow going back to home/welcome always.
-    if (FLOW[currentPage] && !FLOW[currentPage].includes(targetPage)) {
-        // Allow navigation to index or welcome from anywhere
-        if (targetPage === 'index.html' || targetPage === 'welcome.html') {
-            return true;
+    if (PROTECTED_PAGES.includes(targetPage)) {
+        const isLoggedIn = auth.checkAuth();
+        if (!isLoggedIn) {
+            ui.showToast('Please log in first', 'warning');
+            return false;
         }
-        // Otherwise, allow but warn (could be intentional)
-        console.warn(`Navigation from ${currentPage} to ${targetPage} is not in the standard flow.`);
-        return true;
     }
 
     return true;
 }
 
-// ==================== URL BUILDER ====================
+// ==================== ROUTE RESOLVER ====================
+function resolveRoute(path) {
+    // 1. Separate hash and query from the path
+    let pathPart = path;
+    let queryString = '';
+    let hash = '';
 
-function buildUrl(page) {
-    // Split into path and query/hash
-    const [pathAndQuery, hash] = page.split('#');
-    const [base, query] = pathAndQuery.split('?');
-    const cleanBase = base.replace(/^\/+|\/+$/g, ''); // trim slashes
-
-    let absolutePath;
-    if (cleanBase === 'index.html') {
-        absolutePath = '/index.html';
-    } else {
-        absolutePath = `/pages/${cleanBase}`;
+    if (pathPart.includes('#')) {
+        const parts = pathPart.split('#');
+        pathPart = parts[0];
+        hash = parts[1];
     }
 
-    // Add query and hash if present
-    let result = absolutePath;
-    if (query) result += '?' + query;
-    if (hash) result += '#' + hash;
-    return result;
+    if (pathPart.includes('?')) {
+        const parts = pathPart.split('?');
+        pathPart = parts[0];
+        queryString = parts[1];
+    }
+
+    // 2. Clean the path
+    pathPart = pathPart.replace(/^\/+|\/+$/g, '');
+    pathPart = pathPart.replace(/^pages\//, '');
+    pathPart = pathPart.replace(/\.html$/, '');
+
+    const query = new URLSearchParams(queryString || '');
+
+    // 3. Root always resolves to home. The home page decides where to
+    //    send the user after they click "Get Started".
+    if (!pathPart || pathPart === 'index' || pathPart === 'index.html') {
+        return {
+            page: 'home',
+            params: {},
+            query,
+            hash
+        };
+    }
+
+    // 4. Dynamic route match
+    for (const route of DYNAMIC_ROUTES) {
+        const match = pathPart.match(route.pattern);
+        if (match) {
+            return {
+                page: route.page,
+                params: { [route.paramKey]: match[1] },
+                query,
+                hash
+            };
+        }
+    }
+
+    // 5. Static page name
+    return { page: pathPart, params: {}, query, hash };
+}
+
+// ==================== URL BUILDER ====================
+function buildUrl({ page, params = {}, query = new URLSearchParams(), hash = '' }) {
+    let path = page;
+    for (const route of DYNAMIC_ROUTES) {
+        if (route.page === page && params[route.paramKey]) {
+            if (page === 'exam') path = `exam/${params.id}`;
+            else if (page === 'resource-viewer') path = `resource/viewer/${params.id}`;
+            else if (page === 'shared-exam') path = `shared-exam/${params.token}`;
+            break;
+        }
+    }
+    let url = `/${path}`;
+    if (query.toString()) url += `?${query.toString()}`;
+    if (hash) url += `#${hash}`;
+    return url;
 }
 
 // ==================== NAVIGATE ====================
+export function navigateTo(target, data = {}) {
+    let resolved;
+    let targetPage;
 
-export function navigateTo(page, data = {}) {
-    console.log(`[Router] Navigating to: ${page}`);
-
-    const current = getCurrentPage();
-    const base = page.split('?')[0].split('#')[0]; // strip query/hash for check
-
-    if (!isAllowed(base, current)) {
+    if (typeof target === 'string') {
+        resolved = resolveRoute(target);
+        targetPage = resolved.page;
+    } else if (typeof target === 'object') {
+        resolved = target;
+        targetPage = target.page;
+    } else {
+        console.error('[Router] Invalid target:', target);
         return;
     }
+
+    const current = getCurrentPage();
+    if (!isAllowed(targetPage, current)) return;
 
     if (Object.keys(data).length > 0) {
         sessionStorage.setItem('navData', JSON.stringify(data));
     }
 
-    const targetUrl = buildUrl(page);
+    const url = buildUrl(resolved);
+    window.history.pushState({ page: targetPage, params: resolved.params }, '', url);
 
-    // Show transition overlay if available
-    const overlay = document.querySelector('.page-transition-overlay') || (() => {
-        const el = document.createElement('div');
-        el.className = 'page-transition-overlay';
-        document.body.appendChild(el);
-        return el;
-    })();
-    overlay.style.display = 'block';
-    overlay.style.opacity = '1';
-
-    // Small delay to allow overlay to show
-    setTimeout(() => {
-        window.location.href = targetUrl;
-    }, 50);
+    pageManagerNavigate(targetPage, resolved.params, resolved.query, resolved.hash);
 }
 
 // ==================== GET CURRENT PAGE ====================
-
 export function getCurrentPage() {
     const path = window.location.pathname;
-    if (path === '/' || path === '/index.html') return 'index.html';
-    const parts = path.split('/');
-    const filename = parts[parts.length - 1];
-    return filename || 'index.html';
+    if (path === '/' || path === '/index') return 'home';
+
+    let cleanPath = path.replace(/^\/+|\/+$/g, '');
+    cleanPath = cleanPath.replace(/^pages\//, '');
+    cleanPath = cleanPath.replace(/\.html$/, '');
+
+    for (const route of DYNAMIC_ROUTES) {
+        const match = cleanPath.match(route.pattern);
+        if (match) return route.page;
+    }
+    const parts = cleanPath.split('/');
+    return parts[0] || 'home';
 }
 
 // ==================== NAVIGATION DATA ====================
-
 export function getNavData() {
     const data = sessionStorage.getItem('navData');
     sessionStorage.removeItem('navData');
@@ -167,11 +173,34 @@ export function getNavData() {
 }
 
 // ==================== GO BACK ====================
-
 export function goBack() {
     window.history.back();
 }
 
-// ==================== EXPOSE GLOBALLY ====================
+// ==================== INIT ROUTER ====================
+export function initRouter() {
+    window.addEventListener('popstate', () => {
+        const fullPath = window.location.pathname + window.location.search + window.location.hash;
+        const resolved = resolveRoute(fullPath);
+        navigateTo(resolved);
+    });
 
-window.router = { navigateTo, goBack };
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest('a[href]') || e.target.closest('[data-route]');
+        if (!link) return;
+        const href = link.getAttribute('href') || link.dataset.route;
+        if (!href) return;
+        if (href.startsWith('http') || href.startsWith('//') ||
+            href.startsWith('mailto:') || href.startsWith('tel:')) return;
+        e.preventDefault();
+        navigateTo(href);
+    });
+
+    const initialPath = window.location.pathname + window.location.search + window.location.hash;
+    const resolved = resolveRoute(initialPath);
+    navigateTo(resolved);
+}
+
+// ==================== EXPOSE ====================
+window.router = { navigateTo, goBack, initRouter, getCurrentPage, getNavData };
+export default { navigateTo, goBack, initRouter, getCurrentPage, getNavData };

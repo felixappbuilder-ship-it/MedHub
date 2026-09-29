@@ -1,39 +1,487 @@
+/* ==========================================================================
+   LOGIN — page-specific styles
+   Requires common.css (tokens, buttons, .logo, .form-container base, inputs,
+   .error-message, .form-group, :where(header|footer) defaults).
+   Adds ONLY: page layout shell, sticky header, footer overrides, form-row,
+   reveal button, action button group, security note, Google Sign-In
+   button + "or" divider + account-linking modal, responsive.
+   ========================================================================== */
+
+/* ---------- Page container ----------
+   Provides the flex shell. min-height ensures footer stays at bottom
+   when content is short. Overflow is left visible so the sticky header
+   can attach to the viewport (any overflow:hidden ancestor would break it). */
+.page-container {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-primary, #f8fafc);
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    overflow: visible;
+}
+
+/* ---------- Sticky header ----------
+   Pinned to the top of the viewport while the page scrolls.
+   Solid background + z-index so content slides underneath it. */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: var(--bg-secondary, #fff);
+    border-bottom: 1px solid var(--border, #e2e8f0);
+    /* Slight shadow so it separates from content as it slides over */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    /* Ensure the sticky header covers content behind it */
+    isolation: isolate;
+}
+
+/* Common's .logo provides layout + weight + color; this page tightens gap
+   and shrinks font-size slightly. */
+header .logo {
+    gap: 0.75rem;
+    font-size: 1.25rem;
+}
+
+/* Theme toggle — overrides common's default `.btn-outline` (blue-on-transparent). */
+header .btn-outline {
+    background: transparent;
+    border: 1px solid var(--border, #e2e8f0);
+    border-radius: 9999px;
+    padding: 0.4rem 0.9rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    transition: background 0.2s, border-color 0.2s;
+    color: var(--text-primary, #0f172a);
+}
+header .btn-outline:hover {
+    background: var(--bg-hover, #f1f5f9);
+    border-color: var(--text-muted, #94a3b8);
+    /* Block common's `.btn-outline:hover { color: #fff }` from
+       making the icon unreadable on the light hover bg. */
+    color: var(--text-primary, #0f172a);
+}
+
+/* Dark theme header background — uses the card bg so it stays readable */
+.dark-theme header {
+    background: var(--bg-card, #1e293b);
+    border-bottom-color: var(--border, #334155);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- Main ---------- */
+main {
+    flex: 1 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* ---------- Form container ----------
+   Common supplies max-width, bg, border, radius, padding, shadow.
+   Here we widen to full parent width and zero the common margin
+   because <main> centers the form via flex. */
 .form-container {
-    max-width: 450px;
-    margin: 3rem auto;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 2rem;
-    box-shadow: var(--shadow-lg);
+    width: 100%;
+    margin: 0 auto;
+    border-radius: var(--radius-lg, 16px);
 }
-.form-container h2 {
-    margin-bottom: 1.5rem;
-}
+
+/* ---------- Form row (remember + forgot) ---------- */
 .form-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
+
+.form-row label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary, #475569);
+    font-size: 0.95rem;
+    /* Block common's `label` base from adding margin/weight */
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.form-row .btn-link {
+    background: transparent;
+    color: var(--accent, #2563eb);
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+    /* Block common's `.btn-link` underline at rest */
+    text-decoration: none;
+}
+.form-row .btn-link:hover {
+    background: var(--bg-hover, #f1f5f9);
+    text-decoration: underline;
+    /* Block common's `.btn-link:hover { color: var(--accent-dark) }` */
+    color: var(--accent, #2563eb);
+}
+
+/* ---------- Form groups ---------- */
+.form-group {
+    /* Common provides margin-bottom; add relative positioning
+       so .reveal-btn can be absolutely positioned. */
+    position: relative;
+}
+
+.form-group label {
+    /* Common provides display:block + font-weight; override these. */
+    margin-bottom: 0.4rem;
+    color: var(--text-primary, #0f172a);
+    font-size: 0.95rem;
+}
+
+/* Input override — extra right padding for reveal button, custom bg-input */
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    padding: 0.7rem 2.5rem 0.7rem 1rem;
+    border-radius: 8px;
+    background: var(--bg-input, #f8fafc);
+    font-size: 1rem;
+}
+
+.form-group input::placeholder {
+    color: var(--text-muted, #94a3b8);
+}
+
+/* Focus ring — page uses stronger opacity (0.15 vs common's 0.1) */
+.form-group input:focus {
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* ---------- Dark theme token ---------- */
+.dark-theme {
+    --bg-input: #1e293b;
+}
+
+/* ---------- Reveal button ---------- */
 .reveal-btn {
     position: absolute;
     right: 0.75rem;
-    top: 50%;
+    top: 70%;
     transform: translateY(-50%);
     background: none;
     border: none;
-    color: var(--text-muted);
+    color: var(--text-muted, #94a3b8);
     padding: 0.25rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: color 0.2s;
 }
-.form-group {
-    position: relative;
+.reveal-btn:hover {
+    color: var(--text-primary, #0f172a);
 }
+
+/* ---------- Error messages (override common's size/margin) ---------- */
+.error-message {
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+}
+
+/* ---------- Action buttons ---------- */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.action-buttons .btn-primary {
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background 0.2s, transform 0.1s;
+}
+.action-buttons .btn-primary:hover:not(:disabled) {
+    transform: scale(1.01);
+}
+
+.action-buttons .btn-secondary {
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 1rem;
+    background: transparent;
+    color: var(--text-primary, #0f172a);
+}
+.action-buttons .btn-secondary:hover:not(:disabled) {
+    background: var(--bg-hover, #f1f5f9);
+}
+
+/* ---------- Security note ---------- */
 .security-note {
     margin-top: 2rem;
     padding-top: 1rem;
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--border, #e2e8f0);
     font-size: 0.75rem;
-    color: var(--text-muted);
+    color: var(--text-muted, #94a3b8);
     text-align: center;
+}
+
+/* ---------- Footer ----------
+   Common's :where(footer:not([class])) provides padding: 1.5rem 0 +
+   text-align: center. Here we add horizontal padding + flex-shrink. */
+footer {
+    flex-shrink: 0;
+    padding: 1.5rem 1rem;
+}
+
+/* Bordered pill button — overrides common's minimal .btn-text */
+footer .btn-text {
+    background: transparent;
+    border: 1.5px solid var(--border, #e2e8f0);
+    border-radius: 9999px;
+    padding: 0.6rem 1.8rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-primary, #0f172a);
+    transition: background 0.2s, border-color 0.2s, transform 0.1s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+footer .btn-text:hover {
+    background: var(--bg-hover, #f1f5f9);
+    border-color: var(--text-muted, #94a3b8);
+    transform: scale(1.02);
+    color: var(--text-primary, #0f172a);
+}
+
+/* ==========================================================================
+   GOOGLE SIGN-IN
+   ========================================================================== */
+
+/* Google button container — holds the GIS iframe */
+.google-signin-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 44px;
+    margin-bottom: 0.5rem;
+    transition: opacity 0.15s ease;
+}
+.google-signin-container iframe {
+    margin: 0 auto;
+}
+
+/* "or" divider between Google and the password form */
+.auth-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1rem 0 1.25rem;
+    color: var(--text-muted, #94a3b8);
+    font-size: 0.85rem;
+    text-transform: lowercase;
+}
+.auth-divider::before,
+.auth-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border, #e2e8f0);
+}
+
+/* ==========================================================================
+   GOOGLE ACCOUNT-LINKING MODAL
+   ========================================================================== */
+
+#google-link-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 10000;      /* above the sticky header */
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+#google-link-modal[style*="flex"] {
+    display: flex !important;
+}
+
+#google-link-modal .modal {
+    background: var(--bg-card, #fff);
+    border-radius: var(--radius, 12px);
+    max-width: 420px;
+    width: 100%;
+    padding: 1.5rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: loginModalFade 0.25s ease;
+}
+@keyframes loginModalFade {
+    0%   { opacity: 0; transform: scale(0.95) translateY(10px); }
+    100% { opacity: 1; transform: scale(1)    translateY(0);    }
+}
+
+#google-link-modal .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+#google-link-modal .modal-header h3 {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+#google-link-modal .modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-muted, #94a3b8);
+    padding: 0.2rem 0.4rem;
+    line-height: 1;
+    transition: color 0.2s;
+}
+#google-link-modal .modal-close:hover {
+    color: var(--text-primary, #0f172a);
+}
+
+#google-link-modal .modal-body p {
+    margin-bottom: 0.75rem;
+    color: var(--text-secondary, #475569);
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+#google-link-modal .modal-body strong {
+    color: var(--text-primary, #0f172a);
+}
+#google-link-modal .modal-body .form-group {
+    margin-top: 1rem;
+}
+#google-link-modal .modal-body .form-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--text-primary, #0f172a);
+}
+#google-link-modal .modal-body .form-group input {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border, #e2e8f0);
+    background: var(--bg-input, #f8fafc);
+    color: var(--text-primary, #0f172a);
+    font-size: 1rem;
+}
+#google-link-modal .modal-body .form-group input:focus {
+    outline: none;
+    border-color: var(--accent, #2563eb);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+#google-link-modal .error-message {
+    font-size: 0.78rem;
+    margin-top: 0.25rem;
+    color: var(--danger, #ef4444);
+}
+
+#google-link-modal .modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+}
+#google-link-modal .modal-footer .btn-primary,
+#google-link-modal .modal-footer .btn-secondary {
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.92rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#google-link-modal .modal-footer .btn-primary {
+    background: var(--accent, #2563eb);
+    color: #fff;
+    border: none;
+}
+#google-link-modal .modal-footer .btn-primary:hover:not(:disabled) {
+    background: var(--accent-dark, #1d4ed8);
+}
+#google-link-modal .modal-footer .btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+#google-link-modal .modal-footer .btn-secondary {
+    background: var(--bg-secondary, #f1f5f9);
+    color: var(--text-primary, #0f172a);
+    border: 1px solid var(--border, #e2e8f0);
+}
+#google-link-modal .modal-footer .btn-secondary:hover {
+    background: var(--border, #e2e8f0);
+}
+
+/* Dark theme overrides for the linking modal */
+.dark-theme #google-link-modal .modal {
+    background: var(--bg-card, #1e293b);
+}
+.dark-theme #google-link-modal .modal-body p {
+    color: var(--text-secondary, #cbd5e1);
+}
+.dark-theme #google-link-modal .modal-body strong {
+    color: var(--text-primary, #f1f5f9);
+}
+.dark-theme #google-link-modal .modal-body .form-group label {
+    color: var(--text-primary, #f1f5f9);
+}
+.dark-theme #google-link-modal .modal-body .form-group input {
+    background: var(--bg-input, #1e293b);
+    border-color: var(--border, #334155);
+    color: var(--text-primary, #f1f5f9);
+}
+.dark-theme #google-link-modal .modal-close {
+    color: var(--text-muted, #94a3b8);
+}
+.dark-theme #google-link-modal .modal-close:hover {
+    color: var(--text-primary, #f1f5f9);
+}
+.dark-theme #google-link-modal .modal-footer .btn-secondary {
+    background: var(--bg-secondary, #334155);
+    color: var(--text-primary, #f1f5f9);
+    border-color: var(--border, #475569);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+    header {
+        padding: 0.75rem 1rem;
+    }
+    header .logo span {
+        font-size: 1rem;
+    }
+    .form-container {
+        margin: 1.5rem 1rem;
+        padding: 1.5rem;
+    }
+    .form-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #google-link-modal .modal {
+        padding: 1.25rem;
+    }
 }

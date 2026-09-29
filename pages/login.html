@@ -1,487 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
+<section
+  class="page login-page"
+  data-page="login"
+  data-script="/scripts/pages/login.js"
+  data-style="/css/login.css"
+  data-title="Login"
+  data-auth="none"
+  data-cache="true"
+  data-transition="fade"
+>
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="logo">
+      <img src="/assets/images/logo.png" alt="MedVix Logo" width="40" height="40" />
+      <span>MedVix</span>
+    </div>
+    <button id="themeToggle" class="btn-outline" aria-label="Toggle theme">🌓</button>
+  </header>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login – MedHub</title>
+  <!-- ===== LOGIN FORM ===== -->
+  <main>
+    <div class="form-container">
+      <h2>Login to your account</h2>
 
-    <link rel="manifest" href="/manifest.json" />
-    <link rel="stylesheet" href="/css/common.css" media="all" />
-    <link rel="stylesheet" href="/css/login.css" media="all" />
+      <!-- ===== Google Sign-In ===== -->
+      <div id="google-login-container" class="google-signin-container"></div>
 
-    <style>
-        /* ===== header fix: logo left · theme right ===== */
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1rem 2rem;
-            background: var(--bg-secondary, #fff);
-            border-bottom: 1px solid var(--border, #e2e8f0);
-        }
+      <div class="auth-divider"><span>or</span></div>
 
-        header .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-weight: 700;
-            font-size: 1.25rem;
-            color: var(--text-primary, #0f172a);
-        }
-
-        header .logo img {
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
-        }
-
-        header .btn-outline {
-            background: transparent;
-            border: 1px solid var(--border, #e2e8f0);
-            border-radius: 9999px;
-            padding: 0.4rem 0.9rem;
-            font-size: 1.25rem;
-            cursor: pointer;
-            line-height: 1;
-            transition: background 0.2s, border-color 0.2s;
-            color: var(--text-primary, #0f172a);
-        }
-
-        header .btn-outline:hover {
-            background: var(--bg-hover, #f1f5f9);
-            border-color: var(--text-muted, #94a3b8);
-        }
-
-        /* ===== main: flex to center card vertically ===== */
-        .page-container {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            background: var(--bg-primary, #f8fafc);
-            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-        }
-
-        main {
-            flex: 1 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-        }
-
-        .form-container {
-            max-width: 450px;
-            width: 100%;
-            background: var(--bg-card, #ffffff);
-            border: 1px solid var(--border, #e2e8f0);
-            border-radius: var(--radius-lg, 16px);
-            padding: 2rem;
-            box-shadow: var(--shadow-lg, 0 10px 40px rgba(0, 0, 0, 0.08));
-        }
-
-        .form-container h2 {
-            margin-bottom: 1.5rem;
-            color: var(--text-primary, #0f172a);
-        }
-
-        .form-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .form-row label {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-secondary, #475569);
-            font-size: 0.95rem;
-        }
-
-        .form-row .btn-link {
-            background: transparent;
-            border: none;
-            color: var(--accent, #2563eb);
-            font-weight: 500;
-            cursor: pointer;
-            font-size: 0.95rem;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            transition: background 0.2s;
-        }
-
-        .form-row .btn-link:hover {
-            background: var(--bg-hover, #f1f5f9);
-            text-decoration: underline;
-        }
-
-        .form-group {
-            position: relative;
-            margin-bottom: 1.25rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.4rem;
-            font-weight: 500;
-            color: var(--text-primary, #0f172a);
-            font-size: 0.95rem;
-        }
-
-        /* ===== FIX: Input fields with proper dark theme support ===== */
-        .form-group input[type="text"],
-        .form-group input[type="password"] {
-            width: 100%;
-            padding: 0.7rem 2.5rem 0.7rem 1rem;
-            border: 1px solid var(--border, #e2e8f0);
-            border-radius: 8px;
-            background: var(--bg-input, #f8fafc);
-            color: var(--text-primary, #0f172a);
-            font-size: 1rem;
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-
-        .form-group input::placeholder {
-            color: var(--text-muted, #94a3b8);
-        }
-
-        .form-group input:focus {
-            outline: none;
-            border-color: var(--accent, #2563eb);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-        }
-
-        /* ===== Dark theme overrides (using .dark-theme as applied by ui.js) ===== */
-        .dark-theme {
-            --bg-input: #1e293b;
-        }
-
-        .reveal-btn {
-            position: absolute;
-            right: 0.75rem;
-            top: 70%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            color: var(--text-muted, #94a3b8);
-            padding: 0.25rem;
-            cursor: pointer;
-            font-size: 1.1rem;
-            transition: color 0.2s;
-        }
-
-        .reveal-btn:hover {
-            color: var(--text-primary, #0f172a);
-        }
-
-        .error-message {
-            color: var(--danger, #dc2626);
-            font-size: 0.8rem;
-            margin-top: 0.3rem;
-            min-height: 1.2rem;
-        }
-
-        .action-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            margin-top: 0.5rem;
-        }
-
-        .action-buttons .btn-primary {
-            padding: 0.75rem 1.5rem;
-            border-radius: 9999px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.2s, transform 0.1s;
-            border: none;
-            background: var(--accent, #2563eb);
-            color: #fff;
-        }
-
-        .action-buttons .btn-primary:hover {
-            background: var(--accent-dark, #1d4ed8);
-            transform: scale(1.01);
-        }
-
-        .action-buttons .btn-secondary {
-            padding: 0.75rem 1.5rem;
-            border-radius: 9999px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.2s;
-            background: transparent;
-            color: var(--text-primary, #0f172a);
-            border: 1px solid var(--border, #e2e8f0);
-        }
-
-        .action-buttons .btn-secondary:hover {
-            background: var(--bg-hover, #f1f5f9);
-        }
-
-        .security-note {
-            margin-top: 2rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border, #e2e8f0);
-            font-size: 0.75rem;
-            color: var(--text-muted, #94a3b8);
-            text-align: center;
-        }
-
-        footer {
-            flex-shrink: 0;
-            text-align: center;
-            padding: 1.5rem 1rem;
-        }
-
-        footer .btn-text {
-            background: transparent;
-            border: 1.5px solid var(--border, #e2e8f0);
-            border-radius: 9999px;
-            padding: 0.6rem 1.8rem;
-            font-size: 0.95rem;
-            font-weight: 500;
-            cursor: pointer;
-            color: var(--text-primary, #0f172a);
-            transition: background 0.2s, border-color 0.2s, transform 0.1s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        footer .btn-text:hover {
-            background: var(--bg-hover, #f1f5f9);
-            border-color: var(--text-muted, #94a3b8);
-            transform: scale(1.02);
-        }
-
-        /* ===== responsive ===== */
-        @media (max-width: 640px) {
-            header {
-                padding: 0.75rem 1rem;
-            }
-            header .logo span {
-                font-size: 1rem;
-            }
-            .form-container {
-                margin: 1.5rem 1rem;
-                padding: 1.5rem;
-            }
-            .form-row {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        }
-    </style>
-
-    <script type="module" src="/scripts/utils.js"></script>
-    <script type="module" src="/scripts/ui.js"></script>
-    <script type="module" src="/scripts/router.js"></script>
-    <script type="module" src="/scripts/validation.js"></script>
-    <script type="module" src="/scripts/db.js"></script>
-    <script type="module" src="/scripts/auth.js"></script>
-    <script type="module" src="/scripts/security.js"></script>
-    <script type="module" src="/scripts/app.js"></script>
-
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/service-worker.js').catch(() => {});
-        }
-    </script>
-
-    <script type="module">
-        import * as app from '../scripts/app.js';
-        import * as auth from '../scripts/auth.js';
-        import * as ui from '../scripts/ui.js';
-        import * as router from '../scripts/router.js';
-        import * as validation from '../scripts/validation.js';
-        import * as security from '../scripts/security.js';
-        import * as utils from '../scripts/utils.js';
-
-        // ===== DEEP LINK REDIRECT =====
-        const redirectParam = new URLSearchParams(window.location.search).get('redirect');
-        let redirectTarget = null;
-        if (redirectParam) {
-            try {
-                redirectTarget = decodeURIComponent(redirectParam);
-                if (!redirectTarget.startsWith('/')) redirectTarget = null;
-            } catch (e) {
-                redirectTarget = null;
-            }
-        }
-
-        // ===== ALWAYS SETUP SIGNUP BUTTON (with or without redirect) =====
-        const signupBtn = document.querySelector('#signupBtn');
-        if (signupBtn) {
-            signupBtn.onclick = () => {
-                let url = 'signup.html';
-                if (redirectTarget) {
-                    url += `?redirect=${encodeURIComponent(redirectTarget)}`;
-                }
-                router.navigateTo(url);
-            };
-        }
-
-        window.addEventListener('load', function() {
-            ui.applyTheme();
-            if (app.checkAuth()) {
-                if (redirectTarget) {
-                    window.location.href = redirectTarget;
-                } else {
-                    router.navigateTo('subjects.html');
-                }
-                return;
-            }
-            validation.setupLiveValidation('login-form', {
-                email: { required: true, email: true },
-                password: { required: true, min: 8 }
-            });
-            const rememberedEmail = utils.getLocalStorage('rememberedEmail');
-            if (rememberedEmail) {
-                document.getElementById('email').value = rememberedEmail;
-                document.getElementById('remember').checked = true;
-            }
-        });
-
-        window.handleLogin = async function(event) {
-            event.preventDefault();
-            const email = document.getElementById('email').value.trim();
-            const password = document.getElementById('password').value;
-            const remember = document.getElementById('remember').checked;
-
-            if (!validation.validateEmail(email) && !validation.validatePhone(email)) {
-                ui.showToast('Enter a valid email or Kenyan phone', 'error');
-                return;
-            }
-            if (!validation.validatePassword(password)) {
-                ui.showToast('Password must be 8+ chars with upper, lower, number', 'error');
-                return;
-            }
-
-            ui.showLoading();
-            try {
-                const deviceFingerprint = security.generateDeviceFingerprint();
-                const deviceInfo = {
-                    platform: navigator.platform,
-                    userAgent: navigator.userAgent,
-                    screen: `${screen.width}x${screen.height}`,
-                    timezone: new Date().getTimezoneOffset()
-                };
-
-                const user = await auth.login(email, password, { deviceFingerprint, deviceInfo });
-
-                if (remember) utils.setLocalStorage('rememberedEmail', email);
-                else utils.removeLocalStorage('rememberedEmail');
-
-                ui.hideLoading();
-                ui.showToast('Login successful!', 'success');
-
-                if (redirectTarget) {
-                    window.location.href = redirectTarget;
-                } else {
-                    router.navigateTo('subjects.html');
-                }
-            } catch (error) {
-                ui.hideLoading();
-                ui.showToast(error.message || 'Login failed', 'error');
-                if (error.code === 'ACCOUNT_LOCKED') {
-                    router.navigateTo('locked.html?reason=time_manipulation');
-                }
-            }
-        };
-
-        window.forgotPassword = function() {
-            if (redirectTarget) {
-                router.navigateTo(`forgot-password.html?redirect=${encodeURIComponent(redirectTarget)}`);
-            } else {
-                router.navigateTo('forgot-password.html');
-            }
-        };
-
-        // ===== EXPOSE GLOBALLY for inline onclick handlers =====
-        window.ui = ui;
-        window.router = router;
-    </script>
-</head>
-
-<body>
-    <div class="page-container">
-
-        <!-- ===== HEADER ===== -->
-        <header>
-            <div class="logo">
-                <img src="/assets/images/logo.png" alt="MedHub Logo" width="40" height="40" />
-                <span>MedHub</span>
-            </div>
-            <button onclick="window.ui?.toggleTheme()" class="btn-outline" aria-label="Toggle theme">
-                🌓
-            </button>
-        </header>
-
-        <!-- ===== LOGIN FORM ===== -->
-        <main>
-            <div class="form-container">
-                <h2>Login to your account</h2>
-
-                <form id="login-form" onsubmit="window.handleLogin(event)">
-                    <div class="form-group">
-                        <label for="email">Email or Phone (254...)</label>
-                        <input type="text" id="email" name="email"
-                        placeholder="e.g., 254712345678 or student@example.com"
-                        autocomplete="username" required />
-                        <div class="error-message" data-for="email"></div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password"
-                        placeholder="••••••••" autocomplete="current-password" required />
-                        <button type="button" onclick="window.ui?.togglePasswordVisibility('password')"
-                        class="reveal-btn" aria-label="Toggle password visibility">
-                        👁️
-                    </button>
-                    <div class="error-message" data-for="password"></div>
-                </div>
-
-                <div class="form-row">
-                    <label>
-                        <input type="checkbox" id="remember" /> Remember me
-                    </label>
-                    <button type="button" onclick="window.forgotPassword()" class="btn-link">
-                        Forgot password?
-                    </button>
-                </div>
-
-                <div class="action-buttons">
-                    <button type="submit" class="btn-primary">Login</button>
-                    <button id="signupBtn" class="btn-secondary">
-                        Create account
-                    </button>
-                </div>
-            </form>
-
-            <p class="security-note">
-                🔒 Time manipulation will lock your account. Never share password.
-            </p>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="email">Email or Phone (254...)</label>
+          <input type="text" id="email" name="email"
+            placeholder="e.g., 254712345678 or student@example.com"
+            autocomplete="username" required />
+          <div class="error-message" data-for="email"></div>
         </div>
-    </main>
 
-    <!-- ===== FOOTER ===== -->
-    <footer>
-        <button onclick="window.router?.navigateTo('welcome.html')" class="btn-text">
-            ← Back
-        </button>
-    </footer>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password"
+            placeholder="••••••••" autocomplete="current-password" required />
+          <button type="button" id="togglePassword" class="reveal-btn" aria-label="Toggle password visibility">
+            👁️
+          </button>
+          <div class="error-message" data-for="password"></div>
+        </div>
 
-</div>
+        <div class="form-row">
+          <label>
+            <input type="checkbox" id="remember" /> Remember me
+          </label>
+          <button type="button" id="forgotBtn" class="btn-link">
+            Forgot password?
+          </button>
+        </div>
 
-<script data-lazy data-src="/scripts/offline.js"></script>
-</body>
+        <div class="action-buttons">
+          <button type="submit" class="btn-primary">Login</button>
+          <button id="signupBtn" class="btn-secondary" type="button">Create account</button>
+        </div>
+      </form>
 
-</html>
+      <p class="security-note">
+        🔒 Time manipulation will lock your account. Never share password.
+      </p>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <button id="backBtn" class="btn-text">← Back</button>
+  </footer>
+
+  <!-- ============================================================
+       Google account-linking modal
+       (shown when the Google email already belongs to an existing account)
+       ============================================================ -->
+  <div id="google-link-modal" class="modal-overlay" style="display:none;">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>You already have an account</h3>
+        <button class="modal-close" id="google-link-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>
+          A MedVix account already exists with
+          <strong id="google-link-email">—</strong>.
+        </p>
+        <p>Enter your MedVix password to connect Google Sign-In to that account.</p>
+
+        <div class="form-group">
+          <label for="google-link-password">MedVix password</label>
+          <input type="password" id="google-link-password"
+                 placeholder="••••••••" autocomplete="current-password" />
+          <div class="error-message" data-for="google-link-password"></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-secondary" id="google-link-cancel">Cancel</button>
+        <button class="btn-primary" id="google-link-submit">Connect Google</button>
+      </div>
+    </div>
+  </div>
+</section>

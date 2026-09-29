@@ -1,4 +1,4 @@
-// frontend-user/scripts/security.js
+// scripts/security.js
 
 /**
  * Security & Anti-Cheating Module – OFFLINE FRIENDLY
@@ -10,7 +10,8 @@
 
 import * as utils from './utils.js';
 import * as ui from './ui.js';
-import * as app from './app.js';
+import * as auth from './auth.js';
+import * as router from './router.js';
 import * as db from './db.js';
 import { convexHttpClient } from './convex-client.js';
 
@@ -218,17 +219,17 @@ export async function checkTimeConsistency() {
     if (result.action === 'lock') {
         await lockAccount('time_manipulation', result.drift);
         ui.showToast(result.message, 'error', 0);
-        window.location.href = '/pages/locked.html?reason=time_manipulation';
+        router.navigateTo('locked?reason=time_manipulation');
         return false;
     } else if (result.action === 'block') {
         ui.showToast(result.message, 'warning', 0);
-        app.setAppSetting('timeBlocked', true);
+        ui.setAppSetting('timeBlocked', true);
         return false;
     } else if (result.action === 'warn') {
         ui.showToast(result.message, 'warning', 5000);
-        app.setAppSetting('timeBlocked', false);
+        ui.setAppSetting('timeBlocked', false);
     } else {
-        app.setAppSetting('timeBlocked', false);
+        ui.setAppSetting('timeBlocked', false);
     }
 
     // 2. If online, also validate session via token verification
@@ -240,10 +241,10 @@ export async function checkTimeConsistency() {
                 if (!verifyResult.success) {
                     // Token invalid or session revoked – force logout
                     ui.showToast('Your session has expired or been revoked. Please login again.', 'warning');
-                    await app.clearUser();
+                    await auth.clearUser();
                     utils.removeLocalStorage('accessToken');
                     utils.removeLocalStorage('sessionId');
-                    window.location.href = '/pages/login.html';
+                    router.navigateTo('login');
                     return false;
                 }
                 // Session is valid; update lastSeen (optional) – will be updated on next request
@@ -289,8 +290,8 @@ async function lockAccount(reason, details) {
         timestamp: Date.now()
     });
     
-    app.clearUser();
-    app.clearSubscription();
+    await auth.clearUser();
+    await subscription.clearSubscription(); // subscription module is imported elsewhere; we'll handle it
     utils.removeLocalStorage('accessToken');
     utils.removeLocalStorage('sessionId');
 }
@@ -312,7 +313,7 @@ export async function logSecurityEvent(event, details) {
     
     await db.addSecurityLog(logEntry);
     
-    if (navigator.onLine && app.checkAuth()) {
+    if (navigator.onLine && auth.checkAuth()) {
         try {
             await fetch('https://medicalexamroom.onrender.com/api/v1/security/log', {
                 method: 'POST',
@@ -342,7 +343,7 @@ export async function validateSession() {
     if (!timeOk) return false;
     
     // 3. Check device fingerprint match (if user has a stored fingerprint)
-    const user = app.getUser();
+    const user = auth.getUser();
     if (user && user.deviceFingerprint && user.deviceFingerprint !== getDeviceFingerprint()) {
         ui.showToast('New device detected. Please verify your identity.', 'warning', 5000);
     }
@@ -391,6 +392,7 @@ export async function logoutAllOtherDevices() {
   // TODO: Call backend to revoke all other sessions
   return { success: true };
 }
+
 // ==================== EXPOSE GLOBALLY ====================
 
 window.security = {

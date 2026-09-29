@@ -1,11 +1,20 @@
-/* ===== PDF Settings – dedicated page styles ===== */
+/* ==========================================================================
+   PDF SETTINGS — page-specific styles
+   Requires common.css (tokens, form primitives, buttons base, keyframes
+   shimmer, --transition).
+   Adds ONLY: settings container + cards, option groups/rows, checkbox +
+   number input overrides, action row + generate button, limit warning,
+   full-page shimmer skeleton, real-content gate, responsive breakpoint.
+   ========================================================================== */
 
+/* ---------- Page shell ---------- */
 .settings-container {
     max-width: 720px;
     margin: 1.5rem auto;
     padding: 0 1rem;
 }
 
+/* ---------- Settings card ---------- */
 .settings-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
@@ -13,7 +22,6 @@
     padding: 1.5rem;
     margin-bottom: 1.5rem;
 }
-
 .settings-card .card-title {
     font-weight: 600;
     margin-bottom: 1rem;
@@ -22,48 +30,45 @@
     gap: 0.5rem;
 }
 
+/* ---------- Option groups / rows ---------- */
 .option-group {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
     margin: 1rem 0;
 }
-
 .option-row {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 0.75rem;
 }
-
 .option-row label {
     min-width: 120px;
     font-weight: 500;
 }
 
+/* Number input — overrides common's width + padding only.
+   Border, radius, bg, color all match common's `input` rule. */
 .option-row input[type="number"] {
     width: 80px;
     padding: 0.4rem 0.8rem;
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--border);
-    background: var(--bg-secondary);
-    color: var(--text-primary);
 }
 
+/* Checkbox — overrides common's width: auto. accent-color matches common. */
 .option-row input[type="checkbox"] {
     width: 18px;
     height: 18px;
-    accent-color: var(--accent);
     cursor: pointer;
 }
 
+/* ---------- Action row ---------- */
 .action-row {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
     margin-top: 1.5rem;
 }
-
 .action-row button {
     flex: 1;
     min-height: 44px;
@@ -74,16 +79,14 @@
 
 .btn-generate {
     background: var(--accent);
-    color: white;
+    color: #fff;
     border: none;
     cursor: pointer;
     transition: background 0.2s;
 }
-
 .btn-generate:hover:not(:disabled) {
     background: var(--accent-dark, #0056b3);
 }
-
 .btn-generate:disabled {
     opacity: 0.5;
     cursor: not-allowed;
@@ -95,19 +98,120 @@
     margin-top: 0.5rem;
 }
 
-/* ===== Responsive tweaks ===== */
+/* ---------- Shimmer skeleton ---------- */
+#shimmer-content { display: block; }
+#real-content    { display: none; }
+
+.shimmer-wrapper { padding: 1rem; }
+
+.shimmer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: #1e1e2f;
+    border-bottom: 1px solid #333;
+    margin-bottom: 1rem;
+}
+.shimmer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.shimmer-logo-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+}
+.shimmer-logo-text {
+    width: 80px;
+    height: 20px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+}
+.shimmer-btn-sm {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+    display: inline-block;
+}
+.shimmer-subject {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+.shimmer-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+}
+.shimmer-title {
+    width: 150px;
+    height: 24px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+}
+.shimmer-stats {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+.shimmer-stat {
+    width: 100px;
+    height: 28px;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+}
+.shimmer-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+.shimmer-btn {
+    flex: 1;
+    height: 44px;
+    border-radius: var(--radius-sm);
+    background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+}
+.shimmer-topics {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.shimmer-topic {
+    height: 36px;
+    border-radius: var(--radius-sm);
+    background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* ---------- Responsive ---------- */
 @media screen and (max-width: 480px) {
     .option-row {
         flex-direction: column;
         align-items: stretch;
     }
-    .option-row label {
-        min-width: auto;
-    }
-    .option-row input[type="number"] {
-        width: 100%;
-    }
-    .action-row {
-        flex-direction: column;
-    }
+    .option-row label { min-width: auto; }
+    .option-row input[type="number"] { width: 100%; }
+    .action-row { flex-direction: column; }
 }

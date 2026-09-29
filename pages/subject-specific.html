@@ -1,705 +1,184 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Select Topics – MedHub</title>
-
-    <link rel="manifest" href="/manifest.json" />
-    <link rel="stylesheet" href="/css/common.css" media="all" />
-    <link rel="stylesheet" href="/css/subject-specific.css" media="all" />
-
-    <!-- ===== SHIMMER LOADING ===== -->
-    <style id="shimmer-style">
-        body {
-            background: #1a1a2e;
-            color: #eee;
-            margin: 0;
-            padding: 0;
-            font-family: system-ui, -apple-system, sans-serif;
-        }
-        .shimmer-wrapper {
-            padding: 1rem;
-        }
-        .shimmer-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.5rem 1rem;
-            background: #1e1e2f;
-            border-bottom: 1px solid #333;
-            margin-bottom: 1rem;
-        }
-        .shimmer-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .shimmer-logo-icon {
-            width: 32px;
-            height: 32px;
-            border-radius: 6px;
-            background: #3a3a4e;
-            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-        }
-        .shimmer-logo-text {
-            width: 80px;
-            height: 20px;
-            background: #3a3a4e;
-            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-            border-radius: 4px;
-        }
-        .shimmer-btn-sm {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: #3a3a4e;
-            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-            display: inline-block;
-        }
-        .shimmer-subject {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin: 1rem 0;
-        }
-        .shimmer-icon {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: #3a3a4e;
-            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-        }
-        .shimmer-title {
-            width: 150px;
-            height: 24px;
-            background: #3a3a4e;
-            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-            border-radius: 4px;
-        }
-        .shimmer-stats {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin: 1rem 0;
-        }
-        .shimmer-stat {
-            width: 100px;
-            height: 28px;
-            background: #3a3a4e;
-            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-            border-radius: 9999px;
-        }
-        .shimmer-actions {
-            display: flex;
-            gap: 0.5rem;
-            margin: 1rem 0;
-        }
-        .shimmer-btn {
-            flex: 1;
-            height: 44px;
-            background: #3a3a4e;
-            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-            border-radius: var(--radius-sm);
-        }
-        .shimmer-topics {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-        .shimmer-topic {
-            height: 36px;
-            background: #3a3a4e;
-            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-            border-radius: var(--radius-sm);
-        }
-        @keyframes shimmer {
-            0% {
-                background-position: -200px 0;
-            }
-            100% {
-                background-position: calc(200px + 100%) 0;
-            }
-        }
-        #shimmer-content {
-            display: block;
-        }
-        #real-content {
-            display: none;
-        }
-    </style>
-
-    <!-- Core scripts – order is critical -->
-    <script type="module" src="/scripts/utils.js"></script>
-    <script type="module" src="/scripts/ui.js"></script>
-    <script type="module" src="/scripts/router.js"></script>
-    <script type="module" src="/scripts/app.js"></script>
-    <script type="module" src="/scripts/validation.js"></script>
-    <script type="module" src="/scripts/security.js"></script>
-    <script type="module" src="/scripts/db.js"></script>
-    <script type="module" src="/scripts/auth.js"></script>
-    <script type="module" src="/scripts/subscription.js"></script>
-    <script type="module" src="/scripts/questions.js"></script>
-    <script type="module" src="/scripts/analytics.js"></script>
-
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/service-worker.js').catch(() => {});
-        }
-    </script>
-
-
-
-    <script type="module">
-        // ==================== IMPORTS ====================
-        import * as app from '../scripts/app.js';
-        import * as auth from '../scripts/auth.js';
-        import * as ui from '../scripts/ui.js';
-        import * as router from '../scripts/router.js';
-        import * as utils from '../scripts/utils.js';
-        import * as questions from '../scripts/questions.js';
-        import * as analytics from '../scripts/analytics.js';
-        import * as db from '../scripts/db.js';
-        import * as subscription from '../scripts/subscription.js';
-
-        // ==================== STATE ====================
-        let currentSubject = null;
-        let currentUser = null;
-        let topicsData = [];
-        let hasActiveSub = false;
-        let currentMode = 'internal'; // 'internal' | 'pdf'
-
-        // ==================== INITIALIZATION ====================
-        (async function init() {
-            console.log('[SubjectSpecific] Initializing...');
-
-            await app.initializeApp();
-            ui.applyTheme();
-            currentUser = app.getUser();
-            hasActiveSub = await subscription.hasActiveSubscription();
-
-            const subjectId = utils.getQueryParam('subject');
-            if (!subjectId) {
-                ui.showToast('No subject specified', 'error');
-                router.navigateTo('subjects.html');
-                return;
-            }
-            currentSubject = subjectId;
-
-            // Show the correct subject section
-            document.querySelectorAll('.subject-section').forEach(el => el.style.display = 'none');
-            const targetDiv = document.getElementById(`${subjectId}-topics`);
-            if (!targetDiv) {
-                ui.showToast('Subject not found', 'error');
-                router.navigateTo('subjects.html');
-                return;
-            }
-            targetDiv.style.display = 'block';
-
-            // Load subject metadata and update header
-            const subjectMeta = await questions.getSubjectMeta(subjectId);
-            document.getElementById('header-subject-icon').textContent = subjectMeta.icon;
-            document.getElementById('header-subject-name').textContent = subjectMeta.name;
-            document.getElementById('header-subject-color').style.backgroundColor = subjectMeta.color;
-            document.getElementById('header-total-questions').textContent = `${subjectMeta.questions} questions`;
-
-            // Load topics
-            topicsData = await questions.getTopicsBySubject(subjectId);
-            renderTopicTree(subjectId, topicsData);
-
-            // Load recent / weak topics if user is logged in and data exists
-            if (currentUser) {
-                const recentTopics = await analytics.getRecentTopics(subjectId, 3);
-                renderRecentTopics(recentTopics);
-            } else {
-                renderRecentTopics([]);
-            }
-
-            // Restore any previously saved selection
-            const savedSelection = sessionStorage.getItem(`topicSelection_${subjectId}`);
-            if (savedSelection) {
-                try {
-                    const selectedIds = JSON.parse(savedSelection);
-                    restoreSelection(selectedIds);
-                } catch (e) {}
-            }
-
-            // Set default mode: internal
-            setMode('internal');
-
-            // Hide shimmer, show real content
-            document.getElementById('shimmer-content').style.display = 'none';
-            document.getElementById('real-content').style.display = 'block';
-        })();
-
-        // ==================== RENDERING ====================
-        function renderTopicTree(subjectId, topics) {
-            const container = document.getElementById(`${subjectId}-topics-tree`);
-            if (!container) return;
-
-            let html = '';
-            topics.forEach(topic => {
-                const estimated = Math.ceil(topic.questions * 0.75);
-                const isFree = subscription.isTopicFree(subjectId, topic.id);
-                const enabled = hasActiveSub || isFree;
-                const lockIcon = !enabled ? '<span class="lock-icon" title="Subscribe to unlock">🔒</span>' : '';
-                const disabledAttr = enabled ? '' : 'disabled';
-
-                html += `
-                    <div class="topic-item ${enabled ? '' : 'locked'}">
-                        <label>
-                            <input type="checkbox" name="topic" data-subject="${subjectId}" data-topic-id="${topic.id}" data-questions="${topic.questions}" data-estimated="${estimated}" ${disabledAttr}>
-                            <span class="topic-name">${topic.name} ${lockIcon}</span>
-                            <span class="topic-stats">${topic.questions} q · ~${estimated} min</span>
-                        </label>
-                        ${!enabled ? '<div class="tooltip">This topic requires a subscription</div>' : ''}
-                    </div>
-                `;
-            });
-            container.innerHTML = html;
-
-            container.querySelectorAll('input[type="checkbox"]:enabled').forEach(cb => {
-                cb.addEventListener('change', () => {
-                    updateSelectionSummary(subjectId);
-                    saveSelection(subjectId);
-                });
-            });
-        }
-
-        function renderRecentTopics(topics) {
-            const container = document.getElementById('recent-topics-list');
-            const section = document.getElementById('recent-section');
-            if (!container || !section) return;
-
-            if (!topics || topics.length === 0) {
-                section.classList.add('hidden');
-                return;
-            }
-            section.classList.remove('hidden');
-            let html = '';
-            topics.forEach(t => {
-                html += `<div class="recent-topic" onclick="window.quickStudyTopic('${t.subjectId}', '${t.topicId}')">📘 ${t.topicName} – ${t.questions} questions</div>`;
-            });
-            container.innerHTML = html;
-        }
-
-        function updateSelectionSummary(subjectId) {
-            const container = document.getElementById(`${subjectId}-topics-tree`);
-            if (!container) return;
-            const checkboxes = container.querySelectorAll('input[type="checkbox"]:checked');
-            const totalSelected = checkboxes.length;
-            const totalTopics = container.querySelectorAll('input[type="checkbox"]').length;
-            let totalQuestions = 0;
-            let totalMinutes = 0;
-            checkboxes.forEach(cb => {
-                totalQuestions += parseInt(cb.dataset.questions);
-                totalMinutes += parseInt(cb.dataset.estimated);
-            });
-
-            document.getElementById('selected-count').textContent = `${totalSelected} of ${totalTopics} topics selected`;
-            document.getElementById('selected-questions').textContent = `${totalQuestions} questions selected`;
-            const hours = Math.floor(totalMinutes / 60);
-            const mins = totalMinutes % 60;
-            document.getElementById('estimated-time').textContent = `~${hours}h ${mins}m`;
-
-            // Update buttons according to current mode
-            const primaryBtn = document.getElementById('primary-action-btn');
-            const secondaryBtn = document.getElementById('secondary-action-btn');
-
-            if (currentMode === 'internal') {
-                // Internal mode: Start Exam + Quick Exam
-                primaryBtn.textContent = 'Start Exam';
-                primaryBtn.onclick = () => studySelectedTopics(subjectId);
-                secondaryBtn.style.display = 'inline-block';
-                secondaryBtn.textContent = 'Quick Exam (10q)';
-                secondaryBtn.onclick = () => quickExamSelected(subjectId);
-
-                // Enable/disable
-                if (totalSelected === 0) {
-                    primaryBtn.disabled = true;
-                    secondaryBtn.disabled = true;
-                } else {
-                    primaryBtn.disabled = false;
-                    secondaryBtn.disabled = false;
-                }
-            } else {
-                // PDF mode: Create PDF + no secondary button
-                primaryBtn.textContent = 'Create PDF';
-                primaryBtn.onclick = () => createPDF(subjectId);
-                secondaryBtn.style.display = 'none';
-
-                // PDF rules: at least 2 topics AND active subscription
-                const enoughTopics = totalSelected >= 2;
-                const hasSub = hasActiveSub;
-
-                if (!hasSub) {
-                    primaryBtn.disabled = true;
-                    const subMsg = document.getElementById('pdf-sub-required');
-                    if (subMsg) subMsg.style.display = 'inline';
-                } else if (!enoughTopics) {
-                    primaryBtn.disabled = true;
-                    const subMsg = document.getElementById('pdf-sub-required');
-                    if (subMsg) subMsg.style.display = 'none';
-                } else {
-                    primaryBtn.disabled = false;
-                    const subMsg = document.getElementById('pdf-sub-required');
-                    if (subMsg) subMsg.style.display = 'none';
-                }
-            }
-        }
-
-        function saveSelection(subjectId) {
-            const container = document.getElementById(`${subjectId}-topics-tree`);
-            if (!container) return;
-            const selected = [];
-            container.querySelectorAll('input[type="checkbox"]:checked').forEach(cb => {
-                selected.push(cb.dataset.topicId);
-            });
-            sessionStorage.setItem(`topicSelection_${subjectId}`, JSON.stringify(selected));
-        }
-
-        function restoreSelection(selectedIds) {
-            if (!currentSubject) return;
-            const container = document.getElementById(`${currentSubject}-topics-tree`);
-            if (!container) return;
-            container.querySelectorAll('input[type="checkbox"]:enabled').forEach(cb => {
-                if (selectedIds.includes(cb.dataset.topicId)) {
-                    cb.checked = true;
-                }
-            });
-            updateSelectionSummary(currentSubject);
-        }
-
-        // ==================== MODE SWITCHING ====================
-        function setMode(mode) {
-            currentMode = mode;
-            document.querySelectorAll('.mode-btn').forEach(el => {
-                el.classList.toggle('active', el.dataset.mode === mode);
-            });
-
-            const subMsg = document.getElementById('pdf-sub-required');
-            if (subMsg) subMsg.style.display = 'none';
-
-            if (currentSubject) {
-                updateSelectionSummary(currentSubject);
-            }
-        }
-        window.setMode = setMode;
-
-        // ==================== GLOBAL ACTIONS ====================
-        window.selectAllTopics = function(subjectId) {
-            const container = document.getElementById(`${subjectId}-topics-tree`);
-            if (!container) return;
-            container.querySelectorAll('input[type="checkbox"]:enabled').forEach(cb => cb.checked = true);
-            updateSelectionSummary(subjectId);
-            saveSelection(subjectId);
-        };
-
-        window.clearAllTopics = function(subjectId) {
-            const container = document.getElementById(`${subjectId}-topics-tree`);
-            if (!container) return;
-            container.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
-            updateSelectionSummary(subjectId);
-            saveSelection(subjectId);
-        };
-
-        window.studySelectedTopics = function(subjectId) {
-            const container = document.getElementById(`${subjectId}-topics-tree`);
-            const selected = [];
-            container.querySelectorAll('input[type="checkbox"]:checked').forEach(cb => {
-                selected.push({
-                    id: cb.dataset.topicId,
-                    name: cb.parentElement.querySelector('.topic-name').textContent.replace('🔒', '').trim(),
-                    questions: parseInt(cb.dataset.questions),
-                    estimated: parseInt(cb.dataset.estimated)
-                });
-            });
-            if (selected.length === 0) {
-                ui.showToast('Please select at least one topic', 'warning');
-                return;
-            }
-            app.setExamConfig({
-                subject: subjectId,
-                topics: selected,
-                totalQuestions: selected.reduce((sum, t) => sum + t.questions, 0),
-                mode: 'study'
-            });
-            router.navigateTo('exam-settings.html');
-        };
-
-        window.quickExamSelected = function(subjectId) {
-            const container = document.getElementById(`${subjectId}-topics-tree`);
-            const selected = [];
-            container.querySelectorAll('input[type="checkbox"]:checked').forEach(cb => {
-                selected.push({
-                    id: cb.dataset.topicId,
-                    name: cb.parentElement.querySelector('.topic-name').textContent.replace('🔒', '').trim(),
-                    questions: parseInt(cb.dataset.questions),
-                    estimated: parseInt(cb.dataset.estimated)
-                });
-            });
-            if (selected.length === 0) {
-                ui.showToast('Please select at least one topic', 'warning');
-                return;
-            }
-            app.setExamConfig({
-                subject: subjectId,
-                topics: selected,
-                totalQuestions: 10,
-                mode: 'quick'
-            });
-            router.navigateTo('exam-settings.html');
-        };
-
-        window.createPDF = function(subjectId) {
-            const container = document.getElementById(`${subjectId}-topics-tree`);
-            const selected = [];
-            container.querySelectorAll('input[type="checkbox"]:checked').forEach(cb => {
-                selected.push({
-                    id: cb.dataset.topicId,
-                    name: cb.parentElement.querySelector('.topic-name').textContent.replace('🔒', '').trim(),
-                    questions: parseInt(cb.dataset.questions),
-                    estimated: parseInt(cb.dataset.estimated)
-                });
-            });
-            if (selected.length < 2) {
-                ui.showToast('Please select at least 2 topics to export PDF', 'warning');
-                return;
-            }
-            if (!hasActiveSub) {
-                ui.showToast('An active subscription is required to export PDF', 'error');
-                return;
-            }
-            app.setExamConfig({
-                subject: subjectId,
-                topics: selected,
-                totalQuestions: selected.reduce((sum, t) => sum + t.questions, 0),
-                mode: 'pdf'
-            });
-            router.navigateTo('pdf-settings.html');
-        };
-
-        window.quickStudyTopic = function(subjectId, topicId) {
-            const topic = topicsData.find(t => t.id === topicId);
-            if (!topic) return;
-            app.setExamConfig({
-                subject: subjectId,
-                topics: [topic],
-                totalQuestions: 10,
-                mode: 'quick'
-            });
-            router.navigateTo('exam-settings.html');
-        };
-
-        window.getCurrentSubject = function() {
-            const visible = document.querySelector('.subject-section[style*="display: block"]');
-            return visible ? visible.dataset.subject : null;
-        };
-    </script>
-</head>
-
-<body>
-    <!-- ===== SHIMMER CONTENT ===== -->
-    <div id="shimmer-content">
-        <div class="shimmer-header">
-            <div class="shimmer-logo">
-                <div class="shimmer-logo-icon"></div>
-                <div class="shimmer-logo-text"></div>
-            </div>
-            <div>
-                <span class="shimmer-btn-sm" style="margin-right:0.5rem;"></span>
-                <span class="shimmer-btn-sm"></span>
-            </div>
-        </div>
-        <div class="shimmer-wrapper">
-            <div class="shimmer-subject">
-                <div class="shimmer-icon"></div>
-                <div class="shimmer-title"></div>
-            </div>
-            <div class="shimmer-stats">
-                <div class="shimmer-stat"></div>
-                <div class="shimmer-stat"></div>
-                <div class="shimmer-stat"></div>
-            </div>
-            <div class="shimmer-actions">
-                <div class="shimmer-btn"></div>
-                <div class="shimmer-btn"></div>
-            </div>
-            <div class="shimmer-topics">
-                <div class="shimmer-topic"></div>
-                <div class="shimmer-topic"></div>
-                <div class="shimmer-topic"></div>
-                <div class="shimmer-topic"></div>
-                <div class="shimmer-topic"></div>
-            </div>
-        </div>
+<section
+  class="page subject-specific-page"
+  data-page="subject-specific"
+  data-script="/scripts/pages/subject-specific.js"
+  data-style="/css/subject-specific.css"
+  data-title="Select Topics"
+  data-auth="required"
+  data-cache="true"
+  data-transition="fade"
+>
+  <!-- ===== SHIMMER OVERLAY ===== -->
+  <div id="shimmer-content">
+    <div class="shimmer-header">
+      <div class="shimmer-logo">
+        <div class="shimmer-logo-icon"></div>
+        <div class="shimmer-logo-text"></div>
+      </div>
+      <div>
+        <span class="shimmer-btn-sm" style="margin-right:0.5rem;"></span>
+        <span class="shimmer-btn-sm"></span>
+      </div>
     </div>
-
-    <!-- ===== REAL CONTENT ===== -->
-    <div id="real-content">
-        <div class="page-container">
-            <!-- Fixed Header – TWO ROWS ONLY -->
-            <header class="fixed-header">
-                <!-- Row 1 (Superior): Logo, MedHub, Back to Subjects, Theme -->
-                <div class="header-row top">
-                    <div class="left-group">
-                        <img src="/assets/images/logo.png" alt="Logo" width="32" height="32" />
-                        <span class="brand">MedHub</span>
-                        <button onclick="router.navigateTo('subjects.html')" class="btn-text"> Subjects</button>
-                    </div>
-                    <div class="right-group">
-                        <button onclick="ui.toggleTheme()" class="btn-outline">🌓</button>
-                    </div>
-                </div>
-
-                <!-- Row 2 (Inferior): Internal Exam / Export as PDF -->
-                <div class="header-row bottom">
-                    <button class="mode-btn active" data-mode="internal" onclick="setMode('internal')">Internal Exam</button>
-                    <button class="mode-btn" data-mode="pdf" onclick="setMode('pdf')">Export as PDF</button>
-                </div>
-            </header>
-
-            <!-- Subject Metadata (now outside the fixed header) -->
-            <div class="subject-header-info">
-                <div class="subject-title">
-                    <span id="header-subject-icon" class="icon"></span>
-                    <h1 id="header-subject-name"></h1>
-                    <span id="header-subject-color" class="color-dot"></span>
-                </div>
-                <div class="total-questions" id="header-total-questions"></div>
-            </div>
-
-            <!-- Selection Summary -->
-            <div class="selection-summary" id="selection-summary">
-                <div class="summary-stats">
-                    <span id="selected-count">0 of 0 topics selected</span>
-                    <span id="selected-questions">0 questions selected</span>
-                    <span id="estimated-time">~0h 0m</span>
-                    <span id="pdf-sub-required" style="color:var(--accent);font-weight:600;display:none;">⭐ Subscription required</span>
-                </div>
-                <div class="action-buttons">
-                    <button id="primary-action-btn" class="btn-primary" disabled>Start Exam</button>
-                    <button id="secondary-action-btn" class="btn-secondary" disabled>Quick Exam (10q)</button>
-                </div>
-            </div>
-
-            <!-- 8 subject sections – each hidden by default -->
-            <div id="subject-container">
-                <!-- Anatomy -->
-                <div id="anatomy-topics" class="subject-section" data-subject="anatomy" style="display:none;">
-                    <div class="topic-selection">
-                        <div class="selection-actions">
-                            <button onclick="selectAllTopics('anatomy')" class="btn-secondary">Select All</button>
-                            <button onclick="clearAllTopics('anatomy')" class="btn-secondary">Clear All</button>
-                        </div>
-                        <div id="anatomy-topics-tree" class="topic-tree"></div>
-                    </div>
-                </div>
-
-                <!-- Physiology -->
-                <div id="physiology-topics" class="subject-section" data-subject="physiology" style="display:none;">
-                    <div class="topic-selection">
-                        <div class="selection-actions">
-                            <button onclick="selectAllTopics('physiology')" class="btn-secondary">Select All</button>
-                            <button onclick="clearAllTopics('physiology')" class="btn-secondary">Clear All</button>
-                        </div>
-                        <div id="physiology-topics-tree" class="topic-tree"></div>
-                    </div>
-                </div>
-
-                <!-- Biochemistry -->
-                <div id="biochemistry-topics" class="subject-section" data-subject="biochemistry" style="display:none;">
-                    <div class="topic-selection">
-                        <div class="selection-actions">
-                            <button onclick="selectAllTopics('biochemistry')" class="btn-secondary">Select All</button>
-                            <button onclick="clearAllTopics('biochemistry')" class="btn-secondary">Clear All</button>
-                        </div>
-                        <div id="biochemistry-topics-tree" class="topic-tree"></div>
-                    </div>
-                </div>
-
-                <!-- Histology -->
-                <div id="histology-topics" class="subject-section" data-subject="histology" style="display:none;">
-                    <div class="topic-selection">
-                        <div class="selection-actions">
-                            <button onclick="selectAllTopics('histology')" class="btn-secondary">Select All</button>
-                            <button onclick="clearAllTopics('histology')" class="btn-secondary">Clear All</button>
-                        </div>
-                        <div id="histology-topics-tree" class="topic-tree"></div>
-                    </div>
-                </div>
-
-                <!-- Embryology -->
-                <div id="embryology-topics" class="subject-section" data-subject="embryology" style="display:none;">
-                    <div class="topic-selection">
-                        <div class="selection-actions">
-                            <button onclick="selectAllTopics('embryology')" class="btn-secondary">Select All</button>
-                            <button onclick="clearAllTopics('embryology')" class="btn-secondary">Clear All</button>
-                        </div>
-                        <div id="embryology-topics-tree" class="topic-tree"></div>
-                    </div>
-                </div>
-
-                <!-- Pathology -->
-                <div id="pathology-topics" class="subject-section" data-subject="pathology" style="display:none;">
-                    <div class="topic-selection">
-                        <div class="selection-actions">
-                            <button onclick="selectAllTopics('pathology')" class="btn-secondary">Select All</button>
-                            <button onclick="clearAllTopics('pathology')" class="btn-secondary">Clear All</button>
-                        </div>
-                        <div id="pathology-topics-tree" class="topic-tree"></div>
-                    </div>
-                </div>
-
-                <!-- Pharmacology -->
-                <div id="pharmacology-topics" class="subject-section" data-subject="pharmacology" style="display:none;">
-                    <div class="topic-selection">
-                        <div class="selection-actions">
-                            <button onclick="selectAllTopics('pharmacology')" class="btn-secondary">Select All</button>
-                            <button onclick="clearAllTopics('pharmacology')" class="btn-secondary">Clear All</button>
-                        </div>
-                        <div id="pharmacology-topics-tree" class="topic-tree"></div>
-                    </div>
-                </div>
-
-                <!-- Microbiology -->
-                <div id="microbiology-topics" class="subject-section" data-subject="microbiology" style="display:none;">
-                    <div class="topic-selection">
-                        <div class="selection-actions">
-                            <button onclick="selectAllTopics('microbiology')" class="btn-secondary">Select All</button>
-                            <button onclick="clearAllTopics('microbiology')" class="btn-secondary">Clear All</button>
-                        </div>
-                        <div id="microbiology-topics-tree" class="topic-tree"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Recent Topics Section (hidden if no data) -->
-            <div id="recent-section" class="recent-section hidden">
-                <h3>📌 Recent & Weak Topics</h3>
-                <div id="recent-topics-list"></div>
-            </div>
-
-            <footer></footer>
-        </div>
+    <div class="shimmer-wrapper">
+      <div class="shimmer-subject">
+        <div class="shimmer-icon"></div>
+        <div class="shimmer-title"></div>
+      </div>
+      <div class="shimmer-stats">
+        <div class="shimmer-stat"></div>
+        <div class="shimmer-stat"></div>
+        <div class="shimmer-stat"></div>
+      </div>
+      <div class="shimmer-actions">
+        <div class="shimmer-btn"></div>
+        <div class="shimmer-btn"></div>
+      </div>
+      <div class="shimmer-topics">
+        <div class="shimmer-topic"></div>
+        <div class="shimmer-topic"></div>
+        <div class="shimmer-topic"></div>
+        <div class="shimmer-topic"></div>
+        <div class="shimmer-topic"></div>
+      </div>
     </div>
+  </div>
 
-    <script data-lazy data-src="/scripts/offline.js"></script>
-</body>
-</html>
+  <!-- ===== REAL CONTENT ===== -->
+  <div id="real-content">
+    <div class="page-container">
+      <!-- Fixed Header – TWO ROWS -->
+      <header class="fixed-header">
+        <div class="header-row top">
+          <div class="left-group">
+
+            <button id="backBtn" class="btn-text">Subjects</button>
+          </div>
+          <div class="right-group">
+            <button id="themeToggle" class="btn-outline">🌓</button>
+          </div>
+        </div>
+        <div class="header-row bottom">
+          <button class="mode-btn active" data-mode="internal" id="modeInternal">Internal Exam</button>
+          <button class="mode-btn" data-mode="pdf" id="modePdf">Export as PDF</button>
+        </div>
+      </header>
+
+      <!-- Subject Metadata -->
+      <div class="subject-header-info">
+        <div class="subject-title">
+          <span id="header-subject-icon" class="icon"></span>
+          <h1 id="header-subject-name"></h1>
+          <span id="header-subject-color" class="color-dot"></span>
+        </div>
+        <div class="total-questions" id="header-total-questions"></div>
+      </div>
+
+      <!-- Selection Summary -->
+      <div class="selection-summary" id="selection-summary">
+        <div class="summary-stats">
+          <span id="selected-count">0 of 0 topics selected</span>
+          <span id="selected-questions">0 questions selected</span>
+          <span id="estimated-time">~0h 0m</span>
+          <span id="pdf-sub-required" style="color:var(--accent);font-weight:600;display:none;">⭐ Subscription required</span>
+        </div>
+        <div class="action-buttons">
+          <button id="primary-action-btn" class="btn-primary" disabled>Start Exam</button>
+          <button id="secondary-action-btn" class="btn-secondary" disabled>Quick Exam (10q)</button>
+        </div>
+      </div>
+
+      <!-- Subject sections -->
+      <div id="subject-container">
+        <!-- Anatomy -->
+        <div id="anatomy-topics" class="subject-section" data-subject="anatomy" style="display:none;">
+          <div class="topic-selection">
+            <div class="selection-actions">
+              <button class="btn-secondary select-all-btn" data-subject="anatomy">Select All</button>
+              <button class="btn-secondary clear-all-btn" data-subject="anatomy">Clear All</button>
+            </div>
+            <div id="anatomy-topics-tree" class="topic-tree"></div>
+          </div>
+        </div>
+        <!-- Physiology -->
+        <div id="physiology-topics" class="subject-section" data-subject="physiology" style="display:none;">
+          <div class="topic-selection">
+            <div class="selection-actions">
+              <button class="btn-secondary select-all-btn" data-subject="physiology">Select All</button>
+              <button class="btn-secondary clear-all-btn" data-subject="physiology">Clear All</button>
+            </div>
+            <div id="physiology-topics-tree" class="topic-tree"></div>
+          </div>
+        </div>
+        <!-- Biochemistry -->
+        <div id="biochemistry-topics" class="subject-section" data-subject="biochemistry" style="display:none;">
+          <div class="topic-selection">
+            <div class="selection-actions">
+              <button class="btn-secondary select-all-btn" data-subject="biochemistry">Select All</button>
+              <button class="btn-secondary clear-all-btn" data-subject="biochemistry">Clear All</button>
+            </div>
+            <div id="biochemistry-topics-tree" class="topic-tree"></div>
+          </div>
+        </div>
+        <!-- Histology -->
+        <div id="histology-topics" class="subject-section" data-subject="histology" style="display:none;">
+          <div class="topic-selection">
+            <div class="selection-actions">
+              <button class="btn-secondary select-all-btn" data-subject="histology">Select All</button>
+              <button class="btn-secondary clear-all-btn" data-subject="histology">Clear All</button>
+            </div>
+            <div id="histology-topics-tree" class="topic-tree"></div>
+          </div>
+        </div>
+        <!-- Embryology -->
+        <div id="embryology-topics" class="subject-section" data-subject="embryology" style="display:none;">
+          <div class="topic-selection">
+            <div class="selection-actions">
+              <button class="btn-secondary select-all-btn" data-subject="embryology">Select All</button>
+              <button class="btn-secondary clear-all-btn" data-subject="embryology">Clear All</button>
+            </div>
+            <div id="embryology-topics-tree" class="topic-tree"></div>
+          </div>
+        </div>
+        <!-- Pathology -->
+        <div id="pathology-topics" class="subject-section" data-subject="pathology" style="display:none;">
+          <div class="topic-selection">
+            <div class="selection-actions">
+              <button class="btn-secondary select-all-btn" data-subject="pathology">Select All</button>
+              <button class="btn-secondary clear-all-btn" data-subject="pathology">Clear All</button>
+            </div>
+            <div id="pathology-topics-tree" class="topic-tree"></div>
+          </div>
+        </div>
+        <!-- Pharmacology -->
+        <div id="pharmacology-topics" class="subject-section" data-subject="pharmacology" style="display:none;">
+          <div class="topic-selection">
+            <div class="selection-actions">
+              <button class="btn-secondary select-all-btn" data-subject="pharmacology">Select All</button>
+              <button class="btn-secondary clear-all-btn" data-subject="pharmacology">Clear All</button>
+            </div>
+            <div id="pharmacology-topics-tree" class="topic-tree"></div>
+          </div>
+        </div>
+        <!-- Microbiology -->
+        <div id="microbiology-topics" class="subject-section" data-subject="microbiology" style="display:none;">
+          <div class="topic-selection">
+            <div class="selection-actions">
+              <button class="btn-secondary select-all-btn" data-subject="microbiology">Select All</button>
+              <button class="btn-secondary clear-all-btn" data-subject="microbiology">Clear All</button>
+            </div>
+            <div id="microbiology-topics-tree" class="topic-tree"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Topics Section -->
+      <div id="recent-section" class="recent-section hidden">
+        <h3>📌 Recent & Weak Topics</h3>
+        <div id="recent-topics-list"></div>
+      </div>
+
+      <footer></footer>
+    </div>
+  </div>
+</section>

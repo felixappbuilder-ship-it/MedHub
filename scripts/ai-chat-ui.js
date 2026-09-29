@@ -1,9 +1,12 @@
-// frontend-user/scripts/ai-chat-ui.js
+// scripts/ai-chat-ui.js
 
 import * as ui from './ui.js';
 import * as utils from './utils.js';
 import * as router from './router.js';
+import * as auth from './auth.js';
 import ai from './ai.js';
+import { convexHttpClient } from './convex-client.js';
+import { getToken } from './auth.js';
 
 export default class AIChatUI {
     constructor() {
@@ -43,7 +46,7 @@ export default class AIChatUI {
         this.isRecording = false;
         this.recordingTimer = null;
         this.chats = [];
-        this.imageViewerOverlay = null; // For lightbox
+        this.imageViewerOverlay = null;
 
         // Bind methods
         this.loadChats = this.loadChats.bind(this);
@@ -129,9 +132,31 @@ export default class AIChatUI {
                 await this.loadChats();
             });
 
-            dropdown.querySelector('.share-item').addEventListener('click', (e) => {
+            // ===== SHARE (uses Convex backend) =====
+            dropdown.querySelector('.share-item').addEventListener('click', async (e) => {
                 e.stopPropagation();
-                ui.showToast(`🔗 Shareable link (mock): https://chat.shared/${chat.id}`, 'info', 3000);
+                try {
+                    const token = getToken();
+                    if (!token) {
+                        ui.showToast('You must be logged in to share.', 'error');
+                        return;
+                    }
+                    const result = await convexHttpClient.action('conversations/actions:shareConversation', {
+                        token,
+                        conversationId: chat.id,
+                        expiryHours: 24,
+                        
+                    });
+                    if (result.success) {
+                        const shareUrl = result.data.shareUrl; // e.g., `/ai.html?ref=shared&token=...`
+                        ui.showToast(`🔗 Shareable link: ${window.location.origin}${shareUrl}`, 'success', 5000);
+                    } else {
+                        ui.showToast('Failed to create share link: ' + result.message, 'error');
+                    }
+                } catch (err) {
+                    console.error('Share error:', err);
+                    ui.showToast('Error sharing conversation', 'error');
+                }
                 dropdown.classList.remove('show');
             });
 
@@ -194,7 +219,8 @@ export default class AIChatUI {
     }
 
     getUserName() {
-        const user = window.app?.getUser?.() || { name: 'Doctor' };
+        // ✅ Use auth.getUser() instead of window.app?.getUser?.()
+        const user = auth.getUser() || { name: 'Doctor' };
         return user.name?.split(' ')[0] || 'Doctor';
     }
 
@@ -253,9 +279,6 @@ export default class AIChatUI {
         return result;
     }
 
-    // ================================================================
-    //  PERFECTION – ZERO COLLISIONS, COMPLETE SPEC SUPPORT
-    // ================================================================
     renderMarkdown(text) {
         const placeholders = {
             codeBlocks: [],
@@ -266,7 +289,6 @@ export default class AIChatUI {
             safeHtml: []
         };
 
-        // FIX: uid now accepts an index directly (no more 1‑based offset)
         const uid = (prefix, idx) => `\u0000${prefix}_${idx}\u0000`;
 
         let html = text;
@@ -290,8 +312,7 @@ export default class AIChatUI {
             return uid('IC', idx);
         });
 
-        // ---------- LaTeX: block and inline (including \[ \], \( \), (( )) ----------
-        // Block: $$...$$ and \[...\]
+        // LaTeX
         html = html.replace(/\$\$([\s\S]*?)\$\$/g, (match, formula) => {
             const idx = placeholders.latex.length;
             placeholders.latex.push({ type: 'block', formula });
@@ -302,8 +323,6 @@ export default class AIChatUI {
             placeholders.latex.push({ type: 'block', formula });
             return uid('LX', idx);
         });
-
-        // Inline: $...$, \(...\), ((...))
         html = html.replace(/\$(.+?)\$/g, (match, formula) => {
             const idx = placeholders.latex.length;
             placeholders.latex.push({ type: 'inline', formula });
@@ -334,7 +353,7 @@ export default class AIChatUI {
             return uid('LNK', idx);
         });
 
-        // Safe HTML tags – protect from escaping
+        // Safe HTML tags
         html = html.replace(/<(\/?)(details|summary|kbd|abbr|sup|sub|mark|del|ins|video|source)([^>]*)>/gi, (match, closing, tag, attrs) => {
             const idx = placeholders.safeHtml.length;
             placeholders.safeHtml.push({ closing, tag, attrs });
@@ -463,8 +482,6 @@ export default class AIChatUI {
 
         // Final cleanup
         html = html.replace(/<br>\s*<br>/g, '<br>');
-        // Optional DOMPurify (uncomment when library is included)
-        // html = DOMPurify.sanitize(html, { ADD_TAGS: [...], ADD_ATTR: [...] });
         return html;
     }
 
@@ -587,9 +604,6 @@ export default class AIChatUI {
         }
     }
 
-    /**
-     * Auto-detect ASCII diagram patterns in text.
-     */
     _isAsciiDiagram(text) {
         const lines = text.split('\n').filter(l => l.trim().length > 0);
         if (lines.length < 3) return false;
@@ -611,9 +625,6 @@ export default class AIChatUI {
         return diagramLineCount >= Math.ceil(lines.length * 0.4);
     }
 
-    /**
-     * Auto-detect and wrap ASCII diagrams that appear outside code fences.
-     */
     _autoDetectAndWrapAsciiDiagrams(html) {
         const lines = html.split('<br>');
         const result = [];
@@ -652,12 +663,6 @@ export default class AIChatUI {
         return result.join('<br>');
     }
 
-    /**
-     * Render admonition/callout blocks.
-     * Syntax: !!!type Title
-     *          Content line 1
-     *          Content line 2
-     */
     _renderAdmonitions(html) {
         const admonitionRegex = /!!!(\w+)\s+(.+?)\n([\s\S]*?)(?=\n(?:!!!|```|$)|$)/g;
         return html.replace(admonitionRegex, (match, type, title, content) => {

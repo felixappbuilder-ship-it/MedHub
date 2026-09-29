@@ -10,7 +10,8 @@
 
 import * as utils from './utils.js';
 import * as ui from './ui.js';
-import * as app from './app.js';
+import * as auth from './auth.js';
+import * as router from './router.js';
 import { convexHttpClient } from './convex-client.js';
 import { getToken } from './auth.js';
 import * as db from './db.js';
@@ -22,7 +23,7 @@ const STORAGE_KEY_REFERRAL_DATA = 'referral_data';
 const STORAGE_KEY_AGENT_DATA = 'agent_data';
 
 // Base URL for referral links (production)
-const BASE_URL = 'https://medhub.edgeone.app';
+const BASE_URL = 'https://medvix.co.ke';
 
 // ==================== TOKEN ERROR HANDLER ====================
 
@@ -38,9 +39,9 @@ function handleTokenError(error) {
         console.warn('[Referral] Token invalid, logging out...');
         utils.removeLocalStorage('accessToken');
         utils.removeLocalStorage('sessionId');
-        app.clearUser();
+        auth.clearUser();
         ui.showToast('Session expired. Please login again.', 'warning');
-        window.location.href = '/pages/login.html';
+        router.navigateTo('login'); // clean URL
         return true;
     }
     return false;
@@ -261,7 +262,8 @@ export async function requestWithdrawal(amount, phoneNumber) {
     }
 
     try {
-        const result = await convexHttpClient.mutation("referrals/mutations:requestWithdrawal", {
+        // ✅ Fixed: Use `.action` instead of `.mutation` because backend is an action
+        const result = await convexHttpClient.action("referrals/mutations:requestWithdrawal", {
             token,
             amount,
             phoneNumber: formattedPhone
@@ -301,8 +303,8 @@ export function copyReferralLink(referralCode) {
 export function shareReferralLink(referralCode) {
     const link = generateReferralLink(referralCode);
     const shareData = {
-        title: 'Join MedHub and ace your medical exams!',
-        text: 'Use my referral link to join MedHub and get started with premium medical exam prep:',
+        title: 'Join MedVix and ace your medical exams!',
+        text: 'Use my referral link to join MedVix and get started with premium medical exam prep:',
         url: link
     };
 

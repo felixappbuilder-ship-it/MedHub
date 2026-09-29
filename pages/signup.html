@@ -1,587 +1,235 @@
-<!DOCTYPE html>
-<html lang="en">
+<section
+  class="page signup-page"
+  data-page="signup"
+  data-script="/scripts/pages/signup.js"
+  data-style="/css/signup.css"
+  data-title="Sign Up"
+  data-auth="none"
+  data-cache="true"
+  data-transition="fade"
+>
+  <!-- Fixed Header -->
+  <header class="fixed-header">
+    <div class="header-row top">
+      <div class="logo-area">
+        <img src="/assets/images/logo.png" alt="Logo" />
+        <span>MedVix</span>
+      </div>
+      <button id="themeToggle" class="btn-outline">🌓</button>
+    </div>
+    <div class="header-row bottom">
+      <button id="backBtn" class="nav-link">← Back to Home</button>
+      <button id="loginLink" class="nav-link login-link">Already have an account? Login</button>
+    </div>
+  </header>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up – MedHub</title>
+  <main class="form-container">
+    <h1>Create your account</h1>
+    <p class="step-indicator" id="step-indicator">Step 1 of 4: Choose your sign-up method</p>
 
-    <link rel="manifest" href="/manifest.json">
-    <link rel="stylesheet" href="/css/common.css" media="all">
-    <link rel="stylesheet" href="/css/signup.css" media="all">
+    <!-- ============================================================
+         STEP 1 – Choose Google OR Email/Phone (with Referral + Terms)
+         ============================================================ -->
+    <div id="step1" class="step active">
+      <!-- Google button (rendered by GIS) with click guard -->
+      <div id="google-signup-container" class="google-signin-container">
+        <div id="google-click-guard" class="google-click-guard"></div>
+      </div>
 
-    <script type="module" src="/scripts/utils.js"></script>
-    <script type="module" src="/scripts/ui.js"></script>
-    <script type="module" src="/scripts/router.js"></script>
-    <script type="module" src="/scripts/app.js"></script>
-    <script type="module" src="/scripts/auth.js"></script>
-    <script type="module" src="/scripts/validation.js"></script>
-    <script type="module" src="/scripts/security.js"></script>
-    <script type="module" src="/scripts/db.js"></script>
-    <script type="module" src="/scripts/referral.js"></script>
+      <div class="auth-divider"><span>or</span></div>
 
-    <style>
-        /* Fixed header styles (unchanged) */
-        .fixed-header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: var(--bg-card);
-            border-bottom: 1px solid var(--border);
-            padding: 0.5rem 1rem;
-        }
-        .header-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .header-row.top {
-            margin-bottom: 0.3rem;
-        }
-        .header-row .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .header-row .logo-area img {
-            width: 32px;
-            height: 32px;
-            border-radius: 6px;
-        }
-        .header-row .logo-area span {
-            font-weight: 600;
-            font-size: 1.2rem;
-        }
-        .header-row .btn-outline {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            padding: 0.3rem 0.6rem;
-            border-radius: 30px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            line-height: 1;
-            transition: background 0.2s, color 0.2s, border-color 0.2s;
-        }
-        .header-row .btn-outline:hover {
-            background: var(--accent);
-            color: white;
-            border-color: var(--accent);
-        }
-        .header-row .nav-link {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.9rem;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 0.3rem 0.6rem;
-        }
-        .header-row .nav-link:hover {
-            color: var(--text-primary);
-            text-decoration: underline;
-        }
-        .header-row .login-link {
-            font-weight: 500;
-        }
-        .header-row .login-link:hover {
-            color: var(--accent);
-        }
-    </style>
+      <button type="button" id="emailSignupBtn" class="btn-primary btn-block">
+        Continue with Email / Phone
+      </button>
 
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/service-worker.js').catch(() => {});
-        }
-    </script>
-</head>
+      <!-- Referral (applies to BOTH Google and Email paths) -->
+      <div class="form-group" style="margin-top: 1.5rem;">
+        <label for="referralCode">
+          Referral Code
+          <span style="color: var(--text-muted); font-weight: normal;">(optional)</span>
+        </label>
+        <input type="text" id="referralCode" name="referralCode" placeholder="e.g., FHX7P4M2" />
+        <div id="referral-status" style="font-size: 0.8rem; margin-top: 0.25rem;"></div>
+        <small>If you were referred by a friend, enter their code here.</small>
+      </div>
 
-<body>
-    <!-- Fixed Header -->
-    <header class="fixed-header">
-        <div class="header-row top">
-            <div class="logo-area">
-                <img src="/assets/images/logo.png" alt="Logo">
-                <span>MedHub</span>
-            </div>
-            <button onclick="window.ui?.toggleTheme()" class="btn-outline">🌓</button>
-        </div>
-        <div class="header-row bottom">
-            <button onclick="window.router?.navigateTo('welcome.html')" class="nav-link">← Back to Home</button>
-            <!-- Login link – will be updated by script to include redirect parameter -->
-            <button id="loginLink" class="nav-link login-link">Already have an account? Login</button>
-        </div>
-    </header>
+      <!-- Terms (applies to BOTH paths) -->
+      <div class="form-group checkbox">
+        <label>
+          <input type="checkbox" id="terms" name="terms" />
+          By continuing, you agree to the
+          <a href="/terms" target="_blank" rel="noopener">Terms of Service</a> and
+          <a href="/privacy" target="_blank" rel="noopener">Privacy Policy</a>
+        </label>
+        <div class="error-message" data-for="terms"></div>
+      </div>
+    </div>
 
-    <main class="form-container">
-        <h1>Create your account</h1>
-        <p class="step-indicator" id="step-indicator">Step 1 of 3: Personal Information</p>
-
-        <!-- Step 1: Personal Information -->
-        <div id="step1" class="step active">
-            <form id="step1-form">
-                <div class="form-group">
-                    <label for="fullName">Full name</label>
-                    <input type="text" id="fullName" name="fullName" placeholder="e.g., John Mwangi" required>
-                    <div class="error-message" data-for="fullName"></div>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email address</label>
-                    <input type="email" id="email" name="email" placeholder="student@example.com" required>
-                    <div class="error-message" data-for="email"></div>
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Phone number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="e.g., 0712345678" required>
-                    <div class="error-message" data-for="phone"></div>
-                    <small>Format: 07XXXXXXXX or 2547XXXXXXXX</small>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group half">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" placeholder="••••••••" required>
-                        <button type="button" onclick="window.ui?.togglePasswordVisibility('password')"
-                            class="reveal-btn">👁️</button>
-                        <div class="error-message" data-for="password"></div>
-                    </div>
-                    <div class="form-group half">
-                        <label for="confirmPassword">Confirm password</label>
-                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="••••••••"
-                            required>
-                        <button type="button" onclick="window.ui?.togglePasswordVisibility('confirmPassword')"
-                            class="reveal-btn">👁️</button>
-                        <div class="error-message" data-for="confirmPassword"></div>
-                    </div>
-                </div>
-                <div id="password-strength" class="strength-meter"></div>
-
-                <div class="form-group checkbox">
-                    <label>
-                        <input type="checkbox" id="terms" name="terms" required>
-                        I agree to the <a href="/terms.html">Terms of Service</a> and <a
-                            href="/privacy.html">Privacy Policy</a>
-                    </label>
-                    <div class="error-message" data-for="terms"></div>
-                </div>
-
-                <!-- Referral Code Field -->
-                <div class="form-group">
-                    <label for="referralCode">Referral Code <span style="color: var(--text-muted); font-weight: normal;">(optional)</span></label>
-                    <input type="text" id="referralCode" name="referralCode" placeholder="e.g., FHX7P4M2">
-                    <div id="referral-status" style="font-size: 0.8rem; margin-top: 0.25rem;"></div>
-                    <small>If you were referred by a friend, enter their code here.</small>
-                </div>
-
-                <div class="button-group">
-                    <button type="button" onclick="window.router?.navigateTo('welcome.html')"
-                        class="btn-secondary">Cancel</button>
-                    <button type="button" onclick="window.goToStep2()" class="btn-primary">Next →</button>
-                </div>
-            </form>
+    <!-- ============================================================
+         STEP 2 – Personal Information (email/phone path only)
+         ============================================================ -->
+    <div id="step2" class="step" style="display: none;">
+      <form id="step2-form">
+        <div class="form-group">
+          <label for="fullName">Full name</label>
+          <input type="text" id="fullName" name="fullName" placeholder="e.g., John Mwangi" required />
+          <div class="error-message" data-for="fullName"></div>
         </div>
 
-        <!-- Step 2: Security Questions -->
-        <div id="step2" class="step" style="display:none;">
-            <form id="step2-form">
-                <p class="instruction">Set up security questions for account recovery. Choose three different questions and provide answers.</p>
-
-                <div class="form-group">
-                    <label for="sq1">Question 1</label>
-                    <select id="sq1" name="sq1" required>
-                        <option value="">-- Select a question --</option>
-                        <option value="What is your place of birth?">What is your place of birth?</option>
-                        <option value="What was the name of your primary school?">What was the name of your primary school?</option>
-                        <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
-                        <option value="What was the name of your first pet?">What was the name of your first pet?</option>
-                        <option value="What is your favorite book?">What is your favorite book?</option>
-                        <option value="What is your favorite food?">What is your favorite food?</option>
-                        <option value="What city were you born in?">What city were you born in?</option>
-                        <option value="What is your father's middle name?">What is your father's middle name?</option>
-                    </select>
-                    <div class="error-message" data-for="sq1"></div>
-                </div>
-                <div class="form-group">
-                    <label for="answer1">Answer 1</label>
-                    <input type="text" id="answer1" name="answer1" placeholder="Your answer" required>
-                    <div class="error-message" data-for="answer1"></div>
-                </div>
-
-                <div class="form-group">
-                    <label for="sq2">Question 2</label>
-                    <select id="sq2" name="sq2" required>
-                        <option value="">-- Select a question --</option>
-                        <option value="What is your place of birth?">What is your place of birth?</option>
-                        <option value="What was the name of your primary school?">What was the name of your primary school?</option>
-                        <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
-                        <option value="What was the name of your first pet?">What was the name of your first pet?</option>
-                        <option value="What is your favorite book?">What is your favorite book?</option>
-                        <option value="What is your favorite food?">What is your favorite food?</option>
-                        <option value="What city were you born in?">What city were you born in?</option>
-                        <option value="What is your father's middle name?">What is your father's middle name?</option>
-                    </select>
-                    <div class="error-message" data-for="sq2"></div>
-                </div>
-                <div class="form-group">
-                    <label for="answer2">Answer 2</label>
-                    <input type="text" id="answer2" name="answer2" placeholder="Your answer" required>
-                    <div class="error-message" data-for="answer2"></div>
-                </div>
-
-                <div class="form-group">
-                    <label for="sq3">Question 3</label>
-                    <select id="sq3" name="sq3" required>
-                        <option value="">-- Select a question --</option>
-                        <option value="What is your place of birth?">What is your place of birth?</option>
-                        <option value="What was the name of your primary school?">What was the name of your primary school?</option>
-                        <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
-                        <option value="What was the name of your first pet?">What was the name of your first pet?</option>
-                        <option value="What is your favorite book?">What is your favorite book?</option>
-                        <option value="What is your favorite food?">What is your favorite food?</option>
-                        <option value="What city were you born in?">What city were you born in?</option>
-                        <option value="What is your father's middle name?">What is your father's middle name?</option>
-                    </select>
-                    <div class="error-message" data-for="sq3"></div>
-                </div>
-                <div class="form-group">
-                    <label for="answer3">Answer 3</label>
-                    <input type="text" id="answer3" name="answer3" placeholder="Your answer" required>
-                    <div class="error-message" data-for="answer3"></div>
-                </div>
-
-                <div class="button-group">
-                    <button type="button" onclick="window.goToStep1()" class="btn-secondary">← Back</button>
-                    <button type="button" onclick="window.goToStep3()" class="btn-primary">Next →</button>
-                </div>
-            </form>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" placeholder="student@example.com" required />
+          <div class="error-message" data-for="email"></div>
         </div>
 
-        <!-- Step 3: Success & Redirect -->
-        <div id="step3" class="step" style="display:none; text-align: center;">
-            <div class="success-icon">✅</div>
-            <h2>Account created successfully!</h2>
-            <p id="successMessage">Your account has been created. You will be redirected to start your free trial in <span
-                    id="countdown">3</span> seconds.</p>
-            <button id="redirectNowBtn" class="btn-primary">Go to Free Trial now</button>
+        <div class="form-group">
+          <label for="phone">Phone number</label>
+          <input type="tel" id="phone" name="phone" placeholder="e.g., 0712345678" required />
+          <div class="error-message" data-for="phone"></div>
+          <small>Format: 07XXXXXXXX or 2547XXXXXXXX</small>
         </div>
-    </main>
 
-    <script type="module">
-        // ==================== IMPORTS ====================
-        import * as app from '../scripts/app.js';
-        import * as auth from '../scripts/auth.js';
-        import * as ui from '../scripts/ui.js';
-        import * as router from '../scripts/router.js';
-        import * as validation from '../scripts/validation.js';
-        import * as security from '../scripts/security.js';
-        import * as utils from '../scripts/utils.js';
-        import * as db from '../scripts/db.js';
-        import * as referral from '../scripts/referral.js';
+        <div class="form-row">
+          <div class="form-group half">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="••••••••" required />
+            <button type="button" id="togglePassword1" class="reveal-btn">👁️</button>
+            <div class="error-message" data-for="password"></div>
+          </div>
+          <div class="form-group half">
+            <label for="confirmPassword">Confirm password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="••••••••" required />
+            <button type="button" id="togglePassword2" class="reveal-btn">👁️</button>
+            <div class="error-message" data-for="confirmPassword"></div>
+          </div>
+        </div>
+        <div id="password-strength" class="strength-meter"></div>
 
-        // ==================== DEEP LINK REDIRECT ====================
-        const redirectParam = new URLSearchParams(window.location.search).get('redirect');
-        let redirectTarget = null;
-        if (redirectParam) {
-            try {
-                // Decode the URL (it was encoded by welcome.html)
-                redirectTarget = decodeURIComponent(redirectParam);
-                // Ensure it's a relative path (starts with /pages/ or /)
-                if (!redirectTarget.startsWith('/')) {
-                    redirectTarget = null;
-                }
-            } catch (e) {
-                redirectTarget = null;
-            }
-        }
+        <div class="button-group">
+          <button type="button" id="backStep2Btn" class="btn-secondary">← Back</button>
+          <button type="button" id="nextStep2Btn" class="btn-primary">Next →</button>
+        </div>
+      </form>
+    </div>
 
-        // ==================== UPDATE LOGIN LINK ====================
-        const loginLink = document.getElementById('loginLink');
-        if (loginLink) {
-            loginLink.onclick = () => {
-                let url = 'login.html';
-                if (redirectTarget) {
-                    url += `?redirect=${encodeURIComponent(redirectTarget)}`;
-                }
-                router.navigateTo(url);
-            };
-        }
+    <!-- ============================================================
+         STEP 3 – Security Questions (email/phone path only)
+         ============================================================ -->
+    <div id="step3" class="step" style="display: none;">
+      <form id="step3-form">
+        <p class="instruction">Set up security questions for account recovery. Choose three different questions and provide answers.</p>
 
-        // ==================== STATE ====================
-        let formData = {
-            name: '',
-            email: '',
-            phone: '',
-            password: '',
-            confirmPassword: '',
-            terms: false,
-            referralCode: '',
-            securityQuestions: [
-                { question: '', answer: '' },
-                { question: '', answer: '' },
-                { question: '', answer: '' }
-            ]
-        };
+        <div class="form-group">
+          <label for="sq1">Question 1</label>
+          <select id="sq1" name="sq1" required>
+            <option value="">-- Select a question --</option>
+            <option value="What is your place of birth?">What is your place of birth?</option>
+            <option value="What was the name of your primary school?">What was the name of your primary school?</option>
+            <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
+            <option value="What was the name of your first pet?">What was the name of your first pet?</option>
+            <option value="What is your favorite book?">What is your favorite book?</option>
+            <option value="What is your favorite food?">What is your favorite food?</option>
+            <option value="What city were you born in?">What city were you born in?</option>
+            <option value="What is your father's middle name?">What is your father's middle name?</option>
+          </select>
+          <div class="error-message" data-for="sq1"></div>
+        </div>
+        <div class="form-group">
+          <label for="answer1">Answer 1</label>
+          <input type="text" id="answer1" name="answer1" placeholder="Your answer" required />
+          <div class="error-message" data-for="answer1"></div>
+        </div>
 
-        // ==================== REFERRAL CODE DETECTION ====================
-        async function handleReferralCode() {
-            const refInput = document.getElementById('referralCode');
-            const statusEl = document.getElementById('referral-status');
+        <div class="form-group">
+          <label for="sq2">Question 2</label>
+          <select id="sq2" name="sq2" required>
+            <option value="">-- Select a question --</option>
+            <option value="What is your place of birth?">What is your place of birth?</option>
+            <option value="What was the name of your primary school?">What was the name of your primary school?</option>
+            <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
+            <option value="What was the name of your first pet?">What was the name of your first pet?</option>
+            <option value="What is your favorite book?">What is your favorite book?</option>
+            <option value="What is your favorite food?">What is your favorite food?</option>
+            <option value="What city were you born in?">What city were you born in?</option>
+            <option value="What is your father's middle name?">What is your father's middle name?</option>
+          </select>
+          <div class="error-message" data-for="sq2"></div>
+        </div>
+        <div class="form-group">
+          <label for="answer2">Answer 2</label>
+          <input type="text" id="answer2" name="answer2" placeholder="Your answer" required />
+          <div class="error-message" data-for="answer2"></div>
+        </div>
 
-            const urlRef = referral.detectReferralFromURL();
-            const storedRef = referral.getStoredReferralCode();
-            const refCode = urlRef || storedRef;
+        <div class="form-group">
+          <label for="sq3">Question 3</label>
+          <select id="sq3" name="sq3" required>
+            <option value="">-- Select a question --</option>
+            <option value="What is your place of birth?">What is your place of birth?</option>
+            <option value="What was the name of your primary school?">What was the name of your primary school?</option>
+            <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
+            <option value="What was the name of your first pet?">What was the name of your first pet?</option>
+            <option value="What is your favorite book?">What is your favorite book?</option>
+            <option value="What is your favorite food?">What is your favorite food?</option>
+            <option value="What city were you born in?">What city were you born in?</option>
+            <option value="What is your father's middle name?">What is your father's middle name?</option>
+          </select>
+          <div class="error-message" data-for="sq3"></div>
+        </div>
+        <div class="form-group">
+          <label for="answer3">Answer 3</label>
+          <input type="text" id="answer3" name="answer3" placeholder="Your answer" required />
+          <div class="error-message" data-for="answer3"></div>
+        </div>
 
-            if (refCode && refInput) {
-                refInput.value = refCode;
-                refInput.readOnly = true;
-                statusEl.textContent = '⏳ Validating referral code...';
-                statusEl.style.color = 'var(--text-muted)';
+        <div class="button-group">
+          <button type="button" id="backStep3Btn" class="btn-secondary">← Back</button>
+          <button type="button" id="createAccountBtn" class="btn-primary">Create Account →</button>
+        </div>
+      </form>
+    </div>
 
-                try {
-                    const result = await referral.validateReferralCode(refCode);
-                    if (result.valid) {
-                        statusEl.textContent = `✅ Referred by ${result.referrerName || 'a MedHub user'}`;
-                        statusEl.style.color = 'var(--success)';
-                        formData.referralCode = refCode;
-                    } else {
-                        statusEl.textContent = '⚠️ Invalid referral code. You can still sign up without one.';
-                        statusEl.style.color = 'var(--warning)';
-                        refInput.readOnly = false;
-                    }
-                } catch (err) {
-                    console.warn('[Signup] Referral validation error:', err);
-                    statusEl.textContent = '⚠️ Could not validate referral code. You can still sign up.';
-                    statusEl.style.color = 'var(--warning)';
-                }
-            }
-        }
+    <!-- ============================================================
+         STEP 4 – Success & Redirect (both paths land here)
+         ============================================================ -->
+    <div id="step4" class="step" style="display: none; text-align: center;">
+      <div class="success-icon">✅</div>
+      <h2 id="successTitle">Account created successfully!</h2>
+      <p id="successMessage">
+        Redirecting in <span id="countdown">3</span> seconds…
+      </p>
+      <button id="redirectNowBtn" class="btn-primary">Go to Free Trial now</button>
+    </div>
+  </main>
 
-        // ==================== INITIALIZATION ====================
-        window.addEventListener('load', async function () {
-            ui.applyTheme();
+  <!-- ============================================================
+       Google account-linking modal
+       (shown when the Google email already belongs to an existing account)
+       ============================================================ -->
+  <div id="google-link-modal" class="modal-overlay" style="display:none;">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>You already have an account</h3>
+        <button class="modal-close" id="google-link-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>
+          A MedVix account already exists with
+          <strong id="google-link-email">—</strong>.
+        </p>
+        <p>Enter your MedVix password to connect Google Sign-In to that account.</p>
 
-            if (app.checkAuth()) {
-                // If already logged in, go to redirect or subjects
-                if (redirectTarget) {
-                    window.location.href = redirectTarget;
-                } else {
-                    router.navigateTo('subjects.html');
-                }
-                return;
-            }
-
-            validation.setupLiveValidation('step1-form', {
-                fullName: { required: true, min: 2, pattern: '^[A-Za-z ]+$' },
-                email: { required: true, email: true },
-                phone: { required: true, phone: 'KE' },
-                password: { required: true, password: true },
-                terms: { required: true }
-            });
-
-            const pwdField = document.getElementById('password');
-            pwdField.addEventListener('input', function () {
-                const strength = validation.checkPasswordStrength(this.value);
-                ui.updatePasswordStrength(strength);
-            });
-
-            await handleReferralCode();
-
-            const saved = sessionStorage.getItem('signupData');
-            if (saved) {
-                try {
-                    formData = JSON.parse(saved);
-                    document.getElementById('fullName').value = formData.name || '';
-                    document.getElementById('email').value = formData.email || '';
-                    document.getElementById('phone').value = formData.phone || '';
-                    document.getElementById('password').value = formData.password || '';
-                    document.getElementById('confirmPassword').value = formData.confirmPassword || '';
-                    document.getElementById('terms').checked = formData.terms || false;
-                    document.getElementById('referralCode').value = formData.referralCode || '';
-                    if (formData.securityQuestions) {
-                        document.getElementById('sq1').value = formData.securityQuestions[0]?.question || '';
-                        document.getElementById('answer1').value = formData.securityQuestions[0]?.answer || '';
-                        document.getElementById('sq2').value = formData.securityQuestions[1]?.question || '';
-                        document.getElementById('answer2').value = formData.securityQuestions[1]?.answer || '';
-                        document.getElementById('sq3').value = formData.securityQuestions[2]?.question || '';
-                        document.getElementById('answer3').value = formData.securityQuestions[2]?.answer || '';
-                    }
-                } catch (e) { }
-            }
-        });
-
-        // ==================== STEP NAVIGATION ====================
-
-        window.goToStep2 = function () {
-            const step1Data = {
-                fullName: document.getElementById('fullName').value.trim(),
-                email: document.getElementById('email').value.trim(),
-                phone: document.getElementById('phone').value.trim(),
-                password: document.getElementById('password').value,
-                confirmPassword: document.getElementById('confirmPassword').value,
-                terms: document.getElementById('terms').checked,
-                referralCode: document.getElementById('referralCode').value.trim().toUpperCase()
-            };
-
-            const rules = {
-                fullName: { required: true, min: 2 },
-                email: { required: true, email: true },
-                phone: { required: true, phone: 'KE' },
-                password: { required: true, password: true },
-                confirmPassword: { required: true, equalTo: 'password' },
-                terms: { required: true }
-            };
-
-            const result = validation.validateForm(step1Data, rules);
-            if (!result.valid) {
-                validation.showValidationSummary(result.errors);
-                return;
-            }
-
-            formData.name = step1Data.fullName;
-            formData.email = step1Data.email;
-            formData.phone = validation.formatKenyanPhone(step1Data.phone) || step1Data.phone;
-            formData.password = step1Data.password;
-            formData.confirmPassword = step1Data.confirmPassword;
-            formData.terms = step1Data.terms;
-            formData.referralCode = step1Data.referralCode;
-
-            document.getElementById('step1').style.display = 'none';
-            document.getElementById('step2').style.display = 'block';
-            document.getElementById('step-indicator').textContent = 'Step 2 of 3: Security Questions';
-
-            sessionStorage.setItem('signupData', JSON.stringify(formData));
-        };
-
-        window.goToStep1 = function () {
-            const sq1 = document.getElementById('sq1').value;
-            const ans1 = document.getElementById('answer1').value.trim();
-            const sq2 = document.getElementById('sq2').value;
-            const ans2 = document.getElementById('answer2').value.trim();
-            const sq3 = document.getElementById('sq3').value;
-            const ans3 = document.getElementById('answer3').value.trim();
-
-            if (sq1 && ans1) formData.securityQuestions[0] = { question: sq1, answer: ans1 };
-            if (sq2 && ans2) formData.securityQuestions[1] = { question: sq2, answer: ans2 };
-            if (sq3 && ans3) formData.securityQuestions[2] = { question: sq3, answer: ans3 };
-
-            document.getElementById('step2').style.display = 'none';
-            document.getElementById('step1').style.display = 'block';
-            document.getElementById('step-indicator').textContent = 'Step 1 of 3: Personal Information';
-
-            sessionStorage.setItem('signupData', JSON.stringify(formData));
-        };
-
-        window.goToStep3 = async function () {
-            const sq1 = document.getElementById('sq1').value;
-            const ans1 = document.getElementById('answer1').value.trim();
-            const sq2 = document.getElementById('sq2').value;
-            const ans2 = document.getElementById('answer2').value.trim();
-            const sq3 = document.getElementById('sq3').value;
-            const ans3 = document.getElementById('answer3').value.trim();
-
-            if (!sq1 || !ans1 || !sq2 || !ans2 || !sq3 || !ans3) {
-                ui.showToast('Please fill in all security questions and answers', 'error');
-                return;
-            }
-
-            const questions = [sq1, sq2, sq3];
-            const unique = new Set(questions);
-            if (unique.size !== 3) {
-                ui.showToast('Please choose three different questions', 'error');
-                return;
-            }
-
-            formData.securityQuestions = [
-                { question: sq1, answer: ans1 },
-                { question: sq2, answer: ans2 },
-                { question: sq3, answer: ans3 }
-            ];
-
-            ui.showLoading('Creating account...');
-
-            try {
-                const deviceFingerprint = security.generateDeviceFingerprint();
-                const deviceInfo = {
-                    platform: navigator.platform,
-                    userAgent: navigator.userAgent,
-                    screen: `${screen.width}x${screen.height}`,
-                    timezone: new Date().getTimezoneOffset()
-                };
-
-                const userData = {
-                    name: formData.name,
-                    email: formData.email,
-                    phone: formData.phone,
-                    password: formData.password,
-                    securityQuestions: formData.securityQuestions,
-                    deviceFingerprint,
-                    deviceInfo
-                };
-
-                const user = await auth.register(userData, deviceInfo, formData.referralCode || null, false);
-
-                if (!app.checkAuth()) {
-                    console.warn('Auth check failed after registration, forcing reload.');
-                    window.location.href = '/free-trial.html';
-                    return;
-                }
-
-                ui.hideLoading();
-
-                document.getElementById('step2').style.display = 'none';
-                document.getElementById('step3').style.display = 'block';
-                document.getElementById('step-indicator').style.display = 'none';
-
-                sessionStorage.removeItem('signupData');
-
-                // ===== HANDLE DEEP LINK REDIRECT =====
-                let finalTarget = redirectTarget || '/free-trial.html';
-                // Update success message
-                const successMsg = document.getElementById('successMessage');
-                if (redirectTarget) {
-                    successMsg.innerHTML =
-                        `Your account has been created. You will be redirected to your intended page in <span id="countdown">3</span> seconds.`;
-                    // Update button text
-                    document.getElementById('redirectNowBtn').textContent = 'Go to your page now';
-                } else {
-                    successMsg.innerHTML =
-                        `Your account has been created. You will be redirected to start your free trial in <span id="countdown">3</span> seconds.`;
-                }
-
-                // Countdown and redirect
-                let countdown = 3;
-                const countdownEl = document.getElementById('countdown');
-                const interval = setInterval(() => {
-                    countdown--;
-                    countdownEl.textContent = countdown;
-                    if (countdown <= 0) {
-                        clearInterval(interval);
-                        router.navigateTo(finalTarget);
-                    }
-                }, 1000);
-
-                // Button to redirect immediately
-                document.getElementById('redirectNowBtn').onclick = () => {
-                    clearInterval(interval);
-                    router.navigateTo(finalTarget);
-                };
-
-            } catch (error) {
-                ui.hideLoading();
-                ui.showToast(error.message || 'Registration failed', 'error');
-            }
-        };
-
-        // ===== EXPOSE GLOBALLY for inline onclick handlers =====
-        window.goToStep2 = goToStep2;
-        window.goToStep1 = goToStep1;
-        window.goToStep3 = goToStep3;
-        window.ui = ui;
-        window.router = router;
-    </script>
-
-    <script data-lazy data-src="/scripts/offline.js"></script>
-</body>
-
-</html>
+        <div class="form-group">
+          <label for="google-link-password">MedVix password</label>
+          <input type="password" id="google-link-password"
+                 placeholder="••••••••" autocomplete="current-password" />
+          <div class="error-message" data-for="google-link-password"></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-secondary" id="google-link-cancel">Cancel</button>
+        <button class="btn-primary" id="google-link-submit">Connect Google</button>
+      </div>
+    </div>
+  </div>
+</section>

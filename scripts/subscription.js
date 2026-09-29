@@ -1,24 +1,27 @@
+// scripts/subscription.js
+
 /**
  * Subscription Management – Backend‑Integrated
  * Handles free trial, subscription plans, expiry checks, eligibility,
  * and free topics for non-subscribers.
  * Stores subscription data in IndexedDB via db.js.
  * All operations that require backend updates will be done through Convex.
- * 
+ *
  * UI remains unchanged – uses local PLANS constant for display.
  * Backend is used only for eligibility, trial start, status, and purchase.
  */
 
 import * as utils from './utils.js';
 import * as db from './db.js';
-import * as app from './app.js';
 import * as ui from './ui.js';
+import * as payment from './payment.js';
 import { convexHttpClient } from './convex-client.js';
 import { getToken, logout } from './auth.js';
 import * as security from './security.js';
-import * as timeVerifier from './timeVerifier.js'; // ✅ New import
+import * as timeVerifier from './timeVerifier.js';
+import { navigateTo } from './router.js';  // ✅ import router for SPA navigation
 
-// ==================== CONSTANTS (ORIGINAL UI PLANS) ====================
+// ==================== CONSTANTS ====================
 
 const PLANS = {
     trial: {
@@ -97,7 +100,6 @@ const PLANS = {
     }
 };
 
-// ==================== FREE TOPICS ====================
 const FREE_TOPICS = {
     anatomy: ['back', 'introduction-anatomy', 'cross-sectional-anatomy'],
     physiology: ['introduction-homeostasis', 'body-fluids-compartments', 'membrane-physiology'],
@@ -109,33 +111,135 @@ const FREE_TOPICS = {
     microbiology: ['bacterial-structure', 'bacterial-physiology', 'sterilization-disinfection']
 };
 
-// ==================== HELPER: ONLINE CHECK ====================
+// ==================== STATE ====================
+
+let subscriptionStatus = null;
+
+// ==================== HELPERS ====================
+
 function requireOnline() {
     if (!navigator.onLine) {
         throw new Error('You need to be online to perform this action.');
     }
 }
 
-// ==================== SUBSCRIPTION STATUS (BACKEND FIRST) ====================
+// ==================== SUBSCRIPTION MANAGEMENT ====================
 
 /**
- * Get current subscription status from backend (if online) or from local cache.
- * @returns {Promise<Object|null>} subscription object (uses original local structure)
+ * Get the current subscription from memory (fast) or from storage.
+ * This function always returns the cached value if available; otherwise loads from storage.
+ * @returns {Promise<Object|null>}
+ */
+export async function getSubscription() {
+    // If we already have it in memory, return it immediately
+    if (subscriptionStatus !== null) return subscriptionStatus;
+
+    // Try IndexedDB
+    try {
+        const cached = await db.getSubscription();
+        if (cached) {
+            subscriptionStatus = cached;
+            return cached;
+        }
+    } catch (e) {
+        console.warn('[Subscription] Failed to load from IndexedDB, falling back to localStorage', e);
+    }
+
+    // Try localStorage
+    const local = utils.getLocalStorage('subscription', null);
+    if (local) {
+        subscriptionStatus = local;
+        return local;
+    }
+
+    return null;
+}
+
+/**
+ * Set the subscription in memory, IndexedDB, and localStorage.
+ * @param {Object} sub - subscription object
+ */
+export async function setSubscription(sub) {
+    if (!sub) return;
+    subscriptionStatus = sub;
+    try {
+        await db.saveSubscription(sub);
+    } catch (e) {
+        console.warn('[Subscription] IndexedDB save failed, using localStorage', e);
+    }
+    utils.setLocalStorage('subscription', sub);
+}
+
+/**
+ * Clear the subscription from memory and storage.
+ */
+export async function clearSubscription() {
+    subscriptionStatus = null;
+    try {
+        await db.deleteSubscription();
+    } catch (e) {
+        console.warn('[Subscription] IndexedDB delete failed', e);
+    }
+    utils.removeLocalStorage('subscription');
+}
+
+// ==================== INITIALIZATION ====================
+
+export async function initSubscription() {
+    console.log('[Subscription] Initializing...');
+    const token = getToken();
+
+    // If online and we have a token, always try to get the freshest data from backend
+    if (navigator.onLine && token) {
+        console.log('[Subscription] Online & authenticated – fetching fresh subscription from backend...');
+        const sub = await getSubscriptionStatus(true); // force refresh
+        if (sub) {
+            subscriptionStatus = sub;
+            console.log('[Subscription] Loaded fresh from backend:', sub);
+        } else {
+            subscriptionStatus = null;
+            console.log('[Subscription] No active subscription from backend.');
+        }
+    } else {
+        // Offline or no token – just use cached data
+        console.log('[Subscription] Offline or not authenticated – loading from cache...');
+        const sub = await getSubscriptionStatus(false);
+        subscriptionStatus = sub;
+    }
+
+    return subscriptionStatus;
+}
+
+export function fallbackLoadSubscription() {
+    subscriptionStatus = utils.getLocalStorage('subscription', null);
+    console.log('[Subscription] Fallback loaded from localStorage:', subscriptionStatus);
+}
+
+// ==================== SUBSCRIPTION STATUS ====================
+
+/**
+ * Fetch subscription status from backend (if online and allowed), otherwise return cached.
+ * @param {boolean} forceRefresh - if true, forces a backend fetch even if online
+ * @returns {Promise<Object|null>}
  */
 export async function getSubscriptionStatus(forceRefresh = false) {
-    if (forceRefresh || navigator.onLine) {
+    // If we're online and (forceRefresh or we don't have a cached value), try backend
+    if (navigator.onLine && (forceRefresh || subscriptionStatus === null)) {
         try {
             const token = getToken();
             if (!token) return null;
-            const result = await convexHttpClient.action("subscriptions/queries:getSubscriptionStatus", { token });
-            console.log('[Subscription] Raw backend response:', JSON.stringify(result, null, 2));
 
+            const result = await convexHttpClient.action("subscriptions/queries:getSubscriptionStatus", { token });
             if (result && result.success && result.data) {
                 const backendSub = result.data;
-                // ✅ Use isActive directly, fallback to expiry check
+                const now = timeVerifier.getSafeTimestamp();
+                if (now === null) {
+                    console.warn('[Subscription] Time tamper detected, returning null');
+                    return null;
+                }
                 const isActive = backendSub.isActive !== undefined
                     ? backendSub.isActive
-                    : (backendSub.expiryDate && backendSub.expiryDate > Date.now());
+                    : (backendSub.expiryDate && backendSub.expiryDate > now);
                 const normalizedSub = {
                     _id: backendSub._id,
                     plan: backendSub.plan,
@@ -146,88 +250,75 @@ export async function getSubscriptionStatus(forceRefresh = false) {
                     autoRenew: backendSub.autoRenew ?? false,
                     paymentMethod: backendSub.paymentMethod ?? null,
                 };
-                console.log('[Subscription] Normalized sub:', normalizedSub);
-                await db.saveSubscription(normalizedSub);
-                utils.setLocalStorage('subscription', normalizedSub);
-                app.setSubscription(normalizedSub);
-                // ✅ After successful backend sync, reset time verifier (trust server time)
+                await setSubscription(normalizedSub);
                 timeVerifier.resetTimeVerifier();
                 return normalizedSub;
             } else if (result && !result.success) {
                 if (result.error === 'invalid_token' || result.message?.toLowerCase().includes('token')) {
+                    console.warn('[Subscription] Token invalid, logging out.');
                     await logout();
-                    window.location.href = '/pages/login.html';
+                    navigateTo('login');  // ✅ use SPA navigation
                     return null;
                 }
-                console.warn('Backend returned error:', result.message);
+                console.warn('[Subscription] Backend returned error:', result.message);
             }
         } catch (err) {
-            console.warn('Failed to fetch subscription from backend, falling back to cache', err);
+            console.warn('[Subscription] Failed to fetch from backend, using cache', err);
         }
     }
 
-    try {
-        const cached = await db.getSubscription();
-        if (cached) return cached;
-    } catch (e) {}
-    return utils.getLocalStorage('subscription', null);
+    // Return from cache (memory, IndexedDB, localStorage)
+    return await getSubscription();
 }
 
+// ==================== ACTIVE CHECKS ====================
+
 /**
- * Check if the current user has an active subscription or trial.
+ * Check if the user has an active subscription (or trial).
+ * Always uses the cached subscription and safe timestamp.
  * @returns {Promise<boolean>}
  */
 export async function hasActiveSubscription() {
-    // ✅ Verify time before using Date.now()
-    if (!timeVerifier.verifyTime()) return false;
-    const sub = await getSubscriptionStatus();
-    if (!sub) {
-        console.log('[Subscription] No subscription object');
+    const now = timeVerifier.getSafeTimestamp();
+    if (now === null) {
+        console.warn('[Subscription] Time tamper detected, returning false');
         return false;
     }
+
+    const sub = await getSubscription();
+    if (!sub) return false;
+
     const { isActive, expiryDate } = sub;
-    console.log(`[Subscription] Checking active: isActive=${isActive}, expiry=${expiryDate}, now=${Date.now()}`);
-    // If isActive is explicit, use it; otherwise fallback to expiry
+    // If isActive is explicitly set, use it; otherwise fallback to expiry check
     if (isActive !== undefined && isActive !== null) {
-        return isActive && (expiryDate ? expiryDate > Date.now() : true);
+        return isActive && (expiryDate ? expiryDate > now : true);
     }
-    // Fallback
-    return expiryDate && expiryDate > Date.now();
+    // Fallback: check expiry only
+    return expiryDate ? expiryDate > now : false;
 }
 
-/**
- * Check if free trial is still active.
- * @returns {Promise<boolean>}
- */
 export async function isTrialActive() {
-    if (!timeVerifier.verifyTime()) return false;
-    const sub = await getSubscriptionStatus();
-    return sub && sub.plan === 'trial' && sub.isActive && new Date(sub.expiryDate).getTime() > Date.now();
+    const now = timeVerifier.getSafeTimestamp();
+    if (now === null) return false;
+    const sub = await getSubscription();
+    return sub && sub.plan === 'trial' && sub.isActive && (sub.expiryDate ? sub.expiryDate > now : false);
 }
 
-/**
- * Check if user has a paid subscription (any paid plan).
- * @returns {Promise<boolean>}
- */
 export async function isPaidSubscription() {
-    if (!timeVerifier.verifyTime()) return false;
-    const sub = await getSubscriptionStatus();
-    return sub && sub.plan !== 'trial' && sub.isActive && new Date(sub.expiryDate).getTime() > Date.now();
+    const now = timeVerifier.getSafeTimestamp();
+    if (now === null) return false;
+    const sub = await getSubscription();
+    return sub && sub.plan !== 'trial' && sub.isActive && (sub.expiryDate ? sub.expiryDate > now : false);
 }
 
 // ==================== TRIAL MANAGEMENT ====================
 
-/**
- * Check if user is eligible for free trial.
- * @returns {Promise<boolean>} true if eligible
- */
 export async function checkTrialEligibility() {
     requireOnline();
     try {
         const token = getToken();
         if (!token) throw new Error('Not authenticated');
         const deviceFingerprint = security.getDeviceFingerprint();
-        // ✅ Action
         const result = await convexHttpClient.action("subscriptions/queries:checkTrialEligibility", {
             token,
             deviceFingerprint
@@ -235,29 +326,23 @@ export async function checkTrialEligibility() {
         if (!result.success) {
             if (result.error === 'invalid_token' || result.message?.toLowerCase().includes('token')) {
                 await logout();
-                window.location.href = '/pages/login.html';
-                throw new Error('Session expired. Please login again.');
+                navigateTo('login');  // ✅ SPA navigation
+                throw new Error('Session expired.');
             }
             throw new Error(result.message);
         }
         return result.data.eligible;
     } catch (err) {
-        console.error('Failed to check trial eligibility', err);
+        console.error('Trial eligibility check failed:', err);
         throw new Error('Could not verify trial eligibility');
     }
 }
 
-/**
- * Start free trial for current user.
- * @param {Object} options - { deviceFingerprint }
- * @returns {Promise<Object>} subscription object (local structure)
- */
 export async function startFreeTrial({ deviceFingerprint }) {
     requireOnline();
     const token = getToken();
     if (!token) throw new Error('Not authenticated');
     try {
-        // ✅ Action
         const result = await convexHttpClient.action("subscriptions/actions:startFreeTrial", {
             token,
             deviceFingerprint
@@ -265,8 +350,8 @@ export async function startFreeTrial({ deviceFingerprint }) {
         if (!result.success) {
             if (result.error === 'invalid_token' || result.message?.toLowerCase().includes('token')) {
                 await logout();
-                window.location.href = '/pages/login.html';
-                throw new Error('Session expired. Please login again.');
+                navigateTo('login');  // ✅ SPA navigation
+                throw new Error('Session expired.');
             }
             throw new Error(result.message);
         }
@@ -278,28 +363,22 @@ export async function startFreeTrial({ deviceFingerprint }) {
             expiryDate: subscriptionData.expiryDate,
             status: 'active'
         };
-        await db.saveSubscription(normalizedSub);
-        utils.setLocalStorage('subscription', normalizedSub);
-        app.setSubscription(normalizedSub);
-        // ✅ Reset time verifier after successful trial start
+        await setSubscription(normalizedSub);
         timeVerifier.resetTimeVerifier();
         return normalizedSub;
     } catch (err) {
-        console.error('Failed to start trial', err);
+        console.error('Free trial start failed:', err);
         throw new Error(err.message || 'Could not start trial');
     }
 }
 
-/**
- * Get remaining time of trial (if active).
- * @returns {Promise<string|null>} human readable time remaining
- */
 export async function getTrialRemaining() {
-    if (!timeVerifier.verifyTime()) return null;
-    const sub = await getSubscriptionStatus();
+    const now = timeVerifier.getSafeTimestamp();
+    if (now === null) return null;
+    const sub = await getSubscription();
     if (!sub || sub.plan !== 'trial' || !sub.isActive) return null;
-    const now = Date.now();
-    const expiry = new Date(sub.expiryDate).getTime();
+    const expiry = sub.expiryDate;
+    if (!expiry) return null;
     const remainingMs = expiry - now;
     if (remainingMs <= 0) return null;
     return utils.formatTime(Math.floor(remainingMs / 1000));
@@ -307,28 +386,15 @@ export async function getTrialRemaining() {
 
 // ==================== PLAN MANAGEMENT ====================
 
-/**
- * Get all available subscription plans (returns local PLANS constant – no backend call).
- * @returns {Array} list of plan objects (original UI structure)
- */
 export async function getSubscriptionPlans() {
-    // Always return the local PLANS (4 cards) – no backend fetch to avoid UI change
     return Object.values(PLANS);
 }
 
-/**
- * Select a plan (store in app state for payment).
- * @param {string} planId
- */
 export function selectPlan(planId) {
     const plan = Object.values(PLANS).find(p => p.id === planId);
-    app.setSelectedPlan(plan);
+    payment.setSelectedPlan(plan);
 }
 
-/**
- * Set a custom plan with a user-defined amount.
- * @param {number} amount - custom amount in KES
- */
 export function setCustomPlan(amount) {
     const plan = {
         id: 'custom',
@@ -340,16 +406,9 @@ export function setCustomPlan(amount) {
         ctaText: `Pay KES ${amount}`,
         ctaColor: 'primary'
     };
-    app.setSelectedPlan(plan);
+    payment.setSelectedPlan(plan);
 }
 
-/**
- * Purchase subscription (initiates M‑Pesa payment).
- * @param {string} planId - plan identifier (e.g., 'monthly', 'custom')
- * @param {string} phoneNumber - M‑Pesa phone number
- * @param {number|null} customAmount - required if planId === 'custom'
- * @returns {Promise<Object>} transaction details
- */
 export async function purchaseSubscription(planId, phoneNumber, customAmount = null) {
     requireOnline();
     const token = getToken();
@@ -360,53 +419,49 @@ export async function purchaseSubscription(planId, phoneNumber, customAmount = n
             planName: planId,
             deviceFingerprint: security.getDeviceFingerprint(),
             phoneNumber,
-            customAmount, // only used when planId === 'custom'
+            customAmount,
         });
         if (!result.success) {
             if (result.error === 'invalid_token' || result.message?.toLowerCase().includes('token')) {
                 await logout();
-                window.location.href = '/pages/login.html';
-                throw new Error('Session expired. Please login again.');
+                navigateTo('login');  // ✅ SPA navigation
+                throw new Error('Session expired.');
             }
             throw new Error(result.message);
         }
         return result.data;
     } catch (err) {
-        console.error('Purchase failed', err);
+        console.error('Purchase failed:', err);
         throw new Error(err.message || 'Purchase failed');
     }
 }
 
-/**
- * Cancel subscription (disable auto-renew).
- * @returns {Promise<Object>}
- */
 export async function cancelSubscription() {
     requireOnline();
-    const sub = await getSubscriptionStatus();
+    const sub = await getSubscription();
     if (!sub) throw new Error('No active subscription');
     const token = getToken();
     if (!token) throw new Error('Not authenticated');
     try {
-        // ✅ Action
         const result = await convexHttpClient.action("subscriptions/actions:cancelSubscription", { token });
         if (!result.success) {
             if (result.error === 'invalid_token' || result.message?.toLowerCase().includes('token')) {
                 await logout();
-                window.location.href = '/pages/login.html';
-                throw new Error('Session expired. Please login again.');
+                navigateTo('login');  // ✅ SPA navigation
+                throw new Error('Session expired.');
             }
             throw new Error(result.message);
         }
+        // Refresh status after cancellation
         await getSubscriptionStatus(true);
         return { success: true };
     } catch (err) {
-        console.error('Cancel failed', err);
+        console.error('Cancel failed:', err);
         throw new Error(err.message || 'Cancel failed');
     }
 }
 
-// ==================== FREE TOPICS HELPERS (unchanged) ====================
+// ==================== FREE TOPICS ====================
 
 export function isTopicFree(subject, topicId) {
     return FREE_TOPICS[subject]?.includes(topicId) ?? false;
@@ -435,11 +490,12 @@ export async function canExportResults() {
 // ==================== TIME CALCULATIONS ====================
 
 export async function calculateRemainingTime() {
-    if (!timeVerifier.verifyTime()) return 0;
-    const sub = await getSubscriptionStatus();
+    const now = timeVerifier.getSafeTimestamp();
+    if (now === null) return 0;
+    const sub = await getSubscription();
     if (!sub || !sub.isActive) return 0;
-    const now = Date.now();
-    const expiry = new Date(sub.expiryDate).getTime();
+    const expiry = sub.expiryDate;
+    if (!expiry) return 0;
     return Math.max(0, Math.floor((expiry - now) / 1000));
 }
 
@@ -459,25 +515,20 @@ export async function isExpiringSoon(hours = 24) {
     return seconds > 0 && seconds < hours * 3600;
 }
 
-/**
- * Activate a subscription plan (called after successful payment).
- * @param {Object} subscriptionData - { userId, plan, isActive, expiryDate, autoRenew }
- * @returns {Promise<Object>} saved subscription object
- */
 export async function activatePlan(subscriptionData) {
-  // Save the subscription to IndexedDB and update app state
-  await db.saveSubscription(subscriptionData);
-  utils.setLocalStorage('subscription', subscriptionData);
-  app.setSubscription(subscriptionData);
-  // ✅ Reset time verifier after activation
-  timeVerifier.resetTimeVerifier();
-  return subscriptionData;
+    await setSubscription(subscriptionData);
+    timeVerifier.resetTimeVerifier();
+    return subscriptionData;
 }
 
-// ==================== SYNC LOCAL COPY ====================
+// ==================== SYNC ====================
 
 export async function syncSubscription(forceOnline = false) {
     return getSubscriptionStatus(forceOnline);
+}
+
+export async function refreshSubscription() {
+    return await syncSubscription(true);
 }
 
 // ==================== EXPOSE GLOBALLY ====================
@@ -492,8 +543,8 @@ window.subscription = {
     getTrialRemaining,
     getSubscriptionPlans,
     selectPlan,
-    setCustomPlan,          // NEW
-    purchaseSubscription,   // updated to accept customAmount
+    setCustomPlan,
+    purchaseSubscription,
     cancelSubscription,
     isTopicFree,
     areAllTopicsFree,
@@ -503,5 +554,11 @@ window.subscription = {
     calculateRemainingTime,
     formatRemainingTime,
     isExpiringSoon,
-    syncSubscription
+    syncSubscription,
+    setSubscription,
+    getSubscription,
+    clearSubscription,
+    initSubscription,
+    fallbackLoadSubscription,
+    refreshSubscription
 };

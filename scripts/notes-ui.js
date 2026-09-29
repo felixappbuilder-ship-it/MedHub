@@ -1,7 +1,8 @@
+// scripts/notes-ui.js
 import * as notes from './notes.js';
 import * as ui from './ui.js';
 import * as utils from './utils.js';
-import * as app from './app.js';
+import * as auth from './auth.js';
 import * as router from './router.js';
 import * as db from './db.js';
 // --- PDF engine imports ---
@@ -168,8 +169,8 @@ function showShareLinkDialog(link) {
 // ==================== Initialization ====================
 
 export function initNotesPage() {
-    if (!app.checkAuth()) {
-        router.navigateTo('login.html');
+    if (!auth.checkAuth()) {
+        router.navigateTo('login');
         return;
     }
 
@@ -475,8 +476,6 @@ async function summarizeNoteHandler(noteId) {
     }
 }
 
-// ==================== PDF Export Handler (Using Browser Engine) ====================
-
 // ==================== PDF Export Handler (Browser Print) ====================
 
 async function exportPDFHandler(noteId = null) {
@@ -488,15 +487,15 @@ async function exportPDFHandler(noteId = null) {
     try {
         ui.showLoading('Preparing PDF...');
         // Wait for custom fonts to finish loading before measuring
-if (document.fonts && document.fonts.ready) {
-  await document.fonts.ready;
-}
+        if (document.fonts && document.fonts.ready) {
+            await document.fonts.ready;
+        }
 
         const note = await notes.getNote(id);
         if (!note) throw new Error('Note not found');
 
-        const user = app.getUser();
-        const authorName = user?.name || user?.email || 'MedHub User';
+        const user = auth.getUser();
+        const authorName = user?.name || user?.email || 'MedVix User';
         const exportId = 'MH-' + Math.random().toString(36).substr(2, 6).toUpperCase();
 
         // Build data object exactly as buildNotesHTML expects
@@ -751,6 +750,7 @@ export async function searchNotes(query) {
     );
     await renderNotesList(results);
 }
+
 // ==================== Share Modal Helpers ====================
 
 export function closeShareModal() {

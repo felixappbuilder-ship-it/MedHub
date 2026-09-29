@@ -1,21 +1,21 @@
-// frontend-user/scripts/exam-settings.js
+// scripts/exam-settings.js
 
 /**
  * Exam Settings Module
  * Handles configuration, validation, challenge creation, exam start, and joining challenges.
  * Integrated with Convex backend for challenge system.
- * 
+ *
  * Uses a self‑contained base64url blob for challenge config – no topic map required for decoding.
  */
 
-import * as app from './app.js';
 import * as ui from './ui.js';
 import * as router from './router.js';
 import * as utils from './utils.js';
 import * as questions from './questions.js';
 import * as subscription from './subscription.js';
+import * as auth from './auth.js';
+import * as examEngine from './exam-engine.js';
 import { convexHttpClient } from './convex-client.js';
-import { getToken } from './auth.js';
 
 // ==================== STATE ====================
 let config = {};
@@ -65,8 +65,7 @@ function loadChallengeState() {
         const saved = localStorage.getItem(CHALLENGE_STORAGE_KEY);
         if (!saved) return false;
         const parsed = JSON.parse(saved);
-        // Only restore if it looks valid and not finished
-        if (parsed.challengeCode && parsed.status && 
+        if (parsed.challengeCode && parsed.status &&
             parsed.status !== 'completed' && parsed.status !== 'archived') {
             challengeState = parsed;
             return true;
@@ -108,12 +107,10 @@ function base64urlEncode(buffer) {
         result += BASE64URL_CHARS[((b & 15) << 2) | (c >> 6)];
         result += BASE64URL_CHARS[c & 63];
     }
-    // Do NOT remove trailing 'A's – keep the string length a multiple of 4
     return result;
 }
 
 function base64urlDecode(str) {
-    // Safety: ensure length is a multiple of 4 by appending 'A' padding if needed
     while (str.length % 4 !== 0) {
         str += 'A';
     }
@@ -131,17 +128,11 @@ function base64urlDecode(str) {
 }
 
 // ==================== BLOB ENCODER / DECODER ====================
-/**
- * Pack exam configuration into a compact URL‑safe string.
- * Structure (binary):
- *   version:1 | subjectLen:1 | subject:subjectLen | topicCount:1 | (topicLen:1 | topic)*
- *   questionCount:1 | difficulty:1 | seed:4 | timingMode:1 | cycle:1 | flags:1
- */
 export function encodeExamConfig(cfg) {
     const subjectBytes = new TextEncoder().encode(cfg.subject);
     if (subjectBytes.length > 255) throw new Error('Subject name too long');
 
-    const topicNames = cfg.topics || []; // array of strings
+    const topicNames = cfg.topics || [];
     const topicData = [];
     for (const t of topicNames) {
         const enc = new TextEncoder().encode(t);
@@ -168,7 +159,7 @@ export function encodeExamConfig(cfg) {
     const view = new DataView(buf);
     let off = 0;
 
-    view.setUint8(off++, 0x01); // version
+    view.setUint8(off++, 0x01);
     view.setUint8(off++, subjectBytes.length);
     new Uint8Array(buf, off, subjectBytes.length).set(subjectBytes);
     off += subjectBytes.length;
@@ -180,7 +171,7 @@ export function encodeExamConfig(cfg) {
 
     view.setUint8(off++, cfg.questionCount);
     view.setUint8(off++, difficultyVal);
-    view.setUint32(off, seedInt, false); // big-endian
+    view.setUint32(off, seedInt, false);
     off += 4;
     view.setUint8(off++, timingVal);
     view.setUint8(off++, cycle);
@@ -189,9 +180,6 @@ export function encodeExamConfig(cfg) {
     return base64urlEncode(buf);
 }
 
-/**
- * Unpack a blob string back into a full exam config object.
- */
 export function decodeExamConfig(blob) {
     const bytes = base64urlDecode(blob);
     const view = new DataView(bytes.buffer);
@@ -224,7 +212,7 @@ export function decodeExamConfig(blob) {
 
     return {
         subject,
-        topics,              // full names, ready for exam engine
+        topics,
         questionCount,
         difficulty,
         seed,
@@ -239,7 +227,7 @@ export function decodeExamConfig(blob) {
     };
 }
 
-// ==================== TOPIC MAPPING HELPERS (for settings UI only) ====================
+// ==================== TOPIC MAPPING HELPERS ====================
 function buildTopicMap(topicNames) {
     const sorted = [...topicNames].sort((a, b) => a.localeCompare(b));
     const map = {};
@@ -271,7 +259,6 @@ export function setDomRefs(refs) {
     dom.detectTab = dom.detectTab || document.getElementById('detect-tab');
     dom.breakEnabled = dom.breakEnabled || document.getElementById('break-enabled');
     dom.presetSelect = dom.presetSelect || document.getElementById('preset-select');
-    // Challenge UI elements
     dom.challengeCodeDisplay = dom.challengeCodeDisplay || document.getElementById('challenge-code-display');
     dom.challengeStatus = dom.challengeStatus || document.getElementById('challenge-status');
     dom.inviteFriendInput = dom.inviteFriendInput || document.getElementById('invite-friend-input');
@@ -279,7 +266,6 @@ export function setDomRefs(refs) {
     dom.challengeActions = dom.challengeActions || document.getElementById('challenge-actions');
     dom.waitingMessage = dom.waitingMessage || document.getElementById('waiting-message');
     dom.challengeStartBtn = dom.challengeStartBtn || document.getElementById('challenge-start-btn');
-    // Join elements (may be undefined if not on page)
     dom.joinCodeDisplay = dom.joinCodeDisplay || document.getElementById('join-code-display');
     dom.joinStatus = dom.joinStatus || document.getElementById('join-status');
     dom.joinStartBtn = dom.joinStartBtn || document.getElementById('join-start-btn');
@@ -290,23 +276,21 @@ export function setDomRefs(refs) {
 export async function initExamSettings() {
     console.log('[ExamSettings] Initializing...');
 
-    await app.initializeApp();
     ui.applyTheme();
 
-    if (!app.checkAuth()) {
+    if (!auth.checkAuth()) {
         ui.showToast('Please log in', 'warning');
-        router.navigateTo('login.html');
+        router.navigateTo('login');
         return;
     }
 
-    config = app.getExamConfig() || {};
-    
-    // Allow the page to load without a subject if we are joining via ?exam=
+    config = examEngine.getConfig() || {};
+
     const urlParams = new URLSearchParams(window.location.search);
     const examCode = urlParams.get('exam');
     if (!examCode && !config.subject) {
         ui.showToast('No subject selected', 'error');
-        router.navigateTo('subjects.html');
+        router.navigateTo('subjects');
         return;
     }
 
@@ -323,7 +307,6 @@ export async function initExamSettings() {
         updateStats(maxQuestions);
         setMaxQuestions(maxQuestions);
     } else {
-        // Joiner – placeholder values, will be overridden when challenge data arrives
         maxQuestions = 100;
         setMaxQuestions(100);
     }
@@ -333,11 +316,9 @@ export async function initExamSettings() {
     setupDifficultyButtons();
     setupChallengeUI();
 
-    // Restore any active challenge from a previous session
     if (loadChallengeState()) {
         console.log('[ExamSettings] Restored active challenge:', challengeState.challengeCode);
         showChallengeUI();
-        // Resume polling if still waiting
         if (challengeState.status === 'created' || challengeState.status === 'waiting') {
             startPolling();
         }
@@ -536,7 +517,7 @@ function updateChallengeStatus() {
 
 // ==================== CHALLENGE API CALLS ====================
 async function getAuthToken() {
-    const token = getToken();
+    const token = auth.getToken();
     console.log('[ExamSettings] getAuthToken() ->', token ? 'token present' : 'NO TOKEN');
     if (!token) {
         if (window.auth && typeof window.auth.getToken === 'function') {
@@ -549,7 +530,7 @@ async function getAuthToken() {
     return token;
 }
 
-// -------------------- CREATE CHALLENGE (sends blob) --------------------
+// -------------------- CREATE CHALLENGE --------------------
 export async function createChallenge() {
     if (creatingChallenge) {
         console.warn('[ExamSettings] Challenge creation already in progress – skipping.');
@@ -560,13 +541,12 @@ export async function createChallenge() {
     console.log('[ExamSettings] createChallenge() called');
     try {
         const token = await getAuthToken();
-        const cfg = collectConfig();               // returns config with topic names
-        const blob = encodeExamConfig(cfg);        // compact string
+        const cfg = collectConfig();
+        const blob = encodeExamConfig(cfg);
 
-        // Send only the blob to the backend
         const result = await convexHttpClient.action('challenges/actions:createChallenge', {
             token,
-            blob,                                  // backend stores this opaque string
+            blob,
         });
         console.log('[ExamSettings] createChallenge response:', result);
         if (!result.success) {
@@ -581,7 +561,7 @@ export async function createChallenge() {
         challengeState.seed = cfg.seed;
         challengeState.cycle = cfg.cycle;
 
-        saveChallengeState();   // persist across refreshes
+        saveChallengeState();
         showChallengeUI();
         ui.showToast(`Challenge created! Code: ${challengeState.challengeCode}`, 'success');
         startPolling();
@@ -599,7 +579,7 @@ export async function createChallenge() {
     }
 }
 
-// -------------------- INVITE FRIEND (unchanged) --------------------
+// -------------------- INVITE FRIEND --------------------
 export async function inviteFriend() {
     const email = dom.inviteFriendInput?.value?.trim();
     if (!email) {
@@ -631,7 +611,7 @@ export async function inviteFriend() {
     }
 }
 
-// -------------------- JOIN CHALLENGE (fetches blob and starts exam) --------------------
+// -------------------- JOIN CHALLENGE --------------------
 export async function joinChallenge(code) {
     if (!code) {
         ui.showToast('No challenge code provided', 'error');
@@ -651,22 +631,18 @@ export async function joinChallenge(code) {
         }
 
         const { blob, challengeId } = result.data;
-        // Decode the blob immediately – no topic map required
         const fullConfig = decodeExamConfig(blob);
         fullConfig.challengeCode = code;
         fullConfig.challengeId = challengeId;
-        fullConfig.opponent = null;   // will be set later if needed
+        fullConfig.opponent = null;
         fullConfig.isChallenge = true;
         fullConfig.mode = 'challenge';
 
-        // ✅ Save the configuration for the exam room
         savePendingExamConfig(fullConfig);
-
-        app.setExamConfig(fullConfig);
+        examEngine.setExamConfig(fullConfig);
         ui.showToast('Joined successfully! Starting exam...', 'success');
-        // Navigate directly to exam room – both players can now start
         setTimeout(() => {
-            router.navigateTo('exam-room.html');
+            router.navigateTo('exam-room');
         }, 300);
         return true;
     } catch (err) {
@@ -676,7 +652,7 @@ export async function joinChallenge(code) {
     }
 }
 
-// -------------------- POLLING: check challenge status --------------------
+// -------------------- POLLING --------------------
 async function checkChallengeStatus() {
     if (!challengeState.challengeCode) return;
     try {
@@ -696,10 +672,9 @@ async function checkChallengeStatus() {
 
         if (status === 'ready') {
             stopPolling();
-            clearChallengeState();   // no longer needed
+            clearChallengeState();
             ui.showToast('Opponent joined! Starting exam...', 'success');
 
-            // Decode the blob (creator also gets the same blob)
             const fullConfig = decodeExamConfig(blob);
             fullConfig.challengeCode = challengeState.challengeCode;
             fullConfig.challengeId = challengeState.challengeId;
@@ -707,12 +682,10 @@ async function checkChallengeStatus() {
             fullConfig.isChallenge = true;
             fullConfig.mode = 'challenge';
 
-            // ✅ Save the configuration for the exam room
             savePendingExamConfig(fullConfig);
-
-            app.setExamConfig(fullConfig);
+            examEngine.setExamConfig(fullConfig);
             setTimeout(() => {
-                router.navigateTo('exam-room.html');
+                router.navigateTo('exam-room');
             }, 500);
         }
     } catch (err) {
@@ -724,7 +697,7 @@ function startPolling() {
     stopPolling();
     console.log('[ExamSettings] Starting polling every 3 seconds...');
     pollInterval = setInterval(checkChallengeStatus, 3000);
-    checkChallengeStatus(); // immediate first check
+    checkChallengeStatus();
 }
 
 function stopPolling() {
@@ -792,13 +765,11 @@ export function startExam() {
         breakAfter: 0
     };
 
-    // ✅ Save the configuration for the exam room
     savePendingExamConfig(finalConfig);
-
-    app.setExamConfig(finalConfig);
+    examEngine.setExamConfig(finalConfig);
     dom.bottomCard.classList.add('closed');
     setTimeout(() => {
-        router.navigateTo('exam-room.html');
+        router.navigateTo('exam-room');
     }, 300);
 }
 
@@ -870,8 +841,7 @@ export function resetToDefault() {
     updateSettingsPreview();
 }
 
-// ==================== COLLECT CONFIG (returns topic names, not numbers) ====================
-// ==================== COLLECT CONFIG (returns topic IDs) ====================
+// ==================== COLLECT CONFIG ====================
 export function collectConfig() {
     const activeStep = document.querySelector('.card-step.active');
     let mode = 'standard';
@@ -903,7 +873,6 @@ export function collectConfig() {
         if (activeBtn) difficulty = activeBtn.dataset.diff || 'mixed';
     }
 
-    // ⭐ Extract topic IDs from config.topics (objects with id/name, or strings)
     const selectedTopicIds = (config.topics || []).map(t =>
         typeof t === 'object' ? t.id : t
     );
@@ -917,7 +886,7 @@ export function collectConfig() {
     return {
         mode,
         subject: config.subject,
-        topics: selectedTopicIds,        // ← now returns IDs (not names)
+        topics: selectedTopicIds,
         questionCount,
         difficulty,
         timingMode,

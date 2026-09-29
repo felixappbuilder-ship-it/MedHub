@@ -1,484 +1,161 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
-    <title>MedHub AI</title>
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="/libs/fontawesome/css/all.min.css" />
-
-    <!-- External CSS (theme variables and page styles) -->
-    <link rel="stylesheet" href="/css/common.css" media="all" />
-    <link rel="stylesheet" href="/css/ai.css" media="all" />
-
-    <!-- PWA manifest -->
-    <link rel="manifest" href="/manifest.json" />
-
-    <!-- ===== INLINE SHIMMER STYLES (only loading skeleton) ===== -->
-    <style>
-        /* Base fallback for shimmer background */
-        body {
-            background: var(--bg-primary, #1a1a2e);
-            margin: 0;
-            padding: 0;
-            font-family: system-ui, -apple-system, sans-serif;
-        }
-
-        /* Shimmer overlay – covers everything until real content loads */
-        #shimmer-content {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--bg-primary, #1a1a2e);
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            transition: opacity 0.4s ease;
-        }
-        #shimmer-content.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .shimmer-header {
-            padding: 0.5rem 1rem;
-            background: var(--bg-secondary, #1e1e2f);
-            border-bottom: 1px solid var(--border, #333);
-        }
-        .shimmer-header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .shimmer-header-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 0.5rem;
-        }
-        .shimmer-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .shimmer-logo-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 6px;
-            background: #3a3a4e;
-            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-        }
-        .shimmer-logo-text {
-            width: 80px;
-            height: 20px;
-            background: #3a3a4e;
-            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-            border-radius: 4px;
-        }
-        .shimmer-btn-sm {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: #3a3a4e;
-            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-            display: inline-block;
-        }
-        .shimmer-status {
-            height: 28px;
-            width: 140px;
-            background: #3a3a4e;
-            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-            border-radius: 4px;
-        }
-        .shimmer-sidebar {
-            width: 260px;
-            background: var(--bg-secondary, #1e1e2f);
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        .shimmer-sidebar-item {
-            height: 40px;
-            background: #3a3a4e;
-            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-            border-radius: 30px;
-        }
-        .shimmer-chat {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            padding: 1.5rem;
-            flex: 1;
-        }
-        .shimmer-message {
-            display: flex;
-            gap: 0.8rem;
-            max-width: 80%;
-        }
-        .shimmer-message.user {
-            align-self: flex-end;
-            flex-direction: row-reverse;
-        }
-        .shimmer-bubble {
-            height: 60px;
-            width: 200px;
-            background: #3a3a4e;
-            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-            border-radius: 22px;
-        }
-        .shimmer-bubble.short {
-            width: 120px;
-        }
-        .shimmer-bubble.long {
-            width: 280px;
-        }
-        .shimmer-welcome {
-            height: 80px;
-            width: 60%;
-            background: #3a3a4e;
-            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-            border-radius: 28px;
-            margin-bottom: 1rem;
-        }
-        .shimmer-input {
-            height: 50px;
-            width: 100%;
-            background: #3a3a4e;
-            background: linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-            border-radius: 28px;
-            margin-top: 1rem;
-        }
-        .shimmer-layout {
-            display: flex;
-            height: calc(100vh - 110px);
-        }
-
-        @keyframes shimmer {
-            0% {
-                background-position: -200px 0;
-            }
-            100% {
-                background-position: calc(200px + 100%) 0;
-            }
-        }
-
-        /* Real content hidden until ready */
-        #real-content {
-            display: none;
-        }
-        #real-content.visible {
-            display: block;
-        }
-    </style>
-
-    <!-- Core modules -->
-    <script type="module" src="/scripts/utils.js"></script>
-    <script type="module" src="/scripts/ui.js"></script>
-    <script type="module" src="/scripts/router.js"></script>
-    <script type="module" src="/scripts/app.js"></script>
-    <script type="module" src="/scripts/ai.js"></script>
-    <script type="module" src="/scripts/ai-chat-ui.js"></script>
-    <script type="module" src="/scripts/db.js"></script>
-
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/service-worker.js').catch(() => {});
-        }
-    </script>
-</head>
-
-<body>
-    <!-- ===== SHIMMER CONTENT (loading skeleton) ===== -->
-    <div id="shimmer-content">
-        <div class="shimmer-header">
-            <div class="shimmer-header-top">
-                <div class="shimmer-logo">
-                    <div class="shimmer-logo-icon"></div>
-                    <div class="shimmer-logo-text"></div>
-                </div>
-                <div>
-                    <span class="shimmer-btn-sm" style="margin-right:0.5rem;"></span>
-                    <span class="shimmer-btn-sm" style="margin-right:0.5rem;"></span>
-                    <span class="shimmer-btn-sm"></span>
-                </div>
-            </div>
-            <div class="shimmer-header-bottom">
-                <div class="shimmer-logo-text" style="width:100px;"></div>
-                <div class="shimmer-status"></div>
-            </div>
+<section
+  class="page ai-page"
+  data-page="ai"
+  data-script="/scripts/pages/ai.js"
+  data-style="/css/ai.css"
+  data-title="MedVix AI"
+  data-auth="required"
+  data-cache="true"
+  data-transition="fade"
+>
+  <!-- ===== SHIMMER CONTENT ===== -->
+  <div id="shimmer-content">
+    <div class="shimmer-header">
+      <div class="shimmer-header-top">
+        <div class="shimmer-logo">
+          <div class="shimmer-logo-icon"></div>
+          <div class="shimmer-logo-text"></div>
         </div>
-        <div class="shimmer-layout">
-            <div class="shimmer-sidebar">
-                <div class="shimmer-sidebar-item"></div>
-                <div class="shimmer-sidebar-item"></div>
-                <div class="shimmer-sidebar-item"></div>
-                <div class="shimmer-sidebar-item"></div>
-                <div class="shimmer-sidebar-item"></div>
-            </div>
-            <div style="flex:1;padding:1rem;display:flex;flex-direction:column;">
-                <div class="shimmer-welcome"></div>
-                <div class="shimmer-chat">
-                    <div class="shimmer-message user"><div class="shimmer-bubble"></div></div>
-                    <div class="shimmer-message"><div class="shimmer-bubble long"></div></div>
-                    <div class="shimmer-message user"><div class="shimmer-bubble short"></div></div>
-                    <div class="shimmer-message"><div class="shimmer-bubble"></div></div>
-                </div>
-                <div class="shimmer-input"></div>
-            </div>
+        <div>
+          <span class="shimmer-btn-sm" style="margin-right:0.5rem;"></span>
+          <span class="shimmer-btn-sm" style="margin-right:0.5rem;"></span>
+          <span class="shimmer-btn-sm"></span>
         </div>
+      </div>
+      <div class="shimmer-header-bottom">
+        <div class="shimmer-logo-text" style="width:100px;"></div>
+        <div class="shimmer-status"></div>
+      </div>
     </div>
-
-    <!-- ===== REAL CONTENT (fully styled by external CSS) ===== -->
-    <div id="real-content">
-        <!-- TWO FIXED HEADER BARS -->
-        <header class="fixed-top-bar" id="topBar">
-            <!-- Row 1: Logo, brand, subjects, subscribe button -->
-            <div class="header-row top">
-                <div class="left-group">
-                    <button onclick="router.navigateTo('subjects.html')" class="btn-text">Subjects</button>
-                    <button id="subscribeBtn" class="btn-text subscribe-btn" style="display:none;" onclick="router.navigateTo('subscription.html')">Subscribe</button>
-                </div>
-                <div class="right-group">
-                    <!-- Theme toggle – calls ui.toggleTheme() which toggles .dark-theme on body -->
-                    <button id="themeToggle">🌓</button>
-                </div>
-            </div>
-            <!-- Row 2: Notes, Profile, subscription status -->
-            <div class="header-row bottom">
-                <div class="left-group">
-                    <button onclick="router.navigateTo('notes.html')" class="btn-text">Notes</button>
-                    <button onclick="router.navigateTo('profile.html')" class="btn-text">Profile</button>
-                </div>
-                <div class="right-group" id="header-status"></div>
-            </div>
-        </header>
-
-        <!-- MAIN APP -->
-        <div id="app">
-            <div class="sidebar" id="sidebar">
-                <div class="sidebar-header">Chats</div>
-                <div class="new-chat-btn" id="newChatBtn"><i class="fas fa-plus"></i> New Chat</div>
-                <input type="text" class="search-chats" id="searchChats" placeholder="Search chats" />
-                <ul class="chat-history" id="chatHistoryList"></ul>
-                <div class="sidebar-footer">
-                    <div id="settingsBtn"><i class="fas fa-cog"></i> Settings</div>
-                </div>
-            </div>
-
-            <div class="main">
-                <div class="top-bar">
-                    <div class="left-controls">
-                        <div class="menu-icon" id="menuToggle"><i class="fas fa-bars"></i></div>
-                        <div style="font-weight:600;font-size:1.2rem;color:var(--text-primary);">MedHub</div>
-                    </div>
-                    <div class="right-controls">
-                        <a href="/performance.html" target="performance.html" class="performance-btn"><i class="fas fa-chart-line"></i> Performance</a>
-                        <div class="model-selector" id="modelSelectorBtn">
-                            <span id="currentModel">MedHub-1.0</span>
-                            <i class="fas fa-chevron-down" style="font-size:0.8rem;"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="chat-container" id="chatContainer">
-                    <div class="typing-indicator" id="typingIndicator" style="display:none;">
-                        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                    </div>
-                </div>
-
-                <div class="input-area" id="inputArea">
-                    <div class="active-functions" id="activeFunctions"></div>
-                    <div class="pending-attachments" id="pendingAttachments"></div>
-                    <div class="input-wrapper" id="normalInput">
-                        <button class="action-btn" id="attachBtn"><i class="fas fa-paperclip"></i></button>
-                        <button class="action-btn" id="voiceBtn"><i class="fas fa-microphone"></i></button>
-                        <textarea id="messageInput" placeholder="Send a message..." rows="1"></textarea>
-                        <button class="action-btn send" id="sendBtn"><i class="fas fa-paper-plane"></i></button>
-                    </div>
-                    <div class="voice-recording-bar" id="voiceRecordingBar">
-                        <div class="wave-group">
-                            <div class="wave"></div><div class="wave"></div><div class="wave"></div><div class="wave"></div><div class="wave"></div>
-                        </div>
-                        <button class="stop-recording" id="stopRecordingBtn"><i class="fas fa-stop"></i></button>
-                    </div>
-                    <div class="attach-dropdown" id="attachDropdown">
-                        <div class="attach-item" data-action="upload image"><i class="fas fa-image"></i> Upload image</div>
-                        <div class="attach-item" data-action="take photo"><i class="fas fa-camera"></i> Take a photo</div>
-                        <div class="attach-item" data-action="upload document"><i class="fas fa-file-alt"></i> Upload document</div>
-                        <div class="attach-item" data-action="deepthink"><i class="fas fa-brain"></i> Deepthink</div>
-                        <div class="attach-item" data-action="search web"><i class="fas fa-globe"></i> Search in Web</div>
-                        <div class="attach-item" data-action="references"><i class="fas fa-book"></i> Give with references</div>
-                    </div>
-                </div>
-            </div>
+    <div class="shimmer-layout">
+      <div class="shimmer-sidebar">
+        <div class="shimmer-sidebar-item"></div>
+        <div class="shimmer-sidebar-item"></div>
+        <div class="shimmer-sidebar-item"></div>
+        <div class="shimmer-sidebar-item"></div>
+        <div class="shimmer-sidebar-item"></div>
+      </div>
+      <div style="flex:1;padding:1rem;display:flex;flex-direction:column;">
+        <div class="shimmer-welcome"></div>
+        <div class="shimmer-chat">
+          <div class="shimmer-message user"><div class="shimmer-bubble"></div></div>
+          <div class="shimmer-message"><div class="shimmer-bubble long"></div></div>
+          <div class="shimmer-message user"><div class="shimmer-bubble short"></div></div>
+          <div class="shimmer-message"><div class="shimmer-bubble"></div></div>
         </div>
+        <div class="shimmer-input"></div>
+      </div>
     </div>
+  </div>
 
-    <!-- Hidden file inputs -->
-    <input type="file" id="imageUpload" class="file-input" accept="image/*" />
-    <input type="file" id="photoCapture" class="file-input" accept="image/*" capture="environment" />
-    <input type="file" id="documentUpload" class="file-input" accept=".pdf,.doc,.docx,.txt,.ppt,.pptx" />
-
-    <!-- Settings Modal -->
-    <div class="modal-overlay" id="settingsModal">
-        <div class="modal">
-            <h3>Settings</h3>
-            <div class="modal-item">
-                <span>🌙 Dark / Light</span>
-                <button id="themeToggle">Toggle</button>
-            </div>
-            <div class="modal-item">
-                <span>🧠 Model</span>
-                <select id="modelSelect">
-                    <option>MedHub-1.0</option>
-                    <option>MedHub-1.1</option>
-                </select>
-            </div>
-            <div class="modal-item">
-                <span>🗑 Clear history</span>
-                <button id="clearHistoryBtn">Clear</button>
-            </div>
-            <button class="close-btn" id="closeModalBtn">Close</button>
+  <!-- ===== REAL CONTENT ===== -->
+  <div id="real-content">
+    <!-- TWO FIXED HEADER BARS -->
+    <header class="fixed-top-bar" id="topBar">
+      <div class="header-row top">
+        <div class="left-group">
+          <button id="subjectsBtn" class="btn-text">Subjects</button>
+          <button id="subscribeBtn" class="btn-text subscribe-btn" style="display:none;">Subscribe</button>
         </div>
+        <div class="right-group">
+          <button id="themeToggle">🌓</button>
+        </div>
+      </div>
+      <div class="header-row bottom">
+        <div class="left-group">
+          <button id="notesBtn" class="btn-text">Notes</button>
+          <button id="profileBtn" class="btn-text">Profile</button>
+        </div>
+        <div class="right-group" id="header-status"></div>
+      </div>
+    </header>
+
+    <!-- MAIN APP -->
+    <div id="app">
+      <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">Chats</div>
+        <div class="new-chat-btn" id="newChatBtn"><i class="fas fa-plus"></i> New Chat</div>
+        <input type="text" class="search-chats" id="searchChats" placeholder="Search chats" />
+        <ul class="chat-history" id="chatHistoryList"></ul>
+        <div class="sidebar-footer">
+          <div id="settingsBtn"><i class="fas fa-cog"></i> Settings</div>
+        </div>
+      </div>
+
+      <div class="main">
+        <div class="top-bar">
+          <div class="left-controls">
+            <div class="menu-icon" id="menuToggle"><i class="fas fa-bars"></i></div>
+            <div style="font-weight:600;font-size:1.2rem;color:var(--text-primary);">MedVix</div>
+          </div>
+          <div class="right-controls">
+            <a id="performanceLink" class="performance-btn"><i class="fas fa-chart-line"></i> Performance</a>
+            <div class="model-selector" id="modelSelectorBtn">
+              <span id="currentModel">MedVix-1.0</span>
+              <i class="fas fa-chevron-down" style="font-size:0.8rem;"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-container" id="chatContainer">
+          <div class="typing-indicator" id="typingIndicator" style="display:none;">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          </div>
+        </div>
+
+        <div class="input-area" id="inputArea">
+          <div class="active-functions" id="activeFunctions"></div>
+          <div class="pending-attachments" id="pendingAttachments"></div>
+          <div class="input-wrapper" id="normalInput">
+            <button class="action-btn" id="attachBtn"><i class="fas fa-paperclip"></i></button>
+            <button class="action-btn" id="voiceBtn"><i class="fas fa-microphone"></i></button>
+            <textarea id="messageInput" placeholder="Send a message..." rows="1"></textarea>
+            <button class="action-btn send" id="sendBtn"><i class="fas fa-paper-plane"></i></button>
+          </div>
+          <div class="voice-recording-bar" id="voiceRecordingBar">
+            <div class="wave-group">
+              <div class="wave"></div><div class="wave"></div><div class="wave"></div><div class="wave"></div><div class="wave"></div>
+            </div>
+            <button class="stop-recording" id="stopRecordingBtn"><i class="fas fa-stop"></i></button>
+          </div>
+          <div class="attach-dropdown" id="attachDropdown">
+            <div class="attach-item" data-action="upload image"><i class="fas fa-image"></i> Upload image</div>
+            <div class="attach-item" data-action="take photo"><i class="fas fa-camera"></i> Take a photo</div>
+            <div class="attach-item" data-action="upload document"><i class="fas fa-file-alt"></i> Upload document</div>
+            <div class="attach-item" data-action="deepthink"><i class="fas fa-brain"></i> Deepthink</div>
+            <div class="attach-item" data-action="search web"><i class="fas fa-globe"></i> Search in Web</div>
+            <div class="attach-item" data-action="references"><i class="fas fa-book"></i> Give with references</div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <script type="module">
-        import * as app from '/scripts/app.js';
-        import * as ui from '/scripts/ui.js';
-        import * as router from '/scripts/router.js';
-        import * as utils from '/scripts/utils.js';
-        import AIChatUI from '/scripts/ai-chat-ui.js';
-        import ai from '/scripts/ai.js';
+  <!-- Hidden file inputs -->
+  <input type="file" id="imageUpload" class="file-input" accept="image/*" />
+  <input type="file" id="photoCapture" class="file-input" accept="image/*" capture="environment" />
+  <input type="file" id="documentUpload" class="file-input" accept=".pdf,.doc,.docx,.txt,.ppt,.pptx" />
 
-        // ─── Dynamic header offset ───────────────────────────────────────────
-        function updateHeaderOffset() {
-            const header = document.getElementById('topBar');
-            if (!header) return;
-            const headerHeight = header.offsetHeight;
-            document.documentElement.style.setProperty('--header-height', headerHeight + 'px');
-            const appHeight = window.innerHeight - headerHeight;
-            document.documentElement.style.setProperty('--app-height', appHeight + 'px');
-        }
-        window.addEventListener('resize', updateHeaderOffset);
-        if (window.visualViewport) {
-            window.visualViewport.addEventListener('resize', updateHeaderOffset);
-            window.visualViewport.addEventListener('scroll', updateHeaderOffset);
-        }
-
-        (async function init() {
-            await app.initializeApp();
-            ui.applyTheme(); // ensures initial theme is applied
-            updateHeaderOffset();
-
-            if (!app.checkAuth()) {
-                router.navigateTo('login.html');
-                return;
-            }
-
-            // Update subscription status in header
-            const statusEl = document.getElementById('header-status');
-            const sub = app.getSubscription();
-            const subscribeBtn = document.getElementById('subscribeBtn');
-
-            if (sub && sub.isActive) {
-                const remaining = await ai.formatRemainingTime?.() || '';
-                statusEl.innerHTML =
-                    `<span class="status-text">${sub.plan} · expires ${utils.formatDate(sub.expiryDate)} (${remaining})</span>`;
-                subscribeBtn.style.display = 'none';
-            } else {
-                const trialEligible = await ai.checkTrialEligibility?.() || false;
-                if (trialEligible) {
-                    statusEl.innerHTML =
-                        `<span class="status-text">No active plan</span><button class="trial-btn" onclick="router.navigateTo('free-trial.html')">Start Trial</button>`;
-                } else {
-                    statusEl.innerHTML =
-                        `<span class="status-text">No active plan</span><span class="status-text" style="color: var(--danger);">Subscribe</span>`;
-                }
-                subscribeBtn.style.display = 'inline-block';
-            }
-
-            updateHeaderOffset();
-
-            // Initialize chat UI
-            const chatUI = new AIChatUI();
-            await chatUI.init();
-
-            // Hide shimmer, show real content
-            const shimmer = document.getElementById('shimmer-content');
-            const real = document.getElementById('real-content');
-            shimmer.classList.add('hidden');
-            real.classList.add('visible');
-
-            updateHeaderOffset();
-            requestAnimationFrame(updateHeaderOffset);
-
-            // ─── Fix: theme toggle in settings modal ──────────────────────────
-            const themeToggleBtn = document.getElementById('themeToggle');
-            if (themeToggleBtn) {
-                themeToggleBtn.addEventListener('click', () => {
-                    ui.toggleTheme();
-                });
-            }
-
-            // ─── Settings modal open/close ────────────────────────────────────
-            const settingsBtn = document.getElementById('settingsBtn');
-            const settingsModal = document.getElementById('settingsModal');
-            const closeModalBtn = document.getElementById('closeModalBtn');
-
-            if (settingsBtn && settingsModal && closeModalBtn) {
-                settingsBtn.addEventListener('click', () => {
-                    settingsModal.style.display = 'flex';
-                });
-                closeModalBtn.addEventListener('click', () => {
-                    settingsModal.style.display = 'none';
-                });
-                settingsModal.addEventListener('click', (e) => {
-                    if (e.target === settingsModal) {
-                        settingsModal.style.display = 'none';
-                    }
-                });
-            }
-
-            // ─── Clear history ────────────────────────────────────────────────
-            const clearHistoryBtn = document.getElementById('clearHistoryBtn');
-            if (clearHistoryBtn) {
-                clearHistoryBtn.addEventListener('click', () => {
-                    if (confirm('Clear all chat history?')) {
-                        ui.showToast('Chat history cleared.', 'info');
-                        // Optionally clear actual history here
-                    }
-                });
-            }
-
-            // ─── Model selector ───────────────────────────────────────────────
-            const modelSelect = document.getElementById('modelSelect');
-            const currentModelSpan = document.getElementById('currentModel');
-            if (modelSelect && currentModelSpan) {
-                modelSelect.addEventListener('change', () => {
-                    currentModelSpan.textContent = modelSelect.value;
-                });
-            }
-        })();
-    </script>
-</body>
-</html>
+  <!-- Settings Modal -->
+  <div class="modal-overlay" id="settingsModal">
+    <div class="modal">
+      <h3>Settings</h3>
+      <div class="modal-item">
+        <span>🌙 Dark / Light</span>
+        <button id="themeToggleModal">Toggle</button>
+      </div>
+      <div class="modal-item">
+        <span>🧠 Model</span>
+        <select id="modelSelect">
+          <option>MedVix-1.0</option>
+          <option>MedVix-1.1</option>
+        </select>
+      </div>
+      <div class="modal-item">
+        <span>🗑 Clear history</span>
+        <button id="clearHistoryBtn">Clear</button>
+      </div>
+      <button class="close-btn" id="closeModalBtn">Close</button>
+    </div>
+  </div>
+</section>

@@ -1,7 +1,7 @@
-// frontend-user/scripts/performance-rating-v2.js
+// scripts/performance-rating-v2.js
 
 /**
- * MedHub Performance Rating Engine v2 (MPREv2) – Final Production Version
+ * MedVix Performance Rating Engine v2 (MPREv2) – Final Production Version
  * 
  * Based on extensive review and feedback, this version incorporates:
  *   - 10 ranks (Seed → Luminary)
@@ -27,7 +27,7 @@
 
 import * as db from './db.js';
 import * as utils from './utils.js';
-import * as app from './app.js';
+import { getUser } from './auth.js';  // ✅ changed from './app.js'
 
 // ==================== CONSTANTS ====================
 
@@ -295,7 +295,7 @@ function computeIntegrityScore(data) {
     }
 
     // 3. Device fingerprint mismatch (if previously used different device)
-    const user = app.getUser();
+    const user = getUser();  // ✅ now uses the imported function
     if (user && user.deviceFingerprint && deviceFingerprint && user.deviceFingerprint !== deviceFingerprint) {
         score -= 0.1;
         flags.push('device_change');
@@ -312,7 +312,7 @@ async function getPerformanceData(examId, userId) {
     const exam = await db.getExamResult(examId);
     if (!exam) throw new Error('Exam not found');
 
-    const user = app.getUser();
+    const user = getUser();  // ✅ now uses the imported function
     const rating = user?.rating ?? BASE_RATING;
     const historyEWMA = user?.historyEWMA ?? 0.5;
     const completedExams = user?.completedExams ?? 0;

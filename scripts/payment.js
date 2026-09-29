@@ -1,4 +1,5 @@
-// frontend-user/scripts/payment.js
+// scripts/payment.js
+
 /**
  * Payment processing – Convex integration
  * Handles STK push initiation, status polling (with max attempts), manual claim,
@@ -6,17 +7,55 @@
  */
 
 import { convexHttpClient } from './convex-client.js';
-import { getToken } from './auth.js';
+import * as auth from './auth.js';
 import * as security from './security.js';
-import * as app from './app.js';
 import * as ui from './ui.js';
 import * as subscription from './subscription.js';
+
+// ==================== PLAN SELECTION ====================
+
+let selectedPlan = null;
+
+export function setSelectedPlan(plan) {
+    selectedPlan = plan;
+    if (plan) {
+        sessionStorage.setItem('selectedPlan', JSON.stringify(plan));
+    } else {
+        sessionStorage.removeItem('selectedPlan');
+    }
+}
+
+export function getSelectedPlan() {
+    if (selectedPlan) return selectedPlan;
+    const stored = sessionStorage.getItem('selectedPlan');
+    if (stored) {
+        try {
+            selectedPlan = JSON.parse(stored);
+            return selectedPlan;
+        } catch (e) {}
+    }
+    return null;
+}
+
+// ==================== TRANSACTION ID ====================
+
+let currentTransaction = null;
+
+export function setCurrentTransaction(transactionId) {
+    currentTransaction = transactionId;
+}
+
+export function getCurrentTransaction() {
+    return currentTransaction;
+}
+
+// ==================== PAYMENT MANAGER ====================
 
 class PaymentManager {
     constructor() {
         this.paymentStatus = {};
         this.paymentHistory = [];
-        this.activePoll = null; // track active polling timeout
+        this.activePoll = null;
         this.isPolling = false;
         this.init();
     }
@@ -62,14 +101,14 @@ class PaymentManager {
     }
 
     // ============================================================
-    // 2. INITIATE M‑PESA PAYMENT (STK Push via Convex)
+    // 2. INITIATE M‑PESA PAYMENT
     // ============================================================
     async initiateMpesaPayment(paymentData) {
         try {
             const validation = this.validatePaymentData(paymentData);
             if (!validation.isValid) throw new Error(validation.errors[0]);
 
-            const token = getToken();
+            const token = auth.getToken();
             if (!token) throw new Error('Not authenticated');
 
             const deviceFingerprint = security.getDeviceFingerprint();
@@ -119,7 +158,7 @@ class PaymentManager {
                 transactionId,
                 paymentId,
                 message: message || 'Check your phone for M-Pesa prompt',
-                polling: { interval: 15000, maxAttempts: 10 }, // 15s * 10 = 150s
+                polling: { interval: 15000, maxAttempts: 10 },
             };
         } catch (error) {
             console.error('[Payment] Initiation failed:', error);
@@ -128,11 +167,11 @@ class PaymentManager {
     }
 
     // ============================================================
-    // 3. CHECK PAYMENT STATUS (single check)
+    // 3. CHECK PAYMENT STATUS
     // ============================================================
     async checkPaymentStatus(transactionId) {
         try {
-            const token = getToken();
+            const token = auth.getToken();
             if (!token) {
                 console.warn('[Payment] No token found, redirecting to login');
                 window.location.href = '/pages/login.html';
@@ -147,8 +186,7 @@ class PaymentManager {
             if (!result.success) {
                 if (result.error === 'invalid_token' || result.message?.toLowerCase().includes('token')) {
                     console.warn('[Payment] Invalid token, logging out');
-                    const { logout } = await import('./auth.js');
-                    await logout();
+                    await auth.logout();
                     window.location.href = '/pages/login.html';
                     return { success: false, status: 'expired' };
                 }
@@ -184,8 +222,7 @@ class PaymentManager {
         } catch (error) {
             console.error('[Payment] Status check failed:', error);
             if (error.message?.toLowerCase().includes('token')) {
-                const { logout } = await import('./auth.js');
-                await logout();
+                await auth.logout();
                 window.location.href = '/pages/login.html';
                 return { success: false, status: 'expired' };
             }
@@ -194,20 +231,9 @@ class PaymentManager {
     }
 
     // ============================================================
-    // 4. POLL PAYMENT STATUS (auto‑stop after 10 attempts, 15s interval)
+    // 4. POLL PAYMENT STATUS
     // ============================================================
-    /**
-     * Poll payment status with a fixed interval and max attempts.
-     * @param {string} transactionId
-     * @param {Object} callbacks
-     * @param {function} callbacks.onUpdate - called on each poll with { status, payment, attempt }
-     * @param {function} callbacks.onComplete - called when final status reached or max attempts exceeded, with { status, payment, attempts, timedOut }
-     * @param {number} interval - ms between polls (default 15000)
-     * @param {number} maxAttempts - max number of polls (default 10)
-     * @returns {function} cancel function to stop polling early
-     */
     async pollPaymentStatus(transactionId, callbacks = {}, interval = 15000, maxAttempts = 10) {
-        // Cancel any existing poll
         this.cancelPolling();
 
         let attempts = 0;
@@ -252,16 +278,12 @@ class PaymentManager {
         this.isPolling = true;
         await poll();
 
-        // Return a cancel function
         return () => {
             cancelled = true;
             this.cancelPolling();
         };
     }
 
-    /**
-     * Cancel the currently active polling.
-     */
     cancelPolling() {
         if (this.activePoll) {
             clearTimeout(this.activePoll);
@@ -271,11 +293,11 @@ class PaymentManager {
     }
 
     // ============================================================
-    // 5. MANUAL CLAIM (for Buy Goods Till payments)
+    // 5. MANUAL CLAIM
     // ============================================================
     async claimManualPayment({ mpesaCode, phoneNumber }) {
         try {
-            const token = getToken();
+            const token = auth.getToken();
             if (!token) throw new Error('Not authenticated');
 
             const result = await convexHttpClient.action(
@@ -285,7 +307,7 @@ class PaymentManager {
 
             if (!result.success) throw new Error(result.message);
 
-            await app.refreshSubscription();
+            await subscription.refreshSubscription();
             return result.data;
         } catch (error) {
             console.error('[Payment] Manual claim failed:', error);
@@ -294,11 +316,11 @@ class PaymentManager {
     }
 
     // ============================================================
-    // 6. GET PENDING PAYMENTS BY PHONE (for manual claim UI)
+    // 6. GET PENDING PAYMENTS
     // ============================================================
     async getPendingPayments(phoneNumber) {
         try {
-            const token = getToken();
+            const token = auth.getToken();
             if (!token) throw new Error('Not authenticated');
 
             const result = await convexHttpClient.action(
@@ -347,7 +369,8 @@ class PaymentManager {
     }
 
     getPlanDetails(planId) {
-        return subscription.PLANS ? subscription.PLANS[planId] : null;
+        const plans = subscription.getSubscriptionPlans ? subscription.getSubscriptionPlans() : {};
+        return plans[planId] || null;
     }
 
     calculateTaxAndFees(amount) {
@@ -447,6 +470,7 @@ class PaymentManager {
 const Payment = new PaymentManager();
 
 // ==================== EXPORTED WRAPPERS ====================
+
 /**
  * Initiate M‑Pesa payment using the currently selected plan.
  * @param {string} phoneNumber - M‑Pesa phone number (normalized)
@@ -454,7 +478,7 @@ const Payment = new PaymentManager();
  * @returns {Promise<Object>} transaction details
  */
 export async function initiateMPesaPayment(phoneNumber, planId) {
-    const plan = app.getSelectedPlan();
+    const plan = getSelectedPlan();
     if (!plan) {
         throw new Error('No plan selected. Please go back and choose a plan.');
     }
@@ -468,7 +492,7 @@ export async function initiateMPesaPayment(phoneNumber, planId) {
         plan: planId,
         amount,
         description: `Subscription: ${planId}`,
-        userId: app.getUser()?._id || 'demo_user',
+        userId: auth.getUser()?._id || 'demo_user',
     };
 
     const result = await Payment.initiateMpesaPayment(paymentData);

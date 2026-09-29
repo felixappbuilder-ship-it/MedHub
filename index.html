@@ -1,209 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>MedHub – Kenya's #1 Offline Medical QB</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="application-name" content="MedVix" />
+    <meta name="description" content="MedVix — Learn. Practice. Connect. Grow. Achieve." />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>MedVix</title>
 
-    <!-- PWA & Non‑blocking CSS -->
-    <link rel="manifest" href="/manifest.json">
-    <link rel="stylesheet" href="/css/common.css" media="all">
-    <link rel="stylesheet" href="/css/index.css" media="all">
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/logo.png">
+    <link rel="apple-touch-icon" href="/assets/images/logo.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/logo.png">
 
-    <!-- Critical deferred scripts (load after render) -->
-    <script type="module" src="/scripts/utils.js"></script>
-    <script type="module" src="/scripts/ui.js"></script>
-    <script type="module" src="/scripts/router.js"></script>
-    <script type="module" src="/scripts/app.js"></script>
-    <script type="module" src="/scripts/referral.js"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="/libs/fontawesome/css/all.min.css" />
 
-    <!-- Service Worker registration – instant, non‑blocking -->
+    <!-- Manifest & preloads -->
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="preload" href="/assets/images/splash.png" as="image" />
+
+    <!-- Third-party libs -->
+    <link rel="stylesheet" href="/libs/quill/quill.snow.css">
+    <script src="/libs/quill/quill.min.js"></script>
+    <script defer src="/libs/chart/chart.min.js"></script>
+    <script src="/libs/pdfjs/pdf.min.js"></script>
     <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/service-worker.js')
-                .then(() => console.log('SW registered'))
-                .catch(err => console.warn('SW failed:', err));
-        }
+        pdfjsLib.GlobalWorkerOptions.workerSrc = '/libs/pdfjs/pdf.worker.min.js';
     </script>
+    <script src="/libs/pdfkit.standalone.js"></script>
 
-    <!-- Page‑specific init – runs after DOM, calls imported modules -->
-    <script defer>
-        // ---- Referral Modal Controls ----
-        function showReferralModal(code) {
-            const modal = document.getElementById('referral-modal');
-            const codeDisplay = document.getElementById('ref-code-display');
-            if (codeDisplay) codeDisplay.textContent = code;
-            if (modal) modal.style.display = 'flex';
-        }
-
-        function closeReferralModal() {
-            const modal = document.getElementById('referral-modal');
-            if (modal) modal.style.display = 'none';
-        }
-
-        function copyReferralCode() {
-            const code = document.getElementById('ref-code-display')?.textContent || '';
-            if (navigator.clipboard) {
-                navigator.clipboard.writeText(code).then(() => {
-                    showToast('Referral code copied!');
-                }).catch(() => fallbackCopy(code));
-            } else {
-                fallbackCopy(code);
-            }
-        }
-
-        function fallbackCopy(code) {
-            const input = document.createElement('input');
-            input.value = code;
-            document.body.appendChild(input);
-            input.select();
-            document.execCommand('copy');
-            input.remove();
-            showToast('Referral code copied!');
-        }
-
-        function showToast(msg) {
-            const existing = document.querySelector('.toast-message');
-            if (existing) existing.remove();
-            const toast = document.createElement('div');
-            toast.className = 'toast-message';
-            toast.textContent = msg;
-            Object.assign(toast.style, {
-                position: 'fixed',
-                bottom: '30px',
-                left: '50%',
-                transform: 'translateX(-50%)',
-                background: '#1f2937',
-                color: '#fff',
-                padding: '12px 24px',
-                borderRadius: '60px',
-                fontSize: '0.95rem',
-                zIndex: '99999',
-                boxShadow: '0 8px 30px rgba(0,0,0,0.3)',
-                animation: 'modalSlideUp 0.3s ease'
-            });
-            document.body.appendChild(toast);
-            setTimeout(() => toast.remove(), 2500);
-        }
-
-        (async function initIndex() {
-            // Wait for deferred scripts to load
-            await new Promise(resolve => window.addEventListener('load', resolve));
-
-            // App state & authentication check – redirect if already logged in
-            if (window.app?.checkAuth?.()) {
-                router.navigateTo('subjects.html');
-                return;
-            }
-
-            // Setup UI utilities, theme, and install prompt
-            ui.applyTheme();
-            ui.setupInstallPrompt('install-btn');
-
-            // ---- REFERRAL DETECTION – show floating modal instead of banner ----
-            const refCode = window.referral?.detectReferralFromURL?.() || window.referral?.getStoredReferralCode?.();
-            if (refCode) {
-                console.log('[Index] Referral detected:', refCode);
-                showReferralModal(refCode);
-            }
-
-            // ---- FEATURE CARDS ----
-            const features = [
-                { icon: '📱', title: '100% Offline', desc: '5,000+ questions stored on your phone. No internet needed.' },
-                { icon: '⏱️', title: 'Adaptive Timing', desc: '21–54 sec per question, based on difficulty.' },
-                { icon: '💳', title: 'M‑Pesa Only', desc: 'KES 350/mo, 850/3mo, 2,100/yr. Kenyan‑first.' },
-                { icon: '🛡️', title: 'Anti‑Cheat', desc: 'Time manipulation = instant lock.' }
-            ];
-            ui.renderFeatureGrid('feature-grid', features);
-
-            // ---- TESTIMONIALS ----
-            ui.renderTestimonials('testimonials', [
-                { name: 'Dr. A. M.', text: 'Passed my exams with ease. The offline mode saved me.' }
-            ]);
-
-            // ---- FAQ ----
-            ui.renderFaq('faq-section', [
-                { q: 'How do I pay?', a: 'M‑Pesa only. Select a plan, enter your Safaricom number.' },
-                { q: 'Can I study without internet?', a: 'Yes. All questions are stored offline.' }
-            ]);
-        })();
-    </script>
 </head>
+<body>
+  <div id="app-root"></div>
 
-<body class="loading">
-    <!-- Page‑specific content -->
-    <div class="page-container">
-        <header>
-            <div class="logo">
-                <img src="/assets/images/logo.png" alt="MedHub" width="48" height="48">
-                <span>MedHub</span>
-            </div>
-            <div class="header-actions">
-                <a href="/pages/referral.html" class="btn-text" style="display: none;" id="referral-link">💰 Refer & Earn</a>
-                <button id="theme-toggle" onclick="ui.toggleTheme()" class="btn-outline">🌓</button>
-            </div>
-        </header>
+  <script>
+    (async function () {
+      try {
+        const res = await fetch('/pages/home.html');
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const html = await res.text();
 
-        <main id="main-content">
-            <!-- Hero -->
-            <section class="hero">
-                <h1>Serious medical exam prep.<br><span class="accent">Works anywhere, even without internet.</span>
-                </h1>
-                <div class="cta-buttons">
-                    <button onclick="router.navigateTo('welcome.html')" class="btn-primary">Get Started</button>
-                    <button id="install-btn" class="btn-secondary" style="display:none;">📲 Install App</button>
-                </div>
-            </section>
+        const doc = new DOMParser().parseFromString(html, 'text/html');
+        const section = doc.querySelector('section[data-page]');
+        if (!section) throw new Error('no <section data-page>');
 
-            <!-- Feature grid – populated by ui.js -->
-            <section id="feature-grid" class="feature-grid"></section>
+        const styleHref = section.dataset.style;
+        if (styleHref) {
+          const link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = styleHref;
+          link.dataset.page = section.dataset.page;
+          document.head.appendChild(link);
+        }
 
-            <!-- Testimonials -->
-            <section id="testimonials" class="testimonials"></section>
+        document.getElementById('app-root').innerHTML = section.outerHTML;
+        document.title = section.dataset.title || 'MedHub';
+      } catch (err) {
+        console.error('[index] failed to load home:', err);
+      }
+    })();
+  </script>
+  <!-- ============================================================
+     EMOJI → FONT AWESOME REPLACEMENT
+     - Loads the mapping from /emoji-map.json
+     - Replaces emoji characters with <i class="fa-solid ...">
+     - Converts text nodes that are just an FA class string
+       (e.g. "fa-solid fa-bone") into real <i> elements
+     - Watches #app-root so newly-injected pages get processed
+     ============================================================ -->
+<script>
+(async function () {
+  let PALETTE = {};
+  let EMOJI_MAP = {};
 
-            <!-- FAQ -->
-            <section id="faq-section" class="faq"></section>
+  // ---- Load map ----
+  try {
+    const res = await fetch('/emoji-map.json', { cache: 'default' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    PALETTE   = (data && data.palette) || {};
+    EMOJI_MAP = (data && data.emojis)  || {};
+    const count = Object.keys(EMOJI_MAP).length;
+    if (!count) {
+      console.warn('[Emoji] emoji-map.json is empty.');
+      return;
+    }
+    console.info('[Emoji] Loaded ' + count + ' entries.');
+  } catch (err) {
+    console.warn('[Emoji] Could not load /emoji-map.json:', err);
+    return;
+  }
 
-            <!-- Footer -->
-            <footer>
-                <p>📞 0746834527 | ✉️ felixappbuilder@gmail.com</p>
-                <p>
-                    <a href="/pages/privacy.html">Privacy Policy</a> |
-                    <a href="/pages/terms.html">Terms</a> |
-                    <a href="/pages/referral.html">💰 Refer & Earn</a>
-                </p>
-            </footer>
-        </main>
-    </div>
+  // ---- Helpers ----
+  const escapeRegExp = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
-    <!-- ============================================
-         FLOATING REFERRAL MODAL
-         ============================================ -->
-    <div id="referral-modal" class="referral-modal" style="display:none;">
-        <div class="referral-modal-overlay" onclick="closeReferralModal()"></div>
-        <div class="referral-modal-card">
-            <button class="referral-modal-close" onclick="closeReferralModal()" aria-label="Close">✕</button>
-            <div class="referral-modal-icon">🎉</div>
-            <h2>You've been referred!</h2>
-            <p class="referral-modal-message">
-                A MedHub user thought you'd love this. Sign up now and get started with 10,000+ offline medical questions.
-            </p>
-            <div class="referral-modal-code">
-                <span>Code: <strong id="ref-code-display">XXXXXX</strong></span>
-                <button class="btn-copy" onclick="copyReferralCode()">📋 Copy</button>
-            </div>
-            <button onclick="router.navigateTo('signup.html')" class="referral-modal-btn">
-                Claim Your Spot
-            </button>
-            <p class="referral-modal-footer">
-                Already a member? <a href="login.html">Log in</a>
-            </p>
-        </div>
-    </div>
+  function resolveColor(name) {
+    if (!name || typeof name !== 'string') return null;
+    if (name.startsWith('#') || name.startsWith('rgb')) return name;
+    return PALETTE[name] || null;
+  }
 
-    <!-- Lazy offline script -->
-    <script data-lazy data-src="/scripts/offline.js"></script>
+  const keys = Object.keys(EMOJI_MAP).sort((a, b) => b.length - a.length);
+  const emojiRegex     = new RegExp(keys.map(escapeRegExp).join('|'), 'gu');
+  const emojiTestRegex = new RegExp(keys.map(escapeRegExp).join('|'), 'u');
+
+  const FA_TEXT_REGEX = /^\s*(?:fa-solid|fa-regular|fa-brands|fas|far|fab)(?:\s+fa-[\w-]+)+\s*$/;
+
+  function buildIconFromClass(className) {
+    const i = document.createElement('i');
+    let cls = className.trim()
+      .replace(/^fas\b/, 'fa-solid')
+      .replace(/^far\b/, 'fa-regular')
+      .replace(/^fab\b/, 'fa-brands');
+    if (!/^fa-(solid|regular|brands)\b/.test(cls)) cls = 'fa-solid ' + cls;
+    i.className = cls;
+    i.setAttribute('aria-hidden', 'true');
+    return i;
+  }
+
+  function buildIconFromEntry(info) {
+    const i = document.createElement('i');
+    i.className = 'fa-solid ' + info.icon;
+    i.setAttribute('aria-hidden', 'true');
+    if (info.label) i.title = info.label;
+    const color = resolveColor(info.color);
+    if (color) i.style.color = color;
+    return i;
+  }
+
+  // ---- Replace emojis in text nodes ----
+  function replaceEmojis(root) {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        return node.nodeValue && emojiTestRegex.test(node.nodeValue)
+          ? NodeFilter.FILTER_ACCEPT
+          : NodeFilter.FILTER_REJECT;
+      }
+    });
+
+    const textNodes = [];
+    while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+    textNodes.forEach(node => {
+      const text = node.nodeValue;
+      const fragment = document.createDocumentFragment();
+      let lastIndex = 0;
+      let match;
+
+      emojiRegex.lastIndex = 0;
+      while ((match = emojiRegex.exec(text)) !== null) {
+        if (match.index > lastIndex) {
+          fragment.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
+        }
+        const emoji = match[0];
+        const info = EMOJI_MAP[emoji];
+        fragment.appendChild(info ? buildIconFromEntry(info) : document.createTextNode(emoji));
+        lastIndex = emojiRegex.lastIndex;
+      }
+
+      if (lastIndex < text.length) {
+        fragment.appendChild(document.createTextNode(text.slice(lastIndex)));
+      }
+
+      node.parentNode.replaceChild(fragment, node);
+    });
+  }
+
+  // ---- Replace bare FA class strings ----
+  function replaceFAClassText(root) {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        return node.nodeValue && FA_TEXT_REGEX.test(node.nodeValue)
+          ? NodeFilter.FILTER_ACCEPT
+          : NodeFilter.FILTER_REJECT;
+      }
+    });
+
+    const textNodes = [];
+    while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+    textNodes.forEach(node => {
+      const icon = buildIconFromClass(node.nodeValue.trim());
+      node.parentNode.replaceChild(icon, node);
+    });
+  }
+
+  // ---- Aria-label icon-only buttons ----
+  function enhanceIconButtons(root) {
+    root.querySelectorAll('button, a').forEach(el => {
+      const icons = el.querySelectorAll('i.fa-solid, i.fa-regular, i.fa-brands');
+      const text  = el.textContent.trim();
+      if (icons.length === 1 && text === '') {
+        const label = icons[0].title || 'Button';
+        if (!el.getAttribute('aria-label')) el.setAttribute('aria-label', label);
+        if (!el.title) el.title = label;
+      }
+    });
+  }
+
+  // ---- Strip emojis from placeholders ----
+  function cleanPlaceholders(root) {
+    root.querySelectorAll('[placeholder]').forEach(el => {
+      const ph = el.getAttribute('placeholder');
+      if (!ph) return;
+      emojiRegex.lastIndex = 0;
+      const cleaned = ph.replace(emojiRegex, '').trim();
+      if (cleaned !== ph) el.setAttribute('placeholder', cleaned);
+    });
+  }
+
+  function process(root) {
+    if (!root) return;
+    if (root.nodeType !== 1 && root.nodeType !== 9) return;
+    try {
+      replaceEmojis(root);
+      replaceFAClassText(root);
+      enhanceIconButtons(root);
+      cleanPlaceholders(root);
+    } catch (err) {
+      console.warn('[Emoji] process() failed:', err);
+    }
+  }
+
+  // ---- Initial pass ----
+  process(document.body);
+
+  // ---- Watch the SPA mount point and any late DOM changes ----
+  const observer = new MutationObserver(mutations => {
+    mutations.forEach(m => {
+      if (m.type === 'characterData' && m.target && m.target.parentNode) {
+        process(m.target.parentNode);
+        return;
+      }
+      m.addedNodes.forEach(node => {
+        if (node.nodeType === 1) {
+          process(node);
+        } else if (node.nodeType === 3 && node.parentNode && node.parentNode.nodeType === 1) {
+          process(node.parentNode);
+        }
+      });
+    });
+  });
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true,
+    characterData: true
+  });
+})();
+</script>
+
+  <script type="module" src="/scripts/app.js"></script>
 </body>
-
 </html>

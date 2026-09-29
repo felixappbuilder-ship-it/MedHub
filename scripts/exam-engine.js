@@ -1,4 +1,4 @@
-// frontend-user/scripts/exam-engine.js
+// scripts/exam-engine.js
 
 /**
  * Core Exam Engine
@@ -17,7 +17,9 @@ import * as utils from './utils.js';
 import * as questions from './questions.js';
 import * as db from './db.js';
 import * as ui from './ui.js';
-import * as performanceRating from './performance-rating-v2.js'; // ADDED
+import * as performanceRating from './performance-rating-v2.js';
+import * as auth from './auth.js';
+import { convexHttpClient } from './convex-client.js';
 
 // Internal state (not exported)
 let examState = {
@@ -154,6 +156,10 @@ export function getAnswer(index) {
 
 export function getSubject() {
     return examState.config?.subject || 'Unknown';
+}
+
+export function getConfig() {
+    return examState.config;
 }
 
 export function totalQuestions() {
@@ -463,19 +469,19 @@ export async function endExam() {
 
     examState.questions.forEach((q, idx) => {
         const answer = examState.answers[idx];
-        const correctLetter = getCorrectAnswerLetter(q);   // compute from shuffled options
+        const correctLetter = getCorrectAnswerLetter(q);
         const isCorrect = answer.selectedOption === correctLetter;
         if (isCorrect) results.correctAnswers++;
 
         const qResult = {
             id: q.id,
             question: q.question,
-            options: q.options,               // shuffled options
-            correctAnswer: correctLetter,     // computed correct letter
+            options: q.options,
+            correctAnswer: correctLetter,
             userAnswer: answer.selectedOption,
             timeSpent: answer.timeSpent,
             correct: isCorrect,
-            explanation: q.explanation,       // object or string
+            explanation: q.explanation,
             topic: q.topic,
             difficulty: q.difficulty,
             flagged: answer.flagged,
@@ -483,7 +489,6 @@ export async function endExam() {
         };
         results.questions.push(qResult);
 
-        // Topic statistics
         if (!topicMap[q.topic]) {
             topicMap[q.topic] = { total: 0, correct: 0, totalTime: 0 };
         }
@@ -493,8 +498,6 @@ export async function endExam() {
     });
 
     results.scorePercentage = (results.correctAnswers / results.totalQuestions) * 100;
-
-    // Format topic performance
     results.topics = Object.entries(topicMap).map(([topic, data]) => ({
         topic,
         questions: data.total,
@@ -502,24 +505,26 @@ export async function endExam() {
         percentage: (data.correct / data.total) * 100,
         averageTime: data.totalTime / data.total
     }));
-
-    // Identify weak areas (<70%)
     results.weakAreas = results.topics.filter(t => t.percentage < 70).map(t => t.topic);
 
     // ============================================================
-    // PERFORMANCE RATING ENGINE INTEGRATION
+    // 1. SAVE THE EXAM FIRST (so it exists in the database)
+    // ============================================================
+    await db.saveExamResult(results);
+
+    // ============================================================
+    // 2. PERFORMANCE RATING ENGINE INTEGRATION
     // ============================================================
     try {
-        const user = app.getUser();
+        const user = auth.getUser();
         if (user && user._id) {
             const prResult = await performanceRating.computeFullPerformance(
-                results.examId,
-                user._id,
+                results.examId,          // examId string
+                user._id,                // userId string
                 examState.lobbyAvgPR || 0.5,
                 examState.opponentRating || 100
             );
 
-            // Merge performance rating data into results
             results.performanceRatio = prResult.pr;
             results.factors = prResult.factors;
             results.previousRating = prResult.previousRating;
@@ -532,24 +537,33 @@ export async function endExam() {
             results.integrity = prResult.integrity;
             results.historyCount = prResult.historyCount;
 
-            // Update user's rating and history in IndexedDB and app state
+            // Update user
             user.rating = prResult.newRating;
             user.rank = prResult.rank.rank;
             user.historyEWMA = prResult.historyEWMA;
             user.completedExams = (user.completedExams || 0) + 1;
             user.lastExamPR = prResult.pr;
             await db.saveUser(user);
-            app.setUser(user);
         }
     } catch (err) {
         console.warn('Performance Rating computation failed:', err);
-        // Continue without rating – exam results are still valid
     }
 
-    // Save to database
+    // ============================================================
+    // 3. SUBMIT CHALLENGE RESULT (if mode is challenge/shared)
+    // ============================================================
+    if (examState.config.mode === 'challenge' || examState.config.mode === 'shared') {
+        await submitChallengeResult(results);
+    }
+
+    // ============================================================
+    // 4. UPDATE THE EXAM RECORD WITH RATING DATA (already saved)
+    // ============================================================
     await db.saveExamResult(results);
 
-    // Record seen questions for repetition prevention (except Challenge mode)
+    // ============================================================
+    // 5. RECORD SEEN QUESTIONS (except challenge mode)
+    // ============================================================
     if (examState.config.mode !== 'challenge') {
         const questionIds = results.questions.map(q => q.id);
         const byTopic = {};
@@ -565,12 +579,136 @@ export async function endExam() {
     return results;
 }
 
+
+// ==================== Challenge Result Submission ====================
+
 /**
- * Get the current exam configuration.
+ * Submit challenge result to backend, or queue if offline.
+ * @param {Object} results - exam results object
+ */
+async function submitChallengeResult(results) {
+    const token = auth.getToken();
+    if (!token) return;
+
+    // Use challengeId if available, otherwise fall back to challengeCode
+    const challengeId = examState.challengeId || examState.challengeCode;
+    if (!challengeId) return;
+
+    const totalQuestions = results.totalQuestions;
+    const correctCount = results.correctAnswers;
+    const percentage = results.scorePercentage;
+    const timeSpent = results.timeSpent / 1000; // convert to seconds
+
+    // Compute mean difficulty from all questions
+    let difficultySum = 0;
+    let difficultyCount = 0;
+    results.questions.forEach(q => {
+        if (typeof q.difficulty === 'number' && q.difficulty > 0) {
+            difficultySum += q.difficulty;
+            difficultyCount++;
+        }
+    });
+    const difficultyFactor = difficultyCount > 0 ? (difficultySum / difficultyCount) : 1;
+
+    const payload = {
+        token,
+        challengeId,          // ✅ backend expects challengeId
+        score: correctCount,
+        totalQuestions,
+        percentage,
+        timeSpent,
+        difficultyFactor,
+    };
+
+    if (navigator.onLine) {
+        try {
+            // Use the correct Convex mutation name
+            await convexHttpClient.mutation("challenges/mutations:submitResult", payload);
+            console.log('Challenge result submitted successfully');
+            // Mark as submitted to prevent duplicate push via sync
+            results.challengeResultSubmitted = true;
+            // Re‑save the exam with this flag
+            await db.saveExamResult(results);
+        } catch (err) {
+            console.error('Challenge result submission failed:', err);
+            // Queue for later sync
+            await queueChallengeResult(payload);
+        }
+    } else {
+        console.warn('Offline – queuing challenge result for later');
+        await queueChallengeResult(payload);
+    }
+}
+
+/**
+ * Queue challenge result for later submission.
+ * @param {Object} payload - challenge result payload
+ */
+async function queueChallengeResult(payload) {
+    await db.addToSyncQueue('challenge_result', payload);
+}
+
+// ==================== Exam Config Management ====================
+
+/**
+ * Store exam configuration in the state and optionally in sessionStorage.
+ * @param {Object} config - exam configuration object
+ */
+export function setExamConfig(config) {
+    examState.config = config;
+    if (config) {
+        sessionStorage.setItem('examConfig', JSON.stringify(config));
+    } else {
+        sessionStorage.removeItem('examConfig');
+    }
+}
+
+/**
+ * Retrieve the current exam configuration from state, or from sessionStorage as fallback.
  * @returns {Object|null}
  */
-export function getConfig() {
-    return examState.config;
+export function getExamConfig() {
+    if (examState.config) return examState.config;
+    const saved = sessionStorage.getItem('examConfig');
+    if (saved) {
+        try {
+            examState.config = JSON.parse(saved);
+            return examState.config;
+        } catch {
+            examState.config = null;
+        }
+    }
+    return null;
+}
+
+/**
+ * Clear the exam configuration from state and sessionStorage.
+ */
+export function clearExamConfig() {
+    examState.config = null;
+    sessionStorage.removeItem('examConfig');
+}
+
+/**
+ * Clear the entire exam state (for logout, reset, etc.)
+ */
+export function clearExamState() {
+    examState.config = null;
+    examState.questions = [];
+    examState.answers = [];
+    examState.currentIndex = 0;
+    examState.startTime = null;
+    examState.isFinished = false;
+    examState.examId = null;
+    examState.submittedQuestions = [];
+    examState.showExplanation = [];
+    examState.seed = null;
+    examState.cycle = 1;
+    examState.challengeId = null;
+    examState.challengeCode = null;
+    examState.opponent = null;
+    examState.lobbyAvgPR = null;
+    examState.opponentRating = null;
 }
 
 // ==================== Export ====================
@@ -589,6 +727,7 @@ export const config = new Proxy({}, {
   }
 });
 
+// Standard object literal – uses function hoisting, no issues
 export const examEngine = {
     createExam,
     startExam,
@@ -623,5 +762,9 @@ export const examEngine = {
     isRevisionMode,
     isChallengeMode,
     isQuestionSubmitted,
-    getRevisionFeedback
+    getRevisionFeedback,
+    setExamConfig,
+    getExamConfig,
+    clearExamConfig,
+    clearExamState
 };

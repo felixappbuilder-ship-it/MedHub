@@ -38,9 +38,9 @@ const MIME_TYPES = {
 const ZOOM_STEP = 0.25;
 const MIN_ZOOM = 0.25;
 const MAX_ZOOM = 5.0;
-const SEARCH_DEBOUNCE = 300; // ms
+const SEARCH_DEBOUNCE = 300;
 const LAZY_LOAD_MARGIN = '200px';
-const AUTO_HIDE_DELAY = 3000; // ms
+const AUTO_HIDE_DELAY = 3000;
 
 // =========================================================================
 // State
@@ -63,20 +63,28 @@ let renderTasks = new Map();
 let abortController = null;
 let cleanupFunctions = [];
 let scrollTimeout = null;
+let zoomRenderTimer = null;
+let dprListener = null;
+const textContentCache = new Map();
+const pageViewportCache = new Map(); // pageNum -> { width, height } at scale 1
 
 // Auto-hide state
 let autoHideTimer = null;
 let lastTapTime = 0;
 let isHeaderVisible = true;
+let isOverControls = false;   // true when pointer or focus is over header/footer
 
-// Pinch state
-let initialPinchDistance = 0;
-let initialPinchScale = 1;
+// Panning state
+let isPanning = false;
+let pointerDown = false;
+let lastPointerX = 0;
+let lastPointerY = 0;
+let panOffsetX = 0;
+let panOffsetY = 0;
 
-// Image element reference for image pinch
+// Image element reference for image zoom/pan
 let imageElement = null;
-let imagePinchInitialScale = 1;
-let imagePinchInitialDistance = 0;
+let imageScale = 1;
 
 // =========================================================================
 // DOM helpers
@@ -180,12 +188,10 @@ function injectViewerStyles() {
       pointer-events: none;
     }
 
-    /* Prevent browser pinch-zoom interfering with our custom pinch */
-    .viewer-container {
-      touch-action: none;
-    }
-    .viewer-main {
-      touch-action: pan-y pinch-zoom;
+    /* Improve offscreen page rendering performance */
+    .canvas-wrapper {
+      content-visibility: auto;
+      contain-intrinsic-size: 200px;
     }
   `;
   document.head.appendChild(style);
@@ -240,6 +246,22 @@ function destroyCurrentDocument() {
     pdfDoc = null;
   }
 
+  if (zoomRenderTimer) {
+    clearTimeout(zoomRenderTimer);
+    zoomRenderTimer = null;
+  }
+
+  if (dprListener) {
+    window.removeEventListener('resize', dprListener);
+    dprListener = null;
+  }
+
+  textContentCache.clear();
+  pageViewportCache.clear();
+
+  // Remove auto-hide interaction listeners
+  removeAutoHideListeners();
+
   cleanupFunctions.forEach(fn => fn());
   cleanupFunctions = [];
 
@@ -249,21 +271,23 @@ function destroyCurrentDocument() {
   pdfOutline = [];
   searchMatches = [];
   currentMatchIndex = -1;
+  panOffsetX = 0;
+  panOffsetY = 0;
 
   const main = viewerEls.main;
-  if (main) main.innerHTML = '';
+  if (main) {
+    main.innerHTML = '';
+    main.classList.remove('scroll-view', 'page-view');
+  }
 
   if (viewerEls.searchInput) viewerEls.searchInput.value = '';
   updateSearchUI();
 
   if (viewerEls.outlineDrawer) viewerEls.outlineDrawer.classList.remove('open');
 
-  // Remove scroll listener
-  if (viewerEls.main) {
-    viewerEls.main.removeEventListener('scroll', onScrollHandler);
-  }
-
   imageElement = null;
+  imageScale = 1;
+  isOverControls = false;
 }
 
 // =========================================================================
@@ -275,6 +299,11 @@ async function renderDocument(blob, fileType = null, title = 'Document') {
 
   const { main, loading, progress, title: titleEl } = viewerEls;
   if (!main) return;
+
+  // Attach all controls (once per document)
+  setupControls();
+  setupAutoHideListeners();
+  setupDPRListener();
 
   if (loading) loading.style.display = 'block';
   if (progress) progress.style.display = 'none';
@@ -327,7 +356,6 @@ async function renderPDF(blob) {
   viewMode = localStorage.getItem('viewer-viewMode') || 'scroll';
 
   if (progress) {
-    let loaded = 0;
     pdfDoc.onProgress = ({ loaded: l, total }) => {
       if (total) {
         progress.style.display = 'block';
@@ -336,15 +364,14 @@ async function renderPDF(blob) {
     };
   }
 
-  // Show loading dots while rendering the first page(s)
   if (main) {
     main.innerHTML = '<div class="viewer-loading-dots"><span>.</span><span>.</span><span>.</span></div>';
   }
 
   await renderCurrentLayout();
-  setupControls();
 
   if (footer) footer.style.display = 'flex';
+  showHeaderFooter(); // ensure visible initially
 }
 
 // =========================================================================
@@ -357,40 +384,92 @@ async function renderCurrentLayout() {
   const { main, textLayerContainer } = viewerEls;
   if (!main) return;
 
-  main.innerHTML = '';
-  renderTasks.forEach(task => task.cancel());
-  renderTasks.clear();
-
-  // Remove old scroll listener
-  if (onScrollHandler) {
-    main.removeEventListener('scroll', onScrollHandler);
-    onScrollHandler = null;
+  if (zoomRenderTimer) {
+    clearTimeout(zoomRenderTimer);
+    zoomRenderTimer = null;
   }
-
-  // Attach double-tap and pinch events to the main area
-  main.addEventListener('click', handleDoubleTap);
-  setupPinchZoom(main);
 
   if (viewMode === 'scroll') {
     main.classList.add('scroll-view');
     main.classList.remove('page-view');
-    await renderAllPagesScroll();
-    onScrollHandler = onScroll;
-    main.addEventListener('scroll', onScrollHandler);
-    setTimeout(() => detectVisiblePage(), 100);
+
+    const existingContainer = main.querySelector('.page-container');
+
+    if (!existingContainer) {
+      // Initial build
+      main.innerHTML = '';
+      renderTasks.forEach(task => task.cancel());
+      renderTasks.clear();
+
+      if (onScrollHandler) {
+        main.removeEventListener('scroll', onScrollHandler);
+        onScrollHandler = null;
+      }
+
+      panOffsetX = 0;
+      panOffsetY = 0;
+
+      await renderAllPagesScroll();
+
+      onScrollHandler = onScroll;
+      main.addEventListener('scroll', onScrollHandler);
+      setTimeout(() => detectVisiblePage(), 100);
+    } else {
+      // Zoom changed: cancel all pending renders
+      renderTasks.forEach(task => task.cancel());
+      renderTasks.clear();
+
+      // Immediately update dimensions for pages whose base sizes are cached
+      syncWrapperDimensions();
+
+      // Then re-render visible pages at new scale
+      await updateVisiblePages();
+    }
   } else {
     main.classList.remove('scroll-view');
     main.classList.add('page-view');
+    main.innerHTML = '';
+    renderTasks.forEach(task => task.cancel());
+    renderTasks.clear();
+
+    if (onScrollHandler) {
+      main.removeEventListener('scroll', onScrollHandler);
+      onScrollHandler = null;
+    }
+
+    panOffsetX = 0;
+    panOffsetY = 0;
+
     await renderSinglePage(currentPage);
-    updatePageNumberDisplay();
   }
 
   if (textLayerContainer) textLayerContainer.innerHTML = '';
   updateZoomDisplay();
   updateNavButtons();
-
-  // Reset auto-hide timer on any interaction
   resetAutoHideTimer();
+}
+
+async function updateVisiblePages() {
+  const main = viewerEls.main;
+  if (!main) return;
+
+  const viewportTop = main.scrollTop;
+  const viewportBottom = viewportTop + main.clientHeight;
+  const wrappers = main.querySelectorAll('.canvas-wrapper');
+  const tasks = [];
+
+  wrappers.forEach(wrapper => {
+    const rect = wrapper.getBoundingClientRect();
+    const wrapperTop = rect.top + main.scrollTop - main.getBoundingClientRect().top;
+    const wrapperBottom = wrapperTop + rect.height;
+
+    if (wrapperBottom >= viewportTop && wrapperTop <= viewportBottom) {
+      const pageNum = parseInt(wrapper.dataset.page, 10);
+      tasks.push(lazyRenderPage(pageNum, wrapper));
+    }
+  });
+
+  await Promise.all(tasks);
 }
 
 function onScroll() {
@@ -459,10 +538,17 @@ async function renderAllPagesScroll() {
   intersectionObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const pageNum = parseInt(entry.target.dataset.page, 10);
-          lazyRenderPage(pageNum, entry.target);
-          intersectionObserver.unobserve(entry.target);
+        if (!entry.isIntersecting) return;
+
+        const wrapper = entry.target;
+        const pageNum = parseInt(wrapper.dataset.page, 10);
+
+        const needsRender =
+          !wrapper.querySelector('canvas.pdf-canvas') ||
+          wrapper.dataset.renderedScale !== String(currentScale);
+
+        if (needsRender) {
+          lazyRenderPage(pageNum, wrapper);
         }
       });
     },
@@ -472,6 +558,9 @@ async function renderAllPagesScroll() {
   document.querySelectorAll('.canvas-wrapper').forEach(w => {
     intersectionObserver.observe(w);
   });
+
+  // Preload page sizes to eliminate placeholder jumps
+  preloadPageSizes();
 }
 
 async function lazyRenderPage(pageNum, wrapper) {
@@ -479,12 +568,16 @@ async function lazyRenderPage(pageNum, wrapper) {
   if (!canvas) return;
   wrapper.innerHTML = '';
   wrapper.appendChild(canvas);
+
+  // Mark this wrapper as rendered at the current zoom scale
+  wrapper.dataset.renderedScale = String(currentScale);
 }
 
 async function renderSinglePage(pageNum) {
   const { main } = viewerEls;
   const container = document.createElement('div');
   container.className = 'page-container';
+  container.style.transformOrigin = '0 0';
   const wrapper = document.createElement('div');
   wrapper.className = 'canvas-wrapper';
   const canvas = await renderPageToCanvas(pageNum);
@@ -496,6 +589,8 @@ async function renderSinglePage(pageNum) {
 async function renderPageToCanvas(pageNum) {
   if (!pdfDoc) return null;
 
+  const scale = currentScale; // capture current zoom
+
   if (renderTasks.has(pageNum)) {
     renderTasks.get(pageNum).cancel();
     renderTasks.delete(pageNum);
@@ -503,22 +598,44 @@ async function renderPageToCanvas(pageNum) {
 
   try {
     const page = await pdfDoc.getPage(pageNum);
-    const viewport = page.getViewport({ scale: currentScale });
+
+    // Cache base viewport at scale 1 for dimension calculations
+    const baseViewport = page.getViewport({ scale: 1 });
+    pageViewportCache.set(pageNum, {
+      width: baseViewport.width,
+      height: baseViewport.height,
+    });
+
+    // CSS viewport (used for layout / CSS size)
+    const cssViewport = page.getViewport({ scale });
+
+    // High-DPI rendering viewport
+    const pixelRatio = window.devicePixelRatio || 1;
+    const renderViewport = page.getViewport({ scale: scale * pixelRatio });
+
     const canvas = document.createElement('canvas');
     canvas.className = 'pdf-canvas';
-    canvas.height = viewport.height;
-    canvas.width = viewport.width;
+    // Set canvas backing store dimensions (actual pixels)
+    canvas.height = renderViewport.height;
+    canvas.width = renderViewport.width;
+    // Set CSS dimensions to the intended layout size
     canvas.style.display = 'block';
-    canvas.style.width = viewport.width + 'px';
-    canvas.style.height = viewport.height + 'px';
+    canvas.style.width = cssViewport.width + 'px';
+    canvas.style.height = cssViewport.height + 'px';
 
     const context = canvas.getContext('2d');
-    const renderTask = page.render({ canvasContext: context, viewport });
+    const renderTask = page.render({ canvasContext: context, viewport: renderViewport });
     renderTasks.set(pageNum, renderTask);
     await renderTask.promise;
     renderTasks.delete(pageNum);
 
-    attachTextLayer(canvas, pageNum, page, viewport);
+    // If zoom changed while this render was in progress, discard it.
+    if (scale !== currentScale) {
+      return null;
+    }
+
+    // Text layer is not attached here for performance.
+    // It will be created only when needed (e.g., search/highlight).
 
     return canvas;
   } catch (err) {
@@ -529,7 +646,7 @@ async function renderPageToCanvas(pageNum) {
 }
 
 // =========================================================================
-// Text Layer
+// Text Layer (kept for potential future use, but not automatically rendered)
 // =========================================================================
 
 function attachTextLayer(canvas, pageNum, page, viewport) {
@@ -595,8 +712,16 @@ async function performSearch() {
     for (let i = 1; i <= totalPages; i++) {
       if (signal.aborted) return;
       const page = await pdfDoc.getPage(i);
-      const textContent = await page.getTextContent();
+
+      // Use cached text content if available
+      let textContent = textContentCache.get(i);
+      if (!textContent) {
+        textContent = await page.getTextContent();
+        textContentCache.set(i, textContent);
+      }
+
       const { items } = textContent;
+      const pageViewport = page.getViewport({ scale: currentScale });
 
       const textItems = items.map(item => ({
         str: item.str,
@@ -627,11 +752,18 @@ async function performSearch() {
           const itemStart = charCount;
           const itemEnd = charCount + len;
           if (itemEnd > startIdx && itemStart < endIdx) {
-            const [tx, , , ty] = item.transform;
-            const x = tx + (item.width * (Math.max(0, startIdx - itemStart) / len));
-            const y = ty;
-            const w = item.width * ((Math.min(endIdx, itemEnd) - Math.max(startIdx, itemStart)) / len);
-            const h = item.height;
+            const tx = item.transform;
+            const x1 = tx[4];
+            const y1 = tx[5];
+            const x2 = x1 + item.width;
+            const y2 = y1 + item.height;
+
+            const rect = pageViewport.convertToViewportRectangle([x1, y1, x2, y2]);
+            const x = Math.min(rect[0], rect[2]);
+            const y = Math.min(rect[1], rect[3]);
+            const w = Math.abs(rect[2] - rect[0]);
+            const h = Math.abs(rect[3] - rect[1]);
+
             rects.push({ x, y, width: w, height: h });
           }
           charCount += len;
@@ -695,8 +827,21 @@ function highlightCurrentMatch() {
 
   const wrapper = document.querySelector(`.canvas-wrapper[data-page="${match.pageNum}"]`);
   if (!wrapper) return;
-  const textLayer = wrapper.querySelector('.textLayer');
-  if (!textLayer) return;
+
+  // Create or get a dedicated search overlay layer
+  let layer = wrapper.querySelector('.search-layer');
+  if (!layer) {
+    layer = document.createElement('div');
+    layer.className = 'search-layer';
+    layer.style.position = 'absolute';
+    layer.style.top = '0';
+    layer.style.left = '0';
+    layer.style.width = '100%';
+    layer.style.height = '100%';
+    layer.style.pointerEvents = 'none';
+    wrapper.style.position = 'relative';
+    wrapper.appendChild(layer);
+  }
 
   match.rects.forEach(rect => {
     const div = document.createElement('div');
@@ -705,7 +850,7 @@ function highlightCurrentMatch() {
     div.style.top = rect.y + 'px';
     div.style.width = rect.width + 'px';
     div.style.height = rect.height + 'px';
-    textLayer.appendChild(div);
+    layer.appendChild(div);
   });
 }
 
@@ -737,55 +882,41 @@ function onSearchInput() {
 function renderImage(blob) {
   const { main, footer } = viewerEls;
   if (!main) return;
+
+  // Use page-view mode so overflow is hidden and panning works
+  main.classList.add('page-view');
+  main.classList.remove('scroll-view');
+
+  const wrapper = document.createElement('div');
+  wrapper.style.width = '100%';
+  wrapper.style.height = '100%';
+  wrapper.style.display = 'flex';
+  wrapper.style.alignItems = 'center';
+  wrapper.style.justifyContent = 'center';
+  wrapper.style.transformOrigin = 'center center';
+  wrapper.style.touchAction = 'none';
+
   const img = document.createElement('img');
   img.src = URL.createObjectURL(blob);
-  img.style.maxWidth = '100%';
-  img.style.maxHeight = '100%';
+  img.style.maxWidth = 'none';
+  img.style.maxHeight = 'none';
   img.style.objectFit = 'contain';
   img.style.transformOrigin = 'center center';
   img.style.transition = 'transform 0.1s';
+  img.style.touchAction = 'none';
+
+  wrapper.appendChild(img);
   main.innerHTML = '';
-  main.appendChild(img);
+  main.appendChild(wrapper);
+
   imageElement = img;
+  imageScale = 1;
+  panOffsetX = 0;
+  panOffsetY = 0;
+
   if (footer) footer.style.display = 'none';
 
-  // Attach double-tap to image container as well
-  main.addEventListener('click', handleDoubleTap);
-  setupImagePinch();
-}
-
-function setupImagePinch() {
-  if (!imageElement) return;
-  const container = imageElement.parentElement;
-  if (!container) return;
-
-  container.addEventListener('touchstart', (e) => {
-    if (e.touches.length === 2) {
-      const dx = e.touches[0].clientX - e.touches[1].clientX;
-      const dy = e.touches[0].clientY - e.touches[1].clientY;
-      imagePinchInitialDistance = Math.hypot(dx, dy);
-      imagePinchInitialScale = parseFloat(imageElement.style.transform?.replace(/[^0-9.]/g, '')) || 1;
-      e.preventDefault();
-    }
-  }, { passive: false });
-
-  container.addEventListener('touchmove', (e) => {
-    if (e.touches.length === 2) {
-      const dx = e.touches[0].clientX - e.touches[1].clientX;
-      const dy = e.touches[0].clientY - e.touches[1].clientY;
-      const distance = Math.hypot(dx, dy);
-      if (imagePinchInitialDistance > 0) {
-        let scale = imagePinchInitialScale * (distance / imagePinchInitialDistance);
-        scale = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, scale));
-        imageElement.style.transform = `scale(${scale})`;
-        e.preventDefault();
-      }
-    }
-  }, { passive: false });
-
-  container.addEventListener('touchend', () => {
-    imagePinchInitialDistance = 0;
-  });
+  resetAutoHideTimer();
 }
 
 // =========================================================================
@@ -795,18 +926,43 @@ function setupImagePinch() {
 function renderFallback(blob) {
   const { main, footer } = viewerEls;
   if (!main) return;
-  const url = URL.createObjectURL(blob);
 
+  const textTypes = [
+    'text/plain',
+    'text/markdown',
+    'text/csv',
+    'application/rtf', // RTF can be shown as plain text
+    'application/vnd.oasis.opendocument.text', // fallback
+  ];
+
+  if (textTypes.some(type => blob.type.includes(type))) {
+    // Render text directly with proper formatting
+    blob.text().then(text => {
+      const pre = document.createElement('pre');
+      pre.textContent = text;
+      pre.style.whiteSpace = 'pre-wrap';      // preserve line breaks
+      pre.style.wordBreak = 'break-word';     // wrap long lines
+      pre.style.margin = '0';
+      pre.style.padding = '1rem';
+      pre.style.fontFamily = 'var(--font-mono, monospace)';
+      pre.style.fontSize = '0.95rem';
+      pre.style.lineHeight = '1.5';
+      pre.style.overflow = 'auto';
+      pre.style.height = '100%';
+      pre.style.boxSizing = 'border-box';
+      main.innerHTML = '';
+      main.appendChild(pre);
+    });
+    if (footer) footer.style.display = 'none';
+    return;
+  }
+
+  const url = URL.createObjectURL(blob);
   const iframeTypes = [
     'application/vnd.openxmlformats-officedocument',
     'application/msword',
     'application/vnd.ms-powerpoint',
     'application/vnd.ms-excel',
-    'text/plain',
-    'text/markdown',
-    'text/csv',
-    'application/rtf',
-    'application/vnd.oasis.opendocument',
   ];
   const canIframe = iframeTypes.some(type => blob.type.includes(type));
 
@@ -879,11 +1035,7 @@ async function navigateToDest(dest) {
   try {
     const pageIndex = await pdfDoc.getPageIndex(dest);
     const pageNum = pageIndex + 1;
-    if (viewMode === 'page') {
-      currentPage = pageNum;
-    } else {
-      currentPage = pageNum;
-    }
+    currentPage = pageNum;
     await renderCurrentLayout();
     if (viewMode === 'scroll') {
       const wrapper = document.querySelector(`.canvas-wrapper[data-page="${pageNum}"]`);
@@ -895,7 +1047,7 @@ async function navigateToDest(dest) {
 }
 
 // =========================================================================
-// Auto‑hide / Double‑tap / Pinch helpers
+// Auto‑hide / Double‑tap
 // =========================================================================
 
 function showHeaderFooter() {
@@ -917,15 +1069,19 @@ function hideHeaderFooter() {
 
 function resetAutoHideTimer() {
   if (autoHideTimer) clearTimeout(autoHideTimer);
-  autoHideTimer = setTimeout(() => {
-    if (isHeaderVisible) hideHeaderFooter();
-  }, AUTO_HIDE_DELAY);
+  // Only start timer if not currently interacting with controls
+  if (!isOverControls && isHeaderVisible) {
+    autoHideTimer = setTimeout(() => {
+      if (!isOverControls) {
+        hideHeaderFooter();
+      }
+    }, AUTO_HIDE_DELAY);
+  }
 }
 
 function handleDoubleTap(e) {
   const now = Date.now();
   if (now - lastTapTime < 300) {
-    // Double tap detected
     if (isHeaderVisible) {
       hideHeaderFooter();
     } else {
@@ -937,43 +1093,180 @@ function handleDoubleTap(e) {
   }
 }
 
+// -------------------------------------------------------------------------
+// Auto-hide interaction with header/footer
+// -------------------------------------------------------------------------
+
+function setupAutoHideListeners() {
+  const header = document.querySelector('.viewer-header');
+  const footer = document.getElementById('viewer-footer');
+  if (!header && !footer) return;
+
+  const onEnter = () => {
+    isOverControls = true;
+    if (autoHideTimer) {
+      clearTimeout(autoHideTimer);
+      autoHideTimer = null;
+    }
+  };
+
+  const onLeave = () => {
+    isOverControls = false;
+    if (isHeaderVisible) resetAutoHideTimer();
+  };
+
+  // For each control, add mouseenter/mouseleave and focusin/focusout
+  [header, footer].forEach(el => {
+    if (!el) return;
+    el.addEventListener('mouseenter', onEnter);
+    el.addEventListener('mouseleave', onLeave);
+    el.addEventListener('focusin', onEnter);
+    el.addEventListener('focusout', (e) => {
+      // Only leave if focus completely left the element
+      if (!el.contains(e.relatedTarget)) onLeave();
+    });
+  });
+
+  // Store removal functions in cleanupFunctions
+  cleanupFunctions.push(() => {
+    [header, footer].forEach(el => {
+      if (!el) return;
+      el.removeEventListener('mouseenter', onEnter);
+      el.removeEventListener('mouseleave', onLeave);
+      el.removeEventListener('focusin', onEnter);
+      el.removeEventListener('focusout', onLeave);
+    });
+  });
+}
+
+function removeAutoHideListeners() {
+  // The cleanup functions will handle removal; but we can also clear isOverControls
+  isOverControls = false;
+  if (autoHideTimer) {
+    clearTimeout(autoHideTimer);
+    autoHideTimer = null;
+  }
+}
+
+// =========================================================================
+// Panning (page mode and images)
+// =========================================================================
+
+function setupPanning(container) {
+  const pointerDownHandler = (e) => {
+    if (e.button !== 0) return;
+    // Enable panning in page mode OR when an image is displayed
+    if (viewMode !== 'page' && !imageElement) return;
+    pointerDown = true;
+    isPanning = false;
+    lastPointerX = e.clientX;
+    lastPointerY = e.clientY;
+    container.setPointerCapture(e.pointerId);
+    e.preventDefault();
+  };
+
+  const pointerMoveHandler = (e) => {
+    if (!pointerDown) return;
+    const dx = e.clientX - lastPointerX;
+    const dy = e.clientY - lastPointerY;
+    if (Math.abs(dx) > 2 || Math.abs(dy) > 2) {
+      isPanning = true;
+    }
+    if (isPanning) {
+      panOffsetX += dx;
+      panOffsetY += dy;
+      applyPanTransform();
+      lastPointerX = e.clientX;
+      lastPointerY = e.clientY;
+    }
+  };
+
+  const pointerUpHandler = (e) => {
+    pointerDown = false;
+    isPanning = false;
+    if (container.hasPointerCapture(e.pointerId)) {
+      container.releasePointerCapture(e.pointerId);
+    }
+  };
+
+  container.addEventListener('pointerdown', pointerDownHandler);
+  container.addEventListener('pointermove', pointerMoveHandler);
+  container.addEventListener('pointerup', pointerUpHandler);
+  container.addEventListener('pointercancel', pointerUpHandler);
+
+  cleanupFunctions.push(() => {
+    container.removeEventListener('pointerdown', pointerDownHandler);
+    container.removeEventListener('pointermove', pointerMoveHandler);
+    container.removeEventListener('pointerup', pointerUpHandler);
+    container.removeEventListener('pointercancel', pointerUpHandler);
+  });
+}
+
+function applyPanTransform() {
+  // For PDF page view, pan the .page-container
+  const container = viewerEls.main?.querySelector('.page-container');
+  if (container) {
+    container.style.transform = `translate(${panOffsetX}px, ${panOffsetY}px)`;
+    return;
+  }
+
+  // For images, pan the wrapper
+  if (imageElement && imageElement.parentElement) {
+    const wrapper = imageElement.parentElement;
+    wrapper.style.transform = `translate(${panOffsetX}px, ${panOffsetY}px)`;
+  }
+}
+
+// =========================================================================
+// Pinch Zoom (PDF & Images)
+// =========================================================================
+
 function setupPinchZoom(container) {
-  let touchStartX = 0, touchStartY = 0;
   let initialDistance = 0;
   let initialScale = 1;
 
-  container.addEventListener('touchstart', (e) => {
+  const touchStartHandler = (e) => {
     if (e.touches.length === 2) {
       const dx = e.touches[0].clientX - e.touches[1].clientX;
       const dy = e.touches[0].clientY - e.touches[1].clientY;
       initialDistance = Math.hypot(dx, dy);
-      initialScale = currentScale;
+      initialScale = imageElement ? imageScale : currentScale;
       e.preventDefault();
-    } else if (e.touches.length === 1) {
-      touchStartX = e.touches[0].clientX;
-      touchStartY = e.touches[0].clientY;
     }
-  }, { passive: false });
+  };
 
-  container.addEventListener('touchmove', (e) => {
+  const touchMoveHandler = (e) => {
     if (e.touches.length === 2) {
       const dx = e.touches[0].clientX - e.touches[1].clientX;
       const dy = e.touches[0].clientY - e.touches[1].clientY;
       const distance = Math.hypot(dx, dy);
       if (initialDistance > 0) {
-        const scaleFactor = distance / initialDistance;
-        let newScale = initialScale * scaleFactor;
-        newScale = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, newScale));
-        setZoom(newScale);
+        let scale = initialScale * (distance / initialDistance);
+        scale = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, scale));
+
+        if (imageElement) {
+          imageScale = scale;
+          imageElement.style.transform = `scale(${scale})`;
+        } else {
+          setZoom(scale);
+        }
         e.preventDefault();
       }
     }
-  }, { passive: false });
+  };
 
-  container.addEventListener('touchend', (e) => {
-    if (e.touches.length < 2) {
-      initialDistance = 0;
-    }
+  const touchEndHandler = () => {
+    initialDistance = 0;
+  };
+
+  container.addEventListener('touchstart', touchStartHandler, { passive: false });
+  container.addEventListener('touchmove', touchMoveHandler, { passive: false });
+  container.addEventListener('touchend', touchEndHandler);
+
+  cleanupFunctions.push(() => {
+    container.removeEventListener('touchstart', touchStartHandler);
+    container.removeEventListener('touchmove', touchMoveHandler);
+    container.removeEventListener('touchend', touchEndHandler);
   });
 }
 
@@ -1029,8 +1322,6 @@ function setupControls() {
       } else {
         const wrapper = document.querySelector(`.canvas-wrapper[data-page="${page}"]`);
         if (wrapper) {
-          renderTasks.forEach(task => task.cancel());
-          renderTasks.clear();
           if (!wrapper.querySelector('canvas')) {
             lazyRenderPage(page, wrapper);
           }
@@ -1051,36 +1342,74 @@ function setupControls() {
     });
     cleanupFunctions.push(() => {
       els.pageInput?.removeEventListener('change', jumpHandler);
+      els.pageInput?.removeEventListener('keydown', jumpHandler);
     });
   }
 
   // ---------- Zoom ----------
   if (els.zoomIn) {
-    const handler = () => { setZoom(currentScale + ZOOM_STEP); };
+    const handler = () => {
+      if (imageElement) {
+        imageScale = Math.min(MAX_ZOOM, imageScale + ZOOM_STEP);
+        imageElement.style.transform = `scale(${imageScale})`;
+      } else {
+        setZoom(currentScale + ZOOM_STEP);
+      }
+    };
     els.zoomIn.addEventListener('click', handler);
     cleanupFunctions.push(() => els.zoomIn?.removeEventListener('click', handler));
   }
   if (els.zoomOut) {
-    const handler = () => { setZoom(currentScale - ZOOM_STEP); };
+    const handler = () => {
+      if (imageElement) {
+        imageScale = Math.max(MIN_ZOOM, imageScale - ZOOM_STEP);
+        imageElement.style.transform = `scale(${imageScale})`;
+      } else {
+        setZoom(currentScale - ZOOM_STEP);
+      }
+    };
     els.zoomOut.addEventListener('click', handler);
     cleanupFunctions.push(() => els.zoomOut?.removeEventListener('click', handler));
   }
   if (els.zoomFit) {
-    const handler = () => zoomToFit();
+    const handler = () => {
+      if (imageElement) {
+        const mainRect = viewerEls.main.getBoundingClientRect();
+        const imgRect = imageElement.getBoundingClientRect();
+        const fitScale = (mainRect.width - 20) / imgRect.width;
+        imageScale = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, fitScale));
+        imageElement.style.transform = `scale(${imageScale})`;
+      } else {
+        zoomToFit();
+      }
+    };
     els.zoomFit.addEventListener('click', handler);
     cleanupFunctions.push(() => els.zoomFit?.removeEventListener('click', handler));
   }
   if (els.zoomReset) {
-    const handler = () => setZoom(1.0);
+    const handler = () => {
+      if (imageElement) {
+        imageScale = 1;
+        imageElement.style.transform = 'scale(1)';
+      } else {
+        setZoom(1.0);
+      }
+    };
     els.zoomReset.addEventListener('click', handler);
     cleanupFunctions.push(() => els.zoomReset?.removeEventListener('click', handler));
   }
 
+  // Wheel zoom (Ctrl+Wheel)
   const wheelHandler = (e) => {
     if (e.ctrlKey || e.metaKey) {
       e.preventDefault();
       const delta = -Math.sign(e.deltaY) * ZOOM_STEP;
-      setZoom(currentScale + delta);
+      if (imageElement) {
+        imageScale = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, imageScale + delta));
+        imageElement.style.transform = `scale(${imageScale})`;
+      } else {
+        setZoom(currentScale + delta);
+      }
     }
   };
   els.main?.addEventListener('wheel', wheelHandler, { passive: false });
@@ -1150,7 +1479,7 @@ function setupControls() {
   }
 
   const outsideOutlineHandler = (e) => {
-    if (els.outlineDrawer && !e.target.closest('.outline-wrapper')) {
+    if (els.outlineDrawer && !e.target.closest('.outline-drawer')) {
       els.outlineDrawer.classList.remove('open');
     }
   };
@@ -1229,11 +1558,9 @@ function setupControls() {
   // ---------- Back ----------
   if (els.backBtn) {
     const handler = () => {
-      // First try to close embedded viewer
       if (typeof window.closeViewer === 'function') {
         window.closeViewer();
       } else {
-        // Fallback: navigate back
         if (window.history.length > 1) {
           window.history.back();
         } else {
@@ -1245,15 +1572,31 @@ function setupControls() {
     cleanupFunctions.push(() => els.backBtn?.removeEventListener('click', handler));
   }
 
+  // ---------- Double‑tap toggle ----------
+  if (els.main) {
+    els.main.addEventListener('click', handleDoubleTap);
+    cleanupFunctions.push(() => els.main?.removeEventListener('click', handleDoubleTap));
+  }
+
+  // ---------- Panning ----------
+  if (els.main) {
+    setupPanning(els.main);
+  }
+
+  // ---------- Pinch Zoom ----------
+  if (els.main) {
+    setupPinchZoom(els.main);
+  }
+
   // ---------- Keyboard shortcuts ----------
   const keyShortcutHandler = (e) => {
     if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
     switch (e.key) {
       case 'ArrowLeft': e.preventDefault(); if (viewMode === 'page') { if (currentPage > 1) { currentPage--; renderCurrentLayout(); } } break;
       case 'ArrowRight': e.preventDefault(); if (viewMode === 'page') { if (currentPage < totalPages) { currentPage++; renderCurrentLayout(); } } break;
-      case '+': case '=': e.preventDefault(); setZoom(currentScale + ZOOM_STEP); break;
-      case '-': e.preventDefault(); setZoom(currentScale - ZOOM_STEP); break;
-      case '0': e.preventDefault(); setZoom(1.0); break;
+      case '+': case '=': e.preventDefault(); if (imageElement) { imageScale = Math.min(MAX_ZOOM, imageScale + ZOOM_STEP); imageElement.style.transform = `scale(${imageScale})`; } else setZoom(currentScale + ZOOM_STEP); break;
+      case '-': e.preventDefault(); if (imageElement) { imageScale = Math.max(MIN_ZOOM, imageScale - ZOOM_STEP); imageElement.style.transform = `scale(${imageScale})`; } else setZoom(currentScale - ZOOM_STEP); break;
+      case '0': e.preventDefault(); if (imageElement) { imageScale = 1; imageElement.style.transform = 'scale(1)'; } else setZoom(1.0); break;
       case 'f': if (e.ctrlKey || e.metaKey) { e.preventDefault(); toggleFullscreen(); } break;
       default: break;
     }
@@ -1268,7 +1611,15 @@ function setupControls() {
 
 function setZoom(scale) {
   currentScale = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, scale));
-  renderCurrentLayout();
+  updateZoomDisplay();
+
+  if (zoomRenderTimer) clearTimeout(zoomRenderTimer);
+  zoomRenderTimer = setTimeout(() => {
+    zoomRenderTimer = null;
+    renderCurrentLayout().then(() => {
+      if (searchMatches.length) highlightCurrentMatch();
+    });
+  }, 150);
 }
 
 function zoomToFit() {
@@ -1291,7 +1642,7 @@ function updateZoomDisplay() {
 
 function updateNavButtons() {
   if (!viewerEls.prevBtn || !viewerEls.nextBtn) return;
-  if (viewMode === 'scroll') {
+  if (viewMode === 'scroll' || !pdfDoc) {
     viewerEls.prevBtn.disabled = true;
     viewerEls.nextBtn.disabled = true;
   } else {
@@ -1318,6 +1669,33 @@ function toggleFullscreen() {
 }
 
 // =========================================================================
+// Device Pixel Ratio change handler
+// =========================================================================
+
+function setupDPRListener() {
+  if (dprListener) return;
+  let lastDPR = window.devicePixelRatio || 1;
+
+  dprListener = () => {
+    const currentDPR = window.devicePixelRatio || 1;
+    if (currentDPR !== lastDPR) {
+      lastDPR = currentDPR;
+      // Re-render visible pages to adjust to new DPR
+      if (viewMode === 'scroll') {
+        updateVisiblePages();
+      } else {
+        renderSinglePage(currentPage);
+      }
+    }
+  };
+  window.addEventListener('resize', dprListener);
+  cleanupFunctions.push(() => {
+    window.removeEventListener('resize', dprListener);
+    dprListener = null;
+  });
+}
+
+// =========================================================================
 // Utility: escape HTML
 // =========================================================================
 
@@ -1325,6 +1703,79 @@ function escapeHtml(text) {
   const div = document.createElement('div');
   div.textContent = text;
   return div.innerHTML;
+}
+
+// =========================================================================
+// Helper: sync wrapper dimensions using cached base sizes
+// =========================================================================
+
+function syncWrapperDimensions() {
+  const wrappers = viewerEls.main?.querySelectorAll('.canvas-wrapper');
+  wrappers?.forEach(wrapper => {
+    const pageNum = parseInt(wrapper.dataset.page, 10);
+    const base = pageViewportCache.get(pageNum);
+    if (!base) return;
+
+    const w = base.width * currentScale;
+    const h = base.height * currentScale;
+
+    wrapper.style.width = `${w}px`;
+    wrapper.style.height = `${h}px`;
+    wrapper.style.minHeight = `${h}px`;
+
+    const canvas = wrapper.querySelector('canvas.pdf-canvas');
+    if (canvas && wrapper.dataset.renderedScale !== String(currentScale)) {
+      canvas.remove(); // remove stale old-zoom canvas
+      delete wrapper.dataset.renderedScale;
+    }
+  });
+}
+
+// =========================================================================
+// Helper: preload page sizes to prevent placeholder jumps
+// =========================================================================
+
+let pageSizePreloadStarted = false;
+
+function preloadPageSizes() {
+  if (pageSizePreloadStarted || !pdfDoc) return;
+  pageSizePreloadStarted = true;
+
+  const queue = Array.from({ length: totalPages }, (_, i) => i + 1);
+  const concurrency = 3;
+
+  const worker = async () => {
+    while (queue.length && pdfDoc) {
+      const pageNum = queue.shift();
+      try {
+        const page = await pdfDoc.getPage(pageNum);
+        const base = page.getViewport({ scale: 1 });
+
+        if (!pageViewportCache.has(pageNum)) {
+          pageViewportCache.set(pageNum, {
+            width: base.width,
+            height: base.height,
+          });
+        }
+
+        const wrapper = viewerEls.main?.querySelector(
+          `.canvas-wrapper[data-page="${pageNum}"]`
+        );
+
+        if (wrapper && !wrapper.querySelector('canvas.pdf-canvas')) {
+          wrapper.style.width = `${base.width * currentScale}px`;
+          wrapper.style.height = `${base.height * currentScale}px`;
+          wrapper.style.minHeight = `${base.height * currentScale}px`;
+        }
+      } catch (err) {
+        console.warn('Page size preload failed', pageNum, err);
+      }
+    }
+  };
+
+  Promise.all(
+    Array.from({ length: Math.min(concurrency, queue.length) }, worker)
+  ).catch(() => {});
 }
 
 // =========================================================================

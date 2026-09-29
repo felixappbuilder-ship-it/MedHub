@@ -6,26 +6,23 @@
     <title>Delete Account – MedHub</title>
 
     <link rel="manifest" href="/manifest.json">
-    <link rel="stylesheet" href="/css/common.css" media="all">
-    <link rel="stylesheet" href="/css/delete-account.css" media="all">
+    <link rel="stylesheet" href="../css/common.css" media="all">
+    <link rel="stylesheet" href="../css/delete-account.css" media="all">
 
     <!-- Core modules -->
-    <script type="module" src="/scripts/utils.js"></script>
-    <script type="module" src="/scripts/ui.js"></script>
-    <script type="module" src="/scripts/router.js"></script>
-    <script type="module" src="/scripts/app.js"></script>
-    <script type="module" src="/scripts/auth.js"></script>
-    <script type="module" src="/scripts/db.js"></script>
-    <script type="module" src="/scripts/security.js"></script>
+    <script type="module" src="../scripts/utils.js"></script>
+    <script type="module" src="../scripts/ui.js"></script>
+    <script type="module" src="../scripts/router.js"></script>
+    <script type="module" src="../scripts/app.js"></script>
+    <script type="module" src="../scripts/auth.js"></script>
+    <script type="module" src="../scripts/db.js"></script>
+    <script type="module" src="../scripts/security.js"></script>
 
     <style>
-        /* Shimmer overlay – loads before content */
+        /* Shimmer overlay */
         .shimmer-overlay {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            inset: 0;
             background: var(--bg-primary);
             z-index: 9999;
             display: flex;
@@ -44,18 +41,15 @@
         @keyframes spin { to { transform: rotate(360deg); } }
         .shimmer-overlay.hidden { display: none; }
 
-        /* Main content hidden initially */
+        /* Main content hidden initially, then shown */
         #main-content { display: none; }
 
-        /* ===== LOGIN SHEET ===== */
+        /* Login sheet – always on top when needed */
         #login-sheet {
             display: none;
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--overlay);
+            inset: 0;
+            background: rgba(0,0,0,0.6);
             backdrop-filter: blur(4px);
             z-index: 1000;
             align-items: center;
@@ -68,14 +62,10 @@
             padding: 2rem;
             max-width: 400px;
             width: 100%;
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
-        #login-sheet .login-card h2 {
-            margin-top: 0;
-        }
-        #login-sheet .login-card .form-group {
-            margin-bottom: 1rem;
-        }
+        #login-sheet .login-card h2 { margin-top: 0; }
+        #login-sheet .login-card .form-group { margin-bottom: 1rem; }
         #login-sheet .login-card .form-group label {
             display: block;
             font-weight: 500;
@@ -118,7 +108,7 @@
             display: none;
         }
 
-        /* ===== DELETE PAGE SPECIFIC ===== */
+        /* Delete page styles */
         .delete-container {
             max-width: 700px;
             margin: 0 auto;
@@ -127,20 +117,15 @@
         .warning-card {
             display: flex;
             gap: 1rem;
-            background: var(--bg-warning, #fff3cd);
+            background: rgba(239, 68, 68, 0.08);
             border-left: 4px solid var(--danger);
             padding: 1.2rem;
             border-radius: var(--radius);
             margin-bottom: 2rem;
         }
-        .warning-card .warning-icon {
-            font-size: 2rem;
-            flex-shrink: 0;
-        }
-        .warning-card .warning-text strong {
-            display: block;
-            margin-bottom: 0.3rem;
-        }
+        .warning-card .warning-icon { font-size: 2rem; flex-shrink: 0; }
+        .warning-card .warning-text strong { display: block; margin-bottom: 0.3rem; }
+
         .info-section {
             background: var(--bg-card);
             border-radius: var(--radius);
@@ -148,11 +133,7 @@
             margin-bottom: 1.2rem;
             border: 1px solid var(--border);
         }
-        .info-section h2 {
-            font-size: 1.1rem;
-            margin-top: 0;
-            margin-bottom: 0.8rem;
-        }
+        .info-section h2 { font-size: 1.1rem; margin-top: 0; margin-bottom: 0.8rem; }
         .delete-list {
             list-style: none;
             padding: 0;
@@ -171,15 +152,7 @@
             margin-right: 0.5rem;
             opacity: 0.7;
         }
-        .retained p, .offline p, .subscription-note p {
-            margin: 0.5rem 0;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-        .retained a {
-            color: var(--accent);
-            text-decoration: underline;
-        }
+
         .confirmation-section {
             margin-top: 2rem;
             padding: 1.5rem;
@@ -187,9 +160,7 @@
             border-radius: var(--radius);
             border: 1px solid var(--border);
         }
-        .confirm-step {
-            margin-bottom: 1.2rem;
-        }
+        .confirm-step { margin-bottom: 1.2rem; }
         .confirm-step label {
             display: block;
             font-weight: 500;
@@ -229,45 +200,14 @@
             border: 1px solid var(--border);
             color: var(--text-primary);
         }
-        .btn-secondary:hover {
-            background: var(--bg-hover);
-        }
+        .btn-secondary:hover { background: var(--bg-hover); }
         .btn-danger {
             background: var(--danger);
             color: white;
             border: 1px solid var(--danger);
         }
-        .btn-danger:hover:not(:disabled) {
-            background: var(--danger-dark, #c0392b);
-        }
-        .btn-danger:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-        .btn-text {
-            background: none;
-            border: none;
-            color: var(--accent);
-            cursor: pointer;
-            font-weight: 500;
-            padding: 0.2rem 0.4rem;
-        }
-        .btn-text:hover { text-decoration: underline; }
-        .btn-outline {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            padding: 0.3rem 0.6rem;
-            border-radius: 30px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            line-height: 1;
-            transition: background 0.2s, color 0.2s, border-color 0.2s;
-        }
-        .btn-outline:hover {
-            background: var(--accent);
-            color: white;
-            border-color: var(--accent);
-        }
+        .btn-danger:hover:not(:disabled) { background: var(--danger-dark, #c0392b); }
+        .btn-danger:disabled { opacity: 0.5; cursor: not-allowed; }
 
         .delete-header {
             padding: 0.5rem 1rem;
@@ -289,20 +229,10 @@
             align-items: center;
             gap: 0.6rem;
         }
-        .brand {
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-        .page-title {
-            font-size: 1.2rem;
-            margin: 0;
-        }
-        #user-status {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
+        .brand { font-weight: 600; font-size: 1.1rem; }
+        .page-title { font-size: 1.2rem; margin: 0; }
+        #user-status { font-size: 0.85rem; color: var(--text-muted); }
 
-        /* Responsive */
         @media (max-width: 600px) {
             .header-row { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
             .header-row .left-group { width: 100%; }
@@ -310,12 +240,6 @@
             .delete-container { padding: 1rem 0.8rem; }
         }
     </style>
-
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/service-worker.js').catch(() => {});
-        }
-    </script>
 </head>
 <body>
 
@@ -327,16 +251,15 @@
 
     <!-- ===== MAIN CONTENT ===== -->
     <div id="main-content">
-        <!-- Fixed header (2 rows) -->
         <header class="delete-header">
             <div class="header-row top">
                 <div class="left-group">
                     <img src="/assets/images/logo.png" alt="Logo" width="32" height="32">
                     <span class="brand">MedHub</span>
-                    <button onclick="router.navigateTo('settings.html')" class="btn-text">← Settings</button>
+                    <button onclick="window.router?.navigateTo('settings.html')" class="btn-text">← Settings</button>
                 </div>
                 <div class="right-group">
-                    <button onclick="ui.toggleTheme()" class="btn-outline">🌓</button>
+                    <button onclick="window.ui?.toggleTheme()" class="btn-outline">🌓</button>
                 </div>
             </div>
             <div class="header-row bottom">
@@ -346,16 +269,14 @@
         </header>
 
         <main class="delete-container">
-            <!-- Warning Card -->
             <div class="warning-card">
                 <div class="warning-icon">⚠️</div>
                 <div class="warning-text">
                     <strong>This action cannot be undone.</strong>
-                    <p>Deleting your MedHub account permanently removes your personal data from our systems. Some information may be retained for legal or compliance reasons (see below).</p>
+                    <p>Deleting your MedHub account permanently removes your personal data from our systems.</p>
                 </div>
             </div>
 
-            <!-- What will be deleted (matches backend deleteAllUserData) -->
             <section class="info-section">
                 <h2>What will be deleted immediately?</h2>
                 <ul class="delete-list">
@@ -375,7 +296,6 @@
                 </ul>
             </section>
 
-            <!-- What is anonymised (not deleted) -->
             <section class="info-section retained">
                 <h2>What will be anonymised (not deleted)?</h2>
                 <p><strong>Payments and transaction records</strong> – Your payment history will be dissociated from your identity (user ID set to <code>null</code>) but kept for financial audit, tax, and accounting purposes as required by law.</p>
@@ -383,29 +303,23 @@
                 <p>These anonymised records are retained only for the period required by applicable regulations and handled in accordance with our <a href="/pages/privacy.html" target="_blank">Privacy Policy</a>.</p>
             </section>
 
-            <!-- Offline data -->
             <section class="info-section offline">
                 <h2>Offline data on your device</h2>
                 <p>Some data may remain cached in your browser or IndexedDB until you manually clear your browsing data or uninstall the PWA. To remove all local copies, you can clear your site data from your browser settings.</p>
             </section>
 
-            <!-- Subscriptions note -->
             <section class="info-section subscription-note">
                 <h2>Active subscriptions</h2>
                 <p>Deleting your account does <strong>not</strong> automatically cancel any active subscriptions managed through third‑party payment providers (e.g., M‑Pesa). Please cancel them separately before deleting your account to avoid future charges.</p>
             </section>
 
-            <!-- Confirmation Section -->
             <section class="confirmation-section" id="confirmation-section">
                 <div class="confirm-step">
-                    <label for="delete-confirm-input">
-                        To confirm, type <strong>DELETE</strong> below:
-                    </label>
+                    <label for="delete-confirm-input">To confirm, type <strong>DELETE</strong> below:</label>
                     <input type="text" id="delete-confirm-input" placeholder="DELETE" autocomplete="off" />
                     <div id="confirm-error" class="confirm-error"></div>
                 </div>
 
-                <!-- Re‑authentication (password) -->
                 <div class="confirm-step" id="password-step">
                     <label for="delete-password-input">Enter your password to confirm identity:</label>
                     <input type="password" id="delete-password-input" placeholder="Your password" autocomplete="current-password" />
@@ -418,38 +332,42 @@
                 </div>
             </section>
         </main>
+    </div>
 
-        <!-- ===== LOGIN SHEET (hidden if logged in) ===== -->
-        <div id="login-sheet">
-            <div class="login-card">
-                <h2>Please log in</h2>
-                <p>You must be logged in to delete your account.</p>
-                <div class="form-group">
-                    <label for="login-email">Email or phone</label>
-                    <input type="text" id="login-email" placeholder="email or 2547..." />
-                </div>
-                <div class="form-group">
-                    <label for="login-password">Password</label>
-                    <input type="password" id="login-password" placeholder="Your password" />
-                </div>
-                <div id="login-error" class="login-error"></div>
-                <div class="button-group">
-                    <button class="btn btn-secondary" id="login-cancel-btn">Cancel</button>
-                    <button class="btn btn-primary" id="login-submit-btn">Log In</button>
-                </div>
+    <!-- ===== LOGIN SHEET ===== -->
+    <div id="login-sheet">
+        <div class="login-card">
+            <h2>Please log in</h2>
+            <p>You must be logged in to delete your account.</p>
+            <div class="form-group">
+                <label for="login-email">Email or phone</label>
+                <input type="text" id="login-email" placeholder="email or 2547..." />
+            </div>
+            <div class="form-group">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" placeholder="Your password" />
+            </div>
+            <div id="login-error" class="login-error"></div>
+            <div class="button-group">
+                <button class="btn btn-secondary" id="login-cancel-btn">Cancel</button>
+                <button class="btn btn-primary" id="login-submit-btn">Log In</button>
             </div>
         </div>
     </div>
 
     <!-- ==================== JAVASCRIPT ==================== -->
     <script type="module">
-        import * as app from '/scripts/app.js';
-        import * as auth from '/scripts/auth.js';
-        import * as ui from '/scripts/ui.js';
-        import * as router from '/scripts/router.js';
-        import * as utils from '/scripts/utils.js';
-        import * as db from '/scripts/db.js';
-        import * as security from '/scripts/security.js';
+        import * as app from '../scripts/app.js';
+        import * as auth from '../scripts/auth.js';
+        import * as ui from '../scripts/ui.js';
+        import * as router from '../scripts/router.js';
+        import * as utils from '../scripts/utils.js';
+        import * as db from '../scripts/db.js';
+        import * as security from '../scripts/security.js';
+
+        // Expose globally for inline onclick
+        window.ui = ui;
+        window.router = router;
 
         // DOM refs
         const shimmer = document.getElementById('shimmer-overlay');
@@ -463,67 +381,88 @@
         const confirmError = document.getElementById('confirm-error');
         const passwordError = document.getElementById('password-error');
 
-        // Login sheet refs
         const loginEmail = document.getElementById('login-email');
         const loginPassword = document.getElementById('login-password');
         const loginSubmitBtn = document.getElementById('login-submit-btn');
         const loginCancelBtn = document.getElementById('login-cancel-btn');
         const loginError = document.getElementById('login-error');
 
-        let isLoggedIn = false;
-        let currentUser = null;
+        // ===== HIDE SHIMMER =====
+        function hideShimmer() {
+            shimmer.classList.add('hidden');
+        }
+
+        // ===== SHOW LOGIN SHEET =====
+        function showLoginSheet() {
+            loginSheet.style.display = 'flex';
+            mainContent.style.display = 'block'; // show content but overlay
+        }
+
+        function hideLoginSheet() {
+            loginSheet.style.display = 'none';
+        }
 
         // ===== INIT =====
         async function init() {
-            shimmer.classList.remove('hidden');
-            mainContent.style.display = 'none';
+            try {
+                hideShimmer();
 
-            await app.initializeApp();
-            ui.applyTheme();
+                await app.initializeApp();
+                ui.applyTheme();
 
-            isLoggedIn = app.checkAuth();
-            currentUser = app.getUser();
+                const isLoggedIn = app.checkAuth();
+                const currentUser = app.getUser();
 
-            if (isLoggedIn && currentUser) {
-                userStatus.textContent = `👤 ${currentUser.name || currentUser.email}`;
-                loginSheet.style.display = 'none';
+                // Show main content always
                 mainContent.style.display = 'block';
-                setupDeleteFlow();
-            } else {
-                // Show login sheet
-                mainContent.style.display = 'none';
-                loginSheet.style.display = 'flex';
-                setupLoginSheet();
-            }
 
-            shimmer.classList.add('hidden');
+                if (isLoggedIn && currentUser) {
+                    userStatus.textContent = `👤 ${currentUser.name || currentUser.email}`;
+                    hideLoginSheet();
+                    setupDeleteFlow();
+                } else {
+                    userStatus.textContent = 'Not logged in';
+                    showLoginSheet();
+                    setupLoginSheet();
+                }
+
+            } catch (err) {
+                console.error('[DeleteAccount] Init error:', err);
+                hideShimmer();
+                mainContent.style.display = 'block';
+                // Show error inline
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'error-banner';
+                errorDiv.style.cssText = 'background: var(--danger); color: white; padding: 1rem; margin: 1rem; border-radius: var(--radius); text-align: center;';
+                errorDiv.textContent = 'Failed to load page. Please refresh.';
+                document.body.prepend(errorDiv);
+            }
         }
 
         // ===== DELETE FLOW =====
         function setupDeleteFlow() {
-            // Enable/disable confirm button based on "DELETE" input
-            deleteConfirmInput.addEventListener('input', () => {
-                const val = deleteConfirmInput.value.trim();
-                const isDelete = val === 'DELETE';
-                confirmBtn.disabled = !isDelete || !deletePasswordInput.value.trim();
-                confirmError.textContent = '';
-                if (val && val !== 'DELETE') {
-                    confirmError.textContent = 'Please type DELETE exactly.';
-                }
-            });
-
-            deletePasswordInput.addEventListener('input', () => {
+            function validate() {
                 const isDelete = deleteConfirmInput.value.trim() === 'DELETE';
-                confirmBtn.disabled = !isDelete || !deletePasswordInput.value.trim();
-                passwordError.textContent = '';
-            });
+                const hasPassword = deletePasswordInput.value.trim().length > 0;
+                confirmBtn.disabled = !isDelete || !hasPassword;
+                confirmBtn.style.opacity = confirmBtn.disabled ? '0.5' : '1';
+                if (deleteConfirmInput.value.trim() && deleteConfirmInput.value.trim() !== 'DELETE') {
+                    confirmError.textContent = 'Please type DELETE exactly.';
+                } else {
+                    confirmError.textContent = '';
+                }
+                if (hasPassword) {
+                    passwordError.textContent = '';
+                }
+            }
 
-            // Cancel
+            deleteConfirmInput.addEventListener('input', validate);
+            deletePasswordInput.addEventListener('input', validate);
+
             cancelBtn.addEventListener('click', () => {
                 router.navigateTo('settings.html');
             });
 
-            // Confirm delete
             confirmBtn.addEventListener('click', async () => {
                 const password = deletePasswordInput.value.trim();
                 if (!password) {
@@ -535,21 +474,11 @@
                     return;
                 }
 
-                const token = auth.getToken();
-                if (!token) {
-                    ui.showToast('Session expired. Please log in again.', 'error');
-                    loginSheet.style.display = 'flex';
-                    return;
-                }
-
                 ui.showLoading('Deleting your account...');
                 try {
-                    // Call auth.deleteAccount (which calls the backend action)
                     await auth.deleteAccount(password);
-                    // The auth.deleteAccount function already logs out and clears storage
                     ui.hideLoading();
                     ui.showToast('Account permanently deleted.', 'success');
-                    // Redirect to welcome page
                     router.navigateTo('welcome.html');
                 } catch (err) {
                     ui.hideLoading();
@@ -572,12 +501,12 @@
                 ui.showLoading('Logging in...');
                 try {
                     const deviceFingerprint = security.generateDeviceFingerprint();
-                    const user = await auth.login(identifier, password, {
+                    await auth.login(identifier, password, {
                         platform: 'web',
                         deviceFingerprint
                     });
                     ui.hideLoading();
-                    // Re‑initialize the page after login
+                    // Re-init to show delete form
                     await init();
                 } catch (err) {
                     ui.hideLoading();
@@ -590,7 +519,6 @@
                 router.navigateTo('settings.html');
             });
 
-            // Press Enter to submit
             loginPassword.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter') loginSubmitBtn.click();
             });
@@ -602,7 +530,5 @@
         // ===== START =====
         init();
     </script>
-
-    <script data-lazy data-src="/scripts/offline.js"></script>
 </body>
 </html>

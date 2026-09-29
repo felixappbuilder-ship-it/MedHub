@@ -1,6 +1,14 @@
-/* frontend-user/css/viewer.css */
-/* Scoped to the embedded viewer container */
+/* ==========================================================================
+   VIEWER — embedded document viewer (PDF/image)
+   All selectors are scoped under #viewer so they can't leak into the app
+   shell. Requires common.css (tokens, reset, buttons base, spinner base,
+   keyframes spin).
+   Adds ONLY: viewer shell, header, main scroll/page modes, canvas wrapper,
+   text layer + search highlight, footer nav + zoom, search bar, outline
+   drawer, loading, error state, file input.
+   ========================================================================== */
 
+/* ---------- Shell ---------- */
 #viewer .viewer-container {
     display: flex;
     flex-direction: column;
@@ -10,6 +18,7 @@
     position: relative;
 }
 
+/* ---------- Header ---------- */
 #viewer .viewer-header {
     display: flex;
     justify-content: space-between;
@@ -21,7 +30,6 @@
     z-index: 10;
     gap: 0.3rem;
 }
-
 #viewer .viewer-header .left-group {
     display: flex;
     align-items: center;
@@ -29,14 +37,12 @@
     flex: 1;
     min-width: 0;
 }
-
 #viewer .viewer-header .right-group {
     display: flex;
     align-items: center;
     gap: 0.3rem;
     flex-shrink: 0;
 }
-
 #viewer .viewer-title {
     font-weight: 500;
     font-size: 0.95rem;
@@ -47,6 +53,7 @@
     color: var(--text-primary);
 }
 
+/* ---------- Buttons (override common's .btn-icon / button bases) ---------- */
 #viewer .btn-icon {
     background: none;
     border: none;
@@ -64,6 +71,27 @@
     border-radius: 4px;
 }
 
+#viewer .btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.9rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    cursor: pointer;
+    min-height: 32px;
+    white-space: nowrap;
+}
+/* NOTE: --bg-hover is not defined in common — this always falls back to
+   #3a3a4e (a dark slate). Pre-existing; left as-is. */
+#viewer .btn-back:hover {
+    background: var(--bg-hover, #3a3a4e);
+}
+
+/* ---------- Main viewing area ---------- */
 #viewer .viewer-main {
     flex: 1;
     overflow: auto;
@@ -73,41 +101,93 @@
     padding: 0.5rem;
     background: var(--bg-primary);
     position: relative;
+    touch-action: none;          /* custom pan/zoom; block browser gestures */
 }
-
 #viewer .viewer-main.scroll-view {
     overflow-y: auto;
+    overflow-x: hidden;
     align-items: flex-start;
+    touch-action: pan-y;         /* vertical scroll only */
 }
-
 #viewer .viewer-main.page-view {
     overflow: hidden;
     align-items: center;
+    justify-content: center;
+    touch-action: none;
 }
 
+/* ---------- Page container (JS-injected PDF pages) ----------
+   Block common's `.page-container { max-width: 1200px; margin: 0 auto;
+   padding: 0 1.5rem }` — those three declarations would otherwise apply
+   to every JS-injected page canvas and constrain/offset the pan-zoom view. */
 #viewer .page-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: auto;
+    min-width: 0;
     gap: 0.5rem;
+    transform-origin: 0 0;
+    will-change: transform;
+    max-width: none;
+    margin: 0;
+    padding: 0;
 }
-
 #viewer .page-container .canvas-wrapper {
-    background: white;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
-    overflow: hidden;
+    overflow: visible;
     width: fit-content;
-    max-width: 100%;
+    max-width: none;
+    position: relative;          /* anchor for absolute canvas/textLayer */
 }
-
 #viewer .page-container canvas {
     display: block;
-    max-width: 100%;
+    max-width: none;             /* allow enlarged canvas to overflow viewport */
     height: auto;
 }
 
+/* Image viewer wrapper */
+#viewer .viewer-main img {
+    max-width: none;
+    max-height: none;
+    object-fit: contain;
+    transform-origin: center center;
+    touch-action: none;
+    will-change: transform;
+}
+
+/* ---------- Text layer & search highlight ---------- */
+#viewer .textLayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;        /* clicks pass through to canvas */
+    color: transparent;          /* hidden text used only for selection */
+    line-height: 1;
+    z-index: 2;
+}
+#viewer .textLayer span {
+    color: transparent;
+    position: absolute;
+    white-space: pre;
+    cursor: text;
+    transform-origin: 0% 0%;
+}
+
+#viewer .search-highlight {
+    position: absolute;
+    background: rgba(255, 255, 0, 0.4);
+    pointer-events: none;
+    z-index: 3;
+}
+#viewer .search-highlight.active {
+    background: rgba(255, 165, 0, 0.6);
+    outline: 1px solid orange;
+}
+
+/* ---------- Footer ---------- */
 #viewer .viewer-footer {
     background: var(--bg-card);
     border-top: 1px solid var(--border);
@@ -119,13 +199,11 @@
     gap: 0.5rem;
     flex-shrink: 0;
 }
-
 #viewer .page-nav {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
-
 #viewer .page-nav button,
 #viewer .zoom-controls button {
     background: var(--bg-secondary);
@@ -140,19 +218,17 @@
     opacity: 0.4;
     cursor: not-allowed;
 }
-
 #viewer .zoom-controls {
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
-
 #viewer #viewer-zoom-level {
     min-width: 50px;
     text-align: center;
 }
 
-/* Search bar */
+/* ---------- Search bar ---------- */
 #viewer .search-bar {
     display: none;
     align-items: center;
@@ -162,9 +238,7 @@
     padding: 0.1rem 0.4rem;
     border: 1px solid var(--border);
 }
-#viewer .search-bar.active {
-    display: flex;
-}
+#viewer .search-bar.active { display: flex; }
 #viewer .search-bar input {
     border: none;
     background: transparent;
@@ -180,7 +254,7 @@
     min-width: 40px;
 }
 
-/* Outline drawer */
+/* ---------- Outline drawer ---------- */
 #viewer .outline-drawer {
     position: absolute;
     top: 100%;
@@ -196,9 +270,7 @@
     display: none;
     padding: 0.3rem 0;
 }
-#viewer .outline-drawer.open {
-    display: block;
-}
+#viewer .outline-drawer.open { display: block; }
 #viewer .outline-drawer .outline-item {
     padding: 0.4rem 1rem;
     cursor: pointer;
@@ -213,7 +285,9 @@
 #viewer .outline-drawer .outline-item .level-2 { padding-left: 1.5rem; }
 #viewer .outline-drawer .outline-item .level-3 { padding-left: 2.5rem; }
 
-/* Loading */
+/* ---------- Loading ----------
+   Overrides common's .spinner (48×48, white border) with a theme-aware
+   accent version. */
 #viewer .loading-container {
     text-align: center;
     color: var(--text-muted);
@@ -227,19 +301,19 @@
     animation: spin 1s linear infinite;
     margin: 0 auto 1rem;
 }
-@keyframes spin { to { transform: rotate(360deg); } }
 
-/* Error */
-#viewer .error-container {
+/* ---------- Error / unsupported ---------- */
+#viewer .error-container,
+#viewer .unsupported {
     text-align: center;
     padding: 2rem;
     color: var(--text-primary);
 }
-#viewer .error-container .btn-secondary {
+#viewer .error-container .btn-secondary,
+#viewer .unsupported .btn-primary {
     margin-top: 1rem;
+    display: inline-block;
 }
 
-/* File input for local files */
-#viewer .file-input {
-    display: none;
-}
+/* ---------- Hidden file input ---------- */
+#viewer .file-input { display: none; }

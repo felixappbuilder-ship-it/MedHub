@@ -1,4 +1,4 @@
-// frontend-user/scripts/analytics.js
+// scripts/analytics.js
 
 /**
  * Performance Analytics Module
@@ -6,13 +6,17 @@
  * All data is derived from exam results stored in IndexedDB.
  * Integrates with the Performance Rating Engine for user ratings and rankings.
  * Also uses AI to generate personalized insights and recommendations.
+ *
+ * Now uses cached performance/leaderboard from db.js (populated by sync.js)
+ * to provide offline capabilities.
  */
 
 import * as utils from './utils.js';
 import * as db from './db.js';
 import * as sync from './sync.js';
 import * as performanceRating from './performance-rating-v2.js';
-// NEW: import AI insights generator from performance-ai.js (no direct ai.js)
+import * as auth from './auth.js';
+import { convexHttpClient } from './convex-client.js';
 import { generateAIInsightsFromRaw } from './performance-ai.js';
 
 // ==================== CONSTANTS ====================
@@ -159,12 +163,6 @@ export async function identifyWeakAreas() {
 
 // ==================== AI-POWERED INSIGHTS ====================
 
-/**
- * Generate AI-powered personalized insights based on user's exam history.
- * Uses the AI engine via performance-ai.js to provide natural-language recommendations.
- * Cached to avoid repeated API calls.
- * No UI spinners are triggered.
- */
 export async function generateAIInsights(forceRefresh = false) {
     const now = Date.now();
     if (!forceRefresh && aiInsightsCache && (now - aiInsightsCacheTime) < AI_CACHE_TTL) {
@@ -172,7 +170,6 @@ export async function generateAIInsights(forceRefresh = false) {
     }
 
     try {
-        // Gather raw data (no pre‑interpreted summary)
         const exams = filterValidExams(await db.getAllExamResults());
         if (!exams.length) {
             aiInsightsCache = { insights: 'Complete your first exam to get personalized AI insights!' };
@@ -188,7 +185,6 @@ export async function generateAIInsights(forceRefresh = false) {
             subjectAnalysis: analyzeSubjects(exams)
         };
 
-        // Call the AI with raw data
         const aiResult = await generateAIInsightsFromRaw(rawData);
 
         if (aiResult) {
@@ -196,7 +192,6 @@ export async function generateAIInsights(forceRefresh = false) {
             aiInsightsCacheTime = now;
             return aiResult;
         } else {
-            // Fallback: rule-based insights
             const fallback = {
                 insights: 'AI insights currently unavailable. Review your weak areas and practice consistently.',
                 recommendations: ['Focus on weak topics', 'Practice timed exams'],
@@ -226,7 +221,6 @@ export async function calculateAllAnalytics(results = null) {
         const rawExams = results || (await db.getAllExamResults()) || [];
         const exams = filterValidExams(rawExams);
 
-        // Get AI insights (cached)
         let aiInsights = null;
         if (navigator.onLine) {
             try {
@@ -236,6 +230,9 @@ export async function calculateAllAnalytics(results = null) {
             }
         }
 
+        // Get rating info from cache or local user
+        const ratingInfo = await getUserRatingInfo();
+
         return {
             summary: calculateSummary(exams),
             trends: calculateTrends(exams),
@@ -243,9 +240,9 @@ export async function calculateAllAnalytics(results = null) {
             studyPatterns: analyzeStudyPatterns(exams),
             weakAreas: await identifyWeakAreas(),
             recommendations: generateRecommendations(exams, aiInsights),
-            rating: await getUserRatingInfo(),
+            rating: ratingInfo,
             aiInsights: aiInsights,
-            exams: exams // Include full exams array for detailed academic profile
+            exams: exams
         };
     } catch (e) {
         console.warn('calculateAllAnalytics failed', e);
@@ -270,16 +267,33 @@ export async function refreshAnalytics(forceSync = false) {
     } else if (forceSync) {
         console.warn('[Analytics] Force sync requested but device is offline.');
     }
-    // Force refresh AI insights
     await generateAIInsights(true);
     return await calculateAllAnalytics();
 }
 
-// ==================== USER RATING INFO ====================
+// ==================== USER RATING INFO (cached-first) ====================
 
 export async function getUserRatingInfo() {
     try {
-        const user = window.app?.getUser?.();
+        // 1. Try cached performance from IndexedDB (populated by sync.js)
+        const cachedPerf = await db.getUserPerformance();
+        if (cachedPerf) {
+            return {
+                rating: cachedPerf.rating || 100,
+                rank: cachedPerf.rank || { rank: 1, label: 'Seed', title: 'Starting Out' },
+                historyEWMA: cachedPerf.historyEWMA || 0.5,
+                completedExams: cachedPerf.completedExams || 0,
+                reliability: cachedPerf.startedExams ? Math.min(1, (cachedPerf.completedExams || 0) / (cachedPerf.startedExams || 1)) : 1,
+                lastExamPR: cachedPerf.lastExamPR || null,
+                leaderboardPoints: cachedPerf.leaderboardPoints || 0,
+                completedChallenges: cachedPerf.completedChallenges || 0,
+                integrityScore: cachedPerf.integrityScore || 1,
+                achievements: cachedPerf.achievements || []
+            };
+        }
+
+        // 2. Fallback to local user object
+        const user = auth.getUser();
         if (!user) return null;
 
         const rating = user.rating || 100;
@@ -295,7 +309,11 @@ export async function getUserRatingInfo() {
             historyEWMA,
             completedExams,
             reliability,
-            lastExamPR: user.lastExamPR || null
+            lastExamPR: user.lastExamPR || null,
+            leaderboardPoints: user.leaderboardPoints || 0,
+            completedChallenges: user.completedChallenges || 0,
+            integrityScore: user.integrityScore || 1,
+            achievements: user.achievements || []
         };
     } catch (e) {
         console.warn('getUserRatingInfo failed', e);
@@ -303,10 +321,30 @@ export async function getUserRatingInfo() {
     }
 }
 
-// ==================== LEADERBOARD ====================
+// ==================== LEADERBOARD (cached-first) ====================
 
 export async function getLeaderboard(limit = 100) {
     try {
+        // 1. Try cached leaderboard from IndexedDB (populated by sync.js)
+        const cached = await db.getLeaderboard();
+        if (cached && cached.length > 0) {
+            // If online, we may want to refresh, but for now use cache
+            return cached.slice(0, limit);
+        }
+
+        // 2. If online, fetch from backend and cache
+        if (navigator.onLine && auth.getToken()) {
+            const result = await convexHttpClient.action("users/queries:getLeaderboard", {
+                token: auth.getToken(),
+                limit
+            });
+            if (result.success && result.data) {
+                await db.saveLeaderboard(result.data);
+                return result.data.slice(0, limit);
+            }
+        }
+
+        // 3. Fallback to local users
         const users = await db.getAllUsers();
         return users
             .filter(u => u.rating && u.rating > 0)
@@ -326,9 +364,11 @@ export async function getLeaderboard(limit = 100) {
     }
 }
 
+// ==================== RATING HISTORY ====================
+
 export async function getRatingHistory(userId = null, limit = 30) {
     try {
-        const targetUserId = userId || window.app?.getUser?.()?._id;
+        const targetUserId = userId || auth.getUser()?._id;
         if (!targetUserId) return [];
 
         const exams = await db.getAllExamResults();
@@ -361,17 +401,14 @@ function calculateSummary(exams) {
             totalStudyTime: 0,
             bestScore: 0,
             worstScore: 0,
-            correct: 0 // Add correct field for pie chart
+            correct: 0
         };
     }
 
     const totalExams = exams.length;
     const totalQuestions = exams.reduce((sum, e) => sum + (e.totalQuestions || 0), 0);
-    
-    // Compute correct answers, falling back to scorePercentage if missing
     const totalCorrect = exams.reduce((sum, e) => {
         if (e.correctAnswers !== undefined) return sum + e.correctAnswers;
-        // fallback: derive from scorePercentage and totalQuestions
         const score = e.scorePercentage || 0;
         const questions = e.totalQuestions || 1;
         return sum + Math.round((score / 100) * questions);
@@ -392,7 +429,7 @@ function calculateSummary(exams) {
         totalStudyTime: Math.round(totalHours * 10) / 10,
         bestScore: Math.round(bestScore),
         worstScore: Math.round(worstScore),
-        correct: totalCorrect // Expose correct count
+        correct: totalCorrect
     };
 }
 
@@ -548,13 +585,12 @@ function analyzeStudyPatterns(exams) {
     const totalMinutes = totalMs / (1000 * 60);
     const avgSession = exams.length ? totalMinutes / exams.length : 0;
 
-    // Additional patterns for academic profile
     let totalQuestions = 0;
     let longestSession = 0;
     let sessionCount = 0;
     exams.forEach(e => {
         totalQuestions += e.totalQuestions || 0;
-        const duration = (e.timeSpent || 0) / (1000 * 60); // minutes
+        const duration = (e.timeSpent || 0) / (1000 * 60);
         if (duration > longestSession) longestSession = Math.round(duration);
         sessionCount++;
     });
@@ -601,10 +637,6 @@ function calculateStreak(exams) {
     return streak;
 }
 
-/**
- * Generate recommendations (rule-based + AI-enhanced).
- * Merges AI insights with rule-based ones.
- */
 function generateRecommendations(exams, aiInsights = null) {
     const recommendations = [];
 
@@ -616,7 +648,6 @@ function generateRecommendations(exams, aiInsights = null) {
         return recommendations;
     }
 
-    // Rule-based recommendations
     const weakAreas = identifyWeakAreasSync(exams);
     if (weakAreas.length > 0) {
         weakAreas.slice(0, 3).forEach(area => {
@@ -655,7 +686,6 @@ function generateRecommendations(exams, aiInsights = null) {
         });
     }
 
-    // If AI insights are available, add them as a special recommendation
     if (aiInsights) {
         recommendations.push({
             type: 'ai_insights',

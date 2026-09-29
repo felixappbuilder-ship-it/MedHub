@@ -1,831 +1,253 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configure Exam – MedHub</title>
-
-    <link rel="manifest" href="/manifest.json">
-    <link rel="stylesheet" href="/css/common.css" media="all">
-    <link rel="stylesheet" href="/css/exam-settings.css" media="all">
-
-    <!-- Core modules (loaded asynchronously) -->
-    <script type="module" src="/scripts/utils.js"></script>
-    <script type="module" src="/scripts/ui.js"></script>
-    <script type="module" src="/scripts/router.js"></script>
-    <script type="module" src="/scripts/app.js"></script>
-    <script type="module" src="/scripts/exam-engine.js"></script>
-    <script type="module" src="/scripts/questions.js"></script>
-    <script type="module" src="/scripts/analytics.js"></script>
-    <script type="module" src="/scripts/subscription.js"></script>
-    <script type="module" src="/scripts/exam-settings.js"></script>
-
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/service-worker.js').catch(() => {});
-        }
-    </script>
-
-    <style>
-        /* Inline styles for challenge UI */
-        #challenge-status {
-            margin: 0.5rem 0;
-            font-weight: 500;
-        }
-        .challenge-code-display {
-            background: var(--bg-card);
-            padding: 0.5rem 1rem;
-            border-radius: var(--radius);
-            border: 1px solid var(--border);
-            font-family: monospace;
-            font-size: 1.2rem;
-            text-align: center;
-            margin: 0.5rem 0;
-        }
-        .waiting-message {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-        .challenge-actions {
-            margin-top: 0.5rem;
-        }
-        .challenge-actions .btn-sm {
-            margin-right: 0.5rem;
-        }
-        .challenge-extra.show {
-            display: block;
-        }
-        .challenge-extra {
-            display: none;
-        }
-
-        /* ============================================================
-           OVERRIDE: Make bottom card push down dynamically
-           ============================================================ */
-        .bottom-card {
-            position: fixed !important;
-            top: 0;
-            bottom: 0 !important;
-            left: 0;
-            right: 0;
-            height: auto !important;
-            max-height: none !important;
-            border-top: 2px solid var(--accent);
-            border-radius: 24px 24px 0 0;
-            box-shadow: 0 -10px 30px rgba(0,0,0,0.2);
-            padding: 1.5rem 1.5rem 1rem;
-            overflow-y: auto;
-            z-index: 50;
-            transition: transform 0.3s ease, top 0.3s ease;
-            transform: translateY(0);
-        }
-        .bottom-card.closed {
-            transform: translateY(100%);
-        }
-
-        /* Join code input section (step 1) */
-        .join-code-row {
-            margin-top: 1.5rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border);
-        }
-        .join-code-row p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 0.5rem;
-        }
-        .join-code-row input {
-            transition: border-color 0.2s;
-        }
-        .join-code-row input:focus {
-            border-color: var(--accent);
-        }
-
-        /* Share link area */
-        .share-link-area {
-            margin-top: 0.75rem;
-            display: none;
-        }
-        .share-link-area label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-        .share-link-area input {
-            font-family: monospace;
-            font-size: 0.9rem;
-            width: 100%;
-            padding: 0.5rem;
-            border-radius: var(--radius-sm);
-            border: 1px solid var(--border);
-            background: var(--bg-card);
-            color: var(--text-primary);
-        }
-        .share-link-area .btn-sm {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            padding: 0.3rem 0.8rem;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        .share-link-area .btn-sm:hover {
-            background: var(--border);
-        }
-    </style>
-</head>
-
-<body>
-
-    <!-- ============================================================ -->
-    <!--  SHIMMER SKELETON (dark theme, appears before any import)     -->
-    <!-- ============================================================ -->
-    <div id="shimmer-skeleton" style="position:fixed; top:0; left:0; right:0; bottom:0; z-index:9999; background:#1a1a2e; display:flex; flex-direction:column; padding:0.5rem 1rem;">
-        <!-- Header skeleton (2 rows) -->
-        <div style="display:flex; justify-content:space-between; align-items:center; padding:0.5rem 0; border-bottom:1px solid #333; margin-bottom:0.3rem;">
-            <div style="display:flex; align-items:center; gap:0.75rem;">
-                <div style="width:32px; height:32px; border-radius:6px; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite;"></div>
-                <div style="width:80px; height:20px; border-radius:4px; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite;"></div>
-                <div style="width:60px; height:20px; border-radius:4px; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite;"></div>
-            </div>
-            <div style="width:40px; height:40px; border-radius:50%; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite;"></div>
-        </div>
-        <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom:0.5rem;">
-            <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
-                <div style="width:40px; height:40px; border-radius:50%; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite;"></div>
-                <div style="width:120px; height:24px; border-radius:4px; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite;"></div>
-                <div style="width:160px; height:18px; border-radius:4px; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite;"></div>
-            </div>
-            <div style="display:flex; gap:1rem;">
-                <div style="width:60px; height:24px; border-radius:9999px; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite;"></div>
-                <div style="width:60px; height:24px; border-radius:9999px; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite;"></div>
-            </div>
-        </div>
-
-        <!-- Bottom card skeleton -->
-        <div style="flex:1; display:flex; align-items:center; justify-content:center; margin-top:2rem;">
-            <div style="width:90%; max-width:400px; background:#2a2a3e; border-radius:24px; padding:1.5rem; border:1px solid #444;">
-                <div style="width:60%; height:28px; margin:0 auto 1rem; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite; border-radius:4px;"></div>
-                <div style="height:50px; border-radius:var(--radius); background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite; margin-bottom:0.75rem;"></div>
-                <div style="height:50px; border-radius:var(--radius); background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite; margin-bottom:0.75rem;"></div>
-                <div style="height:50px; border-radius:var(--radius); background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite; margin-bottom:1.5rem;"></div>
-                <div style="height:44px; border-radius:30px; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite;"></div>
-            </div>
-        </div>
+<section
+  class="page exam-settings-page"
+  data-page="exam-settings"
+  data-script="/scripts/pages/exam-settings.js"
+  data-style="/css/exam-settings.css"
+  data-title="Configure Exam"
+  data-auth="required"
+  data-cache="true"
+  data-transition="fade"
+>
+  <!-- ============================================================ -->
+  <!--  SHIMMER SKELETON                                            -->
+  <!-- ============================================================ -->
+  <div id="shimmer-skeleton" style="position:fixed; top:0; left:0; right:0; bottom:0; z-index:9999; background:#1a1a2e; display:flex; flex-direction:column; padding:0.5rem 1rem;">
+    <!-- (Shimmer HTML unchanged, but can be kept) -->
+    <div style="display:flex; justify-content:space-between; align-items:center; padding:0.5rem 0; border-bottom:1px solid #333; margin-bottom:0.3rem;">
+      <div style="display:flex; align-items:center; gap:0.75rem;">
+        <div style="width:32px; height:32px; border-radius:6px; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite;"></div>
+        <div style="width:80px; height:20px; border-radius:4px; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite;"></div>
+        <div style="width:60px; height:20px; border-radius:4px; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite;"></div>
+      </div>
+      <div style="width:40px; height:40px; border-radius:50%; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite;"></div>
     </div>
-
-    <!-- ============================================================ -->
-    <!--  REAL CONTENT (hidden until loaded)                         -->
-    <!-- ============================================================ -->
-    <div id="main-content" style="display: none;">
-
-        <!-- Fixed Header (2 rows) -->
-        <header class="fixed-header" id="fixedHeader">
-            <div class="header-row top">
-                <div class="left-group">
-                    <img src="/assets/images/logo.png" alt="Logo" width="32" height="32">
-                    <span class="brand">MedHub</span>
-                    <button onclick="router.navigateTo('subjects.html')" class="btn-text">← Subjects</button>
-                </div>
-                <div class="right-group">
-                    <button onclick="ui.toggleTheme()" class="btn-outline">🌓</button>
-                </div>
-            </div>
-            <div class="header-row bottom">
-                <div class="subject-area">
-                    <span class="icon" id="subject-icon">📚</span>
-                    <span class="name" id="subject-name">Physiology</span>
-                    <span class="topics" id="subject-topics">Respiratory • Cardiovascular • Renal</span>
-                </div>
-                <div class="stats" id="subject-stats">
-                    <span id="stat-questions">50 questions</span>
-                    <span id="stat-difficulty">Mixed</span>
-                    <span id="stat-time">≈ 50 min</span>
-                </div>
-            </div>
-        </header>
-
-        <!-- Floating Bottom Card (now with dynamic top) -->
-        <div class="bottom-card" id="bottomCard">
-
-            <!-- Step 1: Choose Exam Type -->
-            <div class="card-step active" id="step1">
-                <h3 style="margin-top: 0; text-align: center;">Choose Exam Type</h3>
-                <div class="mode-option" data-mode="standard">
-                    <span class="icon">📝</span>
-                    <div class="info">
-                        <div class="title">Standard Exam</div>
-                        <div class="desc">Real exam simulation</div>
-                    </div>
-                </div>
-                <div class="mode-option" data-mode="challenge">
-                    <span class="icon">👥</span>
-                    <div class="info">
-                        <div class="title">Community Challenge</div>
-                        <div class="desc">Compete with other students</div>
-                    </div>
-                </div>
-                <div class="mode-option" data-mode="revision">
-                    <span class="icon">📖</span>
-                    <div class="info">
-                        <div class="title">Revision</div>
-                        <div class="desc">Learn with explanations</div>
-                    </div>
-                </div>
-                <div class="action-row">
-                    <button class="btn btn-primary" id="continue-btn">Continue →</button>
-                </div>
-
-                <!-- NEW: Join by code section -->
-                <div class="join-code-row">
-                    <p>Have a challenge code?</p>
-                    <div style="display: flex; gap: 0.5rem;">
-                        <input type="text" id="join-code-input" placeholder="Enter code" style="flex:1; max-width:200px; padding:0.5rem; border-radius:var(--radius-sm); border:1px solid var(--border); background:var(--bg-card); color:var(--text-primary);">
-                        <button id="join-code-btn" class="btn btn-primary" style="flex:0; padding:0.5rem 1rem;">Join</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Step 2-join: Join Challenge (pre-filled via URL or manual) -->
-            <div class="card-step" id="step2-join">
-                <h3 style="margin-top: 0; text-align: center;">🔗 Join Challenge</h3>
-                <div class="challenge-code-display" id="join-code-display">---</div>
-                <p id="join-status" style="color:var(--text-secondary); font-size:0.9rem; text-align: center;"></p>
-                <div class="action-row">
-                    <button class="btn btn-secondary back-btn">← Back</button>
-                    <button class="btn btn-primary" id="join-start-btn">Join & Start</button>
-                </div>
-            </div>
-
-            <!-- Step 2a: Standard Exam Configuration -->
-            <div class="card-step" id="step2-standard">
-                <h3 style="margin-top: 0;">📝 Standard Exam</h3>
-                <div class="config-group">
-                    <label>Questions</label>
-                    <div class="question-stepper">
-                        <button class="qty-dec">−</button>
-                        <input type="number" id="std-qty" value="50" min="1">
-                        <button class="qty-inc">+</button>
-                        <span class="max-hint" id="std-max-hint">max 100</span>
-                    </div>
-                    <div class="validation-warning" id="std-warning">Number of questions exceeds available questions.</div>
-                </div>
-                <div class="config-group">
-                    <label>Difficulty</label>
-                    <div class="difficulty-group" id="std-difficulty">
-                        <button data-diff="easy">Easy</button>
-                        <button data-diff="mixed" class="active">Mixed</button>
-                        <button data-diff="hard">Hard</button>
-                    </div>
-                </div>
-                <div class="action-row">
-                    <button class="btn btn-secondary back-btn">← Back</button>
-                    <button class="btn btn-primary start-exam-btn">▶ Start Exam</button>
-                </div>
-            </div>
-
-            <!-- Step 2b: Community Challenge Configuration -->
-            <div class="card-step" id="step2-challenge">
-                <h3 style="margin-top: 0;">👥 Community Challenge</h3>
-                <div class="config-group">
-                    <label>Questions</label>
-                    <div class="question-stepper">
-                        <button class="qty-dec">−</button>
-                        <input type="number" id="challenge-qty" value="50" min="1">
-                        <button class="qty-inc">+</button>
-                        <span class="max-hint" id="challenge-max-hint">max 100</span>
-                    </div>
-                    <div class="validation-warning" id="challenge-warning">Number of questions exceeds available questions.</div>
-                </div>
-                <div class="config-group">
-                    <label>Challenge Type</label>
-                    <div class="challenge-type-group" id="challenge-type">
-                        <button data-type="friend" class="active">Friend</button>
-                        <button data-type="anyone">Anyone Online</button>
-                    </div>
-                </div>
-                <!-- Friend challenge extra -->
-                <div class="challenge-extra show" id="friend-extra">
-                    <label>Enter friend's email:</label>
-                    <input type="email" id="invite-friend-input" placeholder="friend@example.com">
-                    <div class="action-row" style="margin-top:0.5rem;">
-                        <button class="btn btn-secondary" id="send-invite-btn">Send Invite</button>
-                        <button class="btn btn-secondary" id="cancel-invite-btn">Cancel</button>
-                    </div>
-                    <div id="invite-status" style="margin-top:0.5rem; font-size:0.85rem;"></div>
-                    <div id="challenge-status" style="margin-top:0.5rem;"></div>
-                    <div class="challenge-code-display" id="challenge-code-display">---</div>
-                    <div class="waiting-message" id="waiting-message">⏳ Waiting for opponent...</div>
-                    <div class="challenge-actions" id="challenge-actions" style="display:none;">
-                        <button class="btn-sm" id="copy-challenge-code-btn">📋 Copy Code</button>
-                        <button class="btn-sm" id="share-challenge-code-btn">📤 Share Code</button>
-                    </div>
-                    <!-- NEW: shareable link area (hidden by default) -->
-                    <div class="share-link-area" id="share-link-area">
-                        <label>Share this link:</label>
-                        <div style="display:flex; gap:0.5rem; margin-top:0.25rem;">
-                            <input type="text" id="share-link-input" readonly>
-                            <button class="btn-sm" id="copy-share-link-btn">📋 Copy</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Anyone online extra -->
-                <div class="challenge-extra" id="anyone-extra">
-                    <label>Invitations</label>
-                    <div id="invitation-list" class="user-list">
-                        <p style="color:var(--text-muted);">No pending invitations.</p>
-                    </div>
-                    <div class="action-row">
-                        <button class="btn btn-secondary" id="refresh-invitations">🔄 Refresh</button>
-                        <button class="btn btn-secondary" id="create-group-btn">Create Group Challenge</button>
-                    </div>
-                </div>
-                <div class="action-row">
-                    <button class="btn btn-secondary back-btn">← Back</button>
-                    <button class="btn btn-primary start-exam-btn" id="challenge-start-btn">Create Challenge →</button>
-                </div>
-            </div>
-
-            <!-- Step 2c: Revision Configuration -->
-            <div class="card-step" id="step2-revision">
-                <h3 style="margin-top: 0;">📖 Revision</h3>
-                <div class="config-group">
-                    <label>Questions</label>
-                    <div class="question-stepper">
-                        <button class="qty-dec">−</button>
-                        <input type="number" id="rev-qty" value="30" min="1">
-                        <button class="qty-inc">+</button>
-                        <span class="max-hint" id="rev-max-hint">max 100</span>
-                    </div>
-                    <div class="validation-warning" id="rev-warning">Number of questions exceeds available questions.</div>
-                </div>
-                <div class="config-group">
-                    <label>Difficulty</label>
-                    <div class="difficulty-group" id="rev-difficulty">
-                        <button data-diff="easy">Easy</button>
-                        <button data-diff="mixed" class="active">Mixed</button>
-                        <button data-diff="hard">Hard</button>
-                    </div>
-                </div>
-                <ul class="feature-list">
-                    <li>Instant marking</li>
-                    <li>Answer shown</li>
-                    <li>Explanation shown</li>
-                </ul>
-                <div class="action-row">
-                    <button class="btn btn-secondary back-btn">← Back</button>
-                    <button class="btn btn-primary start-exam-btn">▶ Start Revision</button>
-                </div>
-            </div>
-
-        </div><!-- end bottom-card -->
-    </div><!-- end main-content -->
-
-    <!-- ============================================================ -->
-    <!--  SMALL INLINE SPINNER (for backend requests)                -->
-    <!-- ============================================================ -->
-    <div id="inline-spinner" style="display:none; position:fixed; bottom:20px; right:20px; background:var(--bg-card); padding:8px 12px; border-radius:30px; box-shadow:0 2px 10px rgba(0,0,0,0.2); z-index:999; align-items:center; gap:8px; font-size:0.9rem; color:var(--text-secondary);">
-        <div class="spinner-small"></div>
-        <span>Loading...</span>
+    <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom:0.5rem;">
+      <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
+        <div style="width:40px; height:40px; border-radius:50%; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite;"></div>
+        <div style="width:120px; height:24px; border-radius:4px; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite;"></div>
+        <div style="width:160px; height:18px; border-radius:4px; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite;"></div>
+      </div>
+      <div style="display:flex; gap:1rem;">
+        <div style="width:60px; height:24px; border-radius:9999px; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite;"></div>
+        <div style="width:60px; height:24px; border-radius:9999px; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite;"></div>
+      </div>
     </div>
+    <!-- Bottom card skeleton -->
+    <div style="flex:1; display:flex; align-items:center; justify-content:center; margin-top:2rem;">
+      <div style="width:90%; max-width:400px; background:#2a2a3e; border-radius:24px; padding:1.5rem; border:1px solid #444;">
+        <div style="width:60%; height:28px; margin:0 auto 1rem; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite; border-radius:4px;"></div>
+        <div style="height:50px; border-radius:var(--radius); background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite; margin-bottom:0.75rem;"></div>
+        <div style="height:50px; border-radius:var(--radius); background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite; margin-bottom:0.75rem;"></div>
+        <div style="height:50px; border-radius:var(--radius); background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite; margin-bottom:1.5rem;"></div>
+        <div style="height:44px; border-radius:30px; background:#3a3a4e; background:linear-gradient(90deg, #3a3a4e 25%, #555 50%, #3a3a4e 75%); background-size:200px 100%; animation:shimmer 1.5s infinite;"></div>
+      </div>
+    </div>
+  </div>
 
-    <!-- ============================================================ -->
-    <!--  SCRIPT: Initialize the page                                 -->
-    <!-- ============================================================ -->
-    <script type="module">
-        import * as examSettings from '../scripts/exam-settings.js';
-        import * as ui from '../scripts/ui.js';
-        import * as router from '../scripts/router.js';
+  <!-- ============================================================ -->
+  <!--  REAL CONTENT (hidden until loaded)                         -->
+  <!-- ============================================================ -->
+  <div id="main-content" style="display: none;">
+    <!-- Fixed Header (2 rows) -->
+    <header class="fixed-header" id="fixedHeader">
+      <div class="header-row top">
+        <div class="left-group">
+          <button id="backBtn" class="btn-text">← Subjects</button>
+        </div>
+        <div class="right-group">
+          <button id="themeToggle" class="btn-outline">🌓</button>
+        </div>
+      </div>
+      <div class="header-row bottom">
+        <div class="subject-area">
+          <span class="icon" id="subject-icon">📚</span>
+          <span class="name" id="subject-name">Physiology</span>
+          <span class="topics" id="subject-topics">Respiratory • Cardiovascular • Renal</span>
+        </div>
+        <div class="stats" id="subject-stats">
+          <span id="stat-questions">50 questions</span>
+          <span id="stat-difficulty">Mixed</span>
+          <span id="stat-time">≈ 50 min</span>
+        </div>
+      </div>
+    </header>
 
-        // ==================== DOM REFS ====================
-        const dom = {
-            shimmer: document.getElementById('shimmer-skeleton'),
-            mainContent: document.getElementById('main-content'),
-            bottomCard: document.getElementById('bottomCard'),
-            fixedHeader: document.getElementById('fixedHeader'),
+    <!-- Floating Bottom Card -->
+    <div class="bottom-card" id="bottomCard">
+      <!-- Step 1: Choose Exam Type -->
+      <div class="card-step active" id="step1">
+        <h3 style="margin-top: 0; text-align: center;">Choose Exam Type</h3>
+        <div class="mode-option" data-mode="standard">
+          <span class="icon">📝</span>
+          <div class="info">
+            <div class="title">Standard Exam</div>
+            <div class="desc">Real exam simulation</div>
+          </div>
+        </div>
+        <div class="mode-option" data-mode="challenge">
+          <span class="icon">👥</span>
+          <div class="info">
+            <div class="title">Community Challenge</div>
+            <div class="desc">Compete with other students</div>
+          </div>
+        </div>
+        <div class="mode-option" data-mode="revision">
+          <span class="icon">📖</span>
+          <div class="info">
+            <div class="title">Revision</div>
+            <div class="desc">Learn with explanations</div>
+          </div>
+        </div>
+        <div class="action-row">
+          <button class="btn btn-primary" id="continue-btn">Continue →</button>
+        </div>
+        <!-- Join by code section -->
+        <div class="join-code-row">
+          <p>Have a challenge code?</p>
+          <div style="display: flex; gap: 0.5rem;">
+            <input type="text" id="join-code-input" placeholder="Enter code" style="flex:1; max-width:200px; padding:0.5rem; border-radius:var(--radius-sm); border:1px solid var(--border); background:var(--bg-card); color:var(--text-primary);">
+            <button id="join-code-btn" class="btn btn-primary" style="flex:0; padding:0.5rem 1rem;">Join</button>
+          </div>
+        </div>
+      </div>
 
-            subjectIcon: document.getElementById('subject-icon'),
-            subjectName: document.getElementById('subject-name'),
-            subjectTopics: document.getElementById('subject-topics'),
-            statQuestions: document.getElementById('stat-questions'),
-            statDifficulty: document.getElementById('stat-difficulty'),
-            statTime: document.getElementById('stat-time'),
+      <!-- Step 2-join: Join Challenge -->
+      <div class="card-step" id="step2-join">
+        <h3 style="margin-top: 0; text-align: center;">🔗 Join Challenge</h3>
+        <div class="challenge-code-display" id="join-code-display">---</div>
+        <p id="join-status" style="color:var(--text-secondary); font-size:0.9rem; text-align: center;"></p>
+        <div class="action-row">
+          <button class="btn btn-secondary back-btn">← Back</button>
+          <button class="btn btn-primary" id="join-start-btn">Join & Start</button>
+        </div>
+      </div>
 
-            step1: document.getElementById('step1'),
-            step2Std: document.getElementById('step2-standard'),
-            step2Chal: document.getElementById('step2-challenge'),
-            step2Rev: document.getElementById('step2-revision'),
-            step2Join: document.getElementById('step2-join'),
+      <!-- Step 2a: Standard Exam Configuration -->
+      <div class="card-step" id="step2-standard">
+        <h3 style="margin-top: 0;">📝 Standard Exam</h3>
+        <div class="config-group">
+          <label>Questions</label>
+          <div class="question-stepper">
+            <button class="qty-dec">−</button>
+            <input type="number" id="std-qty" value="50" min="1">
+            <button class="qty-inc">+</button>
+            <span class="max-hint" id="std-max-hint">max 100</span>
+          </div>
+          <div class="validation-warning" id="std-warning">Number of questions exceeds available questions.</div>
+        </div>
+        <div class="config-group">
+          <label>Difficulty</label>
+          <div class="difficulty-group" id="std-difficulty">
+            <button data-diff="easy">Easy</button>
+            <button data-diff="mixed" class="active">Mixed</button>
+            <button data-diff="hard">Hard</button>
+          </div>
+        </div>
+        <div class="action-row">
+          <button class="btn btn-secondary back-btn">← Back</button>
+          <button class="btn btn-primary start-exam-btn">▶ Start Exam</button>
+        </div>
+      </div>
 
-            continueBtn: document.getElementById('continue-btn'),
-            backBtns: document.querySelectorAll('.back-btn'),
-            startBtns: document.querySelectorAll('.start-exam-btn'),
-            challengeStartBtn: document.getElementById('challenge-start-btn'),
+      <!-- Step 2b: Community Challenge Configuration -->
+      <div class="card-step" id="step2-challenge">
+        <h3 style="margin-top: 0;">👥 Community Challenge</h3>
+        <div class="config-group">
+          <label>Questions</label>
+          <div class="question-stepper">
+            <button class="qty-dec">−</button>
+            <input type="number" id="challenge-qty" value="50" min="1">
+            <button class="qty-inc">+</button>
+            <span class="max-hint" id="challenge-max-hint">max 100</span>
+          </div>
+          <div class="validation-warning" id="challenge-warning">Number of questions exceeds available questions.</div>
+        </div>
+        <div class="config-group">
+          <label>Challenge Type</label>
+          <div class="challenge-type-group" id="challenge-type">
+            <button data-type="friend" class="active">Friend</button>
+            <button data-type="anyone">Anyone Online</button>
+          </div>
+        </div>
+        <!-- Friend challenge extra -->
+        <div class="challenge-extra show" id="friend-extra">
+          <label>Enter friend's email:</label>
+          <input type="email" id="invite-friend-input" placeholder="friend@example.com">
+          <div class="action-row" style="margin-top:0.5rem;">
+            <button class="btn btn-secondary" id="send-invite-btn">Send Invite</button>
+            <button class="btn btn-secondary" id="cancel-invite-btn">Cancel</button>
+          </div>
+          <div id="invite-status" style="margin-top:0.5rem; font-size:0.85rem;"></div>
+          <div id="challenge-status" style="margin-top:0.5rem;"></div>
+          <div class="challenge-code-display" id="challenge-code-display">---</div>
+          <div class="waiting-message" id="waiting-message">⏳ Waiting for opponent...</div>
+          <div class="challenge-actions" id="challenge-actions" style="display:none;">
+            <button class="btn-sm" id="copy-challenge-code-btn">📋 Copy Code</button>
+            <button class="btn-sm" id="share-challenge-code-btn">📤 Share Code</button>
+          </div>
+          <!-- shareable link area -->
+          <div class="share-link-area" id="share-link-area">
+            <label>Share this link:</label>
+            <div style="display:flex; gap:0.5rem; margin-top:0.25rem;">
+              <input type="text" id="share-link-input" readonly>
+              <button class="btn-sm" id="copy-share-link-btn">📋 Copy</button>
+            </div>
+          </div>
+        </div>
+        <!-- Anyone online extra -->
+        <div class="challenge-extra" id="anyone-extra">
+          <label>Invitations</label>
+          <div id="invitation-list" class="user-list">
+            <p style="color:var(--text-muted);">No pending invitations.</p>
+          </div>
+          <div class="action-row">
+            <button class="btn btn-secondary" id="refresh-invitations">🔄 Refresh</button>
+            <button class="btn btn-secondary" id="create-group-btn">Create Group Challenge</button>
+          </div>
+        </div>
+        <div class="action-row">
+          <button class="btn btn-secondary back-btn">← Back</button>
+          <button class="btn btn-primary start-exam-btn" id="challenge-start-btn">Create Challenge →</button>
+        </div>
+      </div>
 
-            qtyInputs: {
-                std: document.getElementById('std-qty'),
-                challenge: document.getElementById('challenge-qty'),
-                rev: document.getElementById('rev-qty')
-            },
-            maxHints: {
-                std: document.getElementById('std-max-hint'),
-                challenge: document.getElementById('challenge-max-hint'),
-                rev: document.getElementById('rev-max-hint')
-            },
-            warnings: {
-                std: document.getElementById('std-warning'),
-                challenge: document.getElementById('challenge-warning'),
-                rev: document.getElementById('rev-warning')
-            },
+      <!-- Step 2c: Revision Configuration -->
+      <div class="card-step" id="step2-revision">
+        <h3 style="margin-top: 0;">📖 Revision</h3>
+        <div class="config-group">
+          <label>Questions</label>
+          <div class="question-stepper">
+            <button class="qty-dec">−</button>
+            <input type="number" id="rev-qty" value="30" min="1">
+            <button class="qty-inc">+</button>
+            <span class="max-hint" id="rev-max-hint">max 100</span>
+          </div>
+          <div class="validation-warning" id="rev-warning">Number of questions exceeds available questions.</div>
+        </div>
+        <div class="config-group">
+          <label>Difficulty</label>
+          <div class="difficulty-group" id="rev-difficulty">
+            <button data-diff="easy">Easy</button>
+            <button data-diff="mixed" class="active">Mixed</button>
+            <button data-diff="hard">Hard</button>
+          </div>
+        </div>
+        <ul class="feature-list">
+          <li>Instant marking</li>
+          <li>Answer shown</li>
+          <li>Explanation shown</li>
+        </ul>
+        <div class="action-row">
+          <button class="btn btn-secondary back-btn">← Back</button>
+          <button class="btn btn-primary start-exam-btn">▶ Start Revision</button>
+        </div>
+      </div>
+    </div><!-- end bottom-card -->
+  </div><!-- end main-content -->
 
-            stdDifficulty: document.getElementById('std-difficulty'),
-            revDifficulty: document.getElementById('rev-difficulty'),
-
-            challengeType: document.getElementById('challenge-type'),
-            friendExtra: document.getElementById('friend-extra'),
-            anyoneExtra: document.getElementById('anyone-extra'),
-            challengeStatus: document.getElementById('challenge-status'),
-            challengeCodeDisplay: document.getElementById('challenge-code-display'),
-            waitingMessage: document.getElementById('waiting-message'),
-            challengeActions: document.getElementById('challenge-actions'),
-            inviteStatus: document.getElementById('invite-status'),
-            inviteFriendInput: document.getElementById('invite-friend-input'),
-            sendInviteBtn: document.getElementById('send-invite-btn'),
-            cancelInviteBtn: document.getElementById('cancel-invite-btn'),
-            copyChallengeCodeBtn: document.getElementById('copy-challenge-code-btn'),
-            shareChallengeCodeBtn: document.getElementById('share-challenge-code-btn'),
-            refreshInvitations: document.getElementById('refresh-invitations'),
-            createGroupBtn: document.getElementById('create-group-btn'),
-            invitationList: document.getElementById('invitation-list'),
-
-            // New join elements
-            joinCodeInput: document.getElementById('join-code-input'),
-            joinCodeBtn: document.getElementById('join-code-btn'),
-            joinCodeDisplay: document.getElementById('join-code-display'),
-            joinStatus: document.getElementById('join-status'),
-            joinStartBtn: document.getElementById('join-start-btn'),
-
-            // Share link elements
-            shareLinkArea: document.getElementById('share-link-area'),
-            shareLinkInput: document.getElementById('share-link-input'),
-            copyShareLinkBtn: document.getElementById('copy-share-link-btn'),
-
-            // Presets (if any)
-            presetSelect: document.getElementById('preset-select'),
-            examMode: document.getElementById('exam-mode'),
-            questionCount: document.getElementById('question-count'),
-            customCount: document.getElementById('custom-count'),
-            customCountContainer: document.getElementById('custom-count-container'),
-            timing: document.getElementById('timing'),
-            preventCopy: document.getElementById('prevent-copy'),
-            autoSave: document.getElementById('auto-save'),
-            detectTab: document.getElementById('detect-tab'),
-            breakEnabled: document.getElementById('break-enabled'),
-        };
-
-        // Pass DOM refs to the module
-        examSettings.setDomRefs(dom);
-
-        // ==================== DYNAMIC CARD POSITIONING ====================
-        function updateBottomCardPosition() {
-            const header = dom.fixedHeader;
-            const card = dom.bottomCard;
-            if (header && card) {
-                const headerBottom = header.getBoundingClientRect().bottom;
-                card.style.top = headerBottom + 'px';
-            }
-        }
-
-        // Listen for resize and any changes that may affect header height
-        window.addEventListener('resize', updateBottomCardPosition);
-        // Use ResizeObserver to watch for header size changes (e.g., when subjects are added)
-        const headerObserver = new ResizeObserver(() => {
-            updateBottomCardPosition();
-        });
-        if (dom.fixedHeader) {
-            headerObserver.observe(dom.fixedHeader);
-        }
-
-        // ==================== BASE URL FOR SHAREABLE LINKS ====================
-        const BASE_URL = 'https://medhub.edgeone.app';
-        const PAGE_PATH = '/pages/exam-settings.html';
-
-        /**
-         * Generate the full shareable link for a challenge.
-         * @param {string} code - The challenge code.
-         * @returns {string} Full URL.
-         */
-        function getShareableLink(code) {
-            return `${BASE_URL}${PAGE_PATH}?exam=${encodeURIComponent(code)}`;
-        }
-
-        /**
-         * Share the challenge link using Capacitor Share, Web Share, or clipboard.
-         * @param {string} code - The challenge code.
-         */
-        function shareChallengeLink(code) {
-            const link = getShareableLink(code);
-            const shareData = {
-                title: 'Join my MedHub Challenge!',
-                text: 'Join my medical exam challenge on MedHub!',
-                url: link
-            };
-
-            // 1. Try Capacitor Share
-            if (window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.Share) {
-                window.Capacitor.Plugins.Share.share({
-                    title: shareData.title,
-                    text: shareData.text,
-                    url: shareData.url,
-                    dialogTitle: 'Share Challenge'
-                }).catch(() => {
-                    fallbackShare(shareData);
-                });
-            }
-            // 2. Try Web Share API
-            else if (navigator.share) {
-                navigator.share(shareData).catch(() => {
-                    fallbackShare(shareData);
-                });
-            }
-            // 3. Clipboard fallback
-            else {
-                fallbackShare(shareData);
-            }
-        }
-
-        function fallbackShare(shareData) {
-            navigator.clipboard?.writeText(shareData.url).then(() => {
-                ui.showToast('Link copied to clipboard!', 'success');
-            }).catch(() => {
-                // Legacy fallback
-                const textarea = document.createElement('textarea');
-                textarea.value = shareData.url;
-                document.body.appendChild(textarea);
-                textarea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textarea);
-                ui.showToast('Link copied!', 'success');
-            });
-        }
-
-        // Expose globally so exam-settings.js can call it after challenge creation
-        window.showShareableLink = (code) => {
-            if (dom.shareLinkArea && dom.shareLinkInput) {
-                dom.shareLinkInput.value = getShareableLink(code);
-                dom.shareLinkArea.style.display = 'block';
-            }
-        };
-
-        // Also expose share function for the share button
-        window.shareChallengeLink = shareChallengeLink;
-
-        // ==================== INIT ====================
-        (async function init() {
-            dom.shimmer.style.display = 'flex';
-            await examSettings.initExamSettings();
-            dom.shimmer.style.display = 'none';
-            dom.mainContent.style.display = 'block';
-            updateBottomCardPosition();
-
-            // Auto-join from URL parameter
-            const urlParams = new URLSearchParams(window.location.search);
-            const examCode = urlParams.get('exam');
-            if (examCode) {
-                // Show join step with code
-                if (dom.joinCodeDisplay) dom.joinCodeDisplay.textContent = examCode;
-                showStep('step2-join');
-            }
-
-            setupEventListeners();
-        })();
-
-        // ==================== EVENT LISTENERS ====================
-        function setupEventListeners() {
-            // Step navigation
-            dom.continueBtn.addEventListener('click', () => {
-                const selected = document.querySelector('.mode-option.selected');
-                if (!selected) {
-                    ui.showToast('Please select an exam type', 'warning');
-                    return;
-                }
-                const mode = selected.dataset.mode;
-                if (mode === 'standard') showStep('step2-standard');
-                else if (mode === 'challenge') showStep('step2-challenge');
-                else if (mode === 'revision') showStep('step2-revision');
-                updateBottomCardPosition();
-            });
-
-            dom.backBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    showStep('step1');
-                    dom.challengeStatus.textContent = '';
-                    dom.challengeCodeDisplay.textContent = '---';
-                    dom.waitingMessage.style.display = 'none';
-                    dom.challengeActions.style.display = 'none';
-                    updateBottomCardPosition();
-                });
-            });
-
-            dom.startBtns.forEach(btn => {
-                if (btn.id !== 'challenge-start-btn' && btn.id !== 'join-start-btn') {
-                    btn.addEventListener('click', examSettings.startExam);
-                }
-            });
-
-            // Mode selection
-            document.querySelectorAll('.mode-option').forEach(el => {
-                el.addEventListener('click', function() {
-                    document.querySelectorAll('.mode-option').forEach(o => o.classList.remove('selected'));
-                    this.classList.add('selected');
-                });
-            });
-
-            // Challenge type
-            dom.challengeType.querySelectorAll('button').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    dom.challengeType.querySelectorAll('button').forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    const type = this.dataset.type;
-                    dom.friendExtra.classList.toggle('show', type === 'friend');
-                    dom.anyoneExtra.classList.toggle('show', type === 'anyone');
-                    dom.challengeStatus.textContent = '';
-                    dom.challengeCodeDisplay.textContent = '---';
-                    dom.waitingMessage.style.display = 'none';
-                    dom.challengeActions.style.display = 'none';
-                    // Hide share link when switching type
-                    if (dom.shareLinkArea) dom.shareLinkArea.style.display = 'none';
-                    updateBottomCardPosition();
-                });
-            });
-
-            // Send invite
-            dom.sendInviteBtn.addEventListener('click', async () => {
-                const email = dom.inviteFriendInput.value.trim();
-                if (!email) {
-                    ui.showToast('Please enter a friend\'s email', 'warning');
-                    return;
-                }
-                showInlineSpinner('Sending invitation...');
-                try {
-                    await examSettings.inviteFriend();
-                } finally {
-                    hideInlineSpinner();
-                }
-            });
-
-            // Cancel invite
-            dom.cancelInviteBtn.addEventListener('click', () => {
-                dom.inviteFriendInput.value = '';
-                dom.inviteStatus.textContent = '';
-                dom.challengeStatus.textContent = '';
-                dom.challengeCodeDisplay.textContent = '---';
-                dom.waitingMessage.style.display = 'none';
-                dom.challengeActions.style.display = 'none';
-                if (dom.shareLinkArea) dom.shareLinkArea.style.display = 'none';
-            });
-
-            // Create challenge (FIX: disable button immediately to prevent double clicks)
-            dom.challengeStartBtn.addEventListener('click', async function () {
-                if (this.disabled) return;          // already in progress
-                this.disabled = true;
-                this.textContent = 'Creating…';
-                
-                showInlineSpinner('Creating challenge...');
-                try {
-                    await examSettings.startChallenge();
-                } finally {
-                    hideInlineSpinner();
-                    // Re‑enable only if the UI hasn't moved on (challenge still not created)
-                    this.disabled = false;
-                    this.textContent = 'Create Challenge →';
-                }
-            });
-
-            // Copy challenge code (old behaviour)
-            dom.copyChallengeCodeBtn.addEventListener('click', () => {
-                const code = dom.challengeCodeDisplay.textContent;
-                if (!code || code === '---') {
-                    ui.showToast('No challenge code available', 'warning');
-                    return;
-                }
-                navigator.clipboard?.writeText(code).then(() => {
-                    ui.showToast('Code copied!', 'success');
-                }).catch(() => {
-                    const input = document.createElement('input');
-                    input.value = code;
-                    document.body.appendChild(input);
-                    input.select();
-                    document.execCommand('copy');
-                    input.remove();
-                    ui.showToast('Code copied!', 'success');
-                });
-            });
-
-            // Share challenge code (now shares the full link using Capacitor/Web Share)
-            dom.shareChallengeCodeBtn.addEventListener('click', () => {
-                const code = dom.challengeCodeDisplay.textContent;
-                if (!code || code === '---') {
-                    ui.showToast('No challenge code available', 'warning');
-                    return;
-                }
-                shareChallengeLink(code);
-            });
-
-            // Refresh invitations (simulated)
-            dom.refreshInvitations.addEventListener('click', () => {
-                dom.invitationList.innerHTML = `
-                    <div>No new invitations.</div>
-                    <button style="margin-top:0.5rem; padding:0.3rem; width:100%; background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-sm);">Accept Group Challenge</button>
-                    <button style="margin-top:0.3rem; padding:0.3rem; width:100%; background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-sm);">Decline</button>
-                `;
-                ui.showToast('Refreshed (simulated)', 'info');
-            });
-
-            dom.createGroupBtn.addEventListener('click', () => {
-                ui.showToast('Group challenge creation coming soon!', 'info');
-            });
-
-            // --- NEW JOIN CODE HANDLERS ---
-            // Join code button in step1
-            dom.joinCodeBtn.addEventListener('click', () => {
-                const code = dom.joinCodeInput.value.trim();
-                if (!code) {
-                    ui.showToast('Please enter a challenge code', 'warning');
-                    return;
-                }
-                dom.joinCodeDisplay.textContent = code;
-                showStep('step2-join');
-            });
-
-            // Join & Start button in step2-join
-            dom.joinStartBtn.addEventListener('click', async function () {
-                if (this.disabled) return;
-                const code = dom.joinCodeDisplay.textContent;
-                if (!code || code === '---') {
-                    ui.showToast('Invalid challenge code', 'error');
-                    return;
-                }
-                this.disabled = true;
-                this.textContent = 'Joining…';
-                showInlineSpinner('Joining challenge...');
-                try {
-                    await examSettings.joinChallenge(code);
-                } finally {
-                    hideInlineSpinner();
-                    this.disabled = false;
-                    this.textContent = 'Join & Start';
-                }
-            });
-
-            // Copy shareable link button
-            dom.copyShareLinkBtn.addEventListener('click', () => {
-                const link = dom.shareLinkInput.value;
-                if (!link) return;
-                navigator.clipboard?.writeText(link).then(() => {
-                    ui.showToast('Link copied!', 'success');
-                }).catch(() => {
-                    ui.showToast('Failed to copy link', 'error');
-                });
-            });
-
-            // Presets
-            dom.presetSelect?.addEventListener('change', function() {
-                const idx = parseInt(this.value);
-                if (!isNaN(idx)) examSettings.applyPreset(idx);
-            });
-            document.querySelector('[onclick="savePreset()"]')?.addEventListener('click', examSettings.savePreset);
-            document.querySelector('[onclick="resetToDefault()"]')?.addEventListener('click', examSettings.resetToDefault);
-        }
-
-        // ==================== STEP NAVIGATION ====================
-        function showStep(stepId) {
-            document.querySelectorAll('.card-step').forEach(el => el.classList.remove('active'));
-            const step = document.getElementById(stepId);
-            if (step) step.classList.add('active');
-            // Ensure card position is correct after showing a step
-            updateBottomCardPosition();
-        }
-
-        // ==================== INLINE SPINNER ====================
-        function showInlineSpinner(message) {
-            const spinner = document.getElementById('inline-spinner');
-            spinner.querySelector('span').textContent = message || 'Loading...';
-            spinner.style.display = 'flex';
-        }
-
-        function hideInlineSpinner() {
-            document.getElementById('inline-spinner').style.display = 'none';
-        }
-
-        // Expose globally if needed
-        window.showInlineSpinner = showInlineSpinner;
-        window.hideInlineSpinner = hideInlineSpinner;
-        window.showStep = showStep;
-        window.updateBottomCardPosition = updateBottomCardPosition;
-    </script>
-
-    <script data-lazy data-src="/scripts/offline.js"></script>
-</body>
-
-</html>
+  <!-- Inline spinner (for backend requests) -->
+  <div id="inline-spinner" style="display:none; position:fixed; bottom:20px; right:20px; background:var(--bg-card); padding:8px 12px; border-radius:30px; box-shadow:0 2px 10px rgba(0,0,0,0.2); z-index:999; align-items:center; gap:8px; font-size:0.9rem; color:var(--text-secondary);">
+    <div class="spinner-small"></div>
+    <span>Loading...</span>
+  </div>
+</section>

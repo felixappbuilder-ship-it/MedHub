@@ -1,4 +1,4 @@
-// frontend-user/scripts/ai.js
+// scripts/ai.js
 /**
  * AI Module – Convex Integration (Memory Chunks)
  * Provides chat, summarization, flashcards, questions, mnemonics, and more.
@@ -12,9 +12,10 @@
 
 import * as utils from './utils.js';
 import * as ui from './ui.js';
-import * as app from './app.js';
+import * as router from './router.js';
 import * as db from './db.js';
 import * as auth from './auth.js';
+import * as subscription from './subscription.js';
 import { convexHttpClient } from './convex-client.js';
 
 // ==================== CONSTANTS ====================
@@ -50,9 +51,9 @@ class AIEngine {
   // ---- Usage & Subscription ----
 
   async checkUsageLimit() {
-    const user = app.getUser();
+    const user = auth.getUser();
     if (!user) return { allowed: false, remaining: 0, limit: 0 };
-    const hasSubscription = await app.hasActiveSubscription();
+    const hasSubscription = await subscription.hasActiveSubscription();
     if (hasSubscription) {
       return { allowed: true, remaining: Infinity, limit: Infinity };
     }
@@ -286,8 +287,8 @@ class AIEngine {
    * @param {Object} params
    * @param {string} params.message - The user message.
    * @param {string} [params.chatId] - Optional conversation ID. If omitted, the engine will reuse the last active one.
-   * @param {Array} [params.modes] - (reserved)
-   * @param {File} [params.file] - (reserved)
+   * @param {Array} [params.modes] - Active modes (e.g., ['deepthink', 'websearch']).
+   * @param {Object} [params.file] - (Temporarily disabled) File data from uploadFile().
    * @returns {Promise<{text: string, chatId: string, meta: any, richData: any}>}
    */
   async sendMessageToAI({ message, chatId, modes = [], file = null }) {
@@ -342,25 +343,31 @@ class AIEngine {
     if (!allowed) {
       if (remaining <= 0) {
         ui.showToast('Free limit reached. Please subscribe.', 'error');
-        window.location.href = '/pages/subscription.html';
+        router.navigateTo('subscription');
         throw new Error('Usage limit reached');
       }
       await this._incrementUsage();
     }
 
+    // File attachments are temporarily disabled – we do not send fileUrl/fileType.
+    // Future enhancement: upload file to storage and send URL.
+
     // Send to backend.
     try {
       const token = getToken();
+      // ===== UPDATED: Include modes (fileUrl/fileType omitted for now) =====
       const result = await convexHttpClient.action('conversations/actions:sendMessage', {
         token,
         conversationId: effectiveChatId,
         message,
+        modes,   // pass modes array
+        // fileUrl and fileType are omitted – file attachments disabled
       });
 
       if (!result.success) {
         if (result.error === 'subscription_required') {
           ui.showToast('Active subscription required for AI features.', 'error');
-          window.location.href = '/pages/subscription.html';
+          router.navigateTo('subscription');
           throw new Error('Subscription required');
         }
         if (result.error === 'rate_limit_exceeded') {
@@ -438,6 +445,7 @@ class AIEngine {
         token,
         conversationId: chatId,
         message: lastUserMsg.content,
+        // modes can be passed if needed, but we omit for simplicity
       });
       if (!result.success) throw new Error(result.message);
       const answer = result.data.message;

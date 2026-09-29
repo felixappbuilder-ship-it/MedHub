@@ -1,17 +1,22 @@
-// frontend-user/scripts/auth.js
+// scripts/auth.js
 
 /**
  * Authentication Handler – Convex Integration
  * Uses Convex backend for authentication when online.
  * Supports session management (single-device enforcement) and device tracking.
  * Includes referral code support during registration.
+ * Includes Google Sign-In (web) with account-linking flow.
  */
 
-import * as app from './app.js';
 import * as ui from './ui.js';
 import * as utils from './utils.js';
 import * as security from './security.js';
+import * as db from './db.js';
+import * as sync from './sync.js';
+import * as subscription from './subscription.js';
+import * as examEngine from './exam-engine.js';
 import { convexHttpClient } from './convex-client.js';
+import { navigateTo } from './router.js';
 
 // ==================== TOKEN MANAGEMENT ====================
 
@@ -20,15 +25,98 @@ export function getToken() {
 }
 
 export function setToken(token) {
-    app.setAuthToken(token);
+    if (token) {
+        utils.setLocalStorage('accessToken', token);
+    } else {
+        utils.removeLocalStorage('accessToken');
+        utils.removeLocalStorage('refreshToken');
+    }
 }
 
 export function clearToken() {
-    app.setAuthToken(null);
+    setToken(null);
 }
 
 export function isTokenValid() {
     return !!getToken();
+}
+
+// ==================== USER MANAGEMENT ====================
+
+let currentUser = null;
+
+export function getUser() {
+    return currentUser;
+}
+
+export async function setUser(user) {
+    if (!user || !user._id) {
+        console.warn('[Auth] setUser called with invalid user', user);
+        return;
+    }
+    console.log('[Auth] Setting user:', user._id);
+    currentUser = user;
+
+    try {
+        await db.saveUser(user);
+        console.log('[Auth] User saved to IndexedDB');
+    } catch (e) {
+        console.warn('[Auth] IndexedDB save failed, using localStorage', e);
+    }
+    utils.setLocalStorage('user', user);
+    console.log('[Auth] User set and saved to both storages');
+}
+
+export async function initUser() {
+    console.log('[Auth] Initializing user...');
+    let userFromDB = null;
+    try {
+        userFromDB = await db.getUser();
+        console.log('[Auth] User from IndexedDB:', userFromDB ? userFromDB._id : 'none');
+    } catch (e) {
+        console.warn('[Auth] Failed to load from IndexedDB', e);
+    }
+
+    const userFromStorage = utils.getLocalStorage('user', null);
+    if (userFromDB) {
+        currentUser = userFromDB;
+        console.log('[Auth] Loaded user from IndexedDB:', currentUser);
+    } else if (userFromStorage) {
+        currentUser = userFromStorage;
+        if (userFromStorage) {
+            try {
+                await db.saveUser(userFromStorage);
+                console.log('[Auth] Restored user from localStorage to IndexedDB');
+            } catch (e) {}
+        }
+    } else {
+        currentUser = null;
+    }
+    return currentUser;
+}
+
+export function fallbackLoadUser() {
+    currentUser = utils.getLocalStorage('user', null);
+}
+
+export async function clearUser() {
+    console.log('[Auth] Clearing user');
+    currentUser = null;
+    try {
+        await db.deleteAllUsers();
+        console.log('[Auth] User deleted from IndexedDB');
+    } catch (e) {
+        console.warn('[Auth] IndexedDB delete failed', e);
+    }
+    utils.removeLocalStorage('user');
+    clearToken();
+}
+
+export function checkAuth() {
+    const token = getToken();
+    const hasUser = !!currentUser;
+    console.log('[Auth] checkAuth: token exists?', !!token, 'user exists?', hasUser);
+    return !!token && hasUser;
 }
 
 // ==================== ONLINE CHECK ====================
@@ -39,7 +127,7 @@ function requireOnline() {
     }
 }
 
-// ==================== HELPER: GET USER-FRIENDLY ERROR ====================
+// ==================== ERROR HELPERS ====================
 
 function getErrorMessage(error) {
     if (error.data?.message) return error.data.message;
@@ -47,22 +135,74 @@ function getErrorMessage(error) {
     return 'An unknown error occurred';
 }
 
-// ==================== TOKEN ERROR HANDLER (async, offline‑friendly) ====================
+// ==================== DEVICE HELPERS ====================
 
 /**
- * Handle token errors:
- * - If offline: keep local user, return true (do nothing).
- * - If online: try to refresh the token silently.
- * - If refresh succeeds: return true (continue).
- * - If refresh fails: clear token and sessionId, but DO NOT clear the local user.
+ * Build a device fingerprint + device info object.
+ * Prefers the stored fingerprint (so password login, Google login, and
+ * account linking all share the same device identity).
  *
- * @param {Error|string} error - The error object or message.
- * @returns {Promise<boolean>} - true if the error was handled (i.e., caller should stop), false otherwise.
+ * @returns {{ deviceFingerprint: string, deviceInfo: object }}
  */
+function buildDeviceIdentity() {
+    const deviceFingerprint =
+        (typeof security.getDeviceFingerprint === 'function' && security.getDeviceFingerprint()) ||
+        (typeof security.generateDeviceFingerprint === 'function' && security.generateDeviceFingerprint()) ||
+        'unknown';
+
+    const deviceInfo = {
+        platform: navigator.platform || 'web',
+        userAgent: navigator.userAgent || '',
+        screen: `${screen.width}x${screen.height}`,
+        timezone: new Date().getTimezoneOffset()
+    };
+
+    return { deviceFingerprint, deviceInfo };
+}
+
+// ==================== USER SHAPE NORMALIZER ====================
+
+/**
+ * Normalize the flat user shape returned by every auth action into the
+ * { _id, name, email, ... } object the rest of the app expects.
+ *
+ * The backend returns user fields FLAT inside `result.data`, e.g.:
+ *   { token, userId, name, email, username, displayName, sessionId }
+ *
+ * Some legacy paths may nest them under `data.user`. This helper handles both.
+ *
+ * @param {Object} data - the `result.data` from any auth action
+ * @returns {Object|null} normalized user or null if neither shape matched
+ */
+function normalizeUser(data) {
+    if (!data) return null;
+
+    // Nested shape (some actions may still return { user: {...} })
+    if (data.user && data.user._id) {
+        return data.user;
+    }
+
+    // Flat shape — the current backend's contract
+    if (data.userId) {
+        return {
+            _id: data.userId,
+            name: data.name,
+            email: data.email,
+            username: data.username,
+            displayName: data.displayName,
+            isAgent: data.isAgent,
+            referralCode: data.referralCode
+        };
+    }
+
+    return null;
+}
+
+// ==================== TOKEN ERROR HANDLER ====================
+
 async function handleTokenError(error) {
     const message = error?.message || error?.toString() || '';
 
-    // Check if this is actually a token-related error
     const isTokenError =
         message.includes('invalid_token') ||
         message.includes('session_expired') ||
@@ -79,38 +219,22 @@ async function handleTokenError(error) {
         return false;
     }
 
-    // ========================================================
-    // OFFLINE: Never destroy the local user just because the JWT expired.
-    // ========================================================
     if (!navigator.onLine) {
-        console.warn(
-            '[Auth] Token expired while offline. Keeping local session.'
-        );
-        return true; // handled – do not propagate error further
+        console.warn('[Auth] Token expired while offline. Keeping local session.');
+        return true;
     }
 
-    // ========================================================
-    // ONLINE: Try to silently obtain a new JWT first.
-    // ========================================================
     console.warn('[Auth] Access token invalid/expired. Attempting refresh...');
-
     const refreshed = await refreshSession();
 
     if (refreshed) {
         console.log('[Auth] Token refreshed successfully.');
-        return true; // handled – continue normally
+        return true;
     }
 
-    // ========================================================
-    // ONLY NOW consider the session genuinely invalid.
-    // ========================================================
     console.warn('[Auth] Persistent session could not be refreshed.');
-
     clearToken();
     utils.removeLocalStorage('sessionId');
-
-    // IMPORTANT: Do NOT delete the cached user here.
-    // It may still be needed for offline operation.
 
     ui.showToast(
         'Your session could not be restored. Please login again when online.',
@@ -132,10 +256,6 @@ function clearStoredReferralCode() {
 
 // ==================== SESSION REFRESH ====================
 
-/**
- * Attempt to refresh the JWT using the stored sessionId.
- * @returns {Promise<boolean>} - true if refresh succeeded, false otherwise.
- */
 export async function refreshSession() {
     if (!navigator.onLine) {
         console.log('[Auth] Offline — cannot refresh token.');
@@ -161,9 +281,7 @@ export async function refreshSession() {
         }
 
         setToken(result.data.token);
-
         console.log('[Auth] JWT silently refreshed.');
-
         return true;
     } catch (error) {
         console.warn('[Auth] Session refresh error:', error);
@@ -171,7 +289,7 @@ export async function refreshSession() {
     }
 }
 
-// ==================== LOGIN ====================
+// ==================== LOGIN (Email / Phone + Password) ====================
 
 export async function login(identifier, password, deviceInfo) {
     console.log('[Auth] Login attempt:', identifier);
@@ -198,7 +316,7 @@ export async function login(identifier, password, deviceInfo) {
 
         const { token, userId, name, email, sessionId, isNewDevice } = result.data;
         setToken(token);
-        await app.setUser({ _id: userId, name, email });
+        await setUser({ _id: userId, name, email });
         security.setDeviceFingerprint(deviceInfoObj.deviceFingerprint);
 
         if (sessionId) {
@@ -209,7 +327,14 @@ export async function login(identifier, password, deviceInfo) {
             ui.showToast('New device detected. You are now logged in on this device.', 'info', 4000);
         }
 
-        await app.syncUserData();
+        await sync.syncUserData();
+
+        try {
+            await subscription.refreshSubscription();
+            console.log('[Auth] Subscription refreshed after login.');
+        } catch (subErr) {
+            console.warn('[Auth] Could not refresh subscription after login:', subErr);
+        }
 
         console.log('[Auth] Login successful:', email);
         return { _id: userId, name, email };
@@ -220,22 +345,14 @@ export async function login(identifier, password, deviceInfo) {
     }
 }
 
-// ==================== REGISTER (with referral and agent support) ====================
+// ==================== REGISTER (Email / Phone + Password) ====================
 
-/**
- * Register a new user with optional referral code and agent flag.
- * @param {Object} userData - contains name, email, phone, password, securityQuestions, deviceFingerprint, deviceInfo, referralCode, isAgent, agentVerified
- * @returns {Promise<Object>} user data
- */
 export async function register(userData) {
     console.log('[Auth] Register attempt:', userData.email);
     requireOnline();
 
     try {
-        // Get referral code from userData or localStorage
         let referralCode = userData.referralCode || getStoredReferralCode();
-
-        // Extract agent flags from userData (default false)
         const isAgent = userData.isAgent || false;
         const agentVerified = userData.agentVerified || false;
 
@@ -268,13 +385,19 @@ export async function register(userData) {
 
         const { token, userId, name, email, referralCode: userReferralCode, isAgent: userIsAgent } = result.data;
         setToken(token);
-        await app.setUser({ _id: userId, name, email, referralCode: userReferralCode, isAgent: userIsAgent });
+        await setUser({ _id: userId, name, email, referralCode: userReferralCode, isAgent: userIsAgent });
         security.setDeviceFingerprint(userData.deviceFingerprint);
 
-        // Clear stored referral code after successful registration
         clearStoredReferralCode();
 
-        await app.syncUserData();
+        await sync.syncUserData();
+
+        try {
+            await subscription.refreshSubscription();
+            console.log('[Auth] Subscription refreshed after registration.');
+        } catch (subErr) {
+            console.warn('[Auth] Could not refresh subscription after registration:', subErr);
+        }
 
         console.log('[Auth] Registration successful:', email);
         return { _id: userId, name, email, referralCode: userReferralCode, isAgent: userIsAgent };
@@ -290,10 +413,10 @@ export async function register(userData) {
 export async function logout() {
     clearToken();
     utils.removeLocalStorage('sessionId');
-    await app.clearUser();
-    app.clearSubscription();
-    app.clearExamConfig();
-    app.clearExamState();
+    await clearUser();
+    await subscription.clearSubscription();
+    examEngine.clearExamConfig();
+    examEngine.clearExamState();
     ui.showToast('Logged out', 'info');
 }
 
@@ -353,7 +476,7 @@ export async function resetPassword(identifier, newPassword) {
         sessionStorage.removeItem('resetToken');
         ui.showToast('Password reset successfully. Please login.', 'success');
         setTimeout(() => {
-            window.location.href = '/pages/login.html';
+            navigateTo('login');
         }, 2000);
     } catch (error) {
         console.error('[Auth] Reset password failed', error);
@@ -365,7 +488,7 @@ export async function resetPassword(identifier, newPassword) {
 
 export async function updateProfile(updates) {
     requireOnline();
-    const user = app.getUser();
+    const user = getUser();
     if (!user) throw new Error('Not authenticated');
 
     try {
@@ -380,7 +503,7 @@ export async function updateProfile(updates) {
             }
             throw new Error(result.message);
         }
-        await app.setUser(result.data.user);
+        await setUser(result.data.user);
         return result.data.user;
     } catch (error) {
         console.error('[Auth] Update profile failed', error);
@@ -391,7 +514,7 @@ export async function updateProfile(updates) {
 
 export async function changePassword({ currentPassword, newPassword }) {
     requireOnline();
-    const user = app.getUser();
+    const user = getUser();
     if (!user) throw new Error('Not authenticated');
 
     try {
@@ -417,7 +540,7 @@ export async function changePassword({ currentPassword, newPassword }) {
 
 export async function updatePreferences(preferences) {
     requireOnline();
-    const user = app.getUser();
+    const user = getUser();
     if (!user) throw new Error('Not authenticated');
 
     try {
@@ -432,7 +555,7 @@ export async function updatePreferences(preferences) {
             }
             throw new Error(result.message);
         }
-        await app.setUser(result.data.user);
+        await setUser(result.data.user);
     } catch (error) {
         console.error('[Auth] Update preferences failed', error);
         if (await handleTokenError(error)) return;
@@ -442,7 +565,7 @@ export async function updatePreferences(preferences) {
 
 export async function exportData() {
     requireOnline();
-    const user = app.getUser();
+    const user = getUser();
     if (!user) throw new Error('Not authenticated');
 
     try {
@@ -471,53 +594,117 @@ export async function exportData() {
     }
 }
 
+// ==================== CLEAR ALL LOCAL DATA ====================
+
+async function clearAllLocalData() {
+    console.log('[Auth] Clearing all local data...');
+
+    try {
+        if (typeof db.clearDatabase === 'function') {
+            await db.clearDatabase();
+            console.log('[Auth] IndexedDB cleared.');
+        } else {
+            console.warn('[Auth] db.clearDatabase not available; skipping IndexedDB wipe.');
+        }
+    } catch (e) {
+        console.warn('[Auth] Failed to clear IndexedDB:', e);
+    }
+
+    const localStorageKeys = [
+        'accessToken',
+        'sessionId',
+        'user',
+        'subscription',
+        'ai_chats',
+        'ai_usage_count',
+        'referral_code',
+        'sync_state',
+        'sync_timer',
+        'deviceFingerprint',
+        'examConfig',
+        'examState',
+        'selectedPlan',
+        'currentTransaction',
+        'rememberedEmail',
+        'appSettings',
+        'favorite_resources',
+        'lastExam',
+        'downloadedExams',
+        'securityViolations',
+        'lockStatus',
+        'userStats',
+        'notes_fallback',
+        'conversations_fallback',
+        'chatHistory_fallback',
+        'notifications_fallback',
+        'publicAssetVersions',
+        'referral_cache_referral',
+        'referral_cache_agent',
+        'convex_session'
+    ];
+
+    for (const key of localStorageKeys) {
+        try {
+            localStorage.removeItem(key);
+        } catch (e) {
+            // ignore
+        }
+    }
+    console.log('[Auth] localStorage cleared.');
+
+    try {
+        sessionStorage.clear();
+        console.log('[Auth] sessionStorage cleared.');
+    } catch (e) {
+        // ignore
+    }
+}
+
 // ==================== ACCOUNT DELETION ====================
 
-/**
- * Permanently delete the user's account.
- * - Requires a valid JWT and the user's password.
- * - Calls the backend action `users/mutations:deleteAccount`.
- * - On success, clears all local data and redirects to the welcome page.
- * - If the password is incorrect, throws an error with a clear message.
- * - Uses handleTokenError to recover from session expiry.
- *
- * @param {string} password - The user's current password (for re‑authentication).
- * @returns {Promise<void>}
- */
 export async function deleteAccount(password) {
     requireOnline();
-    const user = app.getUser();
-    if (!user) throw new Error('Not authenticated');
+
+    const token = getToken();
+    if (!token) {
+        throw new Error('Not authenticated. Please log in again.');
+    }
+
+    const user = getUser();
+    if (!user) {
+        throw new Error('User data not found. Please log in again.');
+    }
 
     try {
         const result = await convexHttpClient.action("users/mutations:deleteAccount", {
-            token: getToken(),
+            token,
             password
         });
 
         if (!result.success) {
-            // Check if this is a token-related error (e.g., session expired)
             if (result.error === 'invalid_token' || result.message?.includes('token')) {
                 await handleTokenError(new Error(result.message));
-                return; // handleTokenError will have cleared the token and shown a toast
+                return;
             }
-            // Otherwise, propagate the error (e.g., invalid password)
             throw new Error(result.message);
         }
 
-        // If deletion succeeded, log out and clear all local state
-        await logout();
-        ui.showToast('Account permanently deleted.', 'success');
+        await clearAllLocalData();
 
-        // Redirect to welcome page (or index)
-        window.location.href = '/pages/welcome.html';
+        currentUser = null;
+        clearToken();
+        utils.removeLocalStorage('sessionId');
+        await subscription.clearSubscription();
+        examEngine.clearExamConfig();
+        examEngine.clearExamState();
+
+        ui.showToast('Account permanently deleted.', 'success');
+        navigateTo('welcome.html');
 
     } catch (error) {
         console.error('[Auth] Delete account failed', error);
-        // If it's a token error, let handleTokenError attempt to recover
         if (await handleTokenError(error)) return;
 
-        // Otherwise, rethrow with a user-friendly message
         const msg = getErrorMessage(error);
         if (msg.includes('Invalid password') || msg.toLowerCase().includes('password')) {
             throw new Error('The password you entered is incorrect. Please try again.');
@@ -526,17 +713,13 @@ export async function deleteAccount(password) {
     }
 }
 
-// ==================== SESSION MANAGEMENT (2‑hour timer removed) ====================
-
-// JWT/session lifetime is controlled by the backend.
-// Do NOT force logout from the frontend based on elapsed time.
+// ==================== SESSION MANAGEMENT ====================
 
 export function startSession() {
     console.log('[Auth] Persistent session active. No frontend auto-logout timer.');
 }
 
 export function extendSession() {
-    // Kept for backwards compatibility with existing code.
     startSession();
 }
 
@@ -600,9 +783,237 @@ export async function logoutAllDevices() {
     }
 }
 
+// ==================== GOOGLE SIGN-IN ====================
+
+/**
+ * Send the Google ID token to the backend for verification and identity resolution.
+ *
+ * Backend response shapes (verified field-by-field):
+ *
+ *   1. SUCCESS (existing Google identity) — flat user fields:
+ *      { success: true, status: "SUCCESS",
+ *        data: { token, userId, name, email, username, displayName,
+ *                sessionId, isNewDevice } }
+ *
+ *   2. NEW_ACCOUNT — flat user fields:
+ *      { success: true, status: "NEW_ACCOUNT",
+ *        data: { token, userId, name, email, username, displayName,
+ *                sessionId, isNewDevice: true } }
+ *
+ *   3. EXISTING_ACCOUNT_REQUIRES_LINK:
+ *      { success: false, status: "EXISTING_ACCOUNT_REQUIRES_LINK",
+ *        data: { linkToken, email } }
+ *
+ *   4. Any other failure:
+ *      { success: false, message: "..." }
+ *
+ * @param {string} idToken - The Google ID token (JWT) returned by Google Identity Services.
+ * @returns {Promise<Object>} Result with `ok: true` (success) or `requiresLink: true`.
+ */
+export async function loginWithGoogle(idToken) {
+    if (!idToken) throw new Error('Missing Google ID token');
+    requireOnline();
+
+    // Build device identity (same source used by password login)
+    const { deviceFingerprint, deviceInfo } = buildDeviceIdentity();
+
+    const result = await convexHttpClient.action(
+        'auth/actions:googleSignIn',
+        {
+            idToken,
+            deviceFingerprint,
+            deviceInfo
+        }
+    );
+
+    if (!result) {
+        throw new Error('Google sign-in failed: empty response');
+    }
+
+    // ------------------------------------------------------------
+    // 1. LINKING REQUIRED — check BEFORE throwing on `!success`
+    //    because the backend uses success:false for this case.
+    // ------------------------------------------------------------
+    const linkStatus =
+        result.status ||
+        result.data?.status;
+
+    if (linkStatus === 'EXISTING_ACCOUNT_REQUIRES_LINK') {
+        return {
+            ok: false,
+            requiresLink: true,
+            email: result.data?.email || '',
+            linkToken: result.data?.linkToken || null,
+            idToken,
+            deviceFingerprint,
+            deviceInfo
+        };
+    }
+
+    // ------------------------------------------------------------
+    // 2. OTHER FAILURES
+    // ------------------------------------------------------------
+    if (!result.success) {
+        throw new Error(result.reason || result.message || 'Google sign-in failed');
+    }
+
+    // ------------------------------------------------------------
+    // 3. SUCCESS — normalize the flat response
+    // ------------------------------------------------------------
+    const data = result.data || {};
+    const status = data.status || 'SUCCESS';
+
+    if (status === 'SUCCESS' || status === 'NEW_ACCOUNT') {
+        const user = normalizeUser(data);
+
+        setToken(data.token);
+        if (data.sessionId) {
+            utils.setLocalStorage('sessionId', data.sessionId);
+        }
+
+        if (user) {
+            await setUser(user);
+        } else {
+            console.error('[Auth] Google login succeeded but no user data found.', data);
+        }
+
+        // Persist the fingerprint so future requests share the same device identity
+        if (deviceFingerprint) {
+            security.setDeviceFingerprint(deviceFingerprint);
+        }
+
+        // Sync profile + subscription exactly like password login
+        await sync.syncUserData();
+
+        try {
+            await subscription.refreshSubscription();
+            console.log('[Auth] Subscription refreshed after Google login.');
+        } catch (subErr) {
+            console.warn('[Auth] Could not refresh subscription after Google login:', subErr);
+        }
+
+        return {
+            ok: true,
+            isNewUser: status === 'NEW_ACCOUNT',
+            user
+        };
+    }
+
+    throw new Error(data.reason || 'Google sign-in failed');
+}
+
+/**
+ * Complete the account-linking flow.
+ *
+ * Strict backend validator:
+ *   v.object({
+ *     linkToken:         v.string(),
+ *     password:          v.string(),
+ *     deviceFingerprint: v.string(),
+ *     deviceInfo:        v.optional(v.any()),
+ *   })
+ *
+ * Extra params passed by page callers (identifier, idToken, googleSub) are
+ * intentionally ignored and never forwarded to the backend.
+ *
+ * Success response (flat user fields):
+ *   { success: true, status: "ACCOUNT_LINKED",
+ *     data: { token, userId, name, email, username, displayName, sessionId } }
+ *
+ * @param {Object} params
+ * @param {string}  params.linkToken          - Opaque token from googleSignIn.
+ * @param {string}  params.password           - Password for the existing account.
+ * @param {string} [params.deviceFingerprint] - Reused from loginWithGoogle.
+ * @param {Object} [params.deviceInfo]        - Reused from loginWithGoogle.
+ * @returns {Promise<Object>} Result with `ok: true` and `user`.
+ */
+export async function linkGoogleAccount({
+    linkToken,
+    password,
+    deviceFingerprint,
+    deviceInfo
+    // Extra params passed by callers (identifier, idToken, googleSub, …)
+    // are intentionally ignored and never forwarded to the backend.
+}) {
+    requireOnline();
+
+    if (!password) {
+        throw new Error('Password is required to link your account.');
+    }
+    if (!linkToken) {
+        console.error('[Auth] linkGoogleAccount called without linkToken');
+        throw new Error('Missing link token. Please sign in with Google again.');
+    }
+
+    // Resolve device identity — prefers the caller-supplied fingerprint,
+    // falls back to the stored one, then to a freshly generated one.
+    const fallback = buildDeviceIdentity();
+    const fingerprint = (deviceFingerprint && String(deviceFingerprint).trim().length > 0)
+        ? deviceFingerprint
+        : fallback.deviceFingerprint;
+
+    const info = (deviceInfo && typeof deviceInfo === 'object')
+        ? { platform: deviceInfo.platform || 'web' }
+        : { platform: 'web' };
+
+    // ------------------------------------------------------------
+    // STRICT PAYLOAD — only the four fields the backend accepts.
+    // ------------------------------------------------------------
+    const payload = {
+        linkToken,
+        password,
+        deviceFingerprint: fingerprint,
+        deviceInfo: info
+    };
+
+    console.log('[Auth] linkGoogleAccount → sending payload keys:', Object.keys(payload));
+
+    const result = await convexHttpClient.action(
+        'auth/actions:linkGoogleAccount',
+        payload
+    );
+
+    if (!result || !result.success) {
+        throw new Error(result?.reason || result?.message || 'Account linking failed');
+    }
+
+    const data = result.data || {};
+
+    // Normalize the flat response
+    const user = normalizeUser(data);
+
+    setToken(data.token);
+    if (data.sessionId) {
+        utils.setLocalStorage('sessionId', data.sessionId);
+    }
+
+    if (user) {
+        await setUser(user);
+    } else {
+        console.error('[Auth] Account linking succeeded but no user data found.', data);
+    }
+
+    // Persist the fingerprint so future requests share the same device identity
+    if (fingerprint) {
+        security.setDeviceFingerprint(fingerprint);
+    }
+
+    await sync.syncUserData();
+
+    try {
+        await subscription.refreshSubscription();
+        console.log('[Auth] Subscription refreshed after Google account linking.');
+    } catch (subErr) {
+        console.warn('[Auth] Could not refresh subscription after Google account linking:', subErr);
+    }
+
+    return { ok: true, user };
+}
+
 // ==================== EXPOSE GLOBALLY ====================
 
 window.auth = {
+    // ---- Email / Phone ----
     login,
     register,
     logout,
@@ -621,5 +1032,19 @@ window.auth = {
     isTokenValid,
     getDevices,
     logoutDevice,
-    logoutAllDevices
+    logoutAllDevices,
+
+    // ---- Google Sign-In ----
+    loginWithGoogle,
+    linkGoogleAccount,
+
+    // ---- Token / User (used by app.js and other modules) ----
+    setToken,
+    clearToken,
+    getUser,
+    setUser,
+    initUser,
+    fallbackLoadUser,
+    clearUser,
+    checkAuth
 };
