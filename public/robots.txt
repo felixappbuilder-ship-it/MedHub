@@ -1,0 +1,20 @@
+# MedVix — robots.txt
+
+User-agent: *
+Allow: /
+
+# Authenticated / transient utility pages — keep out of the index
+Disallow: /login
+Disallow: /signup
+Disallow: /forgot-password
+Disallow: /locked
+Disallow: /exam-room
+Disallow: /notifications
+Disallow: /profile
+Disallow: /payment
+
+# Shared content is public — allow it
+Allow: /shared-exam
+Allow: /shared-note
+
+Sitemap: https://medvix.co.ke/sitemap.xml

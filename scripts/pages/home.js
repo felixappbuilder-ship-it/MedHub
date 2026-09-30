@@ -25,6 +25,9 @@ export async function init(context) {
   const refCode = referral.detectReferralFromURL() || referral.getStoredReferralCode();
   if (refCode) showReferralModal(root, refCode);
 
+  // Android app install banner (skips deep links and installed users)
+  maybeShowAndroidAppBanner();
+
   console.log('[Home] Initialized');
 }
 
@@ -34,11 +37,208 @@ export function destroy() {
 }
 
 // ============================================================
+// Android app install banner
+// ============================================================
+
+const BANNER_DISMISSED_KEY = 'medvix_app_banner_dismissed';
+const BANNER_DISMISS_DAYS  = 7;
+const PLAY_STORE_URL       = 'https://play.google.com/store/apps/details?id=com.medhurb.app';
+const APP_PACKAGE_ID       = 'com.medhurb.app';
+
+async function maybeShowAndroidAppBanner() {
+  // 1. Only on the bare landing page — skip any deep-link URL
+  if (!isPlainLanding()) return;
+
+  // 2. Only on Android browsers
+  if (!isAndroidBrowser()) return;
+
+  // 3. Never inside the app itself (Capacitor injects window.Capacitor)
+  if (typeof window.Capacitor !== 'undefined') return;
+
+  // 4. Respect prior dismissal
+  if (isDismissedRecently()) return;
+
+  // 5. If the app is already installed, do nothing
+  if (await isAppInstalled()) return;
+
+  // All checks passed — show the banner
+  showAppInstallBanner();
+}
+
+function isPlainLanding() {
+  // Only bare root: '/', '/index.html', '/home' — nothing else
+  const path = location.pathname.replace(/^\/+|\/+$/g, '');
+  if (path !== '' && path !== 'home' && path !== 'index.html') return false;
+  // No query params (rules out ?ref=, ?token=, ?redirect=, etc.)
+  if (location.search) return false;
+  // No hash
+  if (location.hash) return false;
+  return true;
+}
+
+function isAndroidBrowser() {
+  return /Android/i.test(navigator.userAgent);
+}
+
+function isDismissedRecently() {
+  try {
+    const ts = parseInt(localStorage.getItem(BANNER_DISMISSED_KEY), 10);
+    if (!ts) return false;
+    return (Date.now() - ts) < BANNER_DISMISS_DAYS * 24 * 60 * 60 * 1000;
+  } catch {
+    return false;
+  }
+}
+
+function markBannerDismissed() {
+  try {
+    localStorage.setItem(BANNER_DISMISSED_KEY, String(Date.now()));
+  } catch {}
+}
+
+async function isAppInstalled() {
+  // getInstalledRelatedApps is Chrome-on-Android only.
+  // It needs /.well-known/assetlinks.json on this domain AND
+  // the website declared in the app's AndroidManifest.
+  // If either is missing, the API returns [] even when the app
+  // is actually installed — so treat [] as "cannot confirm".
+  if (typeof navigator.getInstalledRelatedApps !== 'function') {
+    return false;
+  }
+  try {
+    const apps = await navigator.getInstalledRelatedApps();
+    if (!Array.isArray(apps)) return false;
+    return apps.some(a => a.id === APP_PACKAGE_ID);
+  } catch {
+    return false;
+  }
+}
+
+function showAppInstallBanner() {
+  injectBannerStyles();
+  if (document.getElementById('app-install-banner')) return;
+
+  const banner = document.createElement('div');
+  banner.id = 'app-install-banner';
+  banner.innerHTML = `
+    <div class="app-banner-content">
+      <div class="app-banner-icon">📱</div>
+      <div class="app-banner-text">
+        <div class="app-banner-title">Get the MedVix app</div>
+        <div class="app-banner-subtitle">Better experience on your phone</div>
+      </div>
+      <button class="app-banner-install" type="button">Install</button>
+      <button class="app-banner-close" type="button" aria-label="Close">×</button>
+    </div>
+  `;
+  document.body.appendChild(banner);
+
+  // Animate in on next frame
+  requestAnimationFrame(() => banner.classList.add('visible'));
+
+  const installBtn = banner.querySelector('.app-banner-install');
+  const closeBtn   = banner.querySelector('.app-banner-close');
+
+  installBtn.addEventListener('click', () => {
+    markBannerDismissed();
+    // Redirect to Play Store. On Android this opens the Play Store
+    // app; returning to the browser brings the user back here with
+    // the banner already dismissed.
+    window.location.href = PLAY_STORE_URL;
+  });
+
+  closeBtn.addEventListener('click', () => {
+    markBannerDismissed();
+    dismissBanner(banner);
+  });
+}
+
+function dismissBanner(banner) {
+  banner.classList.remove('visible');
+  setTimeout(() => banner.remove(), 300);
+}
+
+function injectBannerStyles() {
+  if (document.getElementById('app-banner-styles')) return;
+  const style = document.createElement('style');
+  style.id = 'app-banner-styles';
+  style.textContent = `
+    #app-install-banner {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 9999;
+      padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px)) 16px;
+      background: linear-gradient(135deg, #1976d2, #125ca8);
+      color: #fff;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    }
+    #app-install-banner.visible { transform: translateY(0); }
+
+    #app-install-banner .app-banner-content {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    #app-install-banner .app-banner-icon {
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+    #app-install-banner .app-banner-text {
+      flex: 1; min-width: 0;
+    }
+    #app-install-banner .app-banner-title {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 1.2;
+      margin-bottom: 2px;
+    }
+    #app-install-banner .app-banner-subtitle {
+      font-size: 12px;
+      opacity: 0.85;
+      line-height: 1.2;
+    }
+    #app-install-banner .app-banner-install {
+      flex-shrink: 0;
+      background: #fff;
+      color: #1976d2;
+      border: 0;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      transition: transform 0.1s ease;
+      font-family: inherit;
+    }
+    #app-install-banner .app-banner-install:active { transform: scale(0.95); }
+
+    #app-install-banner .app-banner-close {
+      flex-shrink: 0;
+      background: transparent;
+      color: #fff;
+      border: 0;
+      font-size: 24px;
+      line-height: 1;
+      padding: 4px 8px;
+      cursor: pointer;
+      opacity: 0.7;
+      font-family: inherit;
+    }
+    #app-install-banner .app-banner-close:hover { opacity: 1; }
+  `;
+  document.head.appendChild(style);
+}
+
+// ============================================================
 // event wiring
 // ============================================================
 
 function setupEvents(root) {
-  // ---- Get Started ----
   const startBtn = root.querySelector('#getStartedBtn');
   if (startBtn) {
     const h = () => goFromHome();
@@ -46,7 +246,6 @@ function setupEvents(root) {
     cleanupFns.push(() => startBtn.removeEventListener('click', h));
   }
 
-  // ---- Theme toggle ----
   const themeBtn = root.querySelector('#themeToggle');
   if (themeBtn) {
     const h = () => ui.toggleTheme();
@@ -54,7 +253,6 @@ function setupEvents(root) {
     cleanupFns.push(() => themeBtn.removeEventListener('click', h));
   }
 
-  // ---- Referral modal buttons ----
   const closeBtn = root.querySelector('#closeReferralBtn');
   if (closeBtn) {
     const h = () => closeReferralModal(root);
@@ -78,7 +276,6 @@ function setupEvents(root) {
 }
 
 function goFromHome() {
-  // Decide at click-time based on auth state.
   if (auth.checkAuth()) router.navigateTo('subjects');
   else router.navigateTo('welcome');
 }
@@ -182,7 +379,6 @@ function showReferralModal(root, code) {
   const modal  = root.querySelector('#referral-modal');
   const codeEl = root.querySelector('#ref-code-display');
   if (codeEl) {
-    // Works for both <input> and text elements.
     if ('value' in codeEl) codeEl.value = code;
     else codeEl.textContent = code;
   }
