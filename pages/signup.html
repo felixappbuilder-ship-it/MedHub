@@ -8,6 +8,116 @@
   data-cache="true"
   data-transition="fade"
 >
+  <style>
+    /* ---------- Download Gate (floating card) ---------- */
+    .dg-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(8, 12, 24, 0.6);
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+      animation: dgFade 0.18s ease-out;
+    }
+    .dg-overlay[hidden] { display: none; }
+
+    .dg-card {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      padding: 28px 24px 24px;
+      background: var(--surface, #fff);
+      color: var(--text, #0f172a);
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 24px 60px rgba(2, 6, 23, 0.35);
+      animation: dgPop 0.22s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+    }
+
+    /* very small X, top-right */
+    .dg-close {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      font-size: 14px;
+      line-height: 1;
+      color: var(--text-muted, #94a3b8);
+      background: transparent;
+      border: 0;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: color 0.15s, background 0.15s;
+    }
+    .dg-close:hover { color: var(--text, #0f172a); background: rgba(0,0,0,0.06); }
+
+    .dg-title {
+      margin: 0 0 8px;
+      font-size: 20px;
+      font-weight: 700;
+    }
+    .dg-text {
+      margin: 0 0 20px;
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--text-muted, #475569);
+    }
+    .dg-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .dg-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 14px 20px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+      background: #0b1220;
+      border-radius: 12px;
+      transition: transform 0.12s, opacity 0.12s;
+    }
+    .dg-btn:hover { opacity: 0.92; }
+    .dg-btn:active { transform: scale(0.985); }
+    .dg-qr {
+      padding: 10px;
+      background: #fff;
+      border: 1px solid var(--border, #e2e8f0);
+      border-radius: 14px;
+    }
+    .dg-qr img { display: block; width: 180px; height: 180px; }
+    .dg-hint {
+      margin: 0;
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: var(--text-muted, #64748b);
+    }
+
+    @keyframes dgFade { from { opacity: 0 } to { opacity: 1 } }
+    @keyframes dgPop {
+      from { opacity: 0; transform: translateY(12px) scale(0.96) }
+      to   { opacity: 1; transform: translateY(0) scale(1) }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .dg-overlay, .dg-card { animation: none; }
+    }
+  </style>
+
   <!-- Fixed Header -->
   <header class="fixed-header">
     <div class="header-row top">
@@ -31,7 +141,6 @@
          STEP 1 – Choose Google OR Email/Phone (with Referral + Terms)
          ============================================================ -->
     <div id="step1" class="step active">
-      <!-- Google button (rendered by GIS) with click guard -->
       <div id="google-signup-container" class="google-signin-container">
         <div id="google-click-guard" class="google-click-guard"></div>
       </div>
@@ -42,7 +151,6 @@
         Continue with Email / Phone
       </button>
 
-      <!-- Referral (applies to BOTH Google and Email paths) -->
       <div class="form-group" style="margin-top: 1.5rem;">
         <label for="referralCode">
           Referral Code
@@ -53,7 +161,6 @@
         <small>If you were referred by a friend, enter their code here.</small>
       </div>
 
-      <!-- Terms (applies to BOTH paths) -->
       <div class="form-group checkbox">
         <label>
           <input type="checkbox" id="terms" name="terms" />
@@ -188,23 +295,10 @@
         </div>
       </form>
     </div>
-
-    <!-- ============================================================
-         STEP 4 – Success & Redirect (both paths land here)
-         ============================================================ -->
-    <div id="step4" class="step" style="display: none; text-align: center;">
-      <div class="success-icon">✅</div>
-      <h2 id="successTitle">Account created successfully!</h2>
-      <p id="successMessage">
-        Redirecting in <span id="countdown">3</span> seconds…
-      </p>
-      <button id="redirectNowBtn" class="btn-primary">Go to Free Trial now</button>
-    </div>
   </main>
 
   <!-- ============================================================
        Google account-linking modal
-       (shown when the Google email already belongs to an existing account)
        ============================================================ -->
   <div id="google-link-modal" class="modal-overlay" style="display:none;">
     <div class="modal">
@@ -230,6 +324,23 @@
         <button class="btn-secondary" id="google-link-cancel">Cancel</button>
         <button class="btn-primary" id="google-link-submit">Connect Google</button>
       </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       DOWNLOAD GATE — floating card shown after successful signup.
+       JS injects either a Play Store button (Android) or a QR code (PC).
+       ============================================================ -->
+  <div id="download-gate" class="dg-overlay" hidden>
+    <div class="dg-card" role="dialog" aria-modal="true" aria-labelledby="dg-title">
+      <button id="dg-close" class="dg-close" aria-label="Close">&times;</button>
+      <h2 id="dg-title" class="dg-title">Continue with MedVix</h2>
+      <p class="dg-text">
+        To continue using MedVix and get the best experience, please download
+        MedVix on the Play Store. You'll be awarded a
+        <strong>24-hour free trial</strong>.
+      </p>
+      <div id="dg-body" class="dg-body"></div>
     </div>
   </div>
 </section>

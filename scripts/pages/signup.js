@@ -8,6 +8,25 @@ import * as utils from '../utils.js';
 import * as referral from '../referral.js';
 import { initGoogleSignIn, disableGoogleAutoSelect } from '../auth/google.js';
 
+// ============================================================
+// Download Gate configuration
+// ============================================================
+const PLAY_STORE_URL =
+  'https://play.google.com/store/apps/details?id=com.medhurb.app';
+
+// Vite serves /public at the root, so this file lives at:
+//   public/assets/images/qr-code.png
+const QR_IMAGE = '/assets/images/qr-code.png';
+
+const PLAY_ICON_SVG = `
+  <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor">
+    <path d="M3.6 2.3c-.3.2-.5.6-.5 1.1v17.2c0 .5.2.9.5 1.1l9.2-9.7-9.2-9.7zM14.6 9.3 5.9 2.1l9.6 5.5-1 1.7zm0 5.4 1 1.7-9.6 5.5 8.6-7.2zm5.5-2.4-2.9-1.7-1.2 1.6 1.2 1.6 2.9-1.7c.6-.3.6-1.5 0-1.8z"/>
+  </svg>`;
+
+function isAndroidBrowser() {
+  return /android/i.test(navigator.userAgent);
+}
+
 export async function init(context) {
   ui.applyTheme();
 
@@ -35,7 +54,6 @@ export async function init(context) {
   const step1 = $('#step1');
   const step2 = $('#step2');
   const step3 = $('#step3');
-  const step4 = $('#step4');
 
   // Step 1
   const referralCode = $('#referralCode');
@@ -66,10 +84,10 @@ export async function init(context) {
   const backStep3Btn = $('#backStep3Btn');
   const createAccountBtn = $('#createAccountBtn');
 
-  // Step 4
-  const successTitle = $('#successTitle');
-  const successMessage = $('#successMessage');
-  const redirectNowBtn = $('#redirectNowBtn');
+  // Download gate
+  const dgOverlay = $('#download-gate');
+  const dgBody = $('#dg-body');
+  const dgClose = $('#dg-close');
 
   // Header
   const themeToggle = $('#themeToggle');
@@ -93,23 +111,18 @@ export async function init(context) {
 
   // ---- Step navigation ----
   const STEP_LABELS = {
-    1: 'Step 1 of 4: Choose your sign-up method',
-    2: 'Step 2 of 4: Personal Information',
-    3: 'Step 3 of 4: Security Questions',
-    4: '',
+    1: 'Step 1 of 3: Choose your sign-up method',
+    2: 'Step 2 of 3: Personal Information',
+    3: 'Step 3 of 3: Security Questions',
   };
 
   function showStep(n) {
-    [step1, step2, step3, step4].forEach((el, idx) => {
+    [step1, step2, step3].forEach((el, idx) => {
       if (el) el.style.display = (idx + 1 === n) ? 'block' : 'none';
     });
     if (stepIndicator) {
-      if (n === 4) {
-        stepIndicator.style.display = 'none';
-      } else {
-        stepIndicator.style.display = 'block';
-        stepIndicator.textContent = STEP_LABELS[n] || '';
-      }
+      stepIndicator.style.display = 'block';
+      stepIndicator.textContent = STEP_LABELS[n] || '';
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
@@ -126,11 +139,82 @@ export async function init(context) {
   }
 
   // ============================================================
+  // DOWNLOAD GATE
+  // ============================================================
+  /**
+   * Render the correct CTA into the modal body:
+   *  - Android browser → Play Store button
+   *  - Everything else → QR code
+   */
+  function renderDownloadGateBody() {
+    if (!dgBody) return;
+
+    if (isAndroidBrowser()) {
+      dgBody.innerHTML = `
+        <a class="dg-btn" href="${PLAY_STORE_URL}" target="_blank" rel="noopener">
+          ${PLAY_ICON_SVG}
+          <span>Download on Play Store</span>
+        </a>
+        <p class="dg-hint">Opens the MedVix app page on Google Play</p>
+      `;
+    } else {
+      dgBody.innerHTML = `
+        <div class="dg-qr">
+          <img src="${QR_IMAGE}"
+               alt="QR code to download MedVix on Android"
+               width="180" height="180" />
+        </div>
+        <p class="dg-hint">
+          Scan the QR code with your Android phone to download MedVix
+          and activate your 24-hour free trial.
+        </p>
+      `;
+    }
+  }
+
+  function showDownloadGate() {
+    if (!dgOverlay) return;
+    renderDownloadGateBody();
+    dgOverlay.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function hideDownloadGate() {
+    if (!dgOverlay) return;
+    dgOverlay.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  if (dgClose) dgClose.addEventListener('click', hideDownloadGate);
+  if (dgOverlay) {
+    dgOverlay.addEventListener('click', (e) => {
+      if (e.target === dgOverlay) hideDownloadGate();
+    });
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && dgOverlay && !dgOverlay.hidden) hideDownloadGate();
+  });
+
+  // ============================================================
   // STEP 1 – Referral + Terms handling
   // ============================================================
+  function captureManualReferral() {
+    const raw = (referralCode?.value || '').trim();
+    if (!raw) return formData.referralCode || '';
+
+    formData.referralCode = raw;
+
+    try {
+      utils.setLocalStorage('referral_code', raw);
+    } catch (_) { /* ignore */ }
+
+    console.log('[Signup] captureManualReferral →', formData.referralCode);
+    return formData.referralCode;
+  }
 
   async function prefillReferral() {
     if (!referralCode) return;
+
     const urlRef = referral.detectReferralFromURL?.();
     const storedRef = referral.getStoredReferralCode?.();
     const refCode = urlRef || storedRef;
@@ -138,6 +222,7 @@ export async function init(context) {
 
     referralCode.value = refCode;
     referralCode.readOnly = true;
+
     if (referralStatus) {
       referralStatus.textContent = '⏳ Validating referral code…';
       referralStatus.style.color = 'var(--text-muted)';
@@ -164,20 +249,10 @@ export async function init(context) {
         referralStatus.textContent = '⚠️ Could not validate code. You can still sign up.';
         referralStatus.style.color = 'var(--warning)';
       }
+      referralCode.readOnly = false;
     }
   }
   await prefillReferral();
-
-  function captureManualReferral() {
-    const code = (referralCode?.value || '').trim().toUpperCase();
-    if (code) {
-      formData.referralCode = code;
-      try {
-        // Persist so the backend's Google signup action can read it
-        utils.setLocalStorage('referral_code', code);
-      } catch (_) { /* ignore */ }
-    }
-  }
 
   function validateStep1() {
     let ok = true;
@@ -190,7 +265,6 @@ export async function init(context) {
     return ok;
   }
 
-  // Google click guard: blocks click until terms accepted
   function updateGoogleGuard() {
     if (!googleClickGuard) return;
     googleClickGuard.style.pointerEvents = terms.checked ? 'none' : 'auto';
@@ -226,20 +300,20 @@ export async function init(context) {
   if (googleContainer) {
     await initGoogleSignIn({
       container: googleContainer,
-      text: 'signup_with',              // renders "Sign up with Google"
+      text: 'signup_with',
       onCredential: async (response) => {
         if (!validateStep1()) {
           showStep(1);
           return;
         }
-        captureManualReferral();
-        await handleGoogleCredential(response.credential);
+        const refCode = captureManualReferral();
+        await handleGoogleCredential(response.credential, refCode);
       },
     });
   }
 
   // ============================================================
-  // STEP 2 – Personal Info (email/phone path only)
+  // STEP 2 – Personal Info
   // ============================================================
   if (togglePwd1) togglePwd1.addEventListener('click', () => ui.togglePasswordVisibility('password'));
   if (togglePwd2) togglePwd2.addEventListener('click', () => ui.togglePasswordVisibility('confirmPassword'));
@@ -302,7 +376,7 @@ export async function init(context) {
   }
 
   // ============================================================
-  // STEP 3 – Security Questions (email/phone path only)
+  // STEP 3 – Security Questions
   // ============================================================
   if (backStep3Btn) {
     backStep3Btn.addEventListener('click', () => showStep(2));
@@ -333,6 +407,8 @@ export async function init(context) {
         { question: sq3Val, answer: ans3Val },
       ];
 
+      captureManualReferral();
+
       ui.showLoading('Creating account…');
 
       try {
@@ -356,7 +432,9 @@ export async function init(context) {
         });
 
         ui.hideLoading();
-        goToSuccess(redirectTarget);
+
+        // ✅ Instead of redirecting to /free-trial, show the download gate.
+        showDownloadGate();
 
       } catch (error) {
         ui.hideLoading();
@@ -366,64 +444,24 @@ export async function init(context) {
   }
 
   // ============================================================
-  // STEP 4 – Success & Redirect
-  // ============================================================
-  function goToSuccess(target) {
-    const finalTarget = target || '/free-trial';
-
-    if (successTitle) successTitle.textContent = 'Account created successfully!';
-    if (successMessage) {
-      successMessage.innerHTML = target
-        ? `Your account is ready. Redirecting to your page in <span id="countdown">3</span> seconds…`
-        : `Your account is ready. Redirecting to your free trial in <span id="countdown">3</span> seconds…`;
-    }
-    if (redirectNowBtn) {
-      redirectNowBtn.textContent = target ? 'Go to your page now' : 'Go to Free Trial now';
-    }
-
-    showStep(4);
-
-    let countdown = 3;
-    const cd = $('#countdown');
-    if (cd) cd.textContent = countdown;
-
-    const interval = setInterval(() => {
-      countdown -= 1;
-      const el = $('#countdown');
-      if (el) el.textContent = countdown;
-      if (countdown <= 0) {
-        clearInterval(interval);
-        router.navigateTo(finalTarget);
-      }
-    }, 1000);
-
-    if (redirectNowBtn) {
-      redirectNowBtn.onclick = () => {
-        clearInterval(interval);
-        router.navigateTo(finalTarget);
-      };
-    }
-  }
-
-  // ============================================================
   // GOOGLE CREDENTIAL HANDLER
   // ============================================================
-  async function handleGoogleCredential(idToken) {
+  async function handleGoogleCredential(idToken, refCode) {
     ui.showLoading('Signing up with Google…');
 
     try {
-      const result = await auth.loginWithGoogle(idToken);
+      const result = await auth.loginWithGoogle(idToken, refCode || undefined);
 
       if (result.requiresLink) {
         ui.hideLoading();
         openGoogleLinkModal({
           email: result.email,
-          linkToken: result.linkToken,                     // ← NEW: forward linkToken
+          linkToken: result.linkToken,
           idToken,
-          googleSub: result.googleSub,                     // ← kept for legacy
+          googleSub: result.googleSub,
           deviceFingerprint: result.deviceFingerprint,
           deviceInfo: result.deviceInfo,
-          redirectTarget,
+          referralCode: refCode || undefined,
         });
         return;
       }
@@ -433,7 +471,9 @@ export async function init(context) {
         result.isNewUser ? 'Account created — welcome!' : 'Signed in with Google',
         'success'
       );
-      goToSuccess(redirectTarget);
+
+      // ✅ Show the download gate instead of redirecting.
+      showDownloadGate();
 
     } catch (err) {
       ui.hideLoading();
@@ -446,12 +486,12 @@ export async function init(context) {
   // ============================================================
   function openGoogleLinkModal({
     email: linkedEmail,
-    linkToken,                                           // ← NEW
+    linkToken,
     idToken,
     googleSub,
     deviceFingerprint,
     deviceInfo,
-    redirectTarget: target
+    referralCode: refCode,
   }) {
     const modal = $('#google-link-modal');
     const emailEl = $('#google-link-email');
@@ -483,18 +523,21 @@ export async function init(context) {
 
       try {
         await auth.linkGoogleAccount({
-          linkToken,                                     // ← NEW: the important one
+          linkToken,
           identifier: linkedEmail,
           password: pwd,
           idToken,
           googleSub,
           deviceFingerprint,
-          deviceInfo
+          deviceInfo,
+          referralCode: refCode || undefined,
         });
 
         modal.style.display = 'none';
         ui.showToast('Google connected to your account', 'success');
-        goToSuccess(target);
+
+        // ✅ Show the download gate instead of redirecting.
+        showDownloadGate();
 
       } catch (err) {
         ui.showToast(err.message || 'Could not connect Google', 'error');

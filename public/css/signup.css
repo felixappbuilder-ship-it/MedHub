@@ -1,13 +1,13 @@
 /* ==========================================================================
-   SIGNUP — page-specific styles (4-step flow with Google Sign-Up)
+   SIGNUP — page-specific styles (3-step flow + Google Sign-Up + Download Gate)
    Requires common.css (tokens, reset, header-row base, buttons base,
    .error-message, input/label base, keyframes fadeSlide/spin/slideUp,
    focus-visible default).
    Adds ONLY: page-sticky header shell, logo-area, nav links, multi-step
    form, Google button + click guard, "or" divider, linking modal,
-   password reveal + strength meter, checkbox tweaks, success step,
-   instruction banner, auto-save indicator, dark-theme overrides,
-   loading state, responsive.
+   password reveal + strength meter, checkbox tweaks, instruction banner,
+   auto-save indicator, download gate, dark-theme overrides, loading
+   state, responsive.
    ========================================================================== */
 
 /* ---------- Page-sticky fixed header ---------- */
@@ -88,7 +88,6 @@ h1 {
    STEP 1 — Google button + click guard + "or" divider + full-width button
    ========================================================================== */
 
-/* Google button container — holds the GIS iframe */
 .google-signin-container {
     position: relative;
     display: flex;
@@ -102,8 +101,6 @@ h1 {
     margin: 0 auto;
 }
 
-/* Transparent overlay that blocks clicks on the Google button
-   until the user accepts Terms of Service. */
 .google-click-guard {
     position: absolute;
     inset: 0;
@@ -112,7 +109,6 @@ h1 {
     background: transparent;
 }
 
-/* "or" divider between Google and Email/Phone */
 .auth-divider {
     display: flex;
     align-items: center;
@@ -130,8 +126,6 @@ h1 {
     background: var(--border, #e2e8f0);
 }
 
-/* Full-width primary/secondary buttons (used for
-   "Continue with Email / Phone"). */
 .btn-block {
     width: 100%;
     display: block;
@@ -255,44 +249,6 @@ small,
     font-weight: 600;
 }
 
-/* ==========================================================================
-   STEP 4 — Success & Redirect
-   ========================================================================== */
-
-.success-icon {
-    font-size: 4rem;
-    text-align: center;
-    margin: 1rem 0;
-    animation: bounce 0.6s ease;
-}
-@keyframes bounce {
-    0%, 100% { transform: translateY(0);     }
-    50%      { transform: translateY(-20px); }
-}
-
-#step4 {
-    text-align: center;
-    padding: 2rem 1rem;
-}
-#step4 h2 {
-    margin: 1rem 0;
-    color: var(--success);
-}
-#step4 p {
-    margin: 1rem 0 2rem;
-    color: var(--text-secondary);
-}
-#step4 .btn-primary {
-    margin-top: 1.5rem;
-    min-width: 200px;
-}
-
-#countdown {
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: var(--accent);
-}
-
 /* ---------- Instruction banner ---------- */
 .instruction {
     background: var(--bg-secondary);
@@ -367,6 +323,135 @@ footer .btn-text:hover { color: var(--accent); }
     margin-top: 1rem;
 }
 
+/* ==========================================================================
+   DOWNLOAD GATE — floating card shown after successful signup
+   JS injects a Play Store button (Android) or a QR code (PC) into .dg-body.
+   ========================================================================== */
+.dg-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(8, 12, 24, 0.6);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    animation: dgFade 0.18s ease-out;
+}
+.dg-overlay[hidden] { display: none; }
+
+.dg-card {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    padding: 28px 24px 24px;
+    background: var(--bg-card, #fff);
+    color: var(--text-primary, #0f172a);
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 24px 60px rgba(2, 6, 23, 0.35);
+    animation: dgPop 0.22s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+}
+
+/* Very small X, top-right corner */
+.dg-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1;
+    color: var(--text-muted, #94a3b8);
+    background: transparent;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: color 0.15s, background 0.15s;
+}
+.dg-close:hover {
+    color: var(--text-primary, #0f172a);
+    background: rgba(0, 0, 0, 0.06);
+}
+
+.dg-title {
+    margin: 0 0 8px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary, #0f172a);
+}
+.dg-text {
+    margin: 0 0 20px;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--text-secondary, #475569);
+}
+.dg-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Play Store button (Android) */
+.dg-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    background: #0b1220;
+    border-radius: 12px;
+    transition: transform 0.12s, opacity 0.12s;
+}
+.dg-btn:hover { opacity: 0.92; }
+.dg-btn:active { transform: scale(0.985); }
+.dg-btn svg { flex-shrink: 0; }
+
+/* QR code box (PC) */
+.dg-qr {
+    padding: 10px;
+    background: #fff;
+    border: 1px solid var(--border, #e2e8f0);
+    border-radius: 14px;
+}
+.dg-qr img {
+    display: block;
+    width: 180px;
+    height: 180px;
+}
+
+.dg-hint {
+    margin: 0;
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: var(--text-muted, #64748b);
+}
+
+@keyframes dgFade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@keyframes dgPop {
+    from { opacity: 0; transform: translateY(12px) scale(0.96); }
+    to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .dg-overlay,
+    .dg-card { animation: none; }
+}
+
 /* ---------- Disabled state ---------- */
 button:disabled,
 input:disabled {
@@ -421,6 +506,21 @@ input:disabled {
 .dark-theme #google-link-modal .modal-body strong {
     color: var(--text-primary, #f1f5f9);
 }
+.dark-theme .dg-card {
+    background: var(--bg-card, #0f172a);
+    color: var(--text-primary, #f1f5f9);
+}
+.dark-theme .dg-close:hover {
+    color: var(--text-primary, #f1f5f9);
+    background: rgba(255, 255, 255, 0.08);
+}
+.dark-theme .dg-qr {
+    background: #fff;              /* keep QR contrast on dark theme */
+    border-color: var(--border-dark, #334155);
+}
+.dark-theme .dg-btn {
+    background: #2563eb;
+}
 
 /* ==========================================================================
    RESPONSIVE
@@ -438,5 +538,8 @@ input:disabled {
     .button-group button { width: 100%; }
     h1 { font-size: 1.5rem; }
     .reveal-btn { top: 2.3rem; }
-    #step4 .btn-primary { min-width: unset; width: 100%; }
+
+    /* Download gate — tighten padding on small screens */
+    .dg-card { padding: 24px 18px 20px; }
+    .dg-qr img { width: 160px; height: 160px; }
 }

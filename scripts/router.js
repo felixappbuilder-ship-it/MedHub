@@ -6,25 +6,12 @@
  * No `.html` in URLs or internal page names.
  *
  * Pages are resolved dynamically – no static lists required.
- * Authentication is enforced by page-manager based on each page's `data-auth`.
+ * The router NEVER blocks navigation based on auth. Every requested
+ * page is always loaded; each page's own init() decides whether to
+ * bounce the user (e.g. to /login).
  */
 
-import * as ui from './ui.js';
-import * as auth from './auth.js';
 import { navigateTo as pageManagerNavigate } from './page-manager.js';
-
-// ==================== STATIC PERMISSION LISTS ====================
-const PUBLIC_PAGES = [
-    'home', 'index', 'welcome', 'login', 'signup', 'forgot-password',
-    'locked', 'shared-exam', 'shared-note', 'privacy', 'terms', 'agent-terms', 'error'
-];
-
-const PROTECTED_PAGES = [
-    'subjects', 'subject-specific', 'exam-settings', 'exam-room', 'results',
-    'performance', 'profile', 'subscription', 'free-trial', 'payment',
-    'referral', 'agent-registration', 'ai', 'notes', 'notifications',
-    'resource-browser', 'pdf-settings'
-];
 
 // ==================== DYNAMIC ROUTE PATTERNS ====================
 const DYNAMIC_ROUTES = [
@@ -32,21 +19,6 @@ const DYNAMIC_ROUTES = [
     { pattern: /^resource\/viewer\/(.+)$/, page: 'resource-viewer', paramKey: 'id' },
     { pattern: /^shared-exam\/(.+)$/, page: 'shared-exam', paramKey: 'token' }
 ];
-
-// ==================== PERMISSION CHECK ====================
-function isAllowed(targetPage, currentPage) {
-    if (PUBLIC_PAGES.includes(targetPage)) return true;
-
-    if (PROTECTED_PAGES.includes(targetPage)) {
-        const isLoggedIn = auth.checkAuth();
-        if (!isLoggedIn) {
-            ui.showToast('Please log in first', 'warning');
-            return false;
-        }
-    }
-
-    return true;
-}
 
 // ==================== ROUTE RESOLVER ====================
 function resolveRoute(path) {
@@ -74,15 +46,9 @@ function resolveRoute(path) {
 
     const query = new URLSearchParams(queryString || '');
 
-    // 3. Root always resolves to home. The home page decides where to
-    //    send the user after they click "Get Started".
+    // 3. Root always resolves to home.
     if (!pathPart || pathPart === 'index' || pathPart === 'index.html') {
-        return {
-            page: 'home',
-            params: {},
-            query,
-            hash
-        };
+        return { page: 'home', params: {}, query, hash };
     }
 
     // 4. Dynamic route match
@@ -135,9 +101,6 @@ export function navigateTo(target, data = {}) {
         return;
     }
 
-    const current = getCurrentPage();
-    if (!isAllowed(targetPage, current)) return;
-
     if (Object.keys(data).length > 0) {
         sessionStorage.setItem('navData', JSON.stringify(data));
     }
@@ -145,6 +108,8 @@ export function navigateTo(target, data = {}) {
     const url = buildUrl(resolved);
     window.history.pushState({ page: targetPage, params: resolved.params }, '', url);
 
+    // Always load the requested page. The page itself handles any
+    // auth requirements inside its init().
     pageManagerNavigate(targetPage, resolved.params, resolved.query, resolved.hash);
 }
 

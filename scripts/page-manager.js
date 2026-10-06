@@ -1,8 +1,6 @@
 // scripts/page-manager.js
 
 import { loadPage } from './page-loader.js';
-import * as auth from './auth.js';
-import * as ui from './ui.js';
 import * as router from './router.js';
 
 // State
@@ -12,8 +10,12 @@ let abortController = null;
 /**
  * Navigate to a new page.
  *
+ * NOTE: The page-manager NEVER decides auth. It always loads and runs
+ * the requested page. Each page's own init() is responsible for
+ * bouncing to /login (or anywhere else) if it needs an authenticated user.
+ *
  * @param {string} pageName - Page name (e.g., 'home')
- * @param {Object} params  - Dynamic route parameters
+ * @param {Object} params   - Dynamic route parameters
  * @param {URLSearchParams} query - Query parameters
  * @param {string} hash     - URL hash fragment
  */
@@ -31,33 +33,26 @@ export async function navigateTo(pageName, params = {}, query = new URLSearchPar
         // 3. Load HTML + metadata + module
         const pageMeta = await loadPage(pageName);
 
-        // 4. Auth gate (before injection, so we never paint a protected page)
-        if (pageMeta.auth === 'required' && !auth.checkAuth()) {
-            const returnTo = encodeURIComponent('/' + pageName);
-            router.navigateTo(`/login?returnTo=${returnTo}`);
-            return;
-        }
-
-        // 5. Page-specific CSS — awaited so there's no flash of unstyled content
+        // 4. Page-specific CSS — awaited so there's no flash of unstyled content
         if (pageMeta.style) {
             await loadStylesheet(pageMeta.style, pageName);
         }
 
-        // 6. Inject page HTML
+        // 5. Inject page HTML
         const appRoot = document.getElementById('app-root');
         if (!appRoot) throw new Error('#app-root not found');
         appRoot.innerHTML = pageMeta.html;
 
-        // 7. Title immediately, before the page script runs
+        // 6. Title immediately, before the page script runs
         document.title = pageMeta.title || 'MedVix';
 
-        // 8. Locate the injected section
+        // 7. Locate the injected section
         const root = appRoot.querySelector('section[data-page]');
         if (!root) {
             throw new Error(`Page "${pageName}" has no <section data-page>.`);
         }
 
-        // 9. Context object passed to every page's init().
+        // 8. Context object passed to every page's init().
         //    Every scripts/pages/*.js reads `context.root` for its queries.
         const context = {
             root,
@@ -73,13 +68,14 @@ export async function navigateTo(pageName, params = {}, query = new URLSearchPar
             },
         };
 
-        // 10. Call the page's init.
+        // 9. Call the page's init. The page decides everything from here —
+        //    including whether to redirect an unauthenticated user.
         let cleanup = null;
         if (pageMeta.module && typeof pageMeta.module.init === 'function') {
             cleanup = await pageMeta.module.init(context);
         }
 
-        // 11. Remember the page for teardown on next navigation
+        // 10. Remember the page for teardown on next navigation
         currentPage = {
             name: pageName,
             root,
