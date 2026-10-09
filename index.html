@@ -1,6 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- ============================================================
+         MedVix — hostname-based launch router.
+         MUST be the first thing in <head>, above every meta tag and
+         stylesheet. Runs synchronously before the browser parses the
+         rest of the document, so the Play Store redirect fires before
+         any resource is fetched and no flash of the SPA is visible.
+         ============================================================ -->
+    <script>
+    (function medvixLaunchRouter() {
+        'use strict';
+        try {
+            var host = (window.location.hostname || '').toLowerCase();
+
+            var APP_HOSTS = ['app.medvix.co.ke', 'www.app.medvix.co.ke'];
+            var WEB_HOSTS = ['medvix.co.ke', 'www.medvix.co.ke'];
+
+            // Web hosts: normal website. Nothing to do.
+            if (WEB_HOSTS.indexOf(host) !== -1) return;
+
+            // Unknown host (localhost, previews). Leave alone.
+            if (APP_HOSTS.indexOf(host) === -1) return;
+
+            // ── App hosts from here on ───────────────────────────────
+
+            // Inside the Capacitor WebView — the app already owns the
+            // URL. Redirecting would break it.
+            if (window.Capacitor) return;
+
+            // Android browsers only. iOS and desktop get the site.
+            var ua = navigator.userAgent || '';
+            if (!/Android/i.test(ua)) return;
+
+            // Skip in-app browsers (Facebook, Instagram, TikTok, …).
+            // Play Store redirects from those often fail silently and
+            // strand the user on a blank page.
+            if (/\bwv\b/i.test(ua) || /FBAN|FBAV|Instagram|Line\//i.test(ua)) return;
+
+            // Capture the destination exactly as it arrived. Every
+            // route is forwarded — no allow-list.
+            var destination =
+                window.location.pathname +
+                window.location.search +
+                window.location.hash;
+            if (!destination) destination = '/';
+
+            // Encode ONCE inside the referrer value.
+            var referrer = new URLSearchParams({ deep_link: destination }).toString();
+
+            // Build the Play Store URL. searchParams.set() encodes the
+            // referrer value AGAIN — the second, deliberate encoding.
+            // Google Play decodes the referrer parameter exactly once
+            // before storing it; getInstallReferrer() then returns the
+            // destination still single-encoded, which the Java side
+            // decodes with Uri.decode().
+            var playUrl = new URL('https://play.google.com/store/apps/details');
+            playUrl.searchParams.set('id', 'com.medhurb.app');
+            playUrl.searchParams.set('referrer', referrer);
+
+            // replace() keeps the redirect out of history — no
+            // back-button trap after the user installs and opens.
+            window.location.replace(playUrl.toString());
+        } catch (err) {
+            if (window.console && console.warn) {
+                console.warn('[MedVix] launch router failed:', err);
+            }
+        }
+    })();
+    </script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
     <meta name="theme-color" content="#ffffff" />
