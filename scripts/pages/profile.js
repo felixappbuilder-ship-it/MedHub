@@ -1,6 +1,7 @@
 // scripts/pages/profile.js
 import * as ui from '../ui.js';
 import * as router from '../router.js';
+import * as redirect from '../redirect.js';
 import * as auth from '../auth.js';
 import * as utils from '../utils.js';
 import * as validation from '../validation.js';
@@ -8,29 +9,97 @@ import * as security from '../security.js';
 import * as db from '../db.js';
 import * as analytics from '../analytics.js';
 import * as subscription from '../subscription.js';
+import * as contentStore from '../db/content-store.js';
 
 let $;
+
+// Module-scoped ref to the current institution dropdown controller so
+// destroy() and the state adapter can reach it. Null until
+// initInstitutionDropdown() runs.
+let _institutionController = null;
+
+// Module-scoped listener ref so destroy() can remove the online
+// handler we attach in init(). Without this, repeated navigations to
+// the profile page would stack listeners on `window`.
+let _onlineRefreshHandler = null;
+
+// Offline cache for the devices list. Stored as JSON under a single
+// key and scoped to a user id so that switching accounts on the same
+// browser never leaks another user's device list.
+const DEVICES_CACHE_KEY = 'profile_devices_cache_v1';
 
 export async function init(context) {
   $ = (sel) => context.root.querySelector(sel);
 
   ui.applyTheme();
 
-  // Check auth
+  // ── Auth gate ────────────────────────────────────────────────────
+  // Round-trip through login so the user comes back to the same tab
+  // with the same in-progress edits.
   if (!auth.checkAuth()) {
-    ui.showToast('Please log in first', 'warning');
-    router.navigateTo('login');
+    ui.showToast('Please log in to view your profile', 'warning');
     hideShimmer();
+    redirect.navigateWithReturn('login', 'auth_required');
     return;
   }
 
   const user = auth.getUser();
   if (!user) {
     ui.showToast('User data not found', 'error');
-    router.navigateTo('login');
     hideShimmer();
+    redirect.navigateWithReturn('login', 'auth_required');
     return;
   }
+
+  // ── State adapter ────────────────────────────────────────────────
+  // Registered after the auth gate. Captures the active tab and the
+  // institution dropdown's current selection (which lives in a
+  // closure inside initInstitutionDropdown, not in the DOM). Every
+  // form field with an id is handled by the automatic UI snapshot.
+  //
+  // The migration controller is deliberately NOT captured: if the
+  // user was mid-migration when the page was torn down, the
+  // in-flight loop's DOM refs are gone. Better to drop it and let
+  // the user restart from the storage tab.
+  redirect.registerStateAdapter('profile', {
+    capture: () => {
+      const activeTabBtn = document.querySelector('.tab-button.active');
+      const activeTabContent = document.querySelector('.tab-content.active');
+
+      return {
+        activeTabId: activeTabContent ? activeTabContent.id : null,
+        activeTabBtn: activeTabBtn ? activeTabBtn.dataset.tab : null,
+        selectedInstitution:
+          (_institutionController && _institutionController.getSelected()) || null,
+      };
+    },
+    restore: (data) => {
+      if (!data) return;
+
+      // Re-apply the institution dropdown selection. The controller
+      // exposes setSelected() which updates both the closure variable
+      // and the input's value.
+      if (data.selectedInstitution && _institutionController) {
+        try { _institutionController.setSelected(data.selectedInstitution); }
+        catch (err) { console.warn('[Profile] institution restore failed:', err); }
+      }
+
+      // Re-apply the active tab. Switch the button and the content.
+      if (data.activeTabBtn) {
+        const root = document.getElementById('app-root') || document;
+        root.querySelectorAll('.tab-content').forEach((el) => el.classList.remove('active'));
+        root.querySelectorAll('.tab-button').forEach((b) => b.classList.remove('active'));
+
+        const btn = root.querySelector(`.tab-button[data-tab="${data.activeTabBtn}"]`);
+        if (btn) btn.classList.add('active');
+
+        if (data.activeTabId) {
+          const tab = root.querySelector(`#${data.activeTabId}`);
+          if (tab) tab.classList.add('active');
+        }
+      }
+    },
+  });
 
   // Get cached subscription and compute actual active status
   let sub = null;
@@ -72,7 +141,12 @@ export async function init(context) {
     `;
     const changePlanBtn = $('#changePlanBtn');
     if (changePlanBtn) {
-      changePlanBtn.addEventListener('click', () => router.navigateTo('subscription'));
+      // Round-trip through subscription so a session expiry that
+      // surfaces mid-flow lands the user back here with the
+      // profile tab they were on.
+      changePlanBtn.addEventListener('click', () =>
+        redirect.navigateWithReturn('subscription', 'subscription_required')
+      );
     }
   } else {
     subEl.innerHTML = '<p>No active subscription. <a href="#" id="subscribeLink">Subscribe now</a></p>';
@@ -80,13 +154,23 @@ export async function init(context) {
     if (subscribeLink) {
       subscribeLink.addEventListener('click', (e) => {
         e.preventDefault();
-        router.navigateTo('subscription');
+        redirect.navigateWithReturn('subscription', 'subscription_required');
       });
     }
   }
 
-  // Load devices
+  // Load devices (with offline cache fallback)
   await loadDevices();
+
+  // Auto-refresh devices when coming back online. Registered once
+  // per page lifetime — destroy() removes it.
+  if (!_onlineRefreshHandler) {
+    _onlineRefreshHandler = () => {
+      // Only re-run if the devices tab actually exists in this page.
+      if ($('#devices-list')) loadDevices();
+    };
+    try { window.addEventListener('online', _onlineRefreshHandler); } catch { /* ignore */ }
+  }
 
   // Load preferences
   loadPreferences(user.preferences);
@@ -94,11 +178,8 @@ export async function init(context) {
   // Load statistics
   await loadStatistics();
 
-  // Set device fingerprint display
-  const fpEl = $('#device-fingerprint');
-  if (fpEl) {
-    fpEl.textContent = security.getDeviceFingerprint() || '—';
-  }
+  // Load storage info (Storage tab)
+  await loadStorageInfo();
 
   // Initialize institution dropdown
   initInstitutionDropdown();
@@ -108,6 +189,31 @@ export async function init(context) {
 
   // Hide shimmer
   hideShimmer();
+
+  // ── Self-consume of the return stack ─────────────────────────────
+  try {
+    const hasSnap = redirect.hasSnapshot();
+    if (hasSnap) {
+      const myUrl =
+        window.location.pathname +
+        (window.location.search || '') +
+        (window.location.hash || '');
+      const top = redirect.peekReturn();
+      if (top && top.url === myUrl) redirect.popReturn();
+    }
+  } catch (err) {
+    console.warn('[Profile] Return-stack cleanup failed:', err);
+  }
+
+  // ── Resume snapshot ──────────────────────────────────────────────
+  const snap = redirect.consumeSnapshot();
+  if (snap && (snap.ui || snap.page)) {
+    ui.showToast('Continuing where you left off', 'info', 1800);
+    console.log('[Profile] Resumed from redirect:', {
+      fields: Object.keys(snap.ui?.fields || {}).length,
+      pageState: snap.page,
+    });
+  }
 
   console.log('[Profile] Initialized');
 }
@@ -124,10 +230,33 @@ function hideShimmer() {
   }
 }
 
+// ==================== HELPER: FORMAT STUDY DURATION ====================
+// Matches the formatter in pages/performance.js so both surfaces agree.
+function formatStudyDuration(totalSeconds) {
+  const s = Math.max(0, Math.round(Number(totalSeconds) || 0));
+  if (s === 0) return '0h';
+  if (s < 60) return `${s}s`;
+  if (s < 3600) {
+    const m = Math.round(s / 60);
+    return m >= 60 ? '1h' : `${m}m`;
+  }
+  const h = s / 3600;
+  const rounded = Math.round(h * 10) / 10;
+  return Number.isInteger(rounded) ? `${rounded}h` : `${rounded.toFixed(1)}h`;
+}
+
 // ==================== INSTITUTION DROPDOWN ====================
+//
+// Reworked so the selected value is reachable from outside — the
+// state adapter needs to read and write it across a redirect.
+// Returns a controller with getSelected() / setSelected().
 function initInstitutionDropdown() {
   const input = $('#institution');
   const dropdown = $('#institution-dropdown');
+  if (!input || !dropdown) {
+    _institutionController = null;
+    return;
+  }
 
   const institutions = [
     'University of Nairobi (UoN)',
@@ -206,7 +335,7 @@ function initInstitutionDropdown() {
   ];
 
   const uniqueInstitutions = [...new Set(institutions)].sort();
-  let selectedInstitution = '';
+  let selectedInstitution = input.value || '';
 
   function renderDropdown(filter = '') {
     const filtered = filter ?
@@ -245,15 +374,27 @@ function initInstitutionDropdown() {
     renderDropdown(input.value);
   });
 
-  document.addEventListener('click', (e) => {
+  // Use a single listener guarded by a flag so re-init across
+  // navigations doesn't stack document-level handlers.
+  const onDocClick = (e) => {
     if (!input.contains(e.target) && !dropdown.contains(e.target)) {
       dropdown.classList.remove('show');
     }
-  });
+  };
+  document.addEventListener('click', onDocClick);
 
-  if (input.value) {
-    selectedInstitution = input.value;
-  }
+  // Expose a controller so the state adapter and destroy() can
+  // reach in.
+  _institutionController = {
+    getSelected: () => selectedInstitution,
+    setSelected: (val) => {
+      selectedInstitution = val || '';
+      input.value = selectedInstitution;
+    },
+    detach: () => {
+      document.removeEventListener('click', onDocClick);
+    },
+  };
 }
 
 // ==================== EVENT LISTENERS ====================
@@ -293,6 +434,18 @@ function attachEventListeners(context) {
     deleteAccountBtn.addEventListener('click', deleteAccount);
   }
 
+  // ── Devices tab ──────────────────────────────────────────────────
+  const refreshDevicesBtn = $('#refreshDevicesBtn');
+  if (refreshDevicesBtn) {
+    refreshDevicesBtn.addEventListener('click', () => {
+      if (!navigator.onLine) {
+        ui.showToast('You must be online to refresh devices', 'warning');
+        return;
+      }
+      loadDevices();
+    });
+  }
+
   const logoutAllDevicesBtn = $('#logoutAllDevicesBtn');
   if (logoutAllDevicesBtn) {
     logoutAllDevicesBtn.addEventListener('click', logoutAllDevices);
@@ -311,6 +464,20 @@ function attachEventListeners(context) {
   const backToSubjectsFooterBtn = $('#backToSubjectsFooterBtn');
   if (backToSubjectsFooterBtn) {
     backToSubjectsFooterBtn.addEventListener('click', () => router.navigateTo('subjects'));
+  }
+
+  // ── Storage tab ──────────────────────────────────────────────────
+  // The roots list and its per-root action buttons are rendered
+  // dynamically by renderRootsList(), so their listeners are attached
+  // there. Only the tab-level controls are wired here.
+  const deleteAllDataBtn = $('#deleteAllDataBtn');
+  if (deleteAllDataBtn) {
+    deleteAllDataBtn.addEventListener('click', deleteAllData);
+  }
+
+  const cancelMigrationBtn = $('#cancelMigrationBtn');
+  if (cancelMigrationBtn) {
+    cancelMigrationBtn.addEventListener('click', cancelMigration);
   }
 
   const tabs = context.root.querySelectorAll('.tab-button');
@@ -403,59 +570,342 @@ async function changePassword() {
 }
 
 // ==================== DEVICE MANAGEMENT ====================
-async function loadDevices() {
-  const container = $('#devices-list');
-  try {
-    const devices = await security.getUserDevices?.() || [];
-    if (!devices || devices.length === 0) {
-      container.innerHTML = '<p class="no-data">No other devices.</p>';
-      return;
-    }
-    let html = '';
-    devices.forEach(dev => {
-      html += `
-        <div class="device-item ${dev.current ? 'current-device' : ''}">
-          <span class="device-icon">${dev.platform?.includes('Android') ? '📱' : '💻'}</span>
-          <span class="device-name">${dev.platform || 'Unknown'}</span>
-          <span class="device-last">Last used: ${utils.formatDate(dev.lastUsed)}</span>
-          ${dev.current ? '<span class="badge">Current</span>' : ''}
-          ${!dev.current ? `<button class="btn-small logout-device-btn" data-fingerprint="${dev.fingerprint}">Logout</button>` : ''}
-        </div>
-      `;
-    });
-    container.innerHTML = html;
+//
+// Source of truth: auth.listActiveDevices() → Convex
+// auth/actions:listActiveDevices → internal.auth.internal.getUserDevicesForUI.
+//
+// Result shape (from the backend):
+//   {
+//     devices: Array<{
+//       deviceId,    // stable dv_… identifier
+//       deviceName,  // pre-formatted — "Chrome on Windows", "Samsung Galaxy S23"
+//       platform,    // 'android' | 'ios' | 'web' | 'windows'
+//       lastSeen,    // ms timestamp
+//       isCurrent,   // true for this browser / device
+//       sessionId,   // most-recent live session for the device
+//       fingerprint, // legacy mirror of deviceId
+//     }>,
+//     maxDevices, devicesUsed, overLimit,
+//   }
+//
+// Offline behaviour:
+//   1. Online and fetch succeeds → cache the payload, render fresh data.
+//   2. Offline OR fetch fails → render cached payload with a
+//      "Showing saved devices · last updated X ago" note.
+//   3. Offline with no cache → render a local "this device only"
+//      fallback built from security.getCachedDeviceInfo().
+//
+// All writes (sign-out) require the backend, so buttons are disabled
+// while offline.
 
-    container.querySelectorAll('.logout-device-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        logoutDevice(btn.dataset.fingerprint);
-      });
-    });
-  } catch (error) {
-    container.innerHTML = '<p class="error">Failed to load devices.</p>';
+/** Human-friendly "how long ago" — "Just now", "2 hours ago", "Yesterday". */
+function formatRelativeTime(ts) {
+  if (!ts) return 'Never';
+  const diff = Date.now() - ts;
+  if (diff < 0) return 'Just now';
+  const sec = Math.floor(diff / 1000);
+  const min = Math.floor(sec / 60);
+  const hr  = Math.floor(min / 60);
+  const day = Math.floor(hr / 24);
+  if (sec < 60) return 'Just now';
+  if (min < 60) return `${min} minute${min === 1 ? '' : 's'} ago`;
+  if (hr  < 24) return `${hr} hour${hr === 1 ? '' : 's'} ago`;
+  if (day === 1) return 'Yesterday';
+  if (day < 7)   return `${day} days ago`;
+  if (day < 30)  return `${Math.floor(day / 7)} week${Math.floor(day / 7) === 1 ? '' : 's'} ago`;
+  return utils.formatDate(ts);
+}
+
+/** Emoji for the platform — phone for mobile, laptop otherwise. */
+function deviceIcon(platform) {
+  const p = String(platform || '').toLowerCase();
+  if (p === 'android' || p === 'ios') return '📱';
+  return '💻';
+}
+
+// ---------- Offline cache ----------
+
+function readDevicesCache(userId) {
+  if (!userId) return null;
+  try {
+    const raw = utils.getLocalStorage(DEVICES_CACHE_KEY);
+    if (!raw) return null;
+    const parsed = typeof raw === 'string' ? JSON.parse(raw) : raw;
+    if (!parsed || parsed.userId !== userId || !parsed.payload) return null;
+    return parsed;
+  } catch {
+    return null;
   }
 }
 
-async function logoutDevice(fingerprint) {
-  if (await ui.showConfirmationDialog('Logout Device', 'Logout this device?')) {
+function writeDevicesCache(userId, payload) {
+  if (!userId || !payload) return;
+  try {
+    utils.setLocalStorage(DEVICES_CACHE_KEY, JSON.stringify({
+      userId,
+      payload,
+      cachedAt: Date.now(),
+    }));
+  } catch { /* quota / privacy mode — not fatal */ }
+}
+
+function clearDevicesCache() {
+  try { utils.removeLocalStorage(DEVICES_CACHE_KEY); } catch { /* ignore */ }
+}
+
+// ---------- Local-only fallback when offline + no cache ----------
+
+function buildLocalDisplayName(info) {
+  if (!info) return 'This device';
+  const browser = info.browser || info.model;
+  const os = info.osName;
+  if (browser && os && browser !== os) return `${browser} on ${os}`;
+  if (browser) return browser;
+  if (os) return os;
+  return 'This device';
+}
+
+async function buildLocalFallbackDevices() {
+  let deviceId = null;
+  let info = null;
+  try {
+    deviceId = security.getCachedDeviceId?.() || (await security.getDeviceId?.());
+    info = security.getCachedDeviceInfo?.() || (await security.getDeviceInfo?.());
+  } catch { /* ignore */ }
+
+  if (!deviceId) return null;
+
+  return {
+    devices: [{
+      deviceId,
+      deviceName: buildLocalDisplayName(info),
+      platform: (info?.platform || '').toLowerCase() || 'unknown',
+      lastSeen: Date.now(),
+      isCurrent: true,
+      sessionId: null,
+      fingerprint: deviceId,
+    }],
+    maxDevices: 1,
+    devicesUsed: 1,
+    overLimit: false,
+  };
+}
+
+// ---------- Render ----------
+
+async function loadDevices() {
+  const container = $('#devices-list');
+  const summaryEl = $('#devices-summary');
+  const logoutAllBtn = $('#logoutAllDevicesBtn');
+  if (!container) return;
+
+  const user = auth.getUser();
+  const userId = user?._id || null;
+
+  container.innerHTML = '<p class="no-data">Loading devices…</p>';
+  if (summaryEl) summaryEl.textContent = '';
+
+  // ---- 1. Try live fetch ----
+  let payload = null;
+  let source = 'live';
+  let cachedAt = 0;
+
+  if (navigator.onLine) {
     try {
-      await security.logoutDevice?.(fingerprint);
-      ui.showToast('Device logged out', 'success');
-      loadDevices();
-    } catch (error) {
-      ui.showToast('Failed to logout device', 'error');
+      payload = await auth.listActiveDevices();
+      if (payload && userId) writeDevicesCache(userId, payload);
+    } catch (err) {
+      console.warn('[Profile] listActiveDevices failed, falling back:', err);
+      payload = null;
     }
+  }
+
+  // ---- 2. Fall back to cache ----
+  if (!payload) {
+    const cache = readDevicesCache(userId);
+    if (cache) {
+      payload = cache.payload;
+      source = 'cache';
+      cachedAt = cache.cachedAt || 0;
+    }
+  }
+
+  // ---- 3. Local-only fallback ----
+  if (!payload) {
+    payload = await buildLocalFallbackDevices();
+    if (payload) {
+      source = 'local';
+    }
+  }
+
+  // ---- Give up gracefully ----
+  if (!payload) {
+    container.innerHTML =
+      '<p class="error">Couldn’t load devices. Tap Refresh to try again.</p>';
+    return;
+  }
+
+  const devices    = payload.devices    || [];
+  const maxDevices = payload.maxDevices ?? 1;
+  const used       = payload.devicesUsed ?? devices.length;
+  const otherCount = devices.filter(d => !d.isCurrent).length;
+  const offline    = !navigator.onLine || source !== 'live';
+
+  // Summary line.
+  if (summaryEl) {
+    if (devices.length === 0) {
+      summaryEl.textContent = 'No devices are currently signed in.';
+    } else if (used === 1) {
+      summaryEl.textContent = 'Only this device is signed in.';
+    } else {
+      summaryEl.textContent =
+        `You’re signed in on ${used} of ${maxDevices} allowed device${maxDevices === 1 ? '' : 's'}.`;
+    }
+
+    if (source === 'cache') {
+      summaryEl.textContent +=
+        ` · Showing saved devices, last updated ${formatRelativeTime(cachedAt).toLowerCase()}.`;
+    } else if (source === 'local') {
+      summaryEl.textContent +=
+        ' · Offline — showing this device only.';
+    }
+  }
+
+  // Bulk sign-out button state.
+  if (logoutAllBtn) {
+    logoutAllBtn.disabled = otherCount === 0 || offline;
+    logoutAllBtn.title = offline
+      ? 'You must be online to sign out other devices'
+      : otherCount === 0
+        ? 'No other devices to sign out'
+        : '';
+  }
+
+  if (devices.length === 0) {
+    container.innerHTML =
+      '<p class="no-data">No devices are currently signed in.</p>';
+    return;
+  }
+
+  // ---- Render cards ----
+  container.innerHTML = '';
+
+  for (const dev of devices) {
+    const icon   = deviceIcon(dev.platform);
+    const name   = dev.deviceName || 'Unknown device';
+    const when   = formatRelativeTime(dev.lastSeen);
+    const isCur  = !!dev.isCurrent;
+
+    const card = document.createElement('div');
+    card.className = 'device-item' + (isCur ? ' current-device' : '');
+
+    // Info row: icon + name + meta
+    const info = document.createElement('div');
+    info.className = 'device-info';
+
+    const iconEl = document.createElement('span');
+    iconEl.className = 'device-icon';
+    iconEl.textContent = icon;
+    info.appendChild(iconEl);
+
+    const text = document.createElement('div');
+    text.className = 'device-text';
+
+    const nameEl = document.createElement('div');
+    nameEl.className = 'device-name';
+    nameEl.textContent = name;
+    text.appendChild(nameEl);
+
+    const meta = document.createElement('div');
+    meta.className = 'device-meta';
+    meta.textContent = isCur
+      ? `This device · Active ${when.toLowerCase()}`
+      : `Last active ${when.toLowerCase()}`;
+    text.appendChild(meta);
+
+    info.appendChild(text);
+    card.appendChild(info);
+
+    // Action bar (horizontal)
+    const actions = document.createElement('div');
+    actions.className = 'device-actions-bar';
+
+    if (isCur) {
+      const badge = document.createElement('span');
+      badge.className = 'badge badge-current';
+      badge.textContent = 'Current device';
+      actions.appendChild(badge);
+    } else {
+      const signOutBtn = document.createElement('button');
+      signOutBtn.type = 'button';
+      signOutBtn.className = 'btn-danger btn-small';
+      signOutBtn.textContent = 'Sign out';
+      signOutBtn.dataset.deviceId = dev.deviceId;
+      signOutBtn.disabled = offline;
+      if (offline) {
+        signOutBtn.title = 'You must be online to sign out devices';
+      }
+      signOutBtn.addEventListener('click', () => logoutDevice(dev.deviceId));
+      actions.appendChild(signOutBtn);
+    }
+
+    card.appendChild(actions);
+    container.appendChild(card);
+  }
+}
+
+async function logoutDevice(deviceId) {
+  if (!deviceId) {
+    ui.showToast('Device identifier missing', 'error');
+    return;
+  }
+
+  if (!navigator.onLine) {
+    ui.showToast('You must be online to sign out a device', 'warning');
+    return;
+  }
+
+  const ok = await ui.showConfirmationDialog(
+    'Sign out this device',
+    'That device will be signed out right away. You’ll need to sign in again on it.'
+  );
+  if (!ok) return;
+
+  try {
+    await auth.removeOtherDevice(deviceId);
+    ui.showToast('Device signed out', 'success');
+    await loadDevices();
+  } catch (err) {
+    ui.showToast(err.message || 'Couldn’t sign that device out', 'error');
   }
 }
 
 async function logoutAllDevices() {
-  if (await ui.showConfirmationDialog('Logout All Devices', 'Logout from all other devices? (you will stay logged in here)')) {
-    try {
-      await security.logoutAllOtherDevices?.();
-      ui.showToast('All other devices logged out', 'success');
-      loadDevices();
-    } catch (error) {
-      ui.showToast('Operation failed', 'error');
-    }
+  if (!navigator.onLine) {
+    ui.showToast('You must be online to sign out other devices', 'warning');
+    return;
+  }
+
+  const otherCount = $('#devices-list')
+    ?.querySelectorAll('.device-item:not(.current-device)').length || 0;
+
+  if (otherCount === 0) {
+    ui.showToast('No other devices to sign out', 'info');
+    return;
+  }
+
+  const ok = await ui.showConfirmationDialog(
+    'Sign out other devices',
+    `Sign out of every device except this one (${otherCount} device${otherCount === 1 ? '' : 's'})?`
+  );
+  if (!ok) return;
+
+  try {
+    await auth.removeOtherDevices();
+    ui.showToast('Signed out from other devices', 'success');
+    await loadDevices();
+  } catch (err) {
+    ui.showToast(err.message || 'Couldn’t sign out other devices', 'error');
   }
 }
 
@@ -495,7 +945,7 @@ async function savePreferences() {
 async function loadStatistics() {
   try {
     const allResults = await db.getAllExamResults() || [];
-    
+
     const totalExams = allResults.length;
     let totalQuestions = 0;
     let totalCorrect = 0;
@@ -511,12 +961,12 @@ async function loadStatistics() {
     });
 
     const avgScore = totalQuestions > 0 ? (totalCorrect / totalQuestions) * 100 : 0;
-    const totalHours = totalStudyTime > 0 ? Math.round(totalStudyTime / (1000 * 60 * 60) * 10) / 10 : 0;
+    const totalSeconds = Math.round(totalStudyTime / 1000);
 
     $('#total-exams').textContent = totalExams || 0;
     $('#total-questions').textContent = totalQuestions || 0;
     $('#avg-score').textContent = avgScore ? `${Math.round(avgScore)}%` : '—';
-    $('#study-time').textContent = totalHours ? `${totalHours}h` : '0h';
+    $('#study-time').textContent = formatStudyDuration(totalSeconds);
 
     await db.saveUserStatistics({
       totalExams,
@@ -533,7 +983,10 @@ async function loadStatistics() {
       $('#total-exams').textContent = cached.totalExams || 0;
       $('#total-questions').textContent = cached.totalQuestions || 0;
       $('#avg-score').textContent = cached.averageScore ? `${cached.averageScore}%` : '—';
-      $('#study-time').textContent = cached.totalStudyTime ? `${Math.round(cached.totalStudyTime / 60)}h` : '0h';
+      // cached.totalStudyTime is stored in MILLISECONDS (see the
+      // saveUserStatistics() call above); convert to seconds for display.
+      const cachedSeconds = Math.round((cached.totalStudyTime || 0) / 1000);
+      $('#study-time').textContent = formatStudyDuration(cachedSeconds);
     }
   }
 }
@@ -558,7 +1011,7 @@ async function exportData() {
   }
 }
 
-// ==================== ACCOUNT DELETION (UPDATED) ====================
+// ==================== ACCOUNT DELETION ====================
 
 /**
  * Show a custom modal for account deletion with password confirmation.
@@ -690,23 +1143,503 @@ async function deleteAccount() {
     ui.showLoading('Deleting account...');
     try {
       await auth.deleteAccount(password);
-      // auth.deleteAccount already clears local data, logs out, and navigates to welcome.html.
-      // We hide loading manually (auth.deleteAccount doesn't hide it).
       ui.hideLoading();
-      // No need to navigate – auth.deleteAccount does that.
+      // auth.deleteAccount navigates internally. Clear the redirect
+      // chain so the fresh session doesn't inherit a return URL
+      // pointing at a now-deleted profile.
+      try { redirect.clearReturns(); }   catch { /* ignore */ }
+      try { redirect.clearSnapshots(); } catch { /* ignore */ }
+      // Wipe cached device list — the account is gone.
+      clearDevicesCache();
     } catch (error) {
       ui.hideLoading();
       ui.showToast(error.message || 'Deletion failed. Please try again.', 'error');
     }
   } catch (error) {
-    // User cancelled
     if (error.message !== 'Deletion cancelled') {
       ui.showToast(error.message || 'Operation cancelled', 'info');
     }
   }
 }
 
+// ==================== STORAGE ====================
+//
+// Three roots can exist on Android:
+//
+//   internal  — app-private internal storage.
+//   external  — Android's emulated external storage (same physical chip
+//               as internal on modern phones; moving here does not free
+//               space).
+//   sdcard    — the removable SD card's app-specific directory. Real,
+//               separate physical volume. Only present when a card is
+//               mounted.
+//
+// The user picks which one NEW writes go to. Reads work across all
+// three, so switching the preference never strands an existing file.
+//
+// This panel:
+//   • Lists every available root with free space and a removable
+//     badge for the SD card.
+//   • Lets the user switch the write preference without moving
+//     anything ("Switch without moving") or move all existing content
+//     to a chosen root ("Move content here").
+//   • Deletes all data (DB + on-disk content + cache).
+//
+// Migration drives content-store.migrateContentToRoot(), which is
+// idempotent and resumable — files already in the target are skipped
+// via fileInRoot(), so a run that is cancelled, crashes, or is killed
+// by the OS can be restarted without re-doing completed work.
+//
+// All styling lives in profile.css under the "STORAGE TAB" section.
+// This module only writes class names — never inline styles — so the
+// stylesheet and the markup cannot drift.
+
+// Module-scoped abort controller so Cancel can stop an in-flight
+// migration. Null when no migration is running.
+//
+// NOTE: this is intentionally NOT captured by the state adapter — a
+// migration is tied to the live DOM of the running page. If the page
+// is torn down, the migration loop's DOM refs are gone and restoring
+// it would just produce errors. Better to abort and let the user
+// restart from the storage tab.
+let _migrationController = null;
+
+/**
+ * Read every available root from the native bridge.
+ * Returns [] on any failure (bridge absent, malformed JSON).
+ *
+ * @returns {Array<{
+ *   type: 'internal'|'external'|'sdcard',
+ *   path: string,
+ *   available: boolean,
+ *   removable: boolean,
+ *   freeBytes: number,
+ *   isCurrent: boolean,
+ *   volumeId: string,
+ * }>}
+ */
+function getNativeRoots() {
+  try {
+    const raw = window.MedVixStorage?.getAvailableRoots?.();
+    return raw ? JSON.parse(raw) : [];
+  } catch { return []; }
+}
+
+/**
+ * Human-readable label for a root type.
+ */
+function rootLabel(type) {
+  if (type === 'internal') return 'Internal storage';
+  if (type === 'external') return 'Emulated external';
+  if (type === 'sdcard')   return 'SD card';
+  return type || 'Unknown';
+}
+
+/**
+ * Format a byte count as a short human-readable string.
+ */
+function formatBytes(bytes) {
+  const n = Number(bytes) || 0;
+  if (n < 1024) return `${n} B`;
+  if (n < 1024 * 1024) return `${(n / 1024).toFixed(1)} KB`;
+  if (n < 1024 * 1024 * 1024) return `${(n / 1024 / 1024).toFixed(1)} MB`;
+  return `${(n / 1024 / 1024 / 1024).toFixed(2)} GB`;
+}
+
+/**
+ * Shorten a long relative path for display in the migration status.
+ * "content/resources/textbooks/foo/bar.pdf" → "…/foo/bar.pdf"
+ */
+function shortenPath(rel) {
+  if (!rel) return '';
+  const parts = String(rel).split('/');
+  if (parts.length <= 3) return rel;
+  return '…/' + parts.slice(-3).join('/');
+}
+
+/**
+ * Refresh the storage tab: current-root summary, usage, and the list
+ * of available roots with their per-root actions.
+ *
+ * Called once from init() and again after every preference change or
+ * completed migration.
+ */
+async function loadStorageInfo() {
+  const rootTypeEl = $('#storage-current-root');
+  const rootPathEl = $('#storage-current-path');
+  const usageEl    = $('#storage-usage');
+  const listEl     = $('#storage-roots-list');
+
+  // If neither the app-level wrapper nor the native bridge is present
+  // (web dev build), mark the whole panel inert.
+  const hasApp    = !!window.app?.storageAvailable?.();
+  const hasNative = !!window.MedVixStorage?.isAvailable?.();
+  if (!hasApp && !hasNative) {
+    if (rootTypeEl) rootTypeEl.textContent = 'Not available';
+    if (rootPathEl) rootPathEl.textContent = '—';
+    if (usageEl)    usageEl.textContent = '—';
+    if (listEl) {
+      listEl.innerHTML =
+        '<p class="storage-hint">Storage controls are available only in the installed app.</p>';
+    }
+    return;
+  }
+
+  // Current write root. Prefer the app-level wrapper if it exists;
+  // otherwise fall back to the native bridge directly.
+  const currentType =
+    (window.app?.storageRootType?.()) ||
+    (window.MedVixStorage?.getRootType?.()) ||
+    'internal';
+  const currentPath =
+    (window.app?.storageRoot?.()) ||
+    (window.MedVixStorage?.getRoot?.()) ||
+    '';
+
+  if (rootTypeEl) rootTypeEl.textContent = rootLabel(currentType);
+  if (rootPathEl) rootPathEl.textContent = currentPath || '—';
+
+  // Total bytes used by MedVix.
+  try {
+    const stats = await (window.app?.storageStats?.() ?? Promise.resolve(null));
+    const bytes = Number(stats?.totalBytes) || 0;
+    if (usageEl) usageEl.textContent = formatBytes(bytes);
+  } catch {
+    if (usageEl) usageEl.textContent = '—';
+  }
+
+  // Roots list.
+  const roots = getNativeRoots();
+  renderRootsList(roots, currentType);
+}
+
+/**
+ * Render one card per available root. Each non-current, available root
+ * gets a "Move content here" button (migration + preference commit)
+ * and a lighter "Switch without moving" text button (preference only).
+ */
+function renderRootsList(roots, currentType) {
+  const listEl = $('#storage-roots-list');
+  if (!listEl) return;
+
+  if (!roots || roots.length === 0) {
+    listEl.innerHTML = '<p class="storage-hint">No storage locations detected.</p>';
+    return;
+  }
+
+  listEl.innerHTML = '';
+  for (const root of roots) {
+    listEl.appendChild(buildRootCard(root, currentType));
+  }
+}
+
+/**
+ * Build a single root card.
+ *
+ * Styling lives entirely in profile.css (.storage-root and friends).
+ * The class names are the contract; do not inline style here or the
+ * stylesheet will be shadowed.
+ */
+function buildRootCard(root, currentType) {
+  const isCurrent   = root.type === currentType;
+  const isAvailable = !!root.available;
+
+  const card = document.createElement('div');
+  card.className = 'storage-root';
+  if (isCurrent)    card.classList.add('is-current');
+  if (!isAvailable) card.classList.add('is-unavailable');
+
+  // Header row: name + badges.
+  const header = document.createElement('div');
+  header.className = 'storage-root-header';
+
+  const name = document.createElement('span');
+  name.className = 'storage-root-name';
+  name.textContent = rootLabel(root.type);
+  header.appendChild(name);
+
+  if (root.removable) {
+    const badge = document.createElement('span');
+    badge.className = 'storage-root-badge storage-root-badge-removable';
+    badge.textContent = 'SD Card';
+    header.appendChild(badge);
+  }
+
+  if (isCurrent) {
+    const badge = document.createElement('span');
+    badge.className = 'storage-root-badge storage-root-badge-current';
+    badge.textContent = 'Current';
+    header.appendChild(badge);
+  }
+
+  if (!isAvailable) {
+    const badge = document.createElement('span');
+    badge.className = 'storage-root-badge storage-root-badge-unavailable';
+    badge.textContent = 'Not available';
+    header.appendChild(badge);
+  }
+
+  card.appendChild(header);
+
+  // Path.
+  const path = document.createElement('code');
+  path.className = 'storage-root-path';
+  path.textContent = root.path || '—';
+  card.appendChild(path);
+
+  // Free space.
+  const free = document.createElement('div');
+  free.className = 'storage-root-meta';
+  free.textContent = `${formatBytes(root.freeBytes)} free`;
+  card.appendChild(free);
+
+  // Action buttons — only for non-current, available roots.
+  // (CSS hides .storage-root-actions on .is-unavailable, but we also
+  // skip constructing them so there are no listeners to leak.)
+  if (!isCurrent && isAvailable) {
+    const actions = document.createElement('div');
+    actions.className = 'storage-root-actions';
+
+    const moveBtn = document.createElement('button');
+    moveBtn.type = 'button';
+    moveBtn.className = 'btn-secondary';
+    moveBtn.textContent = 'Move content here';
+    moveBtn.addEventListener('click', () => moveContentTo(root.type));
+    actions.appendChild(moveBtn);
+
+    const switchBtn = document.createElement('button');
+    switchBtn.type = 'button';
+    switchBtn.className = 'btn-text';
+    switchBtn.textContent = 'Switch without moving';
+    switchBtn.addEventListener('click', () => switchPreferenceOnly(root.type));
+    actions.appendChild(switchBtn);
+
+    card.appendChild(actions);
+  }
+
+  return card;
+}
+
+/**
+ * Switch the write preference without moving any existing file.
+ * Reads continue to work across all roots, so this is safe at any time.
+ */
+async function switchPreferenceOnly(targetType) {
+  const ok = window.MedVixStorage?.setPreferredRoot?.(targetType);
+  if (!ok) {
+    ui.showToast(`Could not switch to ${rootLabel(targetType)}`, 'error');
+    return;
+  }
+  ui.showToast(`New downloads will use ${rootLabel(targetType)}`, 'success');
+  await loadStorageInfo();
+}
+
+/**
+ * Move every content file from every other available root to the
+ * target, then commit the preference on success.
+ *
+ * Idempotent: files already in the target are skipped. Resumable: a
+ * cancelled or interrupted run can be restarted — the scan re-reads
+ * each source root fresh, and fileInRoot() filters out what has
+ * already moved.
+ */
+async function moveContentTo(targetType) {
+  if (_migrationController) {
+    ui.showToast('A migration is already running', 'warning');
+    return;
+  }
+
+  const label = rootLabel(targetType);
+  const isRemovableTarget = targetType === 'sdcard';
+
+  const extraWarning = isRemovableTarget
+    ? ' If the card is ejected later, the moved content will be unavailable until you re-insert it.'
+    : '';
+
+  const confirmed = await ui.showConfirmationDialog(
+    `Move content to ${label}`,
+    `All downloaded content on this device will be moved to ${label}.` +
+    extraWarning +
+    ' The app may briefly freeze while moving large files. ' +
+    'Do not close the app or eject the card during the move.',
+    'info'
+  );
+  if (!confirmed) return;
+
+  showMigrationPanel();
+
+  _migrationController = new AbortController();
+
+  try {
+    const result = await contentStore.migrateContentToRoot(targetType, {
+      onProgress: updateMigrationProgress,
+      signal: _migrationController.signal,
+    });
+
+    hideMigrationPanel();
+
+    if (result.ok) {
+      // Commit the preference only after every file landed. Until
+      // this point the write root is unchanged, so new downloads
+      // during the migration keep going to the old root — which is
+      // fine because migrateContentToRoot() re-scans on the next run.
+      window.MedVixStorage?.setPreferredRoot?.(targetType);
+
+      const n = result.migrated.length;
+      const skipped = result.skipped.length;
+      const msg = skipped > 0
+        ? `Moved ${n} file${n === 1 ? '' : 's'} to ${label} (${skipped} already there)`
+        : `Moved ${n} file${n === 1 ? '' : 's'} to ${label}`;
+      ui.showToast(msg, 'success');
+    } else if (result.aborted) {
+      ui.showToast(
+        `Migration cancelled. ${result.migrated.length} file(s) already moved — preference unchanged.`,
+        'info',
+        5000
+      );
+    } else {
+      ui.showToast(
+        `${result.migrated.length} moved, ${result.failed.length} failed. Preference unchanged.`,
+        'warning',
+        6000
+      );
+    }
+  } catch (e) {
+    hideMigrationPanel();
+    ui.showToast(e.message || 'Migration failed', 'error');
+  } finally {
+    _migrationController = null;
+    await loadStorageInfo();
+  }
+}
+
+/**
+ * Signal an in-flight migration to stop. The currently-processing file
+ * finishes (the native move is atomic per call); the loop exits before
+ * starting the next one.
+ */
+function cancelMigration() {
+  if (_migrationController) {
+    _migrationController.abort();
+    ui.showToast('Cancelling migration…', 'info');
+  }
+}
+
+function showMigrationPanel() {
+  const panel = $('#storage-migration-panel');
+  if (panel) panel.hidden = false;
+  updateMigrationProgress({ phase: 'scan' });
+}
+
+function hideMigrationPanel() {
+  const panel = $('#storage-migration-panel');
+  if (panel) panel.hidden = true;
+  const fill = $('#storage-migration-fill');
+  if (fill) fill.style.width = '0%';
+}
+
+/**
+ * Update the migration status line and progress bar.
+ *
+ * Called by content-store.migrateContentToRoot() with a fresh progress
+ * object per phase transition and per file. Never throws — missing DOM
+ * elements are silently ignored so a template change cannot break
+ * migration.
+ *
+ * The fill width is the only inline style kept: it is a per-frame
+ * numeric value with no useful CSS-class equivalent.
+ */
+function updateMigrationProgress(p) {
+  const statusEl = $('#storage-migration-status');
+  const fillEl   = $('#storage-migration-fill');
+  if (!statusEl || !fillEl) return;
+
+  let text = '';
+  let pct  = 0;
+
+  if (p.phase === 'scan') {
+    text = `Scanning ${p.sourceRoot || 'sources'}…`;
+    pct  = 2;
+  } else if (p.phase === 'migrate') {
+    text = `Moving: ${shortenPath(p.rel)}`;
+    pct  = p.total ? Math.round((p.index / p.total) * 100) : 0;
+  } else if (p.phase === 'skip') {
+    text = `Already there: ${shortenPath(p.rel)}`;
+    pct  = p.total ? Math.round((p.index / p.total) * 100) : 0;
+  } else if (p.phase === 'fail') {
+    text = `Failed: ${shortenPath(p.rel)}`;
+    pct  = p.total ? Math.round((p.index / p.total) * 100) : 0;
+  } else if (p.phase === 'complete') {
+    text = `Done. ${p.migrated || 0} moved, ${p.skipped || 0} skipped, ${p.failed || 0} failed.`;
+    pct  = 100;
+  }
+
+  statusEl.textContent = text;
+  fillEl.style.width = `${pct}%`;
+}
+
+/**
+ * Wipe every IndexedDB store and every on-disk content/ and cache/
+ * directory. User remains logged in.
+ */
+async function deleteAllData() {
+  const confirmed = await ui.showConfirmationDialog(
+    'Delete all data',
+    'This will permanently delete all app data on this device — downloads, cached content, notes, and local settings. Your account on the server is not affected. Continue?',
+    'critical'
+  );
+  if (!confirmed) return;
+
+  ui.showLoading('Deleting all data…');
+  try {
+    // 1. Clear every IndexedDB store. db.clearDatabase() also wipes
+    //    the on-disk content/ and cache/ trees via the native bridge.
+    await db.clearDatabase();
+
+    // 2. Belt-and-braces: if the native bridge exposes the low-level
+    //    directory wipes, call them directly in case a partial IDB
+    //    clear left something behind.
+    try {
+      if (window.MedVixStorage?.deleteDirectory) {
+        window.MedVixStorage.deleteDirectory('content');
+        window.MedVixStorage.deleteDirectory('cache');
+      }
+    } catch { /* ignore */ }
+
+    ui.hideLoading();
+    ui.showToast('All local data has been deleted', 'success');
+
+    await loadStorageInfo();
+  } catch (e) {
+    ui.hideLoading();
+    ui.showToast(e.message || 'Could not delete data', 'error');
+  }
+}
+
 // ==================== DESTROY ====================
 export function destroy() {
-  // Cleanup if needed
+  // Unregister the state adapter so a subsequent page load does not
+  // inherit a stale closure over this page's DOM.
+  try { redirect.unregisterStateAdapter('profile'); } catch { /* ignore */ }
+
+  // Detach the document-level click listener registered by the
+  // institution dropdown. Without this, repeated navigations to the
+  // profile page would stack listeners on `document`.
+  if (_institutionController) {
+    try { _institutionController.detach(); } catch { /* ignore */ }
+    _institutionController = null;
+  }
+
+  // Remove the online listener registered by init().
+  if (_onlineRefreshHandler) {
+    try { window.removeEventListener('online', _onlineRefreshHandler); } catch { /* ignore */ }
+    _onlineRefreshHandler = null;
+  }
+
+  // Abort any in-flight migration when the page is torn down so its
+  // loop does not keep running against a detached DOM.
+  if (_migrationController) {
+    try { _migrationController.abort(); } catch { /* ignore */ }
+    _migrationController = null;
+  }
 }

@@ -8,7 +8,9 @@
   data-cache="true"
   data-transition="fade"
 >
-  <!-- ===== APP VIEW (Resource Browser) ===== -->
+  <!-- ============================================================
+       APP VIEW — Resource Browser
+       ============================================================ -->
   <div id="app">
     <header class="fixed-header">
       <div class="header-row">
@@ -42,8 +44,7 @@
 
     <main class="main-with-header">
       <div id="resource-grid" class="resource-grid">
-        <!-- 8 skeleton cards (the shimmer/loading will be replaced by JS) -->
-        <!-- The actual content is rendered by resource-browser.js -->
+        <!-- Rendered by resource-browser.js -->
       </div>
 
       <div id="load-more-container">
@@ -53,67 +54,267 @@
     </main>
   </div>
 
-  <!-- ===== VIEWER VIEW (Embedded) ===== -->
-  <div id="viewer" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 2000; background: var(--bg-primary);">
-    <div class="viewer-container" style="height: 100%; display: flex; flex-direction: column;">
+  <!-- ============================================================
+       VIEWER VIEW — Embedded document viewer
+
+       INVARIANTS THIS MARKUP OBEYS:
+
+       1. #viewer-main is a fixed window. It paints the background
+          colour and owns the native scroll box. It is never
+          transformed, never a gesture target.
+
+       2. .page-container is the ONLY interactive element. It is
+          created dynamically by core.js when a document loads. It
+          receives the zoom/pan transform during a pinch.
+
+       3. Inside .page-container, every page slot is either:
+            <canvas class="page" data-page="n">   (rendered)
+            <div    class="cover" data-page="n">  (placeholder)
+          Both are sized inline to natural × displayScale. No wrapper.
+          Sharp corners. White background. The canvas IS the page.
+
+       4. The resolution pyramid governs bitmap density only. Every
+          slot in every ring is sized natural × displayScale. A
+          cover-to-canvas swap is a paint event, not a layout event.
+
+       GRID LAYOUT — .viewer-container
+
+         row 1  header
+         row 2  searchbar (hidden until toggled)
+         row 3  main      ← shared grid cell for:
+                              #viewer-main            (page + scroll)
+                              #viewer-drawer-scrim    (dim backdrop)
+                              #viewer-outline-drawer  (sidebar)
+         row 4  footer
+
+       Because they share grid-area:main, the drawer spans exactly
+       from the bottom of the header to the top of the footer with no
+       JS measurement.
+
+       STATIC CHROME NODES INSIDE #viewer-main
+
+       These four nodes survive every document switch
+       (clearViewerContent preserves them by ID):
+
+         #viewer-loading     — spinner
+         #viewer-progress    — progress bar
+         #viewer-content     — reserved host for image/text/office
+                               (each is wrapped in its own
+                               .page-container by core.js, so this
+                               node is unused for PDFs)
+         #viewer-text-layer  — RESERVED. When text selection is
+                               enabled, JS relocates this node into
+                               .page-container so it can be
+                               absolutely positioned over the page.
+                               Left in place here for compatibility;
+                               it is inert until moved.
+
+       SIDEBAR — one shell, three panels
+
+       #viewer-outline-drawer is a single <aside> whose content is
+       chosen by its `data-panel` attribute:
+         data-panel="outline" → document outline (default)
+         data-panel="search"  → search input + results list
+         data-panel="more"    → document info + action buttons
+       ui-internal.js::_openSidebar(panel) sets the attribute and
+       dispatches to managers so the correct panel renders.
+
+       HEADER LAYOUT
+
+         Row 1: [Back]  [Title]  [☰ Menu]
+         The ☰ button opens a dropdown containing every viewer
+         action (outline, search, view toggle, open file, fit,
+         reset, fullscreen). Row 2 of the header is the search bar
+         when toggled. IDs match pages/viewer.html so ui-internal.js
+         works identically on both pages.
+
+       FOOTER
+
+         [◀ Previous] [Page #/total] [Next ▶]  ·  [−] [zoom %] [+]
+       Fit and Reset live ONLY in the menu — no duplicate IDs.
+       ============================================================ -->
+  <div id="viewer" style="display: none;">
+    <div class="viewer-container">
+
+      <!-- ─── Header ──────────────────────────────────────────────── -->
       <header class="viewer-header" id="viewer-header">
-        <div class="left-group">
-          <button id="viewer-outline-btn" class="btn-icon" title="Document outline">☰</button>
-          <button id="viewer-back-btn" class="btn-back" aria-label="Back to resources">
+        <div class="viewer-header-main">
+          <button id="viewer-back-btn" class="btn-back" type="button" aria-label="Close document">
             <span aria-hidden="true">←</span> Back
           </button>
-          <div class="viewer-title" id="viewer-title">Loading...</div>
+
+          <div class="viewer-title" id="viewer-title">Loading…</div>
+
+          <button
+            id="viewer-menu-btn"
+            class="btn-icon btn-menu"
+            type="button"
+            title="Menu"
+            aria-label="Open menu"
+            aria-haspopup="menu"
+            aria-expanded="false"
+            aria-controls="viewer-menu"
+          >☰</button>
         </div>
-        <div class="right-group">
-          <button id="viewer-search-btn" class="btn-icon" title="Search">🔍</button>
-          <div class="search-bar" id="viewer-search-bar">
-            <input type="text" id="viewer-search-input" placeholder="Find..." autocomplete="off">
-            <span class="search-results" id="viewer-search-count"></span>
-            <button id="viewer-search-prev" class="btn-icon" title="Previous match">↑</button>
-            <button id="viewer-search-next" class="btn-icon" title="Next match">↓</button>
-            <div class="search-options" id="viewer-search-options">
-              <label><input type="checkbox" id="viewer-search-case"> Aa</label>
-              <label><input type="checkbox" id="viewer-search-whole"> “”</label>
-            </div>
-            <button id="viewer-search-close" class="btn-icon" title="Close search">✕</button>
-          </div>
-          <button id="viewer-toggle-view" class="btn-icon" title="Toggle view">📄 Page View</button>
-          <button id="viewer-open-local" class="btn-icon" title="Open local file">📂</button>
-          <button id="viewer-fullscreen-btn" class="btn-icon" title="Fullscreen">⛶</button>
+
+        <!-- ─── Dropdown menu ──────────────────────────────────────
+             Every viewer action that used to be a top-level header
+             button lives here now. IDs are unchanged so existing
+             handlers in ui-internal.js continue to work. -->
+        <div class="viewer-menu" id="viewer-menu" role="menu" hidden>
+          <button class="viewer-menu-item" id="viewer-outline-btn" type="button" role="menuitem">
+            <span class="viewer-menu-icon" aria-hidden="true">☰</span>
+            <span class="viewer-menu-label">Outline</span>
+          </button>
+
+          <button class="viewer-menu-item" id="viewer-search-btn" type="button" role="menuitem">
+            <span class="viewer-menu-icon" aria-hidden="true">🔍</span>
+            <span class="viewer-menu-label">Search text</span>
+          </button>
+
+          <button class="viewer-menu-item" id="viewer-toggle-view" type="button" role="menuitem">
+            <span class="viewer-menu-icon" aria-hidden="true">📄</span>
+            <span class="viewer-menu-label" id="viewer-toggle-view-label">Page view</span>
+          </button>
+
+          <button class="viewer-menu-item" id="viewer-open-local" type="button" role="menuitem">
+            <span class="viewer-menu-icon" aria-hidden="true">📂</span>
+            <span class="viewer-menu-label">Open file</span>
+          </button>
+
+          <div class="viewer-menu-divider" role="separator"></div>
+
+          <button class="viewer-menu-item" id="viewer-zoom-fit" type="button" role="menuitem">
+            <span class="viewer-menu-icon" aria-hidden="true">↔</span>
+            <span class="viewer-menu-label">Fit to width</span>
+          </button>
+
+          <button class="viewer-menu-item" id="viewer-zoom-reset" type="button" role="menuitem">
+            <span class="viewer-menu-icon" aria-hidden="true">1:1</span>
+            <span class="viewer-menu-label">Reset zoom</span>
+          </button>
+
+          <button class="viewer-menu-item" id="viewer-fullscreen-btn" type="button" role="menuitem" aria-pressed="false">
+            <span class="viewer-menu-icon" aria-hidden="true">⛶</span>
+            <span class="viewer-menu-label">Fullscreen</span>
+          </button>
         </div>
-        <!-- Outline drawer (populated by viewer.js) -->
-        <div class="outline-drawer" id="viewer-outline-drawer"></div>
       </header>
 
-      <main class="viewer-main" id="viewer-main">
-        <div class="loading-container" id="viewer-loading">
-          <div class="spinner"></div>
-          <p>Loading document...</p>
-        </div>
-        <progress id="viewer-progress" style="display: none; width: 80%; margin: 1rem auto;"></progress>
-      </main>
-
-      <div class="viewer-footer" id="viewer-footer" style="display: none;">
-<div class="page-nav">
-  <button id="viewer-prev-page" disabled>◀ Previous</button>
-  <div class="page-counter">
-    <label for="viewer-page-input">Page</label>
-    <input type="number" id="viewer-page-input" value="1" min="1" step="1">
-    <span>of <span id="viewer-page-count">1</span></span>
-  </div>
-  <button id="viewer-next-page" disabled>Next ▶</button>
-</div>
-        <div class="zoom-controls">
-          <button id="viewer-zoom-out" title="Zoom out">−</button>
-          <span id="viewer-zoom-level">100%</span>
-          <button id="viewer-zoom-in" title="Zoom in">+</button>
-          <button id="viewer-zoom-fit" title="Fit to width">⛶</button>
-          <button id="viewer-zoom-reset" title="Reset zoom">1:1</button>
-        </div>
+<!-- ─── Search bar (grid row between header and main) ──────── -->
+      <div class="search-bar" id="viewer-search-bar" role="search">
+        <input
+          type="text"
+          id="viewer-search-input"
+          placeholder="Find…"
+          autocomplete="off"
+          aria-label="Search text"
+        >
+        <span class="search-results" id="viewer-search-count" aria-live="polite"></span>
+        <button id="viewer-search-prev" class="btn-icon" type="button" title="Previous match" aria-label="Previous match">↑</button>
+        <button id="viewer-search-next" class="btn-icon" type="button" title="Next match" aria-label="Next match">↓</button>
+        <button id="viewer-search-close" class="btn-icon" type="button" title="Close search" aria-label="Close search">✕</button>
       </div>
 
-      <!-- Hidden file input for local files -->
-      <input type="file" id="viewer-file-input" class="file-input" accept=".pdf,.jpg,.jpeg,.png,.webp,.gif,.docx,.doc,.pptx,.ppt,.txt,.md">
+      <!-- ─── Main viewing area ──────────────────────────────────────
+           The fixed window. Background colour. Native scroll on both
+           axes. Never transformed. Native touch gestures
+           (touch-action: pan-x pan-y) own scrolling.
+
+           core.js inserts a single .page-container here per document.
+           Inside .page-container, one slot per page:
+             <canvas class="page" data-page="n">   (rendered)
+             <div    class="cover" data-page="n">  (placeholder)
+
+           Static chrome below (#viewer-loading, #viewer-progress,
+           #viewer-content, #viewer-text-layer) is preserved across
+           document switches by clearViewerContent.
+
+           #viewer-text-layer is INERT in this position. When text
+           selection is enabled, JS moves it inside .page-container so
+           its absolute-positioned spans can align with the page. -->
+      <main class="viewer-main" id="viewer-main" tabindex="-1">
+        <div class="loading-container" id="viewer-loading">
+          <div class="spinner"></div>
+          <p>Loading document…</p>
+        </div>
+
+        <progress id="viewer-progress" style="display: none;" max="1" value="0"></progress>
+
+        <!-- Reserved: alternate content host (image / text / office /
+             unsupported). Each is wrapped in its own .page-container
+             by core.js. -->
+        <div id="viewer-content"></div>
+
+        <!-- Reserved: text layer host. Relocated into .page-container
+             by core.js when text selection is enabled. -->
+        <div id="viewer-text-layer" class="textLayer" aria-hidden="true"></div>
+
+        <!-- .page-container and its .page / .cover slots are inserted
+             here by core.js. Nothing static goes after this point. -->
+      </main>
+
+      <!-- ─── Footer ─────────────────────────────────────────────── -->
+      <footer class="viewer-footer" id="viewer-footer" style="display: none;">
+        <div class="page-nav">
+          <button id="viewer-prev-page" type="button" disabled aria-label="Previous page">◀ Previous</button>
+          <div class="page-counter">
+            <label for="viewer-page-input">Page</label>
+            <input
+              type="number"
+              id="viewer-page-input"
+              value="1"
+              min="1"
+              step="1"
+              inputmode="numeric"
+              aria-label="Page number"
+            >
+            <span>of <span id="viewer-page-count">1</span></span>
+          </div>
+          <button id="viewer-next-page" type="button" disabled aria-label="Next page">Next ▶</button>
+        </div>
+
+        <!-- Zoom controls: continuous zoom in/out only.
+             Fit and Reset live in the dropdown menu so the two
+             surfaces do not share IDs. -->
+        <div class="zoom-controls">
+          <button id="viewer-zoom-out" type="button" title="Zoom out" aria-label="Zoom out">−</button>
+          <span id="viewer-zoom-level" aria-live="polite">100%</span>
+          <button id="viewer-zoom-in" type="button" title="Zoom in" aria-label="Zoom in">+</button>
+        </div>
+      </footer>
+
+      <!-- ─── Drawer scrim (tap to close) ─────────────────────────
+           Shares grid-area:main with #viewer-main and
+           #viewer-outline-drawer. Sits at z-index 35 — below the
+           drawer (40), above the page (1). Tap-to-close is wired by
+           ui-internal.js. -->
+      <div id="viewer-drawer-scrim" aria-hidden="true"></div>
+
+      <!-- ─── Drawer / sidebar ─────────────────────────────────────
+           One shell, multiple panels. `data-panel` selects which
+           panel's content is shown. ui-internal.js toggles `.open`
+           and calls managers.dispatchPanel(panel) to render the
+           right panel. -->
+      <aside
+        class="outline-drawer"
+        id="viewer-outline-drawer"
+        data-panel="outline"
+        role="complementary"
+        aria-label="Viewer sidebar"
+        aria-hidden="true"
+        tabindex="-1"
+      ></aside>
+
+      <!-- ─── Hidden file input ────────────────────────────────────
+           Kept inside .viewer-container so it dies with the
+           container. display:none means it takes no grid cell. -->
+      <input
+        type="file"
+        id="viewer-file-input"
+        class="file-input"
+        accept=".pdf,.jpg,.jpeg,.png,.webp,.gif,.docx,.doc,.pptx,.ppt,.txt,.md"
+      >
     </div>
   </div>
 </section>

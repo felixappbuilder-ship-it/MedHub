@@ -1,6 +1,7 @@
 // scripts/pages/subjects.js
 import * as ui from '../ui.js';
 import * as router from '../router.js';
+import * as redirect from '../redirect.js';
 import * as auth from '../auth.js';
 import * as subscription from '../subscription.js';
 import * as analytics from '../analytics.js';
@@ -10,6 +11,9 @@ import * as utils from '../utils.js';
 import * as notifications from '../notifications.js';
 import * as publicAssets from '../public-assets.js';
 import * as events from '../events.js';
+// ── SLIDE imports
+import * as questions from '../questions.js';
+import * as slideData from '../slide-data.js';
 
 // ==================== ICON HELPERS ====================
 // All icons use Font Awesome classes rendered as <i> elements.
@@ -41,29 +45,36 @@ const EMOJI_TO_FA = {
 function normalizeIcon(icon) {
   if (!icon) return 'fa-solid fa-book';
   if (typeof icon !== 'string') return 'fa-solid fa-book';
-  // Already a Font Awesome class
   if (/^fa[srb]?\s/.test(icon) || icon.startsWith('fa-')) return icon;
-  // Emoji → FA
   return EMOJI_TO_FA[icon] || 'fa-solid fa-book';
 }
 
 // ==================== CORE SUBJECTS ====================
 const CORE_SUBJECTS = [
-  { id: 'anatomy',      name: 'Anatomy',      icon: 'fa-solid fa-bone',         color: '#FF6B6B', questions: 1245 },
-  { id: 'physiology',   name: 'Physiology',   icon: 'fa-solid fa-heart-pulse',  color: '#4ECDC4', questions: 1860 },
-  { id: 'biochemistry', name: 'Biochemistry', icon: 'fa-solid fa-flask',        color: '#45B7D1', questions: 1650 },
-  { id: 'histology',    name: 'Histology',    icon: 'fa-solid fa-microscope',   color: '#96CEB4', questions: 1365 },
-  { id: 'embryology',   name: 'Embryology',   icon: 'fa-solid fa-egg',          color: '#FFEAA7', questions: 1245 },
-  { id: 'pathology',    name: 'Pathology',    icon: 'fa-solid fa-disease',      color: '#DDA0DD', questions: 2250 },
-  { id: 'pharmacology', name: 'Pharmacology', icon: 'fa-solid fa-pills',        color: '#FDCB6E', questions: 1635 },
-  { id: 'microbiology', name: 'Microbiology', icon: 'fa-solid fa-bacteria',     color: '#E17055', questions: 1650 }
+  { id: 'anatomy', name: 'Anatomy', icon: 'fa-solid fa-bone', color: '#FF6B6B', questions: 1245 },
+  { id: 'physiology', name: 'Physiology', icon: 'fa-solid fa-heart-pulse', color: '#4ECDC4', questions: 1860 },
+  { id: 'biochemistry', name: 'Biochemistry', icon: 'fa-solid fa-flask', color: '#45B7D1', questions: 1650 },
+  { id: 'histology', name: 'Histology', icon: 'fa-solid fa-microscope', color: '#96CEB4', questions: 1365 },
+  // ── SLIDE: card sits between Histology and Embryology, per spec.
+  { id: 'slide-view', name: 'Slide View', icon: 'fa-solid fa-images', color: '#6C5CE7', questions: 0, special: 'slide-view' },
+  { id: 'embryology', name: 'Embryology', icon: 'fa-solid fa-egg', color: '#FFEAA7', questions: 1245 },
+  { id: 'pathology', name: 'Pathology', icon: 'fa-solid fa-disease', color: '#DDA0DD', questions: 2250 },
+  { id: 'pharmacology', name: 'Pharmacology', icon: 'fa-solid fa-pills', color: '#FDCB6E', questions: 1635 },
+  { id: 'microbiology', name: 'Microbiology', icon: 'fa-solid fa-bacteria', color: '#E17055', questions: 1650 }
 ];
+
+// ── SLIDE: accent used for the slide card's progress fill so all
+//    three phases (download / extract / study) look consistent.
+const SLIDE_COLOR = '#6C5CE7';
 
 let extraSubjects = [];
 let activeView = 'core';
 let searchQuery = '';
 let progressMap = {};
 let $;
+
+// ── SLIDE: teardown handle for the card's status subscription.
+let _slideUnsub = null;
 
 export async function init(context) {
   $ = (sel) => context.root.querySelector(sel);
@@ -74,10 +85,59 @@ export async function init(context) {
   const realContent = $('#real-content');
   realContent.classList.remove('visible');
 
+  // ── State adapter ────────────────────────────────────────────────
+  // Registered before the auth gate so a capture-on-redirect is
+  // possible the moment we push login. Captures the parts of UI
+  // state that live only as class flags or module-scoped variables
+  // and are NOT captured by the automatic UI snapshot:
+  //
+  //   • activeView  — 'core' vs 'other', reflected only as a class
+  //                   on toggle buttons.
+  //   • searchQuery — mirrored in #searchInput (auto-captured), but
+  //                   also lives here and drives the filter logic.
+  //
+  // extraSubjects is re-fetched from public assets on every init,
+  // so it is not captured — the fetch restores it fresh.
+  redirect.registerStateAdapter('subjects', {
+    capture: () => ({
+      activeView,
+      searchQuery,
+    }),
+    restore: (data) => {
+      if (!data) return;
+
+      // Restore the view first: setView() sets activeView, updates
+      // the toggle button classes, and re-renders the grid.
+      if (typeof data.activeView === 'string') {
+        try { setView(data.activeView); }
+        catch (err) { console.warn('[Subjects] view restore failed:', err); }
+      }
+
+      // Restore the search query. The input's value was already
+      // set by the module's automatic UI snapshot (it has an id);
+      // we just need to sync the module-scoped variable and
+      // re-render so the filter actually applies.
+      if (typeof data.searchQuery === 'string' && data.searchQuery) {
+        searchQuery = data.searchQuery;
+        const searchInput = document.getElementById('searchInput');
+        const clearSearch = document.getElementById('clearSearch');
+        if (searchInput) searchInput.value = data.searchQuery;
+        if (clearSearch) clearSearch.classList.toggle('visible', true);
+        try { renderSubjects(); }
+        catch (err) { console.warn('[Subjects] render on search restore failed:', err); }
+      }
+    },
+  });
+
   // 1. Check authentication
+  //
+  // Round-trip through login. The user explicitly reached subjects —
+  // via URL, deep link, or a delayed session-expiry redirect — so
+  // after login they should land back here, not on welcome.
   if (!auth.checkAuth()) {
     shimmer.classList.add('hidden');
-    router.navigateTo('welcome');
+    ui.showToast('Please log in to continue', 'warning');
+    redirect.navigateWithReturn('login', 'auth_required');
     return;
   }
 
@@ -137,10 +197,16 @@ export async function init(context) {
   progressMap = (await analytics.getSubjectProgress()) || {};
   renderSubjects();
 
+  // ── SLIDE: kick off slide-data after render, so the card's
+  //    subscriber is already registered when the first status
+  //    emission lands. Non-blocking — download state and the
+  //    weekly update check run in the background.
+  slideData.init().catch(err => console.warn('[Subjects] slide-data init failed:', err));
+
   // 5. Setup handlers
   setupToggleAndSearch(context);
   setupFooterButtons(context);
-  setupThemeAndLogout(context);
+  setupUserMenu(); // <--- Replaced setupThemeAndLogout here
 
   // 6. Hide shimmer
   shimmer.classList.add('hidden');
@@ -162,6 +228,38 @@ export async function init(context) {
     ui.showToast('You are offline', 'warning');
   });
 
+  // ── Self-consume of the return stack ─────────────────────────────
+  // If a snapshot exists for this page AND the top of the return
+  // stack points here, we are the target of a completed round trip.
+  // Pop so the stack doesn't grow on subsequent redirects. Covers
+  // the case where the returning page used history.back() instead
+  // of consumeAndReturn().
+  try {
+    const hasSnap = redirect.hasSnapshot();
+    if (hasSnap) {
+      const myUrl =
+        window.location.pathname +
+        (window.location.search || '') +
+        (window.location.hash || '');
+      const top = redirect.peekReturn();
+      if (top && top.url === myUrl) redirect.popReturn();
+    }
+  } catch (err) {
+    console.warn('[Subjects] Return-stack cleanup failed:', err);
+  }
+
+  // ── Resume snapshot ──────────────────────────────────────────────
+  // Restores view toggle + search query via the adapter. Search input
+  // value is restored by the automatic UI snapshot.
+  const snap = redirect.consumeSnapshot();
+  if (snap && (snap.ui || snap.page)) {
+    ui.showToast('Continuing where you left off', 'info', 1800);
+    console.log('[Subjects] Resumed from redirect:', {
+      fields: Object.keys(snap.ui?.fields || {}).length,
+      pageState: snap.page,
+    });
+  }
+
   console.log('[Subjects] Initialization complete.');
 }
 
@@ -181,19 +279,26 @@ function renderSubjects() {
   }
 
   if (subjectsToRender.length === 0) {
-    grid.innerHTML = `<p class="no-data" style="grid-column:1/-1;">${
-      activeView === 'core'
+    grid.innerHTML = `<p class="no-data" style="grid-column:1/-1;">${activeView === 'core'
         ? 'No core subjects available.'
         : searchQuery
           ? 'No subjects match your search.'
           : 'No additional subjects available.'
-    }</p>`;
+      }</p>`;
     return;
   }
 
   const isCore = activeView === 'core';
 
   grid.innerHTML = subjectsToRender.map(sub => {
+    // ── SLIDE: the special card renders its own markup, but uses
+    //    the same .subject-card, .progress-bar, .progress-fill,
+    //    and .action-btn-sm classes so it looks identical to the
+    //    other core cards.
+    if (sub.special === 'slide-view') {
+      return _slideViewCardHtml(sub);
+    }
+
     const progress = isCore ? (progressMap[sub.id] || 0) : 0;
     const hasProgress = isCore && typeof progress === 'number';
     const navSubject = isCore ? sub.id : (sub.folder || sub.name);
@@ -246,6 +351,168 @@ function renderSubjects() {
     </div>
     `;
   }).join('');
+
+  // ── SLIDE: hydrate the special card after the grid is in the DOM.
+  _hydrateSlideCard();
+}
+
+// ==================== SLIDE VIEW CARD ====================
+//
+// Uses the exact same `.progress-bar` / `.progress-fill` markup as
+// regular subject cards. That single bar is reused across three
+// phases by _updateSlideCardUi():
+//
+//   1. Download progress  (0..100 of the zip fetch)
+//   2. Extraction progress (0..100 of the JSZip entry loop)
+//   3. Aggregate study progress across the slide subjects
+//      (progressMap[id], same source other cards use)
+//
+// Download → Study transition happens on its own as slide-data's
+// status object flips. Update available adds a second button.
+
+function _slideViewCardHtml(sub) {
+  const color = sub.color || SLIDE_COLOR;
+  // Vite serves /public at the app root, so the file at
+  // public/assets/images/microscope.jpg is reachable at
+  // /assets/images/microscope.jpg. The <i> fallback sits behind
+  // the image at z-index 0; if the image 404s, onerror removes it
+  // and the Font Awesome icon shows through instead.
+  return `
+    <div class="subject-card slide-view-card"
+         data-card="slide-view"
+         style="border-top: 4px solid ${color}">
+      <div class="subject-icon slide-icon" style="background:${color}20; color:${color};">
+        <i class="fa-solid fa-images slide-icon-fallback" aria-hidden="true"></i>
+        <img src="/assets/images/microscope.jpg"
+             alt="Slide View"
+             class="slide-icon-img"
+             loading="lazy"
+             onerror="this.remove()">
+      </div>
+      <h3>${sub.name}</h3>
+      <p id="slide-status-text">Checking…</p>
+      <div class="progress-bar">
+        <div class="progress-fill" id="slide-progress-fill"
+             style="width:0%; background:${color}"></div>
+      </div>
+      <div class="card-actions" id="slide-actions"></div>
+    </div>
+  `;
+}
+
+function _hydrateSlideCard() {
+  const card = document.querySelector('[data-card="slide-view"]');
+  if (!card) return;
+
+  // Re-render replaces the card node, so the previous listener would
+  // point at dead DOM. Drop it first.
+  if (_slideUnsub) { _slideUnsub(); _slideUnsub = null; }
+
+  _slideUnsub = slideData.subscribe((status) => {
+    _updateSlideCardUi(card, status);
+  });
+}
+
+function _updateSlideCardUi(card, s) {
+  const statusText = card.querySelector('#slide-status-text');
+  const fill = card.querySelector('#slide-progress-fill');
+  const actions = card.querySelector('#slide-actions');
+  if (!actions || !fill) return;
+
+  // ── Phase 1 & 2: downloading / extracting ─────────────────────
+  if (s.downloading) {
+    if (statusText) {
+      statusText.textContent = s.extracting
+        ? 'Extracting slides…'
+        : 'Downloading slides…';
+    }
+    const pct = s.extracting ? s.extractProgress : s.progress;
+    fill.style.width = pct + '%';
+    fill.style.background = SLIDE_COLOR;
+    actions.innerHTML = '';
+    return;
+  }
+
+  // ── Not downloaded ────────────────────────────────────────────
+  if (!s.downloaded) {
+    if (statusText) {
+      statusText.textContent = s.error
+        ? 'Error: ' + s.error
+        : 'Download study slides';
+    }
+    fill.style.width = '0%';
+    fill.style.background = SLIDE_COLOR;
+    actions.innerHTML = `
+      <button class="action-btn-sm slide-download-btn" id="slide-download-btn">
+        <i class="fa-solid fa-download"></i> <span>Download</span>
+      </button>`;
+    actions.querySelector('#slide-download-btn')
+      ?.addEventListener('click', () => slideData.downloadSlideData());
+    return;
+  }
+
+  // ── Phase 3: downloaded — fill = aggregate study progress ────
+  //    Same metric as the regular cards (progressMap), just averaged
+  //    across the slide zip's subjects.
+  //    NOTE: uses getAllSlideSubjectIds() — the unified public API.
+  //    The old getSlideSubjectIds() name was removed when the slide
+  //    manifest was folded into the unified subject/topic getters.
+  const slideIds = questions.getAllSlideSubjectIds();
+  const aggregate = slideIds.length > 0
+    ? Math.round(
+      slideIds.reduce((acc, id) => acc + (progressMap[id] || 0), 0) /
+      slideIds.length
+    )
+    : 0;
+  fill.style.width = aggregate + '%';
+  fill.style.background = SLIDE_COLOR;
+
+  // ── Update available: Study + Update ─────────────────────────
+  if (s.updateAvailable) {
+    if (statusText) statusText.textContent = 'Update available';
+    actions.innerHTML = `
+      <button class="action-btn-sm slide-update-btn" id="slide-update-btn">
+        <i class="fa-solid fa-rotate"></i> <span>Update</span>
+      </button>
+      <button class="action-btn-sm slide-study-btn" id="slide-study-btn">
+        <i class="fa-solid fa-images"></i> <span>Study</span>
+      </button>`;
+    actions.querySelector('#slide-update-btn')
+      ?.addEventListener('click', () => slideData.downloadSlideData());
+    actions.querySelector('#slide-study-btn')
+      ?.addEventListener('click', _openSlideView);
+    return;
+  }
+
+  // ── Up to date: Study only ───────────────────────────────────
+  if (statusText) statusText.textContent = 'Ready to study';
+  actions.innerHTML = `
+    <button class="action-btn-sm slide-study-btn" id="slide-study-btn">
+      <i class="fa-solid fa-images"></i> <span>Study Slides</span>
+    </button>`;
+  actions.querySelector('#slide-study-btn')
+    ?.addEventListener('click', _openSlideView);
+}
+
+function _openSlideView() {
+  // NOTE: getAllSlideSubjectIds() — see _updateSlideCardUi above.
+  const ids = questions.getAllSlideSubjectIds();
+  if (!ids || ids.length === 0) {
+    ui.showToast('No slide subjects available', 'warning');
+    return;
+  }
+
+  // Multi-subject zips: pick the first deterministically so Study
+  // always lands somewhere. The user can switch subject inside the
+  // normal topic-selection flow.
+  //
+  // Route through the *same* helper the regular Study buttons use
+  // (window.studySubject → subject-specific). This keeps the slide
+  // flow byte-identical to the core-subject flow: subject-specific
+  // → exam-settings → exam-engine → results. Anything downstream
+  // that keys off the URL `subject=` param (analytics, seen-questions,
+  // performance ratings) treats histology-prac exactly like anatomy.
+  window.studySubject(ids[0]);
 }
 
 // ==================== TOGGLE & SEARCH ====================
@@ -291,19 +558,85 @@ function setupFooterButtons(context) {
   });
 }
 
-// ==================== THEME / LOGOUT ====================
-function setupThemeAndLogout(context) {
+
+
+// ==================== THEME / USER MENU ====================
+function setupUserMenu() {
   const themeToggle = $('#themeToggle');
   if (themeToggle) themeToggle.addEventListener('click', ui.toggleTheme);
 
+  const userMenuBtn = $('#userMenuBtn');
+  const userDropdown = $('#userDropdown');
   const logoutBtn = $('#logoutBtn');
+  const switchAccountBtn = $('#switchAccountBtn');
+
+  if (!userMenuBtn || !userDropdown) return;
+
+  // --- 1. Populate Avatar (Image or Initial) ---
+  const user = auth.getUser();
+  const avatarText = $('#userAvatarText');
+  const avatarImg = $('#userAvatarImg');
+
+  if (user) {
+    const imgUrl = user.picture || user.photoURL || user.avatar || user.avatarUrl;
+
+    if (imgUrl) {
+      // Use online image directly, rely on browser caching
+      avatarImg.src = imgUrl;
+      avatarImg.style.display = 'block';
+      avatarText.style.display = 'none';
+      
+      // If the image fails to load (offline/broken link), revert to initials
+      avatarImg.onerror = () => {
+        avatarImg.style.display = 'none';
+        const nameStr = user.name || user.email || 'User';
+        avatarText.textContent = nameStr.charAt(0).toUpperCase();
+        avatarText.style.display = 'flex';
+      };
+    } else {
+      // No image URL, use initials
+      const nameStr = user.name || user.email || 'User';
+      avatarText.textContent = nameStr.charAt(0).toUpperCase();
+      avatarText.style.display = 'flex';
+      avatarImg.style.display = 'none';
+    }
+  }
+
+  // --- 2. Toggle Dropdown ---
+  userMenuBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevent closing immediately
+    const isVisible = userDropdown.classList.contains('show');
+    userDropdown.classList.toggle('show', !isVisible);
+  });
+
+  // Close when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!userMenuBtn.contains(e.target) && !userDropdown.contains(e.target)) {
+      userDropdown.classList.remove('show');
+    }
+  });
+
+  // --- 3. Dropdown Actions ---
+  const performLogout = (redirectUrl) => {
+    userDropdown.classList.remove('show');
+    auth.logout();
+    try { redirect.clearReturns(); } catch { /* ignore */ }
+    try { redirect.clearSnapshots(); } catch { /* ignore */ }
+    router.navigateTo(redirectUrl);
+  };
+
   if (logoutBtn) {
-    logoutBtn.addEventListener('click', () => {
-      auth.logout();
-      router.navigateTo('welcome');
+    logoutBtn.addEventListener('click', () => performLogout('welcome'));
+  }
+
+  if (switchAccountBtn) {
+    switchAccountBtn.addEventListener('click', () => {
+      // Force redirect to login, prompting the user to use a different account
+      performLogout('login?switch_account=true');
     });
   }
 
+  // Notifications button
   const notifBtn = $('#notifBtn');
   if (notifBtn) {
     notifBtn.addEventListener('click', () => router.navigateTo('notifications'));
@@ -344,7 +677,10 @@ async function loadExtraSubjectsAndUpdateGrid() {
     if (toggleContainer) toggleContainer.style.display = 'none';
     searchBar?.classList.remove('visible');
     if (countEl) countEl.style.display = 'none';
-    activeView = 'core';
+    // Fall back to core if a restored 'other' view has no data to
+    // show. Otherwise the grid would render an empty state even
+    // though the toggle button is hidden.
+    if (activeView === 'other') activeView = 'core';
     renderSubjects();
   }
 }
@@ -396,5 +732,11 @@ window.navigateToResources = (subjectId, type) => router.navigateTo(`resource-br
 window.setView = setView;
 
 export function destroy() {
-  // Cleanup if needed
+  // ── SLIDE: drop the card's status subscription so a subsequent
+  //    visit doesn't update a dead DOM node.
+  if (_slideUnsub) { _slideUnsub(); _slideUnsub = null; }
+
+  // Unregister the state adapter so a subsequent page load does not
+  // inherit a stale closure over this page's module state.
+  try { redirect.unregisterStateAdapter('subjects'); } catch { /* ignore */ }
 }

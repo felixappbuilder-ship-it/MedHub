@@ -3,10 +3,53 @@
 /**
  * Content Management Module (Convex + R2)
  * - Fetches resource metadata (thumbnails) from Convex (public, no subscription check)
- * - Caches metadata with manifest version for efficient updates
+ * - Caches metadata IN MEMORY ONLY, for the lifetime of the page session
  * - Downloads actual files only if user has active subscription/trial
  * - Stores downloaded files in IndexedDB (not user-accessible)
  * - Provides filter options (institutions, years) for browsing
+ *
+ * Persistence contract (matches resource-browser.js):
+ *   ┌─────────────────────────────────────────────────────────────────────┐
+ *   │ Undownloaded catalogue items are NEVER persisted to disk.          │
+ *   │                                                                     │
+ *   │ The catalogue cache here is a session-scoped Map. It accelerates   │
+ *   │ repeat visits within one browser session but is discarded when the │
+ *   │ page unloads. Nothing about a user's browsing history survives.    │
+ *   │                                                                     │
+ *   │ Only two persistence stores exist on disk:                         │
+ *   │   • `downloaded_resource_meta` (localStorage) — set by             │
+ *   │     resource-browser.js, contains ONLY downloaded documents.       │
+ *   │   • IndexedDB file + thumbnail blobs — written by resource-        │
+ *   │     browser.js / content.js only when the user downloads a file.   │
+ *   └─────────────────────────────────────────────────────────────────────┘
+ *
+ * Cache shape:
+ *   The in-memory cache stores `{version, documents, cursor, hasMore}`.
+ *   Storing cursor/hasMore is REQUIRED for pagination correctness on
+ *   revisit — without them, the cache-served first page lies about being
+ *   the last page, and the "Load more" button never appears.
+ *
+ *   The cache key includes the topic when one is active. A topic-scoped
+ *   fetch and a category-wide fetch of the same subject+category are two
+ *   different cache entries, so switching between them never serves stale
+ *   documents from the other scope.
+ *
+ * Failure semantics:
+ *   `fetchResources` re-throws network errors when it has no cache to
+ *   fall back on. This lets the caller (resource-browser.js) detect the
+ *   failure and switch to its offline-only view (`loadOfflineResources`).
+ *   Silently returning an empty result set was the root cause of the
+ *   "downloads don't show offline" bug.
+ *
+ * Single-document fetch:
+ *   `fetchResourceById(resourceId)` fetches ONE document from the public
+ *   catalogue by id. Backed by `resources/queries:getResource`, which is
+ *   public (no auth required) and already:
+ *     • returns null for missing or inactive resources;
+ *     • applies the canonical `toPublicDocument()` shape.
+ *   Used by the share-landing flow in resource-browser.js — a share link
+ *   carries only an id, and this is how the recipient resolves it to a
+ *   real card without paginating.
  */
 
 import * as db from './db.js';
@@ -16,26 +59,93 @@ import { convexHttpClient } from './convex-client.js';
 import { getToken } from './auth.js';
 import * as subscription from './subscription.js';
 
-// Cache keys
-const METADATA_CACHE_KEY = 'content_metadata_cache_v2';
+// ==================== IN-MEMORY CACHE ====================
+//
+// Map<string, {
+//   version: any,
+//   documents: any[],
+//   cursor: string|null,
+//   hasMore: boolean,
+//   filters: any,
+//   lastFetched: number,
+// }>
+//
+// Keyed by `${subject}_${category}` when no topic is active, or
+// `${subject}_${category}_${topic}` when one is. Lost on page unload by
+// design.
+
+/**
+ * @type {Map<string, {
+ *   version: any,
+ *   documents: any[],
+ *   cursor: string|null,
+ *   hasMore: boolean,
+ *   filters: any,
+ *   lastFetched: number,
+ * }>}
+ */
+const _catalogueCache = new Map();
+
+/**
+ * Build the cache key for a (subject, category, topic) triple.
+ *
+ *   topic present  → "anatomy_notes_abdomen&pelvis"
+ *   topic absent   → "anatomy_notes"
+ *
+ * The two forms never collide because the topic slug is appended after a
+ * separator that cannot appear in the base key's two parts (subject and
+ * category are written by the backend and do not contain "_" by convention;
+ * if that ever changes, switch to a longer separator like "::").
+ */
+function _cacheKey(subject, category, topic = null) {
+  return topic
+    ? `${subject}_${category}_${topic}`
+    : `${subject}_${category}`;
+}
+
+function _getCache(subject, category, topic = null) {
+  return _catalogueCache.get(_cacheKey(subject, category, topic)) || {
+    version: null,
+    documents: [],
+    cursor: null,
+    hasMore: false,
+    filters: null,
+    lastFetched: 0,
+  };
+}
+
+function _setCache(subject, category, topic = null, data) {
+  const prev = _getCache(subject, category, topic);
+  _catalogueCache.set(_cacheKey(subject, category, topic), {
+    // Preserve fields the caller didn't supply.
+    version: data.version !== undefined ? data.version : prev.version,
+    documents: data.documents !== undefined ? data.documents : prev.documents,
+    cursor: data.cursor !== undefined ? data.cursor : prev.cursor,
+    hasMore: data.hasMore !== undefined ? data.hasMore : prev.hasMore,
+    filters: data.filters !== undefined ? data.filters : prev.filters,
+    lastFetched: Date.now(),
+  });
+}
+
+// ==================== ONE-SHOT CACHE MIGRATION ====================
+
+let _migrationDone = false;
+
+async function _runCacheMigrationOnce() {
+  if (_migrationDone) return;
+  _migrationDone = true;
+  try {
+    await db.saveSetting('content_metadata_cache_v2', {});
+    await db.saveSetting('content_metadata_cache_v3', {});
+  } catch {
+    // Best-effort.
+  }
+}
+
+// ==================== DOWNLOAD MANIFEST HELPERS ====================
+
 const DOWNLOAD_MANIFEST_KEY = 'download_manifest_v2';
 
-// ==================== CACHE HELPERS ====================
-
-async function getCache(subject, category) {
-  const cache = await db.getSetting(METADATA_CACHE_KEY, {});
-  const key = `${subject}_${category}`;
-  return cache[key] || { version: null, documents: [], filters: null, lastFetched: 0 };
-}
-
-async function setCache(subject, category, data) {
-  const cache = await db.getSetting(METADATA_CACHE_KEY, {});
-  const key = `${subject}_${category}`;
-  cache[key] = { ...data, lastFetched: Date.now() };
-  await db.saveSetting(METADATA_CACHE_KEY, cache);
-}
-
-// Internal manifest helpers (used internally and exported)
 function getDownloadManifest() {
   return utils.getLocalStorage(DOWNLOAD_MANIFEST_KEY, {});
 }
@@ -44,84 +154,225 @@ function setDownloadManifest(manifest) {
   utils.setLocalStorage(DOWNLOAD_MANIFEST_KEY, manifest);
 }
 
-// ==================== FETCH RESOURCES (with caching) ====================
+// ==================== SHARED DOCUMENT SHAPE ====================
 
 /**
- * Fetch resources for a subject/category.
- * Uses cached data if manifest version matches.
+ * Project a raw public document (from any of the getResources / getResource
+ * queries) onto the canonical shape consumed by the frontend.
+ *
+ * The backend already returns essentially this shape via `toPublicDocument`,
+ * but keeping one map here means every fetch path in this module produces an
+ * identical field set, so downstream consumers (card renderer, open handler,
+ * download handler, saveDownloadedMeta) never have to branch on origin.
+ *
+ * `topic` is normalized to `null` when absent — the backend already does
+ * this, but re-asserting it here keeps every client-side consumer from
+ * having to distinguish between `undefined` and `null` for the "no topic"
+ * case. `resource-browser.js` relies on this when filtering persisted
+ * downloads by topic scope.
+ *
+ * @param {object} doc
+ * @returns {object}
+ */
+function _toPublicDoc(doc) {
+  return {
+    // Identity
+    _id: doc._id,
+    title: doc.title,
+    subject: doc.subject,
+    category: doc.category,
+    topic: doc.topic ?? null,        // ← NEW
+
+    // Attribution
+    author: doc.author,
+    year: doc.year,
+
+    // Entitlement — REQUIRED by the Open and Download handlers
+    isPremium: doc.isPremium === true,
+
+    // Content metadata
+    fileType: doc.fileType,
+    fileSize: doc.fileSize,
+    description: doc.description,
+    tags: doc.tags,
+
+    // Media
+    thumbnailUrl: doc.thumbnailUrl,
+    r2ThumbnailKey: doc.r2ThumbnailKey,
+
+    // Counters / versioning
+    downloadCount: doc.downloadCount,
+    viewCount: doc.viewCount,
+    version: doc.version,
+
+    // Timestamps
+    uploadedAt: doc.uploadedAt,
+    updatedAt: doc.updatedAt,
+  };
+}
+
+// ==================== FETCH RESOURCES ====================
+
+/**
+ * Fetch resources for a subject/category, optionally scoped to a topic.
+ *
+ * Behaviour:
+ *   • If first page (no cursor, no filters) and cache version matches,
+ *     return the cached page — including its cursor and hasMore, so
+ *     pagination continues correctly.
+ *   • Otherwise fetch from backend.
+ *   • On network failure:
+ *       - If cache has documents → return cache with source 'cache'.
+ *       - If cache is empty → RE-THROW. This lets the caller switch to
+ *         the offline-only view. Silently returning [] is what broke
+ *         offline downloads.
+ *
+ * Topic scoping:
+ *   When `topic` is a non-empty string, the backend query is narrowed to
+ *   that topic via the `by_subject_category_topic` index, and the cache
+ *   key includes the topic. The `getManifest` check is also topic-scoped,
+ *   so a change to a different topic's resources does not invalidate this
+ *   topic's cache.
+ *
+ *   When `topic` is `null`/`undefined`/empty, the query is category-wide
+ *   and the cache key is category-only — matching the pre-topics behavior.
+ *
  * @param {string} subject
  * @param {string} category
- * @param {string|null} cursor (for pagination)
- * @param {Object} filters - { institution, year } (optional)
- * @returns {Promise<{documents: Array, cursor: string|null, hasMore: boolean}>}
+ * @param {string|null} cursor
+ * @param {Object} filters  { institution, year }
+ * @param {string|null} topic   topic slug, or null/undefined for category-wide
+ * @returns {Promise<{documents: Array, cursor: string|null, hasMore: boolean, source: string}>}
  */
-export async function fetchResources(subject, category, cursor = null, filters = {}) {
-  // If no cursor and no filters, check cache
-  if (!cursor && !filters.institution && !filters.year) {
-    const cached = await getCache(subject, category);
-    try {
-      const manifest = await convexHttpClient.query('resources/queries:getManifest', {
-        subject,
-        category,
-      });
-      if (manifest && manifest.version === cached.version && cached.documents.length > 0) {
-        return {
-          documents: cached.documents,
-          cursor: null,
-          hasMore: false,
-        };
+export async function fetchResources(
+  subject,
+  category,
+  cursor = null,
+  filters = {},
+  topic = null,
+) {
+  await _runCacheMigrationOnce();
+
+  // Normalize topic: empty string and undefined both mean "no topic".
+  const normalizedTopic = topic ? String(topic) : null;
+
+  const isFirstPage = !cursor && !filters.institution && !filters.year;
+
+  // ── Cache fast-path ────────────────────────────────────────────────
+  if (isFirstPage) {
+    const cached = _getCache(subject, category, normalizedTopic);
+    if (cached.documents.length > 0) {
+      try {
+        const manifestArgs = { subject, category };
+        if (normalizedTopic) manifestArgs.topic = normalizedTopic;
+
+        const manifest = await convexHttpClient.query(
+          'resources/queries:getManifest',
+          manifestArgs,
+        );
+        if (manifest && manifest.version === cached.version) {
+          return {
+            documents: cached.documents,
+            cursor: cached.cursor || null,
+            hasMore: cached.hasMore === true,
+            source: 'cache',
+          };
+        }
+      } catch {
+        // Manifest check failed — fall through to full fetch. Do not
+        // return the cache here, because we can't confirm it is current.
       }
-    } catch (err) {
-      console.warn('[Content] Could not fetch manifest, will refetch all.', err);
     }
   }
 
-  // Build query parameters
+  // ── Build query params ─────────────────────────────────────────────
   const queryParams = {
     subject,
     category,
     limit: 20,
   };
-  // ✅ Only include cursor if it's a valid non-empty string (not null/undefined)
+  if (normalizedTopic) {
+    queryParams.topic = normalizedTopic;
+  }
   if (cursor && typeof cursor === 'string' && cursor.length > 0) {
     queryParams.cursor = cursor;
   }
 
-  // Fetch from backend
+  // ── Network fetch ──────────────────────────────────────────────────
   try {
     const result = await convexHttpClient.query('resources/queries:getResources', queryParams);
 
-    const documents = result.documents.map((doc) => ({
-      _id: doc._id,
-      title: doc.title,
-      thumbnailUrl: doc.thumbnailUrl,
-      fileType: doc.fileType,
-      fileSize: doc.fileSize,
-      updatedAt: doc.updatedAt,
-    }));
+    const documents = result.documents.map(_toPublicDoc);
 
-    // If first page, update cache
-    if (!cursor && !filters.institution && !filters.year) {
-      await setCache(subject, category, {
+    // Write the cache on first-page fetches, including cursor and hasMore
+    // so a subsequent cache hit continues pagination correctly.
+    if (isFirstPage) {
+      _setCache(subject, category, normalizedTopic, {
         version: result.manifestVersion,
         documents,
+        cursor: result.cursor || null,
+        hasMore: result.hasMore === true,
       });
     }
 
     return {
       documents,
-      cursor: result.cursor,
-      hasMore: result.hasMore,
+      cursor: result.cursor || null,
+      hasMore: result.hasMore === true,
+      source: 'network',
     };
   } catch (err) {
     console.error('[Content] Fetch error:', err);
-    ui.showToast('Failed to load resources', 'error');
-    // Return cached data if available
-    const cached = await getCache(subject, category);
+
+    // Fall back to in-memory cache if we have one — scoped to the same
+    // topic (or lack thereof) as this request.
+    const cached = _getCache(subject, category, normalizedTopic);
     if (cached.documents.length > 0) {
-      return { documents: cached.documents, cursor: null, hasMore: false };
+      return {
+        documents: cached.documents,
+        cursor: cached.cursor || null,
+        hasMore: cached.hasMore === true,
+        source: 'cache-fallback',
+      };
     }
-    return { documents: [], cursor: null, hasMore: false };
+
+    // No cache to serve from. Re-throw so the caller can switch to its
+    // offline path. This is the fix for "downloads don't show offline".
+    throw err;
+  }
+}
+
+// ==================== FETCH ONE ====================
+
+/**
+ * Fetch a single resource by id from the public catalogue.
+ *
+ * Backed by `resources/queries:getResource`, which:
+ *   • is public (no auth required);
+ *   • returns null for missing or inactive resources;
+ *   • applies the canonical `toPublicDocument()` shape (including `topic`).
+ *
+ * Used by the share-landing flow: a share link carries only an id, and
+ * this resolves it to a full public doc — same shape as a `fetchResources`
+ * document — so the caller can inject it into the grid and hand it to the
+ * viewer without any shape adaptation.
+ *
+ * The returned document carries `topic`, which lets `resource-browser.js`
+ * preserve topic context for the Back button on share landing.
+ *
+ * @param {string} resourceId
+ * @returns {Promise<object|null>}
+ */
+export async function fetchResourceById(resourceId) {
+  try {
+    const doc = await convexHttpClient.query('resources/queries:getResource', {
+      resourceId,
+    });
+    if (!doc) return null;
+    return _toPublicDoc(doc);
+  } catch (err) {
+    console.error('[Content] fetchResourceById error:', err);
+    return null;
   }
 }
 
@@ -129,25 +380,30 @@ export async function fetchResources(subject, category, cursor = null, filters =
 
 /**
  * Get available filter values (institutions, years) for a subject/category.
+ *
+ * Category-wide by design: the dropdowns are populated once per category
+ * visit and are not re-scoped when the user selects a topic. This keeps
+ * the "years" list stable as the user drills in and out of topics, which
+ * is the expected UX.
+ *
  * @param {string} subject
  * @param {string} category
  * @returns {Promise<{institutions: string[], years: number[]}>}
  */
 export async function getAvailableFilters(subject, category) {
+  await _runCacheMigrationOnce();
+
+  const cached = _getCache(subject, category);
+  if (cached.filters) {
+    return cached.filters;
+  }
+
   try {
-    // Check cache first
-    const cached = await getCache(subject, category);
-    if (cached.filters) {
-      return cached.filters;
-    }
     const result = await convexHttpClient.query('resources/queries:getFilters', {
       subject,
       category,
     });
-    // Cache filters
-    const cacheData = await getCache(subject, category);
-    cacheData.filters = result;
-    await setCache(subject, category, cacheData);
+    _setCache(subject, category, null, { filters: result });
     return result || { institutions: [], years: [] };
   } catch (err) {
     console.warn('[Content] Failed to fetch filters', err);
@@ -158,14 +414,16 @@ export async function getAvailableFilters(subject, category) {
 // ==================== DOWNLOAD FILE ====================
 
 /**
- * Download a resource file.
- * Checks subscription, gets signed URL, stores in IndexedDB.
+ * Download a resource file (standalone API; the resource browser has its
+ * own download flow that also writes persisted metadata).
+ *
  * @param {string} resourceId
- * @param {string} title (for display)
- * @returns {Promise<boolean>} success
+ * @param {string} title
+ * @returns {Promise<boolean>}
  */
 export async function downloadResource(resourceId, title = '') {
-  // Check active subscription/trial first (fast local check)
+  await _runCacheMigrationOnce();
+
   const hasActive = await subscription.hasActiveSubscription();
   if (!hasActive) {
     ui.showToast('Active subscription or free trial required to download.', 'warning');
@@ -199,10 +457,8 @@ export async function downloadResource(resourceId, title = '') {
     if (!response.ok) throw new Error('Download failed');
 
     const blob = await response.blob();
-    // Store in IndexedDB
     await db.saveFileBlob(resourceId, blob);
 
-    // Update download manifest
     const manifest = getDownloadManifest();
     manifest[resourceId] = {
       downloadedAt: Date.now(),
@@ -255,9 +511,8 @@ export function formatFileSize(bytes) {
 }
 
 // ==================== EXPORTS ====================
-// Export the manifest helpers so the UI can use them
+
 export { getDownloadManifest, setDownloadManifest };
 
-// Compatibility aliases for the resource-browser.html
 export const fetchDocuments = fetchResources;
 export const downloadDocument = downloadResource;

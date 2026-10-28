@@ -10,7 +10,7 @@ import { navigateTo } from './router.js';
 // ==================== CONSTANTS ====================
 
 const SYNC_INTERVAL_MS = 30 * 60 * 1000;     // 30 minutes (background check)
-const SYNC_COOLDOWN_MS = 60 * 60 * 1000;     // 1 hour (minimum time between full syncs)
+const SYNC_COOLDOWN_MS =24 * 60 * 60 * 1000;     // 1 hour (minimum time between full syncs)
 const SYNC_STATE_KEY = 'sync_state';
 const SYNC_TIMER_KEY = 'sync_timer';
 
@@ -719,9 +719,13 @@ async function pushExamResultsForItem(data, token) {
 }
 
 // Process challenge result from queue
+// NOTE: submitResult moved from mutations → actions because the mutation
+// version called ctx.runAction which is illegal in a mutation context
+// (threw "t.runAction is not a function"). Args and return shape are
+// identical, so the only change is the endpoint path + client method.
 async function processChallengeResult(data, token) {
     if (!data || !data.challengeId) return;
-    await convexHttpClient.mutation("challenges/mutations:submitResult", {
+    await convexHttpClient.action("challenges/actions:submitResult", {
         token,
         challengeId: data.challengeId,
         score: data.score,

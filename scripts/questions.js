@@ -1,13 +1,69 @@
 // frontend-user/scripts/questions.js
 
 /**
- * Question Bank Manager
- * Loads questions from per‑topic JSON files (data/questions/[subject]/[topic].json).
- * Tries multiple common paths to work on local, GitHub Pages, and Android WebView.
+ * Question Bank Manager — ENGINE-INTEGRATED
+ *
+ * Loads questions from per‑topic JSON files (data/questions/[subject]/[topic].json)
+ * and merges subjects/topics delivered by the slide-data zip (subject.json).
+ * All public getters are slide-aware — callers never branch on "is this
+ * slide or static?"; the merge is internal.
+ *
+ * ── ENGINE INTEGRATION (2026-02) ─────────────────────────────────────────
+ *
+ *   `getQuestionsForExam(config)` is now ADAPTIVE-CAPABLE. When the caller
+ *   opts in via `config.adaptive === true`, the question pool is ordered by
+ *   the MedVix engine (CL-B + CL-D: expected information gain + time-budgeted
+ *   utility), and topped up with random questions when the engine can't
+ *   produce enough candidates (e.g. brand-new topics with no history).
+ *
+ *   BACKWARD COMPATIBILITY IS ABSOLUTE. Omitting `adaptive` reproduces the
+ *   pre-engine behavior exactly (shuffled random slice). Every other export
+ *   is unchanged.
+ *
+ *   Adaptive is opt-in because:
+ *     • Existing exam modes and UI flows must not silently change difficulty
+ *     • The engine only knows about concepts the learner has attempted —
+ *       new subjects correctly fall through to random
+ *     • Every caller can migrate on its own schedule
+ *
+ *   Additional engine-aware helpers are provided for UI pages:
+ *     • getAdaptiveQuestionsForExam(config) — shorthand for adaptive: true
+ *     • getReviewDueTopics(subjectId)       — concepts due for spaced review
+ *     • getRecommendedStudyMode(subjectId)  — engine mode selector
+ *     • getAdaptiveTopicStats(subjectId)    — per-topic mastery/retrieval
+ *
+ * Public API (unchanged unless noted):
+ *   getSubjectMeta(id)               → { name, icon, color, questions, source }
+ *   getTopicsBySubject(id)           → [{ id, name, questions }, ...]
+ *   getTopicById(subjectId, topicId) → topic | null
+ *   getAllSubjectIds()               → string[]   (static + slide)
+ *   getAllStaticSubjectIds()         → string[]   (static only)
+ *   getAllSlideSubjectIds()          → string[]   (slide only)
+ *   getAllSubjects()                 → [{ id, ...meta, topics }]
+ *   getQuestionsForExam(config)      → Promise<Question[]>       [EXTENDED]
+ *   getQuestionsByIds(ids)           → Promise<Question[]>
+ *
+ * New engine-aware exports:
+ *   getAdaptiveQuestionsForExam(config) → Promise<Question[]>
+ *   getReviewDueTopics(subjectId)       → Promise<Array<{topicId,...}>>
+ *   getRecommendedStudyMode(subjectId, timeBudgetSec) → Promise<mode>
+ *   getAdaptiveTopicStats(subjectId)    → Promise<Array<{topicId,...}>>
+ *   getQuestionIdsForConcept(conceptId) → Promise<string[]>
+ *
+ * Internal (only slide-data.js should call):
+ *   invalidateSlideManifestCache()
+ *
+ * ── ADAPTIVE CONFIG FIELDS (all optional; ignored when adaptive is off) ──
+ *   adaptive        boolean   default false
+ *   mode            string    engine mode; auto-recommended if omitted
+ *   timeBudgetSec   number    total time budget for selection; derived from
+ *                             questionCount * 30 if omitted
+ *   excludeIds      string[]  question ids already in the session (skip)
  */
 
 import * as utils from './utils.js';
 import * as db from './db.js';
+import * as medvix from './medvix.js';
 
 // ==================== SUBJECT METADATA ====================
 const SUBJECT_META = {
@@ -199,6 +255,47 @@ const TOPICS = {
 
 };
 
+// Pseudo-subject representing the "Slide View" card itself. It has no
+// topics and is never studiable — it exists only so a caller who happens
+// to ask getSubjectMeta('slide-view') gets something sensible instead of
+// the generic { name: 'slide-view' } fallback. Not included in any of the
+// getAll*() enumerations, since it isn't a real subject.
+const SLIDE_VIEW_META = {
+    name: 'Slide View',
+    icon: 'fa-solid fa-images',
+    color: '#6C5CE7',
+    questions: 0,
+};
+
+// ==================== SLIDE MANIFEST CACHE (private) ====================
+// `undefined` = not yet read. `null` = read, but no manifest on disk.
+// Every mutation path in slide-data.js must call
+// invalidateSlideManifestCache() **before** emitting status, so the
+// Subjects-card subscriber never sees a stale manifest.
+let _slideManifestCache = undefined;
+
+function _readSlideManifest() {
+    if (_slideManifestCache !== undefined) return _slideManifestCache;
+    try {
+        _slideManifestCache = utils.getLocalStorage('slideDataManifest', null);
+    } catch {
+        _slideManifestCache = null;
+    }
+    return _slideManifestCache;
+}
+
+/**
+ * Drop the in-memory manifest copy so the next read picks up the latest
+ * subject.json from localStorage.
+ *
+ * INTERNAL: only slide-data.js should call this. Any other caller
+ * referencing this function means the abstraction is leaking — route the
+ * need through one of the public getters instead.
+ */
+export function invalidateSlideManifestCache() {
+    _slideManifestCache = undefined;
+}
+
 
 // ==================== PATH DETECTION ====================
 function getPossibleUrls(subject, topicId) {
@@ -282,15 +379,231 @@ async function loadTopicQuestions(subject, topicId) {
     }
 }
 
-// ==================== PUBLIC API ====================
-export function getSubjectMeta(subjectId) {
-    return SUBJECT_META[subjectId] || { name: subjectId, icon: '📚', color: '#888', questions: 0 };
+// ==================== ADAPTIVE ASSEMBLY ====================
+
+/**
+ * Ensure every question has a stable `id`. The engine uses `id` for
+ * deduplication during adaptive selection. Fresh-loaded questions carry
+ * `questionId` but not necessarily `id` — db.saveQuestions normally
+ * backfills this, but we defend here so adaptive selection is never
+ * silently broken by a missing id.
+ */
+function ensureQuestionIds(questions) {
+    for (const q of questions) {
+        if (!q.id) {
+            q.id = q.questionId || ('q_' + Math.random().toString(36).slice(2, 10));
+        }
+    }
+    return questions;
 }
 
+/**
+ * Derive a reasonable time budget from the caller's requested question
+ * count when no explicit budget is provided. 30s per question is the
+ * baseline used throughout the rest of the app (exam-engine derives
+ * timeAllocated the same way).
+ */
+function deriveTimeBudgetSec(questionCount) {
+    return Math.max(60, (questionCount || 10) * 30);
+}
+
+/**
+ * Assemble the final question list.
+ *
+ *   • adaptive falsy  → shuffled random slice (identical to pre-engine)
+ *   • adaptive true   → engine-ranked selection, topped up with random
+ *                       if the engine produces fewer than requested
+ *   • engine error    → silent fall back to shuffled random
+ *   • empty pool      → returns empty array (caller throws)
+ */
+async function assembleQuestions(config, allQuestions) {
+    const {
+        subject,
+        questionCount,
+        adaptive = false,
+        mode = null,
+        timeBudgetSec = null,
+        excludeIds = null,
+    } = config;
+
+    // Filter exclusions up front so both paths see the same pool
+    let pool = allQuestions;
+    if (Array.isArray(excludeIds) && excludeIds.length > 0) {
+        const excludeSet = new Set(excludeIds);
+        pool = pool.filter(q => !excludeSet.has(q.id));
+    }
+
+    if (pool.length === 0) return [];
+
+    // ── Non-adaptive path: exact pre-engine behaviour ──
+    if (!adaptive) {
+        const shuffled = utils.shuffleArray(pool);
+        return shuffled.slice(0, questionCount);
+    }
+
+    // ── Adaptive path (opt-in) ──
+    const budget = (Number.isFinite(timeBudgetSec) && timeBudgetSec > 0)
+        ? timeBudgetSec
+        : deriveTimeBudgetSec(questionCount);
+
+    let chosen = [];
+    try {
+        const selection = await medvix.selectNextQuestions(
+            pool,
+            budget,
+            mode || null,
+            subject || null
+        );
+
+        if (selection && Array.isArray(selection.chosen) && selection.chosen.length > 0) {
+            chosen = selection.chosen
+                .map(c => c && c.question)
+                .filter(Boolean);
+        } else {
+            console.debug('[Questions] Adaptive selection returned no candidates; using random.');
+        }
+    } catch (e) {
+        console.warn('[Questions] Adaptive selection failed; falling back to random:', e);
+    }
+
+    // Deduplicate (engine selection can, in principle, include a question twice)
+    const seenIds = new Set();
+    const dedupedChosen = [];
+    for (const q of chosen) {
+        if (seenIds.has(q.id)) continue;
+        seenIds.add(q.id);
+        dedupedChosen.push(q);
+    }
+
+    // Truncate to request
+    const truncated = dedupedChosen.slice(0, questionCount);
+
+    // Top up with random from remaining pool when short
+    if (truncated.length < questionCount) {
+        const remaining = pool.filter(q => !seenIds.has(q.id));
+        const shuffled = utils.shuffleArray(remaining);
+        const needed = questionCount - truncated.length;
+        return truncated.concat(shuffled.slice(0, needed));
+    }
+
+    return truncated;
+}
+
+// ==================== PUBLIC API ====================
+
+/**
+ * Return metadata for a subject, merging in any subject contributed by
+ * the slide zip. Precedence: slide manifest > static bank > generic
+ * fallback, so a zip can rebrand or recolour an existing subject without
+ * an app release.
+ *
+ * `source` tells callers where the record came from — the only field
+ * downstream ever needs to distinguish slide from static:
+ *   'slide'   — declared by the slide zip's subject.json
+ *   'static'  — one of the built-in SUBJECT_META entries
+ *   'special' — the "slide-view" pseudo-subject (the card itself)
+ *   'unknown' — no match anywhere (subjectId echoed back as name)
+ */
+export function getSubjectMeta(subjectId) {
+    if (subjectId === 'slide-view') {
+        return { ...SLIDE_VIEW_META, source: 'special' };
+    }
+
+    const m = _readSlideManifest();
+    if (m?.SUBJECT_META?.[subjectId]) {
+        return { ...m.SUBJECT_META[subjectId], source: 'slide' };
+    }
+
+    if (SUBJECT_META[subjectId]) {
+        return { ...SUBJECT_META[subjectId], source: 'static' };
+    }
+
+    return { name: subjectId, icon: '📚', color: '#888', questions: 0, source: 'unknown' };
+}
+
+/**
+ * Return the topic list for a subject, merging in any topics delivered
+ * by the slide zip. Same precedence rule as getSubjectMeta.
+ *
+ * `'slide-view'` returns [] — it is the card, not a studiable subject.
+ */
 export function getTopicsBySubject(subjectId) {
+    if (subjectId === 'slide-view') return [];
+
+    const m = _readSlideManifest();
+    if (m?.TOPICS?.[subjectId]) return m.TOPICS[subjectId];
+
     return TOPICS[subjectId] || [];
 }
 
+/**
+ * Single topic by id, or null. Uniform across slide and static subjects.
+ */
+export function getTopicById(subjectId, topicId) {
+    return getTopicsBySubject(subjectId).find(t => t.id === topicId) || null;
+}
+
+/**
+ * Every subject id — static + slide — in a stable order (static first,
+ * then slide-only subjects). Deduped. Excludes 'slide-view'.
+ */
+export function getAllSubjectIds() {
+    const ids = new Set(Object.keys(SUBJECT_META));
+    const m = _readSlideManifest();
+    if (m?.SUBJECT_META) {
+        for (const id of Object.keys(m.SUBJECT_META)) ids.add(id);
+    }
+    return [...ids];
+}
+
+/** Static subject ids only (the built-in SUBJECT_META bank). */
+export function getAllStaticSubjectIds() {
+    return Object.keys(SUBJECT_META);
+}
+
+/**
+ * Slide-delivered subject ids only. Empty array until a zip has been
+ * downloaded. Excludes the 'slide-view' pseudo-subject.
+ */
+export function getAllSlideSubjectIds() {
+    const m = _readSlideManifest();
+    return m?.SUBJECT_META ? Object.keys(m.SUBJECT_META) : [];
+}
+
+/**
+ * Full list of subjects as flat objects, with topics nested. The
+ * subject's raw metadata (including any custom fields the zip's author
+ * added to subject.json) is spread onto each entry, plus `id`,
+ * `source`, and `topics`.
+ */
+export function getAllSubjects() {
+    return getAllSubjectIds().map(id => {
+        const meta = getSubjectMeta(id);
+        return {
+            id,
+            ...meta,
+            topics: getTopicsBySubject(id),
+        };
+    });
+}
+
+/**
+ * Load the questions for an exam.
+ *
+ * Behaviour is UNCHANGED unless the caller passes `adaptive: true`.
+ *
+ * Optional adaptive fields (see file header):
+ *   adaptive        boolean   default false
+ *   mode            string    engine mode (auto-recommended if omitted)
+ *   timeBudgetSec   number    default questionCount * 30
+ *   excludeIds      string[]  question ids to skip
+ *
+ * Slide subjects have no network source — their questions live only in
+ * IndexedDB, populated by slide-data.js at download time. If any
+ * requested topic of a slide subject isn't cached, this throws rather
+ * than generating placeholder questions (which would silently pollute
+ * the user's analytics with fake attempts).
+ */
 export async function getQuestionsForExam(config) {
     const { subject, topics: selectedTopics, questionCount } = config;
 
@@ -299,7 +612,7 @@ export async function getQuestionsForExam(config) {
     if (!questionCount || questionCount < 1) throw new Error('Invalid question count');
 
     // Normalize to array of topic IDs (strings)
-    const topicIds = selectedTopics.map(t => 
+    const topicIds = selectedTopics.map(t =>
         (typeof t === 'object' && t.id) ? t.id : (typeof t === 'string' ? t : String(t))
     );
 
@@ -312,7 +625,23 @@ export async function getQuestionsForExam(config) {
         }
     }
 
-    // Load missing topics
+    // Slide subjects have no network source. Guard: if any requested
+    // topic of a slide subject isn't cached, throw a clear error rather
+    // than letting loadTopicQuestions generate placeholder questions
+    // that would poison the user's analytics.
+    const m = _readSlideManifest();
+    if (m?.TOPICS?.[subject]) {
+        const missing = topicIds.filter(id => !cachedTopics[id]);
+        if (missing.length > 0) {
+            throw new Error(
+                `Slide data not downloaded (missing topics: ${missing.join(', ')}). ` +
+                `Open Subjects → Slide View and download it first.`
+            );
+        }
+    }
+
+    // Load missing topics (non-slide subjects only — the guard above
+    // ensures every slide topic is already cached by this point).
     const loadPromises = topicIds.map(async (topicId) => {
         if (cachedTopics[topicId]) return cachedTopics[topicId];
         const questions = await loadTopicQuestions(subject, topicId);
@@ -321,18 +650,150 @@ export async function getQuestionsForExam(config) {
     });
 
     const topicQuestionArrays = await Promise.all(loadPromises);
-    const allQuestions = topicQuestionArrays.flat();
+    const allQuestions = ensureQuestionIds(topicQuestionArrays.flat());
 
     if (allQuestions.length === 0) {
         throw new Error('No questions available for the selected topics');
     }
 
-    // Optional seen‑question management (you can keep your existing logic)
-    const shuffled = utils.shuffleArray(allQuestions);
-    return shuffled.slice(0, questionCount);
+    return await assembleQuestions(config, allQuestions);
 }
 
+/**
+ * Explicit shorthand for adaptive selection. Equivalent to calling
+ * getQuestionsForExam({ ...config, adaptive: true }), but reads more
+ * naturally at call sites that always want the engine.
+ */
+export async function getAdaptiveQuestionsForExam(config) {
+    return getQuestionsForExam({ ...config, adaptive: true });
+}
+
+/**
+ * Fetch a specific set of questions by id, from whatever's in IndexedDB.
+ * Works for both static and slide subjects (both save to the same store).
+ */
 export async function getQuestionsByIds(ids) {
     const all = await db.getAllQuestions();
     return all.filter(q => ids.includes(q.id));
+}
+
+// ==================== ENGINE-AWARE HELPERS ====================
+//
+// Thin, defensive wrappers over medvix.js. Every function catches and
+// returns a safe empty value — UI pages must never break because the
+// engine is warming up or missing data.
+
+/**
+ * Return the topics of `subjectId` that the engine recommends reviewing
+ * soon (retrieval probability below target). Each entry carries the raw
+ * engine snapshot for optional display.
+ *
+ * @param   {string} subjectId
+ * @returns {Promise<Array<{ topicId: string, conceptId: string,
+ *                           retrieval: number, mastery: number,
+ *                           urgency: 'high'|'moderate',
+ *                           snapshot: object }>>}
+ */
+export async function getReviewDueTopics(subjectId) {
+    try {
+        if (!subjectId) return [];
+        const snapshots = await medvix.getAllConceptStates();
+        if (!Array.isArray(snapshots) || snapshots.length === 0) return [];
+
+        return snapshots
+            .filter(s => s && s.subject === subjectId)
+            .filter(s => Number.isFinite(s.retrieval?.pNow) && s.retrieval.pNow < 0.80)
+            .filter(s => (s.mastery?.evidenceCount || 0) >= 2)  // ignore guesswork
+            .map(s => ({
+                topicId: s.topic,
+                conceptId: s.conceptId,
+                retrieval: s.retrieval.pNow,
+                mastery: s.mastery?.p ?? null,
+                urgency: s.retrieval.pNow < 0.60 ? 'high' : 'moderate',
+                snapshot: s,
+            }))
+            .sort((a, b) => a.retrieval - b.retrieval);
+    } catch (e) {
+        console.warn('[Questions] getReviewDueTopics failed:', e);
+        return [];
+    }
+}
+
+/**
+ * Ask the engine which study mode it recommends for the given subject and
+ * time budget. Returns null when the engine has no opinion.
+ *
+ * @param   {string} subjectId
+ * @param   {number} timeBudgetSec
+ * @returns {Promise<{mode:string, reason:string, confidence:number}|null>}
+ */
+export async function getRecommendedStudyMode(subjectId, timeBudgetSec = 600) {
+    try {
+        return await medvix.getModeRecommendation({
+            budgetSec: timeBudgetSec,
+            subject: subjectId,
+        });
+    } catch (e) {
+        console.warn('[Questions] getRecommendedStudyMode failed:', e);
+        return null;
+    }
+}
+
+/**
+ * Per-topic engine stats for a subject: mastery, retrieval, evidence
+ * count, concept count. Returns one row per topic that the engine has
+ * any evidence about. Returns [] when the engine has no data for the
+ * subject.
+ *
+ * Use this to annotate topic list views (Subjects page, Weak Areas
+ * panel) with posterior mastery vs. exam accuracy.
+ *
+ * @param   {string} subjectId
+ * @returns {Promise<Array<{ topicId: string, conceptId: string,
+ *                           mastery: number|null, retrieval: number|null,
+ *                           evidence: number, ci90: [number,number]|null,
+ *                           misconceptionFlag: boolean }>>}
+ */
+export async function getAdaptiveTopicStats(subjectId) {
+    try {
+        if (!subjectId) return [];
+        const snapshots = await medvix.getAllConceptStates();
+        if (!Array.isArray(snapshots)) return [];
+
+        return snapshots
+            .filter(s => s && s.subject === subjectId)
+            .map(s => ({
+                topicId: s.topic,
+                conceptId: s.conceptId,
+                mastery: Number.isFinite(s.mastery?.p) ? s.mastery.p : null,
+                retrieval: Number.isFinite(s.retrieval?.pNow) ? s.retrieval.pNow : null,
+                evidence: s.mastery?.evidenceCount || 0,
+                ci90: Array.isArray(s.mastery?.ci90) ? s.mastery.ci90 : null,
+                misconceptionFlag: !!s.misconceptions?.flagged,
+            }));
+    } catch (e) {
+        console.warn('[Questions] getAdaptiveTopicStats failed:', e);
+        return [];
+    }
+}
+
+/**
+ * Given a full conceptId (subject::topic), return the ids of every
+ * question in IndexedDB that belongs to that concept. Useful for
+ * targeted remediation flows.
+ *
+ * @param   {string} conceptId   e.g. 'anatomy::abdomen'
+ * @returns {Promise<string[]>}
+ */
+export async function getQuestionIdsForConcept(conceptId) {
+    try {
+        if (!conceptId || !conceptId.includes('::')) return [];
+        const [subject, topic] = conceptId.split('::');
+        const questions = await db.getQuestions({ subject, topic });
+        if (!Array.isArray(questions)) return [];
+        return questions.map(q => q.id).filter(Boolean);
+    } catch (e) {
+        console.warn('[Questions] getQuestionIdsForConcept failed:', e);
+        return [];
+    }
 }

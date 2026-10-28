@@ -1,18 +1,43 @@
 // frontend-user/scripts/db.js
 
 /**
- * IndexedDB Database Manager – OFFLINE SINGLE-USER VERSION (v11)
- * Provides persistent storage for user, exams, subscriptions, sync queue,
- * security logs, lock status, analytics, settings, questions, downloaded exams,
- * shared exams, seen questions, notes, chat history, conversations, shared conversations,
- * file blobs, notifications, AND public assets (blobs + version tracking).
- * Falls back to localStorage when IndexedDB fails.
+ * IndexedDB Database Manager – OFFLINE SINGLE-USER VERSION (v13)
+ *
+ * Provides persistent storage for user, exams, subscriptions, sync
+ * queue, security logs, lock status, analytics, settings, questions,
+ * downloaded exams, shared exams, seen questions, notes, chat history,
+ * conversations, shared conversations, notifications, AND public
+ * assets (versions only).
+ *
+ * Blob storage is delegated to scripts/db/content-store.js. When the
+ * native storage bridge is available (Android), file blobs, thumbnails,
+ * and public asset payloads live on disk and the corresponding
+ * IndexedDB records hold metadata only. When the bridge is unavailable
+ * (web dev build), blobs fall back to being stored in IndexedDB as
+ * before.
+ *
+ * Every exported function keeps its original name and signature. The
+ * rest of the app continues to call saveFileBlob / getFileBlob / etc.
+ * without any change.
  */
 
 import * as utils from './utils.js';
+import * as layout from './db/layout.js';
+import * as contentStore from './db/content-store.js';
+import * as storage from './db/app-storage.js';
 
 const DB_NAME = 'MedExamDB';
-const DB_VERSION = 12; // bumped to add publicAssets & publicAssetVersions
+const DB_VERSION = 14; // bumped — blob storage split to disk + metadata
+
+// ============================================================================
+// Internal storage namespaces
+//
+// These are private to the DB layer. The rest of the app never
+// references them by name.
+// ============================================================================
+
+layout.registerNamespace('files',         { description: 'Internal: file blobs' });
+layout.registerNamespace('public-assets', { description: 'Internal: public assets' });
 
 let db = null;
 let dbInitPromise = null;
@@ -31,7 +56,7 @@ export function initDatabase() {
 
         request.onsuccess = (event) => {
             db = event.target.result;
-            console.log('[DB] Opened successfully (v11)');
+            console.log('[DB] Opened successfully (v' + DB_VERSION + ')');
             resolve(db);
         };
 
@@ -104,6 +129,10 @@ export function initDatabase() {
                 console.log('[DB] Created sharedConversations store');
             }
             if (!db.objectStoreNames.contains('files')) {
+                // Holds metadata for blobs. When native storage is available,
+                // the actual bytes are on disk and this record describes them
+                // (location: 'disk'). When it isn't, the record holds the blob
+                // itself (location: 'idb') for web-dev parity.
                 db.createObjectStore('files', { keyPath: 'id' });
                 console.log('[DB] Created files store');
             }
@@ -119,7 +148,9 @@ export function initDatabase() {
                 console.log('[DB] Created notifications store');
             }
 
-            // ==================== NEW: Public assets stores ====================
+            // --- Public assets ---
+            // Same split as 'files': metadata only when native storage is
+            // available, blob otherwise.
             if (!db.objectStoreNames.contains('publicAssets')) {
                 const paStore = db.createObjectStore('publicAssets', { keyPath: 'key' });
                 paStore.createIndex('by_updatedAt', 'updatedAt', { unique: false });
@@ -380,12 +411,6 @@ export async function getExamProgress(examId) {
 }
 
 // ==================== SYNC QUEUE ====================
-/**
- * Add item to sync queue with optional attempts count.
- * @param {string} type - type of item (e.g., 'note_delete')
- * @param {object} data - data to sync
- * @param {number} attempts - number of attempts (default 0)
- */
 export async function addToSyncQueue(type, data, attempts = 0) {
     const user = await getUser().catch(() => null);
     const item = {
@@ -574,6 +599,45 @@ export async function getSetting(key, defaultValue = null) {
     }
 }
 
+// ==================== APP CONFIG ====================
+const APP_CONFIG_KEY = 'appConfig';
+
+export async function saveAppConfig(config) {
+    if (!config || typeof config !== 'object') return;
+    try {
+        const store = await getStore('settings', 'readwrite');
+        return new Promise((resolve, reject) => {
+            const request = store.put({
+                key: APP_CONFIG_KEY,
+                value: config,
+                updatedAt: Date.now(),
+            });
+            request.onsuccess = () => resolve();
+            request.onerror = (err) => reject(err);
+        });
+    } catch (e) {
+        console.warn('[DB] saveAppConfig failed, using localStorage fallback', e);
+        utils.setLocalStorage(APP_CONFIG_KEY, config);
+    }
+}
+
+export async function getAppConfig() {
+    try {
+        const store = await getStore('settings', 'readonly');
+        return new Promise((resolve, reject) => {
+            const request = store.get(APP_CONFIG_KEY);
+            request.onsuccess = () => {
+                const entry = request.result;
+                resolve(entry && entry.value !== undefined ? entry.value : null);
+            };
+            request.onerror = (err) => reject(err);
+        });
+    } catch (e) {
+        console.warn('[DB] getAppConfig failed, using localStorage fallback', e);
+        return utils.getLocalStorage(APP_CONFIG_KEY, null);
+    }
+}
+
 // ==================== QUESTIONS ====================
 export async function saveQuestions(questions) {
     if (!questions || !questions.length) return;
@@ -643,6 +707,28 @@ export async function getAllQuestions() {
     } catch (e) {
         return [];
     }
+}
+
+export async function deleteQuestionsBySubjectAndTopic(subject, topic) {
+  if (!subject || !topic) return;
+  try {
+    const store = await getStore('questions', 'readwrite');
+    const index = store.index('by_topic');
+    return new Promise((resolve, reject) => {
+      const req = index.openCursor(IDBKeyRange.only(topic));
+      req.onsuccess = (event) => {
+        const cursor = event.target.result;
+        if (!cursor) return resolve();
+        // Topic IDs can repeat across subjects (e.g. "introduction"),
+        // so gate on subject too.
+        if (cursor.value.subject === subject) cursor.delete();
+        cursor.continue();
+      };
+      req.onerror = () => reject(req.error);
+    });
+  } catch (e) {
+    console.warn('[DB] deleteQuestionsBySubjectAndTopic failed', e);
+  }
 }
 
 // ==================== DOWNLOADED EXAMS ====================
@@ -1020,13 +1106,7 @@ export async function deleteConversation(convId) {
     }
 }
 
-// ==================== CONVERSATIONS (BULK OPERATIONS) ====================
-
-/**
- * Save multiple conversations at once.
- * @param {Array} conversations - array of conversation objects
- * @returns {Promise<void>}
- */
+// ==================== CONVERSATIONS (BULK) ====================
 export async function saveConversations(conversations) {
     if (!conversations || !conversations.length) return;
     try {
@@ -1050,24 +1130,14 @@ export async function saveConversations(conversations) {
         console.warn('[DB] saveConversations failed, using localStorage fallback', e);
         const all = utils.getLocalStorage('conversations_fallback', {});
         for (const conv of conversations) {
-            if (conv.id) {
-                all[conv.id] = conv;
-            }
+            if (conv.id) all[conv.id] = conv;
         }
         utils.setLocalStorage('conversations_fallback', all);
     }
 }
 
-/**
- * Get all conversations (optionally filtered by userId).
- * @param {string} userId - optional; if provided, returns only user's conversations
- * @returns {Promise<Array>}
- */
 export async function getConversations(userId) {
-    if (userId) {
-        return getConversationsByUser(userId);
-    }
-    // If no userId, return all conversations (fallback)
+    if (userId) return getConversationsByUser(userId);
     try {
         const store = await getStore('conversations', 'readonly');
         return new Promise((resolve, reject) => {
@@ -1081,10 +1151,6 @@ export async function getConversations(userId) {
     }
 }
 
-/**
- * Clear all conversations.
- * @returns {Promise<void>}
- */
 export async function clearConversations() {
     try {
         const store = await getStore('conversations', 'readwrite');
@@ -1098,25 +1164,15 @@ export async function clearConversations() {
     }
 }
 
-/**
- * Atomically update a conversation's ID (e.g., when a local ID is replaced by a server ID).
- * This deletes the old record and inserts the new one to prevent duplicates.
- * @param {string} oldId - the current local ID
- * @param {string} newId - the new server ID
- * @param {Object} updatedData - the full conversation object with the new ID
- * @returns {Promise<void>}
- */
 export async function replaceConversationId(oldId, newId, updatedData) {
     if (!oldId || !newId || !updatedData) return;
     try {
         const store = await getStore('conversations', 'readwrite');
-        // First, delete the old record
         await new Promise((resolve, reject) => {
             const delReq = store.delete(oldId);
             delReq.onsuccess = () => resolve();
             delReq.onerror = () => reject(delReq.error);
         });
-        // Then insert the new record
         await new Promise((resolve, reject) => {
             const putReq = store.put(updatedData);
             putReq.onsuccess = () => resolve();
@@ -1124,7 +1180,6 @@ export async function replaceConversationId(oldId, newId, updatedData) {
         });
     } catch (e) {
         console.warn('[DB] replaceConversationId failed', e);
-        // Fallback: try to save the new record and delete the old separately
         try {
             await saveConversation(updatedData);
             await deleteConversation(oldId);
@@ -1133,6 +1188,7 @@ export async function replaceConversationId(oldId, newId, updatedData) {
         }
     }
 }
+
 // ==================== SHARED CONVERSATIONS ====================
 export async function saveSharedConversation(token, conversationData, expiryHours = 24) {
     const expiry = Date.now() + expiryHours * 60 * 60 * 1000;
@@ -1253,12 +1309,166 @@ export async function clearChatHistory(userId) {
     }
 }
 
+// ==================== DISK/DB RECONCILIATION ====================
+// Solves the "Split-Brain" problem by making the native disk the source of truth.
+
+export async function syncDiskAndDatabase() {
+    if (!storage.isNativeStorageAvailable()) return;
+
+    try {
+        const filesStore = await getStore('files', 'readwrite');
+        const assetsStore = await getStore('publicAssets', 'readwrite');
+
+        // --- 1. Get all known IDs from IndexedDB ---
+        const knownFiles = await new Promise((resolve) => {
+            const req = filesStore.getAll();
+            req.onsuccess = () => resolve(req.result || []);
+        });
+        const knownAssets = await new Promise((resolve) => {
+            const req = assetsStore.getAll();
+            req.onsuccess = () => resolve(req.result || []);
+        });
+
+        const knownFileIds = new Set(knownFiles.map(f => f.id));
+        const knownAssetIds = new Set(knownAssets.map(a => a.key));
+
+        // --- 2. Prune "Ghost" Metadata (Files that vanished from disk/SD Card) ---
+        for (const record of knownFiles) {
+            // Ignore thumbnails (they live in cache, not in the item folder structure)
+            if (record.location === 'disk' && !record.id.startsWith('thumb_')) {
+                if (!contentStore.itemExists('files', 'blobs', record.id)) {
+                    console.log(`[DB] Pruning ghost file metadata: ${record.id}`);
+                    filesStore.delete(record.id);
+                    knownFileIds.delete(record.id);
+                }
+            }
+        }
+
+        for (const record of knownAssets) {
+            if (record.location === 'disk') {
+                if (!contentStore.itemExists('public-assets', 'assets', record.key)) {
+                    console.log(`[DB] Pruning ghost asset metadata: ${record.key}`);
+                    assetsStore.delete(record.key);
+                    knownAssetIds.delete(record.key);
+                }
+            }
+        }
+
+        // --- 3. Recover Orphaned Files (Files on disk missing from IDB) ---
+        const blobsDir = layout.collectionPath('files', 'blobs');
+        if (storage.exists(blobsDir)) {
+            const diskEntries = storage.listDirectory(blobsDir);
+            for (const entry of diskEntries) {
+                if (!entry.isDirectory) continue;
+                const fileId = entry.name;
+                
+                if (!knownFileIds.has(fileId) && contentStore.itemExists('files', 'blobs', fileId)) {
+                    console.log(`[DB] Recovering orphaned file: ${fileId}`);
+                    const size = storage.getSize(`${blobsDir}/${fileId}/blob.bin`);
+                    filesStore.put({
+                        id: fileId,
+                        location: 'disk',
+                        size: Math.max(0, size),
+                        mimeType: 'application/octet-stream',
+                        storedAt: entry.lastModified || Date.now(),
+                    });
+                }
+            }
+        }
+
+        // --- 4. Recover Orphaned Public Assets ---
+        const assetsDir = layout.collectionPath('public-assets', 'assets');
+        if (storage.exists(assetsDir)) {
+            const assetEntries = storage.listDirectory(assetsDir);
+            for (const entry of assetEntries) {
+                if (!entry.isDirectory) continue;
+                const assetId = entry.name;
+                
+                if (!knownAssetIds.has(assetId) && contentStore.itemExists('public-assets', 'assets', assetId)) {
+                    console.log(`[DB] Recovering orphaned public asset: ${assetId}`);
+                    const size = storage.getSize(`${assetsDir}/${assetId}/blob.bin`);
+                    assetsStore.put({
+                        key: assetId,
+                        location: 'disk',
+                        size: Math.max(0, size),
+                        mimeType: 'application/octet-stream',
+                        metadata: {}, 
+                        updatedAt: entry.lastModified || Date.now(),
+                    });
+                }
+            }
+        }
+    } catch (e) {
+        console.warn('[DB] Failed to sync disk and database:', e);
+    }
+}
+
 // ==================== FILE BLOBS ====================
+//
+// Delegates blob storage to scripts/db/content-store.js when the native
+// storage bridge is available. The 'files' IndexedDB store holds only a
+// small metadata record — id, size, mimeType, storedAt — and the actual
+// bytes live on disk at:
+//
+//   content/files/blobs/{id}/blob.bin
+//
+// When native storage is not available (web dev build), the blob is
+// stored directly in IndexedDB as before, matching the pre-migration
+// behaviour.
+//
+// Reads check the disk first, then fall back to IndexedDB. That makes
+// the migration transparent — old blobs written before the change
+// remain accessible, and new blobs written after live on disk.
+//
+// Callers see no difference. Same function names, same signatures,
+// same return values.
+
 export async function saveFileBlob(id, blob) {
+    if (!id || !blob) return;
+
+    // Preferred path: disk.
+    if (storage.isNativeStorageAvailable()) {
+        const result = await contentStore.saveItemFiles({
+            namespace:  'files',
+            collection: 'blobs',
+            id,
+            files: { 'blob.bin': blob },
+        });
+
+        if (result.ok) {
+            // Metadata record so we can inspect size / mimeType later.
+            try {
+                const store = await getStore('files', 'readwrite');
+                return new Promise((resolve, reject) => {
+                    const request = store.put({
+                        id,
+                        location: 'disk',
+                        size: blob.size,
+                        mimeType: blob.type || 'application/octet-stream',
+                        storedAt: Date.now(),
+                    });
+                    request.onsuccess = () => resolve();
+                    request.onerror = (err) => reject(err);
+                });
+            } catch (e) {
+                console.warn('[DB] saveFileBlob metadata write failed', e);
+            }
+            return;
+        }
+
+        console.warn('[DB] saveFileBlob disk write failed, falling back to IDB');
+    }
+
+    // Fallback path: IndexedDB (web, or native storage unavailable).
     try {
         const store = await getStore('files', 'readwrite');
         return new Promise((resolve, reject) => {
-            const request = store.put({ id, blob, storedAt: Date.now() });
+            const request = store.put({
+                id,
+                blob,
+                location: 'idb',
+                storedAt: Date.now(),
+            });
             request.onsuccess = () => resolve();
             request.onerror = (err) => reject(err);
         });
@@ -1268,11 +1478,26 @@ export async function saveFileBlob(id, blob) {
 }
 
 export async function getFileBlob(id) {
+    if (!id) return null;
+
+    // Try disk first.
+    if (storage.isNativeStorageAvailable()) {
+        if (contentStore.itemExists('files', 'blobs', id)) {
+            const blob = await contentStore.loadItemFile('files', 'blobs', id, 'blob.bin');
+            if (blob) return blob;
+        }
+    }
+
+    // Fall back to IndexedDB — covers legacy blobs saved before the
+    // migration, and web-dev usage where the native bridge is absent.
     try {
         const store = await getStore('files', 'readonly');
         return new Promise((resolve, reject) => {
             const request = store.get(id);
-            request.onsuccess = () => resolve(request.result?.blob || null);
+            request.onsuccess = () => {
+                const record = request.result;
+                resolve(record?.blob || null);
+            };
             request.onerror = (err) => reject(err);
         });
     } catch (e) {
@@ -1282,6 +1507,16 @@ export async function getFileBlob(id) {
 }
 
 export async function deleteFileBlob(id) {
+    if (!id) return;
+
+    // Remove from disk if present.
+    if (storage.isNativeStorageAvailable()) {
+        try {
+            contentStore.deleteItemFiles('files', 'blobs', id);
+        } catch { /* ignore */ }
+    }
+
+    // Remove the metadata / legacy record.
     try {
         const store = await getStore('files', 'readwrite');
         return new Promise((resolve, reject) => {
@@ -1295,6 +1530,12 @@ export async function deleteFileBlob(id) {
 }
 
 export async function hasFileBlob(id) {
+    if (!id) return false;
+
+    if (storage.isNativeStorageAvailable()) {
+        if (contentStore.itemExists('files', 'blobs', id)) return true;
+    }
+
     try {
         const store = await getStore('files', 'readonly');
         return new Promise((resolve, reject) => {
@@ -1307,23 +1548,73 @@ export async function hasFileBlob(id) {
     }
 }
 
-// ==================== THUMBNAIL BLOBS (offline thumbnails) ====================
-// Uses the same 'files' store with a 'thumb_' prefix to avoid collisions with main file blobs.
+// ==================== THUMBNAIL BLOBS ====================
+//
+// Thumbnails are single small files. They live in the cache subtree
+// when native storage is available:
+//
+//   cache/thumbnails/{slug(id)}.{ext}
+//
+// The 'files' store holds a metadata record with the extension and
+// mimeType so reads know which path to look for. Legacy records (from
+// before the migration) still hold the blob directly in IndexedDB —
+// reads fall back to that when the disk lookup misses.
 
 const THUMB_PREFIX = 'thumb_';
 
-/**
- * Save a thumbnail blob for a resource.
- * @param {string} id - resource ID (will be prefixed internally)
- * @param {Blob} blob - thumbnail image blob
- */
+function extFromMime(mimeType) {
+    if (!mimeType) return 'bin';
+    const m = String(mimeType).toLowerCase();
+    if (m.includes('jpeg') || m.includes('jpg')) return 'jpg';
+    if (m.includes('png'))  return 'png';
+    if (m.includes('webp')) return 'webp';
+    if (m.includes('gif'))  return 'gif';
+    if (m.includes('svg'))  return 'svg';
+    return 'bin';
+}
+
 export async function saveThumbnailBlob(id, blob) {
     if (!id || !blob) return;
+
+    if (storage.isNativeStorageAvailable()) {
+        const ext = extFromMime(blob.type);
+        const path = layout.thumbnailPath(id, ext);
+
+        const ok = await contentStore.saveBlobAt(path, blob);
+        if (ok) {
+            try {
+                const store = await getStore('files', 'readwrite');
+                return new Promise((resolve, reject) => {
+                    const request = store.put({
+                        id: THUMB_PREFIX + id,
+                        location: 'disk',
+                        ext,
+                        mimeType: blob.type || 'application/octet-stream',
+                        size: blob.size,
+                        storedAt: Date.now(),
+                    });
+                    request.onsuccess = () => resolve();
+                    request.onerror = (err) => reject(err);
+                });
+            } catch (e) {
+                console.warn('[DB] saveThumbnailBlob metadata write failed', e);
+            }
+            return;
+        }
+        console.warn('[DB] saveThumbnailBlob disk write failed, falling back to IDB');
+    }
+
+    // Fallback path.
     const key = THUMB_PREFIX + id;
     try {
         const store = await getStore('files', 'readwrite');
         return new Promise((resolve, reject) => {
-            const request = store.put({ id: key, blob, storedAt: Date.now() });
+            const request = store.put({
+                id: key,
+                blob,
+                location: 'idb',
+                storedAt: Date.now(),
+            });
             request.onsuccess = () => resolve();
             request.onerror = (err) => reject(err);
         });
@@ -1332,18 +1623,36 @@ export async function saveThumbnailBlob(id, blob) {
     }
 }
 
-/**
- * Retrieve a stored thumbnail blob for a resource.
- * @param {string} id - resource ID
- * @returns {Promise<Blob|null>}
- */
 export async function getThumbnailBlob(id) {
     if (!id) return null;
-    const key = THUMB_PREFIX + id;
+
+    // Try disk first, using the metadata record to know the extension.
+    if (storage.isNativeStorageAvailable()) {
+        try {
+            const store = await getStore('files', 'readonly');
+            const meta = await new Promise((resolve) => {
+                const request = store.get(THUMB_PREFIX + id);
+                request.onsuccess = () => resolve(request.result || null);
+                request.onerror = () => resolve(null);
+            });
+
+            if (meta && meta.location === 'disk' && meta.ext) {
+                const path = layout.thumbnailPath(id, meta.ext);
+                if (contentStore.blobExistsAt(path)) {
+                    const blob = await contentStore.loadBlobAt(path, meta.mimeType);
+                    if (blob) return blob;
+                }
+            }
+        } catch (e) {
+            // fall through to IDB lookup
+        }
+    }
+
+    // Fall back to IndexedDB (legacy or web).
     try {
         const store = await getStore('files', 'readonly');
         return new Promise((resolve, reject) => {
-            const request = store.get(key);
+            const request = store.get(THUMB_PREFIX + id);
             request.onsuccess = () => resolve(request.result?.blob || null);
             request.onerror = (err) => reject(err);
         });
@@ -1353,17 +1662,24 @@ export async function getThumbnailBlob(id) {
     }
 }
 
-/**
- * Delete a stored thumbnail blob.
- * @param {string} id - resource ID
- */
 export async function deleteThumbnailBlob(id) {
     if (!id) return;
-    const key = THUMB_PREFIX + id;
+
+    // Disk removal — try every supported extension.
+    if (storage.isNativeStorageAvailable()) {
+        for (const ext of ['jpg', 'png', 'webp', 'gif', 'svg', 'bin']) {
+            const path = layout.thumbnailPath(id, ext);
+            if (contentStore.blobExistsAt(path)) {
+                contentStore.deleteBlobAt(path);
+            }
+        }
+    }
+
+    // Metadata / legacy record removal.
     try {
         const store = await getStore('files', 'readwrite');
         return new Promise((resolve, reject) => {
-            const request = store.delete(key);
+            const request = store.delete(THUMB_PREFIX + id);
             request.onsuccess = () => resolve();
             request.onerror = (err) => reject(err);
         });
@@ -1373,12 +1689,6 @@ export async function deleteThumbnailBlob(id) {
 }
 
 // ==================== NOTIFICATIONS ====================
-
-/**
- * Save a notification to IndexedDB.
- * @param {Object} notification - { id, userId, title, body, category, priority, read, pinned, archived, timestamp, serverId, data, icon, actions, media, progress }
- * @returns {Promise<void>}
- */
 export async function saveNotification(notification) {
     if (!notification || !notification.id) return;
     try {
@@ -1401,22 +1711,14 @@ export async function saveNotification(notification) {
     }
 }
 
-/**
- * Get all notifications for a user with optional filters.
- * @param {string} userId
- * @param {Object} filters - { read, pinned, archived, category, limit, offset }
- * @returns {Promise<Array>}
- */
 export async function getNotifications(userId, filters = {}) {
     try {
         const store = await getStore('notifications', 'readonly');
-        let notifications = [];
         const index = store.index('by_userId');
         const request = index.getAll(userId);
         return new Promise((resolve, reject) => {
             request.onsuccess = () => {
                 let results = request.result || [];
-                // Apply filters
                 if (filters.read !== undefined) {
                     results = results.filter(n => n.read === filters.read);
                 }
@@ -1429,7 +1731,6 @@ export async function getNotifications(userId, filters = {}) {
                 if (filters.category) {
                     results = results.filter(n => n.category === filters.category);
                 }
-                // Sort by timestamp descending
                 results.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
                 if (filters.limit) {
                     results = results.slice(0, filters.limit);
@@ -1442,7 +1743,6 @@ export async function getNotifications(userId, filters = {}) {
         console.warn('[DB] getNotifications failed, using localStorage fallback', e);
         const notifs = utils.getLocalStorage('notifications_fallback', []);
         let results = notifs.filter(n => n.userId === userId);
-        // Apply filters same as above
         if (filters.read !== undefined) {
             results = results.filter(n => n.read === filters.read);
         }
@@ -1463,11 +1763,6 @@ export async function getNotifications(userId, filters = {}) {
     }
 }
 
-/**
- * Get a single notification by ID.
- * @param {string} id
- * @returns {Promise<Object|null>}
- */
 export async function getNotificationById(id) {
     try {
         const store = await getStore('notifications', 'readonly');
@@ -1482,12 +1777,6 @@ export async function getNotificationById(id) {
     }
 }
 
-/**
- * Update a notification (partial update).
- * @param {string} id
- * @param {Object} updates
- * @returns {Promise<void>}
- */
 export async function updateNotification(id, updates) {
     try {
         const notif = await getNotificationById(id);
@@ -1505,20 +1794,10 @@ export async function updateNotification(id, updates) {
     }
 }
 
-/**
- * Mark a notification as read.
- * @param {string} id
- * @returns {Promise<void>}
- */
 export async function markNotificationRead(id) {
     await updateNotification(id, { read: true });
 }
 
-/**
- * Mark all notifications for a user as read.
- * @param {string} userId
- * @returns {Promise<void>}
- */
 export async function markAllNotificationsRead(userId) {
     try {
         const notifications = await getNotifications(userId);
@@ -1539,11 +1818,6 @@ export async function markAllNotificationsRead(userId) {
     }
 }
 
-/**
- * Delete a notification.
- * @param {string} id
- * @returns {Promise<void>}
- */
 export async function deleteNotification(id) {
     try {
         const store = await getStore('notifications', 'readwrite');
@@ -1559,11 +1833,6 @@ export async function deleteNotification(id) {
     }
 }
 
-/**
- * Get unread notification count for a user.
- * @param {string} userId
- * @returns {Promise<number>}
- */
 export async function getUnreadNotificationCount(userId) {
     try {
         const notifications = await getNotifications(userId, { read: false });
@@ -1574,11 +1843,6 @@ export async function getUnreadNotificationCount(userId) {
     }
 }
 
-/**
- * Clear all notifications for a user.
- * @param {string} userId
- * @returns {Promise<void>}
- */
 export async function clearNotifications(userId) {
     try {
         const store = await getStore('notifications', 'readwrite');
@@ -1604,32 +1868,66 @@ export async function clearNotifications(userId) {
 }
 
 // ==================== PUBLIC ASSETS ====================
+//
+// Same disk-first split as file blobs. The 'publicAssets' IndexedDB
+// store holds metadata only when native storage is available; the
+// actual payload lives at:
+//
+//   content/public-assets/assets/{key}/blob.bin
+//
+// Versions (publicAssetVersions) stay entirely in IndexedDB — they're a
+// few numbers per key.
 
-/**
- * Save a public asset blob and metadata to IndexedDB.
- * @param {string} key - unique identifier (e.g., 'resources-update')
- * @param {Blob} blob - file content
- * @param {Object} metadata - { version, fileHash, fileSize, fileType, description, updatedAt }
- * @returns {Promise<void>}
- */
 export async function savePublicAsset(key, blob, metadata) {
     if (!key || !blob) return;
+
+    if (storage.isNativeStorageAvailable()) {
+        const result = await contentStore.saveItemFiles({
+            namespace:  'public-assets',
+            collection: 'assets',
+            id:         key,
+            files: { 'blob.bin': blob },
+        });
+
+        if (result.ok) {
+            try {
+                const store = await getStore('publicAssets', 'readwrite');
+                return new Promise((resolve, reject) => {
+                    const request = store.put({
+                        key,
+                        location: 'disk',
+                        size: blob.size,
+                        mimeType: blob.type || 'application/octet-stream',
+                        metadata: metadata || {},
+                        updatedAt: Date.now(),
+                    });
+                    request.onsuccess = () => resolve();
+                    request.onerror = (err) => reject(err);
+                });
+            } catch (e) {
+                console.warn('[DB] savePublicAsset metadata write failed', e);
+            }
+            return;
+        }
+        console.warn('[DB] savePublicAsset disk write failed, falling back to IDB');
+    }
+
+    // Fallback path: IndexedDB, with localStorage as last resort.
     try {
         const store = await getStore('publicAssets', 'readwrite');
-        const entry = {
-            key,
-            blob,
-            metadata,
-            updatedAt: Date.now(),
-        };
         return new Promise((resolve, reject) => {
-            const request = store.put(entry);
+            const request = store.put({
+                key,
+                blob,
+                metadata,
+                location: 'idb',
+                updatedAt: Date.now(),
+            });
             request.onsuccess = () => resolve();
             request.onerror = (err) => reject(err);
         });
     } catch (e) {
         console.warn('[DB] savePublicAsset failed, using localStorage fallback', e);
-        // For JSON, store raw string; for other blobs, store base64
         if (metadata?.fileType === 'json') {
             const text = await blob.text();
             utils.setLocalStorage(`publicAsset_${key}`, text);
@@ -1643,19 +1941,25 @@ export async function savePublicAsset(key, blob, metadata) {
     }
 }
 
-/**
- * Retrieve a public asset blob by key.
- * @param {string} key - unique identifier
- * @returns {Promise<Blob|null>}
- */
 export async function getPublicAsset(key) {
+    if (!key) return null;
+
+    if (storage.isNativeStorageAvailable()) {
+        if (contentStore.itemExists('public-assets', 'assets', key)) {
+            const blob = await contentStore.loadItemFile(
+                'public-assets', 'assets', key, 'blob.bin'
+            );
+            if (blob) return blob;
+        }
+    }
+
     try {
         const store = await getStore('publicAssets', 'readonly');
         return new Promise((resolve, reject) => {
             const request = store.get(key);
             request.onsuccess = () => {
                 const entry = request.result;
-                resolve(entry ? entry.blob : null);
+                resolve(entry?.blob || null);
             };
             request.onerror = (err) => reject(err);
         });
@@ -1663,16 +1967,13 @@ export async function getPublicAsset(key) {
         console.warn('[DB] getPublicAsset failed, using localStorage fallback', e);
         const stored = utils.getLocalStorage(`publicAsset_${key}`, null);
         if (!stored) return null;
-        // If it's a data URL, convert to blob
         if (stored.startsWith('data:')) {
             try {
-                const blob = await fetch(stored).then(r => r.blob());
-                return blob;
+                return await fetch(stored).then(r => r.blob());
             } catch {
                 return null;
             }
         }
-        // Assume it's a JSON string
         try {
             return new Blob([stored], { type: 'application/json' });
         } catch {
@@ -1681,11 +1982,6 @@ export async function getPublicAsset(key) {
     }
 }
 
-/**
- * Save the version map of public assets.
- * @param {Object} versions - { key: versionNumber, ... }
- * @returns {Promise<void>}
- */
 export async function savePublicAssetVersions(versions) {
     try {
         const store = await getStore('publicAssetVersions', 'readwrite');
@@ -1705,10 +2001,6 @@ export async function savePublicAssetVersions(versions) {
     }
 }
 
-/**
- * Retrieve the version map of public assets.
- * @returns {Promise<Object>}
- */
 export async function getPublicAssetVersions() {
     try {
         const store = await getStore('publicAssetVersions', 'readonly');
@@ -1726,15 +2018,7 @@ export async function getPublicAssetVersions() {
     }
 }
 
-
 // ==================== REFERRAL DATA CACHE ====================
-
-/**
- * Save referral data (dashboard/agent) to IndexedDB.
- * @param {string} key - 'referral' or 'agent'
- * @param {Object} data - the data to cache (e.g., dashboard response)
- * @returns {Promise<void>}
- */
 export async function saveReferralData(key, data) {
     if (!key) return;
     try {
@@ -1755,11 +2039,6 @@ export async function saveReferralData(key, data) {
     }
 }
 
-/**
- * Retrieve referral data from IndexedDB.
- * @param {string} key - 'referral' or 'agent'
- * @returns {Promise<Object|null>} cached data or null
- */
 export async function getReferralData(key) {
     if (!key) return null;
     try {
@@ -1781,11 +2060,6 @@ export async function getReferralData(key) {
 }
 
 // ==================== PERFORMANCE & LEADERBOARD CACHE ====================
-
-/**
- * Save user performance data to IndexedDB.
- * @param {Object} data - performance data from users/queries:getUserPerformance
- */
 export async function saveUserPerformance(data) {
     try {
         const store = await getStore('analytics', 'readwrite');
@@ -1805,10 +2079,6 @@ export async function saveUserPerformance(data) {
     }
 }
 
-/**
- * Retrieve user performance data from IndexedDB.
- * @returns {Promise<Object|null>} cached performance data
- */
 export async function getUserPerformance() {
     try {
         const store = await getStore('analytics', 'readonly');
@@ -1825,10 +2095,6 @@ export async function getUserPerformance() {
     }
 }
 
-/**
- * Save leaderboard data to IndexedDB.
- * @param {Array} data - leaderboard array from users/queries:getLeaderboard
- */
 export async function saveLeaderboard(data) {
     try {
         const store = await getStore('analytics', 'readwrite');
@@ -1848,10 +2114,6 @@ export async function saveLeaderboard(data) {
     }
 }
 
-/**
- * Retrieve leaderboard data from IndexedDB.
- * @returns {Promise<Array|null>} cached leaderboard array
- */
 export async function getLeaderboard() {
     try {
         const store = await getStore('analytics', 'readonly');
@@ -1868,10 +2130,6 @@ export async function getLeaderboard() {
     }
 }
 
-/**
- * Save challenge history data to IndexedDB.
- * @param {Object} data - challenge history from challenges/queries:getUserChallengeHistory
- */
 export async function saveChallengeHistory(data) {
     try {
         const store = await getStore('analytics', 'readwrite');
@@ -1891,10 +2149,6 @@ export async function saveChallengeHistory(data) {
     }
 }
 
-/**
- * Retrieve challenge history data from IndexedDB.
- * @returns {Promise<Object|null>} cached challenge history
- */
 export async function getChallengeHistory() {
     try {
         const store = await getStore('analytics', 'readonly');
@@ -1912,7 +2166,25 @@ export async function getChallengeHistory() {
 }
 
 // ==================== CLEAR DATABASE ====================
+//
+// Clears every IndexedDB store. Also wipes the content-store disk
+// subtree so a full "clear all data" leaves no orphaned files behind.
+// Cache is cleared too — thumbnails and manifests regenerate.
+
 export async function clearDatabase() {
+    // Wipe files on disk first (via the native bridge), so we don't
+    // leave orphaned blobs if the IDB clear succeeds but the disk
+    // cleanup is interrupted.
+    if (storage.isNativeStorageAvailable()) {
+        try {
+            contentStore.deleteNamespaceFiles('files');
+            contentStore.deleteNamespaceFiles('public-assets');
+            contentStore.clearCache();
+        } catch (e) {
+            console.warn('[DB] clearDatabase: disk cleanup failed', e);
+        }
+    }
+
     try {
         const database = await initDatabase();
         const stores = database.objectStoreNames;
@@ -1930,5 +2202,10 @@ export async function clearDatabase() {
     }
 }
 
-// Auto‑initialize
-initDatabase().catch(err => console.warn('[DB] Init failed, fallback to localStorage', err));
+// Auto‑initialize and sync
+initDatabase()
+    .then(() => {
+        // Run the split-brain recovery silently in the background
+        setTimeout(syncDiskAndDatabase, 2000); 
+    })
+    .catch(err => console.warn('[DB] Init failed, fallback to localStorage', err));

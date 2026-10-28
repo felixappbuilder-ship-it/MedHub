@@ -70,29 +70,102 @@
     })();
     </script>
 
+    <!-- ============================================================
+         Character encoding, viewport and app basics
+         ============================================================ -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
     <meta name="theme-color" content="#ffffff" />
+    <meta name="color-scheme" content="light" />
     <meta name="application-name" content="MedVix" />
-    <meta name="description" content="MedVix — Learn. Practice. Connect. Grow. Achieve." />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <title>MedVix</title>
 
-    <!-- Favicons -->
+    <!-- ============================================================
+         Primary SEO metadata
+         ============================================================ -->
+    <title>MedVix — Learn. Practice. Connect. Grow. Achieve.</title>
+    <meta
+        name="description"
+        content="MedVix is a medical learning companion offering study notes, textbooks, past papers, practice questions and exam preparation tools."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="MedVix" />
+    <!-- Change to https://app.medvix.co.ke/ if you treat the app
+         subdomain as the canonical identity instead. -->
+    <link rel="canonical" href="https://medvix.co.ke/" />
+
+    <!-- ============================================================
+         MedVix — Link Preview Metadata
+         Domains served by this same HTML:
+           https://medvix.co.ke/
+           https://www.medvix.co.ke/
+           https://app.medvix.co.ke/
+           https://www.app.medvix.co.ke/
+         og:url is intentionally omitted because it must identify
+         the exact shared page, not a shared brand identity.
+         ============================================================ -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MedVix" />
+    <meta
+        property="og:title"
+        content="MedVix — Learn. Practice. Connect. Grow. Achieve."
+    />
+    <meta
+        property="og:description"
+        content="Your medical learning companion. Access study resources, textbooks, past papers, practice questions, and exam preparation tools."
+    />
+
+    <!-- Shared branding image -->
+    <meta
+        property="og:image"
+        content="https://app.medvix.co.ke/assets/images/logo.png"
+    />
+    <meta
+        property="og:image:secure_url"
+        content="https://app.medvix.co.ke/assets/images/logo.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta
+        property="og:image:alt"
+        content="MedVix — Learn. Practice. Connect. Grow. Achieve."
+    />
+
+    <!-- X / Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta
+        name="twitter:title"
+        content="MedVix — Learn. Practice. Connect. Grow. Achieve."
+    />
+    <meta
+        name="twitter:description"
+        content="Your medical learning companion for study resources, past papers, and exam preparation."
+    />
+    <meta
+        name="twitter:image"
+        content="https://app.medvix.co.ke/assets/images/logo.png"
+    />
+    <meta name="twitter:image:alt" content="MedVix app icon" />
+
+    <!-- ============================================================
+         Favicons
+         ============================================================ -->
     <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/logo.png">
     <link rel="apple-touch-icon" href="/assets/images/logo.png">
     <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/logo.png">
 
-    <!-- Global CSS -->
-    <link rel="stylesheet" href="./css/common.css" />
-    <link rel="stylesheet" href="/libs/fontawesome/css/all.min.css" />
-
-    <!-- Manifest & preloads -->
+    <!-- ============================================================
+         Manifest & preloads
+         ============================================================ -->
     <link rel="manifest" href="/manifest.json" />
     <link rel="preload" href="/assets/images/splash.png" as="image" />
 
-    <!-- Third-party libs -->
+    <!-- ============================================================
+         Global CSS + third-party libraries
+         ============================================================ -->
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="/libs/fontawesome/css/all.min.css" />
     <link rel="stylesheet" href="/libs/quill/quill.snow.css">
+
     <script src="/libs/quill/quill.min.js"></script>
     <script defer src="/libs/chart/chart.min.js"></script>
     <script src="/libs/pdfjs/pdf.min.js"></script>
@@ -100,7 +173,6 @@
         pdfjsLib.GlobalWorkerOptions.workerSrc = '/libs/pdfjs/pdf.worker.min.js';
     </script>
     <script src="/libs/pdfkit.standalone.js"></script>
-
 </head>
 <body>
   <div id="app-root"></div>
@@ -126,12 +198,15 @@
         }
 
         document.getElementById('app-root').innerHTML = section.outerHTML;
-        document.title = section.dataset.title || 'MedHub';
+        // Fallback now matches the <head> title so the tab/preview
+        // never reverts to the old "MedHub" name.
+        document.title = section.dataset.title || 'MedVix — Learn. Practice. Connect. Grow. Achieve.';
       } catch (err) {
         console.error('[index] failed to load home:', err);
       }
     })();
   </script>
+
   <!-- ============================================================
      EMOJI → FONT AWESOME REPLACEMENT
      - Loads the mapping from /emoji-map.json
@@ -140,187 +215,187 @@
        (e.g. "fa-solid fa-bone") into real <i> elements
      - Watches #app-root so newly-injected pages get processed
      ============================================================ -->
-<script>
-(async function () {
-  let PALETTE = {};
-  let EMOJI_MAP = {};
+  <script>
+  (async function () {
+    let PALETTE = {};
+    let EMOJI_MAP = {};
 
-  // ---- Load map ----
-  try {
-    const res = await fetch('/emoji-map.json', { cache: 'default' });
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    const data = await res.json();
-    PALETTE   = (data && data.palette) || {};
-    EMOJI_MAP = (data && data.emojis)  || {};
-    const count = Object.keys(EMOJI_MAP).length;
-    if (!count) {
-      console.warn('[Emoji] emoji-map.json is empty.');
-      return;
-    }
-    console.info('[Emoji] Loaded ' + count + ' entries.');
-  } catch (err) {
-    console.warn('[Emoji] Could not load /emoji-map.json:', err);
-    return;
-  }
-
-  // ---- Helpers ----
-  const escapeRegExp = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-
-  function resolveColor(name) {
-    if (!name || typeof name !== 'string') return null;
-    if (name.startsWith('#') || name.startsWith('rgb')) return name;
-    return PALETTE[name] || null;
-  }
-
-  const keys = Object.keys(EMOJI_MAP).sort((a, b) => b.length - a.length);
-  const emojiRegex     = new RegExp(keys.map(escapeRegExp).join('|'), 'gu');
-  const emojiTestRegex = new RegExp(keys.map(escapeRegExp).join('|'), 'u');
-
-  const FA_TEXT_REGEX = /^\s*(?:fa-solid|fa-regular|fa-brands|fas|far|fab)(?:\s+fa-[\w-]+)+\s*$/;
-
-  function buildIconFromClass(className) {
-    const i = document.createElement('i');
-    let cls = className.trim()
-      .replace(/^fas\b/, 'fa-solid')
-      .replace(/^far\b/, 'fa-regular')
-      .replace(/^fab\b/, 'fa-brands');
-    if (!/^fa-(solid|regular|brands)\b/.test(cls)) cls = 'fa-solid ' + cls;
-    i.className = cls;
-    i.setAttribute('aria-hidden', 'true');
-    return i;
-  }
-
-  function buildIconFromEntry(info) {
-    const i = document.createElement('i');
-    i.className = 'fa-solid ' + info.icon;
-    i.setAttribute('aria-hidden', 'true');
-    if (info.label) i.title = info.label;
-    const color = resolveColor(info.color);
-    if (color) i.style.color = color;
-    return i;
-  }
-
-  // ---- Replace emojis in text nodes ----
-  function replaceEmojis(root) {
-    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
-      acceptNode(node) {
-        return node.nodeValue && emojiTestRegex.test(node.nodeValue)
-          ? NodeFilter.FILTER_ACCEPT
-          : NodeFilter.FILTER_REJECT;
-      }
-    });
-
-    const textNodes = [];
-    while (walker.nextNode()) textNodes.push(walker.currentNode);
-
-    textNodes.forEach(node => {
-      const text = node.nodeValue;
-      const fragment = document.createDocumentFragment();
-      let lastIndex = 0;
-      let match;
-
-      emojiRegex.lastIndex = 0;
-      while ((match = emojiRegex.exec(text)) !== null) {
-        if (match.index > lastIndex) {
-          fragment.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
-        }
-        const emoji = match[0];
-        const info = EMOJI_MAP[emoji];
-        fragment.appendChild(info ? buildIconFromEntry(info) : document.createTextNode(emoji));
-        lastIndex = emojiRegex.lastIndex;
-      }
-
-      if (lastIndex < text.length) {
-        fragment.appendChild(document.createTextNode(text.slice(lastIndex)));
-      }
-
-      node.parentNode.replaceChild(fragment, node);
-    });
-  }
-
-  // ---- Replace bare FA class strings ----
-  function replaceFAClassText(root) {
-    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
-      acceptNode(node) {
-        return node.nodeValue && FA_TEXT_REGEX.test(node.nodeValue)
-          ? NodeFilter.FILTER_ACCEPT
-          : NodeFilter.FILTER_REJECT;
-      }
-    });
-
-    const textNodes = [];
-    while (walker.nextNode()) textNodes.push(walker.currentNode);
-
-    textNodes.forEach(node => {
-      const icon = buildIconFromClass(node.nodeValue.trim());
-      node.parentNode.replaceChild(icon, node);
-    });
-  }
-
-  // ---- Aria-label icon-only buttons ----
-  function enhanceIconButtons(root) {
-    root.querySelectorAll('button, a').forEach(el => {
-      const icons = el.querySelectorAll('i.fa-solid, i.fa-regular, i.fa-brands');
-      const text  = el.textContent.trim();
-      if (icons.length === 1 && text === '') {
-        const label = icons[0].title || 'Button';
-        if (!el.getAttribute('aria-label')) el.setAttribute('aria-label', label);
-        if (!el.title) el.title = label;
-      }
-    });
-  }
-
-  // ---- Strip emojis from placeholders ----
-  function cleanPlaceholders(root) {
-    root.querySelectorAll('[placeholder]').forEach(el => {
-      const ph = el.getAttribute('placeholder');
-      if (!ph) return;
-      emojiRegex.lastIndex = 0;
-      const cleaned = ph.replace(emojiRegex, '').trim();
-      if (cleaned !== ph) el.setAttribute('placeholder', cleaned);
-    });
-  }
-
-  function process(root) {
-    if (!root) return;
-    if (root.nodeType !== 1 && root.nodeType !== 9) return;
+    // ---- Load map ----
     try {
-      replaceEmojis(root);
-      replaceFAClassText(root);
-      enhanceIconButtons(root);
-      cleanPlaceholders(root);
-    } catch (err) {
-      console.warn('[Emoji] process() failed:', err);
-    }
-  }
-
-  // ---- Initial pass ----
-  process(document.body);
-
-  // ---- Watch the SPA mount point and any late DOM changes ----
-  const observer = new MutationObserver(mutations => {
-    mutations.forEach(m => {
-      if (m.type === 'characterData' && m.target && m.target.parentNode) {
-        process(m.target.parentNode);
+      const res = await fetch('/emoji-map.json', { cache: 'default' });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+      PALETTE   = (data && data.palette) || {};
+      EMOJI_MAP = (data && data.emojis)  || {};
+      const count = Object.keys(EMOJI_MAP).length;
+      if (!count) {
+        console.warn('[Emoji] emoji-map.json is empty.');
         return;
       }
-      m.addedNodes.forEach(node => {
-        if (node.nodeType === 1) {
-          process(node);
-        } else if (node.nodeType === 3 && node.parentNode && node.parentNode.nodeType === 1) {
-          process(node.parentNode);
+      console.info('[Emoji] Loaded ' + count + ' entries.');
+    } catch (err) {
+      console.warn('[Emoji] Could not load /emoji-map.json:', err);
+      return;
+    }
+
+    // ---- Helpers ----
+    const escapeRegExp = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+    function resolveColor(name) {
+      if (!name || typeof name !== 'string') return null;
+      if (name.startsWith('#') || name.startsWith('rgb')) return name;
+      return PALETTE[name] || null;
+    }
+
+    const keys = Object.keys(EMOJI_MAP).sort((a, b) => b.length - a.length);
+    const emojiRegex     = new RegExp(keys.map(escapeRegExp).join('|'), 'gu');
+    const emojiTestRegex = new RegExp(keys.map(escapeRegExp).join('|'), 'u');
+
+    const FA_TEXT_REGEX = /^\s*(?:fa-solid|fa-regular|fa-brands|fas|far|fab)(?:\s+fa-[\w-]+)+\s*$/;
+
+    function buildIconFromClass(className) {
+      const i = document.createElement('i');
+      let cls = className.trim()
+        .replace(/^fas\b/, 'fa-solid')
+        .replace(/^far\b/, 'fa-regular')
+        .replace(/^fab\b/, 'fa-brands');
+      if (!/^fa-(solid|regular|brands)\b/.test(cls)) cls = 'fa-solid ' + cls;
+      i.className = cls;
+      i.setAttribute('aria-hidden', 'true');
+      return i;
+    }
+
+    function buildIconFromEntry(info) {
+      const i = document.createElement('i');
+      i.className = 'fa-solid ' + info.icon;
+      i.setAttribute('aria-hidden', 'true');
+      if (info.label) i.title = info.label;
+      const color = resolveColor(info.color);
+      if (color) i.style.color = color;
+      return i;
+    }
+
+    // ---- Replace emojis in text nodes ----
+    function replaceEmojis(root) {
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+        acceptNode(node) {
+          return node.nodeValue && emojiTestRegex.test(node.nodeValue)
+            ? NodeFilter.FILTER_ACCEPT
+            : NodeFilter.FILTER_REJECT;
         }
       });
-    });
-  });
 
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true,
-    characterData: true
-  });
-})();
-</script>
+      const textNodes = [];
+      while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+      textNodes.forEach(node => {
+        const text = node.nodeValue;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        let match;
+
+        emojiRegex.lastIndex = 0;
+        while ((match = emojiRegex.exec(text)) !== null) {
+          if (match.index > lastIndex) {
+            fragment.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
+          }
+          const emoji = match[0];
+          const info = EMOJI_MAP[emoji];
+          fragment.appendChild(info ? buildIconFromEntry(info) : document.createTextNode(emoji));
+          lastIndex = emojiRegex.lastIndex;
+        }
+
+        if (lastIndex < text.length) {
+          fragment.appendChild(document.createTextNode(text.slice(lastIndex)));
+        }
+
+        node.parentNode.replaceChild(fragment, node);
+      });
+    }
+
+    // ---- Replace bare FA class strings ----
+    function replaceFAClassText(root) {
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+        acceptNode(node) {
+          return node.nodeValue && FA_TEXT_REGEX.test(node.nodeValue)
+            ? NodeFilter.FILTER_ACCEPT
+            : NodeFilter.FILTER_REJECT;
+        }
+      });
+
+      const textNodes = [];
+      while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+      textNodes.forEach(node => {
+        const icon = buildIconFromClass(node.nodeValue.trim());
+        node.parentNode.replaceChild(icon, node);
+      });
+    }
+
+    // ---- Aria-label icon-only buttons ----
+    function enhanceIconButtons(root) {
+      root.querySelectorAll('button, a').forEach(el => {
+        const icons = el.querySelectorAll('i.fa-solid, i.fa-regular, i.fa-brands');
+        const text  = el.textContent.trim();
+        if (icons.length === 1 && text === '') {
+          const label = icons[0].title || 'Button';
+          if (!el.getAttribute('aria-label')) el.setAttribute('aria-label', label);
+          if (!el.title) el.title = label;
+        }
+      });
+    }
+
+    // ---- Strip emojis from placeholders ----
+    function cleanPlaceholders(root) {
+      root.querySelectorAll('[placeholder]').forEach(el => {
+        const ph = el.getAttribute('placeholder');
+        if (!ph) return;
+        emojiRegex.lastIndex = 0;
+        const cleaned = ph.replace(emojiRegex, '').trim();
+        if (cleaned !== ph) el.setAttribute('placeholder', cleaned);
+      });
+    }
+
+    function process(root) {
+      if (!root) return;
+      if (root.nodeType !== 1 && root.nodeType !== 9) return;
+      try {
+        replaceEmojis(root);
+        replaceFAClassText(root);
+        enhanceIconButtons(root);
+        cleanPlaceholders(root);
+      } catch (err) {
+        console.warn('[Emoji] process() failed:', err);
+      }
+    }
+
+    // ---- Initial pass ----
+    process(document.body);
+
+    // ---- Watch the SPA mount point and any late DOM changes ----
+    const observer = new MutationObserver(mutations => {
+      mutations.forEach(m => {
+        if (m.type === 'characterData' && m.target && m.target.parentNode) {
+          process(m.target.parentNode);
+          return;
+        }
+        m.addedNodes.forEach(node => {
+          if (node.nodeType === 1) {
+            process(node);
+          } else if (node.nodeType === 3 && node.parentNode && node.parentNode.nodeType === 1) {
+            process(node.parentNode);
+          }
+        });
+      });
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+      characterData: true
+    });
+  })();
+  </script>
 
   <script type="module" src="/scripts/app.js"></script>
 </body>

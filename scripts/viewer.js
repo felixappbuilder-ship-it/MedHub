@@ -1,1901 +1,889 @@
 // frontend-user/scripts/viewer.js
 
 /**
- * Universal Document Viewer Module
- * Supports: PDF (scroll/paginated, search+highlight, outline, text layer),
- *           images, Office docs (iframe fallback), and local files from device.
+ * Universal Document Viewer - Entry Point
+ * ============================================================================
+ *
+ * Public facade of the viewer subsystem. Shared by two pages:
+ *
+ *   * pages/viewer.html            - dedicated page for external files.
+ *                                    No auth. Drains a pending file on init.
+ *
+ *   * pages/resource-browser.html  - catalogue page. Opens catalogue
+ *                                    resources in an embedded overlay.
+ *                                    Auth required by the page, not here.
+ *
+ * This module is page-agnostic. It never checks which page it's mounted on.
+ * If the viewer chrome (the #viewer element with its 32 IDs) exists, a file
+ * can be loaded into it.
+ *
+ * Public exports:
+ *   * loadDocumentInPage(docId)                             -> Promise<void>
+ *   * openDocument(docId, title?, fileType?, opts?)         -> Promise<void>
+ *   * showEmbeddedViewer(docId, title?, fileType?, opts?)   -> Promise<void>
+ *   * closeEmbeddedViewer()                                 -> void
+ *   * openDocumentModal(docId)                              -> Promise<void>  (legacy alias)
+ *   * openPendingFile()                                     -> boolean       (host-page hook)
+ *
+ * `opts` carries hint flags for the load. Currently only one flag is used:
+ *   * previewMode: boolean - cap rendered pages to 10% and append a
+ *     subscribe CTA after the last preview page. Set by resource-browser.js
+ *     for premium catalogue resources opened without an active subscription.
+ *     Never set by external-file paths (file picker, Android intent).
+ *
+ * ═══════════════════════════════════════════════════════════════════════════
+ * ASYNC FAILURE PROPAGATION
+ *
+ *   The whole open-document chain is awaitable:
+ *
+ *     resource-browser.js Open handler
+ *       → viewer.openDocument(id, title, type, { previewMode })
+ *       → window.showViewer(...)  (set to resource-browser.js::showViewer)
+ *       → viewer.showEmbeddedViewer(...)
+ *       → _loadDocumentIntoEmbedded(...)
+ *
+ *   Every hop returns a Promise that resolves when the load completes and
+ *   rejects when it fails. The Open handler's try/catch is the endpoint:
+ *   it restores the button's "Open" state and surfaces a toast.
+ *
+ *   showEmbeddedViewer is written as a plain function (not async) that
+ *   returns the Promise from _loadDocumentIntoEmbedded and attaches a
+ *   silent `.catch(() => {})` to the returned promise. This silences the
+ *   browser's "unhandled rejection" warning for legacy callers that fire
+ *   and forget, while still rejecting for callers that await. Awaiting the
+ *   same Promise sees the rejection; the two paths do not interfere.
+ *
+ *   Errors that originate inside `core.loadDocument` are a special case:
+ *   core catches them, emits DOCUMENT_ERROR, and ui-internal renders the
+ *   standard error container into the viewer chrome. The chain does NOT
+ *   see those — loadDocument resolves normally after firing the event.
+ *   The chain only sees errors that happen BEFORE core takes over: missing
+ *   IndexedDB blob, failed download, core initialization failure. Those
+ *   are the cases where the button would otherwise stay stuck at
+ *   "Opening…" forever with no visible feedback.
+ * ═══════════════════════════════════════════════════════════════════════════
+ *
+ * External file handling:
+ *   Two entry points hand external files to this module:
+ *
+ *     1. Native payloads (Android intents). The FileOpen plugin delivers
+ *        a path-based payload to app.js, which stashes it in
+ *        sessionStorage.pendingFileOpen and routes to pages/viewer.html.
+ *        That page's init() calls openPendingFile(), which drains the
+ *        stash and hands the payload to _openNativeFilePayload().
+ *
+ *     2. Local File objects (file picker, drag-drop). These arrive via
+ *        the LOCAL_FILE_OPEN_REQUESTED bus event on whatever page the
+ *        user is on. If the viewer chrome is already mounted (viewer page
+ *        or resource-browser overlay), the file loads directly. Otherwise
+ *        it's stashed in _pendingLocalFile (File objects cannot be
+ *        serialized) and the app routes to pages/viewer.html, whose init
+ *        drains the stash.
+ *
+ *   External files NEVER require auth. The user chose the file; it just
+ *   opens. Internal catalogue resources still route through
+ *   resource-browser.html's embedded viewer overlay - they never reach
+ *   the external-file paths.
+ *
+ * Document clearing:
+ *   Every entry point that starts a new document calls clearViewerContent()
+ *   from ui-internal.js. That removes any DOM the previous document left
+ *   behind - page containers, canvas wrappers, canvases, images, iframes,
+ *   search-layer overlays, error containers, and the preview-mode CTA -
+ *   while preserving the four static chrome nodes declared in the host page
+ *   (#viewer-loading, #viewer-progress, #viewer-content, #viewer-text-layer).
+ *
+ * Design constraints:
+ *   * Zero import-time side effects. All wiring happens on demand.
+ *   * Errors are rendered into the viewer chrome, never thrown to
+ *     non-awaiting callers. Awaiting callers receive the rejection.
+ *   * Every error message is escaped via utils.escapeHtml.
+ *   * No reference to pdfjsLib, Worker, localStorage, or rAF.
+ *
+ * @module viewer
  */
+
+'use strict';
+
+// ============================================================================
+// APP-LEVEL IMPORTS (only file permitted to import these)
+// ============================================================================
 
 import * as content from './content.js';
 import * as subscription from './subscription.js';
 import * as ui from './ui.js';
 import * as router from './router.js';
 
-// =========================================================================
-// Constants & Config
-// =========================================================================
+// ============================================================================
+// VIEWER SUBSYSTEM IMPORTS
+// ============================================================================
 
-const MIME_TYPES = {
-  pdf: 'application/pdf',
-  jpg: 'image/jpeg',
-  jpeg: 'image/jpeg',
-  png: 'image/png',
-  webp: 'image/webp',
-  gif: 'image/gif',
-  docx: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-  doc: 'application/msword',
-  pptx: 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
-  ppt: 'application/vnd.ms-powerpoint',
-  xlsx: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-  xls: 'application/vnd.ms-excel',
-  txt: 'text/plain',
-  md: 'text/markdown',
-  csv: 'text/csv',
-  rtf: 'application/rtf',
-  odt: 'application/vnd.oasis.opendocument.text',
-};
+import { createCore, Events, CONFIG } from './viewer/core.js';
+import {
+  injectViewerStyles,
+  refreshElementCache,
+  mountChrome,
+  unmountChrome,
+  clearViewerContent,
+} from './viewer/ui-internal.js';
+import { escapeHtml } from './viewer/utils.js';
 
-const ZOOM_STEP = 0.25;
-const MIN_ZOOM = 0.25;
-const MAX_ZOOM = 5.0;
-const SEARCH_DEBOUNCE = 300;
-const LAZY_LOAD_MARGIN = '200px';
-const AUTO_HIDE_DELAY = 3000;
+// ============================================================================
+// MODULE-PRIVATE STATE
+// ============================================================================
 
-// =========================================================================
-// State
-// =========================================================================
+/** Singleton core instance. @private @type {import('./viewer/core.js').ViewerCore|null} */
+let _core = null;
 
-let pdfDoc = null;
-let currentPage = 1;
-let totalPages = 1;
-let currentScale = 1.0;
-let currentDocId = null;
-let viewMode = 'scroll';
-let pdfOutline = [];
-let searchMatches = [];
-let currentMatchIndex = -1;
-let viewerEls = {};
-let isLocalFile = false;
+/** The docId currently being displayed, if any. @private @type {string|null} */
+let _currentDocId = null;
 
-let intersectionObserver = null;
-let renderTasks = new Map();
-let abortController = null;
-let cleanupFunctions = [];
-let scrollTimeout = null;
-let zoomRenderTimer = null;
-let dprListener = null;
-const textContentCache = new Map();
-const pageViewportCache = new Map(); // pageNum -> { width, height } at scale 1
+/** True when the current document came from a local file. @private */
+let _isLocalFile = false;
 
-// Auto-hide state
-let autoHideTimer = null;
-let lastTapTime = 0;
-let isHeaderVisible = true;
-let isOverControls = false;   // true when pointer or focus is over header/footer
+/** App-level bus subscription unsubscribe functions. @private @type {Array<() => void>} */
+let _appSubscriptions = [];
 
-// Panning state
-let isPanning = false;
-let pointerDown = false;
-let lastPointerX = 0;
-let lastPointerY = 0;
-let panOffsetX = 0;
-let panOffsetY = 0;
+/**
+ * Singleton promise for the init sequence. Prevents concurrent entry calls
+ * from double-constructing the core.
+ * @private
+ * @type {Promise<import('./viewer/core.js').ViewerCore>|null}
+ */
+let _coreInitPromise = null;
 
-// Image element reference for image zoom/pan
-let imageElement = null;
-let imageScale = 1;
+/**
+ * A File object awaiting a viewer host page. Set when a user-selected File
+ * (file input, drag-drop) arrives before the viewer chrome is mounted. File
+ * objects cannot be serialized to sessionStorage, so they live here until
+ * `openPendingFile()` drains them.
+ *
+ * @private
+ * @type {File|null}
+ */
+let _pendingLocalFile = null;
 
-// =========================================================================
-// DOM helpers
-// =========================================================================
+/**
+ * sessionStorage key used to stash a native FileOpen payload between the
+ * page that received it and the viewer page that will load it. The same
+ * key is written by app.js when a cold-start or warm-start file intent
+ * arrives before the viewer page has mounted.
+ *
+ * @private
+ * @constant {string}
+ */
+const PENDING_FILE_KEY = 'pendingFileOpen';
 
-function getViewerElements() {
-  const embedded = document.getElementById('viewer');
-  if (!embedded) return null;
-  return {
-    container: embedded,
-    main: document.getElementById('viewer-main'),
-    content: document.getElementById('viewer-content'),
-    loading: document.getElementById('viewer-loading'),
-    progress: document.getElementById('viewer-progress'),
-    title: document.getElementById('viewer-title'),
-    footer: document.getElementById('viewer-footer'),
-    pageNum: document.getElementById('viewer-page-num'),
-    pageCount: document.getElementById('viewer-page-count'),
-    pageInput: document.getElementById('viewer-page-input'),
-    prevBtn: document.getElementById('viewer-prev-page'),
-    nextBtn: document.getElementById('viewer-next-page'),
-    zoomIn: document.getElementById('viewer-zoom-in'),
-    zoomOut: document.getElementById('viewer-zoom-out'),
-    zoomLevel: document.getElementById('viewer-zoom-level'),
-    zoomFit: document.getElementById('viewer-zoom-fit'),
-    zoomReset: document.getElementById('viewer-zoom-reset'),
-    backBtn: document.getElementById('viewer-back-btn'),
-    fullscreenBtn: document.getElementById('viewer-fullscreen-btn'),
-    toggleViewBtn: document.getElementById('viewer-toggle-view'),
-    searchBtn: document.getElementById('viewer-search-btn'),
-    searchBar: document.getElementById('viewer-search-bar'),
-    searchInput: document.getElementById('viewer-search-input'),
-    searchPrev: document.getElementById('viewer-search-prev'),
-    searchNext: document.getElementById('viewer-search-next'),
-    searchCount: document.getElementById('viewer-search-count'),
-    searchOptions: document.getElementById('viewer-search-options'),
-    searchCaseSensitive: document.getElementById('viewer-search-case'),
-    searchWholeWord: document.getElementById('viewer-search-whole'),
-    searchClose: document.getElementById('viewer-search-close'),
-    outlineBtn: document.getElementById('viewer-outline-btn'),
-    outlineDrawer: document.getElementById('viewer-outline-drawer'),
-    openLocalBtn: document.getElementById('viewer-open-local'),
-    fileInput: document.getElementById('viewer-file-input'),
-    textLayerContainer: document.getElementById('viewer-text-layer'),
-  };
+// ============================================================================
+// 1. CORE LIFECYCLE
+// ============================================================================
+
+/**
+ * Return the singleton core, constructing and initialising it on first call.
+ * Concurrent calls share a single init promise.
+ *
+ * @private
+ * @returns {Promise<import('./viewer/core.js').ViewerCore>}
+ */
+function _ensureCore() {
+  if (_coreInitPromise) return _coreInitPromise;
+
+  _coreInitPromise = (async () => {
+    const core = createCore();
+    _core = core;
+    await core.init();
+    _wireAppSubscriptions(core);
+    _maybeInstallDebugShortcut(core);
+    return core;
+  })();
+
+  _coreInitPromise.catch(() => { /* swallow */ });
+
+  return _coreInitPromise;
 }
 
-function refreshElements() {
-  viewerEls = getViewerElements();
+/**
+ * Register the app-level bus subscriptions. Registered exactly once, at
+ * first `_ensureCore()`. These are viewer-lifetime subscriptions and are
+ * deliberately NOT torn down on document switch.
+ *
+ * @private
+ * @param {import('./viewer/core.js').ViewerCore} core
+ */
+function _wireAppSubscriptions(core) {
+  const bus = core.getBus();
+
+  _appSubscriptions.push(bus.on(Events.NAV_BACK_REQUESTED, () => {
+    _handleBack();
+  }));
+
+  _appSubscriptions.push(bus.on(Events.LOCAL_FILE_OPEN_REQUESTED, (payload) => {
+    if (!payload || !payload.file) return;
+    _handleLocalFileOpen(payload.file).catch(() => { /* handled internally */ });
+  }));
+
+  _appSubscriptions.push(bus.on(Events.PREVIEW_SUBSCRIBE_REQUESTED, () => {
+    try { router.navigateTo('subscription'); } catch { /* ignore */ }
+  }));
 }
 
-// =========================================================================
-// CSS injection for loading dots & auto-hide styles
-// =========================================================================
-
-function injectViewerStyles() {
-  if (document.getElementById('viewer-inline-styles')) return;
-  const style = document.createElement('style');
-  style.id = 'viewer-inline-styles';
-  style.textContent = `
-    .viewer-loading-dots {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      font-size: 2rem;
-      color: var(--text-secondary, #888);
-      gap: 0.25rem;
-    }
-    .viewer-loading-dots span {
-      animation: viewer-dot-bounce 1.4s infinite ease-in-out both;
-      display: inline-block;
-    }
-    .viewer-loading-dots span:nth-child(1) { animation-delay: 0s; }
-    .viewer-loading-dots span:nth-child(2) { animation-delay: 0.2s; }
-    .viewer-loading-dots span:nth-child(3) { animation-delay: 0.4s; }
-    @keyframes viewer-dot-bounce {
-      0%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(-0.5em); }
-    }
-
-    /* Auto-hide header/footer */
-    .viewer-header {
-      transition: transform 0.3s ease, opacity 0.3s ease;
-      transform: translateY(0);
-      opacity: 1;
-    }
-    .viewer-header.hidden {
-      transform: translateY(-100%);
-      opacity: 0;
-      pointer-events: none;
-    }
-    .viewer-footer {
-      transition: transform 0.3s ease, opacity 0.3s ease;
-      transform: translateY(0);
-      opacity: 1;
-    }
-    .viewer-footer.hidden {
-      transform: translateY(100%);
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    /* Improve offscreen page rendering performance */
-    .canvas-wrapper {
-      content-visibility: auto;
-      contain-intrinsic-size: 200px;
-    }
-  `;
-  document.head.appendChild(style);
-}
-
-// =========================================================================
-// PDF.js Initialization
-// =========================================================================
-
-if (typeof pdfjsLib !== 'undefined' && !pdfjsLib.GlobalWorkerOptions.workerSrc) {
-  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
-}
-
-// =========================================================================
-// Helper: MIME detection & Blob fix
-// =========================================================================
-
-function getMimeType(fileType) {
-  return MIME_TYPES[fileType?.toLowerCase()] || 'application/octet-stream';
-}
-
-async function ensureMimeType(blob, fileType) {
-  if ((blob.type === 'application/octet-stream' || !blob.type) && fileType) {
-    const mapped = getMimeType(fileType);
-    if (mapped !== 'application/octet-stream') {
-      return new Blob([await blob.arrayBuffer()], { type: mapped });
-    }
-  }
-  return blob;
-}
-
-// =========================================================================
-// Cleanup
-// =========================================================================
-
-function destroyCurrentDocument() {
-  renderTasks.forEach(task => task.cancel());
-  renderTasks.clear();
-
-  if (abortController) {
-    abortController.abort();
-    abortController = null;
-  }
-
-  if (intersectionObserver) {
-    intersectionObserver.disconnect();
-    intersectionObserver = null;
-  }
-
-  if (pdfDoc) {
-    pdfDoc.destroy();
-    pdfDoc = null;
-  }
-
-  if (zoomRenderTimer) {
-    clearTimeout(zoomRenderTimer);
-    zoomRenderTimer = null;
-  }
-
-  if (dprListener) {
-    window.removeEventListener('resize', dprListener);
-    dprListener = null;
-  }
-
-  textContentCache.clear();
-  pageViewportCache.clear();
-
-  // Remove auto-hide interaction listeners
-  removeAutoHideListeners();
-
-  cleanupFunctions.forEach(fn => fn());
-  cleanupFunctions = [];
-
-  currentPage = 1;
-  totalPages = 1;
-  currentScale = 1.0;
-  pdfOutline = [];
-  searchMatches = [];
-  currentMatchIndex = -1;
-  panOffsetX = 0;
-  panOffsetY = 0;
-
-  const main = viewerEls.main;
-  if (main) {
-    main.innerHTML = '';
-    main.classList.remove('scroll-view', 'page-view');
-  }
-
-  if (viewerEls.searchInput) viewerEls.searchInput.value = '';
-  updateSearchUI();
-
-  if (viewerEls.outlineDrawer) viewerEls.outlineDrawer.classList.remove('open');
-
-  imageElement = null;
-  imageScale = 1;
-  isOverControls = false;
-}
-
-// =========================================================================
-// Main Render Entry
-// =========================================================================
-
-async function renderDocument(blob, fileType = null, title = 'Document') {
-  destroyCurrentDocument();
-
-  const { main, loading, progress, title: titleEl } = viewerEls;
-  if (!main) return;
-
-  // Attach all controls (once per document)
-  setupControls();
-  setupAutoHideListeners();
-  setupDPRListener();
-
-  if (loading) loading.style.display = 'block';
-  if (progress) progress.style.display = 'none';
-  if (titleEl) titleEl.textContent = title;
-
-  blob = await ensureMimeType(blob, fileType);
-  console.log('[Viewer] Document type:', blob.type, 'fileType:', fileType);
-
+/**
+ * @private
+ * @param {import('./viewer/core.js').ViewerCore} _core
+ */
+function _maybeInstallDebugShortcut(_core) {
+  if (!CONFIG.DEBUG_VIEWER) return;
   try {
-    if (blob.type === 'application/pdf') {
-      await renderPDF(blob);
-    } else if (blob.type.startsWith('image/')) {
-      renderImage(blob);
-    } else {
-      renderFallback(blob);
+    if (typeof window !== 'undefined') {
+      window.__viewer = {
+        ...__debug,
+        openPendingFile,
+      };
     }
-  } catch (err) {
-    console.error('[Viewer] Render error:', err);
-    main.innerHTML = `<div class="error-container" role="alert">
-      <p>Failed to render document: ${escapeHtml(err.message)}</p>
-      <button class="btn-secondary" onclick="window.history.back()">Go Back</button>
-    </div>`;
-    if (viewerEls.footer) viewerEls.footer.style.display = 'none';
-  } finally {
-    if (loading) loading.style.display = 'none';
-    if (progress) progress.style.display = 'none';
-  }
+  } catch { /* ignore */ }
 }
 
-// =========================================================================
-// PDF Rendering
-// =========================================================================
+// ============================================================================
+// 2. ENVIRONMENT CHECKS
+// ============================================================================
 
-async function renderPDF(blob) {
-  const { main, footer, progress } = viewerEls;
+/**
+ * True when the DOM is fully parsed and safe to query.
+ * @private
+ * @returns {boolean}
+ */
+function _domReady() {
+  return typeof document !== 'undefined' && document.readyState !== 'loading';
+}
 
-  const arrayBuffer = await blob.arrayBuffer();
-  pdfDoc = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+/**
+ * Resolve once the DOM is ready. No-op when already ready.
+ * @private
+ * @returns {Promise<void>}
+ */
+function _waitForDom() {
+  if (_domReady()) return Promise.resolve();
+  return new Promise((resolve) => {
+    document.addEventListener('DOMContentLoaded', () => resolve(), { once: true });
+  });
+}
 
-  totalPages = pdfDoc.numPages;
-  currentPage = 1;
-
+/**
+ * True when the viewer chrome is mounted and reachable.
+ *
+ * The chrome lives inside the host page - either pages/viewer.html or the
+ * embedded overlay inside pages/resource-browser.html. Both have the same
+ * #viewer element with the same 32 IDs. If `refreshElementCache()` returns
+ * a main element, the chrome is present and a file can be loaded.
+ *
+ * @private
+ * @returns {boolean}
+ */
+function _chromeMounted() {
   try {
-    pdfOutline = await pdfDoc.getOutline();
+    const els = refreshElementCache();
+    return !!(els && els.main);
   } catch {
-    pdfOutline = [];
-  }
-  buildOutline();
-
-  viewMode = localStorage.getItem('viewer-viewMode') || 'scroll';
-
-  if (progress) {
-    pdfDoc.onProgress = ({ loaded: l, total }) => {
-      if (total) {
-        progress.style.display = 'block';
-        progress.value = l / total;
-      }
-    };
-  }
-
-  if (main) {
-    main.innerHTML = '<div class="viewer-loading-dots"><span>.</span><span>.</span><span>.</span></div>';
-  }
-
-  await renderCurrentLayout();
-
-  if (footer) footer.style.display = 'flex';
-  showHeaderFooter(); // ensure visible initially
-}
-
-// =========================================================================
-// Layout rendering
-// =========================================================================
-
-let onScrollHandler = null;
-
-async function renderCurrentLayout() {
-  const { main, textLayerContainer } = viewerEls;
-  if (!main) return;
-
-  if (zoomRenderTimer) {
-    clearTimeout(zoomRenderTimer);
-    zoomRenderTimer = null;
-  }
-
-  if (viewMode === 'scroll') {
-    main.classList.add('scroll-view');
-    main.classList.remove('page-view');
-
-    const existingContainer = main.querySelector('.page-container');
-
-    if (!existingContainer) {
-      // Initial build
-      main.innerHTML = '';
-      renderTasks.forEach(task => task.cancel());
-      renderTasks.clear();
-
-      if (onScrollHandler) {
-        main.removeEventListener('scroll', onScrollHandler);
-        onScrollHandler = null;
-      }
-
-      panOffsetX = 0;
-      panOffsetY = 0;
-
-      await renderAllPagesScroll();
-
-      onScrollHandler = onScroll;
-      main.addEventListener('scroll', onScrollHandler);
-      setTimeout(() => detectVisiblePage(), 100);
-    } else {
-      // Zoom changed: cancel all pending renders
-      renderTasks.forEach(task => task.cancel());
-      renderTasks.clear();
-
-      // Immediately update dimensions for pages whose base sizes are cached
-      syncWrapperDimensions();
-
-      // Then re-render visible pages at new scale
-      await updateVisiblePages();
-    }
-  } else {
-    main.classList.remove('scroll-view');
-    main.classList.add('page-view');
-    main.innerHTML = '';
-    renderTasks.forEach(task => task.cancel());
-    renderTasks.clear();
-
-    if (onScrollHandler) {
-      main.removeEventListener('scroll', onScrollHandler);
-      onScrollHandler = null;
-    }
-
-    panOffsetX = 0;
-    panOffsetY = 0;
-
-    await renderSinglePage(currentPage);
-  }
-
-  if (textLayerContainer) textLayerContainer.innerHTML = '';
-  updateZoomDisplay();
-  updateNavButtons();
-  resetAutoHideTimer();
-}
-
-async function updateVisiblePages() {
-  const main = viewerEls.main;
-  if (!main) return;
-
-  const viewportTop = main.scrollTop;
-  const viewportBottom = viewportTop + main.clientHeight;
-  const wrappers = main.querySelectorAll('.canvas-wrapper');
-  const tasks = [];
-
-  wrappers.forEach(wrapper => {
-    const rect = wrapper.getBoundingClientRect();
-    const wrapperTop = rect.top + main.scrollTop - main.getBoundingClientRect().top;
-    const wrapperBottom = wrapperTop + rect.height;
-
-    if (wrapperBottom >= viewportTop && wrapperTop <= viewportBottom) {
-      const pageNum = parseInt(wrapper.dataset.page, 10);
-      tasks.push(lazyRenderPage(pageNum, wrapper));
-    }
-  });
-
-  await Promise.all(tasks);
-}
-
-function onScroll() {
-  clearTimeout(scrollTimeout);
-  scrollTimeout = setTimeout(() => detectVisiblePage(), 50);
-  resetAutoHideTimer();
-}
-
-function detectVisiblePage() {
-  const { main } = viewerEls;
-  if (!main || viewMode !== 'scroll') return;
-  const wrappers = main.querySelectorAll('.canvas-wrapper');
-  if (!wrappers.length) return;
-  let maxVisible = 0;
-  let visiblePage = 1;
-  const viewportHeight = main.clientHeight;
-  const viewportTop = main.scrollTop;
-  const viewportBottom = viewportTop + viewportHeight;
-
-  wrappers.forEach((wrapper, index) => {
-    const rect = wrapper.getBoundingClientRect();
-    const wrapperTop = rect.top + main.scrollTop - main.getBoundingClientRect().top;
-    const wrapperBottom = wrapperTop + rect.height;
-    const visibleHeight = Math.min(wrapperBottom, viewportBottom) - Math.max(wrapperTop, viewportTop);
-    if (visibleHeight > maxVisible) {
-      maxVisible = visibleHeight;
-      visiblePage = index + 1;
-    }
-  });
-
-  if (visiblePage !== currentPage) {
-    currentPage = visiblePage;
-    updatePageNumberDisplay();
+    return false;
   }
 }
 
-function updatePageNumberDisplay() {
-  const { pageNum, pageInput, pageCount } = viewerEls;
-  if (pageNum) pageNum.textContent = currentPage;
-  if (pageInput) {
-    pageInput.value = currentPage;
-    pageInput.min = 1;
-    pageInput.max = totalPages;
-  }
-  if (pageCount) pageCount.textContent = totalPages;
-  updateNavButtons();
+/**
+ * Mount the viewer chrome and clear any residue from a previous document.
+ * Idempotent. Safe to call before the core is initialised - mountChrome
+ * ignores its argument and only touches the DOM.
+ *
+ * @private
+ * @param {import('./viewer/core.js').ViewerCore|null} core
+ */
+function _prepareChromeForFileOpen(core) {
+  try { mountChrome(core); } catch { /* ignore */ }
+  try { clearViewerContent(); } catch { /* ignore */ }
 }
 
-async function renderAllPagesScroll() {
-  const { main } = viewerEls;
-  const container = document.createElement('div');
-  container.className = 'page-container';
+// ============================================================================
+// 3. BACK-NAVIGATION CHAIN
+// ============================================================================
 
-  for (let i = 1; i <= totalPages; i++) {
-    const wrapper = document.createElement('div');
-    wrapper.className = 'canvas-wrapper';
-    wrapper.dataset.page = i;
-    wrapper.style.minHeight = '200px';
-    container.appendChild(wrapper);
-  }
-
-  main.appendChild(container);
-
-  if (intersectionObserver) intersectionObserver.disconnect();
-
-  intersectionObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-
-        const wrapper = entry.target;
-        const pageNum = parseInt(wrapper.dataset.page, 10);
-
-        const needsRender =
-          !wrapper.querySelector('canvas.pdf-canvas') ||
-          wrapper.dataset.renderedScale !== String(currentScale);
-
-        if (needsRender) {
-          lazyRenderPage(pageNum, wrapper);
-        }
-      });
-    },
-    { rootMargin: LAZY_LOAD_MARGIN }
-  );
-
-  document.querySelectorAll('.canvas-wrapper').forEach(w => {
-    intersectionObserver.observe(w);
-  });
-
-  // Preload page sizes to eliminate placeholder jumps
-  preloadPageSizes();
-}
-
-async function lazyRenderPage(pageNum, wrapper) {
-  const canvas = await renderPageToCanvas(pageNum);
-  if (!canvas) return;
-  wrapper.innerHTML = '';
-  wrapper.appendChild(canvas);
-
-  // Mark this wrapper as rendered at the current zoom scale
-  wrapper.dataset.renderedScale = String(currentScale);
-}
-
-async function renderSinglePage(pageNum) {
-  const { main } = viewerEls;
-  const container = document.createElement('div');
-  container.className = 'page-container';
-  container.style.transformOrigin = '0 0';
-  const wrapper = document.createElement('div');
-  wrapper.className = 'canvas-wrapper';
-  const canvas = await renderPageToCanvas(pageNum);
-  if (canvas) wrapper.appendChild(canvas);
-  container.appendChild(wrapper);
-  main.appendChild(container);
-}
-
-async function renderPageToCanvas(pageNum) {
-  if (!pdfDoc) return null;
-
-  const scale = currentScale; // capture current zoom
-
-  if (renderTasks.has(pageNum)) {
-    renderTasks.get(pageNum).cancel();
-    renderTasks.delete(pageNum);
-  }
-
+/**
+ * The fallback chain for the viewer's back button. Called from the core's
+ * NAV_BACK_REQUESTED event and from the error container's back button.
+ *
+ * On the viewer page, the page's own back button wires directly to
+ * `router.navigateTo('subjects' | 'welcome')` and never emits NAV_BACK.
+ * On the resource-browser page, the overlay's back button calls
+ * `window.closeViewer()` directly. This chain is the fallback when
+ * neither of those applies - e.g. errors during load.
+ *
+ * @private
+ */
+function _handleBack() {
+  // 1. Host-app-provided hook.
   try {
-    const page = await pdfDoc.getPage(pageNum);
-
-    // Cache base viewport at scale 1 for dimension calculations
-    const baseViewport = page.getViewport({ scale: 1 });
-    pageViewportCache.set(pageNum, {
-      width: baseViewport.width,
-      height: baseViewport.height,
-    });
-
-    // CSS viewport (used for layout / CSS size)
-    const cssViewport = page.getViewport({ scale });
-
-    // High-DPI rendering viewport
-    const pixelRatio = window.devicePixelRatio || 1;
-    const renderViewport = page.getViewport({ scale: scale * pixelRatio });
-
-    const canvas = document.createElement('canvas');
-    canvas.className = 'pdf-canvas';
-    // Set canvas backing store dimensions (actual pixels)
-    canvas.height = renderViewport.height;
-    canvas.width = renderViewport.width;
-    // Set CSS dimensions to the intended layout size
-    canvas.style.display = 'block';
-    canvas.style.width = cssViewport.width + 'px';
-    canvas.style.height = cssViewport.height + 'px';
-
-    const context = canvas.getContext('2d');
-    const renderTask = page.render({ canvasContext: context, viewport: renderViewport });
-    renderTasks.set(pageNum, renderTask);
-    await renderTask.promise;
-    renderTasks.delete(pageNum);
-
-    // If zoom changed while this render was in progress, discard it.
-    if (scale !== currentScale) {
-      return null;
-    }
-
-    // Text layer is not attached here for performance.
-    // It will be created only when needed (e.g., search/highlight).
-
-    return canvas;
-  } catch (err) {
-    if (err?.name === 'RenderingCancelledException') return null;
-    console.error(`Error rendering page ${pageNum}:`, err);
-    return null;
-  }
-}
-
-// =========================================================================
-// Text Layer (kept for potential future use, but not automatically rendered)
-// =========================================================================
-
-function attachTextLayer(canvas, pageNum, page, viewport) {
-  const wrapper = canvas.parentElement;
-  if (!wrapper) return;
-
-  let textLayerDiv = wrapper.querySelector('.textLayer');
-  if (textLayerDiv) textLayerDiv.remove();
-
-  textLayerDiv = document.createElement('div');
-  textLayerDiv.className = 'textLayer';
-  textLayerDiv.style.width = viewport.width + 'px';
-  textLayerDiv.style.height = viewport.height + 'px';
-  wrapper.style.position = 'relative';
-  canvas.style.position = 'absolute';
-  canvas.style.top = '0';
-  canvas.style.left = '0';
-  textLayerDiv.style.position = 'absolute';
-  textLayerDiv.style.top = '0';
-  textLayerDiv.style.left = '0';
-
-  wrapper.appendChild(textLayerDiv);
-
-  page.getTextContent().then(textContent => {
-    pdfjsLib.renderTextLayer({
-      textContentSource: textContent,
-      container: textLayerDiv,
-      viewport,
-      textDivs: [],
-    });
-  });
-}
-
-// =========================================================================
-// Search & Highlighting
-// =========================================================================
-
-async function performSearch() {
-  if (abortController) abortController.abort();
-  abortController = new AbortController();
-  const signal = abortController.signal;
-
-  const input = viewerEls.searchInput;
-  if (!input) return;
-  const query = input.value.trim();
-  if (!query) {
-    searchMatches = [];
-    currentMatchIndex = -1;
-    clearSearchHighlights();
-    updateSearchUI();
-    return;
-  }
-
-  if (!pdfDoc) return;
-
-  const caseSensitive = viewerEls.searchCaseSensitive?.checked || false;
-  const wholeWord = viewerEls.searchWholeWord?.checked || false;
-
-  searchMatches = [];
-  currentMatchIndex = -1;
-
-  try {
-    for (let i = 1; i <= totalPages; i++) {
-      if (signal.aborted) return;
-      const page = await pdfDoc.getPage(i);
-
-      // Use cached text content if available
-      let textContent = textContentCache.get(i);
-      if (!textContent) {
-        textContent = await page.getTextContent();
-        textContentCache.set(i, textContent);
-      }
-
-      const { items } = textContent;
-      const pageViewport = page.getViewport({ scale: currentScale });
-
-      const textItems = items.map(item => ({
-        str: item.str,
-        transform: item.transform,
-        width: item.width,
-        height: item.height,
-      }));
-
-      const fullText = textItems.map(t => t.str).join('');
-      let regex;
-      try {
-        const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        const pattern = wholeWord ? `\\b${escaped}\\b` : escaped;
-        regex = new RegExp(pattern, caseSensitive ? 'g' : 'gi');
-      } catch {
-        continue;
-      }
-
-      let match;
-      while ((match = regex.exec(fullText)) !== null) {
-        const startIdx = match.index;
-        const endIdx = startIdx + match[0].length;
-
-        const rects = [];
-        let charCount = 0;
-        for (const item of textItems) {
-          const len = item.str.length;
-          const itemStart = charCount;
-          const itemEnd = charCount + len;
-          if (itemEnd > startIdx && itemStart < endIdx) {
-            const tx = item.transform;
-            const x1 = tx[4];
-            const y1 = tx[5];
-            const x2 = x1 + item.width;
-            const y2 = y1 + item.height;
-
-            const rect = pageViewport.convertToViewportRectangle([x1, y1, x2, y2]);
-            const x = Math.min(rect[0], rect[2]);
-            const y = Math.min(rect[1], rect[3]);
-            const w = Math.abs(rect[2] - rect[0]);
-            const h = Math.abs(rect[3] - rect[1]);
-
-            rects.push({ x, y, width: w, height: h });
-          }
-          charCount += len;
-          if (charCount >= endIdx) break;
-        }
-
-        if (rects.length > 0) {
-          searchMatches.push({ pageNum: i, text: match[0], rects });
-        }
-      }
-    }
-  } catch (err) {
-    if (err.name === 'AbortError') return;
-    console.error('Search error:', err);
-  }
-
-  currentMatchIndex = searchMatches.length > 0 ? 0 : -1;
-  if (searchMatches.length > 0) {
-    navigateToMatch(0);
-  } else {
-    ui.showToast('No matches found', 'warning');
-  }
-  clearSearchHighlights();
-  highlightCurrentMatch();
-  updateSearchUI();
-}
-
-function navigateSearch(delta) {
-  if (!searchMatches.length) return;
-  currentMatchIndex = (currentMatchIndex + delta + searchMatches.length) % searchMatches.length;
-  navigateToMatch(0);
-}
-
-function navigateToMatch(_offset) {
-  const match = searchMatches[currentMatchIndex];
-  if (!match) return;
-
-  if (viewMode === 'page') {
-    if (currentPage !== match.pageNum) {
-      currentPage = match.pageNum;
-      renderCurrentLayout().then(() => highlightCurrentMatch());
+    if (typeof window !== 'undefined' && typeof window.closeViewer === 'function') {
+      window.closeViewer();
       return;
     }
-  } else {
-    const wrapper = document.querySelector(`.canvas-wrapper[data-page="${match.pageNum}"]`);
-    if (wrapper) {
-      wrapper.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      setTimeout(() => highlightCurrentMatch(), 300);
-    } else {
-      highlightCurrentMatch();
+  } catch { /* ignore */ }
+
+  // 2. Browser history, if any.
+  try {
+    if (typeof window !== 'undefined' && window.history && window.history.length > 1) {
+      window.history.back();
+      return;
     }
-    return;
-  }
-  highlightCurrentMatch();
+  } catch { /* ignore */ }
+
+  // 3. Fallback route.
+  try {
+    router.navigateTo('subjects');
+  } catch { /* ignore */ }
 }
 
-function highlightCurrentMatch() {
-  clearSearchHighlights();
-  const match = searchMatches[currentMatchIndex];
-  if (!match) return;
+// ============================================================================
+// 4. EXTERNAL FILE - LOCAL FILE OBJECT (file input, drag-drop)
+// ============================================================================
 
-  const wrapper = document.querySelector(`.canvas-wrapper[data-page="${match.pageNum}"]`);
-  if (!wrapper) return;
+/**
+ * Open a `File` object in the viewer.
+ *
+ * External files are never subject to the catalogue preview policy. The
+ * user chose the file; there is no catalogue resource to upsell. No auth
+ * is required and none is checked here.
+ *
+ * If the viewer chrome is already mounted (viewer page, or the catalogue
+ * page with the overlay active), the file loads in place. Otherwise the
+ * File object is stashed in `_pendingLocalFile` - File objects cannot be
+ * serialized to sessionStorage - and the app routes to `viewer`. That
+ * page's init() calls `openPendingFile()`, which drains the stash.
+ *
+ * @private
+ * @param {File} file
+ * @returns {Promise<void>}
+ */
+async function _handleLocalFileOpen(file) {
+  if (!file) return;
 
-  // Create or get a dedicated search overlay layer
-  let layer = wrapper.querySelector('.search-layer');
-  if (!layer) {
-    layer = document.createElement('div');
-    layer.className = 'search-layer';
-    layer.style.position = 'absolute';
-    layer.style.top = '0';
-    layer.style.left = '0';
-    layer.style.width = '100%';
-    layer.style.height = '100%';
-    layer.style.pointerEvents = 'none';
-    wrapper.style.position = 'relative';
-    wrapper.appendChild(layer);
-  }
+  await _waitForDom();
 
-  match.rects.forEach(rect => {
-    const div = document.createElement('div');
-    div.className = 'search-highlight active';
-    div.style.left = rect.x + 'px';
-    div.style.top = rect.y + 'px';
-    div.style.width = rect.width + 'px';
-    div.style.height = rect.height + 'px';
-    layer.appendChild(div);
-  });
-}
-
-function clearSearchHighlights() {
-  document.querySelectorAll('.search-highlight').forEach(el => el.remove());
-}
-
-function updateSearchUI() {
-  const countEl = viewerEls.searchCount;
-  if (countEl) {
-    countEl.textContent = searchMatches.length
-      ? `${currentMatchIndex + 1}/${searchMatches.length}`
-      : '';
-  }
-  if (viewerEls.searchPrev) viewerEls.searchPrev.disabled = !searchMatches.length;
-  if (viewerEls.searchNext) viewerEls.searchNext.disabled = !searchMatches.length;
-}
-
-let searchTimeout;
-function onSearchInput() {
-  clearTimeout(searchTimeout);
-  searchTimeout = setTimeout(performSearch, SEARCH_DEBOUNCE);
-}
-
-// =========================================================================
-// Image Rendering
-// =========================================================================
-
-function renderImage(blob) {
-  const { main, footer } = viewerEls;
-  if (!main) return;
-
-  // Use page-view mode so overflow is hidden and panning works
-  main.classList.add('page-view');
-  main.classList.remove('scroll-view');
-
-  const wrapper = document.createElement('div');
-  wrapper.style.width = '100%';
-  wrapper.style.height = '100%';
-  wrapper.style.display = 'flex';
-  wrapper.style.alignItems = 'center';
-  wrapper.style.justifyContent = 'center';
-  wrapper.style.transformOrigin = 'center center';
-  wrapper.style.touchAction = 'none';
-
-  const img = document.createElement('img');
-  img.src = URL.createObjectURL(blob);
-  img.style.maxWidth = 'none';
-  img.style.maxHeight = 'none';
-  img.style.objectFit = 'contain';
-  img.style.transformOrigin = 'center center';
-  img.style.transition = 'transform 0.1s';
-  img.style.touchAction = 'none';
-
-  wrapper.appendChild(img);
-  main.innerHTML = '';
-  main.appendChild(wrapper);
-
-  imageElement = img;
-  imageScale = 1;
-  panOffsetX = 0;
-  panOffsetY = 0;
-
-  if (footer) footer.style.display = 'none';
-
-  resetAutoHideTimer();
-}
-
-// =========================================================================
-// Fallback (Office docs, text, etc.)
-// =========================================================================
-
-function renderFallback(blob) {
-  const { main, footer } = viewerEls;
-  if (!main) return;
-
-  const textTypes = [
-    'text/plain',
-    'text/markdown',
-    'text/csv',
-    'application/rtf', // RTF can be shown as plain text
-    'application/vnd.oasis.opendocument.text', // fallback
-  ];
-
-  if (textTypes.some(type => blob.type.includes(type))) {
-    // Render text directly with proper formatting
-    blob.text().then(text => {
-      const pre = document.createElement('pre');
-      pre.textContent = text;
-      pre.style.whiteSpace = 'pre-wrap';      // preserve line breaks
-      pre.style.wordBreak = 'break-word';     // wrap long lines
-      pre.style.margin = '0';
-      pre.style.padding = '1rem';
-      pre.style.fontFamily = 'var(--font-mono, monospace)';
-      pre.style.fontSize = '0.95rem';
-      pre.style.lineHeight = '1.5';
-      pre.style.overflow = 'auto';
-      pre.style.height = '100%';
-      pre.style.boxSizing = 'border-box';
-      main.innerHTML = '';
-      main.appendChild(pre);
-    });
-    if (footer) footer.style.display = 'none';
+  // Chrome not mounted → stash the File and route to the viewer page.
+  if (!_chromeMounted()) {
+    _pendingLocalFile = file;
+    try { router.navigateTo('viewer'); } catch { /* ignore */ }
     return;
   }
 
-  const url = URL.createObjectURL(blob);
-  const iframeTypes = [
-    'application/vnd.openxmlformats-officedocument',
-    'application/msword',
-    'application/vnd.ms-powerpoint',
-    'application/vnd.ms-excel',
-  ];
-  const canIframe = iframeTypes.some(type => blob.type.includes(type));
-
-  if (canIframe) {
-    const iframe = document.createElement('iframe');
-    iframe.src = url;
-    iframe.style.width = '100%';
-    iframe.style.height = '100%';
-    iframe.style.border = 'none';
-    main.innerHTML = '';
-    main.appendChild(iframe);
-    ui.showToast('Document opened in browser. For best experience, download and open locally.', 'info');
-  } else {
-    main.innerHTML = `<div class="unsupported">
-      <p>Preview not available for this file type (${blob.type}).</p>
-      <a href="${url}" download class="btn-primary">Download to view locally</a>
-    </div>`;
-  }
-  if (footer) footer.style.display = 'none';
+  // Chrome mounted → load directly.
+  await _loadLocalFileIntoViewer(file);
 }
 
-// =========================================================================
-// Outline
-// =========================================================================
+/**
+ * Perform the actual load of a user-selected File into the viewer.
+ *
+ * Called from two places:
+ *   * Directly, when the file input fires on a page with chrome mounted.
+ *   * From `openPendingFile()`, after the viewer page's init() drains the
+ *     stash written by `_handleLocalFileOpen`.
+ *
+ * Mounts the viewer chrome before loading. The catalogue path calls
+ * `mountChrome` from `showEmbeddedViewer`; the file-open path must do the
+ * same because it does not go through that entry point.
+ *
+ * @private
+ * @param {File} file
+ * @returns {Promise<void>}
+ */
+async function _loadLocalFileIntoViewer(file) {
+  _currentDocId = null;
+  _isLocalFile = true;
 
-function buildOutline() {
-  const drawer = viewerEls.outlineDrawer;
-  if (!drawer) return;
-  drawer.innerHTML = '';
-  if (!pdfOutline || pdfOutline.length === 0) {
-    drawer.innerHTML = '<div class="outline-empty">No outline</div>';
-    return;
-  }
-  renderOutlineItems(pdfOutline, drawer, 0);
-}
-
-function renderOutlineItems(items, parent, level) {
-  const ul = document.createElement('ul');
-  ul.className = 'outline-list';
-
-  items.forEach(item => {
-    const li = document.createElement('li');
-    li.className = `outline-item level-${Math.min(level, 3)}`;
-
-    const link = document.createElement('a');
-    link.textContent = item.title || 'Untitled';
-    link.href = '#';
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      navigateToDest(item.dest);
-      if (viewerEls.outlineDrawer && window.innerWidth < 768) {
-        viewerEls.outlineDrawer.classList.remove('open');
-      }
-    });
-    li.appendChild(link);
-
-    if (item.items && item.items.length > 0) {
-      renderOutlineItems(item.items, li, level + 1);
+  let fileType = '';
+  try {
+    if (file.name && typeof file.name === 'string') {
+      const parts = file.name.split('.');
+      if (parts.length > 1) fileType = parts.pop();
     }
-
-    ul.appendChild(li);
-  });
-
-  parent.appendChild(ul);
-}
-
-async function navigateToDest(dest) {
-  if (!pdfDoc || !dest) return;
+  } catch { /* ignore */ }
 
   try {
-    const pageIndex = await pdfDoc.getPageIndex(dest);
-    const pageNum = pageIndex + 1;
-    currentPage = pageNum;
-    await renderCurrentLayout();
-    if (viewMode === 'scroll') {
-      const wrapper = document.querySelector(`.canvas-wrapper[data-page="${pageNum}"]`);
-      wrapper?.scrollIntoView({ behavior: 'smooth' });
-    }
+    const core = await _ensureCore();
+    _prepareChromeForFileOpen(core);
+    await core.loadDocument(file, fileType, file.name || 'Document');
   } catch (err) {
-    console.error('Outline navigation error:', err);
+    const message = err && err.message ? err.message : 'Failed to open file';
+    try { ui.showToast('Failed to open file: ' + message, 'error'); } catch { /* ignore */ }
   }
 }
 
-// =========================================================================
-// Auto‑hide / Double‑tap
-// =========================================================================
-
-function showHeaderFooter() {
-  const header = document.querySelector('.viewer-header');
-  const footer = document.getElementById('viewer-footer');
-  if (header) header.classList.remove('hidden');
-  if (footer) footer.classList.remove('hidden');
-  isHeaderVisible = true;
-  resetAutoHideTimer();
-}
-
-function hideHeaderFooter() {
-  const header = document.querySelector('.viewer-header');
-  const footer = document.getElementById('viewer-footer');
-  if (header) header.classList.add('hidden');
-  if (footer) footer.classList.add('hidden');
-  isHeaderVisible = false;
-}
-
-function resetAutoHideTimer() {
-  if (autoHideTimer) clearTimeout(autoHideTimer);
-  // Only start timer if not currently interacting with controls
-  if (!isOverControls && isHeaderVisible) {
-    autoHideTimer = setTimeout(() => {
-      if (!isOverControls) {
-        hideHeaderFooter();
-      }
-    }, AUTO_HIDE_DELAY);
-  }
-}
-
-function handleDoubleTap(e) {
-  const now = Date.now();
-  if (now - lastTapTime < 300) {
-    if (isHeaderVisible) {
-      hideHeaderFooter();
-    } else {
-      showHeaderFooter();
-    }
-    lastTapTime = 0;
-  } else {
-    lastTapTime = now;
-  }
-}
-
-// -------------------------------------------------------------------------
-// Auto-hide interaction with header/footer
-// -------------------------------------------------------------------------
-
-function setupAutoHideListeners() {
-  const header = document.querySelector('.viewer-header');
-  const footer = document.getElementById('viewer-footer');
-  if (!header && !footer) return;
-
-  const onEnter = () => {
-    isOverControls = true;
-    if (autoHideTimer) {
-      clearTimeout(autoHideTimer);
-      autoHideTimer = null;
-    }
-  };
-
-  const onLeave = () => {
-    isOverControls = false;
-    if (isHeaderVisible) resetAutoHideTimer();
-  };
-
-  // For each control, add mouseenter/mouseleave and focusin/focusout
-  [header, footer].forEach(el => {
-    if (!el) return;
-    el.addEventListener('mouseenter', onEnter);
-    el.addEventListener('mouseleave', onLeave);
-    el.addEventListener('focusin', onEnter);
-    el.addEventListener('focusout', (e) => {
-      // Only leave if focus completely left the element
-      if (!el.contains(e.relatedTarget)) onLeave();
-    });
-  });
-
-  // Store removal functions in cleanupFunctions
-  cleanupFunctions.push(() => {
-    [header, footer].forEach(el => {
-      if (!el) return;
-      el.removeEventListener('mouseenter', onEnter);
-      el.removeEventListener('mouseleave', onLeave);
-      el.removeEventListener('focusin', onEnter);
-      el.removeEventListener('focusout', onLeave);
-    });
-  });
-}
-
-function removeAutoHideListeners() {
-  // The cleanup functions will handle removal; but we can also clear isOverControls
-  isOverControls = false;
-  if (autoHideTimer) {
-    clearTimeout(autoHideTimer);
-    autoHideTimer = null;
-  }
-}
-
-// =========================================================================
-// Panning (page mode and images)
-// =========================================================================
-
-function setupPanning(container) {
-  const pointerDownHandler = (e) => {
-    if (e.button !== 0) return;
-    // Enable panning in page mode OR when an image is displayed
-    if (viewMode !== 'page' && !imageElement) return;
-    pointerDown = true;
-    isPanning = false;
-    lastPointerX = e.clientX;
-    lastPointerY = e.clientY;
-    container.setPointerCapture(e.pointerId);
-    e.preventDefault();
-  };
-
-  const pointerMoveHandler = (e) => {
-    if (!pointerDown) return;
-    const dx = e.clientX - lastPointerX;
-    const dy = e.clientY - lastPointerY;
-    if (Math.abs(dx) > 2 || Math.abs(dy) > 2) {
-      isPanning = true;
-    }
-    if (isPanning) {
-      panOffsetX += dx;
-      panOffsetY += dy;
-      applyPanTransform();
-      lastPointerX = e.clientX;
-      lastPointerY = e.clientY;
-    }
-  };
-
-  const pointerUpHandler = (e) => {
-    pointerDown = false;
-    isPanning = false;
-    if (container.hasPointerCapture(e.pointerId)) {
-      container.releasePointerCapture(e.pointerId);
-    }
-  };
-
-  container.addEventListener('pointerdown', pointerDownHandler);
-  container.addEventListener('pointermove', pointerMoveHandler);
-  container.addEventListener('pointerup', pointerUpHandler);
-  container.addEventListener('pointercancel', pointerUpHandler);
-
-  cleanupFunctions.push(() => {
-    container.removeEventListener('pointerdown', pointerDownHandler);
-    container.removeEventListener('pointermove', pointerMoveHandler);
-    container.removeEventListener('pointerup', pointerUpHandler);
-    container.removeEventListener('pointercancel', pointerUpHandler);
-  });
-}
-
-function applyPanTransform() {
-  // For PDF page view, pan the .page-container
-  const container = viewerEls.main?.querySelector('.page-container');
-  if (container) {
-    container.style.transform = `translate(${panOffsetX}px, ${panOffsetY}px)`;
-    return;
-  }
-
-  // For images, pan the wrapper
-  if (imageElement && imageElement.parentElement) {
-    const wrapper = imageElement.parentElement;
-    wrapper.style.transform = `translate(${panOffsetX}px, ${panOffsetY}px)`;
-  }
-}
-
-// =========================================================================
-// Pinch Zoom (PDF & Images)
-// =========================================================================
-
-function setupPinchZoom(container) {
-  let initialDistance = 0;
-  let initialScale = 1;
-
-  const touchStartHandler = (e) => {
-    if (e.touches.length === 2) {
-      const dx = e.touches[0].clientX - e.touches[1].clientX;
-      const dy = e.touches[0].clientY - e.touches[1].clientY;
-      initialDistance = Math.hypot(dx, dy);
-      initialScale = imageElement ? imageScale : currentScale;
-      e.preventDefault();
-    }
-  };
-
-  const touchMoveHandler = (e) => {
-    if (e.touches.length === 2) {
-      const dx = e.touches[0].clientX - e.touches[1].clientX;
-      const dy = e.touches[0].clientY - e.touches[1].clientY;
-      const distance = Math.hypot(dx, dy);
-      if (initialDistance > 0) {
-        let scale = initialScale * (distance / initialDistance);
-        scale = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, scale));
-
-        if (imageElement) {
-          imageScale = scale;
-          imageElement.style.transform = `scale(${scale})`;
-        } else {
-          setZoom(scale);
-        }
-        e.preventDefault();
-      }
-    }
-  };
-
-  const touchEndHandler = () => {
-    initialDistance = 0;
-  };
-
-  container.addEventListener('touchstart', touchStartHandler, { passive: false });
-  container.addEventListener('touchmove', touchMoveHandler, { passive: false });
-  container.addEventListener('touchend', touchEndHandler);
-
-  cleanupFunctions.push(() => {
-    container.removeEventListener('touchstart', touchStartHandler);
-    container.removeEventListener('touchmove', touchMoveHandler);
-    container.removeEventListener('touchend', touchEndHandler);
-  });
-}
-
-// =========================================================================
-// Controls & Event Wiring
-// =========================================================================
-
-function setupControls() {
-  const els = viewerEls;
-  if (!els.container) return;
-
-  // ---------- View Mode Toggle ----------
-  if (els.toggleViewBtn) {
-    const updateToggleLabel = () => {
-      els.toggleViewBtn.textContent = viewMode === 'scroll' ? '📄 Page View' : '📜 Scroll View';
-    };
-    updateToggleLabel();
-    const toggleHandler = () => {
-      viewMode = viewMode === 'scroll' ? 'page' : 'scroll';
-      localStorage.setItem('viewer-viewMode', viewMode);
-      renderCurrentLayout();
-      updateToggleLabel();
-    };
-    els.toggleViewBtn.addEventListener('click', toggleHandler);
-    cleanupFunctions.push(() => els.toggleViewBtn?.removeEventListener('click', toggleHandler));
-  }
-
-  // ---------- Page Navigation ----------
-  if (els.prevBtn) {
-    const handler = () => { if (currentPage > 1) { currentPage--; renderCurrentLayout(); } };
-    els.prevBtn.addEventListener('click', handler);
-    cleanupFunctions.push(() => els.prevBtn?.removeEventListener('click', handler));
-  }
-  if (els.nextBtn) {
-    const handler = () => { if (currentPage < totalPages) { currentPage++; renderCurrentLayout(); } };
-    els.nextBtn.addEventListener('click', handler);
-    cleanupFunctions.push(() => els.nextBtn?.removeEventListener('click', handler));
-  }
-
-  // ---------- Page Jump via Input ----------
-  if (els.pageInput) {
-    const jumpHandler = () => {
-      let page = parseInt(els.pageInput.value, 10);
-      if (isNaN(page)) return;
-      page = Math.max(1, Math.min(totalPages, page));
-      els.pageInput.value = page;
-
-      if (viewMode === 'page') {
-        if (page !== currentPage) {
-          currentPage = page;
-          renderCurrentLayout();
-        }
-      } else {
-        const wrapper = document.querySelector(`.canvas-wrapper[data-page="${page}"]`);
-        if (wrapper) {
-          if (!wrapper.querySelector('canvas')) {
-            lazyRenderPage(page, wrapper);
-          }
-          wrapper.scrollIntoView({ behavior: 'smooth' });
-          setTimeout(() => {
-            currentPage = page;
-            updatePageNumberDisplay();
-          }, 300);
-        }
-      }
-    };
-    els.pageInput.addEventListener('change', jumpHandler);
-    els.pageInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        jumpHandler();
-      }
-    });
-    cleanupFunctions.push(() => {
-      els.pageInput?.removeEventListener('change', jumpHandler);
-      els.pageInput?.removeEventListener('keydown', jumpHandler);
-    });
-  }
-
-  // ---------- Zoom ----------
-  if (els.zoomIn) {
-    const handler = () => {
-      if (imageElement) {
-        imageScale = Math.min(MAX_ZOOM, imageScale + ZOOM_STEP);
-        imageElement.style.transform = `scale(${imageScale})`;
-      } else {
-        setZoom(currentScale + ZOOM_STEP);
-      }
-    };
-    els.zoomIn.addEventListener('click', handler);
-    cleanupFunctions.push(() => els.zoomIn?.removeEventListener('click', handler));
-  }
-  if (els.zoomOut) {
-    const handler = () => {
-      if (imageElement) {
-        imageScale = Math.max(MIN_ZOOM, imageScale - ZOOM_STEP);
-        imageElement.style.transform = `scale(${imageScale})`;
-      } else {
-        setZoom(currentScale - ZOOM_STEP);
-      }
-    };
-    els.zoomOut.addEventListener('click', handler);
-    cleanupFunctions.push(() => els.zoomOut?.removeEventListener('click', handler));
-  }
-  if (els.zoomFit) {
-    const handler = () => {
-      if (imageElement) {
-        const mainRect = viewerEls.main.getBoundingClientRect();
-        const imgRect = imageElement.getBoundingClientRect();
-        const fitScale = (mainRect.width - 20) / imgRect.width;
-        imageScale = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, fitScale));
-        imageElement.style.transform = `scale(${imageScale})`;
-      } else {
-        zoomToFit();
-      }
-    };
-    els.zoomFit.addEventListener('click', handler);
-    cleanupFunctions.push(() => els.zoomFit?.removeEventListener('click', handler));
-  }
-  if (els.zoomReset) {
-    const handler = () => {
-      if (imageElement) {
-        imageScale = 1;
-        imageElement.style.transform = 'scale(1)';
-      } else {
-        setZoom(1.0);
-      }
-    };
-    els.zoomReset.addEventListener('click', handler);
-    cleanupFunctions.push(() => els.zoomReset?.removeEventListener('click', handler));
-  }
-
-  // Wheel zoom (Ctrl+Wheel)
-  const wheelHandler = (e) => {
-    if (e.ctrlKey || e.metaKey) {
-      e.preventDefault();
-      const delta = -Math.sign(e.deltaY) * ZOOM_STEP;
-      if (imageElement) {
-        imageScale = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, imageScale + delta));
-        imageElement.style.transform = `scale(${imageScale})`;
-      } else {
-        setZoom(currentScale + delta);
-      }
-    }
-  };
-  els.main?.addEventListener('wheel', wheelHandler, { passive: false });
-  cleanupFunctions.push(() => els.main?.removeEventListener('wheel', wheelHandler));
-
-  // ---------- Search ----------
-  if (els.searchBtn) {
-    const handler = () => {
-      if (els.searchBar) {
-        els.searchBar.classList.toggle('active');
-        if (els.searchBar.classList.contains('active')) {
-          els.searchInput?.focus();
-        } else {
-          clearSearchHighlights();
-        }
-      }
-    };
-    els.searchBtn.addEventListener('click', handler);
-    cleanupFunctions.push(() => els.searchBtn?.removeEventListener('click', handler));
-  }
-  if (els.searchClose) {
-    const handler = () => {
-      if (els.searchBar) els.searchBar.classList.remove('active');
-      clearSearchHighlights();
-    };
-    els.searchClose.addEventListener('click', handler);
-    cleanupFunctions.push(() => els.searchClose?.removeEventListener('click', handler));
-  }
-  if (els.searchInput) {
-    els.searchInput.addEventListener('input', onSearchInput);
-    cleanupFunctions.push(() => els.searchInput?.removeEventListener('input', onSearchInput));
-    const keyHandler = (e) => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        navigateSearch(e.shiftKey ? -1 : 1);
-      } else if (e.key === 'Escape') {
-        els.searchBar?.classList.remove('active');
-        clearSearchHighlights();
-      }
-    };
-    els.searchInput.addEventListener('keydown', keyHandler);
-    cleanupFunctions.push(() => els.searchInput?.removeEventListener('keydown', keyHandler));
-  }
-  if (els.searchPrev) {
-    const handler = () => navigateSearch(-1);
-    els.searchPrev.addEventListener('click', handler);
-    cleanupFunctions.push(() => els.searchPrev?.removeEventListener('click', handler));
-  }
-  if (els.searchNext) {
-    const handler = () => navigateSearch(1);
-    els.searchNext.addEventListener('click', handler);
-    cleanupFunctions.push(() => els.searchNext?.removeEventListener('click', handler));
-  }
-  [els.searchCaseSensitive, els.searchWholeWord].forEach(el => {
-    if (el) {
-      const handler = performSearch;
-      el.addEventListener('change', handler);
-      cleanupFunctions.push(() => el.removeEventListener('change', handler));
-    }
-  });
-
-  // ---------- Outline ----------
-  if (els.outlineBtn) {
-    const handler = () => els.outlineDrawer?.classList.toggle('open');
-    els.outlineBtn.addEventListener('click', handler);
-    cleanupFunctions.push(() => els.outlineBtn?.removeEventListener('click', handler));
-  }
-
-  const outsideOutlineHandler = (e) => {
-    if (els.outlineDrawer && !e.target.closest('.outline-drawer')) {
-      els.outlineDrawer.classList.remove('open');
-    }
-  };
-  document.addEventListener('click', outsideOutlineHandler);
-  cleanupFunctions.push(() => document.removeEventListener('click', outsideOutlineHandler));
-
-  // ---------- Open Local File ----------
-  if (els.openLocalBtn && els.fileInput) {
-    const handler = () => els.fileInput.click();
-    els.openLocalBtn.addEventListener('click', handler);
-    cleanupFunctions.push(() => els.openLocalBtn?.removeEventListener('click', handler));
-
-    const fileHandler = async (e) => {
-      const file = e.target.files[0];
-      if (!file) return;
-      isLocalFile = true;
-      const fileType = file.name.split('.').pop();
-      await renderDocument(file, fileType, file.name);
-      els.fileInput.value = '';
-    };
-    els.fileInput.addEventListener('change', fileHandler);
-    cleanupFunctions.push(() => els.fileInput?.removeEventListener('change', fileHandler));
-  }
-
-  // ---------- Drag & Drop ----------
-  const dropHandler = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    const file = e.dataTransfer.files[0];
-    if (!file) return;
-    isLocalFile = true;
-    const fileType = file.name.split('.').pop();
-    renderDocument(file, fileType, file.name);
-  };
-  const dragOverHandler = (e) => {
-    e.preventDefault();
-    e.dataTransfer.dropEffect = 'copy';
-  };
-  document.addEventListener('drop', dropHandler);
-  document.addEventListener('dragover', dragOverHandler);
-  cleanupFunctions.push(
-    () => document.removeEventListener('drop', dropHandler),
-    () => document.removeEventListener('dragover', dragOverHandler)
-  );
-
-  // ---------- Touch swipe (page mode) ----------
-  let touchStartX = 0;
-  const touchStart = (e) => {
-    if (viewMode !== 'page') return;
-    touchStartX = e.touches[0].clientX;
-  };
-  const touchEnd = (e) => {
-    if (viewMode !== 'page') return;
-    const diff = touchStartX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 50) {
-      if (diff > 0 && currentPage < totalPages) { currentPage++; renderCurrentLayout(); }
-      else if (diff < 0 && currentPage > 1) { currentPage--; renderCurrentLayout(); }
-    }
-  };
-  if (els.main) {
-    els.main.addEventListener('touchstart', touchStart, { passive: true });
-    els.main.addEventListener('touchend', touchEnd, { passive: true });
-    cleanupFunctions.push(
-      () => els.main?.removeEventListener('touchstart', touchStart),
-      () => els.main?.removeEventListener('touchend', touchEnd)
-    );
-  }
-
-  // ---------- Fullscreen ----------
-  if (els.fullscreenBtn) {
-    const handler = toggleFullscreen;
-    els.fullscreenBtn.addEventListener('click', handler);
-    cleanupFunctions.push(() => els.fullscreenBtn?.removeEventListener('click', handler));
-  }
-
-  // ---------- Back ----------
-  if (els.backBtn) {
-    const handler = () => {
-      if (typeof window.closeViewer === 'function') {
-        window.closeViewer();
-      } else {
-        if (window.history.length > 1) {
-          window.history.back();
-        } else {
-          router.navigateTo('subjects.html');
-        }
-      }
-    };
-    els.backBtn.addEventListener('click', handler);
-    cleanupFunctions.push(() => els.backBtn?.removeEventListener('click', handler));
-  }
-
-  // ---------- Double‑tap toggle ----------
-  if (els.main) {
-    els.main.addEventListener('click', handleDoubleTap);
-    cleanupFunctions.push(() => els.main?.removeEventListener('click', handleDoubleTap));
-  }
-
-  // ---------- Panning ----------
-  if (els.main) {
-    setupPanning(els.main);
-  }
-
-  // ---------- Pinch Zoom ----------
-  if (els.main) {
-    setupPinchZoom(els.main);
-  }
-
-  // ---------- Keyboard shortcuts ----------
-  const keyShortcutHandler = (e) => {
-    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-    switch (e.key) {
-      case 'ArrowLeft': e.preventDefault(); if (viewMode === 'page') { if (currentPage > 1) { currentPage--; renderCurrentLayout(); } } break;
-      case 'ArrowRight': e.preventDefault(); if (viewMode === 'page') { if (currentPage < totalPages) { currentPage++; renderCurrentLayout(); } } break;
-      case '+': case '=': e.preventDefault(); if (imageElement) { imageScale = Math.min(MAX_ZOOM, imageScale + ZOOM_STEP); imageElement.style.transform = `scale(${imageScale})`; } else setZoom(currentScale + ZOOM_STEP); break;
-      case '-': e.preventDefault(); if (imageElement) { imageScale = Math.max(MIN_ZOOM, imageScale - ZOOM_STEP); imageElement.style.transform = `scale(${imageScale})`; } else setZoom(currentScale - ZOOM_STEP); break;
-      case '0': e.preventDefault(); if (imageElement) { imageScale = 1; imageElement.style.transform = 'scale(1)'; } else setZoom(1.0); break;
-      case 'f': if (e.ctrlKey || e.metaKey) { e.preventDefault(); toggleFullscreen(); } break;
-      default: break;
-    }
-  };
-  document.addEventListener('keydown', keyShortcutHandler);
-  cleanupFunctions.push(() => document.removeEventListener('keydown', keyShortcutHandler));
-}
-
-// =========================================================================
-// Zoom helpers
-// =========================================================================
-
-function setZoom(scale) {
-  currentScale = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, scale));
-  updateZoomDisplay();
-
-  if (zoomRenderTimer) clearTimeout(zoomRenderTimer);
-  zoomRenderTimer = setTimeout(() => {
-    zoomRenderTimer = null;
-    renderCurrentLayout().then(() => {
-      if (searchMatches.length) highlightCurrentMatch();
-    });
-  }, 150);
-}
-
-function zoomToFit() {
-  if (!viewerEls.main) return;
-  const containerWidth = viewerEls.main.clientWidth - 40;
-  if (pdfDoc) {
-    pdfDoc.getPage(1).then(page => {
-      const origViewport = page.getViewport({ scale: 1 });
-      const fitScale = containerWidth / origViewport.width;
-      setZoom(fitScale * 0.95);
-    });
-  }
-}
-
-function updateZoomDisplay() {
-  if (viewerEls.zoomLevel) {
-    viewerEls.zoomLevel.textContent = Math.round(currentScale * 100) + '%';
-  }
-}
-
-function updateNavButtons() {
-  if (!viewerEls.prevBtn || !viewerEls.nextBtn) return;
-  if (viewMode === 'scroll' || !pdfDoc) {
-    viewerEls.prevBtn.disabled = true;
-    viewerEls.nextBtn.disabled = true;
-  } else {
-    viewerEls.prevBtn.disabled = currentPage <= 1;
-    viewerEls.nextBtn.disabled = currentPage >= totalPages;
-  }
-  if (viewerEls.pageInput) {
-    viewerEls.pageInput.min = 1;
-    viewerEls.pageInput.max = totalPages;
-  }
-}
-
-// =========================================================================
-// Fullscreen
-// =========================================================================
-
-function toggleFullscreen() {
-  const container = viewerEls.container || document.querySelector('.viewer-container') || document.documentElement;
-  if (!document.fullscreenElement) {
-    container.requestFullscreen().catch(() => {});
-  } else {
-    document.exitFullscreen().catch(() => {});
-  }
-}
-
-// =========================================================================
-// Device Pixel Ratio change handler
-// =========================================================================
-
-function setupDPRListener() {
-  if (dprListener) return;
-  let lastDPR = window.devicePixelRatio || 1;
-
-  dprListener = () => {
-    const currentDPR = window.devicePixelRatio || 1;
-    if (currentDPR !== lastDPR) {
-      lastDPR = currentDPR;
-      // Re-render visible pages to adjust to new DPR
-      if (viewMode === 'scroll') {
-        updateVisiblePages();
-      } else {
-        renderSinglePage(currentPage);
-      }
-    }
-  };
-  window.addEventListener('resize', dprListener);
-  cleanupFunctions.push(() => {
-    window.removeEventListener('resize', dprListener);
-    dprListener = null;
-  });
-}
-
-// =========================================================================
-// Utility: escape HTML
-// =========================================================================
-
-function escapeHtml(text) {
-  const div = document.createElement('div');
-  div.textContent = text;
-  return div.innerHTML;
-}
-
-// =========================================================================
-// Helper: sync wrapper dimensions using cached base sizes
-// =========================================================================
-
-function syncWrapperDimensions() {
-  const wrappers = viewerEls.main?.querySelectorAll('.canvas-wrapper');
-  wrappers?.forEach(wrapper => {
-    const pageNum = parseInt(wrapper.dataset.page, 10);
-    const base = pageViewportCache.get(pageNum);
-    if (!base) return;
-
-    const w = base.width * currentScale;
-    const h = base.height * currentScale;
-
-    wrapper.style.width = `${w}px`;
-    wrapper.style.height = `${h}px`;
-    wrapper.style.minHeight = `${h}px`;
-
-    const canvas = wrapper.querySelector('canvas.pdf-canvas');
-    if (canvas && wrapper.dataset.renderedScale !== String(currentScale)) {
-      canvas.remove(); // remove stale old-zoom canvas
-      delete wrapper.dataset.renderedScale;
-    }
-  });
-}
-
-// =========================================================================
-// Helper: preload page sizes to prevent placeholder jumps
-// =========================================================================
-
-let pageSizePreloadStarted = false;
-
-function preloadPageSizes() {
-  if (pageSizePreloadStarted || !pdfDoc) return;
-  pageSizePreloadStarted = true;
-
-  const queue = Array.from({ length: totalPages }, (_, i) => i + 1);
-  const concurrency = 3;
-
-  const worker = async () => {
-    while (queue.length && pdfDoc) {
-      const pageNum = queue.shift();
-      try {
-        const page = await pdfDoc.getPage(pageNum);
-        const base = page.getViewport({ scale: 1 });
-
-        if (!pageViewportCache.has(pageNum)) {
-          pageViewportCache.set(pageNum, {
-            width: base.width,
-            height: base.height,
-          });
-        }
-
-        const wrapper = viewerEls.main?.querySelector(
-          `.canvas-wrapper[data-page="${pageNum}"]`
-        );
-
-        if (wrapper && !wrapper.querySelector('canvas.pdf-canvas')) {
-          wrapper.style.width = `${base.width * currentScale}px`;
-          wrapper.style.height = `${base.height * currentScale}px`;
-          wrapper.style.minHeight = `${base.height * currentScale}px`;
-        }
-      } catch (err) {
-        console.warn('Page size preload failed', pageNum, err);
-      }
-    }
-  };
-
-  Promise.all(
-    Array.from({ length: Math.min(concurrency, queue.length) }, worker)
-  ).catch(() => {});
-}
-
-// =========================================================================
-// PUBLIC API
-// =========================================================================
-
+// ============================================================================
+// 5. PUBLIC API - loadDocumentInPage
+// ============================================================================
+
+/**
+ * Load a document identified by `docId` into the current page's viewer
+ * chrome. Intended for pages that have the 32 viewer element IDs mounted.
+ *
+ * This is the internal-document path: it keeps the hard subscription gate.
+ * Preview mode is NOT applied here.
+ *
+ * @param {string} docId
+ * @returns {Promise<void>}
+ */
 export async function loadDocumentInPage(docId) {
-  refreshElements();
+  refreshElementCache();
   injectViewerStyles();
-  currentDocId = docId;
-  isLocalFile = false;
 
-  const { main, loading } = viewerEls;
-  if (!main) return;
+  _currentDocId = docId;
+  _isLocalFile = false;
 
-  if (loading) loading.style.display = 'block';
-  if (main) main.innerHTML = '';
+  const els = refreshElementCache();
+  if (!els || !els.main) return;
+
+  clearViewerContent();
+
+  if (els.loading) els.loading.style.display = 'block';
+  if (els.progress) els.progress.style.display = 'none';
 
   try {
     const hasActive = await subscription.hasActiveSubscription();
     if (!hasActive) {
-      ui.showToast('Subscription required', 'warning');
-      router.navigateTo('subscription.html');
+      try { ui.showToast('Subscription required', 'warning'); } catch { /* ignore */ }
+      try { router.navigateTo('subscription'); } catch { /* ignore */ }
       return;
     }
 
     let blob = await content.getLocalFile(docId);
+
     if (!blob) {
-      ui.showLoading('Fetching document...');
+      try { ui.showLoading('Fetching document...'); } catch { /* ignore */ }
       const success = await content.downloadResource(docId);
-      ui.hideLoading();
+      try { ui.hideLoading(); } catch { /* ignore */ }
       if (!success) throw new Error('Download failed');
       blob = await content.getLocalFile(docId);
       if (!blob) throw new Error('File not found after download');
     }
 
-    await renderDocument(blob, null, 'Document');
+    const core = await _ensureCore();
+    await core.loadDocument(blob, null, 'Document', { previewMode: false });
   } catch (err) {
-    console.error('[Viewer] Error:', err);
-    if (main) {
-      main.innerHTML = `<div class="error-container"><p>Failed to load document: ${escapeHtml(err.message)}</p>
-        <button class="btn-secondary" onclick="window.history.back()">Go Back</button></div>`;
-    }
+    _renderErrorContainer(err);
   } finally {
-    if (loading) loading.style.display = 'none';
+    if (els.loading) els.loading.style.display = 'none';
+    if (els.progress) els.progress.style.display = 'none';
   }
 }
 
-export async function openDocument(docId, title = 'Document', fileType = null) {
-  injectViewerStyles();
-  if (typeof window.showViewer === 'function') {
-    window.showViewer(docId, title, fileType);
-  } else {
-    router.navigateTo(`viewer.html?docId=${docId}`);
+// ============================================================================
+// 6. PUBLIC API - openDocument
+// ============================================================================
+
+/**
+ * Open a document from another page. Delegates to `window.showViewer` if
+ * the host app defines it; otherwise navigates to the catalogue page.
+ *
+ * This is the internal-document path. Auth is enforced by the target page's
+ * own logic, not here.
+ *
+ * The delegate call is awaited. When the host app's `window.showViewer`
+ * returns a Promise (as the resource-browser's does), any async failure
+ * inside the viewer propagates back here and out to the caller. This is
+ * what lets the resource-browser Open button's try/catch see "file not
+ * found", "download failed", and viewer initialization errors.
+ *
+ * @param {string} docId
+ * @param {string} [title='Document']
+ * @param {string|null} [fileType=null]
+ * @param {{ previewMode?: boolean }|null} [opts=null]
+ * @returns {Promise<void>}
+ */
+export async function openDocument(docId, title = 'Document', fileType = null, opts = null) {
+  try { injectViewerStyles(); } catch { /* ignore */ }
+
+  if (typeof window !== 'undefined' && typeof window.showViewer === 'function') {
+    // Await the delegate so async failures surface to the caller.
+    // A sync delegate that returns undefined resolves immediately —
+    // which is correct behaviour for legacy hosts that don't return
+    // a Promise.
+    await window.showViewer(docId, title, fileType, opts);
+    return;
   }
-}
 
-export function showEmbeddedViewer(docId, title = 'Document', fileType = null) {
-  refreshElements();
-  injectViewerStyles();
-  currentDocId = docId;
-  isLocalFile = false;
-
-  const { container, main, title: titleEl, loading } = viewerEls;
-  if (!main) return;
-
-  if (container) {
-    container.style.display = 'flex';
-    container.style.position = 'fixed';
-    container.style.top = '0';
-    container.style.left = '0';
-    container.style.width = '100%';
-    container.style.height = '100%';
-    container.style.zIndex = '2000';
-    container.style.background = 'var(--bg-primary)';
-  }
-  const appContainer = document.getElementById('app');
-  if (appContainer) appContainer.style.display = 'none';
-
-  if (loading) loading.style.display = 'block';
-  if (titleEl) titleEl.textContent = title || 'Document';
-  if (main) main.innerHTML = '';
-
-  loadDocumentIntoEmbedded(docId, fileType);
-}
-
-async function loadDocumentIntoEmbedded(docId, fileType) {
-  const { main, loading } = viewerEls;
   try {
+    router.navigateTo('resource-browser');
+  } catch { /* ignore */ }
+}
+
+// ============================================================================
+// 7. PUBLIC API - showEmbeddedViewer
+// ============================================================================
+
+/**
+ * Open the viewer as a fixed-position overlay.
+ *
+ * This is the catalogue path. Called by resource-browser.js when a
+ * catalogue resource is opened. Mounts the chrome itself.
+ *
+ * Returns a Promise that resolves when the load completes and rejects when
+ * it fails. Written as a plain (non-async) function so the returned Promise
+ * is exactly the one from `_loadDocumentIntoEmbedded` — but with a silent
+ * `.catch` attached, so callers that fire-and-forget do not trigger the
+ * browser's unhandled-rejection warning. Awaiting the same Promise still
+ * sees the rejection; the two paths do not interfere.
+ *
+ * @param {string} docId
+ * @param {string} [title='Document']
+ * @param {string|null} [fileType=null]
+ * @param {{ previewMode?: boolean }|null} [opts=null]
+ * @returns {Promise<void>}
+ */
+export function showEmbeddedViewer(docId, title = 'Document', fileType = null, opts = null) {
+  const els = refreshElementCache();
+  injectViewerStyles();
+
+  _currentDocId = docId;
+  _isLocalFile = false;
+
+  if (!els || !els.main) {
+    return Promise.resolve();
+  }
+
+  try { mountChrome(_core); } catch { /* ignore */ }
+
+  clearViewerContent();
+
+  if (els.loading) els.loading.style.display = 'block';
+  if (els.progress) els.progress.style.display = 'none';
+  if (els.title) els.title.textContent = title || 'Document';
+
+  const loadPromise = _loadDocumentIntoEmbedded(docId, fileType, title, opts);
+
+  // Silence unhandled-rejection warnings for callers that ignore the
+  // returned Promise. The rejection is still delivered to anyone who
+  // awaits loadPromise.
+  loadPromise.catch(() => { /* silence for fire-and-forget callers */ });
+
+  return loadPromise;
+}
+
+/**
+ * Load a catalogue document into the mounted embedded viewer.
+ *
+ * Errors that occur before core takes over (missing IndexedDB blob, failed
+ * download, core init failure) are rendered into the viewer chrome AND
+ * re-thrown so the caller can react. Once core.loadDocument is reached,
+ * errors are core's responsibility — core catches them, emits
+ * DOCUMENT_ERROR, and ui-internal renders the standard error container.
+ * core.loadDocument does not reject for PDF-load errors; it resolves
+ * normally after firing the event.
+ *
+ * @private
+ * @param {string} docId
+ * @param {string|null} fileType
+ * @param {{ previewMode?: boolean }|null} [opts=null]
+ * @returns {Promise<void>}
+ */
+async function _loadDocumentIntoEmbedded(docId, fileType, title = 'Document', opts = null) {
+  const els = refreshElementCache();
+  const loadSessionId = Symbol();
+  window._activeLoadSession = loadSessionId;
+
+  try {
+
     let blob = await content.getLocalFile(docId);
-    if (!blob) {
-      ui.showLoading('Downloading document...');
-      const success = await content.downloadResource(docId);
-      ui.hideLoading();
-      if (!success) throw new Error('Download failed');
-      blob = await content.getLocalFile(docId);
-      if (!blob) throw new Error('File not found after download');
-    }
-    await renderDocument(blob, fileType);
+if (!blob) {
+  if (!navigator.onLine) {
+    // Optional: Call a content.js method here to remove the broken docId from the download manifest
+    throw new Error('File missing from device storage. Please delete and re-download when online.');
+  }
+  try { ui.showLoading('Downloading document...'); } catch { /* ignore */ }
+  const success = await content.downloadResource(docId);
+  try { ui.hideLoading(); } catch { /* ignore */ }
+  if (!success) throw new Error('Download failed');
+  blob = await content.getLocalFile(docId);
+  if (!blob) throw new Error('File not found after download');
+}
+
+    const core = await _ensureCore();
+    await core.loadDocument(blob, fileType, title, opts);
   } catch (err) {
-    console.error('[Embedded Viewer] Error:', err);
-    if (main) main.innerHTML = `<div class="error-container"><p>${escapeHtml(err.message)}</p></div>`;
+    // Only render the error if this load session is still current and after a brief grace period
+    setTimeout(() => {
+      if (window._activeLoadSession === loadSessionId && els && els.main) {
+        const message = err && err.message ? err.message : 'Failed to load document';
+        const safe = escapeHtml(String(message));
+        els.main.innerHTML =
+          `<div class="error-container" role="alert"><p>${safe}</p></div>`;
+      }
+    }, 2500);
+    
+    throw err;
   } finally {
-    if (loading) loading.style.display = 'none';
+    if (window._activeLoadSession === loadSessionId) {
+      if (els && els.loading) els.loading.style.display = 'none';
+      if (els && els.progress) els.progress.style.display = 'none';
+    }
   }
 }
 
+// ============================================================================
+// 8. PUBLIC API - closeEmbeddedViewer
+// ============================================================================
+
+/**
+ * Close the embedded viewer overlay and release the current document.
+ * Idempotent.
+ *
+ * @returns {void}
+ */
 export function closeEmbeddedViewer() {
-  destroyCurrentDocument();
+  try {
+    if (_core && typeof _core.destroy === 'function') {
+      _core.destroy();
+    }
+  } catch { /* ignore */ }
 
-  const container = viewerEls.container;
-  if (container) container.style.display = 'none';
-  const appContainer = document.getElementById('app');
-  if (appContainer) appContainer.style.display = 'block';
+  try { unmountChrome(_core); } catch { /* ignore */ }
 
-  currentDocId = null;
-  isLocalFile = false;
+  try { clearViewerContent(); } catch { /* ignore */ }
+
+  _currentDocId = null;
+  _isLocalFile = false;
+  _pendingLocalFile = null;
 }
 
-// Legacy alias
+// ============================================================================
+// 9. PUBLIC API - openDocumentModal (legacy alias)
+// ============================================================================
+
+/**
+ * @param {string} docId
+ * @returns {Promise<void>}
+ */
 export async function openDocumentModal(docId) {
   return openDocument(docId);
+}
+
+// ============================================================================
+// 10. ERROR RENDERING
+// ============================================================================
+
+/**
+ * @private
+ * @param {unknown} err
+ */
+function _renderErrorContainer(err) {
+  const els = refreshElementCache();
+  if (!els || !els.main) return;
+
+  const message = err && typeof err === 'object' && 'message' in err
+    ? String(/** @type {{ message: unknown }} */ (err).message)
+    : 'Unknown error';
+  const safe = escapeHtml(message);
+
+  els.main.innerHTML = `<div class="error-container" role="alert">
+    <p>Failed to load document: ${safe}</p>
+    <button class="btn-secondary" data-viewer-action="back">Go Back</button>
+  </div>`;
+
+  const backBtn = els.main.querySelector('[data-viewer-action="back"]');
+  if (!backBtn) return;
+
+  backBtn.addEventListener('click', () => {
+    try {
+      if (_core) {
+        _core.getBus().emit(Events.NAV_BACK_REQUESTED, {});
+        return;
+      }
+    } catch { /* ignore */ }
+    _handleBack();
+  });
+}
+
+// ============================================================================
+// 11. DEBUG NAMESPACE
+// ============================================================================
+
+/**
+ * QA / dev-tools only.
+ * @type {{
+ *   state: () => object|null,
+ *   flags: () => object|null,
+ *   report: () => object,
+ * }}
+ */
+export const __debug = {
+  state() {
+    try {
+      if (!_core) return null;
+      const s = _core.getState();
+      return s && typeof s.snapshot === 'function' ? s.snapshot() : null;
+    } catch { return null; }
+  },
+
+  flags() {
+    try {
+      if (!_core) return null;
+      const s = _core.getState();
+      return s ? s.get('flags') || null : null;
+    } catch { return null; }
+  },
+
+  report() {
+    const base = {
+      docId: _currentDocId,
+      isLocalFile: _isLocalFile,
+      coreInited: _core !== null,
+      pendingLocalFile: !!_pendingLocalFile,
+      chromeMounted: _chromeMounted(),
+      state: null,
+      flags: null,
+      scheduler: null,
+      memory: null,
+      workers: null,
+      cache: null,
+    };
+    if (!_core) return base;
+    try {
+      const s = _core.getState();
+      base.state = s && typeof s.snapshot === 'function' ? s.snapshot() : null;
+      base.flags = s ? s.get('flags') || null : null;
+    } catch { /* ignore */ }
+    try {
+      const scheduler = _core.getScheduler();
+      base.scheduler = scheduler && typeof scheduler.getStats === 'function'
+        ? scheduler.getStats() : null;
+    } catch { /* ignore */ }
+    try {
+      const memory = _core.getMemory();
+      base.memory = memory && typeof memory.report === 'function'
+        ? memory.report() : null;
+    } catch { /* ignore */ }
+    try {
+      const workers = _core.getWorkers();
+      base.workers = workers && typeof workers.stats === 'function'
+        ? workers.stats() : null;
+    } catch { /* ignore */ }
+    try {
+      const cache = _core.getCache();
+      base.cache = cache && typeof cache.report === 'function'
+        ? cache.report() : null;
+    } catch { /* ignore */ }
+    return base;
+  },
+};
+
+// ============================================================================
+// 12. NATIVE FILE PAYLOAD LOADER
+// ============================================================================
+//
+// Native payloads (path-based) are the Android intent path. They are
+// delivered to app.js via the FileOpen Java plugin, stashed in
+// sessionStorage.pendingFileOpen, and drained here by the viewer page's
+// init() -> openPendingFile().
+//
+// By the time _openNativeFilePayload runs, the caller has already verified
+// that the chrome is mounted (that's what openPendingFile's caller checks).
+// No stash-and-route logic lives here - if the chrome is somehow missing,
+// log and bail rather than attempt a redirect that could loop.
+
+/**
+ * Load a native-provided file payload into the viewer.
+ *
+ * @private
+ * @param {{ path: string, name?: string, mimeType?: string|null, size?: number }} payload
+ * @returns {Promise<void>}
+ */
+async function _openNativeFilePayload(payload) {
+  if (!payload || !payload.path) return;
+
+  await _waitForDom();
+
+  // The chrome should already be mounted by the page that called us. If
+  // it's not, something upstream is broken - bail rather than redirect.
+  if (!_chromeMounted()) {
+    console.warn('[Viewer] Native file payload arrived but viewer chrome is not mounted.');
+    return;
+  }
+
+  _currentDocId = null;
+  _isLocalFile = true;
+
+  let fileType = '';
+  try {
+    if (payload.name && typeof payload.name === 'string') {
+      const parts = payload.name.split('.');
+      if (parts.length > 1) fileType = parts.pop();
+    }
+  } catch { /* ignore */ }
+
+  try {
+    const bridge = typeof window !== 'undefined' ? window.Capacitor : null;
+    const fetchUrl = bridge && typeof bridge.convertFileSrc === 'function'
+      ? bridge.convertFileSrc(payload.path)
+      : payload.path;
+
+    const response = await fetch(fetchUrl);
+    if (!response.ok) throw new Error('HTTP ' + response.status);
+    const blob = await response.blob();
+
+    const typedBlob = payload.mimeType && blob.type !== payload.mimeType
+      ? blob.slice(0, blob.size, payload.mimeType)
+      : blob;
+
+    const core = await _ensureCore();
+    _prepareChromeForFileOpen(core);
+    await core.loadDocument(typedBlob, fileType, payload.name || 'Document');
+  } catch (err) {
+    const message = err && err.message ? err.message : 'Failed to open file';
+    try { ui.showToast('Failed to open file: ' + message, 'error'); } catch { /* ignore */ }
+  }
+}
+
+// ============================================================================
+// 13. PUBLIC API - openPendingFile
+// ============================================================================
+
+/**
+ * Drain a pending external file and open it in the viewer.
+ *
+ * Called by pages/viewer.js from its init(), once the viewer chrome is
+ * mounted. Reads two sources of pending files:
+ *
+ *   1. sessionStorage.pendingFileOpen - native payloads stashed by app.js
+ *      when a cold-start or warm-start file intent arrived before the
+ *      viewer page mounted.
+ *
+ *   2. _pendingLocalFile - a File object from the file picker or drag-drop
+ *      that arrived while the viewer chrome wasn't mounted. File objects
+ *      cannot be serialized, so they live in a module variable.
+ *
+ * The sessionStorage entry is cleared on read (idempotent). The File
+ * reference is nulled on read. Returns true if a file was found and its
+ * load was initiated, false if nothing was pending.
+ *
+ * @returns {boolean}
+ */
+export function openPendingFile() {
+  // -- Source 1: native payload ------------------------------------------
+  try {
+    const raw = sessionStorage.getItem(PENDING_FILE_KEY);
+    if (raw) {
+      sessionStorage.removeItem(PENDING_FILE_KEY);
+      const payload = JSON.parse(raw);
+      if (payload && payload.path) {
+        _openNativeFilePayload(payload).catch(() => { /* handled internally */ });
+        return true;
+      }
+    }
+  } catch { /* ignore parse errors */ }
+
+  // -- Source 2: local File object ---------------------------------------
+  if (_pendingLocalFile) {
+    const file = _pendingLocalFile;
+    _pendingLocalFile = null;
+    _loadLocalFileIntoViewer(file).catch(() => { /* handled internally */ });
+    return true;
+  }
+
+  return false;
 }

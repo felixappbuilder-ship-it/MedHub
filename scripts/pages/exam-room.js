@@ -1,6 +1,7 @@
 // scripts/pages/exam-room.js
 import * as ui from '../ui.js';
 import * as router from '../router.js';
+import * as redirect from '../redirect.js';
 import * as auth from '../auth.js';
 import * as examEngine from '../exam-engine.js';
 import * as timer from '../timer.js';
@@ -9,6 +10,8 @@ import * as db from '../db.js';
 import * as security from '../security.js';
 import * as subscription from '../subscription.js';
 import * as examChat from '../exam-chat.js';
+// ── SLIDE IMAGE: fetch slide-subject image blobs from IndexedDB
+import * as slideData from '../slide-data.js';
 
 // ── GLOBALS ──
 let timerInstance = null;
@@ -20,8 +23,38 @@ let totalQuestions = 0;
 let isFinished = false;
 let $;
 
+// ── SLIDE IMAGE: object-URL lifecycle ──
+//
+// Slide-subject images live in IndexedDB as Blobs. They need an
+// object-URL to serve as <img src>. Standard and revision modes show
+// only one question at a time, so _currentImageUrl tracks that single
+// slot. Shared mode renders every question at once and keeps its own
+// collection in _sharedImageUrls. Both sets are revoked on teardown.
+let _currentImageUrl = null;
+let _imageGen = 0;
+const _sharedImageUrls = new Set();
+
 export async function init(context) {
   $ = (sel) => context.root.querySelector(sel);
+
+  // ── Reset module-scope state from any previous exam session ────────
+  // In an SPA the module is cached across navigations, so these
+  // variables keep their values from the previous exam. Without this
+  // reset, `isFinished` stays `true` after the first exam — every
+  // subsequent exam's submit silently no-ops (`finishExam` returns
+  // early), and `currentQuestionIndex` may point at a stale index.
+  examMode = 'standard';
+  currentQuestionIndex = 0;
+  totalQuestions = 0;
+  isFinished = false;
+  if (timerInstance) { try { timerInstance.stop(); } catch { /* ignore */ } timerInstance = null; }
+  if (globalTimerInstance) { try { globalTimerInstance.stop(); } catch { /* ignore */ } globalTimerInstance = null; }
+  if (autoSaveInterval) { clearInterval(autoSaveInterval); autoSaveInterval = null; }
+  if (_currentImageUrl) { try { URL.revokeObjectURL(_currentImageUrl); } catch { /* ignore */ } _currentImageUrl = null; }
+  for (const url of _sharedImageUrls) { try { URL.revokeObjectURL(url); } catch { /* ignore */ } }
+  _sharedImageUrls.clear();
+  _imageGen = 0;
+  sheetState = 'closed';
 
   ui.applyTheme();
   const shimmer = $('#shimmer-overlay');
@@ -31,14 +64,60 @@ export async function init(context) {
     shared: $('#shared-layout')
   };
 
-  // Check authentication (app is already initialized)
+  // ── Auth gate ────────────────────────────────────────────────────
+  // Round-trip through login so the user comes back to exam-room with
+  // the exam config still intact (the config lives in the exam-engine
+  // module, which persists across SPA navigations).
   if (!auth.checkAuth()) {
     shimmer.style.display = 'none';
-    ui.showToast('Please log in first', 'warning');
-    router.navigateTo('login');
+    ui.showToast('Please log in to start an exam', 'warning');
+    redirect.navigateWithReturn('login', 'auth_required');
     return;
   }
 
+  // ── State adapter ────────────────────────────────────────────────
+  // Registered after the auth gate so we only ever capture meaningful
+  // state. The exam engine persists answers/flags/timing via autoSave;
+  // this adapter covers the parts of state that live only in this
+  // module's memory and never land in the DOM: which question the user
+  // was looking at, which mode, how many questions there are, and
+  // whether the exam has already finished.
+  redirect.registerStateAdapter('exam-room', {
+    capture: () => {
+      // Force a save right now so nothing between the last periodic
+      // autosave (30 s ago) and this redirect moment is lost.
+      try { examEngine.autoSave(); }
+      catch (e) { console.warn('[ExamRoom] autoSave during capture failed:', e); }
+
+      return {
+        currentQuestionIndex,
+        examMode,
+        totalQuestions,
+        isFinished,
+      };
+    },
+    restore: (data) => {
+      if (!data) return;
+
+      if (typeof data.examMode === 'string') examMode = data.examMode;
+      if (typeof data.totalQuestions === 'number') totalQuestions = data.totalQuestions;
+      if (typeof data.isFinished === 'boolean') isFinished = data.isFinished;
+
+      if (typeof data.currentQuestionIndex === 'number') {
+        currentQuestionIndex = data.currentQuestionIndex;
+        // Only safe to call goTo() after the exam has been created —
+        // init() calls consumeSnapshot() after createExam/startExam,
+        // so by the time this runs the engine is ready.
+        try {
+          examEngine.goTo(currentQuestionIndex);
+        } catch (e) {
+          console.warn('[ExamRoom] goTo on restore failed:', e);
+        }
+      }
+    },
+  });
+
+  // ── Config resolution ────────────────────────────────────────────
   let config = examEngine.getConfig();
   if (!config) {
     const pending = localStorage.getItem('pendingExamConfig');
@@ -62,6 +141,10 @@ export async function init(context) {
     } else {
       shimmer.style.display = 'none';
       ui.showToast('No exam configuration found', 'error');
+      // Clear any dangling redirect chain — the user has no exam to
+      // resume, so a pending return URL would just loop them here.
+      try { redirect.clearReturns(); } catch { /* ignore */ }
+      try { redirect.clearSnapshots(); } catch { /* ignore */ }
       router.navigateTo('subjects');
       return;
     }
@@ -79,13 +162,20 @@ export async function init(context) {
     return;
   }
 
+  // ── Subscription gate (standard mode only) ───────────────────────
+  // Round-trip through subscription. The chain subscription → payment
+  // → consumeAndReturn() lands the user back here with the exam ready
+  // to start, config still in the engine.
   if (examMode === 'standard') {
     const hasActiveSub = await subscription.hasActiveSubscription();
     if (!hasActiveSub) {
       const allFree = subscription.areAllTopicsFree(config);
       if (!allFree) {
         shimmer.style.display = 'none';
-        showSubscriptionCard(() => router.navigateTo('exam-settings'));
+        ui.showToast('This exam includes premium topics — subscribe to continue', 'warning');
+        redirect.navigateWithReturn('subscription', 'subscription_required', {
+          meta: { subject: config?.subject, examMode },
+        });
         return;
       }
     }
@@ -97,6 +187,28 @@ export async function init(context) {
     totalQuestions = examEngine.totalQuestions();
     localStorage.removeItem('pendingExamConfig');
 
+    // ── Consume snapshot BEFORE first render ────────────────────────
+    // Restores form fields, scroll, focus and (via the adapter above)
+    // the question index. Runs after createExam/startExam so goTo() can
+    // safely move the engine's cursor to the saved position.
+    const snap = redirect.consumeSnapshot();
+
+    // Self-consume the return stack if it's still pointing here. This
+    // covers the case where the returning page used history.back()
+    // instead of consumeAndReturn() — otherwise the stack would grow
+    // on every subsequent redirect from this page.
+    try {
+      const top = redirect.peekReturn();
+      const myUrl =
+        window.location.pathname +
+        (window.location.search || '') +
+        (window.location.hash || '');
+      if (top && top.url === myUrl) redirect.popReturn();
+    } catch (err) {
+      console.warn('[ExamRoom] Return-stack cleanup failed:', err);
+    }
+
+    // ── Setup UI shells ─────────────────────────────────────────────
     if (examMode === 'standard') {
       setupStandardUI();
     } else if (examMode === 'revision') {
@@ -109,6 +221,8 @@ export async function init(context) {
     shimmer.style.display = 'none';
 
     if (examMode !== 'shared') {
+      // renderQuestion() reads currentQuestionIndex, which the adapter
+      // has already restored — so we render at the right question.
       renderQuestion();
       startTimer();
       if (examMode === 'revision') {
@@ -118,6 +232,12 @@ export async function init(context) {
     setupAutoSave();
     setupEventListeners();
     updateProgress();
+
+    // Friendly confirmation that a redirect round-trip resumed state.
+    if (snap && snap.page && typeof snap.page.currentQuestionIndex === 'number') {
+      ui.showToast('Continuing where you left off', 'info', 1800);
+      console.log('[ExamRoom] Resumed at question', snap.page.currentQuestionIndex + 1);
+    }
   } catch (error) {
     shimmer.style.display = 'none';
     console.error('[ExamRoom] Failed to start exam:', error);
@@ -311,6 +431,14 @@ const totalExamSeconds = timer.getTotalTimeForQuestions(questionsList);
 
   renderDashNavigator(els.dashProgress, totalQuestions);
   renderSections(els.questionsArea, orderedSections, els);
+
+  // ── SLIDE IMAGE: hydrate every image slot after the sections are
+  //    in the DOM. Fire-and-forget — images pop in as their Blobs
+  //    resolve, the rest of the UI is already interactive.
+  hydrateSharedImages(questionsList).catch(err =>
+    console.warn('[ExamRoom] hydrateSharedImages failed:', err)
+  );
+
   attachSharedHandlers(els, questionsList);
   updateAllSharedUI(els, questionsList);
 
@@ -397,6 +525,14 @@ function buildQuestionCard(q) {
   const answered = examEngine.getQuestionState(q.globalIndex).answered;
   const flagged = examEngine.getQuestionState(q.globalIndex).flagged;
   const savedIndicator = answered ? '<span class="save-indicator">✓ Saved</span>' : '<span class="save-indicator" style="opacity:0;"></span>';
+
+  // ── SLIDE IMAGE: empty slot keyed by question index. The actual
+  //    <img> is injected asynchronously by hydrateSharedImages() so
+  //    no user/zip-controlled string ever enters the HTML.
+const imageHtml = q.image
+  ? `<div class="question-image" data-q-idx="${q.globalIndex}"></div>`
+  : '';
+
   return `
     <div class="question-card" id="questionCard-${q.globalIndex}">
       ${savedIndicator}
@@ -405,6 +541,7 @@ function buildQuestionCard(q) {
         <span class="q-text">${q.question}</span>
         <button class="flag-btn ${flagged ? 'flagged' : ''}" data-index="${q.globalIndex}" title="Mark for review">★</button>
       </div>
+      ${imageHtml}
       <div class="options-list" data-index="${q.globalIndex}">
         ${q.options.map((opt, oi) => `
           <div class="option-item ${examEngine.getAnswer(q.globalIndex)?.selectedOption === String.fromCharCode(65 + oi) ? 'selected' : ''}" data-index="${q.globalIndex}" data-option="${String.fromCharCode(65 + oi)}">
@@ -416,6 +553,66 @@ function buildQuestionCard(q) {
     </div>
   `;
 }
+
+// ── SLIDE IMAGE: bulk hydrator for shared/challenge mode ──
+//
+// Shared mode renders all questions at once, so we hydrate every image
+// slot in one pass rather than the single-image pattern used by
+// renderQuestionImage(). Same static-vs-slide split:
+//
+//   • static subject  → /data/images/{subject}/{filename}
+//   • slide subject   → Blob from IndexedDB → object-URL
+//
+// Object-URLs are collected in _sharedImageUrls and revoked on
+// teardown. Failures are logged, not thrown — a missing image must
+// not stop the rest of the review list from rendering.
+async function hydrateSharedImages(questionsList) {
+ const slots = document.querySelectorAll('#shared-layout .question-image[data-q-idx]');
+  if (slots.length === 0) return;
+
+  const examSubject = examEngine.getSubject();
+
+  for (const slot of slots) {
+    const idx = parseInt(slot.dataset.qIdx, 10);
+    const q = questionsList[idx];
+    if (!q || !q.image) continue;
+
+    const subject  = q.subject || examSubject;
+    if (!subject) continue;
+
+    const filename = q.image;
+    const meta = questions.getSubjectMeta(subject);
+
+    try {
+      if (meta.source === 'slide') {
+        const blob = await slideData.getSlideImage(subject, filename);
+        if (!blob) {
+          console.warn(`[ExamRoom] Shared slide image missing: ${subject}/${filename}`);
+          continue;
+        }
+        const url = URL.createObjectURL(blob);
+        _sharedImageUrls.add(url);
+        const img = document.createElement('img');
+        img.src = url;
+        img.alt = 'Question diagram';
+        img.loading = 'lazy';
+        slot.appendChild(img);
+      } else {
+        // Static subject — plain URL, onerror drops the element so a
+        // 404 doesn't leave a broken <img> icon in the card.
+        const img = document.createElement('img');
+        img.src = `/data/images/${encodeURIComponent(subject)}/${encodeURIComponent(filename)}`;
+        img.alt = 'Question diagram';
+        img.loading = 'lazy';
+        img.onerror = () => img.remove();
+        slot.appendChild(img);
+      }
+    } catch (e) {
+      console.warn(`[ExamRoom] Failed to load shared image ${subject}/${filename}:`, e);
+    }
+  }
+}
+
 function attachSharedHandlers(els, questionsList) {
   document.querySelectorAll('#shared-layout .option-item').forEach(item => {
     item.addEventListener('click', function (e) {
@@ -670,12 +867,12 @@ function renderQuestion() {
   flagBtn.classList.toggle('flagged', flagged);
   flagBtn.innerHTML = flagged ? '🏳️ Unflag' : '🏴 Flag';
 
-  if (current.image) {
-    qImage.innerHTML = `<img src="/data/images/${current.subject}/${current.image}" alt="Diagram">`;
-    qImage.style.display = 'block';
-  } else {
-    qImage.style.display = 'none';
-  }
+  // ── SLIDE IMAGE: replaces the inline single-line <img> lookup with a
+  //    call that handles both static (URL from /data/images/) and slide
+  //    (Blob from IndexedDB) cases. Question JSONs reference images by
+  //    bare filename — e.g. "image": "liver.avif" — which is exactly
+  //    what slideData.getSlideImage(subject, filename) expects.
+  renderQuestionImage(qImage, current);
 
   if (isRev) {
     const submitBtn = $('#submit-btn-rev');
@@ -705,6 +902,78 @@ function renderQuestion() {
   updateProgress();
   if (isStd) updateNavGridStandard();
   else if (isRev) updateDashNavigatorRevision('rev-dash-progress');
+  updateNavButtons();
+}
+
+// ── SLIDE IMAGE: question-image renderer (standard & revision) ──
+//
+// Static subjects: images live on the web server at
+//   /data/images/{subject}/{filename}
+// and the question's `image` field is a bare filename. Nothing changes
+// for these — same URL as before.
+//
+// Slide subjects: images live in IndexedDB, written by slide-data.js
+// at download time. They need to be loaded as Blobs and exposed via an
+// object-URL for the <img src>. The `image` field is still a bare
+// filename, matching what slideData.getSlideImage(subject, filename)
+// expects.
+//
+// Async because the IndexedDB read is async. renderQuestion() does not
+// await it — the rest of the question UI (text, options, flag) renders
+// immediately, and the image pops in once the blob resolves. A
+// generation counter ensures a fast sequence of question navigations
+// can't leave a stale blob bound to the <img> after a newer render.
+//
+// Object-URL lifecycle: revoke before minting the next one, and revoke
+// on teardown (see beforeunload / destroy below).
+async function renderQuestionImage(qImageEl, question) {
+  const gen = ++_imageGen;
+
+  // Drop the previous blob's URL before minting a new one.
+  if (_currentImageUrl) {
+    URL.revokeObjectURL(_currentImageUrl);
+    _currentImageUrl = null;
+  }
+
+  if (!qImageEl) return;
+
+  if (!question.image) {
+    qImageEl.innerHTML = '';
+    qImageEl.style.display = 'none';
+    return;
+  }
+
+  const meta = questions.getSubjectMeta(question.subject);
+
+  // Static (or unknown) subject — URL-based rendering, unchanged from
+  // before this fix. `source: 'unknown'` falls through here as well;
+  // a genuinely missing subject would 404 the same way it did prior
+  // to this change, which is the correct parity.
+  if (meta.source !== 'slide') {
+    qImageEl.innerHTML = `<img src="/data/images/${question.subject}/${question.image}" alt="Diagram">`;
+    qImageEl.style.display = 'block';
+    return;
+  }
+
+  // Slide subject — fetch the Blob from IndexedDB.
+  try {
+    const blob = await slideData.getSlideImage(question.subject, question.image);
+    if (gen !== _imageGen) return;      // superseded by a newer render
+    if (!blob) {
+      console.warn(`[ExamRoom] Slide image missing: ${question.subject}/${question.image}`);
+      qImageEl.innerHTML = '';
+      qImageEl.style.display = 'none';
+      return;
+    }
+    _currentImageUrl = URL.createObjectURL(blob);
+    qImageEl.innerHTML = `<img src="${_currentImageUrl}" alt="Diagram">`;
+    qImageEl.style.display = 'block';
+  } catch (err) {
+    if (gen !== _imageGen) return;
+    console.warn('[ExamRoom] Failed to load slide image:', err);
+    qImageEl.innerHTML = '';
+    qImageEl.style.display = 'none';
+  }
 }
 
 function restoreRevisionFeedback() {
@@ -770,8 +1039,19 @@ function nextQuestion() {
     renderQuestion();
     setTimeout(ensureFooterVisible, 100);
     resetTimerForCurrentQuestion();
-  } else if (examMode === 'standard' || examMode === 'revision') {
+    return;
+  }
+  // Revision mode: the Next button on the last question is relabelled
+  // "Submit Exam" — finishing directly is the intended behaviour there.
+  if (examMode === 'revision') {
     finishExam();
+    return;
+  }
+  // Standard mode: the Next button is hidden on the last question, but
+  // the ArrowRight keyboard shortcut can still fire this function.
+  // Route through the same confirmation the Submit button uses.
+  if (examMode === 'standard') {
+    promptAndFinish();
   }
 }
 function prevQuestion() {
@@ -786,16 +1066,43 @@ async function finishExam() {
   if (isFinished) return;
   isFinished = true;
   ui.showLoading('Calculating results...');
+
+  // Split the try so we can distinguish a fatal endExam failure (stay on
+  // the exam room, let the user retry) from non-fatal post-processing
+  // (still navigate to results — the exam was already saved inside
+  // endExam before the enrichment step).
+  let results = null;
   try {
-    const results = await examEngine.endExam();
-    await db.saveExamResult(results);
-    ui.hideLoading();
-    ui.showToast('Exam completed!', 'success');
-    router.navigateTo('results', { examId: results.examId });
+    results = await examEngine.endExam();
   } catch (err) {
+    console.error('[ExamRoom] endExam failed:', err);
     ui.hideLoading();
-    ui.showToast('Error: ' + err.message, 'error');
-    router.navigateTo('subjects');
+    isFinished = false;  // allow retry
+    ui.showToast(
+      'Failed to submit exam: ' + (err && err.message ? err.message : 'unknown error'),
+      'error'
+    );
+    return;
+  }
+
+  // Best-effort safety save. endExam already persisted the result; this
+  // protects against a partial enrichment failure leaving the record in
+  // a half-written state.
+  try {
+    await db.saveExamResult(results);
+  } catch (saveErr) {
+    console.warn('[ExamRoom] Final save failed (non-fatal):', saveErr);
+  }
+
+  ui.hideLoading();
+  ui.showToast('Exam completed!', 'success');
+
+  try {
+    router.navigateTo('results', { examId: results.examId });
+  } catch (navErr) {
+    console.error('[ExamRoom] Navigation to results failed:', navErr);
+    ui.showToast('Result saved. Open Performance to view it.', 'info');
+    try { router.navigateTo('performance'); } catch { /* ignore */ }
   }
 }
 
@@ -848,11 +1155,9 @@ function setupEventListeners() {
   $('#next-btn-std')?.addEventListener('click', nextQuestion);
   $('#prev-nav-std')?.addEventListener('click', prevQuestion);
   $('#next-nav-std')?.addEventListener('click', nextQuestion);
-  $('#submit-exam-btn')?.addEventListener('click', () => {
-    if (examMode === 'standard') {
-      ui.showConfirmationDialog('Submit Exam', 'Are you sure?', 'warning').then(ok => { if (ok) finishExam(); });
-    }
-  });
+  // Route Submit and keyboard-driven "Next on last question" through the
+  // same confirmation flow so behaviour is consistent.
+  $('#submit-exam-btn')?.addEventListener('click', promptAndFinish);
   $('#flag-btn-std')?.addEventListener('click', toggleFlag);
 
   // Revision mode buttons
@@ -875,6 +1180,67 @@ function setupEventListeners() {
   // Fullscreen / distraction
   $('#fullscreen-btn')?.addEventListener('click', toggleFullscreen);
   $('#distraction-btn')?.addEventListener('click', toggleDistractionFree);
+}
+
+function updateNavButtons() {
+  if (examMode === 'shared') return;
+  const isStd = examMode === 'standard';
+  const isRev = examMode === 'revision';
+  if (!isStd && !isRev) return;
+
+  const atFirst = currentQuestionIndex === 0;
+  const atLast = currentQuestionIndex === totalQuestions - 1;
+
+  const prevBtns = [
+    document.getElementById(isStd ? 'prev-btn-std' : 'prev-btn-rev'),
+    isStd ? document.getElementById('prev-nav-std') : null,
+  ].filter(Boolean);
+
+  const nextBtns = [
+    document.getElementById(isStd ? 'next-btn-std' : 'next-btn-rev'),
+    isStd ? document.getElementById('next-nav-std') : null,
+  ].filter(Boolean);
+
+  // Hide "Previous" on the first question. `visibility: hidden` keeps the
+  // button occupying its slot so the Next button never jumps around as the
+  // user navigates between first/non-first questions.
+  for (const btn of prevBtns) {
+    btn.style.visibility = atFirst ? 'hidden' : '';
+    btn.setAttribute('aria-hidden', atFirst ? 'true' : 'false');
+    btn.tabIndex = atFirst ? -1 : 0;
+  }
+
+  // Standard mode: hide "Next" on the last question — Submit takes over.
+  // Revision mode: keep Next visible — it is relabelled "Submit Exam" there.
+  const hideNext = isStd && atLast;
+  for (const btn of nextBtns) {
+    btn.style.visibility = hideNext ? 'hidden' : '';
+    btn.setAttribute('aria-hidden', hideNext ? 'true' : 'false');
+    btn.tabIndex = hideNext ? -1 : 0;
+  }
+}
+
+async function promptAndFinish() {
+  if (examMode !== 'standard') return;
+  if (isFinished) return;
+
+  let ok = false;
+  try {
+    ok = await ui.showConfirmationDialog(
+      'Submit Exam',
+      'Are you sure? Unanswered questions will be marked wrong.',
+      'warning'
+    );
+  } catch (err) {
+    // If the dialog itself fails, do NOT auto-submit. Surface the
+    // failure so the button isn't a silent no-op.
+    console.error('[ExamRoom] Submit confirmation failed:', err);
+    ui.showToast('Could not open confirmation dialog. Please try again.', 'error');
+    return;
+  }
+  if (!ok) return;
+
+  await finishExam();
 }
 
 function updateProgress() {
@@ -921,7 +1287,7 @@ function showSubscriptionCard(onClose) {
         <strong>📘 Premium topics</strong>
         <p>Subscribe to unlock all topics.</p>
       </div>
-      <button onclick="router.navigateTo('subscription')" class="subscribe-now-btn">Subscribe</button>
+      <button class="subscribe-now-btn" id="examRoomSubscribeBtn">Subscribe</button>
       <span class="close-card" id="closeSubscriptionCard"><i class="fas fa-times"></i></span>
     </div>
   `;
@@ -930,6 +1296,15 @@ function showSubscriptionCard(onClose) {
     card.remove();
     if (onClose) onClose();
   });
+  // Route Subscribe through the redirect module so a mid-flight login
+  // bounce still lands the user back here when they have a plan.
+  const subBtn = document.getElementById('examRoomSubscribeBtn');
+  if (subBtn) {
+    subBtn.addEventListener('click', () => {
+      card.remove();
+      redirect.navigateWithReturn('subscription', 'subscription_required');
+    });
+  }
 }
 
 window.addEventListener('beforeunload', () => {
@@ -938,11 +1313,33 @@ window.addEventListener('beforeunload', () => {
   if (globalTimerInstance) globalTimerInstance.stop();
   examChat.stopChat();
   examEngine.autoSave();
+  // ── SLIDE IMAGE: release all object-URLs so blobs can be GC'd
+  if (_currentImageUrl) {
+    URL.revokeObjectURL(_currentImageUrl);
+    _currentImageUrl = null;
+  }
+  for (const url of _sharedImageUrls) {
+    try { URL.revokeObjectURL(url); } catch { /* ignore */ }
+  }
+  _sharedImageUrls.clear();
 });
 
 export function destroy() {
+  // Unregister the state adapter so a subsequent page load does not
+  // inherit a stale closure over this page's in-memory state.
+  try { redirect.unregisterStateAdapter('exam-room'); } catch { /* ignore */ }
+
   if (autoSaveInterval) clearInterval(autoSaveInterval);
   if (timerInstance) timerInstance.stop();
   if (globalTimerInstance) globalTimerInstance.stop();
   examChat.stopChat();
+  // ── SLIDE IMAGE: release all object-URLs so blobs can be GC'd
+  if (_currentImageUrl) {
+    URL.revokeObjectURL(_currentImageUrl);
+    _currentImageUrl = null;
+  }
+  for (const url of _sharedImageUrls) {
+    try { URL.revokeObjectURL(url); } catch { /* ignore */ }
+  }
+  _sharedImageUrls.clear();
 }

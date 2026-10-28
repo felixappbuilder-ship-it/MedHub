@@ -1,5 +1,5 @@
 // public/service-worker.js
-const CACHE_VERSION = 'v3.1';
+const CACHE_VERSION = 'v3.7'; // <--- Bumped for new assets
 const CACHE_NAME = `medexam-${CACHE_VERSION}`;
 
 // ====== DECRYPTION KEY (MUST match encrypt-json.js) ======
@@ -53,37 +53,71 @@ async function decryptData(encryptedText) {
 
 // ====== ASSETS TO CACHE ======
 const STATIC_ASSETS = [
-    // Application shell
+    // ==========================================
+    // 1. Application Shell
+    // ==========================================
     '/',
     '/index.html',
     '/manifest.json',
 
-    // Assets
+    // ==========================================
+    // 2. Images & Media
+    // ==========================================
     '/assets/images/logo 1.png',
     '/assets/images/logo-144x144.png',
     '/assets/images/logo.jpeg',
     '/assets/images/logo.png',
     '/assets/images/qr-code.jpeg',
+    '/assets/images/microscope.jpg',
+    '/assets/images/splash.png',
+    '/assets/images/medvix-brain.png',
 
-    // Global CSS
+    // ==========================================
+    // 3. Third-Party Libraries & CSS
+    // ==========================================
+    '/libs/fontawesome/css/all.min.css',
+    '/libs/fontawesome/webfonts/fa-brands-400.woff2',
+    '/libs/fontawesome/webfonts/fa-regular-400.woff2',
+    '/libs/fontawesome/webfonts/fa-solid-900.woff2',
+    '/libs/fontawesome/webfonts/fa-v4compatibility.woff2',
+    '/libs/fontkit/fontkit.js',
+    '/libs/pdfjs/pdf.min.js',
+    '/libs/pdfjs/pdf.worker.min.js',
+    '/libs/pdfkit.standalone.js',
+    '/libs/public/libs/webfonts/fa-brands-400.ttf',
+    '/libs/public/libs/webfonts/fa-regular-400.ttf',
+    '/libs/public/libs/webfonts/fa-solid-900.ttf',
+    '/libs/public/libs/webfonts/fa-v4compatibility.ttf',
+    '/libs/quill/quill.min.js',
+    '/libs/quill/quill.snow.css',
+    '/libs/blob-stream/blob-stream.js',
+    '/libs/chart/chart.min.js',
+
+    // ==========================================
+    // 4. Page CSS (One by One)
+    // ==========================================
     '/css/common.css',
-
-    // Page‑specific CSS (all)
+    '/css/agent-registration.css',
+    '/css/agent-terms.css',
     '/css/ai.css',
-    '/css/content.css',
     '/css/exam-room.css',
     '/css/exam-settings.css',
     '/css/forgot-password.css',
     '/css/free-trial.css',
     '/css/locked.css',
     '/css/login.css',
-    '/css/notes.css',
+    
     '/css/notifications.css',
+    '/css/offline.css',
     '/css/payment.css',
+   
     '/css/performance.css',
     '/css/privacy.css',
     '/css/profile.css',
+    '/css/referral.css',
+    '/css/resource-browser.css',
     '/css/results.css',
+    '/css/shared-exam.css',
     '/css/shared-note.css',
     '/css/signup.css',
     '/css/subject-specific.css',
@@ -93,57 +127,37 @@ const STATIC_ASSETS = [
     '/css/viewer.css',
     '/css/welcome.css',
 
-    // Font Awesome (if served from /css/ – adjust if from /libs/)
-    '/css/fa-brands-400.woff2',
-    '/css/fa-regular-400.woff2',
-    '/css/fa-solid-900.woff2',
-    '/css/fa-v4compatibility.woff2',
-
-    // Core scripts (shared)
-    '/scripts/app.js',
-    '/scripts/auth.js',
-    '/scripts/db.js',
-    '/scripts/page-loader.js',
-    '/scripts/page-manager.js',
-    '/scripts/router.js',
-    '/scripts/ui.js',
-    '/scripts/utils.js',
-    '/scripts/events.js',
-    '/scripts/updates.js',
-    '/scripts/security.js',
-    '/scripts/sync.js',
-    '/scripts/subscription.js',
-    '/scripts/notifications.js',
-    '/scripts/referral.js',
-    '/scripts/timeVerifier.js',
-    '/scripts/convex-client.js',
-    '/scripts/exam-engine.js',
-    '/scripts/questions.js',
-    '/scripts/analytics.js',
-    '/scripts/performance-rating-v2.js',
-    '/scripts/performance-ai.js',
-    '/scripts/pdf-engine.js',
-    '/scripts/content.js',
-    '/scripts/resource-browser.js',
-    '/scripts/viewer.js',
-    '/scripts/exam-chat.js',
-    '/scripts/timer.js',
-    '/scripts/validation.js',
+    // ==========================================
+    // 5. Core Scripts
+    // ==========================================
     '/scripts/help.js',
-    '/scripts/offline.js',
+    '/scripts/index.js',
+    '/scripts/index2.js',
+    
+    '/scripts/web.js',
 
-    // Page‑specific scripts (all pages)
+    // ==========================================
+    // 6. Page Scripts (One by One)
+    // ==========================================
+    '/scripts/pages/agent-registration.js',
+    '/scripts/pages/agent-terms.js',
     '/scripts/pages/ai.js',
+    '/scripts/pages/error.js',
     '/scripts/pages/exam-room.js',
     '/scripts/pages/exam-settings.js',
     '/scripts/pages/forgot-password.js',
     '/scripts/pages/free-trial.js',
     '/scripts/pages/locked.js',
     '/scripts/pages/login.js',
-    '/scripts/pages/notes.js',
+   
+    '/scripts/pages/notifications.js',
+    '/scripts/pages/offline.js',
     '/scripts/pages/payment.js',
+   
     '/scripts/pages/performance.js',
+    '/scripts/pages/privacy.js',
     '/scripts/pages/profile.js',
+    '/scripts/pages/referral.js',
     '/scripts/pages/resource-browser.js',
     '/scripts/pages/results.js',
     '/scripts/pages/shared-exam.js',
@@ -152,48 +166,44 @@ const STATIC_ASSETS = [
     '/scripts/pages/subject-specific.js',
     '/scripts/pages/subjects.js',
     '/scripts/pages/subscription.js',
+    '/scripts/pages/terms.js',
+    '/scripts/pages/viewer.js',
     '/scripts/pages/welcome.js',
 
-    // Page HTML fragments (all pages)
+    // ==========================================
+    // 7. Page HTML Fragments (One by One)
+    // ==========================================
+    '/pages/agent-registration.html',
+    '/pages/agent-terms.html',
     '/pages/ai.html',
+    '/pages/error.html',
     '/pages/exam-room.html',
     '/pages/exam-settings.html',
     '/pages/forgot-password.html',
     '/pages/free-trial.html',
     '/pages/locked.html',
     '/pages/login.html',
-    '/pages/notes.html',
+    
     '/pages/notifications.html',
+    '/pages/offline.html',
     '/pages/payment.html',
+    
     '/pages/performance.html',
     '/pages/privacy.html',
     '/pages/profile.html',
+    '/pages/referral.html',
     '/pages/resource-browser.html',
     '/pages/results.html',
-    '/pages/shared-exam.html',
-    '/pages/shared-note.html',
     '/pages/signup.html',
     '/pages/subject-specific.html',
     '/pages/subjects.html',
     '/pages/subscription.html',
     '/pages/terms.html',
-    '/pages/welcome.html',
-
-    // Offline fallback
-    '/pages/offline.html',
-
-    // Libraries (if served from /libs/)
-    '/libs/quill/quill.snow.css',
-    '/libs/quill/quill.min.js',
-    '/libs/chart/chart.min.js',
-    '/libs/pdfkit.standalone.js',
-    '/libs/pdfjs/pdf.min.js',
-    '/libs/pdfjs/pdf.worker.min.js',
-    '/libs/fontawesome/css/all.min.css',
-    '/libs/fontawesome/webfonts/fa-brands-400.woff2',
-    '/libs/fontawesome/webfonts/fa-regular-400.woff2',
-    '/libs/fontawesome/webfonts/fa-solid-900.woff2',
-    '/libs/fontawesome/webfonts/fa-v4compatibility.woff2',
+    '/pages/viewer.html',
+    '/pages/welcome.html'
+    
+    // NOTE: shared-exam.html and shared-note.html are intentionally omitted
+    // from the cache here because they are dynamic shared links.
 ];
 
 // ====== FILES THAT MUST NEVER BE CACHED ======
@@ -223,7 +233,8 @@ self.addEventListener('install', event => {
                         .catch(err => console.warn(`[SW] Failed to cache ${url}:`, err.message))
                 )
             );
-        }).then(() => self.skipWaiting())
+        })
+        // NOTE: skipWaiting() removed to prevent abrupt control-takeover reloads
     );
 });
 
@@ -233,7 +244,7 @@ self.addEventListener('activate', event => {
     event.waitUntil(
         caches.keys().then(keys =>
             Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
-        ).then(() => self.clients.claim())
+        )
     );
 });
 
