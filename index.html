@@ -1,419 +1,826 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- ============================================================
-         MedVix — hostname-based launch router.
-         MUST be the first thing in <head>, above every meta tag and
-         stylesheet. Runs synchronously before the browser parses the
-         rest of the document, so the Play Store redirect fires before
-         any resource is fetched and no flash of the SPA is visible.
+         MEDVIX — EARLY HOSTNAME-BASED LAUNCH ROUTER
+
+         Must remain the first executable script in <head>.
+         Runs synchronously without waiting for DOMContentLoaded,
+         window.onload, or any other page resources.
+
+         ROUTING:
+         app.medvix.co.ke / www.app.medvix.co.ke
+           Android       -> Google Play Store
+           Other devices -> /download-qr.html
+
+         medvix.co.ke / www.medvix.co.ke
+           -> Normal website
+
+         Unknown hostnames
+           -> No redirect
          ============================================================ -->
- 
-<script>
-(function medvixLaunchRouter() {
-    'use strict';
 
-    var PLAY_STORE =
-        'https://play.google.com/store/apps/details?id=com.medhurb.app';
+    <script>
+    (function medvixLaunchRouter() {
+        'use strict';
 
-    var APP_HOSTS = [
-        'app.medvix.co.ke',
-        'www.app.medvix.co.ke'
-    ];
+        var PLAY_STORE =
+            'https://play.google.com/store/apps/details?id=com.medhurb.app';
 
-    var WEB_HOSTS = [
-        'medvix.co.ke',
-        'www.medvix.co.ke'
-    ];
+        var APP_HOSTS = [
+            'app.medvix.co.ke',
+            'www.app.medvix.co.ke'
+        ];
 
-    try {
-        var host = location.hostname.toLowerCase();
-        var path = location.pathname;
+        var WEB_HOSTS = [
+            'medvix.co.ke',
+            'www.medvix.co.ke'
+        ];
 
-        // Main website: always load normally.
-        if (WEB_HOSTS.includes(host)) return;
+        // Recognized social preview crawlers.
+        var SOCIAL_BOTS =
+            /facebookexternalhit|Facebot|WhatsApp|Twitterbot|LinkedInBot|TelegramBot|Slackbot|Discordbot|Googlebot|bingbot|Pinterestbot|SkypeUriPreview|redditbot|Applebot/i;
 
-        // Unknown hostname: no routing.
-        if (!APP_HOSTS.includes(host)) return;
+        try {
+            var host = location.hostname.toLowerCase();
 
-        // Prevent redirect loops on the QR landing page.
-        if (path === '/download-qr.html') return;
+            // ----------------------------------------------------
+            // 1. Main website: never redirect.
+            // ----------------------------------------------------
+            if (WEB_HOSTS.indexOf(host) !== -1) {
+                return;
+            }
 
-        // Protect native Capacitor application.
-        if (
-            window.Capacitor &&
-            typeof window.Capacitor.isNativePlatform === 'function' &&
-            window.Capacitor.isNativePlatform()
-        ) return;
+            // ----------------------------------------------------
+            // 2. Unknown hostnames: leave untouched.
+            // ----------------------------------------------------
+            if (APP_HOSTS.indexOf(host) === -1) {
+                return;
+            }
 
-        // Preserve the original destination.
-        var destination =
-            path + location.search + location.hash;
+            // ----------------------------------------------------
+            // 3. Preserve social preview access.
+            // ----------------------------------------------------
+            var ua = navigator.userAgent || '';
 
-        // Android browser: redirect to Play Store.
-        if (/Android/i.test(navigator.userAgent || '')) {
+            if (SOCIAL_BOTS.test(ua)) {
+                return;
+            }
 
-            var referrer = new URLSearchParams({
-                deep_link: destination || '/'
-            }).toString();
+            // ----------------------------------------------------
+            // 4. Protect the native Capacitor application.
+            // ----------------------------------------------------
 
-            var playUrl = new URL(PLAY_STORE);
+            // Native Capacitor origin protection.
+            var protocol = location.protocol.toLowerCase();
 
-            playUrl.searchParams.set('referrer', referrer);
+            if (
+                protocol === 'capacitor:' ||
+                protocol === 'ionic:'
+            ) {
+                return;
+            }
 
-            location.replace(playUrl.toString());
+            // Native marker protection, if injected by the app.
+            if (window.__MEDVIX_NATIVE_APP__ === true) {
+                return;
+            }
+
+            // Capacitor runtime protection.
+            if (
+                window.Capacitor &&
+                typeof window.Capacitor.isNativePlatform === 'function' &&
+                window.Capacitor.isNativePlatform()
+            ) {
+                return;
+            }
+
+            // ----------------------------------------------------
+            // 5. Detect Android.
+            // ----------------------------------------------------
+            var isAndroid =
+                /Android/i.test(ua) ||
+                /Android/i.test(navigator.platform || '') ||
+                (
+                    navigator.userAgentData &&
+                    navigator.userAgentData.platform === 'Android'
+                );
+
+            // ----------------------------------------------------
+            // 6. Preserve the original destination.
+            // Includes pathname, query parameters and hash.
+            // ----------------------------------------------------
+            var destination =
+                location.pathname +
+                location.search +
+                location.hash;
+
+            destination = destination || '/';
+
+            // ----------------------------------------------------
+            // 7. Android -> Google Play Store.
+            // ----------------------------------------------------
+            if (isAndroid) {
+
+                // Preserve the existing nested encoding convention.
+                var referrer = new URLSearchParams({
+                    deep_link: destination
+                }).toString();
+
+                var playUrl = new URL(PLAY_STORE);
+
+                playUrl.searchParams.set('referrer', referrer);
+
+                // Immediate navigation.
+                location.replace(playUrl.toString());
+
+                return;
+            }
+
+            // ----------------------------------------------------
+            // 8. Non-Android -> QR download page.
+            // ----------------------------------------------------
+            var qrUrl = new URL(
+                '/pages/download-qr.html',
+                location.origin
+            );
+
+            qrUrl.searchParams.set(
+                'target',
+                location.origin + destination
+            );
+
+            location.replace(qrUrl.toString());
+
+        } catch (error) {
+            console.error('[MedVix Launch Router]', error);
+
+            // Emergency Android fallback.
+            if (/Android/i.test(navigator.userAgent || '')) {
+                location.replace(PLAY_STORE);
+            }
+        }
+    })();
+    </script>
+
+
+    <!-- ============================================================
+         MEDVIX — BASIC SEO & DOCUMENT METADATA
+         ============================================================ -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>MedVix – Learn. Practice. Connect. Grow. Achieve.</title>
+
+    <meta
+        name="description"
+        content="MedVix is a medical learning platform providing medical students with notes, textbooks, past papers, visual learning resources, practice questions, AI tutoring and exam preparation tools — all in one place."
+    >
+
+    <meta
+        name="keywords"
+        content="MedVix, medical students, medical learning, medical notes, medical textbooks, past papers, medical questions, anatomy, physiology, biochemistry, histology, pathology, pharmacology, microbiology, Kenya"
+    >
+
+    <meta name="author" content="Vertex Digital Apps">
+    <meta name="application-name" content="MedVix">
+    <meta name="apple-mobile-web-app-title" content="MedVix">
+
+    <!-- Search engine indexing -->
+    <meta
+        name="robots"
+        content="index, follow, max-image-preview:large"
+    >
+
+    <meta
+        name="googlebot"
+        content="index, follow, max-image-preview:large"
+    >
+
+    <!-- Canonical website -->
+    <link
+        rel="canonical"
+        href="https://medvix.co.ke/"
+    >
+
+    <!-- Browser appearance -->
+    <meta name="theme-color" content="#0B172A">
+    <meta name="color-scheme" content="light">
+
+
+    <!-- ============================================================
+         OPEN GRAPH — WHATSAPP, FACEBOOK, LINKEDIN, ETC.
+         ============================================================ -->
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MedVix">
+
+    <meta
+        property="og:title"
+        content="MedVix – Your Medical Learning Platform"
+    >
+
+    <meta
+        property="og:description"
+        content="Access medical notes, textbooks, past papers, visual learning resources, 10,000+ practice questions and more. Everything you need for medical learning, all in one place."
+    >
+
+    <meta
+        property="og:url"
+        content="https://medvix.co.ke/"
+    >
+
+    <meta
+        property="og:image"
+        content="https://medvix.co.ke/assets/images/logo-512x512.png"
+    >
+
+    <meta
+        property="og:image:secure_url"
+        content="https://medvix.co.ke/assets/images/logo-512x512.png"
+    >
+
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+
+    <meta
+        property="og:image:alt"
+        content="MedVix medical learning platform logo"
+    >
+
+    <meta property="og:locale" content="en_KE">
+
+
+    <!-- ============================================================
+         TWITTER / X SOCIAL PREVIEW
+         ============================================================ -->
+
+    <meta name="twitter:card" content="summary">
+
+    <meta
+        name="twitter:title"
+        content="MedVix – Your Medical Learning Platform"
+    >
+
+    <meta
+        name="twitter:description"
+        content="Medical notes, textbooks, past papers, visual resources and 10,000+ practice questions — all in one place."
+    >
+
+    <meta
+        name="twitter:image"
+        content="https://medvix.co.ke/assets/images/logo-512x512.png"
+    >
+
+    <meta
+        name="twitter:image:alt"
+        content="MedVix medical learning platform logo"
+    >
+
+
+    <!-- ============================================================
+         FAVICONS & APP ICONS
+         ============================================================ -->
+
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="512x512"
+        href="/assets/images/logo-512x512.png"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="/assets/images/logo-512x512.png"
+    >
+
+
+    <!-- ============================================================
+         WEB APP MANIFEST & RESOURCE PRELOADS
+         ============================================================ -->
+
+    <link
+        rel="manifest"
+        href="/manifest.json"
+    >
+
+    <link
+        rel="preload"
+        href="/assets/images/splash.png"
+        as="image"
+    >
+
+
+    <!-- ============================================================
+         GLOBAL CSS & THIRD-PARTY LIBRARIES
+         ============================================================ -->
+
+    <link
+        rel="stylesheet"
+        href="./css/common.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/libs/fontawesome/css/all.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/libs/quill/quill.snow.css"
+    >
+
+    <script src="/libs/quill/quill.min.js"></script>
+
+    <script
+        defer
+        src="/libs/chart/chart.min.js"
+    ></script>
+
+    <script src="/libs/pdfjs/pdf.min.js"></script>
+
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc =
+            '/libs/pdfjs/pdf.worker.min.js';
+    </script>
+
+    <script src="/libs/pdfkit.standalone.js"></script>
+
+</head>
+
+<body>
+
+    <!-- ============================================================
+         APPLICATION ROOT
+         ============================================================ -->
+
+    <div id="app-root"></div>
+
+
+    <!-- ============================================================
+         HOME PAGE LOADER
+         ============================================================ -->
+
+    <script>
+    (async function () {
+        try {
+            const res = await fetch('/pages/home.html');
+
+            if (!res.ok) {
+                throw new Error('HTTP ' + res.status);
+            }
+
+            const html = await res.text();
+
+            const doc = new DOMParser().parseFromString(
+                html,
+                'text/html'
+            );
+
+            const section = doc.querySelector('section[data-page]');
+
+            if (!section) {
+                throw new Error('no <section data-page>');
+            }
+
+            // Load page-specific stylesheet.
+            const styleHref = section.dataset.style;
+
+            if (styleHref) {
+                const link = document.createElement('link');
+
+                link.rel = 'stylesheet';
+                link.href = styleHref;
+                link.dataset.page = section.dataset.page;
+
+                document.head.appendChild(link);
+            }
+
+            // Inject home page.
+            document.getElementById('app-root').innerHTML =
+                section.outerHTML;
+
+            // Update document title.
+            document.title =
+                section.dataset.title ||
+                'MedVix — Learn. Practice. Connect. Grow. Achieve.';
+
+        } catch (err) {
+            console.error('[index] failed to load home:', err);
+        }
+    })();
+    </script>
+
+
+    <!-- ============================================================
+         EMOJI → FONT AWESOME REPLACEMENT
+
+         - Loads mappings from /emoji-map.json.
+         - Replaces mapped emoji characters with Font Awesome icons.
+         - Converts bare Font Awesome class strings into <i> elements.
+         - Enhances icon-only buttons with accessible labels.
+         - Cleans emojis from placeholders.
+         - Observes #app-root for dynamically injected content.
+         ============================================================ -->
+
+    <script>
+    (async function () {
+        let PALETTE = {};
+        let EMOJI_MAP = {};
+
+        // --------------------------------------------------------
+        // 1. Load emoji mapping.
+        // --------------------------------------------------------
+
+        try {
+            const res = await fetch('/emoji-map.json', {
+                cache: 'default'
+            });
+
+            if (!res.ok) {
+                throw new Error('HTTP ' + res.status);
+            }
+
+            const data = await res.json();
+
+            PALETTE = (data && data.palette) || {};
+            EMOJI_MAP = (data && data.emojis) || {};
+
+            const count = Object.keys(EMOJI_MAP).length;
+
+            if (!count) {
+                console.warn('[Emoji] emoji-map.json is empty.');
+                return;
+            }
+
+            console.info('[Emoji] Loaded ' + count + ' entries.');
+
+        } catch (err) {
+            console.warn(
+                '[Emoji] Could not load /emoji-map.json:',
+                err
+            );
+
             return;
         }
 
-        // Non-Android: display QR download page.
-        var qrUrl = new URL('/download-qr.html', location.origin);
 
-        qrUrl.searchParams.set(
-            'target',
-            location.origin + destination
+        // --------------------------------------------------------
+        // 2. Helpers.
+        // --------------------------------------------------------
+
+        const escapeRegExp = s =>
+            s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+
+        function resolveColor(name) {
+            if (!name || typeof name !== 'string') {
+                return null;
+            }
+
+            if (
+                name.startsWith('#') ||
+                name.startsWith('rgb')
+            ) {
+                return name;
+            }
+
+            return PALETTE[name] || null;
+        }
+
+
+        const keys = Object.keys(EMOJI_MAP).sort(
+            (a, b) => b.length - a.length
         );
 
-        location.replace(qrUrl.toString());
+        const emojiRegex = new RegExp(
+            keys.map(escapeRegExp).join('|'),
+            'gu'
+        );
 
-    } catch (error) {
-        console.error('[MedVix Router]', error);
-
-        // Safe fallback.
-        if (/Android/i.test(navigator.userAgent || '')) {
-            location.replace(PLAY_STORE);
-        }
-    }
-})();
-</script>
+        const emojiTestRegex = new RegExp(
+            keys.map(escapeRegExp).join('|'),
+            'u'
+        );
 
 
-    <!-- ============================================================
-         Character encoding, viewport and app basics
-         ============================================================ -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
-    <meta name="theme-color" content="#ffffff" />
-    <meta name="color-scheme" content="light" />
-    <meta name="application-name" content="MedVix" />
-    <meta name="referrer" content="strict-origin-when-cross-origin" />
+        const FA_TEXT_REGEX =
+            /^\s*(?:fa-solid|fa-regular|fa-brands|fas|far|fab)(?:\s+fa-[\w-]+)+\s*$/;
 
-    <!-- ============================================================
-         Primary SEO metadata
-         ============================================================ -->
-    <title>MedVix — Learn. Practice. Connect. Grow. Achieve.</title>
-    <meta
-        name="description"
-        content="MedVix is a medical learning companion offering study notes, textbooks, past papers, practice questions and exam preparation tools."
-    />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
-    <meta name="author" content="MedVix" />
-    <!-- Change to https://app.medvix.co.ke/ if you treat the app
-         subdomain as the canonical identity instead. -->
-    <link rel="canonical" href="https://medvix.co.ke/" />
 
-    <!-- ============================================================
-         MedVix — Link Preview Metadata
-         Domains served by this same HTML:
-           https://medvix.co.ke/
-           https://www.medvix.co.ke/
-           https://app.medvix.co.ke/
-           https://www.app.medvix.co.ke/
-         og:url is intentionally omitted because it must identify
-         the exact shared page, not a shared brand identity.
-         ============================================================ -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="MedVix" />
-    <meta
-        property="og:title"
-        content="MedVix — Learn. Practice. Connect. Grow. Achieve."
-    />
-    <meta
-        property="og:description"
-        content="Your medical learning companion. Access study resources, textbooks, past papers, practice questions, and exam preparation tools."
-    />
+        // --------------------------------------------------------
+        // 3. Build Font Awesome icon from class string.
+        // --------------------------------------------------------
 
-    <!-- Shared branding image -->
-    <meta
-        property="og:image"
-        content="https://app.medvix.co.ke/assets/images/logo.png"
-    />
-    <meta
-        property="og:image:secure_url"
-        content="https://app.medvix.co.ke/assets/images/logo.png"
-    />
-    <meta property="og:image:type" content="image/png" />
-    <meta
-        property="og:image:alt"
-        content="MedVix — Learn. Practice. Connect. Grow. Achieve."
-    />
+        function buildIconFromClass(className) {
+            const i = document.createElement('i');
 
-    <!-- X / Twitter -->
-    <meta name="twitter:card" content="summary" />
-    <meta
-        name="twitter:title"
-        content="MedVix — Learn. Practice. Connect. Grow. Achieve."
-    />
-    <meta
-        name="twitter:description"
-        content="Your medical learning companion for study resources, past papers, and exam preparation."
-    />
-    <meta
-        name="twitter:image"
-        content="https://app.medvix.co.ke/assets/images/logo.png"
-    />
-    <meta name="twitter:image:alt" content="MedVix app icon" />
+            let cls = className.trim()
+                .replace(/^fas\b/, 'fa-solid')
+                .replace(/^far\b/, 'fa-regular')
+                .replace(/^fab\b/, 'fa-brands');
 
-    <!-- ============================================================
-         Favicons
-         ============================================================ -->
-    <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/logo.png">
-    <link rel="apple-touch-icon" href="/assets/images/logo.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/logo.png">
+            if (!/^fa-(solid|regular|brands)\b/.test(cls)) {
+                cls = 'fa-solid ' + cls;
+            }
 
-    <!-- ============================================================
-         Manifest & preloads
-         ============================================================ -->
-    <link rel="manifest" href="/manifest.json" />
-    <link rel="preload" href="/assets/images/splash.png" as="image" />
+            i.className = cls;
 
-    <!-- ============================================================
-         Global CSS + third-party libraries
-         ============================================================ -->
-    <link rel="stylesheet" href="./css/common.css" />
-    <link rel="stylesheet" href="/libs/fontawesome/css/all.min.css" />
-    <link rel="stylesheet" href="/libs/quill/quill.snow.css">
+            i.setAttribute('aria-hidden', 'true');
 
-    <script src="/libs/quill/quill.min.js"></script>
-    <script defer src="/libs/chart/chart.min.js"></script>
-    <script src="/libs/pdfjs/pdf.min.js"></script>
-    <script>
-        pdfjsLib.GlobalWorkerOptions.workerSrc = '/libs/pdfjs/pdf.worker.min.js';
-    </script>
-    <script src="/libs/pdfkit.standalone.js"></script>
-</head>
-<body>
-  <div id="app-root"></div>
-
-  <script>
-    (async function () {
-      try {
-        const res = await fetch('/pages/home.html');
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        const html = await res.text();
-
-        const doc = new DOMParser().parseFromString(html, 'text/html');
-        const section = doc.querySelector('section[data-page]');
-        if (!section) throw new Error('no <section data-page>');
-
-        const styleHref = section.dataset.style;
-        if (styleHref) {
-          const link = document.createElement('link');
-          link.rel = 'stylesheet';
-          link.href = styleHref;
-          link.dataset.page = section.dataset.page;
-          document.head.appendChild(link);
+            return i;
         }
 
-        document.getElementById('app-root').innerHTML = section.outerHTML;
-        // Fallback now matches the <head> title so the tab/preview
-        // never reverts to the old "MedHub" name.
-        document.title = section.dataset.title || 'MedVix — Learn. Practice. Connect. Grow. Achieve.';
-      } catch (err) {
-        console.error('[index] failed to load home:', err);
-      }
-    })();
-  </script>
 
-  <!-- ============================================================
-     EMOJI → FONT AWESOME REPLACEMENT
-     - Loads the mapping from /emoji-map.json
-     - Replaces emoji characters with <i class="fa-solid ...">
-     - Converts text nodes that are just an FA class string
-       (e.g. "fa-solid fa-bone") into real <i> elements
-     - Watches #app-root so newly-injected pages get processed
-     ============================================================ -->
-  <script>
-  (async function () {
-    let PALETTE = {};
-    let EMOJI_MAP = {};
+        // --------------------------------------------------------
+        // 4. Build icon from emoji map entry.
+        // --------------------------------------------------------
 
-    // ---- Load map ----
-    try {
-      const res = await fetch('/emoji-map.json', { cache: 'default' });
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      const data = await res.json();
-      PALETTE   = (data && data.palette) || {};
-      EMOJI_MAP = (data && data.emojis)  || {};
-      const count = Object.keys(EMOJI_MAP).length;
-      if (!count) {
-        console.warn('[Emoji] emoji-map.json is empty.');
-        return;
-      }
-      console.info('[Emoji] Loaded ' + count + ' entries.');
-    } catch (err) {
-      console.warn('[Emoji] Could not load /emoji-map.json:', err);
-      return;
-    }
+        function buildIconFromEntry(info) {
+            const i = document.createElement('i');
 
-    // ---- Helpers ----
-    const escapeRegExp = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            i.className = 'fa-solid ' + info.icon;
 
-    function resolveColor(name) {
-      if (!name || typeof name !== 'string') return null;
-      if (name.startsWith('#') || name.startsWith('rgb')) return name;
-      return PALETTE[name] || null;
-    }
+            i.setAttribute('aria-hidden', 'true');
 
-    const keys = Object.keys(EMOJI_MAP).sort((a, b) => b.length - a.length);
-    const emojiRegex     = new RegExp(keys.map(escapeRegExp).join('|'), 'gu');
-    const emojiTestRegex = new RegExp(keys.map(escapeRegExp).join('|'), 'u');
+            if (info.label) {
+                i.title = info.label;
+            }
 
-    const FA_TEXT_REGEX = /^\s*(?:fa-solid|fa-regular|fa-brands|fas|far|fab)(?:\s+fa-[\w-]+)+\s*$/;
+            const color = resolveColor(info.color);
 
-    function buildIconFromClass(className) {
-      const i = document.createElement('i');
-      let cls = className.trim()
-        .replace(/^fas\b/, 'fa-solid')
-        .replace(/^far\b/, 'fa-regular')
-        .replace(/^fab\b/, 'fa-brands');
-      if (!/^fa-(solid|regular|brands)\b/.test(cls)) cls = 'fa-solid ' + cls;
-      i.className = cls;
-      i.setAttribute('aria-hidden', 'true');
-      return i;
-    }
+            if (color) {
+                i.style.color = color;
+            }
 
-    function buildIconFromEntry(info) {
-      const i = document.createElement('i');
-      i.className = 'fa-solid ' + info.icon;
-      i.setAttribute('aria-hidden', 'true');
-      if (info.label) i.title = info.label;
-      const color = resolveColor(info.color);
-      if (color) i.style.color = color;
-      return i;
-    }
-
-    // ---- Replace emojis in text nodes ----
-    function replaceEmojis(root) {
-      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
-        acceptNode(node) {
-          return node.nodeValue && emojiTestRegex.test(node.nodeValue)
-            ? NodeFilter.FILTER_ACCEPT
-            : NodeFilter.FILTER_REJECT;
-        }
-      });
-
-      const textNodes = [];
-      while (walker.nextNode()) textNodes.push(walker.currentNode);
-
-      textNodes.forEach(node => {
-        const text = node.nodeValue;
-        const fragment = document.createDocumentFragment();
-        let lastIndex = 0;
-        let match;
-
-        emojiRegex.lastIndex = 0;
-        while ((match = emojiRegex.exec(text)) !== null) {
-          if (match.index > lastIndex) {
-            fragment.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
-          }
-          const emoji = match[0];
-          const info = EMOJI_MAP[emoji];
-          fragment.appendChild(info ? buildIconFromEntry(info) : document.createTextNode(emoji));
-          lastIndex = emojiRegex.lastIndex;
+            return i;
         }
 
-        if (lastIndex < text.length) {
-          fragment.appendChild(document.createTextNode(text.slice(lastIndex)));
+
+        // --------------------------------------------------------
+        // 5. Replace emojis in text nodes.
+        // --------------------------------------------------------
+
+        function replaceEmojis(root) {
+            const walker = document.createTreeWalker(
+                root,
+                NodeFilter.SHOW_TEXT,
+                {
+                    acceptNode(node) {
+                        return node.nodeValue &&
+                            emojiTestRegex.test(node.nodeValue)
+                            ? NodeFilter.FILTER_ACCEPT
+                            : NodeFilter.FILTER_REJECT;
+                    }
+                }
+            );
+
+            const textNodes = [];
+
+            while (walker.nextNode()) {
+                textNodes.push(walker.currentNode);
+            }
+
+            textNodes.forEach(node => {
+                const text = node.nodeValue;
+
+                const fragment =
+                    document.createDocumentFragment();
+
+                let lastIndex = 0;
+                let match;
+
+                emojiRegex.lastIndex = 0;
+
+                while (
+                    (match = emojiRegex.exec(text)) !== null
+                ) {
+                    if (match.index > lastIndex) {
+                        fragment.appendChild(
+                            document.createTextNode(
+                                text.slice(lastIndex, match.index)
+                            )
+                        );
+                    }
+
+                    const emoji = match[0];
+                    const info = EMOJI_MAP[emoji];
+
+                    fragment.appendChild(
+                        info
+                            ? buildIconFromEntry(info)
+                            : document.createTextNode(emoji)
+                    );
+
+                    lastIndex = emojiRegex.lastIndex;
+                }
+
+                if (lastIndex < text.length) {
+                    fragment.appendChild(
+                        document.createTextNode(
+                            text.slice(lastIndex)
+                        )
+                    );
+                }
+
+                if (node.parentNode) {
+                    node.parentNode.replaceChild(
+                        fragment,
+                        node
+                    );
+                }
+            });
         }
 
-        node.parentNode.replaceChild(fragment, node);
-      });
-    }
 
-    // ---- Replace bare FA class strings ----
-    function replaceFAClassText(root) {
-      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
-        acceptNode(node) {
-          return node.nodeValue && FA_TEXT_REGEX.test(node.nodeValue)
-            ? NodeFilter.FILTER_ACCEPT
-            : NodeFilter.FILTER_REJECT;
+        // --------------------------------------------------------
+        // 6. Replace bare Font Awesome class strings.
+        // --------------------------------------------------------
+
+        function replaceFAClassText(root) {
+            const walker = document.createTreeWalker(
+                root,
+                NodeFilter.SHOW_TEXT,
+                {
+                    acceptNode(node) {
+                        return node.nodeValue &&
+                            FA_TEXT_REGEX.test(node.nodeValue)
+                            ? NodeFilter.FILTER_ACCEPT
+                            : NodeFilter.FILTER_REJECT;
+                    }
+                }
+            );
+
+            const textNodes = [];
+
+            while (walker.nextNode()) {
+                textNodes.push(walker.currentNode);
+            }
+
+            textNodes.forEach(node => {
+                const icon = buildIconFromClass(
+                    node.nodeValue.trim()
+                );
+
+                if (node.parentNode) {
+                    node.parentNode.replaceChild(
+                        icon,
+                        node
+                    );
+                }
+            });
         }
-      });
 
-      const textNodes = [];
-      while (walker.nextNode()) textNodes.push(walker.currentNode);
 
-      textNodes.forEach(node => {
-        const icon = buildIconFromClass(node.nodeValue.trim());
-        node.parentNode.replaceChild(icon, node);
-      });
-    }
+        // --------------------------------------------------------
+        // 7. Improve accessibility of icon-only buttons.
+        // --------------------------------------------------------
 
-    // ---- Aria-label icon-only buttons ----
-    function enhanceIconButtons(root) {
-      root.querySelectorAll('button, a').forEach(el => {
-        const icons = el.querySelectorAll('i.fa-solid, i.fa-regular, i.fa-brands');
-        const text  = el.textContent.trim();
-        if (icons.length === 1 && text === '') {
-          const label = icons[0].title || 'Button';
-          if (!el.getAttribute('aria-label')) el.setAttribute('aria-label', label);
-          if (!el.title) el.title = label;
+        function enhanceIconButtons(root) {
+            root.querySelectorAll('button, a').forEach(el => {
+                const icons = el.querySelectorAll(
+                    'i.fa-solid, i.fa-regular, i.fa-brands'
+                );
+
+                const text = el.textContent.trim();
+
+                if (icons.length === 1 && text === '') {
+                    const label = icons[0].title || 'Button';
+
+                    if (!el.getAttribute('aria-label')) {
+                        el.setAttribute('aria-label', label);
+                    }
+
+                    if (!el.title) {
+                        el.title = label;
+                    }
+                }
+            });
         }
-      });
-    }
 
-    // ---- Strip emojis from placeholders ----
-    function cleanPlaceholders(root) {
-      root.querySelectorAll('[placeholder]').forEach(el => {
-        const ph = el.getAttribute('placeholder');
-        if (!ph) return;
-        emojiRegex.lastIndex = 0;
-        const cleaned = ph.replace(emojiRegex, '').trim();
-        if (cleaned !== ph) el.setAttribute('placeholder', cleaned);
-      });
-    }
 
-    function process(root) {
-      if (!root) return;
-      if (root.nodeType !== 1 && root.nodeType !== 9) return;
-      try {
-        replaceEmojis(root);
-        replaceFAClassText(root);
-        enhanceIconButtons(root);
-        cleanPlaceholders(root);
-      } catch (err) {
-        console.warn('[Emoji] process() failed:', err);
-      }
-    }
+        // --------------------------------------------------------
+        // 8. Strip emojis from placeholders.
+        // --------------------------------------------------------
 
-    // ---- Initial pass ----
-    process(document.body);
+        function cleanPlaceholders(root) {
+            root.querySelectorAll('[placeholder]').forEach(el => {
+                const ph = el.getAttribute('placeholder');
 
-    // ---- Watch the SPA mount point and any late DOM changes ----
-    const observer = new MutationObserver(mutations => {
-      mutations.forEach(m => {
-        if (m.type === 'characterData' && m.target && m.target.parentNode) {
-          process(m.target.parentNode);
-          return;
+                if (!ph) {
+                    return;
+                }
+
+                emojiRegex.lastIndex = 0;
+
+                const cleaned = ph
+                    .replace(emojiRegex, '')
+                    .trim();
+
+                if (cleaned !== ph) {
+                    el.setAttribute('placeholder', cleaned);
+                }
+            });
         }
-        m.addedNodes.forEach(node => {
-          if (node.nodeType === 1) {
-            process(node);
-          } else if (node.nodeType === 3 && node.parentNode && node.parentNode.nodeType === 1) {
-            process(node.parentNode);
-          }
+
+
+        // --------------------------------------------------------
+        // 9. Process DOM nodes.
+        // --------------------------------------------------------
+
+        function process(root) {
+            if (!root) {
+                return;
+            }
+
+            if (
+                root.nodeType !== 1 &&
+                root.nodeType !== 9
+            ) {
+                return;
+            }
+
+            try {
+                replaceEmojis(root);
+                replaceFAClassText(root);
+                enhanceIconButtons(root);
+                cleanPlaceholders(root);
+
+            } catch (err) {
+                console.warn(
+                    '[Emoji] process() failed:',
+                    err
+                );
+            }
+        }
+
+
+        // --------------------------------------------------------
+        // 10. Initial processing.
+        // --------------------------------------------------------
+
+        process(document.body);
+
+
+        // --------------------------------------------------------
+        // 11. Observe dynamically injected DOM content.
+        // --------------------------------------------------------
+
+        const observer = new MutationObserver(mutations => {
+            mutations.forEach(m => {
+
+                if (
+                    m.type === 'characterData' &&
+                    m.target &&
+                    m.target.parentNode
+                ) {
+                    process(m.target.parentNode);
+                    return;
+                }
+
+                m.addedNodes.forEach(node => {
+
+                    if (node.nodeType === 1) {
+                        process(node);
+
+                    } else if (
+                        node.nodeType === 3 &&
+                        node.parentNode &&
+                        node.parentNode.nodeType === 1
+                    ) {
+                        process(node.parentNode);
+                    }
+
+                });
+            });
         });
-      });
-    });
 
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true,
-      characterData: true
-    });
-  })();
-  </script>
 
-  <script type="module" src="/scripts/app.js"></script>
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true,
+            characterData: true
+        });
+
+    })();
+    </script>
+
+
+    <!-- ============================================================
+         MAIN APPLICATION MODULE
+         ============================================================ -->
+
+    <script
+        type="module"
+        src="/scripts/app.js"
+    ></script>
+
 </body>
 </html>
