@@ -27,268 +27,599 @@
     >
 
     <style>
-        :root {
-            --primary: #0B172A;
-            --accent: #2563EB;
-            --background: #F4F7FB;
-            --text: #172033;
-            --muted: #64748B;
-            --border: #E2E8F0;
-            --white: #FFFFFF;
-            --success: #16A34A;
-        }
+    
+:root {
+    --primary: #0B172A;
+    --accent: #2563EB;
+    --background: #F4F7FB;
+    --text: #172033;
+    --muted: #64748B;
+    --border: #E2E8F0;
+    --white: #FFFFFF;
+    --success: #16A34A;
+}
 
-        * {
-            box-sizing: border-box;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        body {
-            margin: 0;
-            min-height: 100vh;
-            font-family: Arial, Helvetica, sans-serif;
-            background:
-                radial-gradient(
-                    circle at top,
-                    #E5EDFF 0%,
-                    var(--background) 55%
-                );
-            color: var(--text);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+html {
+    min-height: 100%;
+    scroll-behavior: smooth;
+}
 
-        header {
-            width: 100%;
-            padding: 22px;
-            display: flex;
-            justify-content: center;
-        }
+body {
+    margin: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding:
+        env(safe-area-inset-top)
+        env(safe-area-inset-right)
+        env(safe-area-inset-bottom)
+        env(safe-area-inset-left);
 
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 21px;
-            font-weight: 800;
-            color: var(--primary);
-            text-decoration: none;
-        }
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
 
-        .brand img {
-            width: 38px;
-            height: 38px;
-            object-fit: contain;
-        }
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            #E4EDFF 0%,
+            #F4F7FB 48%,
+            #F8FAFC 100%
+        );
 
-        main {
-            width: 100%;
-            max-width: 460px;
-            padding: 16px 20px 40px;
-            margin: auto 0;
-        }
+    display: flex;
+    flex-direction: column;
+}
 
-        .card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 30px 24px;
-            text-align: center;
-            box-shadow: 0 15px 45px rgba(15, 23, 42, 0.08);
-        }
+/* ============================================================
+   HEADER
+============================================================ */
 
-        .eyebrow {
-            display: inline-block;
-            padding: 7px 12px;
-            border-radius: 30px;
-            background: #EFF6FF;
-            color: var(--accent);
-            font-size: 12px;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
+header {
+    width: 100%;
+    padding: 18px 24px;
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+}
 
-        h1 {
-            font-size: 27px;
-            line-height: 1.2;
-            margin: 0 0 12px;
-            color: var(--primary);
-        }
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
 
-        .description {
-            font-size: 14px;
-            line-height: 1.7;
-            color: var(--muted);
-            margin: 0 auto 24px;
-            max-width: 340px;
-        }
+    color: var(--primary);
+    font-size: 22px;
+    font-weight: 800;
+    text-decoration: none;
+}
 
-        .qr-wrapper {
-            width: 300px;
-            max-width: 100%;
-            min-height: 300px;
-            margin: 0 auto 20px;
-            padding: 10px;
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #FFFFFF;
-        }
+.brand img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
 
-        #qrcode {
-            width: 280px;
-            height: 280px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+/* ============================================================
+   MAIN LAYOUT
+============================================================ */
 
-        #qrcode canvas,
-        #qrcode img {
-            max-width: 100%;
-            max-height: 100%;
-            display: block;
-        }
+main {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 28px 24px 40px;
+}
 
-        .loading {
-            color: var(--muted);
-            font-size: 13px;
-        }
+/* ============================================================
+   MAIN CARD
+============================================================ */
 
-        .instruction {
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--primary);
-            margin: 0 0 8px;
-        }
+.card {
+    width: 100%;
+    background: var(--white);
 
-        .sub-instruction {
-            font-size: 12px;
-            color: var(--muted);
-            line-height: 1.6;
-            margin: 0 0 20px;
-        }
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 26px;
 
-        .referral {
-            display: none;
-            background: #F0FDF4;
-            border: 1px solid #BBF7D0;
-            border-radius: 12px;
-            padding: 11px;
-            margin-bottom: 18px;
-            font-size: 12px;
-            color: #166534;
-        }
+    padding: 36px;
 
-        .referral strong {
-            display: block;
-            margin-top: 4px;
-            font-size: 14px;
-            overflow-wrap: anywhere;
-        }
+    box-shadow:
+        0 20px 60px rgba(15, 23, 42, 0.07),
+        0 3px 12px rgba(15, 23, 42, 0.03);
 
-        .url-box {
-            background: #F8FAFC;
-            border: 1px solid var(--border);
-            padding: 12px;
-            border-radius: 10px;
-            text-align: left;
-            margin-bottom: 14px;
-        }
+    text-align: center;
+}
 
-        .url-label {
-            display: block;
-            font-size: 10px;
-            color: var(--muted);
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 6px;
-        }
+/* ============================================================
+   INTRODUCTION
+============================================================ */
 
-        #target-url {
-            display: block;
-            font-size: 11px;
-            line-height: 1.6;
-            color: #334155;
-            overflow-wrap: anywhere;
-        }
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-        .actions {
-            display: flex;
-            gap: 10px;
-            flex-direction: column;
-        }
+    padding: 8px 14px;
 
-        button,
-        .open-link {
-            width: 100%;
-            border: 0;
-            border-radius: 11px;
-            padding: 14px;
-            font-size: 14px;
-            font-weight: 700;
-            cursor: pointer;
-            text-decoration: none;
-            display: block;
-            text-align: center;
-        }
+    border-radius: 30px;
+    background: #EFF6FF;
 
-        .primary-button {
-            background: var(--primary);
-            color: white;
-        }
+    color: var(--accent);
 
-        .secondary-button {
-            background: #EFF6FF;
-            color: var(--accent);
-        }
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.7px;
 
-        button:active,
-        .open-link:active {
-            transform: scale(0.98);
-        }
+    margin-bottom: 18px;
+}
 
-        #status {
-            min-height: 18px;
-            font-size: 12px;
-            color: var(--success);
-            margin-top: 12px;
-        }
+h1 {
+    color: var(--primary);
 
-        .error {
-            color: #DC2626;
-            font-size: 13px;
-            line-height: 1.6;
-        }
+    font-size: clamp(24px, 4vw, 34px);
+    line-height: 1.2;
 
-        footer {
-            padding: 20px;
-            font-size: 11px;
-            color: var(--muted);
-            text-align: center;
-        }
+    margin: 0 0 12px;
+    font-weight: 800;
+}
 
-        @media (max-width: 380px) {
-            .card {
-                padding: 25px 17px;
-            }
+.description {
+    max-width: 520px;
 
-            h1 {
-                font-size: 23px;
-            }
+    margin: 0 auto 30px;
 
-            .qr-wrapper {
-                width: 270px;
-                min-height: 270px;
-            }
+    color: var(--muted);
 
-            #qrcode {
-                width: 250px;
-                height: 250px;
-            }
-        }
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* ============================================================
+   CONTENT GRID
+   Desktop: QR left, instructions right
+============================================================ */
+
+.qr-wrapper {
+    width: min(100%, 340px);
+    aspect-ratio: 1 / 1;
+
+    margin: 0 auto 22px;
+    padding: 14px;
+
+    border: 1px solid var(--border);
+    border-radius: 22px;
+
+    background: #FFFFFF;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#qrcode {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#qrcode canvas,
+#qrcode img {
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+    display: block;
+}
+
+.loading {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* ============================================================
+   REFERRAL INFORMATION
+============================================================ */
+
+.referral {
+    display: none;
+
+    width: 100%;
+
+    background: #F0FDF4;
+    border: 1px solid #BBF7D0;
+    border-radius: 14px;
+
+    padding: 14px;
+    margin-bottom: 20px;
+
+    color: #166534;
+    font-size: 12px;
+    text-align: left;
+}
+
+.referral strong {
+    display: block;
+    margin-top: 5px;
+
+    font-size: 15px;
+    overflow-wrap: anywhere;
+}
+
+/* ============================================================
+   INSTRUCTIONS
+============================================================ */
+
+.instruction {
+    color: var(--primary);
+
+    font-size: 16px;
+    font-weight: 800;
+
+    margin: 0 0 10px;
+}
+
+.sub-instruction {
+    color: var(--muted);
+
+    font-size: 13px;
+    line-height: 1.9;
+
+    margin: 0 0 22px;
+}
+
+/* ============================================================
+   DESTINATION URL
+============================================================ */
+
+.url-box {
+    width: 100%;
+
+    background: #F8FAFC;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    padding: 14px;
+    margin-bottom: 16px;
+
+    text-align: left;
+}
+
+.url-label {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.7px;
+
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+#target-url {
+    display: block;
+
+    color: #334155;
+
+    font-size: 12px;
+    line-height: 1.7;
+
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+/* ============================================================
+   BUTTONS
+============================================================ */
+
+.actions {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+button,
+.open-link {
+    width: 100%;
+    min-height: 50px;
+
+    border: 0;
+    border-radius: 12px;
+
+    padding: 14px 18px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 800;
+
+    cursor: pointer;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    transition:
+        transform 0.15s ease,
+        background 0.15s ease;
+}
+
+.primary-button {
+    background: var(--primary);
+    color: #FFFFFF;
+}
+
+.secondary-button {
+    background: #EFF6FF;
+    color: var(--accent);
+}
+
+button:active,
+.open-link:active {
+    transform: scale(0.98);
+}
+
+button:focus-visible,
+.open-link:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.4);
+    outline-offset: 3px;
+}
+
+/* ============================================================
+   STATUS
+============================================================ */
+
+#status {
+    min-height: 20px;
+
+    margin-top: 12px;
+
+    color: var(--success);
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.error {
+    color: #DC2626;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* ============================================================
+   FOOTER
+============================================================ */
+
+footer {
+    width: 100%;
+
+    padding: 22px 16px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+    line-height: 1.8;
+
+    text-align: center;
+}
+
+/* ============================================================
+   TABLET
+============================================================ */
+
+@media (min-width: 650px) {
+    header {
+        justify-content: flex-start;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .card {
+        padding: 42px;
+    }
+
+    .qr-wrapper {
+        width: 320px;
+    }
+
+    .actions {
+        max-width: 360px;
+        margin: 0 auto;
+    }
+}
+
+/* ============================================================
+   DESKTOP
+============================================================ */
+
+@media (min-width: 850px) {
+    main {
+        padding-top: 35px;
+        padding-bottom: 50px;
+    }
+
+    .card {
+        padding: 46px;
+    }
+
+    .desktop-content {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: center;
+        gap: 48px;
+
+        text-align: left;
+    }
+
+    .desktop-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .desktop-right {
+        width: 100%;
+        text-align: left;
+    }
+
+    .desktop-right .instruction,
+    .desktop-right .sub-instruction {
+        text-align: left;
+    }
+
+    .desktop-right .referral {
+        margin-top: 20px;
+    }
+
+    .desktop-right .actions {
+        max-width: none;
+    }
+
+    .desktop-right #status {
+        text-align: center;
+    }
+
+    .description {
+        max-width: 620px;
+    }
+
+    .qr-wrapper {
+        width: 100%;
+        max-width: 360px;
+        margin-bottom: 0;
+    }
+}
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 480px) {
+    header {
+        padding: 15px 18px;
+    }
+
+    .brand {
+        font-size: 20px;
+    }
+
+    .brand img {
+        width: 35px;
+        height: 35px;
+    }
+
+    main {
+        padding: 12px 14px 28px;
+    }
+
+    .card {
+        padding: 25px 18px;
+        border-radius: 20px;
+    }
+
+    .eyebrow {
+        font-size: 9px;
+        padding: 7px 10px;
+        margin-bottom: 15px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .description {
+        font-size: 13px;
+        margin-bottom: 22px;
+    }
+
+    .qr-wrapper {
+        width: min(100%, 290px);
+        padding: 10px;
+        border-radius: 17px;
+    }
+
+    .instruction {
+        font-size: 15px;
+    }
+
+    .sub-instruction {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .url-box {
+        padding: 12px;
+    }
+
+    #target-url {
+        font-size: 11px;
+    }
+
+    button,
+    .open-link {
+        min-height: 48px;
+        font-size: 13px;
+    }
+
+    footer {
+        padding: 18px 12px;
+    }
+}
+
+/* ============================================================
+   VERY SMALL PHONES
+============================================================ */
+
+@media (max-width: 350px) {
+    main {
+        padding: 8px 10px 22px;
+    }
+
+    .card {
+        padding: 21px 13px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .qr-wrapper {
+        width: min(100%, 250px);
+        padding: 8px;
+    }
+
+    .eyebrow {
+        font-size: 8px;
+    }
+}
+
+/* ============================================================
+   REDUCED MOTION
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}
+
     </style>
 </head>
 
