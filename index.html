@@ -8,67 +8,84 @@
          rest of the document, so the Play Store redirect fires before
          any resource is fetched and no flash of the SPA is visible.
          ============================================================ -->
-    <script>
-    (function medvixLaunchRouter() {
-        'use strict';
-        try {
-            var host = (window.location.hostname || '').toLowerCase();
+ 
+<script>
+(function medvixLaunchRouter() {
+    'use strict';
 
-            var APP_HOSTS = ['app.medvix.co.ke', 'www.app.medvix.co.ke'];
-            var WEB_HOSTS = ['medvix.co.ke', 'www.medvix.co.ke'];
+    var PLAY_STORE =
+        'https://play.google.com/store/apps/details?id=com.medhurb.app';
 
-            // Web hosts: normal website. Nothing to do.
-            if (WEB_HOSTS.indexOf(host) !== -1) return;
+    var APP_HOSTS = [
+        'app.medvix.co.ke',
+        'www.app.medvix.co.ke'
+    ];
 
-            // Unknown host (localhost, previews). Leave alone.
-            if (APP_HOSTS.indexOf(host) === -1) return;
+    var WEB_HOSTS = [
+        'medvix.co.ke',
+        'www.medvix.co.ke'
+    ];
 
-            // ── App hosts from here on ───────────────────────────────
+    try {
+        var host = location.hostname.toLowerCase();
+        var path = location.pathname;
 
-            // Inside the Capacitor WebView — the app already owns the
-            // URL. Redirecting would break it.
-            if (window.Capacitor) return;
+        // Main website: always load normally.
+        if (WEB_HOSTS.includes(host)) return;
 
-            // Android browsers only. iOS and desktop get the site.
-            var ua = navigator.userAgent || '';
-            if (!/Android/i.test(ua)) return;
+        // Unknown hostname: no routing.
+        if (!APP_HOSTS.includes(host)) return;
 
-            // Skip in-app browsers (Facebook, Instagram, TikTok, …).
-            // Play Store redirects from those often fail silently and
-            // strand the user on a blank page.
-            if (/\bwv\b/i.test(ua) || /FBAN|FBAV|Instagram|Line\//i.test(ua)) return;
+        // Prevent redirect loops on the QR landing page.
+        if (path === '/download-qr.html') return;
 
-            // Capture the destination exactly as it arrived. Every
-            // route is forwarded — no allow-list.
-            var destination =
-                window.location.pathname +
-                window.location.search +
-                window.location.hash;
-            if (!destination) destination = '/';
+        // Protect native Capacitor application.
+        if (
+            window.Capacitor &&
+            typeof window.Capacitor.isNativePlatform === 'function' &&
+            window.Capacitor.isNativePlatform()
+        ) return;
 
-            // Encode ONCE inside the referrer value.
-            var referrer = new URLSearchParams({ deep_link: destination }).toString();
+        // Preserve the original destination.
+        var destination =
+            path + location.search + location.hash;
 
-            // Build the Play Store URL. searchParams.set() encodes the
-            // referrer value AGAIN — the second, deliberate encoding.
-            // Google Play decodes the referrer parameter exactly once
-            // before storing it; getInstallReferrer() then returns the
-            // destination still single-encoded, which the Java side
-            // decodes with Uri.decode().
-            var playUrl = new URL('https://play.google.com/store/apps/details');
-            playUrl.searchParams.set('id', 'com.medhurb.app');
+        // Android browser: redirect to Play Store.
+        if (/Android/i.test(navigator.userAgent || '')) {
+
+            var referrer = new URLSearchParams({
+                deep_link: destination || '/'
+            }).toString();
+
+            var playUrl = new URL(PLAY_STORE);
+
             playUrl.searchParams.set('referrer', referrer);
 
-            // replace() keeps the redirect out of history — no
-            // back-button trap after the user installs and opens.
-            window.location.replace(playUrl.toString());
-        } catch (err) {
-            if (window.console && console.warn) {
-                console.warn('[MedVix] launch router failed:', err);
-            }
+            location.replace(playUrl.toString());
+            return;
         }
-    })();
-    </script>
+
+        // Non-Android: display QR download page.
+        var qrUrl = new URL('/download-qr.html', location.origin);
+
+        qrUrl.searchParams.set(
+            'target',
+            location.origin + destination
+        );
+
+        location.replace(qrUrl.toString());
+
+    } catch (error) {
+        console.error('[MedVix Router]', error);
+
+        // Safe fallback.
+        if (/Android/i.test(navigator.userAgent || '')) {
+            location.replace(PLAY_STORE);
+        }
+    }
+})();
+</script>
+
 
     <!-- ============================================================
          Character encoding, viewport and app basics
