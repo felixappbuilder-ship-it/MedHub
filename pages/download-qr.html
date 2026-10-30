@@ -1,0 +1,580 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta name="theme-color" content="#0B172A">
+
+    <title>Download MedVix – Scan to Continue</title>
+
+    <meta
+        name="description"
+        content="Scan the QR code to download MedVix and access your medical learning resources."
+    >
+
+    <meta name="robots" content="noindex, nofollow">
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="/assets/images/logo-512x512.png"
+    >
+
+    <style>
+        :root {
+            --primary: #0B172A;
+            --accent: #2563EB;
+            --background: #F4F7FB;
+            --text: #172033;
+            --muted: #64748B;
+            --border: #E2E8F0;
+            --white: #FFFFFF;
+            --success: #16A34A;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(
+                    circle at top,
+                    #E5EDFF 0%,
+                    var(--background) 55%
+                );
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            padding: 22px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 21px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .brand img {
+            width: 38px;
+            height: 38px;
+            object-fit: contain;
+        }
+
+        main {
+            width: 100%;
+            max-width: 460px;
+            padding: 16px 20px 40px;
+            margin: auto 0;
+        }
+
+        .card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 30px 24px;
+            text-align: center;
+            box-shadow: 0 15px 45px rgba(15, 23, 42, 0.08);
+        }
+
+        .eyebrow {
+            display: inline-block;
+            padding: 7px 12px;
+            border-radius: 30px;
+            background: #EFF6FF;
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 27px;
+            line-height: 1.2;
+            margin: 0 0 12px;
+            color: var(--primary);
+        }
+
+        .description {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--muted);
+            margin: 0 auto 24px;
+            max-width: 340px;
+        }
+
+        .qr-wrapper {
+            width: 300px;
+            max-width: 100%;
+            min-height: 300px;
+            margin: 0 auto 20px;
+            padding: 10px;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #FFFFFF;
+        }
+
+        #qrcode {
+            width: 280px;
+            height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #qrcode canvas,
+        #qrcode img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+        }
+
+        .loading {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .instruction {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 0 0 8px;
+        }
+
+        .sub-instruction {
+            font-size: 12px;
+            color: var(--muted);
+            line-height: 1.6;
+            margin: 0 0 20px;
+        }
+
+        .referral {
+            display: none;
+            background: #F0FDF4;
+            border: 1px solid #BBF7D0;
+            border-radius: 12px;
+            padding: 11px;
+            margin-bottom: 18px;
+            font-size: 12px;
+            color: #166534;
+        }
+
+        .referral strong {
+            display: block;
+            margin-top: 4px;
+            font-size: 14px;
+            overflow-wrap: anywhere;
+        }
+
+        .url-box {
+            background: #F8FAFC;
+            border: 1px solid var(--border);
+            padding: 12px;
+            border-radius: 10px;
+            text-align: left;
+            margin-bottom: 14px;
+        }
+
+        .url-label {
+            display: block;
+            font-size: 10px;
+            color: var(--muted);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        #target-url {
+            display: block;
+            font-size: 11px;
+            line-height: 1.6;
+            color: #334155;
+            overflow-wrap: anywhere;
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+        }
+
+        button,
+        .open-link {
+            width: 100%;
+            border: 0;
+            border-radius: 11px;
+            padding: 14px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+        }
+
+        .primary-button {
+            background: var(--primary);
+            color: white;
+        }
+
+        .secondary-button {
+            background: #EFF6FF;
+            color: var(--accent);
+        }
+
+        button:active,
+        .open-link:active {
+            transform: scale(0.98);
+        }
+
+        #status {
+            min-height: 18px;
+            font-size: 12px;
+            color: var(--success);
+            margin-top: 12px;
+        }
+
+        .error {
+            color: #DC2626;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        footer {
+            padding: 20px;
+            font-size: 11px;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        @media (max-width: 380px) {
+            .card {
+                padding: 25px 17px;
+            }
+
+            h1 {
+                font-size: 23px;
+            }
+
+            .qr-wrapper {
+                width: 270px;
+                min-height: 270px;
+            }
+
+            #qrcode {
+                width: 250px;
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a class="brand" href="https://medvix.co.ke/">
+            <img
+                src="/assets/images/logo-512x512.png"
+                alt="MedVix"
+            >
+            <span>MedVix</span>
+        </a>
+    </header>
+
+
+    <main>
+        <section class="card">
+
+            <span class="eyebrow">
+                YOUR MEDICAL LEARNING STARTS HERE
+            </span>
+
+            <h1>Scan to continue with MedVix</h1>
+
+            <p class="description">
+                Scan this QR code using your Android phone
+                to get MedVix from Google Play and continue
+                to your intended destination.
+            </p>
+
+
+            <!-- Dynamic referral information -->
+            <div class="referral" id="referral-box">
+                Referral code
+                <strong id="referral-code"></strong>
+            </div>
+
+
+            <!-- QR code -->
+            <div class="qr-wrapper">
+                <div id="qrcode">
+                    <span class="loading">
+                        Generating your QR code...
+                    </span>
+                </div>
+            </div>
+
+
+            <p class="instruction">
+                How to get started
+            </p>
+
+            <p class="sub-instruction">
+                1. Open your phone camera.<br>
+                2. Point it at the QR code.<br>
+                3. Open the displayed link.<br>
+                4. Download MedVix and continue.
+            </p>
+
+
+            <!-- Dynamic destination -->
+            <div class="url-box">
+                <span class="url-label">
+                    Encoded destination
+                </span>
+
+                <span id="target-url">
+                    Preparing destination...
+                </span>
+            </div>
+
+
+            <div class="actions">
+
+                <button
+                    type="button"
+                    class="primary-button"
+                    id="copy-button"
+                >
+                    Copy referral link
+                </button>
+
+                <a
+                    class="open-link secondary-button"
+                    href="https://play.google.com/store/apps/details?id=com.medhurb.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Open Google Play Store
+                </a>
+
+            </div>
+
+            <div id="status" aria-live="polite"></div>
+
+        </section>
+    </main>
+
+
+    <footer>
+        MedVix · Learn. Practice. Connect. Grow. Achieve.
+        <br>
+        © <span id="year"></span> Vertex Digital Apps
+    </footer>
+
+
+    <!-- QRCode.js -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+        referrerpolicy="no-referrer"
+    ></script>
+
+
+    <script>
+    (function medvixDynamicQR() {
+        'use strict';
+
+        var APPROVED_HOSTS = [
+            'app.medvix.co.ke',
+            'www.app.medvix.co.ke'
+        ];
+
+        var DEFAULT_TARGET = 'https://app.medvix.co.ke/';
+
+        var qrElement = document.getElementById('qrcode');
+        var targetElement = document.getElementById('target-url');
+        var referralBox = document.getElementById('referral-box');
+        var referralCodeElement = document.getElementById('referral-code');
+        var copyButton = document.getElementById('copy-button');
+        var statusElement = document.getElementById('status');
+
+        var finalTarget = DEFAULT_TARGET;
+
+
+        // --------------------------------------------------------
+        // 1. Read the original destination from the router.
+        // --------------------------------------------------------
+
+        function getTarget() {
+            var params = new URLSearchParams(location.search);
+
+            var suppliedTarget = params.get('target');
+
+            if (!suppliedTarget) {
+                return DEFAULT_TARGET;
+            }
+
+            try {
+                var url = new URL(suppliedTarget);
+
+                // Only allow HTTPS MedVix app destinations.
+                if (url.protocol !== 'https:') {
+                    throw new Error('Invalid protocol');
+                }
+
+                if (APPROVED_HOSTS.indexOf(url.hostname.toLowerCase()) === -1) {
+                    throw new Error('Unapproved destination');
+                }
+
+                return url.toString();
+
+            } catch (error) {
+                console.warn('[MedVix QR] Invalid target:', error);
+                return DEFAULT_TARGET;
+            }
+        }
+
+
+        // --------------------------------------------------------
+        // 2. Extract referral information if available.
+        // --------------------------------------------------------
+
+        function displayReferral(urlString) {
+            try {
+                var url = new URL(urlString);
+
+                var referral =
+                    url.searchParams.get('ref');
+
+                if (referral) {
+                    referralBox.style.display = 'block';
+                    referralCodeElement.textContent = referral;
+                }
+
+            } catch (error) {
+                console.warn('[MedVix QR] Referral extraction failed.');
+            }
+        }
+
+
+        // --------------------------------------------------------
+        // 3. Generate QR code using the complete destination.
+        // --------------------------------------------------------
+
+        function generateQR(urlString) {
+            if (typeof QRCode === 'undefined') {
+                qrElement.innerHTML =
+                    '<span class="error">' +
+                    'QR generation library could not load. ' +
+                    'Please refresh the page or use the copy button.' +
+                    '</span>';
+
+                return;
+            }
+
+            qrElement.innerHTML = '';
+
+            try {
+                new QRCode(qrElement, {
+                    text: urlString,
+                    width: 280,
+                    height: 280,
+                    colorDark: '#0B172A',
+                    colorLight: '#FFFFFF',
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+
+            } catch (error) {
+                console.error('[MedVix QR] Generation failed:', error);
+
+                qrElement.innerHTML =
+                    '<span class="error">Unable to generate QR code.</span>';
+            }
+        }
+
+
+        // --------------------------------------------------------
+        // 4. Copy the complete referral/deep link.
+        // --------------------------------------------------------
+
+        async function copyTarget() {
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(finalTarget);
+                } else {
+                    var input = document.createElement('textarea');
+
+                    input.value = finalTarget;
+                    input.style.position = 'fixed';
+                    input.style.opacity = '0';
+
+                    document.body.appendChild(input);
+
+                    input.select();
+
+                    var copied = document.execCommand('copy');
+
+                    input.remove();
+
+                    if (!copied) {
+                        throw new Error('Copy operation failed');
+                    }
+                }
+
+                statusElement.textContent =
+                    'Referral link copied successfully.';
+
+            } catch (error) {
+                statusElement.textContent =
+                    'Could not copy automatically. Select the link above.';
+
+                console.warn('[MedVix QR] Copy failed:', error);
+            }
+        }
+
+
+        // --------------------------------------------------------
+        // 5. Initialize.
+        // --------------------------------------------------------
+
+        finalTarget = getTarget();
+
+        targetElement.textContent = finalTarget;
+
+        displayReferral(finalTarget);
+
+        generateQR(finalTarget);
+
+        copyButton.addEventListener('click', copyTarget);
+
+        document.getElementById('year').textContent =
+            new Date().getFullYear();
+
+    })();
+    </script>
+
+</body>
+</html>
